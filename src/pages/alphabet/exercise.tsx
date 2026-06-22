@@ -16,7 +16,7 @@ import {
 } from '@mui/material'
 import type { SelectChangeEvent } from '@mui/material/Select'
 import {
-  exerciseOverviewScopeOptions,
+  getExerciseOverviewScopeOptions,
   getExerciseRowScopeGroup,
   getExerciseRowScopeOptionsForOverview,
   resolveExerciseScope,
@@ -33,6 +33,7 @@ import {
   type Script,
 } from '@/pages/alphabet/exercise-quiz.ts'
 import { KanaDisplay } from '@/components/kana-display.tsx'
+import { useTranslation } from '@/i18n/context.tsx'
 import { playKanaAudio, playWrongAnswerSound } from '@/utils/kana-audio.ts'
 
 function sessionKey(script: Script, mode: ExerciseMode, scope: ExerciseScope) {
@@ -54,6 +55,7 @@ function resultBorderSx(color: 'success.main' | 'error.main') {
 }
 
 function ExercisePage() {
+  const { t } = useTranslation()
   const [script, setScript] = useState<Script>('hiragana')
   const [mode, setMode] = useState<ExerciseMode>('romaji')
   const [overviewScope, setOverviewScope] = useState<ExerciseOverviewScope>('all')
@@ -102,9 +104,11 @@ function ExercisePage() {
   }
 
   const rowScopeOptions = useMemo(
-    () => getExerciseRowScopeOptionsForOverview(overviewScope),
-    [overviewScope],
+    () => getExerciseRowScopeOptionsForOverview(overviewScope, t),
+    [overviewScope, t],
   )
+
+  const overviewScopeOptions = useMemo(() => getExerciseOverviewScopeOptions(t), [t])
 
   const selectedRowOption = rowScopeOptions.find((option) => option.value === rowScope) ?? null
 
@@ -138,15 +142,15 @@ function ExercisePage() {
     }
   }, [answeredCorrectly])
 
-  const scriptLabel = script === 'hiragana' ? 'Hiragana' : 'Katakana'
+  const scriptLabel = t(script === 'hiragana' ? 'nav.hiragana' : 'nav.katakana')
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom>
-        Exercise
+        {t('exercise.title')}
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        Practice the Japanese alphabet.
+        {t('exercise.subtitle')}
       </Typography>
 
       <Box
@@ -158,43 +162,43 @@ function ExercisePage() {
         }}
       >
         <FormControl fullWidth>
-          <InputLabel id="script-select-label">Script</InputLabel>
+          <InputLabel id="script-select-label">{t('exercise.script')}</InputLabel>
           <Select<Script>
             labelId="script-select-label"
             id="script-select"
             value={script}
-            label="Script"
+            label={t('exercise.script')}
             onChange={handleScriptChange}
           >
-            <MenuItem value="hiragana">Hiragana</MenuItem>
-            <MenuItem value="katakana">Katakana</MenuItem>
+            <MenuItem value="hiragana">{t('nav.hiragana')}</MenuItem>
+            <MenuItem value="katakana">{t('nav.katakana')}</MenuItem>
           </Select>
         </FormControl>
 
         <FormControl fullWidth>
-          <InputLabel id="mode-select-label">Mode</InputLabel>
+          <InputLabel id="mode-select-label">{t('exercise.mode')}</InputLabel>
           <Select<ExerciseMode>
             labelId="mode-select-label"
             id="mode-select"
             value={mode}
-            label="Mode"
+            label={t('exercise.mode')}
             onChange={handleModeChange}
           >
-            <MenuItem value="romaji">Guess romaji</MenuItem>
-            <MenuItem value="character">Guess {scriptLabel}</MenuItem>
+            <MenuItem value="romaji">{t('exercise.guessRomaji')}</MenuItem>
+            <MenuItem value="character">{t('exercise.guessCharacter', { script: scriptLabel })}</MenuItem>
           </Select>
         </FormControl>
 
         <FormControl fullWidth>
-          <InputLabel id="scope-select-label">Scope</InputLabel>
+          <InputLabel id="scope-select-label">{t('exercise.scope')}</InputLabel>
           <Select<ExerciseOverviewScope>
             labelId="scope-select-label"
             id="scope-select"
             value={overviewScope}
-            label="Scope"
+            label={t('exercise.scope')}
             onChange={handleOverviewScopeChange}
           >
-            {exerciseOverviewScopeOptions.map((option) => (
+            {overviewScopeOptions.map((option) => (
               <MenuItem key={option.value} value={option.value as ExerciseOverviewScope}>
                 {option.label}
               </MenuItem>
@@ -205,13 +209,19 @@ function ExercisePage() {
         <Autocomplete
           id="row-select"
           options={rowScopeOptions}
-          groupBy={overviewScope === 'all' ? (option) => getExerciseRowScopeGroup(option.value) : undefined}
+          groupBy={
+            overviewScope === 'all' ? (option) => getExerciseRowScopeGroup(option.value, t) : undefined
+          }
           getOptionLabel={(option) => option.label}
           value={selectedRowOption}
           onChange={handleRowScopeChange}
           isOptionEqualToValue={(option, value) => option.value === value.value}
           renderInput={(params) => (
-            <TextField {...params} label="Row" placeholder="Optional — pick a specific row" />
+            <TextField
+              {...params}
+              label={t('exercise.row')}
+              placeholder={t('exercise.rowPlaceholder')}
+            />
           )}
           slotProps={{
             listbox: {
@@ -231,7 +241,9 @@ function ExercisePage() {
         }}
       >
         <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 2 }}>
-          {mode === 'romaji' ? `What is the romaji for this ${scriptLabel}?` : `What is the ${scriptLabel} character?`}
+          {mode === 'romaji'
+            ? t('exercise.questionRomaji', { script: scriptLabel })
+            : t('exercise.questionCharacter', { script: scriptLabel })}
         </Typography>
 
         <Box
@@ -247,7 +259,10 @@ function ExercisePage() {
             <>
               <KanaDisplay cell={question.correctItem} variant="prompt" />
               <IconButton
-                aria-label={`Play ${question.correctItem.char}, ${question.correctItem.romaji}`}
+                aria-label={t('chart.playAudio', {
+                  char: question.correctItem.char,
+                  romaji: question.correctItem.romaji,
+                })}
                 onClick={() =>
                   playKanaAudio(question.correctItem.romaji, question.correctItem.char)
                 }

@@ -1,7 +1,11 @@
 import type { AlphabetCell, AlphabetChartRow } from '@/pages/alphabet/alphabet-chart.tsx'
+import { DAKUTEN_MARK, HANDAKUTEN_MARK, voicedVariantMark } from '@/constants/kana-terminology.ts'
+import type { TranslationParams } from '@/i18n/translations.ts'
 import { getYoonDisplayParts } from '@/utils/yoon-display.ts'
 
 export type { AlphabetCell }
+
+type TranslateFn = (key: string, params?: TranslationParams) => string
 
 type BilingualCell = {
   romaji: string
@@ -139,6 +143,15 @@ const bilingualChartRows: BilingualChartRow[] = [
       null,
       null,
       { romaji: 'wo', hiragana: 'を', katakana: 'ヲ' },
+    ],
+  },
+  {
+    seion: [
+      { romaji: 'n', hiragana: 'ん', katakana: 'ン' },
+      null,
+      null,
+      null,
+      null,
     ],
   },
 ]
@@ -374,94 +387,134 @@ export type AlphabetRowOption = {
   label: string
 }
 
-function formatRowLabel(row: BilingualChartRow): string {
+function getRowName(row: BilingualChartRow) {
   const first = row.seion.find((cell): cell is BilingualCell => cell !== null)
 
   if (!first) {
-    return 'Row'
+    return null
   }
 
-  const name = first.romaji.charAt(0).toUpperCase() + first.romaji.slice(1)
-
-  return `${name} row (${first.hiragana})`
+  return first.romaji.charAt(0).toUpperCase() + first.romaji.slice(1)
 }
 
-function formatVoicedRowLabel(row: BilingualChartRow, variant: 'dakuten' | 'handakuten'): string {
-  const cells = variant === 'dakuten' ? row.dakuten : row.handakuten
-  const first = cells?.find((cell): cell is BilingualCell => cell !== null)
-  const suffix = variant === 'dakuten' ? 'tenten' : 'maru'
-
-  return `${formatRowLabel(row)} — ${suffix} (${first?.hiragana ?? ''})`
-}
-
-function formatYoonRowLabel(row: BilingualChartRow): string {
+function formatRowLabel(row: BilingualChartRow, t: TranslateFn): string {
   const first = row.seion.find((cell): cell is BilingualCell => cell !== null)
+  const name = getRowName(row)
 
-  if (!first) {
-    return 'Yoon row'
+  if (!first || !name) {
+    return t('exercise.rowDefault')
   }
 
-  const name = first.romaji.charAt(0).toUpperCase() + first.romaji.slice(1)
-
-  return `${name} row (${first.hiragana})`
+  return t('exercise.rowLabel', { name, char: first.hiragana })
 }
 
-function formatYoonVoicedRowLabel(row: BilingualChartRow, variant: 'dakuten' | 'handakuten'): string {
+function formatVoicedRowLabel(
+  row: BilingualChartRow,
+  variant: 'dakuten' | 'handakuten',
+  t: TranslateFn,
+): string {
   const cells = variant === 'dakuten' ? row.dakuten : row.handakuten
   const first = cells?.find((cell): cell is BilingualCell => cell !== null)
-  const suffix = variant === 'dakuten' ? 'tenten' : 'maru'
+  const name = getRowName(row)
+  const mark = voicedVariantMark(variant)
 
-  return `${formatYoonRowLabel(row)} — ${suffix} (${first?.hiragana ?? ''})`
+  if (!name) {
+    return t('exercise.rowDefault')
+  }
+
+  return t('exercise.voicedRowLabel', {
+    name,
+    mark,
+    char: first?.hiragana ?? '',
+  })
 }
 
-export const exerciseOverviewScopeOptions: AlphabetRowOption[] = [
-  { value: 'all', label: 'All characters' },
-  { value: 'seion', label: 'All seion (清音)' },
-  { value: 'dakuten', label: 'All tenten (゛)' },
-  { value: 'handakuten', label: 'All maru (゜)' },
-  { value: 'yoon', label: 'All yoon (拗音)' },
-]
+function formatYoonRowLabel(row: BilingualChartRow, t: TranslateFn): string {
+  const first = row.seion.find((cell): cell is BilingualCell => cell !== null)
+  const name = getRowName(row)
 
-export const exerciseRowScopeOptions: AlphabetRowOption[] = [
-  ...bilingualChartRows.flatMap((row, index) => {
-    const options: AlphabetRowOption[] = [{ value: `row-${index}`, label: formatRowLabel(row) }]
+  if (!first || !name) {
+    return t('exercise.yoonRowDefault')
+  }
 
-    if (row.dakuten) {
-      options.push({
-        value: `row-${index}-dakuten`,
-        label: formatVoicedRowLabel(row, 'dakuten'),
-      })
-    }
+  return t('exercise.rowLabel', { name, char: first.hiragana })
+}
 
-    if (row.handakuten) {
-      options.push({
-        value: `row-${index}-handakuten`,
-        label: formatVoicedRowLabel(row, 'handakuten'),
-      })
-    }
+function formatYoonVoicedRowLabel(
+  row: BilingualChartRow,
+  variant: 'dakuten' | 'handakuten',
+  t: TranslateFn,
+): string {
+  const cells = variant === 'dakuten' ? row.dakuten : row.handakuten
+  const first = cells?.find((cell): cell is BilingualCell => cell !== null)
+  const name = getRowName(row)
+  const mark = voicedVariantMark(variant)
 
-    return options
-  }),
-  ...bilingualYoonRows.flatMap((row, index) => {
-    const options: AlphabetRowOption[] = [{ value: `yoon-row-${index}`, label: formatYoonRowLabel(row) }]
+  if (!name) {
+    return t('exercise.yoonRowDefault')
+  }
 
-    if (row.dakuten) {
-      options.push({
-        value: `yoon-row-${index}-dakuten`,
-        label: formatYoonVoicedRowLabel(row, 'dakuten'),
-      })
-    }
+  return t('exercise.voicedRowLabel', {
+    name,
+    mark,
+    char: first?.hiragana ?? '',
+  })
+}
 
-    if (row.handakuten) {
-      options.push({
-        value: `yoon-row-${index}-handakuten`,
-        label: formatYoonVoicedRowLabel(row, 'handakuten'),
-      })
-    }
+export function getExerciseOverviewScopeOptions(t: TranslateFn): AlphabetRowOption[] {
+  return [
+    { value: 'all', label: t('exercise.scopeAll') },
+    { value: 'seion', label: t('exercise.scopeSeion') },
+    { value: 'dakuten', label: t('exercise.scopeDakuten', { mark: DAKUTEN_MARK }) },
+    { value: 'handakuten', label: t('exercise.scopeHandakuten', { mark: HANDAKUTEN_MARK }) },
+    { value: 'yoon', label: t('exercise.scopeYoon') },
+  ]
+}
 
-    return options
-  }),
-]
+export function getExerciseRowScopeOptions(t: TranslateFn): AlphabetRowOption[] {
+  return [
+    ...bilingualChartRows.flatMap((row, index) => {
+      const options: AlphabetRowOption[] = [{ value: `row-${index}`, label: formatRowLabel(row, t) }]
+
+      if (row.dakuten) {
+        options.push({
+          value: `row-${index}-dakuten`,
+          label: formatVoicedRowLabel(row, 'dakuten', t),
+        })
+      }
+
+      if (row.handakuten) {
+        options.push({
+          value: `row-${index}-handakuten`,
+          label: formatVoicedRowLabel(row, 'handakuten', t),
+        })
+      }
+
+      return options
+    }),
+    ...bilingualYoonRows.flatMap((row, index) => {
+      const options: AlphabetRowOption[] = [
+        { value: `yoon-row-${index}`, label: formatYoonRowLabel(row, t) },
+      ]
+
+      if (row.dakuten) {
+        options.push({
+          value: `yoon-row-${index}-dakuten`,
+          label: formatYoonVoicedRowLabel(row, 'dakuten', t),
+        })
+      }
+
+      if (row.handakuten) {
+        options.push({
+          value: `yoon-row-${index}-handakuten`,
+          label: formatYoonVoicedRowLabel(row, 'handakuten', t),
+        })
+      }
+
+      return options
+    }),
+  ]
+}
 
 export function resolveExerciseScope(
   overview: ExerciseOverviewScope,
@@ -470,13 +523,16 @@ export function resolveExerciseScope(
   return row || overview
 }
 
-export function getExerciseRowScopeGroup(scope: ExerciseScope): string {
-  return scope.startsWith('yoon-row-') ? 'Yoon rows' : 'Seion rows'
+export function getExerciseRowScopeGroup(scope: ExerciseScope, t: TranslateFn) {
+  return scope.startsWith('yoon-row-') ? t('exercise.groupYoonRows') : t('exercise.groupSeionRows')
 }
 
 export function getExerciseRowScopeOptionsForOverview(
   overview: ExerciseOverviewScope,
+  t: TranslateFn,
 ): AlphabetRowOption[] {
+  const exerciseRowScopeOptions = getExerciseRowScopeOptions(t)
+
   switch (overview) {
     case 'all':
       return exerciseRowScopeOptions

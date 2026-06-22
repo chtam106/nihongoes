@@ -18,13 +18,15 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import { LanguageSwitcher } from '@/components/language-switcher.tsx'
+import { useTranslation } from '@/i18n/context.tsx'
 import { isNavGroupActive, navGroups, type NavItem } from '@/constants/nav-items.ts'
 
 const drawerWidth = 240
 
 function getInitialExpandedGroups(pathname: string) {
   return Object.fromEntries(
-    navGroups.map((group) => [group.label, isNavGroupActive(group, pathname)]),
+    navGroups.map((group) => [group.path, isNavGroupActive(group, pathname)]),
   )
 }
 
@@ -45,6 +47,7 @@ function NavItemIcon({ item }: { item: Pick<NavItem, 'icon' | 'symbol'> }) {
 function AppLayout() {
   const location = useLocation()
   const theme = useTheme()
+  const { t } = useTranslation()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
   const [mobileOpen, setMobileOpen] = useState(false)
   const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>(() =>
@@ -57,7 +60,7 @@ function AppLayout() {
 
       for (const group of navGroups) {
         if (isNavGroupActive(group, location.pathname)) {
-          next[group.label] = true
+          next[group.path] = true
         }
       }
 
@@ -65,10 +68,10 @@ function AppLayout() {
     })
   }, [location.pathname])
 
-  const toggleGroup = (label: string) => {
+  const toggleGroup = (path: string) => {
     setExpandedGroups((previous) => ({
       ...previous,
-      [label]: !previous[label],
+      [path]: !previous[path],
     }))
   }
 
@@ -76,65 +79,135 @@ function AppLayout() {
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <Toolbar sx={{ px: 2 }}>
         <Typography variant="h6" component="p" noWrap>
-          Learn Japanese
+          {t('app.title')}
         </Typography>
       </Toolbar>
 
       <List sx={{ px: 1, flex: 1 }}>
         {navGroups.map((group) => {
-          const isExpanded = expandedGroups[group.label] ?? false
+          const groupLabel = t(group.labelKey)
+          const isExpanded = expandedGroups[group.path] ?? false
           const GroupIcon = group.icon
+          const hasChildren = group.children.length > 0
+
+          const isGroupHighlighted = location.pathname === group.path
 
           return (
-            <Box key={group.label} sx={{ mb: 0.5 }}>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box key={group.path} sx={{ mb: 0.5 }}>
+              {hasChildren ? (
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderRadius: 1,
+                    bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
+                    '&:hover': {
+                      bgcolor: isGroupHighlighted ? 'action.selected' : 'action.hover',
+                    },
+                  }}
+                >
+                  <ListItemButton
+                    component={NavLink}
+                    to={group.path}
+                    selected={isGroupHighlighted}
+                    onClick={() => setMobileOpen(false)}
+                    sx={{
+                      flex: 1,
+                      borderRadius: 1,
+                      bgcolor: 'transparent',
+                      '&:hover': { bgcolor: 'transparent' },
+                      '&.Mui-selected': {
+                        bgcolor: 'transparent',
+                        '&:hover': { bgcolor: 'transparent' },
+                      },
+                    }}
+                  >
+                    <ListItemIcon sx={{ minWidth: 40 }}>
+                      {GroupIcon ? <GroupIcon fontSize="small" /> : null}
+                    </ListItemIcon>
+                    <ListItemText primary={groupLabel} />
+                  </ListItemButton>
+
+                  <IconButton
+                    size="small"
+                    aria-label={
+                      isExpanded
+                        ? t('nav.collapse', { label: groupLabel })
+                        : t('nav.expand', { label: groupLabel })
+                    }
+                    aria-expanded={isExpanded}
+                    onClick={() => toggleGroup(group.path)}
+                    sx={{
+                      mr: 0.5,
+                      bgcolor: 'transparent',
+                      '&:hover': { bgcolor: 'transparent' },
+                    }}
+                  >
+                    {isExpanded ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
+                  </IconButton>
+                </Box>
+              ) : (
                 <ListItemButton
                   component={NavLink}
                   to={group.path}
-                  selected={location.pathname === group.path}
+                  selected={isGroupHighlighted}
                   onClick={() => setMobileOpen(false)}
-                  sx={{ flex: 1, borderRadius: 1 }}
+                  sx={{ borderRadius: 1 }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
                     {GroupIcon ? <GroupIcon fontSize="small" /> : null}
                   </ListItemIcon>
-                  <ListItemText primary={group.label} />
+                  <ListItemText primary={groupLabel} />
                 </ListItemButton>
+              )}
 
-                <IconButton
-                  size="small"
-                  aria-label={isExpanded ? `Collapse ${group.label}` : `Expand ${group.label}`}
-                  aria-expanded={isExpanded}
-                  onClick={() => toggleGroup(group.label)}
-                  sx={{ mr: 0.5 }}
-                >
-                  {isExpanded ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
-                </IconButton>
-              </Box>
-
-              <Collapse in={isExpanded} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  {group.children.map((child) => (
-                    <ListItemButton
-                      key={child.path}
-                      component={NavLink}
-                      to={child.path}
-                      selected={location.pathname === child.path}
-                      onClick={() => setMobileOpen(false)}
-                      sx={{ pl: 4, borderRadius: 1, mb: 0.5 }}
-                    >
-                      <ListItemIcon sx={{ minWidth: 36 }}>
-                        <NavItemIcon item={child} />
-                      </ListItemIcon>
-                      <ListItemText primary={child.label} />
-                    </ListItemButton>
-                  ))}
-                </List>
-              </Collapse>
+              {hasChildren && (
+                <Collapse in={isExpanded} timeout="auto" unmountOnExit>
+                  <List component="div" disablePadding sx={{ mt: 0.5 }}>
+                    {group.children.map((child) => (
+                      <ListItemButton
+                        key={child.path}
+                        component={NavLink}
+                        to={child.path}
+                        selected={location.pathname === child.path}
+                        onClick={() => setMobileOpen(false)}
+                        sx={{ pl: 4, borderRadius: 1, mb: 0.5 }}
+                      >
+                        <ListItemIcon sx={{ minWidth: 36 }}>
+                          <NavItemIcon item={child} />
+                        </ListItemIcon>
+                        <ListItemText primary={t(child.labelKey)} />
+                      </ListItemButton>
+                    ))}
+                  </List>
+                </Collapse>
+              )}
             </Box>
           )
         })}
       </List>
+    </Box>
+  )
+
+  const headerBar = (
+    <Box
+      component="header"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        gap: 1,
+        px: { xs: 1.5, sm: 2, md: 3 },
+        py: { xs: 1, md: 1.5 },
+        borderBottom: 1,
+        borderColor: 'divider',
+        bgcolor: 'background.paper',
+        position: 'sticky',
+        top: 0,
+        zIndex: (muiTheme) => muiTheme.zIndex.appBar - 1,
+      }}
+    >
+      <LanguageSwitcher />
     </Box>
   )
 
@@ -152,13 +225,14 @@ function AppLayout() {
             color: 'text.primary',
           }}
         >
-          <Toolbar>
-            <IconButton edge="start" onClick={() => setMobileOpen(true)} aria-label="Open menu">
+          <Toolbar sx={{ gap: 1 }}>
+            <IconButton edge="start" onClick={() => setMobileOpen(true)} aria-label={t('nav.openMenu')}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="p" noWrap>
-              Learn Japanese
+            <Typography variant="h6" component="p" noWrap sx={{ flex: 1 }}>
+              {t('app.title')}
             </Typography>
+            <LanguageSwitcher />
           </Toolbar>
         </AppBar>
       )}
@@ -189,8 +263,11 @@ function AppLayout() {
           width: { md: `calc(100% - ${drawerWidth}px)` },
           mt: { xs: 8, md: 0 },
           minWidth: 0,
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
+        {!isMobile && headerBar}
         <Outlet />
       </Box>
     </Box>

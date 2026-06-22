@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import './index.css'
 import App from './app.tsx'
+import { LanguageProvider } from '@/i18n/context.tsx'
 
 const theme = createTheme()
 
@@ -13,9 +14,11 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter basename={routerBasename || undefined}>
-        <App />
-      </BrowserRouter>
+      <LanguageProvider>
+        <BrowserRouter basename={routerBasename || undefined}>
+          <App />
+        </BrowserRouter>
+      </LanguageProvider>
     </ThemeProvider>
   </StrictMode>,
 )

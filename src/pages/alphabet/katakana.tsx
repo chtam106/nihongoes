@@ -1,11 +1,14 @@
 import { AlphabetChartPage } from '@/pages/alphabet/alphabet-chart.tsx'
 import { katakanaChartRows, katakanaYoonChartRows } from '@/constants/alphabet-charts.ts'
+import { useTranslation } from '@/i18n/context.tsx'
 
 function KatakanaPage() {
+  const { t } = useTranslation()
+
   return (
     <AlphabetChartPage
-      title="Katakana"
-      description="Learn the katakana alphabet (カタカナ)."
+      title={t('nav.katakana')}
+      description={t('alphabet.katakanaPageDescription')}
       chartRows={katakanaChartRows}
       yoonChartRows={katakanaYoonChartRows}
     />

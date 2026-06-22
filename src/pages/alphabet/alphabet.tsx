@@ -1,33 +1,36 @@
 import { Link as RouterLink } from 'react-router-dom'
 import { Container, Link, List, ListItem, Paper, Typography } from '@mui/material'
 import { routes } from '@/constants/routes.ts'
-
-const alphabetLinks = [
-  {
-    to: routes.alphabet.hiragana,
-    title: 'Hiragana',
-    description: 'ひらがな — basic Japanese syllabary',
-  },
-  {
-    to: routes.alphabet.katakana,
-    title: 'Katakana',
-    description: 'カタカナ — used for foreign words and emphasis',
-  },
-  {
-    to: routes.alphabet.exercise,
-    title: 'Exercise',
-    description: 'Practice hiragana and katakana',
-  },
-]
+import { useTranslation } from '@/i18n/context.tsx'
 
 function AlphabetPage() {
+  const { t } = useTranslation()
+
+  const alphabetLinks = [
+    {
+      to: routes.alphabet.hiragana,
+      title: t('nav.hiragana'),
+      description: t('alphabet.hiraganaDescription'),
+    },
+    {
+      to: routes.alphabet.katakana,
+      title: t('nav.katakana'),
+      description: t('alphabet.katakanaDescription'),
+    },
+    {
+      to: routes.alphabet.exercise,
+      title: t('nav.exercise'),
+      description: t('alphabet.exerciseDescription'),
+    },
+  ]
+
   return (
     <Container maxWidth="sm" sx={{ py: 4 }}>
       <Typography variant="h4" component="h1" gutterBottom>
-        Alphabet
+        {t('alphabet.title')}
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        Choose a writing system to study.
+        {t('alphabet.subtitle')}
       </Typography>
 
       <Paper elevation={2}>

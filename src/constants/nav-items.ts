@@ -1,3 +1,4 @@
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined'
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined'
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined'
 import type { ComponentType } from 'react'
@@ -5,14 +6,14 @@ import type { SvgIconProps } from '@mui/material'
 import { routes } from '@/constants/routes.ts'
 
 export type NavItem = {
-  label: string
+  labelKey: 'nav.hiragana' | 'nav.katakana' | 'nav.exercise'
   path: string
   icon?: ComponentType<SvgIconProps>
   symbol?: string
 }
 
 export type NavGroup = {
-  label: string
+  labelKey: 'nav.home' | 'nav.alphabet'
   path: string
   icon?: ComponentType<SvgIconProps>
   children: NavItem[]
@@ -20,22 +21,28 @@ export type NavGroup = {
 
 export const navGroups: NavGroup[] = [
   {
-    label: 'Alphabet',
+    labelKey: 'nav.home',
+    path: routes.home,
+    icon: HomeOutlinedIcon,
+    children: [],
+  },
+  {
+    labelKey: 'nav.alphabet',
     path: routes.alphabet.index,
     icon: MenuBookOutlinedIcon,
     children: [
       {
-        label: 'Hiragana',
+        labelKey: 'nav.hiragana',
         path: routes.alphabet.hiragana,
         symbol: 'あ',
       },
       {
-        label: 'Katakana',
+        labelKey: 'nav.katakana',
         path: routes.alphabet.katakana,
         symbol: 'ア',
       },
       {
-        label: 'Exercise',
+        labelKey: 'nav.exercise',
         path: routes.alphabet.exercise,
         icon: QuizOutlinedIcon,
       },
