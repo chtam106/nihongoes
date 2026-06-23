@@ -103,10 +103,8 @@ function AppLayout() {
                     display: 'flex',
                     alignItems: 'center',
                     borderRadius: 1,
-                    bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
-                    '&:hover': {
-                      bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
-                    },
+                    bgcolor: 'transparent',
+                    '&:hover': { bgcolor: 'transparent' },
                   }}
                 >
                   <ListItemButton
@@ -121,6 +119,8 @@ function AppLayout() {
                       '&:hover': { bgcolor: 'transparent' },
                       '&.Mui-selected': {
                         bgcolor: 'transparent',
+                        '& .MuiListItemText-primary': { color: 'primary.main' },
+                        '& .MuiListItemIcon-root': { color: 'primary.main' },
                         '&:hover': { bgcolor: 'transparent' },
                       },
                     }}
@@ -162,7 +162,12 @@ function AppLayout() {
                   sx={{
                     borderRadius: 1,
                     '&:hover': { bgcolor: 'transparent' },
-                    '&.Mui-selected:hover': { bgcolor: 'action.selected' },
+                    '&.Mui-selected': {
+                      bgcolor: 'transparent',
+                      '& .MuiListItemText-primary': { color: 'primary.main' },
+                      '& .MuiListItemIcon-root': { color: 'primary.main' },
+                    },
+                    '&.Mui-selected:hover': { bgcolor: 'transparent' },
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
@@ -214,7 +219,12 @@ function AppLayout() {
                           borderRadius: 1,
                           minHeight: 56,
                           '&:hover': { bgcolor: 'transparent' },
-                          '&.Mui-selected:hover': { bgcolor: 'action.selected' },
+                          '&.Mui-selected': {
+                            bgcolor: 'transparent',
+                            '& .MuiListItemText-primary': { color: 'primary.main' },
+                            '& .MuiListItemIcon-root': { color: 'primary.main' },
+                          },
+                          '&.Mui-selected:hover': { bgcolor: 'transparent' },
                         }}
                       >
                         <ListItemIcon sx={{ minWidth: isAlphabetGroup ? 32 : 40 }}>
