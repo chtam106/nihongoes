@@ -9,14 +9,16 @@ export const EXERCISE_PREFS_STORAGE_KEY = 'langwish.exercise-preferences'
 export type StoredExercisePreferences = {
   script: ExerciseScript
   overviewScope: ExerciseOverviewScope
-  rowScope: ExerciseRowScope | ''
+  rowFrom: ExerciseRowScope | ''
+  rowTo: ExerciseRowScope | ''
   pairDirection: ScriptPairDirection
 }
 
 const DEFAULTS: StoredExercisePreferences = {
   script: 'all',
   overviewScope: 'all',
-  rowScope: '',
+  rowFrom: '',
+  rowTo: '',
   pairDirection: 'hiragana-to-katakana',
 }
 
@@ -52,6 +54,18 @@ function isRowScope(value: unknown): value is ExerciseRowScope | '' {
   return typeof value === 'string'
 }
 
+function readLegacyRowScope(parsed: Partial<StoredExercisePreferences & { rowScope?: string }>) {
+  if (isRowScope(parsed.rowFrom) && parsed.rowFrom) {
+    return { rowFrom: parsed.rowFrom, rowTo: isRowScope(parsed.rowTo) ? parsed.rowTo : '' }
+  }
+
+  if (isRowScope(parsed.rowScope) && parsed.rowScope) {
+    return { rowFrom: parsed.rowScope, rowTo: parsed.rowScope }
+  }
+
+  return { rowFrom: '' as const, rowTo: '' as const }
+}
+
 export function readStoredExercisePreferences(): StoredExercisePreferences {
   if (typeof window === 'undefined') {
     return DEFAULTS
@@ -64,14 +78,16 @@ export function readStoredExercisePreferences(): StoredExercisePreferences {
       return DEFAULTS
     }
 
-    const parsed = JSON.parse(raw) as Partial<StoredExercisePreferences>
+    const parsed = JSON.parse(raw) as Partial<StoredExercisePreferences & { rowScope?: string }>
+    const rowRange = readLegacyRowScope(parsed)
 
     return {
       script: isScript(parsed.script) ? parsed.script : DEFAULTS.script,
       overviewScope: isOverviewScope(parsed.overviewScope)
         ? parsed.overviewScope
         : DEFAULTS.overviewScope,
-      rowScope: isRowScope(parsed.rowScope) ? parsed.rowScope : DEFAULTS.rowScope,
+      rowFrom: rowRange.rowFrom,
+      rowTo: rowRange.rowTo,
       pairDirection: isPairDirection(parsed.pairDirection)
         ? parsed.pairDirection
         : DEFAULTS.pairDirection,

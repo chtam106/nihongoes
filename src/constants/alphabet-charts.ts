@@ -368,9 +368,15 @@ export type ExerciseScope =
   | `row-${number}`
   | `row-${number}-dakuten`
   | `row-${number}-handakuten`
+  | `row-range-${number}-${number}`
+  | `row-range-${number}-${number}-dakuten`
+  | `row-range-${number}-${number}-handakuten`
   | `yoon-row-${number}`
   | `yoon-row-${number}-dakuten`
   | `yoon-row-${number}-handakuten`
+  | `yoon-row-range-${number}-${number}`
+  | `yoon-row-range-${number}-${number}-dakuten`
+  | `yoon-row-range-${number}-${number}-handakuten`
 
 export type ExerciseOverviewScope = 'all' | 'seion' | 'dakuten' | 'handakuten' | 'yoon'
 
@@ -514,9 +520,163 @@ export function getExerciseRowScopeOptions(t: TranslateFn): AlphabetRowOption[] 
 
 export function resolveExerciseScope(
   overview: ExerciseOverviewScope,
-  row: ExerciseRowScope | '',
+  rowFrom: ExerciseRowScope | '',
+  rowTo: ExerciseRowScope | '',
+  rowOptions: AlphabetRowOption[] = [],
 ): ExerciseScope {
-  return row || overview
+  if (!rowFrom && !rowTo) {
+    return overview
+  }
+
+  if (rowFrom && rowTo) {
+    if (rowFrom === rowTo) {
+      return rowFrom
+    }
+
+    return buildRowRangeScope(rowFrom, rowTo) ?? rowFrom
+  }
+
+  if (rowFrom) {
+    return buildRowRangeScopeToLast(rowFrom, rowOptions) ?? rowFrom
+  }
+
+  if (rowTo) {
+    return buildRowRangeScopeFromFirst(rowTo, rowOptions) ?? rowTo
+  }
+
+  return overview
+}
+
+type ParsedRowScope = {
+  family: 'seion' | 'yoon'
+  index: number
+  variant: 'plain' | 'dakuten' | 'handakuten'
+}
+
+function parseRowScope(scope: ExerciseRowScope): ParsedRowScope | null {
+  const seionPlain = scope.match(/^row-(\d+)$/)
+
+  if (seionPlain) {
+    return { family: 'seion', index: Number(seionPlain[1]), variant: 'plain' }
+  }
+
+  const seionVoiced = scope.match(/^row-(\d+)-(dakuten|handakuten)$/)
+
+  if (seionVoiced) {
+    return {
+      family: 'seion',
+      index: Number(seionVoiced[1]),
+      variant: seionVoiced[2] as 'dakuten' | 'handakuten',
+    }
+  }
+
+  const yoonPlain = scope.match(/^yoon-row-(\d+)$/)
+
+  if (yoonPlain) {
+    return { family: 'yoon', index: Number(yoonPlain[1]), variant: 'plain' }
+  }
+
+  const yoonVoiced = scope.match(/^yoon-row-(\d+)-(dakuten|handakuten)$/)
+
+  if (yoonVoiced) {
+    return {
+      family: 'yoon',
+      index: Number(yoonVoiced[1]),
+      variant: yoonVoiced[2] as 'dakuten' | 'handakuten',
+    }
+  }
+
+  return null
+}
+
+function formatRowRangeScope(
+  family: ParsedRowScope['family'],
+  start: number,
+  end: number,
+  variant: ParsedRowScope['variant'],
+): ExerciseScope {
+  const suffix = variant === 'plain' ? '' : `-${variant}`
+
+  if (family === 'seion') {
+    return `row-range-${start}-${end}${suffix}` as ExerciseScope
+  }
+
+  return `yoon-row-range-${start}-${end}${suffix}` as ExerciseScope
+}
+
+export function buildRowRangeScope(
+  from: ExerciseRowScope,
+  to: ExerciseRowScope,
+): ExerciseScope | null {
+  const fromParsed = parseRowScope(from)
+  const toParsed = parseRowScope(to)
+
+  if (!fromParsed || !toParsed) {
+    return null
+  }
+
+  if (fromParsed.family !== toParsed.family || fromParsed.variant !== toParsed.variant) {
+    return null
+  }
+
+  const start = Math.min(fromParsed.index, toParsed.index)
+  const end = Math.max(fromParsed.index, toParsed.index)
+
+  return formatRowRangeScope(fromParsed.family, start, end, fromParsed.variant)
+}
+
+export function buildRowRangeScopeToLast(
+  from: ExerciseRowScope,
+  options: AlphabetRowOption[],
+): ExerciseScope | null {
+  const fromParsed = parseRowScope(from)
+
+  if (!fromParsed) {
+    return null
+  }
+
+  const sameFamily = options
+    .map((option) => parseRowScope(option.value as ExerciseRowScope))
+    .filter(
+      (parsed): parsed is ParsedRowScope =>
+        parsed !== null &&
+        parsed.family === fromParsed.family &&
+        parsed.variant === fromParsed.variant,
+    )
+
+  if (sameFamily.length === 0) {
+    return from
+  }
+
+  const end = Math.max(...sameFamily.map((parsed) => parsed.index))
+
+  return formatRowRangeScope(fromParsed.family, fromParsed.index, end, fromParsed.variant)
+}
+
+export function buildRowRangeScopeFromFirst(
+  to: ExerciseRowScope,
+  options: AlphabetRowOption[],
+): ExerciseScope | null {
+  const toParsed = parseRowScope(to)
+
+  if (!toParsed) {
+    return null
+  }
+
+  const sameFamily = options
+    .map((option) => parseRowScope(option.value as ExerciseRowScope))
+    .filter(
+      (parsed): parsed is ParsedRowScope =>
+        parsed !== null && parsed.family === toParsed.family && parsed.variant === toParsed.variant,
+    )
+
+  if (sameFamily.length === 0) {
+    return to
+  }
+
+  const start = Math.min(...sameFamily.map((parsed) => parsed.index))
+
+  return formatRowRangeScope(toParsed.family, start, toParsed.index, toParsed.variant)
 }
 
 export function getExerciseRowScopeGroup(scope: ExerciseScope, t: TranslateFn) {
@@ -543,6 +703,38 @@ export function getExerciseRowScopeOptionsForOverview(
     default:
       return []
   }
+}
+
+function getRowRangeItems(
+  rows: AlphabetChartRow[],
+  scope: ExerciseScope,
+  prefix: 'row-range' | 'yoon-row-range',
+): AlphabetCell[] {
+  const rangeMatch = scope.match(new RegExp(`^${prefix}-(\\d+)-(\\d+)(?:-(dakuten|handakuten))?$`))
+
+  if (!rangeMatch) {
+    return []
+  }
+
+  const start = Number(rangeMatch[1])
+  const end = Number(rangeMatch[2])
+  const variant = rangeMatch[3]
+  const rowPrefix = prefix === 'row-range' ? 'row' : 'yoon-row'
+  const items: AlphabetCell[] = []
+
+  for (let index = start; index <= end; index += 1) {
+    const rowScope = variant
+      ? (`${rowPrefix}-${index}-${variant}` as ExerciseScope)
+      : (`${rowPrefix}-${index}` as ExerciseScope)
+
+    items.push(
+      ...(prefix === 'row-range'
+        ? getRowScopeItems(rows, rowScope)
+        : getYoonRowScopeItems(rows, rowScope)),
+    )
+  }
+
+  return items
 }
 
 function getRowScopeItems(rows: AlphabetChartRow[], scope: ExerciseScope): AlphabetCell[] {
@@ -616,8 +808,16 @@ export function getAlphabetItems(
     return flattenChartRows(yoonRows)
   }
 
+  if (scope.startsWith('yoon-row-range-')) {
+    return getRowRangeItems(yoonRows, scope, 'yoon-row-range')
+  }
+
   if (scope.startsWith('yoon-row-')) {
     return getYoonRowScopeItems(yoonRows, scope)
+  }
+
+  if (scope.startsWith('row-range-')) {
+    return getRowRangeItems(rows, scope, 'row-range')
   }
 
   return getRowScopeItems(rows, scope)

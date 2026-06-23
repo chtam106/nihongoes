@@ -7,21 +7,27 @@ type ExerciseScopeControlsProps = Pick<
   ReturnType<typeof useExerciseScope>,
   | 'overviewScope'
   | 'overviewScopeOptions'
-  | 'rowSelectOptions'
-  | 'rowSelectValue'
-  | 'showAllRowsOption'
+  | 'rowFromSelectOptions'
+  | 'rowToSelectOptions'
+  | 'rowFromSelectValue'
+  | 'rowToSelectValue'
+  | 'showRowRangeControls'
   | 'handleOverviewScopeChange'
-  | 'handleRowScopeSelectChange'
+  | 'handleRowFromSelectChange'
+  | 'handleRowToSelectChange'
 >
 
 export function ExerciseScopeControls({
   overviewScope,
   overviewScopeOptions,
-  rowSelectOptions,
-  rowSelectValue,
-  showAllRowsOption,
+  rowFromSelectOptions,
+  rowToSelectOptions,
+  rowFromSelectValue,
+  rowToSelectValue,
+  showRowRangeControls,
   handleOverviewScopeChange,
-  handleRowScopeSelectChange,
+  handleRowFromSelectChange,
+  handleRowToSelectChange,
 }: ExerciseScopeControlsProps) {
   const { t } = useTranslation()
 
@@ -44,18 +50,37 @@ export function ExerciseScopeControls({
         </Select>
       </FormControl>
 
-      <FormControl fullWidth disabled={!showAllRowsOption}>
-        <InputLabel id="row-select-label">{t('exercise.row')}</InputLabel>
+      <FormControl fullWidth disabled={!showRowRangeControls}>
+        <InputLabel id="row-from-select-label">{t('exercise.rowFrom')}</InputLabel>
         <Select<string>
-          key={overviewScope}
-          labelId="row-select-label"
-          id="row-select"
-          value={rowSelectValue}
-          label={t('exercise.row')}
-          onChange={handleRowScopeSelectChange}
+          key={`${overviewScope}-from`}
+          labelId="row-from-select-label"
+          id="row-from-select"
+          value={rowFromSelectValue}
+          label={t('exercise.rowFrom')}
+          onChange={handleRowFromSelectChange}
           MenuProps={{ slotProps: { paper: { sx: { maxHeight: 320 } } } }}
         >
-          {rowSelectOptions.map((option) => (
+          {rowFromSelectOptions.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
+      <FormControl fullWidth disabled={!showRowRangeControls}>
+        <InputLabel id="row-to-select-label">{t('exercise.rowTo')}</InputLabel>
+        <Select<string>
+          key={`${overviewScope}-to-${rowFromSelectValue}`}
+          labelId="row-to-select-label"
+          id="row-to-select"
+          value={rowToSelectValue}
+          label={t('exercise.rowTo')}
+          onChange={handleRowToSelectChange}
+          MenuProps={{ slotProps: { paper: { sx: { maxHeight: 320 } } } }}
+        >
+          {rowToSelectOptions.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
             </MenuItem>

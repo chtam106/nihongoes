@@ -10,7 +10,6 @@ type ExercisePageLayoutProps = {
   subtitle: string
   controls: ReactNode
   children: ReactNode
-  controlColumns?: number
 }
 
 export function ExercisePageLayout({
@@ -18,7 +17,6 @@ export function ExercisePageLayout({
   subtitle,
   controls,
   children,
-  controlColumns = 3,
 }: ExercisePageLayoutProps) {
   const { t } = useTranslation()
 
@@ -44,9 +42,8 @@ export function ExercisePageLayout({
         sx={{
           display: 'grid',
           gridTemplateColumns: {
-            xs: '1fr',
-            sm: '1fr 1fr',
-            lg: `repeat(${controlColumns}, 1fr)`,
+            xs: 'repeat(2, minmax(0, 1fr))',
+            lg: 'repeat(4, minmax(0, 1fr))',
           },
           gap: 2,
           mb: 4,

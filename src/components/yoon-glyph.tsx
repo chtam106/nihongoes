@@ -1,4 +1,5 @@
 import { Box, Typography } from '@mui/material'
+import { FONT_FAMILY_JP } from '@/theme/fonts.ts'
 
 type YoonGlyphProps = {
   base: string
@@ -12,6 +13,8 @@ export function YoonGlyph({ base, suffix, compact = false, large = false }: Yoon
   const suffixSize = large ? '1.35rem' : compact ? '0.55rem' : '0.95rem'
   const suffixMb = large ? '0.18em' : compact ? '0.08em' : '0.12em'
 
+  const kanaFontSx = { fontFamily: FONT_FAMILY_JP, fontWeight: 400, lineHeight: 1 } as const
+
   return (
     <Box
       component="span"
@@ -20,16 +23,17 @@ export function YoonGlyph({ base, suffix, compact = false, large = false }: Yoon
         alignItems: 'flex-end',
         justifyContent: 'center',
         lineHeight: 1,
+        fontFamily: FONT_FAMILY_JP,
       }}
     >
-      <Typography component="span" variant={baseVariant} sx={{ lineHeight: 1, fontWeight: 400 }}>
+      <Typography component="span" variant={baseVariant} sx={kanaFontSx}>
         {base}
       </Typography>
       <Typography
         component="span"
         sx={{
+          ...kanaFontSx,
           fontSize: suffixSize,
-          lineHeight: 1,
           mb: suffixMb,
           ml: '-0.06em',
         }}
