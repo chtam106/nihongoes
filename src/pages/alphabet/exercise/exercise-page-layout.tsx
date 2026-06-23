@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Box, Button, Typography } from '@mui/material'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -32,9 +33,9 @@ export function ExercisePageLayout({
         {t('exercise.back')}
       </Button>
 
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Heading component="h1" gutterBottom>
         {title}
-      </Typography>
+      </Heading>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
         {subtitle}
       </Typography>

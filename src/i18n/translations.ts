@@ -169,7 +169,7 @@ const en: TranslationTree = {
   },
   course: {
     lessonsHeading: 'Lessons',
-    lessonLabel: 'Lesson {{number}}',
+    lessonLabel: 'Unit {{number}}',
     focusLabel: 'In this lesson',
     vocabulary: 'Vocabulary',
     grammar: 'Grammar',

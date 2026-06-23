@@ -22,6 +22,7 @@ import {
   type CourseLevel,
   type Lesson,
 } from '@/constants/courses/index.ts'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
 import { cancelSpeech, isSpeechSupported, speakJapanese } from '@/utils/speech.ts'
@@ -112,9 +113,9 @@ function ListeningQuiz({ course, lesson }: { course: Course; lesson: Lesson }) {
             size="small"
             sx={{ mb: 1 }}
           />
-          <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
+          <Heading component="h1">
             {lesson.title[locale]} · {t('course.listening')}
-          </Typography>
+          </Heading>
         </Box>
 
         {finished ? (
@@ -250,9 +251,9 @@ function SpeechUnavailable({ level, lesson }: { level: CourseLevel; lesson: Less
 
   return (
     <PageContainer>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Heading component="h1" gutterBottom>
         {t('course.listening')}
-      </Typography>
+      </Heading>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
         {t('course.speechUnsupported')}
       </Typography>

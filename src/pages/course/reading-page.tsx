@@ -20,6 +20,7 @@ import {
   type Lesson,
   type ReadingPassage,
 } from '@/constants/courses/index.ts'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -53,9 +54,9 @@ function PassageCard({ passage }: { passage: ReadingPassage }) {
         spacing={1}
         sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}
       >
-        <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+        <Heading scale="subsection" component="h2">
           {passage.title[locale]}
-        </Typography>
+        </Heading>
         <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', flexShrink: 0 }}>
           <SpeakButton text={fullText} size="medium" />
           <Button
@@ -184,9 +185,9 @@ function ReadingQuiz({ level, lesson }: { level: CourseLevel; lesson: Lesson }) 
             size="small"
             sx={{ mb: 1 }}
           />
-          <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
+          <Heading component="h1">
             {lesson.title[locale]} · {t('course.reading')}
-          </Typography>
+          </Heading>
         </Box>
 
         <PassageCard passage={passage} />

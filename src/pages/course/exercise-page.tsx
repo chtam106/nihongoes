@@ -20,6 +20,7 @@ import {
   type CourseLevel,
   type Lesson,
 } from '@/constants/courses/index.ts'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -126,9 +127,9 @@ function LessonQuiz({ course, lesson }: { course: Course; lesson: Lesson }) {
             size="small"
             sx={{ mb: 1 }}
           />
-          <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
+          <Heading component="h1">
             {lesson.title[locale]} · {t('course.exercise')}
-          </Typography>
+          </Heading>
         </Box>
 
         {finished ? (

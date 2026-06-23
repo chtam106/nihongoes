@@ -13,6 +13,7 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material'
+import { Heading } from '@/components/heading.tsx'
 import { playKanaAudio } from '@/utils/kana-audio.ts'
 import { KanaDisplay } from '@/components/kana-display.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
@@ -320,9 +321,9 @@ const chartSectionHeadingSx = {
 
 function ChartSectionHeading({ children }: { children: React.ReactNode }) {
   return (
-    <Typography variant="subtitle1" component="h3" sx={chartSectionHeadingSx}>
+    <Heading component="h3" sx={chartSectionHeadingSx}>
       {children}
-    </Typography>
+    </Heading>
   )
 }
 
@@ -396,14 +397,9 @@ export function AlphabetChartPage({
         {t('alphabet.back')}
       </Button>
 
-      <Typography
-        variant="h4"
-        component="h1"
-        gutterBottom
-        sx={{ fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 600 }}
-      >
+      <Heading component="h1" gutterBottom>
         {title}
-      </Typography>
+      </Heading>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
         {description}
       </Typography>
@@ -414,13 +410,9 @@ export function AlphabetChartPage({
       <ChartSection chartRows={chartRows} />
 
       <Box sx={{ mt: { xs: 3, md: 4 } }}>
-        <Typography
-          variant="h5"
-          component="h2"
-          sx={{ mb: 2, fontSize: { xs: '1.375rem', md: '1.625rem' }, fontWeight: 600 }}
-        >
+        <Heading component="h2" sx={{ mb: 2, fontSize: { xs: '1.375rem', md: '1.625rem' } }}>
           {sectionLabels.yoon}
-        </Typography>
+        </Heading>
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           {t('chart.yoonDescription')}
         </Typography>

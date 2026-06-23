@@ -1,5 +1,6 @@
 import { Link as RouterLink } from 'react-router-dom'
 import { Link, List, ListItem, Paper, Typography } from '@mui/material'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -28,9 +29,9 @@ function AlphabetPage() {
 
   return (
     <PageContainer>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Heading component="h1" gutterBottom>
         {t('alphabet.title')}
-      </Typography>
+      </Heading>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
         {t('alphabet.subtitle')}
       </Typography>
@@ -52,7 +53,7 @@ function AlphabetPage() {
                   '&:hover': { bgcolor: 'action.hover' },
                 }}
               >
-                <Typography variant="h6">{item.title}</Typography>
+                <Heading scale="subsection">{item.title}</Heading>
                 <Typography variant="body2" color="text.secondary">
                   {item.description}
                 </Typography>

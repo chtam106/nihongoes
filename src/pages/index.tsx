@@ -55,9 +55,6 @@ function HomePage() {
     <PageContainer>
       <Stack spacing={4}>
         <Box>
-          <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 600 }}>
-            {t('app.title')}
-          </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400, mb: 2 }}>
             {t('home.subtitle')}
           </Typography>
@@ -110,7 +107,7 @@ function HomePage() {
                     >
                       {card.symbol ?? (Icon ? <Icon fontSize="inherit" /> : null)}
                     </Typography>
-                    <Typography variant="h6" component="h2" gutterBottom>
+                    <Typography variant="h6" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
                       {card.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">

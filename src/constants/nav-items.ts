@@ -29,6 +29,13 @@ export type NavGroup = {
   children: NavItem[]
 }
 
+function formatLessonNavLabel(number: number, title: Bilingual): Bilingual {
+  return {
+    en: `Unit ${number}: ${title.en}`,
+    vi: `Bài ${number}: ${title.vi}`,
+  }
+}
+
 const courseGroups: NavGroup[] = COURSE_LEVELS.map((level) => {
   const course = courses[level]
 
@@ -37,9 +44,8 @@ const courseGroups: NavGroup[] = COURSE_LEVELS.map((level) => {
     path: coursePath(level),
     icon: SchoolOutlinedIcon,
     children: course.lessons.map((lesson) => ({
-      label: lesson.title,
+      label: formatLessonNavLabel(lesson.number, lesson.title),
       path: lessonPath(level, lesson.id),
-      symbol: String(lesson.number),
     })),
   }
 })

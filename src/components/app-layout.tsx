@@ -14,6 +14,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Stack,
   Toolbar,
   Typography,
   useMediaQuery,
@@ -88,18 +89,33 @@ function AppLayout() {
 
       <List
         className="thin-scrollbar"
-        sx={{ px: 1, flex: 1, overflowY: 'auto', overflowX: 'hidden', minHeight: 0 }}
+        sx={(muiTheme) => ({
+          px: 1,
+          flex: 1,
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          minHeight: 0,
+          '& > .nav-group-item + .nav-group-item': {
+            borderTop: `1px solid ${alpha(
+              muiTheme.palette.text.primary,
+              muiTheme.palette.mode === 'light' ? 0.08 : 0.16,
+            )}`,
+            mt: 0.5,
+            pt: 0.5,
+          },
+        })}
       >
         {navGroups.map((group) => {
           const groupLabel = group.label ? group.label[locale] : t(group.labelKey ?? '')
           const isExpanded = expandedGroups[group.path] ?? false
           const GroupIcon = group.icon
           const hasChildren = group.children.length > 0
+          const isAlphabetGroup = group.labelKey === 'nav.alphabet'
 
           const isGroupHighlighted = location.pathname === group.path
 
           return (
-            <Box key={group.path} sx={{ mb: 0.5 }}>
+            <Box key={group.path} className="nav-group-item">
               {hasChildren ? (
                 <Box
                   sx={{
@@ -108,7 +124,7 @@ function AppLayout() {
                     borderRadius: 1,
                     bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
                     '&:hover': {
-                      bgcolor: isGroupHighlighted ? 'action.selected' : 'action.hover',
+                      bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
                     },
                   }}
                 >
@@ -162,7 +178,11 @@ function AppLayout() {
                   to={group.path}
                   selected={isGroupHighlighted}
                   onClick={() => setMobileOpen(false)}
-                  sx={{ borderRadius: 1 }}
+                  sx={{
+                    borderRadius: 1,
+                    '&:hover': { bgcolor: 'transparent' },
+                    '&.Mui-selected:hover': { bgcolor: 'action.selected' },
+                  }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
                     {GroupIcon ? <GroupIcon fontSize="small" /> : null}
@@ -173,7 +193,30 @@ function AppLayout() {
 
               {hasChildren && (
                 <Collapse in={isExpanded} timeout="auto" unmountOnExit>
-                  <List component="div" disablePadding sx={{ mt: 0.5 }}>
+                  <List
+                    component="div"
+                    disablePadding
+                    sx={(muiTheme) => ({
+                      mt: 0.5,
+                      pl: 0,
+                      '& .MuiListItemButton-root': {
+                        position: 'relative',
+                      },
+                      '& .MuiListItemButton-root + .MuiListItemButton-root::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: isAlphabetGroup
+                          ? `calc(${muiTheme.spacing(7)} + 32px)`
+                          : `calc(${muiTheme.spacing(2)} + 40px)`,
+                        right: muiTheme.spacing(1),
+                        borderTop: `1px solid ${alpha(
+                          muiTheme.palette.text.primary,
+                          muiTheme.palette.mode === 'light' ? 0.08 : 0.16,
+                        )}`,
+                      },
+                    })}
+                  >
                     {group.children.map((child) => (
                       <ListItemButton
                         key={child.path}
@@ -184,14 +227,32 @@ function AppLayout() {
                           location.pathname.startsWith(`${child.path}/`)
                         }
                         onClick={() => setMobileOpen(false)}
-                        sx={{ pl: 3, py: 0.5, borderRadius: 1, mb: 0.25 }}
+                        sx={{
+                          pl: isAlphabetGroup ? 7 : 2,
+                          py: 0.5,
+                          borderRadius: 1,
+                          minHeight: 56,
+                          '&:hover': { bgcolor: 'transparent' },
+                          '&.Mui-selected:hover': { bgcolor: 'action.selected' },
+                        }}
                       >
-                        <ListItemIcon sx={{ minWidth: 30 }}>
+                        <ListItemIcon sx={{ minWidth: isAlphabetGroup ? 32 : 40 }}>
                           <NavItemIcon item={child} />
                         </ListItemIcon>
                         <ListItemText
                           primary={child.label ? child.label[locale] : t(child.labelKey ?? '')}
-                          slotProps={{ primary: { variant: 'body2' } }}
+                          slotProps={{
+                            primary: {
+                              variant: 'body2',
+                              sx: {
+                                lineHeight: 1.35,
+                                display: '-webkit-box',
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                              },
+                            },
+                          }}
                         />
                       </ListItemButton>
                     ))}
@@ -221,7 +282,13 @@ function AppLayout() {
           boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04)',
         }}
       >
-        <Toolbar sx={{ gap: 1.5 }}>
+        <Toolbar
+          sx={{
+            gap: { xs: 1.5, md: 0 },
+            px: { xs: 2, sm: 4, md: 6 },
+            alignItems: 'center',
+          }}
+        >
           {isMobile ? (
             <IconButton
               edge="start"
@@ -231,11 +298,15 @@ function AppLayout() {
             >
               {mobileOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
-          ) : null}
-          <Brand showTagline={!isMobile} showLogo={!isMobile} />
+          ) : (
+            <Box sx={{ width: drawerWidth, flexShrink: 0 }} aria-hidden />
+          )}
+          <Brand showTagline={false} showLogo={false} />
           <Box sx={{ flexGrow: 1 }} />
-          <AudioSettings />
-          <LanguageSwitcher />
+          <Stack direction="row" spacing={0.5}>
+            <AudioSettings />
+            <LanguageSwitcher />
+          </Stack>
         </Toolbar>
       </AppBar>
 

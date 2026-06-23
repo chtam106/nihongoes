@@ -19,6 +19,7 @@ import {
   type CourseLevel,
   type Lesson,
 } from '@/constants/courses/index.ts'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -39,9 +40,7 @@ function VocabularySection({ lesson }: { lesson: Lesson }) {
     <Box>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <MenuBookOutlinedIcon color="primary" />
-        <Typography variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-          {t('course.vocabulary')}
-        </Typography>
+        <Heading component="h2">{t('course.vocabulary')}</Heading>
       </Stack>
 
       <Box
@@ -118,9 +117,7 @@ function GrammarSection({ lesson }: { lesson: Lesson }) {
     <Box>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <TranslateOutlinedIcon color="primary" />
-        <Typography variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-          {t('course.grammar')}
-        </Typography>
+        <Heading component="h2">{t('course.grammar')}</Heading>
       </Stack>
 
       <Stack spacing={2}>
@@ -128,9 +125,9 @@ function GrammarSection({ lesson }: { lesson: Lesson }) {
           <Card key={point.pattern} elevation={0} sx={elevatedSurfaceSx}>
             <CardContent>
               <Chip label={point.pattern} size="small" sx={{ mb: 1, fontWeight: 600 }} lang="ja" />
-              <Typography variant="h6" component="h3" gutterBottom>
+              <Heading component="h3" gutterBottom>
                 {point.title[locale]}
-              </Typography>
+              </Heading>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                 {point.explanation[locale]}
               </Typography>
@@ -215,9 +212,9 @@ function PracticePanel({ level, lesson }: { level: CourseLevel; lesson: Lesson }
       ]}
     >
       <Box>
-        <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+        <Heading scale="subsection" component="h2">
           {t('course.practiceHeading')}
-        </Typography>
+        </Heading>
         <Typography variant="body2" color="text.secondary">
           {t('course.exerciseSubtitle')}
         </Typography>
@@ -299,9 +296,7 @@ function LessonPage({ level }: { level: CourseLevel }) {
             variant="outlined"
             sx={{ mb: 1 }}
           />
-          <Typography variant="h3" component="h1" sx={{ fontWeight: 600 }}>
-            {lesson.title[locale]}
-          </Typography>
+          <Heading component="h1">{lesson.title[locale]}</Heading>
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
             <Typography variant="overline" color="text.secondary">
