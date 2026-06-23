@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { getCourse, isCourseLevel } from '@/constants/courses/index.ts'
 import { getSeoRouteKey, type SeoRouteKey } from '@/constants/routes.ts'
 import { SITE_NAME, SITE_URL } from '@/constants/site.ts'
+import type { Locale } from '@/i18n/translations.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
 
 type SeoMeta = {
@@ -54,7 +56,16 @@ function buildCanonicalUrl(pathname: string) {
   return `${SITE_URL}${pathname}`
 }
 
-function getSeoMeta(routeKey: SeoRouteKey, t: (key: string) => string): SeoMeta {
+function getSeoMeta(routeKey: SeoRouteKey, locale: Locale, t: (key: string) => string): SeoMeta {
+  if (isCourseLevel(routeKey)) {
+    const course = getCourse(routeKey)
+
+    return {
+      title: `${course.seoTitle[locale]} | ${SITE_NAME}`,
+      description: course.seoDescription[locale],
+    }
+  }
+
   const title = t(`seo.${routeKey}.title`)
   const description = t(`seo.${routeKey}.description`)
 
@@ -118,7 +129,7 @@ export function PageMeta() {
 
   useEffect(() => {
     const routeKey = getSeoRouteKey(location.pathname)
-    const meta = getSeoMeta(routeKey, t)
+    const meta = getSeoMeta(routeKey, locale, t)
     const canonicalUrl = buildCanonicalUrl(location.pathname)
     const ogLocale = locale === 'vi' ? 'vi_VN' : 'en_US'
 

@@ -1,19 +1,30 @@
 import { Link as RouterLink } from 'react-router-dom'
+import type { ComponentType } from 'react'
+import type { SvgIconProps } from '@mui/material'
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined'
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined'
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined'
 import { Box, Button, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material'
 import { PageContainer } from '@/components/page-container.tsx'
+import { courseList, coursePath } from '@/constants/courses/index.ts'
 import { DAKUTEN_MARK, HANDAKUTEN_MARK } from '@/constants/kana-terminology.ts'
 import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts'
 
-function HomePage() {
-  const { t } = useTranslation()
+type StudyCard = {
+  to: string
+  title: string
+  description: string
+  symbol?: string
+  icon?: ComponentType<SvgIconProps>
+}
 
-  const studyCards = [
+function HomePage() {
+  const { locale, t } = useTranslation()
+
+  const studyCards: StudyCard[] = [
     {
       to: routes.alphabet.hiragana,
       title: t('nav.hiragana'),
@@ -32,12 +43,12 @@ function HomePage() {
       icon: QuizOutlinedIcon,
       description: t('home.exerciseDescription'),
     },
-    {
-      to: routes.n5.index,
-      title: t('nav.n5'),
+    ...courseList.map((course) => ({
+      to: coursePath(course.level),
+      title: course.name[locale],
       icon: SchoolOutlinedIcon,
-      description: t('n5.subtitle'),
-    },
+      description: course.subtitle[locale],
+    })),
   ]
 
   return (

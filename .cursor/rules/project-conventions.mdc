@@ -5,6 +5,9 @@ alwaysApply: true
 
 # Langwish conventions
 
+## Courses (N5/N4/N3)
+- Lesson count per level is NOT fixed — author enough lessons to cover the full standard JLPT grammar syllabus for that level; reorder/renumber lessons freely. See the `courses` rule for details.
+
 ## Git (IMPORTANT)
 - NEVER commit or push on your own. Only run `git commit` / `git push` when the user explicitly asks. Make and validate changes in the working tree and wait for the user's go-ahead before committing.
 

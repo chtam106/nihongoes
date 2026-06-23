@@ -3,42 +3,29 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined'
 import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined'
+import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined'
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined'
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined'
 import { Box, Button, Card, CardContent, Chip, Paper, Stack, Typography } from '@mui/material'
 import {
-  getN5Lesson,
-  n5Lessons,
-  n5LessonExercisePath,
-  n5LessonListeningPath,
-  n5LessonPath,
-  type N5Lesson,
-} from '@/constants/n5-course.ts'
+  coursePath,
+  getCourse,
+  getLesson,
+  lessonExercisePath,
+  lessonHasReading,
+  lessonListeningPath,
+  lessonPath,
+  lessonReadingPath,
+  type CourseLevel,
+  type Lesson,
+} from '@/constants/courses/index.ts'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
-import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
 import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts'
+import { LessonNotFound } from './shared.tsx'
 
-function LessonNotFound() {
-  const { t } = useTranslation()
-
-  return (
-    <PageContainer>
-      <Typography variant="h4" component="h1" gutterBottom>
-        {t('n5.notFoundTitle')}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {t('n5.notFoundBody')}
-      </Typography>
-      <Button component={RouterLink} to={routes.n5.index} variant="contained">
-        {t('n5.backToCourse')}
-      </Button>
-    </PageContainer>
-  )
-}
-
-function VocabularySection({ lesson }: { lesson: N5Lesson }) {
+function VocabularySection({ lesson }: { lesson: Lesson }) {
   const { locale, t } = useTranslation()
 
   return (
@@ -46,7 +33,7 @@ function VocabularySection({ lesson }: { lesson: N5Lesson }) {
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <MenuBookOutlinedIcon color="primary" />
         <Typography variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-          {t('n5.vocabulary')}
+          {t('course.vocabulary')}
         </Typography>
       </Stack>
 
@@ -96,7 +83,7 @@ function VocabularySection({ lesson }: { lesson: N5Lesson }) {
   )
 }
 
-function GrammarSection({ lesson }: { lesson: N5Lesson }) {
+function GrammarSection({ lesson }: { lesson: Lesson }) {
   const { locale, t } = useTranslation()
 
   return (
@@ -104,7 +91,7 @@ function GrammarSection({ lesson }: { lesson: N5Lesson }) {
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <TranslateOutlinedIcon color="primary" />
         <Typography variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-          {t('n5.grammar')}
+          {t('course.grammar')}
         </Typography>
       </Stack>
 
@@ -125,7 +112,7 @@ function GrammarSection({ lesson }: { lesson: N5Lesson }) {
                 color="text.secondary"
                 sx={{ display: 'block', mb: 0.5 }}
               >
-                {t('n5.examples')}
+                {t('course.examples')}
               </Typography>
               <Stack spacing={1.5}>
                 {point.examples.map((example) => (
@@ -162,19 +149,87 @@ function GrammarSection({ lesson }: { lesson: N5Lesson }) {
   )
 }
 
-function N5LessonPage() {
+function PracticePanel({ level, lesson }: { level: CourseLevel; lesson: Lesson }) {
+  const { t } = useTranslation()
+  const hasReading = lessonHasReading(lesson)
+
+  return (
+    <Paper
+      elevation={0}
+      sx={[
+        tonalSurfaceSx,
+        {
+          p: { xs: 2.5, md: 3 },
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          alignItems: { md: 'center' },
+          justifyContent: 'space-between',
+          gap: 2,
+        },
+      ]}
+    >
+      <Box>
+        <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+          {t('course.practiceHeading')}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {t('course.exerciseSubtitle')}
+        </Typography>
+      </Box>
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        spacing={1.5}
+        sx={{ flexShrink: 0, width: { xs: '100%', md: 'auto' }, flexWrap: 'wrap' }}
+        useFlexGap
+      >
+        <Button
+          component={RouterLink}
+          to={lessonExercisePath(level, lesson.id)}
+          variant="contained"
+          size="large"
+          startIcon={<FitnessCenterOutlinedIcon />}
+        >
+          {t('course.startExercise')}
+        </Button>
+        <Button
+          component={RouterLink}
+          to={lessonListeningPath(level, lesson.id)}
+          variant="outlined"
+          size="large"
+          startIcon={<HeadphonesOutlinedIcon />}
+        >
+          {t('course.startListening')}
+        </Button>
+        {hasReading ? (
+          <Button
+            component={RouterLink}
+            to={lessonReadingPath(level, lesson.id)}
+            variant="outlined"
+            size="large"
+            startIcon={<ImportContactsOutlinedIcon />}
+          >
+            {t('course.startReading')}
+          </Button>
+        ) : null}
+      </Stack>
+    </Paper>
+  )
+}
+
+function LessonPage({ level }: { level: CourseLevel }) {
   const { lessonId } = useParams<{ lessonId: string }>()
   const { locale, t } = useTranslation()
 
-  const lesson = lessonId ? getN5Lesson(lessonId) : undefined
+  const lesson = lessonId ? getLesson(level, lessonId) : undefined
 
   if (!lesson) {
-    return <LessonNotFound />
+    return <LessonNotFound level={level} />
   }
 
-  const index = n5Lessons.findIndex((item) => item.id === lesson.id)
-  const previous = index > 0 ? n5Lessons[index - 1] : undefined
-  const next = index < n5Lessons.length - 1 ? n5Lessons[index + 1] : undefined
+  const lessons = getCourse(level).lessons
+  const index = lessons.findIndex((item) => item.id === lesson.id)
+  const previous = index > 0 ? lessons[index - 1] : undefined
+  const next = index < lessons.length - 1 ? lessons[index + 1] : undefined
 
   return (
     <PageContainer>
@@ -183,17 +238,17 @@ function N5LessonPage() {
           <Box sx={{ mb: 1.5 }}>
             <Button
               component={RouterLink}
-              to={routes.n5.index}
+              to={coursePath(level)}
               startIcon={<ArrowBackIcon />}
               size="small"
               sx={{ ml: -0.5 }}
             >
-              {t('n5.backToCourse')}
+              {t('course.backToCourse')}
             </Button>
           </Box>
 
           <Chip
-            label={t('n5.lessonLabel', { number: lesson.number })}
+            label={t('course.lessonLabel', { number: lesson.number })}
             color="primary"
             variant="outlined"
             sx={{ mb: 1 }}
@@ -204,7 +259,7 @@ function N5LessonPage() {
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
             <Typography variant="overline" color="text.secondary">
-              {t('n5.focusLabel')}
+              {t('course.focusLabel')}
             </Typography>
             <Typography variant="body1">{lesson.focus[locale]}</Typography>
           </Paper>
@@ -213,66 +268,20 @@ function N5LessonPage() {
         <VocabularySection lesson={lesson} />
         <GrammarSection lesson={lesson} />
 
-        <Paper
-          elevation={0}
-          sx={[
-            tonalSurfaceSx,
-            {
-              p: { xs: 2.5, md: 3 },
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              alignItems: { sm: 'center' },
-              justifyContent: 'space-between',
-              gap: 2,
-            },
-          ]}
-        >
-          <Box>
-            <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
-              {t('n5.exercise')} &amp; {t('n5.listening')}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {t('n5.exerciseSubtitle')}
-            </Typography>
-          </Box>
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={1.5}
-            sx={{ flexShrink: 0, width: { xs: '100%', sm: 'auto' } }}
-          >
-            <Button
-              component={RouterLink}
-              to={n5LessonExercisePath(lesson.id)}
-              variant="contained"
-              size="large"
-              startIcon={<FitnessCenterOutlinedIcon />}
-            >
-              {t('n5.startExercise')}
-            </Button>
-            <Button
-              component={RouterLink}
-              to={n5LessonListeningPath(lesson.id)}
-              variant="outlined"
-              size="large"
-              startIcon={<HeadphonesOutlinedIcon />}
-            >
-              {t('n5.startListening')}
-            </Button>
-          </Stack>
-        </Paper>
+        <PracticePanel level={level} lesson={lesson} />
 
         <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'space-between' }}>
           <Box sx={{ flex: 1 }}>
             {previous ? (
               <Button
                 component={RouterLink}
-                to={n5LessonPath(previous.id)}
+                to={lessonPath(level, previous.id)}
                 startIcon={<ArrowBackIcon />}
                 variant="outlined"
                 fullWidth
                 sx={{ justifyContent: 'flex-start' }}
               >
-                {t('n5.previousLesson')}
+                {t('course.previousLesson')}
               </Button>
             ) : null}
           </Box>
@@ -280,13 +289,13 @@ function N5LessonPage() {
             {next ? (
               <Button
                 component={RouterLink}
-                to={n5LessonPath(next.id)}
+                to={lessonPath(level, next.id)}
                 endIcon={<ArrowForwardIcon />}
                 variant="contained"
                 fullWidth
                 sx={{ justifyContent: 'flex-end' }}
               >
-                {t('n5.nextLesson')}
+                {t('course.nextLesson')}
               </Button>
             ) : null}
           </Box>
@@ -296,4 +305,4 @@ function N5LessonPage() {
   )
 }
 
-export default N5LessonPage
+export default LessonPage

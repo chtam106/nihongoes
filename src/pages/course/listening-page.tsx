@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link as RouterLink, useParams } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutlined'
-import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import ReplayIcon from '@mui/icons-material/Replay'
 import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined'
 import {
@@ -15,80 +13,27 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
-import { getN5Lesson, n5LessonPath, type N5Lesson } from '@/constants/n5-course.ts'
+import {
+  getCourse,
+  getLesson,
+  lessonPath,
+  type Course,
+  type CourseLevel,
+  type Lesson,
+} from '@/constants/courses/index.ts'
 import { PageContainer } from '@/components/page-container.tsx'
-import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
 import { cancelSpeech, isSpeechSupported, speakJapanese } from '@/utils/speech.ts'
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts'
-import { buildLessonListening, type ListeningQuestion } from './n5-listening.ts'
+import { ChoiceButton } from './choice-button.tsx'
+import { buildLessonListening, type ListeningQuestion } from './course-listening.ts'
+import { LessonNotFound, ResultScreen } from './shared.tsx'
 
-function LessonNotFound() {
-  const { t } = useTranslation()
-
-  return (
-    <PageContainer>
-      <Typography variant="h4" component="h1" gutterBottom>
-        {t('n5.notFoundTitle')}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {t('n5.notFoundBody')}
-      </Typography>
-      <Button component={RouterLink} to={routes.n5.index} variant="contained">
-        {t('n5.backToCourse')}
-      </Button>
-    </PageContainer>
-  )
-}
-
-function ResultScreen({
-  score,
-  total,
-  lessonId,
-  onRetry,
-}: {
-  score: number
-  total: number
-  lessonId: string
-  onRetry: () => void
-}) {
-  const { t } = useTranslation()
-  const ratio = total === 0 ? 0 : score / total
-  const message =
-    ratio >= 0.8 ? t('n5.resultGreat') : ratio >= 0.5 ? t('n5.resultGood') : t('n5.resultKeepGoing')
-
-  return (
-    <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 3, md: 4 }, textAlign: 'center' }]}>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-        {t('n5.resultTitle')}
-      </Typography>
-      <Typography variant="h2" component="p" sx={{ fontWeight: 700, color: 'primary.main', my: 2 }}>
-        {score} / {total}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {message}
-      </Typography>
-      <Stack
-        direction={{ xs: 'column', sm: 'row' }}
-        spacing={1.5}
-        sx={{ justifyContent: 'center' }}
-      >
-        <Button variant="contained" startIcon={<ReplayIcon />} onClick={onRetry}>
-          {t('n5.retry')}
-        </Button>
-        <Button variant="outlined" component={RouterLink} to={n5LessonPath(lessonId)}>
-          {t('n5.reviewLesson')}
-        </Button>
-      </Stack>
-    </Paper>
-  )
-}
-
-function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
+function ListeningQuiz({ course, lesson }: { course: Course; lesson: Lesson }) {
   const { locale, t } = useTranslation()
 
   const [questions, setQuestions] = useState<ListeningQuestion[]>(() =>
-    buildLessonListening(lesson, locale),
+    buildLessonListening(course, lesson, locale),
   )
   const [index, setIndex] = useState(0)
   const [selectedId, setSelectedId] = useState<string | undefined>(undefined)
@@ -137,7 +82,7 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
   }
 
   const handleRetry = () => {
-    setQuestions(buildLessonListening(lesson, locale))
+    setQuestions(buildLessonListening(course, lesson, locale))
     setIndex(0)
     setSelectedId(undefined)
     setScore(0)
@@ -151,28 +96,34 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
           <Box sx={{ mb: 1 }}>
             <Button
               component={RouterLink}
-              to={n5LessonPath(lesson.id)}
+              to={lessonPath(course.level, lesson.id)}
               startIcon={<ArrowBackIcon />}
               size="small"
               sx={{ ml: -0.5 }}
             >
-              {t('n5.reviewLesson')}
+              {t('course.reviewLesson')}
             </Button>
           </Box>
           <Chip
-            label={t('n5.lessonLabel', { number: lesson.number })}
+            label={t('course.lessonLabel', { number: lesson.number })}
             color="primary"
             variant="outlined"
             size="small"
             sx={{ mb: 1 }}
           />
           <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
-            {lesson.title[locale]} · {t('n5.listening')}
+            {lesson.title[locale]} · {t('course.listening')}
           </Typography>
         </Box>
 
         {finished ? (
-          <ResultScreen score={score} total={total} lessonId={lesson.id} onRetry={handleRetry} />
+          <ResultScreen
+            score={score}
+            total={total}
+            level={course.level}
+            lessonId={lesson.id}
+            onRetry={handleRetry}
+          />
         ) : (
           <>
             <Box>
@@ -181,7 +132,7 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
                 sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
               >
                 <Typography variant="body2" color="text.secondary">
-                  {t('n5.questionProgress', { current: index + 1, total })}
+                  {t('course.questionProgress', { current: index + 1, total })}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {score} / {total}
@@ -209,12 +160,12 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
               ]}
             >
               <Typography variant="overline" color="text.secondary">
-                {t('n5.listenPrompt')}
+                {t('course.listenPrompt')}
               </Typography>
               <IconButton
                 onClick={() => speakJapanese(question.audioText)}
                 color="primary"
-                aria-label={t('n5.play')}
+                aria-label={t('course.play')}
                 sx={{
                   width: 84,
                   height: 84,
@@ -230,16 +181,13 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
                 startIcon={<ReplayIcon />}
                 onClick={() => speakJapanese(question.audioText)}
               >
-                {t('n5.replay')}
+                {t('course.replay')}
               </Button>
 
               {answered ? (
                 <Box sx={{ mt: 1 }}>
                   <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>
                     {question.reveal.jp}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {question.reveal.romaji}
                   </Typography>
                 </Box>
               ) : null}
@@ -252,34 +200,15 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
                 const showWrong = answered && option.id === selectedId && !isCorrectOption
 
                 return (
-                  <Button
+                  <ChoiceButton
                     key={option.id}
                     onClick={() => handleSelect(option.id)}
-                    disabled={answered && !showCorrect && !showWrong}
-                    variant={showCorrect || showWrong ? 'contained' : 'outlined'}
-                    color={showCorrect ? 'success' : showWrong ? 'error' : 'primary'}
-                    fullWidth
-                    size="large"
-                    endIcon={
-                      showCorrect ? (
-                        <CheckCircleOutlineIcon />
-                      ) : showWrong ? (
-                        <HighlightOffIcon />
-                      ) : undefined
-                    }
-                    sx={{
-                      justifyContent: 'space-between',
-                      textAlign: 'left',
-                      py: 1.5,
-                      textTransform: 'none',
-                      fontSize: '1.05rem',
-                      '&.Mui-disabled': { opacity: 0.6 },
-                    }}
+                    dimmed={answered && !showCorrect && !showWrong}
+                    state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
+                    lang={option.ja ? 'ja' : undefined}
                   >
-                    <Box component="span" lang={option.ja ? 'ja' : undefined}>
-                      {option.label}
-                    </Box>
-                  </Button>
+                    {option.label}
+                  </ChoiceButton>
                 )
               })}
             </Stack>
@@ -298,10 +227,12 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
                       color: selectedId === question.correctId ? 'success.main' : 'error.main',
                     }}
                   >
-                    {selectedId === question.correctId ? t('n5.correct') : t('n5.incorrect')}
+                    {selectedId === question.correctId
+                      ? t('course.correct')
+                      : t('course.incorrect')}
                   </Typography>
                   <Button variant="contained" onClick={handleNext}>
-                    {isLast ? t('n5.seeResults') : t('n5.next')}
+                    {isLast ? t('course.seeResults') : t('course.next')}
                   </Button>
                 </Stack>
               ) : null}
@@ -313,38 +244,44 @@ function ListeningQuiz({ lesson }: { lesson: N5Lesson }) {
   )
 }
 
-function SpeechUnavailable({ lesson }: { lesson: N5Lesson }) {
+function SpeechUnavailable({ level, lesson }: { level: CourseLevel; lesson: Lesson }) {
   const { t } = useTranslation()
 
   return (
     <PageContainer>
       <Typography variant="h4" component="h1" gutterBottom>
-        {t('n5.listening')}
+        {t('course.listening')}
       </Typography>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {t('n5.speechUnsupported')}
+        {t('course.speechUnsupported')}
       </Typography>
-      <Button component={RouterLink} to={n5LessonPath(lesson.id)} variant="contained">
-        {t('n5.reviewLesson')}
+      <Button component={RouterLink} to={lessonPath(level, lesson.id)} variant="contained">
+        {t('course.reviewLesson')}
       </Button>
     </PageContainer>
   )
 }
 
-function N5LessonListeningPage() {
+function ListeningPage({ level }: { level: CourseLevel }) {
   const { lessonId } = useParams<{ lessonId: string }>()
   const { locale } = useTranslation()
-  const lesson = lessonId ? getN5Lesson(lessonId) : undefined
+  const lesson = lessonId ? getLesson(level, lessonId) : undefined
 
   if (!lesson) {
-    return <LessonNotFound />
+    return <LessonNotFound level={level} />
   }
 
   if (!isSpeechSupported()) {
-    return <SpeechUnavailable lesson={lesson} />
+    return <SpeechUnavailable level={level} lesson={lesson} />
   }
 
-  return <ListeningQuiz key={`${lesson.id}:${locale}`} lesson={lesson} />
+  return (
+    <ListeningQuiz
+      key={`${level}:${lesson.id}:${locale}`}
+      course={getCourse(level)}
+      lesson={lesson}
+    />
+  )
 }
 
-export default N5LessonListeningPage
+export default ListeningPage

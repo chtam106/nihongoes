@@ -1,4 +1,4 @@
-import { n5Lessons, type N5Lesson } from '@/constants/n5-course.ts'
+import type { Course, Lesson } from '@/constants/courses/index.ts'
 import type { Locale } from '@/i18n/translations.ts'
 
 export type ListeningOption = {
@@ -65,12 +65,12 @@ type ListeningPools = {
   sentenceMeanings: string[]
 }
 
-function buildPools(locale: Locale): ListeningPools {
+function buildPools(course: Course, locale: Locale): ListeningPools {
   const meanings: string[] = []
   const words: string[] = []
   const sentenceMeanings: string[] = []
 
-  for (const lesson of n5Lessons) {
+  for (const lesson of course.lessons) {
     for (const item of lesson.vocab) {
       meanings.push(item.meaning[locale])
       words.push(vocabWord(item))
@@ -86,8 +86,12 @@ function buildPools(locale: Locale): ListeningPools {
   return { meanings, words, sentenceMeanings }
 }
 
-export function buildLessonListening(lesson: N5Lesson, locale: Locale): ListeningQuestion[] {
-  const pools = buildPools(locale)
+export function buildLessonListening(
+  course: Course,
+  lesson: Lesson,
+  locale: Locale,
+): ListeningQuestion[] {
+  const pools = buildPools(course, locale)
   const candidates: ListeningQuestion[] = []
 
   lesson.vocab.forEach((item, index) => {

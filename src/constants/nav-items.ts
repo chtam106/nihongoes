@@ -4,7 +4,13 @@ import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined'
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined'
 import type { ComponentType } from 'react'
 import type { SvgIconProps } from '@mui/material'
-import { n5Lessons, n5LessonPath, type Bilingual } from '@/constants/n5-course.ts'
+import {
+  COURSE_LEVELS,
+  courses,
+  coursePath,
+  lessonPath,
+  type Bilingual,
+} from '@/constants/courses/index.ts'
 import { routes } from '@/constants/routes.ts'
 
 export type NavItem = {
@@ -16,11 +22,27 @@ export type NavItem = {
 }
 
 export type NavGroup = {
-  labelKey: 'nav.home' | 'nav.alphabet' | 'nav.n5'
+  labelKey?: 'nav.home' | 'nav.alphabet'
+  label?: Bilingual
   path: string
   icon?: ComponentType<SvgIconProps>
   children: NavItem[]
 }
+
+const courseGroups: NavGroup[] = COURSE_LEVELS.map((level) => {
+  const course = courses[level]
+
+  return {
+    label: course.name,
+    path: coursePath(level),
+    icon: SchoolOutlinedIcon,
+    children: course.lessons.map((lesson) => ({
+      label: lesson.title,
+      path: lessonPath(level, lesson.id),
+      symbol: String(lesson.number),
+    })),
+  }
+})
 
 export const navGroups: NavGroup[] = [
   {
@@ -51,16 +73,7 @@ export const navGroups: NavGroup[] = [
       },
     ],
   },
-  {
-    labelKey: 'nav.n5',
-    path: routes.n5.index,
-    icon: SchoolOutlinedIcon,
-    children: n5Lessons.map((lesson) => ({
-      label: lesson.title,
-      path: n5LessonPath(lesson.id),
-      symbol: String(lesson.number),
-    })),
-  },
+  ...courseGroups,
 ]
 
 export function isNavGroupActive(group: NavGroup, pathname: string) {

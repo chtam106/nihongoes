@@ -71,19 +71,31 @@ export function ExerciseQuizPanel({
         }}
       >
         {mode === 'romaji' ? (
-          <>
-            <KanaDisplay cell={question.correctItem} variant="prompt" />
-            <IconButton
-              aria-label={t('chart.playAudio', {
-                char: question.correctItem.char,
-                romaji: question.correctItem.romaji,
-              })}
-              onClick={() => playKanaAudio(question.correctItem.romaji, question.correctItem.char)}
-              sx={{ color: 'text.secondary' }}
-            >
-              <VolumeUpIcon sx={{ fontSize: 32 }} />
-            </IconButton>
-          </>
+          <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+              <KanaDisplay cell={question.correctItem} variant="prompt" />
+              <IconButton
+                aria-label={t('chart.playAudio', {
+                  char: question.correctItem.char,
+                  romaji: question.correctItem.romaji,
+                })}
+                onClick={() =>
+                  playKanaAudio(question.correctItem.romaji, question.correctItem.char)
+                }
+                sx={{
+                  color: 'text.secondary',
+                  position: 'absolute',
+                  left: '100%',
+                  top: 0,
+                  bottom: 0,
+                  my: 'auto',
+                  ml: 0.5,
+                }}
+              >
+                <VolumeUpIcon sx={{ fontSize: 32 }} />
+              </IconButton>
+            </Box>
+          </Box>
         ) : null}
 
         {mode === 'character' ? (
@@ -136,6 +148,8 @@ export function ExerciseQuizPanel({
               sx={{
                 py: 2,
                 fontSize: characterOptions ? '1.5rem' : '1rem',
+                borderWidth: 2,
+                '&.Mui-disabled': { borderWidth: 2 },
                 ...(showGreen && resultBorderSx('success.main')),
                 ...(showRed && resultBorderSx('error.main')),
               }}
