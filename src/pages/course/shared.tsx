@@ -61,7 +61,8 @@ export function ResultScreen({
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         spacing={1.5}
-        sx={{ justifyContent: 'center' }}
+        sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
+        useFlexGap
       >
         <Button variant="contained" startIcon={<ReplayIcon />} onClick={onRetry}>
           {t('course.retry')}

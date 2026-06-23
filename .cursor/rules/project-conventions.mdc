@@ -52,7 +52,8 @@ alwaysApply: true
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.
 
 ## Page layout
-- Wrap every page's content in the shared `<PageContainer>` (`src/components/page-container.tsx`) — do NOT use `<Container>` directly in pages. It is full-width and left-aligned (`maxWidth={false}`); width/padding live in `PageContainer` + the `MuiContainer` theme overrides in `main.tsx`. Never center content in a narrow fixed-width column.
+- Wrap every page's content in the shared `<PageContainer>` (`src/components/page-container.tsx`) — do NOT use `<Container>` directly in pages. Content width/padding live in `PageContainer` + the `MuiContainer` theme overrides in `main.tsx`, with a global max width of `1200px`.
+- On desktop, keep app bar inner content constrained to the same `1200px` max width and gutter alignment as page content.
 - Page headers: put the back button on its own row (wrapped in a `Box`), then the lesson/section chip, then the title — never let the back button and chip share a line.
 - Keep page-level `h1` typography visually consistent across pages (same size + weight). Use the shared `Heading` component with `component="h1"` and no per-page font-size overrides.
 - Keep heading weights consistent for `h2`/`h3` title text as well (page sections and card/list titles should use `fontWeight: 600` unless there is a deliberate, documented exception).

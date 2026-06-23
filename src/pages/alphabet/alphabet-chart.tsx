@@ -331,7 +331,7 @@ function ChartSection({ chartRows }: { chartRows: AlphabetChartRow[] }) {
   const theme = useTheme()
   const { t } = useTranslation()
   const sectionLabels = getChartSectionLabels(t)
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('xl'))
   const displayRows = toDisplayRows(chartRows)
 
   if (isMobile) {

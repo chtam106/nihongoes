@@ -103,10 +103,8 @@ function AppLayout() {
                     display: 'flex',
                     alignItems: 'center',
                     borderRadius: 1,
-                    bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
-                    '&:hover': {
-                      bgcolor: isGroupHighlighted ? 'action.selected' : 'transparent',
-                    },
+                    bgcolor: 'transparent',
+                    '&:hover': { bgcolor: 'transparent' },
                   }}
                 >
                   <ListItemButton
@@ -121,6 +119,8 @@ function AppLayout() {
                       '&:hover': { bgcolor: 'transparent' },
                       '&.Mui-selected': {
                         bgcolor: 'transparent',
+                        '& .MuiListItemText-primary': { color: 'primary.main' },
+                        '& .MuiListItemIcon-root': { color: 'primary.main' },
                         '&:hover': { bgcolor: 'transparent' },
                       },
                     }}
@@ -162,7 +162,12 @@ function AppLayout() {
                   sx={{
                     borderRadius: 1,
                     '&:hover': { bgcolor: 'transparent' },
-                    '&.Mui-selected:hover': { bgcolor: 'action.selected' },
+                    '&.Mui-selected': {
+                      bgcolor: 'transparent',
+                      '& .MuiListItemText-primary': { color: 'primary.main' },
+                      '& .MuiListItemIcon-root': { color: 'primary.main' },
+                    },
+                    '&.Mui-selected:hover': { bgcolor: 'transparent' },
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
@@ -214,7 +219,12 @@ function AppLayout() {
                           borderRadius: 1,
                           minHeight: 56,
                           '&:hover': { bgcolor: 'transparent' },
-                          '&.Mui-selected:hover': { bgcolor: 'action.selected' },
+                          '&.Mui-selected': {
+                            bgcolor: 'transparent',
+                            '& .MuiListItemText-primary': { color: 'primary.main' },
+                            '& .MuiListItemIcon-root': { color: 'primary.main' },
+                          },
+                          '&.Mui-selected:hover': { bgcolor: 'transparent' },
                         }}
                       >
                         <ListItemIcon sx={{ minWidth: isAlphabetGroup ? 32 : 40 }}>
@@ -266,7 +276,7 @@ function AppLayout() {
         <Toolbar
           sx={{
             gap: { xs: 1.5, md: 0 },
-            px: { xs: 2, sm: 4, md: 6 },
+            px: { xs: 2, sm: 4, md: 0 },
             alignItems: 'center',
           }}
         >
@@ -282,12 +292,24 @@ function AppLayout() {
           ) : (
             <Box sx={{ width: drawerWidth, flexShrink: 0 }} aria-hidden />
           )}
-          <Brand showTagline={false} showLogo={false} />
-          <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={0.5}>
-            <AudioSettings />
-            <LanguageSwitcher />
-          </Stack>
+          <Box
+            sx={{
+              flexGrow: 1,
+              minWidth: 0,
+              width: '100%',
+              maxWidth: { md: 1200 },
+              mx: { md: 'auto' },
+            }}
+          >
+            <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', px: { md: 6 } }}>
+              <Brand showTagline={false} showLogo={false} />
+              <Box sx={{ flexGrow: 1 }} />
+              <Stack direction="row" spacing={0.5}>
+                <AudioSettings />
+                <LanguageSwitcher />
+              </Stack>
+            </Stack>
+          </Box>
         </Toolbar>
       </AppBar>
 

@@ -204,8 +204,8 @@ function PracticePanel({ level, lesson }: { level: CourseLevel; lesson: Lesson }
         {
           p: { xs: 2.5, md: 3 },
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
-          alignItems: { md: 'center' },
+          flexDirection: { xs: 'column', xl: 'row' },
+          alignItems: { xl: 'center' },
           justifyContent: 'space-between',
           gap: 2,
         },
@@ -222,7 +222,7 @@ function PracticePanel({ level, lesson }: { level: CourseLevel; lesson: Lesson }
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         spacing={1.5}
-        sx={{ flexShrink: 0, width: { xs: '100%', md: 'auto' }, flexWrap: 'wrap' }}
+        sx={{ flexShrink: 0, width: { xs: '100%', xl: 'auto' }, flexWrap: 'wrap' }}
         useFlexGap
       >
         <Button
@@ -312,29 +312,37 @@ function LessonPage({ level }: { level: CourseLevel }) {
         <PracticePanel level={level} lesson={lesson} />
 
         <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'space-between' }}>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
             {previous ? (
               <Button
                 component={RouterLink}
                 to={lessonPath(level, previous.id)}
                 startIcon={<ArrowBackIcon />}
                 variant="outlined"
-                fullWidth
-                sx={{ justifyContent: 'flex-start' }}
+                sx={{
+                  justifyContent: 'flex-start',
+                  width: { xs: '100%', sm: 'auto' },
+                  minWidth: { sm: 180 },
+                  maxWidth: { sm: 260 },
+                }}
               >
                 {t('course.previousLesson')}
               </Button>
             ) : null}
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
             {next ? (
               <Button
                 component={RouterLink}
                 to={lessonPath(level, next.id)}
                 endIcon={<ArrowForwardIcon />}
                 variant="contained"
-                fullWidth
-                sx={{ justifyContent: 'flex-end' }}
+                sx={{
+                  justifyContent: 'flex-end',
+                  width: { xs: '100%', sm: 'auto' },
+                  minWidth: { sm: 180 },
+                  maxWidth: { sm: 260 },
+                }}
               >
                 {t('course.nextLesson')}
               </Button>
