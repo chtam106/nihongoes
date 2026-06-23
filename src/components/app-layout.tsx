@@ -88,7 +88,7 @@ function AppLayout() {
 
       <List sx={{ px: 1, flex: 1 }}>
         {navGroups.map((group) => {
-          const groupLabel = t(group.labelKey)
+          const groupLabel = group.label ? group.label[locale] : t(group.labelKey ?? '')
           const isExpanded = expandedGroups[group.path] ?? false
           const GroupIcon = group.icon
           const hasChildren = group.children.length > 0

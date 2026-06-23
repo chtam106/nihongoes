@@ -10,38 +10,39 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { getCourse, lessonPath, type CourseLevel } from '@/constants/courses/index.ts'
 import { PageContainer } from '@/components/page-container.tsx'
-import { n5Lessons, n5LessonPath } from '@/constants/n5-course.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts'
 
-function N5CoursePage() {
+function CoursePage({ level }: { level: CourseLevel }) {
   const { locale, t } = useTranslation()
+  const course = getCourse(level)
 
   return (
     <PageContainer>
       <Stack spacing={4}>
         <Box>
           <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 600 }}>
-            {t('n5.title')}
+            {course.name[locale]}
           </Typography>
           <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400, mb: 2 }}>
-            {t('n5.subtitle')}
+            {course.subtitle[locale]}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 620 }}>
-            {t('n5.intro')}
+            {course.intro[locale]}
           </Typography>
         </Box>
 
         <Box>
           <Typography variant="subtitle1" component="h2" sx={{ fontWeight: 600, mb: 1.5 }}>
-            {t('n5.lessonsHeading')}
+            {t('course.lessonsHeading')}
           </Typography>
 
           <Stack spacing={1.5}>
-            {n5Lessons.map((lesson) => (
+            {course.lessons.map((lesson) => (
               <Card key={lesson.id} elevation={0} sx={interactiveSurfaceSx}>
-                <CardActionArea component={RouterLink} to={n5LessonPath(lesson.id)}>
+                <CardActionArea component={RouterLink} to={lessonPath(level, lesson.id)}>
                   <CardContent>
                     <Stack
                       direction="row"
@@ -50,7 +51,7 @@ function N5CoursePage() {
                     >
                       <Box sx={{ minWidth: 0 }}>
                         <Chip
-                          label={t('n5.lessonLabel', { number: lesson.number })}
+                          label={t('course.lessonLabel', { number: lesson.number })}
                           size="small"
                           color="primary"
                           variant="outlined"
@@ -67,7 +68,7 @@ function N5CoursePage() {
                           color="text.secondary"
                           sx={{ mt: 1, display: 'block' }}
                         >
-                          {t('n5.counts', {
+                          {t('course.counts', {
                             vocab: lesson.vocab.length,
                             grammar: lesson.grammar.length,
                           })}
@@ -82,19 +83,21 @@ function N5CoursePage() {
           </Stack>
         </Box>
 
-        <Box>
-          <Button
-            component={RouterLink}
-            to={n5LessonPath(n5Lessons[0].id)}
-            variant="contained"
-            size="large"
-          >
-            {t('n5.openLesson')}
-          </Button>
-        </Box>
+        {course.lessons.length > 0 ? (
+          <Box>
+            <Button
+              component={RouterLink}
+              to={lessonPath(level, course.lessons[0].id)}
+              variant="contained"
+              size="large"
+            >
+              {t('course.openLesson')}
+            </Button>
+          </Box>
+        ) : null}
       </Stack>
     </PageContainer>
   )
 }
 
-export default N5CoursePage
+export default CoursePage

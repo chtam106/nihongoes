@@ -1,9 +1,6 @@
 import { useState } from 'react'
 import { Link as RouterLink, useParams } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutlined'
-import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import ReplayIcon from '@mui/icons-material/Replay'
 import {
   Box,
   Button,
@@ -14,79 +11,28 @@ import {
   TextField,
   Typography,
 } from '@mui/material'
-import { getN5Lesson, n5LessonPath, type N5Lesson } from '@/constants/n5-course.ts'
+import {
+  getCourse,
+  getLesson,
+  lessonPath,
+  type Course,
+  type CourseLevel,
+  type Lesson,
+} from '@/constants/courses/index.ts'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
-import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts'
-import { buildLessonQuiz, normalizeAnswer, type QuizQuestion } from './n5-quiz.ts'
+import { ChoiceButton } from './choice-button.tsx'
+import { buildLessonQuiz, normalizeAnswer, type QuizQuestion } from './course-quiz.ts'
+import { LessonNotFound, ResultScreen } from './shared.tsx'
 
-function LessonNotFound() {
-  const { t } = useTranslation()
-
-  return (
-    <PageContainer>
-      <Typography variant="h4" component="h1" gutterBottom>
-        {t('n5.notFoundTitle')}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {t('n5.notFoundBody')}
-      </Typography>
-      <Button component={RouterLink} to={routes.n5.index} variant="contained">
-        {t('n5.backToCourse')}
-      </Button>
-    </PageContainer>
-  )
-}
-
-function ResultScreen({
-  score,
-  total,
-  lessonId,
-  onRetry,
-}: {
-  score: number
-  total: number
-  lessonId: string
-  onRetry: () => void
-}) {
-  const { t } = useTranslation()
-  const ratio = total === 0 ? 0 : score / total
-  const message =
-    ratio >= 0.8 ? t('n5.resultGreat') : ratio >= 0.5 ? t('n5.resultGood') : t('n5.resultKeepGoing')
-
-  return (
-    <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 3, md: 4 }, textAlign: 'center' }]}>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-        {t('n5.resultTitle')}
-      </Typography>
-      <Typography variant="h2" component="p" sx={{ fontWeight: 700, color: 'primary.main', my: 2 }}>
-        {score} / {total}
-      </Typography>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {message}
-      </Typography>
-      <Stack
-        direction={{ xs: 'column', sm: 'row' }}
-        spacing={1.5}
-        sx={{ justifyContent: 'center' }}
-      >
-        <Button variant="contained" startIcon={<ReplayIcon />} onClick={onRetry}>
-          {t('n5.retry')}
-        </Button>
-        <Button variant="outlined" component={RouterLink} to={n5LessonPath(lessonId)}>
-          {t('n5.reviewLesson')}
-        </Button>
-      </Stack>
-    </Paper>
-  )
-}
-
-function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
+function LessonQuiz({ course, lesson }: { course: Course; lesson: Lesson }) {
   const { locale, t } = useTranslation()
 
-  const [questions, setQuestions] = useState<QuizQuestion[]>(() => buildLessonQuiz(lesson, locale))
+  const [questions, setQuestions] = useState<QuizQuestion[]>(() =>
+    buildLessonQuiz(course, lesson, locale),
+  )
   const [index, setIndex] = useState(0)
   const [selectedId, setSelectedId] = useState<string | undefined>(undefined)
   const [inputValue, setInputValue] = useState('')
@@ -141,7 +87,7 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
   }
 
   const handleRetry = () => {
-    setQuestions(buildLessonQuiz(lesson, locale))
+    setQuestions(buildLessonQuiz(course, lesson, locale))
     setIndex(0)
     setSelectedId(undefined)
     setInputValue('')
@@ -157,28 +103,34 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
           <Box sx={{ mb: 1 }}>
             <Button
               component={RouterLink}
-              to={n5LessonPath(lesson.id)}
+              to={lessonPath(course.level, lesson.id)}
               startIcon={<ArrowBackIcon />}
               size="small"
               sx={{ ml: -0.5 }}
             >
-              {t('n5.reviewLesson')}
+              {t('course.reviewLesson')}
             </Button>
           </Box>
           <Chip
-            label={t('n5.lessonLabel', { number: lesson.number })}
+            label={t('course.lessonLabel', { number: lesson.number })}
             color="primary"
             variant="outlined"
             size="small"
             sx={{ mb: 1 }}
           />
           <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
-            {lesson.title[locale]} · {t('n5.exercise')}
+            {lesson.title[locale]} · {t('course.exercise')}
           </Typography>
         </Box>
 
         {finished ? (
-          <ResultScreen score={score} total={total} lessonId={lesson.id} onRetry={handleRetry} />
+          <ResultScreen
+            score={score}
+            total={total}
+            level={course.level}
+            lessonId={lesson.id}
+            onRetry={handleRetry}
+          />
         ) : (
           <>
             <Box>
@@ -187,7 +139,7 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
                 sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
               >
                 <Typography variant="body2" color="text.secondary">
-                  {t('n5.questionProgress', { current: index + 1, total })}
+                  {t('course.questionProgress', { current: index + 1, total })}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {score} / {total}
@@ -202,7 +154,7 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
 
             <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
               <Typography variant="overline" color="text.secondary">
-                {question.format === 'input' ? t('n5.typeAnswer') : t('n5.chooseAnswer')}
+                {question.format === 'input' ? t('course.typeAnswer') : t('course.chooseAnswer')}
               </Typography>
               <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start', mt: 0.5 }}>
                 <Typography
@@ -213,7 +165,9 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
                 >
                   {question.promptPrimary}
                 </Typography>
-                {question.promptJa && question.kind !== 'grammar-pattern' ? (
+                {question.promptJa &&
+                question.kind !== 'grammar-pattern' &&
+                question.kind !== 'grammar-cloze' ? (
                   <SpeakButton text={question.promptPrimary} size="medium" />
                 ) : null}
               </Stack>
@@ -232,34 +186,15 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
                   const showWrong = answered && option.id === selectedId && !isCorrectOption
 
                   return (
-                    <Button
+                    <ChoiceButton
                       key={option.id}
                       onClick={() => handleSelect(option.id)}
-                      disabled={answered && !showCorrect && !showWrong}
-                      variant={showCorrect || showWrong ? 'contained' : 'outlined'}
-                      color={showCorrect ? 'success' : showWrong ? 'error' : 'primary'}
-                      fullWidth
-                      size="large"
-                      endIcon={
-                        showCorrect ? (
-                          <CheckCircleOutlineIcon />
-                        ) : showWrong ? (
-                          <HighlightOffIcon />
-                        ) : undefined
-                      }
-                      sx={{
-                        justifyContent: 'space-between',
-                        textAlign: 'left',
-                        py: 1.5,
-                        textTransform: 'none',
-                        fontSize: '1.05rem',
-                        '&.Mui-disabled': { opacity: 0.6 },
-                      }}
+                      dimmed={answered && !showCorrect && !showWrong}
+                      state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
+                      lang={option.ja ? 'ja' : undefined}
                     >
-                      <Box component="span" lang={option.ja ? 'ja' : undefined}>
-                        {option.label}
-                      </Box>
-                    </Button>
+                      {option.label}
+                    </ChoiceButton>
                   )
                 })}
               </Stack>
@@ -275,7 +210,7 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
                   <TextField
                     value={inputValue}
                     onChange={(event) => setInputValue(event.target.value)}
-                    placeholder={t('n5.inputPlaceholder')}
+                    placeholder={t('course.inputPlaceholder')}
                     fullWidth
                     autoComplete="off"
                     autoFocus
@@ -296,7 +231,7 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
                     size="large"
                     disabled={submitted || inputValue.trim() === ''}
                   >
-                    {t('n5.check')}
+                    {t('course.check')}
                   </Button>
                 </Stack>
               </Box>
@@ -314,16 +249,16 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
                       variant="subtitle1"
                       sx={{ fontWeight: 600, color: isCorrect ? 'success.main' : 'error.main' }}
                     >
-                      {isCorrect ? t('n5.correct') : t('n5.incorrect')}
+                      {isCorrect ? t('course.correct') : t('course.incorrect')}
                     </Typography>
                     {question.format === 'input' && !isCorrect ? (
                       <Typography variant="body2" color="text.secondary">
-                        {t('n5.answerWas', { answer: question.answer })}
+                        {t('course.answerWas', { answer: question.answer })}
                       </Typography>
                     ) : null}
                   </Box>
                   <Button variant="contained" onClick={handleNext}>
-                    {isLast ? t('n5.seeResults') : t('n5.next')}
+                    {isLast ? t('course.seeResults') : t('course.next')}
                   </Button>
                 </Stack>
               ) : null}
@@ -335,16 +270,18 @@ function LessonQuiz({ lesson }: { lesson: N5Lesson }) {
   )
 }
 
-function N5LessonExercisePage() {
+function ExercisePage({ level }: { level: CourseLevel }) {
   const { lessonId } = useParams<{ lessonId: string }>()
   const { locale } = useTranslation()
-  const lesson = lessonId ? getN5Lesson(lessonId) : undefined
+  const lesson = lessonId ? getLesson(level, lessonId) : undefined
 
   if (!lesson) {
-    return <LessonNotFound />
+    return <LessonNotFound level={level} />
   }
 
-  return <LessonQuiz key={`${lesson.id}:${locale}`} lesson={lesson} />
+  return (
+    <LessonQuiz key={`${level}:${lesson.id}:${locale}`} course={getCourse(level)} lesson={lesson} />
+  )
 }
 
-export default N5LessonExercisePage
+export default ExercisePage

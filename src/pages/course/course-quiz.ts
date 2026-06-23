@@ -1,4 +1,4 @@
-import { n5Lessons, type N5Lesson } from '@/constants/n5-course.ts'
+import type { Course, Lesson } from '@/constants/courses/index.ts'
 import type { Locale } from '@/i18n/translations.ts'
 
 export type QuestionKind =
@@ -62,6 +62,27 @@ const PARTICLE_ALTERNATES: Record<string, string[]> = {
   wa: ['ha'],
 }
 
+const PARTICLE_KANA: Record<string, string> = {
+  wa: 'は',
+  o: 'を',
+  ga: 'が',
+  ni: 'に',
+  de: 'で',
+  e: 'へ',
+  no: 'の',
+  to: 'と',
+  mo: 'も',
+  ka: 'か',
+  kara: 'から',
+  made: 'まで',
+}
+
+const CLOZE_BLANK = '＿＿'
+
+function countOccurrences(haystack: string, needle: string): number {
+  return haystack.split(needle).length - 1
+}
+
 function shuffle<T>(items: T[]): T[] {
   const copy = [...items]
 
@@ -107,13 +128,13 @@ type CoursePools = {
   patternTitles: string[]
 }
 
-function buildCoursePools(locale: Locale): CoursePools {
+function buildCoursePools(course: Course, locale: Locale): CoursePools {
   const meanings: string[] = []
   const words: string[] = []
   const exampleMeanings: string[] = []
   const patternTitles: string[] = []
 
-  for (const lesson of n5Lessons) {
+  for (const lesson of course.lessons) {
     for (const item of lesson.vocab) {
       meanings.push(item.meaning[locale])
       words.push(vocabWord(item))
@@ -131,39 +152,47 @@ function buildCoursePools(locale: Locale): CoursePools {
   return { meanings, words, exampleMeanings, patternTitles }
 }
 
-function trailingPunctuation(token: string): string {
-  return token.match(/[.。!?！？、，,]+$/)?.[0] ?? ''
-}
+function buildClozeQuestion(
+  jp: string,
+  romaji: string,
+  meaning: string,
+  id: string,
+): InputQuestion | null {
+  const particles = romaji
+    .split(' ')
+    .map((token) => normalizeAnswer(token))
+    .filter((token) => PARTICLES.has(token))
 
-function buildClozeQuestion(romaji: string, meaning: string, id: string): InputQuestion | null {
-  const tokens = romaji.split(' ')
-  const particleIndexes = tokens
-    .map((token, index) => ({ index, particle: normalizeAnswer(token) }))
-    .filter((entry) => PARTICLES.has(entry.particle))
-
-  if (particleIndexes.length === 0) {
+  if (particles.length === 0) {
     return null
   }
 
-  const chosen = particleIndexes[Math.floor(Math.random() * particleIndexes.length)]
-  const blanked = tokens
-    .map((token, index) => (index === chosen.index ? `____${trailingPunctuation(token)}` : token))
-    .join(' ')
+  // Blank the particle directly in the Japanese sentence, but only when its kana occurs
+  // exactly once so the blank is unambiguous. Otherwise fall back to a choice question.
+  for (const particle of shuffle(Array.from(new Set(particles)))) {
+    const kana = PARTICLE_KANA[particle]
 
-  return {
-    format: 'input',
-    id,
-    kind: 'grammar-cloze',
-    promptPrimary: blanked,
-    promptSecondary: meaning,
-    promptJa: false,
-    accepted: [chosen.particle, ...(PARTICLE_ALTERNATES[chosen.particle] ?? [])],
-    answer: chosen.particle,
+    if (!kana || countOccurrences(jp, kana) !== 1) {
+      continue
+    }
+
+    return {
+      format: 'input',
+      id,
+      kind: 'grammar-cloze',
+      promptPrimary: jp.replace(kana, CLOZE_BLANK),
+      promptSecondary: meaning,
+      promptJa: true,
+      accepted: [kana, particle, ...(PARTICLE_ALTERNATES[particle] ?? [])],
+      answer: kana,
+    }
   }
+
+  return null
 }
 
-export function buildLessonQuiz(lesson: N5Lesson, locale: Locale): QuizQuestion[] {
-  const pools = buildCoursePools(locale)
+export function buildLessonQuiz(course: Course, lesson: Lesson, locale: Locale): QuizQuestion[] {
+  const pools = buildCoursePools(course, locale)
   const candidates: QuizQuestion[] = []
 
   lesson.vocab.forEach((item, index) => {
@@ -177,7 +206,6 @@ export function buildLessonQuiz(lesson: N5Lesson, locale: Locale): QuizQuestion[
         id: `vocab-meaning-${index}`,
         kind: 'vocab-meaning',
         promptPrimary: word,
-        promptSecondary: item.romaji,
         promptJa: true,
         options,
         correctId,
@@ -216,6 +244,7 @@ export function buildLessonQuiz(lesson: N5Lesson, locale: Locale): QuizQuestion[
       const cloze =
         exampleIndex % 2 === 0
           ? buildClozeQuestion(
+              example.jp,
               example.romaji,
               example.meaning[locale],
               `grammar-cloze-${pointIndex}-${exampleIndex}`,
@@ -238,7 +267,6 @@ export function buildLessonQuiz(lesson: N5Lesson, locale: Locale): QuizQuestion[
         id: `grammar-translate-${pointIndex}-${exampleIndex}`,
         kind: 'grammar-translate',
         promptPrimary: example.jp,
-        promptSecondary: example.romaji,
         promptJa: true,
         options,
         correctId,

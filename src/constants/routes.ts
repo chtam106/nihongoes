@@ -1,8 +1,4 @@
-import {
-  N5_LESSON_EXERCISE_PATHS,
-  N5_LESSON_LISTENING_PATHS,
-  N5_LESSON_PATHS,
-} from '@/constants/n5-course.ts'
+import { COURSE_LEVELS, COURSE_SITEMAP_PATHS, coursePath } from '@/constants/courses/index.ts'
 
 type RouteNode = string | { readonly [key: string]: RouteNode }
 
@@ -10,6 +6,12 @@ export const routes = {
   home: '/',
   n5: {
     index: '/n5',
+  },
+  n4: {
+    index: '/n4',
+  },
+  n3: {
+    index: '/n3',
   },
   alphabet: {
     index: '/alphabet',
@@ -48,20 +50,19 @@ function collectRouteEntries(node: RouteNode, keyPath: string[] = []): RouteEntr
 
 export const routeEntries = collectRouteEntries(routes)
 
-export const SITEMAP_PATHS = [
-  ...routeEntries.map((entry) => entry.path),
-  ...N5_LESSON_PATHS,
-  ...N5_LESSON_EXERCISE_PATHS,
-  ...N5_LESSON_LISTENING_PATHS,
-]
+export const SITEMAP_PATHS = Array.from(
+  new Set([...routeEntries.map((entry) => entry.path), ...COURSE_SITEMAP_PATHS]),
+)
 
 const pathToSeoKey = Object.fromEntries(routeEntries.map((entry) => [entry.path, entry.seoKey]))
 
 export type SeoRouteKey = (typeof routeEntries)[number]['seoKey']
 
 export function getSeoRouteKey(pathname: string): SeoRouteKey {
-  if (pathname.startsWith(`${routes.n5.index}/`)) {
-    return 'n5' as SeoRouteKey
+  for (const level of COURSE_LEVELS) {
+    if (pathname === coursePath(level) || pathname.startsWith(`${coursePath(level)}/`)) {
+      return level as SeoRouteKey
+    }
   }
 
   return (pathToSeoKey[pathname] as SeoRouteKey | undefined) ?? 'home'
