@@ -312,29 +312,37 @@ function LessonPage({ level }: { level: CourseLevel }) {
         <PracticePanel level={level} lesson={lesson} />
 
         <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'space-between' }}>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
             {previous ? (
               <Button
                 component={RouterLink}
                 to={lessonPath(level, previous.id)}
                 startIcon={<ArrowBackIcon />}
                 variant="outlined"
-                fullWidth
-                sx={{ justifyContent: 'flex-start' }}
+                sx={{
+                  justifyContent: 'flex-start',
+                  width: { xs: '100%', sm: 'auto' },
+                  minWidth: { sm: 180 },
+                  maxWidth: { sm: 260 },
+                }}
               >
                 {t('course.previousLesson')}
               </Button>
             ) : null}
           </Box>
-          <Box sx={{ flex: 1 }}>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
             {next ? (
               <Button
                 component={RouterLink}
                 to={lessonPath(level, next.id)}
                 endIcon={<ArrowForwardIcon />}
                 variant="contained"
-                fullWidth
-                sx={{ justifyContent: 'flex-end' }}
+                sx={{
+                  justifyContent: 'flex-end',
+                  width: { xs: '100%', sm: 'auto' },
+                  minWidth: { sm: 180 },
+                  maxWidth: { sm: 260 },
+                }}
               >
                 {t('course.nextLesson')}
               </Button>

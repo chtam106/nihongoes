@@ -276,7 +276,7 @@ function AppLayout() {
         <Toolbar
           sx={{
             gap: { xs: 1.5, md: 0 },
-            px: { xs: 2, sm: 4, md: 6 },
+            px: { xs: 2, sm: 4, md: 0 },
             alignItems: 'center',
           }}
         >
@@ -292,12 +292,24 @@ function AppLayout() {
           ) : (
             <Box sx={{ width: drawerWidth, flexShrink: 0 }} aria-hidden />
           )}
-          <Brand showTagline={false} showLogo={false} />
-          <Box sx={{ flexGrow: 1 }} />
-          <Stack direction="row" spacing={0.5}>
-            <AudioSettings />
-            <LanguageSwitcher />
-          </Stack>
+          <Box
+            sx={{
+              flexGrow: 1,
+              minWidth: 0,
+              width: '100%',
+              maxWidth: { md: 1200 },
+              mx: { md: 'auto' },
+            }}
+          >
+            <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', px: { md: 6 } }}>
+              <Brand showTagline={false} showLogo={false} />
+              <Box sx={{ flexGrow: 1 }} />
+              <Stack direction="row" spacing={0.5}>
+                <AudioSettings />
+                <LanguageSwitcher />
+              </Stack>
+            </Stack>
+          </Box>
         </Toolbar>
       </AppBar>
 

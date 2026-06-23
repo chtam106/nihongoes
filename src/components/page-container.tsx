@@ -6,5 +6,9 @@ import { Container } from '@mui/material'
  * MuiContainer theme overrides) so individual pages don't redefine layout.
  */
 export function PageContainer({ children }: { children: ReactNode }) {
-  return <Container maxWidth={false}>{children}</Container>
+  return (
+    <Container maxWidth={false} sx={{ width: '100%', maxWidth: 1200, mx: 'auto' }}>
+      {children}
+    </Container>
+  )
 }
