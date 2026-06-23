@@ -12,6 +12,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { pink } from '@mui/material/colors'
 import {
   getLesson,
   lessonPath,
@@ -19,9 +20,11 @@ import {
   type Lesson,
   type ReadingPassage,
 } from '@/constants/courses/index.ts'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
+import { isSpeechSupported, speakJapanese } from '@/utils/speech.ts'
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts'
 import { ChoiceButton } from './choice-button.tsx'
 import { LessonNotFound, ResultScreen } from './shared.tsx'
@@ -40,6 +43,7 @@ function shuffle<T>(items: T[]): T[] {
 function PassageCard({ passage }: { passage: ReadingPassage }) {
   const { locale, t } = useTranslation()
   const [showTranslation, setShowTranslation] = useState(false)
+  const canSpeak = isSpeechSupported()
 
   const fullText = useMemo(() => passage.lines.map((line) => line.jp).join(' '), [passage.lines])
 
@@ -50,9 +54,9 @@ function PassageCard({ passage }: { passage: ReadingPassage }) {
         spacing={1}
         sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}
       >
-        <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+        <Heading scale="subsection" component="h2">
           {passage.title[locale]}
-        </Typography>
+        </Heading>
         <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', flexShrink: 0 }}>
           <SpeakButton text={fullText} size="medium" />
           <Button
@@ -67,11 +71,31 @@ function PassageCard({ passage }: { passage: ReadingPassage }) {
 
       <Stack spacing={1.5}>
         {passage.lines.map((line) => (
-          <Box key={line.jp} sx={{ borderLeft: 3, borderColor: 'primary.main', pl: 1.5 }}>
+          <Box key={line.jp}>
             <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
-              <SpeakButton text={line.jp} />
+              <Box sx={{ alignSelf: 'flex-start', position: 'relative', top: -2 }}>
+                <SpeakButton text={line.jp} />
+              </Box>
               <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+                <Typography
+                  variant="body1"
+                  lang="ja"
+                  onClick={canSpeak ? () => speakJapanese(line.jp) : undefined}
+                  role={canSpeak ? 'button' : undefined}
+                  tabIndex={canSpeak ? 0 : undefined}
+                  aria-label={canSpeak ? t('common.playAudio') : undefined}
+                  onKeyDown={
+                    canSpeak
+                      ? (event) => {
+                          if (event.key === 'Enter' || event.key === ' ') {
+                            event.preventDefault()
+                            speakJapanese(line.jp)
+                          }
+                        }
+                      : undefined
+                  }
+                  sx={{ fontWeight: 500, cursor: canSpeak ? 'pointer' : undefined }}
+                >
                   {line.jp}
                 </Typography>
                 <Collapse in={showTranslation}>
@@ -161,9 +185,9 @@ function ReadingQuiz({ level, lesson }: { level: CourseLevel; lesson: Lesson }) 
             size="small"
             sx={{ mb: 1 }}
           />
-          <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
+          <Heading component="h1">
             {lesson.title[locale]} · {t('course.reading')}
-          </Typography>
+          </Heading>
         </Box>
 
         <PassageCard passage={passage} />
@@ -236,7 +260,7 @@ function ReadingQuiz({ level, lesson }: { level: CourseLevel; lesson: Lesson }) 
                     variant="subtitle1"
                     sx={{
                       fontWeight: 600,
-                      color: selectedId === question.correctId ? 'success.main' : 'error.main',
+                      color: selectedId === question.correctId ? 'info.main' : pink[500],
                     }}
                   >
                     {selectedId === question.correctId

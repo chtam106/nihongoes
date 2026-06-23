@@ -1,3 +1,5 @@
+import { n1Course } from './n1.ts'
+import { n2Course } from './n2.ts'
 import { n3Course } from './n3.ts'
 import { n4Course } from './n4.ts'
 import { n5Course } from './n5.ts'
@@ -5,12 +7,14 @@ import type { Course, CourseLevel, Lesson } from './types.ts'
 
 export * from './types.ts'
 
-export const COURSE_LEVELS: CourseLevel[] = ['n5', 'n4', 'n3']
+export const COURSE_LEVELS: CourseLevel[] = ['n5', 'n4', 'n3', 'n2', 'n1']
 
 export const courses: Record<CourseLevel, Course> = {
   n5: n5Course,
   n4: n4Course,
   n3: n3Course,
+  n2: n2Course,
+  n1: n1Course,
 }
 
 export const courseList: Course[] = COURSE_LEVELS.map((level) => courses[level])

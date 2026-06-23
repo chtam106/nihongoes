@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Button, Link, List, ListItem, Paper, Typography } from '@mui/material'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { routes } from '@/constants/routes.ts'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -43,9 +44,9 @@ function ExerciseHubPage() {
         {t('alphabet.back')}
       </Button>
 
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Heading component="h1" gutterBottom>
         {t('exercise.title')}
-      </Typography>
+      </Heading>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
         {t('exercise.hubSubtitle')}
       </Typography>
@@ -67,7 +68,7 @@ function ExerciseHubPage() {
                   '&:hover': { bgcolor: 'action.hover' },
                 }}
               >
-                <Typography variant="h6">{item.title}</Typography>
+                <Heading scale="subsection">{item.title}</Heading>
                 <Typography variant="body2" color="text.secondary">
                   {item.description}
                 </Typography>

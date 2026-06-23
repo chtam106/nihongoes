@@ -19,22 +19,28 @@ import {
   type CourseLevel,
   type Lesson,
 } from '@/constants/courses/index.ts'
+import { Heading } from '@/components/heading.tsx'
 import { PageContainer } from '@/components/page-container.tsx'
 import { SpeakButton } from '@/components/speak-button.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
-import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts'
+import { isSpeechSupported, speakJapanese } from '@/utils/speech.ts'
+import {
+  elevatedSurfaceSx,
+  interactiveSurfaceSx,
+  subtleSurfaceSx,
+  tonalSurfaceSx,
+} from '@/theme/surfaces.ts'
 import { LessonNotFound } from './shared.tsx'
 
 function VocabularySection({ lesson }: { lesson: Lesson }) {
   const { locale, t } = useTranslation()
+  const canSpeak = isSpeechSupported()
 
   return (
     <Box>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <MenuBookOutlinedIcon color="primary" />
-        <Typography variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-          {t('course.vocabulary')}
-        </Typography>
+        <Heading component="h2">{t('course.vocabulary')}</Heading>
       </Stack>
 
       <Box
@@ -48,9 +54,29 @@ function VocabularySection({ lesson }: { lesson: Lesson }) {
           <Paper
             key={`${item.kana}-${item.romaji}`}
             elevation={0}
+            onClick={canSpeak ? () => speakJapanese(item.kana) : undefined}
+            role={canSpeak ? 'button' : undefined}
+            tabIndex={canSpeak ? 0 : undefined}
+            aria-label={canSpeak ? t('common.playAudio') : undefined}
+            onKeyDown={
+              canSpeak
+                ? (event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault()
+                      speakJapanese(item.kana)
+                    }
+                  }
+                : undefined
+            }
             sx={[
-              elevatedSurfaceSx,
-              { p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' },
+              canSpeak ? interactiveSurfaceSx : elevatedSurfaceSx,
+              {
+                p: 1.5,
+                display: 'flex',
+                gap: 0.5,
+                alignItems: 'flex-start',
+                cursor: canSpeak ? 'pointer' : undefined,
+              },
             ]}
           >
             <SpeakButton text={item.kana} />
@@ -85,14 +111,13 @@ function VocabularySection({ lesson }: { lesson: Lesson }) {
 
 function GrammarSection({ lesson }: { lesson: Lesson }) {
   const { locale, t } = useTranslation()
+  const canSpeak = isSpeechSupported()
 
   return (
     <Box>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <TranslateOutlinedIcon color="primary" />
-        <Typography variant="h5" component="h2" sx={{ fontWeight: 600 }}>
-          {t('course.grammar')}
-        </Typography>
+        <Heading component="h2">{t('course.grammar')}</Heading>
       </Stack>
 
       <Stack spacing={2}>
@@ -100,9 +125,9 @@ function GrammarSection({ lesson }: { lesson: Lesson }) {
           <Card key={point.pattern} elevation={0} sx={elevatedSurfaceSx}>
             <CardContent>
               <Chip label={point.pattern} size="small" sx={{ mb: 1, fontWeight: 600 }} lang="ja" />
-              <Typography variant="h6" component="h3" gutterBottom>
+              <Heading component="h3" gutterBottom>
                 {point.title[locale]}
-              </Typography>
+              </Heading>
               <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                 {point.explanation[locale]}
               </Typography>
@@ -116,9 +141,27 @@ function GrammarSection({ lesson }: { lesson: Lesson }) {
               </Typography>
               <Stack spacing={1.5}>
                 {point.examples.map((example) => (
-                  <Box
+                  <Paper
                     key={example.jp}
-                    sx={{ borderLeft: 3, borderColor: 'primary.main', pl: 1.5 }}
+                    elevation={0}
+                    onClick={canSpeak ? () => speakJapanese(example.jp) : undefined}
+                    role={canSpeak ? 'button' : undefined}
+                    tabIndex={canSpeak ? 0 : undefined}
+                    aria-label={canSpeak ? t('common.playAudio') : undefined}
+                    onKeyDown={
+                      canSpeak
+                        ? (event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault()
+                              speakJapanese(example.jp)
+                            }
+                          }
+                        : undefined
+                    }
+                    sx={[
+                      canSpeak ? interactiveSurfaceSx : elevatedSurfaceSx,
+                      { p: 1.5, cursor: canSpeak ? 'pointer' : undefined },
+                    ]}
                   >
                     <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
                       <SpeakButton text={example.jp} />
@@ -138,7 +181,7 @@ function GrammarSection({ lesson }: { lesson: Lesson }) {
                         </Typography>
                       </Box>
                     </Stack>
-                  </Box>
+                  </Paper>
                 ))}
               </Stack>
             </CardContent>
@@ -169,9 +212,9 @@ function PracticePanel({ level, lesson }: { level: CourseLevel; lesson: Lesson }
       ]}
     >
       <Box>
-        <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+        <Heading scale="subsection" component="h2">
           {t('course.practiceHeading')}
-        </Typography>
+        </Heading>
         <Typography variant="body2" color="text.secondary">
           {t('course.exerciseSubtitle')}
         </Typography>
@@ -253,9 +296,7 @@ function LessonPage({ level }: { level: CourseLevel }) {
             variant="outlined"
             sx={{ mb: 1 }}
           />
-          <Typography variant="h3" component="h1" sx={{ fontWeight: 600 }}>
-            {lesson.title[locale]}
-          </Typography>
+          <Heading component="h1">{lesson.title[locale]}</Heading>
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
             <Typography variant="overline" color="text.secondary">

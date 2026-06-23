@@ -10,6 +10,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material'
+import { Heading } from '@/components/heading.tsx'
 import { getCourse, lessonPath, type CourseLevel } from '@/constants/courses/index.ts'
 import { PageContainer } from '@/components/page-container.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -23,9 +24,9 @@ function CoursePage({ level }: { level: CourseLevel }) {
     <PageContainer>
       <Stack spacing={4}>
         <Box>
-          <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 600 }}>
+          <Heading component="h1" gutterBottom>
             {course.name[locale]}
-          </Typography>
+          </Heading>
           <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400, mb: 2 }}>
             {course.subtitle[locale]}
           </Typography>
@@ -35,9 +36,9 @@ function CoursePage({ level }: { level: CourseLevel }) {
         </Box>
 
         <Box>
-          <Typography variant="subtitle1" component="h2" sx={{ fontWeight: 600, mb: 1.5 }}>
+          <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
             {t('course.lessonsHeading')}
-          </Typography>
+          </Heading>
 
           <Stack spacing={1.5}>
             {course.lessons.map((lesson) => (
@@ -57,9 +58,7 @@ function CoursePage({ level }: { level: CourseLevel }) {
                           variant="outlined"
                           sx={{ mb: 1 }}
                         />
-                        <Typography variant="h6" component="h3">
-                          {lesson.title[locale]}
-                        </Typography>
+                        <Heading component="h3">{lesson.title[locale]}</Heading>
                         <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                           {lesson.focus[locale]}
                         </Typography>

@@ -13,6 +13,12 @@ export const routes = {
   n3: {
     index: '/n3',
   },
+  n2: {
+    index: '/n2',
+  },
+  n1: {
+    index: '/n1',
+  },
   alphabet: {
     index: '/alphabet',
     hiragana: '/alphabet/hiragana',

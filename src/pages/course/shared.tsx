@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom'
 import ReplayIcon from '@mui/icons-material/Replay'
 import { Button, Paper, Stack, Typography } from '@mui/material'
+import { Heading } from '@/components/heading.tsx'
 import { coursePath, lessonPath, type CourseLevel } from '@/constants/courses/index.ts'
 import { PageContainer } from '@/components/page-container.tsx'
 import { useTranslation } from '@/i18n/use-translation.ts'
@@ -11,9 +12,9 @@ export function LessonNotFound({ level }: { level: CourseLevel }) {
 
   return (
     <PageContainer>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Heading component="h1" gutterBottom>
         {t('course.notFoundTitle')}
-      </Typography>
+      </Heading>
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
         {t('course.notFoundBody')}
       </Typography>
@@ -48,9 +49,9 @@ export function ResultScreen({
 
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 3, md: 4 }, textAlign: 'center' }]}>
-      <Typography variant="h4" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
+      <Heading scale="page" component="h2" gutterBottom>
         {t('course.resultTitle')}
-      </Typography>
+      </Heading>
       <Typography variant="h2" component="p" sx={{ fontWeight: 700, color: 'primary.main', my: 2 }}>
         {score} / {total}
       </Typography>

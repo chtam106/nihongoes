@@ -2,7 +2,7 @@ import type { Locale } from '@/i18n/translations.ts'
 
 export type Bilingual = Record<Locale, string>
 
-export type CourseLevel = 'n5' | 'n4' | 'n3'
+export type CourseLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1'
 
 export type VocabItem = {
   kana: string

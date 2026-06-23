@@ -52,6 +52,8 @@ export function ExerciseQuizPanel({
 }: ExerciseQuizPanelProps) {
   const { t } = useTranslation()
   const characterOptions = usesCharacterOptions(mode)
+  const playPromptAudio = () =>
+    playKanaAudio(question.correctItem.romaji, question.correctItem.char)
 
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 3, textAlign: 'center' }]}>
@@ -73,15 +75,30 @@ export function ExerciseQuizPanel({
         {mode === 'romaji' ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-              <KanaDisplay cell={question.correctItem} variant="prompt" />
+              <Box
+                onClick={playPromptAudio}
+                role="button"
+                tabIndex={0}
+                aria-label={t('chart.playAudio', {
+                  char: question.correctItem.char,
+                  romaji: question.correctItem.romaji,
+                })}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    playPromptAudio()
+                  }
+                }}
+                sx={{ cursor: 'pointer' }}
+              >
+                <KanaDisplay cell={question.correctItem} variant="prompt" />
+              </Box>
               <IconButton
                 aria-label={t('chart.playAudio', {
                   char: question.correctItem.char,
                   romaji: question.correctItem.romaji,
                 })}
-                onClick={() =>
-                  playKanaAudio(question.correctItem.romaji, question.correctItem.char)
-                }
+                onClick={playPromptAudio}
                 sx={{
                   color: 'text.secondary',
                   position: 'absolute',
@@ -107,7 +124,7 @@ export function ExerciseQuizPanel({
         {mode === 'listen' ? (
           <IconButton
             aria-label={t('exercise.replayAudio')}
-            onClick={() => playKanaAudio(question.correctItem.romaji, question.correctItem.char)}
+            onClick={playPromptAudio}
             sx={{
               color: 'primary.main',
               bgcolor: 'action.hover',
@@ -136,8 +153,8 @@ export function ExerciseQuizPanel({
           const value = getOptionValue(item, mode)
           const isWrongAnswer = wrongAnswers.includes(value)
           const isCorrectAnswer = isQuizAnswerCorrect(question, value)
-          const showGreen = answeredCorrectly && isCorrectAnswer
-          const showRed = isWrongAnswer && !answeredCorrectly
+          const showCorrect = answeredCorrectly && isCorrectAnswer
+          const showWrong = isWrongAnswer && !answeredCorrectly
 
           return (
             <Button
@@ -150,8 +167,8 @@ export function ExerciseQuizPanel({
                 fontSize: characterOptions ? '1.5rem' : '1rem',
                 borderWidth: 2,
                 '&.Mui-disabled': { borderWidth: 2 },
-                ...(showGreen && resultBorderSx('success.main')),
-                ...(showRed && resultBorderSx('error.main')),
+                ...(showCorrect && resultBorderSx('correct')),
+                ...(showWrong && resultBorderSx('wrong')),
               }}
             >
               {characterOptions ? <KanaDisplay cell={item} variant="option" /> : item.romaji}

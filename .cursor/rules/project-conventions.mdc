@@ -24,11 +24,14 @@ alwaysApply: true
 ## i18n
 - UI chrome text lives in `src/i18n/translations.ts` as nested keys; both `en` and `vi` MUST be kept in sync. Read via `const { t, locale } = useTranslation()`.
 - Bilingual CONTENT data (Japanese + meanings) is stored in data files as `Record<Locale, string>` (type `Bilingual`) and rendered with `value[locale]`, not as translation keys.
-- The header slogan (Brand tagline) and the site footer text stay in ENGLISH regardless of locale — hardcode them in the component, do not run them through `t()`.
+- Quiz answer feedback labels should use the exact English words `Correct` and `Incorrect` (keep these two labels in English for both locales).
+- The header should not show brand logo or slogan; keep only the text brand link in the app bar. The site footer text stays in ENGLISH regardless of locale.
+- On desktop (`md` and up), align the text brand (`Langwish`) with the main content text column (same left gutter alignment), not visual center of the viewport.
 
 ## Audio / pronunciation
 - Japanese is spoken via the Web Speech API: `speakJapanese(text)` in `src/utils/speech.ts` (lang `ja-JP`). Voice + speed are user-configurable (persisted in localStorage) via `<AudioSettings />` in the header; voices load async (use `subscribeVoices`).
 - Anywhere Japanese text is shown, add `<SpeakButton text={...} />` (`src/components/speak-button.tsx`). Pass kana for single words, full sentence for examples. Do NOT add it to quiz answer options (would leak the answer) or to grammar patterns containing `N` placeholders.
+- Do not make audio interaction icon-only. Wherever practical, make the related Japanese text/surface itself clickable (and keyboard-accessible with Enter/Space) so users do not need to tap precisely on the speaker icon.
 - Default voice: prefer the macOS "O-ren" voice when no user choice is stored (`getDefaultJapaneseVoice` in `src/utils/speech.ts`, matches name containing `o-ren`, else first Japanese voice). Only display/play it — do NOT pin it to localStorage so the default stays adaptive per device.
 
 ## Surfaces & cards (Material style) — ALWAYS follow
@@ -41,9 +44,18 @@ alwaysApply: true
 - Chrome regions (header, drawer, footer) separate by a soft shadow only — NO background tint and NO divider lines. Header casts the shadow downward, the drawer to the right, the footer upward.
 - Buttons/Chips may keep `variant="outlined"` — those are controls, not content surfaces.
 
+## Quiz feedback styling
+- Keep answer feedback colors consistent across course quizzes and alphabet quizzes: correct uses a light blue tone, wrong uses a light pink tone (soft fill + soft border, not saturated green/red).
+- Do not show success/error icons inside answer choice buttons; rely on color and text feedback.
+
+## Scrollbars
+- Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.
+
 ## Page layout
 - Wrap every page's content in the shared `<PageContainer>` (`src/components/page-container.tsx`) — do NOT use `<Container>` directly in pages. It is full-width and left-aligned (`maxWidth={false}`); width/padding live in `PageContainer` + the `MuiContainer` theme overrides in `main.tsx`. Never center content in a narrow fixed-width column.
 - Page headers: put the back button on its own row (wrapped in a `Box`), then the lesson/section chip, then the title — never let the back button and chip share a line.
+- Keep page-level `h1` typography visually consistent across pages (same size + weight). Use the shared `Heading` component with `component="h1"` and no per-page font-size overrides.
+- Keep heading weights consistent for `h2`/`h3` title text as well (page sections and card/list titles should use `fontWeight: 600` unless there is a deliberate, documented exception).
 
 ## MUI icons
 - Import by exact file name (often the `Outlined` suffix, e.g. `CheckCircleOutlined` not `CheckCircleOutline`). If unsure, check `node_modules/@mui/icons-material/`.
@@ -51,3 +63,13 @@ alwaysApply: true
 ## Routing & sitemap
 - Routes map to `src/pages/**/index.tsx`. Static routes live in `src/constants/routes.ts`; dynamic param routes are registered in `src/app.tsx`.
 - For dynamic pages, export path arrays from the data file and append them to `SITEMAP_PATHS` in `routes.ts`.
+
+## Navigation labels
+- In drawer sub-items for course lessons, keep lesson number inline with the lesson name (e.g. `Unit 1: ...` / `Bài 1: ...`); do not render the number as a separate left icon/symbol.
+- Keep English lesson chips/menu wording consistent as `Unit` (e.g. `Unit {{number}}` in `course.lessonLabel` and `Unit N: ...` in drawer sub-items).
+
+## Drawer menu layout
+- Keep drawer menu visuals minimal: use subtle divider lines between sibling items/sub-items; avoid card-like shadows/background blocks for separation.
+- Do not apply hover background fills on menu items/sub-items. Keep hover visually neutral and use selected state only for active location.
+- Keep child item rows at consistent height even when some labels wrap to two lines (uniform row height for scanability).
+- Maintain alignment consistency: course lesson sub-item text starts align with parent item text starts; for alphabet sub-items, align child icons to the same horizontal start as the parent text column.
