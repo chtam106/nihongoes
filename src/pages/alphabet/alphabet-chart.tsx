@@ -409,7 +409,7 @@ export function AlphabetChartPage({
         color="primary.main"
         sx={{ mt: 1.5, mb: { xs: 2, md: 3 }, fontWeight: 500 }}
       >
-        {t('alphabet.tapHint')}
+        {`* ${t('alphabet.tapHint')}`}
       </Typography>
 
       <ChartSection chartRows={chartRows} />
