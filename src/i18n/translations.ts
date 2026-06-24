@@ -5,9 +5,6 @@ export type Locale = 'en' | 'vi';
 export type TranslationParams = Record<string, string | number>;
 
 const en: TranslationTree = {
-  app: {
-    title: 'Langwish'
-  },
   common: {
     playAudio: 'Play pronunciation'
   },
@@ -25,9 +22,6 @@ const en: TranslationTree = {
     noVoices: 'No Japanese voice was found in your browser.'
   },
   seo: {
-    defaultTitle: 'Langwish - Learn Japanese Hiragana, Katakana & Kana Quiz',
-    defaultDescription:
-      'Free interactive app to learn Japanese hiragana and katakana. Browse kana charts, listen to native audio, and practice with quizzes.',
     home: {
       title: 'Learn Japanese Hiragana & Katakana',
       description:
@@ -110,7 +104,7 @@ const en: TranslationTree = {
       'View seion, dakuten ({{dakuten}}), handakuten ({{handakuten}}), and yoon charts for hiragana and katakana.',
     featureAudio: 'Tap any character to hear NHK-style audio pronunciation.',
     featureQuiz:
-      'Practice with quizzes - choose romaji, choose the character, listen and pick, or match hiragana and katakana.'
+      'Practice with quizzes - choose romaji, choose the character, listen and pick, match hiragana and katakana, or trace strokes in writing practice.'
   },
   alphabet: {
     title: 'Alphabet',
@@ -132,7 +126,6 @@ const en: TranslationTree = {
   },
   exercise: {
     title: 'Exercise',
-    subtitle: 'Practice the Japanese alphabet.',
     hubSubtitle: 'Choose an exercise type.',
     back: 'All exercises',
     romajiDescription: 'See kana and choose the matching romaji.',
@@ -154,16 +147,11 @@ const en: TranslationTree = {
     script: 'Script',
     scriptAll: 'All',
     scriptBoth: 'Hiragana & Katakana',
-    mode: 'Mode',
     scope: 'Scope',
-    row: 'Row',
     rowFrom: 'From row',
     rowTo: 'To row',
-    rowPlaceholder: 'Pick a row',
     allRows: 'All rows',
     guessRomaji: 'Choose romaji',
-    guessCharacter: 'Choose {{script}}',
-    listenPick: 'Listen & pick {{script}}',
     scriptPair: 'Hiragana ↔ Katakana',
     pairDirection: 'Direction',
     pairHiraToKata: 'Hiragana → Katakana',
@@ -232,7 +220,6 @@ const en: TranslationTree = {
     next: 'Next',
     seeResults: 'See results',
     resultTitle: 'Practice complete!',
-    resultScore: 'You got {{correct}} of {{total}} correct.',
     resultGreat: 'Excellent work! You know this lesson well.',
     resultGood: 'Nice progress - review the misses and try again.',
     resultKeepGoing: 'Keep practicing - revisit the lesson and try again.',

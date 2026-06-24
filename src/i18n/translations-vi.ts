@@ -1,9 +1,6 @@
 import type { TranslationTree } from '@/i18n/translations.ts';
 
 export const viTranslations: TranslationTree = {
-  app: {
-    title: 'Langwish'
-  },
   common: {
     playAudio: 'Nghe phát âm'
   },
@@ -21,9 +18,6 @@ export const viTranslations: TranslationTree = {
     noVoices: 'Trình duyệt của bạn không có giọng tiếng Nhật.'
   },
   seo: {
-    defaultTitle: 'Langwish - Học Hiragana, Katakana & Luyện Kana',
-    defaultDescription:
-      'Ứng dụng miễn phí học hiragana và katakana. Xem bảng chữ tương tác, nghe phát âm chuẩn và luyện tập qua bài quiz.',
     home: {
       title: 'Học Hiragana & Katakana tiếng Nhật',
       description:
@@ -104,7 +98,7 @@ export const viTranslations: TranslationTree = {
       'Xem bảng seion, dakuten ({{dakuten}}), handakuten ({{handakuten}}) và yoon cho hiragana và katakana.',
     featureAudio: 'Chạm vào chữ để nghe phát âm kiểu NHK.',
     featureQuiz:
-      'Luyện tập qua câu hỏi - chọn romaji, chọn chữ, nghe chọn chữ, hoặc ghép hiragana và katakana.'
+      'Luyện tập qua câu hỏi - chọn romaji, chọn chữ, nghe chọn chữ, ghép hiragana và katakana, hoặc luyện viết theo thứ tự nét.'
   },
   alphabet: {
     title: 'Bảng chữ cái',
@@ -126,7 +120,6 @@ export const viTranslations: TranslationTree = {
   },
   exercise: {
     title: 'Luyện tập',
-    subtitle: 'Luyện bảng chữ cái tiếng Nhật.',
     hubSubtitle: 'Chọn loại bài tập.',
     back: 'Tất cả bài tập',
     romajiDescription: 'Nhìn chữ kana và chọn romaji đúng.',
@@ -147,16 +140,11 @@ export const viTranslations: TranslationTree = {
     script: 'Bảng chữ',
     scriptAll: 'Tất cả',
     scriptBoth: 'Hiragana & Katakana',
-    mode: 'Chế độ',
     scope: 'Phạm vi',
-    row: 'Hàng',
     rowFrom: 'Từ hàng',
     rowTo: 'Đến hàng',
-    rowPlaceholder: 'Chọn hàng',
     allRows: 'Tất cả các hàng',
     guessRomaji: 'Chọn romaji',
-    guessCharacter: 'Chọn {{script}}',
-    listenPick: 'Nghe & chọn {{script}}',
     scriptPair: 'Hiragana ↔ Katakana',
     pairDirection: 'Hướng',
     pairHiraToKata: 'Hiragana → Katakana',
@@ -225,7 +213,6 @@ export const viTranslations: TranslationTree = {
     next: 'Tiếp theo',
     seeResults: 'Xem kết quả',
     resultTitle: 'Hoàn thành bài tập!',
-    resultScore: 'Bạn đúng {{correct}} / {{total}} câu.',
     resultGreat: 'Xuất sắc! Bạn nắm rất chắc bài này.',
     resultGood: 'Khá tốt - xem lại câu sai rồi thử lại nhé.',
     resultKeepGoing: 'Cố lên - hãy ôn lại bài rồi làm lại.',
