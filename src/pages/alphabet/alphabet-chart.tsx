@@ -14,6 +14,7 @@ import {
   useTheme
 } from '@mui/material';
 import { Heading } from '@/components/heading.tsx';
+import { HintText } from '@/components/hint-text.tsx';
 import { playKanaAudio } from '@/utils/kana-audio.ts';
 import { KanaDisplay } from '@/components/kana-display.tsx';
 import { PageContainer } from '@/components/page-container.tsx';
@@ -404,9 +405,7 @@ export function AlphabetChartPage({
       <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
         {description}
       </Typography>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: { xs: 2, md: 3 } }}>
-        {t('alphabet.tapHint')}
-      </Typography>
+      <HintText sx={{ mt: 1.5, mb: { xs: 2, md: 3 } }}>{t('alphabet.tapHint')}</HintText>
 
       <ChartSection chartRows={chartRows} />
 

@@ -63,6 +63,9 @@ alwaysApply: true
 - Keep answer feedback colors consistent across course quizzes and alphabet quizzes: correct uses a light blue tone, wrong uses a light pink tone (soft fill + soft border, not saturated green/red).
 - Do not show success/error icons inside answer choice buttons; rely on color and text feedback.
 
+## Hints / annotations
+- Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="error.main"` (red) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
+
 ## Scrollbars
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.
 

@@ -14,6 +14,7 @@ import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined';
 import { getAlphabetItems } from '@/constants/alphabet-charts.ts';
+import { HintText } from '@/components/hint-text.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ExercisePageLayout } from '@/pages/alphabet/exercise/exercise-page-layout.tsx';
 import type { Script } from '@/pages/alphabet/exercise/exercise-quiz.ts';
@@ -290,11 +291,7 @@ function WritingExercisePage() {
     <ExercisePageLayout
       title={t('exercise.writing')}
       subtitle={t('exercise.writingDescription')}
-      note={
-        <Typography variant="body2" color="text.secondary">
-          {t('exercise.writingReplayHint')}
-        </Typography>
-      }
+      note={<HintText>{t('exercise.writingReplayHint')}</HintText>}
     >
       <Box
         sx={{

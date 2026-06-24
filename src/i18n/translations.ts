@@ -116,8 +116,10 @@ const en: TranslationTree = {
     hiraganaDescription: 'ひらがな - basic Japanese syllabary',
     katakanaDescription: 'カタカナ - used for foreign words and emphasis',
     exerciseDescription: 'Practice hiragana and katakana',
-    hiraganaPageDescription: 'Learn the hiragana alphabet (ひらがな).',
-    katakanaPageDescription: 'Learn the katakana alphabet (カタカナ).',
+    hiraganaPageDescription:
+      'Hiragana is the foundation of written Japanese. Its 46 basic sounds (seion) spell grammar particles, verb and adjective endings, and native words. Voicing marks (dakuten and handakuten) and the small ゃ/ゅ/ょ of yoon extend the same set to cover every Japanese sound.',
+    katakanaPageDescription:
+      'Katakana shares the exact same sounds as hiragana but uses sharper, more angular strokes. It is reserved for loanwords, foreign names, onomatopoeia, scientific terms, and words written for emphasis. Learning it alongside hiragana lets you read signs, menus, and product names.',
     tapHint: 'Tap a character to hear its pronunciation.'
   },
   chart: {

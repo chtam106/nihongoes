@@ -110,8 +110,10 @@ export const viTranslations: TranslationTree = {
     hiraganaDescription: 'ひらがな - bảng âm tiếng Nhật cơ bản',
     katakanaDescription: 'カタカナ - dùng cho từ ngoại lai và nhấn mạnh',
     exerciseDescription: 'Luyện hiragana và katakana',
-    hiraganaPageDescription: 'Học bảng chữ hiragana (ひらがな).',
-    katakanaPageDescription: 'Học bảng chữ katakana (カタカナ).',
+    hiraganaPageDescription:
+      'Hiragana là nền tảng của chữ viết tiếng Nhật. 46 âm cơ bản (seion) dùng để viết trợ từ ngữ pháp, đuôi động từ và tính từ, cùng các từ thuần Nhật. Dấu hữu thanh (dakuten và handakuten) và âm ghép yoon với ゃ/ゅ/ょ nhỏ mở rộng bộ này để bao trùm mọi âm tiếng Nhật.',
+    katakanaPageDescription:
+      'Katakana có đúng các âm như hiragana nhưng nét vuông và sắc hơn. Nó dùng cho từ ngoại lai, tên nước ngoài, từ tượng thanh, thuật ngữ khoa học và những từ cần nhấn mạnh. Học cùng hiragana giúp bạn đọc được biển hiệu, thực đơn và tên sản phẩm.',
     tapHint: 'Nhấn vào chữ để nghe phát âm.'
   },
   chart: {
