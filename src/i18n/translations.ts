@@ -100,6 +100,8 @@ const en: TranslationTree = {
     hiraganaDescription: 'Learn the basic syllabary used for native Japanese words.',
     katakanaDescription: 'Learn the script used for loanwords and emphasis.',
     exerciseDescription: 'Quiz yourself on romaji and characters with audio feedback.',
+    alphabetSection: 'Alphabet & practice',
+    coursesSection: 'Courses',
     featuresTitle: 'What you can do here',
     featureCharts:
       'View seion, dakuten ({{dakuten}}), handakuten ({{handakuten}}), and yoon charts for hiragana and katakana.',

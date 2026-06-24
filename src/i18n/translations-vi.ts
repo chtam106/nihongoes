@@ -94,6 +94,8 @@ export const viTranslations: TranslationTree = {
     hiraganaDescription: 'Học bảng âm cơ bản dùng cho từ tiếng Nhật thuần.',
     katakanaDescription: 'Học bảng chữ dùng cho từ mượn và nhấn mạnh.',
     exerciseDescription: 'Tự kiểm tra romaji và chữ kana, có phản hồi âm thanh.',
+    alphabetSection: 'Bảng chữ cái & luyện tập',
+    coursesSection: 'Khóa học',
     featuresTitle: 'Bạn có thể làm gì ở đây',
     featureCharts:
       'Xem bảng seion, dakuten ({{dakuten}}), handakuten ({{handakuten}}) và yoon cho hiragana và katakana.',

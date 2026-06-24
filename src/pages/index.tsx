@@ -22,10 +22,53 @@ type StudyCard = {
   icon?: ComponentType<SvgIconProps>;
 };
 
+function StudyCardGrid({ cards }: { cards: StudyCard[] }) {
+  return (
+    <Box
+      sx={{
+        display: 'grid',
+        gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
+        gap: 2
+      }}
+    >
+      {cards.map((card) => {
+        const Icon = card.icon;
+
+        return (
+          <Card key={card.to} elevation={0} sx={[interactiveSurfaceSx, { height: '100%' }]}>
+            <CardActionArea
+              component={RouterLink}
+              to={card.to}
+              sx={{ height: '100%', alignItems: 'stretch' }}
+            >
+              <CardContent>
+                <Typography
+                  variant="h4"
+                  component="span"
+                  sx={{ display: 'block', mb: 1, lineHeight: 1 }}
+                >
+                  {card.symbol}
+                  {card.symbol == null && Icon && <Icon fontSize="inherit" />}
+                </Typography>
+                <Typography variant="h6" component="h3" gutterBottom sx={{ fontWeight: 600 }}>
+                  {card.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {card.description}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        );
+      })}
+    </Box>
+  );
+}
+
 function HomePage() {
   const { locale, t } = useTranslation();
 
-  const studyCards: StudyCard[] = [
+  const alphabetCards: StudyCard[] = [
     {
       to: routes.alphabet.hiragana,
       title: t('nav.hiragana'),
@@ -43,14 +86,15 @@ function HomePage() {
       title: t('nav.exercise'),
       icon: QuizOutlinedIcon,
       description: t('home.exerciseDescription')
-    },
-    ...COURSE_SUMMARIES.map((course) => ({
-      to: coursePath(course.level),
-      title: course.name[locale],
-      icon: SchoolOutlinedIcon,
-      description: course.subtitle[locale]
-    }))
+    }
   ];
+
+  const courseCards: StudyCard[] = COURSE_SUMMARIES.map((course) => ({
+    to: coursePath(course.level),
+    title: course.name[locale],
+    icon: SchoolOutlinedIcon,
+    description: course.subtitle[locale]
+  }));
 
   return (
     <PageContainer>
@@ -83,44 +127,19 @@ function HomePage() {
           </Button>
         </Stack>
 
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' },
-            gap: 2
-          }}
-        >
-          {studyCards.map((card) => {
-            const Icon = card.icon;
+        <Stack spacing={1.5}>
+          <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+            {t('home.alphabetSection')}
+          </Typography>
+          <StudyCardGrid cards={alphabetCards} />
+        </Stack>
 
-            return (
-              <Card key={card.to} elevation={0} sx={[interactiveSurfaceSx, { height: '100%' }]}>
-                <CardActionArea
-                  component={RouterLink}
-                  to={card.to}
-                  sx={{ height: '100%', alignItems: 'stretch' }}
-                >
-                  <CardContent>
-                    <Typography
-                      variant="h4"
-                      component="span"
-                      sx={{ display: 'block', mb: 1, lineHeight: 1 }}
-                    >
-                      {card.symbol}
-                      {card.symbol == null && Icon && <Icon fontSize="inherit" />}
-                    </Typography>
-                    <Typography variant="h6" component="h2" gutterBottom sx={{ fontWeight: 600 }}>
-                      {card.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {card.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            );
-          })}
-        </Box>
+        <Stack spacing={1.5}>
+          <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+            {t('home.coursesSection')}
+          </Typography>
+          <StudyCardGrid cards={courseCards} />
+        </Stack>
 
         <Stack spacing={1.5}>
           <Typography variant="subtitle1" component="h2" sx={{ fontWeight: 600 }}>
