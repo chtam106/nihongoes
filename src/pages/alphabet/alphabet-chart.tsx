@@ -234,7 +234,7 @@ export function AlphabetChartPage({
         </ChartBlock>
 
         <ChartBlock heading={sectionLabels.yoon}>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
             {t('chart.yoonDescription')}
           </Typography>
           <GojuonGrid rows={yoonRows} headers={yoonHeaders} />
