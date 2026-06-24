@@ -22,6 +22,7 @@ import {
 import { GrammarPointCard } from '@/components/grammar-point-card.tsx';
 import { Heading } from '@/components/heading.tsx';
 import { PageContainer } from '@/components/page-container.tsx';
+import { PhoneticsLine } from '@/components/phonetics-line.tsx';
 import { SpeakButton } from '@/components/speak-button.tsx';
 import { SpeakableSurface } from '@/components/speakable-surface.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -67,9 +68,7 @@ function VocabularySection({ lesson }: { lesson: Lesson }) {
                   {item.kana}
                 </Typography>
               )}
-              <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-                {item.romaji}
-              </Typography>
+              <PhoneticsLine romaji={item.romaji} />
               <Typography variant="body2" sx={{ mt: 0.5 }}>
                 {item.meaning[locale]}
               </Typography>

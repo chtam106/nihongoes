@@ -238,6 +238,8 @@ const en: TranslationTree = {
     comprehension: 'Comprehension question',
     showTranslation: 'Show translation',
     hideTranslation: 'Hide translation',
+    showPhonetics: 'Show phonetics',
+    hidePhonetics: 'Hide phonetics',
     questionProgress: 'Question {{current}} of {{total}}',
     chooseAnswer: 'Choose the correct answer',
     typeAnswer: 'Type the missing word',

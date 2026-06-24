@@ -232,6 +232,8 @@ export const viTranslations: TranslationTree = {
     comprehension: 'Câu hỏi đọc hiểu',
     showTranslation: 'Hiện bản dịch',
     hideTranslation: 'Ẩn bản dịch',
+    showPhonetics: 'Hiện phiên âm',
+    hidePhonetics: 'Ẩn phiên âm',
     questionProgress: 'Câu {{current}} / {{total}}',
     chooseAnswer: 'Chọn đáp án đúng',
     typeAnswer: 'Điền từ còn thiếu',

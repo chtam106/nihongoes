@@ -1,6 +1,7 @@
 import { Box, Card, CardContent, Chip, Stack, Typography } from '@mui/material';
 import type { GrammarPoint } from '@/constants/courses/types.ts';
 import { Heading } from '@/components/heading.tsx';
+import { PhoneticsLine } from '@/components/phonetics-line.tsx';
 import { SpeakButton } from '@/components/speak-button.tsx';
 import { SpeakableSurface } from '@/components/speakable-surface.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -33,9 +34,7 @@ export function GrammarPointCard({ point }: { point: GrammarPoint }) {
                   <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
                     {example.jp}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-                    {example.romaji}
-                  </Typography>
+                  <PhoneticsLine romaji={example.romaji} />
                   <Typography variant="body2" sx={{ mt: 0.25 }}>
                     {example.meaning[locale]}
                   </Typography>

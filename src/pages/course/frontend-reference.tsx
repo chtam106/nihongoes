@@ -13,6 +13,7 @@ import {
 import { GrammarPointCard } from '@/components/grammar-point-card.tsx';
 import { Heading } from '@/components/heading.tsx';
 import { PageContainer } from '@/components/page-container.tsx';
+import { PhoneticsLine } from '@/components/phonetics-line.tsx';
 import { SpeakButton } from '@/components/speak-button.tsx';
 import { SpeakableSurface } from '@/components/speakable-surface.tsx';
 import { routes } from '@/constants/routes.ts';
@@ -62,9 +63,7 @@ function VocabSection() {
                       {item.kana}
                     </Typography>
                   )}
-                  <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-                    {item.romaji}
-                  </Typography>
+                  <PhoneticsLine romaji={item.romaji} />
                   <Typography variant="body2" sx={{ mt: 0.5 }}>
                     {item.meaning[locale]}
                   </Typography>
@@ -107,9 +106,7 @@ function MeetingSection() {
                     <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
                       {phrase.jp}
                     </Typography>
-                    <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-                      {phrase.romaji}
-                    </Typography>
+                    <PhoneticsLine romaji={phrase.romaji} />
                     <Typography variant="body2" sx={{ mt: 0.25 }}>
                       {phrase.meaning[locale]}
                     </Typography>
