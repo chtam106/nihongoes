@@ -97,7 +97,7 @@ function ExerciseHubPage() {
                     <Typography
                       variant="h5"
                       component="span"
-                      sx={{ display: 'inline-flex', lineHeight: 1, color: 'primary.main' }}
+                      sx={{ display: 'inline-flex', lineHeight: 1 }}
                     >
                       <Icon fontSize="inherit" />
                     </Typography>
