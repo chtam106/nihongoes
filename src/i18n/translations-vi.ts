@@ -3,7 +3,8 @@ import type { TranslationTree } from '@/i18n/translations.ts';
 export const viTranslations: TranslationTree = {
   common: {
     playAudio: 'Nghe phát âm',
-    back: 'Quay lại'
+    back: 'Quay lại',
+    scrollTop: 'Lên đầu trang'
   },
   errorBoundary: {
     title: 'Đã có lỗi xảy ra',
@@ -210,7 +211,6 @@ export const viTranslations: TranslationTree = {
     vocabulary: 'Từ vựng',
     grammar: 'Ngữ pháp',
     examples: 'Ví dụ',
-    openLesson: 'Học bài',
     previousLesson: 'Bài trước',
     nextLesson: 'Bài sau',
     counts: '{{vocab}} từ · {{grammar}} điểm ngữ pháp',

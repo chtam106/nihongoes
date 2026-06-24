@@ -1,14 +1,5 @@
 import { Link as RouterLink } from 'react-router-dom';
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  Chip,
-  Stack,
-  Typography
-} from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Chip, Stack, Typography } from '@mui/material';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import { Heading } from '@/components/heading.tsx';
 import { getCourse, lessonPath, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
@@ -110,19 +101,6 @@ function CoursePage({ level }: { level: CourseLevel }) {
 
           {!course.modules && <Stack spacing={1.5}>{course.lessons.map(renderLessonCard)}</Stack>}
         </Box>
-
-        {course.lessons.length > 0 && (
-          <Box>
-            <Button
-              component={RouterLink}
-              to={lessonPath(level, course.lessons[0].id)}
-              variant="contained"
-              size="large"
-            >
-              {t('course.openLesson')}
-            </Button>
-          </Box>
-        )}
       </Stack>
     </PageContainer>
   );

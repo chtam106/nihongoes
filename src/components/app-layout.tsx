@@ -15,6 +15,7 @@ import {
 import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand.tsx';
 import { PageMeta } from '@/components/page-meta.tsx';
+import { ScrollToTopButton } from '@/components/scroll-to-top-button.tsx';
 import { SiteFooter } from '@/components/site-footer.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
@@ -43,6 +44,13 @@ function AppLayout() {
       void loadJapaneseUiFont();
     }
   }, [location.pathname]);
+
+  // On navigation, jump to the top of the page unless the URL targets an anchor.
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0 });
+    }
+  }, [location.pathname, location.hash]);
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
@@ -150,6 +158,8 @@ function AppLayout() {
         <Outlet />
         <SiteFooter />
       </Box>
+
+      <ScrollToTopButton />
     </Box>
   );
 }

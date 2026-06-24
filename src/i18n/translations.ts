@@ -7,7 +7,8 @@ export type TranslationParams = Record<string, string | number>;
 const en: TranslationTree = {
   common: {
     playAudio: 'Play pronunciation',
-    back: 'Back'
+    back: 'Back',
+    scrollTop: 'Back to top'
   },
   errorBoundary: {
     title: 'Something went wrong',
@@ -217,7 +218,6 @@ const en: TranslationTree = {
     vocabulary: 'Vocabulary',
     grammar: 'Grammar',
     examples: 'Examples',
-    openLesson: 'Study lesson',
     previousLesson: 'Previous',
     nextLesson: 'Next',
     counts: '{{vocab}} words · {{grammar}} grammar points',

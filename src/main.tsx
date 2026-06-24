@@ -23,7 +23,7 @@ const theme = createTheme({
             ? {}
             : {
                 paddingTop: muiTheme.spacing(4),
-                paddingBottom: muiTheme.spacing(4),
+                paddingBottom: `calc(${muiTheme.spacing(4)} + 50px)`,
                 paddingLeft: muiTheme.spacing(2),
                 paddingRight: muiTheme.spacing(2),
                 [muiTheme.breakpoints.up('sm')]: {
@@ -32,7 +32,7 @@ const theme = createTheme({
                 },
                 [muiTheme.breakpoints.up('md')]: {
                   paddingTop: muiTheme.spacing(6),
-                  paddingBottom: muiTheme.spacing(6),
+                  paddingBottom: `calc(${muiTheme.spacing(6)} + 30px)`,
                   paddingLeft: muiTheme.spacing(6),
                   paddingRight: muiTheme.spacing(6)
                 }
