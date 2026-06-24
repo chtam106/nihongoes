@@ -21,21 +21,11 @@ import {
   hiraganaChartRows,
   katakanaChartRows
 } from '@/constants/alphabet-charts.ts';
-import { HintText } from '@/components/hint-text.tsx';
+import { KanaDisplay } from '@/components/kana-display.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ExercisePageLayout } from '@/pages/alphabet/exercise/exercise-page-layout.tsx';
 import type { Script } from '@/pages/alphabet/exercise/exercise-quiz.ts';
 import { speakJapanese } from '@/utils/speech.ts';
-
-function getAnimCjkFileName(character: string) {
-  const codePoint = character.codePointAt(0);
-  return codePoint ? `${codePoint}.svg` : '';
-}
-
-function getStrokeOrderSvgUrl(character: string, replayToken = 0) {
-  const fileName = getAnimCjkFileName(character);
-  return `https://raw.githubusercontent.com/parsimonhi/animCJK/master/svgsJaKana/${fileName}?v=${replayToken}`;
-}
 
 function drawCanvasGuides(ctx: CanvasRenderingContext2D, width: number, height: number) {
   ctx.clearRect(0, 0, width, height);
@@ -263,73 +253,40 @@ function WritingCanvas({
   );
 }
 
-/** A single stroke-order guide; tapping replays the animation and speaks the kana. */
-function StrokeGuide({ cell, script }: { cell: AlphabetCell; script: Script }) {
+/** A reference glyph in the on-screen (gothic) font; tapping plays its audio. */
+function KanaSample({ cell }: { cell: AlphabetCell }) {
   const { t } = useTranslation();
-  const [replayTick, setReplayTick] = useState(0);
-  const [hasError, setHasError] = useState(false);
-
-  const handleActivate = () => {
-    setReplayTick((previous) => previous + 1);
-    setHasError(false);
-    speakJapanese(cell.char);
-  };
-
-  const guideSize = { xs: 40, sm: 48 };
 
   return (
     <Stack spacing={0.5} sx={{ alignItems: 'center', width: { xs: 46, sm: 56 } }}>
-      {hasError && (
-        <Box
-          sx={{
-            width: guideSize,
-            height: guideSize,
-            borderRadius: 1.5,
-            bgcolor: '#ffffff',
-            boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.08)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
-        >
-          <Typography variant="caption" color="text.secondary">
-            N/A
-          </Typography>
-        </Box>
-      )}
-      {!hasError && (
-        <Box
-          component="img"
-          src={getStrokeOrderSvgUrl(cell.char, replayTick)}
-          role="button"
-          tabIndex={0}
-          alt={t('exercise.writingGuideAlt', {
-            char: cell.char,
-            script: script === 'hiragana' ? t('nav.hiragana') : t('nav.katakana')
-          })}
-          onClick={handleActivate}
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
-              event.preventDefault();
-              handleActivate();
-            }
-          }}
-          onError={() => setHasError(true)}
-          sx={{
-            width: guideSize,
-            height: guideSize,
-            objectFit: 'contain',
-            display: 'block',
-            cursor: 'pointer',
-            borderRadius: 1,
-            '&:focus-visible': {
-              outline: '2px solid',
-              outlineColor: 'primary.main',
-              outlineOffset: 2
-            }
-          }}
-        />
-      )}
+      <Box
+        role="button"
+        tabIndex={0}
+        aria-label={t('common.playAudio')}
+        onClick={() => speakJapanese(cell.char)}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            speakJapanese(cell.char);
+          }
+        }}
+        sx={{
+          width: { xs: 40, sm: 48 },
+          height: { xs: 40, sm: 48 },
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          borderRadius: 1,
+          '&:focus-visible': {
+            outline: '2px solid',
+            outlineColor: 'primary.main',
+            outlineOffset: 2
+          }
+        }}
+      >
+        <KanaDisplay cell={cell} variant="chart" />
+      </Box>
       <Typography variant="caption" color="text.secondary">
         {cell.romaji}
       </Typography>
@@ -493,7 +450,6 @@ function WritingExercisePage() {
     <ExercisePageLayout
       title={t('exercise.writing')}
       subtitle={t('exercise.writingDescription')}
-      note={<HintText>{t('exercise.writingReplayHint')}</HintText>}
     >
       <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: 380, md: 420 }, mx: 'auto' }}>
         <Stack spacing={2}>
@@ -579,9 +535,9 @@ function WritingExercisePage() {
                   useFlexGap
                   sx={{ flex: 1, flexWrap: 'wrap', justifyContent: 'center', minHeight: 80 }}
                 >
-                  {cells.map((cell) => (
-                    <StrokeGuide key={`${script}:${cell.char}`} cell={cell} script={script} />
-                  ))}
+              {cells.map((cell) => (
+                <KanaSample key={`${script}:${cell.char}`} cell={cell} />
+              ))}
                 </Stack>
                 <IconButton
                   aria-label={t('exercise.writingNextRow')}

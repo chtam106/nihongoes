@@ -160,10 +160,8 @@ const en: TranslationTree = {
     scriptPairDescription: 'Match hiragana and katakana pairs.',
     writing: 'Writing practice',
     writingDescription:
-      'Practice writing kana by hand - browse by row with stroke-order guides, or write a random character from its romaji.',
+      'Practice writing kana by hand - browse by row, or write a random character from its romaji.',
     writingRow: 'Row',
-    writingGuideAlt: '{{script}} stroke order for {{char}}',
-    writingReplayHint: 'Tap a character image to replay its stroke order and hear it.',
     writingCanvasAria: 'Writing canvas',
     writingClear: 'Clear writing',
     writingUndo: 'Undo last stroke',

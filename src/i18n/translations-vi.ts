@@ -154,10 +154,8 @@ export const viTranslations: TranslationTree = {
     scriptPairDescription: 'Ghép cặp hiragana và katakana.',
     writing: 'Luyện viết',
     writingDescription:
-      'Luyện viết kana bằng tay - xem theo hàng kèm hướng dẫn thứ tự nét, hoặc viết một chữ ngẫu nhiên từ phiên âm romaji.',
+      'Luyện viết kana bằng tay - xem theo hàng, hoặc viết một chữ ngẫu nhiên từ phiên âm romaji.',
     writingRow: 'Hàng',
-    writingGuideAlt: 'Thứ tự nét {{script}} cho chữ {{char}}',
-    writingReplayHint: 'Nhấn vào hình một chữ để xem lại thứ tự nét và nghe phát âm.',
     writingCanvasAria: 'Vùng luyện viết',
     writingClear: 'Xóa nét viết',
     writingUndo: 'Xóa nét vừa viết',
