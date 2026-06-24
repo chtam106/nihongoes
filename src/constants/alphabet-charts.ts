@@ -820,3 +820,31 @@ export function getAlphabetItems(
 
   return getRowScopeItems(rows, scope);
 }
+
+export type ChouonExample = {
+  jp: string;
+  romaji: string;
+  meaning: { en: string; vi: string };
+};
+
+export const hiraganaChouonExamples: ChouonExample[] = [
+  { jp: 'おかあさん', romaji: 'okāsan', meaning: { en: 'mother', vi: 'mẹ' } },
+  { jp: 'おにいさん', romaji: 'onīsan', meaning: { en: 'older brother', vi: 'anh trai' } },
+  { jp: 'くうき', romaji: 'kūki', meaning: { en: 'air', vi: 'không khí' } },
+  { jp: 'おねえさん', romaji: 'onēsan', meaning: { en: 'older sister', vi: 'chị gái' } },
+  {
+    jp: 'せんせい',
+    romaji: 'sensei',
+    meaning: { en: 'teacher (ei -> ē)', vi: 'giáo viên (ei -> ē)' }
+  },
+  { jp: 'とうきょう', romaji: 'tōkyō', meaning: { en: 'Tokyo (ou -> ō)', vi: 'Tokyo (ou -> ō)' } }
+];
+
+export const katakanaChouonExamples: ChouonExample[] = [
+  { jp: 'コーヒー', romaji: 'kōhī', meaning: { en: 'coffee', vi: 'cà phê' } },
+  { jp: 'ケーキ', romaji: 'kēki', meaning: { en: 'cake', vi: 'bánh ngọt' } },
+  { jp: 'スーパー', romaji: 'sūpā', meaning: { en: 'supermarket', vi: 'siêu thị' } },
+  { jp: 'ノート', romaji: 'nōto', meaning: { en: 'notebook', vi: 'vở/sổ' } },
+  { jp: 'メール', romaji: 'mēru', meaning: { en: 'email', vi: 'email' } },
+  { jp: 'テーブル', romaji: 'tēburu', meaning: { en: 'table', vi: 'bàn' } }
+];

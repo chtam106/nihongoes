@@ -1,11 +1,14 @@
 import { Link as RouterLink } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, Paper, Typography } from '@mui/material';
+import type { ChouonExample } from '@/constants/alphabet-charts.ts';
 import { Heading } from '@/components/heading.tsx';
 import { HintText } from '@/components/hint-text.tsx';
 import { playKanaAudio } from '@/utils/kana-audio.ts';
 import { KanaDisplay } from '@/components/kana-display.tsx';
 import { PageContainer } from '@/components/page-container.tsx';
+import { SpeakButton } from '@/components/speak-button.tsx';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { CellButton, ChartBlock, GojuonGrid } from '@/pages/alphabet/gojuon-grid.tsx';
 import {
   VOWEL_HEADERS,
@@ -61,19 +64,23 @@ const renderKanaCell = (cell: AlphabetCell, compact: boolean) => (
 );
 
 type AlphabetChartPageProps = {
+  script: 'hiragana' | 'katakana';
   title: string;
   description: string;
   chartRows: AlphabetChartRow[];
   yoonChartRows: AlphabetChartRow[];
+  chouonExamples: ChouonExample[];
 };
 
 export function AlphabetChartPage({
+  script,
   title,
   description,
   chartRows,
-  yoonChartRows
+  yoonChartRows,
+  chouonExamples
 }: AlphabetChartPageProps) {
-  const { t } = useTranslation();
+  const { locale, t } = useTranslation();
   const sectionLabels = getChartSectionLabels(t);
 
   const seionRows = toSeionRows(chartRows);
@@ -119,6 +126,45 @@ export function AlphabetChartPage({
             {getYoonDescription(t, yoonChartRows)}
           </Typography>
           <GojuonGrid rows={yoonRows} headers={YOON_HEADERS} renderCell={renderKanaCell} />
+        </ChartBlock>
+
+        <ChartBlock heading={t('chart.chouon')}>
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+            {t(script === 'hiragana' ? 'chart.chouonHiragana' : 'chart.chouonKatakana')}
+          </Typography>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+              gap: 1.5
+            }}
+          >
+            {chouonExamples.map((example) => (
+              <Paper
+                key={example.jp}
+                elevation={0}
+                sx={[elevatedSurfaceSx, { p: 1.5, display: 'flex', gap: 0.5 }]}
+              >
+                <SpeakButton text={example.jp} />
+                <Box sx={{ minWidth: 0 }}>
+                  <Typography
+                    variant="subtitle1"
+                    component="span"
+                    lang="ja"
+                    sx={{ fontWeight: 600 }}
+                  >
+                    {example.jp}
+                  </Typography>
+                  <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
+                    {example.romaji}
+                  </Typography>
+                  <Typography variant="body2" sx={{ mt: 0.5 }}>
+                    {example.meaning[locale]}
+                  </Typography>
+                </Box>
+              </Paper>
+            ))}
+          </Box>
         </ChartBlock>
       </Box>
     </PageContainer>
