@@ -89,8 +89,6 @@ export const viTranslations: TranslationTree = {
     title: 'Học tiếng Nhật cùng Langwish',
     intro:
       'Đọc và luyện kana từng bước, rồi học tiếp với các khóa JLPT N5–N1 và tiếng Nhật frontend có lộ trình — bảng chữ tương tác, audio, quiz và luyện viết.',
-    startHiragana: 'Bắt đầu với Hiragana',
-    jumpExercise: 'Vào Luyện tập',
     hiraganaDescription: 'Học bảng âm cơ bản dùng cho từ tiếng Nhật thuần.',
     katakanaDescription: 'Học bảng chữ dùng cho từ mượn và nhấn mạnh.',
     exerciseDescription: 'Tự kiểm tra romaji và chữ kana, có phản hồi âm thanh.',

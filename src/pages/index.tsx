@@ -5,7 +5,7 @@ import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import VolumeUpOutlinedIcon from '@mui/icons-material/VolumeUpOutlined';
-import { Box, Button, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading.tsx';
 import { PageContainer } from '@/components/page-container.tsx';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
@@ -108,25 +108,6 @@ function HomePage() {
             {t('home.intro')}
           </Typography>
         </Box>
-
-        <Stack direction="row" spacing={1.5} useFlexGap sx={{ flexWrap: 'wrap' }}>
-          <Button
-            component={RouterLink}
-            to={routes.alphabet.hiragana}
-            variant="contained"
-            size="large"
-          >
-            {t('home.startHiragana')}
-          </Button>
-          <Button
-            component={RouterLink}
-            to={routes.alphabet.exercise.index}
-            variant="outlined"
-            size="large"
-          >
-            {t('home.jumpExercise')}
-          </Button>
-        </Stack>
 
         <Stack spacing={1.5}>
           <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
