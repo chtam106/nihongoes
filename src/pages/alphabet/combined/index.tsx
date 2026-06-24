@@ -1,14 +1,22 @@
 import { Link as RouterLink } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Box, Button, Stack, Typography, useMediaQuery, useTheme } from '@mui/material';
-import type { AlphabetCell } from '@/constants/alphabet-charts.ts';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import {
   hiraganaChartRows,
   hiraganaYoonChartRows,
   katakanaChartRows,
   katakanaYoonChartRows
 } from '@/constants/alphabet-charts.ts';
-import type { AlphabetChartRow } from '@/pages/alphabet/alphabet-chart.tsx';
+import { CellButton, ChartBlock, GojuonGrid } from '@/pages/alphabet/gojuon-grid.tsx';
+import {
+  VOWEL_HEADERS,
+  YOON_HEADERS,
+  consonantLabel,
+  firstCell,
+  type AlphabetCell,
+  type AlphabetChartRow,
+  type GridRow
+} from '@/pages/alphabet/gojuon.ts';
 import { Heading } from '@/components/heading.tsx';
 import { HintText } from '@/components/hint-text.tsx';
 import { KanaDisplay } from '@/components/kana-display.tsx';
@@ -24,24 +32,7 @@ type CombinedCell = {
   katakana: AlphabetCell;
 };
 
-type GridRow = {
-  label: string;
-  cells: (CombinedCell | null)[];
-};
-
-const VOWEL_HEADERS = ['a', 'i', 'u', 'e', 'o'];
-const YOON_HEADERS = ['ya', 'yu', 'yo'];
-
-function firstCell(cells: (AlphabetCell | null)[]) {
-  return cells.find((cell): cell is AlphabetCell => cell !== null);
-}
-
-function consonantLabel(cells: (AlphabetCell | null)[]) {
-  const cell = firstCell(cells);
-  if (!cell) return '';
-  const match = cell.romaji.toLowerCase().match(/^[^aeiou]+/);
-  return match ? match[0] : '–';
-}
+type SectionKey = 'seion' | 'dakuten' | 'handakuten';
 
 function zipCells(
   hiraganaCells: (AlphabetCell | null)[],
@@ -54,14 +45,12 @@ function zipCells(
   });
 }
 
-type SectionKey = 'seion' | 'dakuten' | 'handakuten';
-
 function pairRowsForSection(
   hiraganaRows: AlphabetChartRow[],
   katakanaRows: AlphabetChartRow[],
   section: SectionKey
-): GridRow[] {
-  const rows: GridRow[] = [];
+): GridRow<CombinedCell>[] {
+  const rows: GridRow<CombinedCell>[] = [];
 
   hiraganaRows.forEach((hiraganaRow, index) => {
     const katakanaRow = katakanaRows[index];
@@ -80,42 +69,13 @@ function pairRowsForSection(
 
 function CombinedKanaCell({ cell, compact }: { cell: CombinedCell; compact: boolean }) {
   const { t } = useTranslation();
-  const handlePlay = () => playKanaAudio(cell.romaji, cell.hiragana.char);
 
   return (
-    <Box
-      role="button"
-      tabIndex={0}
-      aria-label={t('chart.playAudio', { char: cell.hiragana.char, romaji: cell.romaji })}
-      onClick={handlePlay}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          handlePlay();
-        }
-      }}
-      sx={{
-        height: '100%',
-        minHeight: { xs: 56, md: 72 },
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 0.25,
-        borderRadius: 2,
-        cursor: 'pointer',
-        bgcolor: 'action.hover',
-        transition: 'background-color 0.15s ease, box-shadow 0.15s ease',
-        '&:hover': {
-          bgcolor: 'action.selected',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12)'
-        },
-        '&:focus-visible': {
-          outline: '2px solid',
-          outlineColor: 'primary.main',
-          outlineOffset: 2
-        }
-      }}
+    <CellButton
+      ariaLabel={t('chart.playAudio', { char: cell.hiragana.char, romaji: cell.romaji })}
+      onActivate={() => playKanaAudio(cell.romaji, cell.hiragana.char)}
+      romaji={cell.romaji}
+      compact={compact}
     >
       <Stack
         direction="row"
@@ -125,87 +85,13 @@ function CombinedKanaCell({ cell, compact }: { cell: CombinedCell; compact: bool
         <KanaDisplay cell={cell.hiragana} variant="chart" compact />
         <KanaDisplay cell={cell.katakana} variant="chart" compact />
       </Stack>
-      <Typography
-        variant="caption"
-        color="text.secondary"
-        sx={{ lineHeight: 1.1, fontSize: compact ? 13 : 15 }}
-      >
-        {cell.romaji}
-      </Typography>
-    </Box>
+    </CellButton>
   );
 }
 
-function CombinedGrid({ rows, headers }: { rows: GridRow[]; headers: string[] }) {
-  const theme = useTheme();
-  const compact = useMediaQuery(theme.breakpoints.down('md'));
-  const columnCount = headers.length;
-
-  return (
-    <Box sx={{ width: '100%', overflowX: 'auto' }}>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: `minmax(28px, auto) repeat(${columnCount}, minmax(56px, 1fr))`,
-          gap: 0.5,
-          minWidth: 'min-content'
-        }}
-      >
-        <Box />
-        {headers.map((header) => (
-          <Typography
-            key={header}
-            align="center"
-            sx={{
-              fontWeight: 700,
-              color: 'text.secondary',
-              fontSize: { xs: '1rem', md: '1.2rem' },
-              pb: 0.5
-            }}
-          >
-            {header}
-          </Typography>
-        ))}
-
-        {rows.map((row, rowIndex) => (
-          <Box key={`${row.label}-${rowIndex}`} sx={{ display: 'contents' }}>
-            <Typography
-              sx={{
-                fontWeight: 700,
-                color: 'text.secondary',
-                fontSize: { xs: '1rem', md: '1.2rem' },
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              {row.label}
-            </Typography>
-            {row.cells.map((cell, colIndex) => (
-              <Box key={`${row.label}-${rowIndex}-${colIndex}`}>
-                {cell && <CombinedKanaCell cell={cell} compact={compact} />}
-              </Box>
-            ))}
-          </Box>
-        ))}
-      </Box>
-    </Box>
-  );
-}
-
-function ChartBlock({ heading, children }: { heading: string; children: React.ReactNode }) {
-  return (
-    <Box sx={{ width: '100%' }}>
-      <Heading
-        component="h2"
-        sx={{ mb: 1.5, fontSize: { xs: '1.125rem', md: '1.25rem' }, fontWeight: 600 }}
-      >
-        {heading}
-      </Heading>
-      {children}
-    </Box>
-  );
-}
+const renderCombinedCell = (cell: CombinedCell, compact: boolean) => (
+  <CombinedKanaCell cell={cell} compact={compact} />
+);
 
 function CombinedChartPage() {
   const { t } = useTranslation();
@@ -241,18 +127,36 @@ function CombinedChartPage() {
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 5 } }}>
         <ChartBlock heading={sectionLabels.seion}>
-          <CombinedGrid rows={seionRows} headers={VOWEL_HEADERS} />
+          <GojuonGrid
+            rows={seionRows}
+            headers={VOWEL_HEADERS}
+            renderCell={renderCombinedCell}
+            minCellWidth={56}
+          />
         </ChartBlock>
 
         <ChartBlock heading={sectionLabels.voiced}>
-          <CombinedGrid rows={voicedRows} headers={VOWEL_HEADERS} />
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+            {sectionLabels.voicedDescription}
+          </Typography>
+          <GojuonGrid
+            rows={voicedRows}
+            headers={VOWEL_HEADERS}
+            renderCell={renderCombinedCell}
+            minCellWidth={56}
+          />
         </ChartBlock>
 
         <ChartBlock heading={sectionLabels.yoon}>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
             {t('chart.yoonDescription')}
           </Typography>
-          <CombinedGrid rows={yoonRows} headers={YOON_HEADERS} />
+          <GojuonGrid
+            rows={yoonRows}
+            headers={YOON_HEADERS}
+            renderCell={renderCombinedCell}
+            minCellWidth={56}
+          />
         </ChartBlock>
       </Box>
     </PageContainer>

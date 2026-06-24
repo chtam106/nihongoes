@@ -1,0 +1,141 @@
+import type { ReactNode } from 'react';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Heading } from '@/components/heading.tsx';
+import type { GridRow } from '@/pages/alphabet/gojuon.ts';
+
+/** Interactive chart cell: a tap/keyboard target that plays audio, with romaji below. */
+export function CellButton({
+  ariaLabel,
+  onActivate,
+  romaji,
+  compact,
+  children
+}: {
+  ariaLabel: string;
+  onActivate: () => void;
+  romaji: string;
+  compact: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <Box
+      role="button"
+      tabIndex={0}
+      aria-label={ariaLabel}
+      onClick={onActivate}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onActivate();
+        }
+      }}
+      sx={{
+        height: '100%',
+        minHeight: { xs: 52, md: 68 },
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 0.25,
+        borderRadius: 2,
+        cursor: 'pointer',
+        bgcolor: 'action.hover',
+        transition: 'background-color 0.15s ease, box-shadow 0.15s ease',
+        '&:hover': {
+          bgcolor: 'action.selected',
+          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12)'
+        },
+        '&:focus-visible': {
+          outline: '2px solid',
+          outlineColor: 'primary.main',
+          outlineOffset: 2
+        }
+      }}
+    >
+      {children}
+      <Typography
+        variant="caption"
+        color="text.secondary"
+        sx={{ lineHeight: 1.1, fontSize: compact ? 13 : 15 }}
+      >
+        {romaji}
+      </Typography>
+    </Box>
+  );
+}
+
+const HEADER_LABEL_SX = {
+  fontWeight: 700,
+  color: 'text.secondary',
+  fontSize: { xs: '1rem', md: '1.2rem' }
+} as const;
+
+export function GojuonGrid<T>({
+  rows,
+  headers,
+  renderCell,
+  minCellWidth = 44
+}: {
+  rows: GridRow<T>[];
+  headers: string[];
+  renderCell: (cell: T, compact: boolean) => ReactNode;
+  minCellWidth?: number;
+}) {
+  const theme = useTheme();
+  const compact = useMediaQuery(theme.breakpoints.down('md'));
+  const columnCount = headers.length;
+
+  return (
+    <Box sx={{ width: '100%', overflowX: 'auto' }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: `minmax(28px, auto) repeat(${columnCount}, minmax(${minCellWidth}px, 1fr))`,
+          gap: 0.5,
+          minWidth: 'min-content'
+        }}
+      >
+        <Box />
+        {headers.map((header) => (
+          <Typography key={header} align="center" sx={{ ...HEADER_LABEL_SX, pb: 0.5 }}>
+            {header}
+          </Typography>
+        ))}
+
+        {rows.map((row, rowIndex) => (
+          <Box key={`${row.label}-${rowIndex}`} sx={{ display: 'contents' }}>
+            <Typography
+              sx={{
+                ...HEADER_LABEL_SX,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              {row.label}
+            </Typography>
+            {row.cells.map((cell, colIndex) => (
+              <Box key={`${row.label}-${rowIndex}-${colIndex}`}>
+                {cell && renderCell(cell, compact)}
+              </Box>
+            ))}
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
+export function ChartBlock({ heading, children }: { heading: string; children: ReactNode }) {
+  return (
+    <Box sx={{ width: '100%' }}>
+      <Heading
+        component="h2"
+        sx={{ mb: 1.5, fontSize: { xs: '1.125rem', md: '1.25rem' }, fontWeight: 600 }}
+      >
+        {heading}
+      </Heading>
+      {children}
+    </Box>
+  );
+}
