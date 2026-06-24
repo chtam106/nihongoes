@@ -175,14 +175,21 @@ function WritingCanvas({ ariaLabel, clearLabel }: { ariaLabel: string; clearLabe
         aria-label={clearLabel}
         size="small"
         onClick={redrawCanvas}
+        onPointerUp={(event) => {
+          if (event.pointerType === 'touch' || event.pointerType === 'pen') {
+            event.preventDefault();
+            redrawCanvas();
+          }
+        }}
         sx={{
           position: 'absolute',
           top: 8,
           right: 8,
-          zIndex: 1
+          zIndex: 1,
+          touchAction: 'manipulation'
         }}
       >
-        <CleaningServicesOutlinedIcon fontSize="medium" sx={{ transform: 'rotate(30deg)' }} />
+        <CleaningServicesOutlinedIcon sx={{ fontSize: 28, transform: 'rotate(30deg)' }} />
       </IconButton>
       <Box
         component="canvas"
