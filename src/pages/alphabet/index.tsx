@@ -2,12 +2,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
-import { Box, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading.tsx';
 import { PageContainer } from '@/components/page-container.tsx';
 import { routes } from '@/constants/routes.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { interactiveSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 type AlphabetCard = {
   to: string;
@@ -41,12 +41,37 @@ function AlphabetPage() {
     }
   ];
 
+  const writingSystems = [
+    t('alphabet.systemHiragana'),
+    t('alphabet.systemKatakana'),
+    t('alphabet.systemKanji')
+  ];
+
   return (
     <PageContainer>
       <Heading component="h1" gutterBottom>
         {t('alphabet.title')}
       </Heading>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+      <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
+        {t('alphabet.intro')}
+      </Typography>
+
+      <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2.5, mb: 3 }]}>
+        <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
+          {t('alphabet.systemsHeading')}
+        </Heading>
+        <Stack component="ul" spacing={1} sx={{ m: 0, pl: 2.5 }}>
+          {writingSystems.map((system) => (
+            <Box component="li" key={system}>
+              <Typography variant="body2" color="text.secondary">
+                {system}
+              </Typography>
+            </Box>
+          ))}
+        </Stack>
+      </Paper>
+
+      <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
         {t('alphabet.subtitle')}
       </Typography>
 

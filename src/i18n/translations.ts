@@ -103,7 +103,16 @@ const en: TranslationTree = {
   },
   alphabet: {
     title: 'Alphabet',
-    subtitle: 'Study the hiragana and katakana writing systems, then practice them.',
+    subtitle: 'Choose a writing system to study.',
+    intro:
+      'Written Japanese combines three scripts. Hiragana and katakana are phonetic syllabaries — each character is exactly one sound — while kanji are meaning-based characters borrowed from Chinese. Learn the two kana sets first: together they cover every sound in the language and are the foundation for everything else.',
+    systemsHeading: 'The Japanese writing system',
+    systemHiragana:
+      'Hiragana (ひらがな) — the rounded syllabary of 46 basic sounds, used for native words, grammar particles, and word endings.',
+    systemKatakana:
+      'Katakana (カタカナ) — the same sounds in an angular form, used for loanwords, foreign names, and emphasis.',
+    systemKanji:
+      'Kanji (漢字) — meaning-based characters borrowed from Chinese; you pick these up gradually through the JLPT courses.',
     hiraganaDescription: 'ひらがな - basic Japanese syllabary',
     katakanaDescription: 'カタカナ - used for foreign words and emphasis',
     exerciseDescription: 'Practice hiragana and katakana',

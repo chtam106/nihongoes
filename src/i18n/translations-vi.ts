@@ -97,7 +97,16 @@ export const viTranslations: TranslationTree = {
   },
   alphabet: {
     title: 'Bảng chữ cái',
-    subtitle: 'Học bảng chữ hiragana và katakana, rồi luyện tập.',
+    subtitle: 'Chọn bảng chữ để học.',
+    intro:
+      'Tiếng Nhật viết kết hợp ba hệ chữ. Hiragana và katakana là bảng âm tiết — mỗi chữ tương ứng đúng một âm — còn kanji là chữ biểu nghĩa mượn từ tiếng Hán. Hãy học hai bảng kana trước: chúng bao trùm mọi âm trong tiếng Nhật và là nền tảng cho mọi thứ về sau.',
+    systemsHeading: 'Hệ thống chữ viết tiếng Nhật',
+    systemHiragana:
+      'Hiragana (ひらがな) — bảng âm tiết nét tròn gồm 46 âm cơ bản, dùng cho từ thuần Nhật, trợ từ ngữ pháp và đuôi từ.',
+    systemKatakana:
+      'Katakana (カタカナ) — cùng các âm đó nhưng nét vuông, dùng cho từ ngoại lai, tên nước ngoài và để nhấn mạnh.',
+    systemKanji:
+      'Kanji (漢字) — chữ biểu nghĩa mượn từ tiếng Hán; bạn sẽ học dần qua các khóa JLPT.',
     hiraganaDescription: 'ひらがな - bảng âm tiếng Nhật cơ bản',
     katakanaDescription: 'カタカナ - dùng cho từ ngoại lai và nhấn mạnh',
     exerciseDescription: 'Luyện hiragana và katakana',
