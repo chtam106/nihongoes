@@ -69,7 +69,10 @@ function pairRowsForSection(
     const katakanaCells = katakanaRow?.[section];
     if (!hiraganaCells || !katakanaCells || !firstCell(hiraganaCells)) return;
 
-    rows.push({ label: consonantLabel(hiraganaCells), cells: zipCells(hiraganaCells, katakanaCells) });
+    rows.push({
+      label: consonantLabel(hiraganaCells),
+      cells: zipCells(hiraganaCells, katakanaCells)
+    });
   });
 
   return rows;
