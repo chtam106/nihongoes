@@ -84,8 +84,8 @@ function CombinedKanaCell({ cell, compact }: { cell: CombinedCell; compact: bool
         spacing={compact ? 0.5 : 1}
         sx={{ alignItems: 'center', justifyContent: 'center' }}
       >
-        <KanaDisplay cell={cell.hiragana} variant="chart" compact />
-        <KanaDisplay cell={cell.katakana} variant="chart" compact />
+        <KanaDisplay cell={cell.hiragana} variant="chart" compact={compact} />
+        <KanaDisplay cell={cell.katakana} variant="chart" compact={compact} />
       </Stack>
     </CellButton>
   );
@@ -134,6 +134,7 @@ function CombinedChartPage() {
             headers={VOWEL_HEADERS}
             renderCell={renderCombinedCell}
             minCellWidth={56}
+            maxCellWidth={132}
           />
         </ChartBlock>
 
@@ -146,6 +147,7 @@ function CombinedChartPage() {
             headers={VOWEL_HEADERS}
             renderCell={renderCombinedCell}
             minCellWidth={56}
+            maxCellWidth={132}
           />
         </ChartBlock>
 
@@ -158,6 +160,7 @@ function CombinedChartPage() {
             headers={YOON_HEADERS}
             renderCell={renderCombinedCell}
             minCellWidth={56}
+            maxCellWidth={132}
           />
         </ChartBlock>
       </Box>
