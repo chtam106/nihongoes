@@ -1,7 +1,9 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Link, Typography } from '@mui/material';
 
 // The footer copy stays in English regardless of the selected locale.
 const FOOTER_VIBE = 'Designed by CHT, coded with AI.';
+const REPORT_BUG_EMAIL = 'chtam106@gmail.com';
+const REPORT_BUG_HREF = `mailto:${REPORT_BUG_EMAIL}?subject=Langwish bug report`;
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -20,6 +22,11 @@ export function Footer() {
       <Container maxWidth="md" disableGutters>
         <Typography variant="body2" color="text.secondary">
           {FOOTER_VIBE}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+          <Link href={REPORT_BUG_HREF} color="primary" underline="hover">
+            Report a bug
+          </Link>
         </Typography>
         <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>
           © {year} Langwish · All rights not reserved.
