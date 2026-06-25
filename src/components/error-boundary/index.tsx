@@ -1,8 +1,9 @@
 import { Component, useState, type ErrorInfo, type ReactNode } from 'react';
 import SentimentVeryDissatisfiedOutlinedIcon from '@mui/icons-material/SentimentVeryDissatisfiedOutlined';
-import { Box, Button, Collapse, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Collapse, Stack, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
+import { subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 type ErrorBoundaryProps = {
   children: ReactNode;
@@ -40,69 +41,80 @@ function ErrorFallback({ error, errorInfo, onReload }: ErrorFallbackProps) {
         px: 2
       }}
     >
-      <Box sx={{ width: '100%', maxWidth: 520 }}>
-        <Paper
-          elevation={0}
-          sx={[
-            elevatedSurfaceSx,
-            { px: { xs: 3, sm: 4 }, py: { xs: 4, sm: 5 }, textAlign: 'center' }
-          ]}
+      <Stack
+        spacing={2.5}
+        sx={{ alignItems: 'center', textAlign: 'center', width: '100%', maxWidth: 520, mx: 'auto' }}
+      >
+        <Box
+          sx={{
+            width: 72,
+            height: 72,
+            borderRadius: '50%',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'error.main',
+            bgcolor: (theme) => alpha(theme.palette.error.main, 0.12)
+          }}
         >
-          <Stack spacing={2} sx={{ alignItems: 'center' }}>
-            <SentimentVeryDissatisfiedOutlinedIcon sx={{ fontSize: 64, color: 'error.main' }} />
-            <Typography variant="h4" component="h1" sx={{ fontWeight: 600 }}>
-              {t('errorBoundary.title')}
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              {t('errorBoundary.body')}
-            </Typography>
-            <Stack
-              direction="row"
-              spacing={1.5}
-              useFlexGap
-              sx={{ flexWrap: 'wrap', justifyContent: 'center' }}
+          <SentimentVeryDissatisfiedOutlinedIcon sx={{ fontSize: 38 }} />
+        </Box>
+
+        <Box>
+          <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 1 }}>
+            {t('errorBoundary.title')}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {t('errorBoundary.body')}
+          </Typography>
+        </Box>
+
+        <Stack
+          direction="row"
+          spacing={1.5}
+          useFlexGap
+          sx={{ flexWrap: 'wrap', justifyContent: 'center' }}
+        >
+          <Button size="large" variant="contained" onClick={onReload}>
+            {t('errorBoundary.reload')}
+          </Button>
+          {details.length > 0 && (
+            <Button
+              size="large"
+              variant="outlined"
+              onClick={() => setShowDetails((previous) => !previous)}
             >
-              <Button size="large" variant="contained" onClick={onReload}>
-                {t('errorBoundary.reload')}
-              </Button>
-              {details.length > 0 && (
-                <Button
-                  size="large"
-                  variant="outlined"
-                  onClick={() => setShowDetails((previous) => !previous)}
-                >
-                  {showDetails ? t('errorBoundary.hideDetails') : t('errorBoundary.showDetails')}
-                </Button>
-              )}
-            </Stack>
-            {details.length > 0 && (
-              <Collapse in={showDetails} sx={{ width: '100%' }}>
-                <Box
-                  component="pre"
-                  sx={[
-                    subtleSurfaceSx,
-                    {
-                      mt: 1,
-                      p: 2,
-                      borderRadius: 2,
-                      textAlign: 'left',
-                      overflow: 'auto',
-                      maxHeight: 280,
-                      fontSize: 12,
-                      lineHeight: 1.5,
-                      whiteSpace: 'pre-wrap',
-                      wordBreak: 'break-word',
-                      fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace'
-                    }
-                  ]}
-                >
-                  {details}
-                </Box>
-              </Collapse>
-            )}
-          </Stack>
-        </Paper>
-      </Box>
+              {showDetails ? t('errorBoundary.hideDetails') : t('errorBoundary.showDetails')}
+            </Button>
+          )}
+        </Stack>
+
+        {details.length > 0 && (
+          <Collapse in={showDetails} sx={{ width: '100%' }}>
+            <Box
+              component="pre"
+              sx={[
+                subtleSurfaceSx,
+                {
+                  mt: 1,
+                  p: 2,
+                  borderRadius: 2,
+                  textAlign: 'left',
+                  overflow: 'auto',
+                  maxHeight: 280,
+                  fontSize: 12,
+                  lineHeight: 1.5,
+                  whiteSpace: 'pre-wrap',
+                  wordBreak: 'break-word',
+                  fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace'
+                }
+              ]}
+            >
+              {details}
+            </Box>
+          </Collapse>
+        )}
+      </Stack>
     </Box>
   );
 }
