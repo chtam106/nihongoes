@@ -142,7 +142,7 @@ function FrontendReferencePage() {
             </Button>
           </Box>
 
-          <AiDisclaimer text={t('course.referenceDisclaimer')} sx={{ mb: 2.5 }} />
+          <AiDisclaimer text={t('course.aiDisclaimer')} sx={{ mb: 2.5 }} />
 
           <Heading component="h1" gutterBottom>
             {t('course.referenceTitle')}

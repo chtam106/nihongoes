@@ -261,9 +261,7 @@ const en: TranslationTree = {
     lessonLabel: 'Lesson {{number}}',
     focusLabel: 'In this lesson',
     aiDisclaimer:
-      'This lesson content - and the order of the lessons - is AI-generated, so it may contain mistakes or not be perfectly sequenced. If you spot an error, please report it via the link in the footer.',
-    referenceDisclaimer:
-      'This reference content is AI-generated and may contain mistakes. If you spot an error, please report it via the link in the footer.',
+      'This content - and the order of the material - is AI-generated, so it may contain mistakes or not be perfectly sequenced. If you spot an error, please report it via the link in the footer.',
     vocabulary: 'Vocabulary',
     grammar: 'Grammar',
     examples: 'Examples',

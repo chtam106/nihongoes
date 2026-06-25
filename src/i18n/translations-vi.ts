@@ -254,9 +254,7 @@ export const viTranslations: TranslationTree = {
     lessonLabel: 'Bài {{number}}',
     focusLabel: 'Trong bài này',
     aiDisclaimer:
-      'Nội dung bài học - và cả trình tự các bài - do AI soạn nên có thể có sai sót hoặc sắp xếp chưa hợp lý. Nếu bạn phát hiện lỗi, vui lòng báo qua link ở chân trang.',
-    referenceDisclaimer:
-      'Nội dung tham khảo này do AI soạn nên có thể có sai sót. Nếu bạn phát hiện lỗi, vui lòng báo qua link ở chân trang.',
+      'Nội dung - và cả trình tự sắp xếp - do AI soạn nên có thể có sai sót hoặc chưa hợp lý. Nếu bạn phát hiện lỗi, vui lòng báo qua link ở chân trang.',
     vocabulary: 'Từ vựng',
     grammar: 'Ngữ pháp',
     examples: 'Ví dụ',
