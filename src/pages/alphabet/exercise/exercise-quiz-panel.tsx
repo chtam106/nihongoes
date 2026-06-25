@@ -2,6 +2,7 @@ import { useState } from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { Box, Button, IconButton, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 import {
+  canonicalizeRomaji,
   getOptionValue,
   isQuizAnswerCorrect,
   usesCharacterOptions,
@@ -27,37 +28,6 @@ type ExerciseQuizPanelProps = {
   answeredCorrectly: boolean;
   onAnswer: (answer: string) => void;
 };
-
-/** Map common Kunrei-shiki / typo spellings to the Hepburn romaji used in data. */
-const ROMAJI_ALIASES: Record<string, string> = {
-  si: 'shi',
-  ti: 'chi',
-  tu: 'tsu',
-  hu: 'fu',
-  zi: 'ji',
-  di: 'ji',
-  du: 'zu',
-  sya: 'sha',
-  syu: 'shu',
-  syo: 'sho',
-  tya: 'cha',
-  tyu: 'chu',
-  tyo: 'cho',
-  zya: 'ja',
-  zyu: 'ju',
-  zyo: 'jo',
-  jya: 'ja',
-  jyu: 'ju',
-  jyo: 'jo',
-  cya: 'cha',
-  cyu: 'chu',
-  cyo: 'cho'
-};
-
-function canonicalizeRomaji(value: string) {
-  const normalized = value.trim().toLowerCase();
-  return ROMAJI_ALIASES[normalized] ?? normalized;
-}
 
 type RomajiInputAnswerProps = {
   correctRomaji: string;
