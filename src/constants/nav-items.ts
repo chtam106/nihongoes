@@ -1,6 +1,6 @@
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
+import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import type { ComponentType } from 'react';
@@ -71,7 +71,7 @@ export const navGroups: NavGroup[] = [
   {
     labelKey: 'nav.alphabet',
     path: routes.alphabet.index,
-    icon: MenuBookOutlinedIcon,
+    icon: TranslateOutlinedIcon,
     children: [
       {
         labelKey: 'nav.hiragana',
