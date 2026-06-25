@@ -40,7 +40,7 @@ describe('ExerciseQuizPanel (romaji mode)', () => {
     expect(screen.getByRole('button', { name: 'Show answer' })).toBeInTheDocument();
   });
 
-  it('submits the canonical romaji for the typed value', async () => {
+  it('submits the typed romaji value', async () => {
     const user = userEvent.setup();
     const { onAnswer } = renderRomajiPanel();
 
@@ -50,14 +50,15 @@ describe('ExerciseQuizPanel (romaji mode)', () => {
     expect(onAnswer).toHaveBeenCalledWith('shi');
   });
 
-  it('normalizes Kunrei-shiki input through romaji aliases before submitting', async () => {
+  it('only trims and lowercases the typed value (no alias conversion)', async () => {
     const user = userEvent.setup();
     const { onAnswer } = renderRomajiPanel();
 
-    await user.type(screen.getByPlaceholderText('Type romaji'), 'si');
+    // Kunrei-shiki `si` is NOT converted to `shi`; it submits as typed.
+    await user.type(screen.getByPlaceholderText('Type romaji'), ' SI ');
     await user.click(screen.getByRole('button', { name: 'Check' }));
 
-    expect(onAnswer).toHaveBeenCalledWith('shi');
+    expect(onAnswer).toHaveBeenCalledWith('si');
   });
 
   it('locks the input and disables Check once answered correctly', () => {
