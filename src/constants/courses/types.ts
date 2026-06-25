@@ -9,6 +9,8 @@ export type VocabItem = {
   kana: string;
   kanji?: string;
   romaji: string;
+  /** Override the spoken text when the glyph's reading differs (e.g. particle は -> わ). */
+  speech?: string;
   meaning: Bilingual;
 };
 

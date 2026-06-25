@@ -2,8 +2,8 @@ import type { Lesson } from '@/constants/courses/types.ts';
 
 export const n5LessonsC: Lesson[] = [
   {
-    id: 'lesson-17',
-    number: 17,
+    id: 'lesson-18',
+    number: 18,
     title: {
       en: 'Saying What You Can Do',
       vi: 'Nói về điều bạn có thể làm'
@@ -186,8 +186,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-18',
-    number: 18,
+    id: 'lesson-19',
+    number: 19,
     title: {
       en: 'Experiences & Listing Activities',
       vi: 'Kinh nghiệm & Liệt kê hoạt động'
@@ -393,8 +393,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-19',
-    number: 19,
+    id: 'lesson-20',
+    number: 20,
     title: {
       en: 'Going Out & How Often',
       vi: 'Đi chơi & Mức độ thường xuyên'
@@ -607,8 +607,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-20',
-    number: 20,
+    id: 'lesson-21',
+    number: 21,
     title: {
       en: 'Becoming & Making Changes',
       vi: 'Trở nên & Tạo ra thay đổi'
@@ -814,8 +814,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-21',
-    number: 21,
+    id: 'lesson-22',
+    number: 22,
     title: {
       en: 'Reasons, Contrast & Connectors',
       vi: 'Lý do, Tương phản & Từ nối'
@@ -1031,8 +1031,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-22',
-    number: 22,
+    id: 'lesson-23',
+    number: 23,
     title: {
       en: 'Requests & Advice',
       vi: 'Yêu cầu & Lời khuyên'
@@ -1248,8 +1248,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-23',
-    number: 23,
+    id: 'lesson-24',
+    number: 24,
     title: {
       en: 'Already, Still & Shopping',
       vi: 'Đã, Vẫn còn & Mua sắm'
@@ -1445,8 +1445,8 @@ export const n5LessonsC: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-24',
-    number: 24,
+    id: 'lesson-25',
+    number: 25,
     title: {
       en: 'Opinions & Plans',
       vi: 'Ý kiến & Dự định'

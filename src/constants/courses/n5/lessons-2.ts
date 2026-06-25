@@ -2,8 +2,8 @@ import type { Lesson } from '@/constants/courses/types.ts';
 
 export const n5LessonsB: Lesson[] = [
   {
-    id: 'lesson-9',
-    number: 9,
+    id: 'lesson-10',
+    number: 10,
     title: {
       en: 'Talking About the Past',
       vi: 'Nói về quá khứ'
@@ -203,8 +203,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-10',
-    number: 10,
+    id: 'lesson-11',
+    number: 11,
     title: {
       en: 'Wants & Wishes',
       vi: 'Mong muốn & Ước ao'
@@ -403,8 +403,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-11',
-    number: 11,
+    id: 'lesson-12',
+    number: 12,
     title: {
       en: 'Comparing Things',
       vi: 'So sánh sự vật'
@@ -620,8 +620,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-12',
-    number: 12,
+    id: 'lesson-13',
+    number: 13,
     title: {
       en: 'Counting Things & People',
       vi: 'Đếm đồ vật & người'
@@ -827,8 +827,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-13',
-    number: 13,
+    id: 'lesson-14',
+    number: 14,
     title: {
       en: 'The て-form & Requests',
       vi: 'Thể て & Lời đề nghị'
@@ -1037,8 +1037,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-14',
-    number: 14,
+    id: 'lesson-15',
+    number: 15,
     title: {
       en: 'Ongoing Actions & States',
       vi: 'Hành động đang diễn ra & Trạng thái'
@@ -1245,8 +1245,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-15',
-    number: 15,
+    id: 'lesson-16',
+    number: 16,
     title: {
       en: 'Permission & Prohibition',
       vi: 'Cho phép & Cấm đoán'
@@ -1456,8 +1456,8 @@ export const n5LessonsB: Lesson[] = [
     ]
   },
   {
-    id: 'lesson-16',
-    number: 16,
+    id: 'lesson-17',
+    number: 17,
     title: {
       en: 'Order & Timing of Actions',
       vi: 'Thứ tự & Thời điểm của hành động'

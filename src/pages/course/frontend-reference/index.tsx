@@ -10,6 +10,7 @@ import {
   referenceMeetingPhrases,
   referenceVocabGroups
 } from '@/constants/courses/frontend/reference.ts';
+import { AiDisclaimer } from '@/components/ai-disclaimer';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -140,6 +141,9 @@ function FrontendReferencePage() {
               {t('common.back')}
             </Button>
           </Box>
+
+          <AiDisclaimer text={t('course.aiDisclaimer')} sx={{ mb: 2.5 }} />
+
           <Heading component="h1" gutterBottom>
             {t('course.referenceTitle')}
           </Heading>

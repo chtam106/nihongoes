@@ -8,7 +8,7 @@ export type { ExerciseScope };
 
 export type Script = 'hiragana' | 'katakana';
 export type ExerciseScript = Script | 'all';
-export type ExerciseMode = 'romaji' | 'character' | 'listen' | 'script-pair';
+export type ExerciseMode = 'romaji' | 'character' | 'kana-romaji' | 'listen' | 'script-pair';
 export type ScriptPairDirection = 'hiragana-to-katakana' | 'katakana-to-hiragana' | 'mixed';
 export type ResolvedScriptPairDirection = 'hiragana-to-katakana' | 'katakana-to-hiragana';
 
@@ -56,8 +56,18 @@ function getKanaEntries(scope: ExerciseScope): KanaEntry[] {
   }));
 }
 
-function otherScript(script: Script): Script {
-  return script === 'hiragana' ? 'katakana' : 'hiragana';
+/** Keep one cell per reading, so romaji-choice options never repeat a romaji. */
+function dedupeByRomaji(items: AlphabetCell[]): AlphabetCell[] {
+  const seen = new Set<string>();
+
+  return items.filter((item) => {
+    if (seen.has(item.romaji)) {
+      return false;
+    }
+
+    seen.add(item.romaji);
+    return true;
+  });
 }
 
 function shuffle<T>(items: T[]): T[] {
@@ -71,19 +81,13 @@ function shuffle<T>(items: T[]): T[] {
   return copy;
 }
 
-function pickOptionItems(
-  pool: AlphabetCell[],
-  correctItem: AlphabetCell,
-  pair?: AlphabetCell
-): AlphabetCell[] {
+function pickOptionItems(pool: AlphabetCell[], correctItem: AlphabetCell): AlphabetCell[] {
+  // Exclude same-reading cells so a question never has two correct-looking options
+  // (e.g. か/カ, or homophones じ/ぢ): exactly one option matches the prompt.
   const otherItems = pool.filter((item) => item.romaji !== correctItem.romaji);
-  const distractorCount = Math.min(pair ? 2 : 3, otherItems.length);
+  const distractorCount = Math.min(3, otherItems.length);
 
-  return shuffle([
-    correctItem,
-    ...(pair ? [pair] : []),
-    ...shuffle(otherItems).slice(0, distractorCount)
-  ]);
+  return shuffle([correctItem, ...shuffle(otherItems).slice(0, distractorCount)]);
 }
 
 function resolvePairDirection(direction: ScriptPairDirection): ResolvedScriptPairDirection {
@@ -137,16 +141,16 @@ function buildQuestion(
   const { entry, script: itemScript } = deckItem;
   const correctItem = entry[itemScript];
   const isAllScript = script === 'all';
-  const includeScriptPair = isAllScript && (mode === 'character' || mode === 'listen');
-  const pair = includeScriptPair ? entry[otherScript(itemScript)] : undefined;
+  const isRomajiChoice = mode === 'kana-romaji';
 
-  const pool = isAllScript
+  const basePool = isAllScript
     ? entries.flatMap((item) => [item.hiragana, item.katakana])
     : entries.map((item) => item[itemScript]);
+  const pool = isRomajiChoice ? dedupeByRomaji(basePool) : basePool;
 
-  const optionItems = pickOptionItems(pool, correctItem, pair);
+  const optionItems = pickOptionItems(pool, correctItem);
 
-  if (mode === 'romaji') {
+  if (mode === 'romaji' || isRomajiChoice) {
     return {
       mode,
       correctItem,
@@ -159,7 +163,7 @@ function buildQuestion(
     mode,
     correctItem,
     optionItems,
-    correctAnswers: pair ? [correctItem.char, pair.char] : [correctItem.char]
+    correctAnswers: [correctItem.char]
   };
 }
 
@@ -225,7 +229,7 @@ export function isQuizAnswerCorrect(question: QuizQuestion, answer: string) {
 }
 
 export function getOptionValue(item: AlphabetCell, mode: ExerciseMode) {
-  return mode === 'romaji' ? item.romaji : item.char;
+  return mode === 'romaji' || mode === 'kana-romaji' ? item.romaji : item.char;
 }
 
 export function usesCharacterOptions(mode: ExerciseMode) {

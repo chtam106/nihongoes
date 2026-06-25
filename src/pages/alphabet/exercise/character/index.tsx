@@ -1,3 +1,5 @@
+import { useState, type SyntheticEvent } from 'react';
+import { Tab, Tabs } from '@mui/material';
 import { ExercisePageLayout } from '@/pages/alphabet/exercise/exercise-page-layout.tsx';
 import { ExerciseQuiz } from '@/pages/alphabet/exercise/exercise-quiz-panel.tsx';
 import { ExerciseScopeControls } from '@/pages/alphabet/exercise/exercise-scope-controls.tsx';
@@ -7,16 +9,29 @@ import { useExerciseScope } from '@/pages/alphabet/exercise/use-exercise-scope.t
 import { useExerciseScript } from '@/pages/alphabet/exercise/use-exercise-preferences.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
+type CharacterDirection = 'character' | 'kana-romaji';
+
 function CharacterExercisePage() {
   const { t } = useTranslation();
   const { script, handleScriptChange } = useExerciseScript();
   const scopeState = useExerciseScope();
+  const [direction, setDirection] = useState<CharacterDirection>('character');
   const scriptLabel = getScriptLabel(script, t);
+
+  const handleDirectionChange = (_event: SyntheticEvent, value: CharacterDirection) => {
+    setDirection(value);
+  };
 
   return (
     <ExercisePageLayout
       title={t('exercise.chooseCharacter')}
       subtitle={t('exercise.characterDescription')}
+      note={
+        <Tabs value={direction} onChange={handleDirectionChange} variant="fullWidth">
+          <Tab value="character" label={t('exercise.characterTabChooseKana')} />
+          <Tab value="kana-romaji" label={t('exercise.characterTabChooseRomaji')} />
+        </Tabs>
+      }
       controls={
         <>
           <ExerciseScriptSelect script={script} onChange={handleScriptChange} />
@@ -25,8 +40,8 @@ function CharacterExercisePage() {
       }
     >
       <ExerciseQuiz
-        key={`${script}:${scopeState.scope}`}
-        mode="character"
+        key={`${direction}:${script}:${scopeState.scope}`}
+        mode={direction}
         script={script}
         scope={scopeState.scope}
         scriptLabel={scriptLabel}

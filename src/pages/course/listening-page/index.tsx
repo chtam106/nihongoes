@@ -13,7 +13,6 @@ import {
   Stack,
   Typography
 } from '@mui/material';
-import { pink } from '@mui/material/colors';
 import {
   getCourse,
   getLesson,
@@ -43,14 +42,14 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
     buildLessonListening(course, lesson, locale)
   );
   const [index, setIndex] = useState(0);
-  const [selectedId, setSelectedId] = useState<string | undefined>(undefined);
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
   const total = questions.length;
   const question = questions[index];
   const isLast = index === total - 1;
-  const answered = selectedId !== undefined;
 
   useEffect(() => {
     if (finished) {
@@ -64,34 +63,49 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
     };
   }, [question.audioText, finished]);
 
-  const handleSelect = (optionId: string) => {
-    if (answered) {
+  // Auto-advance shortly after a correct answer; wrong answers let you retry.
+  useEffect(() => {
+    if (!correctPicked) {
       return;
     }
 
-    setSelectedId(optionId);
+    const timer = window.setTimeout(() => {
+      if (isLast) {
+        cancelSpeech();
+        setFinished(true);
+        return;
+      }
+
+      setIndex((previous) => previous + 1);
+      setWrongIds([]);
+      setCorrectPicked(false);
+    }, 900);
+
+    return () => window.clearTimeout(timer);
+  }, [correctPicked, isLast]);
+
+  // For a wrong choice we only mark that option and let the user choose again.
+  const handleSelect = (optionId: string) => {
+    if (correctPicked || wrongIds.includes(optionId)) {
+      return;
+    }
 
     if (optionId === question.correctId) {
-      setScore((previous) => previous + 1);
+      setCorrectPicked(true);
+
+      if (wrongIds.length === 0) {
+        setScore((previous) => previous + 1);
+      }
+    } else {
+      setWrongIds((previous) => [...previous, optionId]);
     }
-  };
-
-  const handleNext = () => {
-    if (isLast) {
-      cancelSpeech();
-      setFinished(true);
-
-      return;
-    }
-
-    setIndex((previous) => previous + 1);
-    setSelectedId(undefined);
   };
 
   const handleRetry = () => {
     setQuestions(buildLessonListening(course, lesson, locale));
     setIndex(0);
-    setSelectedId(undefined);
+    setWrongIds([]);
+    setCorrectPicked(false);
     setScore(0);
     setFinished(false);
   };
@@ -192,7 +206,7 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
                 {t('course.replay')}
               </Button>
 
-              {answered && (
+              {correctPicked && (
                 <Box sx={{ mt: 1 }}>
                   <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>
                     {question.reveal.jp}
@@ -204,14 +218,15 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
             <Stack spacing={1.5}>
               {question.options.map((option) => {
                 const isCorrectOption = option.id === question.correctId;
-                const showCorrect = answered && isCorrectOption;
-                const showWrong = answered && option.id === selectedId && !isCorrectOption;
+                const showCorrect = correctPicked && isCorrectOption;
+                const showWrong = wrongIds.includes(option.id);
+                const locked = correctPicked || showWrong;
 
                 return (
                   <ChoiceButton
                     key={option.id}
                     onClick={() => handleSelect(option.id)}
-                    dimmed={answered && !showCorrect && !showWrong}
+                    dimmed={locked}
                     state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
                     lang={option.ja ? 'ja' : undefined}
                   >
@@ -220,31 +235,6 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
                 );
               })}
             </Stack>
-
-            <Box sx={{ minHeight: 56 }}>
-              {answered && (
-                <Stack
-                  direction="row"
-                  spacing={1.5}
-                  sx={{ alignItems: 'center', justifyContent: 'space-between' }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontWeight: 600,
-                      color: selectedId === question.correctId ? 'info.main' : pink[500]
-                    }}
-                  >
-                    {selectedId === question.correctId
-                      ? t('course.correct')
-                      : t('course.incorrect')}
-                  </Typography>
-                  <Button variant="contained" onClick={handleNext}>
-                    {isLast ? t('course.seeResults') : t('course.next')}
-                  </Button>
-                </Stack>
-              )}
-            </Box>
           </>
         )}
       </Stack>

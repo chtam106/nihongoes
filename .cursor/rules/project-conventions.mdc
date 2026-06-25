@@ -46,7 +46,6 @@ alwaysApply: true
 ## i18n
 - UI chrome text lives in `src/i18n/translations.ts` as nested keys; both `en` and `vi` MUST be kept in sync. Read via `const { t, locale } = useTranslation()`.
 - Bilingual CONTENT data (Japanese + meanings) is stored in data files as `Record<Locale, string>` (type `Bilingual`) and rendered with `value[locale]`, not as translation keys.
-- Quiz answer feedback labels should use the exact English words `Correct` and `Incorrect` (keep these two labels in English for both locales).
 - The header should not show brand logo or slogan; keep only the text brand link in the app bar. The site footer text stays in ENGLISH regardless of locale.
 - On desktop (`md` and up), align the text brand (`Langwish`) with the main content text column (same left gutter alignment), not visual center of the viewport.
 
@@ -59,6 +58,7 @@ alwaysApply: true
 - Anywhere Japanese text is shown, add `<SpeakButton text={...} />` (`src/components/speak-button/index.tsx`). Pass kana for single words, full sentence for examples. Do NOT add it to quiz answer options (would leak the answer) or to grammar patterns containing `N` placeholders.
 - Do not make audio interaction icon-only. Wherever practical, make the related Japanese text/surface itself clickable (and keyboard-accessible with Enter/Space) so users do not need to tap precisely on the speaker icon.
 - Default voice: prefer the macOS "O-ren" voice when no user choice is stored (`getDefaultJapaneseVoice` in `src/utils/speech.ts`, matches name containing `o-ren`, else first Japanese voice). Only display/play it — do NOT pin it to localStorage so the default stays adaptive per device.
+- When a kana's spoken reading differs from its glyph (particles は=wa, へ=e, を=o), set `speech` on the `VocabItem` (e.g. `speech: 'わ'`) so TTS says the particle reading, not the literal kana. The lesson page speaks `item.speech ?? item.kana`. Full sentences need no override (TTS reads particles correctly in context).
 
 ## Surfaces & cards (Material style) — ALWAYS follow
 - Prefer elevation/tonal surfaces over borders. Do NOT use `variant="outlined"` for content cards/papers.
@@ -72,7 +72,9 @@ alwaysApply: true
 
 ## Quiz feedback styling
 - Keep answer feedback colors consistent across course quizzes and alphabet quizzes: correct uses a light blue tone, wrong uses a light pink tone (soft fill + soft border, not saturated green/red).
-- Do not show success/error icons inside answer choice buttons; rely on color and text feedback.
+- Do NOT show a "Correct"/"Incorrect" text label or success/error icons; rely on the choice color feedback only.
+- Quizzes RETRY until correct, then AUTO-ADVANCE: ~900ms after a correct answer the course exercise/listening/reading (and the alphabet quizzes) move to the next question on their own. A wrong answer just marks that attempt (wrong choice tinted pink and locked, or fill-in field turned red) and lets the user try again - do NOT reveal the correct answer and do NOT show a Next button on a wrong attempt. Provide a separate "Show answer" toggle (reuse `exercise.showAnswer`/`exercise.hideAnswer`, grid-overlay style so it never shifts layout) for fill-in questions instead. Score a question as correct only when it is solved on the first attempt.
+- Implement the auto-advance delay with a `setTimeout` inside a `useEffect` (set state in the timer callback, never directly in the effect body).
 
 ## Hints / annotations
 - Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="error.main"` (red) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
@@ -89,6 +91,9 @@ alwaysApply: true
 
 ## Component props typing
 - ALWAYS declare props as a named `type <ComponentName>Props = { ... }` above the component (above its doc comment, if any) and annotate the param with it (e.g. `function Foo({ a, b }: FooProps)`). NEVER inline an object type in the parameter list - not even a single-prop one-liner like `({ level }: { level: CourseLevel })`. For generics use `type FooProps<T> = { ... }` + `function Foo<T>({ ... }: FooProps<T>)`.
+
+## Buttons / icon hit areas
+- NEVER stretch an `IconButton` (or any round button) with `top: 0; bottom: 0` / `height: 100%` or otherwise give it an unequal width vs height - its hover/ripple background turns into an oval. Keep a square footprint and center it instead, e.g. absolutely positioned use `top: '50%'` + `transform: 'translateY(-50%)'` (not `top:0; bottom:0; my:'auto'`).
 
 ## MUI icons
 - Import by exact file name (often the `Outlined` suffix, e.g. `CheckCircleOutlined` not `CheckCircleOutline`). If unsure, check `node_modules/@mui/icons-material/`.

@@ -101,17 +101,16 @@ describe('character mode (see romaji, pick kana)', () => {
     expect(chars).not.toContain('じ');
   });
 
-  it('all scripts: homophones pair with their exact counterpart (ぢ↔ヂ, not ジ)', () => {
+  it('all scripts: each question has exactly one correct kana and no same-reading rival', () => {
     const questions = drawAll('all', 'character', 'dakuten');
-    const djiHira = questions.find((q) => q.correctItem.char === 'ぢ')!;
 
-    expect(djiHira.correctAnswers).toEqual(expect.arrayContaining(['ぢ', 'ヂ']));
-    expect(djiHira.correctAnswers).not.toContain('ジ');
-
-    const chars = djiHira.optionItems.map((item) => item.char);
-    expect(chars).toEqual(expect.arrayContaining(['ぢ', 'ヂ']));
-    expect(chars).not.toContain('じ');
-    expect(chars).not.toContain('ジ');
+    for (const question of questions) {
+      expect(question.correctAnswers).toEqual([question.correctItem.char]);
+      const sameReading = question.optionItems.filter(
+        (item) => item.romaji === question.correctItem.romaji
+      );
+      expect(sameReading).toHaveLength(1);
+    }
   });
 });
 

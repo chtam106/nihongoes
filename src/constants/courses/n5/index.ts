@@ -27,6 +27,227 @@ export const n5Course: Course = {
       id: 'lesson-1',
       number: 1,
       title: {
+        en: 'Core Particles Round-up',
+        vi: 'Tổng hợp trợ từ cốt lõi'
+      },
+      focus: {
+        en: 'Meet the particles that hold sentences together and learn which one to pick: は, が, を, に, で, へ, と, も, の, から, まで.',
+        vi: 'Làm quen với các trợ từ giúp ghép câu và biết chọn cái nào: は, が, を, に, で, へ, と, も, の, から, まで.'
+      },
+      vocab: [
+        {
+          kana: 'は',
+          romaji: 'wa',
+          speech: 'わ',
+          meaning: { en: 'topic marker', vi: 'trợ từ chủ đề' }
+        },
+        { kana: 'が', romaji: 'ga', meaning: { en: 'subject marker', vi: 'trợ từ chủ ngữ' } },
+        {
+          kana: 'を',
+          romaji: 'o',
+          speech: 'お',
+          meaning: { en: 'object marker', vi: 'trợ từ tân ngữ' }
+        },
+        {
+          kana: 'に',
+          romaji: 'ni',
+          meaning: { en: 'at, to (time / destination)', vi: 'vào, đến (thời gian / đích)' }
+        },
+        {
+          kana: 'で',
+          romaji: 'de',
+          meaning: {
+            en: 'at, by (place of action / means)',
+            vi: 'ở, bằng (nơi diễn ra / phương tiện)'
+          }
+        },
+        {
+          kana: 'へ',
+          romaji: 'e',
+          speech: 'え',
+          meaning: { en: 'to (direction)', vi: 'đến (hướng)' }
+        },
+        { kana: 'と', romaji: 'to', meaning: { en: 'and, with', vi: 'và, với' } },
+        { kana: 'も', romaji: 'mo', meaning: { en: 'also, too', vi: 'cũng' } },
+        { kana: 'の', romaji: 'no', meaning: { en: "of, 's (linking)", vi: 'của (nối danh từ)' } },
+        { kana: 'から', romaji: 'kara', meaning: { en: 'from; because', vi: 'từ; vì' } },
+        { kana: 'まで', romaji: 'made', meaning: { en: 'until, up to', vi: 'đến, cho đến' } }
+      ],
+      grammar: [
+        {
+          pattern: 'N は ... / N が ...',
+          title: { en: 'Topic は vs subject が', vi: 'Chủ đề は và chủ ngữ が' },
+          explanation: {
+            en: 'は marks the topic (known or contrasted information); が marks the subject, often new information or the answer to a "who/what" question. Question words like だれ/なに take が.',
+            vi: 'は đánh dấu chủ đề (thông tin đã biết hoặc tương phản); が đánh dấu chủ ngữ, thường là thông tin mới hoặc câu trả lời cho câu hỏi "ai/cái gì". Từ để hỏi như だれ/なに dùng が.'
+          },
+          examples: [
+            {
+              jp: 'わたしは コーヒーが すきです。',
+              romaji: 'Watashi wa kōhī ga suki desu.',
+              meaning: { en: 'I like coffee.', vi: 'Tôi thích cà phê.' }
+            },
+            {
+              jp: 'だれが きましたか。',
+              romaji: 'Dare ga kimashita ka.',
+              meaning: { en: 'Who came?', vi: 'Ai đã đến?' }
+            }
+          ]
+        },
+        {
+          pattern: 'N を V / じかん に V',
+          title: { en: 'Object を and time/target に', vi: 'Tân ngữ を và thời gian/đích に' },
+          explanation: {
+            en: 'を marks the direct object of an action; に marks a specific time, a destination, or where something exists.',
+            vi: 'を đánh dấu tân ngữ trực tiếp của hành động; に đánh dấu thời điểm cụ thể, điểm đến, hoặc nơi tồn tại.'
+          },
+          examples: [
+            {
+              jp: 'ごはんを たべます。',
+              romaji: 'Gohan o tabemasu.',
+              meaning: { en: 'I eat rice.', vi: 'Tôi ăn cơm.' }
+            },
+            {
+              jp: 'しちじに がっこうへ いきます。',
+              romaji: 'Shichi-ji ni gakkō e ikimasu.',
+              meaning: { en: 'I go to school at 7.', vi: 'Tôi đi học lúc 7 giờ.' }
+            }
+          ]
+        },
+        {
+          pattern: 'ばしょ で V / ばしょ へ V',
+          title: {
+            en: 'Place/means で and direction へ',
+            vi: 'Nơi chốn/phương tiện で và hướng へ'
+          },
+          explanation: {
+            en: 'で marks where an action happens or the means used; へ (read "e") marks the direction of movement and overlaps with destination に.',
+            vi: 'で đánh dấu nơi diễn ra hành động hoặc phương tiện; へ (đọc là "e") đánh dấu hướng di chuyển và có thể thay cho に chỉ đích.'
+          },
+          examples: [
+            {
+              jp: 'としょかんで べんきょうします。',
+              romaji: 'Toshokan de benkyō shimasu.',
+              meaning: { en: 'I study at the library.', vi: 'Tôi học ở thư viện.' }
+            },
+            {
+              jp: 'でんしゃで いえへ かえります。',
+              romaji: 'Densha de ie e kaerimasu.',
+              meaning: { en: 'I go home by train.', vi: 'Tôi về nhà bằng tàu điện.' }
+            }
+          ]
+        },
+        {
+          pattern: 'N と N / N も / N の N',
+          title: {
+            en: 'と (and/with), も (also), の (of)',
+            vi: 'と (và/với), も (cũng), の (của)'
+          },
+          explanation: {
+            en: 'と links nouns ("and") or marks a companion ("with"); も replaces は/が to mean "also"; の connects two nouns to show possession or type.',
+            vi: 'と nối danh từ ("và") hoặc đánh dấu người cùng làm ("với"); も thay は/が để nói "cũng"; の nối hai danh từ chỉ sở hữu hoặc loại.'
+          },
+          examples: [
+            {
+              jp: 'ともだちと えいがを みます。',
+              romaji: 'Tomodachi to eiga o mimasu.',
+              meaning: { en: 'I watch a movie with a friend.', vi: 'Tôi xem phim với bạn.' }
+            },
+            {
+              jp: 'わたしも がくせいです。',
+              romaji: 'Watashi mo gakusei desu.',
+              meaning: { en: 'I am a student too.', vi: 'Tôi cũng là học sinh.' }
+            },
+            {
+              jp: 'これは わたしの ほんです。',
+              romaji: 'Kore wa watashi no hon desu.',
+              meaning: { en: 'This is my book.', vi: 'Đây là sách của tôi.' }
+            }
+          ]
+        },
+        {
+          pattern: 'N から N まで',
+          title: { en: 'from から / until まで', vi: 'từ から / đến まで' },
+          explanation: {
+            en: 'から marks a start point and まで an end point, for both time and place. After a clause, から also means "because".',
+            vi: 'から đánh dấu điểm bắt đầu và まで điểm kết thúc, dùng cho cả thời gian và nơi chốn. Sau một mệnh đề, から còn nghĩa là "vì".'
+          },
+          examples: [
+            {
+              jp: 'くじから ごじまで はたらきます。',
+              romaji: 'Ku-ji kara go-ji made hatarakimasu.',
+              meaning: { en: 'I work from 9 to 5.', vi: 'Tôi làm việc từ 9 giờ đến 5 giờ.' }
+            },
+            {
+              jp: 'えきから いえまで あるきます。',
+              romaji: 'Eki kara ie made arukimasu.',
+              meaning: { en: 'I walk from the station to home.', vi: 'Tôi đi bộ từ ga về nhà.' }
+            }
+          ]
+        }
+      ],
+      reading: [
+        {
+          id: 'reading-1',
+          title: { en: 'Sunday with friends', vi: 'Chủ nhật cùng bạn bè' },
+          lines: [
+            {
+              jp: 'にちようびに ともだちと こうえんへ いきました。',
+              romaji: 'Nichiyōbi ni tomodachi to kōen e ikimashita.',
+              meaning: {
+                en: 'On Sunday I went to the park with a friend.',
+                vi: 'Chủ nhật tôi đã đi công viên với bạn.'
+              }
+            },
+            {
+              jp: 'こうえんで サッカーを しました。',
+              romaji: 'Kōen de sakkā o shimashita.',
+              meaning: {
+                en: 'At the park we played soccer.',
+                vi: 'Ở công viên chúng tôi đã chơi bóng đá.'
+              }
+            },
+            {
+              jp: 'それから、えきの レストランで ひるごはんを たべました。',
+              romaji: 'Sorekara, eki no resutoran de hirugohan o tabemashita.',
+              meaning: {
+                en: 'After that, we ate lunch at the restaurant in the station.',
+                vi: 'Sau đó, chúng tôi ăn trưa ở nhà hàng trong ga.'
+              }
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: { en: 'Who did the writer go with?', vi: 'Người viết đã đi với ai?' },
+              choices: [
+                { id: 'a', label: { en: 'Alone', vi: 'Một mình' } },
+                { id: 'b', label: { en: 'A friend', vi: 'Một người bạn' } },
+                { id: 'c', label: { en: 'A teacher', vi: 'Một giáo viên' } }
+              ],
+              correctId: 'b'
+            },
+            {
+              id: 'q2',
+              question: { en: 'Where did they eat lunch?', vi: 'Họ đã ăn trưa ở đâu?' },
+              choices: [
+                { id: 'a', label: { en: 'At the park', vi: 'Ở công viên' } },
+                { id: 'b', label: { en: 'At home', vi: 'Ở nhà' } },
+                {
+                  id: 'c',
+                  label: { en: 'At a restaurant in the station', vi: 'Ở nhà hàng trong ga' }
+                }
+              ],
+              correctId: 'c'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'lesson-2',
+      number: 2,
+      title: {
         en: 'Greetings & Self-introduction',
         vi: 'Chào hỏi & Giới thiệu bản thân'
       },
@@ -224,8 +445,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-2',
-      number: 2,
+      id: 'lesson-3',
+      number: 3,
       title: {
         en: 'This, That & Everyday Things',
         vi: 'Cái này, cái kia & Đồ vật hằng ngày'
@@ -410,8 +631,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-3',
-      number: 3,
+      id: 'lesson-4',
+      number: 4,
       title: {
         en: 'Places & Existence',
         vi: 'Địa điểm & Sự tồn tại'
@@ -566,8 +787,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-4',
-      number: 4,
+      id: 'lesson-5',
+      number: 5,
       title: {
         en: 'Numbers, Time & Prices',
         vi: 'Số đếm, Thời gian & Giá tiền'
@@ -738,8 +959,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-5',
-      number: 5,
+      id: 'lesson-6',
+      number: 6,
       title: {
         en: 'Verbs in the Polite Form',
         vi: 'Động từ thể lịch sự (ます)'
@@ -932,8 +1153,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-6',
-      number: 6,
+      id: 'lesson-7',
+      number: 7,
       title: {
         en: 'Movement & Means',
         vi: 'Di chuyển & Phương tiện'
@@ -1131,8 +1352,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-7',
-      number: 7,
+      id: 'lesson-8',
+      number: 8,
       title: {
         en: 'Describing with Adjectives',
         vi: 'Miêu tả với Tính từ'
@@ -1319,8 +1540,8 @@ export const n5Course: Course = {
       ]
     },
     {
-      id: 'lesson-8',
-      number: 8,
+      id: 'lesson-9',
+      number: 9,
       title: {
         en: 'Likes, Skills & Reasons',
         vi: 'Sở thích, Khả năng & Lý do'

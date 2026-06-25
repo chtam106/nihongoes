@@ -166,6 +166,7 @@ function getQuestionLabel(
 ) {
   switch (mode) {
     case 'romaji':
+    case 'kana-romaji':
       return t('exercise.questionRomaji', { script: scriptLabel });
     case 'character':
       return t('exercise.questionCharacter', { script: scriptLabel });
@@ -209,7 +210,7 @@ export function ExerciseQuizPanel({
           justifyContent: 'center'
         }}
       >
-        {mode === 'romaji' && (
+        {(mode === 'romaji' || mode === 'kana-romaji') && (
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
               <Box
@@ -240,9 +241,8 @@ export function ExerciseQuizPanel({
                   color: 'text.secondary',
                   position: 'absolute',
                   right: '100%',
-                  top: 0,
-                  bottom: 0,
-                  my: 'auto',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
                   mr: 0.5
                 }}
               >

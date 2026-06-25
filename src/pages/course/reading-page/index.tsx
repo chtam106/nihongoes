@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
@@ -12,7 +12,6 @@ import {
   Stack,
   Typography
 } from '@mui/material';
-import { pink } from '@mui/material/colors';
 import {
   getLesson,
   lessonPath,
@@ -132,42 +131,57 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     }))
   );
   const [index, setIndex] = useState(0);
-  const [selectedId, setSelectedId] = useState<string | undefined>(undefined);
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
   const total = questions.length;
   const question = questions[index];
   const isLast = index === total - 1;
-  const answered = selectedId !== undefined;
 
-  const handleSelect = (choiceId: string) => {
-    if (answered) {
+  // Auto-advance shortly after a correct answer; wrong answers let you retry.
+  useEffect(() => {
+    if (!correctPicked) {
       return;
     }
 
-    setSelectedId(choiceId);
+    const timer = window.setTimeout(() => {
+      if (isLast) {
+        setFinished(true);
+        return;
+      }
+
+      setIndex((previous) => previous + 1);
+      setWrongIds([]);
+      setCorrectPicked(false);
+    }, 900);
+
+    return () => window.clearTimeout(timer);
+  }, [correctPicked, isLast]);
+
+  // For a wrong choice we only mark that option and let the user choose again.
+  const handleSelect = (choiceId: string) => {
+    if (correctPicked || wrongIds.includes(choiceId)) {
+      return;
+    }
 
     if (choiceId === question.correctId) {
-      setScore((previous) => previous + 1);
+      setCorrectPicked(true);
+
+      if (wrongIds.length === 0) {
+        setScore((previous) => previous + 1);
+      }
+    } else {
+      setWrongIds((previous) => [...previous, choiceId]);
     }
-  };
-
-  const handleNext = () => {
-    if (isLast) {
-      setFinished(true);
-
-      return;
-    }
-
-    setIndex((previous) => previous + 1);
-    setSelectedId(undefined);
   };
 
   const handleRetry = () => {
     setQuestions(passage.questions.map((item) => ({ ...item, choices: shuffle(item.choices) })));
     setIndex(0);
-    setSelectedId(undefined);
+    setWrongIds([]);
+    setCorrectPicked(false);
     setScore(0);
     setFinished(false);
   };
@@ -243,14 +257,15 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
             <Stack spacing={1.5}>
               {question.choices.map((choice) => {
                 const isCorrectChoice = choice.id === question.correctId;
-                const showCorrect = answered && isCorrectChoice;
-                const showWrong = answered && choice.id === selectedId && !isCorrectChoice;
+                const showCorrect = correctPicked && isCorrectChoice;
+                const showWrong = wrongIds.includes(choice.id);
+                const locked = correctPicked || showWrong;
 
                 return (
                   <ChoiceButton
                     key={choice.id}
                     onClick={() => handleSelect(choice.id)}
-                    dimmed={answered && !showCorrect && !showWrong}
+                    dimmed={locked}
                     state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
                   >
                     {choice.label[locale]}
@@ -258,31 +273,6 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
                 );
               })}
             </Stack>
-
-            <Box sx={{ minHeight: 56 }}>
-              {answered && (
-                <Stack
-                  direction="row"
-                  spacing={1.5}
-                  sx={{ alignItems: 'center', justifyContent: 'space-between' }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    sx={{
-                      fontWeight: 600,
-                      color: selectedId === question.correctId ? 'info.main' : pink[500]
-                    }}
-                  >
-                    {selectedId === question.correctId
-                      ? t('course.correct')
-                      : t('course.incorrect')}
-                  </Typography>
-                  <Button variant="contained" onClick={handleNext}>
-                    {isLast ? t('course.seeResults') : t('course.next')}
-                  </Button>
-                </Stack>
-              )}
-            </Box>
           </>
         )}
       </Stack>

@@ -48,6 +48,12 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
             '&:hover': {
               bgcolor: alpha(feedbackMain, 0.2),
               borderColor: alpha(feedbackMain, 0.62)
+            },
+            '&.Mui-disabled': {
+              opacity: 1,
+              color: feedbackText,
+              borderColor: alpha(feedbackMain, 0.45),
+              bgcolor: alpha(feedbackMain, 0.14)
             }
           })
         };
