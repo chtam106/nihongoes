@@ -11,9 +11,11 @@ const en: TranslationTree = {
     scrollTop: 'Back to top'
   },
   errorBoundary: {
-    title: 'Something went wrong',
+    title: 'Oops, something went wrong',
     body: 'An unexpected error occurred. Please reload the page to continue.',
-    reload: 'Reload page'
+    reload: 'Reload page',
+    showDetails: 'Show error details',
+    hideDetails: 'Hide error details'
   },
   audio: {
     settings: 'Audio settings',
