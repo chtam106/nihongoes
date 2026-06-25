@@ -4,8 +4,20 @@ import {
   getOptionValue,
   isQuizAnswerCorrect,
   usesCharacterOptions,
+  type ExerciseMode,
+  type ExerciseScript,
   type QuizQuestion
 } from '@/pages/alphabet/exercise/exercise-quiz.ts';
+
+/** Draw one full pass of the deck (each item exactly once). */
+function drawAll(
+  script: ExerciseScript,
+  mode: ExerciseMode,
+  scope: Parameters<typeof createQuizSession>[2] = 'all'
+): QuizQuestion[] {
+  const session = createQuizSession(script, mode, scope);
+  return Array.from({ length: session.total }, () => session.next());
+}
 
 const sampleQuestion: QuizQuestion = {
   mode: 'romaji',
@@ -59,4 +71,64 @@ describe('createQuizSession', () => {
     // Reshuffles and keeps serving once the deck is exhausted.
     expect(session.next().correctItem).toBeDefined();
   });
+});
+
+describe('romaji mode (see kana, type romaji)', () => {
+  it('accepts exactly the chart romaji, with ぢ=ji and づ=zu', () => {
+    const questions = drawAll('hiragana', 'romaji', 'dakuten');
+    const find = (char: string) => questions.find((q) => q.correctItem.char === char)!;
+
+    expect(find('ぢ').correctAnswers).toEqual(['ji']);
+    expect(find('づ').correctAnswers).toEqual(['zu']);
+    expect(find('じ').correctAnswers).toEqual(['ji']);
+    expect(find('ず').correctAnswers).toEqual(['zu']);
+
+    for (const question of questions) {
+      expect(question.correctAnswers).toEqual([question.correctItem.romaji]);
+    }
+  });
+});
+
+describe('character mode (see romaji, pick kana)', () => {
+  it('single script: the only matching-reading option is the correct kana', () => {
+    const questions = drawAll('hiragana', 'character', 'dakuten');
+    const dji = questions.find((q) => q.correctItem.char === 'ぢ')!;
+
+    expect(dji.correctAnswers).toEqual(['ぢ']);
+    const chars = dji.optionItems.map((item) => item.char);
+    expect(chars).toContain('ぢ');
+    // じ also reads "ji" but must NOT appear as a competing option.
+    expect(chars).not.toContain('じ');
+  });
+
+  it('all scripts: homophones pair with their exact counterpart (ぢ↔ヂ, not ジ)', () => {
+    const questions = drawAll('all', 'character', 'dakuten');
+    const djiHira = questions.find((q) => q.correctItem.char === 'ぢ')!;
+
+    expect(djiHira.correctAnswers).toEqual(expect.arrayContaining(['ぢ', 'ヂ']));
+    expect(djiHira.correctAnswers).not.toContain('ジ');
+
+    const chars = djiHira.optionItems.map((item) => item.char);
+    expect(chars).toEqual(expect.arrayContaining(['ぢ', 'ヂ']));
+    expect(chars).not.toContain('じ');
+    expect(chars).not.toContain('ジ');
+  });
+});
+
+describe('every choice-mode question is answerable', () => {
+  const modes: ExerciseMode[] = ['character', 'listen', 'script-pair'];
+  const scripts: ExerciseScript[] = ['hiragana', 'katakana', 'all'];
+
+  for (const mode of modes) {
+    for (const script of scripts) {
+      it(`includes all accepted answers among the options (${mode}, ${script})`, () => {
+        for (const question of drawAll(script, mode)) {
+          const chars = question.optionItems.map((item) => item.char);
+          for (const answer of question.correctAnswers) {
+            expect(chars).toContain(answer);
+          }
+        }
+      });
+    }
+  }
 });
