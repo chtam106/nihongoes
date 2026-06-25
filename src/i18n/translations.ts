@@ -185,7 +185,8 @@ const en: TranslationTree = {
     sentenceTitle: 'Read the sentence, type the romaji',
     sentenceDescription: 'Read a kana sentence and type its romaji.',
     sentenceHint1: 'Write long vowels as two vowels in a row (no macron needed).',
-    sentenceHint2: 'Particles are read by their sound (は=wa, へ=e, を=o).',
+    sentenceHint2:
+      'Particles are read by their sound (は=wa, へ=e, を=o); typing the literal spelling works too.',
     sentenceHint3: 'You can type with or without spaces between words.',
     sentenceType: 'Sentence type',
     sentenceTypeHiragana: 'All hiragana',

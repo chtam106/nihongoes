@@ -179,7 +179,7 @@ export const viTranslations: TranslationTree = {
     sentenceTitle: 'Đọc câu và gõ phiên âm romaji',
     sentenceDescription: 'Nhìn câu viết bằng kana và gõ phiên âm romaji.',
     sentenceHint1: 'Viết trường âm thành hai nguyên âm liền nhau (không cần dấu gạch trên đầu).',
-    sentenceHint2: 'Trợ từ đọc theo âm thật (は=wa, へ=e, を=o).',
+    sentenceHint2: 'Trợ từ đọc theo âm thật (は=wa, へ=e, を=o); gõ theo mặt chữ cũng được.',
     sentenceHint3: 'Gõ có hay không có dấu cách giữa các từ đều được.',
     sentenceType: 'Loại câu',
     sentenceTypeHiragana: 'Toàn hiragana',
