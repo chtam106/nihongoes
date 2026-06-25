@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   Box,
   Button,
@@ -13,7 +13,6 @@ import {
   Typography
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
-import { pink } from '@mui/material/colors';
 import { HintText } from '@/components/hint-text.tsx';
 import { SpeakButton } from '@/components/speak-button.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -49,6 +48,7 @@ function SentenceQuiz({ type }: { type: SentenceType }) {
 
   const total = order.length;
   const current = order[index];
+  const kanaText = current.replace(/\s+/g, '');
   const { display, accepted } = useMemo(() => transliterateSentence(current), [current]);
   const answerShown = revealed || status === 'correct';
 
@@ -69,17 +69,26 @@ function SentenceQuiz({ type }: { type: SentenceType }) {
     setRevealed((previous) => !previous);
   };
 
-  const handleNext = () => {
-    const nextIndex = index + 1;
-    if (nextIndex >= total) {
-      setCompleted(true);
+  // Auto-advance to the next sentence shortly after a correct answer.
+  useEffect(() => {
+    if (status !== 'correct') {
       return;
     }
-    setIndex(nextIndex);
-    setValue('');
-    setStatus('idle');
-    setRevealed(false);
-  };
+
+    const timer = window.setTimeout(() => {
+      const nextIndex = index + 1;
+      if (nextIndex >= total) {
+        setCompleted(true);
+        return;
+      }
+      setIndex(nextIndex);
+      setValue('');
+      setStatus('idle');
+      setRevealed(false);
+    }, 1000);
+
+    return () => window.clearTimeout(timer);
+  }, [status, index, total]);
 
   const handleRestart = () => {
     setOrder(shuffle(SENTENCES[type]));
@@ -122,7 +131,7 @@ function SentenceQuiz({ type }: { type: SentenceType }) {
       </Stack>
 
       <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 4 }}>
-        <SpeakButton text={current} size="medium" />
+        <SpeakButton text={kanaText} size="medium" />
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography
             component="p"
@@ -130,11 +139,11 @@ function SentenceQuiz({ type }: { type: SentenceType }) {
             role="button"
             tabIndex={0}
             aria-label={t('common.playAudio')}
-            onClick={() => speakJapanese(current)}
+            onClick={() => speakJapanese(kanaText)}
             onKeyDown={(event) => {
               if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
-                speakJapanese(current);
+                speakJapanese(kanaText);
               }
             }}
             sx={{
@@ -150,7 +159,7 @@ function SentenceQuiz({ type }: { type: SentenceType }) {
               }
             }}
           >
-            {current}
+            {kanaText}
           </Typography>
 
           <Box aria-live="polite" sx={{ mt: 1, display: 'grid', justifyItems: 'start' }}>
@@ -238,36 +247,15 @@ function SentenceQuiz({ type }: { type: SentenceType }) {
           />
 
           <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'flex-end' }}>
-            {status !== 'correct' && (
-              <Button type="submit" variant="contained" disabled={value.trim().length === 0}>
-                {t('exercise.check')}
-              </Button>
-            )}
-            {status === 'correct' && (
-              <Button variant="contained" onClick={handleNext}>
-                {t('exercise.sentenceNext')}
-              </Button>
-            )}
+            <Button
+              type="submit"
+              variant="contained"
+              disabled={status === 'correct' || value.trim().length === 0}
+            >
+              {t('exercise.check')}
+            </Button>
           </Stack>
         </Stack>
-      </Box>
-
-      <Box
-        aria-live="polite"
-        sx={{
-          minHeight: 32,
-          mt: 2,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        {status === 'correct' && (
-          <Typography sx={{ fontWeight: 600, color: 'info.dark' }}>Correct</Typography>
-        )}
-        {status === 'wrong' && (
-          <Typography sx={{ fontWeight: 600, color: pink[700] }}>Incorrect</Typography>
-        )}
       </Box>
     </Paper>
   );
@@ -293,7 +281,13 @@ function SentenceExercisePage() {
     <ExercisePageLayout
       title={t('exercise.sentenceTitle')}
       subtitle={t('exercise.sentenceDescription')}
-      note={<HintText>{t('exercise.sentenceHint')}</HintText>}
+      note={
+        <Stack spacing={0.5}>
+          <HintText>{t('exercise.sentenceHint1')}</HintText>
+          <HintText>{t('exercise.sentenceHint2')}</HintText>
+          <HintText>{t('exercise.sentenceHint3')}</HintText>
+        </Stack>
+      }
     >
       <Box sx={{ maxWidth: { xs: '100%', sm: 560 }, mx: 'auto' }}>
         <FormControl fullWidth sx={{ mb: 3 }}>

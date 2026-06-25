@@ -212,12 +212,35 @@ export type SentenceTransliteration = {
   accepted: string[];
 };
 
+function wordToHepburn(word: string): string {
+  // A standalone particle word reads with its spoken sound (は -> wa etc.) so
+  // the shown answer is proper romaji, even though input checking accepts both.
+  const core = word.replace(/[、。！？]/g, '');
+  const particle = PARTICLE_VARIANTS[core];
+  if (particle) {
+    return particle;
+  }
+
+  return canonicalToHepburn(
+    toSyllableUnits(word)
+      .map((unit) => unit[0])
+      .join('')
+  );
+}
+
 export function transliterateSentence(japanese: string): SentenceTransliteration {
+  // Spaces in the source kana mark word boundaries: they are ignored when
+  // building the accepted answers, but drive the spacing of the shown answer.
   const units = toSyllableUnits(japanese);
-  const primaryCanonical = units.map((unit) => unit[0]).join('');
+  const display = japanese
+    .split(/\s+/)
+    .filter((word) => word.length > 0)
+    .map(wordToHepburn)
+    .filter((word) => word.length > 0)
+    .join(' ');
 
   return {
-    display: canonicalToHepburn(primaryCanonical),
+    display,
     accepted: Array.from(new Set(expandAccepted(units)))
   };
 }
