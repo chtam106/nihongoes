@@ -3,7 +3,7 @@ import { Box, Container, Typography } from '@mui/material';
 // The footer copy stays in English regardless of the selected locale.
 const FOOTER_VIBE = 'Designed by CHT, coded with AI.';
 
-export function SiteFooter() {
+export function Footer() {
   const year = new Date().getFullYear();
 
   return (
@@ -28,3 +28,5 @@ export function SiteFooter() {
     </Box>
   );
 }
+
+export default Footer;

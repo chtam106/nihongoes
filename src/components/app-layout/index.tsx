@@ -1,44 +1,21 @@
-import { Suspense, lazy, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
-import MenuIcon from '@mui/icons-material/Menu';
-import {
-  AppBar,
-  Box,
-  Drawer,
-  IconButton,
-  Stack,
-  Toolbar,
-  useMediaQuery,
-  useTheme
-} from '@mui/material';
-import { alpha } from '@mui/material/styles';
-import { Brand } from '@/components/brand';
+import { Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import { ErrorBoundary } from '@/components/error-boundary';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { Menu } from '@/components/menu';
 import { PageMeta } from '@/components/page-meta';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import { SiteFooter } from '@/components/site-footer';
-import { useTranslation } from '@/i18n/use-translation.ts';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
 
 const drawerWidth = 320;
-const AppDrawerContent = lazy(() => import('@/components/app-drawer-content'));
-const AudioSettings = lazy(() =>
-  import('@/components/audio-settings').then((module) => ({ default: module.AudioSettings }))
-);
-const LanguageSwitcher = lazy(() =>
-  import('@/components/language-switcher').then((module) => ({
-    default: module.LanguageSwitcher
-  }))
-);
 
 function AppLayout() {
   const location = useLocation();
   const theme = useTheme();
-  const { t } = useTranslation();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileOpen, setMobileOpen] = useState(false);
-  const shouldRenderDrawerContent = !isMobile || mobileOpen;
 
   useEffect(() => {
     if (location.pathname !== '/') {
@@ -50,93 +27,19 @@ function AppLayout() {
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
       <PageMeta />
 
-      <AppBar
-        position="fixed"
-        elevation={0}
-        sx={{
-          zIndex: (muiTheme) => muiTheme.zIndex.drawer + 1,
-          color: 'text.primary',
-          bgcolor: (muiTheme) => alpha(muiTheme.palette.background.paper, 0.85),
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
-          boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04)'
-        }}
-      >
-        <Toolbar
-          sx={{
-            gap: { xs: 1.5, md: 0 },
-            px: { xs: 2, sm: 4, md: 0 },
-            alignItems: 'center'
-          }}
-        >
-          {isMobile && (
-            <IconButton
-              edge="start"
-              onClick={() => setMobileOpen((previous) => !previous)}
-              aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
-              aria-expanded={mobileOpen}
-            >
-              {mobileOpen && <CloseIcon />}
-              {!mobileOpen && <MenuIcon />}
-            </IconButton>
-          )}
-          {!isMobile && <Box sx={{ width: drawerWidth, flexShrink: 0 }} aria-hidden />}
-          <Box
-            sx={{
-              flexGrow: 1,
-              minWidth: 0,
-              width: '100%',
-              maxWidth: { md: 1200 },
-              mx: { md: 'auto' }
-            }}
-          >
-            <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', px: { md: 6 } }}>
-              <Brand showTagline={false} showLogo={false} />
-              <Box sx={{ flexGrow: 1 }} />
-              <Stack direction="row" spacing={0.5}>
-                <Suspense fallback={<Box sx={{ width: 80, height: 40 }} aria-hidden />}>
-                  <AudioSettings />
-                  <LanguageSwitcher />
-                </Suspense>
-              </Stack>
-            </Stack>
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <Header
+        drawerWidth={drawerWidth}
+        isMobile={isMobile}
+        mobileOpen={mobileOpen}
+        onToggleMobile={() => setMobileOpen((previous) => !previous)}
+      />
 
-      <Box
-        component="nav"
-        aria-label={t('nav.mainNavigation')}
-        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
-      >
-        <Drawer
-          variant={isMobile ? 'temporary' : 'permanent'}
-          open={isMobile ? mobileOpen : true}
-          onClose={() => setMobileOpen(false)}
-          ModalProps={{ keepMounted: true }}
-          sx={{
-            '& .MuiDrawer-paper': {
-              width: drawerWidth,
-              boxSizing: 'border-box',
-              border: 'none',
-              overflow: 'hidden',
-              boxShadow: '1px 0 2px rgba(0, 0, 0, 0.06), 2px 0 8px rgba(0, 0, 0, 0.04)'
-            }
-          }}
-        >
-          {shouldRenderDrawerContent && (
-            <Suspense
-              fallback={
-                <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  <Toolbar />
-                </Box>
-              }
-            >
-              <AppDrawerContent onNavigate={() => setMobileOpen(false)} />
-            </Suspense>
-          )}
-        </Drawer>
-      </Box>
+      <Menu
+        drawerWidth={drawerWidth}
+        isMobile={isMobile}
+        mobileOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+      />
 
       <Box
         component="main"
@@ -152,7 +55,7 @@ function AppLayout() {
         <ErrorBoundary key={location.pathname}>
           <Outlet />
         </ErrorBoundary>
-        <SiteFooter />
+        <Footer />
       </Box>
 
       <ScrollToTopButton />
