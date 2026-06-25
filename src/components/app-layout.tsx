@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand.tsx';
+import { ErrorBoundary } from '@/components/error-boundary.tsx';
 import { PageMeta } from '@/components/page-meta.tsx';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button.tsx';
 import { SiteFooter } from '@/components/site-footer.tsx';
@@ -148,7 +149,9 @@ function AppLayout() {
         }}
       >
         <Toolbar />
-        <Outlet />
+        <ErrorBoundary key={location.pathname}>
+          <Outlet />
+        </ErrorBoundary>
         <SiteFooter />
       </Box>
 

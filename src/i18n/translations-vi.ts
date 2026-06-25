@@ -7,9 +7,11 @@ export const viTranslations: TranslationTree = {
     scrollTop: 'Lên đầu trang'
   },
   errorBoundary: {
-    title: 'Đã có lỗi xảy ra',
+    title: 'Oops, đã có lỗi xảy ra',
     body: 'Ứng dụng gặp lỗi không mong muốn. Hãy tải lại trang để tiếp tục.',
-    reload: 'Tải lại trang'
+    reload: 'Tải lại trang',
+    showDetails: 'Hiện chi tiết lỗi',
+    hideDetails: 'Ẩn chi tiết lỗi'
   },
   audio: {
     settings: 'Cài đặt âm thanh',
