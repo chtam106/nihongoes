@@ -1,6 +1,6 @@
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
@@ -13,7 +13,9 @@ export default defineConfig([
   ...tseslint.configs.recommended,
   reactHooks.configs.flat.recommended,
   reactRefresh.configs.vite,
-  eslintConfigPrettier,
+  // Runs Prettier as an ESLint rule (`prettier/prettier`) and turns off rules
+  // that conflict with Prettier - so formatting issues surface as lint errors.
+  eslintPluginPrettierRecommended,
   {
     files: ['**/*.{ts,tsx}'],
     plugins: {

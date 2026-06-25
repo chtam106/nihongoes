@@ -310,13 +310,7 @@ function pickRandomIndex(length: number, exclude: number) {
 }
 
 /** Show a random romaji prompt and let the user write the kana, then reveal it. */
-function RomajiPromptPractice({
-  script,
-  rowIndex
-}: {
-  script: Script;
-  rowIndex: number | 'all';
-}) {
+function RomajiPromptPractice({ script, rowIndex }: { script: Script; rowIndex: number | 'all' }) {
   const { t } = useTranslation();
   const items = useMemo(() => {
     if (rowIndex === 'all') {
@@ -391,7 +385,12 @@ function RomajiPromptPractice({
         </Box>
       </Stack>
 
-      <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'center', flexWrap: 'wrap' }} useFlexGap>
+      <Stack
+        direction="row"
+        spacing={1.5}
+        sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
+        useFlexGap
+      >
         <Button variant="outlined" onClick={() => setRevealed((previous) => !previous)}>
           {revealed ? t('exercise.writingHideAnswer') : t('exercise.writingReveal')}
         </Button>
@@ -447,10 +446,7 @@ function WritingExercisePage() {
   };
 
   return (
-    <ExercisePageLayout
-      title={t('exercise.writing')}
-      subtitle={t('exercise.writingDescription')}
-    >
+    <ExercisePageLayout title={t('exercise.writing')} subtitle={t('exercise.writingDescription')}>
       <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: 380, md: 420 }, mx: 'auto' }}>
         <Stack spacing={2}>
           <FormControl fullWidth>
@@ -535,9 +531,9 @@ function WritingExercisePage() {
                   useFlexGap
                   sx={{ flex: 1, flexWrap: 'wrap', justifyContent: 'center', minHeight: 80 }}
                 >
-              {cells.map((cell) => (
-                <KanaSample key={`${script}:${cell.char}`} cell={cell} />
-              ))}
+                  {cells.map((cell) => (
+                    <KanaSample key={`${script}:${cell.char}`} cell={cell} />
+                  ))}
                 </Stack>
                 <IconButton
                   aria-label={t('exercise.writingNextRow')}
