@@ -158,6 +158,7 @@ export function PageMeta() {
     const viUrl = buildUrl(logicalPath, 'vi');
     const enUrl = buildUrl(logicalPath, 'en');
     const ogLocale = locale === 'vi' ? 'vi_VN' : 'en_US';
+    const ogImage = `${SITE_URL}/og-image.png?v=20260626`;
 
     document.title = meta.title;
     document.documentElement.lang = locale;
@@ -175,7 +176,12 @@ export function PageMeta() {
     upsertMeta('og:site_name', SITE_NAME, 'property');
     upsertMeta('og:locale', ogLocale, 'property');
     upsertMeta('og:locale:alternate', locale === 'vi' ? 'en_US' : 'vi_VN', 'property');
-    upsertMeta('twitter:card', 'summary');
+    upsertMeta('og:image', ogImage, 'property');
+    upsertMeta('og:image:width', '1200', 'property');
+    upsertMeta('og:image:height', '630', 'property');
+    upsertMeta('og:image:alt', SITE_NAME, 'property');
+    upsertMeta('twitter:card', 'summary_large_image');
+    upsertMeta('twitter:image', ogImage);
     upsertMeta('twitter:title', meta.title);
     upsertMeta('twitter:description', meta.description);
     upsertLink('canonical', canonicalUrl);
