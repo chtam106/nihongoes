@@ -49,6 +49,32 @@ async function run() {
         { timeout: 20000 }
       );
 
+      // In production, Emotion (MUI) injects styles via the CSSOM (insertRule),
+      // so the `<style data-emotion>` tags serialize empty and the prerendered
+      // page would flash unstyled until the JS bundle loads. Serialize the live
+      // rules back into the tags so the static HTML is fully styled on paint.
+      await page.evaluate(() => {
+        for (const style of Array.from(document.querySelectorAll('style'))) {
+          if (style.textContent && style.textContent.length > 0) {
+            continue;
+          }
+
+          const sheet = style.sheet;
+
+          if (!sheet) {
+            continue;
+          }
+
+          try {
+            style.textContent = Array.from(sheet.cssRules)
+              .map((rule) => rule.cssText)
+              .join('');
+          } catch {
+            // Inaccessible (e.g. cross-origin) stylesheet - skip.
+          }
+        }
+      });
+
       const html = await page.content();
       const file = outputFile(target);
       mkdirSync(dirname(file), { recursive: true });
