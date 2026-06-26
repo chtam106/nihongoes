@@ -29,7 +29,8 @@ export function GrammarPointCard({ point }: GrammarPointCardProps) {
             py: 0.75,
             borderRadius: 2,
             bgcolor: alpha(theme.palette.error.main, theme.palette.mode === 'light' ? 0.12 : 0.24),
-            color: theme.palette.mode === 'light' ? theme.palette.error.dark : theme.palette.error.light,
+            color:
+              theme.palette.mode === 'light' ? theme.palette.error.dark : theme.palette.error.light,
             fontWeight: 700,
             fontSize: '1.05rem',
             lineHeight: 1.5
