@@ -32,7 +32,7 @@ export function Menu({ drawerWidth, isMobile, mobileOpen, onClose }: MenuProps) 
             boxSizing: 'border-box',
             border: 'none',
             overflow: 'hidden',
-            boxShadow: '1px 0 2px rgba(0, 0, 0, 0.06), 2px 0 8px rgba(0, 0, 0, 0.04)'
+            boxShadow: '1px 0 2px rgba(0, 0, 0, 0.035), 2px 0 8px rgba(0, 0, 0, 0.025)'
           }
         }}
       >
