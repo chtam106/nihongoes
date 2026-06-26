@@ -19,6 +19,7 @@ import { playKanaAudio } from '@/utils/kana-audio.ts';
 import { KanaDisplay } from '@/components/kana-display';
 import { PageContainer } from '@/components/page-container';
 import { SpeakButton } from '@/components/speak-button';
+import { SpeakableSurface } from '@/components/speakable-surface';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { CellButton, ChartBlock, GojuonGrid } from '@/pages/alphabet/gojuon-grid.tsx';
 import {
@@ -212,10 +213,10 @@ export function AlphabetChartPage({
               }}
             >
               {chouonExamples.map((example) => (
-                <Paper
+                <SpeakableSurface
                   key={example.jp}
-                  elevation={0}
-                  sx={[elevatedSurfaceSx, { p: 1.5, display: 'flex', gap: 0.5 }]}
+                  text={example.jp}
+                  sx={{ p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' }}
                 >
                   <SpeakButton text={example.jp} />
                   <Box sx={{ minWidth: 0 }}>
@@ -234,7 +235,7 @@ export function AlphabetChartPage({
                       {example.meaning[locale]}
                     </Typography>
                   </Box>
-                </Paper>
+                </SpeakableSurface>
               ))}
             </Box>
           )}
