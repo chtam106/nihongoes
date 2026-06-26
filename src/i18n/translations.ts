@@ -240,7 +240,7 @@ const en: TranslationTree = {
     scopeHandakuten: 'Handakuten ({{mark}})',
     scopeYoon: 'Yoon',
     scopeLegend:
-      'Scope: Seion = the 46 basic kana; Dakuten/Handakuten = voiced-sound marks ({{dakuten}}/{{handakuten}}); Yoon = small ゃ/ゅ/ょ blends.',
+      'Scope: Seion = the 46 basic kana; Dakuten ({{dakuten}}, the "tenten") and Handakuten ({{handakuten}}, the "maru" circle) = voiced-sound marks; Yoon = small ゃ/ゅ/ょ blends.',
     groupSeionRows: 'Seion rows',
     groupYoonRows: 'Yoon rows',
     rowDefault: 'Row',

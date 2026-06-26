@@ -233,7 +233,7 @@ export const viTranslations: TranslationTree = {
     scopeHandakuten: 'Handakuten ({{mark}})',
     scopeYoon: 'Yoon',
     scopeLegend:
-      'Phạm vi: Seion = 46 kana cơ bản; Dakuten/Handakuten = dấu hữu thanh ({{dakuten}}/{{handakuten}}); Yoon = âm ghép với ゃ/ゅ/ょ nhỏ.',
+      'Phạm vi: Seion = 46 kana cơ bản; Dakuten ({{dakuten}}, hay gọi là "tenten") và Handakuten ({{handakuten}}, dấu tròn "maru") = dấu hữu thanh; Yoon = âm ghép với ゃ/ゅ/ょ nhỏ.',
     groupSeionRows: 'Hàng seion',
     groupYoonRows: 'Hàng yoon',
     rowDefault: 'Hàng',
