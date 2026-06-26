@@ -97,6 +97,7 @@ alwaysApply: true
 
 ## Buttons / icon hit areas
 - NEVER stretch an `IconButton` (or any round button) with `top: 0; bottom: 0` / `height: 100%` or otherwise give it an unequal width vs height - its hover/ripple background turns into an oval. Keep a square footprint and center it instead, e.g. absolutely positioned use `top: '50%'` + `transform: 'translateY(-50%)'` (not `top:0; bottom:0; my:'auto'`).
+- COMMON GOTCHA: when an `IconButton`/`SpeakButton` sits as a child of a `display: flex` row (e.g. a `SpeakableSurface` card with icon + text block), the default `align-items: stretch` stretches the button to the row's full height -> oval hover. ALWAYS set `alignItems: 'flex-start'` (or `'center'`) on that flex container, or `alignSelf` on the button. Mirror the lesson vocab card: `sx={{ p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' }}`.
 
 ## MUI icons
 - Import by exact file name (often the `Outlined` suffix, e.g. `CheckCircleOutlined` not `CheckCircleOutline`). If unsure, check `node_modules/@mui/icons-material/`.
