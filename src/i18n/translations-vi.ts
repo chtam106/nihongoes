@@ -38,7 +38,7 @@ export const viTranslations: TranslationTree = {
       hiragana: {
         title: 'Bảng Hiragana & Luyện tập (ひらがな)',
         description:
-          'Học hiragana qua bảng tương tác gồm seion, dakuten, handakuten và yoon. Nhấn để nghe phát âm chuẩn.'
+          'Học hiragana qua bảng tương tác gồm seion, tenten, maru và yoon. Nhấn để nghe phát âm chuẩn.'
       },
       katakana: {
         title: 'Bảng Katakana & Luyện tập (カタカナ)',
@@ -136,7 +136,7 @@ export const viTranslations: TranslationTree = {
     combinedDescription: 'Xem hiragana và katakana cạnh nhau trong cùng một bảng',
     exerciseDescription: 'Luyện hiragana và katakana',
     hiraganaPageDescription:
-      'Hiragana là nền tảng của chữ viết tiếng Nhật. 46 âm cơ bản (seion) dùng để viết trợ từ ngữ pháp, đuôi động từ và tính từ, cùng các từ thuần Nhật. Dấu hữu thanh (dakuten và handakuten) và âm ghép yoon với ゃ/ゅ/ょ nhỏ mở rộng bộ này để bao trùm mọi âm tiếng Nhật.',
+      'Hiragana là nền tảng của chữ viết tiếng Nhật. 46 âm cơ bản (seion) dùng để viết trợ từ ngữ pháp, đuôi động từ và tính từ, cùng các từ thuần Nhật. Dấu hữu thanh (tenten và maru) và âm ghép yoon với ゃ/ゅ/ょ nhỏ mở rộng bộ này để bao trùm mọi âm tiếng Nhật.',
     katakanaPageDescription:
       'Katakana có đúng các âm như hiragana nhưng nét vuông và sắc hơn. Nó dùng cho từ ngoại lai, tên nước ngoài, từ tượng thanh, thuật ngữ khoa học và những từ cần nhấn mạnh. Học cùng hiragana giúp bạn đọc được biển hiệu, thực đơn và tên sản phẩm.',
     combinedPageDescription:
@@ -145,9 +145,9 @@ export const viTranslations: TranslationTree = {
   },
   chart: {
     seion: 'Seion',
-    voiced: 'Dakuten / Handakuten ({{dakuten}} / {{handakuten}})',
+    voiced: 'Tenten / Maru ({{dakuten}} / {{handakuten}})',
     voicedDescription:
-      'Thêm dấu dakuten ({{dakuten}}) để hữu thanh hóa: k→g, s→z, t→d, h→b. Dấu handakuten ({{handakuten}}) biến h→p. Ví dụ: {{base}} ({{baseRomaji}}) + {{dakuten}} = {{voiced}} ({{voicedRomaji}}).',
+      'Thêm dấu tenten ({{dakuten}}) để hữu thanh hóa: k→g, s→z, t→d, h→b. Dấu maru ({{handakuten}}) biến h→p. Ví dụ: {{base}} ({{baseRomaji}}) + {{dakuten}} = {{voiced}} ({{voicedRomaji}}).',
     yoon: 'Yoon',
     yoonDescription:
       'Âm ghép với {{small1}}, {{small2}}, {{small3}} nhỏ - ví dụ: {{base}} + {{small1}} = {{result}} ({{romaji}}).',
