@@ -33,7 +33,8 @@ const Stroke = styled('path', {
 
 type KanaStrokeOrderProps = {
   char: string;
-  size?: number;
+  /** CSS width/height; accepts a responsive object (e.g. `{ xs: 40, sm: 48 }`). */
+  size?: number | { xs?: number; sm?: number; md?: number };
   ariaLabel?: string;
 };
 

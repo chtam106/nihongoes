@@ -291,8 +291,10 @@ function KanaSample({ cell }: KanaSampleProps) {
   const { t } = useTranslation();
 
   return (
-    <Stack spacing={0.5} sx={{ alignItems: 'center', width: { xs: 56, sm: 64 } }}>
-      {Boolean(kanaStrokes[cell.char]) && <KanaStrokeOrder char={cell.char} size={48} />}
+    <Stack spacing={0.5} sx={{ alignItems: 'center', width: { xs: 46, sm: 54 } }}>
+      {Boolean(kanaStrokes[cell.char]) && (
+        <KanaStrokeOrder char={cell.char} size={{ xs: 40, sm: 44 }} />
+      )}
       {!kanaStrokes[cell.char] && (
         <Box
           role="button"
@@ -306,8 +308,8 @@ function KanaSample({ cell }: KanaSampleProps) {
             }
           }}
           sx={{
-            width: { xs: 40, sm: 48 },
-            height: { xs: 40, sm: 48 },
+            width: { xs: 36, sm: 44 },
+            height: { xs: 36, sm: 44 },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -326,7 +328,7 @@ function KanaSample({ cell }: KanaSampleProps) {
       <Typography
         lang="ja"
         component="span"
-        sx={{ fontWeight: 600, lineHeight: 1, fontSize: '1.9rem' }}
+        sx={{ fontWeight: 600, lineHeight: 1, fontSize: { xs: '1.35rem', sm: '1.6rem' } }}
       >
         {cell.char}
       </Typography>
@@ -599,7 +601,7 @@ function WritingExercisePage() {
                 </IconButton>
                 <Stack
                   direction="row"
-                  spacing={{ xs: 0.5, sm: 1 }}
+                  spacing={{ xs: 0.25, sm: 0.5 }}
                   useFlexGap
                   sx={{ flex: 1, flexWrap: 'wrap', justifyContent: 'center', minHeight: 84 }}
                 >
