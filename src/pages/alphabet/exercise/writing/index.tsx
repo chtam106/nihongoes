@@ -11,6 +11,7 @@ import {
   Typography
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
+import { alpha } from '@mui/material/styles';
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -231,7 +232,8 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
           alignItems: 'center',
           px: 1,
           py: 0.5,
-          bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.100' : 'action.selected')
+          bgcolor: (theme) =>
+            alpha(theme.palette.primary.main, theme.palette.mode === 'light' ? 0.08 : 0.2)
         }}
       >
         <IconButton
