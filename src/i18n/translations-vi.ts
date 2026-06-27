@@ -191,6 +191,8 @@ export const viTranslations: TranslationTree = {
     writingHideAnswer: 'Ẩn đáp án',
     writingNext: 'Chữ khác',
     strokeOrderTitle: 'Thứ tự nét',
+    strokeOrderPrevious: 'Chữ trước',
+    strokeOrderNext: 'Chữ sau',
     strokeOrderReplay: 'Chạm vào chữ để xem lại thứ tự nét.',
     strokeOrderUnavailable: 'Chữ này chưa có dữ liệu thứ tự nét.',
     strokeOrderNote:

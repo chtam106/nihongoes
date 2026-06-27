@@ -1,5 +1,7 @@
-import { Dialog, DialogContent, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Dialog, DialogContent, IconButton, Stack, Typography } from '@mui/material';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import type { AlphabetCell } from '@/constants/alphabet-charts.ts';
 import { kanaStrokes } from '@/constants/kana-strokes.ts';
 import { KanaStrokeOrder } from '@/components/kana-stroke-order';
@@ -12,15 +14,39 @@ type StrokeOrderDialogProps = {
   cell: AlphabetCell | null;
   open: boolean;
   onClose: () => void;
+  /** Sibling cells (e.g. the current row) enabling in-modal prev/next navigation. */
+  cells?: AlphabetCell[];
+  /** Called to navigate to another cell in `cells`. */
+  onSelectCell?: (cell: AlphabetCell) => void;
 };
 
 /**
  * Shows a kana's animated stroke order in a modal. Tapping the glyph replays the
  * animation; falls back to the static glyph when the character has no stroke data.
+ * When `cells` + `onSelectCell` are provided, arrows step through the siblings.
  */
-export function StrokeOrderDialog({ cell, open, onClose }: StrokeOrderDialogProps) {
+export function StrokeOrderDialog({
+  cell,
+  open,
+  onClose,
+  cells,
+  onSelectCell
+}: StrokeOrderDialogProps) {
   const { t } = useTranslation();
   const hasStrokes = cell ? Boolean(kanaStrokes[cell.char]) : false;
+
+  const currentIndex = cell && cells ? cells.findIndex((item) => item.char === cell.char) : -1;
+  const canNavigate = Boolean(onSelectCell) && currentIndex !== -1 && (cells?.length ?? 0) > 1;
+  const goToPrevious = () => {
+    if (cells && currentIndex > 0) {
+      onSelectCell?.(cells[currentIndex - 1]);
+    }
+  };
+  const goToNext = () => {
+    if (cells && currentIndex !== -1 && currentIndex < cells.length - 1) {
+      onSelectCell?.(cells[currentIndex + 1]);
+    }
+  };
 
   return (
     <Dialog open={open} onClose={onClose} maxWidth="xs" fullWidth>
@@ -41,17 +67,45 @@ export function StrokeOrderDialog({ cell, open, onClose }: StrokeOrderDialogProp
             </Typography>
           </Stack>
 
-          {cell && hasStrokes && (
-            <KanaStrokeOrder char={cell.char} size={{ xs: 200, sm: 240 }} ariaLabel={cell.romaji} />
-          )}
-          {cell && !hasStrokes && (
-            <Stack spacing={1} sx={{ alignItems: 'center', py: 2 }}>
-              <KanaDisplay cell={cell} variant="prompt" />
-              <HintText sx={{ justifyContent: 'center' }}>
-                {t('exercise.strokeOrderUnavailable')}
-              </HintText>
-            </Stack>
-          )}
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', width: '100%' }}>
+            {canNavigate && (
+              <IconButton
+                aria-label={t('exercise.strokeOrderPrevious')}
+                onClick={goToPrevious}
+                sx={{ visibility: currentIndex <= 0 ? 'hidden' : 'visible' }}
+              >
+                <ChevronLeftIcon sx={{ fontSize: 30 }} />
+              </IconButton>
+            )}
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+              {cell && hasStrokes && (
+                <KanaStrokeOrder
+                  char={cell.char}
+                  size={{ xs: 200, sm: 240 }}
+                  ariaLabel={cell.romaji}
+                />
+              )}
+              {cell && !hasStrokes && (
+                <Stack spacing={1} sx={{ alignItems: 'center', py: 2 }}>
+                  <KanaDisplay cell={cell} variant="prompt" />
+                  <HintText sx={{ justifyContent: 'center' }}>
+                    {t('exercise.strokeOrderUnavailable')}
+                  </HintText>
+                </Stack>
+              )}
+            </Box>
+            {canNavigate && (
+              <IconButton
+                aria-label={t('exercise.strokeOrderNext')}
+                onClick={goToNext}
+                sx={{
+                  visibility: cells && currentIndex < cells.length - 1 ? 'visible' : 'hidden'
+                }}
+              >
+                <ChevronRightIcon sx={{ fontSize: 30 }} />
+              </IconButton>
+            )}
+          </Stack>
 
           <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
             <Typography lang="ja" sx={{ fontSize: '1.5rem', lineHeight: 1, fontWeight: 600 }}>

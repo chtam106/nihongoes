@@ -74,7 +74,7 @@ export function KanaStrokeOrder({ char, size = 48, ariaLabel }: KanaStrokeOrderP
 
   return (
     <Box
-      key={runId}
+      key={`${char}:${runId}`}
       component="svg"
       lang="ja"
       viewBox={`0 0 ${KANA_STROKE_VIEWBOX} ${KANA_STROKE_VIEWBOX}`}

@@ -664,6 +664,8 @@ function WritingExercisePage() {
         cell={strokeCell}
         open={Boolean(strokeCell)}
         onClose={() => setStrokeCell(null)}
+        cells={cells}
+        onSelectCell={setStrokeCell}
       />
     </ExercisePageLayout>
   );

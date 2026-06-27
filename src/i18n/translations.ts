@@ -198,6 +198,8 @@ const en: TranslationTree = {
     writingHideAnswer: 'Hide answer',
     writingNext: 'Next character',
     strokeOrderTitle: 'Stroke order',
+    strokeOrderPrevious: 'Previous character',
+    strokeOrderNext: 'Next character',
     strokeOrderReplay: 'Tap the character to replay the stroke order.',
     strokeOrderUnavailable: 'Stroke order is not available for this character yet.',
     strokeOrderNote:
