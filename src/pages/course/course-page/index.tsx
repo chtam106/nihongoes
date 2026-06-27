@@ -47,7 +47,7 @@ function CoursePage({ level }: CoursePageProps) {
   );
 
   return (
-    <PageContainer>
+    <PageContainer bottomGutter>
       <Stack spacing={4}>
         <AiDisclaimer text={t('course.aiDisclaimer')} />
 

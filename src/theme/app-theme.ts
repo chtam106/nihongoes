@@ -13,7 +13,7 @@ export const appTheme = createTheme({
             ? {}
             : {
                 paddingTop: muiTheme.spacing(4),
-                paddingBottom: `calc(${muiTheme.spacing(4)} + 50px)`,
+                paddingBottom: muiTheme.spacing(4),
                 paddingLeft: muiTheme.spacing(2),
                 paddingRight: muiTheme.spacing(2),
                 [muiTheme.breakpoints.up('sm')]: {
@@ -22,7 +22,7 @@ export const appTheme = createTheme({
                 },
                 [muiTheme.breakpoints.up('md')]: {
                   paddingTop: muiTheme.spacing(6),
-                  paddingBottom: `calc(${muiTheme.spacing(6)} + 30px)`,
+                  paddingBottom: muiTheme.spacing(6),
                   paddingLeft: muiTheme.spacing(6),
                   paddingRight: muiTheme.spacing(6)
                 }
