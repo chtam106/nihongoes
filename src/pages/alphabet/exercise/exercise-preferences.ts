@@ -169,8 +169,6 @@ function isWritingRow(value: unknown): value is WritingRow {
 
 export function sanitizeWritingPreferences(value: unknown): WritingPreferences {
   const record = asRecord(value);
-  // Migrate the older split fields (rowIndex / romajiRow) into the shared row.
-  const rawRow = record.row ?? record.romajiRow ?? record.rowIndex;
   return {
     mode: WRITING_MODES.has(record.mode as WritingMode)
       ? (record.mode as WritingMode)
@@ -178,7 +176,7 @@ export function sanitizeWritingPreferences(value: unknown): WritingPreferences {
     script: WRITING_SCRIPTS.has(record.script as Script)
       ? (record.script as Script)
       : DEFAULT_WRITING_PREFERENCES.script,
-    row: isWritingRow(rawRow) ? rawRow : DEFAULT_WRITING_PREFERENCES.row
+    row: isWritingRow(record.row) ? record.row : DEFAULT_WRITING_PREFERENCES.row
   };
 }
 
