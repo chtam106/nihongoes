@@ -26,6 +26,7 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import { ExercisePageLayout } from '@/pages/alphabet/exercise/exercise-page-layout.tsx';
 import type { Script } from '@/pages/alphabet/exercise/exercise-quiz.ts';
 import { speakJapanese } from '@/utils/speech.ts';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 function drawCanvasGuides(ctx: CanvasRenderingContext2D, width: number, height: number) {
   ctx.clearRect(0, 0, width, height);
@@ -227,11 +228,17 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
   const clearTap = useTapAction(redrawCanvas);
 
   return (
-    <Box sx={{ position: 'relative', width: '100%' }}>
+    <Box sx={[elevatedSurfaceSx, { width: '100%', overflow: 'hidden' }]}>
       <Stack
         direction="row"
-        spacing={2.5}
-        sx={{ position: 'absolute', top: 8, right: 8, zIndex: 1 }}
+        spacing={1}
+        sx={{
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          px: 1,
+          py: 0.5,
+          bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.100' : 'action.selected')
+        }}
       >
         <IconButton
           aria-label={undoLabel}
@@ -239,7 +246,7 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
           {...undoTap}
           sx={{ touchAction: 'manipulation' }}
         >
-          <UndoOutlinedIcon sx={{ fontSize: 28 }} />
+          <UndoOutlinedIcon sx={{ fontSize: 26 }} />
         </IconButton>
         <IconButton
           aria-label={clearLabel}
@@ -247,7 +254,7 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
           {...clearTap}
           sx={{ touchAction: 'manipulation' }}
         >
-          <CleaningServicesOutlinedIcon sx={{ fontSize: 28, transform: 'rotate(30deg)' }} />
+          <CleaningServicesOutlinedIcon sx={{ fontSize: 26, transform: 'rotate(30deg)' }} />
         </IconButton>
       </Stack>
       <Box
@@ -261,12 +268,11 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
         onPointerCancel={handlePointerUp}
         onPointerLeave={handlePointerUp}
         sx={{
+          display: 'block',
           width: '100%',
           aspectRatio: '1 / 1',
-          borderRadius: 2,
           touchAction: 'none',
-          bgcolor: '#ffffff',
-          boxShadow: 'inset 0 0 0 1px rgba(0, 0, 0, 0.08)'
+          bgcolor: '#ffffff'
         }}
       />
     </Box>
