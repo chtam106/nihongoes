@@ -203,12 +203,6 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
           size="small"
           disabled={!canUndo}
           onClick={undoStroke}
-          onPointerUp={(event) => {
-            if (event.pointerType === 'touch' || event.pointerType === 'pen') {
-              event.preventDefault();
-              undoStroke();
-            }
-          }}
           sx={{ touchAction: 'manipulation' }}
         >
           <UndoOutlinedIcon sx={{ fontSize: 28 }} />
@@ -217,12 +211,6 @@ function WritingCanvas({ ariaLabel, clearLabel, undoLabel }: WritingCanvasProps)
           aria-label={clearLabel}
           size="small"
           onClick={redrawCanvas}
-          onPointerUp={(event) => {
-            if (event.pointerType === 'touch' || event.pointerType === 'pen') {
-              event.preventDefault();
-              redrawCanvas();
-            }
-          }}
           sx={{ touchAction: 'manipulation' }}
         >
           <CleaningServicesOutlinedIcon sx={{ fontSize: 28, transform: 'rotate(30deg)' }} />
