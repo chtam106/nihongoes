@@ -313,9 +313,6 @@ function KanaSample({ cell }: KanaSampleProps) {
       >
         <KanaDisplay cell={cell} variant="chart" />
       </Box>
-      <Typography variant="caption" color="text.secondary">
-        {cell.romaji}
-      </Typography>
     </Stack>
   );
 }
@@ -579,7 +576,13 @@ function WritingExercisePage() {
                   direction="row"
                   spacing={{ xs: 0.25, sm: 0.75 }}
                   useFlexGap
-                  sx={{ flex: 1, flexWrap: 'wrap', justifyContent: 'center', minHeight: 80 }}
+                  sx={{
+                    flex: 1,
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    minHeight: 80
+                  }}
                 >
                   {cells.map((cell) => (
                     <KanaSample key={`${script}:${cell.char}`} cell={cell} />
