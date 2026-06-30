@@ -27,6 +27,7 @@ const ExercisePage = lazy(() => import('@/pages/course/exercise-page'));
 const ListeningPage = lazy(() => import('@/pages/course/listening-page'));
 const ReadingPage = lazy(() => import('@/pages/course/reading-page'));
 const NotFoundPage = lazy(() => import('@/pages/not-found'));
+const SentryTestPage = lazy(() => import('@/pages/sentry-test'));
 
 /** Prefix a logical route path for a locale tree (vi at root, en under `/en`). */
 function localizePath(logicalPath: string, prefix: string) {
@@ -127,6 +128,7 @@ function App() {
         <Route element={<AppLayout />}>
           {localeRoutes('')}
           {localeRoutes(`/${PREFIXED_LOCALE}`)}
+          <Route path="/sentry-test" element={<SentryTestPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
