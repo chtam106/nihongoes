@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import { Footer } from '@/components/footer';
@@ -6,12 +6,14 @@ import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import { PageMeta } from '@/components/page-meta';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
-import * as Sentry from '@sentry/react';
-import { ErrorBoundary } from '@/components/error-boundary';
 
 const drawerWidth = 320;
 
-function AppLayout() {
+type AppLayoutProps = {
+  children?: ReactNode;
+};
+
+function AppLayout({ children }: AppLayoutProps) {
   const location = useLocation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -52,11 +54,9 @@ function AppLayout() {
         }}
       >
         <Toolbar />
-        <Sentry.ErrorBoundary>
-          <ErrorBoundary>
-            <Outlet />
-          </ErrorBoundary>
-        </Sentry.ErrorBoundary>
+
+        {children ?? <Outlet />}
+
         <Footer />
       </Box>
     </Box>
