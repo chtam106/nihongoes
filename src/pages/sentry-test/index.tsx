@@ -1,8 +1,17 @@
-import { Box, Button, Typography } from '@mui/material';
+import { useState } from 'react';
+import * as Sentry from '@sentry/react';
+import { Box, Button, Stack, Typography } from '@mui/material';
+
+function Bomb(): never {
+  throw new Error('[Sentry test] Render error from /sentry-test');
+}
 
 function SentryTestPage() {
-  const handleThrow = () => {
-    throw new Error('Example render failure shown by the ErrorBoundary fallback.');
+  const [crash, setCrash] = useState(false);
+
+  const handleCapture = () => {
+    Sentry.captureException(new Error('[Sentry test] Manual error from /sentry-test'));
+    alert('Error sent - check Sentry dashboard');
   };
 
   return (
@@ -19,9 +28,15 @@ function SentryTestPage() {
       <Typography variant="h5" sx={{ fontWeight: 600 }}>
         Sentry test
       </Typography>
-      <Button variant="contained" onClick={handleThrow}>
-        Send error to Sentry
-      </Button>
+      <Stack direction="row" spacing={2}>
+        <Button variant="outlined" onClick={handleCapture}>
+          Send error (no crash)
+        </Button>
+        <Button variant="contained" color="error" onClick={() => setCrash(true)}>
+          Crash UI (test ErrorBoundary)
+        </Button>
+      </Stack>
+      {crash && <Bomb />}
     </Box>
   );
 }
