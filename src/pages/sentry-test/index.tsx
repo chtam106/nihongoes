@@ -1,15 +1,13 @@
-import * as Sentry from '@sentry/react';
 import { Box, Button, Typography } from '@mui/material';
 
 function SentryTestPage() {
   const handleThrow = () => {
-    Sentry.captureException(new Error('[Sentry test] Manual error from /sentry-test'));
-    alert('Error sent - check Sentry dashboard');
+    throw new Error('Example render failure shown by the ErrorBoundary fallback.');
   };
 
   return (
     <Box sx={{ p: 4 }}>
-      <Typography variant="h5" fontWeight={600} gutterBottom>
+      <Typography variant="h5" sx={{ fontWeight: 600 }} gutterBottom>
         Sentry test
       </Typography>
       <Button variant="contained" onClick={handleThrow}>
