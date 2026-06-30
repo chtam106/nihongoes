@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';
-import { ErrorFallback } from '@/components/error-fallback';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import { PageMeta } from '@/components/page-meta';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
 import * as Sentry from '@sentry/react';
+import { ErrorBoundary } from '@/components/error-boundary';
 
 const drawerWidth = 320;
 
@@ -52,8 +52,10 @@ function AppLayout() {
         }}
       >
         <Toolbar />
-        <Sentry.ErrorBoundary fallback={<ErrorFallback />}>
-          <Outlet />
+        <Sentry.ErrorBoundary>
+          <ErrorBoundary>
+            <Outlet />
+          </ErrorBoundary>
         </Sentry.ErrorBoundary>
         <Footer />
       </Box>

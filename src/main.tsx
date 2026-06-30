@@ -9,7 +9,7 @@ import { getLocaleFromPathname } from '@/i18n/locale-routing.ts';
 import type { TranslationTree } from '@/i18n/translations.ts';
 import { appTheme } from '@/theme/app-theme.ts';
 import * as Sentry from '@sentry/react';
-import { ErrorFallback } from './components/error-fallback/index.tsx';
+import { ErrorBoundary } from '@/components/error-boundary';
 
 const routerBasename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -31,17 +31,17 @@ async function bootstrap() {
     <StrictMode>
       <ThemeProvider theme={appTheme}>
         <CssBaseline />
-        <Sentry.ErrorBoundary fallback={<ErrorFallback />}>
-          <BrowserRouter basename={routerBasename || undefined}>
-            <LanguageProvider
-              initialTranslations={
-                initialViTranslations ? { vi: initialViTranslations } : undefined
-              }
-            >
-              <App />
-            </LanguageProvider>
-          </BrowserRouter>
-        </Sentry.ErrorBoundary>
+        <BrowserRouter basename={routerBasename || undefined}>
+          <LanguageProvider
+            initialTranslations={initialViTranslations ? { vi: initialViTranslations } : undefined}
+          >
+            <Sentry.ErrorBoundary>
+              <ErrorBoundary>
+                <App />
+              </ErrorBoundary>
+            </Sentry.ErrorBoundary>
+          </LanguageProvider>
+        </BrowserRouter>
       </ThemeProvider>
     </StrictMode>
   );

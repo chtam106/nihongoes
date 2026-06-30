@@ -2,9 +2,8 @@ import { Box, Button, Typography } from '@mui/material';
 
 function SentryTestPage() {
   const handleThrow = () => {
-    throw new Error('Example render failure shown by the ErrorBoundary fallback.');
+    throw new Error('[Sentry test] Render error from /sentry-test');
   };
-
   return (
     <Box
       sx={{
@@ -19,8 +18,8 @@ function SentryTestPage() {
       <Typography variant="h5" sx={{ fontWeight: 600 }}>
         Sentry test
       </Typography>
-      <Button variant="contained" onClick={handleThrow}>
-        Send error to Sentry
+      <Button variant="contained" color="error" onClick={handleThrow}>
+        Throw error
       </Button>
     </Box>
   );
