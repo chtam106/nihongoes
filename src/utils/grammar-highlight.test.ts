@@ -3,7 +3,8 @@ import {
   formatGrammarPatternDisplay,
   getGrammarHighlightTermGroups,
   getGrammarHighlightTerms,
-  splitGrammarHighlightedText
+  splitGrammarHighlightedText,
+  splitHighlightedText
 } from '@/utils/grammar-highlight.ts';
 
 describe('getGrammarHighlightTerms', () => {
@@ -52,6 +53,27 @@ describe('getGrammarHighlightTerms', () => {
       'ばしょに N があります/います'
     );
     expect(formatGrammarPatternDisplay('N は N です')).toBe('N は N です');
+  });
+});
+
+describe('splitHighlightedText', () => {
+  it('colors explicit terms in order', () => {
+    expect(splitHighlightedText('わたしは がくせいです。', ['は', 'です'])).toEqual([
+      { text: 'わたし', termIndex: null },
+      { text: 'は', termIndex: 0 },
+      { text: ' がくせい', termIndex: null },
+      { text: 'です', termIndex: 1 },
+      { text: '。', termIndex: null }
+    ]);
+  });
+
+  it('does not highlight a term that sits inside an excluded word (は in はたち)', () => {
+    const segments = splitHighlightedText('はたちです。', ['は', 'です'], ['はたち']);
+
+    // は inside はたち must stay uncolored; はたち is consumed whole; です still colored.
+    expect(segments.some((s) => s.text === 'は' && s.termIndex !== null)).toBe(false);
+    expect(segments.some((s) => s.text === 'はたち' && s.termIndex === null)).toBe(true);
+    expect(segments.some((s) => s.text === 'です' && s.termIndex === 1)).toBe(true);
   });
 });
 

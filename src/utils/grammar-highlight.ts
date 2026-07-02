@@ -25,13 +25,25 @@ export type HighlightSegment = {
   termIndex: number | null;
 };
 
-/** High-contrast hues for grammar terms (by pattern order). No error/red; no two blues. */
+/**
+ * High-contrast hues for grammar terms (by pattern order), 10 well-separated
+ * categorical colors so a question + its answers never reuse the same color.
+ * Each is dark enough to read on white surfaces; pure error-red is avoided.
+ */
+// Order matters: the low indices (0-5) are the ones a question + its answers use,
+// so consecutive entries are kept maximally contrasting (no two greens/blues next
+// to each other). Lighter/less-readable hues sit at the rarely-used high indices.
 export const GRAMMAR_HIGHLIGHT_PALETTE = [
-  'primary.main',
-  'warning.dark',
-  'secondary.main',
-  'success.main',
-  'secondary.dark'
+  '#1565c0', // blue
+  '#e65100', // deep orange
+  '#2e7d32', // green
+  '#c2185b', // pink
+  '#a16207', // gold
+  '#6a1b9a', // purple
+  '#00838f', // teal
+  '#283593', // indigo
+  '#827717', // olive
+  '#ad1457' // dark pink
 ] as const;
 
 function hasJapanese(text: string) {
@@ -277,24 +289,68 @@ function groupToPattern(alts: string[]) {
   return `(?:${alts.map(termToPattern).join('|')})`;
 }
 
+/**
+ * A highlight entry: either one term, or an array of alternatives that all share
+ * the SAME color (e.g. `['これ', 'それ', 'あれ']`).
+ */
+export type HighlightTerm = string | string[];
+
+type TermEntry = {
+  alts: string[];
+  /** Palette color slot, or null for a "protected" match that is consumed but NOT colored. */
+  termIndex: number | null;
+};
+
+/**
+ * Split text into spans, coloring each explicit highlight term group by its order.
+ * `exclude` words are matched with priority but never highlighted, so a highlight
+ * term that happens to sit inside one of them is not colored (e.g. は inside はたち).
+ */
+export function splitHighlightedText(
+  text: string,
+  highlights: HighlightTerm[],
+  exclude: string[] = []
+): HighlightSegment[] {
+  const highlightEntries: TermEntry[] = highlights
+    .map((entry) => (Array.isArray(entry) ? entry : [entry]))
+    .map((alts, index) => ({ alts: alts.filter(Boolean), termIndex: index }))
+    .filter((entry) => entry.alts.length > 0);
+
+  const excludeEntries: TermEntry[] = exclude
+    .filter(Boolean)
+    .map((word) => ({ alts: [word], termIndex: null }));
+
+  return splitByEntries(text, [...excludeEntries, ...highlightEntries]);
+}
+
 /** Split text into spans, each matched grammar term tagged with its color index. */
 export function splitGrammarHighlightedText(text: string, pattern: string): HighlightSegment[] {
-  const termGroups = getGrammarHighlightTermGroups(pattern);
+  const entries: TermEntry[] = getGrammarHighlightTermGroups(pattern).map((alts, index) => ({
+    alts,
+    termIndex: index
+  }));
 
-  if (termGroups.length === 0 || !text) {
+  return splitByEntries(text, entries);
+}
+
+function splitByEntries(text: string, entries: TermEntry[]): HighlightSegment[] {
+  const usable = entries.filter((entry) => entry.alts.length > 0);
+
+  if (usable.length === 0 || !text) {
     return [{ text, termIndex: null }];
   }
 
-  const sorted = termGroups
-    .map((alts, index) => ({
-      alts,
-      index,
-      matchLength: Math.max(...alts.map((alt) => alt.length))
+  // Longest match wins so protected/multi-char terms take precedence over short ones.
+  const sorted = usable
+    .map((entry, position) => ({
+      ...entry,
+      position,
+      matchLength: Math.max(...entry.alts.map((alt) => alt.length))
     }))
     .sort((a, b) => b.matchLength - a.matchLength);
 
   const re = new RegExp(
-    sorted.map(({ alts, index }) => `(?<t${index}>${groupToPattern(alts)})`).join('|'),
+    sorted.map(({ alts, position }) => `(?<t${position}>${groupToPattern(alts)})`).join('|'),
     'g'
   );
 
@@ -309,20 +365,16 @@ export function splitGrammarHighlightedText(text: string, pattern: string): High
     }
 
     let termIndex: number | null = null;
-    let matchedText = '';
+    let matchedText = match[0];
 
-    for (const { index: candidateIndex } of sorted) {
-      const group = match.groups?.[`t${candidateIndex}`];
+    for (const candidate of sorted) {
+      const group = match.groups?.[`t${candidate.position}`];
 
-      if (group) {
-        termIndex = candidateIndex;
+      if (group !== undefined) {
+        termIndex = candidate.termIndex;
         matchedText = group;
         break;
       }
-    }
-
-    if (termIndex === null) {
-      matchedText = match[0];
     }
 
     segments.push({ text: matchedText, termIndex });

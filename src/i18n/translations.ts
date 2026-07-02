@@ -272,6 +272,7 @@ const en: TranslationTree = {
     vocabulary: 'Vocabulary',
     grammar: 'Grammar',
     examples: 'Examples',
+    answers: 'Answers',
     previousLesson: 'Previous',
     nextLesson: 'Next',
     counts: '{{vocab}} words · {{grammar}} grammar points',

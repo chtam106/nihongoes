@@ -1,9 +1,10 @@
 import type { Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
-import {
-  getGrammarHighlightTerms,
-  splitGrammarHighlightedText
-} from '@/utils/grammar-highlight.ts';
+import { splitHighlightedText, type HighlightTerm } from '@/utils/grammar-highlight.ts';
+
+function flattenHighlights(highlights: HighlightTerm[]): string[] {
+  return highlights.flatMap((entry) => (Array.isArray(entry) ? entry : [entry]));
+}
 
 export type GrammarOption = {
   id: string;
@@ -81,7 +82,7 @@ export function buildGrammarClozes(lesson: Lesson, locale: Locale): ClozeSeed[] 
 
   for (const point of lesson.grammar) {
     for (const example of point.examples) {
-      const segments = splitGrammarHighlightedText(example.jp, point.pattern);
+      const segments = splitHighlightedText(example.jp, point.highlights);
 
       segments.forEach((segment, index) => {
         if (segment.termIndex === null) {
@@ -117,7 +118,7 @@ export function buildGrammarClozes(lesson: Lesson, locale: Locale): ClozeSeed[] 
 
 /** Every fixed grammar piece taught in the lesson, used as the distractor pool. */
 function grammarTermPool(lesson: Lesson): string[] {
-  return unique(lesson.grammar.flatMap((point) => getGrammarHighlightTerms(point.pattern)));
+  return unique(lesson.grammar.flatMap((point) => flattenHighlights(point.highlights)));
 }
 
 function buildQuestion(seed: ClozeSeed, pool: string[]): GrammarQuestion {

@@ -222,6 +222,7 @@ export const n5Course: Course = {
       grammar: [
         {
           pattern: 'N1 は N2 です',
+          highlights: ['は', 'です'],
           title: {
             en: 'N1 is N2 (statement with です)',
             vi: 'N1 là N2 (câu khẳng định với です)'
@@ -248,6 +249,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N1 は N2 じゃありません',
+          highlights: ['は', 'じゃありません'],
           title: { en: 'N1 is not N2 (negative)', vi: 'N1 không phải là N2 (phủ định)' },
           explanation: {
             en: 'Replace です with じゃありません (or the more formal ではありません) to make it negative.',
@@ -268,10 +270,14 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N1 は N2 ですか',
-          title: { en: 'Yes/no question with か', vi: 'Câu hỏi có/không với か' },
+          highlights: ['は', 'ですか'],
+          title: {
+            en: 'Yes/no question with か',
+            vi: 'Câu hỏi có/không với か'
+          },
           explanation: {
-            en: 'Add か to the end to make a question. No question mark is needed in Japanese.',
-            vi: 'Thêm か vào cuối câu để tạo câu hỏi. Tiếng Nhật không cần dấu chấm hỏi.'
+            en: 'Add か to the end to make a yes/no question. No question mark is needed in Japanese.',
+            vi: 'Thêm か vào cuối câu để tạo câu hỏi có/không. Tiếng Nhật không cần dấu chấm hỏi.'
           },
           examples: [
             {
@@ -284,10 +290,52 @@ export const n5Course: Course = {
               romaji: 'Ano hito wa sensei desu ka.',
               meaning: { en: 'Is that person a teacher?', vi: 'Người kia là giáo viên phải không?' }
             }
-          ]
+          ],
+          answers: {
+            highlights: ['です', 'じゃありません', 'そうです', 'ちがいます'],
+            explanation: {
+              en: 'Answer はい、そうです ("yes, that\'s right") or いいえ、ちがいます ("no, that\'s wrong"); you can also answer with the full sentence - affirmative (はい、～です) or negative (いいえ、～じゃありません).',
+              vi: 'Trả lời はい、そうです ("vâng, đúng vậy") hoặc いいえ、ちがいます ("không, không phải"); cũng có thể trả lời bằng cả câu - khẳng định (はい、～です) hoặc phủ định (いいえ、～じゃありません).'
+            },
+            examples: [
+              {
+                jp: 'はい、がくせいです。',
+                romaji: 'Hai, gakusei desu.',
+                meaning: {
+                  en: "Yes, I'm a student. (full affirmative)",
+                  vi: 'Vâng, tôi là học sinh. (khẳng định đầy đủ)'
+                }
+              },
+              {
+                jp: 'いいえ、がくせいじゃありません。',
+                romaji: 'Iie, gakusei ja arimasen.',
+                meaning: {
+                  en: "No, I'm not a student. (full negative)",
+                  vi: 'Không, tôi không phải học sinh. (phủ định đầy đủ)'
+                }
+              },
+              {
+                jp: 'はい、そうです。',
+                romaji: 'Hai, sō desu.',
+                meaning: {
+                  en: "Yes, that's right. (short affirmative)",
+                  vi: 'Vâng, đúng vậy. (khẳng định gọn)'
+                }
+              },
+              {
+                jp: 'いいえ、ちがいます。',
+                romaji: 'Iie, chigaimasu.',
+                meaning: {
+                  en: "No, that's wrong. (short negative)",
+                  vi: 'Không, không phải. (phủ định gọn)'
+                }
+              }
+            ]
+          }
         },
         {
           pattern: 'N も',
+          highlights: ['も'],
           title: { en: 'も (also, too)', vi: 'も (cũng)' },
           explanation: {
             en: 'も replaces は to say the same thing is also true for another topic ("...too").',
@@ -311,6 +359,8 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N1 の N2',
+          highlights: ['の'],
+          excludeHighlights: ['この', 'その', 'あの', 'どの'],
           title: { en: 'の (affiliation / belonging)', vi: 'の (nơi trực thuộc / thuộc về)' },
           explanation: {
             en: 'の links two nouns; here the first noun (company, school, country) tells which group the second belongs to.',
@@ -334,6 +384,90 @@ export const n5Course: Course = {
               }
             }
           ]
+        },
+        {
+          pattern: 'N は だれ ですか',
+          highlights: ['は', 'だれ', 'どなた', 'ですか'],
+          title: { en: 'Asking who (だれ / どなた)', vi: 'Hỏi "ai" (だれ / どなた)' },
+          explanation: {
+            en: 'Ask who someone is with だれ. どなた is the polite version, used with あの方.',
+            vi: 'Hỏi ai đó là ai với だれ. どなた là cách nói lịch sự, dùng với あの方.'
+          },
+          examples: [
+            {
+              jp: 'あのひとは だれですか。',
+              romaji: 'Ano hito wa dare desu ka.',
+              meaning: { en: 'Who is that person?', vi: 'Người kia là ai?' }
+            },
+            {
+              jp: 'あのかたは どなたですか。',
+              romaji: 'Ano kata wa donata desu ka.',
+              meaning: { en: 'Who is that person? (polite)', vi: 'Vị kia là ai? (lịch sự)' }
+            }
+          ],
+          answers: {
+            highlights: ['は', 'です'],
+            explanation: {
+              en: 'Answer by naming the person or their role with N1 は N2 です.',
+              vi: 'Trả lời bằng cách nêu tên hoặc vai trò của người đó với N1 は N2 です.'
+            },
+            examples: [
+              {
+                jp: 'あのひとは ミラーさんです。',
+                romaji: 'Ano hito wa Mirā-san desu.',
+                meaning: { en: 'That person is Mr. Miller.', vi: 'Người kia là anh Miller.' }
+              },
+              {
+                jp: 'あのかたは やまだせんせいです。',
+                romaji: 'Ano kata wa Yamada-sensei desu.',
+                meaning: { en: 'That person is Professor Yamada.', vi: 'Vị kia là thầy Yamada.' }
+              }
+            ]
+          }
+        },
+        {
+          pattern: 'N は なんさい ですか',
+          highlights: ['は', 'なんさい', 'おいくつ', 'ですか'],
+          excludeHighlights: ['はたち'],
+          title: { en: 'Asking age (なんさい / おいくつ)', vi: 'Hỏi tuổi (なんさい / おいくつ)' },
+          explanation: {
+            en: 'Ask age with なんさい. おいくつ is the polite version. Answer with a number + さい (20 has the special reading はたち).',
+            vi: 'Hỏi tuổi với なんさい. おいくつ là cách nói lịch sự. Trả lời bằng số + さい (20 tuổi đọc đặc biệt là はたち).'
+          },
+          examples: [
+            {
+              jp: 'テレサちゃんは なんさいですか。',
+              romaji: 'Teresa-chan wa nansai desu ka.',
+              meaning: { en: 'How old is Teresa?', vi: 'Bé Teresa bao nhiêu tuổi?' }
+            },
+            {
+              jp: 'おいくつですか。',
+              romaji: 'Oikutsu desu ka.',
+              meaning: { en: 'How old are you? (polite)', vi: 'Anh/chị bao nhiêu tuổi? (lịch sự)' }
+            }
+          ],
+          answers: {
+            highlights: ['さい', 'です'],
+            explanation: {
+              en: 'Answer with a number + さい; 20 years old is the special reading はたち.',
+              vi: 'Trả lời bằng số + さい; 20 tuổi đọc đặc biệt là はたち.'
+            },
+            examples: [
+              {
+                jp: '9さいです。',
+                romaji: 'Kyū-sai desu.',
+                meaning: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' }
+              },
+              {
+                jp: 'はたちです。',
+                romaji: 'Hatachi desu.',
+                meaning: {
+                  en: "I'm 20 years old. (special reading)",
+                  vi: 'Tôi 20 tuổi. (cách đọc đặc biệt)'
+                }
+              }
+            ]
+          }
         }
       ],
       reading: [
@@ -730,6 +864,7 @@ export const n5Course: Course = {
       grammar: [
         {
           pattern: 'これ / それ / あれ は N です',
+          highlights: [['これ', 'それ', 'あれ'], 'は', 'です'],
           title: {
             en: 'これ / それ / あれ (this / that / that over there)',
             vi: 'これ / それ / あれ (cái này / cái đó / cái kia)'
@@ -758,6 +893,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'この / その / あの N',
+          highlights: [['この', 'その', 'あの']],
           title: { en: 'この / その / あの + noun', vi: 'この / その / あの + danh từ' },
           explanation: {
             en: 'Unlike これ/それ/あれ, these always come right before a noun: この本 = "this book". Never say これ本.',
@@ -783,6 +919,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N1 の N2',
+          highlights: ['の'],
           title: { en: 'の (possession / content)', vi: 'の (sở hữu / nội dung)' },
           explanation: {
             en: 'の links two nouns to show an owner ("my book") or the content/type ("Japanese book").',
@@ -807,11 +944,12 @@ export const n5Course: Course = {
           ]
         },
         {
-          pattern: 'N は なんですか',
+          pattern: 'N は なん ですか',
+          highlights: ['は', 'なん', 'ですか'],
           title: { en: 'Asking "what is it?" with 何', vi: 'Hỏi "là cái gì?" với 何' },
           explanation: {
-            en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is; answer with "...です".',
-            vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì; trả lời bằng "...です".'
+            en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is.',
+            vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì.'
           },
           examples: [
             {
@@ -824,30 +962,26 @@ export const n5Course: Course = {
               romaji: 'Are wa nan desu ka.',
               meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' }
             }
-          ]
-        },
-        {
-          pattern: 'はい 、 そうです / いいえ 、 ちがいます',
-          title: {
-            en: 'Answering: はい, そうです / いいえ, ちがいます',
-            vi: 'Trả lời: はい, そうです / いいえ, ちがいます'
-          },
-          explanation: {
-            en: 'For "Is it ~?" questions, answer はい、そうです ("yes, that\'s right") or いいえ、ちがいます ("no, that\'s wrong").',
-            vi: 'Với câu hỏi "Có phải ~?", trả lời はい、そうです ("vâng, đúng vậy") hoặc いいえ、ちがいます ("không, không phải").'
-          },
-          examples: [
-            {
-              jp: 'はい、そうです。',
-              romaji: 'Hai, sō desu.',
-              meaning: { en: "Yes, that's right.", vi: 'Vâng, đúng vậy.' }
+          ],
+          answers: {
+            highlights: ['は', 'です'],
+            explanation: {
+              en: 'Answer by naming the thing with the affirmative sentence: (これ / それ) は ～です.',
+              vi: 'Trả lời bằng cách gọi tên vật đó với câu khẳng định: (これ / それ) は ～です.'
             },
-            {
-              jp: 'いいえ、ちがいます。',
-              romaji: 'Iie, chigaimasu.',
-              meaning: { en: "No, that's wrong.", vi: 'Không, không phải.' }
-            }
-          ]
+            examples: [
+              {
+                jp: 'それは ほんです。',
+                romaji: 'Sore wa hon desu.',
+                meaning: { en: 'It is a book.', vi: 'Đó là quyển sách.' }
+              },
+              {
+                jp: 'これは かぎです。',
+                romaji: 'Kore wa kagi desu.',
+                meaning: { en: 'This is a key.', vi: 'Đây là chìa khóa.' }
+              }
+            ]
+          }
         }
       ],
       reading: [
@@ -1153,6 +1287,7 @@ export const n5Course: Course = {
       grammar: [
         {
           pattern: 'ここ / そこ / あそこ は N です',
+          highlights: [['ここ', 'そこ', 'あそこ'], 'は', 'です'],
           title: {
             en: 'ここ / そこ / あそこ (here / there / over there)',
             vi: 'ここ / そこ / あそこ (ở đây / ở đó / ở kia)'
@@ -1181,6 +1316,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N は どこ ですか',
+          highlights: ['は', 'どこ', 'ですか'],
           title: { en: 'Asking where (どこ)', vi: 'Hỏi ở đâu (どこ)' },
           explanation: {
             en: 'どこ means "where". Use it to ask the location of a place or thing.',
@@ -1201,6 +1337,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'こちら / そちら / あちら',
+          highlights: [['こちら', 'そちら', 'あちら']],
           title: {
             en: 'こちら / そちら / あちら (polite direction)',
             vi: 'こちら / そちら / あちら (hướng, lịch sự)'
@@ -1224,6 +1361,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'どこ の N です',
+          highlights: ['どこ', 'の', 'です'],
           title: { en: 'Where it is from (どこの)', vi: 'Xuất xứ (どこの)' },
           explanation: {
             en: 'どこの asks which country or maker something is from; answer with 国/company + の.',

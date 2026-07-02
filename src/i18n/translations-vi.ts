@@ -263,6 +263,7 @@ export const viTranslations: TranslationTree = {
     vocabulary: 'Từ vựng',
     grammar: 'Ngữ pháp',
     examples: 'Ví dụ',
+    answers: 'Cách trả lời',
     previousLesson: 'Bài trước',
     nextLesson: 'Bài sau',
     counts: '{{vocab}} từ · {{grammar}} điểm ngữ pháp',

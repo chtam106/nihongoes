@@ -83,8 +83,13 @@ alwaysApply: true
 ## Hints / annotations
 - Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="error.main"` (red) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
 
-## Grammar highlight colors
-- Lesson grammar fixed parts (pattern, explanation, examples) use `<GrammarHighlightedText>` with `GRAMMAR_HIGHLIGHT_PALETTE` in `src/utils/grammar-highlight.ts`. Do NOT use `error.main` / red. Pick palette entries with clearly different hues (e.g. blue + orange, not blue + teal).
+## Grammar highlighting (IMPORTANT)
+- Each `GrammarPoint` declares an EXPLICIT `highlights: HighlightTerm[]` (the grammar morphemes to color, in palette order) - NEVER rely on auto/regex derivation from the pattern. `HighlightTerm` = a `string`, or a `string[]` of alternatives that SHARE one color. Use a shared-color group ONLY for a closed interchangeable set like `['これ','それ','あれ']`; list distinct variants (e.g. `だれ`/`どなた`, `なんさい`/`おいくつ`) as SEPARATE terms so each gets its own color.
+- Highlight ONLY grammar components: particles (`は`/`が`/`の`/`も`/`に`...), copula/endings (`です`/`じゃありません`/`ですか`), question words (`なん`/`だれ`/`どこ`/`なんさい`...). Do NOT highlight plain vocabulary or special readings (e.g. `はたち` is a word, not grammar).
+- Split a trailing `ですか` off a question word so it gets its OWN color: `highlights: ['は','なん','ですか']`, not `['は','なんですか']`. The pattern string may keep a space (`N は なん ですか`); it still displays attached (`formatGrammarPatternDisplay`).
+- When a grammar char accidentally sits inside another word, protect that word with `excludeHighlights: string[]` (matched but never colored): e.g. `['はたち']` so `は` in `はたち` isn't colored; `['この','その','あの','どの']` on a `の` point so only the possessive `の` is colored, not the `の` inside a demonstrative. Analyze each example and exclude as needed.
+- Companion answers live in the point's `answers` block (`{ explanation?, examples, highlights?, excludeHighlights? }`), rendered as a separate labelled "Answers"/"Cách trả lời" sub-block with its OWN `highlights`. `GrammarPointCard` shifts the answer block's palette by the number of question highlight groups (`colorOffset={point.highlights.length}`) so answer colors never reuse the question's colors.
+- Colors come from `GRAMMAR_HIGHLIGHT_PALETTE` (10 distinct hex hues) in `src/utils/grammar-highlight.ts`; no red (error), keep hues clearly different. `<GrammarHighlightedText>` takes `highlights` / `exclude` / `colorOffset` props (NOT a raw pattern); `splitHighlightedText(text, highlights, exclude?)` is the underlying splitter.
 
 ## Scrollbars
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.

@@ -18,6 +18,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
   - Vocab: include every 単語 word (core words, suffixes like `〜さん/〜じん/〜さい`, plain + polite variants such as `なんさい`/`おいくつ`).
   - Phrases: include every 会話 set expression (e.g. `はじめまして`, `どうぞよろしくおねがいします`, `しつれいですが`, `こちらは〜さんです`).
   - Grammar: include every 文型/sentence pattern taught in that lesson (e.g. L2 must have `これ/それ/あれ`, `この/その/あの＋N`, `N の N`, `N は なんですか`, `はい そうです / いいえ ちがいます`).
+  - Pair questions with answers: whenever a grammar point teaches how to ASK something (a か yes/no question, or a question word like 何/どこ/だれ/いくら/なんじ), ALWAYS show how to ANSWER it. Do NOT make the answers a separate grammar point; attach them to the SAME `GrammarPoint` via its optional `answers` block (`{ explanation?, examples }`), which `GrammarPointCard` renders as a separate labelled "Answers"/"Cách trả lời" sub-block inside the point. E.g. the か question point carries `はい、そうです / はい、～です / いいえ、ちがいます` in `answers`, and `N は なんですか` carries `(これ/それ)は N です` in `answers`.
 - Only the word/phrase/pattern LISTS must match the textbook. Example sentences, 会話 dialogues, and reading passages must be ORIGINAL — never copy the textbook's copyrighted text.
 - When adding/reviewing a lesson, cross-check the textbook's full vocab + expression + grammar lists before finishing; a missing item is a bug.
 
