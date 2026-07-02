@@ -25,8 +25,8 @@ export const n5Course: Course = {
       id: 'lesson-1',
       number: 1,
       title: {
-        en: 'Introductions - "A is B"',
-        vi: 'Giới thiệu bản thân - "A là B"'
+        en: 'Introductions',
+        vi: 'Giới thiệu bản thân'
       },
       focus: {
         en: 'Introduce yourself and others: state nationality, job, and affiliation with は, です, も, and の.',
@@ -521,8 +521,8 @@ export const n5Course: Course = {
       id: 'lesson-2',
       number: 2,
       title: {
-        en: 'これ / それ / あれ - Things around you',
-        vi: 'これ / それ / あれ - Đồ vật xung quanh'
+        en: 'Things around you',
+        vi: 'Đồ vật xung quanh'
       },
       focus: {
         en: 'Point out and identify objects with これ/それ/あれ, この/その/あの, and の, and answer with そうです / ちがいます.',
