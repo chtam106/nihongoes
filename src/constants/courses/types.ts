@@ -1,4 +1,5 @@
 import type { Locale } from '@/i18n/translations.ts';
+import type { HighlightTerm } from '@/utils/grammar-highlight.ts';
 
 export type Bilingual = Record<Locale, string>;
 
@@ -23,6 +24,10 @@ export type GrammarExample = {
 export type GrammarAnswerBlock = {
   explanation?: Bilingual;
   examples: GrammarExample[];
+  /** Terms to color in this block's explanation/examples (own palette order). */
+  highlights?: HighlightTerm[];
+  /** Words to protect from highlighting (e.g. は inside はたち). */
+  excludeHighlights?: string[];
 };
 
 export type GrammarPoint = {
@@ -30,6 +35,13 @@ export type GrammarPoint = {
   title: Bilingual;
   explanation: Bilingual;
   examples: GrammarExample[];
+  /**
+   * Terms to color in the pattern, explanation, and examples, in palette order.
+   * A nested array marks alternatives that share one color (e.g. ['これ','それ','あれ']).
+   */
+  highlights: HighlightTerm[];
+  /** Words to protect from highlighting (e.g. は inside はたち). */
+  excludeHighlights?: string[];
   /** Optional companion block rendered separately (e.g. sample answers to this question). */
   answers?: GrammarAnswerBlock;
 };
