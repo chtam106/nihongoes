@@ -19,11 +19,19 @@ export type GrammarExample = {
   meaning: Bilingual;
 };
 
+/** A distinct sub-block inside a grammar point, e.g. how to answer the question it teaches. */
+export type GrammarAnswerBlock = {
+  explanation?: Bilingual;
+  examples: GrammarExample[];
+};
+
 export type GrammarPoint = {
   pattern: string;
   title: Bilingual;
   explanation: Bilingual;
   examples: GrammarExample[];
+  /** Optional companion block rendered separately (e.g. sample answers to this question). */
+  answers?: GrammarAnswerBlock;
 };
 
 export type ReadingLine = {

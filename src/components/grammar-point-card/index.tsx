@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
-import type { GrammarPoint } from '@/constants/courses/types.ts';
+import type { GrammarExample, GrammarPoint } from '@/constants/courses/types.ts';
 import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
 import { formatGrammarPatternDisplay } from '@/utils/grammar-highlight.ts';
 import { Heading } from '@/components/heading';
@@ -8,6 +8,46 @@ import { SpeakButton } from '@/components/speak-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
+
+type ExampleListProps = {
+  examples: GrammarExample[];
+  /** When set, the grammar pattern is color-highlighted in each sentence. Omit to render plainly. */
+  pattern?: string;
+};
+
+/** Speakable list of example sentences, optionally highlighting the grammar pattern in each. */
+function ExampleList({ examples, pattern }: ExampleListProps) {
+  const { locale } = useTranslation();
+
+  return (
+    <Stack spacing={1.5}>
+      {examples.map((example) => (
+        <SpeakableSurface key={example.jp} text={example.jp} sx={{ p: 1.5 }}>
+          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
+            <SpeakButton text={example.jp} />
+            <Box sx={{ flex: 1, minWidth: 0 }}>
+              {pattern && (
+                <GrammarHighlightedText
+                  text={example.jp}
+                  pattern={pattern}
+                  variant="body1"
+                  lang="ja"
+                  sx={{ fontWeight: 500 }}
+                />
+              )}
+              {!pattern && (
+                <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+                  {example.jp}
+                </Typography>
+              )}
+              <TranslationLine translation={example.meaning[locale]} />
+            </Box>
+          </Stack>
+        </SpeakableSurface>
+      ))}
+    </Stack>
+  );
+}
 
 type GrammarPointCardProps = {
   point: GrammarPoint;
@@ -81,25 +121,25 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
         <Typography variant="overline" color="text.secondary" sx={{ display: 'block', mb: 0.5 }}>
           {t('course.examples')}
         </Typography>
-        <Stack spacing={1.5}>
-          {point.examples.map((example) => (
-            <SpeakableSurface key={example.jp} text={example.jp} sx={{ p: 1.5 }}>
-              <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
-                <SpeakButton text={example.jp} />
-                <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <GrammarHighlightedText
-                    text={example.jp}
-                    pattern={point.pattern}
-                    variant="body1"
-                    lang="ja"
-                    sx={{ fontWeight: 500 }}
-                  />
-                  <TranslationLine translation={example.meaning[locale]} />
-                </Box>
-              </Stack>
-            </SpeakableSurface>
-          ))}
-        </Stack>
+        <ExampleList examples={point.examples} pattern={point.pattern} />
+
+        {point.answers && (
+          <Box sx={{ mt: 2 }}>
+            <Typography
+              variant="overline"
+              color="text.secondary"
+              sx={{ display: 'block', mb: 0.5 }}
+            >
+              {t('course.answers')}
+            </Typography>
+            {point.answers.explanation && (
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+                {point.answers.explanation[locale]}
+              </Typography>
+            )}
+            <ExampleList examples={point.answers.examples} />
+          </Box>
+        )}
       </CardContent>
     </Card>
   );

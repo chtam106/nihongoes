@@ -268,10 +268,13 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N1 は N2 ですか',
-          title: { en: 'Yes/no question with か', vi: 'Câu hỏi có/không với か' },
+          title: {
+            en: 'Yes/no question with か',
+            vi: 'Câu hỏi có/không với か'
+          },
           explanation: {
-            en: 'Add か to the end to make a question. No question mark is needed in Japanese.',
-            vi: 'Thêm か vào cuối câu để tạo câu hỏi. Tiếng Nhật không cần dấu chấm hỏi.'
+            en: 'Add か to the end to make a yes/no question. No question mark is needed in Japanese.',
+            vi: 'Thêm か vào cuối câu để tạo câu hỏi có/không. Tiếng Nhật không cần dấu chấm hỏi.'
           },
           examples: [
             {
@@ -284,7 +287,47 @@ export const n5Course: Course = {
               romaji: 'Ano hito wa sensei desu ka.',
               meaning: { en: 'Is that person a teacher?', vi: 'Người kia là giáo viên phải không?' }
             }
-          ]
+          ],
+          answers: {
+            explanation: {
+              en: 'Answer はい、そうです ("yes, that\'s right") or いいえ、ちがいます ("no, that\'s wrong"); you can also answer with the full sentence - affirmative (はい、～です) or negative (いいえ、～じゃありません).',
+              vi: 'Trả lời はい、そうです ("vâng, đúng vậy") hoặc いいえ、ちがいます ("không, không phải"); cũng có thể trả lời bằng cả câu - khẳng định (はい、～です) hoặc phủ định (いいえ、～じゃありません).'
+            },
+            examples: [
+              {
+                jp: 'はい、がくせいです。',
+                romaji: 'Hai, gakusei desu.',
+                meaning: {
+                  en: "Yes, I'm a student. (full affirmative)",
+                  vi: 'Vâng, tôi là học sinh. (khẳng định đầy đủ)'
+                }
+              },
+              {
+                jp: 'いいえ、がくせいじゃありません。',
+                romaji: 'Iie, gakusei ja arimasen.',
+                meaning: {
+                  en: "No, I'm not a student. (full negative)",
+                  vi: 'Không, tôi không phải học sinh. (phủ định đầy đủ)'
+                }
+              },
+              {
+                jp: 'はい、そうです。',
+                romaji: 'Hai, sō desu.',
+                meaning: {
+                  en: "Yes, that's right. (short affirmative)",
+                  vi: 'Vâng, đúng vậy. (khẳng định gọn)'
+                }
+              },
+              {
+                jp: 'いいえ、ちがいます。',
+                romaji: 'Iie, chigaimasu.',
+                meaning: {
+                  en: "No, that's wrong. (short negative)",
+                  vi: 'Không, không phải. (phủ định gọn)'
+                }
+              }
+            ]
+          }
         },
         {
           pattern: 'N も',
@@ -810,8 +853,8 @@ export const n5Course: Course = {
           pattern: 'N は なんですか',
           title: { en: 'Asking "what is it?" with 何', vi: 'Hỏi "là cái gì?" với 何' },
           explanation: {
-            en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is; answer with "...です".',
-            vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì; trả lời bằng "...です".'
+            en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is.',
+            vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì.'
           },
           examples: [
             {
@@ -824,30 +867,25 @@ export const n5Course: Course = {
               romaji: 'Are wa nan desu ka.',
               meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' }
             }
-          ]
-        },
-        {
-          pattern: 'はい 、 そうです / いいえ 、 ちがいます',
-          title: {
-            en: 'Answering: はい, そうです / いいえ, ちがいます',
-            vi: 'Trả lời: はい, そうです / いいえ, ちがいます'
-          },
-          explanation: {
-            en: 'For "Is it ~?" questions, answer はい、そうです ("yes, that\'s right") or いいえ、ちがいます ("no, that\'s wrong").',
-            vi: 'Với câu hỏi "Có phải ~?", trả lời はい、そうです ("vâng, đúng vậy") hoặc いいえ、ちがいます ("không, không phải").'
-          },
-          examples: [
-            {
-              jp: 'はい、そうです。',
-              romaji: 'Hai, sō desu.',
-              meaning: { en: "Yes, that's right.", vi: 'Vâng, đúng vậy.' }
+          ],
+          answers: {
+            explanation: {
+              en: 'Answer by naming the thing with the affirmative sentence: (これ / それ) は ～です.',
+              vi: 'Trả lời bằng cách gọi tên vật đó với câu khẳng định: (これ / それ) は ～です.'
             },
-            {
-              jp: 'いいえ、ちがいます。',
-              romaji: 'Iie, chigaimasu.',
-              meaning: { en: "No, that's wrong.", vi: 'Không, không phải.' }
-            }
-          ]
+            examples: [
+              {
+                jp: 'それは ほんです。',
+                romaji: 'Sore wa hon desu.',
+                meaning: { en: 'It is a book.', vi: 'Đó là quyển sách.' }
+              },
+              {
+                jp: 'これは かぎです。',
+                romaji: 'Kore wa kagi desu.',
+                meaning: { en: 'This is a key.', vi: 'Đây là chìa khóa.' }
+              }
+            ]
+          }
         }
       ],
       reading: [
