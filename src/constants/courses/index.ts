@@ -34,6 +34,10 @@ export function lessonHasReading(lesson: Lesson): boolean {
   return Boolean(lesson.reading && lesson.reading.length > 0);
 }
 
+export function lessonHasGrammar(lesson: Lesson): boolean {
+  return lesson.grammar.length > 0;
+}
+
 /** Lesson vocabulary/reference words that have a kanji form (deduped by kanji), for writing practice. */
 export function lessonKanjiWords(lesson: Lesson): VocabItem[] {
   const sources: VocabItem[] = [
@@ -67,7 +71,7 @@ export const COURSE_SITEMAP_PATHS: string[] = COURSE_LEVELS.flatMap((level) => {
     coursePath(level),
     ...lessons.map((lesson) => lessonPath(level, lesson.id)),
     ...lessons.map((lesson) => lessonVocabularyPath(level, lesson.id)),
-    ...lessons.map((lesson) => lessonGrammarPath(level, lesson.id)),
+    ...lessons.filter(lessonHasGrammar).map((lesson) => lessonGrammarPath(level, lesson.id)),
     ...lessons.map((lesson) => lessonListeningPath(level, lesson.id)),
     ...lessons.filter(lessonHasReading).map((lesson) => lessonReadingPath(level, lesson.id)),
     ...lessons.filter(lessonHasKanji).map((lesson) => lessonWritingPath(level, lesson.id))

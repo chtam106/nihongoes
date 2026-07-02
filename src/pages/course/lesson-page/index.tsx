@@ -82,7 +82,7 @@ function SectionNav({ lesson }: SectionNavProps) {
     ...(lesson.phrases && lesson.phrases.length > 0
       ? [{ id: 'phrases', label: t('course.phrasesHeading') }]
       : []),
-    { id: 'grammar', label: t('course.grammar') },
+    ...(lesson.grammar.length > 0 ? [{ id: 'grammar', label: t('course.grammar') }] : []),
     { id: 'practice', label: t('course.practiceHeading') },
     ...(lesson.reference && lesson.reference.length > 0
       ? [{ id: 'reference', label: t('course.referenceHeading') }]
@@ -258,6 +258,10 @@ type GrammarSectionProps = {
 function GrammarSection({ lesson }: GrammarSectionProps) {
   const { t } = useTranslation();
 
+  if (lesson.grammar.length === 0) {
+    return null;
+  }
+
   return (
     <Box id="grammar" sx={SECTION_ANCHOR_SX}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
@@ -283,6 +287,7 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
   const { t } = useTranslation();
   const hasReading = lessonHasReading(lesson);
   const hasKanji = lessonHasKanji(lesson);
+  const hasGrammar = lesson.grammar.length > 0;
 
   return (
     <Paper
@@ -313,14 +318,16 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
         >
           {t('course.startExercise')}
         </Button>
-        <Button
-          component={RouterLink}
-          to={lessonGrammarPath(level, lesson.id)}
-          variant="outlined"
-          startIcon={<TranslateOutlinedIcon />}
-        >
-          {t('course.startGrammar')}
-        </Button>
+        {hasGrammar && (
+          <Button
+            component={RouterLink}
+            to={lessonGrammarPath(level, lesson.id)}
+            variant="outlined"
+            startIcon={<TranslateOutlinedIcon />}
+          >
+            {t('course.startGrammar')}
+          </Button>
+        )}
         {hasReading && (
           <Button
             component={RouterLink}
