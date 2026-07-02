@@ -4,10 +4,10 @@ import { Fab, Fade, useMediaQuery, useTheme } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 /** Show only once the page is scrolled past this fraction of its scrollable height. */
-const SHOW_AFTER_PROGRESS = 0.4;
+const SHOW_AFTER_PROGRESS = 0.15;
 
 /** Treat scrolling as "stopped" once no scroll event fires for this long (ms). */
-const SCROLL_IDLE_DELAY = 200;
+const SCROLL_IDLE_DELAY = 90;
 
 /**
  * Floating "back to top" button, fixed to the bottom-right of the viewport.
@@ -33,9 +33,13 @@ export function ScrollToTopButton() {
     const decideOnIdle = () => {
       const y = window.scrollY;
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      // Rest 16px above the viewport bottom until the footer scrolls into view;
+      // once it does, sit just above however much of the footer is showing.
       const footer = document.querySelector('footer');
-      const footerHeight = footer ? footer.getBoundingClientRect().height : 0;
-      setBottom(footerHeight + gap);
+      const footerOverlap = footer
+        ? Math.max(0, window.innerHeight - footer.getBoundingClientRect().top)
+        : 0;
+      setBottom(footerOverlap + gap);
       // Reveal only when the user settled after scrolling down past the threshold.
       setVisible(maxScroll > 0 && lastDirection === 'down' && y / maxScroll >= SHOW_AFTER_PROGRESS);
     };

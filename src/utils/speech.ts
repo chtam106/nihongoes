@@ -1,4 +1,5 @@
 import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 
 const VOICE_STORAGE_KEY = `${STORAGE_PREFIX}-voice`;
 const RATE_STORAGE_KEY = `${STORAGE_PREFIX}-rate`;
@@ -83,7 +84,7 @@ export function speakJapanese(text: string, rate = getSpeechRate()): void {
 
   window.speechSynthesis.cancel();
 
-  const utterance = new SpeechSynthesisUtterance(text);
+  const utterance = new SpeechSynthesisUtterance(formatJapaneseDisplay(text));
   utterance.lang = 'ja-JP';
   utterance.rate = rate;
 

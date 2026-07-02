@@ -66,6 +66,26 @@ export function getVoicedDescription(t: TranslateFn, rows: AlphabetChartRow[]) {
   });
 }
 
+/** Yoon grid rows: seion plus dakuten/handakuten yoon, with null placeholders removed. */
+export function toYoonGridRows(rows: AlphabetChartRow[]): GridRow<AlphabetCell>[] {
+  const seion = rows
+    .filter((row) => firstCell(row.seion))
+    .map((row) => ({ label: consonantLabel(row.seion), cells: row.seion }));
+
+  const dakuten = rows
+    .filter((row) => row.dakuten && firstCell(row.dakuten))
+    .map((row) => ({ label: consonantLabel(row.dakuten!), cells: row.dakuten! }));
+
+  const handakuten = rows
+    .filter((row) => row.handakuten && firstCell(row.handakuten))
+    .map((row) => ({ label: consonantLabel(row.handakuten!), cells: row.handakuten! }));
+
+  return [...seion, ...dakuten, ...handakuten].map((row) => ({
+    label: row.label,
+    cells: row.cells.filter((cell) => cell !== null)
+  }));
+}
+
 /** Yoon explanation with a script-correct worked example. */
 export function getYoonDescription(t: TranslateFn, rows: AlphabetChartRow[]) {
   const { smalls, example } = getYoonExample(rows);

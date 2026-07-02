@@ -1,14 +1,11 @@
 import { Box, Card, CardActionArea, CardContent, Chip, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
-import { AiDisclaimer } from '@/components/ai-disclaimer';
 import { Heading } from '@/components/heading';
 import { getCourse, lessonPath, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import { routes } from '@/constants/routes.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { interactiveSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
+import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 type CoursePageProps = {
   level: CourseLevel;
@@ -49,8 +46,6 @@ function CoursePage({ level }: CoursePageProps) {
   return (
     <PageContainer bottomGutter>
       <Stack spacing={4}>
-        <AiDisclaimer text={t('course.aiDisclaimer')} />
-
         <Box>
           <Heading component="h1" gutterBottom>
             {course.name[locale]}
@@ -62,26 +57,6 @@ function CoursePage({ level }: CoursePageProps) {
             {course.intro[locale]}
           </Typography>
         </Box>
-
-        {level === 'frontend' && (
-          <Card elevation={0} sx={tonalSurfaceSx}>
-            <CardActionArea component={RouterLink} to={routes.frontend.reference}>
-              <CardContent>
-                <Stack direction="row" spacing={1.5} sx={{ alignItems: 'center' }}>
-                  <LibraryBooksOutlinedIcon color="primary" />
-                  <Box sx={{ minWidth: 0 }}>
-                    <Heading component="h2" sx={{ fontSize: '1.125rem' }}>
-                      {t('course.referenceLink')}
-                    </Heading>
-                    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
-                      {t('course.referenceLinkDescription')}
-                    </Typography>
-                  </Box>
-                </Stack>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        )}
 
         <Box>
           <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>

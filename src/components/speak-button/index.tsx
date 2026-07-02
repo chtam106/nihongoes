@@ -2,6 +2,7 @@ import type { MouseEvent } from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined';
 import { IconButton } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { isSpeechSupported, speakJapanese } from '@/utils/speech.ts';
 
 type SpeakButtonProps = {
@@ -19,7 +20,7 @@ export function SpeakButton({ text, size = 'small' }: SpeakButtonProps) {
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
-    speakJapanese(text);
+    speakJapanese(formatJapaneseDisplay(text));
   };
 
   return (

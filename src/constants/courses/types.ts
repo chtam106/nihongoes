@@ -2,8 +2,7 @@ import type { Locale } from '@/i18n/translations.ts';
 
 export type Bilingual = Record<Locale, string>;
 
-export type CourseLevel = 'n5' | 'n4' | 'n3' | 'n2' | 'n1' | 'frontend';
-export type LessonTrack = 'core' | 'frontend';
+export type CourseLevel = 'n5';
 
 export type VocabItem = {
   kana: string;
@@ -52,15 +51,24 @@ export type ReadingPassage = {
   questions: ReadingQuestion[];
 };
 
+/** A titled group of supplementary/reference vocabulary shown separately from the core word list. */
+export type ReferenceGroup = {
+  title: Bilingual;
+  items: VocabItem[];
+};
+
 export type Lesson = {
   id: string;
   number: number;
-  track?: LessonTrack;
   title: Bilingual;
   focus: Bilingual;
   vocab: VocabItem[];
+  /** Set phrases / fixed expressions (Minna no Nihongo 会話 vocabulary), e.g. おなまえは何ですか. */
+  phrases?: VocabItem[];
   grammar: GrammarPoint[];
   reading?: ReadingPassage[];
+  /** Supplementary vocabulary (Minna no Nihongo 参考語彙) kept out of the core list. */
+  reference?: ReferenceGroup[];
 };
 
 /** Optional thematic grouping of a course's lessons, by inclusive lesson-number range. */

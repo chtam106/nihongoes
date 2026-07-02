@@ -7,22 +7,6 @@ export const routes = {
   n5: {
     index: '/n5'
   },
-  n4: {
-    index: '/n4'
-  },
-  n3: {
-    index: '/n3'
-  },
-  n2: {
-    index: '/n2'
-  },
-  n1: {
-    index: '/n1'
-  },
-  frontend: {
-    index: '/frontend',
-    reference: '/frontend/reference'
-  },
   alphabet: {
     index: '/alphabet',
     hiragana: '/alphabet/hiragana',

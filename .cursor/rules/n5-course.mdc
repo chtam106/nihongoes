@@ -13,6 +13,14 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - Lesson order may be (re)arranged freely. Compose part files and wrap with `withSequentialNumbers(...)` (in `types.ts`) so `id` becomes `lesson-<n>` and `number` becomes `1..N` automatically — no manual renumbering.
 - Everything is data-driven: the `lessons` array length drives routes, nav, sitemap, and the quiz/listening/reading builders — so the count can grow freely with no code changes.
 
+## Content completeness (IMPORTANT)
+- NEVER include fewer items than the source syllabus/textbook. For each lesson, the `vocab` list, the `phrases` (会話 set expressions), AND the `grammar` points must ALL cover the FULL set from the corresponding textbook lesson (N5 follows Minna no Nihongo Shokyu I). Do not trim, sample, or make a "short version".
+  - Vocab: include every 単語 word (core words, suffixes like `〜さん/〜じん/〜さい`, plain + polite variants such as `なんさい`/`おいくつ`).
+  - Phrases: include every 会話 set expression (e.g. `はじめまして`, `どうぞよろしくおねがいします`, `しつれいですが`, `こちらは〜さんです`).
+  - Grammar: include every 文型/sentence pattern taught in that lesson (e.g. L2 must have `これ/それ/あれ`, `この/その/あの＋N`, `N の N`, `N は なんですか`, `はい そうです / いいえ ちがいます`).
+- Only the word/phrase/pattern LISTS must match the textbook. Example sentences, 会話 dialogues, and reading passages must be ORIGINAL — never copy the textbook's copyrighted text.
+- When adding/reviewing a lesson, cross-check the textbook's full vocab + expression + grammar lists before finishing; a missing item is a bug.
+
 ## Data (`src/constants/courses/`)
 - One FOLDER per level/track: `n5/`, `n4/`, `n3/`, `n2/`, `n1/`, `frontend/`. Each folder has an `index.ts` that exports its `Course` (`n5Course`, `n4Course`, …, `frontendCourse`) and keeps long content split into `lessons-*.ts` part files inside the same folder (e.g. `n2/lessons-1.ts`, `frontend/lessons-a.ts`). The `courses/` root holds registry/types/levels only — no per-level content.
 - `types.ts` – shared types: `Bilingual`, `LessonTrack`, `VocabItem`, `GrammarExample`, `GrammarPoint`, `ReadingLine`, `ReadingChoice`, `ReadingQuestion`, `ReadingPassage`, `Lesson`, `Course`, `CourseLevel` (`'n5' | 'n4' | 'n3' | 'n2' | 'n1' | 'frontend'`), plus the `withSequentialNumbers(lessons)` helper. Content is bilingual (`{ en, vi }`), NOT translation keys. A lesson may set `track: 'frontend'`.

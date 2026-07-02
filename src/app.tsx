@@ -21,11 +21,12 @@ const ScriptPairExercisePage = lazy(
 const WritingExercisePage = lazy(() => import('@/pages/alphabet/exercise/writing/index.tsx'));
 const SentenceExercisePage = lazy(() => import('@/pages/alphabet/exercise/sentence/index.tsx'));
 const CoursePage = lazy(() => import('@/pages/course/course-page'));
-const FrontendReferencePage = lazy(() => import('@/pages/course/frontend-reference'));
 const LessonPage = lazy(() => import('@/pages/course/lesson-page'));
 const ExercisePage = lazy(() => import('@/pages/course/exercise-page'));
 const ListeningPage = lazy(() => import('@/pages/course/listening-page'));
 const ReadingPage = lazy(() => import('@/pages/course/reading-page'));
+const WritingPage = lazy(() => import('@/pages/course/writing-page'));
+const GrammarPage = lazy(() => import('@/pages/course/grammar-page'));
 const NotFoundPage = lazy(() => import('@/pages/not-found'));
 const SentryTestPage = lazy(() => import('@/pages/sentry-test'));
 
@@ -52,8 +53,12 @@ function localeRoutes(prefix: string) {
             <Route path={base} element={<CoursePage level={level} />} />
             <Route path={`${base}/lesson/:lessonId`} element={<LessonPage level={level} />} />
             <Route
-              path={`${base}/lesson/:lessonId/exercise`}
+              path={`${base}/lesson/:lessonId/vocabulary`}
               element={<ExercisePage level={level} />}
+            />
+            <Route
+              path={`${base}/lesson/:lessonId/grammar`}
+              element={<GrammarPage level={level} />}
             />
             <Route
               path={`${base}/lesson/:lessonId/listening`}
@@ -63,14 +68,13 @@ function localeRoutes(prefix: string) {
               path={`${base}/lesson/:lessonId/reading`}
               element={<ReadingPage level={level} />}
             />
+            <Route
+              path={`${base}/lesson/:lessonId/writing`}
+              element={<WritingPage level={level} />}
+            />
           </Fragment>
         );
       })}
-
-      <Route
-        path={localizePath(routes.frontend.reference, prefix)}
-        element={<FrontendReferencePage />}
-      />
 
       <Route path={localizePath(routes.alphabet.index, prefix)} element={<AlphabetPage />} />
       <Route path={localizePath(routes.alphabet.hiragana, prefix)} element={<HiraganaPage />} />

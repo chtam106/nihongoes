@@ -8,8 +8,9 @@ const meta = {
     layout: 'padded'
   },
   args: {
+    index: 1,
     point: {
-      pattern: 'NはNです',
+      pattern: 'N は N です',
       title: { en: 'A is B (statement)', vi: 'A là B (câu khẳng định)' },
       explanation: {
         en: 'Use は to mark the topic and です to politely state what it is.',

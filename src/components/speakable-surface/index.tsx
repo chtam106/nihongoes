@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { SxProps, Theme } from '@mui/material';
 import { Paper } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { isSpeechSupported, speakJapanese } from '@/utils/speech.ts';
 import { elevatedSurfaceSx, interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
@@ -20,6 +21,7 @@ type SpeakableSurfaceProps = {
 export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) {
   const { t } = useTranslation();
   const canSpeak = isSpeechSupported();
+  const spokenText = formatJapaneseDisplay(text);
   const sxOverrides = Array.isArray(sx) ? sx : [sx];
 
   return (
@@ -28,13 +30,13 @@ export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) 
       role={canSpeak ? 'button' : undefined}
       tabIndex={canSpeak ? 0 : undefined}
       aria-label={canSpeak ? t('common.playAudio') : undefined}
-      onClick={canSpeak ? () => speakJapanese(text) : undefined}
+      onClick={canSpeak ? () => speakJapanese(spokenText) : undefined}
       onKeyDown={
         canSpeak
           ? (event) => {
               if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
-                speakJapanese(text);
+                speakJapanese(spokenText);
               }
             }
           : undefined

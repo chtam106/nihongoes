@@ -1,6 +1,4 @@
 import { withSequentialNumbers, type Course } from '@/constants/courses/types.ts';
-import { n5LessonsB } from './lessons-2.ts';
-import { n5LessonsC } from './lessons-3.ts';
 
 export const n5Course: Course = {
   level: 'n5',
@@ -11,278 +9,89 @@ export const n5Course: Course = {
     vi: 'Xây nền tảng vững chắc, từng bài một.'
   },
   intro: {
-    en: 'A step-by-step JLPT N5 path inspired by top courses like Genki and Minna no Nihongo. Every lesson pairs core vocabulary with the grammar you need to start making sentences.',
-    vi: 'Lộ trình JLPT N5 từng bước, lấy cảm hứng từ các giáo trình hàng đầu như Genki và Minna no Nihongo. Mỗi bài kết hợp từ vựng cốt lõi với ngữ pháp cần thiết để bắt đầu đặt câu.'
+    en: 'A step-by-step JLPT N5 path modeled on Minna no Nihongo Shokyu I. Every lesson pairs the core vocabulary and sentence patterns with supplementary reference words and a short conversation.',
+    vi: 'Lộ trình JLPT N5 từng bước, bám theo giáo trình Minna no Nihongo Sơ cấp I. Mỗi bài kết hợp từ vựng cốt lõi và mẫu câu với từ tham khảo mở rộng cùng một đoạn hội thoại ngắn.'
   },
   seoTitle: {
     en: 'JLPT N5 Course - Vocabulary & Grammar',
     vi: 'Khóa học JLPT N5 - Từ vựng & Ngữ pháp'
   },
   seoDescription: {
-    en: 'A free, structured JLPT N5 course. Each lesson teaches essential Japanese vocabulary and grammar with example sentences and reading practice in English and Vietnamese.',
-    vi: 'Khóa học JLPT N5 miễn phí, có lộ trình. Mỗi bài dạy từ vựng và ngữ pháp tiếng Nhật cốt lõi kèm câu ví dụ và bài đọc hiểu song ngữ Anh - Việt.'
+    en: 'A free, structured JLPT N5 course modeled on Minna no Nihongo. Each lesson teaches essential Japanese vocabulary, sentence patterns, and reference words with example sentences in English and Vietnamese.',
+    vi: 'Khóa học JLPT N5 miễn phí, có lộ trình theo Minna no Nihongo. Mỗi bài dạy từ vựng, mẫu câu và từ tham khảo tiếng Nhật cốt lõi kèm câu ví dụ song ngữ Anh - Việt.'
   },
   lessons: withSequentialNumbers([
     {
       id: 'lesson-1',
       number: 1,
       title: {
-        en: 'Core Particles Round-up',
-        vi: 'Tổng hợp trợ từ cốt lõi'
+        en: 'Introductions - "A is B"',
+        vi: 'Giới thiệu bản thân - "A là B"'
       },
       focus: {
-        en: 'Meet the particles that hold sentences together and learn which one to pick: は, が, を, に, で, へ, と, も, の, から, まで.',
-        vi: 'Làm quen với các trợ từ giúp ghép câu và biết chọn cái nào: は, が, を, に, で, へ, と, も, の, から, まで.'
+        en: 'Introduce yourself and others: state nationality, job, and affiliation with は, です, も, and の.',
+        vi: 'Giới thiệu bản thân và người khác: nói quốc tịch, nghề nghiệp và nơi trực thuộc với は, です, も và の.'
       },
       vocab: [
+        { kana: 'わたし', kanji: '私', romaji: 'watashi', meaning: { en: 'I, me', vi: 'tôi' } },
         {
-          kana: 'は',
-          romaji: 'wa',
-          speech: 'わ',
-          meaning: { en: 'topic marker', vi: 'trợ từ chủ đề' }
+          kana: 'わたしたち',
+          kanji: '私たち',
+          romaji: 'watashitachi',
+          meaning: { en: 'we, us', vi: 'chúng tôi, chúng ta' }
         },
-        { kana: 'が', romaji: 'ga', meaning: { en: 'subject marker', vi: 'trợ từ chủ ngữ' } },
+        { kana: 'あなた', romaji: 'anata', meaning: { en: 'you', vi: 'bạn, anh/chị' } },
         {
-          kana: 'を',
-          romaji: 'o',
-          speech: 'お',
-          meaning: { en: 'object marker', vi: 'trợ từ tân ngữ' }
-        },
-        {
-          kana: 'に',
-          romaji: 'ni',
-          meaning: { en: 'at, to (time / destination)', vi: 'vào, đến (thời gian / đích)' }
+          kana: 'あのひと',
+          kanji: 'あの人',
+          romaji: 'ano hito',
+          meaning: { en: 'that person, he/she', vi: 'người kia, người đó' }
         },
         {
-          kana: 'で',
-          romaji: 'de',
+          kana: 'あのかた',
+          kanji: 'あの方',
+          romaji: 'ano kata',
+          meaning: { en: 'that person (polite)', vi: 'vị kia (lịch sự)' }
+        },
+        {
+          kana: 'みなさん',
+          kanji: '皆さん',
+          romaji: 'minasan',
+          meaning: { en: 'everyone, all of you', vi: 'mọi người, các bạn' }
+        },
+        {
+          kana: '〜さん',
+          romaji: 'san',
+          speech: 'さん',
+          meaning: { en: 'Mr./Ms. (polite suffix)', vi: 'anh/chị/ông/bà (hậu tố lịch sự)' }
+        },
+        {
+          kana: '〜ちゃん',
+          romaji: 'chan',
+          speech: 'ちゃん',
           meaning: {
-            en: 'at, by (place of action / means)',
-            vi: 'ở, bằng (nơi diễn ra / phương tiện)'
+            en: '~chan (affectionate suffix, esp. for little girls)',
+            vi: '~chan (hậu tố thân mật, nhất là với bé gái)'
           }
         },
         {
-          kana: 'へ',
-          romaji: 'e',
-          speech: 'え',
-          meaning: { en: 'to (direction)', vi: 'đến (hướng)' }
+          kana: '〜じん',
+          kanji: '〜人',
+          romaji: 'jin',
+          speech: 'じん',
+          meaning: { en: '~ people (nationality suffix)', vi: 'người ~ (hậu tố quốc tịch)' }
         },
-        { kana: 'と', romaji: 'to', meaning: { en: 'and, with', vi: 'và, với' } },
-        { kana: 'も', romaji: 'mo', meaning: { en: 'also, too', vi: 'cũng' } },
-        { kana: 'の', romaji: 'no', meaning: { en: "of, 's (linking)", vi: 'của (nối danh từ)' } },
-        { kana: 'から', romaji: 'kara', meaning: { en: 'from; because', vi: 'từ; vì' } },
-        { kana: 'まで', romaji: 'made', meaning: { en: 'until, up to', vi: 'đến, cho đến' } }
-      ],
-      grammar: [
-        {
-          pattern: 'N は ... / N が ...',
-          title: { en: 'Topic は vs subject が', vi: 'Chủ đề は và chủ ngữ が' },
-          explanation: {
-            en: 'は marks the topic (known or contrasted information); が marks the subject, often new information or the answer to a "who/what" question. Question words like だれ/なに take が.',
-            vi: 'は đánh dấu chủ đề (thông tin đã biết hoặc tương phản); が đánh dấu chủ ngữ, thường là thông tin mới hoặc câu trả lời cho câu hỏi "ai/cái gì". Từ để hỏi như だれ/なに dùng が.'
-          },
-          examples: [
-            {
-              jp: 'わたしは コーヒーが すきです。',
-              romaji: 'Watashi wa kōhī ga suki desu.',
-              meaning: { en: 'I like coffee.', vi: 'Tôi thích cà phê.' }
-            },
-            {
-              jp: 'だれが きましたか。',
-              romaji: 'Dare ga kimashita ka.',
-              meaning: { en: 'Who came?', vi: 'Ai đã đến?' }
-            }
-          ]
-        },
-        {
-          pattern: 'N を V / じかん に V',
-          title: { en: 'Object を and time/target に', vi: 'Tân ngữ を và thời gian/đích に' },
-          explanation: {
-            en: 'を marks the direct object of an action; に marks a specific time, a destination, or where something exists.',
-            vi: 'を đánh dấu tân ngữ trực tiếp của hành động; に đánh dấu thời điểm cụ thể, điểm đến, hoặc nơi tồn tại.'
-          },
-          examples: [
-            {
-              jp: 'ごはんを たべます。',
-              romaji: 'Gohan o tabemasu.',
-              meaning: { en: 'I eat rice.', vi: 'Tôi ăn cơm.' }
-            },
-            {
-              jp: 'しちじに がっこうへ いきます。',
-              romaji: 'Shichi-ji ni gakkō e ikimasu.',
-              meaning: { en: 'I go to school at 7.', vi: 'Tôi đi học lúc 7 giờ.' }
-            }
-          ]
-        },
-        {
-          pattern: 'ばしょ で V / ばしょ へ V',
-          title: {
-            en: 'Place/means で and direction へ',
-            vi: 'Nơi chốn/phương tiện で và hướng へ'
-          },
-          explanation: {
-            en: 'で marks where an action happens or the means used; へ (read "e") marks the direction of movement and overlaps with destination に.',
-            vi: 'で đánh dấu nơi diễn ra hành động hoặc phương tiện; へ (đọc là "e") đánh dấu hướng di chuyển và có thể thay cho に chỉ đích.'
-          },
-          examples: [
-            {
-              jp: 'としょかんで べんきょうします。',
-              romaji: 'Toshokan de benkyō shimasu.',
-              meaning: { en: 'I study at the library.', vi: 'Tôi học ở thư viện.' }
-            },
-            {
-              jp: 'でんしゃで いえへ かえります。',
-              romaji: 'Densha de ie e kaerimasu.',
-              meaning: { en: 'I go home by train.', vi: 'Tôi về nhà bằng tàu điện.' }
-            }
-          ]
-        },
-        {
-          pattern: 'N と N / N も / N の N',
-          title: {
-            en: 'と (and/with), も (also), の (of)',
-            vi: 'と (và/với), も (cũng), の (của)'
-          },
-          explanation: {
-            en: 'と links nouns ("and") or marks a companion ("with"); も replaces は/が to mean "also"; の connects two nouns to show possession or type.',
-            vi: 'と nối danh từ ("và") hoặc đánh dấu người cùng làm ("với"); も thay は/が để nói "cũng"; の nối hai danh từ chỉ sở hữu hoặc loại.'
-          },
-          examples: [
-            {
-              jp: 'ともだちと えいがを みます。',
-              romaji: 'Tomodachi to eiga o mimasu.',
-              meaning: { en: 'I watch a movie with a friend.', vi: 'Tôi xem phim với bạn.' }
-            },
-            {
-              jp: 'わたしも がくせいです。',
-              romaji: 'Watashi mo gakusei desu.',
-              meaning: { en: 'I am a student too.', vi: 'Tôi cũng là học sinh.' }
-            },
-            {
-              jp: 'これは わたしの ほんです。',
-              romaji: 'Kore wa watashi no hon desu.',
-              meaning: { en: 'This is my book.', vi: 'Đây là sách của tôi.' }
-            }
-          ]
-        },
-        {
-          pattern: 'N から N まで',
-          title: { en: 'from から / until まで', vi: 'từ から / đến まで' },
-          explanation: {
-            en: 'から marks a start point and まで an end point, for both time and place. After a clause, から also means "because".',
-            vi: 'から đánh dấu điểm bắt đầu và まで điểm kết thúc, dùng cho cả thời gian và nơi chốn. Sau một mệnh đề, から còn nghĩa là "vì".'
-          },
-          examples: [
-            {
-              jp: 'くじから ごじまで はたらきます。',
-              romaji: 'Ku-ji kara go-ji made hatarakimasu.',
-              meaning: { en: 'I work from 9 to 5.', vi: 'Tôi làm việc từ 9 giờ đến 5 giờ.' }
-            },
-            {
-              jp: 'えきから いえまで あるきます。',
-              romaji: 'Eki kara ie made arukimasu.',
-              meaning: { en: 'I walk from the station to home.', vi: 'Tôi đi bộ từ ga về nhà.' }
-            }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'reading-1',
-          title: { en: 'Sunday with friends', vi: 'Chủ nhật cùng bạn bè' },
-          lines: [
-            {
-              jp: 'にちようびに ともだちと こうえんへ いきました。',
-              romaji: 'Nichiyōbi ni tomodachi to kōen e ikimashita.',
-              meaning: {
-                en: 'On Sunday I went to the park with a friend.',
-                vi: 'Chủ nhật tôi đã đi công viên với bạn.'
-              }
-            },
-            {
-              jp: 'こうえんで サッカーを しました。',
-              romaji: 'Kōen de sakkā o shimashita.',
-              meaning: {
-                en: 'At the park we played soccer.',
-                vi: 'Ở công viên chúng tôi đã chơi bóng đá.'
-              }
-            },
-            {
-              jp: 'それから、えきの レストランで ひるごはんを たべました。',
-              romaji: 'Sorekara, eki no resutoran de hirugohan o tabemashita.',
-              meaning: {
-                en: 'After that, we ate lunch at the restaurant in the station.',
-                vi: 'Sau đó, chúng tôi ăn trưa ở nhà hàng trong ga.'
-              }
-            }
-          ],
-          questions: [
-            {
-              id: 'q1',
-              question: { en: 'Who did the writer go with?', vi: 'Người viết đã đi với ai?' },
-              choices: [
-                { id: 'a', label: { en: 'Alone', vi: 'Một mình' } },
-                { id: 'b', label: { en: 'A friend', vi: 'Một người bạn' } },
-                { id: 'c', label: { en: 'A teacher', vi: 'Một giáo viên' } }
-              ],
-              correctId: 'b'
-            },
-            {
-              id: 'q2',
-              question: { en: 'Where did they eat lunch?', vi: 'Họ đã ăn trưa ở đâu?' },
-              choices: [
-                { id: 'a', label: { en: 'At the park', vi: 'Ở công viên' } },
-                { id: 'b', label: { en: 'At home', vi: 'Ở nhà' } },
-                {
-                  id: 'c',
-                  label: { en: 'At a restaurant in the station', vi: 'Ở nhà hàng trong ga' }
-                }
-              ],
-              correctId: 'c'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'lesson-2',
-      number: 2,
-      title: {
-        en: 'Greetings & Self-introduction',
-        vi: 'Chào hỏi & Giới thiệu bản thân'
-      },
-      focus: {
-        en: 'Say hello, introduce yourself, and state who someone is with です.',
-        vi: 'Chào hỏi, giới thiệu bản thân và nói ai đó là ai với です.'
-      },
-      vocab: [
-        {
-          kana: 'おはようございます',
-          romaji: 'ohayō gozaimasu',
-          meaning: { en: 'good morning', vi: 'chào buổi sáng' }
-        },
-        {
-          kana: 'こんにちは',
-          romaji: 'konnichiwa',
-          meaning: { en: 'hello / good afternoon', vi: 'xin chào / chào buổi chiều' }
-        },
-        {
-          kana: 'こんばんは',
-          romaji: 'konbanwa',
-          meaning: { en: 'good evening', vi: 'chào buổi tối' }
-        },
-        {
-          kana: 'はじめまして',
-          romaji: 'hajimemashite',
-          meaning: { en: 'nice to meet you', vi: 'rất vui được gặp' }
-        },
-        { kana: 'わたし', kanji: '私', romaji: 'watashi', meaning: { en: 'I, me', vi: 'tôi' } },
-        { kana: 'あなた', romaji: 'anata', meaning: { en: 'you', vi: 'bạn' } },
         {
           kana: 'せんせい',
           kanji: '先生',
           romaji: 'sensei',
-          meaning: { en: 'teacher', vi: 'giáo viên' }
+          meaning: { en: 'teacher (also a title)', vi: 'giáo viên (cũng dùng làm kính ngữ)' }
+        },
+        {
+          kana: 'きょうし',
+          kanji: '教師',
+          romaji: 'kyōshi',
+          meaning: { en: 'teacher (occupation)', vi: 'giáo viên (nghề nghiệp)' }
         },
         {
           kana: 'がくせい',
@@ -297,22 +106,118 @@ export const n5Course: Course = {
           meaning: { en: 'company employee', vi: 'nhân viên công ty' }
         },
         {
-          kana: 'にほん',
-          kanji: '日本',
-          romaji: 'nihon',
-          meaning: { en: 'Japan', vi: 'Nhật Bản' }
+          kana: 'しゃいん',
+          kanji: '社員',
+          romaji: 'shain',
+          meaning: { en: 'employee (of ~ company)', vi: 'nhân viên (của công ty ~)' }
         },
-        { kana: 'ベトナム', romaji: 'betonamu', meaning: { en: 'Vietnam', vi: 'Việt Nam' } },
-        { kana: 'なまえ', kanji: '名前', romaji: 'namae', meaning: { en: 'name', vi: 'tên' } },
+        {
+          kana: 'ぎんこういん',
+          kanji: '銀行員',
+          romaji: 'ginkōin',
+          meaning: { en: 'bank employee', vi: 'nhân viên ngân hàng' }
+        },
+        {
+          kana: 'いしゃ',
+          kanji: '医者',
+          romaji: 'isha',
+          meaning: { en: 'doctor', vi: 'bác sĩ' }
+        },
+        {
+          kana: 'けんきゅうしゃ',
+          kanji: '研究者',
+          romaji: 'kenkyūsha',
+          meaning: { en: 'researcher', vi: 'nhà nghiên cứu' }
+        },
+        { kana: 'エンジニア', romaji: 'enjinia', meaning: { en: 'engineer', vi: 'kỹ sư' } },
+        {
+          kana: 'だいがく',
+          kanji: '大学',
+          romaji: 'daigaku',
+          meaning: { en: 'university', vi: 'trường đại học' }
+        },
+        {
+          kana: 'びょういん',
+          kanji: '病院',
+          romaji: 'byōin',
+          meaning: { en: 'hospital', vi: 'bệnh viện' }
+        },
+        { kana: 'だれ', romaji: 'dare', meaning: { en: 'who', vi: 'ai' } },
+        {
+          kana: 'どなた',
+          romaji: 'donata',
+          meaning: { en: 'who (polite)', vi: 'vị nào (lịch sự)' }
+        },
+        {
+          kana: '〜さい',
+          kanji: '〜歳',
+          romaji: 'sai',
+          speech: 'さい',
+          meaning: { en: '~ years old', vi: '~ tuổi' }
+        },
+        {
+          kana: 'なんさい',
+          kanji: '何歳',
+          romaji: 'nansai',
+          meaning: { en: 'how old (plain)', vi: 'mấy tuổi (thường)' }
+        },
+        {
+          kana: 'おいくつ',
+          romaji: 'oikutsu',
+          meaning: { en: 'how old (polite)', vi: 'bao nhiêu tuổi (lịch sự)' }
+        },
         { kana: 'はい', romaji: 'hai', meaning: { en: 'yes', vi: 'vâng, đúng' } },
         { kana: 'いいえ', romaji: 'iie', meaning: { en: 'no', vi: 'không' } }
       ],
+      phrases: [
+        {
+          kana: 'はじめまして。',
+          romaji: 'Hajimemashite.',
+          meaning: { en: 'How do you do? (first meeting)', vi: 'Rất hân hạnh (lần đầu gặp).' }
+        },
+        {
+          kana: 'どうぞ よろしく おねがいします。',
+          romaji: 'Dōzo yoroshiku onegaishimasu.',
+          meaning: {
+            en: 'Nice to meet you; I look forward to your kindness.',
+            vi: 'Rất mong được giúp đỡ.'
+          }
+        },
+        {
+          kana: 'おなまえは なんですか。',
+          kanji: 'お名前は何ですか。',
+          romaji: 'Onamae wa nan desu ka.',
+          meaning: { en: 'What is your name?', vi: 'Bạn tên là gì?' }
+        },
+        {
+          kana: 'しつれいですが。',
+          kanji: '失礼ですが。',
+          romaji: 'Shitsurei desu ga.',
+          meaning: {
+            en: 'Excuse me, but... (polite lead-in)',
+            vi: 'Xin lỗi, cho hỏi... (mở đầu lịch sự)'
+          }
+        },
+        {
+          kana: 'アメリカから きました。',
+          romaji: 'Amerika kara kimashita.',
+          meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
+        },
+        {
+          kana: 'こちらは ミラーさんです。',
+          romaji: 'Kochira wa Mirā-san desu.',
+          meaning: { en: 'This is Mr. Miller.', vi: 'Đây là anh Miller.' }
+        }
+      ],
       grammar: [
         {
-          pattern: 'N は N です',
-          title: { en: 'A is B (statement with です)', vi: 'A là B (câu khẳng định với です)' },
+          pattern: 'N1 は N2 です',
+          title: {
+            en: 'N1 is N2 (statement with です)',
+            vi: 'N1 là N2 (câu khẳng định với です)'
+          },
           explanation: {
-            en: 'は (read "wa") marks the topic; です ends a polite statement. It works like "is/am/are".',
+            en: 'は (read "wa") marks the topic; です ends a polite statement and works like "is/am/are".',
             vi: 'は (đọc là "wa") đánh dấu chủ đề; です kết thúc câu lịch sự, tương đương "là".'
           },
           examples: [
@@ -322,38 +227,41 @@ export const n5Course: Course = {
               meaning: { en: 'I am a student.', vi: 'Tôi là học sinh.' }
             },
             {
-              jp: 'たなかさんは せんせいです。',
-              romaji: 'Tanaka-san wa sensei desu.',
-              meaning: { en: 'Mr. Tanaka is a teacher.', vi: 'Anh Tanaka là giáo viên.' }
+              jp: 'ミラーさんは かいしゃいんです。',
+              romaji: 'Mirā-san wa kaishain desu.',
+              meaning: {
+                en: 'Mr. Miller is a company employee.',
+                vi: 'Anh Miller là nhân viên công ty.'
+              }
             }
           ]
         },
         {
-          pattern: 'N は N じゃ ありません',
-          title: { en: 'A is not B (negative)', vi: 'A không phải là B (phủ định)' },
+          pattern: 'N1 は N2 じゃありません',
+          title: { en: 'N1 is not N2 (negative)', vi: 'N1 không phải là N2 (phủ định)' },
           explanation: {
-            en: 'Replace です with じゃ ありません (or the more formal では ありません) to make it negative.',
-            vi: 'Thay です bằng じゃ ありません (hoặc では ありません trang trọng hơn) để phủ định.'
+            en: 'Replace です with じゃありません (or the more formal ではありません) to make it negative.',
+            vi: 'Thay です bằng じゃありません (hoặc ではありません trang trọng hơn) để phủ định.'
           },
           examples: [
             {
-              jp: 'わたしは せんせいじゃ ありません。',
+              jp: 'わたしは せんせいじゃありません。',
               romaji: 'Watashi wa sensei ja arimasen.',
               meaning: { en: 'I am not a teacher.', vi: 'Tôi không phải là giáo viên.' }
             },
             {
-              jp: 'リンさんは にほんじんじゃ ありません。',
-              romaji: 'Rin-san wa nihonjin ja arimasen.',
-              meaning: { en: 'Rin is not Japanese.', vi: 'Chị Rin không phải người Nhật.' }
+              jp: 'ミラーさんは いしゃじゃありません。',
+              romaji: 'Mirā-san wa isha ja arimasen.',
+              meaning: { en: 'Mr. Miller is not a doctor.', vi: 'Anh Miller không phải là bác sĩ.' }
             }
           ]
         },
         {
-          pattern: 'N は N ですか',
+          pattern: 'N1 は N2 ですか',
           title: { en: 'Yes/no question with か', vi: 'Câu hỏi có/không với か' },
           explanation: {
-            en: 'Add か to the end to make a question. No question mark is needed.',
-            vi: 'Thêm か vào cuối câu để tạo câu hỏi. Không cần dấu chấm hỏi.'
+            en: 'Add か to the end to make a question. No question mark is needed in Japanese.',
+            vi: 'Thêm か vào cuối câu để tạo câu hỏi. Tiếng Nhật không cần dấu chấm hỏi.'
           },
           examples: [
             {
@@ -362,29 +270,58 @@ export const n5Course: Course = {
               meaning: { en: 'Are you a student?', vi: 'Bạn là học sinh phải không?' }
             },
             {
-              jp: 'はい、がくせいです。',
-              romaji: 'Hai, gakusei desu.',
-              meaning: { en: 'Yes, I am a student.', vi: 'Vâng, tôi là học sinh.' }
+              jp: 'あのひとは せんせいですか。',
+              romaji: 'Ano hito wa sensei desu ka.',
+              meaning: { en: 'Is that person a teacher?', vi: 'Người kia là giáo viên phải không?' }
             }
           ]
         },
         {
-          pattern: 'N の N',
-          title: { en: 'Possessive / linking の', vi: 'の sở hữu / nối danh từ' },
+          pattern: 'N も',
+          title: { en: 'も (also, too)', vi: 'も (cũng)' },
           explanation: {
-            en: 'の links two nouns, showing possession or affiliation, like "of" or apostrophe-s.',
-            vi: 'の nối hai danh từ, chỉ sở hữu hay nơi trực thuộc, giống "của".'
+            en: 'も replaces は to say the same thing is also true for another topic ("...too").',
+            vi: 'も thay cho は để nói điều đó cũng đúng với một chủ đề khác ("... cũng ...").'
           },
           examples: [
             {
-              jp: 'わたしの なまえは ハナです。',
-              romaji: 'Watashi no namae wa Hana desu.',
-              meaning: { en: 'My name is Hana.', vi: 'Tên tôi là Hana.' }
+              jp: 'ミラーさんも かいしゃいんです。',
+              romaji: 'Mirā-san mo kaishain desu.',
+              meaning: {
+                en: 'Mr. Miller is a company employee too.',
+                vi: 'Anh Miller cũng là nhân viên công ty.'
+              }
             },
             {
-              jp: 'にほんごの せんせい',
-              romaji: 'nihongo no sensei',
-              meaning: { en: 'a Japanese (language) teacher', vi: 'giáo viên tiếng Nhật' }
+              jp: 'わたしも がくせいです。',
+              romaji: 'Watashi mo gakusei desu.',
+              meaning: { en: 'I am a student too.', vi: 'Tôi cũng là học sinh.' }
+            }
+          ]
+        },
+        {
+          pattern: 'N1 の N2',
+          title: { en: 'の (affiliation / belonging)', vi: 'の (nơi trực thuộc / thuộc về)' },
+          explanation: {
+            en: 'の links two nouns; here the first noun (company, school, country) tells which group the second belongs to.',
+            vi: 'の nối hai danh từ; ở đây danh từ đầu (công ty, trường, quốc gia) cho biết danh từ sau thuộc nhóm nào.'
+          },
+          examples: [
+            {
+              jp: 'わたしは さくらだいがくの がくせいです。',
+              romaji: 'Watashi wa Sakura daigaku no gakusei desu.',
+              meaning: {
+                en: 'I am a student at Sakura University.',
+                vi: 'Tôi là sinh viên trường đại học Sakura.'
+              }
+            },
+            {
+              jp: 'あのひとは にほんごの せんせいです。',
+              romaji: 'Ano hito wa nihongo no sensei desu.',
+              meaning: {
+                en: 'That person is a Japanese teacher.',
+                vi: 'Người kia là giáo viên tiếng Nhật.'
+              }
             }
           ]
         }
@@ -392,68 +329,204 @@ export const n5Course: Course = {
       reading: [
         {
           id: 'reading-1',
-          title: { en: 'A new student', vi: 'Một học sinh mới' },
+          title: { en: 'Nice to meet you', vi: 'Rất vui được gặp' },
           lines: [
             {
-              jp: 'はじめまして。わたしは リンです。',
-              romaji: 'Hajimemashite. Watashi wa Rin desu.',
-              meaning: { en: 'Nice to meet you. I am Rin.', vi: 'Rất vui được gặp. Tôi là Rin.' }
-            },
-            {
-              jp: 'ベトナムじんです。がくせいです。',
-              romaji: 'Betonamu-jin desu. Gakusei desu.',
+              jp: 'はじめまして。わたしは マイク・ミラーです。',
+              romaji: 'Hajimemashite. Watashi wa Maiku Mirā desu.',
               meaning: {
-                en: 'I am Vietnamese. I am a student.',
-                vi: 'Tôi là người Việt Nam. Tôi là học sinh.'
+                en: 'Nice to meet you. I am Mike Miller.',
+                vi: 'Rất vui được gặp. Tôi là Mike Miller.'
               }
             },
             {
-              jp: 'たなかさんは わたしの にほんごの せんせいです。',
-              romaji: 'Tanaka-san wa watashi no nihongo no sensei desu.',
+              jp: 'アメリカから きました。',
+              romaji: 'Amerika kara kimashita.',
+              meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
+            },
+            {
+              jp: 'かいしゃいんです。どうぞ よろしく おねがいします。',
+              romaji: 'Kaishain desu. Dōzo yoroshiku onegaishimasu.',
               meaning: {
-                en: 'Mr. Tanaka is my Japanese teacher.',
-                vi: 'Thầy Tanaka là giáo viên tiếng Nhật của tôi.'
+                en: 'I am a company employee. Pleased to meet you.',
+                vi: 'Tôi là nhân viên công ty. Rất mong được giúp đỡ.'
               }
             }
           ],
           questions: [
             {
               id: 'q1',
-              question: { en: 'Where is Rin from?', vi: 'Rin đến từ đâu?' },
+              question: { en: 'Where did Mr. Miller come from?', vi: 'Anh Miller đến từ đâu?' },
               choices: [
-                { id: 'a', label: { en: 'Japan', vi: 'Nhật Bản' } },
-                { id: 'b', label: { en: 'Vietnam', vi: 'Việt Nam' } },
-                { id: 'c', label: { en: 'China', vi: 'Trung Quốc' } }
+                { id: 'a', label: { en: 'America', vi: 'Mỹ' } },
+                { id: 'b', label: { en: 'Japan', vi: 'Nhật Bản' } },
+                { id: 'c', label: { en: 'China', vi: 'Trung Quốc' } },
+                { id: 'd', label: { en: 'Vietnam', vi: 'Việt Nam' } }
               ],
-              correctId: 'b'
+              correctId: 'a'
             },
             {
               id: 'q2',
-              question: { en: 'Who is Mr. Tanaka?', vi: 'Ông Tanaka là ai?' },
+              question: { en: "What is Mr. Miller's job?", vi: 'Anh Miller làm nghề gì?' },
               choices: [
-                {
-                  id: 'a',
-                  label: { en: "Rin's Japanese teacher", vi: 'Giáo viên tiếng Nhật của Rin' }
-                },
-                { id: 'b', label: { en: "Rin's friend", vi: 'Bạn của Rin' } },
-                { id: 'c', label: { en: 'A company employee', vi: 'Nhân viên công ty' } }
+                { id: 'a', label: { en: 'Student', vi: 'Học sinh' } },
+                { id: 'b', label: { en: 'Company employee', vi: 'Nhân viên công ty' } },
+                { id: 'c', label: { en: 'Teacher', vi: 'Giáo viên' } },
+                { id: 'd', label: { en: 'Doctor', vi: 'Bác sĩ' } }
               ],
-              correctId: 'a'
+              correctId: 'b'
+            }
+          ]
+        }
+      ],
+      reference: [
+        {
+          title: { en: 'Countries', vi: 'Quốc gia' },
+          items: [
+            {
+              kana: 'にほん',
+              kanji: '日本',
+              romaji: 'nihon',
+              meaning: { en: 'Japan', vi: 'Nhật Bản' }
+            },
+            { kana: 'アメリカ', romaji: 'amerika', meaning: { en: 'USA', vi: 'Mỹ' } },
+            { kana: 'イギリス', romaji: 'igirisu', meaning: { en: 'UK', vi: 'Anh' } },
+            {
+              kana: 'ちゅうごく',
+              kanji: '中国',
+              romaji: 'chūgoku',
+              meaning: { en: 'China', vi: 'Trung Quốc' }
+            },
+            {
+              kana: 'かんこく',
+              kanji: '韓国',
+              romaji: 'kankoku',
+              meaning: { en: 'South Korea', vi: 'Hàn Quốc' }
+            },
+            { kana: 'ドイツ', romaji: 'doitsu', meaning: { en: 'Germany', vi: 'Đức' } },
+            { kana: 'フランス', romaji: 'furansu', meaning: { en: 'France', vi: 'Pháp' } },
+            { kana: 'ブラジル', romaji: 'burajiru', meaning: { en: 'Brazil', vi: 'Brazil' } },
+            { kana: 'タイ', romaji: 'tai', meaning: { en: 'Thailand', vi: 'Thái Lan' } },
+            { kana: 'ベトナム', romaji: 'betonamu', meaning: { en: 'Vietnam', vi: 'Việt Nam' } }
+          ]
+        },
+        {
+          title: { en: 'Languages', vi: 'Ngôn ngữ' },
+          items: [
+            {
+              kana: 'にほんご',
+              kanji: '日本語',
+              romaji: 'nihongo',
+              meaning: { en: 'Japanese', vi: 'tiếng Nhật' }
+            },
+            {
+              kana: 'えいご',
+              kanji: '英語',
+              romaji: 'eigo',
+              meaning: { en: 'English', vi: 'tiếng Anh' }
+            },
+            {
+              kana: 'ちゅうごくご',
+              kanji: '中国語',
+              romaji: 'chūgokugo',
+              meaning: { en: 'Chinese', vi: 'tiếng Trung' }
+            },
+            {
+              kana: 'かんこくご',
+              kanji: '韓国語',
+              romaji: 'kankokugo',
+              meaning: { en: 'Korean', vi: 'tiếng Hàn' }
+            },
+            {
+              kana: 'ベトナムご',
+              kanji: 'ベトナム語',
+              romaji: 'betonamugo',
+              meaning: { en: 'Vietnamese', vi: 'tiếng Việt' }
+            }
+          ]
+        },
+        {
+          title: { en: 'More occupations', vi: 'Nghề nghiệp khác' },
+          items: [
+            {
+              kana: 'こうむいん',
+              kanji: '公務員',
+              romaji: 'kōmuin',
+              meaning: { en: 'civil servant', vi: 'công chức' }
+            },
+            {
+              kana: 'べんごし',
+              kanji: '弁護士',
+              romaji: 'bengoshi',
+              meaning: { en: 'lawyer', vi: 'luật sư' }
+            },
+            {
+              kana: 'かんごし',
+              kanji: '看護師',
+              romaji: 'kangoshi',
+              meaning: { en: 'nurse', vi: 'y tá' }
+            },
+            {
+              kana: 'しゅふ',
+              kanji: '主婦',
+              romaji: 'shufu',
+              meaning: { en: 'homemaker', vi: 'nội trợ' }
+            },
+            {
+              kana: 'けいさつかん',
+              kanji: '警察官',
+              romaji: 'keisatsukan',
+              meaning: { en: 'police officer', vi: 'cảnh sát' }
+            }
+          ]
+        },
+        {
+          title: { en: 'Nationalities (〜じん)', vi: 'Quốc tịch (〜じん)' },
+          items: [
+            {
+              kana: 'にほんじん',
+              kanji: '日本人',
+              romaji: 'nihonjin',
+              meaning: { en: 'Japanese person', vi: 'người Nhật' }
+            },
+            {
+              kana: 'アメリカじん',
+              kanji: 'アメリカ人',
+              romaji: 'amerikajin',
+              meaning: { en: 'American', vi: 'người Mỹ' }
+            },
+            {
+              kana: 'ちゅうごくじん',
+              kanji: '中国人',
+              romaji: 'chūgokujin',
+              meaning: { en: 'Chinese person', vi: 'người Trung Quốc' }
+            },
+            {
+              kana: 'かんこくじん',
+              kanji: '韓国人',
+              romaji: 'kankokujin',
+              meaning: { en: 'Korean person', vi: 'người Hàn Quốc' }
+            },
+            {
+              kana: 'ベトナムじん',
+              kanji: 'ベトナム人',
+              romaji: 'betonamujin',
+              meaning: { en: 'Vietnamese person', vi: 'người Việt Nam' }
             }
           ]
         }
       ]
     },
     {
-      id: 'lesson-3',
-      number: 3,
+      id: 'lesson-2',
+      number: 2,
       title: {
-        en: 'This, That & Everyday Things',
-        vi: 'Cái này, cái kia & Đồ vật hằng ngày'
+        en: 'これ / それ / あれ - Things around you',
+        vi: 'これ / それ / あれ - Đồ vật xung quanh'
       },
       focus: {
-        en: 'Point at objects with これ/それ/あれ and describe what they are.',
-        vi: 'Chỉ vào đồ vật với これ/それ/あれ và nói chúng là gì.'
+        en: 'Point out and identify objects with これ/それ/あれ, この/その/あの, and の, and answer with そうです / ちがいます.',
+        vi: 'Chỉ và gọi tên đồ vật với これ/それ/あれ, この/その/あの và の, rồi trả lời bằng そうです / ちがいます.'
       },
       vocab: [
         {
@@ -471,61 +544,214 @@ export const n5Course: Course = {
           romaji: 'are',
           meaning: { en: 'that over there', vi: 'cái kia (xa cả hai)' }
         },
+        {
+          kana: 'この',
+          romaji: 'kono',
+          meaning: { en: 'this ~ (+ noun)', vi: 'cái ~ này (+ danh từ)' }
+        },
+        {
+          kana: 'その',
+          romaji: 'sono',
+          meaning: { en: 'that ~ (+ noun)', vi: 'cái ~ đó (+ danh từ)' }
+        },
+        {
+          kana: 'あの',
+          romaji: 'ano',
+          meaning: { en: 'that ~ over there (+ noun)', vi: 'cái ~ kia (+ danh từ)' }
+        },
         { kana: 'ほん', kanji: '本', romaji: 'hon', meaning: { en: 'book', vi: 'sách' } },
-        { kana: 'ペン', romaji: 'pen', meaning: { en: 'pen', vi: 'bút' } },
-        { kana: 'かばん', romaji: 'kaban', meaning: { en: 'bag', vi: 'cặp, túi' } },
+        {
+          kana: 'じしょ',
+          kanji: '辞書',
+          romaji: 'jisho',
+          meaning: { en: 'dictionary', vi: 'từ điển' }
+        },
+        {
+          kana: 'ざっし',
+          kanji: '雑誌',
+          romaji: 'zasshi',
+          meaning: { en: 'magazine', vi: 'tạp chí' }
+        },
+        {
+          kana: 'しんぶん',
+          kanji: '新聞',
+          romaji: 'shinbun',
+          meaning: { en: 'newspaper', vi: 'báo' }
+        },
+        { kana: 'ノート', romaji: 'nōto', meaning: { en: 'notebook', vi: 'vở, sổ tay' } },
+        {
+          kana: 'めいし',
+          kanji: '名刺',
+          romaji: 'meishi',
+          meaning: { en: 'business card', vi: 'danh thiếp' }
+        },
+        {
+          kana: 'てちょう',
+          kanji: '手帳',
+          romaji: 'techō',
+          meaning: { en: 'pocket notebook, planner', vi: 'sổ tay' }
+        },
+        { kana: 'カード', romaji: 'kādo', meaning: { en: 'card', vi: 'thẻ' } },
+        {
+          kana: 'テレホンカード',
+          romaji: 'terehon kādo',
+          meaning: { en: 'telephone card', vi: 'thẻ điện thoại' }
+        },
+        {
+          kana: 'えんぴつ',
+          kanji: '鉛筆',
+          romaji: 'enpitsu',
+          meaning: { en: 'pencil', vi: 'bút chì' }
+        },
+        {
+          kana: 'ボールペン',
+          romaji: 'bōrupen',
+          meaning: { en: 'ballpoint pen', vi: 'bút bi' }
+        },
+        {
+          kana: 'シャープペンシル',
+          romaji: 'shāpupenshiru',
+          meaning: { en: 'mechanical pencil', vi: 'bút chì bấm' }
+        },
+        { kana: 'かぎ', kanji: '鍵', romaji: 'kagi', meaning: { en: 'key', vi: 'chìa khóa' } },
         {
           kana: 'とけい',
           kanji: '時計',
           romaji: 'tokei',
-          meaning: { en: 'clock, watch', vi: 'đồng hồ' }
+          meaning: { en: 'watch, clock', vi: 'đồng hồ' }
         },
-        { kana: 'くるま', kanji: '車', romaji: 'kuruma', meaning: { en: 'car', vi: 'xe ô tô' } },
+        { kana: 'かさ', kanji: '傘', romaji: 'kasa', meaning: { en: 'umbrella', vi: 'ô, dù' } },
+        { kana: 'かばん', romaji: 'kaban', meaning: { en: 'bag', vi: 'cặp, túi xách' } },
+        { kana: 'テレビ', romaji: 'terebi', meaning: { en: 'TV', vi: 'tivi' } },
+        { kana: 'ラジオ', romaji: 'rajio', meaning: { en: 'radio', vi: 'radio' } },
+        { kana: 'カメラ', romaji: 'kamera', meaning: { en: 'camera', vi: 'máy ảnh' } },
         {
-          kana: 'スマホ',
-          romaji: 'sumaho',
-          meaning: { en: 'smartphone', vi: 'điện thoại thông minh' }
+          kana: 'テープ',
+          romaji: 'tēpu',
+          meaning: { en: 'tape (cassette)', vi: 'băng (cát-xét)' }
         },
         {
-          kana: 'なん / なに',
-          kanji: '何',
-          romaji: 'nan / nani',
-          meaning: { en: 'what', vi: 'cái gì' }
+          kana: 'テープレコーダー',
+          romaji: 'tēpu rekōdā',
+          meaning: { en: 'tape recorder', vi: 'máy ghi âm' }
         },
-        { kana: 'そう', romaji: 'sō', meaning: { en: 'so, that way', vi: 'đúng vậy' } },
+        {
+          kana: 'コンピューター',
+          romaji: 'konpyūtā',
+          meaning: { en: 'computer', vi: 'máy tính' }
+        },
+        { kana: 'くるま', kanji: '車', romaji: 'kuruma', meaning: { en: 'car', vi: 'xe hơi' } },
+        {
+          kana: 'じどうしゃ',
+          kanji: '自動車',
+          romaji: 'jidōsha',
+          meaning: { en: 'automobile', vi: 'xe hơi, ô tô' }
+        },
+        { kana: 'つくえ', kanji: '机', romaji: 'tsukue', meaning: { en: 'desk', vi: 'bàn' } },
+        { kana: 'いす', kanji: '椅子', romaji: 'isu', meaning: { en: 'chair', vi: 'ghế' } },
+        {
+          kana: 'チョコレート',
+          romaji: 'chokorēto',
+          meaning: { en: 'chocolate', vi: 'sô-cô-la' }
+        },
+        { kana: 'コーヒー', romaji: 'kōhī', meaning: { en: 'coffee', vi: 'cà phê' } },
+        {
+          kana: 'おみやげ',
+          kanji: 'お土産',
+          romaji: 'omiyage',
+          meaning: { en: 'souvenir, gift', vi: 'quà (đặc sản)' }
+        },
+        {
+          kana: 'にほんご',
+          kanji: '日本語',
+          romaji: 'nihongo',
+          meaning: { en: 'Japanese (language)', vi: 'tiếng Nhật' }
+        },
+        {
+          kana: 'えいご',
+          kanji: '英語',
+          romaji: 'eigo',
+          meaning: { en: 'English (language)', vi: 'tiếng Anh' }
+        },
+        { kana: 'なん', kanji: '何', romaji: 'nan', meaning: { en: 'what', vi: 'cái gì' } },
+        { kana: 'そう', romaji: 'sō', meaning: { en: 'so, right', vi: 'đúng, vậy' } },
         {
           kana: 'ちがいます',
+          kanji: '違います',
           romaji: 'chigaimasu',
-          meaning: { en: "that's wrong / different", vi: 'không đúng, khác' }
+          meaning: { en: "that's wrong, different", vi: 'không phải, khác' }
+        },
+        {
+          kana: '〜ご',
+          kanji: '〜語',
+          romaji: 'go',
+          speech: 'ご',
+          meaning: { en: '~ language (suffix)', vi: 'tiếng ~ (hậu tố)' }
+        }
+      ],
+      phrases: [
+        {
+          kana: 'あのう、すみません。',
+          romaji: 'Anō, sumimasen.',
+          meaning: { en: 'Um, excuse me.', vi: 'À, xin lỗi.' }
+        },
+        {
+          kana: 'これは なんですか。',
+          kanji: 'これは何ですか。',
+          romaji: 'Kore wa nan desu ka.',
+          meaning: { en: 'What is this?', vi: 'Cái này là gì?' }
+        },
+        {
+          kana: 'そうですか。',
+          romaji: 'Sō desu ka.',
+          meaning: { en: 'I see.', vi: 'Vậy à. / Ra vậy.' }
+        },
+        {
+          kana: 'どうも ありがとうございます。',
+          romaji: 'Dōmo arigatō gozaimasu.',
+          meaning: { en: 'Thank you very much.', vi: 'Cảm ơn rất nhiều.' }
+        },
+        {
+          kana: 'どうぞ。',
+          romaji: 'Dōzo.',
+          meaning: { en: 'Here you are. / Please.', vi: 'Mời bạn. / Xin mời.' }
         }
       ],
       grammar: [
         {
           pattern: 'これ / それ / あれ は N です',
-          title: { en: 'Demonstrative pronouns', vi: 'Đại từ chỉ định' },
+          title: {
+            en: 'これ / それ / あれ (this / that / that over there)',
+            vi: 'これ / それ / あれ (cái này / cái đó / cái kia)'
+          },
           explanation: {
-            en: 'これ = near speaker, それ = near listener, あれ = far from both. They stand alone as "this/that".',
-            vi: 'これ = gần người nói, それ = gần người nghe, あれ = xa cả hai. Chúng đứng độc lập như "cái này/đó".'
+            en: 'これ = near the speaker, それ = near the listener, あれ = far from both. They stand alone as "this/that".',
+            vi: 'これ = gần người nói, それ = gần người nghe, あれ = xa cả hai. Chúng đứng độc lập như "cái này/đó/kia".'
           },
           examples: [
             {
-              jp: 'これは ほんです。',
-              romaji: 'Kore wa hon desu.',
-              meaning: { en: 'This is a book.', vi: 'Đây là quyển sách.' }
+              jp: 'これは じしょです。',
+              romaji: 'Kore wa jisho desu.',
+              meaning: { en: 'This is a dictionary.', vi: 'Đây là từ điển.' }
             },
             {
-              jp: 'あれは わたしの くるまです。',
-              romaji: 'Are wa watashi no kuruma desu.',
-              meaning: { en: 'That over there is my car.', vi: 'Cái kia là xe của tôi.' }
+              jp: 'それは ほんですか。',
+              romaji: 'Sore wa hon desu ka.',
+              meaning: { en: 'Is that a book?', vi: 'Cái đó là sách phải không?' }
+            },
+            {
+              jp: 'あれは とけいです。',
+              romaji: 'Are wa tokei desu.',
+              meaning: { en: 'That over there is a clock.', vi: 'Cái kia là đồng hồ.' }
             }
           ]
         },
         {
-          pattern: 'この / その / あの ＋ N',
-          title: { en: 'this/that + noun', vi: 'this/that + danh từ' },
+          pattern: 'この / その / あの N',
+          title: { en: 'この / その / あの + noun', vi: 'この / その / あの + danh từ' },
           explanation: {
-            en: 'この/その/あの always come with a noun right after them, like "this/that + noun": この本 = "this book". This is different from これ/それ/あれ, which stand alone (no noun). So say この本, never これ本.',
-            vi: 'この/その/あの luôn đi kèm một danh từ ngay sau, giống "này/đó/kia" trong tiếng Việt: この本 = "quyển sách này". Khác với これ/それ/あれ (đứng một mình, không có danh từ). Vì vậy nói この本, không nói これ本.'
+            en: 'Unlike これ/それ/あれ, these always come right before a noun: この本 = "this book". Never say これ本.',
+            vi: 'Khác với これ/それ/あれ, nhóm này luôn đứng ngay trước danh từ: この本 = "quyển sách này". Không nói これ本.'
           },
           examples: [
             {
@@ -534,49 +760,82 @@ export const n5Course: Course = {
               meaning: { en: 'This bag is mine.', vi: 'Cái cặp này là của tôi.' }
             },
             {
-              jp: 'その ペンは いくらですか。',
-              romaji: 'Sono pen wa ikura desu ka.',
-              meaning: { en: 'How much is that pen?', vi: 'Cây bút đó bao nhiêu tiền?' }
+              jp: 'その とけいは にほんのです。',
+              romaji: 'Sono tokei wa nihon no desu.',
+              meaning: { en: 'That watch is a Japanese one.', vi: 'Cái đồng hồ đó là hàng Nhật.' }
+            },
+            {
+              jp: 'あの ひとは だれですか。',
+              romaji: 'Ano hito wa dare desu ka.',
+              meaning: { en: 'Who is that person over there?', vi: 'Người kia là ai vậy?' }
+            }
+          ]
+        },
+        {
+          pattern: 'N1 の N2',
+          title: { en: 'の (possession / content)', vi: 'の (sở hữu / nội dung)' },
+          explanation: {
+            en: 'の links two nouns to show an owner ("my book") or the content/type ("Japanese book").',
+            vi: 'の nối hai danh từ để chỉ người sở hữu ("sách của tôi") hoặc nội dung/loại ("sách tiếng Nhật").'
+          },
+          examples: [
+            {
+              jp: 'これは わたしの ほんです。',
+              romaji: 'Kore wa watashi no hon desu.',
+              meaning: { en: 'This is my book.', vi: 'Đây là sách của tôi.' }
+            },
+            {
+              jp: 'それは にほんごの ざっしです。',
+              romaji: 'Sore wa nihongo no zasshi desu.',
+              meaning: { en: 'That is a Japanese magazine.', vi: 'Cái đó là tạp chí tiếng Nhật.' }
+            },
+            {
+              jp: 'あれは だれの かさですか。',
+              romaji: 'Are wa dare no kasa desu ka.',
+              meaning: { en: 'Whose umbrella is that over there?', vi: 'Cái ô kia là của ai?' }
             }
           ]
         },
         {
           pattern: 'N は なんですか',
-          title: { en: 'What is it?', vi: 'Cái này là gì?' },
+          title: { en: 'Asking "what is it?" with 何', vi: 'Hỏi "là cái gì?" với 何' },
           explanation: {
-            en: 'なん (what) replaces the unknown noun. Answer with "...です".',
-            vi: 'なん (cái gì) thay cho danh từ chưa biết. Trả lời bằng "...です".'
+            en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is; answer with "...です".',
+            vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì; trả lời bằng "...です".'
           },
           examples: [
             {
-              jp: 'それは なんですか。',
-              romaji: 'Sore wa nan desu ka.',
-              meaning: { en: 'What is that?', vi: 'Cái đó là gì?' }
+              jp: 'これは なんですか。',
+              romaji: 'Kore wa nan desu ka.',
+              meaning: { en: 'What is this?', vi: 'Đây là cái gì?' }
             },
             {
-              jp: 'これは とけいです。',
-              romaji: 'Kore wa tokei desu.',
-              meaning: { en: 'This is a clock.', vi: 'Đây là đồng hồ.' }
+              jp: 'あれは なんですか。',
+              romaji: 'Are wa nan desu ka.',
+              meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' }
             }
           ]
         },
         {
-          pattern: 'N も',
-          title: { en: '...too / also (も)', vi: '...cũng (も)' },
+          pattern: 'はい 、 そうです / いいえ 、 ちがいます',
+          title: {
+            en: 'Answering: はい, そうです / いいえ, ちがいます',
+            vi: 'Trả lời: はい, そうです / いいえ, ちがいます'
+          },
           explanation: {
-            en: 'も replaces は to mean "also/too" when the statement is the same as a previous one.',
-            vi: 'も thay cho は để diễn đạt "cũng", khi câu giống với câu trước.'
+            en: 'For "Is it ~?" questions, answer はい、そうです ("yes, that\'s right") or いいえ、ちがいます ("no, that\'s wrong").',
+            vi: 'Với câu hỏi "Có phải ~?", trả lời はい、そうです ("vâng, đúng vậy") hoặc いいえ、ちがいます ("không, không phải").'
           },
           examples: [
             {
-              jp: 'これも ほんです。',
-              romaji: 'Kore mo hon desu.',
-              meaning: { en: 'This is a book too.', vi: 'Cái này cũng là sách.' }
+              jp: 'はい、そうです。',
+              romaji: 'Hai, sō desu.',
+              meaning: { en: "Yes, that's right.", vi: 'Vâng, đúng vậy.' }
             },
             {
-              jp: 'わたしも がくせいです。',
-              romaji: 'Watashi mo gakusei desu.',
-              meaning: { en: 'I am a student too.', vi: 'Tôi cũng là học sinh.' }
+              jp: 'いいえ、ちがいます。',
+              romaji: 'Iie, chigaimasu.',
+              meaning: { en: "No, that's wrong.", vi: 'Không, không phải.' }
             }
           ]
         }
@@ -584,321 +843,392 @@ export const n5Course: Course = {
       reading: [
         {
           id: 'reading-1',
-          title: { en: 'Whose things are these?', vi: 'Đây là đồ của ai?' },
+          title: { en: 'What is that?', vi: 'Cái đó là gì?' },
           lines: [
             {
-              jp: 'これは わたしの かばんです。',
-              romaji: 'Kore wa watashi no kaban desu.',
-              meaning: { en: 'This is my bag.', vi: 'Đây là cặp của tôi.' }
+              jp: 'すみません。それは なんですか。',
+              romaji: 'Sumimasen. Sore wa nan desu ka.',
+              meaning: { en: 'Excuse me. What is that?', vi: 'Xin lỗi. Cái đó là gì vậy?' }
             },
             {
-              jp: 'その とけいは リンさんのです。',
-              romaji: 'Sono tokei wa Rin-san no desu.',
-              meaning: { en: 'That watch is Rin\u2019s.', vi: 'Cái đồng hồ đó là của Rin.' }
-            },
-            {
-              jp: 'あれは たなかせんせいの くるまです。',
-              romaji: 'Are wa Tanaka-sensei no kuruma desu.',
+              jp: 'これですか。これは にほんごの じしょです。',
+              romaji: 'Kore desu ka. Kore wa nihongo no jisho desu.',
               meaning: {
-                en: 'That over there is Mr. Tanaka\u2019s car.',
-                vi: 'Cái kia là xe của thầy Tanaka.'
+                en: 'This one? This is a Japanese dictionary.',
+                vi: 'Cái này à? Đây là từ điển tiếng Nhật.'
               }
+            },
+            {
+              jp: 'その じしょは あなたのですか。',
+              romaji: 'Sono jisho wa anata no desu ka.',
+              meaning: {
+                en: 'Is that dictionary yours?',
+                vi: 'Cuốn từ điển đó là của bạn phải không?'
+              }
+            },
+            {
+              jp: 'はい、わたしのです。',
+              romaji: 'Hai, watashi no desu.',
+              meaning: { en: 'Yes, it is mine.', vi: 'Vâng, của tôi.' }
             }
           ],
           questions: [
             {
               id: 'q1',
-              question: { en: 'Whose is the watch?', vi: 'Đồng hồ là của ai?' },
+              question: { en: 'What is the object?', vi: 'Đồ vật đó là gì?' },
               choices: [
-                { id: 'a', label: { en: 'The speaker', vi: 'Người nói' } },
-                { id: 'b', label: { en: 'Rin', vi: 'Rin' } },
-                { id: 'c', label: { en: 'Mr. Tanaka', vi: 'Thầy Tanaka' } }
+                { id: 'a', label: { en: 'A Japanese dictionary', vi: 'Từ điển tiếng Nhật' } },
+                { id: 'b', label: { en: 'A magazine', vi: 'Tạp chí' } },
+                { id: 'c', label: { en: 'A notebook', vi: 'Quyển vở' } },
+                { id: 'd', label: { en: 'A newspaper', vi: 'Tờ báo' } }
               ],
-              correctId: 'b'
+              correctId: 'a'
             },
             {
               id: 'q2',
-              question: { en: 'What is the car over there?', vi: 'Chiếc xe ở đằng kia là gì?' },
+              question: { en: 'Whose is it?', vi: 'Nó là của ai?' },
               choices: [
-                { id: 'a', label: { en: "Mr. Tanaka's car", vi: 'Xe của thầy Tanaka' } },
-                { id: 'b', label: { en: "Rin's car", vi: 'Xe của Rin' } },
-                { id: 'c', label: { en: "The speaker's car", vi: 'Xe của người nói' } }
+                { id: 'a', label: { en: "The listener's", vi: 'Của người nghe' } },
+                { id: 'b', label: { en: 'The speaker who owns it', vi: 'Của người trả lời' } },
+                { id: 'c', label: { en: 'Nobody knows', vi: 'Không ai biết' } },
+                { id: 'd', label: { en: "The teacher's", vi: 'Của giáo viên' } }
               ],
-              correctId: 'a'
+              correctId: 'b'
+            }
+          ]
+        }
+      ],
+      reference: [
+        {
+          title: { en: 'School supplies', vi: 'Đồ dùng học tập' },
+          items: [
+            {
+              kana: 'けしゴム',
+              kanji: '消しゴム',
+              romaji: 'keshigomu',
+              meaning: { en: 'eraser', vi: 'cục tẩy' }
+            },
+            {
+              kana: 'じょうぎ',
+              kanji: '定規',
+              romaji: 'jōgi',
+              meaning: { en: 'ruler', vi: 'thước kẻ' }
+            },
+            { kana: 'はさみ', romaji: 'hasami', meaning: { en: 'scissors', vi: 'cái kéo' } },
+            { kana: 'のり', romaji: 'nori', meaning: { en: 'glue', vi: 'keo dán' } },
+            {
+              kana: 'ふでばこ',
+              kanji: '筆箱',
+              romaji: 'fudebako',
+              meaning: { en: 'pencil case', vi: 'hộp bút' }
+            },
+            { kana: 'カレンダー', romaji: 'karendā', meaning: { en: 'calendar', vi: 'lịch' } }
+          ]
+        },
+        {
+          title: { en: 'Electronics', vi: 'Đồ điện tử' },
+          items: [
+            { kana: 'パソコン', romaji: 'pasokon', meaning: { en: 'PC', vi: 'máy tính' } },
+            {
+              kana: 'スマートフォン',
+              romaji: 'sumātofon',
+              meaning: { en: 'smartphone', vi: 'điện thoại thông minh' }
+            },
+            {
+              kana: 'でんわ',
+              kanji: '電話',
+              romaji: 'denwa',
+              meaning: { en: 'telephone', vi: 'điện thoại' }
+            },
+            {
+              kana: 'れいぞうこ',
+              kanji: '冷蔵庫',
+              romaji: 'reizōko',
+              meaning: { en: 'refrigerator', vi: 'tủ lạnh' }
+            },
+            {
+              kana: 'エアコン',
+              romaji: 'eakon',
+              meaning: { en: 'air conditioner', vi: 'máy lạnh' }
+            }
+          ]
+        },
+        {
+          title: { en: 'Question words', vi: 'Từ để hỏi' },
+          items: [
+            { kana: 'どれ', romaji: 'dore', meaning: { en: 'which one', vi: 'cái nào' } },
+            {
+              kana: 'どの',
+              romaji: 'dono',
+              meaning: { en: 'which ~ (+ noun)', vi: 'cái ~ nào (+ danh từ)' }
+            },
+            {
+              kana: 'そうですか',
+              romaji: 'sō desu ka',
+              meaning: { en: 'I see / is that so', vi: 'thế à / vậy sao' }
+            }
+          ]
+        },
+        {
+          title: { en: 'More everyday objects', vi: 'Đồ vật thường ngày khác' },
+          items: [
+            {
+              kana: 'おかね',
+              kanji: 'お金',
+              romaji: 'okane',
+              meaning: { en: 'money', vi: 'tiền' }
+            },
+            { kana: 'さいふ', kanji: '財布', romaji: 'saifu', meaning: { en: 'wallet', vi: 'ví' } },
+            {
+              kana: 'めがね',
+              kanji: '眼鏡',
+              romaji: 'megane',
+              meaning: { en: 'glasses', vi: 'kính mắt' }
+            },
+            {
+              kana: 'けいたいでんわ',
+              kanji: '携帯電話',
+              romaji: 'keitai denwa',
+              meaning: { en: 'mobile phone', vi: 'điện thoại di động' }
+            },
+            {
+              kana: 'ハンカチ',
+              romaji: 'hankachi',
+              meaning: { en: 'handkerchief', vi: 'khăn tay' }
             }
           ]
         }
       ]
     },
     {
-      id: 'lesson-4',
-      number: 4,
+      id: 'lesson-3',
+      number: 3,
       title: {
-        en: 'Places & Existence',
-        vi: 'Địa điểm & Sự tồn tại'
+        en: 'Places & shopping',
+        vi: 'Nơi chốn & mua sắm'
       },
       focus: {
-        en: 'Say where things and people are with あります / います.',
-        vi: 'Nói đồ vật và người ở đâu với あります / います.'
+        en: 'Point out places with ここ/そこ/あそこ, ask where things are, and talk about prices.',
+        vi: 'Chỉ nơi chốn với ここ/そこ/あそこ, hỏi vật ở đâu và nói về giá cả.'
       },
       vocab: [
         { kana: 'ここ', romaji: 'koko', meaning: { en: 'here', vi: 'ở đây' } },
-        { kana: 'そこ', romaji: 'soko', meaning: { en: 'there (near you)', vi: 'ở đó' } },
-        { kana: 'あそこ', romaji: 'asoko', meaning: { en: 'over there', vi: 'ở đằng kia' } },
+        { kana: 'そこ', romaji: 'soko', meaning: { en: 'there', vi: 'ở đó' } },
+        { kana: 'あそこ', romaji: 'asoko', meaning: { en: 'over there', vi: 'ở kia' } },
+        {
+          kana: 'こちら',
+          romaji: 'kochira',
+          meaning: { en: 'this way, here (polite)', vi: 'phía này, ở đây (lịch sự)' }
+        },
+        {
+          kana: 'そちら',
+          romaji: 'sochira',
+          meaning: { en: 'that way, there (polite)', vi: 'phía đó (lịch sự)' }
+        },
+        {
+          kana: 'あちら',
+          romaji: 'achira',
+          meaning: { en: 'that way over there (polite)', vi: 'phía kia (lịch sự)' }
+        },
         { kana: 'どこ', romaji: 'doko', meaning: { en: 'where', vi: 'ở đâu' } },
-        { kana: 'うえ', kanji: '上', romaji: 'ue', meaning: { en: 'on, above', vi: 'phía trên' } },
         {
-          kana: 'した',
-          kanji: '下',
-          romaji: 'shita',
-          meaning: { en: 'under, below', vi: 'phía dưới' }
-        },
-        { kana: 'なか', kanji: '中', romaji: 'naka', meaning: { en: 'inside', vi: 'bên trong' } },
-        { kana: 'つくえ', kanji: '机', romaji: 'tsukue', meaning: { en: 'desk', vi: 'cái bàn' } },
-        { kana: 'いす', romaji: 'isu', meaning: { en: 'chair', vi: 'cái ghế' } },
-        {
-          kana: 'がっこう',
-          kanji: '学校',
-          romaji: 'gakkō',
-          meaning: { en: 'school', vi: 'trường học' }
-        },
-        { kana: 'えき', kanji: '駅', romaji: 'eki', meaning: { en: 'station', vi: 'nhà ga' } },
-        { kana: 'ねこ', kanji: '猫', romaji: 'neko', meaning: { en: 'cat', vi: 'con mèo' } },
-        {
-          kana: 'います',
-          romaji: 'imasu',
-          meaning: { en: 'exists (living things)', vi: 'có (vật sống)' }
+          kana: 'どちら',
+          romaji: 'dochira',
+          meaning: { en: 'where, which (polite)', vi: 'phía nào (lịch sự)' }
         },
         {
-          kana: 'あります',
-          romaji: 'arimasu',
-          meaning: { en: 'exists (non-living)', vi: 'có (vật không sống)' }
+          kana: 'きょうしつ',
+          kanji: '教室',
+          romaji: 'kyōshitsu',
+          meaning: { en: 'classroom', vi: 'phòng học' }
+        },
+        {
+          kana: 'しょくどう',
+          kanji: '食堂',
+          romaji: 'shokudō',
+          meaning: { en: 'cafeteria, dining hall', vi: 'nhà ăn, căng tin' }
+        },
+        {
+          kana: 'じむしょ',
+          kanji: '事務所',
+          romaji: 'jimusho',
+          meaning: { en: 'office', vi: 'văn phòng' }
+        },
+        {
+          kana: 'かいぎしつ',
+          kanji: '会議室',
+          romaji: 'kaigishitsu',
+          meaning: { en: 'meeting room', vi: 'phòng họp' }
+        },
+        {
+          kana: 'うけつけ',
+          kanji: '受付',
+          romaji: 'uketsuke',
+          meaning: { en: 'reception', vi: 'quầy tiếp tân' }
+        },
+        { kana: 'ロビー', romaji: 'robī', meaning: { en: 'lobby', vi: 'sảnh' } },
+        { kana: 'へや', kanji: '部屋', romaji: 'heya', meaning: { en: 'room', vi: 'phòng' } },
+        { kana: 'トイレ', romaji: 'toire', meaning: { en: 'toilet', vi: 'nhà vệ sinh' } },
+        {
+          kana: 'かいだん',
+          kanji: '階段',
+          romaji: 'kaidan',
+          meaning: { en: 'stairs', vi: 'cầu thang' }
+        },
+        { kana: 'エレベーター', romaji: 'erebētā', meaning: { en: 'elevator', vi: 'thang máy' } },
+        {
+          kana: 'エスカレーター',
+          romaji: 'esukarētā',
+          meaning: { en: 'escalator', vi: 'thang cuốn' }
+        },
+        { kana: 'くに', kanji: '国', romaji: 'kuni', meaning: { en: 'country', vi: 'đất nước' } },
+        {
+          kana: 'かいしゃ',
+          kanji: '会社',
+          romaji: 'kaisha',
+          meaning: { en: 'company', vi: 'công ty' }
+        },
+        { kana: 'うち', romaji: 'uchi', meaning: { en: 'home, house', vi: 'nhà' } },
+        { kana: 'くつ', kanji: '靴', romaji: 'kutsu', meaning: { en: 'shoes', vi: 'giày' } },
+        { kana: 'ネクタイ', romaji: 'nekutai', meaning: { en: 'necktie', vi: 'cà vạt' } },
+        {
+          kana: 'うりば',
+          kanji: '売り場',
+          romaji: 'uriba',
+          meaning: { en: 'sales floor, department', vi: 'quầy hàng, khu bán' }
+        },
+        {
+          kana: '〜えん',
+          kanji: '〜円',
+          romaji: 'en',
+          speech: 'えん',
+          meaning: { en: '~ yen', vi: '~ yên' }
+        },
+        { kana: 'いくら', romaji: 'ikura', meaning: { en: 'how much', vi: 'bao nhiêu tiền' } },
+        {
+          kana: '〜かい',
+          kanji: '〜階',
+          romaji: 'kai',
+          speech: 'かい',
+          meaning: { en: '~th floor (counter)', vi: 'tầng ~ (lượng từ)' }
+        }
+      ],
+      phrases: [
+        {
+          kana: 'いらっしゃいませ。',
+          romaji: 'Irasshaimase.',
+          meaning: { en: 'Welcome. (in a shop)', vi: 'Xin mời. (trong cửa hàng)' }
+        },
+        {
+          kana: 'これを ください。',
+          romaji: 'Kore o kudasai.',
+          meaning: { en: "I'll take this, please.", vi: 'Cho tôi cái này.' }
+        },
+        {
+          kana: 'これは いくらですか。',
+          romaji: 'Kore wa ikura desu ka.',
+          meaning: { en: 'How much is this?', vi: 'Cái này bao nhiêu tiền?' }
+        },
+        {
+          kana: 'ちょっと みせて ください。',
+          romaji: 'Chotto misete kudasai.',
+          meaning: { en: 'Please show me for a moment.', vi: 'Cho tôi xem một chút.' }
+        },
+        {
+          kana: 'おねがいします。',
+          romaji: 'Onegaishimasu.',
+          meaning: { en: 'Please. (making a request)', vi: 'Làm ơn / nhờ bạn.' }
         }
       ],
       grammar: [
         {
-          pattern: 'N は ばしょ に あります / います',
-          title: { en: 'X is located at Y', vi: 'X ở tại Y' },
+          pattern: 'ここ / そこ / あそこ は N です',
+          title: {
+            en: 'ここ / そこ / あそこ (here / there / over there)',
+            vi: 'ここ / そこ / あそこ (ở đây / ở đó / ở kia)'
+          },
           explanation: {
-            en: 'Use います for living things (people, animals) and あります for objects. に marks the location.',
-            vi: 'Dùng います cho vật sống (người, động vật) và あります cho đồ vật. に đánh dấu địa điểm.'
+            en: 'These name a place: ここ near the speaker, そこ near the listener, あそこ far from both.',
+            vi: 'Nhóm này chỉ nơi chốn: ここ gần người nói, そこ gần người nghe, あそこ xa cả hai.'
           },
           examples: [
             {
-              jp: 'ねこは いすの したに います。',
-              romaji: 'Neko wa isu no shita ni imasu.',
-              meaning: { en: 'The cat is under the chair.', vi: 'Con mèo ở dưới ghế.' }
+              jp: 'ここは きょうしつです。',
+              romaji: 'Koko wa kyōshitsu desu.',
+              meaning: { en: 'This place is the classroom.', vi: 'Đây là phòng học.' }
             },
             {
-              jp: 'ほんは つくえの うえに あります。',
-              romaji: 'Hon wa tsukue no ue ni arimasu.',
-              meaning: { en: 'The book is on the desk.', vi: 'Quyển sách ở trên bàn.' }
-            }
-          ]
-        },
-        {
-          pattern: 'ばしょ に N が あります / います',
-          title: { en: 'At Y there is X', vi: 'Tại Y có X' },
-          explanation: {
-            en: 'When introducing something new, the location comes first and the thing is marked with が.',
-            vi: 'Khi giới thiệu cái mới, địa điểm đứng trước và sự vật được đánh dấu bằng が.'
-          },
-          examples: [
-            {
-              jp: 'つくえの うえに ペンが あります。',
-              romaji: 'Tsukue no ue ni pen ga arimasu.',
-              meaning: { en: 'There is a pen on the desk.', vi: 'Trên bàn có một cây bút.' }
+              jp: 'そこは じむしょです。',
+              romaji: 'Soko wa jimusho desu.',
+              meaning: { en: 'That place is the office.', vi: 'Đó là văn phòng.' }
             },
             {
-              jp: 'あそこに せんせいが います。',
-              romaji: 'Asoko ni sensei ga imasu.',
-              meaning: { en: 'There is a teacher over there.', vi: 'Ở đằng kia có giáo viên.' }
+              jp: 'あそこは しょくどうです。',
+              romaji: 'Asoko wa shokudō desu.',
+              meaning: { en: 'Over there is the cafeteria.', vi: 'Kia là nhà ăn.' }
             }
           ]
         },
         {
           pattern: 'N は どこ ですか',
-          title: { en: 'Where is it?', vi: 'Cái đó ở đâu?' },
+          title: { en: 'Asking where (どこ)', vi: 'Hỏi ở đâu (どこ)' },
           explanation: {
-            en: 'どこ asks for a location. ここ/そこ/あそこ answer "here/there/over there".',
-            vi: 'どこ hỏi địa điểm. ここ/そこ/あそこ trả lời "ở đây/ở đó/ở đằng kia".'
+            en: 'どこ means "where". Use it to ask the location of a place or thing.',
+            vi: 'どこ nghĩa là "ở đâu". Dùng để hỏi vị trí của nơi chốn hoặc đồ vật.'
           },
           examples: [
             {
-              jp: 'えきは どこですか。',
-              romaji: 'Eki wa doko desu ka.',
-              meaning: { en: 'Where is the station?', vi: 'Nhà ga ở đâu?' }
+              jp: 'トイレは どこですか。',
+              romaji: 'Toire wa doko desu ka.',
+              meaning: { en: 'Where is the toilet?', vi: 'Nhà vệ sinh ở đâu?' }
             },
             {
-              jp: 'がっこうは あそこです。',
-              romaji: 'Gakkō wa asoko desu.',
-              meaning: { en: 'The school is over there.', vi: 'Trường học ở đằng kia.' }
-            }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'reading-1',
-          title: { en: 'In the classroom', vi: 'Trong lớp học' },
-          lines: [
-            {
-              jp: 'きょうしつに つくえが あります。',
-              romaji: 'Kyōshitsu ni tsukue ga arimasu.',
-              meaning: { en: 'There is a desk in the classroom.', vi: 'Trong lớp có một cái bàn.' }
-            },
-            {
-              jp: 'つくえの うえに ほんと ペンが あります。',
-              romaji: 'Tsukue no ue ni hon to pen ga arimasu.',
-              meaning: {
-                en: 'On the desk there are a book and a pen.',
-                vi: 'Trên bàn có một quyển sách và một cây bút.'
-              }
-            },
-            {
-              jp: 'いすの したに ねこが います。',
-              romaji: 'Isu no shita ni neko ga imasu.',
-              meaning: { en: 'There is a cat under the chair.', vi: 'Dưới ghế có một con mèo.' }
-            }
-          ],
-          questions: [
-            {
-              id: 'q1',
-              question: { en: 'What is on the desk?', vi: 'Trên bàn có gì?' },
-              choices: [
-                { id: 'a', label: { en: 'A cat', vi: 'Một con mèo' } },
-                { id: 'b', label: { en: 'A book and a pen', vi: 'Một quyển sách và một cây bút' } },
-                { id: 'c', label: { en: 'A clock', vi: 'Một cái đồng hồ' } }
-              ],
-              correctId: 'b'
-            },
-            {
-              id: 'q2',
-              question: { en: 'Where is the cat?', vi: 'Con mèo ở đâu?' },
-              choices: [
-                { id: 'a', label: { en: 'Under the chair', vi: 'Dưới ghế' } },
-                { id: 'b', label: { en: 'On the desk', vi: 'Trên bàn' } },
-                { id: 'c', label: { en: 'At the station', vi: 'Ở nhà ga' } }
-              ],
-              correctId: 'a'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'lesson-5',
-      number: 5,
-      title: {
-        en: 'Numbers, Time & Prices',
-        vi: 'Số đếm, Thời gian & Giá tiền'
-      },
-      focus: {
-        en: 'Tell the time, ask prices, and express ranges with から / まで.',
-        vi: 'Nói giờ, hỏi giá và diễn đạt khoảng với から / まで.'
-      },
-      vocab: [
-        { kana: 'いま', kanji: '今', romaji: 'ima', meaning: { en: 'now', vi: 'bây giờ' } },
-        {
-          kana: 'なんじ',
-          kanji: '何時',
-          romaji: 'nanji',
-          meaning: { en: 'what time', vi: 'mấy giờ' }
-        },
-        { kana: 'じ', kanji: '時', romaji: 'ji', meaning: { en: "o'clock (hour)", vi: 'giờ' } },
-        {
-          kana: 'ふん / ぷん',
-          kanji: '分',
-          romaji: 'fun / pun',
-          meaning: { en: 'minute', vi: 'phút' }
-        },
-        { kana: 'はん', kanji: '半', romaji: 'han', meaning: { en: 'half (past)', vi: 'rưỡi' } },
-        {
-          kana: 'ごぜん',
-          kanji: '午前',
-          romaji: 'gozen',
-          meaning: { en: 'a.m.', vi: 'buổi sáng (AM)' }
-        },
-        {
-          kana: 'ごご',
-          kanji: '午後',
-          romaji: 'gogo',
-          meaning: { en: 'p.m.', vi: 'buổi chiều (PM)' }
-        },
-        { kana: 'えん', kanji: '円', romaji: 'en', meaning: { en: 'yen', vi: 'yên (tiền Nhật)' } },
-        { kana: 'いくら', romaji: 'ikura', meaning: { en: 'how much', vi: 'bao nhiêu tiền' } },
-        { kana: 'やすい', kanji: '安い', romaji: 'yasui', meaning: { en: 'cheap', vi: 'rẻ' } },
-        {
-          kana: 'たかい',
-          kanji: '高い',
-          romaji: 'takai',
-          meaning: { en: 'expensive, tall', vi: 'đắt, cao' }
-        },
-        {
-          kana: 'なんようび',
-          kanji: '何曜日',
-          romaji: 'nan-yōbi',
-          meaning: { en: 'what day of the week', vi: 'thứ mấy' }
-        }
-      ],
-      grammar: [
-        {
-          pattern: 'いま ... じ ... ふん です',
-          title: { en: 'Telling the time', vi: 'Cách nói giờ' },
-          explanation: {
-            en: 'Combine the hour (じ) and minutes (ふん/ぷん). はん means "half past".',
-            vi: 'Ghép giờ (じ) và phút (ふん/ぷん). はん nghĩa là "rưỡi".'
-          },
-          examples: [
-            {
-              jp: 'いま ごぜん くじ はんです。',
-              romaji: 'Ima gozen ku-ji han desu.',
-              meaning: { en: 'It is 9:30 a.m. now.', vi: 'Bây giờ là 9 giờ rưỡi sáng.' }
-            },
-            {
-              jp: 'いま なんじですか。',
-              romaji: 'Ima nan-ji desu ka.',
-              meaning: { en: 'What time is it now?', vi: 'Bây giờ là mấy giờ?' }
+              jp: 'うけつけは どこですか。',
+              romaji: 'Uketsuke wa doko desu ka.',
+              meaning: { en: 'Where is the reception?', vi: 'Quầy tiếp tân ở đâu?' }
             }
           ]
         },
         {
-          pattern: 'N から N まで',
-          title: { en: 'from ... to ... (から / まで)', vi: 'từ ... đến ... (から / まで)' },
+          pattern: 'こちら / そちら / あちら',
+          title: {
+            en: 'こちら / そちら / あちら (polite direction)',
+            vi: 'こちら / そちら / あちら (hướng, lịch sự)'
+          },
           explanation: {
-            en: 'から marks a starting point and まで an ending point, for both time and place.',
-            vi: 'から đánh dấu điểm bắt đầu và まで điểm kết thúc, dùng cho cả thời gian và nơi chốn.'
+            en: 'The polite version of ここ/そこ/あそこ; also used to point out a direction.',
+            vi: 'Dạng lịch sự của ここ/そこ/あそこ; cũng dùng để chỉ hướng.'
           },
           examples: [
             {
-              jp: 'がっこうは くじから ごじまでです。',
-              romaji: 'Gakkō wa ku-ji kara go-ji made desu.',
-              meaning: { en: 'School is from 9 to 5.', vi: 'Trường học từ 9 giờ đến 5 giờ.' }
+              jp: 'エレベーターは こちらです。',
+              romaji: 'Erebētā wa kochira desu.',
+              meaning: { en: 'The elevator is this way.', vi: 'Thang máy ở phía này.' }
             },
             {
-              jp: 'えきから がっこうまで',
-              romaji: 'eki kara gakkō made',
-              meaning: { en: 'from the station to the school', vi: 'từ nhà ga đến trường' }
+              jp: 'かいぎしつは あちらです。',
+              romaji: 'Kaigishitsu wa achira desu.',
+              meaning: { en: 'The meeting room is that way.', vi: 'Phòng họp ở phía kia.' }
             }
           ]
         },
         {
-          pattern: 'N は いくら ですか',
-          title: { en: 'How much is it?', vi: 'Cái này bao nhiêu tiền?' },
+          pattern: 'どこ の N です',
+          title: { en: 'Where it is from (どこの)', vi: 'Xuất xứ (どこの)' },
           explanation: {
-            en: 'いくら asks a price; answer with the number + えん (yen).',
-            vi: 'いくら hỏi giá; trả lời bằng số + えん (yên).'
+            en: 'どこの asks which country or maker something is from; answer with 国/company + の.',
+            vi: 'どこの hỏi đồ vật đến từ nước nào / hãng nào; trả lời bằng tên nước/hãng + の.'
           },
           examples: [
             {
-              jp: 'この ほんは いくらですか。',
-              romaji: 'Kono hon wa ikura desu ka.',
-              meaning: { en: 'How much is this book?', vi: 'Quyển sách này bao nhiêu tiền?' }
+              jp: 'これは どこの くるまですか。',
+              romaji: 'Kore wa doko no kuruma desu ka.',
+              meaning: { en: 'Which country is this car from?', vi: 'Xe này của nước nào?' }
             },
             {
-              jp: 'せんえんです。',
-              romaji: 'Sen-en desu.',
-              meaning: { en: 'It is 1,000 yen.', vi: 'Nó giá 1.000 yên.' }
+              jp: 'にほんの くるまです。',
+              romaji: 'Nihon no kuruma desu.',
+              meaning: { en: 'It is a Japanese car.', vi: 'Là xe của Nhật.' }
             }
           ]
         }
@@ -909,826 +1239,160 @@ export const n5Course: Course = {
           title: { en: 'At the shop', vi: 'Ở cửa hàng' },
           lines: [
             {
-              jp: 'みせは ごぜん くじから ごご ろくじまでです。',
-              romaji: 'Mise wa gozen ku-ji kara gogo roku-ji made desu.',
+              jp: 'すみません、その くつは いくらですか。',
+              romaji: 'Sumimasen, sono kutsu wa ikura desu ka.',
               meaning: {
-                en: 'The shop is open from 9 a.m. to 6 p.m.',
-                vi: 'Cửa hàng mở từ 9 giờ sáng đến 6 giờ chiều.'
+                en: 'Excuse me, how much are those shoes?',
+                vi: 'Xin lỗi, đôi giày đó bao nhiêu tiền?'
               }
             },
             {
-              jp: 'この とけいは ごせんえんです。',
-              romaji: 'Kono tokei wa go-sen-en desu.',
-              meaning: { en: 'This watch is 5,000 yen.', vi: 'Cái đồng hồ này giá 5.000 yên.' }
+              jp: 'これですか。8000えんです。',
+              romaji: 'Kore desu ka. Hassen en desu.',
+              meaning: { en: 'These? They are 8000 yen.', vi: 'Đôi này à? 8000 yên.' }
             },
             {
-              jp: 'たかいです。あの とけいは やすいです。',
-              romaji: 'Takai desu. Ano tokei wa yasui desu.',
-              meaning: {
-                en: 'It is expensive. That watch over there is cheap.',
-                vi: 'Nó đắt. Cái đồng hồ kia thì rẻ.'
-              }
+              jp: 'じゃ、これを ください。',
+              romaji: 'Ja, kore o kudasai.',
+              meaning: { en: "Then I'll take them, please.", vi: 'Vậy cho tôi đôi này.' }
+            },
+            {
+              jp: 'ありがとうございます。',
+              romaji: 'Arigatō gozaimasu.',
+              meaning: { en: 'Thank you.', vi: 'Cảm ơn quý khách.' }
             }
           ],
           questions: [
             {
               id: 'q1',
-              question: {
-                en: 'What time does the shop close?',
-                vi: 'Cửa hàng đóng cửa lúc mấy giờ?'
-              },
+              question: { en: 'How much are the shoes?', vi: 'Đôi giày bao nhiêu tiền?' },
               choices: [
-                { id: 'a', label: { en: '9 a.m.', vi: '9 giờ sáng' } },
-                { id: 'b', label: { en: '6 p.m.', vi: '6 giờ chiều' } },
-                { id: 'c', label: { en: '5 p.m.', vi: '5 giờ chiều' } }
-              ],
-              correctId: 'b'
-            },
-            {
-              id: 'q2',
-              question: { en: 'How much is this watch?', vi: 'Cái đồng hồ này giá bao nhiêu?' },
-              choices: [
-                { id: 'a', label: { en: '1,000 yen', vi: '1.000 yên' } },
-                { id: 'b', label: { en: '5,000 yen', vi: '5.000 yên' } },
-                { id: 'c', label: { en: '6,000 yen', vi: '6.000 yên' } }
-              ],
-              correctId: 'b'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'lesson-6',
-      number: 6,
-      title: {
-        en: 'Verbs in the Polite Form',
-        vi: 'Động từ thể lịch sự (ます)'
-      },
-      focus: {
-        en: 'Talk about actions and time with the ます-form and the particle を.',
-        vi: 'Nói về hành động và thời gian với thể ます và trợ từ を.'
-      },
-      vocab: [
-        {
-          kana: 'たべます',
-          kanji: '食べます',
-          romaji: 'tabemasu',
-          meaning: { en: 'to eat', vi: 'ăn' }
-        },
-        {
-          kana: 'のみます',
-          kanji: '飲みます',
-          romaji: 'nomimasu',
-          meaning: { en: 'to drink', vi: 'uống' }
-        },
-        {
-          kana: 'みます',
-          kanji: '見ます',
-          romaji: 'mimasu',
-          meaning: { en: 'to see, watch', vi: 'xem, nhìn' }
-        },
-        {
-          kana: 'よみます',
-          kanji: '読みます',
-          romaji: 'yomimasu',
-          meaning: { en: 'to read', vi: 'đọc' }
-        },
-        { kana: 'します', romaji: 'shimasu', meaning: { en: 'to do', vi: 'làm' } },
-        {
-          kana: 'いきます',
-          kanji: '行きます',
-          romaji: 'ikimasu',
-          meaning: { en: 'to go', vi: 'đi' }
-        },
-        {
-          kana: 'きます',
-          kanji: '来ます',
-          romaji: 'kimasu',
-          meaning: { en: 'to come', vi: 'đến' }
-        },
-        { kana: 'みず', kanji: '水', romaji: 'mizu', meaning: { en: 'water', vi: 'nước' } },
-        { kana: 'ごはん', romaji: 'gohan', meaning: { en: 'rice, meal', vi: 'cơm, bữa ăn' } },
-        { kana: 'あさ', kanji: '朝', romaji: 'asa', meaning: { en: 'morning', vi: 'buổi sáng' } },
-        { kana: 'よる', kanji: '夜', romaji: 'yoru', meaning: { en: 'night', vi: 'buổi tối' } },
-        {
-          kana: 'まいにち',
-          kanji: '毎日',
-          romaji: 'mainichi',
-          meaning: { en: 'every day', vi: 'mỗi ngày' }
-        }
-      ],
-      grammar: [
-        {
-          pattern: 'N を V ます',
-          title: { en: 'Object + verb (を)', vi: 'Tân ngữ + động từ (を)' },
-          explanation: {
-            en: 'を marks the direct object of an action. The verb comes at the end of the sentence.',
-            vi: 'を đánh dấu tân ngữ trực tiếp của hành động. Động từ đứng cuối câu.'
-          },
-          examples: [
-            {
-              jp: 'ごはんを たべます。',
-              romaji: 'Gohan o tabemasu.',
-              meaning: { en: 'I eat rice.', vi: 'Tôi ăn cơm.' }
-            },
-            {
-              jp: 'みずを のみます。',
-              romaji: 'Mizu o nomimasu.',
-              meaning: { en: 'I drink water.', vi: 'Tôi uống nước.' }
-            }
-          ]
-        },
-        {
-          pattern: 'ます / ません / ました / ませんでした',
-          title: { en: 'Polite verb conjugation', vi: 'Chia động từ thể lịch sự' },
-          explanation: {
-            en: 'ます = present/future, ません = negative, ました = past, ませんでした = past negative.',
-            vi: 'ます = hiện tại/tương lai, ません = phủ định, ました = quá khứ, ませんでした = quá khứ phủ định.'
-          },
-          examples: [
-            {
-              jp: 'あさ ごはんを たべません。',
-              romaji: 'Asa gohan o tabemasen.',
-              meaning: { en: "I don't eat breakfast.", vi: 'Buổi sáng tôi không ăn cơm.' }
-            },
-            {
-              jp: 'きのう ほんを よみました。',
-              romaji: 'Kinō hon o yomimashita.',
-              meaning: { en: 'I read a book yesterday.', vi: 'Hôm qua tôi đã đọc sách.' }
-            }
-          ]
-        },
-        {
-          pattern: 'じかん に V ます',
-          title: { en: 'Doing something at a time (に)', vi: 'Làm gì đó vào lúc (に)' },
-          explanation: {
-            en: 'に marks a specific time (clock time, day). General time words like まいにち take no に.',
-            vi: 'に đánh dấu thời điểm cụ thể (giờ, ngày). Từ chỉ thời gian chung như まいにち thì không cần に.'
-          },
-          examples: [
-            {
-              jp: 'しちじに いきます。',
-              romaji: 'Shichi-ji ni ikimasu.',
-              meaning: { en: 'I go at 7 o\u2019clock.', vi: 'Tôi đi lúc 7 giờ.' }
-            },
-            {
-              jp: 'まいにち べんきょうします。',
-              romaji: 'Mainichi benkyō shimasu.',
-              meaning: { en: 'I study every day.', vi: 'Tôi học mỗi ngày.' }
-            }
-          ]
-        },
-        {
-          pattern: 'V ませんか / V ましょう',
-          title: { en: 'Inviting & suggesting', vi: 'Mời & rủ rê' },
-          explanation: {
-            en: 'V ませんか invites ("won\u2019t you...?"); V ましょう suggests doing it together ("let\u2019s...").',
-            vi: 'V ませんか dùng để mời ("...không?"); V ましょう dùng để rủ cùng làm ("...nào").'
-          },
-          examples: [
-            {
-              jp: 'ごはんを たべませんか。',
-              romaji: 'Gohan o tabemasen ka.',
-              meaning: { en: "Won't you eat with me?", vi: 'Cùng ăn cơm không?' }
-            },
-            {
-              jp: 'いきましょう。',
-              romaji: 'Ikimashō.',
-              meaning: { en: "Let's go.", vi: 'Đi nào.' }
-            }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'reading-1',
-          title: { en: 'My morning', vi: 'Buổi sáng của tôi' },
-          lines: [
-            {
-              jp: 'まいあさ しちじに おきます。',
-              romaji: 'Maiasa shichi-ji ni okimasu.',
-              meaning: { en: 'I get up at 7 every morning.', vi: 'Mỗi sáng tôi dậy lúc 7 giờ.' }
-            },
-            {
-              jp: 'あさごはんを たべて、みずを のみます。',
-              romaji: 'Asagohan o tabete, mizu o nomimasu.',
-              meaning: { en: 'I eat breakfast and drink water.', vi: 'Tôi ăn sáng và uống nước.' }
-            },
-            {
-              jp: 'よる ほんを よみます。',
-              romaji: 'Yoru hon o yomimasu.',
-              meaning: { en: 'At night I read a book.', vi: 'Buổi tối tôi đọc sách.' }
-            }
-          ],
-          questions: [
-            {
-              id: 'q1',
-              question: {
-                en: 'What time does the writer get up?',
-                vi: 'Người viết dậy lúc mấy giờ?'
-              },
-              choices: [
-                { id: 'a', label: { en: '6 o\u2019clock', vi: '6 giờ' } },
-                { id: 'b', label: { en: '7 o\u2019clock', vi: '7 giờ' } },
-                { id: 'c', label: { en: '9 o\u2019clock', vi: '9 giờ' } }
-              ],
-              correctId: 'b'
-            },
-            {
-              id: 'q2',
-              question: {
-                en: 'What does the writer do at night?',
-                vi: 'Buổi tối người viết làm gì?'
-              },
-              choices: [
-                { id: 'a', label: { en: 'Reads a book', vi: 'Đọc sách' } },
-                { id: 'b', label: { en: 'Eats breakfast', vi: 'Ăn sáng' } },
-                { id: 'c', label: { en: 'Goes to school', vi: 'Đi học' } }
-              ],
-              correctId: 'a'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'lesson-7',
-      number: 7,
-      title: {
-        en: 'Movement & Means',
-        vi: 'Di chuyển & Phương tiện'
-      },
-      focus: {
-        en: 'Say where you go, how you get there, and who you go with.',
-        vi: 'Nói bạn đi đâu, đi bằng gì và đi với ai.'
-      },
-      vocab: [
-        {
-          kana: 'でんしゃ',
-          kanji: '電車',
-          romaji: 'densha',
-          meaning: { en: 'train', vi: 'tàu điện' }
-        },
-        { kana: 'バス', romaji: 'basu', meaning: { en: 'bus', vi: 'xe buýt' } },
-        {
-          kana: 'じてんしゃ',
-          kanji: '自転車',
-          romaji: 'jitensha',
-          meaning: { en: 'bicycle', vi: 'xe đạp' }
-        },
-        {
-          kana: 'あるいて',
-          kanji: '歩いて',
-          romaji: 'aruite',
-          meaning: { en: 'on foot', vi: 'đi bộ' }
-        },
-        { kana: 'いえ', kanji: '家', romaji: 'ie', meaning: { en: 'house, home', vi: 'nhà' } },
-        {
-          kana: 'かいしゃ',
-          kanji: '会社',
-          romaji: 'kaisha',
-          meaning: { en: 'company, office', vi: 'công ty' }
-        },
-        { kana: 'スーパー', romaji: 'sūpā', meaning: { en: 'supermarket', vi: 'siêu thị' } },
-        {
-          kana: 'ともだち',
-          kanji: '友達',
-          romaji: 'tomodachi',
-          meaning: { en: 'friend', vi: 'bạn bè' }
-        },
-        {
-          kana: 'かえります',
-          kanji: '帰ります',
-          romaji: 'kaerimasu',
-          meaning: { en: 'to return home', vi: 'trở về' }
-        },
-        {
-          kana: 'あした',
-          kanji: '明日',
-          romaji: 'ashita',
-          meaning: { en: 'tomorrow', vi: 'ngày mai' }
-        },
-        {
-          kana: 'きのう',
-          kanji: '昨日',
-          romaji: 'kinō',
-          meaning: { en: 'yesterday', vi: 'hôm qua' }
-        },
-        {
-          kana: 'ひとり',
-          kanji: '一人',
-          romaji: 'hitori',
-          meaning: { en: 'alone, one person', vi: 'một mình' }
-        }
-      ],
-      grammar: [
-        {
-          pattern: 'ばしょ へ／に いきます',
-          title: { en: 'Going to a place (へ / に)', vi: 'Đi đến một nơi (へ / に)' },
-          explanation: {
-            en: 'へ (read "e") or に marks the destination of いきます/きます/かえります.',
-            vi: 'へ (đọc là "e") hoặc に đánh dấu điểm đến của いきます/きます/かえります.'
-          },
-          examples: [
-            {
-              jp: 'がっこうへ いきます。',
-              romaji: 'Gakkō e ikimasu.',
-              meaning: { en: 'I go to school.', vi: 'Tôi đi đến trường.' }
-            },
-            {
-              jp: 'いえに かえります。',
-              romaji: 'Ie ni kaerimasu.',
-              meaning: { en: 'I return home.', vi: 'Tôi về nhà.' }
-            }
-          ]
-        },
-        {
-          pattern: 'のりもの で いきます',
-          title: { en: 'By means of (で)', vi: 'Bằng phương tiện (で)' },
-          explanation: {
-            en: 'で marks the means of transport. あるいて (on foot) is an exception and takes no で.',
-            vi: 'で đánh dấu phương tiện. あるいて (đi bộ) là ngoại lệ, không dùng で.'
-          },
-          examples: [
-            {
-              jp: 'でんしゃで かいしゃへ いきます。',
-              romaji: 'Densha de kaisha e ikimasu.',
-              meaning: { en: 'I go to the office by train.', vi: 'Tôi đi làm bằng tàu điện.' }
-            },
-            {
-              jp: 'あるいて えきへ いきます。',
-              romaji: 'Aruite eki e ikimasu.',
-              meaning: { en: 'I walk to the station.', vi: 'Tôi đi bộ đến nhà ga.' }
-            }
-          ]
-        },
-        {
-          pattern: 'ひと と V ます',
-          title: { en: 'Doing something with someone (と)', vi: 'Làm gì đó cùng ai (と)' },
-          explanation: {
-            en: 'と marks the person you do the action together with ("with").',
-            vi: 'と đánh dấu người mà bạn cùng làm hành động ("với, cùng").'
-          },
-          examples: [
-            {
-              jp: 'ともだちと スーパーへ いきます。',
-              romaji: 'Tomodachi to sūpā e ikimasu.',
-              meaning: {
-                en: 'I go to the supermarket with a friend.',
-                vi: 'Tôi đi siêu thị với bạn.'
-              }
-            },
-            {
-              jp: 'ひとりで いきました。',
-              romaji: 'Hitori de ikimashita.',
-              meaning: { en: 'I went alone.', vi: 'Tôi đã đi một mình.' }
-            }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'reading-1',
-          title: { en: 'Going to the supermarket', vi: 'Đi siêu thị' },
-          lines: [
-            {
-              jp: 'きのう ともだちと スーパーへ いきました。',
-              romaji: 'Kinō tomodachi to sūpā e ikimashita.',
-              meaning: {
-                en: 'Yesterday I went to the supermarket with a friend.',
-                vi: 'Hôm qua tôi đã đi siêu thị với bạn.'
-              }
-            },
-            {
-              jp: 'でんしゃで いきました。',
-              romaji: 'Densha de ikimashita.',
-              meaning: { en: 'We went by train.', vi: 'Chúng tôi đã đi bằng tàu điện.' }
-            },
-            {
-              jp: 'あした わたしは ひとりで いえに かえります。',
-              romaji: 'Ashita watashi wa hitori de ie ni kaerimasu.',
-              meaning: {
-                en: 'Tomorrow I will go home alone.',
-                vi: 'Ngày mai tôi sẽ về nhà một mình.'
-              }
-            }
-          ],
-          questions: [
-            {
-              id: 'q1',
-              question: {
-                en: 'How did they go to the supermarket?',
-                vi: 'Họ đi siêu thị bằng gì?'
-              },
-              choices: [
-                { id: 'a', label: { en: 'By train', vi: 'Bằng tàu điện' } },
-                { id: 'b', label: { en: 'By bus', vi: 'Bằng xe buýt' } },
-                { id: 'c', label: { en: 'On foot', vi: 'Đi bộ' } }
+                { id: 'a', label: { en: '8000 yen', vi: '8000 yên' } },
+                { id: 'b', label: { en: '5000 yen', vi: '5000 yên' } },
+                { id: 'c', label: { en: '3000 yen', vi: '3000 yên' } },
+                { id: 'd', label: { en: '1000 yen', vi: '1000 yên' } }
               ],
               correctId: 'a'
             },
             {
               id: 'q2',
-              question: {
-                en: 'Who went to the supermarket together?',
-                vi: 'Ai đã cùng đi siêu thị?'
-              },
+              question: { en: 'What does the customer decide?', vi: 'Khách quyết định thế nào?' },
               choices: [
-                {
-                  id: 'a',
-                  label: { en: 'The writer and a friend', vi: 'Người viết và một người bạn' }
-                },
-                { id: 'b', label: { en: 'The writer alone', vi: 'Người viết một mình' } },
-                {
-                  id: 'c',
-                  label: { en: 'The writer and a teacher', vi: 'Người viết và giáo viên' }
-                }
+                { id: 'a', label: { en: 'To buy them', vi: 'Mua đôi giày' } },
+                { id: 'b', label: { en: 'Not to buy', vi: 'Không mua' } },
+                { id: 'c', label: { en: 'To come back later', vi: 'Quay lại sau' } },
+                { id: 'd', label: { en: 'To ask the price again', vi: 'Hỏi lại giá' } }
               ],
               correctId: 'a'
             }
+          ]
+        }
+      ],
+      reference: [
+        {
+          title: { en: 'Floors (〜階)', vi: 'Tầng (〜階)' },
+          items: [
+            {
+              kana: 'いっかい',
+              kanji: '1階',
+              romaji: 'ikkai',
+              meaning: { en: '1st floor', vi: 'tầng 1' }
+            },
+            {
+              kana: 'にかい',
+              kanji: '2階',
+              romaji: 'nikai',
+              meaning: { en: '2nd floor', vi: 'tầng 2' }
+            },
+            {
+              kana: 'さんがい',
+              kanji: '3階',
+              romaji: 'sangai',
+              meaning: { en: '3rd floor', vi: 'tầng 3' }
+            },
+            {
+              kana: 'よんかい',
+              kanji: '4階',
+              romaji: 'yonkai',
+              meaning: { en: '4th floor', vi: 'tầng 4' }
+            },
+            {
+              kana: 'ごかい',
+              kanji: '5階',
+              romaji: 'gokai',
+              meaning: { en: '5th floor', vi: 'tầng 5' }
+            },
+            {
+              kana: 'ちか',
+              kanji: '地下',
+              romaji: 'chika',
+              meaning: { en: 'basement', vi: 'tầng hầm' }
+            }
+          ]
+        },
+        {
+          title: { en: 'Around town', vi: 'Địa điểm quanh phố' },
+          items: [
+            {
+              kana: 'ぎんこう',
+              kanji: '銀行',
+              romaji: 'ginkō',
+              meaning: { en: 'bank', vi: 'ngân hàng' }
+            },
+            {
+              kana: 'ゆうびんきょく',
+              kanji: '郵便局',
+              romaji: 'yūbinkyoku',
+              meaning: { en: 'post office', vi: 'bưu điện' }
+            },
+            { kana: 'えき', kanji: '駅', romaji: 'eki', meaning: { en: 'station', vi: 'nhà ga' } },
+            {
+              kana: 'としょかん',
+              kanji: '図書館',
+              romaji: 'toshokan',
+              meaning: { en: 'library', vi: 'thư viện' }
+            },
+            {
+              kana: 'デパート',
+              romaji: 'depāto',
+              meaning: { en: 'department store', vi: 'trung tâm thương mại' }
+            },
+            { kana: 'スーパー', romaji: 'sūpā', meaning: { en: 'supermarket', vi: 'siêu thị' } }
+          ]
+        },
+        {
+          title: { en: 'Big numbers (for prices)', vi: 'Số lớn (cho giá tiền)' },
+          items: [
+            { kana: 'ひゃく', kanji: '百', romaji: 'hyaku', meaning: { en: '100', vi: '100' } },
+            {
+              kana: 'さんびゃく',
+              kanji: '三百',
+              romaji: 'sanbyaku',
+              meaning: { en: '300', vi: '300' }
+            },
+            {
+              kana: 'ろっぴゃく',
+              kanji: '六百',
+              romaji: 'roppyaku',
+              meaning: { en: '600', vi: '600' }
+            },
+            {
+              kana: 'はっぴゃく',
+              kanji: '八百',
+              romaji: 'happyaku',
+              meaning: { en: '800', vi: '800' }
+            },
+            { kana: 'せん', kanji: '千', romaji: 'sen', meaning: { en: '1,000', vi: '1.000' } },
+            {
+              kana: 'はっせん',
+              kanji: '八千',
+              romaji: 'hassen',
+              meaning: { en: '8,000', vi: '8.000' }
+            },
+            { kana: 'まん', kanji: '万', romaji: 'man', meaning: { en: '10,000', vi: '10.000' } }
           ]
         }
       ]
-    },
-    {
-      id: 'lesson-8',
-      number: 8,
-      title: {
-        en: 'Describing with Adjectives',
-        vi: 'Miêu tả với Tính từ'
-      },
-      focus: {
-        en: 'Describe things with い-adjectives and な-adjectives, positive and negative.',
-        vi: 'Miêu tả sự vật với tính từ -い và tính từ -な, khẳng định và phủ định.'
-      },
-      vocab: [
-        {
-          kana: 'おおきい',
-          kanji: '大きい',
-          romaji: 'ōkii',
-          meaning: { en: 'big (い-adj)', vi: 'to (tính từ -い)' }
-        },
-        {
-          kana: 'ちいさい',
-          kanji: '小さい',
-          romaji: 'chiisai',
-          meaning: { en: 'small (い-adj)', vi: 'nhỏ (tính từ -い)' }
-        },
-        {
-          kana: 'あたらしい',
-          kanji: '新しい',
-          romaji: 'atarashii',
-          meaning: { en: 'new (い-adj)', vi: 'mới (tính từ -い)' }
-        },
-        {
-          kana: 'おもしろい',
-          romaji: 'omoshiroi',
-          meaning: { en: 'interesting, fun (い-adj)', vi: 'thú vị (tính từ -い)' }
-        },
-        {
-          kana: 'おいしい',
-          romaji: 'oishii',
-          meaning: { en: 'delicious (い-adj)', vi: 'ngon (tính từ -い)' }
-        },
-        {
-          kana: 'いい / よい',
-          romaji: 'ii / yoi',
-          meaning: { en: 'good (irregular い-adj)', vi: 'tốt (tính từ -い bất quy tắc)' }
-        },
-        {
-          kana: 'きれい',
-          romaji: 'kirei',
-          meaning: { en: 'pretty, clean (な-adj)', vi: 'đẹp, sạch (tính từ -な)' }
-        },
-        {
-          kana: 'しずか',
-          kanji: '静か',
-          romaji: 'shizuka',
-          meaning: { en: 'quiet (な-adj)', vi: 'yên tĩnh (tính từ -な)' }
-        },
-        {
-          kana: 'にぎやか',
-          romaji: 'nigiyaka',
-          meaning: { en: 'lively (な-adj)', vi: 'náo nhiệt (tính từ -な)' }
-        },
-        {
-          kana: 'べんり',
-          kanji: '便利',
-          romaji: 'benri',
-          meaning: { en: 'convenient (な-adj)', vi: 'tiện lợi (tính từ -な)' }
-        },
-        { kana: 'とても', romaji: 'totemo', meaning: { en: 'very', vi: 'rất' } },
-        {
-          kana: 'あまり',
-          romaji: 'amari',
-          meaning: { en: 'not very (with negative)', vi: 'không ... lắm (đi với phủ định)' }
-        }
-      ],
-      grammar: [
-        {
-          pattern: 'N は い-adjective です',
-          title: { en: 'い-adjectives', vi: 'Tính từ đuôi -い' },
-          explanation: {
-            en: 'い-adjectives end in い and go straight before です. Negative: drop い → くない (e.g. 大きくない).',
-            vi: 'Tính từ -い kết thúc bằng い và đứng ngay trước です. Phủ định: bỏ い → くない (vd 大きくない).'
-          },
-          examples: [
-            {
-              jp: 'この くるまは おおきいです。',
-              romaji: 'Kono kuruma wa ōkii desu.',
-              meaning: { en: 'This car is big.', vi: 'Chiếc xe này to.' }
-            },
-            {
-              jp: 'この ほんは おもしろくないです。',
-              romaji: 'Kono hon wa omoshiroku nai desu.',
-              meaning: { en: "This book isn't interesting.", vi: 'Quyển sách này không thú vị.' }
-            }
-          ]
-        },
-        {
-          pattern: 'N は な-adjective です',
-          title: { en: 'な-adjectives', vi: 'Tính từ đuôi -な' },
-          explanation: {
-            en: 'な-adjectives need な only before a noun (きれいな はな). Before です they stand alone. Negative: ...じゃ ありません.',
-            vi: 'Tính từ -な chỉ cần な khi đứng trước danh từ (きれいな はな). Trước です thì đứng một mình. Phủ định: ...じゃ ありません.'
-          },
-          examples: [
-            {
-              jp: 'この まちは しずかです。',
-              romaji: 'Kono machi wa shizuka desu.',
-              meaning: { en: 'This town is quiet.', vi: 'Thị trấn này yên tĩnh.' }
-            },
-            {
-              jp: 'えきは あまり べんりじゃ ありません。',
-              romaji: 'Eki wa amari benri ja arimasen.',
-              meaning: { en: "The station isn't very convenient.", vi: 'Nhà ga không tiện lắm.' }
-            }
-          ]
-        },
-        {
-          pattern: 'adjective ＋ N',
-          title: { en: 'Adjective modifying a noun', vi: 'Tính từ bổ nghĩa cho danh từ' },
-          explanation: {
-            en: 'い-adjectives attach directly (あたらしい くるま); な-adjectives add な (きれいな はな).',
-            vi: 'Tính từ -い gắn trực tiếp (あたらしい くるま); tính từ -な thêm な (きれいな はな).'
-          },
-          examples: [
-            {
-              jp: 'あたらしい スマホ',
-              romaji: 'atarashii sumaho',
-              meaning: { en: 'a new smartphone', vi: 'điện thoại mới' }
-            },
-            {
-              jp: 'にぎやかな まち',
-              romaji: 'nigiyaka na machi',
-              meaning: { en: 'a lively town', vi: 'thị trấn náo nhiệt' }
-            }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'reading-1',
-          title: { en: 'My town', vi: 'Thị trấn của tôi' },
-          lines: [
-            {
-              jp: 'わたしの まちは ちいさいです。',
-              romaji: 'Watashi no machi wa chiisai desu.',
-              meaning: { en: 'My town is small.', vi: 'Thị trấn của tôi nhỏ.' }
-            },
-            {
-              jp: 'にぎやかじゃ ありませんが、とても しずかです。',
-              romaji: 'Nigiyaka ja arimasen ga, totemo shizuka desu.',
-              meaning: {
-                en: 'It is not lively, but it is very quiet.',
-                vi: 'Nó không náo nhiệt, nhưng rất yên tĩnh.'
-              }
-            },
-            {
-              jp: 'えきの まえの みせの ごはんは おいしいです。',
-              romaji: 'Eki no mae no mise no gohan wa oishii desu.',
-              meaning: {
-                en: 'The food at the shop in front of the station is delicious.',
-                vi: 'Đồ ăn ở quán trước nhà ga rất ngon.'
-              }
-            }
-          ],
-          questions: [
-            {
-              id: 'q1',
-              question: { en: 'What is the town like?', vi: 'Thị trấn như thế nào?' },
-              choices: [
-                { id: 'a', label: { en: 'Big and lively', vi: 'To và náo nhiệt' } },
-                { id: 'b', label: { en: 'Small and quiet', vi: 'Nhỏ và yên tĩnh' } },
-                { id: 'c', label: { en: 'Big and quiet', vi: 'To và yên tĩnh' } }
-              ],
-              correctId: 'b'
-            },
-            {
-              id: 'q2',
-              question: { en: 'What is said about the food?', vi: 'Đồ ăn được nói thế nào?' },
-              choices: [
-                { id: 'a', label: { en: 'It is delicious', vi: 'Rất ngon' } },
-                { id: 'b', label: { en: 'It is expensive', vi: 'Rất đắt' } },
-                { id: 'c', label: { en: 'It is cheap', vi: 'Rất rẻ' } }
-              ],
-              correctId: 'a'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'lesson-9',
-      number: 9,
-      title: {
-        en: 'Likes, Skills & Reasons',
-        vi: 'Sở thích, Khả năng & Lý do'
-      },
-      focus: {
-        en: 'Say what you like, what you are good at, and explain why with から.',
-        vi: 'Nói điều bạn thích, điều bạn giỏi và giải thích lý do với から.'
-      },
-      vocab: [
-        {
-          kana: 'すき',
-          kanji: '好き',
-          romaji: 'suki',
-          meaning: { en: 'to like (な-adj)', vi: 'thích (tính từ -な)' }
-        },
-        {
-          kana: 'きらい',
-          kanji: '嫌い',
-          romaji: 'kirai',
-          meaning: { en: 'to dislike (な-adj)', vi: 'ghét (tính từ -な)' }
-        },
-        {
-          kana: 'じょうず',
-          kanji: '上手',
-          romaji: 'jōzu',
-          meaning: { en: 'good at (な-adj)', vi: 'giỏi (tính từ -な)' }
-        },
-        {
-          kana: 'へた',
-          kanji: '下手',
-          romaji: 'heta',
-          meaning: { en: 'bad at (な-adj)', vi: 'kém (tính từ -な)' }
-        },
-        {
-          kana: 'りょうり',
-          kanji: '料理',
-          romaji: 'ryōri',
-          meaning: { en: 'cooking, cuisine', vi: 'nấu ăn, món ăn' }
-        },
-        {
-          kana: 'おんがく',
-          kanji: '音楽',
-          romaji: 'ongaku',
-          meaning: { en: 'music', vi: 'âm nhạc' }
-        },
-        { kana: 'スポーツ', romaji: 'supōtsu', meaning: { en: 'sports', vi: 'thể thao' } },
-        { kana: 'えいが', kanji: '映画', romaji: 'eiga', meaning: { en: 'movie', vi: 'phim' } },
-        {
-          kana: 'にほんご',
-          kanji: '日本語',
-          romaji: 'nihongo',
-          meaning: { en: 'Japanese language', vi: 'tiếng Nhật' }
-        },
-        { kana: 'よく', romaji: 'yoku', meaning: { en: 'often, well', vi: 'thường, giỏi' } },
-        { kana: 'どうして', romaji: 'dōshite', meaning: { en: 'why', vi: 'tại sao' } },
-        { kana: 'だから', romaji: 'dakara', meaning: { en: 'so, therefore', vi: 'vì vậy' } }
-      ],
-      grammar: [
-        {
-          pattern: 'N が すき／きらい です',
-          title: { en: 'Likes and dislikes (が)', vi: 'Thích và ghét (が)' },
-          explanation: {
-            en: 'The thing liked/disliked is marked with が, not を, before すき/きらい です.',
-            vi: 'Đối tượng được thích/ghét đánh dấu bằng が (không phải を), trước すき/きらい です.'
-          },
-          examples: [
-            {
-              jp: 'わたしは おんがくが すきです。',
-              romaji: 'Watashi wa ongaku ga suki desu.',
-              meaning: { en: 'I like music.', vi: 'Tôi thích âm nhạc.' }
-            },
-            {
-              jp: 'スポーツは あまり すきじゃ ありません。',
-              romaji: 'Supōtsu wa amari suki ja arimasen.',
-              meaning: { en: "I don't really like sports.", vi: 'Tôi không thích thể thao lắm.' }
-            }
-          ]
-        },
-        {
-          pattern: 'N が じょうず／へた です',
-          title: { en: 'Being good / bad at (が)', vi: 'Giỏi / kém về (が)' },
-          explanation: {
-            en: 'じょうず (good at) and へた (bad at) also mark the skill with が.',
-            vi: 'じょうず (giỏi) và へた (kém) cũng đánh dấu kỹ năng bằng が.'
-          },
-          examples: [
-            {
-              jp: 'ハナさんは りょうりが じょうずです。',
-              romaji: 'Hana-san wa ryōri ga jōzu desu.',
-              meaning: { en: 'Hana is good at cooking.', vi: 'Hana nấu ăn giỏi.' }
-            },
-            {
-              jp: 'わたしは にほんごが まだ へたです。',
-              romaji: 'Watashi wa nihongo ga mada heta desu.',
-              meaning: { en: 'I am still bad at Japanese.', vi: 'Tôi vẫn còn kém tiếng Nhật.' }
-            }
-          ]
-        },
-        {
-          pattern: 'sentence から、sentence',
-          title: { en: 'Giving a reason (から)', vi: 'Nêu lý do (から)' },
-          explanation: {
-            en: 'から after a clause means "because". The reason comes first, the result after.',
-            vi: 'から sau một mệnh đề nghĩa là "vì". Lý do đứng trước, kết quả đứng sau.'
-          },
-          examples: [
-            {
-              jp: 'えいがが すきですから、よく みます。',
-              romaji: 'Eiga ga suki desu kara, yoku mimasu.',
-              meaning: {
-                en: 'I like movies, so I watch them often.',
-                vi: 'Vì tôi thích phim nên hay xem.'
-              }
-            },
-            {
-              jp: 'どうして いきませんか。',
-              romaji: 'Dōshite ikimasen ka.',
-              meaning: { en: "Why won't you go?", vi: 'Tại sao bạn không đi?' }
-            }
-          ]
-        }
-      ],
-      reading: [
-        {
-          id: 'reading-1',
-          title: { en: 'Hana\u2019s hobbies', vi: 'Sở thích của Hana' },
-          lines: [
-            {
-              jp: 'ハナさんは おんがくが すきです。',
-              romaji: 'Hana-san wa ongaku ga suki desu.',
-              meaning: { en: 'Hana likes music.', vi: 'Hana thích âm nhạc.' }
-            },
-            {
-              jp: 'りょうりが じょうずですから、まいにち りょうりを します。',
-              romaji: 'Ryōri ga jōzu desu kara, mainichi ryōri o shimasu.',
-              meaning: {
-                en: 'She is good at cooking, so she cooks every day.',
-                vi: 'Cô ấy nấu ăn giỏi, nên ngày nào cũng nấu ăn.'
-              }
-            },
-            {
-              jp: 'でも、スポーツは あまり すきじゃ ありません。',
-              romaji: 'Demo, supōtsu wa amari suki ja arimasen.',
-              meaning: {
-                en: 'But she does not really like sports.',
-                vi: 'Nhưng cô ấy không thích thể thao lắm.'
-              }
-            }
-          ],
-          questions: [
-            {
-              id: 'q1',
-              question: {
-                en: 'Why does Hana cook every day?',
-                vi: 'Tại sao Hana nấu ăn mỗi ngày?'
-              },
-              choices: [
-                {
-                  id: 'a',
-                  label: { en: 'Because she is good at cooking', vi: 'Vì cô ấy nấu ăn giỏi' }
-                },
-                {
-                  id: 'b',
-                  label: { en: 'Because she likes sports', vi: 'Vì cô ấy thích thể thao' }
-                },
-                {
-                  id: 'c',
-                  label: { en: 'Because she dislikes music', vi: 'Vì cô ấy ghét âm nhạc' }
-                }
-              ],
-              correctId: 'a'
-            },
-            {
-              id: 'q2',
-              question: { en: 'What does Hana not like much?', vi: 'Hana không thích gì lắm?' },
-              choices: [
-                { id: 'a', label: { en: 'Sports', vi: 'Thể thao' } },
-                { id: 'b', label: { en: 'Music', vi: 'Âm nhạc' } },
-                { id: 'c', label: { en: 'Cooking', vi: 'Nấu ăn' } }
-              ],
-              correctId: 'a'
-            }
-          ]
-        }
-      ]
-    },
-    ...n5LessonsB,
-    ...n5LessonsC
+    }
   ])
 };

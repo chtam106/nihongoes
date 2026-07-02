@@ -6,6 +6,7 @@ alwaysApply: true
 # Nihongoes conventions
 
 ## Courses (N5–N1 + Frontend)
+- Author lesson content (vocab, phrases, grammar, reading, reference) by hand in each `<course>/index.ts` (or its `lessons-*.ts` part files) following the shape of the existing lessons. Do NOT use a code generator for lesson data. When listing a lesson's vocabulary, cross-check against the Minna no Nihongo word list so nothing is missed (see the "never list less than the textbook" rule) - use the textbook/an authoritative list as a reference while you write, but keep our own EN/VI meanings.
 - Lesson count per level is NOT fixed — author enough lessons to cover the full standard JLPT grammar syllabus for that level; reorder/renumber lessons freely. See the `n5-course` rule for details.
 - Keep frontend/software-engineering Japanese content in a dedicated top-level `frontend` course track; do NOT mix frontend lessons into JLPT levels (`n5`-`n1`).
 - In `src/constants/courses`, keep one folder per course level/track (`n5`, `n4`, `n3`, `n2`, `n1`, `frontend`), with each course definition in `<course>/index.ts`; keep the `courses/` root as registry/types only.
@@ -81,6 +82,9 @@ alwaysApply: true
 
 ## Hints / annotations
 - Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="error.main"` (red) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
+
+## Grammar highlight colors
+- Lesson grammar fixed parts (pattern, explanation, examples) use `<GrammarHighlightedText>` with `GRAMMAR_HIGHLIGHT_PALETTE` in `src/utils/grammar-highlight.ts`. Do NOT use `error.main` / red. Pick palette entries with clearly different hues (e.g. blue + orange, not blue + teal).
 
 ## Scrollbars
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.
