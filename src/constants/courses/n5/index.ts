@@ -70,8 +70,18 @@ export const n5Course: Course = {
           romaji: 'chan',
           speech: 'ちゃん',
           meaning: {
-            en: '~chan (affectionate suffix, esp. for little girls)',
+            en: '~chan (affectionate suffix, especially for little girls)',
             vi: '~chan (hậu tố thân mật, nhất là với bé gái)'
+          }
+        },
+        {
+          kana: '〜くん',
+          kanji: '〜君',
+          romaji: 'kun',
+          speech: 'くん',
+          meaning: {
+            en: '~kun (familiar suffix, especially for boys)',
+            vi: '~kun (hậu tố thân mật, nhất là với bé trai)'
           }
         },
         {
