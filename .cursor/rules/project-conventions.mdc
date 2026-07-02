@@ -82,6 +82,9 @@ alwaysApply: true
 ## Hints / annotations
 - Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="error.main"` (red) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
 
+## Grammar highlight colors
+- Lesson grammar fixed parts (pattern, explanation, examples) use `<GrammarHighlightedText>` with `GRAMMAR_HIGHLIGHT_PALETTE` in `src/utils/grammar-highlight.ts`. Do NOT use `error.main` / red. Pick palette entries with clearly different hues (e.g. blue + orange, not blue + teal).
+
 ## Scrollbars
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.
 

@@ -1,5 +1,5 @@
 import { useState, type KeyboardEvent } from 'react';
-import { Box, Link, Stack, Typography } from '@mui/material';
+import { Box, Link, Typography } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 type TranslationLineProps = {
@@ -7,11 +7,10 @@ type TranslationLineProps = {
 };
 
 /**
- * The meaning (translation) line for an example sentence. Hidden by default and
- * shown only when the inline button is tapped; once shown, a "hide" button sits
- * to the left of the translation. Both states overlap in a single grid cell (only
- * the visibility flips) so toggling never shifts the surrounding layout. Stops
- * click/key propagation so it doesn't trigger a surrounding speakable surface.
+ * The meaning (translation) line for an example sentence. Hidden by default,
+ * showing only a "show" button; once revealed, the translation sits on its own
+ * row with the "hide" button on the row below it. Stops click/key propagation so
+ * it doesn't trigger a surrounding speakable surface.
  */
 export function TranslationLine({ translation }: TranslationLineProps) {
   const { t } = useTranslation();
@@ -20,31 +19,8 @@ export function TranslationLine({ translation }: TranslationLineProps) {
   const stopKeyPropagation = (event: KeyboardEvent<HTMLButtonElement>) => event.stopPropagation();
 
   return (
-    <Box sx={{ display: 'grid', justifyItems: 'start' }}>
-      <Link
-        component="button"
-        type="button"
-        variant="body2"
-        underline="hover"
-        onClick={(event) => {
-          event.stopPropagation();
-          setShown(true);
-        }}
-        onKeyDown={stopKeyPropagation}
-        sx={{ gridArea: '1 / 1', lineHeight: 1.66, visibility: shown ? 'hidden' : 'visible' }}
-      >
-        {t('course.showTranslation')}
-      </Link>
-      <Stack
-        direction="row"
-        spacing={1}
-        sx={{
-          gridArea: '1 / 1',
-          alignItems: 'baseline',
-          flexWrap: 'wrap',
-          visibility: shown ? 'visible' : 'hidden'
-        }}
-      >
+    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+      {!shown && (
         <Link
           component="button"
           type="button"
@@ -52,17 +28,35 @@ export function TranslationLine({ translation }: TranslationLineProps) {
           underline="hover"
           onClick={(event) => {
             event.stopPropagation();
-            setShown(false);
+            setShown(true);
           }}
           onKeyDown={stopKeyPropagation}
-          sx={{ lineHeight: 1.66, flexShrink: 0 }}
+          sx={{ lineHeight: 1.66 }}
         >
-          {t('course.hideTranslation')}
+          {t('course.showTranslation')}
         </Link>
-        <Typography variant="body2" sx={{ lineHeight: 1.66 }}>
-          {translation}
-        </Typography>
-      </Stack>
+      )}
+      {shown && (
+        <>
+          <Typography variant="body2" sx={{ lineHeight: 1.66 }}>
+            {translation}
+          </Typography>
+          <Link
+            component="button"
+            type="button"
+            variant="body2"
+            underline="hover"
+            onClick={(event) => {
+              event.stopPropagation();
+              setShown(false);
+            }}
+            onKeyDown={stopKeyPropagation}
+            sx={{ lineHeight: 1.66 }}
+          >
+            {t('course.hideTranslation')}
+          </Link>
+        </>
+      )}
     </Box>
   );
 }

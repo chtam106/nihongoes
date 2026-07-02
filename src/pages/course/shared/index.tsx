@@ -16,23 +16,27 @@ import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 type LessonQuizHeaderProps = {
   level: CourseLevel;
   lesson: Lesson;
-  section: 'exercise' | 'listening' | 'reading';
+  section: 'vocabulary' | 'grammar' | 'listening' | 'reading' | 'writing';
 };
 
 /**
  * Shared header for the lesson practice / listening / reading pages: shows the
- * lesson number, the course code (or Frontend track) and the section as tags
- * above the lesson title, instead of baking the section into the title text.
+ * lesson number, the course code and the section as tags above the lesson
+ * title, instead of baking the section into the title text.
  */
 export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderProps) {
   const { locale, t } = useTranslation();
   const course = getCourse(level);
   const sectionLabel =
-    section === 'exercise'
-      ? t('course.exercise')
-      : section === 'listening'
-        ? t('course.listening')
-        : t('course.reading');
+    section === 'vocabulary'
+      ? t('course.vocabulary')
+      : section === 'grammar'
+        ? t('course.grammar')
+        : section === 'listening'
+          ? t('course.listening')
+          : section === 'reading'
+            ? t('course.reading')
+            : t('course.writing');
 
   return (
     <Box>
@@ -42,18 +46,7 @@ export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderPro
         useFlexGap
         sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
       >
-        {lesson.track === 'frontend' && (
-          <Chip
-            label={t('course.frontendTrackTag')}
-            color="secondary"
-            variant="outlined"
-            size="small"
-            component={RouterLink}
-            to={coursePath(level)}
-            clickable
-          />
-        )}
-        {lesson.track !== 'frontend' && course && (
+        {course && (
           <Chip
             label={course.code}
             color="secondary"

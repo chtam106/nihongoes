@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ReplayIcon from '@mui/icons-material/Replay';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined';
 import { Box, Button, IconButton, LinearProgress, Paper, Stack, Typography } from '@mui/material';
@@ -15,6 +14,7 @@ import {
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { cancelSpeech, isSpeechSupported, speakJapanese } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/pages/course/choice-button';
@@ -167,24 +167,17 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
               >
                 <VolumeUpIcon />
               </IconButton>
-              <Button
-                size="small"
-                startIcon={<ReplayIcon />}
-                onClick={() => speakJapanese(question.audioText)}
-              >
-                {t('course.replay')}
-              </Button>
 
               {correctPicked && (
                 <Box sx={{ mt: 1 }}>
                   <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>
-                    {question.reveal.jp}
+                    {formatJapaneseDisplay(question.reveal.jp)}
                   </Typography>
                 </Box>
               )}
             </Paper>
 
-            <Stack spacing={1.5}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
               {question.options.map((option) => {
                 const isCorrectOption = option.id === question.correctId;
                 const showCorrect = correctPicked && isCorrectOption;
@@ -203,7 +196,7 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
                   </ChoiceButton>
                 );
               })}
-            </Stack>
+            </Box>
           </>
         )}
       </Stack>

@@ -26,6 +26,7 @@ import {
   firstCell,
   getVoicedDescription,
   getYoonDescription,
+  toYoonGridRows,
   type AlphabetCell,
   type AlphabetChartRow,
   type GridRow
@@ -100,10 +101,7 @@ export function AlphabetChartPage({
 
   const seionRows = toSeionRows(chartRows);
   const voicedRows = toVoicedRows(chartRows);
-  const yoonRows = toSeionRows(yoonChartRows).map((row) => ({
-    label: row.label,
-    cells: row.cells.filter((cell) => cell !== null)
-  }));
+  const yoonRows = toYoonGridRows(yoonChartRows);
 
   return (
     <PageContainer>

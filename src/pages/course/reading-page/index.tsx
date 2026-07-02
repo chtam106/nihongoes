@@ -12,6 +12,7 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { SpeakButton } from '@/components/speak-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { isSpeechSupported, speakJapanese } from '@/utils/speech.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/pages/course/choice-button';
@@ -37,7 +38,10 @@ function PassageCard({ passage }: PassageCardProps) {
   const [showTranslation, setShowTranslation] = useState(false);
   const canSpeak = isSpeechSupported();
 
-  const fullText = useMemo(() => passage.lines.map((line) => line.jp).join(' '), [passage.lines]);
+  const fullText = useMemo(
+    () => passage.lines.map((line) => formatJapaneseDisplay(line.jp)).join(''),
+    [passage.lines]
+  );
 
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
@@ -62,43 +66,47 @@ function PassageCard({ passage }: PassageCardProps) {
       </Stack>
 
       <Stack spacing={1.5}>
-        {passage.lines.map((line) => (
-          <Box key={line.jp}>
-            <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
-              <Box sx={{ alignSelf: 'flex-start', position: 'relative', top: -2 }}>
-                <SpeakButton text={line.jp} />
-              </Box>
-              <Box sx={{ flex: 1, minWidth: 0 }}>
-                <Typography
-                  variant="body1"
-                  lang="ja"
-                  onClick={canSpeak ? () => speakJapanese(line.jp) : undefined}
-                  role={canSpeak ? 'button' : undefined}
-                  tabIndex={canSpeak ? 0 : undefined}
-                  aria-label={canSpeak ? t('common.playAudio') : undefined}
-                  onKeyDown={
-                    canSpeak
-                      ? (event) => {
-                          if (event.key === 'Enter' || event.key === ' ') {
-                            event.preventDefault();
-                            speakJapanese(line.jp);
+        {passage.lines.map((line) => {
+          const displayJp = formatJapaneseDisplay(line.jp);
+
+          return (
+            <Box key={line.jp}>
+              <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
+                <Box sx={{ alignSelf: 'flex-start', position: 'relative', top: -2 }}>
+                  <SpeakButton text={line.jp} />
+                </Box>
+                <Box sx={{ flex: 1, minWidth: 0 }}>
+                  <Typography
+                    variant="body1"
+                    lang="ja"
+                    onClick={canSpeak ? () => speakJapanese(displayJp) : undefined}
+                    role={canSpeak ? 'button' : undefined}
+                    tabIndex={canSpeak ? 0 : undefined}
+                    aria-label={canSpeak ? t('common.playAudio') : undefined}
+                    onKeyDown={
+                      canSpeak
+                        ? (event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              speakJapanese(displayJp);
+                            }
                           }
-                        }
-                      : undefined
-                  }
-                  sx={{ fontWeight: 500, cursor: canSpeak ? 'pointer' : undefined }}
-                >
-                  {line.jp}
-                </Typography>
-                <Collapse in={showTranslation}>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
-                    {line.meaning[locale]}
+                        : undefined
+                    }
+                    sx={{ fontWeight: 500, cursor: canSpeak ? 'pointer' : undefined }}
+                  >
+                    {displayJp}
                   </Typography>
-                </Collapse>
-              </Box>
-            </Stack>
-          </Box>
-        ))}
+                  <Collapse in={showTranslation}>
+                    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
+                      {line.meaning[locale]}
+                    </Typography>
+                  </Collapse>
+                </Box>
+              </Stack>
+            </Box>
+          );
+        })}
       </Stack>
     </Paper>
   );
@@ -221,7 +229,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
               </Typography>
             </Paper>
 
-            <Stack spacing={1.5}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
               {question.choices.map((choice) => {
                 const isCorrectChoice = choice.id === question.correctId;
                 const showCorrect = correctPicked && isCorrectChoice;
@@ -239,7 +247,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
                   </ChoiceButton>
                 );
               })}
-            </Stack>
+            </Box>
           </>
         )}
       </Stack>

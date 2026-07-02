@@ -106,9 +106,12 @@ function CombinedChartPage() {
     ...pairRowsForSection(hiraganaChartRows, katakanaChartRows, 'dakuten'),
     ...pairRowsForSection(hiraganaChartRows, katakanaChartRows, 'handakuten')
   ];
-  const yoonRows = pairRowsForSection(hiraganaYoonChartRows, katakanaYoonChartRows, 'seion').map(
-    (row) => ({ label: row.label, cells: row.cells.filter((cell) => cell !== null) })
-  );
+  const yoonRows = (['seion', 'dakuten', 'handakuten'] as const satisfies readonly SectionKey[])
+    .flatMap((section) => pairRowsForSection(hiraganaYoonChartRows, katakanaYoonChartRows, section))
+    .map((row) => ({
+      label: row.label,
+      cells: row.cells.filter((cell): cell is CombinedCell => cell !== null)
+    }));
 
   return (
     <PageContainer>

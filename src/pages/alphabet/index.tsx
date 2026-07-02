@@ -1,3 +1,4 @@
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import { Box, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
@@ -26,7 +27,7 @@ function AlphabetPage() {
     {
       to: routes.alphabet.combined,
       title: t('nav.combined'),
-      symbol: 'あ/ア',
+      icon: GridViewOutlinedIcon,
       description: t('alphabet.combinedDescription')
     },
     {
