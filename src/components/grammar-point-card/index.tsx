@@ -4,7 +4,6 @@ import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
 import { formatGrammarPatternDisplay, type HighlightTerm } from '@/utils/grammar-highlight.ts';
 import { Heading } from '@/components/heading';
 import { TranslationLine } from '@/components/translation-line';
-import { SpeakButton } from '@/components/speak-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
@@ -28,28 +27,23 @@ function ExampleList({ examples, highlights, exclude, colorOffset = 0 }: Example
     <Stack spacing={1.5}>
       {examples.map((example) => (
         <SpeakableSurface key={example.jp} text={example.jp} sx={{ p: 1.5 }}>
-          <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
-            <SpeakButton text={example.jp} />
-            <Box sx={{ flex: 1, minWidth: 0 }}>
-              {hasHighlights && (
-                <GrammarHighlightedText
-                  text={example.jp}
-                  highlights={highlights!}
-                  exclude={exclude}
-                  colorOffset={colorOffset}
-                  variant="body1"
-                  lang="ja"
-                  sx={{ fontWeight: 500 }}
-                />
-              )}
-              {!hasHighlights && (
-                <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
-                  {example.jp}
-                </Typography>
-              )}
-              <TranslationLine translation={example.meaning[locale]} />
-            </Box>
-          </Stack>
+          {hasHighlights && (
+            <GrammarHighlightedText
+              text={example.jp}
+              highlights={highlights!}
+              exclude={exclude}
+              colorOffset={colorOffset}
+              variant="body1"
+              lang="ja"
+              sx={{ fontWeight: 500 }}
+            />
+          )}
+          {!hasHighlights && (
+            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+              {example.jp}
+            </Typography>
+          )}
+          <TranslationLine translation={example.meaning[locale]} />
         </SpeakableSurface>
       ))}
     </Stack>
