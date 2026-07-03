@@ -260,6 +260,7 @@ export const viTranslations: TranslationTree = {
     referenceSubtitle: 'Từ mở rộng liên quan tới bài học, cũng có trong bài luyện từ vựng.',
     lessonLabel: 'Bài {{number}}',
     focusLabel: 'Trong bài này',
+    audioHint: 'Bấm vào bất kỳ từ vựng hoặc câu nào để nghe phát âm.',
     vocabulary: 'Từ vựng',
     grammar: 'Ngữ pháp',
     examples: 'Ví dụ',

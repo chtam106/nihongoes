@@ -30,9 +30,9 @@ import {
 } from '@/constants/courses/index.ts';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
+import { HintText } from '@/components/hint-text';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import { SpeakButton } from '@/components/speak-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
@@ -137,15 +137,12 @@ function VocabularySection({ lesson }: VocabularySectionProps) {
           <SpeakableSurface
             key={`${item.kana}-${item.romaji}`}
             text={item.speech ?? item.kana}
-            sx={{ p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' }}
+            sx={{ p: 1.5 }}
           >
-            <SpeakButton text={item.speech ?? item.kana} />
-            <Box sx={{ minWidth: 0 }}>
-              <VocabHeadword item={item} />
-              <Typography variant="body2" sx={{ mt: 0.5 }}>
-                {item.meaning[locale]}
-              </Typography>
-            </Box>
+            <VocabHeadword item={item} />
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
+              {item.meaning[locale]}
+            </Typography>
           </SpeakableSurface>
         ))}
       </Box>
@@ -176,17 +173,14 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
           <SpeakableSurface
             key={`${phrase.kana}-${phrase.romaji}`}
             text={phrase.speech ?? phrase.kana}
-            sx={{ p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' }}
+            sx={{ p: 1.5 }}
           >
-            <SpeakButton text={phrase.speech ?? phrase.kana} />
-            <Box sx={{ minWidth: 0 }}>
-              <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
-                {phrase.kanji ?? phrase.kana}
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 0.25 }}>
-                {phrase.meaning[locale]}
-              </Typography>
-            </Box>
+            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+              {phrase.kanji ?? phrase.kana}
+            </Typography>
+            <Typography variant="body2" sx={{ mt: 0.25 }}>
+              {phrase.meaning[locale]}
+            </Typography>
           </SpeakableSurface>
         ))}
       </Stack>
@@ -232,15 +226,12 @@ function ReferenceSection({ lesson }: ReferenceSectionProps) {
                 <SpeakableSurface
                   key={`${item.kana}-${item.romaji}`}
                   text={item.speech ?? item.kana}
-                  sx={{ p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' }}
+                  sx={{ p: 1.5 }}
                 >
-                  <SpeakButton text={item.speech ?? item.kana} />
-                  <Box sx={{ minWidth: 0 }}>
-                    <VocabHeadword item={item} />
-                    <Typography variant="body2" sx={{ mt: 0.5 }}>
-                      {item.meaning[locale]}
-                    </Typography>
-                  </Box>
+                  <VocabHeadword item={item} />
+                  <Typography variant="body2" sx={{ mt: 0.5 }}>
+                    {item.meaning[locale]}
+                  </Typography>
                 </SpeakableSurface>
               ))}
             </Box>
@@ -413,6 +404,8 @@ function LessonPage({ level }: LessonPageProps) {
             </Typography>
             <Typography variant="body1">{lesson.focus[locale]}</Typography>
           </Paper>
+
+          <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
         </Box>
 
         <SectionNav lesson={lesson} />

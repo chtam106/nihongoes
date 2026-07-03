@@ -269,6 +269,7 @@ const en: TranslationTree = {
       'Extra words related to this lesson, also included in the vocabulary practice.',
     lessonLabel: 'Lesson {{number}}',
     focusLabel: 'In this lesson',
+    audioHint: 'Tap any vocabulary word or sentence to hear it pronounced.',
     vocabulary: 'Vocabulary',
     grammar: 'Grammar',
     examples: 'Examples',
