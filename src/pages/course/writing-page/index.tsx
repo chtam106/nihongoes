@@ -33,6 +33,14 @@ import { FONT_FAMILY_JP, loadJapaneseUiFont } from '@/theme/fonts.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound, LessonQuizHeader } from '@/pages/course/shared';
 
+// Matches anything that is NOT a CJK kanji (kana, 〜, punctuation, latin, etc.).
+const NON_KANJI_RE = /[^\u4E00-\u9FFF]/g;
+
+/** Keep only the kanji characters so the tracing sheet never shows kana or 〜. */
+function kanjiOnly(text: string): string {
+  return text.replace(NON_KANJI_RE, '');
+}
+
 function configurePen(ctx: CanvasRenderingContext2D) {
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
@@ -302,7 +310,7 @@ function KanjiWriting({ level, lesson }: KanjiWritingProps) {
     );
   }
 
-  const guide = current.kanji ?? current.kana;
+  const guide = kanjiOnly(current.kanji ?? '') || current.kana;
   const guideFontSize = `min(${Math.round(72 / guide.length)}vw, ${Math.round(300 / guide.length)}px)`;
   const speechText = current.speech ?? current.kana;
 
