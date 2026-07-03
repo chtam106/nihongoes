@@ -270,7 +270,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N1 は N2 ですか',
-          highlights: ['は', 'ですか'],
+          highlights: ['は', 'です', 'か'],
           title: {
             en: 'Yes/no question with か',
             vi: 'Câu hỏi có/không với か'
@@ -387,7 +387,8 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N は だれ ですか',
-          highlights: ['は', 'だれ', 'どなた', 'ですか'],
+          highlights: ['は', 'だれ', 'どなた', 'です', 'か'],
+          excludeHighlights: ['あのかた'],
           title: { en: 'Asking who (だれ / どなた)', vi: 'Hỏi "ai" (だれ / どなた)' },
           explanation: {
             en: 'Ask who someone is with だれ. どなた is the polite version, used with あの方.',
@@ -427,12 +428,11 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N は なんさい ですか',
-          highlights: ['は', 'なんさい', 'おいくつ', 'ですか'],
-          excludeHighlights: ['はたち'],
+          highlights: ['は', 'なんさい', 'おいくつ', 'です', 'か'],
           title: { en: 'Asking age (なんさい / おいくつ)', vi: 'Hỏi tuổi (なんさい / おいくつ)' },
           explanation: {
-            en: 'Ask age with なんさい. おいくつ is the polite version. Answer with a number + さい (20 has the special reading はたち).',
-            vi: 'Hỏi tuổi với なんさい. おいくつ là cách nói lịch sự. Trả lời bằng số + さい (20 tuổi đọc đặc biệt là はたち).'
+            en: 'Ask age with なんさい. おいくつ is the polite version.',
+            vi: 'Hỏi tuổi với なんさい. おいくつ là cách nói lịch sự.'
           },
           examples: [
             {
@@ -945,7 +945,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N は なん ですか',
-          highlights: ['は', 'なん', 'ですか'],
+          highlights: ['は', 'なん', 'です', 'か'],
           title: { en: 'Asking "what is it?" with 何', vi: 'Hỏi "là cái gì?" với 何' },
           explanation: {
             en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is.',
@@ -1316,7 +1316,7 @@ export const n5Course: Course = {
         },
         {
           pattern: 'N は どこ ですか',
-          highlights: ['は', 'どこ', 'ですか'],
+          highlights: ['は', 'どこ', 'です', 'か'],
           title: { en: 'Asking where (どこ)', vi: 'Hỏi ở đâu (どこ)' },
           explanation: {
             en: 'どこ means "where". Use it to ask the location of a place or thing.',

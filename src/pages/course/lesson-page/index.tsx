@@ -99,11 +99,11 @@ function SectionNav({ lesson }: SectionNavProps) {
         <Button
           key={item.id}
           variant="outlined"
-          size="small"
+          size="medium"
           color="primary"
           endIcon={<KeyboardArrowDownIcon />}
           onClick={() => scrollToSection(item.id)}
-          sx={{ textTransform: 'none' }}
+          sx={{ textTransform: 'none', fontSize: (theme) => theme.typography.body1.fontSize }}
         >
           {item.label}
         </Button>
