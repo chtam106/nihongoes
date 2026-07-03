@@ -118,16 +118,14 @@ function localeRoutes(prefix: string) {
 if (import.meta.env.PROD) {
   Sentry.init({
     dsn: 'https://bf3133d22cc666760ff3802a937d83e4@o4511653477548032.ingest.us.sentry.io/4511653482004480',
-    integrations: [Sentry.browserTracingIntegration(), Sentry.replayIntegration()],
+    integrations: [
+      Sentry.browserTracingIntegration(),
+      // Disable built-in masking: this site has no sensitive user data.
+      Sentry.replayIntegration({ maskAllText: false, blockAllMedia: false })
+    ],
     tracesSampleRate: 1.0,
     replaysSessionSampleRate: 0.1,
     replaysOnErrorSampleRate: 1.0
-  });
-
-  Sentry.replayIntegration({
-    // NOTE: This will disable built-in masking. Only use this if your site has no sensitive data, or if you've already set up other options for masking or blocking relevant data, such as 'ignore', 'block', 'mask' and 'maskFn'.
-    maskAllText: false,
-    blockAllMedia: false
   });
 }
 
