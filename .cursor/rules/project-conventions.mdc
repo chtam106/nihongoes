@@ -37,9 +37,13 @@ alwaysApply: true
 ## Kana terminology (display text)
 - In ALL user-facing display text (UI labels, chart headings/descriptions, exercise hints, meta descriptions) use the colloquial mark names: call dakuten "Tenten" and handakuten "Maru". Do NOT use the formal words "dakuten"/"handakuten" in any displayed copy (EN or VI). Internal code identifiers (variable/type/scope keys like `dakuten`, `handakuten`, `scopeDakuten`) stay as-is.
 
+## Vocab word display (IMPORTANT)
+- When a word HAS a kanji form, render it inline as `漢字（かな）` - kanji first, then the kana reading in full-width Japanese parentheses. A kana-only word (no kanji, or kanji === kana) renders plainly. No underline, no furigana. This is implemented in `VocabHeadword` (`src/pages/course/lesson-page/index.tsx`), used by the vocab and reference sections. Do NOT revert to the old two-line (kanji on top, grey kana below) layout.
+
 ## Text & typography (IMPORTANT)
 - Use ONLY US-keyboard ASCII punctuation in non-Japanese text (UI strings, EN/VI content, code, comments, docs). NEVER use em dash (`—`) or en dash (`–`); use a hyphen `-` (as a separator write ` - `, for ranges write `N5-N1` not `N5–N1`). Avoid other "smart"/typographic unicode (curly quotes `“”‘’`, ellipsis `…`) too: use `"`, `'`, `...`.
 - Japanese CONTENT may use Japanese punctuation (`、。「」〜・` etc.); the rule only applies to the non-Japanese parts of a string.
+- Minimum text size is `body1` (16px / 1rem) on BOTH mobile and desktop - no readable text may render smaller. Enforced centrally in `src/theme/app-theme.ts` by flooring the small MUI variants (`body2`, `subtitle2`, `caption`, `overline`, `button`) to `1rem`, plus `MuiChip` (`root` + `sizeSmall`, whose own font is 13px/12px). Do NOT introduce `fontSize` values below `1rem` for text; keep the theme as the single source of truth (only tiny non-text decorations like a numbered badge glyph may stay smaller).
 
 ## Alphabet romaji matching
 - Each kana accepts EXACTLY ONE romaji - the spelling shown in the chart (`AlphabetCell.romaji`). The romaji quiz's `correctAnswers` is just `[correctItem.romaji]`; typed input is only normalized with `normalizeRomajiInput` (trim + lowercase) before an exact match. Do NOT add alternate-spelling aliasing (no Kunrei si/shi, tya/cha, no homophone fuzziness) in the alphabet quiz.

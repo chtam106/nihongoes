@@ -46,27 +46,22 @@ type VocabHeadwordProps = {
 };
 
 /**
- * A vocab card's headword. When the word has a kanji form, the kanji is shown on
- * the top line (bold) with the kana reading on the line below it (muted grey); a
- * kana-only word is shown as a single line.
+ * A vocab card's headword. When the word has a kanji form, it is shown inline as
+ * `漢字（かな）` (kanji first, then the kana reading); a kana-only word is shown
+ * plainly.
  */
 function VocabHeadword({ item }: VocabHeadwordProps) {
+  const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
+
   return (
-    <Box>
-      <Typography
-        variant="subtitle1"
-        component="div"
-        lang="ja"
-        sx={{ fontWeight: 600, lineHeight: 1.3 }}
-      >
-        {item.kanji ?? item.kana}
-      </Typography>
-      {item.kanji && (
-        <Typography variant="body2" component="div" lang="ja" color="text.secondary">
-          {item.kana}
-        </Typography>
-      )}
-    </Box>
+    <Typography
+      variant="subtitle1"
+      component="div"
+      lang="ja"
+      sx={{ fontWeight: 600, lineHeight: 1.3 }}
+    >
+      {hasKanji ? `${item.kanji}（${item.kana}）` : item.kana}
+    </Typography>
   );
 }
 
@@ -280,6 +275,51 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
   const hasKanji = lessonHasKanji(lesson);
   const hasGrammar = lesson.grammar.length > 0;
 
+  const actions = [
+    {
+      key: 'exercise',
+      to: lessonVocabularyPath(level, lesson.id),
+      icon: <FitnessCenterOutlinedIcon />,
+      label: t('course.startExercise')
+    },
+    ...(hasGrammar
+      ? [
+          {
+            key: 'grammar',
+            to: lessonGrammarPath(level, lesson.id),
+            icon: <TranslateOutlinedIcon />,
+            label: t('course.startGrammar')
+          }
+        ]
+      : []),
+    ...(hasReading
+      ? [
+          {
+            key: 'reading',
+            to: lessonReadingPath(level, lesson.id),
+            icon: <ImportContactsOutlinedIcon />,
+            label: t('course.startReading')
+          }
+        ]
+      : []),
+    {
+      key: 'listening',
+      to: lessonListeningPath(level, lesson.id),
+      icon: <HeadphonesOutlinedIcon />,
+      label: t('course.startListening')
+    },
+    ...(hasKanji
+      ? [
+          {
+            key: 'writing',
+            to: lessonWritingPath(level, lesson.id),
+            icon: <BorderColorOutlinedIcon />,
+            label: t('course.startWriting')
+          }
+        ]
+      : [])
+  ];
+
   return (
     <Paper
       id="practice"
@@ -294,59 +334,18 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
           {t('course.exerciseSubtitle')}
         </Typography>
       </Box>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: { xs: 'repeat(2, 1fr)', sm: 'repeat(3, 1fr)' },
-          gap: 1.5
-        }}
-      >
-        <Button
-          component={RouterLink}
-          to={lessonVocabularyPath(level, lesson.id)}
-          variant="outlined"
-          startIcon={<FitnessCenterOutlinedIcon />}
-        >
-          {t('course.startExercise')}
-        </Button>
-        {hasGrammar && (
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5 }}>
+        {actions.map((action) => (
           <Button
+            key={action.key}
             component={RouterLink}
-            to={lessonGrammarPath(level, lesson.id)}
+            to={action.to}
             variant="outlined"
-            startIcon={<TranslateOutlinedIcon />}
+            startIcon={action.icon}
           >
-            {t('course.startGrammar')}
+            {action.label}
           </Button>
-        )}
-        {hasReading && (
-          <Button
-            component={RouterLink}
-            to={lessonReadingPath(level, lesson.id)}
-            variant="outlined"
-            startIcon={<ImportContactsOutlinedIcon />}
-          >
-            {t('course.startReading')}
-          </Button>
-        )}
-        <Button
-          component={RouterLink}
-          to={lessonListeningPath(level, lesson.id)}
-          variant="outlined"
-          startIcon={<HeadphonesOutlinedIcon />}
-        >
-          {t('course.startListening')}
-        </Button>
-        {hasKanji && (
-          <Button
-            component={RouterLink}
-            to={lessonWritingPath(level, lesson.id)}
-            variant="outlined"
-            startIcon={<BorderColorOutlinedIcon />}
-          >
-            {t('course.startWriting')}
-          </Button>
-        )}
+        ))}
       </Box>
     </Paper>
   );

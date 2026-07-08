@@ -132,13 +132,9 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
 
         {point.answers && (
           <Box sx={{ mt: 2 }}>
-            <Typography
-              variant="subtitle1"
-              color="text.primary"
-              sx={{ display: 'block', mb: 0.75, fontWeight: 700 }}
-            >
+            <Heading component="h4" scale="subsection" sx={{ mb: 0.75 }}>
               {t('course.answers')}
-            </Typography>
+            </Heading>
             {point.answers.explanation && (
               <GrammarHighlightedText
                 text={point.answers.explanation[locale]}

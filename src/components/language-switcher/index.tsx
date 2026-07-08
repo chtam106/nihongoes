@@ -60,6 +60,7 @@ export function LanguageSwitcher() {
               variant="caption"
               component="span"
               sx={{
+                fontSize: '0.75rem',
                 fontWeight: selected ? 700 : 500,
                 color: selected ? 'text.primary' : 'text.secondary',
                 letterSpacing: 0.4,
