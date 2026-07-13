@@ -6817,10 +6817,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to think, to feel', vi: 'tư - nghĩ, suy nghĩ' },
         onyomi: ['シ'],
         kunyomi: ['おも.う'],
-        components: ['田', '心'],
+        components: [],
         mnemonic: {
-          en: 'The brain 田 above the heart 心 working together: to think, to feel.',
-          vi: 'Bộ não 田 trên trái tim 心 cùng hoạt động: suy nghĩ, cảm nhận.'
+          en: 'The head (drawn like 田) working together with the heart 心 below: to think, to feel.',
+          vi: 'Cái đầu (viết như 田) cùng hoạt động với trái tim 心 bên dưới: suy nghĩ, cảm nhận.'
         },
         examples: [
           {
@@ -10248,6 +10248,4500 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '者', reading: 'しゃ' }
             ],
             meaning: { en: 'scholar', vi: 'học giả' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Places & districts',
+      vi: 'Nơi chốn & khu vực'
+    },
+    kanji: [
+      {
+        char: '屋',
+        meaning: { en: 'roof; shop, store', vi: 'ốc - mái nhà; cửa hàng, tiệm' },
+        onyomi: ['オク'],
+        kunyomi: ['や'],
+        components: ['尸', '至'],
+        mnemonic: {
+          en: 'A covering 尸 you arrive 至 under to be sheltered: a roof, and by extension a shop or store.',
+          vi: 'Tấm che 尸 mà người ta đi đến 至 để trú: mái nhà, và nghĩa rộng là cửa hàng, tiệm.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '屋', reading: 'や' },
+              { text: '根', reading: 'ね' }
+            ],
+            meaning: { en: 'roof', vi: 'mái nhà' }
+          },
+          {
+            parts: [
+              { text: '本', reading: 'ほん' },
+              { text: '屋', reading: 'や' }
+            ],
+            meaning: { en: 'bookstore', vi: 'hiệu sách' }
+          },
+          {
+            parts: [
+              { text: '部', reading: 'へ' },
+              { text: '屋', reading: 'や' }
+            ],
+            meaning: { en: 'room', vi: 'căn phòng' }
+          }
+        ]
+      },
+      {
+        char: '局',
+        meaning: { en: 'bureau, office; station', vi: 'cục - cục, sở; đài (phát thanh...)' },
+        onyomi: ['キョク'],
+        kunyomi: [],
+        components: ['尸', '口'],
+        mnemonic: {
+          en: 'A section of an office under one roof 尸 where orders 口 are handled: a bureau, an office, a station.',
+          vi: 'Một bộ phận dưới một mái 尸 nơi xử lý mệnh lệnh 口: cục, sở, đài.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '薬', reading: 'やっ' },
+              { text: '局', reading: 'きょく' }
+            ],
+            meaning: { en: 'pharmacy', vi: 'hiệu thuốc' }
+          },
+          {
+            parts: [
+              { text: '結', reading: 'けっ' },
+              { text: '局', reading: 'きょく' }
+            ],
+            meaning: { en: 'after all, in the end', vi: 'rốt cuộc, cuối cùng' }
+          },
+          {
+            parts: [
+              { text: '局', reading: 'きょく' },
+              { text: '長', reading: 'ちょう' }
+            ],
+            meaning: { en: 'bureau chief', vi: 'cục trưởng' }
+          }
+        ]
+      },
+      {
+        char: '宮',
+        meaning: { en: 'palace; shrine', vi: 'cung - cung điện; đền thờ' },
+        onyomi: ['キュウ', 'グウ'],
+        kunyomi: ['みや'],
+        components: ['宀', '口', '口'],
+        mnemonic: {
+          en: 'A grand building under a roof 宀 with room after room 口 口: a palace, a shrine.',
+          vi: 'Một tòa nhà lớn dưới mái 宀 với hết phòng này 口 đến phòng khác 口: cung điện, đền thờ.'
+        },
+        examples: [
+          {
+            parts: [{ text: '宮', reading: 'みや' }],
+            meaning: { en: 'shrine, palace', vi: 'cung, đền' }
+          },
+          {
+            parts: [
+              { text: '王', reading: 'おう' },
+              { text: '宮', reading: 'きゅう' }
+            ],
+            meaning: { en: 'royal palace', vi: 'cung điện hoàng gia' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'じん' },
+              { text: '宮', reading: 'ぐう' }
+            ],
+            meaning: { en: 'Shinto shrine', vi: 'thần cung, đền thờ' }
+          }
+        ]
+      },
+      {
+        char: '館',
+        meaning: { en: 'hall, large building', vi: 'quán - tòa nhà lớn, quán' },
+        onyomi: ['カン'],
+        kunyomi: ['やかた'],
+        components: [],
+        mnemonic: {
+          en: 'A large building where officials 官 gather and are fed 食: a hall, a large public building.',
+          vi: 'Tòa nhà lớn nơi các quan 官 tụ họp và được cho ăn 食: đại sảnh, tòa nhà công cộng lớn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '図', reading: 'と' },
+              { text: '書', reading: 'しょ' },
+              { text: '館', reading: 'かん' }
+            ],
+            meaning: { en: 'library', vi: 'thư viện' }
+          },
+          {
+            parts: [
+              { text: '旅', reading: 'りょ' },
+              { text: '館', reading: 'かん' }
+            ],
+            meaning: { en: 'Japanese inn', vi: 'nhà trọ kiểu Nhật' }
+          },
+          {
+            parts: [
+              { text: '会', reading: 'かい' },
+              { text: '館', reading: 'かん' }
+            ],
+            meaning: { en: 'hall, assembly building', vi: 'hội quán, nhà văn hóa' }
+          }
+        ]
+      },
+      {
+        char: '庫',
+        meaning: { en: 'warehouse, storehouse', vi: 'khố - kho, nhà kho' },
+        onyomi: ['コ', 'ク'],
+        kunyomi: [],
+        components: ['广', '車'],
+        mnemonic: {
+          en: 'A building 广 where carts 車 and goods are stored away: a warehouse, a storehouse.',
+          vi: 'Một tòa nhà 广 nơi cất xe cộ 車 và hàng hóa: kho, nhà kho.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '車', reading: 'しゃ' },
+              { text: '庫', reading: 'こ' }
+            ],
+            meaning: { en: 'garage', vi: 'nhà để xe' }
+          },
+          {
+            parts: [
+              { text: '金', reading: 'きん' },
+              { text: '庫', reading: 'こ' }
+            ],
+            meaning: { en: 'safe, vault', vi: 'két sắt' }
+          },
+          {
+            parts: [
+              { text: '書', reading: 'しょ' },
+              { text: '庫', reading: 'こ' }
+            ],
+            meaning: { en: 'book storage, stacks', vi: 'kho sách' }
+          }
+        ]
+      },
+      {
+        char: '庭',
+        meaning: { en: 'garden, yard', vi: 'đình - sân, vườn' },
+        onyomi: ['テイ'],
+        kunyomi: ['にわ'],
+        components: [],
+        mnemonic: {
+          en: 'The open ground within the grounds of a building 广: a garden, a yard.',
+          vi: 'Khoảng đất trống trong khuôn viên tòa nhà 广: sân, vườn.'
+        },
+        examples: [
+          {
+            parts: [{ text: '庭', reading: 'にわ' }],
+            meaning: { en: 'garden, yard', vi: 'sân vườn' }
+          },
+          {
+            parts: [
+              { text: '家', reading: 'か' },
+              { text: '庭', reading: 'てい' }
+            ],
+            meaning: { en: 'household, home', vi: 'gia đình, gia đạo' }
+          },
+          {
+            parts: [
+              { text: '校', reading: 'こう' },
+              { text: '庭', reading: 'てい' }
+            ],
+            meaning: { en: 'schoolyard', vi: 'sân trường' }
+          }
+        ]
+      },
+      {
+        char: '都',
+        meaning: { en: 'capital, metropolis', vi: 'đô - thủ đô, đô thị' },
+        onyomi: ['ト', 'ツ'],
+        kunyomi: ['みやこ'],
+        components: [],
+        mnemonic: {
+          en: 'The city district 阝 where many people 者 gather: a capital, a big city.',
+          vi: 'Khu phố 阝 nơi nhiều người 者 tụ về: thủ đô, đô thị lớn.'
+        },
+        examples: [
+          {
+            parts: [{ text: '都', reading: 'みやこ' }],
+            meaning: { en: 'capital city', vi: 'kinh đô' }
+          },
+          {
+            parts: [
+              { text: '東', reading: 'とう' },
+              { text: '京', reading: 'きょう' },
+              { text: '都', reading: 'と' }
+            ],
+            meaning: { en: 'Tokyo Metropolis', vi: 'đô Tokyo' }
+          },
+          {
+            parts: [
+              { text: '都', reading: 'つ' },
+              { text: '合', reading: 'ごう' }
+            ],
+            meaning: { en: 'convenience, circumstances', vi: 'sự thuận tiện, hoàn cảnh' }
+          }
+        ]
+      },
+      {
+        char: '区',
+        meaning: { en: 'ward, district; section', vi: 'khu - khu vực; quận' },
+        onyomi: ['ク'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A boundary box 匚 drawn around one part of a city: a ward, a district, a section.',
+          vi: 'Một cái khung 匚 vẽ quanh một phần thành phố: khu vực, quận.'
+        },
+        examples: [
+          {
+            parts: [{ text: '区', reading: 'く' }],
+            meaning: { en: 'ward, district', vi: 'quận, khu' }
+          },
+          {
+            parts: [
+              { text: '地', reading: 'ち' },
+              { text: '区', reading: 'く' }
+            ],
+            meaning: { en: 'district, area', vi: 'khu vực, địa hạt' }
+          },
+          {
+            parts: [
+              { text: '区', reading: 'く' },
+              { text: '分', reading: 'ぶん' }
+            ],
+            meaning: { en: 'division, classification', vi: 'phân chia, phân loại' }
+          }
+        ]
+      },
+      {
+        char: '界',
+        meaning: { en: 'boundary; world, realm', vi: 'giới - ranh giới; thế giới, giới' },
+        onyomi: ['カイ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'The lines dividing fields 田 mark where one area ends: a boundary, and by extension a world or realm.',
+          vi: 'Những đường chia ruộng 田 đánh dấu nơi một vùng kết thúc: ranh giới, và nghĩa rộng là thế giới, giới.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '世', reading: 'せ' },
+              { text: '界', reading: 'かい' }
+            ],
+            meaning: { en: 'the world', vi: 'thế giới' }
+          },
+          {
+            parts: [
+              { text: '業', reading: 'ぎょう' },
+              { text: '界', reading: 'かい' }
+            ],
+            meaning: { en: 'industry, business world', vi: 'giới, ngành' }
+          },
+          {
+            parts: [
+              { text: '外', reading: 'がい' },
+              { text: '界', reading: 'かい' }
+            ],
+            meaning: { en: 'the outside world', vi: 'thế giới bên ngoài' }
+          }
+        ]
+      },
+      {
+        char: '州',
+        meaning: { en: 'state, province; sandbar', vi: 'châu - châu, bang; bãi giữa sông' },
+        onyomi: ['シュウ'],
+        kunyomi: ['す'],
+        components: [],
+        mnemonic: {
+          en: 'Little islets dotted along a flowing river, later a large region: a state, a province.',
+          vi: 'Những cồn bãi rải rác dọc dòng sông chảy, sau chỉ vùng lớn: châu, bang.'
+        },
+        examples: [
+          {
+            parts: [{ text: '州', reading: 'しゅう' }],
+            meaning: { en: 'state, province', vi: 'bang, châu' }
+          },
+          {
+            parts: [
+              { text: '本', reading: 'ほん' },
+              { text: '州', reading: 'しゅう' }
+            ],
+            meaning: { en: 'Honshu (main island)', vi: 'đảo Honshu' }
+          },
+          {
+            parts: [
+              { text: '九', reading: 'きゅう' },
+              { text: '州', reading: 'しゅう' }
+            ],
+            meaning: { en: 'Kyushu', vi: 'đảo Kyushu' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Action verbs',
+      vi: 'Động từ hành động'
+    },
+    kanji: [
+      {
+        char: '打',
+        meaning: { en: 'to hit, to strike', vi: 'đả - đánh, đập' },
+        onyomi: ['ダ'],
+        kunyomi: ['う.つ'],
+        components: [],
+        mnemonic: {
+          en: 'The hand 扌 driving a nail 丁 with a blow: to hit, to strike.',
+          vi: 'Bàn tay 扌 đóng cây đinh 丁 bằng một cú: đánh, đập.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '打', reading: 'う' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: 'to hit, to strike', vi: 'đánh, đập' }
+          },
+          {
+            parts: [
+              { text: '打', reading: 'だ' },
+              { text: '者', reading: 'しゃ' }
+            ],
+            meaning: { en: 'batter (baseball)', vi: 'cầu thủ đánh bóng' }
+          },
+          {
+            parts: [
+              { text: '安', reading: 'あん' },
+              { text: '打', reading: 'だ' }
+            ],
+            meaning: { en: 'base hit (baseball)', vi: 'cú đánh trúng' }
+          }
+        ]
+      },
+      {
+        char: '投',
+        meaning: { en: 'to throw', vi: 'đầu - ném, quăng' },
+        onyomi: ['トウ'],
+        kunyomi: ['な.げる'],
+        components: [],
+        mnemonic: {
+          en: 'The hand 扌 winding up and hurling something forward: to throw.',
+          vi: 'Bàn tay 扌 lấy đà và quăng vật về phía trước: ném, quăng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '投', reading: 'な' },
+              { text: 'げ', reading: 'げ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to throw', vi: 'ném, quăng' }
+          },
+          {
+            parts: [
+              { text: '投', reading: 'とう' },
+              { text: '手', reading: 'しゅ' }
+            ],
+            meaning: { en: 'pitcher (baseball)', vi: 'cầu thủ ném bóng' }
+          },
+          {
+            parts: [
+              { text: '投', reading: 'とう' },
+              { text: '票', reading: 'ひょう' }
+            ],
+            meaning: { en: 'voting, ballot', vi: 'bỏ phiếu' }
+          }
+        ]
+      },
+      {
+        char: '持',
+        meaning: { en: 'to hold, to have', vi: 'trì - cầm, giữ; có' },
+        onyomi: ['ジ'],
+        kunyomi: ['も.つ'],
+        components: [],
+        mnemonic: {
+          en: 'The hand 扌 keeping firm hold of something the way a temple 寺 keeps its treasures: to hold, to have.',
+          vi: 'Bàn tay 扌 giữ chặt vật gì đó như ngôi chùa 寺 giữ bảo vật: cầm, giữ, có.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '持', reading: 'も' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: 'to hold, to have', vi: 'cầm, có' }
+          },
+          {
+            parts: [
+              { text: '気', reading: 'き' },
+              { text: '持', reading: 'も' },
+              { text: 'ち', reading: 'ち' }
+            ],
+            meaning: { en: 'feeling, mood', vi: 'tâm trạng, cảm giác' }
+          },
+          {
+            parts: [
+              { text: '所', reading: 'しょ' },
+              { text: '持', reading: 'じ' }
+            ],
+            meaning: { en: 'possession, carrying', vi: 'sự sở hữu, mang theo' }
+          }
+        ]
+      },
+      {
+        char: '取',
+        meaning: { en: 'to take, to grab', vi: 'thủ - lấy, cầm lấy' },
+        onyomi: ['シュ'],
+        kunyomi: ['と.る'],
+        components: ['耳', '又'],
+        mnemonic: {
+          en: 'A hand 又 grabbing an ear 耳 to seize it: to take, to grab.',
+          vi: 'Một bàn tay 又 tóm lấy cái tai 耳: lấy, cầm lấy.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '取', reading: 'と' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to take, to grab', vi: 'lấy, cầm' }
+          },
+          {
+            parts: [
+              { text: '取', reading: 'と' },
+              { text: 'り', reading: 'り' },
+              { text: '出', reading: 'だ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to take out', vi: 'lấy ra' }
+          },
+          {
+            parts: [
+              { text: '書', reading: 'か' },
+              { text: 'き', reading: 'き' },
+              { text: '取', reading: 'と' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'dictation', vi: 'chép chính tả' }
+          }
+        ]
+      },
+      {
+        char: '受',
+        meaning: { en: 'to receive, to accept', vi: 'thụ - nhận, tiếp nhận' },
+        onyomi: ['ジュ'],
+        kunyomi: ['う.ける'],
+        components: [],
+        mnemonic: {
+          en: 'One hand above passing something down to another hand 又 below: to receive, to accept.',
+          vi: 'Một bàn tay bên trên trao vật xuống cho bàn tay 又 bên dưới: nhận, tiếp nhận.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '受', reading: 'う' },
+              { text: 'け', reading: 'け' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to receive, to take (a test)', vi: 'nhận; dự (thi)' }
+          },
+          {
+            parts: [
+              { text: '受', reading: 'じゅ' },
+              { text: '験', reading: 'けん' }
+            ],
+            meaning: { en: 'taking an entrance exam', vi: 'dự thi (tuyển sinh)' }
+          },
+          {
+            parts: [
+              { text: '受', reading: 'うけ' },
+              { text: '付', reading: 'つけ' }
+            ],
+            meaning: { en: 'reception, front desk', vi: 'quầy tiếp tân' }
+          }
+        ]
+      },
+      {
+        char: '拾',
+        meaning: { en: 'to pick up, to gather', vi: 'thập - nhặt, lượm' },
+        onyomi: ['シュウ', 'ジュウ'],
+        kunyomi: ['ひろ.う'],
+        components: [],
+        mnemonic: {
+          en: 'The hand 扌 bringing together 合 things off the ground: to pick up, to gather.',
+          vi: 'Bàn tay 扌 gom nhặt 合 những thứ dưới đất: nhặt, lượm.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '拾', reading: 'ひろ' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to pick up', vi: 'nhặt, lượm' }
+          },
+          {
+            parts: [
+              { text: '拾', reading: 'ひろ' },
+              { text: 'い', reading: 'い' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'a found item', vi: 'đồ nhặt được' }
+          }
+        ]
+      },
+      {
+        char: '消',
+        meaning: { en: 'to disappear; to erase, to put out', vi: 'tiêu - biến mất; xóa, tắt' },
+        onyomi: ['ショウ'],
+        kunyomi: ['き.える', 'け.す'],
+        components: [],
+        mnemonic: {
+          en: 'Water 氵 poured over something to make it fade and vanish: to disappear, to erase, to put out.',
+          vi: 'Nước 氵 dội lên khiến vật gì đó mờ dần và biến mất: biến mất, xóa, dập tắt.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '消', reading: 'け' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to erase, to turn off', vi: 'xóa, tắt' }
+          },
+          {
+            parts: [
+              { text: '消', reading: 'き' },
+              { text: 'え', reading: 'え' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to disappear, to go out', vi: 'biến mất, tắt' }
+          },
+          {
+            parts: [
+              { text: '消', reading: 'しょう' },
+              { text: '火', reading: 'か' }
+            ],
+            meaning: { en: 'fire extinguishing', vi: 'chữa cháy, dập lửa' }
+          }
+        ]
+      },
+      {
+        char: '助',
+        meaning: { en: 'to help, to rescue', vi: 'trợ - giúp đỡ, cứu' },
+        onyomi: ['ジョ'],
+        kunyomi: ['たす.ける', 'たす.かる'],
+        components: [],
+        mnemonic: {
+          en: 'Adding your strength 力 to someone else in need: to help, to rescue.',
+          vi: 'Góp thêm sức 力 cho người đang cần: giúp đỡ, cứu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '助', reading: 'たす' },
+              { text: 'け', reading: 'け' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to help, to save', vi: 'giúp, cứu' }
+          },
+          {
+            parts: [
+              { text: '助', reading: 'じょ' },
+              { text: '手', reading: 'しゅ' }
+            ],
+            meaning: { en: 'assistant', vi: 'trợ lý' }
+          },
+          {
+            parts: [
+              { text: '助', reading: 'じょ' },
+              { text: '言', reading: 'げん' }
+            ],
+            meaning: { en: 'advice', vi: 'lời khuyên' }
+          }
+        ]
+      },
+      {
+        char: '決',
+        meaning: { en: 'to decide, to settle', vi: 'quyết - quyết định' },
+        onyomi: ['ケツ'],
+        kunyomi: ['き.める', 'き.まる'],
+        components: [],
+        mnemonic: {
+          en: 'Water 氵 breaking through a dam once and for all, no turning back: to decide, to settle.',
+          vi: 'Nước 氵 phá vỡ con đập dứt khoát, không quay lại: quyết định, dứt khoát.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '決', reading: 'き' },
+              { text: 'め', reading: 'め' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to decide', vi: 'quyết định' }
+          },
+          {
+            parts: [
+              { text: '決', reading: 'けっ' },
+              { text: '心', reading: 'しん' }
+            ],
+            meaning: { en: 'determination, resolve', vi: 'quyết tâm' }
+          },
+          {
+            parts: [
+              { text: '決', reading: 'けっ' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'decision', vi: 'sự quyết định' }
+          }
+        ]
+      },
+      {
+        char: '起',
+        meaning: { en: 'to get up, to wake; to occur', vi: 'khởi - dậy, thức dậy; xảy ra' },
+        onyomi: ['キ'],
+        kunyomi: ['お.きる', 'お.こる'],
+        components: ['走', '己'],
+        mnemonic: {
+          en: 'Someone rising up to run 走 as their own self 己 springs into action: to get up, to wake, to occur.',
+          vi: 'Người bật dậy chạy 走 khi chính mình 己 bắt đầu hành động: dậy, thức dậy, xảy ra.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '起', reading: 'お' },
+              { text: 'き', reading: 'き' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to get up, to wake up', vi: 'thức dậy' }
+          },
+          {
+            parts: [
+              { text: '起', reading: 'き' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'standing up', vi: 'đứng dậy' }
+          },
+          {
+            parts: [
+              { text: '早', reading: 'はや' },
+              { text: '起', reading: 'お' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'early rising', vi: 'dậy sớm' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Time, speed & measure',
+      vi: 'Thời gian, tốc độ & mức độ'
+    },
+    kanji: [
+      {
+        char: '寒',
+        meaning: { en: 'cold', vi: 'hàn - lạnh, rét' },
+        onyomi: ['カン'],
+        kunyomi: ['さむ.い'],
+        components: [],
+        mnemonic: {
+          en: 'Huddling under a roof 宀 packed with straw against the ice 冫 below: cold.',
+          vi: 'Co ro dưới mái nhà 宀 chất đầy rơm, phía dưới là băng 冫: lạnh, rét.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '寒', reading: 'さむ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'cold', vi: 'lạnh' }
+          },
+          {
+            parts: [
+              { text: '寒', reading: 'さむ' },
+              { text: '気', reading: 'け' }
+            ],
+            meaning: { en: 'chill, the shivers', vi: 'cảm giác ớn lạnh' }
+          },
+          {
+            parts: [
+              { text: '寒', reading: 'さむ' },
+              { text: '空', reading: 'ぞら' }
+            ],
+            meaning: { en: 'cold winter sky', vi: 'bầu trời giá lạnh' }
+          }
+        ]
+      },
+      {
+        char: '暑',
+        meaning: { en: 'hot (weather)', vi: 'thử - nóng (thời tiết)' },
+        onyomi: ['ショ'],
+        kunyomi: ['あつ.い'],
+        components: [],
+        mnemonic: {
+          en: 'The sun 日 beating down on a person 者 until the day is sweltering: hot weather.',
+          vi: 'Mặt trời 日 dội xuống người 者 khiến trời oi bức: nóng (thời tiết).'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '暑', reading: 'あつ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'hot (weather)', vi: 'nóng' }
+          },
+          {
+            parts: [
+              { text: '暑', reading: 'あつ' },
+              { text: 'さ', reading: 'さ' }
+            ],
+            meaning: { en: 'the heat', vi: 'cái nóng' }
+          },
+          {
+            parts: [
+              { text: '暑', reading: 'しょ' },
+              { text: '中', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'midsummer, dog days', vi: 'giữa hè oi bức' }
+          }
+        ]
+      },
+      {
+        char: '昔',
+        meaning: { en: 'long ago, former times', vi: 'tích - ngày xưa, thời xưa' },
+        onyomi: ['セキ', 'シャク'],
+        kunyomi: ['むかし'],
+        components: [],
+        mnemonic: {
+          en: 'Many days 日 piled up and stacked away in the past: long ago, former times.',
+          vi: 'Nhiều ngày 日 chồng chất và cất lại trong quá khứ: ngày xưa, thời xưa.'
+        },
+        examples: [
+          {
+            parts: [{ text: '昔', reading: 'むかし' }],
+            meaning: { en: 'long ago, the old days', vi: 'ngày xưa' }
+          },
+          {
+            parts: [
+              { text: '昔', reading: 'むかし' },
+              { text: '話', reading: 'ばなし' }
+            ],
+            meaning: { en: 'old tale, folk story', vi: 'chuyện cổ tích' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'おお' },
+              { text: '昔', reading: 'むかし' }
+            ],
+            meaning: { en: 'ancient times', vi: 'thời thượng cổ' }
+          }
+        ]
+      },
+      {
+        char: '期',
+        meaning: { en: 'period, term', vi: 'kỳ - kỳ hạn, thời kỳ' },
+        onyomi: ['キ', 'ゴ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Counting off the cycles of the moon 月 to mark a fixed span: a period, a term.',
+          vi: 'Đếm các chu kỳ của mặt trăng 月 để định một khoảng cố định: kỳ hạn, thời kỳ.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '期', reading: 'き' },
+              { text: '間', reading: 'かん' }
+            ],
+            meaning: { en: 'period, duration', vi: 'khoảng thời gian' }
+          },
+          {
+            parts: [
+              { text: '学', reading: 'がっ' },
+              { text: '期', reading: 'き' }
+            ],
+            meaning: { en: 'school term, semester', vi: 'học kỳ' }
+          },
+          {
+            parts: [
+              { text: '時', reading: 'じ' },
+              { text: '期', reading: 'き' }
+            ],
+            meaning: { en: 'time, season, phase', vi: 'thời kỳ, thời điểm' }
+          }
+        ]
+      },
+      {
+        char: '急',
+        meaning: { en: 'hurry; sudden, urgent', vi: 'cấp - vội, gấp; đột ngột' },
+        onyomi: ['キュウ'],
+        kunyomi: ['いそ.ぐ'],
+        components: [],
+        mnemonic: {
+          en: 'A hand clutching at the heart 心 in a rush: to hurry, sudden, urgent.',
+          vi: 'Một bàn tay nắm lấy trái tim 心 trong vội vã: vội, gấp, đột ngột.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '急', reading: 'いそ' },
+              { text: 'ぐ', reading: 'ぐ' }
+            ],
+            meaning: { en: 'to hurry', vi: 'vội, gấp' }
+          },
+          {
+            parts: [
+              { text: '急', reading: 'きゅう' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'express (train)', vi: 'tàu tốc hành' }
+          },
+          {
+            parts: [
+              { text: '急', reading: 'きゅう' },
+              { text: '病', reading: 'びょう' }
+            ],
+            meaning: { en: 'sudden illness', vi: 'bệnh đột ngột' }
+          }
+        ]
+      },
+      {
+        char: '速',
+        meaning: { en: 'fast, quick; speed', vi: 'tốc - nhanh, tốc độ' },
+        onyomi: ['ソク'],
+        kunyomi: ['はや.い'],
+        components: [],
+        mnemonic: {
+          en: 'Bundling everything up 束 to move 辶 without delay: fast, quick, speed.',
+          vi: 'Bó gọn mọi thứ 束 để di chuyển 辶 không chậm trễ: nhanh, tốc độ.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '速', reading: 'はや' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'fast, quick', vi: 'nhanh' }
+          },
+          {
+            parts: [
+              { text: '速', reading: 'そく' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'speed, velocity', vi: 'tốc độ' }
+          },
+          {
+            parts: [
+              { text: '高', reading: 'こう' },
+              { text: '速', reading: 'そく' }
+            ],
+            meaning: { en: 'high speed', vi: 'cao tốc' }
+          }
+        ]
+      },
+      {
+        char: '度',
+        meaning: { en: 'degree; a time; extent', vi: 'độ - độ; lần; mức độ' },
+        onyomi: ['ド', 'ト'],
+        kunyomi: ['たび'],
+        components: [],
+        mnemonic: {
+          en: 'A measure taken by hand under a shelter 广 to mark off degrees: a degree, a time (occurrence), an extent.',
+          vi: 'Một phép đo bằng tay dưới mái 广 để chia độ: độ, lần, mức độ.'
+        },
+        examples: [
+          {
+            parts: [{ text: '度', reading: 'たび' }],
+            meaning: { en: 'each time, occasion', vi: 'mỗi lần' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いち' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'once, one time', vi: 'một lần' }
+          },
+          {
+            parts: [
+              { text: '温', reading: 'おん' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'temperature', vi: 'nhiệt độ' }
+          }
+        ]
+      },
+      {
+        char: '秒',
+        meaning: { en: 'second (of time)', vi: 'miểu - giây (thời gian)' },
+        onyomi: ['ビョウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'The tiniest 少 sliver of a grain stalk 禾, the smallest common slice of time: a second.',
+          vi: 'Mẩu 少 nhỏ xíu của bông lúa 禾, lát thời gian nhỏ nhất thường dùng: giây.'
+        },
+        examples: [
+          {
+            parts: [{ text: '秒', reading: 'びょう' }],
+            meaning: { en: 'second (of time)', vi: 'giây' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いち' },
+              { text: '秒', reading: 'びょう' }
+            ],
+            meaning: { en: 'one second', vi: 'một giây' }
+          },
+          {
+            parts: [
+              { text: '秒', reading: 'びょう' },
+              { text: '読', reading: 'よ' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'countdown', vi: 'đếm ngược' }
+          }
+        ]
+      },
+      {
+        char: '短',
+        meaning: { en: 'short; shortcoming', vi: 'đoản - ngắn; thiếu sót' },
+        onyomi: ['タン'],
+        kunyomi: ['みじか.い'],
+        components: ['矢', '豆'],
+        mnemonic: {
+          en: 'Measuring with a short arrow 矢 against a stubby bean 豆 to show smallness: short.',
+          vi: 'Đo bằng mũi tên 矢 ngắn với hạt đậu 豆 lùn để chỉ sự nhỏ: ngắn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '短', reading: 'みじか' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'short', vi: 'ngắn' }
+          },
+          {
+            parts: [
+              { text: '短', reading: 'たん' },
+              { text: '気', reading: 'き' }
+            ],
+            meaning: { en: 'short temper, impatience', vi: 'nóng tính' }
+          },
+          {
+            parts: [
+              { text: '長', reading: 'ちょう' },
+              { text: '短', reading: 'たん' }
+            ],
+            meaning: { en: 'length; strengths & weaknesses', vi: 'dài ngắn; ưu và nhược' }
+          }
+        ]
+      },
+      {
+        char: '倍',
+        meaning: { en: 'double, times, -fold', vi: 'bội - gấp, gấp bội; lần' },
+        onyomi: ['バイ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A person 亻 taking a quantity and folding it over on itself: double, times, -fold.',
+          vi: 'Một người 亻 lấy một lượng rồi nhân nó lên: gấp, gấp bội, lần.'
+        },
+        examples: [
+          {
+            parts: [{ text: '倍', reading: 'ばい' }],
+            meaning: { en: 'double, twice', vi: 'gấp đôi' }
+          },
+          {
+            parts: [
+              { text: '二', reading: 'に' },
+              { text: '倍', reading: 'ばい' }
+            ],
+            meaning: { en: 'twofold, double', vi: 'gấp hai' }
+          },
+          {
+            parts: [
+              { text: '何', reading: 'なん' },
+              { text: '倍', reading: 'ばい' }
+            ],
+            meaning: { en: 'how many times', vi: 'gấp mấy lần' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Plants & farming',
+      vi: 'Cây cối & trồng trọt'
+    },
+    kanji: [
+      {
+        char: '育',
+        meaning: { en: 'to raise, to grow up', vi: 'dục - nuôi dưỡng, lớn lên' },
+        onyomi: ['イク'],
+        kunyomi: ['そだ.てる', 'そだ.つ'],
+        components: [],
+        mnemonic: {
+          en: 'A newborn child entering the world, then fed with flesh 月 to grow: to raise, to grow up.',
+          vi: 'Một đứa trẻ mới chào đời, rồi được nuôi bằng thịt da 月 để lớn: nuôi dưỡng, lớn lên.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '育', reading: 'そだ' },
+              { text: 'て', reading: 'て' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to raise, to bring up', vi: 'nuôi dưỡng' }
+          },
+          {
+            parts: [
+              { text: '教', reading: 'きょう' },
+              { text: '育', reading: 'いく' }
+            ],
+            meaning: { en: 'education', vi: 'giáo dục' }
+          },
+          {
+            parts: [
+              { text: '体', reading: 'たい' },
+              { text: '育', reading: 'いく' }
+            ],
+            meaning: { en: 'physical education', vi: 'thể dục' }
+          }
+        ]
+      },
+      {
+        char: '植',
+        meaning: { en: 'to plant', vi: 'thực - trồng (cây)' },
+        onyomi: ['ショク'],
+        kunyomi: ['う.える'],
+        components: [],
+        mnemonic: {
+          en: 'Setting a tree 木 straight 直 upright into the ground: to plant.',
+          vi: 'Đặt cái cây 木 thẳng 直 xuống đất: trồng cây.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '植', reading: 'う' },
+              { text: 'え', reading: 'え' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to plant', vi: 'trồng' }
+          },
+          {
+            parts: [
+              { text: '植', reading: 'しょく' },
+              { text: '物', reading: 'ぶつ' }
+            ],
+            meaning: { en: 'plant, vegetation', vi: 'thực vật' }
+          },
+          {
+            parts: [
+              { text: '田', reading: 'た' },
+              { text: '植', reading: 'う' },
+              { text: 'え', reading: 'え' }
+            ],
+            meaning: { en: 'rice planting', vi: 'cấy lúa' }
+          }
+        ]
+      },
+      {
+        char: '根',
+        meaning: { en: 'root; root cause', vi: 'căn - rễ; căn nguyên, gốc' },
+        onyomi: ['コン'],
+        kunyomi: ['ね'],
+        components: [],
+        mnemonic: {
+          en: 'The part of a tree 木 that stays fixed in the ground: a root, and the root cause of things.',
+          vi: 'Phần của cây 木 bám cố định dưới đất: cái rễ, và gốc rễ, căn nguyên.'
+        },
+        examples: [
+          {
+            parts: [{ text: '根', reading: 'ね' }],
+            meaning: { en: 'root', vi: 'rễ' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '根', reading: 'こん' }
+            ],
+            meaning: { en: 'daikon radish', vi: 'củ cải trắng' }
+          },
+          {
+            parts: [
+              { text: '屋', reading: 'や' },
+              { text: '根', reading: 'ね' }
+            ],
+            meaning: { en: 'roof', vi: 'mái nhà' }
+          }
+        ]
+      },
+      {
+        char: '葉',
+        meaning: { en: 'leaf', vi: 'diệp - lá (cây)' },
+        onyomi: ['ヨウ'],
+        kunyomi: ['は'],
+        components: [],
+        mnemonic: {
+          en: 'The flat green growth 艹 spreading from the branches of a tree 木: a leaf.',
+          vi: 'Phần xanh dẹt 艹 mọc ra từ cành cây 木: chiếc lá.'
+        },
+        examples: [
+          {
+            parts: [{ text: '葉', reading: 'は' }],
+            meaning: { en: 'leaf', vi: 'lá' }
+          },
+          {
+            parts: [
+              { text: '落', reading: 'お' },
+              { text: 'ち', reading: 'ち' },
+              { text: '葉', reading: 'ば' }
+            ],
+            meaning: { en: 'fallen leaves', vi: 'lá rụng' }
+          },
+          {
+            parts: [
+              { text: '言', reading: 'こと' },
+              { text: '葉', reading: 'ば' }
+            ],
+            meaning: { en: 'word, language', vi: 'lời nói, ngôn từ' }
+          }
+        ]
+      },
+      {
+        char: '実',
+        meaning: { en: 'fruit, nut; truth, real', vi: 'thực - quả, hạt; sự thật, thực' },
+        onyomi: ['ジツ'],
+        kunyomi: ['み', 'みの.る'],
+        components: [],
+        mnemonic: {
+          en: 'A house 宀 filled with the ripe fruit of the harvest: fruit, and by extension truth and substance.',
+          vi: 'Ngôi nhà 宀 đầy hoa trái của vụ mùa: quả, và nghĩa rộng là sự thật, thực chất.'
+        },
+        examples: [
+          {
+            parts: [{ text: '実', reading: 'み' }],
+            meaning: { en: 'fruit, nut', vi: 'quả, hạt' }
+          },
+          {
+            parts: [
+              { text: '実', reading: 'じつ' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'real ability', vi: 'thực lực' }
+          },
+          {
+            parts: [
+              { text: '事', reading: 'じ' },
+              { text: '実', reading: 'じつ' }
+            ],
+            meaning: { en: 'fact', vi: 'sự thật, sự việc' }
+          }
+        ]
+      },
+      {
+        char: '落',
+        meaning: { en: 'to fall, to drop', vi: 'lạc - rơi, rớt; rụng' },
+        onyomi: ['ラク'],
+        kunyomi: ['お.ちる', 'お.とす'],
+        components: [],
+        mnemonic: {
+          en: 'Leaves 艹 and water 氵 dropping down to the ground: to fall, to drop.',
+          vi: 'Lá 艹 và nước 氵 rơi xuống đất: rơi, rớt, rụng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '落', reading: 'お' },
+              { text: 'ち', reading: 'ち' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to fall, to drop', vi: 'rơi, rớt' }
+          },
+          {
+            parts: [
+              { text: '落', reading: 'お' },
+              { text: 'と', reading: 'と' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to drop, to let fall', vi: 'làm rơi, đánh rớt' }
+          },
+          {
+            parts: [
+              { text: '落', reading: 'お' },
+              { text: 'ち', reading: 'ち' },
+              { text: '葉', reading: 'ば' }
+            ],
+            meaning: { en: 'fallen leaves', vi: 'lá rụng' }
+          }
+        ]
+      },
+      {
+        char: '緑',
+        meaning: { en: 'green', vi: 'lục - màu xanh lá' },
+        onyomi: ['リョク', 'ロク'],
+        kunyomi: ['みどり'],
+        components: [],
+        mnemonic: {
+          en: 'The color of threads 糸 dyed from fresh leaves and grass: green.',
+          vi: 'Màu của sợi chỉ 糸 nhuộm từ lá cỏ tươi: màu xanh lá.'
+        },
+        examples: [
+          {
+            parts: [{ text: '緑', reading: 'みどり' }],
+            meaning: { en: 'green', vi: 'màu xanh lá' }
+          },
+          {
+            parts: [
+              { text: '緑', reading: 'みどり' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'green (color)', vi: 'màu xanh lục' }
+          },
+          {
+            parts: [
+              { text: '新', reading: 'しん' },
+              { text: '緑', reading: 'りょく' }
+            ],
+            meaning: { en: 'fresh spring greenery', vi: 'màu xanh non đầu mùa' }
+          }
+        ]
+      },
+      {
+        char: '畑',
+        meaning: { en: 'field (dry crops)', vi: 'điền - ruộng khô, nương rẫy' },
+        onyomi: [],
+        kunyomi: ['はた', 'はたけ'],
+        components: ['火', '田'],
+        mnemonic: {
+          en: 'A field 田 cleared by fire 火 for dry-crop farming: a cultivated field, as opposed to a wet rice paddy.',
+          vi: 'Cánh đồng 田 được đốt 火 dọn để trồng cạn: ruộng khô, nương rẫy (khác ruộng nước).'
+        },
+        note: {
+          en: "A kokuji (kanji made in Japan), so it has no on'yomi.",
+          vi: 'Là kokuji (chữ do người Nhật tạo) nên không có âm ON.'
+        },
+        examples: [
+          {
+            parts: [{ text: '畑', reading: 'はたけ' }],
+            meaning: { en: 'field, cultivated plot', vi: 'ruộng, nương' }
+          },
+          {
+            parts: [
+              { text: '田', reading: 'た' },
+              { text: '畑', reading: 'はた' }
+            ],
+            meaning: { en: 'fields (paddies and dry fields)', vi: 'ruộng nương, đồng áng' }
+          },
+          {
+            parts: [
+              { text: '花', reading: 'はな' },
+              { text: '畑', reading: 'ばたけ' }
+            ],
+            meaning: { en: 'flower field', vi: 'vườn hoa, cánh đồng hoa' }
+          }
+        ]
+      },
+      {
+        char: '農',
+        meaning: { en: 'agriculture, farming', vi: 'nông - nông nghiệp, làm ruộng' },
+        onyomi: ['ノウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Working the fields from dawn with tools in hand, season after season: farming, agriculture.',
+          vi: 'Cày cấy đồng ruộng từ sáng sớm với nông cụ trong tay, hết mùa này đến mùa khác: nông nghiệp, làm ruộng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '農', reading: 'のう' },
+              { text: '業', reading: 'ぎょう' }
+            ],
+            meaning: { en: 'agriculture', vi: 'nông nghiệp' }
+          },
+          {
+            parts: [
+              { text: '農', reading: 'のう' },
+              { text: '家', reading: 'か' }
+            ],
+            meaning: { en: 'farmer, farmhouse', vi: 'nhà nông, nông hộ' }
+          },
+          {
+            parts: [
+              { text: '農', reading: 'のう' },
+              { text: '民', reading: 'みん' }
+            ],
+            meaning: { en: 'farmer, peasant', vi: 'nông dân' }
+          }
+        ]
+      },
+      {
+        char: '苦',
+        meaning: {
+          en: 'bitter; suffering, hardship',
+          vi: 'khổ - đắng; khổ sở, vất vả'
+        },
+        onyomi: ['ク'],
+        kunyomi: ['くる.しい', 'にが.い'],
+        components: [],
+        mnemonic: {
+          en: 'An old 古 herb 艹 that has turned bitter: bitter, and the bitterness of suffering and hardship.',
+          vi: 'Một loại cây cỏ 艹 để lâu 古 hóa đắng: đắng, và sự cay đắng của khổ sở, vất vả.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '苦', reading: 'にが' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'bitter (taste)', vi: 'đắng' }
+          },
+          {
+            parts: [
+              { text: '苦', reading: 'くる' },
+              { text: 'し', reading: 'し' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'painful, hard to bear', vi: 'khổ sở, đau đớn' }
+          },
+          {
+            parts: [
+              { text: '苦', reading: 'く' },
+              { text: '労', reading: 'ろう' }
+            ],
+            meaning: { en: 'hardship, toil', vi: 'vất vả, gian khổ' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Buildings & structures',
+      vi: 'Công trình & kiến trúc'
+    },
+    kanji: [
+      {
+        char: '開',
+        meaning: { en: 'to open', vi: 'khai - mở' },
+        onyomi: ['カイ'],
+        kunyomi: ['ひら.く', 'あ.ける'],
+        components: [],
+        mnemonic: {
+          en: 'Two hands lifting the bar off a gate 門 to swing it open: to open.',
+          vi: 'Hai bàn tay nhấc thanh chắn khỏi cổng 門 để mở ra: mở.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '開', reading: 'ひら' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to open (up), to bloom', vi: 'mở ra, nở' }
+          },
+          {
+            parts: [
+              { text: '開', reading: 'あ' },
+              { text: 'け', reading: 'け' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to open (something)', vi: 'mở (cái gì đó)' }
+          },
+          {
+            parts: [
+              { text: '開', reading: 'かい' },
+              { text: '店', reading: 'てん' }
+            ],
+            meaning: { en: 'opening a shop', vi: 'khai trương, mở cửa hàng' }
+          }
+        ]
+      },
+      {
+        char: '階',
+        meaning: { en: 'floor, story; rank', vi: 'giai - tầng (lầu); bậc' },
+        onyomi: ['カイ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Steps cut into a hillside 阝 rising level by level: a floor, a story, a rank.',
+          vi: 'Những bậc cắt vào sườn đồi 阝 lên từng cấp: tầng lầu, bậc.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '階', reading: 'かい' },
+              { text: '段', reading: 'だん' }
+            ],
+            meaning: { en: 'stairs, steps', vi: 'cầu thang' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '階', reading: 'かい' }
+            ],
+            meaning: { en: 'first floor, ground floor', vi: 'tầng một' }
+          },
+          {
+            parts: [
+              { text: '二', reading: 'に' },
+              { text: '階', reading: 'かい' }
+            ],
+            meaning: { en: 'second floor', vi: 'tầng hai' }
+          }
+        ]
+      },
+      {
+        char: '院',
+        meaning: { en: 'institution (hospital, temple, academy)', vi: 'viện - viện, cơ sở' },
+        onyomi: ['イン'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A walled compound on the hillside 阝 enclosing a large institution: a hospital, temple, or academy.',
+          vi: 'Một khu tường bao trên sườn đồi 阝 chứa cơ sở lớn: bệnh viện, chùa, học viện.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '病', reading: 'びょう' },
+              { text: '院', reading: 'いん' }
+            ],
+            meaning: { en: 'hospital', vi: 'bệnh viện' }
+          },
+          {
+            parts: [
+              { text: '入', reading: 'にゅう' },
+              { text: '院', reading: 'いん' }
+            ],
+            meaning: { en: 'hospitalization', vi: 'nhập viện' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '学', reading: 'がく' },
+              { text: '院', reading: 'いん' }
+            ],
+            meaning: { en: 'graduate school', vi: 'cao học, viện sau đại học' }
+          }
+        ]
+      },
+      {
+        char: '駅',
+        meaning: { en: 'station', vi: 'dịch - nhà ga, trạm' },
+        onyomi: ['エキ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Once a relay post where horses 馬 were changed, now a train station.',
+          vi: 'Vốn là trạm đổi ngựa 馬, nay là nhà ga xe lửa.'
+        },
+        examples: [
+          {
+            parts: [{ text: '駅', reading: 'えき' }],
+            meaning: { en: 'station', vi: 'nhà ga' }
+          },
+          {
+            parts: [
+              { text: '駅', reading: 'えき' },
+              { text: '前', reading: 'まえ' }
+            ],
+            meaning: { en: 'in front of the station', vi: 'trước nhà ga' }
+          },
+          {
+            parts: [
+              { text: '駅', reading: 'えき' },
+              { text: '員', reading: 'いん' }
+            ],
+            meaning: { en: 'station staff', vi: 'nhân viên nhà ga' }
+          }
+        ]
+      },
+      {
+        char: '央',
+        meaning: { en: 'center, middle', vi: 'ương - trung tâm, chính giữa' },
+        onyomi: ['オウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A person standing right in the middle of a frame, dead center: the center, the middle.',
+          vi: 'Một người đứng ngay giữa khung, chính giữa: trung tâm, chính giữa.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '中', reading: 'ちゅう' },
+              { text: '央', reading: 'おう' }
+            ],
+            meaning: { en: 'center, middle', vi: 'trung ương, trung tâm' }
+          },
+          {
+            parts: [
+              { text: '中', reading: 'ちゅう' },
+              { text: '央', reading: 'おう' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'the Chuo Line', vi: 'tuyến Chuo' }
+          }
+        ]
+      },
+      {
+        char: '横',
+        meaning: { en: 'side, horizontal; beside', vi: 'hoành - ngang; bên cạnh' },
+        onyomi: ['オウ'],
+        kunyomi: ['よこ'],
+        components: ['木', '黄'],
+        mnemonic: {
+          en: 'A yellow 黄 beam of wood 木 laid down flat across: horizontal, sideways, beside.',
+          vi: 'Một thanh gỗ 木 màu vàng 黄 đặt nằm ngang: ngang, bên cạnh.'
+        },
+        examples: [
+          {
+            parts: [{ text: '横', reading: 'よこ' }],
+            meaning: { en: 'side, beside', vi: 'bên cạnh, chiều ngang' }
+          },
+          {
+            parts: [
+              { text: '横', reading: 'よこ' },
+              { text: '顔', reading: 'がお' }
+            ],
+            meaning: { en: 'profile (of a face)', vi: 'khuôn mặt nghiêng' }
+          },
+          {
+            parts: [
+              { text: '横', reading: 'よこ' },
+              { text: '書', reading: 'が' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'horizontal writing', vi: 'viết ngang' }
+          }
+        ]
+      },
+      {
+        char: '柱',
+        meaning: { en: 'pillar, post, column', vi: 'trụ - cột, trụ' },
+        onyomi: ['チュウ'],
+        kunyomi: ['はしら'],
+        components: [],
+        mnemonic: {
+          en: 'The main 主 piece of wood 木 that holds up a building: a pillar, a post.',
+          vi: 'Thanh gỗ 木 chính 主 chống đỡ cả tòa nhà: cây cột, cây trụ.'
+        },
+        examples: [
+          {
+            parts: [{ text: '柱', reading: 'はしら' }],
+            meaning: { en: 'pillar, post', vi: 'cây cột' }
+          },
+          {
+            parts: [
+              { text: '電', reading: 'でん' },
+              { text: '柱', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'utility pole', vi: 'cột điện' }
+          },
+          {
+            parts: [
+              { text: '門', reading: 'もん' },
+              { text: '柱', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'gatepost', vi: 'trụ cổng' }
+          }
+        ]
+      },
+      {
+        char: '板',
+        meaning: { en: 'board, plank', vi: 'bản - tấm ván, tấm bảng' },
+        onyomi: ['ハン', 'バン'],
+        kunyomi: ['いた'],
+        components: [],
+        mnemonic: {
+          en: 'A flat slab of wood 木 sawn and turned over 反: a board, a plank.',
+          vi: 'Một tấm gỗ 木 phẳng được xẻ và lật 反: tấm ván, tấm bảng.'
+        },
+        examples: [
+          {
+            parts: [{ text: '板', reading: 'いた' }],
+            meaning: { en: 'board, plank', vi: 'tấm ván' }
+          },
+          {
+            parts: [
+              { text: '黒', reading: 'こく' },
+              { text: '板', reading: 'ばん' }
+            ],
+            meaning: { en: 'blackboard', vi: 'bảng đen' }
+          },
+          {
+            parts: [
+              { text: '板', reading: 'いた' },
+              { text: '前', reading: 'まえ' }
+            ],
+            meaning: { en: 'sushi chef', vi: 'đầu bếp (món Nhật)' }
+          }
+        ]
+      },
+      {
+        char: '坂',
+        meaning: { en: 'slope, hill', vi: 'phản - con dốc' },
+        onyomi: ['ハン'],
+        kunyomi: ['さか'],
+        components: [],
+        mnemonic: {
+          en: 'A stretch of ground 土 that tilts and turns back 反 on itself as it climbs: a slope.',
+          vi: 'Một đoạn đất 土 nghiêng dốc, đổ ngược 反 khi đi lên: con dốc.'
+        },
+        examples: [
+          {
+            parts: [{ text: '坂', reading: 'さか' }],
+            meaning: { en: 'slope, hill', vi: 'con dốc' }
+          },
+          {
+            parts: [
+              { text: '上', reading: 'のぼ' },
+              { text: 'り', reading: 'り' },
+              { text: '坂', reading: 'ざか' }
+            ],
+            meaning: { en: 'uphill slope', vi: 'dốc lên' }
+          },
+          {
+            parts: [
+              { text: '下', reading: 'くだ' },
+              { text: 'り', reading: 'り' },
+              { text: '坂', reading: 'ざか' }
+            ],
+            meaning: { en: 'downhill slope', vi: 'dốc xuống' }
+          }
+        ]
+      },
+      {
+        char: '橋',
+        meaning: { en: 'bridge', vi: 'kiều - cây cầu' },
+        onyomi: ['キョウ'],
+        kunyomi: ['はし'],
+        components: [],
+        mnemonic: {
+          en: 'A tall structure of wood 木 arching high across a river: a bridge.',
+          vi: 'Một công trình gỗ 木 cao vòng qua sông: cây cầu.'
+        },
+        examples: [
+          {
+            parts: [{ text: '橋', reading: 'はし' }],
+            meaning: { en: 'bridge', vi: 'cây cầu' }
+          },
+          {
+            parts: [
+              { text: '歩', reading: 'ほ' },
+              { text: '道', reading: 'どう' },
+              { text: '橋', reading: 'きょう' }
+            ],
+            meaning: { en: 'pedestrian bridge', vi: 'cầu vượt cho người đi bộ' }
+          },
+          {
+            parts: [
+              { text: '鉄', reading: 'てっ' },
+              { text: '橋', reading: 'きょう' }
+            ],
+            meaning: { en: 'iron/railway bridge', vi: 'cầu sắt' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Everyday verbs',
+      vi: 'Động từ đời thường'
+    },
+    kanji: [
+      {
+        char: '始',
+        meaning: { en: 'to begin, to start', vi: 'thủy - bắt đầu, khởi đầu' },
+        onyomi: ['シ'],
+        kunyomi: ['はじ.める', 'はじ.まる'],
+        components: [],
+        mnemonic: {
+          en: 'A woman 女 giving birth, the very beginning of a life: to begin, to start.',
+          vi: 'Người phụ nữ 女 sinh con, khởi đầu của một cuộc đời: bắt đầu, khởi đầu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '始', reading: 'はじ' },
+              { text: 'め', reading: 'め' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to begin, to start', vi: 'bắt đầu' }
+          },
+          {
+            parts: [
+              { text: '開', reading: 'かい' },
+              { text: '始', reading: 'し' }
+            ],
+            meaning: { en: 'start, commencement', vi: 'sự bắt đầu, khai mạc' }
+          },
+          {
+            parts: [
+              { text: '始', reading: 'し' },
+              { text: '発', reading: 'はつ' }
+            ],
+            meaning: { en: 'first train/bus of the day', vi: 'chuyến đầu tiên' }
+          }
+        ]
+      },
+      {
+        char: '終',
+        meaning: { en: 'to end, to finish', vi: 'chung - kết thúc, cuối cùng' },
+        onyomi: ['シュウ'],
+        kunyomi: ['お.わる', 'お.える'],
+        components: [],
+        mnemonic: {
+          en: 'The last knot tied at the very end of a thread 糸, like winter 冬 closing the year: to finish, the end.',
+          vi: 'Nút thắt cuối cùng ở đuôi sợi chỉ 糸, như mùa đông 冬 khép lại năm: kết thúc, cuối cùng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '終', reading: 'お' },
+              { text: 'わ', reading: 'わ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to end, to finish', vi: 'kết thúc' }
+          },
+          {
+            parts: [
+              { text: '終', reading: 'しゅう' },
+              { text: '点', reading: 'てん' }
+            ],
+            meaning: { en: 'terminal, last stop', vi: 'ga cuối, điểm cuối' }
+          },
+          {
+            parts: [
+              { text: '終', reading: 'しゅう' },
+              { text: '電', reading: 'でん' }
+            ],
+            meaning: { en: 'last train', vi: 'chuyến tàu cuối' }
+          }
+        ]
+      },
+      {
+        char: '集',
+        meaning: { en: 'to gather, to collect', vi: 'tập - tụ họp, thu thập' },
+        onyomi: ['シュウ'],
+        kunyomi: ['あつ.める', 'あつ.まる'],
+        components: ['隹', '木'],
+        mnemonic: {
+          en: 'Birds 隹 flocking together onto a tree 木: to gather, to collect.',
+          vi: 'Đàn chim 隹 tụ lại trên cây 木: tụ họp, thu thập.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '集', reading: 'あつ' },
+              { text: 'め', reading: 'め' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to collect, to gather', vi: 'thu thập, tập hợp' }
+          },
+          {
+            parts: [
+              { text: '集', reading: 'しゅう' },
+              { text: '合', reading: 'ごう' }
+            ],
+            meaning: { en: 'gathering, meeting up', vi: 'tập hợp, tập trung' }
+          },
+          {
+            parts: [
+              { text: '集', reading: 'しゅう' },
+              { text: '中', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'concentration', vi: 'sự tập trung' }
+          }
+        ]
+      },
+      {
+        char: '住',
+        meaning: { en: 'to live, to reside', vi: 'trú - sống, cư trú' },
+        onyomi: ['ジュウ'],
+        kunyomi: ['す.む'],
+        components: [],
+        mnemonic: {
+          en: 'A person 亻 who is the master 主 of a fixed place: to live, to reside.',
+          vi: 'Một người 亻 làm chủ 主 một nơi cố định: sống, cư trú.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '住', reading: 'す' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to live, to reside', vi: 'sống, ở' }
+          },
+          {
+            parts: [
+              { text: '住', reading: 'じゅう' },
+              { text: '所', reading: 'しょ' }
+            ],
+            meaning: { en: 'address', vi: 'địa chỉ' }
+          },
+          {
+            parts: [
+              { text: '住', reading: 'じゅう' },
+              { text: '民', reading: 'みん' }
+            ],
+            meaning: { en: 'resident', vi: 'cư dân' }
+          }
+        ]
+      },
+      {
+        char: '守',
+        meaning: { en: 'to protect, to guard', vi: 'thủ - bảo vệ, giữ gìn' },
+        onyomi: ['シュ', 'ス'],
+        kunyomi: ['まも.る'],
+        components: ['宀', '寸'],
+        mnemonic: {
+          en: 'A hand 寸 keeping watch under the roof 宀 of a home: to protect, to guard.',
+          vi: 'Bàn tay 寸 canh giữ dưới mái nhà 宀: bảo vệ, giữ gìn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '守', reading: 'まも' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to protect, to keep (a promise)', vi: 'bảo vệ, giữ (lời)' }
+          },
+          {
+            parts: [
+              { text: '留', reading: 'る' },
+              { text: '守', reading: 'す' }
+            ],
+            meaning: { en: 'absence (from home)', vi: 'sự vắng nhà' }
+          },
+          {
+            parts: [
+              { text: '見', reading: 'み' },
+              { text: '守', reading: 'まも' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to watch over', vi: 'trông chừng, dõi theo' }
+          }
+        ]
+      },
+      {
+        char: '待',
+        meaning: { en: 'to wait', vi: 'đãi - chờ, đợi' },
+        onyomi: ['タイ'],
+        kunyomi: ['ま.つ'],
+        components: [],
+        mnemonic: {
+          en: 'Standing on the road 彳 as still as a temple 寺, biding time: to wait.',
+          vi: 'Đứng bên đường 彳 tĩnh lặng như ngôi chùa 寺, chờ thời gian trôi: chờ, đợi.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '待', reading: 'ま' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: 'to wait', vi: 'chờ, đợi' }
+          },
+          {
+            parts: [
+              { text: '期', reading: 'き' },
+              { text: '待', reading: 'たい' }
+            ],
+            meaning: { en: 'expectation, hope', vi: 'kỳ vọng, mong đợi' }
+          },
+          {
+            parts: [
+              { text: '待', reading: 'まち' },
+              { text: '合', reading: 'あい' },
+              { text: '室', reading: 'しつ' }
+            ],
+            meaning: { en: 'waiting room', vi: 'phòng chờ' }
+          }
+        ]
+      },
+      {
+        char: '定',
+        meaning: { en: 'to fix, to set, to decide', vi: 'định - định, quy định; cố định' },
+        onyomi: ['テイ', 'ジョウ'],
+        kunyomi: ['さだ.める'],
+        components: [],
+        mnemonic: {
+          en: 'Settling something firmly in place under a roof 宀: to fix, to set, to decide.',
+          vi: 'Ổn định vật gì đó cố định dưới mái nhà 宀: định, quy định, cố định.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '定', reading: 'さだ' },
+              { text: 'め', reading: 'め' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to establish, to lay down', vi: 'quy định, định ra' }
+          },
+          {
+            parts: [
+              { text: '決', reading: 'けっ' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'decision', vi: 'sự quyết định' }
+          },
+          {
+            parts: [
+              { text: '定', reading: 'てい' },
+              { text: '食', reading: 'しょく' }
+            ],
+            meaning: { en: 'set meal', vi: 'suất ăn cố định' }
+          }
+        ]
+      },
+      {
+        char: '着',
+        meaning: { en: 'to wear; to arrive; to attach', vi: 'trước - mặc; đến nơi; dính' },
+        onyomi: ['チャク'],
+        kunyomi: ['き.る', 'つ.く'],
+        components: [],
+        mnemonic: {
+          en: 'Pulling clothing down over yourself and settling in on arrival: to wear, to arrive, to attach.',
+          vi: 'Kéo áo quần lên người và yên vị khi đến nơi: mặc, đến nơi, dính vào.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '着', reading: 'き' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to wear, to put on', vi: 'mặc' }
+          },
+          {
+            parts: [
+              { text: '着', reading: 'つ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to arrive', vi: 'đến nơi' }
+          },
+          {
+            parts: [
+              { text: '到', reading: 'とう' },
+              { text: '着', reading: 'ちゃく' }
+            ],
+            meaning: { en: 'arrival', vi: 'sự đến nơi' }
+          }
+        ]
+      },
+      {
+        char: '放',
+        meaning: { en: 'to release, to let go; to broadcast', vi: 'phóng - thả, buông; phát' },
+        onyomi: ['ホウ'],
+        kunyomi: ['はな.す', 'はな.つ'],
+        components: [],
+        mnemonic: {
+          en: 'A hand striking to send something off in a direction 方 and let it loose: to release, to let go, to broadcast.',
+          vi: 'Một bàn tay đánh cho vật bay theo hướng 方 và buông ra: thả, buông, phát (sóng).'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '放', reading: 'はな' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to let go, to set free', vi: 'thả, buông' }
+          },
+          {
+            parts: [
+              { text: '放', reading: 'ほう' },
+              { text: '送', reading: 'そう' }
+            ],
+            meaning: { en: 'broadcast', vi: 'phát sóng' }
+          },
+          {
+            parts: [
+              { text: '開', reading: 'かい' },
+              { text: '放', reading: 'ほう' }
+            ],
+            meaning: { en: 'opening up, throwing open', vi: 'mở rộng, cởi mở' }
+          }
+        ]
+      },
+      {
+        char: '注',
+        meaning: { en: 'to pour; to pay attention', vi: 'chú - rót, đổ; chú ý' },
+        onyomi: ['チュウ'],
+        kunyomi: ['そそ.ぐ'],
+        components: [],
+        mnemonic: {
+          en: 'Pouring water 氵 in a steady stream onto one main 主 spot: to pour, and to focus attention on.',
+          vi: 'Rót nước 氵 thành dòng vào một điểm chính 主: rót, đổ, và chú ý vào.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '注', reading: 'そそ' },
+              { text: 'ぐ', reading: 'ぐ' }
+            ],
+            meaning: { en: 'to pour', vi: 'rót, đổ' }
+          },
+          {
+            parts: [
+              { text: '注', reading: 'ちゅう' },
+              { text: '意', reading: 'い' }
+            ],
+            meaning: { en: 'caution, attention', vi: 'chú ý, cẩn thận' }
+          },
+          {
+            parts: [
+              { text: '注', reading: 'ちゅう' },
+              { text: '文', reading: 'もん' }
+            ],
+            meaning: { en: 'order (in a shop)', vi: 'gọi món, đặt hàng' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Spirit & society',
+      vi: 'Tâm linh & xã hội'
+    },
+    kanji: [
+      {
+        char: '神',
+        meaning: { en: 'god, spirit; mind', vi: 'thần - thần, thần linh; tinh thần' },
+        onyomi: ['シン', 'ジン'],
+        kunyomi: ['かみ'],
+        components: [],
+        mnemonic: {
+          en: 'At the altar 礻 people call on the lightning-spirit 申 above: a god, a spirit.',
+          vi: 'Trước bàn thờ 礻 người ta khấn vị thần sấm sét 申 trên cao: thần, thần linh.'
+        },
+        examples: [
+          {
+            parts: [{ text: '神', reading: 'かみ' }],
+            meaning: { en: 'god, deity', vi: 'thần, vị thần' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'じん' },
+              { text: '社', reading: 'じゃ' }
+            ],
+            meaning: { en: 'Shinto shrine', vi: 'đền thờ Thần đạo' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'かみ' },
+              { text: '様', reading: 'さま' }
+            ],
+            meaning: { en: 'god (honorific)', vi: 'thần linh, ông trời' }
+          }
+        ]
+      },
+      {
+        char: '真',
+        meaning: { en: 'true, real; pure', vi: 'chân - thật, chân thật; ngay' },
+        onyomi: ['シン'],
+        kunyomi: ['ま'],
+        components: [],
+        mnemonic: {
+          en: 'A tool held straight and true to test what is genuine: true, real, pure.',
+          vi: 'Một dụng cụ giữ thẳng và chuẩn để kiểm chứng cái thật: thật, chân thật, ngay.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '真', reading: 'ま' },
+              { text: 'ん', reading: 'ん' },
+              { text: '中', reading: 'なか' }
+            ],
+            meaning: { en: 'dead center, right in the middle', vi: 'chính giữa' }
+          },
+          {
+            parts: [
+              { text: '写', reading: 'しゃ' },
+              { text: '真', reading: 'しん' }
+            ],
+            meaning: { en: 'photograph', vi: 'bức ảnh' }
+          },
+          {
+            parts: [
+              { text: '真', reading: 'しん' },
+              { text: '実', reading: 'じつ' }
+            ],
+            meaning: { en: 'truth, reality', vi: 'sự thật, chân thật' }
+          }
+        ]
+      },
+      {
+        char: '深',
+        meaning: { en: 'deep', vi: 'thâm - sâu; đậm' },
+        onyomi: ['シン'],
+        kunyomi: ['ふか.い'],
+        components: [],
+        mnemonic: {
+          en: 'Water 氵 that goes far down into a cave, hard to reach the bottom: deep.',
+          vi: 'Nước 氵 ăn sâu xuống hang, khó chạm đáy: sâu, thâm sâu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '深', reading: 'ふか' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'deep', vi: 'sâu' }
+          },
+          {
+            parts: [
+              { text: '深', reading: 'しん' },
+              { text: '夜', reading: 'や' }
+            ],
+            meaning: { en: 'late at night, midnight', vi: 'đêm khuya' }
+          },
+          {
+            parts: [
+              { text: '水', reading: 'すい' },
+              { text: '深', reading: 'しん' }
+            ],
+            meaning: { en: 'water depth', vi: 'độ sâu của nước' }
+          }
+        ]
+      },
+      {
+        char: '申',
+        meaning: { en: 'to say, to state (humble)', vi: 'thân - thưa, nói (khiêm nhường)' },
+        onyomi: ['シン'],
+        kunyomi: ['もう.す'],
+        components: [],
+        mnemonic: {
+          en: 'A bolt of lightning splitting the sky, once used to speak to the gods: to say, to state humbly.',
+          vi: 'Tia sét xẻ dọc bầu trời, xưa dùng để thưa với thần: thưa, nói (khiêm nhường).'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '申', reading: 'もう' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to say (humble)', vi: 'thưa, nói (khiêm tốn)' }
+          },
+          {
+            parts: [
+              { text: '申', reading: 'もう' },
+              { text: 'し', reading: 'し' },
+              { text: '込', reading: 'こ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to apply, to sign up', vi: 'đăng ký, xin' }
+          },
+          {
+            parts: [
+              { text: '申', reading: 'もう' },
+              { text: 'し', reading: 'し' },
+              { text: '出', reading: 'で' }
+            ],
+            meaning: { en: 'offer, proposal', vi: 'lời đề nghị' }
+          }
+        ]
+      },
+      {
+        char: '祭',
+        meaning: { en: 'festival; to worship', vi: 'tế - lễ hội; cúng tế' },
+        onyomi: ['サイ'],
+        kunyomi: ['まつ.り', 'まつ.る'],
+        components: [],
+        mnemonic: {
+          en: 'A hand 又 placing meat 月 on the altar 示 as an offering: a festival, to worship.',
+          vi: 'Bàn tay 又 đặt miếng thịt 月 lên bàn thờ 示 để cúng: lễ hội, cúng tế.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '祭', reading: 'まつ' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'festival', vi: 'lễ hội' }
+          },
+          {
+            parts: [
+              { text: '祭', reading: 'さい' },
+              { text: '日', reading: 'じつ' }
+            ],
+            meaning: { en: 'national holiday, feast day', vi: 'ngày lễ' }
+          },
+          {
+            parts: [
+              { text: '文', reading: 'ぶん' },
+              { text: '化', reading: 'か' },
+              { text: '祭', reading: 'さい' }
+            ],
+            meaning: { en: 'cultural festival', vi: 'lễ hội văn hóa' }
+          }
+        ]
+      },
+      {
+        char: '礼',
+        meaning: { en: 'courtesy, manners; thanks, a bow', vi: 'lễ - lễ nghi, lễ phép; cảm tạ' },
+        onyomi: ['レイ', 'ライ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Bowing respectfully before the altar 礻: courtesy, manners, a bow of thanks.',
+          vi: 'Cúi mình kính cẩn trước bàn thờ 礻: lễ nghi, lễ phép, cảm tạ.'
+        },
+        examples: [
+          {
+            parts: [{ text: '礼', reading: 'れい' }],
+            meaning: { en: 'bow; thanks; courtesy', vi: 'sự cúi chào; lời cảm tạ' }
+          },
+          {
+            parts: [
+              { text: '失', reading: 'しつ' },
+              { text: '礼', reading: 'れい' }
+            ],
+            meaning: { en: 'rudeness; excuse me', vi: 'thất lễ; xin lỗi' }
+          },
+          {
+            parts: [
+              { text: 'お', reading: 'お' },
+              { text: '礼', reading: 'れい' }
+            ],
+            meaning: { en: 'thanks, token of gratitude', vi: 'lời cảm ơn, chút tạ ơn' }
+          }
+        ]
+      },
+      {
+        char: '世',
+        meaning: { en: 'generation; world; age', vi: 'thế - đời, thế giới; thế hệ' },
+        onyomi: ['セイ', 'セ'],
+        kunyomi: ['よ'],
+        components: [],
+        mnemonic: {
+          en: 'Three tens joined together, about a lifetime or one generation: a generation, the world, an age.',
+          vi: 'Ba số mười nối lại, chừng một đời người hay một thế hệ: thế hệ, đời, thế giới.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '世', reading: 'せ' },
+              { text: '界', reading: 'かい' }
+            ],
+            meaning: { en: 'the world', vi: 'thế giới' }
+          },
+          {
+            parts: [
+              { text: '世', reading: 'せ' },
+              { text: '話', reading: 'わ' }
+            ],
+            meaning: { en: 'care, looking after', vi: 'sự chăm sóc, giúp đỡ' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '世', reading: 'せい' }
+            ],
+            meaning: { en: 'first generation', vi: 'thế hệ thứ nhất' }
+          }
+        ]
+      },
+      {
+        char: '全',
+        meaning: { en: 'all, whole; complete', vi: 'toàn - toàn bộ, tất cả; hoàn toàn' },
+        onyomi: ['ゼン'],
+        kunyomi: ['すべ.て', 'まった.く'],
+        components: [],
+        mnemonic: {
+          en: 'A perfect gem kept whole and flawless under cover: all, whole, complete.',
+          vi: 'Một viên ngọc hoàn hảo giữ nguyên vẹn, không tì vết dưới lớp che: toàn bộ, tất cả, hoàn toàn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '全', reading: 'ぜん' },
+              { text: '部', reading: 'ぶ' }
+            ],
+            meaning: { en: 'all, the whole', vi: 'toàn bộ, tất cả' }
+          },
+          {
+            parts: [
+              { text: '安', reading: 'あん' },
+              { text: '全', reading: 'ぜん' }
+            ],
+            meaning: { en: 'safety', vi: 'an toàn' }
+          },
+          {
+            parts: [
+              { text: '全', reading: 'ぜん' },
+              { text: '国', reading: 'こく' }
+            ],
+            meaning: { en: 'the whole country', vi: 'toàn quốc' }
+          }
+        ]
+      },
+      {
+        char: '族',
+        meaning: { en: 'tribe, clan, family', vi: 'tộc - dòng họ, bộ tộc' },
+        onyomi: ['ゾク'],
+        kunyomi: [],
+        components: ['方', '矢'],
+        mnemonic: {
+          en: 'Arrows 矢 gathered under one banner 方: a clan, a tribe, a family.',
+          vi: 'Những mũi tên 矢 tụ dưới một lá cờ 方: dòng họ, bộ tộc, gia tộc.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '家', reading: 'か' },
+              { text: '族', reading: 'ぞく' }
+            ],
+            meaning: { en: 'family', vi: 'gia đình' }
+          },
+          {
+            parts: [
+              { text: '民', reading: 'みん' },
+              { text: '族', reading: 'ぞく' }
+            ],
+            meaning: { en: 'ethnic group, people', vi: 'dân tộc' }
+          },
+          {
+            parts: [
+              { text: '水', reading: 'すい' },
+              { text: '族', reading: 'ぞく' },
+              { text: '館', reading: 'かん' }
+            ],
+            meaning: { en: 'aquarium', vi: 'thủy cung' }
+          }
+        ]
+      },
+      {
+        char: '他',
+        meaning: { en: 'other, another', vi: 'tha - khác, cái khác' },
+        onyomi: ['タ'],
+        kunyomi: ['ほか'],
+        components: [],
+        mnemonic: {
+          en: 'A person 亻 who is someone else, not this one: other, another.',
+          vi: 'Một người 亻 khác, không phải người này: khác, cái khác.'
+        },
+        examples: [
+          {
+            parts: [{ text: '他', reading: 'ほか' }],
+            meaning: { en: 'other, the rest', vi: 'cái khác, phần còn lại' }
+          },
+          {
+            parts: [
+              { text: '他', reading: 'た' },
+              { text: '人', reading: 'にん' }
+            ],
+            meaning: { en: 'other people, stranger', vi: 'người khác, người dưng' }
+          },
+          {
+            parts: [
+              { text: '他', reading: 'た' },
+              { text: '国', reading: 'こく' }
+            ],
+            meaning: { en: 'foreign country', vi: 'nước khác, nước ngoài' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Documents, order & money',
+      vi: 'Giấy tờ, thứ tự & tiền bạc'
+    },
+    kanji: [
+      {
+        char: '談',
+        meaning: { en: 'to talk, to discuss', vi: 'đàm - trò chuyện, bàn luận' },
+        onyomi: ['ダン'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Words 言 exchanged warmly around a fire 炎: to talk, to discuss.',
+          vi: 'Lời nói 言 trao đổi ấm áp bên ngọn lửa 炎: trò chuyện, bàn luận.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '相', reading: 'そう' },
+              { text: '談', reading: 'だん' }
+            ],
+            meaning: { en: 'consultation', vi: 'bàn bạc, tư vấn' }
+          },
+          {
+            parts: [
+              { text: '会', reading: 'かい' },
+              { text: '談', reading: 'だん' }
+            ],
+            meaning: { en: 'talks, conference', vi: 'hội đàm' }
+          },
+          {
+            parts: [
+              { text: '面', reading: 'めん' },
+              { text: '談', reading: 'だん' }
+            ],
+            meaning: { en: 'interview, face-to-face talk', vi: 'phỏng vấn, nói chuyện trực tiếp' }
+          }
+        ]
+      },
+      {
+        char: '調',
+        meaning: {
+          en: 'to investigate; to tune; tone',
+          vi: 'điều - điều tra; điều chỉnh; giai điệu'
+        },
+        onyomi: ['チョウ'],
+        kunyomi: ['しら.べる', 'ととの.える'],
+        components: [],
+        mnemonic: {
+          en: 'Using words 言 to go all around 周 a matter and set it right: to investigate, to tune, a tone.',
+          vi: 'Dùng lời 言 xem xét khắp 周 một việc và chỉnh cho đúng: điều tra, điều chỉnh, giai điệu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '調', reading: 'しら' },
+              { text: 'べ', reading: 'べ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to investigate, to look up', vi: 'điều tra, tra cứu' }
+          },
+          {
+            parts: [
+              { text: '調', reading: 'ちょう' },
+              { text: '子', reading: 'し' }
+            ],
+            meaning: { en: 'condition, tune, tempo', vi: 'tình trạng, nhịp điệu' }
+          },
+          {
+            parts: [
+              { text: '体', reading: 'たい' },
+              { text: '調', reading: 'ちょう' }
+            ],
+            meaning: { en: 'physical condition', vi: 'thể trạng' }
+          }
+        ]
+      },
+      {
+        char: '帳',
+        meaning: { en: 'notebook, register; curtain', vi: 'trướng - sổ tay, sổ sách; màn' },
+        onyomi: ['チョウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A long 長 sheet of cloth 巾 bound to write on: a notebook, a register, and a hanging curtain.',
+          vi: 'Một tấm vải 巾 dài 長 đóng lại để ghi chép: sổ tay, sổ sách, và tấm màn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '手', reading: 'て' },
+              { text: '帳', reading: 'ちょう' }
+            ],
+            meaning: { en: 'notebook, planner', vi: 'sổ tay' }
+          },
+          {
+            parts: [
+              { text: '通', reading: 'つう' },
+              { text: '帳', reading: 'ちょう' }
+            ],
+            meaning: { en: 'bankbook, passbook', vi: 'sổ ngân hàng' }
+          },
+          {
+            parts: [
+              { text: '帳', reading: 'ちょう' },
+              { text: '面', reading: 'めん' }
+            ],
+            meaning: { en: 'notebook, account book', vi: 'quyển sổ, sổ sách' }
+          }
+        ]
+      },
+      {
+        char: '式',
+        meaning: { en: 'ceremony; style; formula', vi: 'thức - nghi thức; kiểu; công thức' },
+        onyomi: ['シキ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A fixed way of doing work 工 by rule: a ceremony, a style, a formula.',
+          vi: 'Một cách làm việc 工 cố định theo khuôn phép: nghi thức, kiểu, công thức.'
+        },
+        examples: [
+          {
+            parts: [{ text: '式', reading: 'しき' }],
+            meaning: { en: 'ceremony', vi: 'nghi thức, lễ' }
+          },
+          {
+            parts: [
+              { text: '入', reading: 'にゅう' },
+              { text: '学', reading: 'がく' },
+              { text: '式', reading: 'しき' }
+            ],
+            meaning: { en: 'entrance ceremony', vi: 'lễ nhập học' }
+          },
+          {
+            parts: [
+              { text: '数', reading: 'すう' },
+              { text: '式', reading: 'しき' }
+            ],
+            meaning: { en: 'mathematical formula', vi: 'công thức toán' }
+          }
+        ]
+      },
+      {
+        char: '号',
+        meaning: { en: 'number, issue; title', vi: 'hiệu - số, số hiệu; danh hiệu' },
+        onyomi: ['ゴウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A mouth 口 calling out a number or a name aloud: a number, an issue, a title.',
+          vi: 'Cái miệng 口 xướng to một con số hay cái tên: số hiệu, số (báo), danh hiệu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '番', reading: 'ばん' },
+              { text: '号', reading: 'ごう' }
+            ],
+            meaning: { en: 'number (in a series)', vi: 'số (thứ tự)' }
+          },
+          {
+            parts: [
+              { text: '記', reading: 'き' },
+              { text: '号', reading: 'ごう' }
+            ],
+            meaning: { en: 'symbol, sign', vi: 'ký hiệu' }
+          },
+          {
+            parts: [
+              { text: '信', reading: 'しん' },
+              { text: '号', reading: 'ごう' }
+            ],
+            meaning: { en: 'traffic signal, signal', vi: 'đèn tín hiệu' }
+          }
+        ]
+      },
+      {
+        char: '第',
+        meaning: { en: 'ordinal prefix (No.); order', vi: 'đệ - thứ (số thứ tự)' },
+        onyomi: ['ダイ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Bamboo 竹 slips numbered in order and bound together: the marker for ordinal numbers (No. 1, No. 2).',
+          vi: 'Những thẻ tre 竹 đánh số theo thứ tự và bó lại: dấu chỉ số thứ tự (thứ nhất, thứ hai).'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '第', reading: 'だい' },
+              { text: '一', reading: 'いち' }
+            ],
+            meaning: { en: 'the first, No. 1', vi: 'thứ nhất' }
+          },
+          {
+            parts: [
+              { text: '第', reading: 'だい' },
+              { text: '二', reading: 'に' }
+            ],
+            meaning: { en: 'the second, No. 2', vi: 'thứ hai' }
+          },
+          {
+            parts: [
+              { text: '第', reading: 'だい' },
+              { text: '三', reading: 'さん' }
+            ],
+            meaning: { en: 'the third, No. 3', vi: 'thứ ba' }
+          }
+        ]
+      },
+      {
+        char: '丁',
+        meaning: {
+          en: 'city block; counter (tofu, etc.)',
+          vi: 'đinh - khu phố; (đếm đậu phụ...)'
+        },
+        onyomi: ['チョウ', 'テイ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'The shape of a single nail; used as a city block, and a counter for things like blocks of tofu.',
+          vi: 'Hình một cây đinh; dùng làm đơn vị khu phố, và lượng từ đếm (miếng đậu phụ...).'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '丁', reading: 'ちょう' },
+              { text: '目', reading: 'め' }
+            ],
+            meaning: { en: 'city block number', vi: 'số khu phố (chome)' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '丁', reading: 'ちょう' }
+            ],
+            meaning: { en: 'one block; one serving', vi: 'một khối; một phần' }
+          },
+          {
+            parts: [
+              { text: '丁', reading: 'ちょう' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'exactly, just right', vi: 'vừa đúng, vừa vặn' }
+          }
+        ]
+      },
+      {
+        char: '両',
+        meaning: {
+          en: 'both, pair; (train car); old coin',
+          vi: 'lưỡng - cả hai; (toa xe); lạng (tiền xưa)'
+        },
+        onyomi: ['リョウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A balance scale with two equal pans: both, a pair, and an old unit of money and train cars.',
+          vi: 'Một cái cân với hai đĩa cân bằng: cả hai, một cặp, và đơn vị tiền xưa, toa tàu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '両', reading: 'りょう' },
+              { text: '方', reading: 'ほう' }
+            ],
+            meaning: { en: 'both, both sides', vi: 'cả hai bên' }
+          },
+          {
+            parts: [
+              { text: '両', reading: 'りょう' },
+              { text: '手', reading: 'て' }
+            ],
+            meaning: { en: 'both hands', vi: 'hai tay' }
+          },
+          {
+            parts: [
+              { text: '両', reading: 'りょう' },
+              { text: '親', reading: 'しん' }
+            ],
+            meaning: { en: 'parents', vi: 'cha mẹ' }
+          }
+        ]
+      },
+      {
+        char: '銀',
+        meaning: { en: 'silver', vi: 'ngân - bạc; ngân hàng' },
+        onyomi: ['ギン'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'The metal 金 that shines white like the moon: silver.',
+          vi: 'Kim loại 金 sáng trắng như ánh trăng: bạc.'
+        },
+        examples: [
+          {
+            parts: [{ text: '銀', reading: 'ぎん' }],
+            meaning: { en: 'silver', vi: 'bạc' }
+          },
+          {
+            parts: [
+              { text: '銀', reading: 'ぎん' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'bank', vi: 'ngân hàng' }
+          },
+          {
+            parts: [
+              { text: '水', reading: 'すい' },
+              { text: '銀', reading: 'ぎん' }
+            ],
+            meaning: { en: 'mercury', vi: 'thủy ngân' }
+          }
+        ]
+      },
+      {
+        char: '配',
+        meaning: { en: 'to distribute, to hand out; to arrange', vi: 'phối - phân phát; sắp đặt' },
+        onyomi: ['ハイ'],
+        kunyomi: ['くば.る'],
+        components: ['酉', '己'],
+        mnemonic: {
+          en: 'A person 己 kneeling by the wine jars 酉 to portion them out to guests: to distribute, to hand out, to arrange.',
+          vi: 'Một người 己 quỳ bên các vò rượu 酉 chia cho khách: phân phát, chia, sắp đặt.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '配', reading: 'くば' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to distribute, to hand out', vi: 'phân phát, chia' }
+          },
+          {
+            parts: [
+              { text: '心', reading: 'しん' },
+              { text: '配', reading: 'ぱい' }
+            ],
+            meaning: { en: 'worry, anxiety', vi: 'lo lắng' }
+          },
+          {
+            parts: [
+              { text: '配', reading: 'はい' },
+              { text: '達', reading: 'たつ' }
+            ],
+            meaning: { en: 'delivery', vi: 'giao hàng' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Ocean, sun & shape',
+      vi: 'Biển, mặt trời & hình dạng'
+    },
+    kanji: [
+      {
+        char: '羊',
+        meaning: { en: 'sheep', vi: 'dương - con cừu' },
+        onyomi: ['ヨウ'],
+        kunyomi: ['ひつじ'],
+        components: [],
+        mnemonic: {
+          en: 'A picture of a sheep seen from the front, its two curved horns on top: a sheep.',
+          vi: 'Hình con cừu nhìn từ trước, hai cái sừng cong ở trên: con cừu.'
+        },
+        examples: [
+          {
+            parts: [{ text: '羊', reading: 'ひつじ' }],
+            meaning: { en: 'sheep', vi: 'con cừu' }
+          },
+          {
+            parts: [
+              { text: '羊', reading: 'よう' },
+              { text: '毛', reading: 'もう' }
+            ],
+            meaning: { en: 'wool', vi: 'lông cừu' }
+          },
+          {
+            parts: [
+              { text: '子', reading: 'こ' },
+              { text: '羊', reading: 'ひつじ' }
+            ],
+            meaning: { en: 'lamb', vi: 'cừu con' }
+          }
+        ]
+      },
+      {
+        char: '洋',
+        meaning: { en: 'ocean; Western', vi: 'dương - đại dương; phương Tây' },
+        onyomi: ['ヨウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A vast body of water 氵 as broad as a spreading flock of sheep 羊: the ocean, and the West beyond it.',
+          vi: 'Vùng nước 氵 rộng mênh mông như đàn cừu 羊 trải ra: đại dương, và phương Tây bên kia.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '洋', reading: 'よう' },
+              { text: '服', reading: 'ふく' }
+            ],
+            meaning: { en: 'Western clothes', vi: 'quần áo kiểu Tây' }
+          },
+          {
+            parts: [
+              { text: '太', reading: 'たい' },
+              { text: '平', reading: 'へい' },
+              { text: '洋', reading: 'よう' }
+            ],
+            meaning: { en: 'the Pacific Ocean', vi: 'Thái Bình Dương' }
+          },
+          {
+            parts: [
+              { text: '西', reading: 'せい' },
+              { text: '洋', reading: 'よう' }
+            ],
+            meaning: { en: 'the West, the Occident', vi: 'phương Tây' }
+          }
+        ]
+      },
+      {
+        char: '陽',
+        meaning: { en: 'sun; yang, brightness', vi: 'dương - mặt trời; dương, sáng' },
+        onyomi: ['ヨウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'The sunny side of the hill 阝 where sunlight 日 pours down: the sun, the yang, brightness.',
+          vi: 'Sườn đồi 阝 đón nắng, nơi ánh mặt trời 日 rọi xuống: mặt trời, dương, sáng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '太', reading: 'たい' },
+              { text: '陽', reading: 'よう' }
+            ],
+            meaning: { en: 'the sun', vi: 'mặt trời' }
+          },
+          {
+            parts: [
+              { text: '陽', reading: 'よう' },
+              { text: '気', reading: 'き' }
+            ],
+            meaning: { en: 'cheerful, lively', vi: 'vui vẻ, hoạt bát' }
+          },
+          {
+            parts: [
+              { text: '陽', reading: 'よう' },
+              { text: '光', reading: 'こう' }
+            ],
+            meaning: { en: 'sunlight', vi: 'ánh nắng' }
+          }
+        ]
+      },
+      {
+        char: '様',
+        meaning: {
+          en: 'manner, appearance; Mr./Ms. (polite)',
+          vi: 'dạng - dáng vẻ, kiểu; ngài, vị (kính)'
+        },
+        onyomi: ['ヨウ'],
+        kunyomi: ['さま'],
+        components: ['木', '羊'],
+        mnemonic: {
+          en: 'The graceful form of a tree 木 and a sheep 羊, a pleasing appearance: a manner, a way, and the polite title "-sama".',
+          vi: 'Dáng vẻ đẹp của cái cây 木 và con cừu 羊, hình dáng dễ nhìn: dáng vẻ, kiểu cách, và hậu tố kính "-sama".'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '様', reading: 'よう' },
+              { text: '子', reading: 'す' }
+            ],
+            meaning: { en: 'state, appearance', vi: 'tình hình, dáng vẻ' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'かみ' },
+              { text: '様', reading: 'さま' }
+            ],
+            meaning: { en: 'god (honorific)', vi: 'thần linh' }
+          },
+          {
+            parts: [
+              { text: '王', reading: 'おう' },
+              { text: '様', reading: 'さま' }
+            ],
+            meaning: { en: 'king', vi: 'đức vua' }
+          }
+        ]
+      },
+      {
+        char: '流',
+        meaning: { en: 'to flow; a current', vi: 'lưu - chảy, trôi; dòng' },
+        onyomi: ['リュウ'],
+        kunyomi: ['なが.れる', 'なが.す'],
+        components: [],
+        mnemonic: {
+          en: 'Water 氵 running and streaming ever downward: to flow, to drift, a current.',
+          vi: 'Nước 氵 chảy tuôn không ngừng xuống thấp: chảy, trôi, dòng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '流', reading: 'なが' },
+              { text: 'れ', reading: 'れ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to flow', vi: 'chảy, trôi' }
+          },
+          {
+            parts: [
+              { text: '流', reading: 'りゅう' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'fashion, trend', vi: 'xu hướng, thịnh hành' }
+          },
+          {
+            parts: [
+              { text: '電', reading: 'でん' },
+              { text: '流', reading: 'りゅう' }
+            ],
+            meaning: { en: 'electric current', vi: 'dòng điện' }
+          }
+        ]
+      },
+      {
+        char: '平',
+        meaning: { en: 'flat, level; peaceful', vi: 'bình - bằng phẳng; bình yên' },
+        onyomi: ['ヘイ', 'ビョウ'],
+        kunyomi: ['たい.ら', 'ひら'],
+        components: [],
+        mnemonic: {
+          en: 'A water surface settling perfectly level and calm: flat, even, peaceful.',
+          vi: 'Mặt nước lắng xuống thật phẳng và yên: bằng phẳng, cân bằng, bình yên.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '平', reading: 'たい' },
+              { text: 'ら', reading: 'ら' }
+            ],
+            meaning: { en: 'flat, level', vi: 'bằng phẳng' }
+          },
+          {
+            parts: [
+              { text: '平', reading: 'へい' },
+              { text: '和', reading: 'わ' }
+            ],
+            meaning: { en: 'peace', vi: 'hòa bình' }
+          },
+          {
+            parts: [
+              { text: '平', reading: 'へい' },
+              { text: '日', reading: 'じつ' }
+            ],
+            meaning: { en: 'weekday', vi: 'ngày thường' }
+          }
+        ]
+      },
+      {
+        char: '表',
+        meaning: {
+          en: 'surface; to express; chart',
+          vi: 'biểu - bề mặt; biểu thị; bảng biểu'
+        },
+        onyomi: ['ヒョウ'],
+        kunyomi: ['おもて', 'あらわ.す'],
+        components: [],
+        mnemonic: {
+          en: 'The outer coat worn on the surface, what shows on the outside: the surface, to express, a chart.',
+          vi: 'Lớp áo khoác ngoài, cái lộ ra bên ngoài: bề mặt, biểu thị, bảng biểu.'
+        },
+        examples: [
+          {
+            parts: [{ text: '表', reading: 'おもて' }],
+            meaning: { en: 'surface, front side', vi: 'mặt ngoài, mặt trước' }
+          },
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '表', reading: 'ぴょう' }
+            ],
+            meaning: { en: 'announcement, presentation', vi: 'công bố, phát biểu' }
+          },
+          {
+            parts: [
+              { text: '表', reading: 'ひょう' },
+              { text: '現', reading: 'げん' }
+            ],
+            meaning: { en: 'expression', vi: 'biểu hiện, diễn đạt' }
+          }
+        ]
+      },
+      {
+        char: '反',
+        meaning: { en: 'anti, opposite; to oppose', vi: 'phản - ngược lại; phản đối; lật' },
+        onyomi: ['ハン', 'タン'],
+        kunyomi: ['そ.る', 'そ.らす'],
+        components: ['厂', '又'],
+        mnemonic: {
+          en: 'A hand 又 pushing back against a cliff 厂, turning the opposite way: anti, opposite, to oppose.',
+          vi: 'Bàn tay 又 đẩy ngược vào vách đá 厂, quay theo hướng đối lập: ngược lại, phản đối, lật.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '対', reading: 'たい' }
+            ],
+            meaning: { en: 'opposition, opposite', vi: 'phản đối, đối lập' }
+          },
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '発', reading: 'ぱつ' }
+            ],
+            meaning: { en: 'repulsion, backlash', vi: 'phản kháng, phản ứng lại' }
+          },
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '応', reading: 'のう' }
+            ],
+            meaning: { en: 'reaction, response', vi: 'phản ứng' }
+          }
+        ]
+      },
+      {
+        char: '発',
+        meaning: {
+          en: 'to depart; to emit; to happen',
+          vi: 'phát - phát ra; khởi hành; xảy ra'
+        },
+        onyomi: ['ハツ', 'ホツ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Two feet setting out as something shoots forth from a bow: to depart, to emit, to launch.',
+          vi: 'Đôi chân bước ra khi vật gì bắn đi từ cây cung: phát ra, khởi hành, phóng đi.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '表', reading: 'ぴょう' }
+            ],
+            meaning: { en: 'announcement, presentation', vi: 'công bố, phát biểu' }
+          },
+          {
+            parts: [
+              { text: '出', reading: 'しゅっ' },
+              { text: '発', reading: 'ぱつ' }
+            ],
+            meaning: { en: 'departure', vi: 'sự khởi hành' }
+          },
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '見', reading: 'けん' }
+            ],
+            meaning: { en: 'discovery', vi: 'phát hiện' }
+          }
+        ]
+      },
+      {
+        char: '球',
+        meaning: { en: 'ball, sphere', vi: 'cầu - quả bóng, khối cầu' },
+        onyomi: ['キュウ'],
+        kunyomi: ['たま'],
+        components: [],
+        mnemonic: {
+          en: 'A perfectly round gem 玉 polished into a sphere: a ball, a globe.',
+          vi: 'Một viên ngọc 玉 mài tròn thành khối cầu: quả bóng, khối cầu.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '野', reading: 'や' },
+              { text: '球', reading: 'きゅう' }
+            ],
+            meaning: { en: 'baseball', vi: 'bóng chày' }
+          },
+          {
+            parts: [
+              { text: '地', reading: 'ち' },
+              { text: '球', reading: 'きゅう' }
+            ],
+            meaning: { en: 'the Earth, the globe', vi: 'Trái Đất' }
+          },
+          {
+            parts: [
+              { text: '電', reading: 'でん' },
+              { text: '球', reading: 'きゅう' }
+            ],
+            meaning: { en: 'light bulb', vi: 'bóng đèn' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Writing, arts & practice',
+      vi: 'Chữ viết, nghệ thuật & luyện tập'
+    },
+    kanji: [
+      {
+        char: '筆',
+        meaning: { en: 'writing brush', vi: 'bút - cây bút, bút lông' },
+        onyomi: ['ヒツ'],
+        kunyomi: ['ふで'],
+        components: [],
+        mnemonic: {
+          en: 'A hand holding a bamboo 竹 stalk tipped with hair to write: a writing brush.',
+          vi: 'Bàn tay cầm thân tre 竹 gắn túm lông để viết: cây bút lông.'
+        },
+        examples: [
+          {
+            parts: [{ text: '筆', reading: 'ふで' }],
+            meaning: { en: 'writing brush', vi: 'bút lông' }
+          },
+          {
+            parts: [
+              { text: '筆', reading: 'ひっ' },
+              { text: '記', reading: 'き' }
+            ],
+            meaning: { en: 'note-taking, writing', vi: 'ghi chép' }
+          },
+          {
+            parts: [
+              { text: '鉛', reading: 'えん' },
+              { text: '筆', reading: 'ぴつ' }
+            ],
+            meaning: { en: 'pencil', vi: 'bút chì' }
+          }
+        ]
+      },
+      {
+        char: '漢',
+        meaning: {
+          en: 'Han China; kanji; fellow, man',
+          vi: 'hán - nhà Hán, chữ Hán; đàn ông'
+        },
+        onyomi: ['カン'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A great river 氵 civilization, the Han of China: Chinese, the Han, and by extension a fellow.',
+          vi: 'Nền văn minh bên dòng sông lớn 氵, nhà Hán của Trung Hoa: thuộc Hán, chữ Hán, và nghĩa rộng là gã đàn ông.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '漢', reading: 'かん' },
+              { text: '字', reading: 'じ' }
+            ],
+            meaning: { en: 'kanji, Chinese character', vi: 'chữ Hán, chữ kanji' }
+          },
+          {
+            parts: [
+              { text: '漢', reading: 'かん' },
+              { text: '文', reading: 'ぶん' }
+            ],
+            meaning: { en: 'classical Chinese writing', vi: 'Hán văn' }
+          },
+          {
+            parts: [
+              { text: '漢', reading: 'かん' },
+              { text: '方', reading: 'ぽう' }
+            ],
+            meaning: { en: 'Chinese herbal medicine', vi: 'thuốc Bắc, Đông y' }
+          }
+        ]
+      },
+      {
+        char: '写',
+        meaning: { en: 'to copy; to photograph', vi: 'tả - sao chép; chụp (ảnh)' },
+        onyomi: ['シャ'],
+        kunyomi: ['うつ.す', 'うつ.る'],
+        components: [],
+        mnemonic: {
+          en: 'Laying a cover over a page and tracing what shows through: to copy, to reproduce, to photograph.',
+          vi: 'Phủ tấm che lên trang giấy và đồ theo nét hiện qua: sao chép, sao lại, chụp ảnh.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '写', reading: 'うつ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to copy, to transcribe', vi: 'sao chép, chép lại' }
+          },
+          {
+            parts: [
+              { text: '写', reading: 'しゃ' },
+              { text: '真', reading: 'しん' }
+            ],
+            meaning: { en: 'photograph', vi: 'bức ảnh' }
+          },
+          {
+            parts: [
+              { text: '書', reading: 'か' },
+              { text: 'き', reading: 'き' },
+              { text: '写', reading: 'うつ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to copy out (by hand)', vi: 'chép lại (bằng tay)' }
+          }
+        ]
+      },
+      {
+        char: '童',
+        meaning: { en: 'child, youngster', vi: 'đồng - trẻ em, nhi đồng' },
+        onyomi: ['ドウ'],
+        kunyomi: ['わらべ'],
+        components: [],
+        mnemonic: {
+          en: 'A youngster standing 立 in the village 里, still just a child: a child, a youngster.',
+          vi: 'Một đứa nhỏ đứng 立 trong làng 里, hãy còn là trẻ con: trẻ em, nhi đồng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '童', reading: 'どう' },
+              { text: '話', reading: 'わ' }
+            ],
+            meaning: { en: 'fairy tale', vi: 'truyện cổ tích' }
+          },
+          {
+            parts: [
+              { text: '童', reading: 'どう' },
+              { text: '心', reading: 'しん' }
+            ],
+            meaning: { en: 'childlike heart', vi: 'tâm hồn trẻ thơ' }
+          },
+          {
+            parts: [
+              { text: '学', reading: 'がく' },
+              { text: '童', reading: 'どう' }
+            ],
+            meaning: { en: 'schoolchild', vi: 'học sinh tiểu học' }
+          }
+        ]
+      },
+      {
+        char: '笛',
+        meaning: { en: 'flute, whistle', vi: 'địch - cái sáo; còi' },
+        onyomi: ['テキ'],
+        kunyomi: ['ふえ'],
+        components: [],
+        mnemonic: {
+          en: 'A bamboo 竹 tube you blow through to make sound come out 由: a flute, a whistle.',
+          vi: 'Một ống tre 竹 thổi vào cho âm thanh phát ra 由: cây sáo, cái còi.'
+        },
+        examples: [
+          {
+            parts: [{ text: '笛', reading: 'ふえ' }],
+            meaning: { en: 'flute, whistle', vi: 'cây sáo, còi' }
+          },
+          {
+            parts: [
+              { text: '口', reading: 'くち' },
+              { text: '笛', reading: 'ぶえ' }
+            ],
+            meaning: { en: 'whistling (with the mouth)', vi: 'huýt sáo' }
+          },
+          {
+            parts: [
+              { text: '汽', reading: 'き' },
+              { text: '笛', reading: 'てき' }
+            ],
+            meaning: { en: 'steam whistle', vi: 'còi hơi' }
+          }
+        ]
+      },
+      {
+        char: '美',
+        meaning: { en: 'beautiful', vi: 'mỹ - đẹp, xinh đẹp' },
+        onyomi: ['ビ'],
+        kunyomi: ['うつく.しい'],
+        components: ['羊', '大'],
+        mnemonic: {
+          en: 'A big 大 fat sheep 羊, prized and fine to look at: beautiful.',
+          vi: 'Một con cừu 羊 to 大 béo tốt, quý và đẹp mắt: đẹp, xinh đẹp.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '美', reading: 'うつく' },
+              { text: 'し', reading: 'し' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'beautiful', vi: 'đẹp, xinh đẹp' }
+          },
+          {
+            parts: [
+              { text: '美', reading: 'び' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'a beauty, beautiful woman', vi: 'người đẹp, mỹ nhân' }
+          },
+          {
+            parts: [
+              { text: '美', reading: 'び' },
+              { text: '術', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'fine art', vi: 'mỹ thuật' }
+          }
+        ]
+      },
+      {
+        char: '練',
+        meaning: { en: 'to train, to practice; to knead', vi: 'luyện - luyện tập, rèn' },
+        onyomi: ['レン'],
+        kunyomi: ['ね.る'],
+        components: [],
+        mnemonic: {
+          en: 'Working raw threads 糸 over and over to refine them: to train, to practice, to knead smooth.',
+          vi: 'Nhồi luyện sợi thô 糸 hết lần này lần khác cho tinh: luyện tập, rèn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '練', reading: 'れん' },
+              { text: '習', reading: 'しゅう' }
+            ],
+            meaning: { en: 'practice, drill', vi: 'luyện tập' }
+          },
+          {
+            parts: [
+              { text: '訓', reading: 'くん' },
+              { text: '練', reading: 'れん' }
+            ],
+            meaning: { en: 'training', vi: 'huấn luyện' }
+          },
+          {
+            parts: [
+              { text: '練', reading: 'ね' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to knead, to refine', vi: 'nhào, luyện' }
+          }
+        ]
+      },
+      {
+        char: '列',
+        meaning: { en: 'row, line, rank', vi: 'liệt - hàng, dãy' },
+        onyomi: ['レツ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Things cut apart cleanly and set out one after another: a row, a line, a rank.',
+          vi: 'Những vật được cắt tách gọn và đặt nối nhau: hàng, dãy.'
+        },
+        examples: [
+          {
+            parts: [{ text: '列', reading: 'れつ' }],
+            meaning: { en: 'row, line', vi: 'hàng, dãy' }
+          },
+          {
+            parts: [
+              { text: '行', reading: 'ぎょう' },
+              { text: '列', reading: 'れつ' }
+            ],
+            meaning: { en: 'queue, procession', vi: 'hàng dài, đoàn diễu' }
+          },
+          {
+            parts: [
+              { text: '列', reading: 'れっ' },
+              { text: '車', reading: 'しゃ' }
+            ],
+            meaning: { en: 'train', vi: 'đoàn tàu' }
+          }
+        ]
+      },
+      {
+        char: '等',
+        meaning: { en: 'equal; grade, class; etc.', vi: 'đẳng - ngang bằng; hạng; vân vân' },
+        onyomi: ['トウ'],
+        kunyomi: ['ひと.しい', 'など'],
+        components: [],
+        mnemonic: {
+          en: 'Bamboo 竹 slips at a temple 寺 all cut to the same length: equal, a grade, and "etcetera".',
+          vi: 'Những thẻ tre 竹 ở chùa 寺 cắt bằng nhau: ngang bằng, hạng, và "vân vân".'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '等', reading: 'ひと' },
+              { text: 'し', reading: 'し' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'equal, identical', vi: 'ngang bằng' }
+          },
+          {
+            parts: [
+              { text: '平', reading: 'びょう' },
+              { text: '等', reading: 'どう' }
+            ],
+            meaning: { en: 'equality', vi: 'bình đẳng' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '等', reading: 'とう' }
+            ],
+            meaning: { en: 'first class, first prize', vi: 'hạng nhất' }
+          }
+        ]
+      },
+      {
+        char: '由',
+        meaning: { en: 'reason, cause; via, from', vi: 'do - lý do; từ, bởi' },
+        onyomi: ['ユ', 'ユウ', 'ユイ'],
+        kunyomi: ['よし'],
+        components: [],
+        mnemonic: {
+          en: 'A gourd with something coming out from within, the source: a reason, a cause, "by way of".',
+          vi: 'Một quả bầu có thứ gì đó thoát ra từ bên trong, cội nguồn: lý do, nguyên do, "bởi, từ".'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '理', reading: 'り' },
+              { text: '由', reading: 'ゆう' }
+            ],
+            meaning: { en: 'reason', vi: 'lý do' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '由', reading: 'ゆう' }
+            ],
+            meaning: { en: 'freedom', vi: 'tự do' }
+          },
+          {
+            parts: [
+              { text: '経', reading: 'けい' },
+              { text: '由', reading: 'ゆ' }
+            ],
+            meaning: { en: 'via, by way of', vi: 'đi qua, trung chuyển' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Business & change',
+      vi: 'Buôn bán & thay đổi'
+    },
+    kanji: [
+      {
+        char: '商',
+        meaning: { en: 'commerce, trade; merchant', vi: 'thương - buôn bán, thương mại' },
+        onyomi: ['ショウ'],
+        kunyomi: ['あきな.う'],
+        components: [],
+        mnemonic: {
+          en: 'Standing at a stall calling out with the mouth 口 to sell goods: commerce, trade, a merchant.',
+          vi: 'Đứng ở quầy, dùng miệng 口 rao bán hàng: buôn bán, thương mại.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '商', reading: 'しょう' },
+              { text: '人', reading: 'にん' }
+            ],
+            meaning: { en: 'merchant, trader', vi: 'thương nhân' }
+          },
+          {
+            parts: [
+              { text: '商', reading: 'しょう' },
+              { text: '店', reading: 'てん' }
+            ],
+            meaning: { en: 'store, shop', vi: 'cửa hàng' }
+          },
+          {
+            parts: [
+              { text: '商', reading: 'しょう' },
+              { text: '業', reading: 'ぎょう' }
+            ],
+            meaning: { en: 'commerce, business', vi: 'thương nghiệp' }
+          }
+        ]
+      },
+      {
+        char: '委',
+        meaning: { en: 'to entrust; committee', vi: 'ủy - giao phó, ủy thác' },
+        onyomi: ['イ'],
+        kunyomi: [],
+        components: ['禾', '女'],
+        mnemonic: {
+          en: 'A woman 女 bending under grain 禾, entrusted with the harvest: to entrust, to commit.',
+          vi: 'Người phụ nữ 女 khom mình dưới bông lúa 禾, được giao lo vụ mùa: giao phó, ủy thác.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '委', reading: 'い' },
+              { text: '員', reading: 'いん' }
+            ],
+            meaning: { en: 'committee member', vi: 'ủy viên' }
+          },
+          {
+            parts: [
+              { text: '委', reading: 'い' },
+              { text: '員', reading: 'いん' },
+              { text: '会', reading: 'かい' }
+            ],
+            meaning: { en: 'committee', vi: 'ủy ban' }
+          },
+          {
+            parts: [
+              { text: '委', reading: 'い' },
+              { text: '員', reading: 'いん' },
+              { text: '長', reading: 'ちょう' }
+            ],
+            meaning: { en: 'committee chairperson', vi: 'chủ tịch ủy ban' }
+          }
+        ]
+      },
+      {
+        char: '化',
+        meaning: { en: 'to change, to transform', vi: 'hóa - biến hóa, thay đổi' },
+        onyomi: ['カ', 'ケ'],
+        kunyomi: ['ば.ける'],
+        components: [],
+        mnemonic: {
+          en: 'A person 亻 upright turning into a person 匕 fallen over, one form becoming another: to change, to transform.',
+          vi: 'Một người 亻 đứng biến thành người 匕 ngã xuống, hình này hóa thành hình kia: biến hóa, thay đổi.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '化', reading: 'ば' },
+              { text: 'け', reading: 'け' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to transform, to take on a form', vi: 'biến hình, hóa thành' }
+          },
+          {
+            parts: [
+              { text: '文', reading: 'ぶん' },
+              { text: '化', reading: 'か' }
+            ],
+            meaning: { en: 'culture', vi: 'văn hóa' }
+          },
+          {
+            parts: [
+              { text: '化', reading: 'か' },
+              { text: '学', reading: 'がく' }
+            ],
+            meaning: { en: 'chemistry', vi: 'hóa học' }
+          }
+        ]
+      },
+      {
+        char: '代',
+        meaning: {
+          en: 'to substitute; generation; fee',
+          vi: 'đại - thay thế; thời, đời; tiền phí'
+        },
+        onyomi: ['ダイ', 'タイ'],
+        kunyomi: ['か.わる', 'よ', 'しろ'],
+        components: [],
+        mnemonic: {
+          en: 'One person 亻 stepping in to take the place of another: to substitute, a generation, and a charge or fee.',
+          vi: 'Một người 亻 bước vào thay chỗ người khác: thay thế, thời đại, và khoản tiền phí.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '代', reading: 'か' },
+              { text: 'わ', reading: 'わ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to substitute, to replace', vi: 'thay thế' }
+          },
+          {
+            parts: [
+              { text: '時', reading: 'じ' },
+              { text: '代', reading: 'だい' }
+            ],
+            meaning: { en: 'era, period, age', vi: 'thời đại' }
+          },
+          {
+            parts: [
+              { text: '電', reading: 'でん' },
+              { text: '気', reading: 'き' },
+              { text: '代', reading: 'だい' }
+            ],
+            meaning: { en: 'electricity bill', vi: 'tiền điện' }
+          }
+        ]
+      },
+      {
+        char: '対',
+        meaning: { en: 'opposite; versus; to face', vi: 'đối - đối diện; đối lập; cặp' },
+        onyomi: ['タイ', 'ツイ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A hand 寸 held out to face another head-on: opposite, versus, a pair, to face.',
+          vi: 'Bàn tay 寸 đưa ra đối mặt trực diện: đối diện, đối lập, cặp.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '対', reading: 'たい' }
+            ],
+            meaning: { en: 'opposition, opposite', vi: 'phản đối, đối lập' }
+          },
+          {
+            parts: [
+              { text: '対', reading: 'たい' },
+              { text: 'す', reading: 'す' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to face, to deal with', vi: 'đối diện, đối với' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '対', reading: 'つい' }
+            ],
+            meaning: { en: 'a pair', vi: 'một cặp, một đôi' }
+          }
+        ]
+      },
+      {
+        char: '負',
+        meaning: { en: 'to lose; to bear; to owe', vi: 'phụ - thua; gánh vác; âm (số)' },
+        onyomi: ['フ'],
+        kunyomi: ['ま.ける', 'お.う'],
+        components: [],
+        mnemonic: {
+          en: 'A person bending under a load of money 貝 they owe: to bear a burden, to owe, and to lose a contest.',
+          vi: 'Một người khom lưng dưới gánh nợ tiền 貝: gánh vác, mắc nợ, và thua cuộc.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '負', reading: 'ま' },
+              { text: 'け', reading: 'け' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to lose, to be defeated', vi: 'thua' }
+          },
+          {
+            parts: [
+              { text: '負', reading: 'お' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to bear, to carry (on the back)', vi: 'gánh, cõng' }
+          },
+          {
+            parts: [
+              { text: '勝', reading: 'しょう' },
+              { text: '負', reading: 'ぶ' }
+            ],
+            meaning: { en: 'match, contest', vi: 'trận đấu, thắng thua' }
+          }
+        ]
+      },
+      {
+        char: '部',
+        meaning: { en: 'part, section, department', vi: 'bộ - bộ phận; ban; câu lạc bộ' },
+        onyomi: ['ブ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'One district 阝 marked off from a city, one part of the whole: a part, a section, a department.',
+          vi: 'Một khu 阝 tách ra từ thành phố, một phần của tổng thể: bộ phận, ban, phòng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '部', reading: 'ぶ' },
+              { text: '分', reading: 'ぶん' }
+            ],
+            meaning: { en: 'part, portion', vi: 'bộ phận, phần' }
+          },
+          {
+            parts: [
+              { text: '全', reading: 'ぜん' },
+              { text: '部', reading: 'ぶ' }
+            ],
+            meaning: { en: 'all, the whole', vi: 'toàn bộ' }
+          },
+          {
+            parts: [
+              { text: '部', reading: 'へ' },
+              { text: '屋', reading: 'や' }
+            ],
+            meaning: { en: 'room', vi: 'căn phòng' }
+          }
+        ]
+      },
+      {
+        char: '勝',
+        meaning: { en: 'to win, to excel', vi: 'thắng - thắng, chiến thắng; hơn' },
+        onyomi: ['ショウ'],
+        kunyomi: ['か.つ', 'まさ.る'],
+        components: [],
+        mnemonic: {
+          en: 'Pouring out all your strength 力 to come out on top: to win, to excel.',
+          vi: 'Dồn hết sức 力 để vươn lên đứng đầu: thắng, chiến thắng, hơn hẳn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '勝', reading: 'か' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: 'to win', vi: 'thắng' }
+          },
+          {
+            parts: [
+              { text: '勝', reading: 'しょう' },
+              { text: '負', reading: 'ぶ' }
+            ],
+            meaning: { en: 'match, victory or defeat', vi: 'trận đấu, thắng thua' }
+          },
+          {
+            parts: [
+              { text: '決', reading: 'けっ' },
+              { text: '勝', reading: 'しょう' }
+            ],
+            meaning: { en: 'final (match)', vi: 'trận chung kết' }
+          }
+        ]
+      },
+      {
+        char: '乗',
+        meaning: { en: 'to ride, to board; to multiply', vi: 'thừa - đi (xe), lên (xe); nhân' },
+        onyomi: ['ジョウ'],
+        kunyomi: ['の.る', 'の.せる'],
+        components: [],
+        mnemonic: {
+          en: 'A person climbing up onto a tree or cart to ride: to ride, to board, and to multiply.',
+          vi: 'Một người trèo lên cây hay lên xe để đi: đi xe, lên xe, và phép nhân.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '乗', reading: 'の' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to ride, to get on', vi: 'đi (xe), lên (xe)' }
+          },
+          {
+            parts: [
+              { text: '乗', reading: 'じょう' },
+              { text: '車', reading: 'しゃ' }
+            ],
+            meaning: { en: 'boarding (a vehicle)', vi: 'lên xe' }
+          },
+          {
+            parts: [
+              { text: '乗', reading: 'じょう' },
+              { text: '客', reading: 'きゃく' }
+            ],
+            meaning: { en: 'passenger', vi: 'hành khách' }
+          }
+        ]
+      },
+      {
+        char: '有',
+        meaning: { en: 'to exist, to have', vi: 'hữu - có, tồn tại' },
+        onyomi: ['ユウ', 'ウ'],
+        kunyomi: ['あ.る'],
+        components: [],
+        mnemonic: {
+          en: 'A hand holding a piece of meat 月, having something in your grasp: to have, to exist.',
+          vi: 'Một bàn tay giữ miếng thịt 月, có thứ gì trong tay: có, tồn tại.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '有', reading: 'ゆう' },
+              { text: '名', reading: 'めい' }
+            ],
+            meaning: { en: 'famous', vi: 'nổi tiếng' }
+          },
+          {
+            parts: [
+              { text: '有', reading: 'ゆう' },
+              { text: '料', reading: 'りょう' }
+            ],
+            meaning: { en: 'paid, fee-charging', vi: 'có thu phí' }
+          },
+          {
+            parts: [
+              { text: '所', reading: 'しょ' },
+              { text: '有', reading: 'ゆう' }
+            ],
+            meaning: { en: 'ownership, possession', vi: 'sở hữu' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Daily life & concepts',
+      vi: 'Đời sống & khái niệm'
+    },
+    kanji: [
+      {
+        char: '去',
+        meaning: { en: 'to leave, to go away; past', vi: 'khứ - rời đi; đã qua' },
+        onyomi: ['キョ', 'コ'],
+        kunyomi: ['さ.る'],
+        components: [],
+        mnemonic: {
+          en: 'Walking away from a spot of earth 土, leaving it behind: to leave, to go away, the past.',
+          vi: 'Bước khỏi một mảnh đất 土, bỏ lại phía sau: rời đi, ra đi, đã qua.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '去', reading: 'さ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to leave, to go away', vi: 'rời đi' }
+          },
+          {
+            parts: [
+              { text: '去', reading: 'きょ' },
+              { text: '年', reading: 'ねん' }
+            ],
+            meaning: { en: 'last year', vi: 'năm ngoái' }
+          },
+          {
+            parts: [
+              { text: '死', reading: 'し' },
+              { text: '去', reading: 'きょ' }
+            ],
+            meaning: { en: 'death, passing away', vi: 'sự qua đời' }
+          }
+        ]
+      },
+      {
+        char: '曲',
+        meaning: { en: 'to bend; crooked; melody', vi: 'khúc - cong, uốn; bản nhạc' },
+        onyomi: ['キョク'],
+        kunyomi: ['ま.がる', 'ま.げる'],
+        components: [],
+        mnemonic: {
+          en: 'The shape of something bent into curves; also a winding tune: to bend, crooked, a melody.',
+          vi: 'Hình vật bị uốn cong; cũng là giai điệu uốn lượn: cong, uốn, bản nhạc.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '曲', reading: 'ま' },
+              { text: 'が', reading: 'が' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to bend, to turn', vi: 'cong, rẽ' }
+          },
+          {
+            parts: [
+              { text: '曲', reading: 'きょく' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'curve, curved line', vi: 'đường cong' }
+          },
+          {
+            parts: [
+              { text: '名', reading: 'めい' },
+              { text: '曲', reading: 'きょく' }
+            ],
+            meaning: { en: 'famous piece of music', vi: 'danh khúc, bản nhạc nổi tiếng' }
+          }
+        ]
+      },
+      {
+        char: '向',
+        meaning: { en: 'to face, toward', vi: 'hướng - hướng về, quay về' },
+        onyomi: ['コウ'],
+        kunyomi: ['む.く', 'む.かう', 'む.こう'],
+        components: [],
+        mnemonic: {
+          en: 'A window with a mouth 口 below, a house turned to face one direction: to face, toward.',
+          vi: 'Một ô cửa sổ với cái miệng 口 bên dưới, ngôi nhà quay về một hướng: hướng về, quay về.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '向', reading: 'む' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to face, to turn toward', vi: 'quay về, hướng về' }
+          },
+          {
+            parts: [
+              { text: '方', reading: 'ほう' },
+              { text: '向', reading: 'こう' }
+            ],
+            meaning: { en: 'direction', vi: 'phương hướng' }
+          },
+          {
+            parts: [
+              { text: '向', reading: 'む' },
+              { text: 'こ', reading: 'こ' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'over there, the other side', vi: 'phía bên kia' }
+          }
+        ]
+      },
+      {
+        char: '次',
+        meaning: { en: 'next, following; order', vi: 'thứ - tiếp theo; thứ tự' },
+        onyomi: ['ジ', 'シ'],
+        kunyomi: ['つ.ぐ', 'つぎ'],
+        components: [],
+        mnemonic: {
+          en: 'A yawn 欠 breathed out one after another in sequence: next, the following, order.',
+          vi: 'Một cái ngáp 欠 thở ra hết cái này đến cái kia theo trình tự: tiếp theo, thứ tự.'
+        },
+        examples: [
+          {
+            parts: [{ text: '次', reading: 'つぎ' }],
+            meaning: { en: 'next', vi: 'tiếp theo' }
+          },
+          {
+            parts: [
+              { text: '次', reading: 'じ' },
+              { text: '回', reading: 'かい' }
+            ],
+            meaning: { en: 'next time', vi: 'lần sau' }
+          },
+          {
+            parts: [
+              { text: '目', reading: 'もく' },
+              { text: '次', reading: 'じ' }
+            ],
+            meaning: { en: 'table of contents', vi: 'mục lục' }
+          }
+        ]
+      },
+      {
+        char: '重',
+        meaning: {
+          en: 'heavy; to pile up; important',
+          vi: 'trọng - nặng; chồng lên; quan trọng'
+        },
+        onyomi: ['ジュウ', 'チョウ'],
+        kunyomi: ['おも.い', 'かさ.ねる', 'え'],
+        components: [],
+        mnemonic: {
+          en: 'A heavy bundle weighing a person down, layers stacked up: heavy, to pile up, and important.',
+          vi: 'Một bó nặng đè trĩu người, các lớp chồng lên nhau: nặng, chồng lên, và quan trọng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '重', reading: 'おも' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'heavy', vi: 'nặng' }
+          },
+          {
+            parts: [
+              { text: '体', reading: 'たい' },
+              { text: '重', reading: 'じゅう' }
+            ],
+            meaning: { en: 'body weight', vi: 'cân nặng' }
+          },
+          {
+            parts: [
+              { text: '重', reading: 'かさ' },
+              { text: 'ね', reading: 'ね' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to pile up, to stack', vi: 'chồng lên, xếp lớp' }
+          }
+        ]
+      },
+      {
+        char: '宿',
+        meaning: { en: 'lodging, inn; to stay over', vi: 'túc - chỗ trọ, quán trọ; ở lại' },
+        onyomi: ['シュク'],
+        kunyomi: ['やど', 'やど.る'],
+        components: [],
+        mnemonic: {
+          en: 'People 亻 resting for the night under a roof 宀: lodging, an inn, to stay over.',
+          vi: 'Người 亻 nghỉ qua đêm dưới mái nhà 宀: chỗ trọ, quán trọ, ở lại.'
+        },
+        examples: [
+          {
+            parts: [{ text: '宿', reading: 'やど' }],
+            meaning: { en: 'lodging, inn', vi: 'chỗ trọ' }
+          },
+          {
+            parts: [
+              { text: '宿', reading: 'しゅく' },
+              { text: '題', reading: 'だい' }
+            ],
+            meaning: { en: 'homework', vi: 'bài tập về nhà' }
+          },
+          {
+            parts: [
+              { text: '下', reading: 'げ' },
+              { text: '宿', reading: 'しゅく' }
+            ],
+            meaning: { en: 'boarding house, lodgings', vi: 'nhà trọ' }
+          }
+        ]
+      },
+      {
+        char: '所',
+        meaning: { en: 'place, spot', vi: 'sở - nơi chốn, chỗ' },
+        onyomi: ['ショ'],
+        kunyomi: ['ところ'],
+        components: ['戸', '斤'],
+        mnemonic: {
+          en: 'The spot by the door 戸 where the axe 斤 is kept, a fixed place: a place, a spot.',
+          vi: 'Chỗ cạnh cửa 戸 nơi cất cái rìu 斤, một vị trí cố định: nơi chốn, chỗ.'
+        },
+        examples: [
+          {
+            parts: [{ text: '所', reading: 'ところ' }],
+            meaning: { en: 'place, spot', vi: 'nơi, chỗ' }
+          },
+          {
+            parts: [
+              { text: '住', reading: 'じゅう' },
+              { text: '所', reading: 'しょ' }
+            ],
+            meaning: { en: 'address', vi: 'địa chỉ' }
+          },
+          {
+            parts: [
+              { text: '場', reading: 'ば' },
+              { text: '所', reading: 'しょ' }
+            ],
+            meaning: { en: 'location, place', vi: 'địa điểm' }
+          }
+        ]
+      },
+      {
+        char: '命',
+        meaning: { en: 'life; command', vi: 'mệnh - sinh mệnh; mệnh lệnh' },
+        onyomi: ['メイ', 'ミョウ'],
+        kunyomi: ['いのち'],
+        components: [],
+        mnemonic: {
+          en: 'An order given aloud with the mouth 口 that one must obey as if life depended on it: life, a command.',
+          vi: 'Một mệnh lệnh hô bằng miệng 口 mà người ta phải theo như thể tính mạng phụ thuộc vào đó: sinh mệnh, mệnh lệnh.'
+        },
+        examples: [
+          {
+            parts: [{ text: '命', reading: 'いのち' }],
+            meaning: { en: 'life', vi: 'sinh mệnh, mạng sống' }
+          },
+          {
+            parts: [
+              { text: '生', reading: 'せい' },
+              { text: '命', reading: 'めい' }
+            ],
+            meaning: { en: 'life (biological)', vi: 'sinh mệnh, sự sống' }
+          },
+          {
+            parts: [
+              { text: '命', reading: 'めい' },
+              { text: '令', reading: 'れい' }
+            ],
+            meaning: { en: 'order, command', vi: 'mệnh lệnh' }
+          }
+        ]
+      },
+      {
+        char: '面',
+        meaning: { en: 'face; surface; mask', vi: 'diện - mặt; bề mặt; mặt nạ' },
+        onyomi: ['メン'],
+        kunyomi: ['おも', 'つら'],
+        components: [],
+        mnemonic: {
+          en: 'The outline of a face with an eye inside, the front of the head: a face, a surface, a mask.',
+          vi: 'Đường viền khuôn mặt với con mắt bên trong, mặt trước của đầu: mặt, bề mặt, mặt nạ.'
+        },
+        examples: [
+          {
+            parts: [{ text: '面', reading: 'めん' }],
+            meaning: { en: 'face, surface, aspect', vi: 'mặt, bề mặt, phương diện' }
+          },
+          {
+            parts: [
+              { text: '面', reading: 'おも' },
+              { text: '白', reading: 'しろ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'interesting, funny', vi: 'thú vị, buồn cười' }
+          },
+          {
+            parts: [
+              { text: '場', reading: 'ば' },
+              { text: '面', reading: 'めん' }
+            ],
+            meaning: { en: 'scene, situation', vi: 'cảnh, tình huống' }
+          }
+        ]
+      },
+      {
+        char: '和',
+        meaning: {
+          en: 'harmony, peace; Japanese',
+          vi: 'hòa - hòa hợp, êm ấm; Nhật Bản'
+        },
+        onyomi: ['ワ', 'オ'],
+        kunyomi: ['やわ.らぐ', 'なご.む'],
+        components: ['禾', '口'],
+        mnemonic: {
+          en: 'Grain 禾 shared into every mouth 口 so all are fed and at peace: harmony, and things Japanese.',
+          vi: 'Lúa gạo 禾 chia vào mọi cái miệng 口 để ai cũng no và yên: hòa hợp, êm ấm, và thuộc về Nhật.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '平', reading: 'へい' },
+              { text: '和', reading: 'わ' }
+            ],
+            meaning: { en: 'peace', vi: 'hòa bình' }
+          },
+          {
+            parts: [
+              { text: '和', reading: 'わ' },
+              { text: '食', reading: 'しょく' }
+            ],
+            meaning: { en: 'Japanese cuisine', vi: 'món ăn Nhật' }
+          },
+          {
+            parts: [
+              { text: '昭', reading: 'しょう' },
+              { text: '和', reading: 'わ' }
+            ],
+            meaning: { en: 'the Showa era', vi: 'thời Showa' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Regions, metal & more',
+      vi: 'Vùng miền, kim loại & khác'
+    },
+    kanji: [
+      {
+        char: '軽',
+        meaning: { en: 'light (not heavy)', vi: 'khinh - nhẹ; nhẹ nhàng' },
+        onyomi: ['ケイ'],
+        kunyomi: ['かる.い'],
+        components: [],
+        mnemonic: {
+          en: 'A cart 車 built small and light so it rolls easily: light, not heavy.',
+          vi: 'Một chiếc xe 車 làm nhỏ và nhẹ để lăn dễ: nhẹ, nhẹ nhàng.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '軽', reading: 'かる' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'light, not heavy', vi: 'nhẹ' }
+          },
+          {
+            parts: [
+              { text: '手', reading: 'て' },
+              { text: '軽', reading: 'がる' }
+            ],
+            meaning: { en: 'easy, handy', vi: 'dễ dàng, tiện lợi' }
+          },
+          {
+            parts: [
+              { text: '軽', reading: 'けい' },
+              { text: '食', reading: 'しょく' }
+            ],
+            meaning: { en: 'light meal, snack', vi: 'bữa ăn nhẹ' }
+          }
+        ]
+      },
+      {
+        char: '県',
+        meaning: { en: 'prefecture', vi: 'huyện - tỉnh (đơn vị hành chính)' },
+        onyomi: ['ケン'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A large administrative region under the central government: a prefecture.',
+          vi: 'Một vùng hành chính lớn trực thuộc chính quyền trung ương: tỉnh (ken).'
+        },
+        examples: [
+          {
+            parts: [{ text: '県', reading: 'けん' }],
+            meaning: { en: 'prefecture', vi: 'tỉnh' }
+          },
+          {
+            parts: [
+              { text: '県', reading: 'けん' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'prefectural (run by the prefecture)', vi: 'thuộc tỉnh, tỉnh lập' }
+          },
+          {
+            parts: [
+              { text: '県', reading: 'けん' },
+              { text: '道', reading: 'どう' }
+            ],
+            meaning: { en: 'prefectural road', vi: 'tỉnh lộ' }
+          }
+        ]
+      },
+      {
+        char: '昭',
+        meaning: { en: 'shining, bright', vi: 'chiêu - sáng, rạng rỡ' },
+        onyomi: ['ショウ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'The sun 日 calling forth its light to make things bright and clear: shining, bright.',
+          vi: 'Mặt trời 日 gọi ánh sáng lên làm mọi thứ rạng rỡ: sáng, rực rỡ.'
+        },
+        note: {
+          en: 'In modern Japanese it appears almost only in 昭和 (the Shōwa era, 1926-1989).',
+          vi: 'Trong tiếng Nhật hiện đại hầu như chỉ xuất hiện trong 昭和 (thời Shōwa, 1926-1989).'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '昭', reading: 'しょう' },
+              { text: '和', reading: 'わ' }
+            ],
+            meaning: { en: 'the Showa era', vi: 'thời Showa' }
+          },
+          {
+            parts: [
+              { text: '昭', reading: 'しょう' },
+              { text: '和', reading: 'わ' },
+              { text: '時', reading: 'じ' },
+              { text: '代', reading: 'だい' }
+            ],
+            meaning: { en: 'the Showa period', vi: 'thời đại Showa' }
+          }
+        ]
+      },
+      {
+        char: '整',
+        meaning: { en: 'to arrange, to put in order', vi: 'chỉnh - sắp xếp, chỉnh đốn' },
+        onyomi: ['セイ'],
+        kunyomi: ['ととの.える', 'ととの.う'],
+        components: [],
+        mnemonic: {
+          en: 'Straightening a bundle out until everything is correct 正 and neat: to arrange, to put in order.',
+          vi: 'Chỉnh một bó cho tới khi mọi thứ ngay ngắn 正 và gọn gàng: sắp xếp, chỉnh đốn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '整', reading: 'ととの' },
+              { text: 'え', reading: 'え' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to arrange, to get in order', vi: 'sắp xếp, chỉnh cho gọn' }
+          },
+          {
+            parts: [
+              { text: '整', reading: 'せい' },
+              { text: '理', reading: 'り' }
+            ],
+            meaning: { en: 'sorting out, tidying', vi: 'sắp xếp, chỉnh lý' }
+          },
+          {
+            parts: [
+              { text: '調', reading: 'ちょう' },
+              { text: '整', reading: 'せい' }
+            ],
+            meaning: { en: 'adjustment, regulation', vi: 'điều chỉnh' }
+          }
+        ]
+      },
+      {
+        char: '鉄',
+        meaning: { en: 'iron', vi: 'thiết - sắt' },
+        onyomi: ['テツ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'A common, hard metal 金 dug from the earth: iron.',
+          vi: 'Một kim loại 金 cứng, phổ biến đào từ đất: sắt.'
+        },
+        examples: [
+          {
+            parts: [{ text: '鉄', reading: 'てつ' }],
+            meaning: { en: 'iron', vi: 'sắt' }
+          },
+          {
+            parts: [
+              { text: '地', reading: 'ち' },
+              { text: '下', reading: 'か' },
+              { text: '鉄', reading: 'てつ' }
+            ],
+            meaning: { en: 'subway, metro', vi: 'tàu điện ngầm' }
+          },
+          {
+            parts: [
+              { text: '鉄', reading: 'てつ' },
+              { text: '道', reading: 'どう' }
+            ],
+            meaning: { en: 'railway', vi: 'đường sắt' }
+          }
+        ]
+      },
+      {
+        char: '登',
+        meaning: { en: 'to climb, to ascend', vi: 'đăng - trèo, leo lên' },
+        onyomi: ['トウ', 'ト'],
+        kunyomi: ['のぼ.る'],
+        components: [],
+        mnemonic: {
+          en: 'Two feet stepping up rung by rung onto a raised stand 豆: to climb, to ascend.',
+          vi: 'Đôi chân bước lên từng nấc trên cái bệ cao 豆: trèo, leo lên.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '登', reading: 'のぼ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to climb', vi: 'trèo, leo' }
+          },
+          {
+            parts: [
+              { text: '登', reading: 'と' },
+              { text: '山', reading: 'ざん' }
+            ],
+            meaning: { en: 'mountain climbing', vi: 'leo núi' }
+          },
+          {
+            parts: [
+              { text: '登', reading: 'とう' },
+              { text: '校', reading: 'こう' }
+            ],
+            meaning: { en: 'going to school', vi: 'đến trường' }
+          }
+        ]
+      },
+      {
+        char: '物',
+        meaning: { en: 'thing, object', vi: 'vật - vật, đồ vật' },
+        onyomi: ['ブツ', 'モツ'],
+        kunyomi: ['もの'],
+        components: [],
+        mnemonic: {
+          en: 'Livestock like a cow 牛 counted among your goods: a thing, an object.',
+          vi: 'Gia súc như con bò 牛 được tính vào của cải: vật, đồ vật.'
+        },
+        examples: [
+          {
+            parts: [{ text: '物', reading: 'もの' }],
+            meaning: { en: 'thing, object', vi: 'đồ vật, vật' }
+          },
+          {
+            parts: [
+              { text: '動', reading: 'どう' },
+              { text: '物', reading: 'ぶつ' }
+            ],
+            meaning: { en: 'animal', vi: 'động vật' }
+          },
+          {
+            parts: [
+              { text: '買', reading: 'か' },
+              { text: 'い', reading: 'い' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'shopping', vi: 'mua sắm' }
+          }
+        ]
+      },
+      {
+        char: '予',
+        meaning: { en: 'beforehand, in advance', vi: 'dự - trước, sẵn' },
+        onyomi: ['ヨ'],
+        kunyomi: [],
+        components: [],
+        mnemonic: {
+          en: 'Setting things up ahead of time before they are needed: beforehand, in advance.',
+          vi: 'Chuẩn bị mọi thứ từ trước khi cần: trước, sẵn.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '予', reading: 'よ' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'plan, schedule', vi: 'dự định, lịch trình' }
+          },
+          {
+            parts: [
+              { text: '予', reading: 'よ' },
+              { text: '習', reading: 'しゅう' }
+            ],
+            meaning: { en: 'preparation (before a lesson)', vi: 'chuẩn bị bài trước' }
+          },
+          {
+            parts: [
+              { text: '予', reading: 'よ' },
+              { text: '約', reading: 'やく' }
+            ],
+            meaning: { en: 'reservation, booking', vi: 'đặt trước' }
+          }
+        ]
+      },
+      {
+        char: '路',
+        meaning: { en: 'road, path', vi: 'lộ - đường, con đường' },
+        onyomi: ['ロ'],
+        kunyomi: ['じ'],
+        components: [],
+        mnemonic: {
+          en: 'Where the feet 足 travel each 各 day: a road, a path.',
+          vi: 'Nơi đôi chân 足 đi lại mỗi ngày: con đường, lối đi.'
+        },
+        examples: [
+          {
+            parts: [
+              { text: '道', reading: 'どう' },
+              { text: '路', reading: 'ろ' }
+            ],
+            meaning: { en: 'road, roadway', vi: 'đường sá' }
+          },
+          {
+            parts: [
+              { text: '線', reading: 'せん' },
+              { text: '路', reading: 'ろ' }
+            ],
+            meaning: { en: 'railway track', vi: 'đường ray' }
+          },
+          {
+            parts: [
+              { text: '通', reading: 'つう' },
+              { text: '路', reading: 'ろ' }
+            ],
+            meaning: { en: 'passage, aisle', vi: 'lối đi, hành lang' }
+          }
+        ]
+      },
+      {
+        char: '豆',
+        meaning: { en: 'bean', vi: 'đậu - hạt đậu' },
+        onyomi: ['トウ', 'ズ'],
+        kunyomi: ['まめ'],
+        components: [],
+        mnemonic: {
+          en: 'A picture of a tall-stemmed dish once used for offerings, later meaning bean: a bean.',
+          vi: 'Hình một cái đĩa có chân cao xưa dùng để cúng, sau mang nghĩa hạt đậu: hạt đậu.'
+        },
+        examples: [
+          {
+            parts: [{ text: '豆', reading: 'まめ' }],
+            meaning: { en: 'bean', vi: 'hạt đậu' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '豆', reading: 'ず' }
+            ],
+            meaning: { en: 'soybean', vi: 'đậu nành' }
+          },
+          {
+            parts: [
+              { text: '豆', reading: 'とう' },
+              { text: '腐', reading: 'ふ' }
+            ],
+            meaning: { en: 'tofu', vi: 'đậu phụ' }
           }
         ]
       }
