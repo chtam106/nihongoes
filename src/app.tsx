@@ -27,6 +27,12 @@ const ListeningPage = lazy(() => import('@/pages/course/listening-page'));
 const ReadingPage = lazy(() => import('@/pages/course/reading-page'));
 const WritingPage = lazy(() => import('@/pages/course/writing-page'));
 const GrammarPage = lazy(() => import('@/pages/course/grammar-page'));
+const KanjiHubPage = lazy(() => import('@/pages/kanji/index.tsx'));
+const KanjiRadicalsPage = lazy(() => import('@/pages/kanji/radicals/index.tsx'));
+const KanjiTrackPage = lazy(() => import('@/pages/kanji/track/index.tsx'));
+const KanjiLessonPage = lazy(() => import('@/pages/kanji/lesson/index.tsx'));
+const KanjiQuizPage = lazy(() => import('@/pages/kanji/quiz/index.tsx'));
+const KanjiWritingPage = lazy(() => import('@/pages/kanji/writing/index.tsx'));
 const NotFoundPage = lazy(() => import('@/pages/not-found'));
 const SentryTestPage = lazy(() => import('@/pages/sentry-test'));
 
@@ -75,6 +81,28 @@ function localeRoutes(prefix: string) {
           </Fragment>
         );
       })}
+
+      <Route path={localizePath(routes.kanji.index, prefix)} element={<KanjiHubPage />} />
+      <Route
+        path={localizePath(`${routes.kanji.index}/radicals`, prefix)}
+        element={<KanjiRadicalsPage />}
+      />
+      <Route
+        path={localizePath(`${routes.kanji.index}/:track`, prefix)}
+        element={<KanjiTrackPage />}
+      />
+      <Route
+        path={localizePath(`${routes.kanji.index}/:track/lesson/:lessonId`, prefix)}
+        element={<KanjiLessonPage />}
+      />
+      <Route
+        path={localizePath(`${routes.kanji.index}/:track/lesson/:lessonId/quiz`, prefix)}
+        element={<KanjiQuizPage />}
+      />
+      <Route
+        path={localizePath(`${routes.kanji.index}/:track/lesson/:lessonId/writing`, prefix)}
+        element={<KanjiWritingPage />}
+      />
 
       <Route path={localizePath(routes.alphabet.index, prefix)} element={<AlphabetPage />} />
       <Route path={localizePath(routes.alphabet.hiragana, prefix)} element={<HiraganaPage />} />

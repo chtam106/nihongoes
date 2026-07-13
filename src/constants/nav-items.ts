@@ -3,11 +3,18 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
+import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
 import { COURSE_LEVELS, coursePath, lessonPath } from '@/constants/courses/levels.ts';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
 import type { Bilingual, CourseLevel } from '@/constants/courses/types.ts';
+import {
+  kanjiTracks,
+  kanjiTrackPath,
+  KANJI_BASE_PATH,
+  KANJI_RADICALS_PATH
+} from '@/constants/kanji/index.ts';
 import { routes } from '@/constants/routes.ts';
 
 export type NavItem = {
@@ -37,6 +44,22 @@ function formatLessonNavLabel(number: number, title: Bilingual): Bilingual {
 const courseSummaryByLevel = Object.fromEntries(
   COURSE_SUMMARIES.map((summary) => [summary.level, summary])
 ) as Record<CourseLevel, (typeof COURSE_SUMMARIES)[number]>;
+
+const kanjiGroup: NavGroup = {
+  label: { en: 'Kanji', vi: 'Kanji' },
+  path: KANJI_BASE_PATH,
+  icon: BrushOutlinedIcon,
+  children: [
+    {
+      label: { en: 'Radicals', vi: 'Bộ thủ' },
+      path: KANJI_RADICALS_PATH
+    },
+    ...kanjiTracks.map((track) => ({
+      label: track.name,
+      path: kanjiTrackPath(track.slug)
+    }))
+  ]
+};
 
 const courseGroups: NavGroup[] = COURSE_LEVELS.map((level) => ({
   label: courseSummaryByLevel[level].name,
@@ -87,6 +110,7 @@ export const navGroups: NavGroup[] = [
       }
     ]
   },
+  kanjiGroup,
   ...courseGroups
 ];
 

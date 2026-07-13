@@ -7,6 +7,9 @@ export const routes = {
   n5: {
     index: '/n5'
   },
+  kanji: {
+    index: '/kanji'
+  },
   alphabet: {
     index: '/alphabet',
     hiragana: '/alphabet/hiragana',
@@ -58,6 +61,10 @@ export function getSeoRouteKey(pathname: string): SeoRouteKey {
     if (pathname === coursePath(level) || pathname.startsWith(`${coursePath(level)}/`)) {
       return level as SeoRouteKey;
     }
+  }
+
+  if (pathname === routes.kanji.index || pathname.startsWith(`${routes.kanji.index}/`)) {
+    return 'kanji' as SeoRouteKey;
   }
 
   return (pathToSeoKey[pathname] as SeoRouteKey | undefined) ?? 'notFound';
