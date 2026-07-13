@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
@@ -7,6 +8,7 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
 import { KanjiCard } from '@/components/kanji-card';
+import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -14,6 +16,7 @@ import {
   getKanjiLesson,
   getKanjiTrack,
   KANJI_BASE_PATH,
+  kanjiLessonPath,
   kanjiQuizPath,
   kanjiTrackPath,
   kanjiWritingPath,
@@ -93,40 +96,80 @@ function KanjiLessonPage() {
     );
   }
 
+  const lessons = track.lessons;
+  const index = lessons.findIndex((item) => item.id === lesson.id);
+  const previous = index > 0 ? lessons[index - 1] : undefined;
+  const next = index < lessons.length - 1 ? lessons[index + 1] : undefined;
+
   return (
     <PageContainer bottomGutter>
       <Stack spacing={3}>
         <Box>
-          <Box sx={{ mb: 1 }}>
-            <Button
+          <Stack
+            direction="row"
+            spacing={1}
+            useFlexGap
+            sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
+          >
+            <Chip
+              label={track.name[locale]}
+              color="secondary"
+              variant="outlined"
+              size="small"
               component={RouterLink}
               to={kanjiTrackPath(track.slug)}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {track.name[locale]}
-            </Button>
-          </Box>
-          <Chip
-            label={t('kanji.lessonLabel', { number: lesson.number })}
-            color="primary"
-            variant="outlined"
-            size="small"
-            sx={{ mb: 1 }}
-          />
+              clickable
+            />
+            <Chip
+              label={t('kanji.lessonLabel', { number: lesson.number })}
+              color="primary"
+              variant="outlined"
+              size="small"
+            />
+          </Stack>
           <Heading component="h1">{lesson.title[locale]}</Heading>
         </Box>
 
         <HintText>{t('kanji.detailHint')}</HintText>
 
-        <Stack spacing={2}>
+        <KanjiReadingsNote collapsible />
+
+        <Stack spacing={5}>
           {lesson.kanji.map((entry, index) => (
             <KanjiCard key={entry.char} entry={entry} index={index + 1} />
           ))}
         </Stack>
 
         <KanjiPracticePanel trackSlug={track.slug} lesson={lesson} />
+
+        <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'space-between' }}>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+            {previous && (
+              <Button
+                component={RouterLink}
+                to={kanjiLessonPath(track.slug, previous.id)}
+                startIcon={<ArrowBackIcon />}
+                variant="text"
+                sx={{ px: 0 }}
+              >
+                {t('course.previousLesson')}
+              </Button>
+            )}
+          </Box>
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+            {next && (
+              <Button
+                component={RouterLink}
+                to={kanjiLessonPath(track.slug, next.id)}
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                sx={{ px: 0 }}
+              >
+                {t('course.nextLesson')}
+              </Button>
+            )}
+          </Box>
+        </Stack>
       </Stack>
 
       <ScrollToTopButton />

@@ -1,6 +1,5 @@
 import { useEffect, useState, type MouseEvent } from 'react';
 import { useParams } from 'react-router-dom';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
@@ -22,6 +21,7 @@ import {
   getKanjiTrack,
   KANJI_BASE_PATH,
   kanjiLessonPath,
+  kanjiTrackPath,
   type KanjiEntry,
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
@@ -313,27 +313,31 @@ function KanjiQuizPage() {
     <PageContainer>
       <Stack spacing={3}>
         <Box>
-          <Box sx={{ mb: 1 }}>
-            <Button
+          <Stack
+            direction="row"
+            spacing={1}
+            useFlexGap
+            sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
+          >
+            <Chip
+              label={track.name[locale]}
+              color="secondary"
+              variant="outlined"
+              size="small"
+              component={RouterLink}
+              to={kanjiTrackPath(track.slug)}
+              clickable
+            />
+            <Chip
+              label={t('kanji.lessonLabel', { number: lesson.number })}
+              color="primary"
+              variant="outlined"
+              size="small"
               component={RouterLink}
               to={kanjiLessonPath(track.slug, lesson.id)}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {lesson.title[locale]}
-            </Button>
-          </Box>
-          <Chip
-            label={t('kanji.lessonLabel', { number: lesson.number })}
-            color="primary"
-            variant="outlined"
-            size="small"
-            component={RouterLink}
-            to={kanjiLessonPath(track.slug, lesson.id)}
-            clickable
-            sx={{ mb: 1 }}
-          />
+              clickable
+            />
+          </Stack>
           <Heading component="h1">{t('kanji.quizTitle')}</Heading>
         </Box>
 
