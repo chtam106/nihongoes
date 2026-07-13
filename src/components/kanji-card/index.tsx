@@ -1,7 +1,5 @@
 import { Box, Paper, Stack, Typography } from '@mui/material';
-import { alpha, type Theme } from '@mui/material/styles';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Heading } from '@/components/heading';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
@@ -60,6 +58,44 @@ function InfoRow({ label, value, japanese, emphasize }: InfoRowProps) {
   );
 }
 
+// Shared soft-shadow pill styling, mirroring the component-radical pills.
+const PILL_SHADOW = '0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1)';
+
+// Pill styling for a single reading.
+const readingPillSx = {
+  display: 'inline-flex',
+  alignItems: 'baseline',
+  px: 0.75,
+  py: 0.25,
+  borderRadius: 1,
+  fontWeight: 600,
+  bgcolor: 'background.paper',
+  boxShadow: PILL_SHADOW
+} as const;
+
+type ReadingRowProps = {
+  label: string;
+  readings: string[];
+};
+
+/** A label followed by each reading rendered as its own tag/pill. */
+function ReadingRow({ label, readings }: ReadingRowProps) {
+  return (
+    <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline' }}>
+      <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0, minWidth: 88 }}>
+        {label}
+      </Typography>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+        {readings.map((reading) => (
+          <Box key={reading} component="span" lang="ja" sx={readingPillSx}>
+            {reading}
+          </Box>
+        ))}
+      </Box>
+    </Stack>
+  );
+}
+
 type KanjiCardProps = {
   entry: KanjiEntry;
   /** 1-based position of this kanji within the lesson. */
@@ -75,189 +111,200 @@ export function KanjiCard({ entry, index }: KanjiCardProps) {
   const { locale, t } = useTranslation();
 
   return (
-    <Box>
-      <Heading component="h2" sx={{ mb: 1 }}>
-        {t('kanji.kanjiHeading', { number: index })}
-      </Heading>
-      <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
-        <Paper
-          elevation={0}
-          sx={[
-            elevatedSurfaceSx,
-            {
-              p: 2,
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              gap: 2,
-              alignItems: 'center'
-            }
-          ]}
+    <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
+      <Paper
+        elevation={0}
+        sx={[
+          elevatedSurfaceSx,
+          {
+            position: 'relative',
+            p: 2,
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: 2,
+            alignItems: 'center'
+          }
+        ]}
+      >
+        <Typography
+          component="span"
+          aria-label={t('kanji.kanjiHeading', { number: index })}
+          sx={{
+            position: 'absolute',
+            top: 6,
+            left: 8,
+            zIndex: 1,
+            fontSize: 14,
+            lineHeight: 1,
+            fontWeight: 600,
+            color: 'text.secondary'
+          }}
         >
-          <Typography
-            component="span"
-            lang="ja"
-            sx={{
-              flexShrink: 0,
-              width: { xs: 64, md: 72 },
-              textAlign: 'center',
-              fontWeight: 600,
-              fontSize: { xs: 56, md: 64 },
-              lineHeight: 1
-            }}
-          >
-            {entry.char}
-          </Typography>
-          <Box sx={{ width: { xs: '100%', sm: 'auto' }, flex: { sm: 1 }, minWidth: 0 }}>
-            <Stack spacing={0.5}>
-              <InfoRow
-                label={t('kanji.meaningLabel')}
-                value={locale === 'vi' ? formatKanjiMeaning(entry.meaning.vi) : entry.meaning.en}
-                emphasize
-              />
-              {entry.components.length >= 2 && (
-                <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline' }}>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ flexShrink: 0, minWidth: 88 }}
-                  >
-                    {t('kanji.radicals')}
-                  </Typography>
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
-                    {entry.components.map((char, componentIndex) => {
-                      const radical = getRadicalByChar(char);
-                      const key = `${char}-${componentIndex}`;
-                      const pillSx = {
-                        display: 'inline-flex',
-                        alignItems: 'baseline',
-                        gap: 0.5,
-                        px: 0.75,
-                        py: 0.25,
-                        borderRadius: 1,
-                        bgcolor: (theme: Theme) => alpha(theme.palette.primary.main, 0.12),
-                        border: (theme: Theme) =>
-                          `1px solid ${alpha(theme.palette.primary.main, 0.24)}`
-                      };
-                      const inner = (
-                        <>
-                          <Box component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                            {char}
+          #{index}
+        </Typography>
+        <Typography
+          component="span"
+          lang="ja"
+          sx={{
+            flexShrink: 0,
+            width: { xs: 64, md: 72 },
+            textAlign: 'center',
+            fontWeight: 600,
+            fontSize: { xs: 56, md: 64 },
+            lineHeight: 1
+          }}
+        >
+          {entry.char}
+        </Typography>
+        <Box sx={{ width: { xs: '100%', sm: 'auto' }, flex: { sm: 1 }, minWidth: 0 }}>
+          <Stack spacing={0.5}>
+            <InfoRow
+              label={t('kanji.meaningLabel')}
+              value={locale === 'vi' ? formatKanjiMeaning(entry.meaning.vi) : entry.meaning.en}
+              emphasize
+            />
+            {entry.components.length >= 2 && (
+              <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline' }}>
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ flexShrink: 0, minWidth: 88 }}
+                >
+                  {t('kanji.radicals')}
+                </Typography>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+                  {entry.components.map((char, componentIndex) => {
+                    const radical = getRadicalByChar(char);
+                    const key = `${char}-${componentIndex}`;
+                    const pillSx = {
+                      display: 'inline-flex',
+                      alignItems: 'baseline',
+                      gap: 0.5,
+                      px: 0.75,
+                      py: 0.25,
+                      borderRadius: 1,
+                      bgcolor: 'background.paper',
+                      boxShadow: PILL_SHADOW
+                    };
+                    const inner = (
+                      <>
+                        <Box component="span" lang="ja" sx={{ fontWeight: 600 }}>
+                          {char}
+                        </Box>
+                        {radical && (
+                          <Box component="span" sx={{ color: 'text.secondary' }}>
+                            {locale === 'vi'
+                              ? formatKanjiMeaning(radical.meaning.vi)
+                              : radical.meaning.en}
                           </Box>
-                          {radical && (
-                            <Box component="span" sx={{ color: 'text.secondary' }}>
-                              {locale === 'vi'
-                                ? formatKanjiMeaning(radical.meaning.vi)
-                                : radical.meaning.en}
-                            </Box>
-                          )}
-                        </>
-                      );
+                        )}
+                      </>
+                    );
 
-                      if (!radical) {
-                        return (
-                          <Box component="span" key={key} sx={pillSx}>
-                            {inner}
-                          </Box>
-                        );
-                      }
-
+                    if (!radical) {
                       return (
-                        <Box
-                          key={key}
-                          component={RouterLink}
-                          to={`${KANJI_RADICALS_PATH}#radical-${radical.number}`}
-                          sx={[
-                            pillSx,
-                            {
-                              color: 'text.primary',
-                              textDecoration: 'none',
-                              '&:hover': {
-                                bgcolor: (theme: Theme) => alpha(theme.palette.primary.main, 0.22)
-                              }
-                            }
-                          ]}
-                        >
+                        <Box component="span" key={key} sx={pillSx}>
                           {inner}
                         </Box>
                       );
-                    })}
-                  </Box>
-                </Stack>
-              )}
-              {entry.onyomi.length > 0 && (
-                <InfoRow label={t('kanji.onReading')} value={entry.onyomi.join('、')} japanese />
-              )}
-              {entry.kunyomi.length > 0 && (
-                <InfoRow
-                  label={t('kanji.kunReading')}
-                  value={entry.kunyomi.map(formatReading).join('、')}
-                  japanese
-                />
-              )}
-            </Stack>
-          </Box>
-        </Paper>
+                    }
 
-        {entry.mnemonic && (
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
-              {t('kanji.mnemonic')}
-            </Typography>
-            <Typography variant="body2">{entry.mnemonic[locale]}</Typography>
-          </Box>
-        )}
-
-        {entry.note && (
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
-              {t('kanji.note')}
-            </Typography>
-            <Typography variant="body2">{entry.note[locale]}</Typography>
-          </Box>
-        )}
-
-        <Typography
-          variant="overline"
-          color="text.secondary"
-          sx={{ display: 'block', mt: 2, mb: 0.5 }}
-        >
-          {t('kanji.examples')}
-        </Typography>
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-            gap: 1
-          }}
-        >
-          {entry.examples.map((example, exampleIndex) => {
-            const isLoneLastOnMobile =
-              entry.examples.length % 2 === 1 && exampleIndex === entry.examples.length - 1;
-
-            return (
-              <SpeakableSurface
-                key={exampleWord(example.parts)}
-                text={exampleReading(example.parts)}
-                sx={{
-                  p: 1.5,
-                  height: '100%',
-                  gridColumn: isLoneLastOnMobile ? { xs: '1 / -1', md: 'auto' } : undefined
-                }}
-              >
-                <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                  {exampleWord(example.parts)}
-                  <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
-                    {exampleReading(example.parts)}
-                  </Box>
-                </Typography>
-                <Typography variant="body2" sx={{ mt: 0.25 }}>
-                  {example.meaning[locale]}
-                </Typography>
-              </SpeakableSurface>
-            );
-          })}
+                    return (
+                      <Box
+                        key={key}
+                        component={RouterLink}
+                        to={`${KANJI_RADICALS_PATH}#radical-${radical.number}`}
+                        sx={[
+                          pillSx,
+                          {
+                            color: 'text.primary',
+                            textDecoration: 'none',
+                            transition: 'box-shadow 0.2s ease',
+                            '&:hover': {
+                              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.12)'
+                            }
+                          }
+                        ]}
+                      >
+                        {inner}
+                      </Box>
+                    );
+                  })}
+                </Box>
+              </Stack>
+            )}
+            {entry.onyomi.length > 0 && (
+              <ReadingRow label={t('kanji.onReading')} readings={entry.onyomi} />
+            )}
+            {entry.kunyomi.length > 0 && (
+              <ReadingRow
+                label={t('kanji.kunReading')}
+                readings={entry.kunyomi.map(formatReading)}
+              />
+            )}
+          </Stack>
         </Box>
       </Paper>
-    </Box>
+
+      {entry.mnemonic && (
+        <Box sx={{ mt: 2 }}>
+          <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
+            {t('kanji.mnemonic')}
+          </Typography>
+          <Typography variant="body2">{entry.mnemonic[locale]}</Typography>
+        </Box>
+      )}
+
+      {entry.note && (
+        <Box sx={{ mt: 2 }}>
+          <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
+            {t('kanji.note')}
+          </Typography>
+          <Typography variant="body2">{entry.note[locale]}</Typography>
+        </Box>
+      )}
+
+      <Typography
+        variant="overline"
+        color="text.secondary"
+        sx={{ display: 'block', mt: 2, mb: 0.5 }}
+      >
+        {t('kanji.examples')}
+      </Typography>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+          gap: 1
+        }}
+      >
+        {entry.examples.map((example, exampleIndex) => {
+          const isLoneLastOnMobile =
+            entry.examples.length % 2 === 1 && exampleIndex === entry.examples.length - 1;
+
+          return (
+            <SpeakableSurface
+              key={exampleWord(example.parts)}
+              text={exampleReading(example.parts)}
+              sx={{
+                p: 1.5,
+                height: '100%',
+                gridColumn: isLoneLastOnMobile ? { xs: '1 / -1', md: 'auto' } : undefined
+              }}
+            >
+              <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
+                {exampleWord(example.parts)}
+                <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
+                  {exampleReading(example.parts)}
+                </Box>
+              </Typography>
+              <Typography variant="body2" sx={{ mt: 0.25 }}>
+                {example.meaning[locale]}
+              </Typography>
+            </SpeakableSurface>
+          );
+        })}
+      </Box>
+    </Paper>
   );
 }

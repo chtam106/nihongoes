@@ -58,7 +58,10 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'otsu',
     kana: 'おつ',
-    meaning: { en: 'second, fishhook', vi: 'ất - móc câu' }
+    meaning: {
+      en: 'the 2nd of the ten heavenly stems',
+      vi: 'ất - can Ất (thiên can thứ hai)'
+    }
   },
   {
     number: 6,
@@ -123,7 +126,7 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'keigamae',
     kana: 'けいがまえ',
-    meaning: { en: 'down box', vi: 'quynh - vùng biên' }
+    meaning: { en: 'down box, enclosure', vi: 'quynh - khung bao (mở xuống dưới)' }
   },
   {
     number: 14,
@@ -155,7 +158,7 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'ukebako',
     kana: 'うけばこ',
-    meaning: { en: 'open box', vi: 'khảm - há miệng' }
+    meaning: { en: 'open box, container', vi: 'khảm - cái hộp mở miệng, đồ chứa' }
   },
   {
     number: 18,
@@ -252,7 +255,10 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'mata',
     kana: 'また',
-    meaning: { en: 'again; hand (as a component)', vi: 'hựu - lại nữa; bàn tay (khi ghép chữ)' }
+    meaning: {
+      en: 'again; hand (when used in other kanji)',
+      vi: 'hựu - lại nữa; bàn tay (khi ghép chữ)'
+    }
   },
   {
     number: 30,
@@ -284,7 +290,7 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'samurai',
     kana: 'さむらい',
-    meaning: { en: 'scholar', vi: 'sĩ - học trò' }
+    meaning: { en: 'scholar, gentleman, samurai', vi: 'sĩ - kẻ sĩ, quý ông (người văn/võ)' }
   },
   {
     number: 34,
@@ -292,7 +298,10 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'chi',
     kana: 'ち',
-    meaning: { en: 'go', vi: 'truy - đến sau' }
+    meaning: {
+      en: 'to come after, to trail behind',
+      vi: 'truy - đến sau, theo sau'
+    }
   },
   {
     number: 35,
@@ -348,7 +357,10 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'sun',
     kana: 'すん',
-    meaning: { en: 'inch; hand (as a component)', vi: 'thốn - tấc; bàn tay (khi ghép chữ)' }
+    meaning: {
+      en: 'a small unit of length (~3cm, like an inch); hand (when used in other kanji)',
+      vi: 'thốn - tấc (đơn vị đo chiều dài ngắn, ~3cm); bàn tay (khi ghép chữ)'
+    }
   },
   {
     number: 42,
@@ -373,7 +385,7 @@ export const radicals: Radical[] = [
     name: 'shikabane',
     kana: 'しかばね',
     meaning: {
-      en: 'corpse; roof/dwelling (as a component)',
+      en: 'corpse; roof/dwelling (when used in other kanji)',
       vi: 'thi - xác chết; mái, nhà (khi ghép chữ)'
     }
   },
@@ -620,7 +632,7 @@ export const radicals: Radical[] = [
     name: 'tsuki',
     kana: 'つき',
     meaning: {
-      en: 'moon; flesh/body (as a component)',
+      en: 'moon; flesh/body (when used in other kanji)',
       vi: 'nguyệt - mặt trăng; thịt, thân thể (khi ghép chữ)'
     }
   },
@@ -876,7 +888,7 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'hatsugashira',
     kana: 'はつがしら',
-    meaning: { en: 'dotted tent', vi: 'bát - gạt ngang' }
+    meaning: { en: 'outspread legs, departure', vi: 'bát - hai chân dang ra (bộ chân bước)' }
   },
   {
     number: 106,
@@ -941,7 +953,7 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'shimesu',
     kana: 'しめす',
-    meaning: { en: 'altar, spirit', vi: 'thị - thần đất' }
+    meaning: { en: 'altar, spirit, to show', vi: 'thị - bàn thờ; thần linh' }
   },
   {
     number: 114,
@@ -1023,7 +1035,7 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'hitsuji',
     kana: 'ひつじ',
-    meaning: { en: 'sheep', vi: 'dương - con dê' }
+    meaning: { en: 'sheep', vi: 'dương - con cừu (dê)' }
   },
   {
     number: 124,
@@ -1667,7 +1679,7 @@ export const radicals: Radical[] = [
     strokes: 12,
     name: 'kibi',
     kana: 'きび',
-    meaning: { en: 'millet', vi: 'thử - lúa nếp' }
+    meaning: { en: 'millet', vi: 'thử - cây kê (lúa nếp)' }
   },
   {
     number: 203,

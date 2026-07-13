@@ -1,9 +1,9 @@
-import { grade1Lessons, grade2Lessons, grade3Lessons } from './lessons.ts';
+import { grade1Lessons, grade2Lessons, grade3Lessons, grade4Lessons } from './lessons.ts';
 import { radicals, type Radical } from './radicals.ts';
 import type { Bilingual, KanjiLesson } from './types.ts';
 
 export * from './types.ts';
-export { grade1Lessons, grade2Lessons, grade3Lessons } from './lessons.ts';
+export { grade1Lessons, grade2Lessons, grade3Lessons, grade4Lessons } from './lessons.ts';
 export { radicals };
 export type { Radical };
 
@@ -62,7 +62,21 @@ const grade3Track: KanjiTrack = {
   lessons: grade3Lessons
 };
 
-export const kanjiTracks: KanjiTrack[] = [grade1Track, grade2Track, grade3Track];
+const grade4Track: KanjiTrack = {
+  slug: 'grade-4',
+  name: { en: 'Grade 4 kanji', vi: 'Kanji lớp 4' },
+  subtitle: {
+    en: 'The 202 fourth-grade Jōyō kanji, 10 characters per lesson.',
+    vi: '202 chữ kanji Jōyō lớp 4, mỗi bài 10 chữ.'
+  },
+  intro: {
+    en: 'The 202 kanji taught in fourth grade in Japan: feelings, society, nature, and more abstract ideas. Work through them in small, ordered lessons of 10 characters, each with meanings, on and kun readings, and example words you can tap to hear.',
+    vi: '202 chữ kanji được dạy ở lớp 4 tại Nhật: cảm xúc, xã hội, thiên nhiên và nhiều khái niệm trừu tượng hơn. Học theo từng bài nhỏ, có thứ tự, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, và các từ ví dụ có thể bấm để nghe.'
+  },
+  lessons: grade4Lessons
+};
+
+export const kanjiTracks: KanjiTrack[] = [grade1Track, grade2Track, grade3Track, grade4Track];
 
 export function getKanjiTrack(slug: string): KanjiTrack | undefined {
   return kanjiTracks.find((track) => track.slug === slug);

@@ -299,6 +299,8 @@ const en: TranslationTree = {
       "On'yomi (音読み) is the reading borrowed from Chinese, usually used in compound words, e.g. 三月 (さんがつ, March).",
     kunReadingDesc:
       "Kun'yomi (訓読み) is the native Japanese reading, used when the kanji stands alone or takes kana endings, e.g. 三つ (みっつ, three items).",
+    readingScriptNote:
+      "By convention the readings list writes on'yomi in katakana (シュ) and kun'yomi in hiragana (さけ). Example words show furigana in hiragana, so the same on'yomi can look like シュ in the list but しゅ in a word.",
     examples: 'Example words',
     mnemonic: 'Mnemonic',
     note: 'Note',
@@ -321,11 +323,12 @@ const en: TranslationTree = {
     radicalsStrokesGroup: '{{count}} strokes',
     radicalsCount: '{{count}} radicals',
     radicalsLegendHeading: 'How to read a radical card',
+    radicalsLegendNumber: "Top-left tag - the radical's Kangxi index number (1-214).",
     radicalsLegendChar: 'Large character - the radical in its standalone form.',
     radicalsLegendVariant:
       'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',
-    radicalsLegendMeaning: 'Bold line - the English meaning of the radical.',
-    radicalsLegendName: 'Grey line - the Japanese name of the radical (in romaji).',
+    radicalsLegendMeaning: 'Bold line - the meaning of the radical.',
+    radicalsLegendName: 'Grey line - the Japanese name of the radical (in kana).',
     notFoundTitle: 'Lesson not found',
     notFoundBody: 'This kanji lesson does not exist. Go back to the kanji overview.'
   },

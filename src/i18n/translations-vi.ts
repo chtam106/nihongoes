@@ -291,6 +291,8 @@ export const viTranslations: TranslationTree = {
       'Âm ON (音読み) là âm đọc mượn từ tiếng Hán, thường dùng trong từ ghép, vd 三月 (さんがつ, tháng Ba).',
     kunReadingDesc:
       'Âm KUN (訓読み) là âm đọc thuần Nhật, dùng khi chữ đứng riêng hoặc có đuôi kana, vd 三つ (みっつ, ba cái).',
+    readingScriptNote:
+      'Theo quy ước, danh sách cách đọc viết âm ON bằng katakana (シュ) và âm KUN bằng hiragana (さけ). Từ ví dụ hiện furigana bằng hiragana, nên cùng một âm ON có thể trông là シュ trong danh sách nhưng しゅ trong từ.',
     examples: 'Từ ví dụ',
     mnemonic: 'Cách ghi nhớ',
     note: 'Lưu ý',
@@ -313,11 +315,12 @@ export const viTranslations: TranslationTree = {
     radicalsStrokesGroup: '{{count}} nét',
     radicalsCount: '{{count}} bộ thủ',
     radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
+    radicalsLegendNumber: 'Nhãn góc trên trái - số thứ tự bộ thủ theo Khang Hy (1-214).',
     radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
     radicalsLegendVariant:
       'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
     radicalsLegendMeaning: 'Dòng in đậm - nghĩa của bộ thủ (Hán-Việt - nghĩa tiếng Việt).',
-    radicalsLegendName: 'Dòng xám - tên tiếng Nhật của bộ thủ (romaji).',
+    radicalsLegendName: 'Dòng xám - tên tiếng Nhật của bộ thủ (kana).',
     notFoundTitle: 'Không tìm thấy bài học',
     notFoundBody: 'Bài kanji này không tồn tại. Hãy quay lại trang tổng quan Kanji.'
   },

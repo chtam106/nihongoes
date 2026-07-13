@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {
@@ -26,6 +25,7 @@ import {
   getKanjiTrack,
   KANJI_BASE_PATH,
   kanjiLessonPath,
+  kanjiTrackPath,
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
 
@@ -50,18 +50,16 @@ function KanjiWriting({ trackSlug, lesson }: KanjiWritingProps) {
     <PageContainer>
       <Stack spacing={3}>
         <Box>
-          <Box sx={{ mb: 1 }}>
-            <Button
-              component={RouterLink}
-              to={kanjiLessonPath(trackSlug, lesson.id)}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {lesson.title[locale]}
-            </Button>
-          </Box>
           <Stack direction="row" spacing={1} useFlexGap sx={{ mb: 1, flexWrap: 'wrap' }}>
+            <Chip
+              label={getKanjiTrack(trackSlug)?.name[locale] ?? ''}
+              color="secondary"
+              variant="outlined"
+              size="small"
+              component={RouterLink}
+              to={kanjiTrackPath(trackSlug)}
+              clickable
+            />
             <Chip
               label={t('kanji.lessonLabel', { number: lesson.number })}
               color="primary"

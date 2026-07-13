@@ -17,6 +17,7 @@ import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 // Colors that connect each part of the sample card to its explanation.
 const PART_COLORS = {
+  number: '#c2185b',
   char: '#1565c0',
   variant: '#e65100',
   meaning: '#2e7d32',
@@ -52,6 +53,7 @@ function RadicalLegend() {
   }
 
   const items = [
+    { color: PART_COLORS.number, text: t('kanji.radicalsLegendNumber') },
     { color: PART_COLORS.char, text: t('kanji.radicalsLegendChar') },
     { color: PART_COLORS.variant, text: t('kanji.radicalsLegendVariant') },
     { color: PART_COLORS.meaning, text: t('kanji.radicalsLegendMeaning') },
@@ -69,6 +71,7 @@ function RadicalLegend() {
           sx={[
             elevatedSurfaceSx,
             {
+              position: 'relative',
               p: 1.5,
               display: 'flex',
               gap: 1.5,
@@ -78,6 +81,21 @@ function RadicalLegend() {
             }
           ]}
         >
+          <Typography
+            component="span"
+            sx={{
+              position: 'absolute',
+              top: 6,
+              left: 8,
+              zIndex: 1,
+              fontSize: 12,
+              lineHeight: 1,
+              fontWeight: 600,
+              color: PART_COLORS.number
+            }}
+          >
+            #{sample.number}
+          </Typography>
           <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
             <Typography
               lang="ja"
@@ -135,8 +153,6 @@ type RadicalCardProps = {
 };
 
 function RadicalCard({ radical, highlighted }: RadicalCardProps) {
-  const { locale } = useTranslation();
-
   return (
     <Paper
       elevation={0}
@@ -144,7 +160,8 @@ function RadicalCard({ radical, highlighted }: RadicalCardProps) {
       sx={[
         subtleSurfaceSx,
         {
-          p: 1.5,
+          position: 'relative',
+          p: 2,
           display: 'flex',
           gap: 1.5,
           alignItems: 'center',
@@ -159,6 +176,21 @@ function RadicalCard({ radical, highlighted }: RadicalCardProps) {
         }
       ]}
     >
+      <Typography
+        component="span"
+        sx={{
+          position: 'absolute',
+          top: 6,
+          left: 8,
+          zIndex: 1,
+          fontSize: 12,
+          lineHeight: 1,
+          fontWeight: 600,
+          color: 'text.secondary'
+        }}
+      >
+        #{radical.number}
+      </Typography>
       <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
         <Typography lang="ja" sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1 }}>
           {radical.char}
@@ -170,14 +202,40 @@ function RadicalCard({ radical, highlighted }: RadicalCardProps) {
         )}
       </Box>
       <Box sx={{ minWidth: 0 }}>
-        <Typography variant="body1" sx={{ fontWeight: 600 }}>
-          {locale === 'vi' ? formatKanjiMeaning(radical.meaning.vi) : radical.meaning.en}
-        </Typography>
+        <RadicalMeaning radical={radical} />
         <Typography lang="ja" variant="body2" color="text.secondary">
           {radical.kana}
         </Typography>
       </Box>
     </Paper>
+  );
+}
+
+type RadicalMeaningProps = {
+  radical: Radical;
+};
+
+/**
+ * The radical's meaning. The primary sense is on the first line; any extra
+ * senses (split on "; ", e.g. a "when used in other kanji" note) drop to their
+ * own lighter line so they do not crowd the primary meaning.
+ */
+function RadicalMeaning({ radical }: RadicalMeaningProps) {
+  const { locale } = useTranslation();
+  const text = locale === 'vi' ? formatKanjiMeaning(radical.meaning.vi) : radical.meaning.en;
+  const [primary, ...notes] = text.split('; ');
+
+  return (
+    <>
+      <Typography variant="body1" sx={{ fontWeight: 600 }}>
+        {primary}
+      </Typography>
+      {notes.map((note) => (
+        <Typography key={note} variant="body2" color="text.secondary">
+          {note}
+        </Typography>
+      ))}
+    </>
   );
 }
 
