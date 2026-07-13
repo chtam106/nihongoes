@@ -323,7 +323,8 @@ const en: TranslationTree = {
     radicalsStrokesGroup: '{{count}} strokes',
     radicalsCount: '{{count}} radicals',
     radicalsLegendHeading: 'How to read a radical card',
-    radicalsLegendNumber: "Top-left tag - the radical's Kangxi index number (1-214).",
+    radicalsLegendNumber:
+      "Top-left tag - the radical's number in the standard 214-radical order (1-214).",
     radicalsLegendChar: 'Large character - the radical in its standalone form.',
     radicalsLegendVariant:
       'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',

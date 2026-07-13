@@ -315,7 +315,8 @@ export const viTranslations: TranslationTree = {
     radicalsStrokesGroup: '{{count}} nét',
     radicalsCount: '{{count}} bộ thủ',
     radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
-    radicalsLegendNumber: 'Nhãn góc trên trái - số thứ tự bộ thủ theo Khang Hy (1-214).',
+    radicalsLegendNumber:
+      'Nhãn góc trên trái - số thứ tự của bộ thủ trong bảng 214 bộ chuẩn (1-214).',
     radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
     radicalsLegendVariant:
       'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
