@@ -223,25 +223,40 @@ export function KanjiCard({ entry, index }: KanjiCardProps) {
         >
           {t('kanji.examples')}
         </Typography>
-        <Stack spacing={1}>
-          {entry.examples.map((example) => (
-            <SpeakableSurface
-              key={exampleWord(example.parts)}
-              text={exampleReading(example.parts)}
-              sx={{ p: 1.5 }}
-            >
-              <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                {exampleWord(example.parts)}
-                <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
-                  {exampleReading(example.parts)}
-                </Box>
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 0.25 }}>
-                {example.meaning[locale]}
-              </Typography>
-            </SpeakableSurface>
-          ))}
-        </Stack>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+            gap: 1
+          }}
+        >
+          {entry.examples.map((example, exampleIndex) => {
+            const isLoneLastOnMobile =
+              entry.examples.length % 2 === 1 && exampleIndex === entry.examples.length - 1;
+
+            return (
+              <SpeakableSurface
+                key={exampleWord(example.parts)}
+                text={exampleReading(example.parts)}
+                sx={{
+                  p: 1.5,
+                  height: '100%',
+                  gridColumn: isLoneLastOnMobile ? { xs: '1 / -1', md: 'auto' } : undefined
+                }}
+              >
+                <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
+                  {exampleWord(example.parts)}
+                  <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
+                    {exampleReading(example.parts)}
+                  </Box>
+                </Typography>
+                <Typography variant="body2" sx={{ mt: 0.25 }}>
+                  {example.meaning[locale]}
+                </Typography>
+              </SpeakableSurface>
+            );
+          })}
+        </Box>
       </Paper>
     </Box>
   );

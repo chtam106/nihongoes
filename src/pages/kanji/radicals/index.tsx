@@ -99,8 +99,8 @@ function RadicalLegend() {
             <Typography variant="body1" sx={{ fontWeight: 600, color: PART_COLORS.meaning }}>
               {locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en}
             </Typography>
-            <Typography variant="body2" sx={{ color: PART_COLORS.name }}>
-              {sample.name}
+            <Typography lang="ja" variant="body2" sx={{ color: PART_COLORS.name }}>
+              {sample.kana}
             </Typography>
           </Box>
         </Paper>
@@ -173,8 +173,8 @@ function RadicalCard({ radical, highlighted }: RadicalCardProps) {
         <Typography variant="body1" sx={{ fontWeight: 600 }}>
           {locale === 'vi' ? formatKanjiMeaning(radical.meaning.vi) : radical.meaning.en}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {radical.name}
+        <Typography lang="ja" variant="body2" color="text.secondary">
+          {radical.kana}
         </Typography>
       </Box>
     </Paper>

@@ -20,15 +20,19 @@ export function Footer() {
       }}
     >
       <Container maxWidth="md" disableGutters>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" sx={{ fontSize: '0.875rem' }}>
           {FOOTER_VIBE}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+        <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, fontSize: '0.875rem' }}>
           <Link href={CONTACT_HREF} color="primary" underline="hover">
             Contact us
           </Link>
         </Typography>
-        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 0.5 }}>
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ display: 'block', mt: 0.5, fontSize: '0.75rem' }}
+        >
           © {year} Nihongoes · All rights not reserved.
         </Typography>
       </Container>
