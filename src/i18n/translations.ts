@@ -39,6 +39,11 @@ const en: TranslationTree = {
       title: 'Page Not Found (404)',
       description: 'The page you requested could not be found.'
     },
+    kanji: {
+      title: 'Learn Jōyō Kanji Step by Step',
+      description:
+        'Learn the Jōyō kanji in bite-sized lessons of 10 characters each, with meanings, on and kun readings, example words, and native audio.'
+    },
     alphabet: {
       title: 'Learn the Japanese Alphabet - Hiragana and Katakana',
       description:
@@ -260,6 +265,69 @@ const en: TranslationTree = {
     yoonRowDefault: 'Yoon row',
     rowToLast: 'To last row',
     rowLabel: '{{name}} row ({{char}})'
+  },
+  kanji: {
+    overviewTitle: 'Kanji',
+    overviewSubtitle: 'Choose a grade to start studying.',
+    overviewIntro:
+      "Study kanji step by step: pick a grade below and work through it lesson by lesson, with meanings, on'yomi and kun'yomi readings, example words, and writing practice.",
+    collectionsHeading: 'Jōyō kanji by grade',
+    aboutHeading: 'What is kanji?',
+    aboutWhat:
+      'Kanji (漢字) are meaning-based characters adapted from Chinese. Each one carries a meaning and one or more readings, and they are written alongside the hiragana and katakana syllabaries.',
+    aboutCount:
+      'There are tens of thousands of kanji in total, but only about 2,136 Jōyō (everyday-use) kanji are needed to read most modern Japanese - newspapers, books, and signs. Around 1,000 of these are taught in elementary school.',
+    aboutJlpt:
+      'For the JLPT you need roughly 100 kanji at N5, 300 at N4, 650 at N3, 1,000 at N2, and 2,000+ at N1.',
+    tipsHeading: 'How to learn kanji',
+    tipsContext:
+      'Learn kanji through vocabulary - real words in context - rather than memorizing characters in isolation.',
+    tipsRadicals:
+      'Break each kanji into its radicals (component parts); it is far easier to remember 休 as "person 亻 + tree 木" than as separate strokes.',
+    tipsReview:
+      'Practice both directions - recognizing meaning and recalling the kanji - and review regularly so readings stick.',
+    lessonsHeading: 'Lessons',
+    lessonLabel: 'Lesson {{number}}',
+    lessonCount: '{{count}} lessons',
+    kanjiCount: '{{count}} kanji',
+    detailHint: 'Tap an example word to hear it pronounced.',
+    meaningLabel: 'Meaning',
+    onReading: "On'yomi",
+    kunReading: "Kun'yomi",
+    readingsTitle: "On'yomi & Kun'yomi",
+    onReadingDesc:
+      "On'yomi (音読み) is the reading borrowed from Chinese, usually used in compound words, e.g. 三月 (さんがつ, March).",
+    kunReadingDesc:
+      "Kun'yomi (訓読み) is the native Japanese reading, used when the kanji stands alone or takes kana endings, e.g. 三つ (みっつ, three items).",
+    examples: 'Example words',
+    mnemonic: 'Mnemonic',
+    note: 'Note',
+    kanjiHeading: 'Kanji {{number}}',
+    practiceHeading: 'Practice',
+    practiceSubtitle: "Test yourself on this lesson's kanji.",
+    quizTitle: 'Meaning quiz',
+    quizMeaning: 'Kanji -> meaning',
+    quizCharacter: 'Meaning -> kanji',
+    quizMeaningPrompt: 'What does this kanji mean?',
+    quizCharacterPrompt: 'Which kanji has this meaning?',
+    writing: 'Write kanji',
+    writingKanji: 'Kanji',
+    reviewLesson: 'Review lesson',
+    radicals: 'Radicals',
+    radicalsTitle: 'Kanji radicals (部首)',
+    radicalsSubtitle: 'The 214 building blocks used to form kanji.',
+    radicalsIntro:
+      'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up. They are grouped below by stroke count.',
+    radicalsStrokesGroup: '{{count}} strokes',
+    radicalsCount: '{{count}} radicals',
+    radicalsLegendHeading: 'How to read a radical card',
+    radicalsLegendChar: 'Large character - the radical in its standalone form.',
+    radicalsLegendVariant:
+      'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',
+    radicalsLegendMeaning: 'Bold line - the English meaning of the radical.',
+    radicalsLegendName: 'Grey line - the Japanese name of the radical (in romaji).',
+    notFoundTitle: 'Lesson not found',
+    notFoundBody: 'This kanji lesson does not exist. Go back to the kanji overview.'
   },
   course: {
     lessonsHeading: 'Lessons',

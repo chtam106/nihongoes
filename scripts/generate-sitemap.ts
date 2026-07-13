@@ -3,12 +3,15 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { routes, SITEMAP_PATHS } from '@/constants/routes.ts';
 import { COURSE_SITEMAP_PATHS } from '@/constants/courses/index.ts';
+import { KANJI_SITEMAP_PATHS } from '@/constants/kanji/index.ts';
 import { SITE_URL } from '@/constants/site.ts';
 import { withLocale } from '@/i18n/locale-routing.ts';
 
 const lastmod = new Date().toISOString().slice(0, 10);
 const distDir = join(dirname(fileURLToPath(import.meta.url)), '../dist');
-const logicalPaths = Array.from(new Set([...SITEMAP_PATHS, ...COURSE_SITEMAP_PATHS]));
+const logicalPaths = Array.from(
+  new Set([...SITEMAP_PATHS, ...COURSE_SITEMAP_PATHS, ...KANJI_SITEMAP_PATHS])
+);
 
 function absoluteUrl(logicalPath: string, locale: 'vi' | 'en') {
   const path = withLocale(logicalPath, locale);

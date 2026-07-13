@@ -34,6 +34,11 @@ export const viTranslations: TranslationTree = {
       title: 'Không tìm thấy trang (404)',
       description: 'Không tìm thấy trang bạn yêu cầu.'
     },
+    kanji: {
+      title: 'Học Kanji thông dụng (Jōyō) từng bước',
+      description:
+        'Học kanji thông dụng (Jōyō) theo từng bài nhỏ, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, từ ví dụ và phát âm chuẩn.'
+    },
     alphabet: {
       title: 'Bảng chữ cái tiếng Nhật - Hiragana và Katakana',
       description:
@@ -252,6 +257,69 @@ export const viTranslations: TranslationTree = {
     yoonRowDefault: 'Hàng yoon',
     rowToLast: 'Đến hàng cuối',
     rowLabel: 'Hàng {{name}} ({{char}})'
+  },
+  kanji: {
+    overviewTitle: 'Kanji',
+    overviewSubtitle: 'Chọn một lớp để bắt đầu học.',
+    overviewIntro:
+      'Học kanji từng bước: chọn một lớp bên dưới và học theo từng bài, kèm nghĩa, âm ON và KUN, từ ví dụ và luyện viết.',
+    collectionsHeading: 'Jōyō kanji theo lớp',
+    aboutHeading: 'Kanji là gì?',
+    aboutWhat:
+      'Kanji (漢字) là chữ biểu nghĩa mượn từ tiếng Hán. Mỗi chữ mang một nghĩa và một hoặc nhiều cách đọc, được viết xen kẽ với hai bảng chữ hiragana và katakana.',
+    aboutCount:
+      'Tổng cộng có hàng chục nghìn chữ kanji, nhưng chỉ cần khoảng 2.136 chữ Jōyō (thông dụng) là đọc được hầu hết tiếng Nhật hiện đại - báo chí, sách vở và biển hiệu. Trong đó khoảng 1.000 chữ được dạy ở bậc tiểu học.',
+    aboutJlpt:
+      'Với JLPT, bạn cần khoảng 100 chữ ở N5, 300 ở N4, 650 ở N3, 1.000 ở N2 và hơn 2.000 ở N1.',
+    tipsHeading: 'Cách học kanji',
+    tipsContext:
+      'Học kanji qua từ vựng - các từ thật trong ngữ cảnh - thay vì học thuộc từng chữ rời rạc.',
+    tipsRadicals:
+      'Phân tách mỗi kanji thành các bộ thủ (thành phần cấu tạo); nhớ 休 là "người 亻 + cây 木" dễ hơn nhiều so với nhớ từng nét.',
+    tipsReview:
+      'Luyện cả hai chiều - nhận diện nghĩa và nhớ lại chữ - và ôn lại thường xuyên để nhớ cách đọc.',
+    lessonsHeading: 'Danh sách bài học',
+    lessonLabel: 'Bài {{number}}',
+    lessonCount: '{{count}} bài',
+    kanjiCount: '{{count}} chữ kanji',
+    detailHint: 'Bấm vào từ ví dụ để nghe phát âm.',
+    meaningLabel: 'Nghĩa',
+    onReading: 'Âm ON',
+    kunReading: 'Âm KUN',
+    readingsTitle: 'Âm ON & Âm KUN',
+    onReadingDesc:
+      'Âm ON (音読み) là âm đọc mượn từ tiếng Hán, thường dùng trong từ ghép, vd 三月 (さんがつ, tháng Ba).',
+    kunReadingDesc:
+      'Âm KUN (訓読み) là âm đọc thuần Nhật, dùng khi chữ đứng riêng hoặc có đuôi kana, vd 三つ (みっつ, ba cái).',
+    examples: 'Từ ví dụ',
+    mnemonic: 'Cách ghi nhớ',
+    note: 'Lưu ý',
+    kanjiHeading: 'Chữ {{number}}',
+    practiceHeading: 'Luyện tập',
+    practiceSubtitle: 'Tự kiểm tra kanji của bài này.',
+    quizTitle: 'Luyện nghĩa',
+    quizMeaning: 'Nhìn kanji chọn nghĩa',
+    quizCharacter: 'Nhìn nghĩa chọn kanji',
+    quizMeaningPrompt: 'Kanji này nghĩa là gì?',
+    quizCharacterPrompt: 'Kanji nào mang nghĩa này?',
+    writing: 'Viết kanji',
+    writingKanji: 'Kanji',
+    reviewLesson: 'Xem lại bài học',
+    radicals: 'Bộ thủ',
+    radicalsTitle: 'Bộ thủ kanji (部首)',
+    radicalsSubtitle: '214 thành phần cấu tạo nên chữ kanji.',
+    radicalsIntro:
+      'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn. Bên dưới sắp xếp theo số nét.',
+    radicalsStrokesGroup: '{{count}} nét',
+    radicalsCount: '{{count}} bộ thủ',
+    radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
+    radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
+    radicalsLegendVariant:
+      'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
+    radicalsLegendMeaning: 'Dòng in đậm - nghĩa của bộ thủ (Hán-Việt - nghĩa tiếng Việt).',
+    radicalsLegendName: 'Dòng xám - tên tiếng Nhật của bộ thủ (romaji).',
+    notFoundTitle: 'Không tìm thấy bài học',
+    notFoundBody: 'Bài kanji này không tồn tại. Hãy quay lại trang tổng quan Kanji.'
   },
   course: {
     lessonsHeading: 'Danh sách bài học',
