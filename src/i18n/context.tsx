@@ -92,7 +92,8 @@ export function LanguageProvider({ children, initialTranslations }: LanguageProv
     (nextLocale: Locale) => {
       const logicalPath = stripLocalePrefix(location.pathname);
       const target = `${withLocale(logicalPath, nextLocale)}${location.search}${location.hash}`;
-      navigate(target);
+      // Replace so switching language does not add a history entry or reset scroll.
+      navigate(target, { replace: true });
     },
     [location.pathname, location.search, location.hash, navigate]
   );

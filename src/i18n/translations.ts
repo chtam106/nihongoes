@@ -328,6 +328,13 @@ const en: TranslationTree = {
       'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up. They are grouped below by stroke count.',
     radicalsStrokesGroup: '{{count}} strokes',
     radicalsCount: '{{count}} radicals',
+    radicalsFilterAll: 'All',
+    radicalsFilterCommon: 'Most common',
+    radicalsCommonHeading: 'Most common radicals',
+    radicalsCommonHint:
+      'The radicals that appear in the most kanji across the lessons, ordered by how often they are used.',
+    radicalsCommonStats: '{{radicals}} radicals - found in {{kanji}} kanji',
+    radicalsUsageCount: 'in {{count}} kanji',
     radicalsLegendHeading: 'How to read a radical card',
     radicalsLegendNumber:
       "Top-left tag - the radical's order number in the traditional Kangxi table (1-214). The order follows the table, so a few radicals (e.g. 母, #80, has 5 strokes) may not run consecutively within a stroke group.",

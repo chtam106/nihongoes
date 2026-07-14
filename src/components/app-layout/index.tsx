@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import { PageMeta } from '@/components/page-meta';
+import { ScrollManager } from '@/components/scroll-manager';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
 
 const drawerWidth = 320;
@@ -27,6 +28,7 @@ function AppLayout({ children }: AppLayoutProps) {
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100svh' }}>
+      <ScrollManager />
       <PageMeta />
 
       <Header

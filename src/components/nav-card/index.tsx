@@ -43,7 +43,7 @@ export function NavCardGrid({ items, titleComponent = 'h2' }: NavCardGridProps) 
                   <Typography
                     variant="h5"
                     component="span"
-                    sx={{ display: 'inline-flex', lineHeight: 1 }}
+                    sx={{ display: 'inline-flex', lineHeight: 1, color: 'primary.main' }}
                   >
                     {item.symbol}
                     {item.symbol == null && Icon && <Icon fontSize="inherit" />}

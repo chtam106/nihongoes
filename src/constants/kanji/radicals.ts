@@ -1312,6 +1312,7 @@ export const radicals: Radical[] = [
   {
     number: 157,
     char: '足',
+    variants: ['⻊'],
     strokes: 7,
     name: 'ashi',
     kana: 'あし',
@@ -1378,6 +1379,7 @@ export const radicals: Radical[] = [
   {
     number: 165,
     char: '釆',
+    variants: ['采'],
     strokes: 7,
     name: 'nogome',
     kana: 'のごめ',
