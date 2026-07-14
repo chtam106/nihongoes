@@ -135,7 +135,7 @@ function KanjiLessonPage() {
 
         <KanjiReadingsNote collapsible />
 
-        <KanjiComponentLegend />
+        <KanjiComponentLegend collapsible />
 
         <Stack spacing={5}>
           {lesson.kanji.map((entry, index) => (

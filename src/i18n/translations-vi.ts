@@ -320,6 +320,13 @@ export const viTranslations: TranslationTree = {
       'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn. Bên dưới sắp xếp theo số nét.',
     radicalsStrokesGroup: '{{count}} nét',
     radicalsCount: '{{count}} bộ thủ',
+    radicalsFilterAll: 'Tất cả',
+    radicalsFilterCommon: 'Thông dụng nhất',
+    radicalsCommonHeading: 'Bộ thủ thông dụng nhất',
+    radicalsCommonHint:
+      'Những bộ thủ xuất hiện trong nhiều chữ kanji nhất qua các bài học, sắp xếp theo mức độ sử dụng.',
+    radicalsCommonStats: '{{radicals}} bộ - có trong {{kanji}} kanji',
+    radicalsUsageCount: 'trong {{count}} kanji',
     radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
     radicalsLegendNumber:
       'Nhãn góc trên trái - số thứ tự của bộ thủ theo bảng Khang Hy (Kangxi) truyền thống (1-214). Thứ tự bám theo bảng này, nên vài bộ (vd 母, #80, có 5 nét) có thể không liền số trong cùng một nhóm nét.',
