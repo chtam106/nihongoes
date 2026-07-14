@@ -44,14 +44,13 @@ export type KanjiEntry = {
   onyomi: string[];
   /** Kun'yomi readings in hiragana; okurigana is marked after a dot (e.g. ひと.つ). */
   kunyomi: string[];
-  /** Radical/component characters that make up the kanji, in reading order (e.g. 休 -> ['亻', '木']). */
-  components: string[];
   /**
    * Full component breakdown with roles (bộ thủ chính / gợi nghĩa / gợi âm / khác).
-   * When present, the card shows this instead of `components`. List every
-   * building block; exactly one should be `radical` (the dictionary radical).
+   * List every building block; exactly one should be `radical` (the dictionary
+   * radical). For an atomic kanji that is itself a radical, use a single
+   * `radical` part equal to the character (e.g. 木 -> [{ char: '木', role: 'radical' }]).
    */
-  parts?: KanjiComponent[];
+  parts: KanjiComponent[];
   /** Optional memory aid, e.g. "person 亻 resting by a tree 木 = rest". Only set when there is a good one. */
   mnemonic?: Bilingual;
   /** Optional usage note (reading caveats, common confusions, when to use which reading, etc.). */
