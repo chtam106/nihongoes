@@ -46,7 +46,11 @@ function KanjiTrackPage() {
 
   const renderLessonCard = (lesson: KanjiLesson) => (
     <Card key={lesson.id} elevation={0} sx={interactiveSurfaceSx}>
-      <CardActionArea component={RouterLink} to={kanjiLessonPath(track.slug, lesson.id)}>
+      <CardActionArea
+        component={RouterLink}
+        to={kanjiLessonPath(track.slug, lesson.id)}
+        sx={{ userSelect: 'text' }}
+      >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
             <Chip
@@ -90,9 +94,6 @@ function KanjiTrackPage() {
           <Heading component="h1" gutterBottom>
             {track.name[locale]}
           </Heading>
-          <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400, mb: 2 }}>
-            {track.subtitle[locale]}
-          </Typography>
           <Typography variant="body1" color="text.secondary">
             {track.intro[locale]}
           </Typography>

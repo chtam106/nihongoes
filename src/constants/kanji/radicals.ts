@@ -373,6 +373,7 @@ export const radicals: Radical[] = [
   {
     number: 43,
     char: '尢',
+    variants: ['尤'],
     strokes: 3,
     name: 'dainomage',
     kana: 'だいのまげ',
@@ -678,11 +679,12 @@ export const radicals: Radical[] = [
   },
   {
     number: 80,
-    char: '毋',
-    strokes: 4,
-    name: 'nakare',
-    kana: 'なかれ',
-    meaning: { en: 'do not', vi: 'vô - chớ' }
+    char: '母',
+    variants: ['毋'],
+    strokes: 5,
+    name: 'haha / nakare',
+    kana: 'はは',
+    meaning: { en: 'mother', vi: 'mẫu - mẹ' }
   },
   {
     number: 81,

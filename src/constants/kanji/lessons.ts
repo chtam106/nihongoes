@@ -1,9 +1,8 @@
 import { withSequentialNumbers, type KanjiLesson } from './types.ts';
 
 /**
- * Grade 1 Jōyō kanji (80 characters), learned 10 per lesson. Lesson 1 covers
- * the numbers 一 through 十. Author each lesson by hand; keep 10 kanji per lesson
- * and add new lessons in order.
+ * Grade 1 Jōyō kanji (80 characters), authored by hand in ordered lessons
+ * (~10 per lesson as a loose target, not fixed). Lesson 1 covers 一 through 十.
  */
 export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
   {
@@ -18,10 +17,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イチ', 'イツ'],
         kunyomi: ['ひと', 'ひと.つ'],
         components: ['一'],
-        mnemonic: {
-          en: 'Just a single horizontal stroke, drawn once to stand for the number one.',
-          vi: 'Chỉ một vạch ngang duy nhất, tượng trưng cho số một.'
-        },
         examples: [
           {
             parts: [
@@ -52,10 +47,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ニ'],
         kunyomi: ['ふた', 'ふた.つ'],
         components: ['一', '一'],
-        mnemonic: {
-          en: 'Two horizontal strokes stacked up, one for each unit of two.',
-          vi: 'Hai vạch ngang xếp chồng lên nhau, mỗi vạch là một đơn vị của số hai.'
-        },
         examples: [
           {
             parts: [
@@ -86,10 +77,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['サン'],
         kunyomi: ['み', 'み.つ', 'みっ.つ'],
         components: ['一', '一', '一'],
-        mnemonic: {
-          en: 'Three horizontal strokes stacked up, counting out the number three.',
-          vi: 'Ba vạch ngang xếp chồng lên nhau, đếm thành số ba.'
-        },
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -123,6 +111,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['よ', 'よ.つ', 'よっ.つ', 'よん'],
         components: ['囗', '儿'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '儿', role: 'other' }
+        ],
         note: {
           en: 'When counting, 四 is usually read よん, not し (which sounds like 死 "death") - but fixed words keep し, e.g. 四月 (しがつ).',
           vi: 'Khi đếm, 四 thường đọc よん chứ không đọc し (nghe giống 死 "chết") - nhưng từ cố định vẫn dùng し, vd 四月 (しがつ).'
@@ -160,6 +152,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゴ'],
         kunyomi: ['いつ', 'いつ.つ'],
         components: ['一', '一'],
+        parts: [{ char: '二', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -193,6 +186,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ロク'],
         kunyomi: ['む', 'む.つ', 'むっ.つ', 'むい'],
         components: ['亠', '八'],
+        parts: [
+          { char: '亠', role: 'other' },
+          { char: '八', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -219,6 +216,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シチ'],
         kunyomi: ['なな', 'なな.つ', 'なの'],
         components: ['一', '乚'],
+        parts: [
+          { char: '一', role: 'radical' },
+          { char: '乚', role: 'other' }
+        ],
         note: {
           en: "Often read なな when counting to avoid confusion with 一 (いち), though the on'yomi is しち (七月 = しちがつ).",
           vi: 'Khi đếm thường đọc なな cho khỏi nhầm với 一 (いち), dù âm ON là しち (七月 = しちがつ).'
@@ -275,6 +276,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キュウ', 'ク'],
         kunyomi: ['ここの', 'ここの.つ'],
         components: ['丿', '乚'],
+        parts: [{ char: '乙', role: 'radical' }],
         note: {
           en: 'Read きゅう or く; the month uses く (九月 = くがつ).',
           vi: 'Đọc きゅう hoặc く; tên tháng dùng く (九月 = くがつ).'
@@ -305,15 +307,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジュウ', 'ジッ'],
         kunyomi: ['とお', 'と'],
         components: ['一', '丨'],
-        mnemonic: {
-          en: 'A horizontal 一 crossed by a vertical 丨 makes a plus sign, the shape used for ten.',
-          vi: 'Vạch ngang 一 cắt nét sổ dọc 丨 tạo thành hình dấu cộng, chính là số mười.'
-        },
         examples: [
-          {
-            parts: [{ text: '十', reading: 'じゅう' }],
-            meaning: { en: 'ten', vi: 'mười' }
-          },
           {
             parts: [
               { text: '十', reading: 'じゅう' },
@@ -341,14 +335,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジン', 'ニン'],
         kunyomi: ['ひと'],
         components: ['人'],
-        mnemonic: {
-          en: 'A simple figure standing on two legs pictures a person.',
-          vi: 'Hình người đơn giản đứng trên hai chân, chính là con người.'
-        },
         examples: [
           {
-            parts: [{ text: '人', reading: 'ひと' }],
-            meaning: { en: 'person', vi: 'người' }
+            parts: [
+              { text: '人', reading: 'ひと' },
+              { text: '々', reading: 'びと' }
+            ],
+            meaning: { en: 'people', vi: 'mọi người' }
           },
           {
             parts: [{ text: '大人', reading: 'おとな' }],
@@ -369,10 +362,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ダイ', 'タイ'],
         kunyomi: ['おお', 'おお.きい'],
         components: ['大'],
-        mnemonic: {
-          en: 'A person 人 stretching both arms out as wide as they can looks big.',
-          vi: 'Người 人 dang rộng hai tay hết cỡ trông thật to lớn.'
-        },
         examples: [
           {
             parts: [
@@ -400,10 +389,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ショウ'],
         kunyomi: ['ちい.さい', 'こ', 'お'],
         components: ['小'],
-        mnemonic: {
-          en: 'A center line flanked by two tiny specks: something small.',
-          vi: 'Một nét ở giữa với hai chấm nhỏ xíu hai bên: thứ gì đó nhỏ bé.'
-        },
         examples: [
           {
             parts: [
@@ -427,14 +412,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['サン'],
         kunyomi: ['やま'],
         components: ['山'],
-        mnemonic: {
-          en: 'Three peaks rising up side by side form a mountain.',
-          vi: 'Ba đỉnh nhô lên cạnh nhau tạo thành ngọn núi.'
-        },
         examples: [
           {
-            parts: [{ text: '山', reading: 'やま' }],
-            meaning: { en: 'mountain', vi: 'núi' }
+            parts: [
+              { text: '山', reading: 'やま' },
+              { text: '道', reading: 'みち' }
+            ],
+            meaning: { en: 'mountain path', vi: 'đường núi' }
           },
           {
             parts: [
@@ -459,14 +443,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セン'],
         kunyomi: ['かわ'],
         components: ['川'],
-        mnemonic: {
-          en: 'Three lines of water flowing downstream make a river.',
-          vi: 'Ba dòng nước chảy xuôi tạo thành con sông.'
-        },
         examples: [
           {
-            parts: [{ text: '川', reading: 'かわ' }],
-            meaning: { en: 'river', vi: 'sông' }
+            parts: [
+              { text: '川', reading: 'かわ' },
+              { text: '岸', reading: 'ぎし' }
+            ],
+            meaning: { en: 'riverbank', vi: 'bờ sông' }
           },
           {
             parts: [
@@ -483,14 +466,14 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['モク', 'ボク'],
         kunyomi: ['き', 'こ'],
         components: ['木'],
-        mnemonic: {
-          en: 'A trunk with branches spreading up and roots reaching down: a tree.',
-          vi: 'Thân cây với cành vươn lên và rễ tỏa xuống: một cái cây.'
-        },
         examples: [
           {
-            parts: [{ text: '木', reading: 'き' }],
-            meaning: { en: 'tree', vi: 'cây' }
+            parts: [
+              { text: '木', reading: 'き' },
+              { text: 'の', reading: 'の' },
+              { text: '実', reading: 'み' }
+            ],
+            meaning: { en: 'nut, berry (of a tree)', vi: 'quả, hạt của cây' }
           },
           {
             parts: [
@@ -515,14 +498,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ'],
         kunyomi: ['ひ', 'ほ'],
         components: ['火'],
-        mnemonic: {
-          en: 'Flames leaping up with a spark flying off each side.',
-          vi: 'Ngọn lửa bốc lên với tia lửa bắn ra hai bên.'
-        },
         examples: [
           {
-            parts: [{ text: '火', reading: 'ひ' }],
-            meaning: { en: 'fire', vi: 'lửa' }
+            parts: [
+              { text: '火', reading: 'ひ' },
+              { text: '花', reading: 'ばな' }
+            ],
+            meaning: { en: 'spark', vi: 'tia lửa' }
           },
           {
             parts: [
@@ -546,14 +528,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['スイ'],
         kunyomi: ['みず'],
         components: ['水'],
-        mnemonic: {
-          en: 'Streams trickling out from a central current picture flowing water.',
-          vi: 'Những dòng nước tỏa ra từ mạch giữa, vẽ nên dòng nước.'
-        },
         examples: [
           {
-            parts: [{ text: '水', reading: 'みず' }],
-            meaning: { en: 'water', vi: 'nước' }
+            parts: [
+              { text: '水', reading: 'みず' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'light blue', vi: 'màu xanh nước' }
           },
           {
             parts: [
@@ -571,10 +552,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ニチ', 'ジツ'],
         kunyomi: ['ひ', 'か'],
         components: ['日'],
-        mnemonic: {
-          en: 'A drawing of the sun: a round frame with a mark inside.',
-          vi: 'Hình vẽ mặt trời: cái khung tròn có vạch bên trong.'
-        },
         examples: [
           {
             parts: [
@@ -606,14 +583,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゲツ', 'ガツ'],
         kunyomi: ['つき'],
         components: ['月'],
-        mnemonic: {
-          en: 'The shape of a crescent moon, which also gives us the word for month.',
-          vi: 'Hình vầng trăng lưỡi liềm, cũng dùng để chỉ tháng.'
-        },
         examples: [
           {
-            parts: [{ text: '月', reading: 'つき' }],
-            meaning: { en: 'moon', vi: 'mặt trăng' }
+            parts: [
+              { text: '月', reading: 'つき' },
+              { text: '見', reading: 'み' }
+            ],
+            meaning: { en: 'moon viewing', vi: 'ngắm trăng' }
           },
           {
             parts: [
@@ -646,15 +622,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['モク', 'ボク'],
         kunyomi: ['め', 'ま'],
         components: ['目'],
-        mnemonic: {
-          en: 'An eye drawn standing on end, pupil and all.',
-          vi: 'Con mắt được vẽ dựng đứng lên, có cả con ngươi.'
-        },
         examples: [
-          {
-            parts: [{ text: '目', reading: 'め' }],
-            meaning: { en: 'eye', vi: 'mắt' }
-          },
           {
             parts: [
               { text: '一', reading: 'ひと' },
@@ -677,14 +645,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ', 'ク'],
         kunyomi: ['くち'],
         components: ['口'],
-        mnemonic: {
-          en: 'A simple square drawn to look like a wide open mouth.',
-          vi: 'Hình vuông đơn giản vẽ như cái miệng đang há to.'
-        },
         examples: [
           {
-            parts: [{ text: '口', reading: 'くち' }],
-            meaning: { en: 'mouth', vi: 'miệng' }
+            parts: [
+              { text: '口', reading: 'くち' },
+              { text: '笛', reading: 'ぶえ' }
+            ],
+            meaning: { en: 'whistling (with the mouth)', vi: 'huýt sáo' }
           },
           {
             parts: [
@@ -708,15 +675,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジ'],
         kunyomi: ['みみ'],
         components: ['耳'],
-        mnemonic: {
-          en: 'A drawing of an ear, shaped just like the real thing.',
-          vi: 'Hình vẽ cái tai, đúng như tai thật.'
-        },
         examples: [
-          {
-            parts: [{ text: '耳', reading: 'みみ' }],
-            meaning: { en: 'ear', vi: 'tai' }
-          },
           {
             parts: [
               { text: '耳', reading: 'みみ' },
@@ -732,15 +691,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュ'],
         kunyomi: ['て', 'た'],
         components: ['手'],
-        mnemonic: {
-          en: 'A hand with its fingers and wrist spread out.',
-          vi: 'Bàn tay với các ngón và cổ tay xòe ra.'
-        },
         examples: [
-          {
-            parts: [{ text: '手', reading: 'て' }],
-            meaning: { en: 'hand', vi: 'tay' }
-          },
           {
             parts: [{ text: '上手', reading: 'じょうず' }],
             meaning: { en: 'skillful, good at', vi: 'giỏi, khéo' }
@@ -760,14 +711,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ソク'],
         kunyomi: ['あし', 'た.りる', 'た.す'],
         components: ['足'],
-        mnemonic: {
-          en: 'A knee (口) sitting on top of a foot below: the whole leg.',
-          vi: 'Đầu gối (口) nằm trên bàn chân phía dưới: cả cái chân.'
-        },
         examples: [
           {
-            parts: [{ text: '足', reading: 'あし' }],
-            meaning: { en: 'foot, leg', vi: 'chân' }
+            parts: [
+              { text: '足', reading: 'あし' },
+              { text: '音', reading: 'おと' }
+            ],
+            meaning: { en: 'footsteps', vi: 'tiếng bước chân' }
           },
           {
             parts: [
@@ -791,14 +741,14 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['リキ', 'リョク'],
         kunyomi: ['ちから'],
         components: ['力'],
-        mnemonic: {
-          en: 'A flexed arm bulging with muscle shows raw power.',
-          vi: 'Cánh tay gồng lên cuồn cuộn cơ bắp, thể hiện sức mạnh.'
-        },
         examples: [
           {
-            parts: [{ text: '力', reading: 'ちから' }],
-            meaning: { en: 'power, strength', vi: 'sức mạnh' }
+            parts: [
+              { text: '力', reading: 'ちから' },
+              { text: '持', reading: 'も' },
+              { text: 'ち', reading: 'ち' }
+            ],
+            meaning: { en: 'strong person', vi: 'người khỏe, lực sĩ' }
           },
           {
             parts: [
@@ -822,15 +772,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ダン', 'ナン'],
         kunyomi: ['おとこ'],
         components: ['田', '力'],
-        mnemonic: {
-          en: 'The one who brings power 力 to work the rice field 田 is the man.',
-          vi: 'Người mang sức mạnh 力 ra làm ruộng đồng 田 chính là đàn ông.'
-        },
+        parts: [
+          { char: '田', role: 'radical' },
+          { char: '力', role: 'semantic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '男', reading: 'おとこ' }],
-            meaning: { en: 'man', vi: 'đàn ông' }
-          },
           {
             parts: [
               { text: '男', reading: 'だん' },
@@ -854,15 +800,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジョ', 'ニョ'],
         kunyomi: ['おんな', 'め'],
         components: ['女'],
-        mnemonic: {
-          en: 'A figure of a woman kneeling gracefully.',
-          vi: 'Hình người phụ nữ đang quỳ duyên dáng.'
-        },
         examples: [
-          {
-            parts: [{ text: '女', reading: 'おんな' }],
-            meaning: { en: 'woman', vi: 'phụ nữ' }
-          },
           {
             parts: [
               { text: '女', reading: 'じょ' },
@@ -886,15 +824,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ', 'ス'],
         kunyomi: ['こ'],
         components: ['子'],
-        mnemonic: {
-          en: 'A baby swaddled up with its little arms reaching out.',
-          vi: 'Em bé được quấn tã, giơ hai cánh tay nhỏ ra.'
-        },
         examples: [
-          {
-            parts: [{ text: '子', reading: 'こ' }],
-            meaning: { en: 'child', vi: 'con, đứa trẻ' }
-          },
           {
             parts: [
               { text: '子', reading: 'こ' },
@@ -917,10 +847,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['メイ', 'ミョウ'],
         kunyomi: ['な'],
         components: ['夕', '口'],
-        mnemonic: {
-          en: 'In the dark evening 夕 you call out with your mouth 口 to say who you are: your name.',
-          vi: 'Trời tối 夕 phải cất miệng 口 gọi to để cho biết mình là ai: đó là cái tên.'
-        },
+        parts: [
+          { char: '夕', role: 'semantic' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -959,14 +889,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジョウ'],
         kunyomi: ['うえ', 'あ.げる', 'あ.がる', 'のぼ.る'],
         components: ['一'],
-        mnemonic: {
-          en: 'A small mark placed above the base line 一, pointing upward.',
-          vi: 'Một dấu đặt phía trên vạch nền 一, chỉ hướng lên trên.'
-        },
         examples: [
           {
-            parts: [{ text: '上', reading: 'うえ' }],
-            meaning: { en: 'above, on top', vi: 'phía trên' }
+            parts: [
+              { text: '真', reading: 'ま' },
+              { text: '上', reading: 'うえ' }
+            ],
+            meaning: { en: 'directly above', vi: 'ngay phía trên' }
           },
           {
             parts: [{ text: '上手', reading: 'じょうず' }],
@@ -987,14 +916,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ', 'ゲ'],
         kunyomi: ['した', 'さ.げる', 'さ.がる', 'くだ.る', 'お.りる'],
         components: ['一'],
-        mnemonic: {
-          en: 'A small mark placed below the base line 一, pointing downward.',
-          vi: 'Một dấu đặt phía dưới vạch nền 一, chỉ hướng xuống dưới.'
-        },
         examples: [
           {
-            parts: [{ text: '下', reading: 'した' }],
-            meaning: { en: 'below, under', vi: 'phía dưới' }
+            parts: [
+              { text: '下', reading: 'した' },
+              { text: '町', reading: 'まち' }
+            ],
+            meaning: { en: 'downtown, old quarter', vi: 'khu phố cổ' }
           },
           {
             parts: [
@@ -1018,14 +946,18 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チュウ'],
         kunyomi: ['なか'],
         components: ['口', '丨'],
-        mnemonic: {
-          en: 'A vertical line 丨 pierces right through the middle of a box 口.',
-          vi: 'Nét dọc 丨 xuyên thẳng qua giữa cái khung 口.'
-        },
+        parts: [
+          { char: '口', role: 'other' },
+          { char: '丨', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '中', reading: 'なか' }],
-            meaning: { en: 'inside, middle', vi: 'bên trong, ở giữa' }
+            parts: [
+              { text: '真', reading: 'ま' },
+              { text: 'ん', reading: 'ん' },
+              { text: '中', reading: 'なか' }
+            ],
+            meaning: { en: 'the very middle', vi: 'chính giữa' }
           },
           {
             parts: [
@@ -1049,15 +981,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['サ'],
         kunyomi: ['ひだり'],
         components: ['工'],
-        mnemonic: {
-          en: 'A hand busy working with a tool 工 on the left side.',
-          vi: 'Bàn tay đang làm việc với dụng cụ 工 ở bên trái.'
-        },
         examples: [
-          {
-            parts: [{ text: '左', reading: 'ひだり' }],
-            meaning: { en: 'left', vi: 'bên trái' }
-          },
           {
             parts: [
               { text: '左', reading: 'ひだり' },
@@ -1073,15 +997,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ウ', 'ユウ'],
         kunyomi: ['みぎ'],
         components: ['口'],
-        mnemonic: {
-          en: 'A hand raised to the mouth 口: the hand you eat with is the right one.',
-          vi: 'Bàn tay đưa lên miệng 口: tay dùng để ăn chính là tay phải.'
-        },
         examples: [
-          {
-            parts: [{ text: '右', reading: 'みぎ' }],
-            meaning: { en: 'right', vi: 'bên phải' }
-          },
           {
             parts: [
               { text: '右', reading: 'みぎ' },
@@ -1104,15 +1020,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['テン'],
         kunyomi: ['あま', 'あめ'],
         components: ['一', '大'],
-        mnemonic: {
-          en: 'A line 一 drawn above a big person 大 marks the sky over their head.',
-          vi: 'Vạch 一 vẽ trên đầu người lớn 大, đánh dấu bầu trời phía trên.'
-        },
+        parts: [
+          { char: '一', role: 'other' },
+          { char: '大', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '天', reading: 'てん' }],
-            meaning: { en: 'heaven, sky', vi: 'bầu trời' }
-          },
           {
             parts: [
               { text: '天', reading: 'てん' },
@@ -1128,14 +1040,17 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['クウ'],
         kunyomi: ['そら', 'あ.く', 'から', 'あ.ける'],
         components: ['穴', '工'],
-        mnemonic: {
-          en: 'Peering out through a hole 穴 you see nothing but the empty sky.',
-          vi: 'Nhìn qua cái lỗ 穴 chỉ thấy bầu trời trống không.'
-        },
+        parts: [
+          { char: '穴', role: 'radical' },
+          { char: '工', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '空', reading: 'そら' }],
-            meaning: { en: 'sky', vi: 'bầu trời' }
+            parts: [
+              { text: '空', reading: 'そら' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'sky blue', vi: 'màu xanh da trời' }
           },
           {
             parts: [
@@ -1159,15 +1074,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['デン'],
         kunyomi: ['た'],
         components: ['田'],
-        mnemonic: {
-          en: 'A field neatly divided into plots, like a grid.',
-          vi: 'Thửa ruộng chia gọn thành từng ô như một cái lưới.'
-        },
         examples: [
-          {
-            parts: [{ text: '田', reading: 'た' }],
-            meaning: { en: 'rice field', vi: 'ruộng' }
-          },
           {
             parts: [
               { text: '田', reading: 'た' },
@@ -1190,14 +1097,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ド', 'ト'],
         kunyomi: ['つち'],
         components: ['土'],
-        mnemonic: {
-          en: 'A mound of earth rising up from the ground.',
-          vi: 'Một ụ đất nhô lên khỏi mặt đất.'
-        },
         examples: [
           {
-            parts: [{ text: '土', reading: 'つち' }],
-            meaning: { en: 'soil, earth', vi: 'đất' }
+            parts: [
+              { text: '土', reading: 'つち' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'earthy color', vi: 'màu đất' }
           },
           {
             parts: [
@@ -1222,14 +1128,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セキ', 'シャク', 'コク'],
         kunyomi: ['いし'],
         components: ['厂', '口'],
-        mnemonic: {
-          en: 'A rock 口 lying at the foot of a cliff 厂.',
-          vi: 'Hòn đá 口 nằm dưới chân vách núi 厂.'
-        },
         examples: [
           {
-            parts: [{ text: '石', reading: 'いし' }],
-            meaning: { en: 'stone', vi: 'đá' }
+            parts: [
+              { text: '小', reading: 'こ' },
+              { text: '石', reading: 'いし' }
+            ],
+            meaning: { en: 'pebble', vi: 'hòn sỏi' }
           },
           {
             parts: [
@@ -1261,10 +1166,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ガク'],
         kunyomi: ['まな.ぶ'],
         components: ['冖', '子'],
-        mnemonic: {
-          en: 'A child 子 sitting under a roof 冖 to study.',
-          vi: 'Đứa trẻ 子 ngồi dưới mái 冖 để học hành.'
-        },
+        parts: [
+          { char: '冖', role: 'other' },
+          { char: '子', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -1294,11 +1199,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'school', vi: 'hiệu - trường học' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['木'],
-        mnemonic: {
-          en: 'A place full of trees 木 where students gather and mingle 交.',
-          vi: 'Nơi có nhiều cây 木, học sinh tụ họp giao lưu 交.'
-        },
+        components: ['木', '交'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '交', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -1329,10 +1234,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セン'],
         kunyomi: ['さき'],
         components: ['儿'],
-        mnemonic: {
-          en: 'A person on legs 儿 striding out ahead of everyone else.',
-          vi: 'Người trên đôi chân 儿 sải bước vượt lên phía trước.'
-        },
         examples: [
           {
             parts: [
@@ -1349,8 +1250,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'last month', vi: 'tháng trước' }
           },
           {
-            parts: [{ text: '先', reading: 'さき' }],
-            meaning: { en: 'ahead, previous', vi: 'phía trước, trước' }
+            parts: [
+              { text: '春', reading: 'はる' },
+              { text: '先', reading: 'さき' }
+            ],
+            meaning: { en: 'early spring', vi: 'đầu xuân' }
           }
         ]
       },
@@ -1360,10 +1264,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['い.きる', 'う.まれる', 'なま'],
         components: ['生'],
-        mnemonic: {
-          en: 'A young plant sprouting up out of the ground 一.',
-          vi: 'Một cây non nhú lên khỏi mặt đất 一.'
-        },
         examples: [
           {
             parts: [
@@ -1394,8 +1294,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'to live', vi: 'sống' }
           },
           {
-            parts: [{ text: '生', reading: 'なま' }],
-            meaning: { en: 'raw, uncooked', vi: 'sống, tươi (chưa nấu)' }
+            parts: [
+              { text: '生', reading: 'なま' },
+              { text: '水', reading: 'みず' }
+            ],
+            meaning: { en: 'unboiled water', vi: 'nước lã (chưa đun)' }
           }
         ]
       },
@@ -1405,14 +1308,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ネン'],
         kunyomi: ['とし'],
         components: ['干'],
-        mnemonic: {
-          en: 'The rice harvest comes around once with each full turn of the seasons.',
-          vi: 'Cứ mỗi vòng thời tiết trôi qua lại có một mùa lúa chín.'
-        },
         examples: [
           {
-            parts: [{ text: '年', reading: 'とし' }],
-            meaning: { en: 'year, age', vi: 'năm, tuổi' }
+            parts: [
+              { text: '年', reading: 'とし' },
+              { text: '上', reading: 'うえ' }
+            ],
+            meaning: { en: 'older, senior', vi: 'lớn tuổi hơn' }
           },
           {
             parts: [
@@ -1433,10 +1335,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ブン', 'モン'],
         kunyomi: ['ふみ'],
         components: ['文'],
-        mnemonic: {
-          en: 'A figure marked with a crossed pattern, like woven strokes of writing.',
-          vi: 'Hình người có hoa văn đan chéo, như những nét chữ viết.'
-        },
         examples: [
           {
             parts: [
@@ -1451,27 +1349,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '文', reading: 'ぶん' }
             ],
             meaning: { en: 'composition, essay', vi: 'bài văn' }
-          },
-          {
-            parts: [{ text: '文', reading: 'ぶん' }],
-            meaning: { en: 'sentence', vi: 'câu văn' }
-          }
-        ]
-      },
-      {
-        char: '字',
-        meaning: { en: 'character, letter', vi: 'tự - chữ, ký tự' },
-        onyomi: ['ジ'],
-        kunyomi: ['あざ'],
-        components: ['宀', '子'],
-        mnemonic: {
-          en: 'A child 子 sitting under a roof 宀 practicing how to write characters.',
-          vi: 'Đứa trẻ 子 ngồi dưới mái nhà 宀 tập viết chữ.'
-        },
-        examples: [
-          {
-            parts: [{ text: '字', reading: 'じ' }],
-            meaning: { en: 'character, letter', vi: 'chữ, ký tự' }
           },
           {
             parts: [
@@ -1490,20 +1367,50 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
+        char: '字',
+        meaning: { en: 'character, letter', vi: 'tự - chữ, ký tự' },
+        onyomi: ['ジ'],
+        kunyomi: ['あざ'],
+        components: ['宀', '子'],
+        parts: [
+          { char: '宀', role: 'semantic' },
+          { char: '子', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '漢', reading: 'かん' },
+              { text: '字', reading: 'じ' }
+            ],
+            meaning: { en: 'kanji', vi: 'chữ Hán (kanji)' }
+          },
+          {
+            parts: [
+              { text: '文', reading: 'も' },
+              { text: '字', reading: 'じ' }
+            ],
+            meaning: { en: 'character, letter', vi: 'ký tự, chữ' }
+          },
+          {
+            parts: [
+              { text: '数', reading: 'すう' },
+              { text: '字', reading: 'じ' }
+            ],
+            meaning: { en: 'number, digit', vi: 'chữ số' }
+          }
+        ]
+      },
+      {
         char: '本',
         meaning: { en: 'book; origin; main', vi: 'bản - sách; gốc' },
         onyomi: ['ホン'],
         kunyomi: ['もと'],
         components: ['木', '一'],
-        mnemonic: {
-          en: 'A tree 木 with a mark 一 right at its root points to the origin, and to a book.',
-          vi: 'Cái cây 木 có vạch 一 ngay gốc rễ, chỉ về cội nguồn, và cũng là sách.'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '一', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '本', reading: 'ほん' }],
-            meaning: { en: 'book', vi: 'sách' }
-          },
           {
             parts: [
               { text: '日', reading: 'に' },
@@ -1526,10 +1433,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ケン'],
         kunyomi: ['み.る', 'み.える', 'み.せる'],
         components: ['目', '儿'],
-        mnemonic: {
-          en: 'An eye 目 up on a pair of legs 儿 walks around looking at things.',
-          vi: 'Con mắt 目 trên đôi chân 儿 đi khắp nơi ngắm nhìn.'
-        },
         examples: [
           {
             parts: [
@@ -1560,10 +1463,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キ', 'ケ'],
         kunyomi: [],
         components: ['气'],
-        mnemonic: {
-          en: 'Vapor 气 rising into the air, carrying energy and spirit with it.',
-          vi: 'Hơi 气 bốc lên không trung, mang theo năng lượng và tinh thần.'
-        },
         examples: [
           {
             parts: [
@@ -1601,16 +1500,12 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flower', vi: 'hoa - bông hoa' },
         onyomi: ['カ'],
         kunyomi: ['はな'],
-        components: ['艹', '亻', '匕'],
-        mnemonic: {
-          en: 'The grass radical 艹 sits atop a plant that bursts into bloom.',
-          vi: 'Bộ thảo 艹 nằm trên loài cây bung nở thành hoa.'
-        },
+        components: ['艹', '化'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '化', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '花', reading: 'はな' }],
-            meaning: { en: 'flower', vi: 'hoa' }
-          },
           {
             parts: [
               { text: '花', reading: 'はな' },
@@ -1632,16 +1527,12 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grass', vi: 'thảo - cỏ' },
         onyomi: ['ソウ'],
         kunyomi: ['くさ'],
-        components: ['艹', '日', '十'],
-        mnemonic: {
-          en: 'The grass radical 艹 over a plant that sprouts early 早 in the fields.',
-          vi: 'Bộ thảo 艹 trên loài cây mọc sớm 早 ngoài đồng.'
-        },
+        components: ['艹', '早'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '早', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '草', reading: 'くさ' }],
-            meaning: { en: 'grass', vi: 'cỏ' }
-          },
           {
             parts: [
               { text: '草', reading: 'くさ' },
@@ -1664,15 +1555,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チク'],
         kunyomi: ['たけ'],
         components: ['竹'],
-        mnemonic: {
-          en: 'Two bamboo stalks standing with their leaves drooping down.',
-          vi: 'Hai thân tre đứng thẳng, lá rủ xuống.'
-        },
         examples: [
-          {
-            parts: [{ text: '竹', reading: 'たけ' }],
-            meaning: { en: 'bamboo', vi: 'tre' }
-          },
           {
             parts: [
               { text: '竹', reading: 'ちく' },
@@ -1695,14 +1578,17 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['リン'],
         kunyomi: ['はやし'],
         components: ['木', '木'],
-        mnemonic: {
-          en: 'Two trees 木 standing side by side make a small wood.',
-          vi: 'Hai cây 木 đứng cạnh nhau tạo thành khu rừng nhỏ.'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '木', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '林', reading: 'はやし' }],
-            meaning: { en: 'woods, grove', vi: 'rừng nhỏ' }
+            parts: [
+              { text: '松', reading: 'まつ' },
+              { text: '林', reading: 'ばやし' }
+            ],
+            meaning: { en: 'pine woods', vi: 'rừng thông' }
           },
           {
             parts: [
@@ -1726,14 +1612,18 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シン'],
         kunyomi: ['もり'],
         components: ['木', '木', '木'],
-        mnemonic: {
-          en: 'Three trees 木 crowded together make a deep forest.',
-          vi: 'Ba cây 木 chụm lại tạo thành rừng rậm.'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '木', role: 'semantic' },
+          { char: '木', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '森', reading: 'もり' }],
-            meaning: { en: 'forest', vi: 'rừng' }
+            parts: [
+              { text: '青', reading: 'あお' },
+              { text: '森', reading: 'もり' }
+            ],
+            meaning: { en: 'Aomori (place name)', vi: 'Aomori (địa danh)' }
           },
           {
             parts: [
@@ -1750,15 +1640,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ケン'],
         kunyomi: ['いぬ'],
         components: ['大', '丶'],
-        mnemonic: {
-          en: 'A big animal 大 with one extra spot 丶 for its ear is a dog.',
-          vi: 'Con vật to 大 có thêm một chấm 丶 làm cái tai, đó là con chó.'
-        },
         examples: [
-          {
-            parts: [{ text: '犬', reading: 'いぬ' }],
-            meaning: { en: 'dog', vi: 'chó' }
-          },
           {
             parts: [
               { text: '子', reading: 'こ' },
@@ -1781,15 +1663,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チュウ'],
         kunyomi: ['むし'],
         components: ['虫'],
-        mnemonic: {
-          en: 'A drawing of a wriggling bug or snake.',
-          vi: 'Hình vẽ con sâu hay con rắn đang ngoằn ngoèo.'
-        },
         examples: [
-          {
-            parts: [{ text: '虫', reading: 'むし' }],
-            meaning: { en: 'insect, bug', vi: 'côn trùng' }
-          },
           {
             parts: [
               { text: '昆', reading: 'こん' },
@@ -1812,15 +1686,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: [],
         kunyomi: ['かい'],
         components: ['貝'],
-        mnemonic: {
-          en: 'A drawing of a cowrie shell, which people once used as money.',
-          vi: 'Hình con ốc/vỏ sò, thứ người xưa từng dùng làm tiền.'
-        },
         examples: [
-          {
-            parts: [{ text: '貝', reading: 'かい' }],
-            meaning: { en: 'shellfish', vi: 'con sò' }
-          },
           {
             parts: [
               { text: '貝', reading: 'かい' },
@@ -1836,15 +1702,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ギョク'],
         kunyomi: ['たま'],
         components: ['玉'],
-        mnemonic: {
-          en: 'A string of jade beads, with one extra dot added for sparkle.',
-          vi: 'Xâu ngọc bích, thêm một chấm cho lấp lánh.'
-        },
         examples: [
-          {
-            parts: [{ text: '玉', reading: 'たま' }],
-            meaning: { en: 'ball, jewel', vi: 'viên bi, ngọc' }
-          },
           {
             parts: [
               { text: '目', reading: 'め' },
@@ -1867,15 +1725,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キン', 'コン'],
         kunyomi: ['かね', 'かな'],
         components: ['金'],
-        mnemonic: {
-          en: 'Nuggets of metal buried in the earth beneath a roof.',
-          vi: 'Những cục kim loại vùi trong lòng đất dưới mái nhà.'
-        },
         examples: [
-          {
-            parts: [{ text: '金', reading: 'きん' }],
-            meaning: { en: 'gold', vi: 'vàng' }
-          },
           {
             parts: [
               { text: 'お', reading: 'お' },
@@ -1907,15 +1757,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ウ'],
         kunyomi: ['あめ', 'あま'],
         components: ['雨'],
-        mnemonic: {
-          en: 'Raindrops falling one by one from a cloud.',
-          vi: 'Những giọt mưa rơi lã chã từ đám mây.'
-        },
         examples: [
-          {
-            parts: [{ text: '雨', reading: 'あめ' }],
-            meaning: { en: 'rain', vi: 'mưa' }
-          },
           {
             parts: [
               { text: '大', reading: 'おお' },
@@ -1938,15 +1780,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['あお', 'あお.い'],
         components: ['青'],
-        mnemonic: {
-          en: 'The fresh color of new shoots and a clear sky.',
-          vi: 'Màu tươi non của mầm cây và bầu trời quang đãng.'
-        },
         examples: [
-          {
-            parts: [{ text: '青', reading: 'あお' }],
-            meaning: { en: 'blue', vi: 'màu xanh' }
-          },
           {
             parts: [
               { text: '青', reading: 'あお' },
@@ -1969,15 +1803,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セキ', 'シャク'],
         kunyomi: ['あか', 'あか.い'],
         components: ['赤'],
-        mnemonic: {
-          en: 'A big fire glowing red over the earth.',
-          vi: 'Ngọn lửa lớn cháy đỏ rực trên mặt đất.'
-        },
         examples: [
-          {
-            parts: [{ text: '赤', reading: 'あか' }],
-            meaning: { en: 'red', vi: 'màu đỏ' }
-          },
           {
             parts: [
               { text: '赤', reading: 'あか' },
@@ -2000,15 +1826,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ハク', 'ビャク'],
         kunyomi: ['しろ', 'しろ.い', 'しら'],
         components: ['白'],
-        mnemonic: {
-          en: 'A single ray of sunlight, bright and pale.',
-          vi: 'Một tia nắng, sáng và nhàn nhạt.'
-        },
         examples: [
-          {
-            parts: [{ text: '白', reading: 'しろ' }],
-            meaning: { en: 'white', vi: 'màu trắng' }
-          },
           {
             parts: [
               { text: '白', reading: 'しろ' },
@@ -2032,11 +1850,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セン'],
         kunyomi: ['ち'],
         components: ['丿', '十'],
+        parts: [
+          { char: '丿', role: 'other' },
+          { char: '十', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '千', reading: 'せん' }],
-            meaning: { en: 'thousand', vi: 'nghìn' }
-          },
           {
             parts: [
               { text: '三', reading: 'さん' },
@@ -2059,11 +1877,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヒャク'],
         kunyomi: [],
         components: ['一', '白'],
+        parts: [
+          { char: '一', role: 'other' },
+          { char: '白', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '百', reading: 'ひゃく' }],
-            meaning: { en: 'hundred', vi: 'trăm' }
-          },
           {
             parts: [
               { text: '三', reading: 'さん' },
@@ -2086,15 +1904,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['エン'],
         kunyomi: ['まる.い'],
         components: ['冂'],
-        mnemonic: {
-          en: 'Something enclosed and rounded off 冂, like a coin.',
-          vi: 'Vật được bao lại và bo tròn 冂, như một đồng xu.'
-        },
         examples: [
-          {
-            parts: [{ text: '円', reading: 'えん' }],
-            meaning: { en: 'yen', vi: 'đồng yên' }
-          },
           {
             parts: [
               { text: '千', reading: 'せん' },
@@ -2117,15 +1927,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['オウ'],
         kunyomi: [],
         components: [],
-        mnemonic: {
-          en: 'Three lines (heaven, man and earth) joined by a single vertical ruler.',
-          vi: 'Ba vạch (trời, người, đất) nối lại bởi một người cai trị dọc giữa.'
-        },
         examples: [
-          {
-            parts: [{ text: '王', reading: 'おう' }],
-            meaning: { en: 'king', vi: 'vua' }
-          },
           {
             parts: [
               { text: '王', reading: 'おう' },
@@ -2150,10 +1952,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         components: ['立', '日'],
         examples: [
           {
-            parts: [{ text: '音', reading: 'おと' }],
-            meaning: { en: 'sound', vi: 'âm thanh' }
-          },
-          {
             parts: [
               { text: '音', reading: 'おん' },
               { text: '楽', reading: 'がく' }
@@ -2175,10 +1973,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['リツ', 'リュウ'],
         kunyomi: ['た.つ', 'た.てる'],
         components: ['立'],
-        mnemonic: {
-          en: 'A person standing firmly with both feet on the ground.',
-          vi: 'Người đứng vững, hai chân trên mặt đất.'
-        },
         examples: [
           {
             parts: [
@@ -2217,10 +2011,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キュウ'],
         kunyomi: ['やす.む', 'やす.まる'],
         components: ['亻', '木'],
-        mnemonic: {
-          en: 'A person 亻 leaning against a tree 木 to take a break.',
-          vi: 'Người 亻 tựa vào gốc cây 木 để nghỉ chân.'
-        },
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '木', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -2252,15 +2046,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['いと'],
         components: [],
-        mnemonic: {
-          en: 'A bundle of fine threads twisted together.',
-          vi: 'Một bó sợi mảnh xoắn lại với nhau.'
-        },
         examples: [
-          {
-            parts: [{ text: '糸', reading: 'いと' }],
-            meaning: { en: 'thread', vi: 'sợi chỉ' }
-          },
           {
             parts: [
               { text: '毛', reading: 'け' },
@@ -2276,14 +2062,13 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シャ'],
         kunyomi: ['くるま'],
         components: [],
-        mnemonic: {
-          en: 'A cart drawn as if seen from directly above.',
-          vi: 'Chiếc xe vẽ như nhìn thẳng từ trên xuống.'
-        },
         examples: [
           {
-            parts: [{ text: '車', reading: 'くるま' }],
-            meaning: { en: 'car', vi: 'xe' }
+            parts: [
+              { text: '車', reading: 'くるま' },
+              { text: 'いす', reading: 'いす' }
+            ],
+            meaning: { en: 'wheelchair', vi: 'xe lăn' }
           },
           {
             parts: [
@@ -2308,10 +2093,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュツ'],
         kunyomi: ['で.る', 'だ.す'],
         components: [],
-        mnemonic: {
-          en: 'Sprouts pushing up and breaking out of the ground.',
-          vi: 'Mầm cây đâm lên, trồi ra khỏi mặt đất.'
-        },
+        parts: [{ char: '凵', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2349,10 +2131,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['ただ.しい', 'まさ'],
         components: ['一', '止'],
-        mnemonic: {
-          en: 'You stop 止 exactly at the one 一 correct line.',
-          vi: 'Ta dừng 止 đúng ngay vạch 一 chuẩn.'
-        },
+        parts: [
+          { char: '一', role: 'other' },
+          { char: '止', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -2383,10 +2165,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セキ'],
         kunyomi: ['ゆう'],
         components: [],
-        mnemonic: {
-          en: 'A thin crescent moon appearing at dusk.',
-          vi: 'Vầng trăng lưỡi liềm mảnh ló ra lúc chạng vạng.'
-        },
         examples: [
           {
             parts: [
@@ -2414,10 +2192,10 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ソウ', 'サッ'],
         kunyomi: ['はや.い'],
         components: ['日', '十'],
-        mnemonic: {
-          en: 'The sun 日 is already up above the ten 十, nice and early.',
-          vi: 'Mặt trời 日 đã lên trên chữ mười 十, còn sớm tinh mơ.'
-        },
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '十', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -2448,15 +2226,11 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ソン'],
         kunyomi: ['むら'],
         components: ['木', '寸'],
-        mnemonic: {
-          en: 'Trees 木 measured out 寸 and shared into plots make a village.',
-          vi: 'Cây cối 木 được đo 寸 chia thành từng khu, tạo nên ngôi làng.'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '寸', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '村', reading: 'むら' }],
-            meaning: { en: 'village', vi: 'làng' }
-          },
           {
             parts: [
               { text: '村', reading: 'むら' },
@@ -2478,16 +2252,12 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'town', vi: 'đinh - phố, thị trấn' },
         onyomi: ['チョウ'],
         kunyomi: ['まち'],
-        components: [],
-        mnemonic: {
-          en: 'A field 田 laid out in neat blocks 丁 becomes a town.',
-          vi: 'Ruộng đất 田 chia thành từng khu vuông vắn 丁, thành khu phố.'
-        },
+        components: ['田', '丁'],
+        parts: [
+          { char: '田', role: 'radical' },
+          { char: '丁', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '町', reading: 'まち' }],
-            meaning: { en: 'town', vi: 'phố, thị trấn' }
-          },
           {
             parts: [
               { text: '下', reading: 'した' },
@@ -2510,10 +2280,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ニュウ'],
         kunyomi: ['い.る', 'はい.る', 'い.れる'],
         components: [],
-        mnemonic: {
-          en: 'A figure bending down to step in through a narrow opening.',
-          vi: 'Hình người cúi mình bước vào qua khe cửa hẹp.'
-        },
         examples: [
           {
             parts: [
@@ -2550,8 +2316,8 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
 ]);
 
 /**
- * Grade 2 Jōyō kanji (160 characters), learned 10 per lesson. Author each lesson
- * by hand; keep 10 kanji per lesson and add new lessons in order.
+ * Grade 2 Jōyō kanji (160 characters), authored by hand in ordered lessons
+ * (~10 per lesson as a loose target, not fixed). Add new lessons in order.
  */
 export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
   {
@@ -2566,10 +2332,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コン', 'キン'],
         kunyomi: ['いま'],
         components: [],
+        parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '今', reading: 'いま' }],
-            meaning: { en: 'now', vi: 'bây giờ' }
+            parts: [
+              { text: 'ただ', reading: 'ただ' },
+              { text: '今', reading: 'いま' }
+            ],
+            meaning: { en: "I'm home; just now", vi: 'tôi về rồi; vừa nãy' }
           },
           {
             parts: [{ text: '今日', reading: 'きょう' }],
@@ -2589,15 +2359,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'time, hour', vi: 'thời - thời gian, giờ' },
         onyomi: ['ジ'],
         kunyomi: ['とき'],
-        components: ['日', '土', '寸'],
-        mnemonic: {
-          en: 'The sun 日 moving past a temple 寺 marks the passing time.',
-          vi: 'Mặt trời 日 dịch chuyển bên ngôi chùa 寺, đánh dấu thời gian trôi.'
-        },
+        components: ['日', '寺'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '寺', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '時', reading: 'とき' }],
-            meaning: { en: 'time', vi: 'thời gian, lúc' }
+            parts: [
+              { text: '時', reading: 'とき' },
+              { text: '々', reading: 'どき' }
+            ],
+            meaning: { en: 'sometimes', vi: 'thỉnh thoảng' }
           },
           {
             parts: [
@@ -2621,15 +2394,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チョウ'],
         kunyomi: ['あさ'],
         components: ['日', '月'],
-        mnemonic: {
-          en: 'The sun 日 rising while the moon 月 still lingers in the sky.',
-          vi: 'Mặt trời 日 mọc lên khi trăng 月 còn nấn ná trên trời.'
-        },
+        parts: [
+          { char: '日', role: 'semantic' },
+          { char: '月', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '朝', reading: 'あさ' }],
-            meaning: { en: 'morning', vi: 'buổi sáng' }
-          },
           {
             parts: [
               { text: '朝', reading: 'ちょう' },
@@ -2652,15 +2421,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チュウ'],
         kunyomi: ['ひる'],
         components: [],
-        mnemonic: {
-          en: 'The sun 日 sitting at its highest point in the middle of the day.',
-          vi: 'Mặt trời 日 lên cao nhất vào giữa ngày.'
-        },
+        parts: [{ char: '日', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '昼', reading: 'ひる' }],
-            meaning: { en: 'noon, daytime', vi: 'buổi trưa' }
-          },
           {
             parts: [
               { text: '昼', reading: 'ちゅう' },
@@ -2683,14 +2445,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヤ'],
         kunyomi: ['よる', 'よ'],
         components: [],
-        mnemonic: {
-          en: 'When evening 夕 falls, people settle in under a roof for the night.',
-          vi: 'Khi chiều tối 夕 buông, người ta về nghỉ dưới mái nhà cho qua đêm.'
-        },
+        parts: [{ char: '夕', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '夜', reading: 'よる' }],
-            meaning: { en: 'night', vi: 'ban đêm' }
+            parts: [
+              { text: '夜', reading: 'よ' },
+              { text: '空', reading: 'ぞら' }
+            ],
+            meaning: { en: 'night sky', vi: 'bầu trời đêm' }
           },
           {
             parts: [
@@ -2713,11 +2475,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'week', vi: 'chu - tuần' },
         onyomi: ['シュウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Going around 辶 one full circuit 周 of days.',
-          vi: 'Đi hết 辶 trọn một vòng 周 các ngày.'
-        },
+        components: ['辶', '周'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '周', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -2748,14 +2510,15 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュン'],
         kunyomi: ['はる'],
         components: [],
-        mnemonic: {
-          en: 'The sun 日 warms the ground and sprouts start pushing up.',
-          vi: 'Mặt trời 日 sưởi ấm mặt đất, mầm cây bắt đầu vươn lên.'
-        },
+        parts: [{ char: '日', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '春', reading: 'はる' }],
-            meaning: { en: 'spring', vi: 'mùa xuân' }
+            parts: [
+              { text: '春', reading: 'はる' },
+              { text: '休', reading: 'やす' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'spring break', vi: 'nghỉ xuân' }
           },
           {
             parts: [
@@ -2779,15 +2542,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ', 'ゲ'],
         kunyomi: ['なつ'],
         components: [],
-        mnemonic: {
-          en: 'Dragging your legs 夂 and walking slowly in the summer heat.',
-          vi: 'Lê chân 夂 bước chậm chạp trong cái nóng oi ả.'
-        },
+        parts: [{ char: '夊', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '夏', reading: 'なつ' }],
-            meaning: { en: 'summer', vi: 'mùa hè' }
-          },
           {
             parts: [
               { text: '夏', reading: 'なつ' },
@@ -2811,14 +2567,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュウ'],
         kunyomi: ['あき'],
         components: ['禾', '火'],
-        mnemonic: {
-          en: 'Grain 禾 ripening red as fire 火 at harvest time.',
-          vi: 'Lúa 禾 chín đỏ như lửa 火 vào mùa gặt.'
-        },
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '火', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '秋', reading: 'あき' }],
-            meaning: { en: 'autumn, fall', vi: 'mùa thu' }
+            parts: [
+              { text: '秋', reading: 'あき' },
+              { text: '風', reading: 'かぜ' }
+            ],
+            meaning: { en: 'autumn wind', vi: 'gió thu' }
           },
           {
             parts: [
@@ -2842,15 +2601,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['トウ'],
         kunyomi: ['ふゆ'],
         components: ['夂', '冫'],
-        mnemonic: {
-          en: 'Trailing legs 夂 dragging over two marks of ice 冫.',
-          vi: 'Đôi chân lê bước 夂 trên hai vệt băng giá 冫.'
-        },
+        parts: [
+          { char: '夂', role: 'other' },
+          { char: '冫', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '冬', reading: 'ふゆ' }],
-            meaning: { en: 'winter', vi: 'mùa đông' }
-          },
           {
             parts: [
               { text: '冬', reading: 'ふゆ' },
@@ -2882,14 +2637,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['フ'],
         kunyomi: ['ちち'],
         components: [],
-        mnemonic: {
-          en: 'A hand gripping a stick: the household authority.',
-          vi: 'Bàn tay nắm cây roi: người có quyền trong nhà.'
-        },
         examples: [
           {
-            parts: [{ text: '父', reading: 'ちち' }],
-            meaning: { en: 'father (my)', vi: 'bố (của tôi)' }
+            parts: [
+              { text: '父', reading: 'ちち' },
+              { text: '親', reading: 'おや' }
+            ],
+            meaning: { en: 'father', vi: 'người cha' }
           },
           {
             parts: [
@@ -2914,14 +2668,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ボ'],
         kunyomi: ['はは'],
         components: [],
-        mnemonic: {
-          en: 'A figure of a mother, with two dots for the breasts that nurse a child.',
-          vi: 'Hình người mẹ, hai chấm là bầu sữa nuôi con.'
-        },
+        parts: [{ char: '母', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '母', reading: 'はは' }],
-            meaning: { en: 'mother (my)', vi: 'mẹ (của tôi)' }
+            parts: [
+              { text: '母', reading: 'はは' },
+              { text: '親', reading: 'おや' }
+            ],
+            meaning: { en: 'mother', vi: 'người mẹ' }
           },
           {
             parts: [
@@ -2946,14 +2700,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ケイ', 'キョウ'],
         kunyomi: ['あに'],
         components: ['口', '儿'],
-        mnemonic: {
-          en: 'A person on legs 儿 with a big mouth 口, the one who bosses the others around.',
-          vi: 'Người trên đôi chân 儿 với cái miệng 口 to, hay sai bảo em út.'
-        },
+        parts: [
+          { char: '口', role: 'other' },
+          { char: '儿', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '兄', reading: 'あに' }],
-            meaning: { en: 'older brother (my)', vi: 'anh trai (của tôi)' }
+            parts: [
+              { text: '兄', reading: 'あに' },
+              { text: '貴', reading: 'き' }
+            ],
+            meaning: { en: 'big brother (informal)', vi: 'anh (thân mật)' }
           },
           {
             parts: [
@@ -2978,14 +2735,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ダイ', 'テイ'],
         kunyomi: ['おとうと'],
         components: [],
-        mnemonic: {
-          en: 'The little one wrapped and bound up below the elder sibling.',
-          vi: 'Đứa nhỏ được quấn buộc ở dưới, xếp sau người anh.'
-        },
+        parts: [{ char: '弓', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '弟', reading: 'おとうと' }],
-            meaning: { en: 'younger brother (my)', vi: 'em trai (của tôi)' }
+            parts: [
+              { text: '弟', reading: 'おとうと' },
+              { text: 'さん', reading: 'さん' }
+            ],
+            meaning: { en: "(someone's) younger brother", vi: 'em trai (của ai đó)' }
           },
           {
             parts: [
@@ -3008,15 +2765,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'older sister', vi: 'tỷ - chị gái' },
         onyomi: ['シ'],
         kunyomi: ['あね'],
-        components: [],
-        mnemonic: {
-          en: 'The woman 女 of the household who runs the errands at the market 市.',
-          vi: 'Người phụ nữ 女 trong nhà lo việc chợ búa 市.'
-        },
+        components: ['女', '市'],
+        parts: [
+          { char: '女', role: 'radical' },
+          { char: '市', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '姉', reading: 'あね' }],
-            meaning: { en: 'older sister (my)', vi: 'chị gái (của tôi)' }
+            parts: [
+              { text: '姉', reading: 'あね' },
+              { text: '上', reading: 'うえ' }
+            ],
+            meaning: { en: 'elder sister (honorific)', vi: 'chị (kính ngữ)' }
           },
           {
             parts: [
@@ -3040,16 +2800,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'younger sister', vi: 'muội - em gái' },
         onyomi: ['マイ'],
         kunyomi: ['いもうと'],
-        components: [],
-        mnemonic: {
-          en: 'The girl 女 who has not yet 未 grown up.',
-          vi: 'Người con gái 女 vẫn chưa 未 trưởng thành.'
-        },
+        components: ['女', '未'],
+        parts: [
+          { char: '女', role: 'radical' },
+          { char: '未', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '妹', reading: 'いもうと' }],
-            meaning: { en: 'younger sister (my)', vi: 'em gái (của tôi)' }
-          },
           {
             parts: [
               { text: '姉', reading: 'し' },
@@ -3072,15 +2828,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ユウ'],
         kunyomi: ['とも'],
         components: [],
-        mnemonic: {
-          en: 'Two hands 又 reaching out to help each other.',
-          vi: 'Hai bàn tay 又 chìa ra giúp đỡ nhau.'
-        },
+        parts: [{ char: '又', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '友', reading: 'とも' }],
-            meaning: { en: 'friend', vi: 'bạn' }
-          },
           {
             parts: [
               { text: '友', reading: 'とも' },
@@ -3103,14 +2852,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シン'],
         kunyomi: ['おや', 'した.しい'],
         components: ['立', '木', '見'],
-        mnemonic: {
-          en: 'You stand 立 by a tree 木 and watch 見 over your child.',
-          vi: 'Bạn đứng 立 bên gốc cây 木 dõi nhìn 見 trông con.'
-        },
+        parts: [
+          { char: '立', role: 'other' },
+          { char: '木', role: 'other' },
+          { char: '見', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '親', reading: 'おや' }],
-            meaning: { en: 'parent', vi: 'cha mẹ' }
+            parts: [
+              { text: '親', reading: 'おや' },
+              { text: '子', reading: 'こ' }
+            ],
+            meaning: { en: 'parent and child', vi: 'cha mẹ và con cái' }
           },
           {
             parts: [
@@ -3134,10 +2887,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジ', 'シ'],
         kunyomi: ['みずか.ら'],
         components: [],
-        mnemonic: {
-          en: 'A finger pointing back at your own nose: meaning yourself.',
-          vi: 'Ngón tay chỉ vào mũi mình: ý là bản thân.'
-        },
         examples: [
           {
             parts: [
@@ -3169,14 +2918,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ', 'ケ'],
         kunyomi: ['いえ', 'や'],
         components: ['宀', '豕'],
-        mnemonic: {
-          en: 'Long ago a home 宀 usually kept a pig 豕 inside, so this kanji came to mean house and family.',
-          vi: 'Ngày xưa trong nhà 宀 thường nuôi con heo 豕, nên chữ này mang nghĩa nhà, gia đình.'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '豕', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '家', reading: 'いえ' }],
-            meaning: { en: 'house, home', vi: 'nhà' }
+            parts: [
+              { text: '家', reading: 'いえ' },
+              { text: '出', reading: 'で' }
+            ],
+            meaning: { en: 'running away from home', vi: 'bỏ nhà đi' }
           },
           {
             parts: [
@@ -3208,14 +2960,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['トウ'],
         kunyomi: ['ひがし'],
         components: ['木', '日'],
-        mnemonic: {
-          en: 'The sun 日 rising up behind a tree 木.',
-          vi: 'Mặt trời 日 nhô lên sau lùm cây 木.'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '日', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '東', reading: 'ひがし' }],
-            meaning: { en: 'east', vi: 'hướng đông' }
+            parts: [
+              { text: '東', reading: 'ひがし' },
+              { text: '口', reading: 'ぐち' }
+            ],
+            meaning: { en: 'east exit', vi: 'cửa (lối ra) phía đông' }
           },
           {
             parts: [
@@ -3239,15 +2994,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セイ', 'サイ'],
         kunyomi: ['にし'],
         components: [],
-        mnemonic: {
-          en: 'A bird settling into its nest just as the sun sets in the west.',
-          vi: 'Con chim về tổ đúng lúc mặt trời lặn ở phía tây.'
-        },
         examples: [
-          {
-            parts: [{ text: '西', reading: 'にし' }],
-            meaning: { en: 'west', vi: 'hướng tây' }
-          },
           {
             parts: [
               { text: '西', reading: 'にし' },
@@ -3270,14 +3017,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ナン'],
         kunyomi: ['みなみ'],
         components: [],
-        mnemonic: {
-          en: 'Plants thrive on the warm side that faces south.',
-          vi: 'Cây cối tốt tươi ở phía ấm áp hướng về nam.'
-        },
+        parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '南', reading: 'みなみ' }],
-            meaning: { en: 'south', vi: 'hướng nam' }
+            parts: [
+              { text: '南', reading: 'みなみ' },
+              { text: '口', reading: 'ぐち' }
+            ],
+            meaning: { en: 'south exit', vi: 'cửa (lối ra) phía nam' }
           },
           {
             parts: [
@@ -3301,14 +3048,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ホク'],
         kunyomi: ['きた'],
         components: [],
-        mnemonic: {
-          en: 'Two people sitting back to back, turning away from the cold.',
-          vi: 'Hai người ngồi quay lưng nhau, tránh cái lạnh phương bắc.'
-        },
+        parts: [{ char: '匕', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '北', reading: 'きた' }],
-            meaning: { en: 'north', vi: 'hướng bắc' }
+            parts: [
+              { text: '北', reading: 'きた' },
+              { text: '口', reading: 'ぐち' }
+            ],
+            meaning: { en: 'north exit', vi: 'cửa (lối ra) phía bắc' }
           },
           {
             parts: [
@@ -3333,11 +3080,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゼン'],
         kunyomi: ['まえ'],
         components: [],
+        parts: [{ char: '刂', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '前', reading: 'まえ' }],
-            meaning: { en: 'front, before', vi: 'phía trước, trước' }
-          },
           {
             parts: [
               { text: '名', reading: 'な' },
@@ -3360,10 +3104,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゴ', 'コウ'],
         kunyomi: ['うし.ろ', 'あと', 'のち'],
         components: ['彳', '幺', '夂'],
-        mnemonic: {
-          en: 'Stepping 彳 on short 幺 dragging legs 夂, you keep falling behind.',
-          vi: 'Bước 彳 với đôi chân nhỏ 幺 lê phía sau 夂 nên cứ tụt lại.'
-        },
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '幺', role: 'other' },
+          { char: '夂', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -3409,14 +3154,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ナイ'],
         kunyomi: ['うち'],
         components: ['冂', '人'],
-        mnemonic: {
-          en: 'A person 人 tucked within an enclosure 冂.',
-          vi: 'Người 人 nép bên trong khung bao 冂.'
-        },
+        parts: [
+          { char: '冂', role: 'radical' },
+          { char: '人', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '内', reading: 'うち' }],
-            meaning: { en: 'inside', vi: 'bên trong' }
+            parts: [
+              { text: '内', reading: 'うち' },
+              { text: '側', reading: 'がわ' }
+            ],
+            meaning: { en: 'the inside', vi: 'phía trong' }
           },
           {
             parts: [
@@ -3440,14 +3188,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ガイ', 'ゲ'],
         kunyomi: ['そと', 'ほか', 'はず.す'],
         components: ['夕', '卜'],
-        mnemonic: {
-          en: 'Fortune-telling 卜 was done at evening 夕, out in the open.',
-          vi: 'Việc bói toán 卜 làm lúc chiều tối 夕, ở ngoài trời.'
-        },
+        parts: [
+          { char: '夕', role: 'radical' },
+          { char: '卜', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '外', reading: 'そと' }],
-            meaning: { en: 'outside', vi: 'bên ngoài' }
+            parts: [
+              { text: '外', reading: 'そと' },
+              { text: '側', reading: 'がわ' }
+            ],
+            meaning: { en: 'the outside', vi: 'phía ngoài' }
           },
           {
             parts: [
@@ -3470,11 +3221,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'far, distant', vi: 'viễn - xa, xa xôi' },
         onyomi: ['エン'],
         kunyomi: ['とお.い'],
-        components: [],
-        mnemonic: {
-          en: 'A journey 辶 that stretches on over a great distance.',
-          vi: 'Chặng đường 辶 kéo dài đằng đẵng.'
-        },
+        components: ['辶', '袁'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '袁', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -3505,10 +3256,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キン'],
         kunyomi: ['ちか.い'],
         components: ['辶', '斤'],
-        mnemonic: {
-          en: 'Just a short walk 辶 away, only an axe 斤 throw off.',
-          vi: 'Chỉ vài bước 辶, gần trong tầm ném rìu 斤.'
-        },
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '斤', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -3547,10 +3298,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゲン', 'ゴン'],
         kunyomi: ['い.う', 'こと'],
         components: [],
-        mnemonic: {
-          en: 'Words coming out of a mouth 口, line after line.',
-          vi: 'Lời nói phát ra từ miệng 口, từng hàng từng hàng.'
-        },
         examples: [
           {
             parts: [
@@ -3581,10 +3328,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ワ'],
         kunyomi: ['はな.す', 'はなし'],
         components: ['言', '舌'],
-        mnemonic: {
-          en: 'Working your speech 言 and your tongue 舌 to have a chat.',
-          vi: 'Dùng lời nói 言 và cái lưỡi 舌 để trò chuyện.'
-        },
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '舌', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -3594,8 +3341,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'to speak, to talk', vi: 'nói chuyện' }
           },
           {
-            parts: [{ text: '話', reading: 'はなし' }],
-            meaning: { en: 'story, talk', vi: 'câu chuyện' }
+            parts: [
+              { text: '話', reading: 'はなし' },
+              { text: 'し', reading: 'し' },
+              { text: '合', reading: 'あ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'discussion, talk', vi: 'sự bàn bạc, trao đổi' }
           },
           {
             parts: [
@@ -3612,10 +3364,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ブン', 'モン'],
         kunyomi: ['き.く', 'き.こえる'],
         components: ['門', '耳'],
-        mnemonic: {
-          en: 'An ear 耳 pressed up against the gate 門 to listen in.',
-          vi: 'Cái tai 耳 áp vào cánh cổng 門 để nghe ngóng.'
-        },
+        parts: [
+          { char: '門', role: 'phonetic' },
+          { char: '耳', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -3645,11 +3397,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to read', vi: 'độc - đọc, đọc sách' },
         onyomi: ['ドク', 'トク'],
         kunyomi: ['よ.む'],
-        components: [],
-        mnemonic: {
-          en: 'Using your speech 言 to sell 売 the words out loud.',
-          vi: 'Dùng lời nói 言 để rao bán 売 con chữ thành tiếng.'
-        },
+        components: ['言', '売'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '売', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -3679,11 +3431,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'write; book', vi: 'thư - viết; sách' },
         onyomi: ['ショ'],
         kunyomi: ['か.く'],
-        components: ['聿', '日'],
-        mnemonic: {
-          en: 'A hand grips a brush 聿 to write on paper.',
-          vi: 'Bàn tay cầm bút lông 聿 viết lên giấy.'
-        },
+        components: ['聿', '曰'],
+        parts: [
+          { char: '聿', role: 'other' },
+          { char: '曰', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -3714,10 +3466,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['バイ'],
         kunyomi: ['か.う'],
         components: ['罒', '貝'],
-        mnemonic: {
-          en: 'Casting a net 罒 to scoop up shells and money 貝.',
-          vi: 'Chụp lưới 罒 vơ lấy vỏ sò và tiền 貝.'
-        },
+        parts: [
+          { char: '罒', role: 'semantic' },
+          { char: '貝', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -3748,11 +3500,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to sell', vi: 'mại - bán, bán ra' },
         onyomi: ['バイ'],
         kunyomi: ['う.る'],
-        components: [],
-        mnemonic: {
-          en: 'Setting goods out on display for people to take away.',
-          vi: 'Bày hàng ra cho người ta mua và mang đi.'
-        },
+        components: ['士'],
+        parts: [{ char: '士', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3783,10 +3532,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ', 'ギョウ'],
         kunyomi: ['い.く', 'おこな.う'],
         components: [],
-        mnemonic: {
-          en: 'A crossroads where people head off in every direction.',
-          vi: 'Ngã tư nơi người ta rẽ đi khắp ngả.'
-        },
         examples: [
           {
             parts: [
@@ -3816,11 +3561,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'come', vi: 'lai - đến, tới' },
         onyomi: ['ライ'],
         kunyomi: ['く.る', 'きた.る'],
-        components: [],
-        mnemonic: {
-          en: 'Ripe grain that draws people in to gather.',
-          vi: 'Lúa chín thu hút người ta kéo đến.'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3850,11 +3592,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'return, go home', vi: 'quy - trở về' },
         onyomi: ['キ'],
         kunyomi: ['かえ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Coming back home to tidy up and settle in.',
-          vi: 'Trở về nhà dọn dẹp và an cư.'
-        },
+        components: ['巾'],
+        parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3894,14 +3633,14 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シン'],
         kunyomi: ['こころ'],
         components: [],
-        mnemonic: {
-          en: 'A drawing of a heart, chambers and all.',
-          vi: 'Hình vẽ trái tim, đủ cả các ngăn bên trong.'
-        },
         examples: [
           {
-            parts: [{ text: '心', reading: 'こころ' }],
-            meaning: { en: 'heart, mind', vi: 'trái tim, tấm lòng' }
+            parts: [
+              { text: '心', reading: 'こころ' },
+              { text: '細', reading: 'ぼそ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'uneasy, forlorn', vi: 'bất an, cô quạnh' }
           },
           {
             parts: [
@@ -3925,14 +3664,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['タイ', 'テイ'],
         kunyomi: ['からだ'],
         components: ['亻', '木', '一'],
-        mnemonic: {
-          en: 'A person 亻 plus their main trunk 本 makes up the body.',
-          vi: 'Người 亻 cùng phần thân gốc 本 hợp thành cơ thể.'
-        },
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '木', role: 'other' },
+          { char: '一', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '体', reading: 'からだ' }],
-            meaning: { en: 'body', vi: 'cơ thể' }
+            parts: [
+              { text: '体', reading: 'からだ' },
+              { text: 'つき', reading: 'つき' }
+            ],
+            meaning: { en: 'build, physique', vi: 'vóc dáng' }
           },
           {
             parts: [
@@ -3956,18 +3699,21 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['トウ', 'ズ'],
         kunyomi: ['あたま'],
         components: ['豆', '頁'],
-        mnemonic: {
-          en: 'A round bean 豆 shape sitting atop the head 頁.',
-          vi: 'Hình hạt đậu 豆 tròn nằm trên phần đầu 頁.'
-        },
+        parts: [
+          { char: '豆', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
         note: {
           en: 'Read あたま for the physical head; in compounds it becomes とう (先頭) or ず (頭痛).',
           vi: 'Đọc あたま khi chỉ cái đầu; trong từ ghép thành とう (先頭) hoặc ず (頭痛).'
         },
         examples: [
           {
-            parts: [{ text: '頭', reading: 'あたま' }],
-            meaning: { en: 'head', vi: 'cái đầu' }
+            parts: [
+              { text: '石', reading: 'いし' },
+              { text: '頭', reading: 'あたま' }
+            ],
+            meaning: { en: 'stubborn person', vi: 'người bảo thủ (đầu đá)' }
           },
           {
             parts: [
@@ -3990,16 +3736,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'face', vi: 'nhan - khuôn mặt' },
         onyomi: ['ガン'],
         kunyomi: ['かお'],
-        components: [],
-        mnemonic: {
-          en: 'The most expressive page 頁 of a whole person.',
-          vi: 'Trang 頁 biểu cảm nhất của con người.'
-        },
+        components: ['彦', '頁'],
+        parts: [
+          { char: '彦', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '顔', reading: 'かお' }],
-            meaning: { en: 'face', vi: 'khuôn mặt' }
-          },
           {
             parts: [
               { text: '顔', reading: 'かお' },
@@ -4022,15 +3764,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュ'],
         kunyomi: ['くび'],
         components: [],
-        mnemonic: {
-          en: 'A head with hair perched on top of the neck.',
-          vi: 'Cái đầu có tóc đặt trên cái cổ.'
-        },
         examples: [
-          {
-            parts: [{ text: '首', reading: 'くび' }],
-            meaning: { en: 'neck', vi: 'cổ' }
-          },
           {
             parts: [
               { text: '首', reading: 'しゅ' },
@@ -4053,15 +3787,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['モウ'],
         kunyomi: ['け'],
         components: [],
-        mnemonic: {
-          en: 'A single strand of hair curling at its tip.',
-          vi: 'Một sợi lông xoăn ở đầu ngọn.'
-        },
         examples: [
-          {
-            parts: [{ text: '毛', reading: 'け' }],
-            meaning: { en: 'hair, fur', vi: 'lông, tóc' }
-          },
           {
             parts: [
               { text: '毛', reading: 'け' },
@@ -4083,11 +3809,15 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'voice', vi: 'thanh - giọng, tiếng' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['こえ'],
-        components: [],
+        components: ['士'],
+        parts: [{ char: '士', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '声', reading: 'こえ' }],
-            meaning: { en: 'voice', vi: 'giọng nói' }
+            parts: [
+              { text: '大', reading: 'おお' },
+              { text: '声', reading: 'ごえ' }
+            ],
+            meaning: { en: 'loud voice', vi: 'giọng to' }
           },
           {
             parts: [
@@ -4111,6 +3841,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゲン', 'ガン'],
         kunyomi: ['もと'],
         components: ['二', '儿'],
+        parts: [
+          { char: '二', role: 'other' },
+          { char: '儿', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -4118,10 +3852,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '気', reading: 'き' }
             ],
             meaning: { en: 'healthy, energetic', vi: 'khỏe mạnh' }
-          },
-          {
-            parts: [{ text: '元', reading: 'もと' }],
-            meaning: { en: 'origin, source', vi: 'gốc, nguồn' }
           },
           {
             parts: [
@@ -4138,10 +3868,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['タイ', 'タ'],
         kunyomi: ['ふと.い'],
         components: ['大', '丶'],
-        mnemonic: {
-          en: 'A big 大 person with one extra dot 丶 of bulk added on.',
-          vi: 'Người to 大 thêm một chấm 丶 bề dày nữa.'
-        },
+        parts: [
+          { char: '大', role: 'radical' },
+          { char: '丶', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4172,10 +3902,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キョウ', 'ゴウ'],
         kunyomi: ['つよ.い'],
         components: ['弓', '虫'],
-        mnemonic: {
-          en: 'A bow 弓 and a tough little beetle 虫: taut and hardy.',
-          vi: 'Cây cung 弓 và con bọ 虫: căng và cứng cáp.'
-        },
+        parts: [
+          { char: '弓', role: 'radical' },
+          { char: '虫', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4213,12 +3943,9 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ten thousand', vi: 'vạn - vạn (10.000)' },
         onyomi: ['マン', 'バン'],
         kunyomi: [],
-        components: [],
+        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '万', reading: 'まん' }],
-            meaning: { en: 'ten thousand', vi: 'vạn' }
-          },
           {
             parts: [
               { text: '一', reading: 'いち' },
@@ -4240,11 +3967,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'half', vi: 'bán - một nửa' },
         onyomi: ['ハン'],
         kunyomi: ['なか.ば'],
-        components: [],
-        mnemonic: {
-          en: 'A vertical line slicing something evenly into two.',
-          vi: 'Một nét dọc cắt vật thành hai phần bằng nhau.'
-        },
+        components: ['十'],
+        parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -4275,10 +3999,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ブン', 'フン', 'ブ'],
         kunyomi: ['わ.ける', 'わ.かる'],
         components: ['八', '刀'],
-        mnemonic: {
-          en: 'A knife 刀 slicing 八 something apart into portions.',
-          vi: 'Con dao 刀 chia tách 八 vật ra thành từng phần.'
-        },
+        parts: [
+          { char: '八', role: 'other' },
+          { char: '刀', role: 'radical' }
+        ],
         note: {
           en: 'Many readings: ぶん (part/portion), ふん (minute), ぶ (rate/percent).',
           vi: 'Nhiều cách đọc: ぶん (phần), ふん (phút), ぶ (tỷ lệ/phần trăm).'
@@ -4312,11 +4036,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'number, count', vi: 'số - con số; đếm' },
         onyomi: ['スウ', 'ス'],
         kunyomi: ['かず', 'かぞ.える'],
-        components: [],
+        components: ['婁', '攵'],
+        parts: [
+          { char: '婁', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '数', reading: 'かず' }],
-            meaning: { en: 'number, count', vi: 'con số' }
+            parts: [
+              { text: '数', reading: 'かず' },
+              { text: '々', reading: 'かず' }
+            ],
+            meaning: { en: 'many, various', vi: 'nhiều, đủ loại' }
           },
           {
             parts: [
@@ -4339,11 +4070,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'talent; age', vi: 'tài - tài năng; tuổi' },
         onyomi: ['サイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A sprout just breaking through the surface: raw, natural talent.',
-          vi: 'Mầm cây vừa nhú lên: tài năng bẩm sinh thô sơ.'
-        },
+        components: ['手'],
+        parts: [{ char: '手', role: 'radical' }],
         note: {
           en: 'Commonly written for age in place of 歳 (informal), e.g. 五才 = five years old.',
           vi: 'Thường dùng viết tuổi thay cho 歳 (thân mật), vd 五才 = 5 tuổi.'
@@ -4378,10 +4106,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カイ', 'エ'],
         kunyomi: ['まわ.る', 'まわ.す'],
         components: ['囗', '口'],
-        mnemonic: {
-          en: 'A small box 口 spinning around inside a larger one 囗.',
-          vi: 'Cái khung nhỏ 口 xoay tròn bên trong khung lớn 囗.'
-        },
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4412,10 +4140,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['バン'],
         kunyomi: [],
         components: ['釆', '田'],
-        mnemonic: {
-          en: 'Sorting 釆 the plots of a field 田 into a set order.',
-          vi: 'Phân loại 釆 các thửa ruộng 田 theo thứ tự.'
-        },
+        parts: [
+          { char: '釆', role: 'other' },
+          { char: '田', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -4445,15 +4173,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'what', vi: 'hà - cái gì, gì' },
         onyomi: ['カ'],
         kunyomi: ['なに', 'なん'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 tilting their head to ask what is going on.',
-          vi: 'Người 亻 nghiêng đầu hỏi có chuyện gì.'
-        },
+        components: ['亻', '可'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '可', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '何', reading: 'なに' }],
-            meaning: { en: 'what', vi: 'cái gì' }
+            parts: [
+              { text: '何', reading: 'なに' },
+              { text: '者', reading: 'もの' }
+            ],
+            meaning: { en: 'who (person)', vi: 'kẻ nào, người nào' }
           },
           {
             parts: [
@@ -4476,11 +4207,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'every', vi: 'mỗi - mỗi, hằng' },
         onyomi: ['マイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A mother 母 giving birth over and over, happening every single time.',
-          vi: 'Người mẹ 母 sinh nở hết lần này đến lần khác, lần nào cũng vậy.'
-        },
+        components: ['母'],
+        parts: [{ char: '母', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -4511,10 +4239,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ドウ'],
         kunyomi: ['おな.じ'],
         components: ['冂', '一', '口'],
-        mnemonic: {
-          en: 'One 一 mouth 口 speaking under the same roof 冂: everyone in agreement.',
-          vi: 'Một 一 cái miệng 口 nói dưới cùng mái 冂: tất cả đồng lòng.'
-        },
+        parts: [
+          { char: '冂', role: 'other' },
+          { char: '一', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -4553,10 +4282,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キョウ'],
         kunyomi: ['おし.える', 'おそ.わる'],
         components: ['子', '攵'],
-        mnemonic: {
-          en: 'Guiding a child 子 along with a firm tap 攵 is how you teach.',
-          vi: 'Dìu dắt đứa trẻ 子 kèm những cái nhắc nhở 攵 chính là dạy học.'
-        },
+        parts: [
+          { char: '子', role: 'other' },
+          { char: '攵', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -4588,10 +4317,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ'],
         kunyomi: [],
         components: ['禾', '斗'],
-        mnemonic: {
-          en: 'Measuring out grain 禾 with a dipper 斗, sorting it into categories.',
-          vi: 'Đong lúa 禾 bằng cái đấu 斗, phân ra thành từng loại.'
-        },
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '斗', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4622,10 +4351,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['サン'],
         kunyomi: [],
         components: ['竹', '目', '廾'],
-        mnemonic: {
-          en: 'Counting on bamboo 竹 rods, eyes 目 fixed and both hands 廾 busy: doing sums.',
-          vi: 'Đếm trên que tre 竹, mắt 目 chăm chú, hai tay 廾 bận rộn: đang tính toán.'
-        },
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '目', role: 'other' },
+          { char: '廾', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4655,7 +4385,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'diagram, plan', vi: 'đồ - sơ đồ, bản vẽ' },
         onyomi: ['ズ', 'ト'],
         kunyomi: ['はか.る'],
-        components: [],
+        components: ['囗'],
+        parts: [{ char: '囗', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -4686,11 +4417,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reason, logic; manage', vi: 'lý - lẽ, lý; quản lý' },
         onyomi: ['リ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Polishing a gem to follow its natural grain, finding the reason within.',
-          vi: 'Mài viên ngọc theo đường vân tự nhiên, tìm ra cái lý bên trong.'
-        },
+        components: ['王', '里'],
+        parts: [
+          { char: '王', role: 'radical' },
+          { char: '里', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -4720,11 +4451,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to think, consider', vi: 'khảo - suy nghĩ, cân nhắc' },
         onyomi: ['コウ'],
         kunyomi: ['かんが.える'],
-        components: [],
-        mnemonic: {
-          en: 'An elder 耂 bent over, mulling something over carefully.',
-          vi: 'Người già 耂 cúi mình, ngẫm nghĩ điều gì đó thật kỹ.'
-        },
+        components: ['耂'],
+        parts: [{ char: '耂', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -4755,10 +4483,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チ'],
         kunyomi: ['し.る'],
         components: ['矢', '口'],
-        mnemonic: {
-          en: 'Words from your mouth 口 as straight and sure as an arrow 矢: you know it.',
-          vi: 'Lời từ miệng 口 thẳng và chắc như mũi tên 矢: bạn biết rõ điều đó.'
-        },
+        parts: [
+          { char: '矢', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4788,11 +4516,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'make, create', vi: 'tác - làm, tạo' },
         onyomi: ['サク', 'サ'],
         kunyomi: ['つく.る'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 crafting something with their own hands.',
-          vi: 'Người 亻 dùng chính đôi tay tạo ra thứ gì đó.'
-        },
+        components: ['亻', '乍'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '乍', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -4823,10 +4551,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ', 'ク'],
         kunyomi: [],
         components: [],
-        mnemonic: {
-          en: 'A craftsman tool or ruler, standing upright.',
-          vi: 'Cây thước hay dụng cụ của người thợ, dựng đứng.'
-        },
         examples: [
           {
             parts: [
@@ -4898,14 +4622,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['テン'],
         kunyomi: ['みせ'],
         components: ['广', '卜', '口'],
-        mnemonic: {
-          en: 'A building under a wide roof 广 where goods are set out and sold.',
-          vi: 'Toà nhà dưới mái rộng 广 nơi bày ra bán hàng hoá.'
-        },
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '卜', role: 'other' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '店', reading: 'みせ' }],
-            meaning: { en: 'shop, store', vi: 'cửa hàng' }
+            parts: [
+              { text: '店', reading: 'みせ' },
+              { text: '先', reading: 'さき' }
+            ],
+            meaning: { en: 'storefront', vi: 'trước cửa hàng' }
           },
           {
             parts: [
@@ -4929,10 +4657,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シツ'],
         kunyomi: ['むろ'],
         components: ['宀', '至'],
-        mnemonic: {
-          en: 'A place under a roof 宀 that you finally arrive 至 at: a room.',
-          vi: 'Nơi dưới mái nhà 宀 mà bạn bước tới 至: một căn phòng.'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '至', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -4963,10 +4691,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジョウ'],
         kunyomi: ['ば'],
         components: ['土', '日'],
-        mnemonic: {
-          en: 'A patch of earth 土 out in the sun 日: an open place or spot.',
-          vi: 'Một mảnh đất 土 ngoài nắng 日: một nơi chốn, khoảng trống.'
-        },
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '日', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -4997,10 +4725,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シャ'],
         kunyomi: ['やしろ'],
         components: ['礻', '土'],
-        mnemonic: {
-          en: 'An altar 礻 to the god of the earth 土: a shrine, and later a company.',
-          vi: 'Bàn thờ 礻 thần đất 土: ngôi đền, về sau là công ty.'
-        },
+        parts: [
+          { char: '礻', role: 'radical' },
+          { char: '土', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -5030,11 +4758,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'meeting; to meet', vi: 'hội - gặp gỡ; hội họp' },
         onyomi: ['カイ', 'エ'],
         kunyomi: ['あ.う'],
-        components: [],
-        mnemonic: {
-          en: 'People gathering together under one roof to meet.',
-          vi: 'Mọi người tụ lại dưới một mái để gặp gỡ.'
-        },
+        components: ['人', '云'],
+        parts: [
+          { char: '人', role: 'radical' },
+          { char: '云', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -5065,10 +4793,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['いち'],
         components: ['亠', '巾'],
-        mnemonic: {
-          en: 'A cloth 巾 banner hung up 亠 where a market and city gather.',
-          vi: 'Tấm vải 巾 treo lên 亠 nơi họp chợ và thành phố.'
-        },
+        parts: [
+          { char: '亠', role: 'other' },
+          { char: '巾', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -5099,10 +4827,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キョウ', 'ケイ'],
         kunyomi: [],
         components: ['亠', '口', '小'],
-        mnemonic: {
-          en: 'A tall gatehouse rising above the streets: the capital.',
-          vi: 'Toà cổng cao sừng sững giữa phố phường: kinh đô.'
-        },
+        parts: [
+          { char: '亠', role: 'radical' },
+          { char: '口', role: 'other' },
+          { char: '小', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -5133,14 +4862,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コク'],
         kunyomi: ['くに'],
         components: ['囗', '玉'],
-        mnemonic: {
-          en: 'A jewel 玉 (the ruler) enclosed by a border 囗: a country.',
-          vi: 'Viên ngọc 玉 (nhà vua) trong vòng biên giới 囗: một đất nước.'
-        },
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '玉', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '国', reading: 'くに' }],
-            meaning: { en: 'country', vi: 'đất nước' }
+            parts: [
+              { text: '国', reading: 'くに' },
+              { text: '々', reading: 'ぐに' }
+            ],
+            meaning: { en: 'many countries', vi: 'các nước' }
           },
           {
             parts: [
@@ -5163,7 +4895,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'garden, park', vi: 'viên - vườn, công viên' },
         onyomi: ['エン'],
         kunyomi: ['その'],
-        components: [],
+        components: ['囗', '袁'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '袁', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -5195,14 +4931,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ドウ', 'トウ'],
         kunyomi: ['みち'],
         components: ['辶', '首'],
-        mnemonic: {
-          en: 'Moving forward 辶 in the direction your head 首 faces: the road, the way.',
-          vi: 'Bước đi 辶 theo hướng cái đầu 首 hướng tới: con đường, đạo.'
-        },
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '首', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '道', reading: 'みち' }],
-            meaning: { en: 'road, path', vi: 'con đường' }
+            parts: [
+              { text: '近', reading: 'ちか' },
+              { text: '道', reading: 'みち' }
+            ],
+            meaning: { en: 'shortcut', vi: 'đường tắt' }
           },
           {
             parts: [
@@ -5234,10 +4973,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ソウ'],
         kunyomi: ['はし.る'],
         components: [],
-        mnemonic: {
-          en: 'A person leaning forward, legs pumping hard to run.',
-          vi: 'Người đổ về phía trước, chân sải mạnh để chạy.'
-        },
         examples: [
           {
             parts: [
@@ -5267,11 +5002,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to walk', vi: 'bộ - đi bộ, bước đi' },
         onyomi: ['ホ', 'ブ'],
         kunyomi: ['ある.く', 'あゆ.む'],
-        components: [],
-        mnemonic: {
-          en: 'One foot 止 after another, taking steps: walking.',
-          vi: 'Đặt chân 止 nối chân, từng bước một: đi bộ.'
-        },
+        components: ['止'],
+        parts: [{ char: '止', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5302,10 +5034,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['と.まる', 'と.める'],
         components: [],
-        mnemonic: {
-          en: 'A footprint that has come to rest in one place: to stop.',
-          vi: 'Dấu chân dừng hẳn lại một chỗ: dừng, ngừng.'
-        },
         examples: [
           {
             parts: [
@@ -5335,11 +5063,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pass through; commute', vi: 'thông - đi qua, thông suốt; đi lại' },
         onyomi: ['ツウ', 'ツ'],
         kunyomi: ['とお.る', 'かよ.う'],
-        components: [],
-        mnemonic: {
-          en: 'Moving 辶 straight through with nothing in the way: passing through.',
-          vi: 'Di chuyển 辶 xuyên suốt không gì cản: đi qua, thông suốt.'
-        },
+        components: ['辶', '甬'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '甬', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -5373,10 +5101,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イン'],
         kunyomi: ['ひ.く'],
         components: ['弓', '丨'],
-        mnemonic: {
-          en: 'Drawing back the string of a bow 弓 along a line 丨: to pull.',
-          vi: 'Kéo dây cung 弓 dọc theo một đường 丨: kéo, lôi.'
-        },
+        parts: [
+          { char: '弓', role: 'radical' },
+          { char: '丨', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -5407,10 +5135,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ショク', 'ジキ'],
         kunyomi: ['た.べる', 'く.う'],
         components: [],
-        mnemonic: {
-          en: 'Gathering under a roof around a bowl of rice to eat.',
-          vi: 'Quây quần dưới mái nhà quanh bát cơm để ăn.'
-        },
         examples: [
           {
             parts: [
@@ -5441,18 +5165,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ベイ', 'マイ'],
         kunyomi: ['こめ'],
         components: [],
-        mnemonic: {
-          en: 'Grains scattering off a rice stalk in every direction.',
-          vi: 'Những hạt gạo văng ra khắp phía từ bông lúa.'
-        },
         note: {
           en: 'Also abbreviates America (アメリカ), e.g. 米国 = the USA.',
           vi: 'Còn là chữ viết tắt của nước Mỹ (アメリカ), vd 米国 = Hoa Kỳ.'
         },
         examples: [
           {
-            parts: [{ text: '米', reading: 'こめ' }],
-            meaning: { en: 'rice (uncooked)', vi: 'gạo' }
+            parts: [
+              { text: '米', reading: 'こめ' },
+              { text: '粒', reading: 'つぶ' }
+            ],
+            meaning: { en: 'grain of rice', vi: 'hạt gạo' }
           },
           {
             parts: [
@@ -5476,15 +5199,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ニク'],
         kunyomi: [],
         components: [],
-        mnemonic: {
-          en: 'A slab of meat with its marbled grain drawn inside.',
-          vi: 'Một miếng thịt với thớ vân vẽ bên trong.'
-        },
         examples: [
-          {
-            parts: [{ text: '肉', reading: 'にく' }],
-            meaning: { en: 'meat', vi: 'thịt' }
-          },
           {
             parts: [
               { text: '牛', reading: 'ぎゅう' },
@@ -5507,10 +5222,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チャ', 'サ'],
         kunyomi: [],
         components: ['艹', '木'],
-        mnemonic: {
-          en: 'A leafy plant 艹 grown on a bush 木, brewed as tea.',
-          vi: 'Loài cây lá 艹 mọc trên cây bụi 木, pha thành trà.'
-        },
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '木', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -5541,15 +5256,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['バク'],
         kunyomi: ['むぎ'],
         components: [],
-        mnemonic: {
-          en: 'A stalk of grain with spreading roots, harvested as wheat.',
-          vi: 'Một cây ngũ cốc có rễ tỏa ra, thu hoạch làm lúa mì.'
-        },
         examples: [
-          {
-            parts: [{ text: '麦', reading: 'むぎ' }],
-            meaning: { en: 'wheat, barley', vi: 'lúa mì, lúa mạch' }
-          },
           {
             parts: [
               { text: '小', reading: 'こ' },
@@ -5579,16 +5286,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'snow', vi: 'tuyết - tuyết' },
         onyomi: ['セツ'],
         kunyomi: ['ゆき'],
-        components: [],
-        mnemonic: {
-          en: 'Rain 雨 turned cold and white, falling as snow.',
-          vi: 'Mưa 雨 hoá lạnh và trắng, rơi xuống thành tuyết.'
-        },
+        components: ['雨', '彐'],
+        parts: [
+          { char: '雨', role: 'radical' },
+          { char: '彐', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '雪', reading: 'ゆき' }],
-            meaning: { en: 'snow', vi: 'tuyết' }
-          },
           {
             parts: [
               { text: '大', reading: 'おお' },
@@ -5610,15 +5313,19 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cloud', vi: 'vân - mây, đám mây' },
         onyomi: ['ウン'],
         kunyomi: ['くも'],
-        components: [],
-        mnemonic: {
-          en: 'Rain 雨 gathering up above into billowing clouds.',
-          vi: 'Mưa 雨 tụ lại phía trên thành những đám mây cuồn cuộn.'
-        },
+        components: ['雨', '云'],
+        parts: [
+          { char: '雨', role: 'radical' },
+          { char: '云', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '雲', reading: 'くも' }],
-            meaning: { en: 'cloud', vi: 'mây' }
+            parts: [
+              { text: '雲', reading: 'くも' },
+              { text: '行', reading: 'ゆ' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'how the clouds (things) move', vi: 'chiều hướng (mây, tình hình)' }
           },
           {
             parts: [
@@ -5642,14 +5349,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['フウ', 'フ'],
         kunyomi: ['かぜ', 'かざ'],
         components: ['几', '虫'],
-        mnemonic: {
-          en: 'Wind sweeping a little bug 虫 along inside its gust 几.',
-          vi: 'Cơn gió cuốn con bọ 虫 đi trong luồng 几.'
-        },
         examples: [
           {
-            parts: [{ text: '風', reading: 'かぜ' }],
-            meaning: { en: 'wind', vi: 'gió' }
+            parts: [
+              { text: '北', reading: 'きた' },
+              { text: '風', reading: 'かぜ' }
+            ],
+            meaning: { en: 'north wind', vi: 'gió bắc' }
           },
           {
             parts: [
@@ -5672,11 +5378,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'electricity', vi: 'điện - điện; sấm sét' },
         onyomi: ['デン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Rain 雨 with lightning flashing beneath it: electricity.',
-          vi: 'Mưa 雨 kèm tia chớp loé bên dưới: điện, sấm sét.'
-        },
+        components: ['雨', '电'],
+        parts: [
+          { char: '雨', role: 'radical' },
+          { char: '电', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -5707,15 +5413,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['ほし'],
         components: ['日', '生'],
-        mnemonic: {
-          en: 'A tiny sun 日 born 生 up in the night sky: a star.',
-          vi: 'Một mặt trời 日 tí hon sinh ra 生 trên trời đêm: ngôi sao.'
-        },
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '生', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '星', reading: 'ほし' }],
-            meaning: { en: 'star', vi: 'ngôi sao' }
-          },
           {
             parts: [
               { text: '火', reading: 'か' },
@@ -5738,10 +5440,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セイ'],
         kunyomi: ['は.れる'],
         components: ['日', '青'],
-        mnemonic: {
-          en: 'The sun 日 shining in a blue 青 sky: clear, fine weather.',
-          vi: 'Mặt trời 日 chiếu trên nền trời xanh 青: trời quang, nắng đẹp.'
-        },
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '青', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -5772,11 +5474,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'light; to shine', vi: 'quang - ánh sáng; toả sáng' },
         onyomi: ['コウ'],
         kunyomi: ['ひか.る', 'ひかり'],
-        components: [],
-        mnemonic: {
-          en: 'Rays streaming out above a person 儿: shining light.',
-          vi: 'Những tia sáng toả ra phía trên một người 儿: ánh sáng lấp lánh.'
-        },
+        components: ['儿'],
+        parts: [{ char: '儿', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5786,8 +5485,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'to shine, to glitter', vi: 'toả sáng, lấp lánh' }
           },
           {
-            parts: [{ text: '光', reading: 'ひかり' }],
-            meaning: { en: 'light', vi: 'ánh sáng' }
+            parts: [
+              { text: '月', reading: 'つき' },
+              { text: 'の', reading: 'の' },
+              { text: '光', reading: 'ひかり' }
+            ],
+            meaning: { en: 'moonlight', vi: 'ánh trăng' }
           },
           {
             parts: [
@@ -5803,15 +5506,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sea, ocean', vi: 'hải - biển' },
         onyomi: ['カイ'],
         kunyomi: ['うみ'],
-        components: [],
-        mnemonic: {
-          en: 'The water 氵 that stretches on and on everywhere: the sea.',
-          vi: 'Dòng nước 氵 trải dài mênh mông khắp nơi: biển cả.'
-        },
+        components: ['氵', '毎'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '毎', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '海', reading: 'うみ' }],
-            meaning: { en: 'sea', vi: 'biển' }
+            parts: [
+              { text: '海', reading: 'うみ' },
+              { text: '辺', reading: 'べ' }
+            ],
+            meaning: { en: 'seaside', vi: 'bờ biển' }
           },
           {
             parts: [
@@ -5835,16 +5541,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pond', vi: 'trì - cái ao' },
         onyomi: ['チ'],
         kunyomi: ['いけ'],
-        components: [],
-        mnemonic: {
-          en: 'A small body of water 氵 held in one spot: a pond.',
-          vi: 'Một vũng nước 氵 đọng lại một chỗ: cái ao.'
-        },
+        components: ['氵', '也'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '也', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '池', reading: 'いけ' }],
-            meaning: { en: 'pond', vi: 'ao' }
-          },
           {
             parts: [
               { text: '電', reading: 'でん' },
@@ -5867,15 +5569,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コク'],
         kunyomi: ['たに'],
         components: [],
-        mnemonic: {
-          en: 'A gap opening between mountain slopes with a mouth 口 at the bottom: a valley.',
-          vi: 'Khe mở giữa hai sườn núi, đáy có cái miệng 口: thung lũng.'
-        },
         examples: [
-          {
-            parts: [{ text: '谷', reading: 'たに' }],
-            meaning: { en: 'valley', vi: 'thung lũng' }
-          },
           {
             parts: [
               { text: '谷', reading: 'たに' },
@@ -5906,15 +5600,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チョウ'],
         kunyomi: ['とり'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a long-tailed bird perched, with its eye and feathers.',
-          vi: 'Hình con chim đuôi dài đang đậu, có cả mắt và lông.'
-        },
         examples: [
-          {
-            parts: [{ text: '鳥', reading: 'とり' }],
-            meaning: { en: 'bird', vi: 'con chim' }
-          },
           {
             parts: [
               { text: '小', reading: 'こ' },
@@ -5937,14 +5623,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ギョ'],
         kunyomi: ['さかな', 'うお'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a fish: head on top, scaly body, fins below.',
-          vi: 'Hình con cá: đầu ở trên, thân đầy vảy, vây bên dưới.'
-        },
         examples: [
           {
-            parts: [{ text: '魚', reading: 'さかな' }],
-            meaning: { en: 'fish', vi: 'con cá' }
+            parts: [
+              { text: '魚', reading: 'さかな' },
+              { text: '屋', reading: 'や' }
+            ],
+            meaning: { en: 'fish shop', vi: 'tiệm cá' }
           },
           {
             parts: [
@@ -5968,15 +5653,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['バ'],
         kunyomi: ['うま', 'ま'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a horse: flowing mane, body, and galloping legs.',
-          vi: 'Hình con ngựa: bờm bay, thân và bốn chân đang phi.'
-        },
         examples: [
-          {
-            parts: [{ text: '馬', reading: 'うま' }],
-            meaning: { en: 'horse', vi: 'con ngựa' }
-          },
           {
             parts: [
               { text: '馬', reading: 'ば' },
@@ -5999,14 +5676,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ギュウ'],
         kunyomi: ['うし'],
         components: [],
-        mnemonic: {
-          en: 'A cow seen head-on, its two horns sticking up.',
-          vi: 'Con bò nhìn từ phía trước, hai cái sừng chĩa lên.'
-        },
         examples: [
           {
-            parts: [{ text: '牛', reading: 'うし' }],
-            meaning: { en: 'cow', vi: 'con bò' }
+            parts: [
+              { text: '子', reading: 'こ' },
+              { text: '牛', reading: 'うし' }
+            ],
+            meaning: { en: 'calf', vi: 'con bê' }
           },
           {
             parts: [
@@ -6030,18 +5706,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ウ'],
         kunyomi: ['は', 'はね'],
         components: [],
-        mnemonic: {
-          en: 'A pair of feathered wings drawn side by side.',
-          vi: 'Đôi cánh lông vẽ cạnh nhau.'
-        },
         note: {
           en: 'Also the counter for birds and rabbits (一羽, 二羽).',
           vi: 'Còn là lượng từ đếm chim và thỏ (一羽, 二羽).'
         },
         examples: [
           {
-            parts: [{ text: '羽', reading: 'はね' }],
-            meaning: { en: 'feather, wing', vi: 'lông, cánh' }
+            parts: [
+              { text: '羽', reading: 'は' },
+              { text: '音', reading: 'おと' }
+            ],
+            meaning: { en: 'sound of wings', vi: 'tiếng vỗ cánh' }
           },
           {
             parts: [
@@ -6065,14 +5740,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カク'],
         kunyomi: ['つの', 'かど'],
         components: [],
-        mnemonic: {
-          en: 'The shape of an animal horn, also used for a corner or angle.',
-          vi: 'Hình cái sừng thú, cũng dùng cho góc, góc cạnh.'
-        },
         examples: [
           {
-            parts: [{ text: '角', reading: 'つの' }],
-            meaning: { en: 'horn (of an animal)', vi: 'sừng' }
+            parts: [
+              { text: '角', reading: 'つの' },
+              { text: '笛', reading: 'ぶえ' }
+            ],
+            meaning: { en: 'horn (instrument)', vi: 'tù và (kèn sừng)' }
           },
           {
             parts: [
@@ -6096,10 +5770,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['メイ'],
         kunyomi: ['な.く', 'な.る'],
         components: ['口', '鳥'],
-        mnemonic: {
-          en: 'A bird 鳥 opening its mouth 口 to sing out.',
-          vi: 'Con chim 鳥 mở miệng 口 cất tiếng hót.'
-        },
+        parts: [
+          { char: '口', role: 'semantic' },
+          { char: '鳥', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -6130,11 +5804,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'field, plain; the wild', vi: 'dã - cánh đồng, đồng hoang' },
         onyomi: ['ヤ'],
         kunyomi: ['の'],
-        components: [],
-        mnemonic: {
-          en: 'The open land 里 stretching out beyond the village: a field, the wild.',
-          vi: 'Vùng đất 里 trải rộng ngoài làng: cánh đồng, đồng hoang.'
-        },
+        components: ['里', '予'],
+        parts: [
+          { char: '里', role: 'radical' },
+          { char: '予', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -6165,14 +5839,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['リ'],
         kunyomi: ['さと'],
         components: ['田', '土'],
-        mnemonic: {
-          en: 'Rice fields 田 on the earth 土 where a country village sits.',
-          vi: 'Ruộng đồng 田 trên đất 土, nơi có ngôi làng quê.'
-        },
         examples: [
           {
-            parts: [{ text: '里', reading: 'さと' }],
-            meaning: { en: 'hometown, village', vi: 'quê, làng quê' }
+            parts: [
+              { text: '古', reading: 'ふる' },
+              { text: '里', reading: 'さと' }
+            ],
+            meaning: { en: 'hometown', vi: 'quê hương' }
           },
           {
             parts: [
@@ -6196,15 +5869,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ガン'],
         kunyomi: ['いわ'],
         components: ['山', '石'],
-        mnemonic: {
-          en: 'A stone 石 as big as part of a mountain 山: a boulder, a crag.',
-          vi: 'Hòn đá 石 to như một phần núi 山: tảng đá lớn.'
-        },
+        parts: [
+          { char: '山', role: 'radical' },
+          { char: '石', role: 'semantic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '岩', reading: 'いわ' }],
-            meaning: { en: 'rock, boulder', vi: 'tảng đá' }
-          },
           {
             parts: [
               { text: '岩', reading: 'がん' },
@@ -6235,10 +5904,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ'],
         kunyomi: ['たか.い', 'たか'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a tall tower or gate building, storey upon storey: high, tall.',
-          vi: 'Hình một tòa tháp hay cổng cao nhiều tầng chồng lên nhau: cao.'
-        },
         examples: [
           {
             parts: [
@@ -6269,10 +5934,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['タ'],
         kunyomi: ['おお.い'],
         components: ['夕', '夕'],
-        mnemonic: {
-          en: 'One evening 夕 stacked on another evening 夕: evening after evening adds up to many.',
-          vi: 'Một buổi tối 夕 chồng lên một buổi tối 夕 khác: hết tối này đến tối kia, thành nhiều.'
-        },
+        parts: [
+          { char: '夕', role: 'radical' },
+          { char: '夕', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6302,11 +5967,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'few, little', vi: 'thiểu - ít; một chút' },
         onyomi: ['ショウ'],
         kunyomi: ['すく.ない', 'すこ.し'],
-        components: [],
-        mnemonic: {
-          en: 'Something small 小 with one more sliver cut off: even fewer, just a little.',
-          vi: 'Cái gì đó nhỏ 小 lại bị cắt thêm một chút: càng ít, chỉ một tí.'
-        },
+        components: ['小', '丿'],
+        parts: [
+          { char: '小', role: 'radical' },
+          { char: '丿', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6338,10 +6003,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジャク'],
         kunyomi: ['よわ.い'],
         components: ['弓', '弓'],
-        mnemonic: {
-          en: 'Two bows 弓 whose strings have gone limp and feathery: weak, frail.',
-          vi: 'Hai cây cung 弓 dây đã chùng, rũ như lông: yếu ớt.'
-        },
+        parts: [
+          { char: '弓', role: 'radical' },
+          { char: '弓', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6372,10 +6037,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['メイ', 'ミョウ'],
         kunyomi: ['あか.るい', 'あ.ける'],
         components: ['日', '月'],
-        mnemonic: {
-          en: 'The sun 日 and the moon 月 together, the two brightest things: bright, clear.',
-          vi: 'Mặt trời 日 và mặt trăng 月 cùng nhau, hai thứ sáng nhất: sáng, rõ ràng.'
-        },
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '月', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -6408,10 +6073,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コ'],
         kunyomi: ['ふる.い'],
         components: ['十', '口'],
-        mnemonic: {
-          en: 'Words passed through ten 十 mouths 口 over the generations: old, ancient.',
-          vi: 'Lời truyền qua mười 十 cái miệng 口 bao đời: cũ, xưa.'
-        },
+        parts: [
+          { char: '十', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -6442,10 +6107,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シン'],
         kunyomi: ['あたら.しい', 'あら.た'],
         components: ['立', '木', '斤'],
-        mnemonic: {
-          en: 'Standing 立 by a tree 木 with an axe 斤 to cut fresh wood: new.',
-          vi: 'Đứng 立 bên cây 木 cầm rìu 斤 chặt gỗ tươi: mới.'
-        },
+        parts: [
+          { char: '立', role: 'other' },
+          { char: '木', role: 'other' },
+          { char: '斤', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -6477,10 +6143,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チョウ'],
         kunyomi: ['なが.い'],
         components: [],
-        mnemonic: {
-          en: 'A picture of long flowing hair on an elder: long, and the senior who leads.',
-          vi: 'Hình mái tóc dài của bậc trưởng lão: dài, và người đứng đầu.'
-        },
         examples: [
           {
             parts: [
@@ -6510,11 +6172,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wide, spacious', vi: 'quảng - rộng, rộng rãi' },
         onyomi: ['コウ'],
         kunyomi: ['ひろ.い'],
-        components: [],
-        mnemonic: {
-          en: 'A wide roof 广 sheltering a broad, open space: wide, spacious.',
-          vi: 'Mái nhà 广 rộng che một khoảng đất thênh thang: rộng rãi.'
-        },
+        components: ['广', '厶'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '厶', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6545,10 +6207,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['サイ'],
         kunyomi: ['ほそ.い', 'こま.かい'],
         components: ['糸', '田'],
-        mnemonic: {
-          en: 'A thread 糸 as fine as the lines dividing a field 田: thin, fine, detailed.',
-          vi: 'Sợi chỉ 糸 mảnh như những đường chia ô ruộng 田: nhỏ, mảnh, chi tiết.'
-        },
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '田', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -6589,10 +6251,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゴ'],
         kunyomi: ['かた.る'],
         components: ['言', '口'],
-        mnemonic: {
-          en: 'Speech 言 shaped by the mouth 口 into words: language.',
-          vi: 'Lời nói 言 được cái miệng 口 tạo thành từ ngữ: ngôn ngữ.'
-        },
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6624,10 +6286,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キ'],
         kunyomi: ['しる.す'],
         components: ['言', '己'],
-        mnemonic: {
-          en: 'Putting your own 己 words 言 down on paper: to record, to note.',
-          vi: 'Ghi lại lời nói 言 của chính mình 己 lên giấy: ghi chép.'
-        },
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '己', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -6658,10 +6320,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ケイ'],
         kunyomi: ['はか.る'],
         components: ['言', '十'],
-        mnemonic: {
-          en: 'Speaking 言 the numbers up to ten 十 as you count: to measure, to plan.',
-          vi: 'Đọc 言 các con số đến mười 十 khi đếm: đo, tính, lên kế hoạch.'
-        },
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '十', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6691,11 +6353,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'picture, drawing; stroke', vi: 'họa/hoạch - tranh vẽ; nét (chữ)' },
         onyomi: ['ガ', 'カク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A hand drawing a boundary around a field 田: a picture, and a brush stroke.',
-          vi: 'Bàn tay vẽ đường viền quanh thửa ruộng 田: bức tranh, và nét vẽ.'
-        },
+        components: ['田'],
+        parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -6725,15 +6384,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shape, form', vi: 'hình - hình dạng, hình thức' },
         onyomi: ['ケイ', 'ギョウ'],
         kunyomi: ['かた', 'かたち'],
-        components: [],
-        mnemonic: {
-          en: 'A frame with decorative strokes 彡 added: the shape, the form of a thing.',
-          vi: 'Một cái khung thêm vài nét trang trí 彡: hình dạng, hình thức của vật.'
-        },
+        components: ['开', '彡'],
+        parts: [
+          { char: '开', role: 'phonetic' },
+          { char: '彡', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '形', reading: 'かたち' }],
-            meaning: { en: 'shape, form', vi: 'hình dạng' }
+            parts: [
+              { text: '姿', reading: 'すがた' },
+              { text: '形', reading: 'かたち' }
+            ],
+            meaning: { en: 'figure, appearance', vi: 'hình dáng' }
           },
           {
             parts: [
@@ -6757,16 +6419,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'point, dot; score', vi: 'điểm - chấm, điểm; điểm số' },
         onyomi: ['テン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Small dots like sparks marking spots: a point, a dot, a score.',
-          vi: 'Những chấm nhỏ như tia lửa đánh dấu vị trí: điểm, chấm, điểm số.'
-        },
+        components: ['占', '灬'],
+        parts: [
+          { char: '占', role: 'phonetic' },
+          { char: '灬', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '点', reading: 'てん' }],
-            meaning: { en: 'point, dot', vi: 'điểm, chấm' }
-          },
           {
             parts: [
               { text: '百', reading: 'ひゃく' },
@@ -6789,10 +6447,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['チョク', 'ジキ'],
         kunyomi: ['なお.す', 'なお.る'],
         components: ['十', '目'],
-        mnemonic: {
-          en: 'Ten 十 eyes 目 looking straight to check a thing is honest and correct: straight, to fix.',
-          vi: 'Mười 十 con mắt 目 nhìn thẳng kiểm tra cho ngay ngắn: thẳng, sửa lại.'
-        },
+        parts: [
+          { char: '十', role: 'other' },
+          { char: '目', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -6830,10 +6488,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['トウ'],
         kunyomi: ['こた.える', 'こた.え'],
         components: ['竹', '口'],
-        mnemonic: {
-          en: 'Words from the mouth 口 written on a bamboo 竹 slip to reply: an answer.',
-          vi: 'Lời từ miệng 口 chép lên thẻ tre 竹 để hồi đáp: câu trả lời.'
-        },
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -6864,11 +6522,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to think, to feel', vi: 'tư - nghĩ, suy nghĩ' },
         onyomi: ['シ'],
         kunyomi: ['おも.う'],
-        components: [],
-        mnemonic: {
-          en: 'The head (drawn like 田) working together with the heart 心 below: to think, to feel.',
-          vi: 'Cái đầu (viết như 田) cùng hoạt động với trái tim 心 bên dưới: suy nghĩ, cảm nhận.'
-        },
+        components: ['田', '心'],
+        parts: [
+          { char: '田', role: 'other' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -6900,14 +6558,17 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['かみ'],
         components: ['糸', '氏'],
-        mnemonic: {
-          en: 'Threads 糸 of plant fiber pressed by a clan 氏 into flat sheets: paper.',
-          vi: 'Những sợi 糸 xơ thực vật được ép thành tấm phẳng: giấy.'
-        },
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '氏', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '紙', reading: 'かみ' }],
-            meaning: { en: 'paper', vi: 'giấy' }
+            parts: [
+              { text: '紙', reading: 'かみ' },
+              { text: 'くず', reading: 'くず' }
+            ],
+            meaning: { en: 'scrap paper', vi: 'giấy vụn' }
           },
           {
             parts: [
@@ -6940,15 +6601,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['モン'],
         kunyomi: ['かど'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a pair of swinging double doors: a gate.',
-          vi: 'Hình đôi cánh cửa lớn mở ra hai bên: cái cổng.'
-        },
         examples: [
-          {
-            parts: [{ text: '門', reading: 'もん' }],
-            meaning: { en: 'gate', vi: 'cổng' }
-          },
           {
             parts: [
               { text: '校', reading: 'こう' },
@@ -6971,15 +6624,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コ'],
         kunyomi: ['と'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a single-panel door on its hinge: a door, a household.',
-          vi: 'Hình một cánh cửa đơn gắn bản lề: cánh cửa, hộ gia đình.'
-        },
         examples: [
-          {
-            parts: [{ text: '戸', reading: 'と' }],
-            meaning: { en: 'door', vi: 'cửa' }
-          },
           {
             parts: [
               { text: '戸', reading: 'と' },
@@ -7001,20 +6646,16 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stand, platform', vi: 'đài - bệ, bục; (đếm máy móc, xe)' },
         onyomi: ['ダイ', 'タイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A raised platform you stand a thing on: a stand, a base.',
-          vi: 'Cái bệ nâng lên để đặt vật lên trên: bục, bệ.'
-        },
+        components: ['厶', '口'],
+        parts: [
+          { char: '厶', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         note: {
           en: 'Also the counter for machines and vehicles (一台, 二台).',
           vi: 'Còn là lượng từ đếm máy móc và xe cộ (一台, 二台).'
         },
         examples: [
-          {
-            parts: [{ text: '台', reading: 'だい' }],
-            meaning: { en: 'stand, platform', vi: 'bệ, bục' }
-          },
           {
             parts: [
               { text: '一', reading: 'いち' },
@@ -7036,11 +6677,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ground, land; place', vi: 'địa - đất, mặt đất; nơi chốn' },
         onyomi: ['チ', 'ジ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The earth 土 spreading out underfoot: the ground, the land.',
-          vi: 'Đất 土 trải ra dưới chân: mặt đất, vùng đất.'
-        },
+        components: ['土', '也'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '也', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -7070,16 +6711,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'plain, field; origin', vi: 'nguyên - cánh đồng, đồng bằng; nguồn gốc' },
         onyomi: ['ゲン'],
         kunyomi: ['はら'],
-        components: [],
-        mnemonic: {
-          en: 'A spring flowing out from under a cliff 厂 onto the open plain: a field, an origin.',
-          vi: 'Dòng suối chảy ra từ dưới vách đá 厂 trên cánh đồng rộng: đồng bằng, nguồn gốc.'
-        },
+        components: ['厂', '白', '小'],
+        parts: [
+          { char: '厂', role: 'radical' },
+          { char: '白', role: 'other' },
+          { char: '小', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '原', reading: 'はら' }],
-            meaning: { en: 'field, plain', vi: 'cánh đồng' }
-          },
           {
             parts: [
               { text: '高', reading: 'こう' },
@@ -7102,14 +6740,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ホウ'],
         kunyomi: ['かた'],
         components: [],
-        mnemonic: {
-          en: 'A plow turning to one side, pointing a way: a direction, a method, and a polite word for a person.',
-          vi: 'Cái cày rẽ về một bên, chỉ hướng đi: phương hướng, cách thức, và cách gọi lịch sự "vị".'
-        },
         examples: [
           {
-            parts: [{ text: '方', reading: 'かた' }],
-            meaning: { en: 'way; person (polite)', vi: 'cách; vị (người)' }
+            parts: [
+              { text: '見', reading: 'み' },
+              { text: '方', reading: 'かた' }
+            ],
+            meaning: { en: 'way of looking, viewpoint', vi: 'cách nhìn' }
           },
           {
             parts: [
@@ -7133,10 +6770,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ'],
         kunyomi: ['おおやけ'],
         components: ['八', '厶'],
-        mnemonic: {
-          en: 'Dividing 八 what is private 厶 so all may share: public, official.',
-          vi: 'Chia 八 cái riêng tư 厶 ra để mọi người cùng hưởng: công cộng, chung.'
-        },
+        parts: [
+          { char: '八', role: 'radical' },
+          { char: '厶', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -7166,11 +6803,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fit, to match; to join', vi: 'hợp - hợp, khớp; kết hợp' },
         onyomi: ['ゴウ', 'ガッ'],
         kunyomi: ['あ.う', 'あ.わせる'],
-        components: [],
-        mnemonic: {
-          en: 'A lid coming down snugly onto the mouth 口 of a jar: to fit, to match, to join.',
-          vi: 'Cái nắp đậy khít xuống miệng 口 của cái hũ: khớp, vừa, kết hợp.'
-        },
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7203,11 +6837,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['コウ'],
         kunyomi: ['まじ.わる', 'ま.ぜる'],
-        components: [],
-        mnemonic: {
-          en: 'A person with their legs crossed over each other: to cross, to mix, to exchange.',
-          vi: 'Người bắt chéo hai chân lên nhau: giao nhau, trộn lẫn, giao lưu.'
-        },
+        components: ['亠'],
+        parts: [{ char: '亠', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7238,11 +6869,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'day of the week', vi: 'diệu - thứ (trong tuần)' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The sun 日 marking each shining day that names a day of the week.',
-          vi: 'Mặt trời 日 đánh dấu mỗi ngày rực rỡ, đặt tên cho các thứ trong tuần.'
-        },
+        components: ['日', '翟'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '翟', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -7283,16 +6914,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'song; to sing', vi: 'ca - bài hát; hát' },
         onyomi: ['カ'],
         kunyomi: ['うた', 'うた.う'],
-        components: [],
-        mnemonic: {
-          en: 'A wide-open mouth 欠 singing verse after verse: a song, to sing.',
-          vi: 'Cái miệng mở to 欠 hát hết câu này đến câu khác: bài hát, ca hát.'
-        },
+        components: ['哥', '欠'],
+        parts: [
+          { char: '哥', role: 'phonetic' },
+          { char: '欠', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '歌', reading: 'うた' }],
-            meaning: { en: 'song', vi: 'bài hát' }
-          },
           {
             parts: [
               { text: '歌', reading: 'うた' },
@@ -7314,11 +6941,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fun, comfort; music', vi: 'lạc/nhạc - vui, thoải mái; âm nhạc' },
         onyomi: ['ガク', 'ラク'],
         kunyomi: ['たの.しい'],
-        components: [],
-        mnemonic: {
-          en: 'A tree 木 hung with bells and drums to play: music, and the fun and ease it brings.',
-          vi: 'Cái cây 木 treo chuông trống để chơi: âm nhạc, và niềm vui, sự thoải mái nó mang lại.'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7349,11 +6973,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lively, active; life', vi: 'hoạt - sống động, hoạt động' },
         onyomi: ['カツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 on the tongue 舌 keeps a body lively and alive: active, living.',
-          vi: 'Nước 氵 trên cái lưỡi 舌 giữ cho cơ thể sống động: hoạt động, sống.'
-        },
+        components: ['氵', '舌'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '舌', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -7384,15 +7008,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ショク', 'シキ'],
         kunyomi: ['いろ'],
         components: [],
-        mnemonic: {
-          en: 'The rising flush of color on skin and on all things: color, hue.',
-          vi: 'Sắc màu ửng lên trên da và trên vạn vật: màu sắc.'
-        },
         examples: [
-          {
-            parts: [{ text: '色', reading: 'いろ' }],
-            meaning: { en: 'color', vi: 'màu' }
-          },
           {
             parts: [
               { text: '黄', reading: 'き' },
@@ -7415,15 +7031,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ', 'オウ'],
         kunyomi: ['き', 'こ'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a fire arrow whose burning tip glows yellow: the color yellow.',
-          vi: 'Hình mũi tên lửa với đầu cháy rực sắc vàng: màu vàng.'
-        },
         examples: [
-          {
-            parts: [{ text: '黄', reading: 'き' }],
-            meaning: { en: 'yellow', vi: 'màu vàng' }
-          },
           {
             parts: [
               { text: '黄', reading: 'き' },
@@ -7446,15 +7054,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コク'],
         kunyomi: ['くろ', 'くろ.い'],
         components: [],
-        mnemonic: {
-          en: 'Soot from a fire 灬 rising up and blackening everything above it: the color black.',
-          vi: 'Bồ hóng từ ngọn lửa 灬 bốc lên làm đen mọi thứ phía trên: màu đen.'
-        },
         examples: [
-          {
-            parts: [{ text: '黒', reading: 'くろ' }],
-            meaning: { en: 'black', vi: 'màu đen' }
-          },
           {
             parts: [
               { text: '黒', reading: 'くろ' },
@@ -7476,16 +7076,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'round, circle; pill', vi: 'hoàn - tròn; viên (thuốc)' },
         onyomi: ['ガン'],
         kunyomi: ['まる', 'まる.い'],
-        components: [],
-        mnemonic: {
-          en: 'A person curling their body into a rounded ball: round, a circle.',
-          vi: 'Một người co mình cuộn tròn lại: tròn, hình tròn.'
-        },
+        components: ['九', '丶'],
+        parts: [
+          { char: '九', role: 'other' },
+          { char: '丶', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '丸', reading: 'まる' }],
-            meaning: { en: 'circle, round', vi: 'hình tròn' }
-          },
           {
             parts: [
               { text: '丸', reading: 'まる' },
@@ -7508,14 +7104,13 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['トウ'],
         kunyomi: ['かたな'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a single-edged blade with its handle: a sword, a knife.',
-          vi: 'Hình một lưỡi dao một cạnh có cán: thanh đao, con dao.'
-        },
         examples: [
           {
-            parts: [{ text: '刀', reading: 'かたな' }],
-            meaning: { en: 'sword', vi: 'thanh kiếm' }
+            parts: [
+              { text: '小', reading: 'こ' },
+              { text: '刀', reading: 'がたな' }
+            ],
+            meaning: { en: 'small knife', vi: 'con dao nhỏ' }
           },
           {
             parts: [
@@ -7540,15 +7135,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キュウ'],
         kunyomi: ['ゆみ'],
         components: [],
-        mnemonic: {
-          en: 'A picture of an archery bow, curved and strung: a bow.',
-          vi: 'Hình cây cung bắn tên, cong và đã căng dây: cái cung.'
-        },
         examples: [
-          {
-            parts: [{ text: '弓', reading: 'ゆみ' }],
-            meaning: { en: 'bow', vi: 'cây cung' }
-          },
           {
             parts: [
               { text: '弓', reading: 'きゅう' },
@@ -7571,15 +7158,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['や'],
         components: [],
-        mnemonic: {
-          en: 'A picture of an arrow with its head and feathered tail: an arrow.',
-          vi: 'Hình mũi tên có đầu nhọn và đuôi lông: mũi tên.'
-        },
         examples: [
-          {
-            parts: [{ text: '矢', reading: 'や' }],
-            meaning: { en: 'arrow', vi: 'mũi tên' }
-          },
           {
             parts: [
               { text: '弓', reading: 'ゆみ' },
@@ -7613,10 +7192,10 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カン', 'ケン'],
         kunyomi: ['あいだ', 'ま'],
         components: ['門', '日'],
-        mnemonic: {
-          en: 'Sunlight 日 shining through the gap in a gate 門: the space or interval between.',
-          vi: 'Ánh nắng 日 lọt qua khe cổng 門: khoảng trống, khoảng giữa.'
-        },
+        parts: [
+          { char: '門', role: 'radical' },
+          { char: '日', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -7633,8 +7212,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'human being', vi: 'con người' }
           },
           {
-            parts: [{ text: '間', reading: 'あいだ' }],
-            meaning: { en: 'space between, interval', vi: 'khoảng giữa' }
+            parts: [
+              { text: '間', reading: 'あいだ' },
+              { text: '柄', reading: 'がら' }
+            ],
+            meaning: { en: 'relationship', vi: 'mối quan hệ' }
           }
         ]
       },
@@ -7643,11 +7225,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'steam, vapor', vi: 'khí - hơi nước' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 turning into rising vapor 气 as it boils: steam.',
-          vi: 'Nước 氵 sôi bốc thành hơi 气 bay lên: hơi nước.'
-        },
+        components: ['氵', '气'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '气', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -7677,11 +7259,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'noon, midday', vi: 'ngọ - giữa trưa' },
         onyomi: ['ゴ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The sun at its highest, the marker splitting the day in half: noon.',
-          vi: 'Mặt trời lên cao nhất, cái mốc chia đôi ngày: giữa trưa.'
-        },
+        components: ['十'],
+        parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7712,14 +7291,18 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジ'],
         kunyomi: ['てら'],
         components: ['土', '寸'],
-        mnemonic: {
-          en: 'A place on the earth 土 tended by careful hands 寸: a temple.',
-          vi: 'Nơi trên mặt đất 土 được bàn tay 寸 chăm sóc kỹ lưỡng: ngôi chùa.'
-        },
+        parts: [
+          { char: '土', role: 'other' },
+          { char: '寸', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '寺', reading: 'てら' }],
-            meaning: { en: 'temple', vi: 'chùa' }
+            parts: [
+              { text: '寺', reading: 'てら' },
+              { text: '子', reading: 'こ' },
+              { text: '屋', reading: 'や' }
+            ],
+            meaning: { en: 'temple school (Edo era)', vi: 'trường tư thời Edo' }
           },
           {
             parts: [
@@ -7742,11 +7325,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to cut; earnest, important', vi: 'thiết - cắt; tha thiết, quan trọng' },
         onyomi: ['セツ', 'サイ'],
         kunyomi: ['き.る', 'き.れる'],
-        components: [],
-        mnemonic: {
-          en: 'Bringing a blade 刀 down to slice through something: to cut, and by extension, to be earnest.',
-          vi: 'Hạ lưỡi dao 刀 xuống cắt đứt vật gì đó: cắt, và nghĩa rộng là tha thiết.'
-        },
+        components: ['七', '刀'],
+        parts: [
+          { char: '七', role: 'phonetic' },
+          { char: '刀', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -7776,15 +7359,20 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ship, boat', vi: 'thuyền - tàu, thuyền' },
         onyomi: ['セン'],
         kunyomi: ['ふね', 'ふな'],
-        components: [],
-        mnemonic: {
-          en: 'A boat 舟 big enough to carry many people across the water: a ship.',
-          vi: 'Chiếc thuyền 舟 đủ lớn chở nhiều người qua nước: con tàu.'
-        },
+        components: ['舟', '八', '口'],
+        parts: [
+          { char: '舟', role: 'radical' },
+          { char: '八', role: 'other' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '船', reading: 'ふね' }],
-            meaning: { en: 'ship, boat', vi: 'con thuyền, tàu' }
+            parts: [
+              { text: '渡', reading: 'わた' },
+              { text: 'し', reading: 'し' },
+              { text: '船', reading: 'ぶね' }
+            ],
+            meaning: { en: 'ferry boat', vi: 'đò ngang' }
           },
           {
             parts: [
@@ -7808,10 +7396,11 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['セン'],
         kunyomi: [],
         components: ['糸', '白', '水'],
-        mnemonic: {
-          en: 'A thread 糸 drawn out as long and thin as a spring of water 泉: a line, a wire.',
-          vi: 'Sợi chỉ 糸 kéo dài mảnh như dòng suối 泉: đường kẻ, sợi dây, tuyến.'
-        },
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '白', role: 'other' },
+          { char: '水', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -7841,15 +7430,20 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to assemble; group, class', vi: 'tổ - kết thành nhóm; tổ, nhóm, lớp' },
         onyomi: ['ソ'],
         kunyomi: ['く.む', 'くみ'],
-        components: [],
-        mnemonic: {
-          en: 'Threads 糸 twisted and bound together into one cord: to assemble, a group or class.',
-          vi: 'Những sợi chỉ 糸 xoắn bện lại thành một: kết nhóm, tổ, nhóm, lớp.'
-        },
+        components: ['糸', '且'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '且', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '組', reading: 'くみ' }],
-            meaning: { en: 'group, class', vi: 'tổ, nhóm, lớp' }
+            parts: [
+              { text: '組', reading: 'くみ' },
+              { text: 'み', reading: 'み' },
+              { text: '立', reading: 'た' },
+              { text: 'て', reading: 'て' }
+            ],
+            meaning: { en: 'assembly, structure', vi: 'sự lắp ráp, cấu tạo' }
           },
           {
             parts: [
@@ -7875,11 +7469,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['トウ'],
         kunyomi: ['あ.たる', 'あ.てる'],
-        components: [],
-        mnemonic: {
-          en: 'A small mark landing exactly on its target: to hit, to be right, to be suitable.',
-          vi: 'Một dấu nhỏ rơi trúng đúng đích: trúng, đúng, thích đáng.'
-        },
+        components: ['彐'],
+        parts: [{ char: '彐', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7910,16 +7501,12 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'picture, drawing, painting', vi: 'hội/họa - bức tranh, tranh vẽ' },
         onyomi: ['カイ', 'エ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Colored threads 糸 brought together 会 to embroider a picture: a drawing, a painting.',
-          vi: 'Những sợi chỉ 糸 màu tụ lại 会 thêu nên bức tranh: tranh vẽ.'
-        },
+        components: ['糸', '会'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '会', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '絵', reading: 'え' }],
-            meaning: { en: 'picture, drawing', vi: 'bức tranh' }
-          },
           {
             parts: [
               { text: '絵', reading: 'え' },
@@ -7941,8 +7528,8 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
 ]);
 
 /**
- * Grade 3 Jōyō kanji (200 characters), learned 10 per lesson. Author each lesson
- * by hand; keep 10 kanji per lesson and add new lessons in order.
+ * Grade 3 Jōyō kanji (200 characters), authored by hand in ordered lessons
+ * (~10 per lesson as a loose target, not fixed). Add new lessons in order.
  */
 export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
   {
@@ -7956,11 +7543,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bad, evil', vi: 'ác - xấu, tệ; ác' },
         onyomi: ['アク', 'オ'],
         kunyomi: ['わる.い'],
-        components: [],
-        mnemonic: {
-          en: 'A twisted, ugly feeling weighing down on the heart 心: bad, evil.',
-          vi: 'Một cảm giác méo mó, xấu xa đè nặng lên trái tim 心: xấu, ác.'
-        },
+        components: ['亜', '心'],
+        parts: [
+          { char: '亜', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -7991,10 +7578,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['アン'],
         kunyomi: ['やす.い'],
         components: ['宀', '女'],
-        mnemonic: {
-          en: 'A woman 女 settled safely under a roof 宀: peaceful, secure, and by extension cheap (worry-free).',
-          vi: 'Người phụ nữ 女 an vị dưới mái nhà 宀: yên ổn, an toàn, và nghĩa rộng là rẻ (không phải lo lắng).'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '女', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -8025,10 +7612,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['アン'],
         kunyomi: ['くら.い'],
         components: ['日', '音'],
-        mnemonic: {
-          en: 'When the sun 日 sets and only sound 音 remains: it is dark.',
-          vi: 'Khi mặt trời 日 lặn, chỉ còn lại âm thanh 音: trời tối.'
-        },
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '音', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -8058,11 +7645,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'happiness, good fortune', vi: 'hạnh - hạnh phúc, may mắn' },
         onyomi: ['コウ'],
         kunyomi: ['しあわ.せ', 'さいわ.い'],
-        components: [],
-        mnemonic: {
-          en: 'A charm once worn to ward off punishment, now a sign of good luck: happiness, fortune.',
-          vi: 'Một lá bùa xưa đeo để tránh hình phạt, nay thành dấu hiệu điều lành: hạnh phúc, may mắn.'
-        },
+        components: ['干'],
+        parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8093,10 +7677,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヒ'],
         kunyomi: ['かな.しい'],
         components: ['非', '心'],
-        mnemonic: {
-          en: 'When things turn out not 非 as the heart 心 had wished: sadness, grief.',
-          vi: 'Khi mọi việc hóa ra không 非 như lòng 心 mong muốn: nỗi buồn, bi thương.'
-        },
+        parts: [
+          { char: '非', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8129,10 +7713,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イ'],
         kunyomi: [],
         components: ['音', '心'],
-        mnemonic: {
-          en: 'The sound 音 that rises up from the heart 心: what you mean, your intention.',
-          vi: 'Âm thanh 音 vang lên từ trái tim 心: điều bạn muốn nói, ý định.'
-        },
+        parts: [
+          { char: '音', role: 'semantic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8162,11 +7746,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to feel; feeling, emotion', vi: 'cảm - cảm giác, cảm nhận' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Something striking all through the heart 心: a feeling, an emotion.',
-          vi: 'Điều gì đó chạm khắp trái tim 心: cảm giác, cảm xúc.'
-        },
+        components: ['咸', '心'],
+        parts: [
+          { char: '咸', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8197,11 +7781,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thought, idea; to imagine', vi: 'tưởng - suy nghĩ, ý tưởng; tưởng tượng' },
         onyomi: ['ソウ', 'ソ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Holding the appearance 相 of things in the heart 心: to picture, to imagine, a thought.',
-          vi: 'Giữ hình ảnh 相 của sự vật trong lòng 心: hình dung, tưởng tượng, ý tưởng.'
-        },
+        components: ['相', '心'],
+        parts: [
+          { char: '相', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8235,10 +7819,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ソウ', 'ショウ'],
         kunyomi: ['あい'],
         components: ['木', '目'],
-        mnemonic: {
-          en: 'An eye 目 examining a tree 木 up close, the two facing each other: mutual, and the look of a thing.',
-          vi: 'Con mắt 目 nhìn kỹ cái cây 木, hai bên đối diện nhau: lẫn nhau, và vẻ ngoài của vật.'
-        },
+        parts: [
+          { char: '木', role: 'other' },
+          { char: '目', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8269,14 +7853,17 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ソク'],
         kunyomi: ['いき'],
         components: ['自', '心'],
-        mnemonic: {
-          en: 'Breath moving from the nose 自 down to the heart 心: a breath.',
-          vi: 'Hơi thở đi từ mũi 自 xuống tới tim 心: hơi thở.'
-        },
+        parts: [
+          { char: '自', role: 'semantic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '息', reading: 'いき' }],
-            meaning: { en: 'breath', vi: 'hơi thở' }
+            parts: [
+              { text: 'ため', reading: 'ため' },
+              { text: '息', reading: 'いき' }
+            ],
+            meaning: { en: 'a sigh', vi: 'tiếng thở dài' }
           },
           {
             parts: [
@@ -8307,11 +7894,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'medicine; doctor', vi: 'y - y học, thầy thuốc' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: ['匚', '矢'],
-        mnemonic: {
-          en: 'An arrow 矢 wound treated inside a box-like case 匚 of tools: medicine, healing, a doctor.',
-          vi: 'Vết thương do mũi tên 矢 được chữa trong hộp đồ nghề 匚: y học, thầy thuốc.'
-        },
+        components: ['匸', '矢'],
+        parts: [
+          { char: '匸', role: 'radical' },
+          { char: '矢', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -8342,11 +7929,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'illness, disease', vi: 'bệnh - bệnh tật, ốm' },
         onyomi: ['ビョウ'],
         kunyomi: ['や.む', 'やまい'],
-        components: [],
-        mnemonic: {
-          en: 'A person lying on a sickbed under the sickness roof 疒: illness, disease.',
-          vi: 'Người nằm trên giường bệnh dưới mái bệnh 疒: bệnh tật, ốm đau.'
-        },
+        components: ['疒', '丙'],
+        parts: [
+          { char: '疒', role: 'radical' },
+          { char: '丙', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -8376,11 +7963,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'death; to die', vi: 'tử - chết, cái chết' },
         onyomi: ['シ'],
         kunyomi: ['し.ぬ'],
-        components: [],
-        mnemonic: {
-          en: 'A person kneeling beside bare bones 歹: death, to die.',
-          vi: 'Một người quỳ bên bộ xương trơ 歹: cái chết, chết.'
-        },
+        components: ['歹', '匕'],
+        parts: [
+          { char: '歹', role: 'radical' },
+          { char: '匕', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -8411,14 +7998,13 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ケツ'],
         kunyomi: ['ち'],
         components: [],
-        mnemonic: {
-          en: 'A drop marked above a dish 皿 to show blood collected in it: blood.',
-          vi: 'Một giọt đánh dấu phía trên cái đĩa 皿 để chỉ máu hứng trong đó: máu.'
-        },
         examples: [
           {
-            parts: [{ text: '血', reading: 'ち' }],
-            meaning: { en: 'blood', vi: 'máu' }
+            parts: [
+              { text: '血', reading: 'ち' },
+              { text: '筋', reading: 'すじ' }
+            ],
+            meaning: { en: 'lineage, blood relation', vi: 'huyết thống' }
           },
           {
             parts: [
@@ -8441,15 +8027,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'medicine, drug', vi: 'dược - thuốc' },
         onyomi: ['ヤク'],
         kunyomi: ['くすり'],
-        components: [],
-        mnemonic: {
-          en: 'The healing herbs 艹 that bring comfort and ease 楽 to the sick: medicine.',
-          vi: 'Những loại cây cỏ 艹 mang lại sự dễ chịu 楽 cho người bệnh: thuốc.'
-        },
+        components: ['艹', '楽'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '楽', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '薬', reading: 'くすり' }],
-            meaning: { en: 'medicine', vi: 'thuốc' }
+            parts: [
+              { text: '薬', reading: 'くすり' },
+              { text: '指', reading: 'ゆび' }
+            ],
+            meaning: { en: 'ring finger', vi: 'ngón áp út' }
           },
           {
             parts: [
@@ -8473,15 +8062,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ビ'],
         kunyomi: ['はな'],
         components: [],
-        mnemonic: {
-          en: 'The nose 自 (originally a drawing of a nose) shown in full with the nostrils below: the nose.',
-          vi: 'Cái mũi 自 (vốn là hình vẽ cái mũi) vẽ đầy đủ với lỗ mũi bên dưới: cái mũi.'
-        },
         examples: [
-          {
-            parts: [{ text: '鼻', reading: 'はな' }],
-            meaning: { en: 'nose', vi: 'mũi' }
-          },
           {
             parts: [
               { text: '鼻', reading: 'はな' },
@@ -8504,15 +8085,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['は'],
         components: [],
-        mnemonic: {
-          en: 'Teeth set in the mouth that bite down and stop 止 the food: a tooth.',
-          vi: 'Hàm răng trong miệng cắn xuống chặn 止 thức ăn lại: cái răng.'
-        },
         examples: [
-          {
-            parts: [{ text: '歯', reading: 'は' }],
-            meaning: { en: 'tooth', vi: 'răng' }
-          },
           {
             parts: [
               { text: '歯', reading: 'は' },
@@ -8535,15 +8108,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'finger; to point', vi: 'chỉ - ngón tay; chỉ, trỏ' },
         onyomi: ['シ'],
         kunyomi: ['ゆび', 'さ.す'],
-        components: [],
-        mnemonic: {
-          en: 'The part of the hand 扌 you use to point at what you want: a finger, to point.',
-          vi: 'Phần của bàn tay 扌 dùng để trỏ vào thứ mình muốn: ngón tay, chỉ trỏ.'
-        },
+        components: ['扌', '旨'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '旨', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '指', reading: 'ゆび' }],
-            meaning: { en: 'finger', vi: 'ngón tay' }
+            parts: [
+              { text: '指', reading: 'ゆび' },
+              { text: '輪', reading: 'わ' }
+            ],
+            meaning: { en: 'ring', vi: 'chiếc nhẫn' }
           },
           {
             parts: [
@@ -8567,14 +8143,13 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヒ'],
         kunyomi: ['かわ'],
         components: [],
-        mnemonic: {
-          en: 'A hand peeling the hide off an animal: skin, hide, leather, or the peel of a fruit.',
-          vi: 'Một bàn tay lột da con thú: da, da thú, hoặc vỏ trái cây.'
-        },
         examples: [
           {
-            parts: [{ text: '皮', reading: 'かわ' }],
-            meaning: { en: 'skin, peel', vi: 'da, vỏ' }
+            parts: [
+              { text: '毛', reading: 'け' },
+              { text: '皮', reading: 'がわ' }
+            ],
+            meaning: { en: 'fur', vi: 'lông thú, da lông' }
           },
           {
             parts: [
@@ -8598,15 +8173,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シン'],
         kunyomi: ['み'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a person with a rounded belly, the whole body: body, oneself.',
-          vi: 'Hình một người với cái bụng tròn, cả cơ thể: thân thể, bản thân.'
-        },
         examples: [
-          {
-            parts: [{ text: '身', reading: 'み' }],
-            meaning: { en: 'body, oneself', vi: 'thân, mình' }
-          },
           {
             parts: [
               { text: '中', reading: 'なか' },
@@ -8636,11 +8203,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'effort, diligence', vi: 'miễn - cố gắng, chăm chỉ' },
         onyomi: ['ベン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Putting in strength 力 to push yourself past every excuse: to make an effort, to study hard.',
-          vi: 'Dồn sức 力 để vượt qua mọi cái cớ lười biếng: cố gắng, chăm chỉ học.'
-        },
+        components: ['免', '力'],
+        parts: [
+          { char: '免', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8664,10 +8231,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュウ'],
         kunyomi: ['なら.う'],
         components: ['羽', '白'],
-        mnemonic: {
-          en: 'A young bird flapping its wings 羽 over and over in the white 白 daylight to learn to fly: to learn, to practice.',
-          vi: 'Chim non vỗ đôi cánh 羽 hết lần này đến lần khác giữa ban ngày 白 để tập bay: học, luyện tập.'
-        },
+        parts: [
+          { char: '羽', role: 'radical' },
+          { char: '白', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -8697,11 +8264,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to research, to investigate', vi: 'cứu - nghiên cứu, tìm tòi' },
         onyomi: ['キュウ'],
         kunyomi: ['きわ.める'],
-        components: [],
-        mnemonic: {
-          en: 'Digging all the way to the end of a cave 穴 to get to the bottom of things: to research, to investigate.',
-          vi: 'Đào tới tận cùng cái hang 穴 để truy đến ngọn ngành: nghiên cứu, tìm tòi.'
-        },
+        components: ['穴', '九'],
+        parts: [
+          { char: '穴', role: 'radical' },
+          { char: '九', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -8728,11 +8295,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to polish, to grind; research', vi: 'nghiên - mài; nghiên cứu' },
         onyomi: ['ケン'],
         kunyomi: ['と.ぐ'],
-        components: [],
-        mnemonic: {
-          en: 'Grinding something smooth against a stone 石 over and over: to polish, and by extension to research deeply.',
-          vi: 'Mài một vật cho nhẵn trên hòn đá 石 lặp đi lặp lại: mài, và nghĩa rộng là nghiên cứu sâu.'
-        },
+        components: ['石', '开'],
+        parts: [
+          { char: '石', role: 'radical' },
+          { char: '开', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -8762,11 +8329,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rank, grade; class', vi: 'cấp - cấp bậc; lớp học' },
         onyomi: ['キュウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Threads 糸 tied at set levels along a rope: a rank, a grade, a class.',
-          vi: 'Những sợi chỉ 糸 buộc theo từng nấc dọc sợi dây: cấp bậc, hạng, lớp học.'
-        },
+        components: ['糸', '及'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '及', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -8796,11 +8363,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'topic, title; problem', vi: 'đề - đề tài, đề mục; bài toán' },
         onyomi: ['ダイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The heading at the head 頁 of a text that sets its subject: a topic, a title, a problem to solve.',
-          vi: 'Dòng tiêu đề ở đầu 頁 bài viết nêu chủ đề: đề tài, đề mục, bài toán.'
-        },
+        components: ['是', '頁'],
+        parts: [
+          { char: '是', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8831,10 +8398,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['モン'],
         kunyomi: ['と.う', 'と.い'],
         components: ['門', '口'],
-        mnemonic: {
-          en: 'A mouth 口 at the gate 門 calling out to ask something: to ask, a question.',
-          vi: 'Cái miệng 口 ở cổng 門 gọi vào để hỏi: hỏi, câu hỏi.'
-        },
+        parts: [
+          { char: '門', role: 'phonetic' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -8864,11 +8431,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'chapter; badge, emblem', vi: 'chương - chương (sách); huy hiệu' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A complete unit of music or writing marked off from start to finish: a chapter, and a badge or emblem.',
-          vi: 'Một đoạn nhạc hay bài viết trọn vẹn từ đầu đến cuối: chương, và huy hiệu, phù hiệu.'
-        },
+        components: ['立', '早'],
+        parts: [
+          { char: '立', role: 'radical' },
+          { char: '早', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -8876,10 +8443,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '章', reading: 'しょう' }
             ],
             meaning: { en: 'sentence, writing', vi: 'câu văn, đoạn văn' }
-          },
-          {
-            parts: [{ text: '章', reading: 'しょう' }],
-            meaning: { en: 'chapter', vi: 'chương' }
           },
           {
             parts: [
@@ -8895,16 +8458,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'poem, poetry', vi: 'thi - thơ, thi ca' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Words 言 crafted with the calm care of a temple 寺: a poem, poetry.',
-          vi: 'Lời nói 言 được trau chuốt với sự tĩnh tại như ngôi chùa 寺: bài thơ, thi ca.'
-        },
+        components: ['言', '寺'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '寺', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '詩', reading: 'し' }],
-            meaning: { en: 'poem', vi: 'bài thơ' }
-          },
           {
             parts: [
               { text: '詩', reading: 'し' },
@@ -8929,11 +8488,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ギョウ', 'ゴウ'],
         kunyomi: ['わざ'],
-        components: [],
-        mnemonic: {
-          en: 'A rack heavy with tools and instruments ready for the day: work, a trade, business, and studies.',
-          vi: 'Cái giá đầy dụng cụ, nhạc cụ sẵn sàng cho một ngày: công việc, nghề nghiệp, học nghiệp.'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8971,11 +8527,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to carry, to transport; luck', vi: 'vận - vận chuyển, chở; vận may' },
         onyomi: ['ウン'],
         kunyomi: ['はこ.ぶ'],
-        components: [],
-        mnemonic: {
-          en: 'An army 軍 on the move 辶, hauling its supplies along: to carry, to transport, and the fortune that movement brings.',
-          vi: 'Một đạo quân 軍 di chuyển 辶, chở theo quân nhu: vận chuyển, và vận may mà sự chuyển vần mang lại.'
-        },
+        components: ['辶', '軍'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '軍', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9005,11 +8561,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to move', vi: 'động - chuyển động, cử động' },
         onyomi: ['ドウ'],
         kunyomi: ['うご.く'],
-        components: [],
-        mnemonic: {
-          en: 'It takes real strength 力 to shift something heavy 重: to move.',
-          vi: 'Phải có sức 力 thật sự mới dịch được vật nặng 重: chuyển động, cử động.'
-        },
+        components: ['重', '力'],
+        parts: [
+          { char: '重', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -9039,11 +8595,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to turn, to roll; to tumble', vi: 'chuyển - quay, lăn; ngã' },
         onyomi: ['テン'],
         kunyomi: ['ころ.ぶ', 'ころ.がる'],
-        components: [],
-        mnemonic: {
-          en: 'The wheels of a cart 車 rolling round and round: to turn, to roll, to tumble.',
-          vi: 'Bánh xe 車 lăn tròn vòng vòng: quay, lăn, ngã.'
-        },
+        components: ['車', '云'],
+        parts: [
+          { char: '車', role: 'radical' },
+          { char: '云', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9074,11 +8630,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to advance, to progress', vi: 'tiến - tiến lên, tiến bộ' },
         onyomi: ['シン'],
         kunyomi: ['すす.む'],
-        components: [],
-        mnemonic: {
-          en: 'A bird 隹 can only fly forward as it moves 辶: to advance, to move forward, to progress.',
-          vi: 'Con chim 隹 khi bay 辶 chỉ tiến về phía trước: tiến lên, tiến bộ.'
-        },
+        components: ['辶', '隹'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '隹', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9108,11 +8664,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to chase, to pursue', vi: 'truy - đuổi theo, truy đuổi' },
         onyomi: ['ツイ'],
         kunyomi: ['お.う'],
-        components: [],
-        mnemonic: {
-          en: 'Setting off in motion 辶 after someone ahead of you: to chase, to pursue.',
-          vi: 'Lên đường di chuyển 辶 theo sau người phía trước: đuổi theo, truy đuổi.'
-        },
+        components: ['辶'],
+        parts: [{ char: '辶', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -9144,11 +8697,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to send; to see off', vi: 'tống - gửi, đưa tiễn' },
         onyomi: ['ソウ'],
         kunyomi: ['おく.る'],
-        components: [],
-        mnemonic: {
-          en: 'Setting something in motion 辶 to carry it off to another place: to send, to see off.',
-          vi: 'Cho vật gì đó lên đường 辶 để đưa tới nơi khác: gửi, đưa tiễn.'
-        },
+        components: ['辶'],
+        parts: [{ char: '辶', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -9179,11 +8729,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to return, to give back', vi: 'phản - trả lại, hoàn lại' },
         onyomi: ['ヘン'],
         kunyomi: ['かえ.す', 'かえ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Turning back 反 the way you came, in motion 辶: to return something, to give back.',
-          vi: 'Quay ngược 反 lại con đường cũ 辶: trả lại, hoàn lại.'
-        },
+        components: ['辶', '反'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9213,11 +8763,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to play, to enjoy oneself', vi: 'du - chơi, vui chơi; đi dạo' },
         onyomi: ['ユウ'],
         kunyomi: ['あそ.ぶ'],
-        components: [],
-        mnemonic: {
-          en: 'Wandering about on the move 辶 with no set task, just for fun: to play, to enjoy oneself.',
-          vi: 'Lang thang đây đó 辶 chẳng có việc gì, chỉ để vui: chơi, vui chơi, đi dạo.'
-        },
+        components: ['辶', '方', '子'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '方', role: 'other' },
+          { char: '子', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -9248,11 +8799,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to swim', vi: 'vịnh - bơi, bơi lội' },
         onyomi: ['エイ'],
         kunyomi: ['およ.ぐ'],
-        components: [],
-        mnemonic: {
-          en: 'Moving your body through the water 氵 to stay afloat: to swim.',
-          vi: 'Đưa cơ thể lướt qua nước 氵 để nổi: bơi, bơi lội.'
-        },
+        components: ['氵', '永'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '永', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9283,15 +8834,15 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'travel, journey', vi: 'lữ - đi du lịch, hành trình' },
         onyomi: ['リョ'],
         kunyomi: ['たび'],
-        components: [],
-        mnemonic: {
-          en: 'People following a banner, setting off together on a long journey: travel, a trip.',
-          vi: 'Đoàn người theo lá cờ, cùng lên đường một hành trình dài: đi du lịch, chuyến đi.'
-        },
+        components: ['方'],
+        parts: [{ char: '方', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '旅', reading: 'たび' }],
-            meaning: { en: 'trip, journey', vi: 'chuyến đi' }
+            parts: [
+              { text: '旅', reading: 'たび' },
+              { text: '先', reading: 'さき' }
+            ],
+            meaning: { en: 'travel destination', vi: 'nơi đến (chuyến đi)' }
           },
           {
             parts: [
@@ -9322,11 +8873,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'warm; temperature', vi: 'ôn - ấm, ấm áp; nhiệt độ' },
         onyomi: ['オン'],
         kunyomi: ['あたた.かい'],
-        components: [],
-        mnemonic: {
-          en: 'Warm water 氵 held in a dish 皿 under the sun 日: warm, and temperature.',
-          vi: 'Nước ấm 氵 đựng trong đĩa 皿 dưới nắng 日: ấm áp, và nhiệt độ.'
-        },
+        components: ['氵', '日', '皿'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '日', role: 'other' },
+          { char: '皿', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -9357,16 +8909,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hot water', vi: 'thang - nước nóng' },
         onyomi: ['トウ'],
         kunyomi: ['ゆ'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 heated under the rising sun until it steams: hot water.',
-          vi: 'Nước 氵 được đun dưới mặt trời cho tới khi bốc hơi: nước nóng.'
-        },
+        components: ['氵', '日'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '日', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '湯', reading: 'ゆ' }],
-            meaning: { en: 'hot water', vi: 'nước nóng' }
-          },
           {
             parts: [
               { text: '湯', reading: 'ゆ' },
@@ -9388,16 +8936,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wave', vi: 'ba - sóng' },
         onyomi: ['ハ'],
         kunyomi: ['なみ'],
-        components: [],
-        mnemonic: {
-          en: 'The skin 皮 of the water 氵 rising and rippling: a wave.',
-          vi: 'Lớp da 皮 của mặt nước 氵 dâng lên gợn sóng: con sóng.'
-        },
+        components: ['氵', '皮'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '皮', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '波', reading: 'なみ' }],
-            meaning: { en: 'wave', vi: 'sóng' }
-          },
           {
             parts: [
               { text: '電', reading: 'でん' },
@@ -9419,16 +8963,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ice', vi: 'băng - nước đá, băng' },
         onyomi: ['ヒョウ'],
         kunyomi: ['こおり', 'ひ'],
-        components: [],
-        mnemonic: {
-          en: 'Water 水 with an extra mark to show it has frozen solid: ice.',
-          vi: 'Nước 水 thêm một dấu để chỉ nó đã đông cứng: nước đá, băng.'
-        },
+        components: ['水', '丶'],
+        parts: [
+          { char: '水', role: 'radical' },
+          { char: '丶', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '氷', reading: 'こおり' }],
-            meaning: { en: 'ice', vi: 'nước đá' }
-          },
           {
             parts: [
               { text: '氷', reading: 'こおり' },
@@ -9450,15 +8990,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lake', vi: 'hồ - cái hồ' },
         onyomi: ['コ'],
         kunyomi: ['みずうみ'],
-        components: [],
-        mnemonic: {
-          en: 'A great, calm body of water 氵 resting inland: a lake.',
-          vi: 'Một vùng nước 氵 lớn, tĩnh lặng nằm trong đất liền: cái hồ.'
-        },
+        components: ['氵', '胡'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '胡', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '湖', reading: 'みずうみ' }],
-            meaning: { en: 'lake', vi: 'hồ' }
+            parts: [
+              { text: '湖', reading: 'こ' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'lake water', vi: 'nước hồ' }
           },
           {
             parts: [
@@ -9481,16 +9024,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'harbor, port', vi: 'cảng - bến cảng' },
         onyomi: ['コウ'],
         kunyomi: ['みなと'],
-        components: [],
-        mnemonic: {
-          en: 'A sheltered inlet of water 氵 where boats gather: a harbor, a port.',
-          vi: 'Một vũng nước 氵 kín gió nơi thuyền bè tụ lại: bến cảng.'
-        },
+        components: ['氵', '巷'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '巷', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '港', reading: 'みなと' }],
-            meaning: { en: 'harbor, port', vi: 'bến cảng' }
-          },
           {
             parts: [
               { text: '空', reading: 'くう' },
@@ -9512,16 +9051,9 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'island', vi: 'đảo - hòn đảo' },
         onyomi: ['トウ'],
         kunyomi: ['しま'],
-        components: [],
-        mnemonic: {
-          en: 'A mountain 山 in the sea where birds 鳥 land to rest: an island.',
-          vi: 'Một ngọn núi 山 giữa biển nơi chim 鳥 đáp xuống nghỉ: hòn đảo.'
-        },
+        components: ['山'],
+        parts: [{ char: '山', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '島', reading: 'しま' }],
-            meaning: { en: 'island', vi: 'hòn đảo' }
-          },
           {
             parts: [
               { text: '半', reading: 'はん' },
@@ -9544,14 +9076,17 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ガン'],
         kunyomi: ['きし'],
         components: ['山', '厂'],
-        mnemonic: {
-          en: 'Where the mountain 山 meets a cliff 厂 dropping down to the water: the shore, the bank.',
-          vi: 'Nơi núi 山 gặp vách đá 厂 đổ xuống mặt nước: bờ sông, bờ biển.'
-        },
+        parts: [
+          { char: '山', role: 'radical' },
+          { char: '厂', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '岸', reading: 'きし' }],
-            meaning: { en: 'shore, bank', vi: 'bờ' }
+            parts: [
+              { text: '岸', reading: 'きし' },
+              { text: '辺', reading: 'べ' }
+            ],
+            meaning: { en: 'shore, waterside', vi: 'bờ nước' }
           },
           {
             parts: [
@@ -9575,15 +9110,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['タン'],
         kunyomi: ['すみ'],
         components: ['山', '火'],
-        mnemonic: {
-          en: 'What is left when fire 火 burns wood from the mountain 山 down to black lumps: charcoal, coal.',
-          vi: 'Thứ còn lại khi lửa 火 đốt gỗ trên núi 山 thành những cục đen: than, than củi.'
-        },
+        parts: [
+          { char: '山', role: 'other' },
+          { char: '火', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '炭', reading: 'すみ' }],
-            meaning: { en: 'charcoal', vi: 'than củi' }
-          },
           {
             parts: [
               { text: '石', reading: 'せき' },
@@ -9605,16 +9136,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'oil', vi: 'du - dầu' },
         onyomi: ['ユ'],
         kunyomi: ['あぶら'],
-        components: [],
-        mnemonic: {
-          en: 'A liquid 氵 that seeps up out of the ground: oil.',
-          vi: 'Một chất lỏng 氵 rỉ ra từ dưới đất: dầu.'
-        },
+        components: ['氵', '由'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '由', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '油', reading: 'あぶら' }],
-            meaning: { en: 'oil', vi: 'dầu' }
-          },
           {
             parts: [
               { text: '石', reading: 'せき' },
@@ -9645,10 +9172,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イン'],
         kunyomi: ['の.む'],
         components: ['食', '欠'],
-        mnemonic: {
-          en: 'Opening the mouth wide 欠 to take in food and drink 食: to drink.',
-          vi: 'Há miệng thật to 欠 để đưa đồ ăn thức uống 食 vào: uống.'
-        },
+        parts: [
+          { char: '食', role: 'radical' },
+          { char: '欠', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -9679,15 +9206,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sake, alcohol', vi: 'tửu - rượu' },
         onyomi: ['シュ'],
         kunyomi: ['さけ', 'さか'],
-        components: [],
-        mnemonic: {
-          en: 'Liquid 氵 fermented in a wine jar 酉: sake, alcohol.',
-          vi: 'Chất lỏng 氵 ủ lên men trong vò rượu 酉: rượu.'
-        },
+        components: ['氵', '酉'],
+        parts: [
+          { char: '氵', role: 'other' },
+          { char: '酉', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '酒', reading: 'さけ' }],
-            meaning: { en: 'sake, alcohol', vi: 'rượu' }
+            parts: [
+              { text: '甘', reading: 'あま' },
+              { text: '酒', reading: 'ざけ' }
+            ],
+            meaning: { en: 'amazake (sweet sake)', vi: 'rượu ngọt amazake' }
           },
           {
             parts: [
@@ -9711,15 +9241,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'taste, flavor', vi: 'vị - vị, hương vị' },
         onyomi: ['ミ'],
         kunyomi: ['あじ', 'あじ.わう'],
-        components: [],
-        mnemonic: {
-          en: 'What the mouth 口 senses from food: taste, flavor.',
-          vi: 'Điều cái miệng 口 cảm nhận được từ thức ăn: vị, hương vị.'
-        },
+        components: ['口', '未'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '未', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '味', reading: 'あじ' }],
-            meaning: { en: 'taste, flavor', vi: 'vị, hương vị' }
+            parts: [
+              { text: '味', reading: 'あじ' },
+              { text: '見', reading: 'み' }
+            ],
+            meaning: { en: 'tasting, sampling', vi: 'nếm thử' }
           },
           {
             parts: [
@@ -9743,14 +9276,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヒン'],
         kunyomi: ['しな'],
         components: ['口', '口', '口'],
-        mnemonic: {
-          en: 'Boxes stacked up like three mouths 口 in a pile: goods, articles, and their quality.',
-          vi: 'Những cái hộp xếp chồng như ba cái miệng 口 chất đống: hàng hóa, món đồ, và phẩm chất.'
-        },
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '口', role: 'other' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '品', reading: 'しな' }],
-            meaning: { en: 'goods, article', vi: 'hàng hóa, món đồ' }
+            parts: [
+              { text: '品', reading: 'しな' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'goods, article', vi: 'hàng hóa' }
           },
           {
             parts: [
@@ -9776,11 +9313,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['グ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Holding up a tool in both hands, ready to use: an implement, equipment, and the ingredients in a dish.',
-          vi: 'Nâng một dụng cụ bằng cả hai tay, sẵn sàng dùng: dụng cụ, đồ nghề, và nguyên liệu trong món ăn.'
-        },
+        components: ['目', '八'],
+        parts: [
+          { char: '目', role: 'other' },
+          { char: '八', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -9810,11 +9347,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'luggage, cargo; burden', vi: 'hà - hành lý, hàng hóa; gánh nặng' },
         onyomi: ['カ'],
         kunyomi: ['に'],
-        components: [],
-        mnemonic: {
-          en: 'A load of plants 艹 that a person 何 carries on their shoulders: luggage, cargo, a burden.',
-          vi: 'Một bó cây cỏ 艹 mà người 何 gánh trên vai: hành lý, hàng hóa, gánh nặng.'
-        },
+        components: ['艹', '何'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '何', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9822,10 +9359,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '物', reading: 'もつ' }
             ],
             meaning: { en: 'luggage, baggage', vi: 'hành lý' }
-          },
-          {
-            parts: [{ text: '荷', reading: 'に' }],
-            meaning: { en: 'load, cargo', vi: 'hàng, gánh' }
           },
           {
             parts: [
@@ -9841,15 +9374,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'box, case', vi: 'sương - cái hộp, thùng' },
         onyomi: [],
         kunyomi: ['はこ'],
-        components: [],
-        mnemonic: {
-          en: 'A container woven from bamboo 竹 to store things in: a box.',
-          vi: 'Một cái đồ đựng đan từ tre 竹 để cất đồ: cái hộp, cái thùng.'
-        },
+        components: ['竹', '相'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '相', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '箱', reading: 'はこ' }],
-            meaning: { en: 'box', vi: 'cái hộp' }
+            parts: [
+              { text: '箱', reading: 'はこ' },
+              { text: '庭', reading: 'にわ' }
+            ],
+            meaning: { en: 'miniature garden', vi: 'vườn cảnh mini' }
           },
           {
             parts: [
@@ -9874,14 +9410,14 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: [],
         kunyomi: ['さら'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a shallow dish or bowl standing on its base: a plate, a dish.',
-          vi: 'Hình một cái đĩa nông đứng trên đế: cái đĩa.'
-        },
         examples: [
           {
-            parts: [{ text: '皿', reading: 'さら' }],
-            meaning: { en: 'plate, dish', vi: 'cái đĩa' }
+            parts: [
+              { text: '皿', reading: 'さら' },
+              { text: '洗', reading: 'あら' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'washing dishes', vi: 'rửa bát đĩa' }
           },
           {
             parts: [
@@ -9907,16 +9443,13 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['フク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'What you put on the body 月 to cover it: clothes.',
-          vi: 'Thứ khoác lên cơ thể 月 để che: quần áo.'
-        },
+        components: ['月', '卩', '又'],
+        parts: [
+          { char: '月', role: 'radical' },
+          { char: '卩', role: 'other' },
+          { char: '又', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '服', reading: 'ふく' }],
-            meaning: { en: 'clothes', vi: 'quần áo' }
-          },
           {
             parts: [
               { text: '洋', reading: 'よう' },
@@ -9938,11 +9471,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'good fortune, blessing', vi: 'phúc - phúc, may mắn, điều lành' },
         onyomi: ['フク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Praying at an altar 礻 for a jar 畐 full to the brim: good fortune, blessing.',
-          vi: 'Cầu nguyện trước bàn thờ 礻 cho một vò 畐 đầy ắp: phúc, may mắn, điều lành.'
-        },
+        components: ['礻', '畐'],
+        parts: [
+          { char: '礻', role: 'radical' },
+          { char: '畐', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -9980,11 +9513,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to serve; to do (work)', vi: 'sĩ - phục vụ, làm việc' },
         onyomi: ['シ', 'ジ'],
         kunyomi: ['つか.える'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 serving a lord like a retainer 士: to serve, to do work.',
-          vi: 'Một người 亻 phục vụ chủ như kẻ sĩ 士: phục vụ, làm việc.'
-        },
+        components: ['亻', '士'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '士', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10015,11 +9548,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'matter, thing, affair', vi: 'sự - việc, sự việc' },
         onyomi: ['ジ'],
         kunyomi: ['こと'],
-        components: [],
-        mnemonic: {
-          en: 'A hand holding a brush to record an official matter: a thing, an affair.',
-          vi: 'Một bàn tay cầm bút ghi lại công việc chính sự: việc, sự việc.'
-        },
+        components: ['亅'],
+        parts: [{ char: '亅', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -10049,11 +9579,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to use; messenger', vi: 'sử - dùng, sử dụng; sứ giả' },
         onyomi: ['シ'],
         kunyomi: ['つか.う'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 sent to carry out an order and be put to use: to use, and an envoy, a messenger.',
-          vi: 'Một người 亻 được sai đi thực hiện mệnh lệnh, được sử dụng: dùng, và sứ giả.'
-        },
+        components: ['亻', '吏'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '吏', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10083,16 +9613,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'connection; person in charge', vi: 'hệ - liên quan; người phụ trách' },
         onyomi: ['ケイ'],
         kunyomi: ['かかり', 'かか.る'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 tied by a thread 系 to a duty: the one in charge, a connection.',
-          vi: 'Một người 亻 bị buộc bởi sợi dây 系 vào một nhiệm vụ: người phụ trách, mối liên quan.'
-        },
+        components: ['亻', '系'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '系', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '係', reading: 'かかり' }],
-            meaning: { en: 'person in charge', vi: 'người phụ trách' }
-          },
           {
             parts: [
               { text: '関', reading: 'かん' },
@@ -10114,16 +9640,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'role, post; service', vi: 'dịch - vai trò, chức vụ; phục dịch' },
         onyomi: ['ヤク', 'エキ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A person going out on the road 彳 to carry out an assigned duty: a role, a post, service.',
-          vi: 'Một người ra đường 彳 để làm nhiệm vụ được giao: vai trò, chức vụ, phục dịch.'
-        },
+        components: ['彳', '殳'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '殳', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '役', reading: 'やく' }],
-            meaning: { en: 'role, part', vi: 'vai trò' }
-          },
           {
             parts: [
               { text: '役', reading: 'やく' },
@@ -10146,10 +9668,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イン'],
         kunyomi: [],
         components: ['口', '貝'],
-        mnemonic: {
-          en: 'A mouth 口 counted over a shell of money 貝: one head, one member of a group, a staff member.',
-          vi: 'Một cái miệng 口 tính trên đồng tiền vỏ sò 貝: một người, một thành viên, nhân viên.'
-        },
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '貝', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -10180,15 +9702,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キャク', 'カク'],
         kunyomi: [],
         components: ['宀', '口'],
-        mnemonic: {
-          en: 'Someone who comes to your house 宀 and is welcomed with words 口: a guest, a customer.',
-          vi: 'Người đến nhà 宀 bạn và được chào đón bằng lời 口: khách, khách mời.'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '客', reading: 'きゃく' }],
-            meaning: { en: 'guest, customer', vi: 'khách' }
-          },
           {
             parts: [
               { text: '客', reading: 'きゃく' },
@@ -10210,15 +9728,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'you (familiar); lord', vi: 'quân - anh, cậu (bạn); vua, chúa' },
         onyomi: ['クン'],
         kunyomi: ['きみ'],
-        components: [],
-        mnemonic: {
-          en: 'A ruling hand above and a mouth 口 giving orders below: a lord, and the familiar "you" (-kun).',
-          vi: 'Bàn tay cai trị bên trên và cái miệng 口 ra lệnh bên dưới: vua chúa, và cách gọi thân mật "cậu" (-kun).'
-        },
+        components: ['尹', '口'],
+        parts: [
+          { char: '尹', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '君', reading: 'きみ' }],
-            meaning: { en: 'you (familiar)', vi: 'cậu, bạn' }
+            parts: [
+              { text: '君', reading: 'きみ' },
+              { text: 'たち', reading: 'たち' }
+            ],
+            meaning: { en: 'you (plural)', vi: 'các cậu, các bạn' }
           },
           {
             parts: [
@@ -10241,15 +9762,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'main; master, owner', vi: 'chủ - chính, chủ yếu; chủ nhân' },
         onyomi: ['シュ'],
         kunyomi: ['ぬし', 'おも'],
-        components: [],
-        mnemonic: {
-          en: 'A steady flame standing on its lampstand, the central light of a home: main, master, owner.',
-          vi: 'Ngọn lửa vững trên chân đèn, nguồn sáng trung tâm của ngôi nhà: chính, chủ yếu, chủ nhân.'
-        },
+        components: ['丶', '王'],
+        parts: [
+          { char: '丶', role: 'radical' },
+          { char: '王', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '主', reading: 'ぬし' }],
-            meaning: { en: 'owner, master', vi: 'chủ nhân' }
+            parts: [
+              { text: '持', reading: 'も' },
+              { text: 'ち', reading: 'ち' },
+              { text: '主', reading: 'ぬし' }
+            ],
+            meaning: { en: 'owner', vi: 'chủ sở hữu' }
           },
           {
             parts: [
@@ -10272,15 +9797,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'person, the one who', vi: 'giả - người, kẻ (làm gì đó)' },
         onyomi: ['シャ'],
         kunyomi: ['もの'],
-        components: [],
-        mnemonic: {
-          en: 'A general word pointing at a person defined by what they do: a person, the one who.',
-          vi: 'Từ chung chỉ một người được xác định bởi việc họ làm: người, kẻ (làm gì đó).'
-        },
+        components: ['耂', '日'],
+        parts: [
+          { char: '耂', role: 'radical' },
+          { char: '日', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '者', reading: 'もの' }],
-            meaning: { en: 'person', vi: 'người, kẻ' }
+            parts: [
+              { text: '若', reading: 'わか' },
+              { text: '者', reading: 'もの' }
+            ],
+            meaning: { en: 'young person', vi: 'người trẻ' }
           },
           {
             parts: [
@@ -10312,10 +9840,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['オク'],
         kunyomi: ['や'],
         components: ['尸', '至'],
-        mnemonic: {
-          en: 'A covering 尸 you arrive 至 under to be sheltered: a roof, and by extension a shop or store.',
-          vi: 'Tấm che 尸 mà người ta đi đến 至 để trú: mái nhà, và nghĩa rộng là cửa hàng, tiệm.'
-        },
+        parts: [
+          { char: '尸', role: 'radical' },
+          { char: '至', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -10346,10 +9874,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キョク'],
         kunyomi: [],
         components: ['尸', '口'],
-        mnemonic: {
-          en: 'A section of an office under one roof 尸 where orders 口 are handled: a bureau, an office, a station.',
-          vi: 'Một bộ phận dưới một mái 尸 nơi xử lý mệnh lệnh 口: cục, sở, đài.'
-        },
+        parts: [
+          { char: '尸', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -10380,14 +9908,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キュウ', 'グウ'],
         kunyomi: ['みや'],
         components: ['宀', '口', '口'],
-        mnemonic: {
-          en: 'A grand building under a roof 宀 with room after room 口 口: a palace, a shrine.',
-          vi: 'Một tòa nhà lớn dưới mái 宀 với hết phòng này 口 đến phòng khác 口: cung điện, đền thờ.'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '口', role: 'other' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '宮', reading: 'みや' }],
-            meaning: { en: 'shrine, palace', vi: 'cung, đền' }
+            parts: [
+              { text: 'お', reading: 'お' },
+              { text: '宮', reading: 'みや' }
+            ],
+            meaning: { en: 'Shinto shrine', vi: 'đền Thần đạo' }
           },
           {
             parts: [
@@ -10410,11 +9942,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hall, large building', vi: 'quán - tòa nhà lớn, quán' },
         onyomi: ['カン'],
         kunyomi: ['やかた'],
-        components: [],
-        mnemonic: {
-          en: 'A large building where officials 官 gather and are fed 食: a hall, a large public building.',
-          vi: 'Tòa nhà lớn nơi các quan 官 tụ họp và được cho ăn 食: đại sảnh, tòa nhà công cộng lớn.'
-        },
+        components: ['食', '官'],
+        parts: [
+          { char: '食', role: 'radical' },
+          { char: '官', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10446,10 +9978,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コ', 'ク'],
         kunyomi: [],
         components: ['广', '車'],
-        mnemonic: {
-          en: 'A building 广 where carts 車 and goods are stored away: a warehouse, a storehouse.',
-          vi: 'Một tòa nhà 广 nơi cất xe cộ 車 và hàng hóa: kho, nhà kho.'
-        },
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '車', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -10479,15 +10011,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'garden, yard', vi: 'đình - sân, vườn' },
         onyomi: ['テイ'],
         kunyomi: ['にわ'],
-        components: [],
-        mnemonic: {
-          en: 'The open ground within the grounds of a building 广: a garden, a yard.',
-          vi: 'Khoảng đất trống trong khuôn viên tòa nhà 广: sân, vườn.'
-        },
+        components: ['广', '廷'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '廷', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '庭', reading: 'にわ' }],
-            meaning: { en: 'garden, yard', vi: 'sân vườn' }
+            parts: [
+              { text: '裏', reading: 'うら' },
+              { text: '庭', reading: 'にわ' }
+            ],
+            meaning: { en: 'backyard', vi: 'sân sau' }
           },
           {
             parts: [
@@ -10510,15 +10045,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'capital, metropolis', vi: 'đô - thủ đô, đô thị' },
         onyomi: ['ト', 'ツ'],
         kunyomi: ['みやこ'],
-        components: [],
-        mnemonic: {
-          en: 'The city district 阝 where many people 者 gather: a capital, a big city.',
-          vi: 'Khu phố 阝 nơi nhiều người 者 tụ về: thủ đô, đô thị lớn.'
-        },
+        components: ['者', '阝'],
+        parts: [
+          { char: '者', role: 'phonetic' },
+          { char: '阝', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '都', reading: 'みやこ' }],
-            meaning: { en: 'capital city', vi: 'kinh đô' }
+            parts: [
+              { text: '都', reading: 'みやこ' },
+              { text: '落', reading: 'お' },
+              { text: 'ち', reading: 'ち' }
+            ],
+            meaning: { en: 'leaving the capital', vi: 'rời kinh đô về quê' }
           },
           {
             parts: [
@@ -10542,16 +10081,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ward, district; section', vi: 'khu - khu vực; quận' },
         onyomi: ['ク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A boundary box 匚 drawn around one part of a city: a ward, a district, a section.',
-          vi: 'Một cái khung 匚 vẽ quanh một phần thành phố: khu vực, quận.'
-        },
+        components: ['匸', '乂'],
+        parts: [
+          { char: '匸', role: 'radical' },
+          { char: '乂', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '区', reading: 'く' }],
-            meaning: { en: 'ward, district', vi: 'quận, khu' }
-          },
           {
             parts: [
               { text: '地', reading: 'ち' },
@@ -10573,11 +10108,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'boundary; world, realm', vi: 'giới - ranh giới; thế giới, giới' },
         onyomi: ['カイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The lines dividing fields 田 mark where one area ends: a boundary, and by extension a world or realm.',
-          vi: 'Những đường chia ruộng 田 đánh dấu nơi một vùng kết thúc: ranh giới, và nghĩa rộng là thế giới, giới.'
-        },
+        components: ['田', '介'],
+        parts: [
+          { char: '田', role: 'radical' },
+          { char: '介', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10607,16 +10142,9 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'state, province; sandbar', vi: 'châu - châu, bang; bãi giữa sông' },
         onyomi: ['シュウ'],
         kunyomi: ['す'],
-        components: [],
-        mnemonic: {
-          en: 'Little islets dotted along a flowing river, later a large region: a state, a province.',
-          vi: 'Những cồn bãi rải rác dọc dòng sông chảy, sau chỉ vùng lớn: châu, bang.'
-        },
+        components: ['川'],
+        parts: [{ char: '川', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '州', reading: 'しゅう' }],
-            meaning: { en: 'state, province', vi: 'bang, châu' }
-          },
           {
             parts: [
               { text: '本', reading: 'ほん' },
@@ -10646,11 +10174,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to hit, to strike', vi: 'đả - đánh, đập' },
         onyomi: ['ダ'],
         kunyomi: ['う.つ'],
-        components: [],
-        mnemonic: {
-          en: 'The hand 扌 driving a nail 丁 with a blow: to hit, to strike.',
-          vi: 'Bàn tay 扌 đóng cây đinh 丁 bằng một cú: đánh, đập.'
-        },
+        components: ['扌', '丁'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '丁', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10680,11 +10208,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to throw', vi: 'đầu - ném, quăng' },
         onyomi: ['トウ'],
         kunyomi: ['な.げる'],
-        components: [],
-        mnemonic: {
-          en: 'The hand 扌 winding up and hurling something forward: to throw.',
-          vi: 'Bàn tay 扌 lấy đà và quăng vật về phía trước: ném, quăng.'
-        },
+        components: ['扌', '殳'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '殳', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10715,11 +10243,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to hold, to have', vi: 'trì - cầm, giữ; có' },
         onyomi: ['ジ'],
         kunyomi: ['も.つ'],
-        components: [],
-        mnemonic: {
-          en: 'The hand 扌 keeping firm hold of something the way a temple 寺 keeps its treasures: to hold, to have.',
-          vi: 'Bàn tay 扌 giữ chặt vật gì đó như ngôi chùa 寺 giữ bảo vật: cầm, giữ, có.'
-        },
+        components: ['扌', '寺'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '寺', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10751,10 +10279,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュ'],
         kunyomi: ['と.る'],
         components: ['耳', '又'],
-        mnemonic: {
-          en: 'A hand 又 grabbing an ear 耳 to seize it: to take, to grab.',
-          vi: 'Một bàn tay 又 tóm lấy cái tai 耳: lấy, cầm lấy.'
-        },
+        parts: [
+          { char: '耳', role: 'other' },
+          { char: '又', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -10788,11 +10316,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to receive, to accept', vi: 'thụ - nhận, tiếp nhận' },
         onyomi: ['ジュ'],
         kunyomi: ['う.ける'],
-        components: [],
-        mnemonic: {
-          en: 'One hand above passing something down to another hand 又 below: to receive, to accept.',
-          vi: 'Một bàn tay bên trên trao vật xuống cho bàn tay 又 bên dưới: nhận, tiếp nhận.'
-        },
+        components: ['爫', '冖', '又'],
+        parts: [
+          { char: '爫', role: 'other' },
+          { char: '冖', role: 'other' },
+          { char: '又', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -10823,11 +10352,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to pick up, to gather', vi: 'thập - nhặt, lượm' },
         onyomi: ['シュウ', 'ジュウ'],
         kunyomi: ['ひろ.う'],
-        components: [],
-        mnemonic: {
-          en: 'The hand 扌 bringing together 合 things off the ground: to pick up, to gather.',
-          vi: 'Bàn tay 扌 gom nhặt 合 những thứ dưới đất: nhặt, lượm.'
-        },
+        components: ['扌', '合'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '合', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10851,11 +10380,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to disappear; to erase, to put out', vi: 'tiêu - biến mất; xóa, tắt' },
         onyomi: ['ショウ'],
         kunyomi: ['き.える', 'け.す'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 poured over something to make it fade and vanish: to disappear, to erase, to put out.',
-          vi: 'Nước 氵 dội lên khiến vật gì đó mờ dần và biến mất: biến mất, xóa, dập tắt.'
-        },
+        components: ['氵', '肖'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '肖', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10886,11 +10415,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to help, to rescue', vi: 'trợ - giúp đỡ, cứu' },
         onyomi: ['ジョ'],
         kunyomi: ['たす.ける', 'たす.かる'],
-        components: [],
-        mnemonic: {
-          en: 'Adding your strength 力 to someone else in need: to help, to rescue.',
-          vi: 'Góp thêm sức 力 cho người đang cần: giúp đỡ, cứu.'
-        },
+        components: ['且', '力'],
+        parts: [
+          { char: '且', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -10921,11 +10450,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to decide, to settle', vi: 'quyết - quyết định' },
         onyomi: ['ケツ'],
         kunyomi: ['き.める', 'き.まる'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 breaking through a dam once and for all, no turning back: to decide, to settle.',
-          vi: 'Nước 氵 phá vỡ con đập dứt khoát, không quay lại: quyết định, dứt khoát.'
-        },
+        components: ['氵', '夬'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '夬', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -10957,10 +10486,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キ'],
         kunyomi: ['お.きる', 'お.こる'],
         components: ['走', '己'],
-        mnemonic: {
-          en: 'Someone rising up to run 走 as their own self 己 springs into action: to get up, to wake, to occur.',
-          vi: 'Người bật dậy chạy 走 khi chính mình 己 bắt đầu hành động: dậy, thức dậy, xảy ra.'
-        },
+        parts: [
+          { char: '走', role: 'radical' },
+          { char: '己', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11000,11 +10529,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cold', vi: 'hàn - lạnh, rét' },
         onyomi: ['カン'],
         kunyomi: ['さむ.い'],
-        components: [],
-        mnemonic: {
-          en: 'Huddling under a roof 宀 packed with straw against the ice 冫 below: cold.',
-          vi: 'Co ro dưới mái nhà 宀 chất đầy rơm, phía dưới là băng 冫: lạnh, rét.'
-        },
+        components: ['宀', '冫'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '冫', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -11034,11 +10563,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hot (weather)', vi: 'thử - nóng (thời tiết)' },
         onyomi: ['ショ'],
         kunyomi: ['あつ.い'],
-        components: [],
-        mnemonic: {
-          en: 'The sun 日 beating down on a person 者 until the day is sweltering: hot weather.',
-          vi: 'Mặt trời 日 dội xuống người 者 khiến trời oi bức: nóng (thời tiết).'
-        },
+        components: ['日', '者'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '者', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11068,16 +10597,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'long ago, former times', vi: 'tích - ngày xưa, thời xưa' },
         onyomi: ['セキ', 'シャク'],
         kunyomi: ['むかし'],
-        components: [],
-        mnemonic: {
-          en: 'Many days 日 piled up and stacked away in the past: long ago, former times.',
-          vi: 'Nhiều ngày 日 chồng chất và cất lại trong quá khứ: ngày xưa, thời xưa.'
-        },
+        components: ['廿', '日'],
+        parts: [
+          { char: '廿', role: 'other' },
+          { char: '日', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '昔', reading: 'むかし' }],
-            meaning: { en: 'long ago, the old days', vi: 'ngày xưa' }
-          },
           {
             parts: [
               { text: '昔', reading: 'むかし' },
@@ -11099,11 +10624,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'period, term', vi: 'kỳ - kỳ hạn, thời kỳ' },
         onyomi: ['キ', 'ゴ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Counting off the cycles of the moon 月 to mark a fixed span: a period, a term.',
-          vi: 'Đếm các chu kỳ của mặt trăng 月 để định một khoảng cố định: kỳ hạn, thời kỳ.'
-        },
+        components: ['其', '月'],
+        parts: [
+          { char: '其', role: 'phonetic' },
+          { char: '月', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -11133,11 +10658,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hurry; sudden, urgent', vi: 'cấp - vội, gấp; đột ngột' },
         onyomi: ['キュウ'],
         kunyomi: ['いそ.ぐ'],
-        components: [],
-        mnemonic: {
-          en: 'A hand clutching at the heart 心 in a rush: to hurry, sudden, urgent.',
-          vi: 'Một bàn tay nắm lấy trái tim 心 trong vội vã: vội, gấp, đột ngột.'
-        },
+        components: ['彐', '心'],
+        parts: [
+          { char: '彐', role: 'other' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -11167,11 +10692,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fast, quick; speed', vi: 'tốc - nhanh, tốc độ' },
         onyomi: ['ソク'],
         kunyomi: ['はや.い'],
-        components: [],
-        mnemonic: {
-          en: 'Bundling everything up 束 to move 辶 without delay: fast, quick, speed.',
-          vi: 'Bó gọn mọi thứ 束 để di chuyển 辶 không chậm trễ: nhanh, tốc độ.'
-        },
+        components: ['辶', '束'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '束', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11201,15 +10726,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'degree; a time; extent', vi: 'độ - độ; lần; mức độ' },
         onyomi: ['ド', 'ト'],
         kunyomi: ['たび'],
-        components: [],
-        mnemonic: {
-          en: 'A measure taken by hand under a shelter 广 to mark off degrees: a degree, a time (occurrence), an extent.',
-          vi: 'Một phép đo bằng tay dưới mái 广 để chia độ: độ, lần, mức độ.'
-        },
+        components: ['广', '又'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '又', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '度', reading: 'たび' }],
-            meaning: { en: 'each time, occasion', vi: 'mỗi lần' }
+            parts: [
+              { text: '度', reading: 'たび' },
+              { text: '々', reading: 'たび' }
+            ],
+            meaning: { en: 'often, repeatedly', vi: 'thường xuyên' }
           },
           {
             parts: [
@@ -11232,16 +10760,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'second (of time)', vi: 'miểu - giây (thời gian)' },
         onyomi: ['ビョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The tiniest 少 sliver of a grain stalk 禾, the smallest common slice of time: a second.',
-          vi: 'Mẩu 少 nhỏ xíu của bông lúa 禾, lát thời gian nhỏ nhất thường dùng: giây.'
-        },
+        components: ['禾', '少'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '少', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '秒', reading: 'びょう' }],
-            meaning: { en: 'second (of time)', vi: 'giây' }
-          },
           {
             parts: [
               { text: '一', reading: 'いち' },
@@ -11265,10 +10789,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['タン'],
         kunyomi: ['みじか.い'],
         components: ['矢', '豆'],
-        mnemonic: {
-          en: 'Measuring with a short arrow 矢 against a stubby bean 豆 to show smallness: short.',
-          vi: 'Đo bằng mũi tên 矢 ngắn với hạt đậu 豆 lùn để chỉ sự nhỏ: ngắn.'
-        },
+        parts: [
+          { char: '矢', role: 'radical' },
+          { char: '豆', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11298,16 +10822,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'double, times, -fold', vi: 'bội - gấp, gấp bội; lần' },
         onyomi: ['バイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 taking a quantity and folding it over on itself: double, times, -fold.',
-          vi: 'Một người 亻 lấy một lượng rồi nhân nó lên: gấp, gấp bội, lần.'
-        },
+        components: ['亻', '咅'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '咅', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '倍', reading: 'ばい' }],
-            meaning: { en: 'double, twice', vi: 'gấp đôi' }
-          },
           {
             parts: [
               { text: '二', reading: 'に' },
@@ -11337,11 +10857,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to raise, to grow up', vi: 'dục - nuôi dưỡng, lớn lên' },
         onyomi: ['イク'],
         kunyomi: ['そだ.てる', 'そだ.つ'],
-        components: [],
-        mnemonic: {
-          en: 'A newborn child entering the world, then fed with flesh 月 to grow: to raise, to grow up.',
-          vi: 'Một đứa trẻ mới chào đời, rồi được nuôi bằng thịt da 月 để lớn: nuôi dưỡng, lớn lên.'
-        },
+        components: ['肉'],
+        parts: [{ char: '肉', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -11372,11 +10889,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to plant', vi: 'thực - trồng (cây)' },
         onyomi: ['ショク'],
         kunyomi: ['う.える'],
-        components: [],
-        mnemonic: {
-          en: 'Setting a tree 木 straight 直 upright into the ground: to plant.',
-          vi: 'Đặt cái cây 木 thẳng 直 xuống đất: trồng cây.'
-        },
+        components: ['木', '直'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '直', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11408,16 +10925,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'root; root cause', vi: 'căn - rễ; căn nguyên, gốc' },
         onyomi: ['コン'],
         kunyomi: ['ね'],
-        components: [],
-        mnemonic: {
-          en: 'The part of a tree 木 that stays fixed in the ground: a root, and the root cause of things.',
-          vi: 'Phần của cây 木 bám cố định dưới đất: cái rễ, và gốc rễ, căn nguyên.'
-        },
+        components: ['木', '艮'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '艮', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '根', reading: 'ね' }],
-            meaning: { en: 'root', vi: 'rễ' }
-          },
           {
             parts: [
               { text: '大', reading: 'だい' },
@@ -11439,15 +10952,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'leaf', vi: 'diệp - lá (cây)' },
         onyomi: ['ヨウ'],
         kunyomi: ['は'],
-        components: [],
-        mnemonic: {
-          en: 'The flat green growth 艹 spreading from the branches of a tree 木: a leaf.',
-          vi: 'Phần xanh dẹt 艹 mọc ra từ cành cây 木: chiếc lá.'
-        },
+        components: ['艹', '世', '木'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '世', role: 'phonetic' },
+          { char: '木', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '葉', reading: 'は' }],
-            meaning: { en: 'leaf', vi: 'lá' }
+            parts: [
+              { text: '葉', reading: 'は' },
+              { text: 'っぱ', reading: 'っぱ' }
+            ],
+            meaning: { en: 'leaf (casual)', vi: 'chiếc lá' }
           },
           {
             parts: [
@@ -11471,15 +10988,15 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fruit, nut; truth, real', vi: 'thực - quả, hạt; sự thật, thực' },
         onyomi: ['ジツ'],
         kunyomi: ['み', 'みの.る'],
-        components: [],
-        mnemonic: {
-          en: 'A house 宀 filled with the ripe fruit of the harvest: fruit, and by extension truth and substance.',
-          vi: 'Ngôi nhà 宀 đầy hoa trái của vụ mùa: quả, và nghĩa rộng là sự thật, thực chất.'
-        },
+        components: ['宀'],
+        parts: [{ char: '宀', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '実', reading: 'み' }],
-            meaning: { en: 'fruit, nut', vi: 'quả, hạt' }
+            parts: [
+              { text: '実', reading: 'み' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'harvest, fruition', vi: 'sự kết trái, thành quả' }
           },
           {
             parts: [
@@ -11502,11 +11019,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fall, to drop', vi: 'lạc - rơi, rớt; rụng' },
         onyomi: ['ラク'],
         kunyomi: ['お.ちる', 'お.とす'],
-        components: [],
-        mnemonic: {
-          en: 'Leaves 艹 and water 氵 dropping down to the ground: to fall, to drop.',
-          vi: 'Lá 艹 và nước 氵 rơi xuống đất: rơi, rớt, rụng.'
-        },
+        components: ['艹', '氵', '各'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '氵', role: 'other' },
+          { char: '各', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11539,16 +11057,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'green', vi: 'lục - màu xanh lá' },
         onyomi: ['リョク', 'ロク'],
         kunyomi: ['みどり'],
-        components: [],
-        mnemonic: {
-          en: 'The color of threads 糸 dyed from fresh leaves and grass: green.',
-          vi: 'Màu của sợi chỉ 糸 nhuộm từ lá cỏ tươi: màu xanh lá.'
-        },
+        components: ['糸', '彔'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '彔', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '緑', reading: 'みどり' }],
-            meaning: { en: 'green', vi: 'màu xanh lá' }
-          },
           {
             parts: [
               { text: '緑', reading: 'みどり' },
@@ -11571,18 +11085,22 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: [],
         kunyomi: ['はた', 'はたけ'],
         components: ['火', '田'],
-        mnemonic: {
-          en: 'A field 田 cleared by fire 火 for dry-crop farming: a cultivated field, as opposed to a wet rice paddy.',
-          vi: 'Cánh đồng 田 được đốt 火 dọn để trồng cạn: ruộng khô, nương rẫy (khác ruộng nước).'
-        },
+        parts: [
+          { char: '火', role: 'semantic' },
+          { char: '田', role: 'radical' }
+        ],
         note: {
           en: "A kokuji (kanji made in Japan), so it has no on'yomi.",
           vi: 'Là kokuji (chữ do người Nhật tạo) nên không có âm ON.'
         },
         examples: [
           {
-            parts: [{ text: '畑', reading: 'はたけ' }],
-            meaning: { en: 'field, cultivated plot', vi: 'ruộng, nương' }
+            parts: [
+              { text: '畑', reading: 'はたけ' },
+              { text: '仕', reading: 'し' },
+              { text: '事', reading: 'ごと' }
+            ],
+            meaning: { en: 'farm work', vi: 'việc đồng áng' }
           },
           {
             parts: [
@@ -11605,11 +11123,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'agriculture, farming', vi: 'nông - nông nghiệp, làm ruộng' },
         onyomi: ['ノウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Working the fields from dawn with tools in hand, season after season: farming, agriculture.',
-          vi: 'Cày cấy đồng ruộng từ sáng sớm với nông cụ trong tay, hết mùa này đến mùa khác: nông nghiệp, làm ruộng.'
-        },
+        components: ['曲', '辰'],
+        parts: [
+          { char: '曲', role: 'other' },
+          { char: '辰', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -11642,11 +11160,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ク'],
         kunyomi: ['くる.しい', 'にが.い'],
-        components: [],
-        mnemonic: {
-          en: 'An old 古 herb 艹 that has turned bitter: bitter, and the bitterness of suffering and hardship.',
-          vi: 'Một loại cây cỏ 艹 để lâu 古 hóa đắng: đắng, và sự cay đắng của khổ sở, vất vả.'
-        },
+        components: ['艹', '古'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '古', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11685,11 +11203,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to open', vi: 'khai - mở' },
         onyomi: ['カイ'],
         kunyomi: ['ひら.く', 'あ.ける'],
-        components: [],
-        mnemonic: {
-          en: 'Two hands lifting the bar off a gate 門 to swing it open: to open.',
-          vi: 'Hai bàn tay nhấc thanh chắn khỏi cổng 門 để mở ra: mở.'
-        },
+        components: ['門', '开'],
+        parts: [
+          { char: '門', role: 'radical' },
+          { char: '开', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -11720,11 +11238,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'floor, story; rank', vi: 'giai - tầng (lầu); bậc' },
         onyomi: ['カイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Steps cut into a hillside 阝 rising level by level: a floor, a story, a rank.',
-          vi: 'Những bậc cắt vào sườn đồi 阝 lên từng cấp: tầng lầu, bậc.'
-        },
+        components: ['阝', '皆'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '皆', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11754,11 +11272,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'institution (hospital, temple, academy)', vi: 'viện - viện, cơ sở' },
         onyomi: ['イン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A walled compound on the hillside 阝 enclosing a large institution: a hospital, temple, or academy.',
-          vi: 'Một khu tường bao trên sườn đồi 阝 chứa cơ sở lớn: bệnh viện, chùa, học viện.'
-        },
+        components: ['阝', '完'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '完', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -11789,16 +11307,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'station', vi: 'dịch - nhà ga, trạm' },
         onyomi: ['エキ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Once a relay post where horses 馬 were changed, now a train station.',
-          vi: 'Vốn là trạm đổi ngựa 馬, nay là nhà ga xe lửa.'
-        },
+        components: ['馬', '尺'],
+        parts: [
+          { char: '馬', role: 'radical' },
+          { char: '尺', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '駅', reading: 'えき' }],
-            meaning: { en: 'station', vi: 'nhà ga' }
-          },
           {
             parts: [
               { text: '駅', reading: 'えき' },
@@ -11820,11 +11334,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'center, middle', vi: 'ương - trung tâm, chính giữa' },
         onyomi: ['オウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A person standing right in the middle of a frame, dead center: the center, the middle.',
-          vi: 'Một người đứng ngay giữa khung, chính giữa: trung tâm, chính giữa.'
-        },
+        components: ['冂', '大'],
+        parts: [
+          { char: '冂', role: 'other' },
+          { char: '大', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -11849,15 +11363,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['オウ'],
         kunyomi: ['よこ'],
         components: ['木', '黄'],
-        mnemonic: {
-          en: 'A yellow 黄 beam of wood 木 laid down flat across: horizontal, sideways, beside.',
-          vi: 'Một thanh gỗ 木 màu vàng 黄 đặt nằm ngang: ngang, bên cạnh.'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '黄', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '横', reading: 'よこ' }],
-            meaning: { en: 'side, beside', vi: 'bên cạnh, chiều ngang' }
-          },
           {
             parts: [
               { text: '横', reading: 'よこ' },
@@ -11880,15 +11390,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pillar, post, column', vi: 'trụ - cột, trụ' },
         onyomi: ['チュウ'],
         kunyomi: ['はしら'],
-        components: [],
-        mnemonic: {
-          en: 'The main 主 piece of wood 木 that holds up a building: a pillar, a post.',
-          vi: 'Thanh gỗ 木 chính 主 chống đỡ cả tòa nhà: cây cột, cây trụ.'
-        },
+        components: ['木', '主'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '主', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '柱', reading: 'はしら' }],
-            meaning: { en: 'pillar, post', vi: 'cây cột' }
+            parts: [
+              { text: '柱', reading: 'はしら' },
+              { text: '時', reading: 'ど' },
+              { text: '計', reading: 'けい' }
+            ],
+            meaning: { en: 'pendulum wall clock', vi: 'đồng hồ treo tường' }
           },
           {
             parts: [
@@ -11911,16 +11425,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'board, plank', vi: 'bản - tấm ván, tấm bảng' },
         onyomi: ['ハン', 'バン'],
         kunyomi: ['いた'],
-        components: [],
-        mnemonic: {
-          en: 'A flat slab of wood 木 sawn and turned over 反: a board, a plank.',
-          vi: 'Một tấm gỗ 木 phẳng được xẻ và lật 反: tấm ván, tấm bảng.'
-        },
+        components: ['木', '反'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '板', reading: 'いた' }],
-            meaning: { en: 'board, plank', vi: 'tấm ván' }
-          },
           {
             parts: [
               { text: '黒', reading: 'こく' },
@@ -11942,15 +11452,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'slope, hill', vi: 'phản - con dốc' },
         onyomi: ['ハン'],
         kunyomi: ['さか'],
-        components: [],
-        mnemonic: {
-          en: 'A stretch of ground 土 that tilts and turns back 反 on itself as it climbs: a slope.',
-          vi: 'Một đoạn đất 土 nghiêng dốc, đổ ngược 反 khi đi lên: con dốc.'
-        },
+        components: ['土', '反'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '坂', reading: 'さか' }],
-            meaning: { en: 'slope, hill', vi: 'con dốc' }
+            parts: [
+              { text: '坂', reading: 'さか' },
+              { text: '道', reading: 'みち' }
+            ],
+            meaning: { en: 'sloping road, hill', vi: 'con dốc' }
           },
           {
             parts: [
@@ -11975,15 +11488,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bridge', vi: 'kiều - cây cầu' },
         onyomi: ['キョウ'],
         kunyomi: ['はし'],
-        components: [],
-        mnemonic: {
-          en: 'A tall structure of wood 木 arching high across a river: a bridge.',
-          vi: 'Một công trình gỗ 木 cao vòng qua sông: cây cầu.'
-        },
+        components: ['木', '喬'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '喬', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '橋', reading: 'はし' }],
-            meaning: { en: 'bridge', vi: 'cây cầu' }
+            parts: [
+              { text: '橋', reading: 'はし' },
+              { text: '渡', reading: 'わた' },
+              { text: 'し', reading: 'し' }
+            ],
+            meaning: { en: 'bridging, mediation', vi: 'sự làm cầu nối' }
           },
           {
             parts: [
@@ -12015,11 +11532,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to begin, to start', vi: 'thủy - bắt đầu, khởi đầu' },
         onyomi: ['シ'],
         kunyomi: ['はじ.める', 'はじ.まる'],
-        components: [],
-        mnemonic: {
-          en: 'A woman 女 giving birth, the very beginning of a life: to begin, to start.',
-          vi: 'Người phụ nữ 女 sinh con, khởi đầu của một cuộc đời: bắt đầu, khởi đầu.'
-        },
+        components: ['女', '台'],
+        parts: [
+          { char: '女', role: 'radical' },
+          { char: '台', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12050,11 +11567,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to end, to finish', vi: 'chung - kết thúc, cuối cùng' },
         onyomi: ['シュウ'],
         kunyomi: ['お.わる', 'お.える'],
-        components: [],
-        mnemonic: {
-          en: 'The last knot tied at the very end of a thread 糸, like winter 冬 closing the year: to finish, the end.',
-          vi: 'Nút thắt cuối cùng ở đuôi sợi chỉ 糸, như mùa đông 冬 khép lại năm: kết thúc, cuối cùng.'
-        },
+        components: ['糸', '冬'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '冬', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12086,10 +11603,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュウ'],
         kunyomi: ['あつ.める', 'あつ.まる'],
         components: ['隹', '木'],
-        mnemonic: {
-          en: 'Birds 隹 flocking together onto a tree 木: to gather, to collect.',
-          vi: 'Đàn chim 隹 tụ lại trên cây 木: tụ họp, thu thập.'
-        },
+        parts: [
+          { char: '隹', role: 'radical' },
+          { char: '木', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -12120,11 +11637,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to live, to reside', vi: 'trú - sống, cư trú' },
         onyomi: ['ジュウ'],
         kunyomi: ['す.む'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 who is the master 主 of a fixed place: to live, to reside.',
-          vi: 'Một người 亻 làm chủ 主 một nơi cố định: sống, cư trú.'
-        },
+        components: ['亻', '主'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '主', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12155,10 +11672,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シュ', 'ス'],
         kunyomi: ['まも.る'],
         components: ['宀', '寸'],
-        mnemonic: {
-          en: 'A hand 寸 keeping watch under the roof 宀 of a home: to protect, to guard.',
-          vi: 'Bàn tay 寸 canh giữ dưới mái nhà 宀: bảo vệ, giữ gìn.'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '寸', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -12189,11 +11706,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wait', vi: 'đãi - chờ, đợi' },
         onyomi: ['タイ'],
         kunyomi: ['ま.つ'],
-        components: [],
-        mnemonic: {
-          en: 'Standing on the road 彳 as still as a temple 寺, biding time: to wait.',
-          vi: 'Đứng bên đường 彳 tĩnh lặng như ngôi chùa 寺, chờ thời gian trôi: chờ, đợi.'
-        },
+        components: ['彳', '寺'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '寺', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12224,11 +11741,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fix, to set, to decide', vi: 'định - định, quy định; cố định' },
         onyomi: ['テイ', 'ジョウ'],
         kunyomi: ['さだ.める'],
-        components: [],
-        mnemonic: {
-          en: 'Settling something firmly in place under a roof 宀: to fix, to set, to decide.',
-          vi: 'Ổn định vật gì đó cố định dưới mái nhà 宀: định, quy định, cố định.'
-        },
+        components: ['宀', '疋'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '疋', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -12259,11 +11776,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wear; to arrive; to attach', vi: 'trước - mặc; đến nơi; dính' },
         onyomi: ['チャク'],
         kunyomi: ['き.る', 'つ.く'],
-        components: [],
-        mnemonic: {
-          en: 'Pulling clothing down over yourself and settling in on arrival: to wear, to arrive, to attach.',
-          vi: 'Kéo áo quần lên người và yên vị khi đến nơi: mặc, đến nơi, dính vào.'
-        },
+        components: ['羊', '目'],
+        parts: [
+          { char: '羊', role: 'other' },
+          { char: '目', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -12293,11 +11810,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to release, to let go; to broadcast', vi: 'phóng - thả, buông; phát' },
         onyomi: ['ホウ'],
         kunyomi: ['はな.す', 'はな.つ'],
-        components: [],
-        mnemonic: {
-          en: 'A hand striking to send something off in a direction 方 and let it loose: to release, to let go, to broadcast.',
-          vi: 'Một bàn tay đánh cho vật bay theo hướng 方 và buông ra: thả, buông, phát (sóng).'
-        },
+        components: ['方', '攵'],
+        parts: [
+          { char: '方', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -12327,11 +11844,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to pour; to pay attention', vi: 'chú - rót, đổ; chú ý' },
         onyomi: ['チュウ'],
         kunyomi: ['そそ.ぐ'],
-        components: [],
-        mnemonic: {
-          en: 'Pouring water 氵 in a steady stream onto one main 主 spot: to pour, and to focus attention on.',
-          vi: 'Rót nước 氵 thành dòng vào một điểm chính 主: rót, đổ, và chú ý vào.'
-        },
+        components: ['氵', '主'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '主', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12369,16 +11886,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'god, spirit; mind', vi: 'thần - thần, thần linh; tinh thần' },
         onyomi: ['シン', 'ジン'],
         kunyomi: ['かみ'],
-        components: [],
-        mnemonic: {
-          en: 'At the altar 礻 people call on the lightning-spirit 申 above: a god, a spirit.',
-          vi: 'Trước bàn thờ 礻 người ta khấn vị thần sấm sét 申 trên cao: thần, thần linh.'
-        },
+        components: ['礻', '申'],
+        parts: [
+          { char: '礻', role: 'radical' },
+          { char: '申', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '神', reading: 'かみ' }],
-            meaning: { en: 'god, deity', vi: 'thần, vị thần' }
-          },
           {
             parts: [
               { text: '神', reading: 'じん' },
@@ -12400,11 +11913,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'true, real; pure', vi: 'chân - thật, chân thật; ngay' },
         onyomi: ['シン'],
         kunyomi: ['ま'],
-        components: [],
-        mnemonic: {
-          en: 'A tool held straight and true to test what is genuine: true, real, pure.',
-          vi: 'Một dụng cụ giữ thẳng và chuẩn để kiểm chứng cái thật: thật, chân thật, ngay.'
-        },
+        components: ['十', '目', '八'],
+        parts: [
+          { char: '十', role: 'other' },
+          { char: '目', role: 'radical' },
+          { char: '八', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -12435,11 +11949,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'deep', vi: 'thâm - sâu; đậm' },
         onyomi: ['シン'],
         kunyomi: ['ふか.い'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 that goes far down into a cave, hard to reach the bottom: deep.',
-          vi: 'Nước 氵 ăn sâu xuống hang, khó chạm đáy: sâu, thâm sâu.'
-        },
+        components: ['氵', '罙'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '罙', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12469,11 +11983,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to say, to state (humble)', vi: 'thân - thưa, nói (khiêm nhường)' },
         onyomi: ['シン'],
         kunyomi: ['もう.す'],
-        components: [],
-        mnemonic: {
-          en: 'A bolt of lightning splitting the sky, once used to speak to the gods: to say, to state humbly.',
-          vi: 'Tia sét xẻ dọc bầu trời, xưa dùng để thưa với thần: thưa, nói (khiêm nhường).'
-        },
+        components: ['田'],
+        parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -12506,11 +12017,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'festival; to worship', vi: 'tế - lễ hội; cúng tế' },
         onyomi: ['サイ'],
         kunyomi: ['まつ.り', 'まつ.る'],
-        components: [],
-        mnemonic: {
-          en: 'A hand 又 placing meat 月 on the altar 示 as an offering: a festival, to worship.',
-          vi: 'Bàn tay 又 đặt miếng thịt 月 lên bàn thờ 示 để cúng: lễ hội, cúng tế.'
-        },
+        components: ['夕', '又', '示'],
+        parts: [
+          { char: '夕', role: 'other' },
+          { char: '又', role: 'other' },
+          { char: '示', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -12541,16 +12053,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'courtesy, manners; thanks, a bow', vi: 'lễ - lễ nghi, lễ phép; cảm tạ' },
         onyomi: ['レイ', 'ライ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Bowing respectfully before the altar 礻: courtesy, manners, a bow of thanks.',
-          vi: 'Cúi mình kính cẩn trước bàn thờ 礻: lễ nghi, lễ phép, cảm tạ.'
-        },
+        components: ['礻', '乚'],
+        parts: [
+          { char: '礻', role: 'radical' },
+          { char: '乚', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '礼', reading: 'れい' }],
-            meaning: { en: 'bow; thanks; courtesy', vi: 'sự cúi chào; lời cảm tạ' }
-          },
           {
             parts: [
               { text: '失', reading: 'しつ' },
@@ -12572,11 +12080,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'generation; world; age', vi: 'thế - đời, thế giới; thế hệ' },
         onyomi: ['セイ', 'セ'],
         kunyomi: ['よ'],
-        components: [],
-        mnemonic: {
-          en: 'Three tens joined together, about a lifetime or one generation: a generation, the world, an age.',
-          vi: 'Ba số mười nối lại, chừng một đời người hay một thế hệ: thế hệ, đời, thế giới.'
-        },
+        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -12614,11 +12119,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'all, whole; complete', vi: 'toàn - toàn bộ, tất cả; hoàn toàn' },
         onyomi: ['ゼン'],
         kunyomi: ['すべ.て', 'まった.く'],
-        components: [],
-        mnemonic: {
-          en: 'A perfect gem kept whole and flawless under cover: all, whole, complete.',
-          vi: 'Một viên ngọc hoàn hảo giữ nguyên vẹn, không tì vết dưới lớp che: toàn bộ, tất cả, hoàn toàn.'
-        },
+        components: ['入', '王'],
+        parts: [
+          { char: '入', role: 'radical' },
+          { char: '王', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -12656,10 +12161,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ゾク'],
         kunyomi: [],
         components: ['方', '矢'],
-        mnemonic: {
-          en: 'Arrows 矢 gathered under one banner 方: a clan, a tribe, a family.',
-          vi: 'Những mũi tên 矢 tụ dưới một lá cờ 方: dòng họ, bộ tộc, gia tộc.'
-        },
+        parts: [
+          { char: '方', role: 'radical' },
+          { char: '矢', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -12690,15 +12195,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'other, another', vi: 'tha - khác, cái khác' },
         onyomi: ['タ'],
         kunyomi: ['ほか'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 who is someone else, not this one: other, another.',
-          vi: 'Một người 亻 khác, không phải người này: khác, cái khác.'
-        },
+        components: ['亻', '也'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '也', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '他', reading: 'ほか' }],
-            meaning: { en: 'other, the rest', vi: 'cái khác, phần còn lại' }
+            parts: [
+              { text: 'その', reading: 'その' },
+              { text: '他', reading: 'ほか' }
+            ],
+            meaning: { en: 'the rest, others', vi: 'phần còn lại, cái khác' }
           },
           {
             parts: [
@@ -12729,11 +12237,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to talk, to discuss', vi: 'đàm - trò chuyện, bàn luận' },
         onyomi: ['ダン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Words 言 exchanged warmly around a fire 炎: to talk, to discuss.',
-          vi: 'Lời nói 言 trao đổi ấm áp bên ngọn lửa 炎: trò chuyện, bàn luận.'
-        },
+        components: ['言', '炎'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '炎', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12766,11 +12274,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['チョウ'],
         kunyomi: ['しら.べる', 'ととの.える'],
-        components: [],
-        mnemonic: {
-          en: 'Using words 言 to go all around 周 a matter and set it right: to investigate, to tune, a tone.',
-          vi: 'Dùng lời 言 xem xét khắp 周 một việc và chỉnh cho đúng: điều tra, điều chỉnh, giai điệu.'
-        },
+        components: ['言', '周'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '周', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12801,11 +12309,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'notebook, register; curtain', vi: 'trướng - sổ tay, sổ sách; màn' },
         onyomi: ['チョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A long 長 sheet of cloth 巾 bound to write on: a notebook, a register, and a hanging curtain.',
-          vi: 'Một tấm vải 巾 dài 長 đóng lại để ghi chép: sổ tay, sổ sách, và tấm màn.'
-        },
+        components: ['巾', '長'],
+        parts: [
+          { char: '巾', role: 'radical' },
+          { char: '長', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12835,16 +12343,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ceremony; style; formula', vi: 'thức - nghi thức; kiểu; công thức' },
         onyomi: ['シキ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A fixed way of doing work 工 by rule: a ceremony, a style, a formula.',
-          vi: 'Một cách làm việc 工 cố định theo khuôn phép: nghi thức, kiểu, công thức.'
-        },
+        components: ['工', '弋'],
+        parts: [
+          { char: '工', role: 'other' },
+          { char: '弋', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '式', reading: 'しき' }],
-            meaning: { en: 'ceremony', vi: 'nghi thức, lễ' }
-          },
           {
             parts: [
               { text: '入', reading: 'にゅう' },
@@ -12867,11 +12371,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'number, issue; title', vi: 'hiệu - số, số hiệu; danh hiệu' },
         onyomi: ['ゴウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A mouth 口 calling out a number or a name aloud: a number, an issue, a title.',
-          vi: 'Cái miệng 口 xướng to một con số hay cái tên: số hiệu, số (báo), danh hiệu.'
-        },
+        components: ['口', '丂'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '丂', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -12901,11 +12405,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ordinal prefix (No.); order', vi: 'đệ - thứ (số thứ tự)' },
         onyomi: ['ダイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Bamboo 竹 slips numbered in order and bound together: the marker for ordinal numbers (No. 1, No. 2).',
-          vi: 'Những thẻ tre 竹 đánh số theo thứ tự và bó lại: dấu chỉ số thứ tự (thứ nhất, thứ hai).'
-        },
+        components: ['竹', '弟'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '弟', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -12938,11 +12442,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['チョウ', 'テイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The shape of a single nail; used as a city block, and a counter for things like blocks of tofu.',
-          vi: 'Hình một cây đinh; dùng làm đơn vị khu phố, và lượng từ đếm (miếng đậu phụ...).'
-        },
+        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -12975,11 +12476,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['リョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A balance scale with two equal pans: both, a pair, and an old unit of money and train cars.',
-          vi: 'Một cái cân với hai đĩa cân bằng: cả hai, một cặp, và đơn vị tiền xưa, toa tàu.'
-        },
+        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13009,16 +12507,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'silver', vi: 'ngân - bạc; ngân hàng' },
         onyomi: ['ギン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The metal 金 that shines white like the moon: silver.',
-          vi: 'Kim loại 金 sáng trắng như ánh trăng: bạc.'
-        },
+        components: ['金', '艮'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '艮', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '銀', reading: 'ぎん' }],
-            meaning: { en: 'silver', vi: 'bạc' }
-          },
           {
             parts: [
               { text: '銀', reading: 'ぎん' },
@@ -13041,10 +12535,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ハイ'],
         kunyomi: ['くば.る'],
         components: ['酉', '己'],
-        mnemonic: {
-          en: 'A person 己 kneeling by the wine jars 酉 to portion them out to guests: to distribute, to hand out, to arrange.',
-          vi: 'Một người 己 quỳ bên các vò rượu 酉 chia cho khách: phân phát, chia, sắp đặt.'
-        },
+        parts: [
+          { char: '酉', role: 'radical' },
+          { char: '己', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -13083,15 +12577,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヨウ'],
         kunyomi: ['ひつじ'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a sheep seen from the front, its two curved horns on top: a sheep.',
-          vi: 'Hình con cừu nhìn từ trước, hai cái sừng cong ở trên: con cừu.'
-        },
         examples: [
-          {
-            parts: [{ text: '羊', reading: 'ひつじ' }],
-            meaning: { en: 'sheep', vi: 'con cừu' }
-          },
           {
             parts: [
               { text: '羊', reading: 'よう' },
@@ -13113,11 +12599,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ocean; Western', vi: 'dương - đại dương; phương Tây' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A vast body of water 氵 as broad as a spreading flock of sheep 羊: the ocean, and the West beyond it.',
-          vi: 'Vùng nước 氵 rộng mênh mông như đàn cừu 羊 trải ra: đại dương, và phương Tây bên kia.'
-        },
+        components: ['氵', '羊'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '羊', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -13148,11 +12634,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sun; yang, brightness', vi: 'dương - mặt trời; dương, sáng' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The sunny side of the hill 阝 where sunlight 日 pours down: the sun, the yang, brightness.',
-          vi: 'Sườn đồi 阝 đón nắng, nơi ánh mặt trời 日 rọi xuống: mặt trời, dương, sáng.'
-        },
+        components: ['阝', '昜'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '昜', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -13186,10 +12672,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヨウ'],
         kunyomi: ['さま'],
         components: ['木', '羊'],
-        mnemonic: {
-          en: 'The graceful form of a tree 木 and a sheep 羊, a pleasing appearance: a manner, a way, and the polite title "-sama".',
-          vi: 'Dáng vẻ đẹp của cái cây 木 và con cừu 羊, hình dáng dễ nhìn: dáng vẻ, kiểu cách, và hậu tố kính "-sama".'
-        },
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '羊', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -13219,11 +12705,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to flow; a current', vi: 'lưu - chảy, trôi; dòng' },
         onyomi: ['リュウ'],
         kunyomi: ['なが.れる', 'なが.す'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 running and streaming ever downward: to flow, to drift, a current.',
-          vi: 'Nước 氵 chảy tuôn không ngừng xuống thấp: chảy, trôi, dòng.'
-        },
+        components: ['氵', '川'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '川', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -13254,11 +12740,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flat, level; peaceful', vi: 'bình - bằng phẳng; bình yên' },
         onyomi: ['ヘイ', 'ビョウ'],
         kunyomi: ['たい.ら', 'ひら'],
-        components: [],
-        mnemonic: {
-          en: 'A water surface settling perfectly level and calm: flat, even, peaceful.',
-          vi: 'Mặt nước lắng xuống thật phẳng và yên: bằng phẳng, cân bằng, bình yên.'
-        },
+        components: ['干'],
+        parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13291,15 +12774,16 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヒョウ'],
         kunyomi: ['おもて', 'あらわ.す'],
-        components: [],
-        mnemonic: {
-          en: 'The outer coat worn on the surface, what shows on the outside: the surface, to express, a chart.',
-          vi: 'Lớp áo khoác ngoài, cái lộ ra bên ngoài: bề mặt, biểu thị, bảng biểu.'
-        },
+        components: ['衣'],
+        parts: [{ char: '衣', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '表', reading: 'おもて' }],
-            meaning: { en: 'surface, front side', vi: 'mặt ngoài, mặt trước' }
+            parts: [
+              { text: '表', reading: 'おもて' },
+              { text: '向', reading: 'む' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'on the surface, official', vi: 'bề ngoài, chính thức' }
           },
           {
             parts: [
@@ -13323,10 +12807,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ハン', 'タン'],
         kunyomi: ['そ.る', 'そ.らす'],
         components: ['厂', '又'],
-        mnemonic: {
-          en: 'A hand 又 pushing back against a cliff 厂, turning the opposite way: anti, opposite, to oppose.',
-          vi: 'Bàn tay 又 đẩy ngược vào vách đá 厂, quay theo hướng đối lập: ngược lại, phản đối, lật.'
-        },
+        parts: [
+          { char: '厂', role: 'other' },
+          { char: '又', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -13359,11 +12843,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ハツ', 'ホツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Two feet setting out as something shoots forth from a bow: to depart, to emit, to launch.',
-          vi: 'Đôi chân bước ra khi vật gì bắn đi từ cây cung: phát ra, khởi hành, phóng đi.'
-        },
+        components: ['癶'],
+        parts: [{ char: '癶', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13393,11 +12874,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ball, sphere', vi: 'cầu - quả bóng, khối cầu' },
         onyomi: ['キュウ'],
         kunyomi: ['たま'],
-        components: [],
-        mnemonic: {
-          en: 'A perfectly round gem 玉 polished into a sphere: a ball, a globe.',
-          vi: 'Một viên ngọc 玉 mài tròn thành khối cầu: quả bóng, khối cầu.'
-        },
+        components: ['王', '求'],
+        parts: [
+          { char: '王', role: 'radical' },
+          { char: '求', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -13435,15 +12916,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'writing brush', vi: 'bút - cây bút, bút lông' },
         onyomi: ['ヒツ'],
         kunyomi: ['ふで'],
-        components: [],
-        mnemonic: {
-          en: 'A hand holding a bamboo 竹 stalk tipped with hair to write: a writing brush.',
-          vi: 'Bàn tay cầm thân tre 竹 gắn túm lông để viết: cây bút lông.'
-        },
+        components: ['竹', '聿'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '聿', role: 'semantic' }
+        ],
         examples: [
           {
-            parts: [{ text: '筆', reading: 'ふで' }],
-            meaning: { en: 'writing brush', vi: 'bút lông' }
+            parts: [
+              { text: '筆', reading: 'ふで' },
+              { text: '箱', reading: 'ばこ' }
+            ],
+            meaning: { en: 'pencil case', vi: 'hộp bút' }
           },
           {
             parts: [
@@ -13469,11 +12953,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A great river 氵 civilization, the Han of China: Chinese, the Han, and by extension a fellow.',
-          vi: 'Nền văn minh bên dòng sông lớn 氵, nhà Hán của Trung Hoa: thuộc Hán, chữ Hán, và nghĩa rộng là gã đàn ông.'
-        },
+        components: ['氵'],
+        parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13503,11 +12984,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to copy; to photograph', vi: 'tả - sao chép; chụp (ảnh)' },
         onyomi: ['シャ'],
         kunyomi: ['うつ.す', 'うつ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Laying a cover over a page and tracing what shows through: to copy, to reproduce, to photograph.',
-          vi: 'Phủ tấm che lên trang giấy và đồ theo nét hiện qua: sao chép, sao lại, chụp ảnh.'
-        },
+        components: ['冖', '与'],
+        parts: [
+          { char: '冖', role: 'radical' },
+          { char: '与', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -13539,11 +13020,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'child, youngster', vi: 'đồng - trẻ em, nhi đồng' },
         onyomi: ['ドウ'],
         kunyomi: ['わらべ'],
-        components: [],
-        mnemonic: {
-          en: 'A youngster standing 立 in the village 里, still just a child: a child, a youngster.',
-          vi: 'Một đứa nhỏ đứng 立 trong làng 里, hãy còn là trẻ con: trẻ em, nhi đồng.'
-        },
+        components: ['立', '里'],
+        parts: [
+          { char: '立', role: 'radical' },
+          { char: '里', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -13573,15 +13054,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flute, whistle', vi: 'địch - cái sáo; còi' },
         onyomi: ['テキ'],
         kunyomi: ['ふえ'],
-        components: [],
-        mnemonic: {
-          en: 'A bamboo 竹 tube you blow through to make sound come out 由: a flute, a whistle.',
-          vi: 'Một ống tre 竹 thổi vào cho âm thanh phát ra 由: cây sáo, cái còi.'
-        },
+        components: ['竹', '由'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '由', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '笛', reading: 'ふえ' }],
-            meaning: { en: 'flute, whistle', vi: 'cây sáo, còi' }
+            parts: [
+              { text: '笛', reading: 'ふえ' },
+              { text: 'の', reading: 'の' },
+              { text: '音', reading: 'ね' }
+            ],
+            meaning: { en: 'sound of a flute', vi: 'tiếng sáo' }
           },
           {
             parts: [
@@ -13605,10 +13090,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ビ'],
         kunyomi: ['うつく.しい'],
         components: ['羊', '大'],
-        mnemonic: {
-          en: 'A big 大 fat sheep 羊, prized and fine to look at: beautiful.',
-          vi: 'Một con cừu 羊 to 大 béo tốt, quý và đẹp mắt: đẹp, xinh đẹp.'
-        },
+        parts: [
+          { char: '羊', role: 'radical' },
+          { char: '大', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -13639,11 +13124,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to train, to practice; to knead', vi: 'luyện - luyện tập, rèn' },
         onyomi: ['レン'],
         kunyomi: ['ね.る'],
-        components: [],
-        mnemonic: {
-          en: 'Working raw threads 糸 over and over to refine them: to train, to practice, to knead smooth.',
-          vi: 'Nhồi luyện sợi thô 糸 hết lần này lần khác cho tinh: luyện tập, rèn.'
-        },
+        components: ['糸', '東'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '東', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -13673,16 +13158,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'row, line, rank', vi: 'liệt - hàng, dãy' },
         onyomi: ['レツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Things cut apart cleanly and set out one after another: a row, a line, a rank.',
-          vi: 'Những vật được cắt tách gọn và đặt nối nhau: hàng, dãy.'
-        },
+        components: ['歹', '刂'],
+        parts: [
+          { char: '歹', role: 'other' },
+          { char: '刂', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '列', reading: 'れつ' }],
-            meaning: { en: 'row, line', vi: 'hàng, dãy' }
-          },
           {
             parts: [
               { text: '行', reading: 'ぎょう' },
@@ -13704,11 +13185,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'equal; grade, class; etc.', vi: 'đẳng - ngang bằng; hạng; vân vân' },
         onyomi: ['トウ'],
         kunyomi: ['ひと.しい', 'など'],
-        components: [],
-        mnemonic: {
-          en: 'Bamboo 竹 slips at a temple 寺 all cut to the same length: equal, a grade, and "etcetera".',
-          vi: 'Những thẻ tre 竹 ở chùa 寺 cắt bằng nhau: ngang bằng, hạng, và "vân vân".'
-        },
+        components: ['竹', '寺'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '寺', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -13739,11 +13220,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reason, cause; via, from', vi: 'do - lý do; từ, bởi' },
         onyomi: ['ユ', 'ユウ', 'ユイ'],
         kunyomi: ['よし'],
-        components: [],
-        mnemonic: {
-          en: 'A gourd with something coming out from within, the source: a reason, a cause, "by way of".',
-          vi: 'Một quả bầu có thứ gì đó thoát ra từ bên trong, cội nguồn: lý do, nguyên do, "bởi, từ".'
-        },
+        components: ['田'],
+        parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13781,11 +13259,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'commerce, trade; merchant', vi: 'thương - buôn bán, thương mại' },
         onyomi: ['ショウ'],
         kunyomi: ['あきな.う'],
-        components: [],
-        mnemonic: {
-          en: 'Standing at a stall calling out with the mouth 口 to sell goods: commerce, trade, a merchant.',
-          vi: 'Đứng ở quầy, dùng miệng 口 rao bán hàng: buôn bán, thương mại.'
-        },
+        components: ['立', '口'],
+        parts: [
+          { char: '立', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -13816,10 +13294,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イ'],
         kunyomi: [],
         components: ['禾', '女'],
-        mnemonic: {
-          en: 'A woman 女 bending under grain 禾, entrusted with the harvest: to entrust, to commit.',
-          vi: 'Người phụ nữ 女 khom mình dưới bông lúa 禾, được giao lo vụ mùa: giao phó, ủy thác.'
-        },
+        parts: [
+          { char: '禾', role: 'other' },
+          { char: '女', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -13851,11 +13329,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to change, to transform', vi: 'hóa - biến hóa, thay đổi' },
         onyomi: ['カ', 'ケ'],
         kunyomi: ['ば.ける'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 upright turning into a person 匕 fallen over, one form becoming another: to change, to transform.',
-          vi: 'Một người 亻 đứng biến thành người 匕 ngã xuống, hình này hóa thành hình kia: biến hóa, thay đổi.'
-        },
+        components: ['亻', '匕'],
+        parts: [
+          { char: '亻', role: 'other' },
+          { char: '匕', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -13889,11 +13367,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ダイ', 'タイ'],
         kunyomi: ['か.わる', 'よ', 'しろ'],
-        components: [],
-        mnemonic: {
-          en: 'One person 亻 stepping in to take the place of another: to substitute, a generation, and a charge or fee.',
-          vi: 'Một người 亻 bước vào thay chỗ người khác: thay thế, thời đại, và khoản tiền phí.'
-        },
+        components: ['亻', '弋'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '弋', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -13925,11 +13403,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'opposite; versus; to face', vi: 'đối - đối diện; đối lập; cặp' },
         onyomi: ['タイ', 'ツイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A hand 寸 held out to face another head-on: opposite, versus, a pair, to face.',
-          vi: 'Bàn tay 寸 đưa ra đối mặt trực diện: đối diện, đối lập, cặp.'
-        },
+        components: ['文', '寸'],
+        parts: [
+          { char: '文', role: 'other' },
+          { char: '寸', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -13960,11 +13438,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to lose; to bear; to owe', vi: 'phụ - thua; gánh vác; âm (số)' },
         onyomi: ['フ'],
         kunyomi: ['ま.ける', 'お.う'],
-        components: [],
-        mnemonic: {
-          en: 'A person bending under a load of money 貝 they owe: to bear a burden, to owe, and to lose a contest.',
-          vi: 'Một người khom lưng dưới gánh nợ tiền 貝: gánh vác, mắc nợ, và thua cuộc.'
-        },
+        components: ['貝'],
+        parts: [{ char: '貝', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13995,11 +13470,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'part, section, department', vi: 'bộ - bộ phận; ban; câu lạc bộ' },
         onyomi: ['ブ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'One district 阝 marked off from a city, one part of the whole: a part, a section, a department.',
-          vi: 'Một khu 阝 tách ra từ thành phố, một phần của tổng thể: bộ phận, ban, phòng.'
-        },
+        components: ['咅', '阝'],
+        parts: [
+          { char: '咅', role: 'phonetic' },
+          { char: '阝', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -14029,11 +13504,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to win, to excel', vi: 'thắng - thắng, chiến thắng; hơn' },
         onyomi: ['ショウ'],
         kunyomi: ['か.つ', 'まさ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Pouring out all your strength 力 to come out on top: to win, to excel.',
-          vi: 'Dồn hết sức 力 để vươn lên đứng đầu: thắng, chiến thắng, hơn hẳn.'
-        },
+        components: ['月', '力'],
+        parts: [
+          { char: '月', role: 'other' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -14063,11 +13538,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to ride, to board; to multiply', vi: 'thừa - đi (xe), lên (xe); nhân' },
         onyomi: ['ジョウ'],
         kunyomi: ['の.る', 'の.せる'],
-        components: [],
-        mnemonic: {
-          en: 'A person climbing up onto a tree or cart to ride: to ride, to board, and to multiply.',
-          vi: 'Một người trèo lên cây hay lên xe để đi: đi xe, lên xe, và phép nhân.'
-        },
+        components: ['丿'],
+        parts: [{ char: '丿', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -14097,11 +13569,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to exist, to have', vi: 'hữu - có, tồn tại' },
         onyomi: ['ユウ', 'ウ'],
         kunyomi: ['あ.る'],
-        components: [],
-        mnemonic: {
-          en: 'A hand holding a piece of meat 月, having something in your grasp: to have, to exist.',
-          vi: 'Một bàn tay giữ miếng thịt 月, có thứ gì trong tay: có, tồn tại.'
-        },
+        components: ['月'],
+        parts: [{ char: '月', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -14139,11 +13608,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to leave, to go away; past', vi: 'khứ - rời đi; đã qua' },
         onyomi: ['キョ', 'コ'],
         kunyomi: ['さ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Walking away from a spot of earth 土, leaving it behind: to leave, to go away, the past.',
-          vi: 'Bước khỏi một mảnh đất 土, bỏ lại phía sau: rời đi, ra đi, đã qua.'
-        },
+        components: ['土', '厶'],
+        parts: [
+          { char: '土', role: 'other' },
+          { char: '厶', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -14173,11 +13642,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to bend; crooked; melody', vi: 'khúc - cong, uốn; bản nhạc' },
         onyomi: ['キョク'],
         kunyomi: ['ま.がる', 'ま.げる'],
-        components: [],
-        mnemonic: {
-          en: 'The shape of something bent into curves; also a winding tune: to bend, crooked, a melody.',
-          vi: 'Hình vật bị uốn cong; cũng là giai điệu uốn lượn: cong, uốn, bản nhạc.'
-        },
+        components: ['曰'],
+        parts: [{ char: '曰', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -14208,11 +13674,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to face, toward', vi: 'hướng - hướng về, quay về' },
         onyomi: ['コウ'],
         kunyomi: ['む.く', 'む.かう', 'む.こう'],
-        components: [],
-        mnemonic: {
-          en: 'A window with a mouth 口 below, a house turned to face one direction: to face, toward.',
-          vi: 'Một ô cửa sổ với cái miệng 口 bên dưới, ngôi nhà quay về một hướng: hướng về, quay về.'
-        },
+        components: ['冂', '口'],
+        parts: [
+          { char: '冂', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -14243,15 +13709,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'next, following; order', vi: 'thứ - tiếp theo; thứ tự' },
         onyomi: ['ジ', 'シ'],
         kunyomi: ['つ.ぐ', 'つぎ'],
-        components: [],
-        mnemonic: {
-          en: 'A yawn 欠 breathed out one after another in sequence: next, the following, order.',
-          vi: 'Một cái ngáp 欠 thở ra hết cái này đến cái kia theo trình tự: tiếp theo, thứ tự.'
-        },
+        components: ['冫', '欠'],
+        parts: [
+          { char: '冫', role: 'other' },
+          { char: '欠', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '次', reading: 'つぎ' }],
-            meaning: { en: 'next', vi: 'tiếp theo' }
+            parts: [
+              { text: '次', reading: 'つぎ' },
+              { text: '々', reading: 'つぎ' }
+            ],
+            meaning: { en: 'one after another', vi: 'lần lượt, liên tiếp' }
           },
           {
             parts: [
@@ -14277,11 +13746,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ジュウ', 'チョウ'],
         kunyomi: ['おも.い', 'かさ.ねる', 'え'],
-        components: [],
-        mnemonic: {
-          en: 'A heavy bundle weighing a person down, layers stacked up: heavy, to pile up, and important.',
-          vi: 'Một bó nặng đè trĩu người, các lớp chồng lên nhau: nặng, chồng lên, và quan trọng.'
-        },
+        components: ['里'],
+        parts: [{ char: '里', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -14312,15 +13778,19 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lodging, inn; to stay over', vi: 'túc - chỗ trọ, quán trọ; ở lại' },
         onyomi: ['シュク'],
         kunyomi: ['やど', 'やど.る'],
-        components: [],
-        mnemonic: {
-          en: 'People 亻 resting for the night under a roof 宀: lodging, an inn, to stay over.',
-          vi: 'Người 亻 nghỉ qua đêm dưới mái nhà 宀: chỗ trọ, quán trọ, ở lại.'
-        },
+        components: ['宀', '亻', '百'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '亻', role: 'other' },
+          { char: '百', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '宿', reading: 'やど' }],
-            meaning: { en: 'lodging, inn', vi: 'chỗ trọ' }
+            parts: [
+              { text: '宿', reading: 'やど' },
+              { text: '屋', reading: 'や' }
+            ],
+            meaning: { en: 'inn', vi: 'quán trọ' }
           },
           {
             parts: [
@@ -14344,14 +13814,17 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ショ'],
         kunyomi: ['ところ'],
         components: ['戸', '斤'],
-        mnemonic: {
-          en: 'The spot by the door 戸 where the axe 斤 is kept, a fixed place: a place, a spot.',
-          vi: 'Chỗ cạnh cửa 戸 nơi cất cái rìu 斤, một vị trí cố định: nơi chốn, chỗ.'
-        },
+        parts: [
+          { char: '戸', role: 'radical' },
+          { char: '斤', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '所', reading: 'ところ' }],
-            meaning: { en: 'place, spot', vi: 'nơi, chỗ' }
+            parts: [
+              { text: '所', reading: 'ところ' },
+              { text: '々', reading: 'どころ' }
+            ],
+            meaning: { en: 'here and there', vi: 'chỗ này chỗ kia' }
           },
           {
             parts: [
@@ -14374,15 +13847,18 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'life; command', vi: 'mệnh - sinh mệnh; mệnh lệnh' },
         onyomi: ['メイ', 'ミョウ'],
         kunyomi: ['いのち'],
-        components: [],
-        mnemonic: {
-          en: 'An order given aloud with the mouth 口 that one must obey as if life depended on it: life, a command.',
-          vi: 'Một mệnh lệnh hô bằng miệng 口 mà người ta phải theo như thể tính mạng phụ thuộc vào đó: sinh mệnh, mệnh lệnh.'
-        },
+        components: ['口', '卩'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '卩', role: 'other' }
+        ],
         examples: [
           {
-            parts: [{ text: '命', reading: 'いのち' }],
-            meaning: { en: 'life', vi: 'sinh mệnh, mạng sống' }
+            parts: [
+              { text: '命', reading: 'いのち' },
+              { text: 'がけ', reading: 'がけ' }
+            ],
+            meaning: { en: "at the risk of one's life", vi: 'liều mạng' }
           },
           {
             parts: [
@@ -14406,15 +13882,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['メン'],
         kunyomi: ['おも', 'つら'],
         components: [],
-        mnemonic: {
-          en: 'The outline of a face with an eye inside, the front of the head: a face, a surface, a mask.',
-          vi: 'Đường viền khuôn mặt với con mắt bên trong, mặt trước của đầu: mặt, bề mặt, mặt nạ.'
-        },
         examples: [
-          {
-            parts: [{ text: '面', reading: 'めん' }],
-            meaning: { en: 'face, surface, aspect', vi: 'mặt, bề mặt, phương diện' }
-          },
           {
             parts: [
               { text: '面', reading: 'おも' },
@@ -14441,10 +13909,10 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ワ', 'オ'],
         kunyomi: ['やわ.らぐ', 'なご.む'],
         components: ['禾', '口'],
-        mnemonic: {
-          en: 'Grain 禾 shared into every mouth 口 so all are fed and at peace: harmony, and things Japanese.',
-          vi: 'Lúa gạo 禾 chia vào mọi cái miệng 口 để ai cũng no và yên: hòa hợp, êm ấm, và thuộc về Nhật.'
-        },
+        parts: [
+          { char: '禾', role: 'phonetic' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -14482,11 +13950,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'light (not heavy)', vi: 'khinh - nhẹ; nhẹ nhàng' },
         onyomi: ['ケイ'],
         kunyomi: ['かる.い'],
-        components: [],
-        mnemonic: {
-          en: 'A cart 車 built small and light so it rolls easily: light, not heavy.',
-          vi: 'Một chiếc xe 車 làm nhỏ và nhẹ để lăn dễ: nhẹ, nhẹ nhàng.'
-        },
+        components: ['車', '圣'],
+        parts: [
+          { char: '車', role: 'radical' },
+          { char: '圣', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -14516,16 +13984,9 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prefecture', vi: 'huyện - tỉnh (đơn vị hành chính)' },
         onyomi: ['ケン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A large administrative region under the central government: a prefecture.',
-          vi: 'Một vùng hành chính lớn trực thuộc chính quyền trung ương: tỉnh (ken).'
-        },
+        components: ['目'],
+        parts: [{ char: '目', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '県', reading: 'けん' }],
-            meaning: { en: 'prefecture', vi: 'tỉnh' }
-          },
           {
             parts: [
               { text: '県', reading: 'けん' },
@@ -14547,11 +14008,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shining, bright', vi: 'chiêu - sáng, rạng rỡ' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The sun 日 calling forth its light to make things bright and clear: shining, bright.',
-          vi: 'Mặt trời 日 gọi ánh sáng lên làm mọi thứ rạng rỡ: sáng, rực rỡ.'
-        },
+        components: ['日', '召'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '召', role: 'phonetic' }
+        ],
         note: {
           en: 'In modern Japanese it appears almost only in 昭和 (the Shōwa era, 1926-1989).',
           vi: 'Trong tiếng Nhật hiện đại hầu như chỉ xuất hiện trong 昭和 (thời Shōwa, 1926-1989).'
@@ -14580,11 +14041,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to arrange, to put in order', vi: 'chỉnh - sắp xếp, chỉnh đốn' },
         onyomi: ['セイ'],
         kunyomi: ['ととの.える', 'ととの.う'],
-        components: [],
-        mnemonic: {
-          en: 'Straightening a bundle out until everything is correct 正 and neat: to arrange, to put in order.',
-          vi: 'Chỉnh một bó cho tới khi mọi thứ ngay ngắn 正 và gọn gàng: sắp xếp, chỉnh đốn.'
-        },
+        components: ['束', '攵', '正'],
+        parts: [
+          { char: '束', role: 'other' },
+          { char: '攵', role: 'radical' },
+          { char: '正', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -14615,16 +14077,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'iron', vi: 'thiết - sắt' },
         onyomi: ['テツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A common, hard metal 金 dug from the earth: iron.',
-          vi: 'Một kim loại 金 cứng, phổ biến đào từ đất: sắt.'
-        },
+        components: ['金', '失'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '失', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '鉄', reading: 'てつ' }],
-            meaning: { en: 'iron', vi: 'sắt' }
-          },
           {
             parts: [
               { text: '地', reading: 'ち' },
@@ -14647,11 +14105,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to climb, to ascend', vi: 'đăng - trèo, leo lên' },
         onyomi: ['トウ', 'ト'],
         kunyomi: ['のぼ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Two feet stepping up rung by rung onto a raised stand 豆: to climb, to ascend.',
-          vi: 'Đôi chân bước lên từng nấc trên cái bệ cao 豆: trèo, leo lên.'
-        },
+        components: ['癶', '豆'],
+        parts: [
+          { char: '癶', role: 'radical' },
+          { char: '豆', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -14681,16 +14139,12 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thing, object', vi: 'vật - vật, đồ vật' },
         onyomi: ['ブツ', 'モツ'],
         kunyomi: ['もの'],
-        components: [],
-        mnemonic: {
-          en: 'Livestock like a cow 牛 counted among your goods: a thing, an object.',
-          vi: 'Gia súc như con bò 牛 được tính vào của cải: vật, đồ vật.'
-        },
+        components: ['牛', '勿'],
+        parts: [
+          { char: '牛', role: 'radical' },
+          { char: '勿', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '物', reading: 'もの' }],
-            meaning: { en: 'thing, object', vi: 'đồ vật, vật' }
-          },
           {
             parts: [
               { text: '動', reading: 'どう' },
@@ -14713,11 +14167,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'beforehand, in advance', vi: 'dự - trước, sẵn' },
         onyomi: ['ヨ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Setting things up ahead of time before they are needed: beforehand, in advance.',
-          vi: 'Chuẩn bị mọi thứ từ trước khi cần: trước, sẵn.'
-        },
+        components: ['亅'],
+        parts: [{ char: '亅', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -14747,11 +14198,11 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'road, path', vi: 'lộ - đường, con đường' },
         onyomi: ['ロ'],
         kunyomi: ['じ'],
-        components: [],
-        mnemonic: {
-          en: 'Where the feet 足 travel each 各 day: a road, a path.',
-          vi: 'Nơi đôi chân 足 đi lại mỗi ngày: con đường, lối đi.'
-        },
+        components: ['足', '各'],
+        parts: [
+          { char: '足', role: 'radical' },
+          { char: '各', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -14782,14 +14233,13 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['トウ', 'ズ'],
         kunyomi: ['まめ'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a tall-stemmed dish once used for offerings, later meaning bean: a bean.',
-          vi: 'Hình một cái đĩa có chân cao xưa dùng để cúng, sau mang nghĩa hạt đậu: hạt đậu.'
-        },
         examples: [
           {
-            parts: [{ text: '豆', reading: 'まめ' }],
-            meaning: { en: 'bean', vi: 'hạt đậu' }
+            parts: [
+              { text: '枝', reading: 'えだ' },
+              { text: '豆', reading: 'まめ' }
+            ],
+            meaning: { en: 'edamame', vi: 'đậu nành non (edamame)' }
           },
           {
             parts: [
@@ -14812,8 +14262,8 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
 ]);
 
 /**
- * Grade 4 Jōyō kanji (202 characters), learned 10 per lesson. Author each lesson
- * by hand; keep 10 kanji per lesson and add new lessons in order.
+ * Grade 4 Jōyō kanji (202 characters), authored by hand in ordered lessons
+ * (~10 per lesson as a loose target, not fixed). Add new lessons in order.
  */
 export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
   {
@@ -14823,20 +14273,51 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
     },
     kanji: [
       {
+        char: '法',
+        meaning: { en: 'law, method, rule', vi: 'pháp - luật pháp; phương pháp' },
+        onyomi: ['ホウ', 'ハッ'],
+        kunyomi: [],
+        components: ['氵', '去'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '去', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '方', reading: 'ほう' },
+              { text: '法', reading: 'ほう' }
+            ],
+            meaning: { en: 'method, way', vi: 'phương pháp, cách' }
+          },
+          {
+            parts: [
+              { text: '法', reading: 'ほう' },
+              { text: '律', reading: 'りつ' }
+            ],
+            meaning: { en: 'law', vi: 'pháp luật' }
+          },
+          {
+            parts: [
+              { text: '文', reading: 'ぶん' },
+              { text: '法', reading: 'ぽう' }
+            ],
+            meaning: { en: 'grammar', vi: 'ngữ pháp' }
+          }
+        ]
+      },
+      {
         char: '愛',
         meaning: { en: 'love, affection', vi: 'ái - yêu, tình yêu' },
         onyomi: ['アイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A hand holding the heart 心 close and not letting go: love, affection.',
-          vi: 'Một bàn tay ôm giữ trái tim 心 không rời: yêu thương, tình yêu.'
-        },
+        components: ['爫', '心', '夂'],
+        parts: [
+          { char: '爫', role: 'other' },
+          { char: '心', role: 'radical' },
+          { char: '夂', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '愛', reading: 'あい' }],
-            meaning: { en: 'love', vi: 'tình yêu' }
-          },
           {
             parts: [
               { text: '愛', reading: 'あい' },
@@ -14859,10 +14340,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ'],
         kunyomi: ['この.む', 'す.く'],
         components: ['女', '子'],
-        mnemonic: {
-          en: 'A mother 女 cradling her child 子, the picture of fondness: to like, good.',
-          vi: 'Người mẹ 女 ôm ấp đứa con 子, hình ảnh của sự yêu quý: thích, tốt.'
-        },
+        parts: [
+          { char: '女', role: 'radical' },
+          { char: '子', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -14888,50 +14369,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '喜',
-        meaning: { en: 'to rejoice, joy', vi: 'hỷ - vui mừng, hân hoan' },
-        onyomi: ['キ'],
-        kunyomi: ['よろこ.ぶ'],
-        components: [],
-        mnemonic: {
-          en: 'A drum beating and a mouth 口 open in delight: to rejoice, joy.',
-          vi: 'Tiếng trống vang lên và cái miệng 口 mở ra hân hoan: vui mừng, hân hoan.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '喜', reading: 'よろこ' },
-              { text: 'ぶ', reading: 'ぶ' }
-            ],
-            meaning: { en: 'to be glad, to rejoice', vi: 'vui mừng' }
-          },
-          {
-            parts: [
-              { text: '大', reading: 'おお' },
-              { text: '喜', reading: 'よろこ' },
-              { text: 'び', reading: 'び' }
-            ],
-            meaning: { en: 'great joy', vi: 'mừng rỡ, vui sướng' }
-          },
-          {
-            parts: [
-              { text: '悲', reading: 'ひ' },
-              { text: '喜', reading: 'き' }
-            ],
-            meaning: { en: 'joy and sorrow', vi: 'buồn vui, bi hỉ' }
-          }
-        ]
-      },
-      {
         char: '泣',
         meaning: { en: 'to cry, to weep', vi: 'khấp - khóc' },
         onyomi: ['キュウ'],
         kunyomi: ['な.く'],
-        components: [],
-        mnemonic: {
-          en: 'Standing 立 with water 氵 streaming from the eyes: to cry, to weep.',
-          vi: 'Đứng 立 với nước 氵 tuôn ra từ mắt: khóc.'
-        },
+        components: ['氵', '立'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '立', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -14962,11 +14408,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to laugh, to smile', vi: 'tiếu - cười' },
         onyomi: ['ショウ'],
         kunyomi: ['わら.う', 'え.む'],
-        components: [],
-        mnemonic: {
-          en: 'Bamboo 竹 leaves swaying as if bent over laughing: to laugh, to smile.',
-          vi: 'Lá tre 竹 lay động như đang cười ngặt nghẽo: cười, mỉm cười.'
-        },
+        components: ['竹', '夭'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '夭', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -14997,11 +14443,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to hope, to wish; to gaze afar', vi: 'vọng - hy vọng, mong mỏi; ngắm xa' },
         onyomi: ['ボウ', 'モウ'],
         kunyomi: ['のぞ.む'],
-        components: [],
-        mnemonic: {
-          en: 'Gazing up at the moon 月 far away and longing for it: to hope, to wish, to gaze into the distance.',
-          vi: 'Ngước nhìn mặt trăng 月 xa xăm và khao khát: hy vọng, mong mỏi, ngắm xa.'
-        },
+        components: ['亡', '月', '王'],
+        parts: [
+          { char: '亡', role: 'phonetic' },
+          { char: '月', role: 'radical' },
+          { char: '王', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -15031,11 +14478,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wish, to pray, to request', vi: 'nguyện - cầu nguyện, ước nguyện' },
         onyomi: ['ガン'],
         kunyomi: ['ねが.う'],
-        components: [],
-        mnemonic: {
-          en: 'Bowing the head 頁 to make an earnest request: to wish, to pray, to request.',
-          vi: 'Cúi đầu 頁 để khẩn cầu tha thiết: cầu nguyện, ước nguyện.'
-        },
+        components: ['原', '頁'],
+        parts: [
+          { char: '原', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -15066,11 +14513,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hope; rare, scarce', vi: 'hy - hy vọng; hiếm' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A loosely woven cloth 巾 with rare, hoped-for threads: hope, and rare, scarce.',
-          vi: 'Tấm vải 巾 dệt thưa với những sợi hiếm hoi được mong đợi: hy vọng, và hiếm.'
-        },
+        components: ['巾'],
+        parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15093,11 +14537,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to seek, to demand', vi: 'cầu - tìm kiếm, yêu cầu' },
         onyomi: ['キュウ'],
         kunyomi: ['もと.める'],
-        components: [],
-        mnemonic: {
-          en: 'Reaching out to grasp and pull in what you want: to seek, to demand, to request.',
-          vi: 'Vươn ra nắm lấy và kéo về thứ mình muốn: tìm kiếm, yêu cầu.'
-        },
+        components: ['水'],
+        parts: [{ char: '水', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15128,11 +14569,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thought, wish; attention', vi: 'niệm - ý nghĩ; tâm niệm' },
         onyomi: ['ネン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Holding something in the heart 心 right now 今, keeping it in mind: a thought, a wish, attention.',
-          vi: 'Giữ điều gì đó trong tim 心 ngay lúc này 今, khắc ghi trong lòng: ý nghĩ, tâm niệm.'
-        },
+        components: ['今', '心'],
+        parts: [
+          { char: '今', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -15171,10 +14612,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ'],
         kunyomi: ['は.たす', 'は.てる'],
         components: ['田', '木'],
-        mnemonic: {
-          en: 'A round fruit 田 sitting on top of a tree 木: fruit, and the result that ripens.',
-          vi: 'Một quả tròn 田 nằm trên cây 木: trái cây, và kết quả chín muồi.'
-        },
+        parts: [
+          { char: '田', role: 'other' },
+          { char: '木', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -15205,16 +14646,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bud, sprout', vi: 'nha - mầm, chồi' },
         onyomi: ['ガ'],
         kunyomi: ['め'],
-        components: [],
-        mnemonic: {
-          en: 'A new shoot 艹 pushing up sharp like a fang 牙 through the soil: a bud, a sprout.',
-          vi: 'Một mầm cây 艹 nhú lên nhọn như cái răng nanh 牙 xuyên qua đất: mầm, chồi.'
-        },
+        components: ['艹', '牙'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '牙', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '芽', reading: 'め' }],
-            meaning: { en: 'sprout, bud', vi: 'mầm, chồi' }
-          },
           {
             parts: [
               { text: '新', reading: 'しん' },
@@ -15236,11 +14673,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vegetable, greens', vi: 'thái - rau, rau xanh' },
         onyomi: ['サイ'],
         kunyomi: ['な'],
-        components: [],
-        mnemonic: {
-          en: 'Leafy plants 艹 you pick by hand to eat: vegetables, greens.',
-          vi: 'Những cây lá 艹 hái bằng tay để ăn: rau, rau xanh.'
-        },
+        components: ['艹', '采'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '采', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15250,8 +14687,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'vegetables', vi: 'rau củ' }
           },
           {
-            parts: [{ text: '菜', reading: 'な' }],
-            meaning: { en: 'greens, rape plant', vi: 'rau, cải' }
+            parts: [
+              { text: '菜', reading: 'な' },
+              { text: 'の', reading: 'の' },
+              { text: '花', reading: 'はな' }
+            ],
+            meaning: { en: 'rape blossoms', vi: 'hoa cải' }
           },
           {
             parts: [
@@ -15267,16 +14708,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'plum (ume)', vi: 'mai - cây mơ, quả mơ' },
         onyomi: ['バイ'],
         kunyomi: ['うめ'],
-        components: [],
-        mnemonic: {
-          en: 'A tree 木 that blooms early every year and bears sour fruit: the plum (ume).',
-          vi: 'Cái cây 木 năm nào cũng nở sớm và cho quả chua: cây mơ (ume).'
-        },
+        components: ['木', '毎'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '毎', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '梅', reading: 'うめ' }],
-            meaning: { en: 'plum, ume', vi: 'quả mơ' }
-          },
           {
             parts: [{ text: '梅雨', reading: 'つゆ' }],
             meaning: { en: 'the rainy season', vi: 'mùa mưa (tsuyu)' }
@@ -15295,15 +14732,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seed; kind, type', vi: 'chủng - hạt giống; loại, chủng loại' },
         onyomi: ['シュ'],
         kunyomi: ['たね'],
-        components: [],
-        mnemonic: {
-          en: 'The heaviest 重, best grains of a crop 禾 saved to plant: a seed, and a kind or type.',
-          vi: 'Những hạt 禾 nặng 重 nhất, tốt nhất của vụ mùa giữ lại để gieo: hạt giống, và loại, chủng loại.'
-        },
+        components: ['禾', '重'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '重', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '種', reading: 'たね' }],
-            meaning: { en: 'seed', vi: 'hạt giống' }
+            parts: [
+              { text: '種', reading: 'たね' },
+              { text: 'まき', reading: 'まき' }
+            ],
+            meaning: { en: 'sowing seeds', vi: 'gieo hạt' }
           },
           {
             parts: [
@@ -15326,11 +14766,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cooked rice; meal', vi: 'phạn - cơm; bữa ăn' },
         onyomi: ['ハン'],
         kunyomi: ['めし'],
-        components: [],
-        mnemonic: {
-          en: 'The food 食 you come back 反 to every day, cooked rice: a meal.',
-          vi: 'Món ăn 食 mà ngày nào cũng quay lại 反 dùng, cơm chín: bữa cơm.'
-        },
+        components: ['食', '反'],
+        parts: [
+          { char: '食', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15340,8 +14780,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'cooked rice, meal', vi: 'cơm' }
           },
           {
-            parts: [{ text: '飯', reading: 'めし' }],
-            meaning: { en: 'meal, food (casual)', vi: 'cơm, bữa ăn' }
+            parts: [
+              { text: '昼', reading: 'ひる' },
+              { text: '飯', reading: 'めし' }
+            ],
+            meaning: { en: 'lunch (casual)', vi: 'bữa trưa (thân mật)' }
           },
           {
             parts: [
@@ -15357,16 +14800,9 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'salt', vi: 'diêm - muối' },
         onyomi: ['エン'],
         kunyomi: ['しお'],
-        components: [],
-        mnemonic: {
-          en: 'White grains gathered from earth 土 and seawater in a dish: salt.',
-          vi: 'Những hạt trắng lấy từ đất 土 và nước biển đựng trong đĩa: muối.'
-        },
+        components: ['土'],
+        parts: [{ char: '土', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '塩', reading: 'しお' }],
-            meaning: { en: 'salt', vi: 'muối' }
-          },
           {
             parts: [
               { text: '塩', reading: 'しお' },
@@ -15388,11 +14824,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'materials, ingredients; fee', vi: 'liệu - nguyên liệu; phí, tiền' },
         onyomi: ['リョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Measuring out rice 米 with a scoop 斗 as materials and their cost: ingredients, materials, a fee.',
-          vi: 'Đong gạo 米 bằng cái đấu 斗 làm nguyên liệu và tính giá: nguyên liệu, vật liệu, phí.'
-        },
+        components: ['米', '斗'],
+        parts: [
+          { char: '米', role: 'other' },
+          { char: '斗', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -15423,10 +14859,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ヨウ'],
         kunyomi: ['やしな.う'],
         components: ['羊', '食'],
-        mnemonic: {
-          en: 'Feeding sheep 羊 good food 食 to raise them well: to nourish, to raise, to support.',
-          vi: 'Cho cừu 羊 ăn no đủ 食 để nuôi lớn: nuôi dưỡng, bồi dưỡng.'
-        },
+        parts: [
+          { char: '羊', role: 'phonetic' },
+          { char: '食', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -15456,11 +14892,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to burn, to bake, to grill', vi: 'thiêu - đốt, nướng' },
         onyomi: ['ショウ'],
         kunyomi: ['や.く', 'や.ける'],
-        components: [],
-        mnemonic: {
-          en: 'Putting something over fire 火 until it chars or cooks: to burn, to bake, to grill.',
-          vi: 'Đặt thứ gì đó lên lửa 火 cho cháy hoặc chín: đốt, nướng.'
-        },
+        components: ['火', '尭'],
+        parts: [
+          { char: '火', role: 'radical' },
+          { char: '尭', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15503,11 +14939,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['エイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A flower 艹 blooming at the very center 央, the finest of its kind: excellent, and England/English.',
-          vi: 'Một bông hoa 艹 nở ngay chính giữa 央, tinh túy nhất: xuất sắc, và nước Anh, tiếng Anh.'
-        },
+        components: ['艹', '央'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '央', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15541,11 +14977,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Words 言 that test the results 果 of study, divided into sections: a lesson, a department, to assign.',
-          vi: 'Những lời 言 kiểm tra kết quả 果 học tập, chia thành phần: bài học, ban/khoa, giao việc.'
-        },
+        components: ['言', '果'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '果', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15576,10 +15012,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['クン'],
         kunyomi: [],
         components: ['言', '川'],
-        mnemonic: {
-          en: 'Words 言 that flow like a river 川 to guide and teach: instruction, and the native kun reading.',
-          vi: 'Những lời 言 chảy như dòng sông 川 để dẫn dắt, dạy bảo: dạy bảo, và âm KUN.'
-        },
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '川', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15609,11 +15045,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to try, to test', vi: 'thí - thử; thi, kiểm tra' },
         onyomi: ['シ'],
         kunyomi: ['こころ.みる', 'ため.す'],
-        components: [],
-        mnemonic: {
-          en: 'Putting something to the test with set words 言 in a fixed form 式: to try, to test.',
-          vi: 'Đem thử bằng những lời 言 theo khuôn thức 式 định sẵn: thử, kiểm tra, thi.'
-        },
+        components: ['言', '式'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '式', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15643,11 +15079,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'test, verification; effect', vi: 'nghiệm - thử nghiệm, kiểm chứng' },
         onyomi: ['ケン', 'ゲン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Testing a horse 馬 to verify how good it is: a test, verification, an effect.',
-          vi: 'Thử con ngựa 馬 để kiểm chứng nó tốt ra sao: thử nghiệm, kiểm chứng.'
-        },
+        components: ['馬', '僉'],
+        parts: [
+          { char: '馬', role: 'radical' },
+          { char: '僉', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15680,11 +15116,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カク'],
         kunyomi: ['おぼ.える', 'さ.める'],
-        components: [],
-        mnemonic: {
-          en: 'Opening the eyes 見 to take something in and keep it: to memorize, to wake up, to sense.',
-          vi: 'Mở mắt 見 để tiếp nhận và ghi nhớ: nhớ, tỉnh giấc, cảm giác.'
-        },
+        components: ['見'],
+        parts: [{ char: '見', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15717,11 +15150,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to explain; a theory', vi: 'thuyết - giải thích; học thuyết' },
         onyomi: ['セツ', 'ゼイ'],
         kunyomi: ['と.く'],
-        components: [],
-        mnemonic: {
-          en: 'Using words 言 to open up an idea and make it clear: to explain, a theory.',
-          vi: 'Dùng lời 言 để mở ra một ý và làm rõ: giải thích, học thuyết.'
-        },
+        components: ['言', '兌'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '兌', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15751,16 +15184,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'example; precedent', vi: 'lệ - ví dụ; lệ thường' },
         onyomi: ['レイ'],
         kunyomi: ['たと.える'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 lined up 列 as one instance among many: an example, a precedent.',
-          vi: 'Một người 亻 xếp hàng 列 như một trường hợp trong nhiều cái: ví dụ, lệ thường.'
-        },
+        components: ['亻', '列'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '列', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '例', reading: 'れい' }],
-            meaning: { en: 'example, instance', vi: 'ví dụ' }
-          },
           {
             parts: [
               { text: '例', reading: 'たと' },
@@ -15786,11 +15215,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['テン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'An important book held up on a stand for reference: a canon, a code, a ceremony.',
-          vi: 'Một cuốn sách quan trọng được nâng trên giá để tra cứu: sách chuẩn, điển tịch, điển lễ.'
-        },
+        components: ['八'],
+        parts: [{ char: '八', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15820,11 +15246,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'complete, finished, whole', vi: 'hoàn - hoàn thành, trọn vẹn' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A house 宀 built to its very origin 元, every part in place: complete, finished, whole.',
-          vi: 'Ngôi nhà 宀 xây trọn tới gốc 元, mọi phần đủ cả: hoàn thành, trọn vẹn.'
-        },
+        components: ['宀', '元'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '元', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -15862,11 +15288,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'people, populace', vi: 'dân - người dân, dân chúng' },
         onyomi: ['ミン'],
         kunyomi: ['たみ'],
-        components: [],
-        mnemonic: {
-          en: 'A picture standing for the common people ruled over: the people, the populace.',
-          vi: 'Hình tượng chỉ tầng lớp dân thường được cai trị: người dân, dân chúng.'
-        },
+        components: ['氏'],
+        parts: [{ char: '氏', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15896,11 +15319,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'government official; public office', vi: 'quan - quan chức; cơ quan' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Someone housed under the roof 宀 of the government to serve: an official, a public office.',
-          vi: 'Người làm việc dưới mái 宀 nhà nước: quan chức, cơ quan công.'
-        },
+        components: ['宀'],
+        parts: [{ char: '宀', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15930,16 +15350,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'army, military', vi: 'quân - quân đội' },
         onyomi: ['グン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'War chariots 車 gathered under one command: an army, the military.',
-          vi: 'Những cỗ chiến xa 車 tập hợp dưới một quyền chỉ huy: quân đội.'
-        },
+        components: ['冖', '車'],
+        parts: [
+          { char: '冖', role: 'other' },
+          { char: '車', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '軍', reading: 'ぐん' }],
-            meaning: { en: 'army, military', vi: 'quân đội' }
-          },
           {
             parts: [
               { text: '軍', reading: 'ぐん' },
@@ -15961,16 +15377,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'soldier', vi: 'binh - lính, binh sĩ' },
         onyomi: ['ヘイ', 'ヒョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Two hands holding up a weapon like an axe, ready for battle: a soldier.',
-          vi: 'Hai bàn tay nâng vũ khí như cái rìu, sẵn sàng chiến đấu: người lính, binh sĩ.'
-        },
+        components: ['斤', '八'],
+        parts: [
+          { char: '斤', role: 'other' },
+          { char: '八', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '兵', reading: 'へい' }],
-            meaning: { en: 'soldier', vi: 'người lính' }
-          },
           {
             parts: [
               { text: '兵', reading: 'へい' },
@@ -15988,52 +15400,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '士',
-        meaning: {
-          en: 'samurai; gentleman; expert',
-          vi: 'sĩ - kẻ sĩ; quý ông; chuyên gia'
-        },
-        onyomi: ['シ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'One 一 who has mastered much down to ten 十, a learned or martial man: a samurai, a gentleman, an expert.',
-          vi: 'Người thông tỏ từ một 一 đến mười 十, kẻ sĩ văn hay võ: kẻ sĩ, quý ông, chuyên gia.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '博', reading: 'はか' },
-              { text: '士', reading: 'せ' }
-            ],
-            meaning: { en: 'doctorate; learned person', vi: 'tiến sĩ, bậc thông thái' }
-          },
-          {
-            parts: [
-              { text: '武', reading: 'ぶ' },
-              { text: '士', reading: 'し' }
-            ],
-            meaning: { en: 'samurai, warrior', vi: 'võ sĩ, samurai' }
-          },
-          {
-            parts: [
-              { text: '力', reading: 'りき' },
-              { text: '士', reading: 'し' }
-            ],
-            meaning: { en: 'sumo wrestler', vi: 'võ sĩ sumo' }
-          }
-        ]
-      },
-      {
         char: '司',
         meaning: { en: 'to administer, to manage', vi: 'ty - cai quản, phụ trách' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A mouth 口 giving out orders from an office, one who directs: to administer, to manage.',
-          vi: 'Một cái miệng 口 ra lệnh từ công đường, người điều hành: cai quản, phụ trách.'
-        },
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -16064,10 +15436,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シン', 'ジン'],
         kunyomi: [],
         components: [],
-        mnemonic: {
-          en: 'A picture of the wide, downcast eye of a servant bowing before a lord: a retainer, a subject, a minister.',
-          vi: 'Hình con mắt mở to cúi xuống của kẻ hầu trước chủ: bề tôi, quần thần, quan.'
-        },
         examples: [
           {
             parts: [
@@ -16097,11 +15465,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to deliberate, to discuss', vi: 'nghị - bàn bạc, nghị luận' },
         onyomi: ['ギ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Weighing matters with careful, just words 言: to deliberate, to discuss.',
-          vi: 'Cân nhắc mọi việc bằng lời lẽ 言 đúng mực: bàn bạc, nghị luận.'
-        },
+        components: ['言', '義'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '義', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16131,16 +15499,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'county, rural district', vi: 'quận - huyện (hành chính)' },
         onyomi: ['グン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A district 阝 governed by a lord 君: a county, a rural district.',
-          vi: 'Một vùng 阝 do một vị chúa 君 cai quản: quận, huyện nông thôn.'
-        },
+        components: ['君', '阝'],
+        parts: [
+          { char: '君', role: 'phonetic' },
+          { char: '阝', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '郡', reading: 'ぐん' }],
-            meaning: { en: 'county, district', vi: 'quận, huyện' }
-          },
           {
             parts: [
               { text: '郡', reading: 'ぐん' },
@@ -16158,11 +15522,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['サン'],
         kunyomi: ['う.む', 'う.まれる'],
-        components: [],
-        mnemonic: {
-          en: 'Bringing new life 生 into being: to give birth, to produce, and the products made.',
-          vi: 'Đưa sự sống 生 mới ra đời: sinh đẻ, sản xuất, và sản vật làm ra.'
-        },
+        components: ['生'],
+        parts: [{ char: '生', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -16200,15 +15561,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'heat; fever; passion', vi: 'nhiệt - nóng; sốt; nhiệt huyết' },
         onyomi: ['ネツ'],
         kunyomi: ['あつ.い'],
-        components: [],
-        mnemonic: {
-          en: 'Fire 灬 burning below to raise the temperature: heat, fever, passion.',
-          vi: 'Ngọn lửa 灬 cháy bên dưới làm tăng nhiệt: nhiệt, cơn sốt, nhiệt huyết.'
-        },
+        components: ['埶', '灬'],
+        parts: [
+          { char: '埶', role: 'phonetic' },
+          { char: '灬', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '熱', reading: 'ねつ' }],
-            meaning: { en: 'heat, fever', vi: 'nhiệt, cơn sốt' }
+            parts: [
+              { text: '高', reading: 'こう' },
+              { text: '熱', reading: 'ねつ' }
+            ],
+            meaning: { en: 'high fever', vi: 'sốt cao' }
           },
           {
             parts: [
@@ -16234,11 +15598,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['レイ'],
         kunyomi: ['つめ.たい', 'ひ.える', 'さ.める'],
-        components: [],
-        mnemonic: {
-          en: 'The ice 冫 that chills something down at command 令: cold, to cool.',
-          vi: 'Băng 冫 làm cho vật lạnh đi theo lệnh 令: lạnh, nguội, làm lạnh.'
-        },
+        components: ['冫', '令'],
+        parts: [
+          { char: '冫', role: 'radical' },
+          { char: '令', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16270,11 +15634,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lamp, light', vi: 'đăng - đèn, ánh đèn' },
         onyomi: ['トウ'],
         kunyomi: ['ひ'],
-        components: [],
-        mnemonic: {
-          en: 'A steady flame 火 nailed 丁 in place to give light: a lamp, a light.',
-          vi: 'Một ngọn lửa 火 đóng cố định 丁 để chiếu sáng: cái đèn, ánh đèn.'
-        },
+        components: ['火', '丁'],
+        parts: [
+          { char: '火', role: 'radical' },
+          { char: '丁', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16284,8 +15648,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'electric light', vi: 'đèn điện' }
           },
           {
-            parts: [{ text: '灯', reading: 'ひ' }],
-            meaning: { en: 'light, lamplight', vi: 'ánh đèn' }
+            parts: [
+              { text: '灯', reading: 'とう' },
+              { text: '台', reading: 'だい' }
+            ],
+            meaning: { en: 'lighthouse', vi: 'ngọn hải đăng' }
           },
           {
             parts: [
@@ -16301,11 +15668,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'full; to fill', vi: 'mãn - đầy, tràn đầy' },
         onyomi: ['マン'],
         kunyomi: ['み.ちる', 'み.たす'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 rising until the vessel is filled to the brim: full, to fill.',
-          vi: 'Nước 氵 dâng đến khi đầy tràn miệng: đầy, tràn đầy.'
-        },
+        components: ['氵'],
+        parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -16336,11 +15700,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shallow', vi: 'thiển - cạn, nông' },
         onyomi: ['セン'],
         kunyomi: ['あさ.い'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 with only a thin, small amount, not deep: shallow.',
-          vi: 'Nước 氵 chỉ có một lớp mỏng, không sâu: cạn, nông.'
-        },
+        components: ['氵', '戔'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '戔', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16370,11 +15734,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to bathe', vi: 'dục - tắm' },
         onyomi: ['ヨク'],
         kunyomi: ['あ.びる'],
-        components: [],
-        mnemonic: {
-          en: 'Pouring water 氵 over yourself at a valley 谷 spring: to bathe.',
-          vi: 'Dội nước 氵 lên người ở suối trong thung lũng 谷: tắm.'
-        },
+        components: ['氵', '谷'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '谷', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16406,11 +15770,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'clear, pure, clean', vi: 'thanh - trong, thanh khiết' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['きよ.い'],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 as clear and fresh as the color blue-green 青: clear, pure, clean.',
-          vi: 'Nước 氵 trong và tươi như màu xanh 青: trong, thanh khiết, sạch.'
-        },
+        components: ['氵', '青'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '青', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16440,11 +15804,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'quiet, calm, still', vi: 'tĩnh - yên tĩnh, tĩnh lặng' },
         onyomi: ['セイ', 'ジョウ'],
         kunyomi: ['しず.か', 'しず.まる'],
-        components: [],
-        mnemonic: {
-          en: 'The stillness of blue-green 青 nature with all struggle 争 laid to rest: quiet, calm.',
-          vi: 'Sự tĩnh lặng của thiên nhiên xanh 青 khi mọi tranh đấu 争 lắng xuống: yên tĩnh, tĩnh lặng.'
-        },
+        components: ['青', '争'],
+        parts: [
+          { char: '青', role: 'radical' },
+          { char: '争', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -16474,16 +15838,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'land, dry land', vi: 'lục - đất liền, lục địa' },
         onyomi: ['リク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The raised, dry ground of hills 阝 above the water: land, dry land.',
-          vi: 'Vùng đất cao, khô của đồi 阝 nhô trên mặt nước: đất liền, lục địa.'
-        },
+        components: ['阝', '坴'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '坴', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '陸', reading: 'りく' }],
-            meaning: { en: 'land', vi: 'đất liền' }
-          },
           {
             parts: [
               { text: '大', reading: 'たい' },
@@ -16505,11 +15865,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'health, well-being, peace', vi: 'khang - khỏe mạnh, an khang' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Life under a sturdy roof 广 with plenty and ease: health, well-being, peace.',
-          vi: 'Cuộc sống dưới mái nhà 广 vững chãi, sung túc và thảnh thơi: khỏe mạnh, an khang.'
-        },
+        components: ['广'],
+        parts: [{ char: '广', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -16540,11 +15897,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to endeavor, to strive', vi: 'nỗ - cố gắng, nỗ lực' },
         onyomi: ['ド'],
         kunyomi: ['つと.める'],
-        components: [],
-        mnemonic: {
-          en: 'Putting your back and strength 力 into a task like a laborer: to endeavor, to strive.',
-          vi: 'Dồn sức 力 vào công việc như người lao động: cố gắng, nỗ lực.'
-        },
+        components: ['奴', '力'],
+        parts: [
+          { char: '奴', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -16571,11 +15928,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ロウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Working hard by lamplight with all your strength 力: labor, toil, and the effort spent.',
-          vi: 'Làm lụng dưới ánh đèn bằng hết sức 力: lao động, vất vả, công sức.'
-        },
+        components: ['力'],
+        parts: [{ char: '力', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -16606,10 +15960,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['コウ', 'ク'],
         kunyomi: [],
         components: ['工', '力'],
-        mnemonic: {
-          en: 'Skilled work 工 plus real strength 力 that produces results: achievement, merit.',
-          vi: 'Kỹ năng 工 cộng với sức lực 力 tạo ra thành quả: công lao, thành tích.'
-        },
+        parts: [
+          { char: '工', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -16639,11 +15993,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to work, to labor', vi: 'động - làm việc, lao động' },
         onyomi: ['ドウ'],
         kunyomi: ['はたら.く'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 in motion 動, putting in a day of work: to work, to labor.',
-          vi: 'Một người 亻 vận động 動, bỏ ra một ngày công: làm việc, lao động.'
-        },
+        components: ['亻', '動'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '動', role: 'phonetic' }
+        ],
         note: {
           en: "A kokuji (kanji made in Japan); unusually it also has an on'yomi ドウ.",
           vi: 'Là kokuji (chữ do người Nhật tạo); hiếm gặp là nó vẫn có âm ON ドウ.'
@@ -16681,11 +16035,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セキ'],
         kunyomi: ['つ.む', 'つ.もる'],
-        components: [],
-        mnemonic: {
-          en: 'Stacking sheaves of grain 禾 higher and higher: to pile up, to accumulate.',
-          vi: 'Chất những bó lúa 禾 ngày một cao: chất đống, tích lũy.'
-        },
+        components: ['禾', '責'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '責', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16711,52 +16065,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '得',
-        meaning: {
-          en: 'to gain, to acquire; profit',
-          vi: 'đắc - được, thu được; có lợi'
-        },
-        onyomi: ['トク'],
-        kunyomi: ['え.る', 'う.る'],
-        components: [],
-        mnemonic: {
-          en: 'Going out on the road 彳 and coming back having gained something: to gain, to profit, to acquire.',
-          vi: 'Ra đường 彳 rồi trở về với thứ thu được: được, thu được, có lợi.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '得', reading: 'え' },
-              { text: 'る', reading: 'る' }
-            ],
-            meaning: { en: 'to gain, to obtain', vi: 'thu được, đạt được' }
-          },
-          {
-            parts: [
-              { text: '得', reading: 'とく' },
-              { text: '意', reading: 'い' }
-            ],
-            meaning: { en: "one's strong point; proud", vi: 'sở trường; đắc ý' }
-          },
-          {
-            parts: [
-              { text: '所', reading: 'しょ' },
-              { text: '得', reading: 'とく' }
-            ],
-            meaning: { en: 'income, earnings', vi: 'thu nhập' }
-          }
-        ]
-      },
-      {
         char: '特',
         meaning: { en: 'special, particular', vi: 'đặc - đặc biệt, riêng biệt' },
         onyomi: ['トク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A prize bull 牛 set apart at the temple 寺 as something special: special, particular.',
-          vi: 'Một con bò 牛 quý được dành riêng ở chùa 寺 như thứ đặc biệt: đặc biệt, riêng biệt.'
-        },
+        components: ['牛', '寺'],
+        parts: [
+          { char: '牛', role: 'radical' },
+          { char: '寺', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16786,11 +16103,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'single, simple', vi: 'đơn - đơn, đơn giản; đơn lẻ' },
         onyomi: ['タン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'One thing on its own, nothing added: single, simple.',
-          vi: 'Một thứ đứng riêng, không thêm gì: đơn, đơn giản, đơn lẻ.'
-        },
+        components: ['十'],
+        parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -16821,10 +16135,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['カ'],
         kunyomi: ['くわ.える', 'くわ.わる'],
         components: ['力', '口'],
-        mnemonic: {
-          en: 'Putting strength 力 behind your words 口 to pile more on: to add, to increase.',
-          vi: 'Dồn sức 力 vào lời nói 口 để chất thêm: thêm vào, tăng.'
-        },
+        parts: [
+          { char: '力', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -16858,16 +16172,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['アン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Sitting peacefully 安 at a wooden 木 desk to think things through: a plan, an idea, a proposal.',
-          vi: 'Ngồi yên 安 bên bàn gỗ 木 nghĩ cho thấu: phương án, ý tưởng, đề án.'
-        },
+        components: ['安', '木'],
+        parts: [
+          { char: '安', role: 'phonetic' },
+          { char: '木', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '案', reading: 'あん' }],
-            meaning: { en: 'idea, plan', vi: 'ý tưởng, phương án' }
-          },
           {
             parts: [
               { text: '案', reading: 'あん' },
@@ -16897,15 +16207,19 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rank, position; unit', vi: 'vị - vị trí, ngôi thứ; đơn vị' },
         onyomi: ['イ'],
         kunyomi: ['くらい'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 standing 立 in their assigned spot: a rank, a position, a place.',
-          vi: 'Một người 亻 đứng 立 đúng chỗ được xếp: vị trí, ngôi thứ.'
-        },
+        components: ['亻', '立'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '立', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '位', reading: 'くらい' }],
-            meaning: { en: 'rank, grade', vi: 'ngôi thứ, cấp bậc' }
+            parts: [
+              { text: '位', reading: 'くらい' },
+              { text: '取', reading: 'ど' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'place value (of digits)', vi: 'giá trị hàng (của chữ số)' }
           },
           {
             parts: [
@@ -16928,11 +16242,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'low', vi: 'đê - thấp' },
         onyomi: ['テイ'],
         kunyomi: ['ひく.い'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 crouching down close to the ground: low.',
-          vi: 'Một người 亻 khom xuống sát mặt đất: thấp.'
-        },
+        components: ['亻', '氐'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '氐', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -16962,15 +16276,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bottom', vi: 'để - đáy' },
         onyomi: ['テイ'],
         kunyomi: ['そこ'],
-        components: [],
-        mnemonic: {
-          en: 'The lowest floor under a building 广, where everything rests: the bottom.',
-          vi: 'Tầng thấp nhất dưới tòa nhà 广, nơi mọi thứ nằm lên: đáy.'
-        },
+        components: ['广', '氐'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '氐', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '底', reading: 'そこ' }],
-            meaning: { en: 'bottom', vi: 'đáy' }
+            parts: [
+              { text: '谷', reading: 'たに' },
+              { text: '底', reading: 'そこ' }
+            ],
+            meaning: { en: 'bottom of a valley', vi: 'đáy thung lũng' }
           },
           {
             parts: [
@@ -16989,54 +16306,16 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '停',
-        meaning: { en: 'to stop, to halt', vi: 'đình - dừng, ngừng lại' },
-        onyomi: ['テイ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 pausing at a roadside pavilion to stop and rest: to stop, to halt.',
-          vi: 'Một người 亻 dừng ở cái đình bên đường để nghỉ: dừng, ngừng lại.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '停', reading: 'てい' },
-              { text: '止', reading: 'し' }
-            ],
-            meaning: { en: 'a stop, a halt', vi: 'sự dừng lại' }
-          },
-          {
-            parts: [
-              { text: '停', reading: 'てい' },
-              { text: '電', reading: 'でん' }
-            ],
-            meaning: { en: 'power outage', vi: 'mất điện' }
-          },
-          {
-            parts: [
-              { text: '停', reading: 'てい' },
-              { text: '車', reading: 'しゃ' }
-            ],
-            meaning: { en: 'stopping (a vehicle)', vi: 'dừng xe' }
-          }
-        ]
-      },
-      {
         char: '側',
         meaning: { en: 'side, next to', vi: 'trắc - phía, bên' },
         onyomi: ['ソク'],
         kunyomi: ['がわ', 'かわ'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 standing off to one side by the rules: a side, next to.',
-          vi: 'Một người 亻 đứng lệch sang một bên: phía, bên cạnh.'
-        },
+        components: ['亻', '則'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '則', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '側', reading: 'がわ' }],
-            meaning: { en: 'side', vi: 'phía, bên' }
-          },
           {
             parts: [
               { text: '右', reading: 'みぎ' },
@@ -17058,16 +16337,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'each, every', vi: 'các - mỗi, các' },
         onyomi: ['カク'],
         kunyomi: ['おのおの'],
-        components: [],
-        mnemonic: {
-          en: 'A foot arriving at each doorway 口 in turn: each, every.',
-          vi: 'Bàn chân lần lượt đến từng cửa 口: mỗi, các.'
-        },
+        components: ['夂', '口'],
+        parts: [
+          { char: '夂', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '各', reading: 'かく' }],
-            meaning: { en: 'each, every', vi: 'mỗi, các' }
-          },
           {
             parts: [
               { text: '各', reading: 'かく' },
@@ -17089,15 +16364,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seal, stamp; mark', vi: 'ấn - con dấu; dấu hiệu' },
         onyomi: ['イン'],
         kunyomi: ['しるし'],
-        components: [],
-        mnemonic: {
-          en: 'A hand pressing a seal down onto a document: a seal, a stamp, a mark.',
-          vi: 'Một bàn tay ấn con dấu xuống văn bản: con dấu, dấu ấn, dấu hiệu.'
-        },
+        components: ['爪', '卩'],
+        parts: [
+          { char: '爪', role: 'other' },
+          { char: '卩', role: 'radical' }
+        ],
         examples: [
           {
-            parts: [{ text: '印', reading: 'しるし' }],
-            meaning: { en: 'mark, sign', vi: 'dấu, ký hiệu' }
+            parts: [
+              { text: '矢', reading: 'や' },
+              { text: '印', reading: 'じるし' }
+            ],
+            meaning: { en: 'arrow (symbol)', vi: 'mũi tên (ký hiệu)' }
           },
           {
             parts: [
@@ -17120,11 +16398,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mark, sign; target', vi: 'tiêu - dấu hiệu, mốc; tiêu chuẩn' },
         onyomi: ['ヒョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A wooden 木 post put up as a marker or signpost: a mark, a sign, a target.',
-          vi: 'Một cọc gỗ 木 dựng lên làm mốc hay biển chỉ: dấu hiệu, cột mốc, mục tiêu.'
-        },
+        components: ['木', '票'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '票', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17157,11 +16435,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['テキ'],
         kunyomi: ['まと'],
-        components: [],
-        mnemonic: {
-          en: 'A white 白 bullseye you aim at: a target, and the suffix that makes adjectives.',
-          vi: 'Cái hồng tâm trắng 白 để nhắm bắn: mục tiêu, cái đích, và hậu tố tạo tính từ (-tính).'
-        },
+        components: ['白', '勺'],
+        parts: [
+          { char: '白', role: 'radical' },
+          { char: '勺', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17171,8 +16449,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'purpose, aim', vi: 'mục đích' }
           },
           {
-            parts: [{ text: '的', reading: 'まと' }],
-            meaning: { en: 'target, mark', vi: 'cái đích, bia' }
+            parts: [
+              { text: '的', reading: 'まと' },
+              { text: '外', reading: 'はず' },
+              { text: 'れ', reading: 'れ' }
+            ],
+            meaning: { en: 'off the mark, irrelevant', vi: 'trật lất, lệch trọng tâm' }
           },
           {
             parts: [
@@ -17189,16 +16471,9 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bundle; to bind; promise', vi: 'thúc - bó; ràng buộc' },
         onyomi: ['ソク'],
         kunyomi: ['たば'],
-        components: [],
-        mnemonic: {
-          en: 'Firewood 木 tied together in the middle into a bundle: a bundle, to bind, and a promise (a binding word).',
-          vi: 'Củi gỗ 木 bó lại ở giữa thành một bó: bó, ràng buộc, và lời hứa (lời ràng buộc).'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '束', reading: 'たば' }],
-            meaning: { en: 'bundle', vi: 'bó' }
-          },
           {
             parts: [
               { text: '約', reading: 'やく' },
@@ -17228,11 +16503,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to choose, to select', vi: 'tuyển - chọn, tuyển chọn' },
         onyomi: ['セン'],
         kunyomi: ['えら.ぶ'],
-        components: [],
-        mnemonic: {
-          en: 'Going 辶 among many and picking out the ones you want: to choose, to select.',
-          vi: 'Đi 辶 giữa nhiều thứ và lựa ra cái mình muốn: chọn, tuyển chọn.'
-        },
+        components: ['辶', '巽'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '巽', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17265,11 +16540,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キョ'],
         kunyomi: ['あ.げる'],
-        components: [],
-        mnemonic: {
-          en: 'Raising both hands 手 up high to put something forward: to raise, to cite, to hold an event.',
-          vi: 'Giơ đôi tay 手 lên cao để đưa ra: giơ lên, nêu ra, tổ chức.'
-        },
+        components: ['手'],
+        parts: [{ char: '手', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17300,16 +16572,9 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'difference; to hold out', vi: 'sai - sự khác biệt; chìa ra' },
         onyomi: ['サ'],
         kunyomi: ['さ.す'],
-        components: [],
-        mnemonic: {
-          en: 'A hand held out unevenly, one side off from the other: a difference, a gap, to hold out.',
-          vi: 'Bàn tay chìa ra lệch, bên này khác bên kia: sự khác biệt, chênh lệch, chìa ra.'
-        },
+        components: ['工'],
+        parts: [{ char: '工', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '差', reading: 'さ' }],
-            meaning: { en: 'difference, gap', vi: 'sự chênh lệch' }
-          },
           {
             parts: [
               { text: '差', reading: 'さ' },
@@ -17331,11 +16596,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fold, to break, to bend', vi: 'chiết - gấp; bẻ gãy' },
         onyomi: ['セツ'],
         kunyomi: ['お.る', 'お.れる'],
-        components: [],
-        mnemonic: {
-          en: 'A hand 扌 taking an axe 斤 to snap a branch in two: to fold, to break, to bend.',
-          vi: 'Bàn tay 扌 cầm rìu 斤 bẻ gãy cành làm đôi: gấp, bẻ gãy, uốn.'
-        },
+        components: ['扌', '斤'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '斤', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17370,11 +16635,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セツ', 'セチ'],
         kunyomi: ['ふし'],
-        components: [],
-        mnemonic: {
-          en: 'The joints 竹 that divide a bamboo stalk into sections: a node, a joint, a season, moderation.',
-          vi: 'Những đốt 竹 chia thân tre thành khúc: đốt, mấu, mùa/dịp, tiết chế.'
-        },
+        components: ['竹', '即'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '即', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17404,11 +16669,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'secondary, deputy, vice-', vi: 'phó - phụ, phó (thứ hai)' },
         onyomi: ['フク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A copy cut off from the main one to serve alongside it: secondary, deputy, vice-.',
-          vi: 'Một bản sao cắt ra từ bản chính để đi kèm: phụ, phó, thứ yếu.'
-        },
+        components: ['畐', '刂'],
+        parts: [
+          { char: '畐', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -17438,16 +16703,9 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'separate, different; to part', vi: 'biệt - riêng, khác; chia tay' },
         onyomi: ['ベツ'],
         kunyomi: ['わか.れる'],
-        components: [],
-        mnemonic: {
-          en: 'A knife 刂 cutting things apart into separate pieces: separate, different, to part.',
-          vi: 'Con dao 刂 cắt mọi thứ ra thành phần riêng: riêng, khác, chia tay.'
-        },
+        components: ['刂'],
+        parts: [{ char: '刂', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '別', reading: 'べつ' }],
-            meaning: { en: 'separate, another', vi: 'riêng, khác' }
-          },
           {
             parts: [
               { text: '別', reading: 'わか' },
@@ -17470,11 +16728,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to change; strange', vi: 'biến - thay đổi; kỳ lạ' },
         onyomi: ['ヘン'],
         kunyomi: ['か.わる', 'か.える'],
-        components: [],
-        mnemonic: {
-          en: 'Something turning into a different form than before: to change, and strange, odd.',
-          vi: 'Thứ gì đó hóa thành hình dạng khác trước: thay đổi, và kỳ lạ.'
-        },
+        components: ['夂'],
+        parts: [{ char: '夂', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17505,11 +16760,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to continue, to keep on', vi: 'tục - tiếp tục, nối tiếp' },
         onyomi: ['ゾク'],
         kunyomi: ['つづ.く', 'つづ.ける'],
-        components: [],
-        mnemonic: {
-          en: 'Threads 糸 joined end to end without a break: to continue, to keep on.',
-          vi: 'Những sợi chỉ 糸 nối đầu này qua đầu kia không đứt: tiếp tục, nối tiếp.'
-        },
+        components: ['糸', '売'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '売', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17543,11 +16798,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ソウ'],
         kunyomi: ['あらそ.う'],
-        components: [],
-        mnemonic: {
-          en: 'Two hands pulling at the same thing from opposite ends: to contend, to compete, to dispute.',
-          vi: 'Hai bàn tay giằng cùng một vật từ hai đầu: tranh giành, tranh chấp.'
-        },
+        components: ['亅'],
+        parts: [{ char: '亅', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17585,11 +16837,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'goods, currency, freight', vi: 'hóa - hàng hóa; tiền tệ' },
         onyomi: ['カ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Things that change 化 hands for money 貝: goods, currency, freight.',
-          vi: 'Những thứ đổi 化 lấy tiền 貝: hàng hóa, tiền tệ, hàng vận chuyển.'
-        },
+        components: ['化', '貝'],
+        parts: [
+          { char: '化', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -17619,16 +16871,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hundred million', vi: 'ức - trăm triệu (10^8)' },
         onyomi: ['オク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A number so huge a person 亻 can barely imagine 意 it: a hundred million.',
-          vi: 'Một con số lớn đến mức người 亻 khó tưởng tượng 意 nổi: trăm triệu.'
-        },
+        components: ['亻', '意'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '意', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '億', reading: 'おく' }],
-            meaning: { en: 'hundred million', vi: 'trăm triệu' }
-          },
           {
             parts: [
               { text: '一', reading: 'いち' },
@@ -17650,16 +16898,9 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'trillion; omen, sign', vi: 'triệu - nghìn tỷ (10^12); điềm báo' },
         onyomi: ['チョウ'],
         kunyomi: ['きざ.し'],
-        components: [],
-        mnemonic: {
-          en: 'The cracks that appeared on a heated tortoise shell, read as omens; also a huge number: a trillion, a sign.',
-          vi: 'Những vết nứt hiện trên mai rùa nung để bói điềm; cũng là con số khổng lồ: nghìn tỷ, điềm báo.'
-        },
+        components: ['儿'],
+        parts: [{ char: '儿', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '兆', reading: 'ちょう' }],
-            meaning: { en: 'trillion', vi: 'nghìn tỷ' }
-          },
           {
             parts: [
               { text: '一', reading: 'いっ' },
@@ -17677,77 +16918,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '貯',
-        meaning: { en: 'to save, to store up', vi: 'trữ - tích trữ, để dành' },
-        onyomi: ['チョ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Putting money 貝 away in a safe box to keep: to save, to store up.',
-          vi: 'Cất tiền 貝 vào hòm để giữ: tích trữ, để dành.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '貯', reading: 'ちょ' },
-              { text: '金', reading: 'きん' }
-            ],
-            meaning: { en: 'savings', vi: 'tiền tiết kiệm' }
-          },
-          {
-            parts: [
-              { text: '貯', reading: 'ちょ' },
-              { text: '水', reading: 'すい' },
-              { text: '池', reading: 'ち' }
-            ],
-            meaning: { en: 'reservoir', vi: 'hồ chứa nước' }
-          }
-        ]
-      },
-      {
-        char: '費',
-        meaning: { en: 'expense, cost; to spend', vi: 'phí - chi phí, tiêu tốn' },
-        onyomi: ['ヒ'],
-        kunyomi: ['つい.やす'],
-        components: [],
-        mnemonic: {
-          en: 'Money 貝 flying out as it gets spent: expense, cost, to use up.',
-          vi: 'Tiền 貝 bay ra khi tiêu xài: chi phí, tiêu tốn.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '費', reading: 'ひ' },
-              { text: '用', reading: 'よう' }
-            ],
-            meaning: { en: 'cost, expense', vi: 'chi phí' }
-          },
-          {
-            parts: [
-              { text: '会', reading: 'かい' },
-              { text: '費', reading: 'ひ' }
-            ],
-            meaning: { en: 'membership fee', vi: 'hội phí' }
-          },
-          {
-            parts: [
-              { text: '消', reading: 'しょう' },
-              { text: '費', reading: 'ひ' }
-            ],
-            meaning: { en: 'consumption', vi: 'tiêu dùng, tiêu thụ' }
-          }
-        ]
-      },
-      {
         char: '給',
         meaning: { en: 'to supply, to give; salary', vi: 'cấp - cấp phát; lương' },
         onyomi: ['キュウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Handing out threads 糸 to bring things together 合 and provide: to supply, to give, salary.',
-          vi: 'Phát sợi chỉ 糸 để gom lại 合 và cung cấp: cấp phát, cung cấp, lương.'
-        },
+        components: ['糸', '合'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '合', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17777,11 +16956,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'profit, advantage; sharp', vi: 'lợi - lợi ích; sắc bén' },
         onyomi: ['リ'],
         kunyomi: ['き.く'],
-        components: [],
-        mnemonic: {
-          en: 'A sharp blade 刂 cutting grain 禾 efficiently for gain: profit, advantage, sharp.',
-          vi: 'Lưỡi dao 刂 sắc cắt lúa 禾 hiệu quả để thu lợi: lợi ích, sắc bén.'
-        },
+        components: ['禾', '刂'],
+        parts: [
+          { char: '禾', role: 'other' },
+          { char: '刂', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -17814,11 +16993,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ベン', 'ビン'],
         kunyomi: ['たよ.り'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 arranging things to be handy and smooth: convenience, and mail or a flight that carries word.',
-          vi: 'Một người 亻 sắp đặt mọi thứ cho thuận tiện: tiện lợi, và thư từ hoặc chuyến (bay) đưa tin.'
-        },
+        components: ['亻', '更'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '更', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -17848,11 +17027,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'good, fine', vi: 'lương - tốt, tốt đẹp' },
         onyomi: ['リョウ'],
         kunyomi: ['よ.い', 'い.い'],
-        components: [],
-        mnemonic: {
-          en: 'Grains sifted to keep only the fine ones: good, fine, of quality.',
-          vi: 'Hạt gạo sàng lọc chỉ giữ hạt ngon: tốt, tốt đẹp, có chất lượng.'
-        },
+        components: ['艮'],
+        parts: [{ char: '艮', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17882,11 +17058,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vessel, container; instrument', vi: 'khí - đồ đựng, dụng cụ' },
         onyomi: ['キ'],
         kunyomi: ['うつわ'],
-        components: [],
-        mnemonic: {
-          en: 'Several open mouths 口 like bowls set around, holding things: a container, an instrument.',
-          vi: 'Mấy cái miệng 口 mở như những cái bát đặt quanh, đựng đồ: đồ đựng, dụng cụ.'
-        },
+        components: ['口', '犬'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '犬', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -17903,8 +17079,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'musical instrument', vi: 'nhạc cụ' }
           },
           {
-            parts: [{ text: '器', reading: 'うつわ' }],
-            meaning: { en: 'vessel, bowl', vi: 'cái bát, đồ đựng' }
+            parts: [
+              { text: '食', reading: 'しょっ' },
+              { text: '器', reading: 'き' }
+            ],
+            meaning: { en: 'tableware', vi: 'bát đĩa, đồ ăn' }
           }
         ]
       }
@@ -17922,10 +17101,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['シ'],
         kunyomi: ['うじ'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a root standing for a family line: a clan, a surname, and the polite "Mr."',
-          vi: 'Hình cái rễ cây tượng trưng cho dòng họ: họ tộc, họ, và cách gọi lịch sự "ông".'
-        },
         examples: [
           {
             parts: [
@@ -17935,8 +17110,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'full name', vi: 'họ tên' }
           },
           {
-            parts: [{ text: '氏', reading: 'うじ' }],
-            meaning: { en: 'clan, family', vi: 'họ tộc' }
+            parts: [
+              { text: '氏', reading: 'うじ' },
+              { text: '神', reading: 'がみ' }
+            ],
+            meaning: { en: 'local guardian deity', vi: 'thần bản địa' }
           },
           {
             parts: [
@@ -17952,11 +17130,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'child, infant', vi: 'nhi - trẻ nhỏ, hài nhi' },
         onyomi: ['ジ', 'ニ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A little one with a soft, open head, a small child: an infant, a child.',
-          vi: 'Một đứa bé đầu còn mềm, trẻ nhỏ: hài nhi, trẻ em.'
-        },
+        components: ['儿'],
+        parts: [{ char: '儿', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17987,16 +17162,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grandchild', vi: 'tôn - cháu (nội, ngoại)' },
         onyomi: ['ソン'],
         kunyomi: ['まご'],
-        components: [],
-        mnemonic: {
-          en: 'A child 子 connected by a thread 系 down the family line: a grandchild.',
-          vi: 'Đứa con 子 nối tiếp bằng sợi dây 系 dòng dõi: đứa cháu.'
-        },
+        components: ['子', '系'],
+        parts: [
+          { char: '子', role: 'radical' },
+          { char: '系', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '孫', reading: 'まご' }],
-            meaning: { en: 'grandchild', vi: 'cháu' }
-          },
           {
             parts: [
               { text: '子', reading: 'し' },
@@ -18018,15 +17189,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'husband; man', vi: 'phu - chồng; người đàn ông' },
         onyomi: ['フ', 'フウ'],
         kunyomi: ['おっと'],
-        components: [],
-        mnemonic: {
-          en: 'A grown man 大 with a pin in his topknot, a full adult: a husband, a man.',
-          vi: 'Một người đàn ông trưởng thành 大 cài trâm búi tóc: người chồng, đàn ông.'
-        },
+        components: ['大'],
+        parts: [{ char: '大', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '夫', reading: 'おっと' }],
-            meaning: { en: 'husband', vi: 'chồng' }
+            parts: [
+              { text: '夫', reading: 'ふう' },
+              { text: '婦', reading: 'ふ' }
+            ],
+            meaning: { en: 'married couple', vi: 'vợ chồng' }
           },
           {
             parts: [
@@ -18049,16 +17220,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'relationship; go-between', vi: 'trọng - quan hệ; trung gian' },
         onyomi: ['チュウ'],
         kunyomi: ['なか'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 standing in the middle 中 between others: the relationship between people, a go-between.',
-          vi: 'Một người 亻 đứng ở giữa 中 những người khác: mối quan hệ, người trung gian.'
-        },
+        components: ['亻', '中'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '中', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '仲', reading: 'なか' }],
-            meaning: { en: 'relationship, terms', vi: 'quan hệ, tình cảm' }
-          },
           {
             parts: [
               { text: '仲', reading: 'なか' },
@@ -18082,10 +17249,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ロウ'],
         kunyomi: ['お.いる', 'ふ.ける'],
         components: [],
-        mnemonic: {
-          en: 'A bent old person leaning on a cane: old, aged, to grow old.',
-          vi: 'Một người già còng lưng chống gậy: già, cao tuổi.'
-        },
         examples: [
           {
             parts: [
@@ -18119,11 +17282,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ト'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'People traveling the road 彳 on foot together as followers: a follower, a pupil, on foot.',
-          vi: 'Những người đi trên đường 彳 bằng chân, theo cùng: môn đồ, học trò, đi bộ.'
-        },
+        components: ['彳', '走'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '走', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18153,11 +17316,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to borrow', vi: 'tá - mượn, vay' },
         onyomi: ['シャク'],
         kunyomi: ['か.りる'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 asking to use something from the old days 昔 for a while: to borrow.',
-          vi: 'Một người 亻 xin dùng nhờ thứ gì đó 昔 một thời gian: mượn, vay.'
-        },
+        components: ['亻', '昔'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '昔', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18188,11 +17351,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'trust, belief; message', vi: 'tín - tin tưởng; tin tức' },
         onyomi: ['シン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 who stands by their word 言: trust, belief, and a message sent.',
-          vi: 'Một người 亻 giữ đúng lời nói 言: tin tưởng, niềm tin, và tin nhắn gửi đi.'
-        },
+        components: ['亻', '言'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '言', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -18223,15 +17386,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'together, joint, in common', vi: 'cộng - cùng, chung' },
         onyomi: ['キョウ'],
         kunyomi: ['とも'],
-        components: [],
-        mnemonic: {
-          en: 'Two hands lifting something up together: together, joint, in common.',
-          vi: 'Hai bàn tay cùng nâng một vật lên: cùng nhau, chung.'
-        },
+        components: ['八'],
+        parts: [{ char: '八', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '共', reading: 'とも' }],
-            meaning: { en: 'together, both', vi: 'cùng, cả hai' }
+            parts: [
+              { text: '共', reading: 'とも' },
+              { text: 'に', reading: 'に' }
+            ],
+            meaning: { en: 'together, both', vi: 'cùng nhau' }
           },
           {
             parts: [
@@ -18262,11 +17425,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to build, to erect', vi: 'kiến - xây dựng' },
         onyomi: ['ケン', 'コン'],
         kunyomi: ['た.てる', 'た.つ'],
-        components: [],
-        mnemonic: {
-          en: 'Drawing up plans with a brush 聿 and setting a structure upright: to build, to erect.',
-          vi: 'Vẽ bản thiết kế bằng bút 聿 rồi dựng công trình lên: xây dựng.'
-        },
+        components: ['聿', '廴'],
+        parts: [
+          { char: '聿', role: 'phonetic' },
+          { char: '廴', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -18297,11 +17460,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'healthy, robust', vi: 'kiện - khỏe mạnh, cường tráng' },
         onyomi: ['ケン'],
         kunyomi: ['すこ.やか'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 built 建 strong and sturdy: healthy, robust.',
-          vi: 'Một người 亻 được dựng 建 vững chắc: khỏe mạnh, cường tráng.'
-        },
+        components: ['亻', '建'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '建', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18332,11 +17495,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to tie, to bind; to conclude', vi: 'kết - buộc, thắt; kết thúc' },
         onyomi: ['ケツ'],
         kunyomi: ['むす.ぶ', 'ゆ.う'],
-        components: [],
-        mnemonic: {
-          en: 'Tying threads 糸 into a lucky 吉 knot to finish: to tie, to bind, to conclude.',
-          vi: 'Buộc sợi chỉ 糸 thành nút cát tường 吉 để hoàn tất: buộc, thắt, kết thúc.'
-        },
+        components: ['糸', '吉'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '吉', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18366,11 +17529,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hard, solid, firm', vi: 'cố - cứng, chắc; kiên cố' },
         onyomi: ['コ'],
         kunyomi: ['かた.い', 'かた.める'],
-        components: [],
-        mnemonic: {
-          en: 'Something old 古 sealed tight inside a box 囗 until it sets firm: hard, solid, firm.',
-          vi: 'Thứ để lâu 古 bịt kín trong hộp 囗 tới khi đông cứng: cứng, chắc, kiên cố.'
-        },
+        components: ['囗', '古'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '古', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18400,11 +17563,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to become, to achieve, to form', vi: 'thành - trở thành; hoàn thành' },
         onyomi: ['セイ', 'ジョウ'],
         kunyomi: ['な.る', 'な.す'],
-        components: [],
-        mnemonic: {
-          en: 'A halberd raised over completed work, a task carried through: to become, to achieve, to form.',
-          vi: 'Ngọn kích giơ trên công việc đã xong, một nhiệm vụ hoàn tất: trở thành, hoàn thành.'
-        },
+        components: ['戈'],
+        parts: [{ char: '戈', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -18434,11 +17594,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'timber; material', vi: 'tài - gỗ; nguyên vật liệu' },
         onyomi: ['ザイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Wood 木 with the talent 才 to be shaped into things: timber, material, stuff.',
-          vi: 'Gỗ 木 có tiềm năng 才 để tạo thành vật: gỗ, nguyên vật liệu.'
-        },
+        components: ['木', '才'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '才', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18468,11 +17628,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'machine, device', vi: 'giới - máy móc, khí cụ' },
         onyomi: ['カイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A wooden 木 contraption of gears and levers: a machine, a device.',
-          vi: 'Một bộ khung gỗ 木 đầy bánh răng, đòn bẩy: máy móc, khí cụ.'
-        },
+        components: ['木', '戒'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '戒', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18498,11 +17658,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キ'],
         kunyomi: ['はた'],
-        components: [],
-        mnemonic: {
-          en: 'A wooden 木 loom, later any machine, and the right moment to use it: a machine, an opportunity.',
-          vi: 'Một khung cửi gỗ 木, sau là máy móc nói chung, và thời cơ để dùng: máy móc, cơ hội.'
-        },
+        components: ['木', '幾'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '幾', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18533,15 +17693,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pipe, tube; to manage', vi: 'quản - ống; quản lý' },
         onyomi: ['カン'],
         kunyomi: ['くだ'],
-        components: [],
-        mnemonic: {
-          en: 'A hollow bamboo 竹 tube overseen by an official 官: a pipe, a tube, and to manage.',
-          vi: 'Ống tre 竹 rỗng được quan 官 trông coi: cái ống, và quản lý.'
-        },
+        components: ['竹', '官'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '官', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '管', reading: 'くだ' }],
-            meaning: { en: 'pipe, tube', vi: 'cái ống' }
+            parts: [
+              { text: '血', reading: 'けっ' },
+              { text: '管', reading: 'かん' }
+            ],
+            meaning: { en: 'blood vessel', vi: 'mạch máu' }
           },
           {
             parts: [
@@ -18558,37 +17721,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'management, control', vi: 'quản lý' }
           }
         ]
-      },
-      {
-        char: '型',
-        meaning: { en: 'mold; type, model', vi: 'hình - khuôn; loại, kiểu' },
-        onyomi: ['ケイ'],
-        kunyomi: ['かた'],
-        components: [],
-        mnemonic: {
-          en: 'A shape pressed from earth 土 as a mold to cast copies: a mold, a type, a model.',
-          vi: 'Một khuôn nặn từ đất 土 để đúc ra bản sao: khuôn, loại, kiểu.'
-        },
-        examples: [
-          {
-            parts: [{ text: '型', reading: 'かた' }],
-            meaning: { en: 'mold, type', vi: 'khuôn, kiểu' }
-          },
-          {
-            parts: [
-              { text: '大', reading: 'おお' },
-              { text: '型', reading: 'がた' }
-            ],
-            meaning: { en: 'large-size', vi: 'cỡ lớn' }
-          },
-          {
-            parts: [
-              { text: '新', reading: 'しん' },
-              { text: '型', reading: 'がた' }
-            ],
-            meaning: { en: 'new model, new type', vi: 'kiểu mới, mẫu mới' }
-          }
-        ]
       }
     ]
   },
@@ -18603,11 +17735,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to shine, to illuminate', vi: 'chiếu - chiếu sáng, rọi' },
         onyomi: ['ショウ'],
         kunyomi: ['て.る', 'て.らす'],
-        components: [],
-        mnemonic: {
-          en: 'The bright sun 昭 with fire 灬 beneath, casting light on everything: to shine, to illuminate.',
-          vi: 'Mặt trời rạng 昭 với lửa 灬 bên dưới, rọi sáng mọi thứ: chiếu sáng, rọi.'
-        },
+        components: ['昭', '灬'],
+        parts: [
+          { char: '昭', role: 'phonetic' },
+          { char: '灬', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -18638,11 +17770,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'scenery, view', vi: 'cảnh - phong cảnh, cảnh sắc' },
         onyomi: ['ケイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The sunlight 日 falling over the capital 京 rooftops, a fine view: scenery, a scene.',
-          vi: 'Ánh nắng 日 phủ lên mái phố kinh đô 京, một cảnh đẹp: phong cảnh, cảnh sắc.'
-        },
+        components: ['日', '京'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '京', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18672,11 +17804,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to view, to observe; outlook', vi: 'quan - quan sát, ngắm; quan điểm' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Watching closely with the eyes 見 to take a good look: to view, to observe.',
-          vi: 'Nhìn kỹ bằng mắt 見 để quan sát cho rõ: quan sát, ngắm, quan điểm.'
-        },
+        components: ['雚', '見'],
+        parts: [
+          { char: '雚', role: 'phonetic' },
+          { char: '見', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -18706,16 +17838,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mirror', vi: 'kính - cái gương' },
         onyomi: ['キョウ'],
         kunyomi: ['かがみ'],
-        components: [],
-        mnemonic: {
-          en: 'A polished sheet of metal 金 that reflects your face: a mirror.',
-          vi: 'Một tấm kim loại 金 mài bóng phản chiếu khuôn mặt: cái gương.'
-        },
+        components: ['金', '竟'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '竟', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '鏡', reading: 'かがみ' }],
-            meaning: { en: 'mirror', vi: 'cái gương' }
-          },
           {
             parts: [
               { text: '手', reading: 'て' },
@@ -18741,11 +17869,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['かえり.みる', 'はぶ.く'],
-        components: [],
-        mnemonic: {
-          en: 'Looking with the eye 目 at the small 少 details to reflect, and to trim away: to reflect, to omit, a ministry.',
-          vi: 'Dùng mắt 目 soi những chi tiết nhỏ 少 để tự xét, và để cắt bớt: tự xét, lược bỏ, bộ (chính phủ).'
-        },
+        components: ['少', '目'],
+        parts: [
+          { char: '少', role: 'phonetic' },
+          { char: '目', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -18775,11 +17903,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to perceive, to guess, to inspect', vi: 'sát - xét đoán, quan sát kỹ' },
         onyomi: ['サツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Studying things under a roof 宀 as carefully as a festival ritual 祭 to figure them out: to perceive, to guess, to inspect.',
-          vi: 'Xem xét mọi thứ dưới mái nhà 宀 kỹ như một nghi lễ 祭 để hiểu ra: xét đoán, quan sát kỹ.'
-        },
+        components: ['宀', '祭'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '祭', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18813,11 +17941,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キョク', 'ゴク'],
         kunyomi: ['きわ.める'],
-        components: [],
-        mnemonic: {
-          en: 'A wooden 木 ridgepole at the very top, the highest point: extreme, the utmost, a pole.',
-          vi: 'Cây xà gỗ 木 ở đỉnh cao nhất, điểm tột cùng: cực điểm, cực (địa cực).'
-        },
+        components: ['木', '亟'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '亟', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18848,11 +17976,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'path; diameter', vi: 'kính - đường nhỏ; đường kính' },
         onyomi: ['ケイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A narrow side road 彳 cutting straight across, later the straight line across a circle: a path, a diameter.',
-          vi: 'Một lối nhỏ 彳 cắt thẳng qua, sau là đường thẳng qua vòng tròn: đường mòn, đường kính.'
-        },
+        components: ['彳', '圣'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '圣', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18882,16 +18010,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'art, craft, skill', vi: 'nghệ - nghệ thuật, tài nghệ' },
         onyomi: ['ゲイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A cultivated plant 艹 grown with skill, later any refined skill: art, craft, performance.',
-          vi: 'Một cây cỏ 艹 trồng khéo léo, sau là kỹ năng tinh xảo: nghệ thuật, tài nghệ.'
-        },
+        components: ['艹', '云'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '云', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '芸', reading: 'げい' }],
-            meaning: { en: 'art, performance, trick', vi: 'tài nghệ, trò diễn' }
-          },
           {
             parts: [
               { text: '芸', reading: 'げい' },
@@ -18916,11 +18040,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ジ', 'チ'],
         kunyomi: ['おさ.める', 'なお.る'],
-        components: [],
-        mnemonic: {
-          en: 'Controlling the flow of water 氵 to keep it in order: to govern, and to cure, to heal.',
-          vi: 'Điều khiển dòng nước 氵 cho vào nề nếp: cai trị, và chữa bệnh, chữa lành.'
-        },
+        components: ['氵', '台'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '台', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18961,11 +18085,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['デン'],
         kunyomi: ['つた.える', 'つた.わる'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 passing word along from one to the next: to transmit, to convey, a legend handed down.',
-          vi: 'Một người 亻 chuyền lời từ người này sang người kia: truyền đạt, truyền lại, truyền thuyết.'
-        },
+        components: ['亻', '云'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '云', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -18997,11 +18121,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to record', vi: 'lục - ghi chép, ghi lại' },
         onyomi: ['ロク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Carving words into metal 金 to keep them permanently: to record.',
-          vi: 'Khắc chữ vào kim loại 金 để lưu giữ mãi: ghi chép, ghi lại.'
-        },
+        components: ['金', '彔'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '彔', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -19034,11 +18158,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ショウ'],
         kunyomi: ['とな.える'],
-        components: [],
-        mnemonic: {
-          en: 'A mouth 口 calling out clearly and repeatedly: to chant, to sing out, to advocate.',
-          vi: 'Cái miệng 口 hô lên rõ ràng, lặp lại: xướng lên, hô, chủ trương.'
-        },
+        components: ['口', '昌'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '昌', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -19065,50 +18189,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '告',
-        meaning: { en: 'to tell, to announce', vi: 'cáo - báo, thông báo' },
-        onyomi: ['コク'],
-        kunyomi: ['つ.げる'],
-        components: [],
-        mnemonic: {
-          en: 'Speaking out with the mouth 口 to let others know: to tell, to announce.',
-          vi: 'Nói ra bằng miệng 口 để người khác biết: báo, thông báo.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '報', reading: 'ほう' },
-              { text: '告', reading: 'こく' }
-            ],
-            meaning: { en: 'report', vi: 'báo cáo' }
-          },
-          {
-            parts: [
-              { text: '広', reading: 'こう' },
-              { text: '告', reading: 'こく' }
-            ],
-            meaning: { en: 'advertisement', vi: 'quảng cáo' }
-          },
-          {
-            parts: [
-              { text: '告', reading: 'つ' },
-              { text: 'げ', reading: 'げ' },
-              { text: 'る', reading: 'る' }
-            ],
-            meaning: { en: 'to tell, to inform', vi: 'báo, mách' }
-          }
-        ]
-      },
-      {
         char: '令',
         meaning: { en: 'command, order, decree', vi: 'lệnh - mệnh lệnh; ra lệnh' },
         onyomi: ['レイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A figure kneeling to receive an order from above: a command, an order, a decree.',
-          vi: 'Một người quỳ nhận lệnh từ bên trên: mệnh lệnh, hiệu lệnh.'
-        },
+        components: ['人'],
+        parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19138,11 +18224,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ballot, vote; slip', vi: 'phiếu - lá phiếu; phiếu, vé' },
         onyomi: ['ヒョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A slip of paper used to cast a vote or serve as a ticket: a ballot, a slip.',
-          vi: 'Một mảnh giấy dùng để bỏ phiếu hay làm vé: lá phiếu, phiếu.'
-        },
+        components: ['覀', '示'],
+        parts: [
+          { char: '覀', role: 'other' },
+          { char: '示', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -19173,10 +18259,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ジュン'],
         kunyomi: [],
         components: ['川', '頁'],
-        mnemonic: {
-          en: 'Heads 頁 flowing along in line like a river 川: order, sequence, and going along obediently.',
-          vi: 'Những cái đầu 頁 xuôi theo hàng như dòng sông 川: thứ tự, trình tự, và thuận theo.'
-        },
+        parts: [
+          { char: '川', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -19206,11 +18292,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'first, beginning', vi: 'sơ - đầu tiên, lần đầu' },
         onyomi: ['ショ'],
         kunyomi: ['はじ.め', 'はつ', 'そ.める'],
-        components: [],
-        mnemonic: {
-          en: 'Taking a knife 刀 to cloth 衤 for the very first cut of a garment: the first, the beginning.',
-          vi: 'Cầm dao 刀 cắt vải 衤 nhát đầu tiên may áo: đầu tiên, lần đầu.'
-        },
+        components: ['衤', '刀'],
+        parts: [
+          { char: '衤', role: 'other' },
+          { char: '刀', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -19241,11 +18327,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'circumference, lap, around', vi: 'chu - chu vi; vòng quanh' },
         onyomi: ['シュウ'],
         kunyomi: ['まわ.り'],
-        components: [],
-        mnemonic: {
-          en: 'Going all the way around the edge and back to the mouth 口 of the start: circumference, a lap, around.',
-          vi: 'Đi hết một vòng quanh mép rồi về lại chỗ bắt đầu 口: chu vi, vòng, xung quanh.'
-        },
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19269,42 +18352,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'surroundings, vicinity', vi: 'vùng lân cận' }
           }
         ]
-      },
-      {
-        char: '史',
-        meaning: { en: 'history, chronicle', vi: 'sử - lịch sử' },
-        onyomi: ['シ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A hand holding a record-tablet, the keeper of events: history, a chronicle.',
-          vi: 'Một bàn tay cầm thẻ ghi chép, người giữ sự kiện: lịch sử, sử sách.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '歴', reading: 'れき' },
-              { text: '史', reading: 'し' }
-            ],
-            meaning: { en: 'history', vi: 'lịch sử' }
-          },
-          {
-            parts: [
-              { text: '世', reading: 'せ' },
-              { text: '界', reading: 'かい' },
-              { text: '史', reading: 'し' }
-            ],
-            meaning: { en: 'world history', vi: 'lịch sử thế giới' }
-          },
-          {
-            parts: [
-              { text: '日', reading: 'に' },
-              { text: '本', reading: 'ほん' },
-              { text: '史', reading: 'し' }
-            ],
-            meaning: { en: 'Japanese history', vi: 'lịch sử Nhật Bản' }
-          }
-        ]
       }
     ]
   },
@@ -19319,11 +18366,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'squad, corps, party', vi: 'đội - đội, đoàn' },
         onyomi: ['タイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A band of people marching down the hillside 阝 in formation: a squad, a corps, a party.',
-          vi: 'Một toán người xuống sườn đồi 阝 theo đội hình: đội, đoàn, tiểu đội.'
-        },
+        components: ['阝'],
+        parts: [{ char: '阝', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19353,11 +18397,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to reach, to attain; (plural)', vi: 'đạt - đạt tới; (số nhiều)' },
         onyomi: ['タツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Moving along 辶 until you arrive at your goal: to reach, to attain, and the plural marker for people.',
-          vi: 'Di chuyển 辶 cho tới khi đến đích: đạt tới, và hậu tố số nhiều cho người.'
-        },
+        components: ['辶', '幸'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '幸', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -19388,15 +18432,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'belt, sash; zone; to wear', vi: 'đới - dây lưng; vùng, đới' },
         onyomi: ['タイ'],
         kunyomi: ['お.びる', 'おび'],
-        components: [],
-        mnemonic: {
-          en: 'A long strip of cloth 巾 tied around the waist: a belt, a sash, and a zone or band.',
-          vi: 'Một dải vải 巾 dài quấn quanh eo: dây lưng, đai, và vùng, đới.'
-        },
+        components: ['巾'],
+        parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '帯', reading: 'おび' }],
-            meaning: { en: 'obi, sash', vi: 'dây thắt lưng (obi)' }
+            parts: [
+              { text: '帯', reading: 'おび' },
+              { text: 'びる', reading: 'びる' }
+            ],
+            meaning: { en: 'to take on, be tinged with', vi: 'mang, nhuốm' }
           },
           {
             parts: [
@@ -19422,11 +18466,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ソツ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A worker in a plain uniform finishing their term of duty: to finish, to graduate, and a common soldier.',
-          vi: 'Một người mặc đồng phục giản dị hoàn tất kỳ hạn: tốt nghiệp, hoàn thành, và người lính.'
-        },
+        components: ['十'],
+        parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19460,11 +18501,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['サン'],
         kunyomi: ['まい.る'],
-        components: [],
-        mnemonic: {
-          en: 'Bowing your head with hair streaming to join in respectfully: to participate, and to go or come humbly.',
-          vi: 'Cúi đầu tóc rủ xuống để cùng tham dự một cách kính cẩn: tham gia, và đi/đến (khiêm nhường).'
-        },
+        components: ['厶'],
+        parts: [{ char: '厶', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19494,11 +18532,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to scatter, to disperse', vi: 'tán - phân tán, rải rác' },
         onyomi: ['サン'],
         kunyomi: ['ち.る', 'ち.らす'],
-        components: [],
-        mnemonic: {
-          en: 'A hand striking things apart so they fly off in all directions: to scatter, to disperse.',
-          vi: 'Một bàn tay đập cho mọi thứ văng ra khắp nơi: phân tán, rải rác.'
-        },
+        components: ['攵'],
+        parts: [{ char: '攵', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19528,11 +18563,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to place, to put, to leave', vi: 'trí - đặt, để' },
         onyomi: ['チ'],
         kunyomi: ['お.く'],
-        components: [],
-        mnemonic: {
-          en: 'Setting a net down straight 直 in a fixed spot: to place, to put, to leave.',
-          vi: 'Đặt cái lưới xuống ngay ngắn 直 tại một chỗ: đặt, để.'
-        },
+        components: ['罒', '直'],
+        parts: [
+          { char: '罒', role: 'radical' },
+          { char: '直', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -19562,11 +18597,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to remain, leftover; cruel', vi: 'tàn - còn lại; tàn nhẫn' },
         onyomi: ['ザン'],
         kunyomi: ['のこ.る', 'のこ.す'],
-        components: [],
-        mnemonic: {
-          en: 'Bare bones 歹 left behind after the flesh is gone, what remains: to remain, leftover, and cruel.',
-          vi: 'Bộ xương trơ 歹 còn lại sau khi thịt đã hết, cái sót lại: còn lại, và tàn nhẫn.'
-        },
+        components: ['歹', '戔'],
+        parts: [
+          { char: '歹', role: 'radical' },
+          { char: '戔', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -19596,16 +18631,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seat', vi: 'tịch - chỗ ngồi' },
         onyomi: ['セキ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A cloth 巾 mat laid out under a roof 广 for someone to sit on: a seat.',
-          vi: 'Một tấm vải 巾 trải dưới mái nhà 广 để ngồi: chỗ ngồi.'
-        },
+        components: ['广', '巾'],
+        parts: [
+          { char: '广', role: 'other' },
+          { char: '巾', role: 'radical' }
+        ],
         examples: [
-          {
-            parts: [{ text: '席', reading: 'せき' }],
-            meaning: { en: 'seat', vi: 'chỗ ngồi' }
-          },
           {
             parts: [
               { text: '出', reading: 'しゅっ' },
@@ -19627,16 +18658,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nest', vi: 'sào - cái tổ' },
         onyomi: ['ソウ'],
         kunyomi: ['す'],
-        components: [],
-        mnemonic: {
-          en: 'Birds gathered in a nest built up in a tree 木: a nest.',
-          vi: 'Đàn chim tụ trong cái tổ dựng trên cây 木: cái tổ.'
-        },
+        components: ['巛', '木'],
+        parts: [
+          { char: '巛', role: 'radical' },
+          { char: '木', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '巣', reading: 'す' }],
-            meaning: { en: 'nest', vi: 'cái tổ' }
-          },
           {
             parts: [
               { text: '巣', reading: 'す' },
@@ -19667,10 +18694,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['イ'],
         kunyomi: ['ころも'],
         components: [],
-        mnemonic: {
-          en: 'A picture of a robe with collar and sleeves draped down: clothing, a garment.',
-          vi: 'Hình một chiếc áo choàng có cổ và tay áo rủ xuống: áo, y phục.'
-        },
         examples: [
           {
             parts: [
@@ -19687,132 +18710,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'clothing, garments', vi: 'đồ mặc, quần áo' }
           },
           {
-            parts: [{ text: '衣', reading: 'ころも' }],
-            meaning: { en: 'robe, garment', vi: 'áo, y phục' }
-          }
-        ]
-      },
-      {
-        char: '胃',
-        meaning: { en: 'stomach', vi: 'vị - dạ dày' },
-        onyomi: ['イ'],
-        kunyomi: [],
-        components: ['田', '月'],
-        mnemonic: {
-          en: 'A pouch (drawn like a field 田) that is part of the body 月: the stomach.',
-          vi: 'Một cái túi (vẽ như thửa ruộng 田) thuộc về cơ thể 月: dạ dày.'
-        },
-        examples: [
-          {
-            parts: [{ text: '胃', reading: 'い' }],
-            meaning: { en: 'stomach', vi: 'dạ dày' }
-          },
-          {
             parts: [
-              { text: '胃', reading: 'い' },
-              { text: '腸', reading: 'ちょう' }
+              { text: '衣', reading: 'ころも' },
+              { text: '替', reading: 'が' },
+              { text: 'え', reading: 'え' }
             ],
-            meaning: { en: 'stomach and intestines', vi: 'dạ dày và ruột' }
-          },
-          {
-            parts: [
-              { text: '胃', reading: 'い' },
-              { text: '薬', reading: 'ぐすり' }
-            ],
-            meaning: { en: 'stomach medicine', vi: 'thuốc dạ dày' }
-          }
-        ]
-      },
-      {
-        char: '腸',
-        meaning: { en: 'intestine', vi: 'tràng - ruột' },
-        onyomi: ['チョウ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The long, winding organ of the body 月 that digests food: the intestines.',
-          vi: 'Cơ quan dài quanh co của cơ thể 月 tiêu hóa thức ăn: ruột.'
-        },
-        examples: [
-          {
-            parts: [{ text: '腸', reading: 'ちょう' }],
-            meaning: { en: 'intestine, gut', vi: 'ruột' }
-          },
-          {
-            parts: [
-              { text: '胃', reading: 'い' },
-              { text: '腸', reading: 'ちょう' }
-            ],
-            meaning: { en: 'stomach and intestines', vi: 'dạ dày và ruột' }
-          },
-          {
-            parts: [
-              { text: '大', reading: 'だい' },
-              { text: '腸', reading: 'ちょう' }
-            ],
-            meaning: { en: 'large intestine', vi: 'ruột già' }
-          }
-        ]
-      },
-      {
-        char: '脈',
-        meaning: { en: 'pulse, vein', vi: 'mạch - mạch máu; mạch (núi)' },
-        onyomi: ['ミャク'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The branching streams of blood running through the body 月: a pulse, a vein, a vein of rock.',
-          vi: 'Những dòng máu phân nhánh chảy khắp cơ thể 月: mạch đập, mạch máu, mạch núi.'
-        },
-        examples: [
-          {
-            parts: [{ text: '脈', reading: 'みゃく' }],
-            meaning: { en: 'pulse', vi: 'mạch đập' }
-          },
-          {
-            parts: [
-              { text: '山', reading: 'さん' },
-              { text: '脈', reading: 'みゃく' }
-            ],
-            meaning: { en: 'mountain range', vi: 'dãy núi' }
-          },
-          {
-            parts: [
-              { text: '文', reading: 'ぶん' },
-              { text: '脈', reading: 'みゃく' }
-            ],
-            meaning: { en: 'context', vi: 'ngữ cảnh, mạch văn' }
-          }
-        ]
-      },
-      {
-        char: '毒',
-        meaning: { en: 'poison', vi: 'độc - chất độc' },
-        onyomi: ['ドク'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A harmful plant growing wild that will hurt anyone who eats it: poison.',
-          vi: 'Một loại cây độc mọc hoang gây hại cho ai ăn phải: chất độc.'
-        },
-        examples: [
-          {
-            parts: [{ text: '毒', reading: 'どく' }],
-            meaning: { en: 'poison', vi: 'chất độc' }
-          },
-          {
-            parts: [
-              { text: '消', reading: 'しょう' },
-              { text: '毒', reading: 'どく' }
-            ],
-            meaning: { en: 'disinfection', vi: 'khử trùng' }
-          },
-          {
-            parts: [
-              { text: '中', reading: 'ちゅう' },
-              { text: '毒', reading: 'どく' }
-            ],
-            meaning: { en: 'poisoning; addiction', vi: 'trúng độc; nghiện' }
+            meaning: { en: 'seasonal change of clothes', vi: 'thay áo theo mùa' }
           }
         ]
       },
@@ -19821,11 +18724,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'certain, without fail; necessary', vi: 'tất - tất yếu, chắc chắn' },
         onyomi: ['ヒツ'],
         kunyomi: ['かなら.ず'],
-        components: [],
-        mnemonic: {
-          en: 'A firm line drawn through the heart 心, a fixed resolve: certain, without fail, necessary.',
-          vi: 'Một nét vạch dứt khoát xuyên qua trái tim 心, ý chí kiên định: tất yếu, chắc chắn, nhất định.'
-        },
+        components: ['心'],
+        parts: [{ char: '心', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19856,15 +18756,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['ガイ'],
         kunyomi: [],
         components: ['宀', '口'],
-        mnemonic: {
-          en: 'Harsh words 口 spoken under a roof 宀 that cut and hurt: harm, damage, injury.',
-          vi: 'Lời cay nghiệt 口 nói ra dưới mái nhà 宀 làm tổn thương: tác hại, gây hại.'
-        },
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '口', role: 'other' }
+        ],
         examples: [
-          {
-            parts: [{ text: '害', reading: 'がい' }],
-            meaning: { en: 'harm, damage', vi: 'tác hại' }
-          },
           {
             parts: [
               { text: '公', reading: 'こう' },
@@ -19889,11 +18785,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['エイ'],
         kunyomi: ['さか.える', 'は.える'],
-        components: [],
-        mnemonic: {
-          en: 'A tree 木 crowned with blossoming lights, thriving in full bloom: to flourish, glory, prosperity.',
-          vi: 'Một cái cây 木 rực rỡ hoa lá, sum suê nở rộ: hưng thịnh, vinh quang.'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19924,11 +18817,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to reform, to revise, to change', vi: 'cải - sửa đổi, cải cách' },
         onyomi: ['カイ'],
         kunyomi: ['あらた.める'],
-        components: [],
-        mnemonic: {
-          en: 'Striking oneself 己 into shape to correct old ways: to reform, to revise, to change.',
-          vi: 'Tự chấn chỉnh bản thân 己 để sửa nếp cũ: sửa đổi, cải cách.'
-        },
+        components: ['己', '攵'],
+        parts: [
+          { char: '己', role: 'other' },
+          { char: '攵', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -19953,40 +18846,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'revision, amendment', vi: 'sửa đổi, cải chính' }
           }
         ]
-      },
-      {
-        char: '囲',
-        meaning: { en: 'to surround, to enclose', vi: 'vi - bao quanh, vây quanh' },
-        onyomi: ['イ'],
-        kunyomi: ['かこ.む'],
-        components: [],
-        mnemonic: {
-          en: 'A boundary 囗 drawn all the way around something: to surround, to enclose.',
-          vi: 'Một đường viền 囗 khép kín quanh vật gì đó: bao quanh, vây quanh.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '囲', reading: 'かこ' },
-              { text: 'む', reading: 'む' }
-            ],
-            meaning: { en: 'to surround', vi: 'vây quanh' }
-          },
-          {
-            parts: [
-              { text: '周', reading: 'しゅう' },
-              { text: '囲', reading: 'い' }
-            ],
-            meaning: { en: 'surroundings', vi: 'xung quanh, chu vi' }
-          },
-          {
-            parts: [
-              { text: '囲', reading: 'い' },
-              { text: '碁', reading: 'ご' }
-            ],
-            meaning: { en: 'the game of Go', vi: 'cờ vây' }
-          }
-        ]
       }
     ]
   },
@@ -20001,11 +18860,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'not, un- (negative prefix)', vi: 'bất - không, chẳng (phủ định)' },
         onyomi: ['フ', 'ブ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A firm bar blocking the way, saying no: not, un-, a negative prefix.',
-          vi: 'Một thanh chắn ngang chặn lối, nói không: không, chẳng, tiền tố phủ định.'
-        },
+        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20035,11 +18891,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'not yet, un-', vi: 'vị - chưa (phủ định)' },
         onyomi: ['ミ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A tree 木 whose top branches have not yet grown out: not yet, still to come.',
-          vi: 'Một cái cây 木 mà cành ngọn chưa mọc ra: chưa, vẫn còn đợi.'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20069,11 +18922,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'end, tip', vi: 'mạt - cuối; ngọn' },
         onyomi: ['マツ', 'バツ'],
         kunyomi: ['すえ'],
-        components: [],
-        mnemonic: {
-          en: 'A tree 木 with a stroke marking the very tips of its branches: the end, the tip.',
-          vi: 'Một cái cây 木 có nét đánh dấu tận đầu ngọn cành: cuối, ngọn.'
-        },
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20090,8 +18940,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
             meaning: { en: 'year-end', vi: 'cuối năm' }
           },
           {
-            parts: [{ text: '末', reading: 'すえ' }],
-            meaning: { en: 'the end, the tip', vi: 'cuối, ngọn' }
+            parts: [
+              { text: '末', reading: 'すえ' },
+              { text: 'っ子', reading: 'っこ' }
+            ],
+            meaning: { en: 'the youngest child', vi: 'con út' }
           }
         ]
       },
@@ -20100,11 +18953,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nothing, without, un-', vi: 'vô - không, không có' },
         onyomi: ['ム', 'ブ'],
         kunyomi: ['な.い'],
-        components: [],
-        mnemonic: {
-          en: 'A place once full, now burned down to nothing: nothing, without, un-.',
-          vi: 'Một nơi từng đầy ắp, nay cháy rụi còn lại con số không: không, không có.'
-        },
+        components: ['灬'],
+        parts: [{ char: '灬', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20134,11 +18984,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to attach; to hand over', vi: 'phó - gắn vào; giao cho' },
         onyomi: ['フ'],
         kunyomi: ['つ.ける', 'つ.く'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 handing something over with their hand 寸, attaching it: to attach, to hand over.',
-          vi: 'Một người 亻 trao thứ gì đó bằng tay 寸, gắn vào: gắn, đính; giao cho.'
-        },
+        components: ['亻', '寸'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '寸', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -20172,11 +19022,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['フ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A building 广 where documents are filed 付 and government is run: an office, a prefecture (fu).',
-          vi: 'Một tòa nhà 广 nơi lưu hồ sơ 付 và điều hành chính sự: phủ, cơ quan, phủ (hành chính).'
-        },
+        components: ['广', '付'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '付', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -20184,10 +19034,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '府', reading: 'ふ' }
             ],
             meaning: { en: 'government', vi: 'chính phủ' }
-          },
-          {
-            parts: [{ text: '府', reading: 'ふ' }],
-            meaning: { en: 'urban prefecture', vi: 'phủ (đơn vị hành chính)' }
           },
           {
             parts: [
@@ -20199,52 +19045,13 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '粉',
-        meaning: { en: 'powder, flour', vi: 'phấn - bột, phấn' },
-        onyomi: ['フン'],
-        kunyomi: ['こ', 'こな'],
-        components: [],
-        mnemonic: {
-          en: 'Rice 米 divided 分 down to fine grains: powder, flour.',
-          vi: 'Gạo 米 chia nhỏ 分 tới hạt li ti: bột, phấn.'
-        },
-        examples: [
-          {
-            parts: [{ text: '粉', reading: 'こな' }],
-            meaning: { en: 'powder, flour', vi: 'bột' }
-          },
-          {
-            parts: [
-              { text: '小', reading: 'こ' },
-              { text: '麦', reading: 'むぎ' },
-              { text: '粉', reading: 'こ' }
-            ],
-            meaning: { en: 'wheat flour', vi: 'bột mì' }
-          },
-          {
-            parts: [
-              { text: '花', reading: 'か' },
-              { text: '粉', reading: 'ふん' }
-            ],
-            meaning: { en: 'pollen', vi: 'phấn hoa' }
-          }
-        ]
-      },
-      {
         char: '量',
         meaning: { en: 'quantity, amount; to measure', vi: 'lượng - số lượng; đo lường' },
         onyomi: ['リョウ'],
         kunyomi: ['はか.る'],
-        components: [],
-        mnemonic: {
-          en: 'Weighing a load in the marketplace to find how much: quantity, amount, to measure.',
-          vi: 'Cân đong một lô hàng ngoài chợ để biết bao nhiêu: số lượng, đo lường.'
-        },
+        components: ['里'],
+        parts: [{ char: '里', role: 'radical' }],
         examples: [
-          {
-            parts: [{ text: '量', reading: 'りょう' }],
-            meaning: { en: 'quantity, amount', vi: 'số lượng' }
-          },
           {
             parts: [
               { text: '数', reading: 'すう' },
@@ -20266,16 +19073,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wheel, ring, loop', vi: 'luân - bánh xe; vòng' },
         onyomi: ['リン'],
         kunyomi: ['わ'],
-        components: [],
-        mnemonic: {
-          en: 'The round wheel of a cart 車 turning in a circle: a wheel, a ring, a loop.',
-          vi: 'Bánh xe tròn của chiếc xe 車 quay thành vòng: bánh xe, vòng.'
-        },
+        components: ['車', '侖'],
+        parts: [
+          { char: '車', role: 'radical' },
+          { char: '侖', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '輪', reading: 'わ' }],
-            meaning: { en: 'ring, loop', vi: 'vòng' }
-          },
           {
             parts: [
               { text: '車', reading: 'しゃ' },
@@ -20297,11 +19100,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'kind, type, category', vi: 'loại - loại, chủng loại' },
         onyomi: ['ルイ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Sorting heads 頁 of grain into like piles by kind: a kind, a type, a category.',
-          vi: 'Phân loại các đầu 頁 hạt theo từng nhóm giống nhau: loại, chủng loại.'
-        },
+        components: ['米', '頁'],
+        parts: [
+          { char: '米', role: 'other' },
+          { char: '頁', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -20339,11 +19142,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'war, battle; to fight', vi: 'chiến - chiến tranh; chiến đấu' },
         onyomi: ['セン'],
         kunyomi: ['たたか.う', 'いくさ'],
-        components: [],
-        mnemonic: {
-          en: 'Taking up a halberd 戈 to clash in battle: war, a fight, to fight.',
-          vi: 'Cầm ngọn qua 戈 lao vào giao tranh: chiến tranh, trận đánh, chiến đấu.'
-        },
+        components: ['単', '戈'],
+        parts: [
+          { char: '単', role: 'phonetic' },
+          { char: '戈', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -20373,11 +19176,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'defeat, failure; to lose', vi: 'bại - thất bại, thua' },
         onyomi: ['ハイ'],
         kunyomi: ['やぶ.れる'],
-        components: [],
-        mnemonic: {
-          en: 'Money 貝 struck and broken apart, everything lost: defeat, failure.',
-          vi: 'Tiền của 貝 bị đập vỡ tan, mất sạch: thất bại, thua.'
-        },
+        components: ['貝', '攵'],
+        parts: [
+          { char: '貝', role: 'other' },
+          { char: '攵', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -20408,11 +19211,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'courage, bravery', vi: 'dũng - dũng cảm, can đảm' },
         onyomi: ['ユウ'],
         kunyomi: ['いさ.む'],
-        components: [],
-        mnemonic: {
-          en: 'Summoning up all your strength 力 to face danger: courage, bravery.',
-          vi: 'Dồn hết sức mạnh 力 để đối mặt nguy hiểm: dũng cảm, can đảm.'
-        },
+        components: ['甬', '力'],
+        parts: [
+          { char: '甬', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -20438,49 +19241,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '殺',
-        meaning: { en: 'to kill', vi: 'sát - giết' },
-        onyomi: ['サツ', 'サイ'],
-        kunyomi: ['ころ.す'],
-        components: [],
-        mnemonic: {
-          en: 'Striking a blow with a weapon to take a life: to kill.',
-          vi: 'Giáng một đòn bằng vũ khí để lấy mạng: giết.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '殺', reading: 'ころ' },
-              { text: 'す', reading: 'す' }
-            ],
-            meaning: { en: 'to kill', vi: 'giết' }
-          },
-          {
-            parts: [
-              { text: '殺', reading: 'さつ' },
-              { text: '人', reading: 'じん' }
-            ],
-            meaning: { en: 'murder', vi: 'giết người' }
-          },
-          {
-            parts: [
-              { text: '自', reading: 'じ' },
-              { text: '殺', reading: 'さつ' }
-            ],
-            meaning: { en: 'suicide', vi: 'tự sát' }
-          }
-        ]
-      },
-      {
         char: '欠',
         meaning: { en: 'to lack, to be absent; a gap', vi: 'khiếm - thiếu; vắng' },
         onyomi: ['ケツ'],
         kunyomi: ['か.ける', 'か.く'],
         components: [],
-        mnemonic: {
-          en: 'A person leaning back with mouth open, missing something: to lack, to be absent, a gap.',
-          vi: 'Một người ngả ra há miệng, thiếu mất cái gì đó: thiếu, vắng, khuyết.'
-        },
         examples: [
           {
             parts: [
@@ -20511,11 +19276,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to lose, to miss', vi: 'thất - mất, đánh mất' },
         onyomi: ['シツ'],
         kunyomi: ['うしな.う'],
-        components: [],
-        mnemonic: {
-          en: 'Something slipping out of the hand and dropping away: to lose, to miss.',
-          vi: 'Thứ gì đó tuột khỏi tay rơi mất: mất, đánh mất.'
-        },
+        components: ['大'],
+        parts: [{ char: '大', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20548,11 +19310,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヨウ'],
         kunyomi: ['い.る', 'かなめ'],
-        components: [],
-        mnemonic: {
-          en: 'What is central and indispensable, held at the waist: need, essential, the main point.',
-          vi: 'Cái cốt lõi không thể thiếu, giữ ngay eo: cần thiết, điểm mấu chốt.'
-        },
+        components: ['西', '女'],
+        parts: [
+          { char: '西', role: 'radical' },
+          { char: '女', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -20585,11 +19347,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヤク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Binding a thread 糸 into a small tight knot to pledge and to shorten: a promise, approximately.',
-          vi: 'Buộc sợi chỉ 糸 thành nút nhỏ để giao ước và rút gọn: lời hứa, khoảng chừng.'
-        },
+        components: ['糸', '勺'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '勺', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -20604,30 +19366,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '約', reading: 'やく' }
             ],
             meaning: { en: 'reservation, booking', vi: 'đặt trước' }
-          },
-          {
-            parts: [{ text: '約', reading: 'やく' }],
-            meaning: { en: 'approximately, about', vi: 'khoảng, chừng' }
-          }
-        ]
-      },
-      {
-        char: '法',
-        meaning: { en: 'law, method, rule', vi: 'pháp - luật pháp; phương pháp' },
-        onyomi: ['ホウ', 'ハッ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Water 氵 that always flows the level, proper way 去: a law, a method, a rule.',
-          vi: 'Nước 氵 luôn chảy theo cách đúng mực, thuận lẽ 去: luật pháp, phương pháp.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '方', reading: 'ほう' },
-              { text: '法', reading: 'ほう' }
-            ],
-            meaning: { en: 'method, way', vi: 'phương pháp, cách' }
           },
           {
             parts: [
@@ -20653,11 +19391,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['コウ'],
         kunyomi: ['そうろう'],
-        components: [],
-        mnemonic: {
-          en: 'A person 亻 watching for the changing signs of the seasons: the weather, the season, to wait for.',
-          vi: 'Một người 亻 dõi theo dấu hiệu thay đổi của mùa: thời tiết, mùa, chờ đợi.'
-        },
+        components: ['亻'],
+        parts: [{ char: '亻', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20691,49 +19426,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
     },
     kanji: [
       {
-        char: '航',
-        meaning: { en: 'to navigate, to sail, to fly', vi: 'hàng - đi (thuyền, máy bay)' },
-        onyomi: ['コウ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Taking a boat 舟 out across the water on a voyage: to navigate, to sail, to fly.',
-          vi: 'Đưa con thuyền 舟 ra khơi trên hành trình: đi thuyền, đi biển, bay.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '航', reading: 'こう' },
-              { text: '空', reading: 'くう' }
-            ],
-            meaning: { en: 'aviation', vi: 'hàng không' }
-          },
-          {
-            parts: [
-              { text: '欠', reading: 'けっ' },
-              { text: '航', reading: 'こう' }
-            ],
-            meaning: { en: 'cancelled flight/sailing', vi: 'hủy chuyến (bay, tàu)' }
-          },
-          {
-            parts: [
-              { text: '出', reading: 'しゅっ' },
-              { text: '航', reading: 'こう' }
-            ],
-            meaning: { en: 'setting sail, departure', vi: 'khởi hành (tàu)' }
-          }
-        ]
-      },
-      {
         char: '飛',
         meaning: { en: 'to fly, to leap', vi: 'phi - bay; nhảy vọt' },
         onyomi: ['ヒ'],
         kunyomi: ['と.ぶ', 'と.ばす'],
         components: [],
-        mnemonic: {
-          en: 'A bird spreading its wings to leap up into the air: to fly, to leap, to skip.',
-          vi: 'Một con chim xòe cánh vút lên không: bay, nhảy vọt.'
-        },
         examples: [
           {
             parts: [
@@ -20767,11 +19464,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['レン'],
         kunyomi: ['つ.れる', 'つら.なる'],
-        components: [],
-        mnemonic: {
-          en: 'Carts 車 moving 辶 in a row, one linked to the next: to link, to take along, consecutive.',
-          vi: 'Những chiếc xe 車 di chuyển 辶 nối đuôi nhau: liên kết, dẫn theo, liên tục.'
-        },
+        components: ['辶', '車'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '車', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -20802,11 +19499,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vicinity, area; side', vi: 'biên - vùng lân cận; cạnh (hình học)' },
         onyomi: ['ヘン'],
         kunyomi: ['あた.り', 'べ'],
-        components: [],
-        mnemonic: {
-          en: 'The area you can reach by moving 辶 a short way around: the vicinity, the area nearby, a side.',
-          vi: 'Vùng có thể tới bằng cách đi 辶 loanh quanh gần đó: vùng lân cận, xung quanh, cạnh.'
-        },
+        components: ['辶', '刀'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '刀', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -20836,15 +19533,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'town, street', vi: 'nhai - phố xá, đường phố' },
         onyomi: ['ガイ', 'カイ'],
         kunyomi: ['まち'],
-        components: [],
-        mnemonic: {
-          en: 'A place of crossings 行 lined with shops and houses: a town, a street.',
-          vi: 'Nơi có những giao lộ 行 hai bên là nhà cửa, cửa hàng: phố xá, đường phố.'
-        },
+        components: ['行', '圭'],
+        parts: [
+          { char: '行', role: 'radical' },
+          { char: '圭', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '街', reading: 'まち' }],
-            meaning: { en: 'town, downtown', vi: 'phố, khu phố' }
+            parts: [
+              { text: '街', reading: 'まち' },
+              { text: '角', reading: 'かど' }
+            ],
+            meaning: { en: 'street corner', vi: 'góc phố' }
           },
           {
             parts: [
@@ -20868,11 +19568,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'by means of; from; than', vi: 'dĩ - bằng, lấy; từ' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A person using a tool to do something, marking "by means of, from, than".',
-          vi: 'Một người dùng công cụ để làm việc gì đó, chỉ "bằng, lấy, từ".'
-        },
+        components: ['人'],
+        parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20902,11 +19599,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'barrier, gate; connection', vi: 'quan - cửa ải; liên quan' },
         onyomi: ['カン'],
         kunyomi: ['せき', 'かか.わる'],
-        components: [],
-        mnemonic: {
-          en: 'A checkpoint gate 門 controlling who passes: a barrier, and by extension a connection or relation.',
-          vi: 'Một cổng chốt 門 kiểm soát ai qua lại: cửa ải, và nghĩa rộng là liên quan, quan hệ.'
-        },
+        components: ['門'],
+        parts: [{ char: '門', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -20937,11 +19631,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fishing', vi: 'ngư - đánh bắt cá' },
         onyomi: ['ギョ', 'リョウ'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Going out on the water 氵 to catch fish 魚: fishing.',
-          vi: 'Ra vùng nước 氵 để bắt cá 魚: đánh bắt cá.'
-        },
+        components: ['氵', '魚'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '魚', role: 'semantic' }
+        ],
         examples: [
           {
             parts: [
@@ -20971,11 +19665,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to herd; pasture', vi: 'mục - chăn thả; đồng cỏ' },
         onyomi: ['ボク'],
         kunyomi: ['まき'],
-        components: [],
-        mnemonic: {
-          en: 'Driving cattle 牛 out to graze with a stick: to herd, a pasture.',
-          vi: 'Lùa đàn bò 牛 ra gặm cỏ bằng cây gậy: chăn thả, đồng cỏ.'
-        },
+        components: ['牛', '攵'],
+        parts: [
+          { char: '牛', role: 'radical' },
+          { char: '攵', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -21005,11 +19699,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wrap, to wrap up', vi: 'bao - bao bọc, gói' },
         onyomi: ['ホウ'],
         kunyomi: ['つつ.む'],
-        components: [],
-        mnemonic: {
-          en: 'Arms curled all the way around something to enclose it: to wrap, to wrap up.',
-          vi: 'Vòng tay bao trọn quanh vật gì đó: bao bọc, gói lại.'
-        },
+        components: ['勹', '巳'],
+        parts: [
+          { char: '勹', role: 'radical' },
+          { char: '巳', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -21048,10 +19742,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キ'],
         kunyomi: [],
         components: ['禾', '子'],
-        mnemonic: {
-          en: 'A young grain plant 禾 with its child 子 seeds ripening each part of the year: a season.',
-          vi: 'Cây lúa 禾 với hạt con 子 chín theo từng phần trong năm: mùa.'
-        },
+        parts: [
+          { char: '禾', role: 'semantic' },
+          { char: '子', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -21077,52 +19771,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '紀',
-        meaning: {
-          en: 'chronicle; era; discipline',
-          vi: 'kỷ - kỷ nguyên; ghi chép; kỷ luật'
-        },
-        onyomi: ['キ'],
-        kunyomi: [],
-        components: ['糸', '己'],
-        mnemonic: {
-          en: 'Threads 糸 of oneself 己 wound in order to keep a record of the age: a chronicle, an era, discipline.',
-          vi: 'Sợi chỉ 糸 của bản thân 己 quấn theo trật tự để ghi lại thời đại: ký sự, kỷ nguyên, kỷ luật.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '世', reading: 'せい' },
-              { text: '紀', reading: 'き' }
-            ],
-            meaning: { en: 'century', vi: 'thế kỷ' }
-          },
-          {
-            parts: [
-              { text: '紀', reading: 'き' },
-              { text: '元', reading: 'げん' }
-            ],
-            meaning: { en: 'era, epoch (of an era count)', vi: 'kỷ nguyên' }
-          },
-          {
-            parts: [
-              { text: '風', reading: 'ふう' },
-              { text: '紀', reading: 'き' }
-            ],
-            meaning: { en: 'discipline, public order', vi: 'kỷ cương, nề nếp' }
-          }
-        ]
-      },
-      {
         char: '最',
         meaning: { en: 'most, the -est', vi: 'tối - nhất, cực (nhất)' },
         onyomi: ['サイ'],
         kunyomi: ['もっと.も'],
-        components: [],
-        mnemonic: {
-          en: 'Reaching up to seize the very top thing, the extreme: most, the -est.',
-          vi: 'Với lên nắm lấy thứ đứng đầu nhất, cực điểm: nhất, hơn cả.'
-        },
+        components: ['曰', '取'],
+        parts: [
+          { char: '曰', role: 'radical' },
+          { char: '取', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -21152,11 +19809,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'yesterday; the previous', vi: 'tạc - hôm qua; trước (ngày/năm qua)' },
         onyomi: ['サク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'The day 日 just gone by: yesterday, the previous day or year.',
-          vi: 'Ngày 日 vừa trôi qua: hôm qua, ngày/năm trước.'
-        },
+        components: ['日', '乍'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '乍', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [{ text: '昨日', reading: 'きのう' }],
@@ -21184,10 +19841,10 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         onyomi: ['キョウ'],
         kunyomi: [],
         components: ['十', '力'],
-        mnemonic: {
-          en: 'Many strengths 力 joined under one 十 to work as one: to cooperate.',
-          vi: 'Nhiều sức mạnh 力 gộp dưới một 十 để làm chung: hợp tác, hiệp lực.'
-        },
+        parts: [
+          { char: '十', role: 'radical' },
+          { char: '力', role: 'other' }
+        ],
         examples: [
           {
             parts: [
@@ -21217,11 +19874,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to compete, to vie', vi: 'cạnh - tranh đua, thi đấu' },
         onyomi: ['キョウ', 'ケイ'],
         kunyomi: ['きそ.う', 'せ.る'],
-        components: [],
-        mnemonic: {
-          en: 'Two people side by side racing to outdo each other: to compete, to vie.',
-          vi: 'Hai người kề nhau đua để hơn nhau: tranh đua, thi đấu.'
-        },
+        components: ['立'],
+        parts: [{ char: '立', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -21251,11 +19905,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to celebrate, to congratulate', vi: 'chúc - chúc mừng; ăn mừng' },
         onyomi: ['シュク'],
         kunyomi: ['いわ.う'],
-        components: [],
-        mnemonic: {
-          en: 'Kneeling at the altar 礻 to offer words of blessing: to celebrate, to congratulate.',
-          vi: 'Quỳ trước bàn thờ 礻 dâng lời chúc phúc: chúc mừng, ăn mừng.'
-        },
+        components: ['礻', '兄'],
+        parts: [
+          { char: '礻', role: 'radical' },
+          { char: '兄', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -21289,11 +19943,11 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ジ'],
         kunyomi: ['や.める'],
-        components: [],
-        mnemonic: {
-          en: "Choosing careful words to take one's leave: words, and to resign, to decline.",
-          vi: 'Chọn lời lẽ cẩn thận để cáo lui: từ ngữ, và từ chức, từ chối.'
-        },
+        components: ['舌', '辛'],
+        parts: [
+          { char: '舌', role: 'other' },
+          { char: '辛', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -21324,15 +19978,18 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tag, label; paper money', vi: 'trát - thẻ, phiếu; tờ tiền' },
         onyomi: ['サツ'],
         kunyomi: ['ふだ'],
-        components: [],
-        mnemonic: {
-          en: 'A small wooden 木 tag hung to label something, later a paper note: a tag, a bill.',
-          vi: 'Một tấm thẻ gỗ 木 nhỏ treo để ghi nhãn, sau là tờ giấy bạc: thẻ, phiếu, tờ tiền.'
-        },
+        components: ['木', '乚'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '乚', role: 'phonetic' }
+        ],
         examples: [
           {
-            parts: [{ text: '札', reading: 'ふだ' }],
-            meaning: { en: 'tag, label, card', vi: 'thẻ, phiếu' }
+            parts: [
+              { text: '名', reading: 'な' },
+              { text: '札', reading: 'ふだ' }
+            ],
+            meaning: { en: 'name tag', vi: 'bảng tên' }
           },
           {
             parts: [
@@ -21356,11 +20013,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to print', vi: 'loát - in ấn' },
         onyomi: ['サツ'],
         kunyomi: ['す.る'],
-        components: [],
-        mnemonic: {
-          en: 'Pressing an inked block and cutting off 刂 clean copies: to print.',
-          vi: 'Ép bản mực rồi cắt 刂 ra những bản in sạch: in ấn.'
-        },
+        components: ['刂'],
+        parts: [{ char: '刂', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -21383,16 +20037,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flag, banner', vi: 'kỳ - lá cờ' },
         onyomi: ['キ'],
         kunyomi: ['はた'],
-        components: [],
-        mnemonic: {
-          en: 'A banner on a pole (from 方) flapping in the wind: a flag.',
-          vi: 'Một lá cờ trên cột (từ 方) phấp phới trong gió: lá cờ.'
-        },
+        components: ['方', '其'],
+        parts: [
+          { char: '方', role: 'radical' },
+          { char: '其', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '旗', reading: 'はた' }],
-            meaning: { en: 'flag', vi: 'lá cờ' }
-          },
           {
             parts: [
               { text: '国', reading: 'こっ' },
@@ -21422,16 +20072,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pine tree', vi: 'tùng - cây thông' },
         onyomi: ['ショウ'],
         kunyomi: ['まつ'],
-        components: [],
-        mnemonic: {
-          en: 'A tree 木 that everyone 公 knows stays green all year: the pine.',
-          vi: 'Cái cây 木 ai ai 公 cũng biết, quanh năm xanh: cây thông.'
-        },
+        components: ['木', '公'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '公', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '松', reading: 'まつ' }],
-            meaning: { en: 'pine tree', vi: 'cây thông' }
-          },
           {
             parts: [
               { text: '松', reading: 'まつ' },
@@ -21449,80 +20095,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '象',
-        meaning: {
-          en: 'elephant; shape, phenomenon',
-          vi: 'tượng - con voi; hiện tượng, hình tượng'
-        },
-        onyomi: ['ショウ', 'ゾウ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A picture of an elephant with its long trunk and body: an elephant, and by extension a shape or phenomenon.',
-          vi: 'Hình con voi với cái vòi dài và thân: con voi, và nghĩa rộng là hình tượng, hiện tượng.'
-        },
-        examples: [
-          {
-            parts: [{ text: '象', reading: 'ぞう' }],
-            meaning: { en: 'elephant', vi: 'con voi' }
-          },
-          {
-            parts: [
-              { text: '気', reading: 'き' },
-              { text: '象', reading: 'しょう' }
-            ],
-            meaning: { en: 'weather, meteorology', vi: 'khí tượng' }
-          },
-          {
-            parts: [
-              { text: '対', reading: 'たい' },
-              { text: '象', reading: 'しょう' }
-            ],
-            meaning: { en: 'target, object', vi: 'đối tượng' }
-          }
-        ]
-      },
-      {
-        char: '賞',
-        meaning: { en: 'prize, award', vi: 'thưởng - giải thưởng; khen thưởng' },
-        onyomi: ['ショウ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Money 貝 given out to honor an achievement: a prize, an award.',
-          vi: 'Tiền 貝 trao ra để tôn vinh thành tích: giải thưởng, khen thưởng.'
-        },
-        examples: [
-          {
-            parts: [{ text: '賞', reading: 'しょう' }],
-            meaning: { en: 'prize, award', vi: 'giải thưởng' }
-          },
-          {
-            parts: [
-              { text: '賞', reading: 'しょう' },
-              { text: '金', reading: 'きん' }
-            ],
-            meaning: { en: 'prize money', vi: 'tiền thưởng' }
-          },
-          {
-            parts: [
-              { text: '賞', reading: 'しょう' },
-              { text: '品', reading: 'ひん' }
-            ],
-            meaning: { en: 'prize, award item', vi: 'phần thưởng' }
-          }
-        ]
-      },
-      {
         char: '然',
         meaning: { en: 'state, -like, so', vi: 'nhiên - trạng thái; như vậy' },
         onyomi: ['ゼン', 'ネン'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A suffix meaning "in that state, just so", often paired with other kanji: -like, natural, so.',
-          vi: 'Một hậu tố nghĩa "ở trạng thái ấy, như vậy", thường đi kèm chữ khác: như thế, trạng thái, tự nhiên.'
-        },
+        components: ['灬'],
+        parts: [{ char: '灬', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -21552,15 +20130,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'warehouse, storehouse', vi: 'thương - kho, nhà kho' },
         onyomi: ['ソウ'],
         kunyomi: ['くら'],
-        components: [],
-        mnemonic: {
-          en: 'A building with a door for storing grain safely: a warehouse, a storehouse.',
-          vi: 'Một tòa nhà có cửa để cất trữ lương thực an toàn: kho, nhà kho.'
-        },
+        components: ['人'],
+        parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
-            parts: [{ text: '倉', reading: 'くら' }],
-            meaning: { en: 'storehouse, warehouse', vi: 'kho' }
+            parts: [
+              { text: '米', reading: 'こめ' },
+              { text: '倉', reading: 'ぐら' }
+            ],
+            meaning: { en: 'rice granary', vi: 'kho thóc' }
           },
           {
             parts: [
@@ -21579,53 +20157,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '堂',
-        meaning: { en: 'hall', vi: 'đường - đại sảnh, gian nhà lớn' },
-        onyomi: ['ドウ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'A grand building raised high on an earthen 土 base: a hall.',
-          vi: 'Một tòa nhà lớn dựng cao trên nền đất 土: đại sảnh, gian nhà lớn.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '食', reading: 'しょく' },
-              { text: '堂', reading: 'どう' }
-            ],
-            meaning: { en: 'dining hall, cafeteria', vi: 'nhà ăn, căng tin' }
-          },
-          {
-            parts: [
-              { text: '本', reading: 'ほん' },
-              { text: '堂', reading: 'どう' }
-            ],
-            meaning: { en: 'main hall (of a temple)', vi: 'chính điện' }
-          },
-          {
-            parts: [
-              { text: '議', reading: 'ぎ' },
-              { text: '事', reading: 'じ' },
-              { text: '堂', reading: 'どう' }
-            ],
-            meaning: {
-              en: 'assembly hall, parliament building',
-              vi: 'nghị trường, tòa nhà quốc hội'
-            }
-          }
-        ]
-      },
-      {
         char: '博',
         meaning: { en: 'broad, extensive; doctorate', vi: 'bác - rộng, uyên bác' },
         onyomi: ['ハク', 'バク'],
         kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Knowledge spread wide in all ten 十 directions: broad, extensive, learned.',
-          vi: 'Kiến thức trải rộng khắp mười 十 phương: rộng khắp, uyên bác.'
-        },
+        components: ['十', '尃'],
+        parts: [
+          { char: '十', role: 'radical' },
+          { char: '尃', role: 'phonetic' }
+        ],
         examples: [
           {
             parts: [
@@ -21652,52 +20192,15 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         ]
       },
       {
-        char: '歴',
-        meaning: {
-          en: 'history, career; to pass through',
-          vi: 'lịch - lịch sử; trải qua'
-        },
-        onyomi: ['レキ'],
-        kunyomi: [],
-        components: [],
-        mnemonic: {
-          en: 'Steps 止 that pass one by one through the years: personal history, a career, passing through.',
-          vi: 'Những bước chân 止 lần lượt đi qua năm tháng: lý lịch, quá trình, trải qua.'
-        },
-        examples: [
-          {
-            parts: [
-              { text: '歴', reading: 'れき' },
-              { text: '史', reading: 'し' }
-            ],
-            meaning: { en: 'history', vi: 'lịch sử' }
-          },
-          {
-            parts: [
-              { text: '学', reading: 'がく' },
-              { text: '歴', reading: 'れき' }
-            ],
-            meaning: { en: 'academic background', vi: 'học vấn, quá trình học' }
-          },
-          {
-            parts: [
-              { text: '歴', reading: 'れき' },
-              { text: '代', reading: 'だい' }
-            ],
-            meaning: { en: 'successive generations', vi: 'các đời, lịch đại' }
-          }
-        ]
-      },
-      {
         char: '群',
         meaning: { en: 'group, flock, crowd', vi: 'quần - bầy, đàn, nhóm' },
         onyomi: ['グン'],
         kunyomi: ['む.れ', 'むら'],
-        components: [],
-        mnemonic: {
-          en: 'A ruler 君 leading a whole flock of sheep 羊 gathered together: a group, a flock, a crowd.',
-          vi: 'Một vị chúa 君 dẫn cả đàn cừu 羊 tụ lại: bầy, đàn, nhóm.'
-        },
+        components: ['君', '羊'],
+        parts: [
+          { char: '君', role: 'phonetic' },
+          { char: '羊', role: 'radical' }
+        ],
         examples: [
           {
             parts: [
@@ -21727,11 +20230,8 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'well', vi: 'tỉnh - cái giếng' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['い'],
-        components: [],
-        mnemonic: {
-          en: 'A picture of the wooden frame around the mouth of a well: a well.',
-          vi: 'Hình khung gỗ quanh miệng giếng: cái giếng.'
-        },
+        components: ['二'],
+        parts: [{ char: '二', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -21761,16 +20261,12 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'castle', vi: 'thành - thành, thành lũy' },
         onyomi: ['ジョウ'],
         kunyomi: ['しろ'],
-        components: [],
-        mnemonic: {
-          en: 'A great wall of earth 土 built up 成 to defend a stronghold: a castle.',
-          vi: 'Một bức tường đất 土 lớn dựng nên 成 để phòng thủ: thành, thành lũy.'
-        },
+        components: ['土', '成'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '成', role: 'phonetic' }
+        ],
         examples: [
-          {
-            parts: [{ text: '城', reading: 'しろ' }],
-            meaning: { en: 'castle', vi: 'tòa thành' }
-          },
           {
             parts: [
               { text: '城', reading: 'じょう' },
@@ -21785,6 +20281,13834 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '城', reading: 'しろ' }
             ],
             meaning: { en: 'castle (polite)', vi: 'tòa thành' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Place-name kanji (1)',
+      vi: 'Chữ địa danh (1)'
+    },
+    kanji: [
+      {
+        char: '茨',
+        meaning: { en: 'thorny plant; (Ibaraki)', vi: 'tì - cây gai; (Ibaraki)' },
+        onyomi: ['シ'],
+        kunyomi: ['いばら'],
+        components: ['艹', '次'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '次', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '茨', reading: 'いば' },
+              { text: '城', reading: 'らき' }
+            ],
+            meaning: { en: 'Ibaraki (prefecture)', vi: 'tỉnh Ibaraki' }
+          },
+          {
+            parts: [
+              { text: '茨', reading: 'いばら' },
+              { text: 'の', reading: 'の' },
+              { text: '道', reading: 'みち' }
+            ],
+            meaning: { en: 'thorny path', vi: 'con đường gai góc' }
+          }
+        ]
+      },
+      {
+        char: '岡',
+        meaning: { en: 'hill; (place names)', vi: 'cương - gò đồi; (địa danh)' },
+        onyomi: ['コウ'],
+        kunyomi: ['おか'],
+        components: ['山'],
+        parts: [{ char: '山', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '岡', reading: 'おか' },
+              { text: '山', reading: 'やま' }
+            ],
+            meaning: { en: 'Okayama', vi: 'Okayama' }
+          },
+          {
+            parts: [
+              { text: '福', reading: 'ふく' },
+              { text: '岡', reading: 'おか' }
+            ],
+            meaning: { en: 'Fukuoka', vi: 'Fukuoka' }
+          },
+          {
+            parts: [
+              { text: '静', reading: 'しず' },
+              { text: '岡', reading: 'おか' }
+            ],
+            meaning: { en: 'Shizuoka', vi: 'Shizuoka' }
+          }
+        ]
+      },
+      {
+        char: '沖',
+        meaning: { en: 'open sea, offshore', vi: 'trùng - ngoài khơi' },
+        onyomi: ['チュウ'],
+        kunyomi: ['おき'],
+        components: ['氵', '中'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '中', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '沖', reading: 'おき' },
+              { text: '縄', reading: 'なわ' }
+            ],
+            meaning: { en: 'Okinawa', vi: 'Okinawa' }
+          },
+          {
+            parts: [
+              { text: '沖', reading: 'おき' },
+              { text: '合', reading: 'あい' }
+            ],
+            meaning: { en: 'offshore, the open sea', vi: 'ngoài khơi' }
+          }
+        ]
+      },
+      {
+        char: '賀',
+        meaning: { en: 'congratulate; (place names)', vi: 'hạ - chúc mừng; (địa danh)' },
+        onyomi: ['ガ'],
+        kunyomi: [],
+        components: ['加', '貝'],
+        parts: [
+          { char: '加', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '滋', reading: 'し' },
+              { text: '賀', reading: 'が' }
+            ],
+            meaning: { en: 'Shiga', vi: 'Shiga' }
+          },
+          {
+            parts: [
+              { text: '年', reading: 'ねん' },
+              { text: '賀', reading: 'が' },
+              { text: '状', reading: 'じょう' }
+            ],
+            meaning: { en: 'New Year greeting card', vi: 'thiệp chúc Tết' }
+          }
+        ]
+      },
+      {
+        char: '潟',
+        meaning: { en: 'lagoon; (Niigata)', vi: 'tích - đầm phá; (Niigata)' },
+        onyomi: ['セキ'],
+        kunyomi: ['かた'],
+        components: ['氵'],
+        parts: [{ char: '氵', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '新', reading: 'にい' },
+              { text: '潟', reading: 'がた' }
+            ],
+            meaning: { en: 'Niigata', vi: 'Niigata' }
+          },
+          {
+            parts: [
+              { text: '干', reading: 'ひ' },
+              { text: '潟', reading: 'がた' }
+            ],
+            meaning: { en: 'tidal flat', vi: 'bãi triều' }
+          }
+        ]
+      },
+      {
+        char: '岐',
+        meaning: { en: 'fork, branch off', vi: 'kỳ - rẽ nhánh' },
+        onyomi: ['キ'],
+        kunyomi: [],
+        components: ['山', '支'],
+        parts: [
+          { char: '山', role: 'radical' },
+          { char: '支', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '岐', reading: 'ぎ' },
+              { text: '阜', reading: 'ふ' }
+            ],
+            meaning: { en: 'Gifu', vi: 'Gifu' }
+          },
+          {
+            parts: [
+              { text: '分', reading: 'ぶん' },
+              { text: '岐', reading: 'き' }
+            ],
+            meaning: { en: 'branching, divergence', vi: 'sự phân nhánh' }
+          }
+        ]
+      },
+      {
+        char: '熊',
+        meaning: { en: 'bear', vi: 'hùng - con gấu' },
+        onyomi: ['ユウ'],
+        kunyomi: ['くま'],
+        components: ['能', '灬'],
+        parts: [
+          { char: '能', role: 'phonetic' },
+          { char: '灬', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '熊', reading: 'くま' },
+              { text: '本', reading: 'もと' }
+            ],
+            meaning: { en: 'Kumamoto', vi: 'Kumamoto' }
+          },
+          {
+            parts: [
+              { text: '白', reading: 'しろ' },
+              { text: '熊', reading: 'くま' }
+            ],
+            meaning: { en: 'polar bear', vi: 'gấu trắng' }
+          }
+        ]
+      },
+      {
+        char: '香',
+        meaning: { en: 'fragrance, incense', vi: 'hương - hương thơm' },
+        onyomi: ['コウ', 'キョウ'],
+        kunyomi: ['か', 'かお.り', 'かお.る'],
+        components: ['香'],
+        parts: [{ char: '香', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '香', reading: 'か' },
+              { text: '川', reading: 'がわ' }
+            ],
+            meaning: { en: 'Kagawa', vi: 'Kagawa' }
+          },
+          {
+            parts: [
+              { text: '香', reading: 'こう' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'perfume', vi: 'nước hoa' }
+          },
+          {
+            parts: [
+              { text: '香', reading: 'かお' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'fragrance, scent', vi: 'mùi hương' }
+          }
+        ]
+      },
+      {
+        char: '佐',
+        meaning: { en: 'assist; (place names)', vi: 'tá - phụ tá; (địa danh)' },
+        onyomi: ['サ'],
+        kunyomi: [],
+        components: ['亻', '左'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '左', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '佐', reading: 'さ' },
+              { text: '賀', reading: 'が' }
+            ],
+            meaning: { en: 'Saga', vi: 'Saga' }
+          },
+          {
+            parts: [
+              { text: '補', reading: 'ほ' },
+              { text: '佐', reading: 'さ' }
+            ],
+            meaning: { en: 'assistance, aide', vi: 'phụ tá' }
+          }
+        ]
+      },
+      {
+        char: '阪',
+        meaning: { en: 'slope; (Osaka)', vi: 'phản - dốc; (Osaka)' },
+        onyomi: ['ハン'],
+        kunyomi: ['さか'],
+        components: ['阝', '反'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '大', reading: 'おお' },
+              { text: '阪', reading: 'さか' }
+            ],
+            meaning: { en: 'Osaka', vi: 'Osaka' }
+          },
+          {
+            parts: [
+              { text: '京', reading: 'けい' },
+              { text: '阪', reading: 'はん' }
+            ],
+            meaning: { en: 'Kyoto-Osaka area', vi: 'vùng Kyoto - Osaka' }
+          }
+        ]
+      },
+      {
+        char: '崎',
+        meaning: { en: 'cape, promontory', vi: 'khi - mũi đất' },
+        onyomi: ['キ'],
+        kunyomi: ['さき'],
+        components: ['山', '奇'],
+        parts: [
+          { char: '山', role: 'radical' },
+          { char: '奇', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '長', reading: 'なが' },
+              { text: '崎', reading: 'さき' }
+            ],
+            meaning: { en: 'Nagasaki', vi: 'Nagasaki' }
+          },
+          {
+            parts: [
+              { text: '宮', reading: 'みや' },
+              { text: '崎', reading: 'ざき' }
+            ],
+            meaning: { en: 'Miyazaki', vi: 'Miyazaki' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Place-name kanji (2)',
+      vi: 'Chữ địa danh (2)'
+    },
+    kanji: [
+      {
+        char: '埼',
+        meaning: { en: 'cape; (Saitama)', vi: 'khi - mũi đất; (Saitama)' },
+        onyomi: ['キ'],
+        kunyomi: ['さき'],
+        components: ['土', '奇'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '奇', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '埼', reading: 'さい' },
+              { text: '玉', reading: 'たま' }
+            ],
+            meaning: { en: 'Saitama', vi: 'Saitama' }
+          },
+          {
+            parts: [
+              { text: '埼', reading: 'さい' },
+              { text: '玉', reading: 'たま' },
+              { text: '県', reading: 'けん' }
+            ],
+            meaning: { en: 'Saitama prefecture', vi: 'tỉnh Saitama' }
+          }
+        ]
+      },
+      {
+        char: '滋',
+        meaning: { en: 'nourishing; (Shiga)', vi: 'tư - bồi bổ; (Shiga)' },
+        onyomi: ['ジ'],
+        kunyomi: [],
+        components: ['氵'],
+        parts: [{ char: '氵', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '滋', reading: 'し' },
+              { text: '賀', reading: 'が' }
+            ],
+            meaning: { en: 'Shiga', vi: 'Shiga' }
+          },
+          {
+            parts: [
+              { text: '滋', reading: 'じ' },
+              { text: '養', reading: 'よう' }
+            ],
+            meaning: { en: 'nourishment', vi: 'sự bồi bổ' }
+          }
+        ]
+      },
+      {
+        char: '鹿',
+        meaning: { en: 'deer', vi: 'lộc - con hươu, nai' },
+        onyomi: ['ロク'],
+        kunyomi: ['しか', 'か'],
+        components: ['鹿'],
+        parts: [{ char: '鹿', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '鹿', reading: 'か' },
+              { text: '児', reading: 'ご' },
+              { text: '島', reading: 'しま' }
+            ],
+            meaning: { en: 'Kagoshima', vi: 'Kagoshima' }
+          },
+          {
+            parts: [
+              { text: '子', reading: 'こ' },
+              { text: '鹿', reading: 'じか' }
+            ],
+            meaning: { en: 'fawn', vi: 'hươu con' }
+          }
+        ]
+      },
+      {
+        char: '徳',
+        meaning: { en: 'virtue', vi: 'đức - đức hạnh' },
+        onyomi: ['トク'],
+        kunyomi: [],
+        components: ['彳'],
+        parts: [{ char: '彳', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '徳', reading: 'とく' },
+              { text: '島', reading: 'しま' }
+            ],
+            meaning: { en: 'Tokushima', vi: 'Tokushima' }
+          },
+          {
+            parts: [
+              { text: '道', reading: 'どう' },
+              { text: '徳', reading: 'とく' }
+            ],
+            meaning: { en: 'morality', vi: 'đạo đức' }
+          }
+        ]
+      },
+      {
+        char: '栃',
+        meaning: { en: 'horse chestnut; (Tochigi)', vi: 'lịch - cây dẻ ngựa; (Tochigi)' },
+        onyomi: [],
+        kunyomi: ['とち'],
+        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '栃', reading: 'とち' },
+              { text: '木', reading: 'ぎ' }
+            ],
+            meaning: { en: 'Tochigi', vi: 'Tochigi' }
+          },
+          {
+            parts: [
+              { text: '栃', reading: 'とち' },
+              { text: '木', reading: 'ぎ' },
+              { text: '県', reading: 'けん' }
+            ],
+            meaning: { en: 'Tochigi prefecture', vi: 'tỉnh Tochigi' }
+          }
+        ]
+      },
+      {
+        char: '奈',
+        meaning: { en: '(used in place names)', vi: 'nại - (dùng trong địa danh)' },
+        onyomi: ['ナ'],
+        kunyomi: [],
+        components: ['大', '示'],
+        parts: [
+          { char: '大', role: 'radical' },
+          { char: '示', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '奈', reading: 'な' },
+              { text: '良', reading: 'ら' }
+            ],
+            meaning: { en: 'Nara', vi: 'Nara' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'か' },
+              { text: '奈', reading: 'な' },
+              { text: '川', reading: 'がわ' }
+            ],
+            meaning: { en: 'Kanagawa', vi: 'Kanagawa' }
+          }
+        ]
+      },
+      {
+        char: '縄',
+        meaning: { en: 'rope; (Okinawa)', vi: 'thằng - dây thừng; (Okinawa)' },
+        onyomi: ['ジョウ'],
+        kunyomi: ['なわ'],
+        components: ['糸'],
+        parts: [{ char: '糸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '沖', reading: 'おき' },
+              { text: '縄', reading: 'なわ' }
+            ],
+            meaning: { en: 'Okinawa', vi: 'Okinawa' }
+          },
+          {
+            parts: [
+              { text: '縄', reading: 'なわ' },
+              { text: '跳', reading: 'と' },
+              { text: 'び', reading: 'び' }
+            ],
+            meaning: { en: 'jump rope', vi: 'nhảy dây' }
+          }
+        ]
+      },
+      {
+        char: '媛',
+        meaning: { en: 'beautiful woman; (Ehime)', vi: 'viên - mỹ nữ; (Ehime)' },
+        onyomi: ['エン'],
+        kunyomi: ['ひめ'],
+        components: ['女', '爰'],
+        parts: [
+          { char: '女', role: 'radical' },
+          { char: '爰', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '愛', reading: 'え' },
+              { text: '媛', reading: 'ひめ' }
+            ],
+            meaning: { en: 'Ehime', vi: 'Ehime' }
+          },
+          {
+            parts: [
+              { text: '才', reading: 'さい' },
+              { text: '媛', reading: 'えん' }
+            ],
+            meaning: { en: 'talented woman', vi: 'người phụ nữ tài giỏi' }
+          }
+        ]
+      },
+      {
+        char: '富',
+        meaning: { en: 'wealth, abundance', vi: 'phú - giàu có, phong phú' },
+        onyomi: ['フ', 'フウ'],
+        kunyomi: ['と.む', 'とみ'],
+        components: ['宀', '畐'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '畐', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '富', reading: 'と' },
+              { text: '山', reading: 'やま' }
+            ],
+            meaning: { en: 'Toyama', vi: 'Toyama' }
+          },
+          {
+            parts: [
+              { text: '豊', reading: 'ほう' },
+              { text: '富', reading: 'ふ' }
+            ],
+            meaning: { en: 'abundant', vi: 'phong phú' }
+          },
+          {
+            parts: [
+              { text: '富', reading: 'ふ' },
+              { text: '士', reading: 'じ' },
+              { text: '山', reading: 'さん' }
+            ],
+            meaning: { en: 'Mt. Fuji', vi: 'núi Phú Sĩ' }
+          }
+        ]
+      },
+      {
+        char: '阜',
+        meaning: { en: 'hill; (Gifu)', vi: 'phụ - gò đất; (Gifu)' },
+        onyomi: ['フ'],
+        kunyomi: [],
+        components: ['阜'],
+        parts: [{ char: '阜', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '岐', reading: 'ぎ' },
+              { text: '阜', reading: 'ふ' }
+            ],
+            meaning: { en: 'Gifu', vi: 'Gifu' }
+          },
+          {
+            parts: [
+              { text: '岐', reading: 'ぎ' },
+              { text: '阜', reading: 'ふ' },
+              { text: '県', reading: 'けん' }
+            ],
+            meaning: { en: 'Gifu prefecture', vi: 'tỉnh Gifu' }
+          }
+        ]
+      },
+      {
+        char: '梨',
+        meaning: { en: 'pear', vi: 'lê - quả lê' },
+        onyomi: ['リ'],
+        kunyomi: ['なし'],
+        components: ['利', '木'],
+        parts: [
+          { char: '利', role: 'phonetic' },
+          { char: '木', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '山', reading: 'やま' },
+              { text: '梨', reading: 'なし' }
+            ],
+            meaning: { en: 'Yamanashi', vi: 'Yamanashi' }
+          },
+          {
+            parts: [
+              { text: '洋', reading: 'よう' },
+              { text: '梨', reading: 'なし' }
+            ],
+            meaning: { en: 'western pear', vi: 'lê tây' }
+          }
+        ]
+      }
+    ]
+  }
+]);
+
+/**
+ * Grade 5 Jōyō kanji (193 characters), authored by hand in ordered lessons
+ * (~10 per lesson as a loose target, not fixed). Add new lessons in order.
+ */
+export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
+  {
+    title: {
+      en: 'Feelings & disposition',
+      vi: 'Cảm xúc & tâm tính'
+    },
+    kanji: [
+      {
+        char: '情',
+        meaning: { en: 'emotion, feeling; situation', vi: 'tình - tình cảm; tình huống' },
+        onyomi: ['ジョウ', 'セイ'],
+        kunyomi: ['なさ.け'],
+        components: ['忄', '青'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '青', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '感', reading: 'かん' },
+              { text: '情', reading: 'じょう' }
+            ],
+            meaning: { en: 'emotion, feeling', vi: 'cảm xúc' }
+          },
+          {
+            parts: [
+              { text: '表', reading: 'ひょう' },
+              { text: '情', reading: 'じょう' }
+            ],
+            meaning: { en: 'facial expression', vi: 'biểu cảm, nét mặt' }
+          },
+          {
+            parts: [
+              { text: '情', reading: 'じょう' },
+              { text: '報', reading: 'ほう' }
+            ],
+            meaning: { en: 'information', vi: 'thông tin' }
+          }
+        ]
+      },
+      {
+        char: '性',
+        meaning: {
+          en: 'nature, quality; sex',
+          vi: 'tính - bản tính; tính chất; giới tính'
+        },
+        onyomi: ['セイ', 'ショウ'],
+        kunyomi: [],
+        components: ['忄', '生'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '生', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '性', reading: 'せい' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'personality, character', vi: 'tính cách' }
+          },
+          {
+            parts: [
+              { text: '男', reading: 'だん' },
+              { text: '性', reading: 'せい' }
+            ],
+            meaning: { en: 'male', vi: 'nam giới' }
+          },
+          {
+            parts: [
+              { text: '女', reading: 'じょ' },
+              { text: '性', reading: 'せい' }
+            ],
+            meaning: { en: 'female', vi: 'nữ giới' }
+          }
+        ]
+      },
+      {
+        char: '快',
+        meaning: { en: 'pleasant, comfortable', vi: 'khoái - dễ chịu, sảng khoái' },
+        onyomi: ['カイ'],
+        kunyomi: ['こころよ.い'],
+        components: ['忄', '夬'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '夬', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '快', reading: 'こころよ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'pleasant, agreeable', vi: 'dễ chịu' }
+          },
+          {
+            parts: [
+              { text: '快', reading: 'かい' },
+              { text: '晴', reading: 'せい' }
+            ],
+            meaning: { en: 'clear, fine weather', vi: 'trời quang đãng' }
+          },
+          {
+            parts: [
+              { text: '全', reading: 'ぜん' },
+              { text: '快', reading: 'かい' }
+            ],
+            meaning: { en: 'full recovery', vi: 'khỏi hẳn (bệnh)' }
+          }
+        ]
+      },
+      {
+        char: '応',
+        meaning: { en: 'to respond, to comply', vi: 'ứng - đáp ứng; phản ứng' },
+        onyomi: ['オウ'],
+        kunyomi: ['こた.える'],
+        components: ['广', '心'],
+        parts: [
+          { char: '广', role: 'other' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '応', reading: 'おう' },
+              { text: 'じ', reading: 'じ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to respond, to comply', vi: 'đáp ứng, hưởng ứng' }
+          },
+          {
+            parts: [
+              { text: '応', reading: 'おう' },
+              { text: '用', reading: 'よう' }
+            ],
+            meaning: { en: 'application, putting to use', vi: 'ứng dụng' }
+          },
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '応', reading: 'のう' }
+            ],
+            meaning: { en: 'reaction, response', vi: 'phản ứng' }
+          }
+        ]
+      },
+      {
+        char: '慣',
+        meaning: { en: 'to get used to; custom', vi: 'quán - quen; thói quen' },
+        onyomi: ['カン'],
+        kunyomi: ['な.れる', 'な.らす'],
+        components: ['忄', '貫'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '貫', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '慣', reading: 'な' },
+              { text: 'れ', reading: 'れ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to get used to', vi: 'quen với' }
+          },
+          {
+            parts: [
+              { text: '習', reading: 'しゅう' },
+              { text: '慣', reading: 'かん' }
+            ],
+            meaning: { en: 'habit, custom', vi: 'thói quen, tập quán' }
+          },
+          {
+            parts: [
+              { text: '慣', reading: 'かん' },
+              { text: '例', reading: 'れい' }
+            ],
+            meaning: { en: 'custom, precedent', vi: 'lệ thường, thông lệ' }
+          }
+        ]
+      },
+      {
+        char: '志',
+        meaning: { en: 'will, aspiration, intention', vi: 'chí - ý chí, chí hướng' },
+        onyomi: ['シ'],
+        kunyomi: ['こころざ.す', 'こころざし'],
+        components: ['士', '心'],
+        parts: [
+          { char: '士', role: 'other' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '志', reading: 'こころざ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to aspire, set one’s mind on', vi: 'nuôi chí, hướng tới' }
+          },
+          {
+            parts: [
+              { text: '意', reading: 'い' },
+              { text: '志', reading: 'し' }
+            ],
+            meaning: { en: 'will, volition', vi: 'ý chí' }
+          },
+          {
+            parts: [
+              { text: '志', reading: 'し' },
+              { text: '望', reading: 'ぼう' }
+            ],
+            meaning: { en: 'aspiration, wish (of choice)', vi: 'nguyện vọng' }
+          }
+        ]
+      },
+      {
+        char: '態',
+        meaning: { en: 'attitude; state, condition', vi: 'thái - thái độ; trạng thái' },
+        onyomi: ['タイ'],
+        kunyomi: [],
+        components: ['能', '心'],
+        parts: [
+          { char: '能', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '態', reading: 'たい' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'attitude, manner', vi: 'thái độ' }
+          },
+          {
+            parts: [
+              { text: '状', reading: 'じょう' },
+              { text: '態', reading: 'たい' }
+            ],
+            meaning: { en: 'state, condition', vi: 'trạng thái, tình trạng' }
+          },
+          {
+            parts: [
+              { text: '実', reading: 'じっ' },
+              { text: '態', reading: 'たい' }
+            ],
+            meaning: { en: 'actual state of things', vi: 'thực trạng' }
+          }
+        ]
+      },
+      {
+        char: '迷',
+        meaning: {
+          en: 'to be lost, to stray; to hesitate',
+          vi: 'mê - lạc; phân vân; mê muội'
+        },
+        onyomi: ['メイ'],
+        kunyomi: ['まよ.う'],
+        components: ['辶', '米'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '米', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '迷', reading: 'まよ' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to get lost, to hesitate', vi: 'lạc; phân vân' }
+          },
+          {
+            parts: [
+              { text: '迷', reading: 'まい' },
+              { text: '子', reading: 'ご' }
+            ],
+            meaning: { en: 'lost child', vi: 'trẻ lạc' }
+          },
+          {
+            parts: [
+              { text: '迷', reading: 'めい' },
+              { text: '路', reading: 'ろ' }
+            ],
+            meaning: { en: 'maze, labyrinth', vi: 'mê cung' }
+          }
+        ]
+      },
+      {
+        char: '夢',
+        meaning: { en: 'dream', vi: 'mộng - giấc mơ' },
+        onyomi: ['ム'],
+        kunyomi: ['ゆめ'],
+        components: ['夕'],
+        parts: [{ char: '夕', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '初', reading: 'はつ' },
+              { text: '夢', reading: 'ゆめ' }
+            ],
+            meaning: { en: 'first dream of the new year', vi: 'giấc mơ đầu năm' }
+          },
+          {
+            parts: [
+              { text: '夢', reading: 'む' },
+              { text: '中', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'engrossed, absorbed', vi: 'mê mải, say sưa' }
+          },
+          {
+            parts: [
+              { text: '悪', reading: 'あく' },
+              { text: '夢', reading: 'む' }
+            ],
+            meaning: { en: 'nightmare', vi: 'ác mộng' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Government & economy',
+      vi: 'Chính trị & kinh tế'
+    },
+    kanji: [
+      {
+        char: '政',
+        meaning: { en: 'politics, government', vi: 'chính - chính trị' },
+        onyomi: ['セイ', 'ショウ'],
+        kunyomi: ['まつりごと'],
+        components: ['正', '攵'],
+        parts: [
+          { char: '正', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '政', reading: 'せい' },
+              { text: '治', reading: 'じ' }
+            ],
+            meaning: { en: 'politics', vi: 'chính trị' }
+          },
+          {
+            parts: [
+              { text: '政', reading: 'せい' },
+              { text: '府', reading: 'ふ' }
+            ],
+            meaning: { en: 'government', vi: 'chính phủ' }
+          },
+          {
+            parts: [
+              { text: '行', reading: 'ぎょう' },
+              { text: '政', reading: 'せい' }
+            ],
+            meaning: { en: 'administration', vi: 'hành chính' }
+          }
+        ]
+      },
+      {
+        char: '制',
+        meaning: { en: 'system, control; rule', vi: 'chế - chế độ; kiểm soát' },
+        onyomi: ['セイ'],
+        kunyomi: [],
+        components: ['未', '刂'],
+        parts: [
+          { char: '未', role: 'semantic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '制', reading: 'せい' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'system, institution', vi: 'chế độ' }
+          },
+          {
+            parts: [
+              { text: '制', reading: 'せい' },
+              { text: '服', reading: 'ふく' }
+            ],
+            meaning: { en: 'uniform', vi: 'đồng phục' }
+          },
+          {
+            parts: [
+              { text: '強', reading: 'きょう' },
+              { text: '制', reading: 'せい' }
+            ],
+            meaning: { en: 'compulsion, coercion', vi: 'cưỡng chế' }
+          }
+        ]
+      },
+      {
+        char: '統',
+        meaning: { en: 'unite, govern; overall', vi: 'thống - thống nhất, thống lĩnh' },
+        onyomi: ['トウ'],
+        kunyomi: ['す.べる'],
+        components: ['糸', '充'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '充', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '伝', reading: 'でん' },
+              { text: '統', reading: 'とう' }
+            ],
+            meaning: { en: 'tradition', vi: 'truyền thống' }
+          },
+          {
+            parts: [
+              { text: '統', reading: 'とう' },
+              { text: '一', reading: 'いつ' }
+            ],
+            meaning: { en: 'unification', vi: 'thống nhất' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '統', reading: 'とう' },
+              { text: '領', reading: 'りょう' }
+            ],
+            meaning: { en: 'president', vi: 'tổng thống' }
+          }
+        ]
+      },
+      {
+        char: '領',
+        meaning: { en: 'territory, jurisdiction', vi: 'lĩnh - lãnh thổ; lĩnh hội' },
+        onyomi: ['リョウ'],
+        kunyomi: [],
+        components: ['令', '頁'],
+        parts: [
+          { char: '令', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '統', reading: 'とう' },
+              { text: '領', reading: 'りょう' }
+            ],
+            meaning: { en: 'president', vi: 'tổng thống' }
+          },
+          {
+            parts: [
+              { text: '領', reading: 'りょう' },
+              { text: '土', reading: 'ど' }
+            ],
+            meaning: { en: 'territory', vi: 'lãnh thổ' }
+          },
+          {
+            parts: [
+              { text: '要', reading: 'よう' },
+              { text: '領', reading: 'りょう' }
+            ],
+            meaning: { en: 'the main point, the knack', vi: 'điểm cốt yếu, bí quyết' }
+          }
+        ]
+      },
+      {
+        char: '経',
+        meaning: { en: 'pass through; manage; sutra', vi: 'kinh - trải qua; kinh tế; kinh sách' },
+        onyomi: ['ケイ', 'キョウ'],
+        kunyomi: ['へ.る'],
+        components: ['糸', '圣'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '圣', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '経', reading: 'けい' },
+              { text: '済', reading: 'ざい' }
+            ],
+            meaning: { en: 'economy', vi: 'kinh tế' }
+          },
+          {
+            parts: [
+              { text: '経', reading: 'けい' },
+              { text: '験', reading: 'けん' }
+            ],
+            meaning: { en: 'experience', vi: 'kinh nghiệm' }
+          },
+          {
+            parts: [
+              { text: '経', reading: 'た' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: '(time) to pass', vi: '(thời gian) trôi qua' }
+          }
+        ]
+      },
+      {
+        char: '営',
+        meaning: { en: 'run (a business), manage', vi: 'doanh - kinh doanh, điều hành' },
+        onyomi: ['エイ'],
+        kunyomi: ['いとな.む'],
+        components: ['冖', '口'],
+        parts: [
+          { char: '冖', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '営', reading: 'えい' },
+              { text: '業', reading: 'ぎょう' }
+            ],
+            meaning: { en: 'business (operation)', vi: 'kinh doanh, mở cửa (bán hàng)' }
+          },
+          {
+            parts: [
+              { text: '経', reading: 'けい' },
+              { text: '営', reading: 'えい' }
+            ],
+            meaning: { en: 'management', vi: 'quản lý, kinh doanh' }
+          },
+          {
+            parts: [
+              { text: '営', reading: 'いとな' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to run, to conduct', vi: 'điều hành, tiến hành' }
+          }
+        ]
+      },
+      {
+        char: '費',
+        meaning: { en: 'expense, cost; spend', vi: 'phí - chi phí; tiêu tốn' },
+        onyomi: ['ヒ'],
+        kunyomi: ['つい.やす'],
+        components: ['弗', '貝'],
+        parts: [
+          { char: '弗', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '費', reading: 'ひ' },
+              { text: '用', reading: 'よう' }
+            ],
+            meaning: { en: 'cost, expense', vi: 'chi phí' }
+          },
+          {
+            parts: [
+              { text: '学', reading: 'がく' },
+              { text: '費', reading: 'ひ' }
+            ],
+            meaning: { en: 'school fees, tuition', vi: 'học phí' }
+          },
+          {
+            parts: [
+              { text: '消', reading: 'しょう' },
+              { text: '費', reading: 'ひ' }
+            ],
+            meaning: { en: 'consumption', vi: 'tiêu thụ' }
+          }
+        ]
+      },
+      {
+        char: '税',
+        meaning: { en: 'tax, duty', vi: 'thuế - thuế' },
+        onyomi: ['ゼイ'],
+        kunyomi: [],
+        components: ['禾', '兌'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '兌', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '税', reading: 'ぜい' },
+              { text: '金', reading: 'きん' }
+            ],
+            meaning: { en: 'tax (money)', vi: 'tiền thuế' }
+          },
+          {
+            parts: [
+              { text: '消', reading: 'しょう' },
+              { text: '費', reading: 'ひ' },
+              { text: '税', reading: 'ぜい' }
+            ],
+            meaning: { en: 'consumption tax', vi: 'thuế tiêu thụ' }
+          },
+          {
+            parts: [
+              { text: '税', reading: 'ぜい' },
+              { text: '関', reading: 'かん' }
+            ],
+            meaning: { en: 'customs', vi: 'hải quan' }
+          }
+        ]
+      },
+      {
+        char: '賞',
+        meaning: { en: 'prize, reward; praise', vi: 'thưởng - phần thưởng; khen thưởng' },
+        onyomi: ['ショウ'],
+        kunyomi: [],
+        components: ['尚', '貝'],
+        parts: [
+          { char: '尚', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '賞', reading: 'しょう' },
+              { text: '金', reading: 'きん' }
+            ],
+            meaning: { en: 'prize money', vi: 'tiền thưởng' }
+          },
+          {
+            parts: [
+              { text: '受', reading: 'じゅ' },
+              { text: '賞', reading: 'しょう' }
+            ],
+            meaning: { en: 'winning a prize', vi: 'nhận giải, đoạt giải' }
+          },
+          {
+            parts: [
+              { text: '賞', reading: 'しょう' },
+              { text: '状', reading: 'じょう' }
+            ],
+            meaning: { en: 'certificate of merit', vi: 'giấy khen' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Water & liquids',
+      vi: 'Nước & chất lỏng'
+    },
+    kanji: [
+      {
+        char: '液',
+        meaning: { en: 'liquid, fluid', vi: 'dịch - chất lỏng' },
+        onyomi: ['エキ'],
+        kunyomi: [],
+        components: ['氵', '夜'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '夜', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '液', reading: 'えき' },
+              { text: '体', reading: 'たい' }
+            ],
+            meaning: { en: 'liquid', vi: 'chất lỏng' }
+          },
+          {
+            parts: [
+              { text: '血', reading: 'けつ' },
+              { text: '液', reading: 'えき' }
+            ],
+            meaning: { en: 'blood', vi: 'máu, huyết dịch' }
+          },
+          {
+            parts: [
+              { text: '液', reading: 'えき' },
+              { text: '晶', reading: 'しょう' }
+            ],
+            meaning: { en: 'liquid crystal (LCD)', vi: 'tinh thể lỏng (LCD)' }
+          }
+        ]
+      },
+      {
+        char: '永',
+        meaning: { en: 'eternal, long', vi: 'vĩnh - lâu dài, vĩnh viễn' },
+        onyomi: ['エイ'],
+        kunyomi: ['なが.い'],
+        components: ['水'],
+        parts: [{ char: '水', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '永', reading: 'えい' },
+              { text: '遠', reading: 'えん' }
+            ],
+            meaning: { en: 'eternity', vi: 'vĩnh viễn' }
+          },
+          {
+            parts: [
+              { text: '永', reading: 'えい' },
+              { text: '久', reading: 'きゅう' }
+            ],
+            meaning: { en: 'permanence', vi: 'vĩnh cửu' }
+          },
+          {
+            parts: [
+              { text: '永', reading: 'なが' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'long, everlasting', vi: 'dài lâu' }
+          }
+        ]
+      },
+      {
+        char: '河',
+        meaning: { en: 'river', vi: 'hà - sông (lớn)' },
+        onyomi: ['カ'],
+        kunyomi: ['かわ'],
+        components: ['氵', '可'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '可', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '河', reading: 'か' },
+              { text: '川', reading: 'せん' }
+            ],
+            meaning: { en: 'rivers', vi: 'sông ngòi' }
+          },
+          {
+            parts: [
+              { text: '運', reading: 'うん' },
+              { text: '河', reading: 'が' }
+            ],
+            meaning: { en: 'canal', vi: 'kênh đào' }
+          },
+          {
+            parts: [
+              { text: '銀', reading: 'ぎん' },
+              { text: '河', reading: 'が' }
+            ],
+            meaning: { en: 'the Milky Way, galaxy', vi: 'dải Ngân Hà' }
+          }
+        ]
+      },
+      {
+        char: '混',
+        meaning: { en: 'mix, blend; be crowded', vi: 'hỗn - trộn lẫn; hỗn tạp' },
+        onyomi: ['コン'],
+        kunyomi: ['ま.じる', 'ま.ぜる', 'こ.む'],
+        components: ['氵', '昆'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '昆', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '混', reading: 'こん' },
+              { text: '雑', reading: 'ざつ' }
+            ],
+            meaning: { en: 'congestion, crowding', vi: 'đông đúc, hỗn tạp' }
+          },
+          {
+            parts: [
+              { text: '混', reading: 'こん' },
+              { text: '合', reading: 'ごう' }
+            ],
+            meaning: { en: 'mixture', vi: 'hỗn hợp' }
+          },
+          {
+            parts: [
+              { text: '混', reading: 'ま' },
+              { text: 'ぜる', reading: 'ぜる' }
+            ],
+            meaning: { en: 'to mix (something)', vi: 'trộn, pha' }
+          }
+        ]
+      },
+      {
+        char: '潔',
+        meaning: { en: 'pure, clean', vi: 'khiết - trong sạch' },
+        onyomi: ['ケツ'],
+        kunyomi: ['いさぎよ.い'],
+        components: ['氵', '絜'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '絜', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '清', reading: 'せい' },
+              { text: '潔', reading: 'けつ' }
+            ],
+            meaning: { en: 'clean, hygienic', vi: 'sạch sẽ' }
+          },
+          {
+            parts: [
+              { text: '潔', reading: 'けっ' },
+              { text: '白', reading: 'ぱく' }
+            ],
+            meaning: { en: 'innocence, purity', vi: 'trong sạch, vô tội' }
+          },
+          {
+            parts: [
+              { text: '簡', reading: 'かん' },
+              { text: '潔', reading: 'けつ' }
+            ],
+            meaning: { en: 'concise, terse', vi: 'ngắn gọn, súc tích' }
+          }
+        ]
+      },
+      {
+        char: '減',
+        meaning: { en: 'decrease, reduce', vi: 'giảm - giảm bớt' },
+        onyomi: ['ゲン'],
+        kunyomi: ['へ.る', 'へ.らす'],
+        components: ['氵', '咸'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '咸', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '減', reading: 'げん' },
+              { text: '少', reading: 'しょう' }
+            ],
+            meaning: { en: 'decrease, reduction', vi: 'giảm thiểu' }
+          },
+          {
+            parts: [
+              { text: '加', reading: 'か' },
+              { text: '減', reading: 'げん' }
+            ],
+            meaning: { en: 'degree, adjustment', vi: 'mức độ, sự điều chỉnh' }
+          },
+          {
+            parts: [
+              { text: '減', reading: 'へ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to decrease', vi: 'giảm đi' }
+          }
+        ]
+      },
+      {
+        char: '測',
+        meaning: { en: 'measure, gauge', vi: 'trắc - đo lường' },
+        onyomi: ['ソク'],
+        kunyomi: ['はか.る'],
+        components: ['氵', '則'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '則', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '測', reading: 'そく' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'measurement', vi: 'sự đo đạc' }
+          },
+          {
+            parts: [
+              { text: '観', reading: 'かん' },
+              { text: '測', reading: 'そく' }
+            ],
+            meaning: { en: 'observation', vi: 'quan trắc' }
+          },
+          {
+            parts: [
+              { text: '測', reading: 'はか' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to measure', vi: 'đo' }
+          }
+        ]
+      },
+      {
+        char: '演',
+        meaning: { en: 'perform, act; lecture', vi: 'diễn - biểu diễn; diễn thuyết' },
+        onyomi: ['エン'],
+        kunyomi: [],
+        components: ['氵', '寅'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '寅', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '演', reading: 'えん' },
+              { text: '技', reading: 'ぎ' }
+            ],
+            meaning: { en: 'acting, performance', vi: 'diễn xuất' }
+          },
+          {
+            parts: [
+              { text: '講', reading: 'こう' },
+              { text: '演', reading: 'えん' }
+            ],
+            meaning: { en: 'lecture', vi: 'buổi diễn thuyết' }
+          },
+          {
+            parts: [
+              { text: '演', reading: 'えん' },
+              { text: '奏', reading: 'そう' }
+            ],
+            meaning: { en: 'musical performance', vi: 'biểu diễn nhạc' }
+          }
+        ]
+      },
+      {
+        char: '準',
+        meaning: { en: 'standard; semi-, quasi-', vi: 'chuẩn - tiêu chuẩn; bán, sắp' },
+        onyomi: ['ジュン'],
+        kunyomi: [],
+        components: ['氵', '隼'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '隼', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '準', reading: 'じゅん' },
+              { text: '備', reading: 'び' }
+            ],
+            meaning: { en: 'preparation', vi: 'chuẩn bị' }
+          },
+          {
+            parts: [
+              { text: '標', reading: 'ひょう' },
+              { text: '準', reading: 'じゅん' }
+            ],
+            meaning: { en: 'standard, norm', vi: 'tiêu chuẩn' }
+          },
+          {
+            parts: [
+              { text: '水', reading: 'すい' },
+              { text: '準', reading: 'じゅん' }
+            ],
+            meaning: { en: 'level', vi: 'mức, trình độ' }
+          }
+        ]
+      },
+      {
+        char: '益',
+        meaning: { en: 'benefit, profit', vi: 'ích - lợi ích' },
+        onyomi: ['エキ', 'ヤク'],
+        kunyomi: [],
+        components: ['八', '皿'],
+        parts: [
+          { char: '八', role: 'other' },
+          { char: '皿', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '利', reading: 'り' },
+              { text: '益', reading: 'えき' }
+            ],
+            meaning: { en: 'profit, gain', vi: 'lợi nhuận' }
+          },
+          {
+            parts: [
+              { text: '有', reading: 'ゆう' },
+              { text: '益', reading: 'えき' }
+            ],
+            meaning: { en: 'beneficial, useful', vi: 'hữu ích' }
+          },
+          {
+            parts: [
+              { text: '益', reading: 'えき' },
+              { text: '虫', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'beneficial insect', vi: 'côn trùng có ích' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Production & materials',
+      vi: 'Sản xuất & vật liệu'
+    },
+    kanji: [
+      {
+        char: '造',
+        meaning: { en: 'make, build, create', vi: 'tạo - chế tạo, kiến tạo' },
+        onyomi: ['ゾウ'],
+        kunyomi: ['つく.る'],
+        components: ['辶', '告'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '告', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '製', reading: 'せい' },
+              { text: '造', reading: 'ぞう' }
+            ],
+            meaning: { en: 'manufacture', vi: 'chế tạo, sản xuất' }
+          },
+          {
+            parts: [
+              { text: '構', reading: 'こう' },
+              { text: '造', reading: 'ぞう' }
+            ],
+            meaning: { en: 'structure', vi: 'cấu trúc' }
+          },
+          {
+            parts: [
+              { text: '造', reading: 'つく' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to make, to build', vi: 'chế tạo, làm ra' }
+          }
+        ]
+      },
+      {
+        char: '構',
+        meaning: { en: 'construct, set up; posture', vi: 'cấu - cấu tạo, dựng nên' },
+        onyomi: ['コウ'],
+        kunyomi: ['かま.える', 'かま.う'],
+        components: ['木', '冓'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '冓', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '構', reading: 'こう' },
+              { text: '造', reading: 'ぞう' }
+            ],
+            meaning: { en: 'structure', vi: 'cấu trúc' }
+          },
+          {
+            parts: [
+              { text: '構', reading: 'こう' },
+              { text: '成', reading: 'せい' }
+            ],
+            meaning: { en: 'composition, makeup', vi: 'cấu thành' }
+          },
+          {
+            parts: [
+              { text: '結', reading: 'けっ' },
+              { text: '構', reading: 'こう' }
+            ],
+            meaning: { en: 'quite; fine, no thanks', vi: 'khá; được rồi (từ chối)' }
+          }
+        ]
+      },
+      {
+        char: '築',
+        meaning: { en: 'build, construct', vi: 'trúc - xây dựng' },
+        onyomi: ['チク'],
+        kunyomi: ['きず.く'],
+        components: ['竹', '木'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '木', role: 'semantic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '建', reading: 'けん' },
+              { text: '築', reading: 'ちく' }
+            ],
+            meaning: { en: 'architecture, construction', vi: 'kiến trúc, xây dựng' }
+          },
+          {
+            parts: [
+              { text: '新', reading: 'しん' },
+              { text: '築', reading: 'ちく' }
+            ],
+            meaning: { en: 'newly built', vi: 'xây mới' }
+          },
+          {
+            parts: [
+              { text: '築', reading: 'きず' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to build up, to establish', vi: 'gây dựng' }
+          }
+        ]
+      },
+      {
+        char: '製',
+        meaning: { en: 'manufacture, make', vi: 'chế - chế tạo (sản phẩm)' },
+        onyomi: ['セイ'],
+        kunyomi: [],
+        components: ['制', '衣'],
+        parts: [
+          { char: '制', role: 'phonetic' },
+          { char: '衣', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '製', reading: 'せい' },
+              { text: '品', reading: 'ひん' }
+            ],
+            meaning: { en: 'product, goods', vi: 'sản phẩm' }
+          },
+          {
+            parts: [
+              { text: '製', reading: 'せい' },
+              { text: '作', reading: 'さく' }
+            ],
+            meaning: { en: 'production (of works)', vi: 'chế tác, sản xuất' }
+          },
+          {
+            parts: [
+              { text: '日', reading: 'に' },
+              { text: '本', reading: 'ほん' },
+              { text: '製', reading: 'せい' }
+            ],
+            meaning: { en: 'made in Japan', vi: 'sản xuất tại Nhật' }
+          }
+        ]
+      },
+      {
+        char: '織',
+        meaning: { en: 'weave', vi: 'chức - dệt' },
+        onyomi: ['ショク', 'シキ'],
+        kunyomi: ['お.る'],
+        components: ['糸', '戠'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '戠', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '組', reading: 'そ' },
+              { text: '織', reading: 'しき' }
+            ],
+            meaning: { en: 'organization', vi: 'tổ chức' }
+          },
+          {
+            parts: [
+              { text: '織', reading: 'おり' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'woven cloth, textile', vi: 'vải dệt' }
+          },
+          {
+            parts: [
+              { text: '織', reading: 'お' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to weave', vi: 'dệt' }
+          }
+        ]
+      },
+      {
+        char: '編',
+        meaning: { en: 'knit, compile, edit', vi: 'biên - đan; biên soạn' },
+        onyomi: ['ヘン'],
+        kunyomi: ['あ.む'],
+        components: ['糸', '扁'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '扁', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '編', reading: 'へん' },
+              { text: '集', reading: 'しゅう' }
+            ],
+            meaning: { en: 'editing', vi: 'biên tập' }
+          },
+          {
+            parts: [
+              { text: '編', reading: 'へん' },
+              { text: '成', reading: 'せい' }
+            ],
+            meaning: { en: 'formation, organizing', vi: 'biên chế, tổ chức' }
+          },
+          {
+            parts: [
+              { text: '編', reading: 'あ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to knit, to braid', vi: 'đan, tết' }
+          }
+        ]
+      },
+      {
+        char: '素',
+        meaning: { en: 'element; plain, bare', vi: 'tố - yếu tố; mộc mạc' },
+        onyomi: ['ソ', 'ス'],
+        kunyomi: [],
+        components: ['糸'],
+        parts: [{ char: '糸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '素', reading: 'そ' },
+              { text: '材', reading: 'ざい' }
+            ],
+            meaning: { en: 'material', vi: 'nguyên liệu, chất liệu' }
+          },
+          {
+            parts: [
+              { text: '要', reading: 'よう' },
+              { text: '素', reading: 'そ' }
+            ],
+            meaning: { en: 'element, factor', vi: 'yếu tố' }
+          },
+          {
+            parts: [
+              { text: '素', reading: 'す' },
+              { text: '直', reading: 'なお' }
+            ],
+            meaning: { en: 'obedient, honest', vi: 'ngoan ngoãn, thật thà' }
+          }
+        ]
+      },
+      {
+        char: '綿',
+        meaning: { en: 'cotton', vi: 'miên - bông (vải)' },
+        onyomi: ['メン'],
+        kunyomi: ['わた'],
+        components: ['糸', '白', '巾'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '白', role: 'other' },
+          { char: '巾', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '木', reading: 'も' },
+              { text: '綿', reading: 'めん' }
+            ],
+            meaning: { en: 'cotton (cloth)', vi: 'vải bông' }
+          },
+          {
+            parts: [
+              { text: '綿', reading: 'めん' },
+              { text: '密', reading: 'みつ' }
+            ],
+            meaning: { en: 'detailed, meticulous', vi: 'tỉ mỉ, kỹ càng' }
+          },
+          {
+            parts: [
+              { text: '真', reading: 'ま' },
+              { text: '綿', reading: 'わた' }
+            ],
+            meaning: { en: 'silk floss', vi: 'bông tơ' }
+          }
+        ]
+      },
+      {
+        char: '銅',
+        meaning: { en: 'copper', vi: 'đồng - đồng (kim loại)' },
+        onyomi: ['ドウ'],
+        kunyomi: [],
+        components: ['金', '同'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '同', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '銅', reading: 'どう' },
+              { text: '像', reading: 'ぞう' }
+            ],
+            meaning: { en: 'bronze statue', vi: 'tượng đồng' }
+          },
+          {
+            parts: [
+              { text: '青', reading: 'せい' },
+              { text: '銅', reading: 'どう' }
+            ],
+            meaning: { en: 'bronze', vi: 'đồng thau' }
+          },
+          {
+            parts: [
+              { text: '銅', reading: 'どう' },
+              { text: '山', reading: 'ざん' }
+            ],
+            meaning: { en: 'copper mine', vi: 'mỏ đồng' }
+          }
+        ]
+      },
+      {
+        char: '鉱',
+        meaning: { en: 'ore, mineral', vi: 'khoáng - quặng, khoáng vật' },
+        onyomi: ['コウ'],
+        kunyomi: [],
+        components: ['金', '広'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '広', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '鉱', reading: 'こう' },
+              { text: '物', reading: 'ぶつ' }
+            ],
+            meaning: { en: 'mineral', vi: 'khoáng vật' }
+          },
+          {
+            parts: [
+              { text: '鉱', reading: 'こう' },
+              { text: '石', reading: 'せき' }
+            ],
+            meaning: { en: 'ore', vi: 'quặng' }
+          },
+          {
+            parts: [
+              { text: '鉄', reading: 'てっ' },
+              { text: '鉱', reading: 'こう' }
+            ],
+            meaning: { en: 'iron ore', vi: 'quặng sắt' }
+          }
+        ]
+      },
+      {
+        char: '粉',
+        meaning: { en: 'powder, flour', vi: 'phấn - bột, phấn' },
+        onyomi: ['フン'],
+        kunyomi: ['こ', 'こな'],
+        components: ['米', '分'],
+        parts: [
+          { char: '米', role: 'radical' },
+          { char: '分', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '粉', reading: 'こな' },
+              { text: '薬', reading: 'ぐすり' }
+            ],
+            meaning: { en: 'powdered medicine', vi: 'thuốc bột' }
+          },
+          {
+            parts: [
+              { text: '小', reading: 'こ' },
+              { text: '麦', reading: 'むぎ' },
+              { text: '粉', reading: 'こ' }
+            ],
+            meaning: { en: 'wheat flour', vi: 'bột mì' }
+          },
+          {
+            parts: [
+              { text: '花', reading: 'か' },
+              { text: '粉', reading: 'ふん' }
+            ],
+            meaning: { en: 'pollen', vi: 'phấn hoa' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Study & knowledge',
+      vi: 'Học tập & tri thức'
+    },
+    kanji: [
+      {
+        char: '基',
+        meaning: { en: 'base, foundation', vi: 'cơ - nền tảng, cơ sở' },
+        onyomi: ['キ'],
+        kunyomi: ['もと', 'もとい'],
+        components: ['其', '土'],
+        parts: [
+          { char: '其', role: 'phonetic' },
+          { char: '土', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '基', reading: 'き' },
+              { text: '本', reading: 'ほん' }
+            ],
+            meaning: { en: 'basics, fundamentals', vi: 'cơ bản' }
+          },
+          {
+            parts: [
+              { text: '基', reading: 'き' },
+              { text: '礎', reading: 'そ' }
+            ],
+            meaning: { en: 'foundation, basis', vi: 'nền móng' }
+          },
+          {
+            parts: [
+              { text: '基', reading: 'き' },
+              { text: '準', reading: 'じゅん' }
+            ],
+            meaning: { en: 'standard, criterion', vi: 'chuẩn mực' }
+          }
+        ]
+      },
+      {
+        char: '規',
+        meaning: { en: 'standard, rule; compass', vi: 'quy - quy tắc; com-pa' },
+        onyomi: ['キ'],
+        kunyomi: [],
+        components: ['夫', '見'],
+        parts: [
+          { char: '夫', role: 'other' },
+          { char: '見', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '規', reading: 'き' },
+              { text: '則', reading: 'そく' }
+            ],
+            meaning: { en: 'rule, regulation', vi: 'quy tắc' }
+          },
+          {
+            parts: [
+              { text: '規', reading: 'き' },
+              { text: '模', reading: 'ぼ' }
+            ],
+            meaning: { en: 'scale, scope', vi: 'quy mô' }
+          },
+          {
+            parts: [
+              { text: '定', reading: 'じょう' },
+              { text: '規', reading: 'ぎ' }
+            ],
+            meaning: { en: 'ruler (tool)', vi: 'cây thước' }
+          }
+        ]
+      },
+      {
+        char: '検',
+        meaning: { en: 'examine, inspect', vi: 'kiểm - kiểm tra' },
+        onyomi: ['ケン'],
+        kunyomi: [],
+        components: ['木', '僉'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '僉', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '検', reading: 'けん' },
+              { text: '査', reading: 'さ' }
+            ],
+            meaning: { en: 'inspection, examination', vi: 'kiểm tra, xét nghiệm' }
+          },
+          {
+            parts: [
+              { text: '検', reading: 'けん' },
+              { text: '討', reading: 'とう' }
+            ],
+            meaning: { en: 'consideration, study', vi: 'xem xét, cân nhắc' }
+          },
+          {
+            parts: [
+              { text: '点', reading: 'てん' },
+              { text: '検', reading: 'けん' }
+            ],
+            meaning: { en: 'check-up, inspection', vi: 'kiểm điểm, rà soát' }
+          }
+        ]
+      },
+      {
+        char: '講',
+        meaning: { en: 'lecture, study', vi: 'giảng - giảng giải' },
+        onyomi: ['コウ'],
+        kunyomi: [],
+        components: ['言', '冓'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '冓', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '講', reading: 'こう' },
+              { text: '義', reading: 'ぎ' }
+            ],
+            meaning: { en: 'lecture (class)', vi: 'bài giảng' }
+          },
+          {
+            parts: [
+              { text: '講', reading: 'こう' },
+              { text: '演', reading: 'えん' }
+            ],
+            meaning: { en: 'public lecture', vi: 'buổi diễn thuyết' }
+          },
+          {
+            parts: [
+              { text: '受', reading: 'じゅ' },
+              { text: '講', reading: 'こう' }
+            ],
+            meaning: { en: 'attending a course', vi: 'theo học (khóa)' }
+          }
+        ]
+      },
+      {
+        char: '評',
+        meaning: { en: 'evaluate, criticize', vi: 'bình - phê bình, đánh giá' },
+        onyomi: ['ヒョウ'],
+        kunyomi: [],
+        components: ['言', '平'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '平', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '評', reading: 'ひょう' },
+              { text: '価', reading: 'か' }
+            ],
+            meaning: { en: 'evaluation', vi: 'đánh giá' }
+          },
+          {
+            parts: [
+              { text: '評', reading: 'ひょう' },
+              { text: '判', reading: 'ばん' }
+            ],
+            meaning: { en: 'reputation', vi: 'tiếng tăm, dư luận' }
+          },
+          {
+            parts: [
+              { text: '批', reading: 'ひ' },
+              { text: '評', reading: 'ひょう' }
+            ],
+            meaning: { en: 'criticism, review', vi: 'phê bình' }
+          }
+        ]
+      },
+      {
+        char: '識',
+        meaning: { en: 'knowledge, discernment', vi: 'thức - nhận biết, tri thức' },
+        onyomi: ['シキ'],
+        kunyomi: [],
+        components: ['言', '戠'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '戠', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '知', reading: 'ち' },
+              { text: '識', reading: 'しき' }
+            ],
+            meaning: { en: 'knowledge', vi: 'kiến thức' }
+          },
+          {
+            parts: [
+              { text: '意', reading: 'い' },
+              { text: '識', reading: 'しき' }
+            ],
+            meaning: { en: 'consciousness, awareness', vi: 'ý thức' }
+          },
+          {
+            parts: [
+              { text: '常', reading: 'じょう' },
+              { text: '識', reading: 'しき' }
+            ],
+            meaning: { en: 'common sense', vi: 'thường thức' }
+          }
+        ]
+      },
+      {
+        char: '質',
+        meaning: { en: 'quality; substance', vi: 'chất - chất lượng; bản chất' },
+        onyomi: ['シツ', 'シチ'],
+        kunyomi: [],
+        components: ['斦', '貝'],
+        parts: [
+          { char: '斦', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '質', reading: 'しつ' },
+              { text: '問', reading: 'もん' }
+            ],
+            meaning: { en: 'question', vi: 'câu hỏi' }
+          },
+          {
+            parts: [
+              { text: '品', reading: 'ひん' },
+              { text: '質', reading: 'しつ' }
+            ],
+            meaning: { en: 'quality', vi: 'chất lượng' }
+          },
+          {
+            parts: [
+              { text: '性', reading: 'せい' },
+              { text: '質', reading: 'しつ' }
+            ],
+            meaning: { en: 'nature, property', vi: 'tính chất' }
+          }
+        ]
+      },
+      {
+        char: '修',
+        meaning: { en: 'discipline, master; repair', vi: 'tu - tu dưỡng, rèn; sửa' },
+        onyomi: ['シュウ', 'シュ'],
+        kunyomi: ['おさ.める'],
+        components: ['亻', '攵', '彡'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '攵', role: 'other' },
+          { char: '彡', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '修', reading: 'しゅう' },
+              { text: '理', reading: 'り' }
+            ],
+            meaning: { en: 'repair', vi: 'sửa chữa' }
+          },
+          {
+            parts: [
+              { text: '研', reading: 'けん' },
+              { text: '修', reading: 'しゅう' }
+            ],
+            meaning: { en: 'training, study', vi: 'tu nghiệp, tập huấn' }
+          },
+          {
+            parts: [
+              { text: '修', reading: 'おさ' },
+              { text: 'める', reading: 'める' }
+            ],
+            meaning: { en: 'to master, to cultivate', vi: 'tu dưỡng, học được' }
+          }
+        ]
+      },
+      {
+        char: '述',
+        meaning: { en: 'state, mention', vi: 'thuật - trình bày, thuật lại' },
+        onyomi: ['ジュツ'],
+        kunyomi: ['の.べる'],
+        components: ['辶', '朮'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '朮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '記', reading: 'き' },
+              { text: '述', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'description, statement', vi: 'ghi chép, thuật' }
+          },
+          {
+            parts: [
+              { text: '述', reading: 'じゅつ' },
+              { text: '語', reading: 'ご' }
+            ],
+            meaning: { en: 'predicate (grammar)', vi: 'vị ngữ' }
+          },
+          {
+            parts: [
+              { text: '述', reading: 'の' },
+              { text: 'べる', reading: 'べる' }
+            ],
+            meaning: { en: 'to state, to mention', vi: 'trình bày, nêu' }
+          }
+        ]
+      },
+      {
+        char: '序',
+        meaning: { en: 'order, sequence; preface', vi: 'tự - trình tự; lời tựa' },
+        onyomi: ['ジョ'],
+        kunyomi: [],
+        components: ['广', '予'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '予', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '順', reading: 'じゅん' },
+              { text: '序', reading: 'じょ' }
+            ],
+            meaning: { en: 'order, sequence', vi: 'trình tự' }
+          },
+          {
+            parts: [
+              { text: '序', reading: 'じょ' },
+              { text: '文', reading: 'ぶん' }
+            ],
+            meaning: { en: 'preface, foreword', vi: 'lời tựa' }
+          },
+          {
+            parts: [
+              { text: '秩', reading: 'ちつ' },
+              { text: '序', reading: 'じょ' }
+            ],
+            meaning: { en: 'order, discipline', vi: 'trật tự' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Movement & change',
+      vi: 'Di chuyển & biến đổi'
+    },
+    kanji: [
+      {
+        char: '往',
+        meaning: { en: 'go, journey; past', vi: 'vãng - đi; đã qua' },
+        onyomi: ['オウ'],
+        kunyomi: [],
+        components: ['彳', '主'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '主', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '往', reading: 'おう' },
+              { text: '復', reading: 'ふく' }
+            ],
+            meaning: { en: 'round trip', vi: 'khứ hồi' }
+          },
+          {
+            parts: [
+              { text: '往', reading: 'おう' },
+              { text: '来', reading: 'らい' }
+            ],
+            meaning: { en: 'coming and going, traffic', vi: 'đi lại, qua lại' }
+          },
+          {
+            parts: [
+              { text: '往', reading: 'おう' },
+              { text: '年', reading: 'ねん' }
+            ],
+            meaning: { en: 'years gone by', vi: 'những năm xưa' }
+          }
+        ]
+      },
+      {
+        char: '復',
+        meaning: { en: 'return, restore, repeat', vi: 'phục - trở lại, khôi phục' },
+        onyomi: ['フク'],
+        kunyomi: [],
+        components: ['彳', '复'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '复', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '復', reading: 'ふく' },
+              { text: '習', reading: 'しゅう' }
+            ],
+            meaning: { en: 'review (of lessons)', vi: 'ôn tập' }
+          },
+          {
+            parts: [
+              { text: '回', reading: 'かい' },
+              { text: '復', reading: 'ふく' }
+            ],
+            meaning: { en: 'recovery', vi: 'hồi phục' }
+          },
+          {
+            parts: [
+              { text: '往', reading: 'おう' },
+              { text: '復', reading: 'ふく' }
+            ],
+            meaning: { en: 'round trip', vi: 'khứ hồi' }
+          }
+        ]
+      },
+      {
+        char: '移',
+        meaning: { en: 'move, shift, transfer', vi: 'di - di chuyển, dời' },
+        onyomi: ['イ'],
+        kunyomi: ['うつ.る', 'うつ.す'],
+        components: ['禾', '多'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '多', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '移', reading: 'い' },
+              { text: '動', reading: 'どう' }
+            ],
+            meaning: { en: 'movement, shift', vi: 'di động, di chuyển' }
+          },
+          {
+            parts: [
+              { text: '移', reading: 'い' },
+              { text: '民', reading: 'みん' }
+            ],
+            meaning: { en: 'immigrant, migration', vi: 'di dân' }
+          },
+          {
+            parts: [
+              { text: '移', reading: 'うつ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to move, to shift', vi: 'dời chỗ, chuyển' }
+          }
+        ]
+      },
+      {
+        char: '過',
+        meaning: { en: 'pass, exceed; error', vi: 'quá - đi qua; quá mức' },
+        onyomi: ['カ'],
+        kunyomi: ['す.ぎる', 'す.ごす', 'あやま.つ'],
+        components: ['辶', '咼'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '咼', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '過', reading: 'か' },
+              { text: '去', reading: 'こ' }
+            ],
+            meaning: { en: 'the past', vi: 'quá khứ' }
+          },
+          {
+            parts: [
+              { text: '通', reading: 'つう' },
+              { text: '過', reading: 'か' }
+            ],
+            meaning: { en: 'passing through', vi: 'thông qua, đi qua' }
+          },
+          {
+            parts: [
+              { text: '過', reading: 'す' },
+              { text: 'ぎる', reading: 'ぎる' }
+            ],
+            meaning: { en: 'to pass, to exceed', vi: 'trôi qua, quá' }
+          }
+        ]
+      },
+      {
+        char: '逆',
+        meaning: { en: 'reverse, opposite', vi: 'nghịch - ngược lại' },
+        onyomi: ['ギャク'],
+        kunyomi: ['さか', 'さか.らう'],
+        components: ['辶', '屰'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '屰', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '逆', reading: 'ぎゃく' },
+              { text: '転', reading: 'てん' }
+            ],
+            meaning: { en: 'reversal, turnaround', vi: 'đảo ngược' }
+          },
+          {
+            parts: [
+              { text: '逆', reading: 'ぎゃっ' },
+              { text: '効', reading: 'こう' },
+              { text: '果', reading: 'か' }
+            ],
+            meaning: { en: 'counterproductive effect', vi: 'phản tác dụng' }
+          },
+          {
+            parts: [
+              { text: '逆', reading: 'さか' },
+              { text: 'らう', reading: 'らう' }
+            ],
+            meaning: { en: 'to go against, to defy', vi: 'chống lại, cưỡng lại' }
+          }
+        ]
+      },
+      {
+        char: '増',
+        meaning: { en: 'increase, add', vi: 'tăng - tăng thêm' },
+        onyomi: ['ゾウ'],
+        kunyomi: ['ま.す', 'ふ.える', 'ふ.やす'],
+        components: ['土', '曾'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '曾', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '増', reading: 'ぞう' },
+              { text: '加', reading: 'か' }
+            ],
+            meaning: { en: 'increase', vi: 'sự tăng lên' }
+          },
+          {
+            parts: [
+              { text: '増', reading: 'ぞう' },
+              { text: '減', reading: 'げん' }
+            ],
+            meaning: { en: 'increase and decrease', vi: 'tăng giảm' }
+          },
+          {
+            parts: [
+              { text: '増', reading: 'ふ' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to increase (intransitive)', vi: 'tăng lên' }
+          }
+        ]
+      },
+      {
+        char: '断',
+        meaning: { en: 'cut off; decide; refuse', vi: 'đoạn - cắt đứt; quyết đoán; từ chối' },
+        onyomi: ['ダン'],
+        kunyomi: ['た.つ', 'ことわ.る'],
+        components: ['米', '斤'],
+        parts: [
+          { char: '米', role: 'other' },
+          { char: '斤', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '判', reading: 'はん' },
+              { text: '断', reading: 'だん' }
+            ],
+            meaning: { en: 'judgment, decision', vi: 'phán đoán' }
+          },
+          {
+            parts: [
+              { text: '断', reading: 'だん' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'conclusion, assertion', vi: 'khẳng định' }
+          },
+          {
+            parts: [
+              { text: '断', reading: 'ことわ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to refuse, to decline', vi: 'từ chối' }
+          }
+        ]
+      },
+      {
+        char: '張',
+        meaning: { en: 'stretch, spread; assert', vi: 'trương - căng, giăng' },
+        onyomi: ['チョウ'],
+        kunyomi: ['は.る'],
+        components: ['弓', '長'],
+        parts: [
+          { char: '弓', role: 'radical' },
+          { char: '長', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '主', reading: 'しゅ' },
+              { text: '張', reading: 'ちょう' }
+            ],
+            meaning: { en: 'assertion, claim', vi: 'chủ trương' }
+          },
+          {
+            parts: [
+              { text: '出', reading: 'しゅっ' },
+              { text: '張', reading: 'ちょう' }
+            ],
+            meaning: { en: 'business trip', vi: 'công tác (xa)' }
+          },
+          {
+            parts: [
+              { text: '張', reading: 'は' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to stretch, to spread', vi: 'căng, giăng' }
+          }
+        ]
+      },
+      {
+        char: '停',
+        meaning: { en: 'stop, halt', vi: 'đình - dừng lại' },
+        onyomi: ['テイ'],
+        kunyomi: [],
+        components: ['亻', '亭'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '亭', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '停', reading: 'てい' },
+              { text: '止', reading: 'し' }
+            ],
+            meaning: { en: 'stopping, halt', vi: 'đình chỉ, ngừng' }
+          },
+          {
+            parts: [
+              { text: '停', reading: 'てい' },
+              { text: '車', reading: 'しゃ' }
+            ],
+            meaning: { en: 'stopping a vehicle', vi: 'đỗ xe, dừng xe' }
+          },
+          {
+            parts: [
+              { text: '停', reading: 'てい' },
+              { text: '電', reading: 'でん' }
+            ],
+            meaning: { en: 'power outage', vi: 'mất điện' }
+          }
+        ]
+      },
+      {
+        char: '提',
+        meaning: { en: 'propose, present; carry', vi: 'đề - đề xuất; xách' },
+        onyomi: ['テイ'],
+        kunyomi: ['さ.げる'],
+        components: ['扌', '是'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '是', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '提', reading: 'てい' },
+              { text: '出', reading: 'しゅつ' }
+            ],
+            meaning: { en: 'submission', vi: 'nộp, đệ trình' }
+          },
+          {
+            parts: [
+              { text: '提', reading: 'てい' },
+              { text: '案', reading: 'あん' }
+            ],
+            meaning: { en: 'proposal', vi: 'đề án' }
+          },
+          {
+            parts: [
+              { text: '提', reading: 'てい' },
+              { text: '供', reading: 'きょう' }
+            ],
+            meaning: { en: 'offer, provision', vi: 'cung cấp' }
+          }
+        ]
+      },
+      {
+        char: '航',
+        meaning: { en: 'to navigate, to sail, to fly', vi: 'hàng - đi (thuyền, máy bay)' },
+        onyomi: ['コウ'],
+        kunyomi: [],
+        components: ['舟', '亢'],
+        parts: [
+          { char: '舟', role: 'radical' },
+          { char: '亢', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '航', reading: 'こう' },
+              { text: '空', reading: 'くう' }
+            ],
+            meaning: { en: 'aviation', vi: 'hàng không' }
+          },
+          {
+            parts: [
+              { text: '欠', reading: 'けっ' },
+              { text: '航', reading: 'こう' }
+            ],
+            meaning: { en: 'cancelled flight/sailing', vi: 'hủy chuyến (bay, tàu)' }
+          },
+          {
+            parts: [
+              { text: '出', reading: 'しゅっ' },
+              { text: '航', reading: 'こう' }
+            ],
+            meaning: { en: 'setting sail, departure', vi: 'khởi hành (tàu)' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Duty & judgment',
+      vi: 'Bổn phận & phán xét'
+    },
+    kanji: [
+      {
+        char: '護',
+        meaning: { en: 'protect, guard', vi: 'hộ - bảo vệ, che chở' },
+        onyomi: ['ゴ'],
+        kunyomi: [],
+        components: ['言', '蒦'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '蒦', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '護', reading: 'ご' }
+            ],
+            meaning: { en: 'protection', vi: 'bảo hộ' }
+          },
+          {
+            parts: [
+              { text: '護', reading: 'ご' },
+              { text: '衛', reading: 'えい' }
+            ],
+            meaning: { en: 'escort, bodyguard', vi: 'hộ vệ' }
+          },
+          {
+            parts: [
+              { text: '弁', reading: 'べん' },
+              { text: '護', reading: 'ご' }
+            ],
+            meaning: { en: 'legal defense', vi: 'biện hộ' }
+          }
+        ]
+      },
+      {
+        char: '衛',
+        meaning: { en: 'defend, guard', vi: 'vệ - bảo vệ, phòng vệ' },
+        onyomi: ['エイ'],
+        kunyomi: [],
+        components: ['行', '韋'],
+        parts: [
+          { char: '行', role: 'radical' },
+          { char: '韋', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '衛', reading: 'えい' },
+              { text: '生', reading: 'せい' }
+            ],
+            meaning: { en: 'hygiene, sanitation', vi: 'vệ sinh' }
+          },
+          {
+            parts: [
+              { text: '護', reading: 'ご' },
+              { text: '衛', reading: 'えい' }
+            ],
+            meaning: { en: 'escort, bodyguard', vi: 'hộ vệ' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '衛', reading: 'えい' }
+            ],
+            meaning: { en: 'self-defense', vi: 'tự vệ' }
+          }
+        ]
+      },
+      {
+        char: '防',
+        meaning: { en: 'prevent, defend against', vi: 'phòng - phòng ngừa, ngăn' },
+        onyomi: ['ボウ'],
+        kunyomi: ['ふせ.ぐ'],
+        components: ['阝', '方'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '方', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '防', reading: 'ぼう' },
+              { text: '止', reading: 'し' }
+            ],
+            meaning: { en: 'prevention', vi: 'ngăn chặn' }
+          },
+          {
+            parts: [
+              { text: '予', reading: 'よ' },
+              { text: '防', reading: 'ぼう' }
+            ],
+            meaning: { en: 'prevention (of illness)', vi: 'phòng ngừa' }
+          },
+          {
+            parts: [
+              { text: '防', reading: 'ふせ' },
+              { text: 'ぐ', reading: 'ぐ' }
+            ],
+            meaning: { en: 'to prevent, to defend', vi: 'ngăn, phòng' }
+          }
+        ]
+      },
+      {
+        char: '武',
+        meaning: { en: 'military, martial', vi: 'vũ - võ, quân sự' },
+        onyomi: ['ブ', 'ム'],
+        kunyomi: [],
+        components: ['戈', '止'],
+        parts: [
+          { char: '戈', role: 'semantic' },
+          { char: '止', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '武', reading: 'ぶ' },
+              { text: '士', reading: 'し' }
+            ],
+            meaning: { en: 'samurai, warrior', vi: 'võ sĩ' }
+          },
+          {
+            parts: [
+              { text: '武', reading: 'ぶ' },
+              { text: '器', reading: 'き' }
+            ],
+            meaning: { en: 'weapon', vi: 'vũ khí' }
+          },
+          {
+            parts: [
+              { text: '武', reading: 'ぶ' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'military force', vi: 'vũ lực' }
+          }
+        ]
+      },
+      {
+        char: '務',
+        meaning: { en: 'duty, serve', vi: 'vụ - nhiệm vụ, phục vụ' },
+        onyomi: ['ム'],
+        kunyomi: ['つと.める'],
+        components: ['矛', '攵', '力'],
+        parts: [
+          { char: '矛', role: 'phonetic' },
+          { char: '攵', role: 'other' },
+          { char: '力', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '義', reading: 'ぎ' },
+              { text: '務', reading: 'む' }
+            ],
+            meaning: { en: 'obligation, duty', vi: 'nghĩa vụ' }
+          },
+          {
+            parts: [
+              { text: '事', reading: 'じ' },
+              { text: '務', reading: 'む' }
+            ],
+            meaning: { en: 'office work, clerical', vi: 'sự vụ, hành chính' }
+          },
+          {
+            parts: [
+              { text: '務', reading: 'つと' },
+              { text: 'める', reading: 'める' }
+            ],
+            meaning: { en: 'to serve (a role)', vi: 'đảm nhiệm' }
+          }
+        ]
+      },
+      {
+        char: '責',
+        meaning: { en: 'blame; responsibility', vi: 'trách - trách nhiệm; khiển trách' },
+        onyomi: ['セキ'],
+        kunyomi: ['せ.める'],
+        components: ['貝'],
+        parts: [{ char: '貝', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '責', reading: 'せき' },
+              { text: '任', reading: 'にん' }
+            ],
+            meaning: { en: 'responsibility', vi: 'trách nhiệm' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '責', reading: 'せき' }
+            ],
+            meaning: { en: 'self-reproach', vi: 'tự trách' }
+          },
+          {
+            parts: [
+              { text: '責', reading: 'せ' },
+              { text: 'める', reading: 'める' }
+            ],
+            meaning: { en: 'to blame, to reproach', vi: 'khiển trách, chê trách' }
+          }
+        ]
+      },
+      {
+        char: '任',
+        meaning: { en: 'entrust, appoint; duty', vi: 'nhiệm - giao phó; nhiệm vụ' },
+        onyomi: ['ニン'],
+        kunyomi: ['まか.せる', 'まか.す'],
+        components: ['亻', '壬'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '壬', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '任', reading: 'にん' },
+              { text: '務', reading: 'む' }
+            ],
+            meaning: { en: 'mission, duty', vi: 'nhiệm vụ' }
+          },
+          {
+            parts: [
+              { text: '責', reading: 'せき' },
+              { text: '任', reading: 'にん' }
+            ],
+            meaning: { en: 'responsibility', vi: 'trách nhiệm' }
+          },
+          {
+            parts: [
+              { text: '任', reading: 'まか' },
+              { text: 'せる', reading: 'せる' }
+            ],
+            meaning: { en: 'to entrust, to leave to', vi: 'giao phó, phó mặc' }
+          }
+        ]
+      },
+      {
+        char: '賛',
+        meaning: { en: 'approve, support', vi: 'tán - tán thành, ủng hộ' },
+        onyomi: ['サン'],
+        kunyomi: [],
+        components: ['貝'],
+        parts: [{ char: '貝', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '賛', reading: 'さん' },
+              { text: '成', reading: 'せい' }
+            ],
+            meaning: { en: 'approval, agreement', vi: 'tán thành' }
+          },
+          {
+            parts: [
+              { text: '賛', reading: 'さん' },
+              { text: '同', reading: 'どう' }
+            ],
+            meaning: { en: 'endorsement', vi: 'tán đồng' }
+          },
+          {
+            parts: [
+              { text: '協', reading: 'きょう' },
+              { text: '賛', reading: 'さん' }
+            ],
+            meaning: { en: 'sponsorship, support', vi: 'tài trợ, hợp tác' }
+          }
+        ]
+      },
+      {
+        char: '効',
+        meaning: { en: 'effect, efficacy', vi: 'hiệu - hiệu quả' },
+        onyomi: ['コウ'],
+        kunyomi: ['き.く'],
+        components: ['交', '力'],
+        parts: [
+          { char: '交', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '効', reading: 'こう' },
+              { text: '果', reading: 'か' }
+            ],
+            meaning: { en: 'effect, result', vi: 'hiệu quả' }
+          },
+          {
+            parts: [
+              { text: '有', reading: 'ゆう' },
+              { text: '効', reading: 'こう' }
+            ],
+            meaning: { en: 'valid, effective', vi: 'hữu hiệu, có hiệu lực' }
+          },
+          {
+            parts: [
+              { text: '効', reading: 'き' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to take effect, to work', vi: 'có tác dụng' }
+          }
+        ]
+      },
+      {
+        char: '判',
+        meaning: { en: 'judge, decide; seal', vi: 'phán - phán xét; con dấu' },
+        onyomi: ['ハン', 'バン'],
+        kunyomi: [],
+        components: ['半', '刂'],
+        parts: [
+          { char: '半', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '判', reading: 'はん' },
+              { text: '断', reading: 'だん' }
+            ],
+            meaning: { en: 'judgment, decision', vi: 'phán đoán' }
+          },
+          {
+            parts: [
+              { text: '判', reading: 'はん' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'judgment, verdict', vi: 'phán định' }
+          },
+          {
+            parts: [
+              { text: '裁', reading: 'さい' },
+              { text: '判', reading: 'ばん' }
+            ],
+            meaning: { en: 'trial, court', vi: 'xét xử, tòa án' }
+          }
+        ]
+      },
+      {
+        char: '非',
+        meaning: { en: 'non-, un-; wrong', vi: 'phi - không phải; sai trái' },
+        onyomi: ['ヒ'],
+        kunyomi: [],
+        components: ['非'],
+        parts: [{ char: '非', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '非', reading: 'ひ' },
+              { text: '常', reading: 'じょう' }
+            ],
+            meaning: { en: 'emergency; extraordinary', vi: 'khẩn cấp; phi thường' }
+          },
+          {
+            parts: [
+              { text: '是', reading: 'ぜ' },
+              { text: '非', reading: 'ひ' }
+            ],
+            meaning: { en: 'by all means; right and wrong', vi: 'nhất định; phải trái' }
+          },
+          {
+            parts: [
+              { text: '非', reading: 'ひ' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'delinquency, misconduct', vi: 'hành vi sai trái' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Land, home & society',
+      vi: 'Đất đai, nơi ở & xã hội'
+    },
+    kanji: [
+      {
+        char: '耕',
+        meaning: { en: 'cultivate, plow', vi: 'canh - cày cấy' },
+        onyomi: ['コウ'],
+        kunyomi: ['たがや.す'],
+        components: ['耒', '井'],
+        parts: [
+          { char: '耒', role: 'radical' },
+          { char: '井', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '耕', reading: 'こう' },
+              { text: '作', reading: 'さく' }
+            ],
+            meaning: { en: 'cultivation, farming', vi: 'canh tác' }
+          },
+          {
+            parts: [
+              { text: '農', reading: 'のう' },
+              { text: '耕', reading: 'こう' }
+            ],
+            meaning: { en: 'agriculture, tillage', vi: 'nông canh' }
+          },
+          {
+            parts: [
+              { text: '耕', reading: 'たがや' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to plow, to till', vi: 'cày, xới đất' }
+          }
+        ]
+      },
+      {
+        char: '境',
+        meaning: { en: 'boundary, border', vi: 'cảnh - ranh giới, cảnh giới' },
+        onyomi: ['キョウ', 'ケイ'],
+        kunyomi: ['さかい'],
+        components: ['土', '竟'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '竟', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '環', reading: 'かん' },
+              { text: '境', reading: 'きょう' }
+            ],
+            meaning: { en: 'environment', vi: 'môi trường' }
+          },
+          {
+            parts: [
+              { text: '国', reading: 'こっ' },
+              { text: '境', reading: 'きょう' }
+            ],
+            meaning: { en: 'national border', vi: 'biên giới' }
+          },
+          {
+            parts: [
+              { text: '境', reading: 'きょう' },
+              { text: '界', reading: 'かい' }
+            ],
+            meaning: { en: 'boundary', vi: 'ranh giới' }
+          }
+        ]
+      },
+      {
+        char: '均',
+        meaning: { en: 'even, equal', vi: 'quân - đều, cân bằng' },
+        onyomi: ['キン'],
+        kunyomi: [],
+        components: ['土', '勻'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '勻', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '平', reading: 'へい' },
+              { text: '均', reading: 'きん' }
+            ],
+            meaning: { en: 'average', vi: 'trung bình' }
+          },
+          {
+            parts: [
+              { text: '均', reading: 'きん' },
+              { text: '等', reading: 'とう' }
+            ],
+            meaning: { en: 'equality, uniformity', vi: 'quân bình, đồng đều' }
+          },
+          {
+            parts: [
+              { text: '均', reading: 'きん' },
+              { text: '一', reading: 'いつ' }
+            ],
+            meaning: { en: 'uniform, flat (rate)', vi: 'đồng nhất, đồng giá' }
+          }
+        ]
+      },
+      {
+        char: '在',
+        meaning: { en: 'exist, be located', vi: 'tại - tồn tại, ở' },
+        onyomi: ['ザイ'],
+        kunyomi: ['あ.る'],
+        components: ['才', '土'],
+        parts: [
+          { char: '才', role: 'phonetic' },
+          { char: '土', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '存', reading: 'そん' },
+              { text: '在', reading: 'ざい' }
+            ],
+            meaning: { en: 'existence', vi: 'sự tồn tại' }
+          },
+          {
+            parts: [
+              { text: '現', reading: 'げん' },
+              { text: '在', reading: 'ざい' }
+            ],
+            meaning: { en: 'the present, now', vi: 'hiện tại' }
+          },
+          {
+            parts: [
+              { text: '在', reading: 'ざい' },
+              { text: '庫', reading: 'こ' }
+            ],
+            meaning: { en: 'stock, inventory', vi: 'hàng tồn kho' }
+          }
+        ]
+      },
+      {
+        char: '居',
+        meaning: { en: 'reside, be present', vi: 'cư - cư trú, ở' },
+        onyomi: ['キョ'],
+        kunyomi: ['い.る'],
+        components: ['尸', '古'],
+        parts: [
+          { char: '尸', role: 'radical' },
+          { char: '古', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '住', reading: 'じゅう' },
+              { text: '居', reading: 'きょ' }
+            ],
+            meaning: { en: 'residence, dwelling', vi: 'nơi cư trú' }
+          },
+          {
+            parts: [
+              { text: '居', reading: 'い' },
+              { text: '間', reading: 'ま' }
+            ],
+            meaning: { en: 'living room', vi: 'phòng khách' }
+          },
+          {
+            parts: [
+              { text: '居', reading: 'い' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to be (present), to exist', vi: 'có mặt, ở' }
+          }
+        ]
+      },
+      {
+        char: '堂',
+        meaning: { en: 'hall, temple', vi: 'đường - sảnh, điện' },
+        onyomi: ['ドウ'],
+        kunyomi: [],
+        components: ['尚', '土'],
+        parts: [
+          { char: '尚', role: 'phonetic' },
+          { char: '土', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '食', reading: 'しょく' },
+              { text: '堂', reading: 'どう' }
+            ],
+            meaning: { en: 'cafeteria, dining hall', vi: 'nhà ăn, căng tin' }
+          },
+          {
+            parts: [
+              { text: '講', reading: 'こう' },
+              { text: '堂', reading: 'どう' }
+            ],
+            meaning: { en: 'auditorium', vi: 'giảng đường' }
+          },
+          {
+            parts: [
+              { text: '堂', reading: 'どう' },
+              { text: '々', reading: 'どう' }
+            ],
+            meaning: { en: 'dignified, imposing', vi: 'đường hoàng, oai vệ' }
+          }
+        ]
+      },
+      {
+        char: '導',
+        meaning: { en: 'guide, lead', vi: 'đạo - dẫn dắt, hướng dẫn' },
+        onyomi: ['ドウ'],
+        kunyomi: ['みちび.く'],
+        components: ['道', '寸'],
+        parts: [
+          { char: '道', role: 'phonetic' },
+          { char: '寸', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '指', reading: 'し' },
+              { text: '導', reading: 'どう' }
+            ],
+            meaning: { en: 'guidance, instruction', vi: 'chỉ đạo, hướng dẫn' }
+          },
+          {
+            parts: [
+              { text: '導', reading: 'どう' },
+              { text: '入', reading: 'にゅう' }
+            ],
+            meaning: { en: 'introduction, adoption', vi: 'đưa vào, áp dụng' }
+          },
+          {
+            parts: [
+              { text: '導', reading: 'みちび' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to guide, to lead', vi: 'dẫn dắt' }
+          }
+        ]
+      },
+      {
+        char: '際',
+        meaning: { en: 'occasion; edge; contact', vi: 'tế - dịp; ranh; giao tiếp' },
+        onyomi: ['サイ'],
+        kunyomi: ['きわ'],
+        components: ['阝', '祭'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '祭', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '国', reading: 'こく' },
+              { text: '際', reading: 'さい' }
+            ],
+            meaning: { en: 'international', vi: 'quốc tế' }
+          },
+          {
+            parts: [
+              { text: '実', reading: 'じっ' },
+              { text: '際', reading: 'さい' }
+            ],
+            meaning: { en: 'actual, in practice', vi: 'thực tế' }
+          },
+          {
+            parts: [
+              { text: '交', reading: 'こう' },
+              { text: '際', reading: 'さい' }
+            ],
+            meaning: { en: 'association, dating', vi: 'giao thiệp, hẹn hò' }
+          }
+        ]
+      },
+      {
+        char: '属',
+        meaning: { en: 'belong to, genus', vi: 'thuộc - thuộc về' },
+        onyomi: ['ゾク'],
+        kunyomi: [],
+        components: ['尸'],
+        parts: [{ char: '尸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '所', reading: 'しょ' },
+              { text: '属', reading: 'ぞく' }
+            ],
+            meaning: { en: 'belonging (to a group)', vi: 'trực thuộc' }
+          },
+          {
+            parts: [
+              { text: '金', reading: 'きん' },
+              { text: '属', reading: 'ぞく' }
+            ],
+            meaning: { en: 'metal', vi: 'kim loại' }
+          },
+          {
+            parts: [
+              { text: '属', reading: 'ぞく' },
+              { text: '性', reading: 'せい' }
+            ],
+            meaning: { en: 'attribute, property', vi: 'thuộc tính' }
+          }
+        ]
+      },
+      {
+        char: '損',
+        meaning: { en: 'loss, damage', vi: 'tổn - tổn thất, hư hại' },
+        onyomi: ['ソン'],
+        kunyomi: ['そこ.なう'],
+        components: ['扌', '員'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '員', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '損', reading: 'そん' },
+              { text: '害', reading: 'がい' }
+            ],
+            meaning: { en: 'damage, harm', vi: 'thiệt hại' }
+          },
+          {
+            parts: [
+              { text: '損', reading: 'そん' },
+              { text: '失', reading: 'しつ' }
+            ],
+            meaning: { en: 'loss', vi: 'tổn thất' }
+          },
+          {
+            parts: [
+              { text: '破', reading: 'は' },
+              { text: '損', reading: 'そん' }
+            ],
+            meaning: { en: 'breakage, damage', vi: 'hư hỏng' }
+          }
+        ]
+      },
+      {
+        char: '囲',
+        meaning: { en: 'to surround, to enclose', vi: 'vi - bao quanh, vây quanh' },
+        onyomi: ['イ'],
+        kunyomi: ['かこ.む'],
+        components: ['囗', '井'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '井', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '囲', reading: 'かこ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to surround', vi: 'vây quanh' }
+          },
+          {
+            parts: [
+              { text: '周', reading: 'しゅう' },
+              { text: '囲', reading: 'い' }
+            ],
+            meaning: { en: 'surroundings', vi: 'xung quanh, chu vi' }
+          },
+          {
+            parts: [
+              { text: '囲', reading: 'い' },
+              { text: '碁', reading: 'ご' }
+            ],
+            meaning: { en: 'the game of Go', vi: 'cờ vây' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Wealth & commerce',
+      vi: 'Tiền của & thương mại'
+    },
+    kanji: [
+      {
+        char: '貸',
+        meaning: { en: 'lend, rent out', vi: 'thải - cho vay, cho thuê' },
+        onyomi: ['タイ'],
+        kunyomi: ['か.す'],
+        components: ['代', '貝'],
+        parts: [
+          { char: '代', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '賃', reading: 'ちん' },
+              { text: '貸', reading: 'たい' }
+            ],
+            meaning: { en: 'lease, rental', vi: 'cho thuê' }
+          },
+          {
+            parts: [
+              { text: '貸', reading: 'かし' },
+              { text: '家', reading: 'や' }
+            ],
+            meaning: { en: 'house for rent', vi: 'nhà cho thuê' }
+          },
+          {
+            parts: [
+              { text: '貸', reading: 'か' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to lend', vi: 'cho mượn, cho vay' }
+          }
+        ]
+      },
+      {
+        char: '貯',
+        meaning: { en: 'save up, store', vi: 'trữ - tích trữ, dành dụm' },
+        onyomi: ['チョ'],
+        kunyomi: [],
+        components: ['貝', '宁'],
+        parts: [
+          { char: '貝', role: 'radical' },
+          { char: '宁', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '貯', reading: 'ちょ' },
+              { text: '金', reading: 'きん' }
+            ],
+            meaning: { en: 'savings', vi: 'tiền tiết kiệm' }
+          },
+          {
+            parts: [
+              { text: '貯', reading: 'ちょ' },
+              { text: '蓄', reading: 'ちく' }
+            ],
+            meaning: { en: 'savings, hoarding', vi: 'tích lũy' }
+          },
+          {
+            parts: [
+              { text: '貯', reading: 'ちょ' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'water storage', vi: 'trữ nước' }
+          }
+        ]
+      },
+      {
+        char: '貿',
+        meaning: { en: 'trade', vi: 'mậu - mậu dịch, buôn bán' },
+        onyomi: ['ボウ'],
+        kunyomi: [],
+        components: ['卯', '貝'],
+        parts: [
+          { char: '卯', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '貿', reading: 'ぼう' },
+              { text: '易', reading: 'えき' }
+            ],
+            meaning: { en: 'trade, commerce', vi: 'mậu dịch, ngoại thương' }
+          },
+          {
+            parts: [
+              { text: '貿', reading: 'ぼう' },
+              { text: '易', reading: 'えき' },
+              { text: '港', reading: 'こう' }
+            ],
+            meaning: { en: 'trading port', vi: 'cảng thương mại' }
+          },
+          {
+            parts: [
+              { text: '貿', reading: 'ぼう' },
+              { text: '易', reading: 'えき' },
+              { text: '風', reading: 'ふう' }
+            ],
+            meaning: { en: 'trade winds', vi: 'gió mậu dịch' }
+          }
+        ]
+      },
+      {
+        char: '財',
+        meaning: { en: 'wealth, property', vi: 'tài - tài sản, của cải' },
+        onyomi: ['ザイ', 'サイ'],
+        kunyomi: [],
+        components: ['貝', '才'],
+        parts: [
+          { char: '貝', role: 'radical' },
+          { char: '才', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '財', reading: 'ざい' },
+              { text: '産', reading: 'さん' }
+            ],
+            meaning: { en: 'property, assets', vi: 'tài sản' }
+          },
+          {
+            parts: [
+              { text: '財', reading: 'さい' },
+              { text: '布', reading: 'ふ' }
+            ],
+            meaning: { en: 'wallet', vi: 'ví tiền' }
+          },
+          {
+            parts: [
+              { text: '文', reading: 'ぶん' },
+              { text: '化', reading: 'か' },
+              { text: '財', reading: 'ざい' }
+            ],
+            meaning: { en: 'cultural asset', vi: 'di sản văn hóa' }
+          }
+        ]
+      },
+      {
+        char: '資',
+        meaning: { en: 'resources, capital', vi: 'tư - tư bản, tư liệu' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['次', '貝'],
+        parts: [
+          { char: '次', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '資', reading: 'し' },
+              { text: '本', reading: 'ほん' }
+            ],
+            meaning: { en: 'capital', vi: 'tư bản, vốn' }
+          },
+          {
+            parts: [
+              { text: '資', reading: 'し' },
+              { text: '料', reading: 'りょう' }
+            ],
+            meaning: { en: 'materials, data', vi: 'tư liệu' }
+          },
+          {
+            parts: [
+              { text: '資', reading: 'し' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'qualification', vi: 'tư cách, chứng chỉ' }
+          }
+        ]
+      },
+      {
+        char: '価',
+        meaning: { en: 'value, price', vi: 'giá - giá trị, giá cả' },
+        onyomi: ['カ'],
+        kunyomi: ['あたい'],
+        components: ['亻', '西'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '西', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '価', reading: 'か' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'price', vi: 'giá cả' }
+          },
+          {
+            parts: [
+              { text: '物', reading: 'ぶっ' },
+              { text: '価', reading: 'か' }
+            ],
+            meaning: { en: 'commodity prices', vi: 'vật giá' }
+          },
+          {
+            parts: [
+              { text: '価', reading: 'か' },
+              { text: '値', reading: 'ち' }
+            ],
+            meaning: { en: 'value, worth', vi: 'giá trị' }
+          }
+        ]
+      },
+      {
+        char: '証',
+        meaning: { en: 'proof, certificate', vi: 'chứng - chứng minh, chứng cứ' },
+        onyomi: ['ショウ'],
+        kunyomi: [],
+        components: ['言', '正'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '正', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '証', reading: 'しょう' },
+              { text: '明', reading: 'めい' }
+            ],
+            meaning: { en: 'proof, certification', vi: 'chứng minh' }
+          },
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '証', reading: 'しょう' }
+            ],
+            meaning: { en: 'guarantee', vi: 'bảo chứng, bảo hành' }
+          },
+          {
+            parts: [
+              { text: '証', reading: 'しょう' },
+              { text: '拠', reading: 'こ' }
+            ],
+            meaning: { en: 'evidence', vi: 'chứng cứ' }
+          }
+        ]
+      },
+      {
+        char: '支',
+        meaning: { en: 'support; branch; pay', vi: 'chi - chống đỡ; chi nhánh; chi trả' },
+        onyomi: ['シ'],
+        kunyomi: ['ささ.える'],
+        components: ['十', '又'],
+        examples: [
+          {
+            parts: [
+              { text: '支', reading: 'し' },
+              { text: '持', reading: 'じ' }
+            ],
+            meaning: { en: 'support, backing', vi: 'ủng hộ' }
+          },
+          {
+            parts: [
+              { text: '支', reading: 'し' },
+              { text: '店', reading: 'てん' }
+            ],
+            meaning: { en: 'branch (store)', vi: 'chi nhánh' }
+          },
+          {
+            parts: [
+              { text: '支', reading: 'ささ' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to support, to hold up', vi: 'chống đỡ, nâng đỡ' }
+          }
+        ]
+      },
+      {
+        char: '布',
+        meaning: { en: 'cloth; spread', vi: 'bố - vải; trải ra' },
+        onyomi: ['フ'],
+        kunyomi: ['ぬの'],
+        components: ['巾'],
+        parts: [{ char: '巾', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '分', reading: 'ぶん' },
+              { text: '布', reading: 'ぷ' }
+            ],
+            meaning: { en: 'distribution', vi: 'phân bố' }
+          },
+          {
+            parts: [
+              { text: '毛', reading: 'もう' },
+              { text: '布', reading: 'ふ' }
+            ],
+            meaning: { en: 'blanket', vi: 'chăn (len)' }
+          },
+          {
+            parts: [
+              { text: '布', reading: 'ぬの' },
+              { text: '地', reading: 'じ' }
+            ],
+            meaning: { en: 'cloth, fabric', vi: 'vải vóc' }
+          }
+        ]
+      },
+      {
+        char: '額',
+        meaning: { en: 'amount, sum; forehead; frame', vi: 'ngạch - số tiền; trán; khung' },
+        onyomi: ['ガク'],
+        kunyomi: ['ひたい'],
+        components: ['客', '頁'],
+        parts: [
+          { char: '客', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '金', reading: 'きん' },
+              { text: '額', reading: 'がく' }
+            ],
+            meaning: { en: 'amount of money', vi: 'số tiền' }
+          },
+          {
+            parts: [
+              { text: '全', reading: 'ぜん' },
+              { text: '額', reading: 'がく' }
+            ],
+            meaning: { en: 'total amount', vi: 'toàn bộ số tiền' }
+          },
+          {
+            parts: [
+              { text: '半', reading: 'はん' },
+              { text: '額', reading: 'がく' }
+            ],
+            meaning: { en: 'half the amount, half price', vi: 'nửa giá' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'People, family & roles',
+      vi: 'Con người, gia đình & vai trò'
+    },
+    kanji: [
+      {
+        char: '妻',
+        meaning: { en: 'wife', vi: 'thê - vợ' },
+        onyomi: ['サイ'],
+        kunyomi: ['つま'],
+        components: ['女'],
+        parts: [{ char: '女', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '夫', reading: 'ふ' },
+              { text: '妻', reading: 'さい' }
+            ],
+            meaning: { en: 'husband and wife', vi: 'vợ chồng' }
+          },
+          {
+            parts: [
+              { text: '妻', reading: 'さい' },
+              { text: '子', reading: 'し' }
+            ],
+            meaning: { en: 'wife and children', vi: 'vợ con' }
+          },
+          {
+            parts: [
+              { text: '人', reading: 'ひと' },
+              { text: '妻', reading: 'づま' }
+            ],
+            meaning: { en: 'married woman', vi: 'người có chồng' }
+          }
+        ]
+      },
+      {
+        char: '婦',
+        meaning: { en: 'woman, wife', vi: 'phụ - phụ nữ, người vợ' },
+        onyomi: ['フ'],
+        kunyomi: [],
+        components: ['女', '帚'],
+        parts: [
+          { char: '女', role: 'radical' },
+          { char: '帚', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '婦', reading: 'ふ' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'lady, woman', vi: 'phụ nữ' }
+          },
+          {
+            parts: [
+              { text: '主', reading: 'しゅ' },
+              { text: '婦', reading: 'ふ' }
+            ],
+            meaning: { en: 'housewife', vi: 'nội trợ' }
+          },
+          {
+            parts: [
+              { text: '夫', reading: 'ふう' },
+              { text: '婦', reading: 'ふ' }
+            ],
+            meaning: { en: 'married couple', vi: 'vợ chồng' }
+          }
+        ]
+      },
+      {
+        char: '祖',
+        meaning: { en: 'ancestor, founder', vi: 'tổ - tổ tiên' },
+        onyomi: ['ソ'],
+        kunyomi: [],
+        components: ['礻', '且'],
+        parts: [
+          { char: '礻', role: 'radical' },
+          { char: '且', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '祖', reading: 'そ' },
+              { text: '父', reading: 'ふ' }
+            ],
+            meaning: { en: 'grandfather', vi: 'ông' }
+          },
+          {
+            parts: [
+              { text: '祖', reading: 'そ' },
+              { text: '母', reading: 'ぼ' }
+            ],
+            meaning: { en: 'grandmother', vi: 'bà' }
+          },
+          {
+            parts: [
+              { text: '先', reading: 'せん' },
+              { text: '祖', reading: 'ぞ' }
+            ],
+            meaning: { en: 'ancestors', vi: 'tổ tiên' }
+          }
+        ]
+      },
+      {
+        char: '師',
+        meaning: { en: 'teacher, master', vi: 'sư - thầy, bậc thầy' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['巾'],
+        parts: [{ char: '巾', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '教', reading: 'きょう' },
+              { text: '師', reading: 'し' }
+            ],
+            meaning: { en: 'teacher (instructor)', vi: 'giáo viên' }
+          },
+          {
+            parts: [
+              { text: '医', reading: 'い' },
+              { text: '師', reading: 'し' }
+            ],
+            meaning: { en: 'medical doctor', vi: 'bác sĩ' }
+          },
+          {
+            parts: [
+              { text: '師', reading: 'し' },
+              { text: '匠', reading: 'しょう' }
+            ],
+            meaning: { en: 'master (craftsman)', vi: 'sư phụ, bậc thầy' }
+          }
+        ]
+      },
+      {
+        char: '士',
+        meaning: { en: 'gentleman, scholar; expert', vi: 'sĩ - kẻ sĩ; chuyên gia' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['士'],
+        examples: [
+          {
+            parts: [
+              { text: '武', reading: 'ぶ' },
+              { text: '士', reading: 'し' }
+            ],
+            meaning: { en: 'samurai, warrior', vi: 'võ sĩ' }
+          },
+          {
+            parts: [{ text: '博士', reading: 'はかせ' }],
+            meaning: { en: 'doctor (PhD), expert', vi: 'tiến sĩ, học giả' }
+          },
+          {
+            parts: [
+              { text: '弁', reading: 'べん' },
+              { text: '護', reading: 'ご' },
+              { text: '士', reading: 'し' }
+            ],
+            meaning: { en: 'lawyer', vi: 'luật sư' }
+          }
+        ]
+      },
+      {
+        char: '似',
+        meaning: { en: 'resemble, be similar', vi: 'tự - giống nhau' },
+        onyomi: ['ジ'],
+        kunyomi: ['に.る'],
+        components: ['亻', '以'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '以', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '類', reading: 'るい' },
+              { text: '似', reading: 'じ' }
+            ],
+            meaning: { en: 'resemblance, similarity', vi: 'tương tự' }
+          },
+          {
+            parts: [
+              { text: '似', reading: 'に' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to resemble', vi: 'giống' }
+          },
+          {
+            parts: [
+              { text: '似', reading: 'に' },
+              { text: '顔', reading: 'がお' },
+              { text: '絵', reading: 'え' }
+            ],
+            meaning: { en: 'portrait, likeness', vi: 'tranh chân dung' }
+          }
+        ]
+      },
+      {
+        char: '個',
+        meaning: { en: 'individual; counter for items', vi: 'cá - riêng lẻ; lượng từ' },
+        onyomi: ['コ'],
+        kunyomi: [],
+        components: ['亻', '固'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '固', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '個', reading: 'こ' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'individual', vi: 'cá nhân' }
+          },
+          {
+            parts: [
+              { text: '個', reading: 'こ' },
+              { text: '性', reading: 'せい' }
+            ],
+            meaning: { en: 'individuality', vi: 'cá tính' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '個', reading: 'こ' }
+            ],
+            meaning: { en: 'one (item)', vi: 'một cái' }
+          }
+        ]
+      },
+      {
+        char: '保',
+        meaning: { en: 'keep, protect, maintain', vi: 'bảo - giữ gìn, bảo vệ' },
+        onyomi: ['ホ'],
+        kunyomi: ['たも.つ'],
+        components: ['亻', '呆'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '呆', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '護', reading: 'ご' }
+            ],
+            meaning: { en: 'protection', vi: 'bảo hộ' }
+          },
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '険', reading: 'けん' }
+            ],
+            meaning: { en: 'insurance', vi: 'bảo hiểm' }
+          },
+          {
+            parts: [
+              { text: '保', reading: 'たも' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: 'to keep, to maintain', vi: 'duy trì, giữ' }
+          }
+        ]
+      },
+      {
+        char: '職',
+        meaning: { en: 'occupation, post', vi: 'chức - nghề nghiệp, chức vụ' },
+        onyomi: ['ショク'],
+        kunyomi: [],
+        components: ['耳', '戠'],
+        parts: [
+          { char: '耳', role: 'radical' },
+          { char: '戠', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '職', reading: 'しょく' },
+              { text: '業', reading: 'ぎょう' }
+            ],
+            meaning: { en: 'occupation, profession', vi: 'nghề nghiệp' }
+          },
+          {
+            parts: [
+              { text: '就', reading: 'しゅう' },
+              { text: '職', reading: 'しょく' }
+            ],
+            meaning: { en: 'finding employment', vi: 'xin việc, đi làm' }
+          },
+          {
+            parts: [
+              { text: '職', reading: 'しょく' },
+              { text: '員', reading: 'いん' }
+            ],
+            meaning: { en: 'staff member', vi: 'nhân viên' }
+          }
+        ]
+      },
+      {
+        char: '舎',
+        meaning: { en: 'building, quarters', vi: 'xá - nhà, khu nhà' },
+        onyomi: ['シャ'],
+        kunyomi: [],
+        components: ['人', '舌'],
+        parts: [
+          { char: '人', role: 'radical' },
+          { char: '舌', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '校', reading: 'こう' },
+              { text: '舎', reading: 'しゃ' }
+            ],
+            meaning: { en: 'school building', vi: 'toà nhà trường học' }
+          },
+          {
+            parts: [
+              { text: '宿', reading: 'しゅく' },
+              { text: '舎', reading: 'しゃ' }
+            ],
+            meaning: { en: 'dormitory', vi: 'ký túc xá' }
+          },
+          {
+            parts: [
+              { text: '駅', reading: 'えき' },
+              { text: '舎', reading: 'しゃ' }
+            ],
+            meaning: { en: 'station building', vi: 'nhà ga' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Danger, disaster & limits',
+      vi: 'Nguy hiểm, tai họa & giới hạn'
+    },
+    kanji: [
+      {
+        char: '犯',
+        meaning: { en: 'commit (a crime), violate', vi: 'phạm - phạm tội, vi phạm' },
+        onyomi: ['ハン'],
+        kunyomi: ['おか.す'],
+        components: ['犭'],
+        parts: [{ char: '犭', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '犯', reading: 'はん' },
+              { text: '罪', reading: 'ざい' }
+            ],
+            meaning: { en: 'crime', vi: 'tội phạm' }
+          },
+          {
+            parts: [
+              { text: '犯', reading: 'はん' },
+              { text: '人', reading: 'にん' }
+            ],
+            meaning: { en: 'criminal, culprit', vi: 'thủ phạm' }
+          },
+          {
+            parts: [
+              { text: '犯', reading: 'おか' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to commit, to violate', vi: 'phạm, vi phạm' }
+          }
+        ]
+      },
+      {
+        char: '罪',
+        meaning: { en: 'crime, sin, guilt', vi: 'tội - tội lỗi' },
+        onyomi: ['ザイ'],
+        kunyomi: ['つみ'],
+        components: ['罒', '非'],
+        parts: [
+          { char: '罒', role: 'radical' },
+          { char: '非', role: 'semantic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '犯', reading: 'はん' },
+              { text: '罪', reading: 'ざい' }
+            ],
+            meaning: { en: 'crime', vi: 'tội phạm' }
+          },
+          {
+            parts: [
+              { text: '有', reading: 'ゆう' },
+              { text: '罪', reading: 'ざい' }
+            ],
+            meaning: { en: 'guilty', vi: 'có tội' }
+          },
+          {
+            parts: [
+              { text: '罪', reading: 'ざい' },
+              { text: '人', reading: 'にん' }
+            ],
+            meaning: { en: 'a criminal, sinner', vi: 'tội nhân' }
+          }
+        ]
+      },
+      {
+        char: '災',
+        meaning: { en: 'disaster, calamity', vi: 'tai - tai họa' },
+        onyomi: ['サイ'],
+        kunyomi: ['わざわ.い'],
+        components: ['巛', '火'],
+        parts: [
+          { char: '巛', role: 'semantic' },
+          { char: '火', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '災', reading: 'さい' },
+              { text: '害', reading: 'がい' }
+            ],
+            meaning: { en: 'disaster, damage', vi: 'thiên tai, tai họa' }
+          },
+          {
+            parts: [
+              { text: '火', reading: 'か' },
+              { text: '災', reading: 'さい' }
+            ],
+            meaning: { en: 'fire (disaster)', vi: 'hỏa hoạn' }
+          },
+          {
+            parts: [
+              { text: '天', reading: 'てん' },
+              { text: '災', reading: 'さい' }
+            ],
+            meaning: { en: 'natural disaster', vi: 'thiên tai' }
+          }
+        ]
+      },
+      {
+        char: '殺',
+        meaning: { en: 'kill', vi: 'sát - giết' },
+        onyomi: ['サツ', 'サイ'],
+        kunyomi: ['ころ.す'],
+        components: ['殳'],
+        parts: [{ char: '殳', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '殺', reading: 'さつ' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'murder', vi: 'giết người' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '殺', reading: 'さつ' }
+            ],
+            meaning: { en: 'suicide', vi: 'tự sát' }
+          },
+          {
+            parts: [
+              { text: '殺', reading: 'ころ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to kill', vi: 'giết' }
+          }
+        ]
+      },
+      {
+        char: '毒',
+        meaning: { en: 'poison', vi: 'độc - chất độc' },
+        onyomi: ['ドク'],
+        kunyomi: [],
+        components: ['母'],
+        parts: [{ char: '母', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '毒', reading: 'どく' },
+              { text: '薬', reading: 'やく' }
+            ],
+            meaning: { en: 'poison (drug)', vi: 'thuốc độc' }
+          },
+          {
+            parts: [
+              { text: '中', reading: 'ちゅう' },
+              { text: '毒', reading: 'どく' }
+            ],
+            meaning: { en: 'poisoning, addiction', vi: 'ngộ độc, nghiện' }
+          },
+          {
+            parts: [
+              { text: '消', reading: 'しょう' },
+              { text: '毒', reading: 'どく' }
+            ],
+            meaning: { en: 'disinfection', vi: 'khử trùng' }
+          }
+        ]
+      },
+      {
+        char: '破',
+        meaning: { en: 'break, tear, destroy', vi: 'phá - phá vỡ, xé' },
+        onyomi: ['ハ'],
+        kunyomi: ['やぶ.る', 'やぶ.れる'],
+        components: ['石', '皮'],
+        parts: [
+          { char: '石', role: 'radical' },
+          { char: '皮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '破', reading: 'は' },
+              { text: '壊', reading: 'かい' }
+            ],
+            meaning: { en: 'destruction', vi: 'phá hoại' }
+          },
+          {
+            parts: [
+              { text: '突', reading: 'とっ' },
+              { text: '破', reading: 'ぱ' }
+            ],
+            meaning: { en: 'breakthrough', vi: 'đột phá' }
+          },
+          {
+            parts: [
+              { text: '破', reading: 'やぶ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to tear, to break', vi: 'xé, phá' }
+          }
+        ]
+      },
+      {
+        char: '険',
+        meaning: { en: 'steep, dangerous', vi: 'hiểm - hiểm trở, nguy hiểm' },
+        onyomi: ['ケン'],
+        kunyomi: ['けわ.しい'],
+        components: ['阝', '僉'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '僉', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '危', reading: 'き' },
+              { text: '険', reading: 'けん' }
+            ],
+            meaning: { en: 'danger', vi: 'nguy hiểm' }
+          },
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '険', reading: 'けん' }
+            ],
+            meaning: { en: 'insurance', vi: 'bảo hiểm' }
+          },
+          {
+            parts: [
+              { text: '険', reading: 'けわ' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'steep, harsh', vi: 'hiểm trở, gay gắt' }
+          }
+        ]
+      },
+      {
+        char: '圧',
+        meaning: { en: 'pressure, press', vi: 'áp - áp lực, ép' },
+        onyomi: ['アツ'],
+        kunyomi: [],
+        components: ['厂', '土'],
+        parts: [
+          { char: '厂', role: 'other' },
+          { char: '土', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '気', reading: 'き' },
+              { text: '圧', reading: 'あつ' }
+            ],
+            meaning: { en: 'atmospheric pressure', vi: 'khí áp' }
+          },
+          {
+            parts: [
+              { text: '圧', reading: 'あつ' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'pressure, force', vi: 'áp lực' }
+          },
+          {
+            parts: [
+              { text: '血', reading: 'けつ' },
+              { text: '圧', reading: 'あつ' }
+            ],
+            meaning: { en: 'blood pressure', vi: 'huyết áp' }
+          }
+        ]
+      },
+      {
+        char: '救',
+        meaning: { en: 'rescue, save', vi: 'cứu - cứu giúp' },
+        onyomi: ['キュウ'],
+        kunyomi: ['すく.う'],
+        components: ['求', '攵'],
+        parts: [
+          { char: '求', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '救', reading: 'きゅう' },
+              { text: '助', reading: 'じょ' }
+            ],
+            meaning: { en: 'rescue', vi: 'cứu trợ' }
+          },
+          {
+            parts: [
+              { text: '救', reading: 'きゅう' },
+              { text: '急', reading: 'きゅう' }
+            ],
+            meaning: { en: 'emergency (aid)', vi: 'cấp cứu' }
+          },
+          {
+            parts: [
+              { text: '救', reading: 'すく' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to rescue, to save', vi: 'cứu' }
+          }
+        ]
+      },
+      {
+        char: '限',
+        meaning: { en: 'limit, restrict', vi: 'hạn - giới hạn' },
+        onyomi: ['ゲン'],
+        kunyomi: ['かぎ.る'],
+        components: ['阝', '艮'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '艮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '制', reading: 'せい' },
+              { text: '限', reading: 'げん' }
+            ],
+            meaning: { en: 'restriction, limit', vi: 'hạn chế' }
+          },
+          {
+            parts: [
+              { text: '限', reading: 'げん' },
+              { text: '界', reading: 'かい' }
+            ],
+            meaning: { en: 'limit, boundary', vi: 'giới hạn' }
+          },
+          {
+            parts: [
+              { text: '限', reading: 'かぎ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to limit, to restrict', vi: 'giới hạn' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Actions & making',
+      vi: 'Hành động & tạo lập'
+    },
+    kanji: [
+      {
+        char: '招',
+        meaning: { en: 'invite, beckon', vi: 'chiêu - mời, vẫy gọi' },
+        onyomi: ['ショウ'],
+        kunyomi: ['まね.く'],
+        components: ['扌', '召'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '召', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '招', reading: 'しょう' },
+              { text: '待', reading: 'たい' }
+            ],
+            meaning: { en: 'invitation', vi: 'mời (dự tiệc)' }
+          },
+          {
+            parts: [
+              { text: '招', reading: 'まね' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to invite, to beckon', vi: 'mời, vẫy gọi' }
+          },
+          {
+            parts: [
+              { text: '手', reading: 'て' },
+              { text: '招', reading: 'まね' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'beckoning', vi: 'vẫy tay gọi' }
+          }
+        ]
+      },
+      {
+        char: '授',
+        meaning: { en: 'grant, teach', vi: 'thụ - trao cho, giảng dạy' },
+        onyomi: ['ジュ'],
+        kunyomi: ['さず.ける'],
+        components: ['扌', '受'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '受', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '授', reading: 'じゅ' },
+              { text: '業', reading: 'ぎょう' }
+            ],
+            meaning: { en: 'class, lesson', vi: 'tiết học, giờ giảng' }
+          },
+          {
+            parts: [
+              { text: '教', reading: 'きょう' },
+              { text: '授', reading: 'じゅ' }
+            ],
+            meaning: { en: 'professor', vi: 'giáo sư' }
+          },
+          {
+            parts: [
+              { text: '授', reading: 'さず' },
+              { text: 'ける', reading: 'ける' }
+            ],
+            meaning: { en: 'to grant, to confer', vi: 'ban, trao cho' }
+          }
+        ]
+      },
+      {
+        char: '接',
+        meaning: { en: 'touch, connect, receive', vi: 'tiếp - tiếp xúc, nối' },
+        onyomi: ['セツ'],
+        kunyomi: ['つ.ぐ'],
+        components: ['扌', '妾'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '妾', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '接', reading: 'せつ' },
+              { text: '続', reading: 'ぞく' }
+            ],
+            meaning: { en: 'connection', vi: 'kết nối' }
+          },
+          {
+            parts: [
+              { text: '直', reading: 'ちょく' },
+              { text: '接', reading: 'せつ' }
+            ],
+            meaning: { en: 'direct', vi: 'trực tiếp' }
+          },
+          {
+            parts: [
+              { text: '面', reading: 'めん' },
+              { text: '接', reading: 'せつ' }
+            ],
+            meaning: { en: 'interview', vi: 'phỏng vấn' }
+          }
+        ]
+      },
+      {
+        char: '採',
+        meaning: { en: 'pick, gather, adopt', vi: 'thải - hái, chọn lấy' },
+        onyomi: ['サイ'],
+        kunyomi: ['と.る'],
+        components: ['扌', '采'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '采', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '採', reading: 'さい' },
+              { text: '用', reading: 'よう' }
+            ],
+            meaning: { en: 'adoption, hiring', vi: 'tuyển dụng, áp dụng' }
+          },
+          {
+            parts: [
+              { text: '採', reading: 'さい' },
+              { text: '点', reading: 'てん' }
+            ],
+            meaning: { en: 'grading, scoring', vi: 'chấm điểm' }
+          },
+          {
+            parts: [
+              { text: '採', reading: 'と' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to pick, to take', vi: 'hái, lấy' }
+          }
+        ]
+      },
+      {
+        char: '設',
+        meaning: { en: 'establish, set up', vi: 'thiết - thiết lập' },
+        onyomi: ['セツ'],
+        kunyomi: ['もう.ける'],
+        components: ['言', '殳'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '殳', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '設', reading: 'せつ' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'establishment, founding', vi: 'thành lập' }
+          },
+          {
+            parts: [
+              { text: '設', reading: 'せっ' },
+              { text: '計', reading: 'けい' }
+            ],
+            meaning: { en: 'design, planning', vi: 'thiết kế' }
+          },
+          {
+            parts: [
+              { text: '設', reading: 'もう' },
+              { text: 'ける', reading: 'ける' }
+            ],
+            meaning: { en: 'to set up, to establish', vi: 'lập ra, đặt' }
+          }
+        ]
+      },
+      {
+        char: '絶',
+        meaning: { en: 'sever, cease; extremely', vi: 'tuyệt - dứt, tuyệt' },
+        onyomi: ['ゼツ'],
+        kunyomi: ['た.える', 'た.やす', 'た.つ'],
+        components: ['糸', '色'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '色', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '絶', reading: 'ぜっ' },
+              { text: '対', reading: 'たい' }
+            ],
+            meaning: { en: 'absolute(ly)', vi: 'tuyệt đối' }
+          },
+          {
+            parts: [
+              { text: '絶', reading: 'ぜつ' },
+              { text: '望', reading: 'ぼう' }
+            ],
+            meaning: { en: 'despair', vi: 'tuyệt vọng' }
+          },
+          {
+            parts: [
+              { text: '絶', reading: 'た' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to die out, to cease', vi: 'dứt, tuyệt chủng' }
+          }
+        ]
+      },
+      {
+        char: '総',
+        meaning: { en: 'general, total', vi: 'tổng - tổng, toàn bộ' },
+        onyomi: ['ソウ'],
+        kunyomi: [],
+        components: ['糸', '悤'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '悤', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '総', reading: 'そう' },
+              { text: '合', reading: 'ごう' }
+            ],
+            meaning: { en: 'comprehensive, overall', vi: 'tổng hợp' }
+          },
+          {
+            parts: [
+              { text: '総', reading: 'そう' },
+              { text: '理', reading: 'り' }
+            ],
+            meaning: { en: 'prime minister', vi: 'thủ tướng' }
+          },
+          {
+            parts: [
+              { text: '総', reading: 'そう' },
+              { text: '額', reading: 'がく' }
+            ],
+            meaning: { en: 'total amount', vi: 'tổng số tiền' }
+          }
+        ]
+      },
+      {
+        char: '像',
+        meaning: { en: 'image, statue', vi: 'tượng - hình tượng, tượng' },
+        onyomi: ['ゾウ'],
+        kunyomi: [],
+        components: ['亻', '象'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '象', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '想', reading: 'そう' },
+              { text: '像', reading: 'ぞう' }
+            ],
+            meaning: { en: 'imagination', vi: 'tưởng tượng' }
+          },
+          {
+            parts: [
+              { text: '画', reading: 'が' },
+              { text: '像', reading: 'ぞう' }
+            ],
+            meaning: { en: 'image (picture)', vi: 'hình ảnh' }
+          },
+          {
+            parts: [
+              { text: '銅', reading: 'どう' },
+              { text: '像', reading: 'ぞう' }
+            ],
+            meaning: { en: 'bronze statue', vi: 'tượng đồng' }
+          }
+        ]
+      },
+      {
+        char: '精',
+        meaning: { en: 'refined, spirit, energy', vi: 'tinh - tinh túy, tinh thần' },
+        onyomi: ['セイ', 'ショウ'],
+        kunyomi: [],
+        components: ['米', '青'],
+        parts: [
+          { char: '米', role: 'radical' },
+          { char: '青', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '精', reading: 'せい' },
+              { text: '神', reading: 'しん' }
+            ],
+            meaning: { en: 'spirit, mind', vi: 'tinh thần' }
+          },
+          {
+            parts: [
+              { text: '精', reading: 'せい' },
+              { text: '密', reading: 'みつ' }
+            ],
+            meaning: { en: 'precise, detailed', vi: 'tinh vi, chính xác' }
+          },
+          {
+            parts: [
+              { text: '精', reading: 'せい' },
+              { text: '算', reading: 'さん' }
+            ],
+            meaning: { en: 'exact settlement (of fare)', vi: 'thanh toán bù trừ' }
+          }
+        ]
+      },
+      {
+        char: '勢',
+        meaning: { en: 'force, momentum', vi: 'thế - khí thế, đà' },
+        onyomi: ['セイ'],
+        kunyomi: ['いきお.い'],
+        components: ['埶', '力'],
+        parts: [
+          { char: '埶', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '勢', reading: 'せい' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'power, influence', vi: 'thế lực' }
+          },
+          {
+            parts: [
+              { text: '姿', reading: 'し' },
+              { text: '勢', reading: 'せい' }
+            ],
+            meaning: { en: 'posture, stance', vi: 'tư thế' }
+          },
+          {
+            parts: [
+              { text: '勢', reading: 'いきお' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'momentum, vigor', vi: 'đà, khí thế' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Rules & conditions',
+      vi: 'Quy tắc & điều kiện'
+    },
+    kanji: [
+      {
+        char: '則',
+        meaning: { en: 'rule, law', vi: 'tắc - quy tắc' },
+        onyomi: ['ソク'],
+        kunyomi: [],
+        components: ['貝', '刂'],
+        parts: [
+          { char: '貝', role: 'other' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '規', reading: 'き' },
+              { text: '則', reading: 'そく' }
+            ],
+            meaning: { en: 'rule, regulation', vi: 'quy tắc' }
+          },
+          {
+            parts: [
+              { text: '原', reading: 'げん' },
+              { text: '則', reading: 'そく' }
+            ],
+            meaning: { en: 'principle', vi: 'nguyên tắc' }
+          },
+          {
+            parts: [
+              { text: '法', reading: 'ほう' },
+              { text: '則', reading: 'そく' }
+            ],
+            meaning: { en: 'law (of nature)', vi: 'định luật' }
+          }
+        ]
+      },
+      {
+        char: '条',
+        meaning: { en: 'article, clause; line', vi: 'điều - điều khoản' },
+        onyomi: ['ジョウ'],
+        kunyomi: [],
+        components: ['夂', '木'],
+        parts: [
+          { char: '夂', role: 'other' },
+          { char: '木', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '条', reading: 'じょう' },
+              { text: '件', reading: 'けん' }
+            ],
+            meaning: { en: 'condition, terms', vi: 'điều kiện' }
+          },
+          {
+            parts: [
+              { text: '条', reading: 'じょう' },
+              { text: '約', reading: 'やく' }
+            ],
+            meaning: { en: 'treaty', vi: 'hiệp ước' }
+          },
+          {
+            parts: [
+              { text: '条', reading: 'じょう' },
+              { text: '文', reading: 'ぶん' }
+            ],
+            meaning: { en: 'text of a provision', vi: 'điều văn' }
+          }
+        ]
+      },
+      {
+        char: '件',
+        meaning: { en: 'matter, case, item', vi: 'kiện - sự việc, vụ' },
+        onyomi: ['ケン'],
+        kunyomi: [],
+        components: ['亻', '牛'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '牛', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '事', reading: 'じ' },
+              { text: '件', reading: 'けん' }
+            ],
+            meaning: { en: 'incident, case', vi: 'vụ việc' }
+          },
+          {
+            parts: [
+              { text: '条', reading: 'じょう' },
+              { text: '件', reading: 'けん' }
+            ],
+            meaning: { en: 'condition', vi: 'điều kiện' }
+          },
+          {
+            parts: [
+              { text: '件', reading: 'けん' },
+              { text: '数', reading: 'すう' }
+            ],
+            meaning: { en: 'number of cases', vi: 'số vụ, số lượng' }
+          }
+        ]
+      },
+      {
+        char: '格',
+        meaning: { en: 'status, rank; case (grammar)', vi: 'cách - cách thức, tư cách' },
+        onyomi: ['カク', 'コウ'],
+        kunyomi: [],
+        components: ['木', '各'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '各', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '性', reading: 'せい' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'personality', vi: 'tính cách' }
+          },
+          {
+            parts: [
+              { text: '合', reading: 'ごう' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'passing (an exam)', vi: 'đỗ, hợp cách' }
+          },
+          {
+            parts: [
+              { text: '価', reading: 'か' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'price', vi: 'giá cả' }
+          }
+        ]
+      },
+      {
+        char: '確',
+        meaning: { en: 'certain, confirm', vi: 'xác - chắc chắn, xác nhận' },
+        onyomi: ['カク'],
+        kunyomi: ['たし.か', 'たし.かめる'],
+        components: ['石', '隺'],
+        parts: [
+          { char: '石', role: 'radical' },
+          { char: '隺', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '確', reading: 'かく' },
+              { text: '認', reading: 'にん' }
+            ],
+            meaning: { en: 'confirmation', vi: 'xác nhận' }
+          },
+          {
+            parts: [
+              { text: '正', reading: 'せい' },
+              { text: '確', reading: 'かく' }
+            ],
+            meaning: { en: 'accurate', vi: 'chính xác' }
+          },
+          {
+            parts: [
+              { text: '確', reading: 'たし' },
+              { text: 'か', reading: 'か' }
+            ],
+            meaning: { en: 'certain, sure', vi: 'chắc chắn' }
+          }
+        ]
+      },
+      {
+        char: '解',
+        meaning: { en: 'untie, solve, understand', vi: 'giải - cởi, giải quyết, hiểu' },
+        onyomi: ['カイ', 'ゲ'],
+        kunyomi: ['と.く', 'と.ける'],
+        components: ['角', '刀', '牛'],
+        parts: [
+          { char: '角', role: 'radical' },
+          { char: '刀', role: 'semantic' },
+          { char: '牛', role: 'semantic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '解', reading: 'かい' },
+              { text: '決', reading: 'けつ' }
+            ],
+            meaning: { en: 'solution, settlement', vi: 'giải quyết' }
+          },
+          {
+            parts: [
+              { text: '理', reading: 'り' },
+              { text: '解', reading: 'かい' }
+            ],
+            meaning: { en: 'understanding', vi: 'lý giải, hiểu' }
+          },
+          {
+            parts: [
+              { text: '解', reading: 'と' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to solve, to untie', vi: 'giải, cởi' }
+          }
+        ]
+      },
+      {
+        char: '適',
+        meaning: { en: 'suitable, fit', vi: 'thích - thích hợp' },
+        onyomi: ['テキ'],
+        kunyomi: [],
+        components: ['辶', '啇'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '啇', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '適', reading: 'てき' },
+              { text: '当', reading: 'とう' }
+            ],
+            meaning: { en: 'suitable, appropriate', vi: 'thích đáng' }
+          },
+          {
+            parts: [
+              { text: '適', reading: 'てき' },
+              { text: '切', reading: 'せつ' }
+            ],
+            meaning: { en: 'appropriate, proper', vi: 'thích hợp' }
+          },
+          {
+            parts: [
+              { text: '快', reading: 'かい' },
+              { text: '適', reading: 'てき' }
+            ],
+            meaning: { en: 'comfortable, pleasant', vi: 'dễ chịu, tiện nghi' }
+          }
+        ]
+      },
+      {
+        char: '程',
+        meaning: { en: 'extent, degree; schedule', vi: 'trình - mức độ; lộ trình' },
+        onyomi: ['テイ'],
+        kunyomi: ['ほど'],
+        components: ['禾', '呈'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '呈', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '程', reading: 'てい' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'degree, extent', vi: 'mức độ' }
+          },
+          {
+            parts: [
+              { text: '日', reading: 'にっ' },
+              { text: '程', reading: 'てい' }
+            ],
+            meaning: { en: 'schedule, itinerary', vi: 'lịch trình' }
+          },
+          {
+            parts: [
+              { text: '過', reading: 'か' },
+              { text: '程', reading: 'てい' }
+            ],
+            meaning: { en: 'process', vi: 'quá trình' }
+          }
+        ]
+      },
+      {
+        char: '易',
+        meaning: { en: 'easy; divination', vi: 'dị - dễ; (dịch) bói' },
+        onyomi: ['エキ', 'イ'],
+        kunyomi: ['やさ.しい'],
+        components: ['日', '勿'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '勿', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '容', reading: 'よう' },
+              { text: '易', reading: 'い' }
+            ],
+            meaning: { en: 'easy, simple', vi: 'dễ dàng' }
+          },
+          {
+            parts: [
+              { text: '貿', reading: 'ぼう' },
+              { text: '易', reading: 'えき' }
+            ],
+            meaning: { en: 'trade', vi: 'mậu dịch' }
+          },
+          {
+            parts: [
+              { text: '易', reading: 'やさ' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'easy, plain', vi: 'dễ' }
+          }
+        ]
+      },
+      {
+        char: '因',
+        meaning: { en: 'cause, be based on', vi: 'nhân - nguyên nhân; do bởi' },
+        onyomi: ['イン'],
+        kunyomi: ['よ.る'],
+        components: ['囗', '大'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '大', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '原', reading: 'げん' },
+              { text: '因', reading: 'いん' }
+            ],
+            meaning: { en: 'cause', vi: 'nguyên nhân' }
+          },
+          {
+            parts: [
+              { text: '因', reading: 'いん' },
+              { text: '果', reading: 'が' }
+            ],
+            meaning: { en: 'cause and effect, karma', vi: 'nhân quả' }
+          },
+          {
+            parts: [
+              { text: '要', reading: 'よう' },
+              { text: '因', reading: 'いん' }
+            ],
+            meaning: { en: 'factor', vi: 'yếu tố, nhân tố' }
+          }
+        ]
+      },
+      {
+        char: '可',
+        meaning: { en: 'possible; approve', vi: 'khả - có thể; cho phép' },
+        onyomi: ['カ'],
+        kunyomi: [],
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '可', reading: 'か' },
+              { text: '能', reading: 'のう' }
+            ],
+            meaning: { en: 'possible', vi: 'khả năng, có thể' }
+          },
+          {
+            parts: [
+              { text: '許', reading: 'きょ' },
+              { text: '可', reading: 'か' }
+            ],
+            meaning: { en: 'permission', vi: 'cho phép' }
+          },
+          {
+            parts: [
+              { text: '可', reading: 'か' },
+              { text: '決', reading: 'けつ' }
+            ],
+            meaning: { en: 'approval (of a motion)', vi: 'thông qua (nghị quyết)' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Nature, growth & ability',
+      vi: 'Thiên nhiên, sinh trưởng & khả năng'
+    },
+    kanji: [
+      {
+        char: '桜',
+        meaning: { en: 'cherry (blossom)', vi: 'anh - hoa anh đào' },
+        onyomi: ['オウ'],
+        kunyomi: ['さくら'],
+        components: ['木', '女'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '女', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '桜', reading: 'さくら' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'cherry-blossom pink', vi: 'màu hồng anh đào' }
+          },
+          {
+            parts: [
+              { text: '夜', reading: 'よ' },
+              { text: '桜', reading: 'ざくら' }
+            ],
+            meaning: { en: 'cherry blossoms at night', vi: 'ngắm anh đào đêm' }
+          },
+          {
+            parts: [
+              { text: '桜', reading: 'さくら' },
+              { text: '前', reading: 'ぜん' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'cherry-blossom front', vi: 'đường ranh hoa nở' }
+          }
+        ]
+      },
+      {
+        char: '幹',
+        meaning: { en: 'trunk, main part', vi: 'cán - thân cây; nòng cốt' },
+        onyomi: ['カン'],
+        kunyomi: ['みき'],
+        components: ['干'],
+        parts: [{ char: '干', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '新', reading: 'しん' },
+              { text: '幹', reading: 'かん' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'Shinkansen (bullet train)', vi: 'tàu cao tốc Shinkansen' }
+          },
+          {
+            parts: [
+              { text: '幹', reading: 'かん' },
+              { text: '部', reading: 'ぶ' }
+            ],
+            meaning: { en: 'executive, cadre', vi: 'cán bộ, ban lãnh đạo' }
+          },
+          {
+            parts: [
+              { text: '幹', reading: 'かん' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'main line, trunk line', vi: 'tuyến chính' }
+          }
+        ]
+      },
+      {
+        char: '枝',
+        meaning: { en: 'branch, twig', vi: 'chi - cành cây' },
+        onyomi: ['シ'],
+        kunyomi: ['えだ'],
+        components: ['木', '支'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '支', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '枝', reading: 'えだ' },
+              { text: '豆', reading: 'まめ' }
+            ],
+            meaning: { en: 'edamame', vi: 'đậu nành non' }
+          },
+          {
+            parts: [
+              { text: '小', reading: 'こ' },
+              { text: '枝', reading: 'えだ' }
+            ],
+            meaning: { en: 'twig, small branch', vi: 'cành con' }
+          },
+          {
+            parts: [
+              { text: '枝', reading: 'えだ' },
+              { text: '分', reading: 'わ' },
+              { text: 'かれ', reading: 'かれ' }
+            ],
+            meaning: { en: 'branching off', vi: 'sự phân nhánh' }
+          }
+        ]
+      },
+      {
+        char: '酸',
+        meaning: { en: 'acid; sour', vi: 'toan - axit; chua' },
+        onyomi: ['サン'],
+        kunyomi: ['す.い'],
+        components: ['酉', '夋'],
+        parts: [
+          { char: '酉', role: 'radical' },
+          { char: '夋', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '酸', reading: 'さん' },
+              { text: '素', reading: 'そ' }
+            ],
+            meaning: { en: 'oxygen', vi: 'oxy' }
+          },
+          {
+            parts: [
+              { text: '酸', reading: 'さん' },
+              { text: '性', reading: 'せい' }
+            ],
+            meaning: { en: 'acidity', vi: 'tính axit' }
+          },
+          {
+            parts: [
+              { text: '酸', reading: 'す' },
+              { text: 'っぱい', reading: 'っぱい' }
+            ],
+            meaning: { en: 'sour', vi: 'chua' }
+          }
+        ]
+      },
+      {
+        char: '眼',
+        meaning: { en: 'eye(ball)', vi: 'nhãn - mắt' },
+        onyomi: ['ガン'],
+        kunyomi: ['まなこ'],
+        components: ['目', '艮'],
+        parts: [
+          { char: '目', role: 'radical' },
+          { char: '艮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [{ text: '眼鏡', reading: 'めがね' }],
+            meaning: { en: 'eyeglasses', vi: 'kính mắt' }
+          },
+          {
+            parts: [
+              { text: '眼', reading: 'がん' },
+              { text: '科', reading: 'か' }
+            ],
+            meaning: { en: 'ophthalmology', vi: 'khoa mắt' }
+          },
+          {
+            parts: [
+              { text: '肉', reading: 'にく' },
+              { text: '眼', reading: 'がん' }
+            ],
+            meaning: { en: 'the naked eye', vi: 'mắt thường' }
+          }
+        ]
+      },
+      {
+        char: '肥',
+        meaning: { en: 'fat; fertile; fertilizer', vi: 'phì - béo; màu mỡ; phân bón' },
+        onyomi: ['ヒ'],
+        kunyomi: ['こ.える', 'こ.やす'],
+        components: ['肉', '巴'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '巴', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '肥', reading: 'ひ' },
+              { text: '料', reading: 'りょう' }
+            ],
+            meaning: { en: 'fertilizer', vi: 'phân bón' }
+          },
+          {
+            parts: [
+              { text: '肥', reading: 'ひ' },
+              { text: '満', reading: 'まん' }
+            ],
+            meaning: { en: 'obesity', vi: 'béo phì' }
+          },
+          {
+            parts: [
+              { text: '肥', reading: 'こ' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to grow fat, to become fertile', vi: 'béo lên, màu mỡ' }
+          }
+        ]
+      },
+      {
+        char: '燃',
+        meaning: { en: 'burn', vi: 'nhiên - cháy, đốt' },
+        onyomi: ['ネン'],
+        kunyomi: ['も.える', 'も.やす'],
+        components: ['火', '然'],
+        parts: [
+          { char: '火', role: 'radical' },
+          { char: '然', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '燃', reading: 'ねん' },
+              { text: '料', reading: 'りょう' }
+            ],
+            meaning: { en: 'fuel', vi: 'nhiên liệu' }
+          },
+          {
+            parts: [
+              { text: '燃', reading: 'ねん' },
+              { text: '焼', reading: 'しょう' }
+            ],
+            meaning: { en: 'combustion', vi: 'sự cháy' }
+          },
+          {
+            parts: [
+              { text: '燃', reading: 'も' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to burn (intransitive)', vi: 'cháy' }
+          }
+        ]
+      },
+      {
+        char: '独',
+        meaning: { en: 'alone, single', vi: 'độc - một mình, độc lập' },
+        onyomi: ['ドク'],
+        kunyomi: ['ひと.り'],
+        components: ['犭', '虫'],
+        parts: [
+          { char: '犭', role: 'radical' },
+          { char: '虫', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '独', reading: 'どく' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'independence', vi: 'độc lập' }
+          },
+          {
+            parts: [
+              { text: '独', reading: 'どく' },
+              { text: '身', reading: 'しん' }
+            ],
+            meaning: { en: 'single, unmarried', vi: 'độc thân' }
+          },
+          {
+            parts: [
+              { text: '単', reading: 'たん' },
+              { text: '独', reading: 'どく' }
+            ],
+            meaning: { en: 'single, sole', vi: 'đơn độc' }
+          }
+        ]
+      },
+      {
+        char: '能',
+        meaning: { en: 'ability, be able', vi: 'năng - khả năng' },
+        onyomi: ['ノウ'],
+        kunyomi: [],
+        components: ['肉'],
+        parts: [{ char: '肉', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '能', reading: 'のう' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'ability, capacity', vi: 'năng lực' }
+          },
+          {
+            parts: [
+              { text: '可', reading: 'か' },
+              { text: '能', reading: 'のう' }
+            ],
+            meaning: { en: 'possible', vi: 'khả năng, có thể' }
+          },
+          {
+            parts: [
+              { text: '才', reading: 'さい' },
+              { text: '能', reading: 'のう' }
+            ],
+            meaning: { en: 'talent', vi: 'tài năng' }
+          }
+        ]
+      },
+      {
+        char: '現',
+        meaning: { en: 'appear, present, current', vi: 'hiện - xuất hiện, hiện tại' },
+        onyomi: ['ゲン'],
+        kunyomi: ['あらわ.れる', 'あらわ.す'],
+        components: ['王', '見'],
+        parts: [
+          { char: '王', role: 'radical' },
+          { char: '見', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '現', reading: 'げん' },
+              { text: '在', reading: 'ざい' }
+            ],
+            meaning: { en: 'the present, now', vi: 'hiện tại' }
+          },
+          {
+            parts: [
+              { text: '現', reading: 'げん' },
+              { text: '実', reading: 'じつ' }
+            ],
+            meaning: { en: 'reality', vi: 'hiện thực' }
+          },
+          {
+            parts: [
+              { text: '現', reading: 'あらわ' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to appear', vi: 'xuất hiện' }
+          }
+        ]
+      },
+      {
+        char: '脈',
+        meaning: { en: 'pulse, vein', vi: 'mạch - mạch máu; mạch (núi)' },
+        onyomi: ['ミャク'],
+        kunyomi: [],
+        components: ['肉'],
+        parts: [{ char: '肉', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '山', reading: 'さん' },
+              { text: '脈', reading: 'みゃく' }
+            ],
+            meaning: { en: 'mountain range', vi: 'dãy núi' }
+          },
+          {
+            parts: [
+              { text: '文', reading: 'ぶん' },
+              { text: '脈', reading: 'みゃく' }
+            ],
+            meaning: { en: 'context', vi: 'ngữ cảnh, mạch văn' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Words, feeling & thought',
+      vi: 'Lời nói, cảm xúc & suy nghĩ'
+    },
+    kanji: [
+      {
+        char: '喜',
+        meaning: { en: 'rejoice, delight', vi: 'hỉ - vui mừng' },
+        onyomi: ['キ'],
+        kunyomi: ['よろこ.ぶ'],
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '喜', reading: 'き' },
+              { text: '劇', reading: 'げき' }
+            ],
+            meaning: { en: 'comedy', vi: 'hài kịch' }
+          },
+          {
+            parts: [
+              { text: '歓', reading: 'かん' },
+              { text: '喜', reading: 'き' }
+            ],
+            meaning: { en: 'joy, delight', vi: 'hoan hỉ' }
+          },
+          {
+            parts: [
+              { text: '喜', reading: 'よろこ' },
+              { text: 'ぶ', reading: 'ぶ' }
+            ],
+            meaning: { en: 'to rejoice, to be glad', vi: 'vui mừng' }
+          }
+        ]
+      },
+      {
+        char: '許',
+        meaning: { en: 'permit, allow', vi: 'hứa - cho phép, tha thứ' },
+        onyomi: ['キョ'],
+        kunyomi: ['ゆる.す'],
+        components: ['言', '午'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '午', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '許', reading: 'きょ' },
+              { text: '可', reading: 'か' }
+            ],
+            meaning: { en: 'permission', vi: 'cho phép' }
+          },
+          {
+            parts: [
+              { text: '免', reading: 'めん' },
+              { text: '許', reading: 'きょ' }
+            ],
+            meaning: { en: 'license', vi: 'giấy phép, bằng' }
+          },
+          {
+            parts: [
+              { text: '許', reading: 'ゆる' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to permit, to forgive', vi: 'cho phép, tha thứ' }
+          }
+        ]
+      },
+      {
+        char: '謝',
+        meaning: { en: 'thank; apologize', vi: 'tạ - cảm tạ; tạ lỗi' },
+        onyomi: ['シャ'],
+        kunyomi: ['あやま.る'],
+        components: ['言', '射'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '射', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '感', reading: 'かん' },
+              { text: '謝', reading: 'しゃ' }
+            ],
+            meaning: { en: 'gratitude', vi: 'cảm tạ, biết ơn' }
+          },
+          {
+            parts: [
+              { text: '謝', reading: 'しゃ' },
+              { text: '罪', reading: 'ざい' }
+            ],
+            meaning: { en: 'apology', vi: 'tạ lỗi, xin lỗi' }
+          },
+          {
+            parts: [
+              { text: '謝', reading: 'あやま' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to apologize', vi: 'xin lỗi' }
+          }
+        ]
+      },
+      {
+        char: '寄',
+        meaning: { en: 'draw near; contribute', vi: 'ký - ghé lại; gửi, góp' },
+        onyomi: ['キ'],
+        kunyomi: ['よ.る', 'よ.せる'],
+        components: ['宀', '奇'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '奇', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '寄', reading: 'き' },
+              { text: '付', reading: 'ふ' }
+            ],
+            meaning: { en: 'donation', vi: 'quyên góp' }
+          },
+          {
+            parts: [
+              { text: '寄', reading: 'き' },
+              { text: '生', reading: 'せい' }
+            ],
+            meaning: { en: 'parasitism', vi: 'ký sinh' }
+          },
+          {
+            parts: [
+              { text: '寄', reading: 'よ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to drop by, to draw near', vi: 'ghé qua, lại gần' }
+          }
+        ]
+      },
+      {
+        char: '技',
+        meaning: { en: 'skill, technique', vi: 'kỹ - kỹ năng, kỹ thuật' },
+        onyomi: ['ギ'],
+        kunyomi: ['わざ'],
+        components: ['扌', '支'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '支', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '技', reading: 'ぎ' },
+              { text: '術', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'technology, technique', vi: 'kỹ thuật' }
+          },
+          {
+            parts: [
+              { text: '技', reading: 'ぎ' },
+              { text: '能', reading: 'のう' }
+            ],
+            meaning: { en: 'skill, ability', vi: 'kỹ năng' }
+          },
+          {
+            parts: [
+              { text: '演', reading: 'えん' },
+              { text: '技', reading: 'ぎ' }
+            ],
+            meaning: { en: 'acting, performance', vi: 'diễn xuất' }
+          }
+        ]
+      },
+      {
+        char: '義',
+        meaning: { en: 'righteousness, meaning', vi: 'nghĩa - chính nghĩa; nghĩa' },
+        onyomi: ['ギ'],
+        kunyomi: [],
+        components: ['羊', '我'],
+        parts: [
+          { char: '羊', role: 'radical' },
+          { char: '我', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '義', reading: 'ぎ' },
+              { text: '務', reading: 'む' }
+            ],
+            meaning: { en: 'duty, obligation', vi: 'nghĩa vụ' }
+          },
+          {
+            parts: [
+              { text: '意', reading: 'い' },
+              { text: '義', reading: 'ぎ' }
+            ],
+            meaning: { en: 'meaning, significance', vi: 'ý nghĩa' }
+          },
+          {
+            parts: [
+              { text: '正', reading: 'せい' },
+              { text: '義', reading: 'ぎ' }
+            ],
+            meaning: { en: 'justice', vi: 'chính nghĩa' }
+          }
+        ]
+      },
+      {
+        char: '興',
+        meaning: { en: 'interest; flourish', vi: 'hưng - hứng thú; hưng thịnh' },
+        onyomi: ['コウ', 'キョウ'],
+        kunyomi: ['おこ.る', 'おこ.す'],
+        components: ['臼'],
+        parts: [{ char: '臼', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '興', reading: 'きょう' },
+              { text: '味', reading: 'み' }
+            ],
+            meaning: { en: 'interest', vi: 'hứng thú' }
+          },
+          {
+            parts: [
+              { text: '興', reading: 'こう' },
+              { text: '奮', reading: 'ふん' }
+            ],
+            meaning: { en: 'excitement', vi: 'hưng phấn' }
+          },
+          {
+            parts: [
+              { text: '復', reading: 'ふっ' },
+              { text: '興', reading: 'こう' }
+            ],
+            meaning: { en: 'revival, reconstruction', vi: 'phục hưng' }
+          }
+        ]
+      },
+      {
+        char: '句',
+        meaning: { en: 'phrase, verse', vi: 'cú - câu, cú (thơ)' },
+        onyomi: ['ク'],
+        kunyomi: [],
+        components: ['勹', '口'],
+        parts: [
+          { char: '勹', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '文', reading: 'もん' },
+              { text: '句', reading: 'く' }
+            ],
+            meaning: { en: 'complaint; phrase', vi: 'lời than phiền; câu chữ' }
+          },
+          {
+            parts: [
+              { text: '俳', reading: 'はい' },
+              { text: '句', reading: 'く' }
+            ],
+            meaning: { en: 'haiku', vi: 'thơ haiku' }
+          },
+          {
+            parts: [
+              { text: '語', reading: 'ご' },
+              { text: '句', reading: 'く' }
+            ],
+            meaning: { en: 'words and phrases', vi: 'từ ngữ, ngữ cú' }
+          }
+        ]
+      },
+      {
+        char: '得',
+        meaning: { en: 'gain, obtain', vi: 'đắc - được, đạt được' },
+        onyomi: ['トク'],
+        kunyomi: ['え.る', 'う.る'],
+        components: ['彳', '寸'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '寸', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '得', reading: 'とく' },
+              { text: '意', reading: 'い' }
+            ],
+            meaning: { en: 'proud, one\u2019s forte', vi: 'sở trường, đắc ý' }
+          },
+          {
+            parts: [
+              { text: '所', reading: 'しょ' },
+              { text: '得', reading: 'とく' }
+            ],
+            meaning: { en: 'income, earnings', vi: 'thu nhập' }
+          },
+          {
+            parts: [
+              { text: '得', reading: 'え' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to gain, to obtain', vi: 'đạt được' }
+          }
+        ]
+      },
+      {
+        char: '常',
+        meaning: { en: 'usual, constant', vi: 'thường - bình thường, thường xuyên' },
+        onyomi: ['ジョウ'],
+        kunyomi: ['つね', 'とこ'],
+        components: ['尚', '巾'],
+        parts: [
+          { char: '尚', role: 'phonetic' },
+          { char: '巾', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '常', reading: 'じょう' },
+              { text: '識', reading: 'しき' }
+            ],
+            meaning: { en: 'common sense', vi: 'thường thức' }
+          },
+          {
+            parts: [
+              { text: '日', reading: 'にち' },
+              { text: '常', reading: 'じょう' }
+            ],
+            meaning: { en: 'everyday, daily', vi: 'thường nhật' }
+          },
+          {
+            parts: [
+              { text: '非', reading: 'ひ' },
+              { text: '常', reading: 'じょう' }
+            ],
+            meaning: { en: 'emergency; extraordinary', vi: 'khẩn cấp; phi thường' }
+          }
+        ]
+      },
+      {
+        char: '象',
+        meaning: {
+          en: 'elephant; shape, phenomenon',
+          vi: 'tượng - con voi; hiện tượng, hình tượng'
+        },
+        onyomi: ['ショウ', 'ゾウ'],
+        kunyomi: [],
+        components: ['豕'],
+        parts: [{ char: '豕', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '子', reading: 'こ' },
+              { text: '象', reading: 'ぞう' }
+            ],
+            meaning: { en: 'baby elephant', vi: 'voi con' }
+          },
+          {
+            parts: [
+              { text: '気', reading: 'き' },
+              { text: '象', reading: 'しょう' }
+            ],
+            meaning: { en: 'weather, meteorology', vi: 'khí tượng' }
+          },
+          {
+            parts: [
+              { text: '対', reading: 'たい' },
+              { text: '象', reading: 'しょう' }
+            ],
+            meaning: { en: 'target, object', vi: 'đối tượng' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Quantity, comparison & degree',
+      vi: 'Số lượng, so sánh & mức độ'
+    },
+    kanji: [
+      {
+        char: '比',
+        meaning: { en: 'compare, ratio', vi: 'tỉ - so sánh, tỉ lệ' },
+        onyomi: ['ヒ'],
+        kunyomi: ['くら.べる'],
+        components: [],
+        examples: [
+          {
+            parts: [
+              { text: '比', reading: 'ひ' },
+              { text: '較', reading: 'かく' }
+            ],
+            meaning: { en: 'comparison', vi: 'so sánh' }
+          },
+          {
+            parts: [
+              { text: '比', reading: 'ひ' },
+              { text: '例', reading: 'れい' }
+            ],
+            meaning: { en: 'proportion', vi: 'tỉ lệ' }
+          },
+          {
+            parts: [
+              { text: '比', reading: 'くら' },
+              { text: 'べる', reading: 'べる' }
+            ],
+            meaning: { en: 'to compare', vi: 'so sánh' }
+          }
+        ]
+      },
+      {
+        char: '率',
+        meaning: { en: 'rate, proportion; lead', vi: 'suất - tỉ lệ; (soái) dẫn dắt' },
+        onyomi: ['リツ', 'ソツ'],
+        kunyomi: ['ひき.いる'],
+        components: ['玄'],
+        parts: [{ char: '玄', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '効', reading: 'こう' },
+              { text: '率', reading: 'りつ' }
+            ],
+            meaning: { en: 'efficiency', vi: 'hiệu suất' }
+          },
+          {
+            parts: [
+              { text: '率', reading: 'そっ' },
+              { text: '直', reading: 'ちょく' }
+            ],
+            meaning: { en: 'frank, candid', vi: 'thẳng thắn' }
+          },
+          {
+            parts: [
+              { text: '引', reading: 'いん' },
+              { text: '率', reading: 'そつ' }
+            ],
+            meaning: { en: 'leading (a group)', vi: 'dẫn dắt (đoàn)' }
+          }
+        ]
+      },
+      {
+        char: '余',
+        meaning: { en: 'surplus, remainder', vi: 'dư - thừa, dư ra' },
+        onyomi: ['ヨ'],
+        kunyomi: ['あま.る', 'あま.す'],
+        components: ['人'],
+        parts: [{ char: '人', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '余', reading: 'よ' },
+              { text: '分', reading: 'ぶん' }
+            ],
+            meaning: { en: 'extra, surplus', vi: 'phần dư, thừa' }
+          },
+          {
+            parts: [
+              { text: '余', reading: 'よ' },
+              { text: '裕', reading: 'ゆう' }
+            ],
+            meaning: { en: 'room, leeway', vi: 'dư dả, thư thả' }
+          },
+          {
+            parts: [
+              { text: '余', reading: 'あま' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to be left over', vi: 'dư ra, thừa' }
+          }
+        ]
+      },
+      {
+        char: '容',
+        meaning: { en: 'contain; appearance', vi: 'dung - chứa; dung mạo' },
+        onyomi: ['ヨウ'],
+        kunyomi: [],
+        components: ['宀', '谷'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '谷', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '内', reading: 'ない' },
+              { text: '容', reading: 'よう' }
+            ],
+            meaning: { en: 'content(s)', vi: 'nội dung' }
+          },
+          {
+            parts: [
+              { text: '容', reading: 'よう' },
+              { text: '器', reading: 'き' }
+            ],
+            meaning: { en: 'container', vi: 'vật chứa' }
+          },
+          {
+            parts: [
+              { text: '容', reading: 'よう' },
+              { text: '易', reading: 'い' }
+            ],
+            meaning: { en: 'easy', vi: 'dễ dàng' }
+          }
+        ]
+      },
+      {
+        char: '略',
+        meaning: { en: 'abbreviate; strategy', vi: 'lược - lược bớt; sách lược' },
+        onyomi: ['リャク'],
+        kunyomi: [],
+        components: ['田', '各'],
+        parts: [
+          { char: '田', role: 'radical' },
+          { char: '各', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '省', reading: 'しょう' },
+              { text: '略', reading: 'りゃく' }
+            ],
+            meaning: { en: 'omission, abbreviation', vi: 'lược bỏ' }
+          },
+          {
+            parts: [
+              { text: '戦', reading: 'せん' },
+              { text: '略', reading: 'りゃく' }
+            ],
+            meaning: { en: 'strategy', vi: 'chiến lược' }
+          },
+          {
+            parts: [
+              { text: '略', reading: 'りゃく' },
+              { text: '図', reading: 'ず' }
+            ],
+            meaning: { en: 'rough sketch', vi: 'lược đồ' }
+          }
+        ]
+      },
+      {
+        char: '備',
+        meaning: { en: 'prepare, equip', vi: 'bị - chuẩn bị, trang bị' },
+        onyomi: ['ビ'],
+        kunyomi: ['そな.える', 'そな.わる'],
+        components: ['亻'],
+        parts: [{ char: '亻', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '準', reading: 'じゅん' },
+              { text: '備', reading: 'び' }
+            ],
+            meaning: { en: 'preparation', vi: 'chuẩn bị' }
+          },
+          {
+            parts: [
+              { text: '設', reading: 'せつ' },
+              { text: '備', reading: 'び' }
+            ],
+            meaning: { en: 'equipment, facilities', vi: 'thiết bị' }
+          },
+          {
+            parts: [
+              { text: '備', reading: 'そな' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to equip, to prepare for', vi: 'trang bị, phòng bị' }
+          }
+        ]
+      },
+      {
+        char: '複',
+        meaning: { en: 'multiple, complex', vi: 'phức - phức tạp, kép' },
+        onyomi: ['フク'],
+        kunyomi: [],
+        components: ['衤', '复'],
+        parts: [
+          { char: '衤', role: 'radical' },
+          { char: '复', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '複', reading: 'ふく' },
+              { text: '雑', reading: 'ざつ' }
+            ],
+            meaning: { en: 'complicated', vi: 'phức tạp' }
+          },
+          {
+            parts: [
+              { text: '複', reading: 'ふく' },
+              { text: '数', reading: 'すう' }
+            ],
+            meaning: { en: 'plural, multiple', vi: 'số nhiều' }
+          },
+          {
+            parts: [
+              { text: '重', reading: 'じゅう' },
+              { text: '複', reading: 'ふく' }
+            ],
+            meaning: { en: 'duplication, overlap', vi: 'trùng lặp' }
+          }
+        ]
+      },
+      {
+        char: '団',
+        meaning: { en: 'group, association', vi: 'đoàn - đoàn thể' },
+        onyomi: ['ダン', 'トン'],
+        kunyomi: [],
+        components: ['囗', '寸'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '寸', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '団', reading: 'だん' },
+              { text: '体', reading: 'たい' }
+            ],
+            meaning: { en: 'organization, group', vi: 'đoàn thể, tổ chức' }
+          },
+          {
+            parts: [
+              { text: '集', reading: 'しゅう' },
+              { text: '団', reading: 'だん' }
+            ],
+            meaning: { en: 'group, mass', vi: 'tập đoàn, nhóm' }
+          },
+          {
+            parts: [
+              { text: '団', reading: 'だん' },
+              { text: '子', reading: 'ご' }
+            ],
+            meaning: { en: 'dango (dumpling)', vi: 'bánh dango' }
+          }
+        ]
+      },
+      {
+        char: '豊',
+        meaning: { en: 'abundant, rich', vi: 'phong - phong phú, dồi dào' },
+        onyomi: ['ホウ'],
+        kunyomi: ['ゆた.か'],
+        components: ['曲', '豆'],
+        parts: [
+          { char: '曲', role: 'other' },
+          { char: '豆', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '豊', reading: 'ほう' },
+              { text: '富', reading: 'ふ' }
+            ],
+            meaning: { en: 'abundant, plentiful', vi: 'phong phú' }
+          },
+          {
+            parts: [
+              { text: '豊', reading: 'ほう' },
+              { text: '作', reading: 'さく' }
+            ],
+            meaning: { en: 'good harvest', vi: 'được mùa' }
+          },
+          {
+            parts: [
+              { text: '豊', reading: 'ゆた' },
+              { text: 'か', reading: 'か' }
+            ],
+            meaning: { en: 'abundant, rich', vi: 'dồi dào, sung túc' }
+          }
+        ]
+      },
+      {
+        char: '貧',
+        meaning: { en: 'poor, poverty', vi: 'bần - nghèo' },
+        onyomi: ['ヒン', 'ビン'],
+        kunyomi: ['まず.しい'],
+        components: ['分', '貝'],
+        parts: [
+          { char: '分', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '貧', reading: 'ひん' },
+              { text: '困', reading: 'こん' }
+            ],
+            meaning: { en: 'poverty', vi: 'nghèo khó' }
+          },
+          {
+            parts: [
+              { text: '貧', reading: 'びん' },
+              { text: '乏', reading: 'ぼう' }
+            ],
+            meaning: { en: 'poverty, scarcity', vi: 'bần cùng, túng thiếu' }
+          },
+          {
+            parts: [
+              { text: '貧', reading: 'まず' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'poor', vi: 'nghèo' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Records, documents & reports',
+      vi: 'Ghi chép, văn bản & báo cáo'
+    },
+    kanji: [
+      {
+        char: '版',
+        meaning: { en: 'printing block, edition', vi: 'bản - bản in, ấn bản' },
+        onyomi: ['ハン'],
+        kunyomi: [],
+        components: ['片', '反'],
+        parts: [
+          { char: '片', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '出', reading: 'しゅっ' },
+              { text: '版', reading: 'ぱん' }
+            ],
+            meaning: { en: 'publishing', vi: 'xuất bản' }
+          },
+          {
+            parts: [
+              { text: '版', reading: 'はん' },
+              { text: '画', reading: 'が' }
+            ],
+            meaning: { en: 'woodblock print', vi: 'tranh khắc' }
+          },
+          {
+            parts: [
+              { text: '初', reading: 'しょ' },
+              { text: '版', reading: 'はん' }
+            ],
+            meaning: { en: 'first edition', vi: 'bản in đầu' }
+          }
+        ]
+      },
+      {
+        char: '刊',
+        meaning: { en: 'publish, print', vi: 'san - ấn hành, xuất bản' },
+        onyomi: ['カン'],
+        kunyomi: [],
+        components: ['干', '刂'],
+        parts: [
+          { char: '干', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '刊', reading: 'かん' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'publication', vi: 'ấn hành' }
+          },
+          {
+            parts: [
+              { text: '週', reading: 'しゅう' },
+              { text: '刊', reading: 'かん' }
+            ],
+            meaning: { en: 'weekly (publication)', vi: 'tuần san' }
+          },
+          {
+            parts: [
+              { text: '朝', reading: 'ちょう' },
+              { text: '刊', reading: 'かん' }
+            ],
+            meaning: { en: 'morning edition', vi: 'báo buổi sáng' }
+          }
+        ]
+      },
+      {
+        char: '史',
+        meaning: { en: 'history', vi: 'sử - lịch sử' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '歴', reading: 'れき' },
+              { text: '史', reading: 'し' }
+            ],
+            meaning: { en: 'history', vi: 'lịch sử' }
+          },
+          {
+            parts: [
+              { text: '史', reading: 'し' },
+              { text: '料', reading: 'りょう' }
+            ],
+            meaning: { en: 'historical materials', vi: 'sử liệu' }
+          },
+          {
+            parts: [
+              { text: '世', reading: 'せ' },
+              { text: '界', reading: 'かい' },
+              { text: '史', reading: 'し' }
+            ],
+            meaning: { en: 'world history', vi: 'lịch sử thế giới' }
+          }
+        ]
+      },
+      {
+        char: '状',
+        meaning: { en: 'condition; letter', vi: 'trạng - tình trạng; thư từ' },
+        onyomi: ['ジョウ'],
+        kunyomi: [],
+        components: ['爿', '犬'],
+        parts: [
+          { char: '爿', role: 'phonetic' },
+          { char: '犬', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '状', reading: 'じょう' },
+              { text: '態', reading: 'たい' }
+            ],
+            meaning: { en: 'condition, state', vi: 'trạng thái' }
+          },
+          {
+            parts: [
+              { text: '現', reading: 'げん' },
+              { text: '状', reading: 'じょう' }
+            ],
+            meaning: { en: 'current state', vi: 'hiện trạng' }
+          },
+          {
+            parts: [
+              { text: '年', reading: 'ねん' },
+              { text: '賀', reading: 'が' },
+              { text: '状', reading: 'じょう' }
+            ],
+            meaning: { en: 'New Year greeting card', vi: 'thiệp chúc Tết' }
+          }
+        ]
+      },
+      {
+        char: '示',
+        meaning: { en: 'show, indicate', vi: 'thị - chỉ ra, biểu thị' },
+        onyomi: ['ジ', 'シ'],
+        kunyomi: ['しめ.す'],
+        components: [],
+        examples: [
+          {
+            parts: [
+              { text: '表', reading: 'ひょう' },
+              { text: '示', reading: 'じ' }
+            ],
+            meaning: { en: 'display, indication', vi: 'hiển thị' }
+          },
+          {
+            parts: [
+              { text: '指', reading: 'し' },
+              { text: '示', reading: 'じ' }
+            ],
+            meaning: { en: 'instruction, directions', vi: 'chỉ thị' }
+          },
+          {
+            parts: [
+              { text: '示', reading: 'しめ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to show, to indicate', vi: 'chỉ ra, cho thấy' }
+          }
+        ]
+      },
+      {
+        char: '報',
+        meaning: { en: 'report; requite', vi: 'báo - báo cáo; đền đáp' },
+        onyomi: ['ホウ'],
+        kunyomi: ['むく.いる'],
+        components: ['土'],
+        parts: [{ char: '土', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '報', reading: 'ほう' },
+              { text: '告', reading: 'こく' }
+            ],
+            meaning: { en: 'report', vi: 'báo cáo' }
+          },
+          {
+            parts: [
+              { text: '情', reading: 'じょう' },
+              { text: '報', reading: 'ほう' }
+            ],
+            meaning: { en: 'information', vi: 'thông tin' }
+          },
+          {
+            parts: [
+              { text: '予', reading: 'よ' },
+              { text: '報', reading: 'ほう' }
+            ],
+            meaning: { en: 'forecast', vi: 'dự báo' }
+          }
+        ]
+      },
+      {
+        char: '績',
+        meaning: { en: 'achievements, results', vi: 'tích - thành tích' },
+        onyomi: ['セキ'],
+        kunyomi: [],
+        components: ['糸', '責'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '責', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '成', reading: 'せい' },
+              { text: '績', reading: 'せき' }
+            ],
+            meaning: { en: 'grades, results', vi: 'thành tích, kết quả' }
+          },
+          {
+            parts: [
+              { text: '業', reading: 'ぎょう' },
+              { text: '績', reading: 'せき' }
+            ],
+            meaning: { en: 'business results', vi: 'thành tích kinh doanh' }
+          },
+          {
+            parts: [
+              { text: '実', reading: 'じっ' },
+              { text: '績', reading: 'せき' }
+            ],
+            meaning: { en: 'track record', vi: 'thành tích thực tế' }
+          }
+        ]
+      },
+      {
+        char: '査',
+        meaning: { en: 'investigate, inspect', vi: 'tra - tra xét, điều tra' },
+        onyomi: ['サ'],
+        kunyomi: [],
+        components: ['木', '且'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '且', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '検', reading: 'けん' },
+              { text: '査', reading: 'さ' }
+            ],
+            meaning: { en: 'inspection, examination', vi: 'kiểm tra' }
+          },
+          {
+            parts: [
+              { text: '調', reading: 'ちょう' },
+              { text: '査', reading: 'さ' }
+            ],
+            meaning: { en: 'survey, investigation', vi: 'điều tra, khảo sát' }
+          },
+          {
+            parts: [
+              { text: '審', reading: 'しん' },
+              { text: '査', reading: 'さ' }
+            ],
+            meaning: { en: 'screening, review', vi: 'thẩm tra' }
+          }
+        ]
+      },
+      {
+        char: '故',
+        meaning: { en: 'reason; old; deceased', vi: 'cố - duyên cớ; cũ; cố (đã mất)' },
+        onyomi: ['コ'],
+        kunyomi: ['ゆえ'],
+        components: ['古', '攵'],
+        parts: [
+          { char: '古', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '事', reading: 'じ' },
+              { text: '故', reading: 'こ' }
+            ],
+            meaning: { en: 'accident', vi: 'tai nạn, sự cố' }
+          },
+          {
+            parts: [
+              { text: '故', reading: 'こ' },
+              { text: '郷', reading: 'きょう' }
+            ],
+            meaning: { en: 'hometown', vi: 'cố hương, quê nhà' }
+          },
+          {
+            parts: [
+              { text: '故', reading: 'こ' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'the deceased', vi: 'người đã khuất' }
+          }
+        ]
+      },
+      {
+        char: '再',
+        meaning: { en: 'again, re-', vi: 'tái - lại, tái' },
+        onyomi: ['サイ', 'サ'],
+        kunyomi: ['ふたた.び'],
+        components: ['冂'],
+        parts: [{ char: '冂', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '再', reading: 'さい' },
+              { text: '会', reading: 'かい' }
+            ],
+            meaning: { en: 'reunion', vi: 'tái ngộ, gặp lại' }
+          },
+          {
+            parts: [
+              { text: '再', reading: 'さい' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'once more', vi: 'một lần nữa' }
+          },
+          {
+            parts: [
+              { text: '再', reading: 'ふたた' },
+              { text: 'び', reading: 'び' }
+            ],
+            meaning: { en: 'again', vi: 'lại, lần nữa' }
+          }
+        ]
+      },
+      {
+        char: '告',
+        meaning: { en: 'to tell, to announce', vi: 'cáo - báo, thông báo' },
+        onyomi: ['コク'],
+        kunyomi: ['つ.げる'],
+        components: ['牛', '口'],
+        parts: [
+          { char: '牛', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '報', reading: 'ほう' },
+              { text: '告', reading: 'こく' }
+            ],
+            meaning: { en: 'report', vi: 'báo cáo' }
+          },
+          {
+            parts: [
+              { text: '広', reading: 'こう' },
+              { text: '告', reading: 'こく' }
+            ],
+            meaning: { en: 'advertisement', vi: 'quảng cáo' }
+          },
+          {
+            parts: [
+              { text: '告', reading: 'つ' },
+              { text: 'げ', reading: 'げ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to tell, to inform', vi: 'báo, mách' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Time, state & variety',
+      vi: 'Thời gian, trạng thái & tạp'
+    },
+    kanji: [
+      {
+        char: '仮',
+        meaning: { en: 'temporary, provisional', vi: 'giả - tạm thời, giả' },
+        onyomi: ['カ', 'ケ'],
+        kunyomi: ['かり'],
+        components: ['亻', '反'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '反', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '仮', reading: 'か' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'assumption', vi: 'giả định' }
+          },
+          {
+            parts: [
+              { text: '仮', reading: 'か' },
+              { text: '名', reading: 'な' }
+            ],
+            meaning: { en: 'kana (syllabary)', vi: 'chữ kana' }
+          },
+          {
+            parts: [
+              { text: '仮', reading: 'かり' },
+              { text: 'に', reading: 'に' }
+            ],
+            meaning: { en: 'temporarily, supposing', vi: 'tạm thời, giả sử' }
+          }
+        ]
+      },
+      {
+        char: '久',
+        meaning: { en: 'long time', vi: 'cửu - lâu dài' },
+        onyomi: ['キュウ', 'ク'],
+        kunyomi: ['ひさ.しい'],
+        components: ['丿'],
+        parts: [{ char: '丿', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '永', reading: 'えい' },
+              { text: '久', reading: 'きゅう' }
+            ],
+            meaning: { en: 'permanence, eternity', vi: 'vĩnh cửu' }
+          },
+          {
+            parts: [
+              { text: '持', reading: 'じ' },
+              { text: '久', reading: 'きゅう' }
+            ],
+            meaning: { en: 'endurance, persistence', vi: 'bền bỉ, trì cửu' }
+          },
+          {
+            parts: [
+              { text: '久', reading: 'ひさ' },
+              { text: 'しぶり', reading: 'しぶり' }
+            ],
+            meaning: { en: 'after a long time', vi: 'lâu rồi mới (gặp)' }
+          }
+        ]
+      },
+      {
+        char: '旧',
+        meaning: { en: 'old, former', vi: 'cựu - cũ, xưa' },
+        onyomi: ['キュウ'],
+        kunyomi: [],
+        components: ['丨', '日'],
+        parts: [
+          { char: '丨', role: 'other' },
+          { char: '日', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '旧', reading: 'きゅう' },
+              { text: '式', reading: 'しき' }
+            ],
+            meaning: { en: 'old style', vi: 'kiểu cũ' }
+          },
+          {
+            parts: [
+              { text: '新', reading: 'しん' },
+              { text: '旧', reading: 'きゅう' }
+            ],
+            meaning: { en: 'new and old', vi: 'mới cũ' }
+          },
+          {
+            parts: [
+              { text: '復', reading: 'ふっ' },
+              { text: '旧', reading: 'きゅう' }
+            ],
+            meaning: { en: 'restoration', vi: 'khôi phục (như cũ)' }
+          }
+        ]
+      },
+      {
+        char: '禁',
+        meaning: { en: 'prohibit, forbid', vi: 'cấm - ngăn cấm' },
+        onyomi: ['キン'],
+        kunyomi: [],
+        components: ['林', '示'],
+        parts: [
+          { char: '林', role: 'other' },
+          { char: '示', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '禁', reading: 'きん' },
+              { text: '止', reading: 'し' }
+            ],
+            meaning: { en: 'prohibition', vi: 'cấm chỉ' }
+          },
+          {
+            parts: [
+              { text: '禁', reading: 'きん' },
+              { text: '物', reading: 'もつ' }
+            ],
+            meaning: { en: 'forbidden thing, taboo', vi: 'điều kiêng kỵ' }
+          },
+          {
+            parts: [
+              { text: '解', reading: 'かい' },
+              { text: '禁', reading: 'きん' }
+            ],
+            meaning: { en: 'lifting a ban', vi: 'dỡ bỏ lệnh cấm' }
+          }
+        ]
+      },
+      {
+        char: '厚',
+        meaning: { en: 'thick; kind', vi: 'hậu - dày; hậu hĩnh' },
+        onyomi: ['コウ'],
+        kunyomi: ['あつ.い'],
+        components: ['厂'],
+        parts: [{ char: '厂', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '厚', reading: 'こう' },
+              { text: '意', reading: 'い' }
+            ],
+            meaning: { en: 'kindness, courtesy', vi: 'hảo ý, thịnh tình' }
+          },
+          {
+            parts: [
+              { text: '温', reading: 'おん' },
+              { text: '厚', reading: 'こう' }
+            ],
+            meaning: { en: 'gentle, warm-hearted', vi: 'ôn hậu' }
+          },
+          {
+            parts: [
+              { text: '厚', reading: 'あつ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'thick', vi: 'dày' }
+          }
+        ]
+      },
+      {
+        char: '雑',
+        meaning: { en: 'miscellaneous, rough', vi: 'tạp - hỗn tạp, lẫn lộn' },
+        onyomi: ['ザツ', 'ゾウ'],
+        kunyomi: [],
+        components: ['木', '隹'],
+        parts: [
+          { char: '木', role: 'other' },
+          { char: '隹', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '複', reading: 'ふく' },
+              { text: '雑', reading: 'ざつ' }
+            ],
+            meaning: { en: 'complicated', vi: 'phức tạp' }
+          },
+          {
+            parts: [
+              { text: '雑', reading: 'ざっ' },
+              { text: '誌', reading: 'し' }
+            ],
+            meaning: { en: 'magazine', vi: 'tạp chí' }
+          },
+          {
+            parts: [
+              { text: '雑', reading: 'ざつ' },
+              { text: '音', reading: 'おん' }
+            ],
+            meaning: { en: 'noise', vi: 'tạp âm' }
+          }
+        ]
+      },
+      {
+        char: '飼',
+        meaning: { en: 'raise, keep (animals)', vi: 'tự - nuôi (thú)' },
+        onyomi: ['シ'],
+        kunyomi: ['か.う'],
+        components: ['食', '司'],
+        parts: [
+          { char: '食', role: 'radical' },
+          { char: '司', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '飼', reading: 'し' },
+              { text: '育', reading: 'いく' }
+            ],
+            meaning: { en: 'raising, breeding', vi: 'chăn nuôi' }
+          },
+          {
+            parts: [
+              { text: '飼', reading: 'し' },
+              { text: '料', reading: 'りょう' }
+            ],
+            meaning: { en: 'animal feed', vi: 'thức ăn chăn nuôi' }
+          },
+          {
+            parts: [
+              { text: '飼', reading: 'か' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to keep (a pet)', vi: 'nuôi (thú)' }
+          }
+        ]
+      },
+      {
+        char: '紀',
+        meaning: {
+          en: 'chronicle; era; discipline',
+          vi: 'kỷ - kỷ nguyên; ghi chép; kỷ luật'
+        },
+        onyomi: ['キ'],
+        kunyomi: [],
+        components: ['糸', '己'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '己', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '世', reading: 'せい' },
+              { text: '紀', reading: 'き' }
+            ],
+            meaning: { en: 'century', vi: 'thế kỷ' }
+          },
+          {
+            parts: [
+              { text: '紀', reading: 'き' },
+              { text: '元', reading: 'げん' }
+            ],
+            meaning: { en: 'era, epoch (of an era count)', vi: 'kỷ nguyên' }
+          },
+          {
+            parts: [
+              { text: '風', reading: 'ふう' },
+              { text: '紀', reading: 'き' }
+            ],
+            meaning: { en: 'discipline, public order', vi: 'kỷ cương, nề nếp' }
+          }
+        ]
+      },
+      {
+        char: '歴',
+        meaning: {
+          en: 'history, career; to pass through',
+          vi: 'lịch - lịch sử; trải qua'
+        },
+        onyomi: ['レキ'],
+        kunyomi: [],
+        components: ['厂', '止'],
+        parts: [
+          { char: '厂', role: 'other' },
+          { char: '止', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '歴', reading: 'れき' },
+              { text: '史', reading: 'し' }
+            ],
+            meaning: { en: 'history', vi: 'lịch sử' }
+          },
+          {
+            parts: [
+              { text: '学', reading: 'がく' },
+              { text: '歴', reading: 'れき' }
+            ],
+            meaning: { en: 'academic background', vi: 'học vấn, quá trình học' }
+          },
+          {
+            parts: [
+              { text: '歴', reading: 'れき' },
+              { text: '代', reading: 'だい' }
+            ],
+            meaning: { en: 'successive generations', vi: 'các đời, lịch đại' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Skills & concepts',
+      vi: 'Kỹ thuật & khái niệm'
+    },
+    kanji: [
+      {
+        char: '術',
+        meaning: { en: 'art, technique', vi: 'thuật - kỹ thuật, thuật' },
+        onyomi: ['ジュツ'],
+        kunyomi: [],
+        components: ['行', '朮'],
+        parts: [
+          { char: '行', role: 'radical' },
+          { char: '朮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '技', reading: 'ぎ' },
+              { text: '術', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'technology, technique', vi: 'kỹ thuật' }
+          },
+          {
+            parts: [
+              { text: '手', reading: 'しゅ' },
+              { text: '術', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'surgery', vi: 'phẫu thuật' }
+          },
+          {
+            parts: [
+              { text: '芸', reading: 'げい' },
+              { text: '術', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'art', vi: 'nghệ thuật' }
+          }
+        ]
+      },
+      {
+        char: '仏',
+        meaning: { en: 'Buddha; France', vi: 'phật - Phật; (Pháp)' },
+        onyomi: ['ブツ', 'フツ'],
+        kunyomi: ['ほとけ'],
+        components: ['亻', '厶'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '厶', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '仏', reading: 'ぶっ' },
+              { text: '教', reading: 'きょう' }
+            ],
+            meaning: { en: 'Buddhism', vi: 'Phật giáo' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '仏', reading: 'ぶつ' }
+            ],
+            meaning: { en: 'great Buddha statue', vi: 'tượng Phật lớn' }
+          },
+          {
+            parts: [
+              { text: '念', reading: 'ねん' },
+              { text: '仏', reading: 'ぶつ' }
+            ],
+            meaning: { en: 'Buddhist chant', vi: 'niệm Phật' }
+          }
+        ]
+      },
+      {
+        char: '弁',
+        meaning: { en: 'speech; valve; petal', vi: 'biện - biện luận; van' },
+        onyomi: ['ベン'],
+        kunyomi: [],
+        components: ['厶', '廾'],
+        parts: [
+          { char: '厶', role: 'other' },
+          { char: '廾', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '弁', reading: 'べん' },
+              { text: '当', reading: 'とう' }
+            ],
+            meaning: { en: 'boxed lunch (bento)', vi: 'cơm hộp bento' }
+          },
+          {
+            parts: [
+              { text: '弁', reading: 'べん' },
+              { text: '護', reading: 'ご' }
+            ],
+            meaning: { en: 'legal defense', vi: 'biện hộ' }
+          },
+          {
+            parts: [
+              { text: '弁', reading: 'べん' },
+              { text: '論', reading: 'ろん' }
+            ],
+            meaning: { en: 'debate, argument', vi: 'biện luận' }
+          }
+        ]
+      },
+      {
+        char: '墓',
+        meaning: { en: 'grave, tomb', vi: 'mộ - mồ mả' },
+        onyomi: ['ボ'],
+        kunyomi: ['はか'],
+        components: ['莫', '土'],
+        parts: [
+          { char: '莫', role: 'phonetic' },
+          { char: '土', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '墓', reading: 'ぼ' },
+              { text: '地', reading: 'ち' }
+            ],
+            meaning: { en: 'graveyard', vi: 'nghĩa địa' }
+          },
+          {
+            parts: [
+              { text: '墓', reading: 'はか' },
+              { text: '参', reading: 'まい' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'visiting a grave', vi: 'đi tảo mộ' }
+          },
+          {
+            parts: [
+              { text: '墓', reading: 'はか' },
+              { text: '石', reading: 'いし' }
+            ],
+            meaning: { en: 'gravestone', vi: 'bia mộ' }
+          }
+        ]
+      },
+      {
+        char: '暴',
+        meaning: { en: 'violent, rampage', vi: 'bạo - bạo lực, hung bạo' },
+        onyomi: ['ボウ', 'バク'],
+        kunyomi: ['あば.れる'],
+        components: ['日'],
+        parts: [{ char: '日', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '暴', reading: 'ぼう' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'violence', vi: 'bạo lực' }
+          },
+          {
+            parts: [
+              { text: '暴', reading: 'ぼう' },
+              { text: '風', reading: 'ふう' }
+            ],
+            meaning: { en: 'storm, gale', vi: 'bão tố' }
+          },
+          {
+            parts: [
+              { text: '暴', reading: 'あば' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to rampage, to act violently', vi: 'nổi loạn, làm loạn' }
+          }
+        ]
+      },
+      {
+        char: '輸',
+        meaning: { en: 'transport, send', vi: 'thâu - vận chuyển' },
+        onyomi: ['ユ'],
+        kunyomi: [],
+        components: ['車', '兪'],
+        parts: [
+          { char: '車', role: 'radical' },
+          { char: '兪', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '輸', reading: 'ゆ' },
+              { text: '入', reading: 'にゅう' }
+            ],
+            meaning: { en: 'import', vi: 'nhập khẩu' }
+          },
+          {
+            parts: [
+              { text: '輸', reading: 'ゆ' },
+              { text: '出', reading: 'しゅつ' }
+            ],
+            meaning: { en: 'export', vi: 'xuất khẩu' }
+          },
+          {
+            parts: [
+              { text: '運', reading: 'うん' },
+              { text: '輸', reading: 'ゆ' }
+            ],
+            meaning: { en: 'transportation', vi: 'vận tải' }
+          }
+        ]
+      },
+      {
+        char: '留',
+        meaning: { en: 'stay, detain, fasten', vi: 'lưu - lưu lại, giữ' },
+        onyomi: ['リュウ', 'ル'],
+        kunyomi: ['と.める', 'と.まる'],
+        components: ['卯', '田'],
+        parts: [
+          { char: '卯', role: 'phonetic' },
+          { char: '田', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '留', reading: 'りゅう' },
+              { text: '学', reading: 'がく' }
+            ],
+            meaning: { en: 'studying abroad', vi: 'du học' }
+          },
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '留', reading: 'りゅう' }
+            ],
+            meaning: { en: 'reservation, deferment', vi: 'bảo lưu, hoãn lại' }
+          },
+          {
+            parts: [
+              { text: '留', reading: 'る' },
+              { text: '守', reading: 'す' }
+            ],
+            meaning: { en: 'being away from home', vi: 'vắng nhà' }
+          }
+        ]
+      },
+      {
+        char: '型',
+        meaning: { en: 'mold; type, model', vi: 'hình - khuôn; loại, kiểu' },
+        onyomi: ['ケイ'],
+        kunyomi: ['かた'],
+        components: ['刑', '土'],
+        parts: [
+          { char: '刑', role: 'phonetic' },
+          { char: '土', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '型', reading: 'かた' },
+              { text: '紙', reading: 'がみ' }
+            ],
+            meaning: { en: 'paper pattern', vi: 'giấy rập (mẫu)' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'おお' },
+              { text: '型', reading: 'がた' }
+            ],
+            meaning: { en: 'large-size', vi: 'cỡ lớn' }
+          },
+          {
+            parts: [
+              { text: '新', reading: 'しん' },
+              { text: '型', reading: 'がた' }
+            ],
+            meaning: { en: 'new model, new type', vi: 'kiểu mới, mẫu mới' }
+          }
+        ]
+      }
+    ]
+  }
+]);
+
+/**
+ * Grade 6 Jōyō kanji (191 characters), authored by hand in ordered lessons
+ * (~10 per lesson as a loose target, not fixed). Add new lessons in order.
+ */
+export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
+  {
+    title: {
+      en: 'Body & health',
+      vi: 'Cơ thể & sức khỏe'
+    },
+    kanji: [
+      {
+        char: '胃',
+        meaning: { en: 'stomach', vi: 'vị - dạ dày' },
+        onyomi: ['イ'],
+        kunyomi: [],
+        components: ['田', '肉'],
+        parts: [
+          { char: '田', role: 'semantic' },
+          { char: '肉', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '胃', reading: 'い' },
+              { text: '腸', reading: 'ちょう' }
+            ],
+            meaning: { en: 'stomach and intestines', vi: 'dạ dày và ruột' }
+          },
+          {
+            parts: [
+              { text: '胃', reading: 'い' },
+              { text: '薬', reading: 'ぐすり' }
+            ],
+            meaning: { en: 'stomach medicine', vi: 'thuốc đau dạ dày' }
+          },
+          {
+            parts: [
+              { text: '胃', reading: 'い' },
+              { text: '酸', reading: 'さん' }
+            ],
+            meaning: { en: 'stomach acid', vi: 'axit dạ dày' }
+          }
+        ]
+      },
+      {
+        char: '腸',
+        meaning: { en: 'intestines', vi: 'tràng - ruột' },
+        onyomi: ['チョウ'],
+        kunyomi: [],
+        components: ['肉', '昜'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '昜', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '大', reading: 'だい' },
+              { text: '腸', reading: 'ちょう' }
+            ],
+            meaning: { en: 'large intestine', vi: 'ruột già' }
+          },
+          {
+            parts: [
+              { text: '小', reading: 'しょう' },
+              { text: '腸', reading: 'ちょう' }
+            ],
+            meaning: { en: 'small intestine', vi: 'ruột non' }
+          },
+          {
+            parts: [
+              { text: '胃', reading: 'い' },
+              { text: '腸', reading: 'ちょう' }
+            ],
+            meaning: { en: 'stomach and intestines', vi: 'dạ dày và ruột' }
+          }
+        ]
+      },
+      {
+        char: '肺',
+        meaning: { en: 'lungs', vi: 'phế - phổi' },
+        onyomi: ['ハイ'],
+        kunyomi: [],
+        components: ['肉', '巿'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '巿', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '肺', reading: 'はい' },
+              { text: '炎', reading: 'えん' }
+            ],
+            meaning: { en: 'pneumonia', vi: 'viêm phổi' }
+          },
+          {
+            parts: [
+              { text: '肺', reading: 'はい' },
+              { text: '活', reading: 'かつ' },
+              { text: '量', reading: 'りょう' }
+            ],
+            meaning: { en: 'lung capacity', vi: 'dung tích phổi' }
+          },
+          {
+            parts: [
+              { text: '心', reading: 'しん' },
+              { text: '肺', reading: 'ぱい' }
+            ],
+            meaning: { en: 'heart and lungs', vi: 'tim phổi' }
+          }
+        ]
+      },
+      {
+        char: '背',
+        meaning: { en: 'back; height', vi: 'bối - lưng; chiều cao' },
+        onyomi: ['ハイ'],
+        kunyomi: ['せ', 'せい', 'そむ.く'],
+        components: ['北', '肉'],
+        parts: [
+          { char: '北', role: 'phonetic' },
+          { char: '肉', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '背', reading: 'せ' },
+              { text: '中', reading: 'なか' }
+            ],
+            meaning: { en: 'back (body)', vi: 'lưng' }
+          },
+          {
+            parts: [
+              { text: '背', reading: 'はい' },
+              { text: '景', reading: 'けい' }
+            ],
+            meaning: { en: 'background', vi: 'bối cảnh, nền' }
+          },
+          {
+            parts: [
+              { text: '背', reading: 'せ' },
+              { text: '番', reading: 'ばん' },
+              { text: '号', reading: 'ごう' }
+            ],
+            meaning: { en: "player's number", vi: 'số áo đấu' }
+          }
+        ]
+      },
+      {
+        char: '骨',
+        meaning: { en: 'bone', vi: 'cốt - xương' },
+        onyomi: ['コツ'],
+        kunyomi: ['ほね'],
+        components: ['骨'],
+        parts: [{ char: '骨', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '骨', reading: 'こっ' },
+              { text: '折', reading: 'せつ' }
+            ],
+            meaning: { en: 'bone fracture', vi: 'gãy xương' }
+          },
+          {
+            parts: [
+              { text: '鉄', reading: 'てっ' },
+              { text: '骨', reading: 'こつ' }
+            ],
+            meaning: { en: 'steel frame', vi: 'khung thép' }
+          },
+          {
+            parts: [
+              { text: '背', reading: 'せ' },
+              { text: '骨', reading: 'ぼね' }
+            ],
+            meaning: { en: 'spine, backbone', vi: 'xương sống' }
+          }
+        ]
+      },
+      {
+        char: '筋',
+        meaning: { en: 'muscle; sinew; plot', vi: 'cân - gân, cơ' },
+        onyomi: ['キン'],
+        kunyomi: ['すじ'],
+        components: ['竹', '肉', '力'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '肉', role: 'other' },
+          { char: '力', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '筋', reading: 'きん' },
+              { text: '肉', reading: 'にく' }
+            ],
+            meaning: { en: 'muscle', vi: 'cơ bắp' }
+          },
+          {
+            parts: [
+              { text: '筋', reading: 'きん' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'muscular strength', vi: 'sức cơ bắp' }
+          },
+          {
+            parts: [
+              { text: '鉄', reading: 'てっ' },
+              { text: '筋', reading: 'きん' }
+            ],
+            meaning: { en: 'reinforcing steel bar', vi: 'cốt thép' }
+          }
+        ]
+      },
+      {
+        char: '脳',
+        meaning: { en: 'brain', vi: 'não - não bộ' },
+        onyomi: ['ノウ'],
+        kunyomi: [],
+        components: ['肉'],
+        parts: [{ char: '肉', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '頭', reading: 'ず' },
+              { text: '脳', reading: 'のう' }
+            ],
+            meaning: { en: 'brains, head', vi: 'đầu óc' }
+          },
+          {
+            parts: [
+              { text: '首', reading: 'しゅ' },
+              { text: '脳', reading: 'のう' }
+            ],
+            meaning: { en: 'leaders, heads (of state)', vi: 'thủ não, lãnh đạo' }
+          },
+          {
+            parts: [
+              { text: '脳', reading: 'のう' },
+              { text: '波', reading: 'は' }
+            ],
+            meaning: { en: 'brain waves', vi: 'sóng não' }
+          }
+        ]
+      },
+      {
+        char: '乳',
+        meaning: { en: 'milk; breast', vi: 'nhũ - sữa' },
+        onyomi: ['ニュウ'],
+        kunyomi: ['ちち', 'ち'],
+        components: ['孚', '乙'],
+        parts: [
+          { char: '孚', role: 'other' },
+          { char: '乙', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '牛', reading: 'ぎゅう' },
+              { text: '乳', reading: 'にゅう' }
+            ],
+            meaning: { en: 'cow milk', vi: 'sữa bò' }
+          },
+          {
+            parts: [
+              { text: '母', reading: 'ぼ' },
+              { text: '乳', reading: 'にゅう' }
+            ],
+            meaning: { en: 'breast milk', vi: 'sữa mẹ' }
+          },
+          {
+            parts: [
+              { text: '乳', reading: 'にゅう' },
+              { text: '歯', reading: 'し' }
+            ],
+            meaning: { en: 'baby teeth', vi: 'răng sữa' }
+          }
+        ]
+      },
+      {
+        char: '痛',
+        meaning: { en: 'pain, ache', vi: 'thống - đau' },
+        onyomi: ['ツウ'],
+        kunyomi: ['いた.い', 'いた.む'],
+        components: ['疒', '甬'],
+        parts: [
+          { char: '疒', role: 'radical' },
+          { char: '甬', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '頭', reading: 'ず' },
+              { text: '痛', reading: 'つう' }
+            ],
+            meaning: { en: 'headache', vi: 'đau đầu' }
+          },
+          {
+            parts: [
+              { text: '痛', reading: 'つう' },
+              { text: '感', reading: 'かん' }
+            ],
+            meaning: { en: 'keen awareness (of pain)', vi: 'cảm nhận sâu sắc' }
+          },
+          {
+            parts: [
+              { text: '痛', reading: 'いた' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'painful', vi: 'đau' }
+          }
+        ]
+      },
+      {
+        char: '呼',
+        meaning: { en: 'call; breathe out', vi: 'hô - gọi; thở ra' },
+        onyomi: ['コ'],
+        kunyomi: ['よ.ぶ'],
+        components: ['口', '乎'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '乎', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '呼', reading: 'こ' },
+              { text: '吸', reading: 'きゅう' }
+            ],
+            meaning: { en: 'breathing, respiration', vi: 'hô hấp' }
+          },
+          {
+            parts: [
+              { text: '点', reading: 'てん' },
+              { text: '呼', reading: 'こ' }
+            ],
+            meaning: { en: 'roll call', vi: 'điểm danh' }
+          },
+          {
+            parts: [
+              { text: '呼', reading: 'よ' },
+              { text: 'ぶ', reading: 'ぶ' }
+            ],
+            meaning: { en: 'to call', vi: 'gọi' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Character & virtue',
+      vi: 'Tâm tính & đạo đức'
+    },
+    kanji: [
+      {
+        char: '恩',
+        meaning: { en: 'kindness, debt of gratitude', vi: 'ân - ân huệ, ơn nghĩa' },
+        onyomi: ['オン'],
+        kunyomi: [],
+        components: ['因', '心'],
+        parts: [
+          { char: '因', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '恩', reading: 'おん' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'benefactor', vi: 'ân nhân' }
+          },
+          {
+            parts: [
+              { text: '恩', reading: 'おん' },
+              { text: '師', reading: 'し' }
+            ],
+            meaning: { en: 'one\u2019s (respected) teacher', vi: 'thầy (kính trọng)' }
+          },
+          {
+            parts: [
+              { text: '恩', reading: 'おん' },
+              { text: '返', reading: 'がえ' },
+              { text: 'し', reading: 'し' }
+            ],
+            meaning: { en: 'repaying a kindness', vi: 'sự báo ân' }
+          }
+        ]
+      },
+      {
+        char: '忠',
+        meaning: { en: 'loyalty', vi: 'trung - trung thành' },
+        onyomi: ['チュウ'],
+        kunyomi: [],
+        components: ['中', '心'],
+        parts: [
+          { char: '中', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '忠', reading: 'ちゅう' },
+              { text: '実', reading: 'じつ' }
+            ],
+            meaning: { en: 'faithful, devoted', vi: 'trung thực, tận tụy' }
+          },
+          {
+            parts: [
+              { text: '忠', reading: 'ちゅう' },
+              { text: '告', reading: 'こく' }
+            ],
+            meaning: { en: 'advice, warning', vi: 'lời khuyên răn' }
+          },
+          {
+            parts: [
+              { text: '忠', reading: 'ちゅう' },
+              { text: '誠', reading: 'せい' }
+            ],
+            meaning: { en: 'loyalty, allegiance', vi: 'lòng trung thành' }
+          }
+        ]
+      },
+      {
+        char: '誠',
+        meaning: { en: 'sincerity, truth', vi: 'thành - chân thành' },
+        onyomi: ['セイ'],
+        kunyomi: ['まこと'],
+        components: ['言', '成'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '成', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '誠', reading: 'せい' },
+              { text: '実', reading: 'じつ' }
+            ],
+            meaning: { en: 'sincere, honest', vi: 'thành thật' }
+          },
+          {
+            parts: [
+              { text: '誠', reading: 'せい' },
+              { text: '意', reading: 'い' }
+            ],
+            meaning: { en: 'sincerity, good faith', vi: 'thành ý' }
+          },
+          {
+            parts: [
+              { text: '忠', reading: 'ちゅう' },
+              { text: '誠', reading: 'せい' }
+            ],
+            meaning: { en: 'loyalty', vi: 'lòng trung thành' }
+          }
+        ]
+      },
+      {
+        char: '敬',
+        meaning: { en: 'respect, revere', vi: 'kính - kính trọng' },
+        onyomi: ['ケイ'],
+        kunyomi: ['うやま.う'],
+        components: ['苟', '攵'],
+        parts: [
+          { char: '苟', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '尊', reading: 'そん' },
+              { text: '敬', reading: 'けい' }
+            ],
+            meaning: { en: 'respect, esteem', vi: 'tôn kính' }
+          },
+          {
+            parts: [
+              { text: '敬', reading: 'けい' },
+              { text: '語', reading: 'ご' }
+            ],
+            meaning: { en: 'honorific language', vi: 'kính ngữ' }
+          },
+          {
+            parts: [
+              { text: '敬', reading: 'うやま' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to respect', vi: 'kính trọng' }
+          }
+        ]
+      },
+      {
+        char: '孝',
+        meaning: { en: 'filial piety', vi: 'hiếu - hiếu thảo' },
+        onyomi: ['コウ'],
+        kunyomi: [],
+        components: ['耂', '子'],
+        parts: [
+          { char: '耂', role: 'other' },
+          { char: '子', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '孝', reading: 'こう' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'filial piety', vi: 'lòng hiếu thảo' }
+          },
+          {
+            parts: [
+              { text: '親', reading: 'おや' },
+              { text: '孝', reading: 'こう' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'filial devotion', vi: 'hiếu thảo với cha mẹ' }
+          },
+          {
+            parts: [
+              { text: '不', reading: 'ふ' },
+              { text: '孝', reading: 'こう' }
+            ],
+            meaning: { en: 'lack of filial piety', vi: 'bất hiếu' }
+          }
+        ]
+      },
+      {
+        char: '仁',
+        meaning: { en: 'benevolence, humanity', vi: 'nhân - lòng nhân' },
+        onyomi: ['ジン', 'ニ'],
+        kunyomi: [],
+        components: ['亻', '二'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '二', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '仁', reading: 'じん' },
+              { text: '愛', reading: 'あい' }
+            ],
+            meaning: { en: 'benevolence, charity', vi: 'nhân ái' }
+          },
+          {
+            parts: [
+              { text: '仁', reading: 'じん' },
+              { text: '義', reading: 'ぎ' }
+            ],
+            meaning: { en: 'humanity and justice', vi: 'nhân nghĩa' }
+          },
+          {
+            parts: [
+              { text: '仁', reading: 'じん' },
+              { text: '術', reading: 'じゅつ' }
+            ],
+            meaning: { en: 'benevolent art (medicine)', vi: 'nhân thuật (y đạo)' }
+          }
+        ]
+      },
+      {
+        char: '善',
+        meaning: { en: 'good, virtue', vi: 'thiện - tốt, lương thiện' },
+        onyomi: ['ゼン'],
+        kunyomi: ['よ.い'],
+        components: ['羊', '口'],
+        parts: [
+          { char: '羊', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '善', reading: 'ぜん' },
+              { text: '良', reading: 'りょう' }
+            ],
+            meaning: { en: 'good, virtuous', vi: 'lương thiện' }
+          },
+          {
+            parts: [
+              { text: '改', reading: 'かい' },
+              { text: '善', reading: 'ぜん' }
+            ],
+            meaning: { en: 'improvement', vi: 'cải thiện' }
+          },
+          {
+            parts: [
+              { text: '最', reading: 'さい' },
+              { text: '善', reading: 'ぜん' }
+            ],
+            meaning: { en: 'the best, one\u2019s utmost', vi: 'tốt nhất' }
+          }
+        ]
+      },
+      {
+        char: '我',
+        meaning: { en: 'I, self, ego', vi: 'ngã - ta, cái tôi' },
+        onyomi: ['ガ'],
+        kunyomi: ['われ', 'わ'],
+        components: ['手', '戈'],
+        parts: [
+          { char: '手', role: 'other' },
+          { char: '戈', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '我', reading: 'が' }
+            ],
+            meaning: { en: 'ego, self', vi: 'bản ngã' }
+          },
+          {
+            parts: [
+              { text: '我', reading: 'われ' },
+              { text: '々', reading: 'われ' }
+            ],
+            meaning: { en: 'we', vi: 'chúng ta' }
+          },
+          {
+            parts: [
+              { text: '無', reading: 'む' },
+              { text: '我', reading: 'が' }
+            ],
+            meaning: { en: 'selflessness', vi: 'vô ngã' }
+          }
+        ]
+      },
+      {
+        char: '己',
+        meaning: { en: 'self, oneself', vi: 'kỷ - bản thân' },
+        onyomi: ['コ', 'キ'],
+        kunyomi: ['おのれ'],
+        components: ['己'],
+        parts: [{ char: '己', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '己', reading: 'こ' }
+            ],
+            meaning: { en: 'self, oneself', vi: 'tự kỷ, bản thân' }
+          },
+          {
+            parts: [
+              { text: '利', reading: 'り' },
+              { text: '己', reading: 'こ' }
+            ],
+            meaning: { en: 'self-interest', vi: 'vị kỷ' }
+          },
+          {
+            parts: [
+              { text: '知', reading: 'ち' },
+              { text: '己', reading: 'き' }
+            ],
+            meaning: { en: 'close friend', vi: 'tri kỷ' }
+          }
+        ]
+      },
+      {
+        char: '亡',
+        meaning: { en: 'die; perish; lose', vi: 'vong - chết; mất' },
+        onyomi: ['ボウ', 'モウ'],
+        kunyomi: ['な.い', 'ほろ.びる'],
+        components: ['亠'],
+        parts: [{ char: '亠', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '死', reading: 'し' },
+              { text: '亡', reading: 'ぼう' }
+            ],
+            meaning: { en: 'death', vi: 'tử vong' }
+          },
+          {
+            parts: [
+              { text: '亡', reading: 'ぼう' },
+              { text: '命', reading: 'めい' }
+            ],
+            meaning: { en: 'exile, defection', vi: 'vong mệnh, lưu vong' }
+          },
+          {
+            parts: [
+              { text: '亡', reading: 'な' },
+              { text: 'くなる', reading: 'くなる' }
+            ],
+            meaning: { en: 'to pass away', vi: 'qua đời' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Government & law',
+      vi: 'Chính quyền & pháp luật'
+    },
+    kanji: [
+      {
+        char: '憲',
+        meaning: { en: 'constitution; law', vi: 'hiến - hiến pháp' },
+        onyomi: ['ケン'],
+        kunyomi: [],
+        components: ['宀', '心'],
+        parts: [
+          { char: '宀', role: 'other' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '憲', reading: 'けん' },
+              { text: '法', reading: 'ぽう' }
+            ],
+            meaning: { en: 'constitution', vi: 'hiến pháp' }
+          },
+          {
+            parts: [
+              { text: '憲', reading: 'けん' },
+              { text: '政', reading: 'せい' }
+            ],
+            meaning: { en: 'constitutional government', vi: 'hiến chính' }
+          },
+          {
+            parts: [
+              { text: '立', reading: 'りっ' },
+              { text: '憲', reading: 'けん' }
+            ],
+            meaning: { en: 'constitutionalism', vi: 'lập hiến' }
+          }
+        ]
+      },
+      {
+        char: '権',
+        meaning: { en: 'right; authority, power', vi: 'quyền - quyền lợi; quyền lực' },
+        onyomi: ['ケン', 'ゴン'],
+        kunyomi: [],
+        components: ['木', '雚'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '雚', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '権', reading: 'けん' },
+              { text: '利', reading: 'り' }
+            ],
+            meaning: { en: 'a right', vi: 'quyền lợi' }
+          },
+          {
+            parts: [
+              { text: '権', reading: 'けん' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'power, authority', vi: 'quyền lực' }
+          },
+          {
+            parts: [
+              { text: '人', reading: 'じん' },
+              { text: '権', reading: 'けん' }
+            ],
+            meaning: { en: 'human rights', vi: 'nhân quyền' }
+          }
+        ]
+      },
+      {
+        char: '律',
+        meaning: { en: 'law, rule; rhythm', vi: 'luật - luật lệ; nhịp' },
+        onyomi: ['リツ', 'リチ'],
+        kunyomi: [],
+        components: ['彳', '聿'],
+        parts: [
+          { char: '彳', role: 'radical' },
+          { char: '聿', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '法', reading: 'ほう' },
+              { text: '律', reading: 'りつ' }
+            ],
+            meaning: { en: 'law', vi: 'pháp luật' }
+          },
+          {
+            parts: [
+              { text: '規', reading: 'き' },
+              { text: '律', reading: 'りつ' }
+            ],
+            meaning: { en: 'discipline, order', vi: 'kỷ luật' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いち' },
+              { text: '律', reading: 'りつ' }
+            ],
+            meaning: { en: 'uniform, across the board', vi: 'nhất loạt, đồng đều' }
+          }
+        ]
+      },
+      {
+        char: '裁',
+        meaning: { en: 'judge; cut cloth', vi: 'tài - xét xử; cắt (vải)' },
+        onyomi: ['サイ'],
+        kunyomi: ['た.つ', 'さば.く'],
+        components: ['衣', '戈'],
+        parts: [
+          { char: '衣', role: 'radical' },
+          { char: '戈', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '裁', reading: 'さい' },
+              { text: '判', reading: 'ばん' }
+            ],
+            meaning: { en: 'trial, judgment', vi: 'xét xử, phiên tòa' }
+          },
+          {
+            parts: [
+              { text: '裁', reading: 'さい' },
+              { text: '量', reading: 'りょう' }
+            ],
+            meaning: { en: 'discretion', vi: 'quyền quyết định, tài lượng' }
+          },
+          {
+            parts: [
+              { text: '裁', reading: 'さば' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to judge', vi: 'phân xử' }
+          }
+        ]
+      },
+      {
+        char: '党',
+        meaning: { en: 'political party; faction', vi: 'đảng - đảng phái' },
+        onyomi: ['トウ'],
+        kunyomi: [],
+        components: ['尚', '儿'],
+        parts: [
+          { char: '尚', role: 'phonetic' },
+          { char: '儿', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '政', reading: 'せい' },
+              { text: '党', reading: 'とう' }
+            ],
+            meaning: { en: 'political party', vi: 'chính đảng' }
+          },
+          {
+            parts: [
+              { text: '与', reading: 'よ' },
+              { text: '党', reading: 'とう' }
+            ],
+            meaning: { en: 'ruling party', vi: 'đảng cầm quyền' }
+          },
+          {
+            parts: [
+              { text: '野', reading: 'や' },
+              { text: '党', reading: 'とう' }
+            ],
+            meaning: { en: 'opposition party', vi: 'đảng đối lập' }
+          }
+        ]
+      },
+      {
+        char: '庁',
+        meaning: { en: 'government office, agency', vi: 'sảnh - cơ quan nhà nước' },
+        onyomi: ['チョウ'],
+        kunyomi: [],
+        components: ['广', '丁'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '丁', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '官', reading: 'かん' },
+              { text: '庁', reading: 'ちょう' }
+            ],
+            meaning: { en: 'government office', vi: 'cơ quan chính phủ' }
+          },
+          {
+            parts: [
+              { text: '県', reading: 'けん' },
+              { text: '庁', reading: 'ちょう' }
+            ],
+            meaning: { en: 'prefectural office', vi: 'trụ sở tỉnh' }
+          },
+          {
+            parts: [
+              { text: '気', reading: 'き' },
+              { text: '象', reading: 'しょう' },
+              { text: '庁', reading: 'ちょう' }
+            ],
+            meaning: { en: 'Meteorological Agency', vi: 'cục khí tượng' }
+          }
+        ]
+      },
+      {
+        char: '署',
+        meaning: { en: 'government post; to sign', vi: 'thự - sở, cơ quan; ký tên' },
+        onyomi: ['ショ'],
+        kunyomi: [],
+        components: ['罒', '者'],
+        parts: [
+          { char: '罒', role: 'radical' },
+          { char: '者', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '警', reading: 'けい' },
+              { text: '察', reading: 'さつ' },
+              { text: '署', reading: 'しょ' }
+            ],
+            meaning: { en: 'police station', vi: 'đồn cảnh sát' }
+          },
+          {
+            parts: [
+              { text: '署', reading: 'しょ' },
+              { text: '名', reading: 'めい' }
+            ],
+            meaning: { en: 'signature', vi: 'chữ ký' }
+          },
+          {
+            parts: [
+              { text: '部', reading: 'ぶ' },
+              { text: '署', reading: 'しょ' }
+            ],
+            meaning: { en: 'department, post', vi: 'bộ phận, đơn vị' }
+          }
+        ]
+      },
+      {
+        char: '策',
+        meaning: { en: 'plan, scheme, policy', vi: 'sách - kế sách, chính sách' },
+        onyomi: ['サク'],
+        kunyomi: [],
+        components: ['竹', '朿'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '朿', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '政', reading: 'せい' },
+              { text: '策', reading: 'さく' }
+            ],
+            meaning: { en: 'policy', vi: 'chính sách' }
+          },
+          {
+            parts: [
+              { text: '対', reading: 'たい' },
+              { text: '策', reading: 'さく' }
+            ],
+            meaning: { en: 'countermeasure', vi: 'đối sách, biện pháp' }
+          },
+          {
+            parts: [
+              { text: '策', reading: 'さく' },
+              { text: '略', reading: 'りゃく' }
+            ],
+            meaning: { en: 'strategy, scheme', vi: 'sách lược' }
+          }
+        ]
+      },
+      {
+        char: '皇',
+        meaning: { en: 'emperor, imperial', vi: 'hoàng - vua, hoàng đế' },
+        onyomi: ['コウ', 'オウ'],
+        kunyomi: [],
+        components: ['白', '王'],
+        parts: [
+          { char: '白', role: 'radical' },
+          { char: '王', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '天', reading: 'てん' },
+              { text: '皇', reading: 'のう' }
+            ],
+            meaning: { en: 'the Emperor (of Japan)', vi: 'Thiên hoàng' }
+          },
+          {
+            parts: [
+              { text: '皇', reading: 'こう' },
+              { text: '室', reading: 'しつ' }
+            ],
+            meaning: { en: 'the Imperial family', vi: 'hoàng thất' }
+          },
+          {
+            parts: [
+              { text: '皇', reading: 'こう' },
+              { text: '后', reading: 'ごう' }
+            ],
+            meaning: { en: 'empress', vi: 'hoàng hậu' }
+          }
+        ]
+      },
+      {
+        char: '后',
+        meaning: { en: 'empress, queen', vi: 'hậu - hoàng hậu' },
+        onyomi: ['コウ'],
+        kunyomi: [],
+        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '皇', reading: 'こう' },
+              { text: '后', reading: 'ごう' }
+            ],
+            meaning: { en: 'empress', vi: 'hoàng hậu' }
+          },
+          {
+            parts: [
+              { text: '皇', reading: 'こう' },
+              { text: '太', reading: 'たい' },
+              { text: '后', reading: 'ごう' }
+            ],
+            meaning: { en: 'empress dowager', vi: 'hoàng thái hậu' }
+          },
+          {
+            parts: [
+              { text: '后', reading: 'こう' },
+              { text: '妃', reading: 'ひ' }
+            ],
+            meaning: { en: 'empress and consorts', vi: 'hậu phi' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Body & senses',
+      vi: 'Cơ thể & giác quan'
+    },
+    kanji: [
+      {
+        char: '胸',
+        meaning: { en: 'chest, breast', vi: 'hung - ngực' },
+        onyomi: ['キョウ'],
+        kunyomi: ['むね', 'むな'],
+        components: ['肉', '匈'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '匈', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '胸', reading: 'きょう' },
+              { text: '囲', reading: 'い' }
+            ],
+            meaning: { en: 'chest measurement', vi: 'vòng ngực' }
+          },
+          {
+            parts: [
+              { text: '度', reading: 'ど' },
+              { text: '胸', reading: 'きょう' }
+            ],
+            meaning: { en: 'courage, nerve', vi: 'sự gan dạ' }
+          },
+          {
+            parts: [
+              { text: '胸', reading: 'むな' },
+              { text: '元', reading: 'もと' }
+            ],
+            meaning: { en: 'chest, breast area', vi: 'trước ngực' }
+          }
+        ]
+      },
+      {
+        char: '腹',
+        meaning: { en: 'belly, abdomen', vi: 'phúc - bụng' },
+        onyomi: ['フク'],
+        kunyomi: ['はら'],
+        components: ['肉', '复'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '复', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '空', reading: 'くう' },
+              { text: '腹', reading: 'ふく' }
+            ],
+            meaning: { en: 'empty stomach, hunger', vi: 'bụng đói' }
+          },
+          {
+            parts: [
+              { text: '満', reading: 'まん' },
+              { text: '腹', reading: 'ぷく' }
+            ],
+            meaning: { en: 'full stomach', vi: 'no bụng' }
+          },
+          {
+            parts: [
+              { text: '立', reading: 'りっ' },
+              { text: '腹', reading: 'ぷく' }
+            ],
+            meaning: { en: 'getting angry', vi: 'nổi giận' }
+          }
+        ]
+      },
+      {
+        char: '臓',
+        meaning: { en: 'internal organ, viscera', vi: 'tạng - nội tạng' },
+        onyomi: ['ゾウ'],
+        kunyomi: [],
+        components: ['肉', '蔵'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '蔵', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '心', reading: 'しん' },
+              { text: '臓', reading: 'ぞう' }
+            ],
+            meaning: { en: 'heart (organ)', vi: 'tim' }
+          },
+          {
+            parts: [
+              { text: '内', reading: 'ない' },
+              { text: '臓', reading: 'ぞう' }
+            ],
+            meaning: { en: 'internal organs', vi: 'nội tạng' }
+          },
+          {
+            parts: [
+              { text: '臓', reading: 'ぞう' },
+              { text: '器', reading: 'き' }
+            ],
+            meaning: { en: 'organ (of the body)', vi: 'cơ quan nội tạng' }
+          }
+        ]
+      },
+      {
+        char: '舌',
+        meaning: { en: 'tongue', vi: 'thiệt - lưỡi' },
+        onyomi: ['ゼツ'],
+        kunyomi: ['した'],
+        components: ['舌'],
+        parts: [{ char: '舌', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '弁', reading: 'べん' },
+              { text: '舌', reading: 'ぜつ' }
+            ],
+            meaning: { en: 'eloquence, speech', vi: 'tài ăn nói' }
+          },
+          {
+            parts: [
+              { text: '毒', reading: 'どく' },
+              { text: '舌', reading: 'ぜつ' }
+            ],
+            meaning: { en: 'sharp tongue', vi: 'lời cay độc' }
+          },
+          {
+            parts: [
+              { text: '舌', reading: 'した' },
+              { text: '先', reading: 'さき' }
+            ],
+            meaning: { en: 'tip of the tongue', vi: 'đầu lưỡi' }
+          }
+        ]
+      },
+      {
+        char: '姿',
+        meaning: { en: 'figure, form, appearance', vi: 'tư - dáng, hình dáng' },
+        onyomi: ['シ'],
+        kunyomi: ['すがた'],
+        components: ['次', '女'],
+        parts: [
+          { char: '次', role: 'phonetic' },
+          { char: '女', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '姿', reading: 'し' },
+              { text: '勢', reading: 'せい' }
+            ],
+            meaning: { en: 'posture, stance', vi: 'tư thế' }
+          },
+          {
+            parts: [
+              { text: '容', reading: 'よう' },
+              { text: '姿', reading: 'し' }
+            ],
+            meaning: { en: 'appearance, looks', vi: 'dung mạo' }
+          },
+          {
+            parts: [
+              { text: '姿', reading: 'すがた' },
+              { text: '見', reading: 'み' }
+            ],
+            meaning: { en: 'full-length mirror', vi: 'gương soi toàn thân' }
+          }
+        ]
+      },
+      {
+        char: '視',
+        meaning: { en: 'look at, regard', vi: 'thị - nhìn, coi' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['示', '見'],
+        parts: [
+          { char: '示', role: 'phonetic' },
+          { char: '見', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '視', reading: 'し' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'eyesight', vi: 'thị lực' }
+          },
+          {
+            parts: [
+              { text: '無', reading: 'む' },
+              { text: '視', reading: 'し' }
+            ],
+            meaning: { en: 'disregard, ignore', vi: 'phớt lờ' }
+          },
+          {
+            parts: [
+              { text: '視', reading: 'し' },
+              { text: '野', reading: 'や' }
+            ],
+            meaning: { en: 'field of view', vi: 'tầm nhìn, thị dã' }
+          }
+        ]
+      },
+      {
+        char: '看',
+        meaning: { en: 'watch over, care for', vi: 'khán - trông nom' },
+        onyomi: ['カン'],
+        kunyomi: [],
+        components: ['手', '目'],
+        parts: [
+          { char: '手', role: 'other' },
+          { char: '目', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '看', reading: 'かん' },
+              { text: '板', reading: 'ばん' }
+            ],
+            meaning: { en: 'signboard', vi: 'bảng hiệu' }
+          },
+          {
+            parts: [
+              { text: '看', reading: 'かん' },
+              { text: '護', reading: 'ご' }
+            ],
+            meaning: { en: 'nursing', vi: 'điều dưỡng, chăm sóc' }
+          },
+          {
+            parts: [
+              { text: '看', reading: 'かん' },
+              { text: '病', reading: 'びょう' }
+            ],
+            meaning: { en: 'nursing (a patient)', vi: 'chăm bệnh' }
+          }
+        ]
+      },
+      {
+        char: '覧',
+        meaning: { en: 'look at, view', vi: 'lãm - xem, ngắm' },
+        onyomi: ['ラン'],
+        kunyomi: [],
+        components: ['監', '見'],
+        parts: [
+          { char: '監', role: 'phonetic' },
+          { char: '見', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '展', reading: 'てん' },
+              { text: '覧', reading: 'らん' },
+              { text: '会', reading: 'かい' }
+            ],
+            meaning: { en: 'exhibition', vi: 'triển lãm' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いち' },
+              { text: '覧', reading: 'らん' }
+            ],
+            meaning: { en: 'a look; a list', vi: 'bảng liệt kê, xem qua' }
+          },
+          {
+            parts: [
+              { text: '回', reading: 'かい' },
+              { text: '覧', reading: 'らん' }
+            ],
+            meaning: { en: 'circulation (of a notice)', vi: 'chuyền tay xem' }
+          }
+        ]
+      },
+      {
+        char: '吸',
+        meaning: { en: 'inhale, suck, absorb', vi: 'hấp - hút, hít' },
+        onyomi: ['キュウ'],
+        kunyomi: ['す.う'],
+        components: ['口', '及'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '及', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '呼', reading: 'こ' },
+              { text: '吸', reading: 'きゅう' }
+            ],
+            meaning: { en: 'breathing', vi: 'hô hấp' }
+          },
+          {
+            parts: [
+              { text: '吸', reading: 'きゅう' },
+              { text: '収', reading: 'しゅう' }
+            ],
+            meaning: { en: 'absorption', vi: 'hấp thu' }
+          },
+          {
+            parts: [
+              { text: '吸', reading: 'す' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to breathe in, to suck', vi: 'hít, hút' }
+          }
+        ]
+      },
+      {
+        char: '映',
+        meaning: { en: 'reflect; project; shine', vi: 'ánh - chiếu, phản chiếu' },
+        onyomi: ['エイ'],
+        kunyomi: ['うつ.る', 'は.える'],
+        components: ['日', '央'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '央', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '映', reading: 'えい' },
+              { text: '画', reading: 'が' }
+            ],
+            meaning: { en: 'movie, film', vi: 'phim, điện ảnh' }
+          },
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '映', reading: 'えい' }
+            ],
+            meaning: { en: 'reflection, to reflect', vi: 'phản ánh' }
+          },
+          {
+            parts: [
+              { text: '映', reading: 'うつ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to be reflected, to appear', vi: 'hiện lên, phản chiếu' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Money & trade',
+      vi: 'Tiền bạc & mua bán'
+    },
+    kanji: [
+      {
+        char: '銭',
+        meaning: { en: 'coin, money', vi: 'tiền - đồng tiền' },
+        onyomi: ['セン'],
+        kunyomi: ['ぜに'],
+        components: ['金', '戔'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '戔', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '金', reading: 'きん' },
+              { text: '銭', reading: 'せん' }
+            ],
+            meaning: { en: 'money, cash', vi: 'kim tiền, tiền bạc' }
+          },
+          {
+            parts: [
+              { text: '銭', reading: 'せん' },
+              { text: '湯', reading: 'とう' }
+            ],
+            meaning: { en: 'public bathhouse', vi: 'nhà tắm công cộng' }
+          },
+          {
+            parts: [
+              { text: '小', reading: 'こ' },
+              { text: '銭', reading: 'ぜに' }
+            ],
+            meaning: { en: 'small change', vi: 'tiền lẻ' }
+          }
+        ]
+      },
+      {
+        char: '賃',
+        meaning: { en: 'fare, wages, rent', vi: 'nhẫm - tiền công, tiền thuê' },
+        onyomi: ['チン'],
+        kunyomi: [],
+        components: ['任', '貝'],
+        parts: [
+          { char: '任', role: 'phonetic' },
+          { char: '貝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '家', reading: 'や' },
+              { text: '賃', reading: 'ちん' }
+            ],
+            meaning: { en: 'rent', vi: 'tiền thuê nhà' }
+          },
+          {
+            parts: [
+              { text: '運', reading: 'うん' },
+              { text: '賃', reading: 'ちん' }
+            ],
+            meaning: { en: 'fare, freight charge', vi: 'cước phí' }
+          },
+          {
+            parts: [
+              { text: '賃', reading: 'ちん' },
+              { text: '金', reading: 'ぎん' }
+            ],
+            meaning: { en: 'wages', vi: 'tiền lương' }
+          }
+        ]
+      },
+      {
+        char: '済',
+        meaning: { en: 'finish; settle; economy', vi: 'tế - xong; trả xong; kinh tế' },
+        onyomi: ['サイ'],
+        kunyomi: ['す.む'],
+        components: ['氵', '斉'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '斉', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '経', reading: 'けい' },
+              { text: '済', reading: 'ざい' }
+            ],
+            meaning: { en: 'economy', vi: 'kinh tế' }
+          },
+          {
+            parts: [
+              { text: '返', reading: 'へん' },
+              { text: '済', reading: 'さい' }
+            ],
+            meaning: { en: 'repayment', vi: 'trả nợ' }
+          },
+          {
+            parts: [
+              { text: '済', reading: 'す' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to be finished, to be settled', vi: 'xong, giải quyết xong' }
+          }
+        ]
+      },
+      {
+        char: '収',
+        meaning: { en: 'obtain; collect; income', vi: 'thu - thu, gom; thu nhập' },
+        onyomi: ['シュウ'],
+        kunyomi: ['おさ.める'],
+        components: ['又'],
+        parts: [{ char: '又', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '収', reading: 'しゅう' },
+              { text: '入', reading: 'にゅう' }
+            ],
+            meaning: { en: 'income', vi: 'thu nhập' }
+          },
+          {
+            parts: [
+              { text: '回', reading: 'かい' },
+              { text: '収', reading: 'しゅう' }
+            ],
+            meaning: { en: 'collection, recovery', vi: 'thu hồi' }
+          },
+          {
+            parts: [
+              { text: '吸', reading: 'きゅう' },
+              { text: '収', reading: 'しゅう' }
+            ],
+            meaning: { en: 'absorption', vi: 'hấp thu' }
+          }
+        ]
+      },
+      {
+        char: '納',
+        meaning: { en: 'pay in; store, put away', vi: 'nạp - nộp; cất giữ' },
+        onyomi: ['ノウ'],
+        kunyomi: ['おさ.める'],
+        components: ['糸', '内'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '内', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '納', reading: 'のう' },
+              { text: '税', reading: 'ぜい' }
+            ],
+            meaning: { en: 'tax payment', vi: 'nộp thuế' }
+          },
+          {
+            parts: [
+              { text: '納', reading: 'のう' },
+              { text: '入', reading: 'にゅう' }
+            ],
+            meaning: { en: 'delivery, payment', vi: 'nộp, giao nộp' }
+          },
+          {
+            parts: [
+              { text: '収', reading: 'しゅう' },
+              { text: '納', reading: 'のう' }
+            ],
+            meaning: { en: 'storage', vi: 'cất giữ, thu nạp' }
+          }
+        ]
+      },
+      {
+        char: '供',
+        meaning: { en: 'offer, supply; accompany', vi: 'cung - cung cấp; hầu' },
+        onyomi: ['キョウ', 'ク'],
+        kunyomi: ['そな.える', 'とも'],
+        components: ['亻', '共'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '共', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '供', reading: 'きょう' },
+              { text: '給', reading: 'きゅう' }
+            ],
+            meaning: { en: 'supply', vi: 'cung cấp' }
+          },
+          {
+            parts: [
+              { text: '提', reading: 'てい' },
+              { text: '供', reading: 'きょう' }
+            ],
+            meaning: { en: 'offer, provision', vi: 'cung cấp, tài trợ' }
+          },
+          {
+            parts: [
+              { text: '子', reading: 'こ' },
+              { text: '供', reading: 'ども' }
+            ],
+            meaning: { en: 'child', vi: 'trẻ con' }
+          }
+        ]
+      },
+      {
+        char: '値',
+        meaning: { en: 'price; value', vi: 'trị - giá; giá trị' },
+        onyomi: ['チ'],
+        kunyomi: ['ね', 'あたい'],
+        components: ['亻', '直'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '直', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '価', reading: 'か' },
+              { text: '値', reading: 'ち' }
+            ],
+            meaning: { en: 'value, worth', vi: 'giá trị' }
+          },
+          {
+            parts: [
+              { text: '数', reading: 'すう' },
+              { text: '値', reading: 'ち' }
+            ],
+            meaning: { en: 'numerical value', vi: 'giá trị số' }
+          },
+          {
+            parts: [
+              { text: '値', reading: 'ね' },
+              { text: '段', reading: 'だん' }
+            ],
+            meaning: { en: 'price', vi: 'giá cả' }
+          }
+        ]
+      },
+      {
+        char: '株',
+        meaning: { en: 'stump; share, stock', vi: 'chu - gốc cây; cổ phần' },
+        onyomi: ['シュ'],
+        kunyomi: ['かぶ'],
+        components: ['木', '朱'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '朱', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '株', reading: 'かぶ' },
+              { text: '式', reading: 'しき' }
+            ],
+            meaning: { en: 'stock, shares', vi: 'cổ phiếu' }
+          },
+          {
+            parts: [
+              { text: '株', reading: 'かぶ' },
+              { text: '主', reading: 'ぬし' }
+            ],
+            meaning: { en: 'shareholder', vi: 'cổ đông' }
+          },
+          {
+            parts: [
+              { text: '株', reading: 'かぶ' },
+              { text: '価', reading: 'か' }
+            ],
+            meaning: { en: 'stock price', vi: 'giá cổ phiếu' }
+          }
+        ]
+      },
+      {
+        char: '貴',
+        meaning: { en: 'precious, noble', vi: 'quý - quý giá; cao quý' },
+        onyomi: ['キ'],
+        kunyomi: ['たっと.い', 'とうと.い'],
+        components: ['貝'],
+        parts: [{ char: '貝', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '貴', reading: 'き' },
+              { text: '重', reading: 'ちょう' }
+            ],
+            meaning: { en: 'precious, valuable', vi: 'quý báu' }
+          },
+          {
+            parts: [
+              { text: '貴', reading: 'き' },
+              { text: '族', reading: 'ぞく' }
+            ],
+            meaning: { en: 'nobility, aristocrat', vi: 'quý tộc' }
+          },
+          {
+            parts: [
+              { text: '高', reading: 'こう' },
+              { text: '貴', reading: 'き' }
+            ],
+            meaning: { en: 'noble, exalted', vi: 'cao quý' }
+          }
+        ]
+      },
+      {
+        char: '郵',
+        meaning: { en: 'mail, post', vi: 'bưu - bưu chính' },
+        onyomi: ['ユウ'],
+        kunyomi: [],
+        components: ['垂', '阝'],
+        parts: [
+          { char: '垂', role: 'other' },
+          { char: '阝', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '郵', reading: 'ゆう' },
+              { text: '便', reading: 'びん' }
+            ],
+            meaning: { en: 'mail, postal service', vi: 'bưu điện, thư từ' }
+          },
+          {
+            parts: [
+              { text: '郵', reading: 'ゆう' },
+              { text: '送', reading: 'そう' }
+            ],
+            meaning: { en: 'mailing', vi: 'gửi qua bưu điện' }
+          },
+          {
+            parts: [
+              { text: '郵', reading: 'ゆう' },
+              { text: '便', reading: 'びん' },
+              { text: '局', reading: 'きょく' }
+            ],
+            meaning: { en: 'post office', vi: 'bưu cục' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Books & words',
+      vi: 'Sách vở & ngôn từ'
+    },
+    kanji: [
+      {
+        char: '冊',
+        meaning: { en: 'counter for books; volume', vi: 'sách - cuốn (đếm sách)' },
+        onyomi: ['サツ', 'サク'],
+        kunyomi: [],
+        components: ['冂'],
+        parts: [{ char: '冂', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '冊', reading: 'さつ' }
+            ],
+            meaning: { en: 'one book (counter)', vi: 'một cuốn' }
+          },
+          {
+            parts: [
+              { text: '別', reading: 'べっ' },
+              { text: '冊', reading: 'さつ' }
+            ],
+            meaning: { en: 'separate volume', vi: 'tập riêng, phụ bản' }
+          },
+          {
+            parts: [
+              { text: '短', reading: 'たん' },
+              { text: '冊', reading: 'ざく' }
+            ],
+            meaning: { en: 'strip of paper (for writing)', vi: 'thẻ giấy dài' }
+          }
+        ]
+      },
+      {
+        char: '巻',
+        meaning: { en: 'roll up; volume', vi: 'quyển - cuộn; quyển sách' },
+        onyomi: ['カン'],
+        kunyomi: ['ま.く', 'まき'],
+        components: ['己'],
+        parts: [{ char: '己', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '巻', reading: 'まき' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'scroll', vi: 'cuộn thư họa' }
+          },
+          {
+            parts: [
+              { text: '圧', reading: 'あっ' },
+              { text: '巻', reading: 'かん' }
+            ],
+            meaning: { en: 'highlight, masterpiece', vi: 'phần đặc sắc nhất' }
+          },
+          {
+            parts: [
+              { text: '上', reading: 'じょう' },
+              { text: '巻', reading: 'かん' }
+            ],
+            meaning: { en: 'first volume', vi: 'quyển thượng' }
+          }
+        ]
+      },
+      {
+        char: '誌',
+        meaning: { en: 'magazine; record', vi: 'chí - tạp chí; ghi chép' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['言', '志'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '志', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '雑', reading: 'ざっ' },
+              { text: '誌', reading: 'し' }
+            ],
+            meaning: { en: 'magazine', vi: 'tạp chí' }
+          },
+          {
+            parts: [
+              { text: '日', reading: 'にっ' },
+              { text: '誌', reading: 'し' }
+            ],
+            meaning: { en: 'diary, journal', vi: 'nhật ký' }
+          },
+          {
+            parts: [
+              { text: '誌', reading: 'し' },
+              { text: '面', reading: 'めん' }
+            ],
+            meaning: { en: 'pages of a magazine', vi: 'trang tạp chí' }
+          }
+        ]
+      },
+      {
+        char: '詞',
+        meaning: { en: 'words, part of speech', vi: 'từ - lời, từ loại' },
+        onyomi: ['シ'],
+        kunyomi: [],
+        components: ['言', '司'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '司', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '歌', reading: 'か' },
+              { text: '詞', reading: 'し' }
+            ],
+            meaning: { en: 'song lyrics', vi: 'lời bài hát' }
+          },
+          {
+            parts: [
+              { text: '動', reading: 'どう' },
+              { text: '詞', reading: 'し' }
+            ],
+            meaning: { en: 'verb', vi: 'động từ' }
+          },
+          {
+            parts: [
+              { text: '作', reading: 'さく' },
+              { text: '詞', reading: 'し' }
+            ],
+            meaning: { en: 'writing lyrics', vi: 'viết lời (nhạc)' }
+          }
+        ]
+      },
+      {
+        char: '論',
+        meaning: { en: 'argument, theory', vi: 'luận - bàn luận, lý luận' },
+        onyomi: ['ロン'],
+        kunyomi: [],
+        components: ['言', '侖'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '侖', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '議', reading: 'ぎ' },
+              { text: '論', reading: 'ろん' }
+            ],
+            meaning: { en: 'discussion, argument', vi: 'thảo luận, tranh luận' }
+          },
+          {
+            parts: [
+              { text: '結', reading: 'けつ' },
+              { text: '論', reading: 'ろん' }
+            ],
+            meaning: { en: 'conclusion', vi: 'kết luận' }
+          },
+          {
+            parts: [
+              { text: '論', reading: 'ろん' },
+              { text: '文', reading: 'ぶん' }
+            ],
+            meaning: { en: 'thesis, paper', vi: 'luận văn' }
+          }
+        ]
+      },
+      {
+        char: '訳',
+        meaning: { en: 'translate; reason, meaning', vi: 'dịch - dịch thuật; lý do' },
+        onyomi: ['ヤク'],
+        kunyomi: ['わけ'],
+        components: ['言', '尺'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '尺', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '翻', reading: 'ほん' },
+              { text: '訳', reading: 'やく' }
+            ],
+            meaning: { en: 'translation', vi: 'phiên dịch (văn bản)' }
+          },
+          {
+            parts: [
+              { text: '通', reading: 'つう' },
+              { text: '訳', reading: 'やく' }
+            ],
+            meaning: { en: 'interpreting', vi: 'thông dịch' }
+          },
+          {
+            parts: [
+              { text: '言', reading: 'い' },
+              { text: 'い', reading: 'い' },
+              { text: '訳', reading: 'わけ' }
+            ],
+            meaning: { en: 'excuse', vi: 'lời biện bạch' }
+          }
+        ]
+      },
+      {
+        char: '誤',
+        meaning: { en: 'mistake, err', vi: 'ngộ - lầm, sai' },
+        onyomi: ['ゴ'],
+        kunyomi: ['あやま.る'],
+        components: ['言', '呉'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '呉', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '誤', reading: 'ご' },
+              { text: '解', reading: 'かい' }
+            ],
+            meaning: { en: 'misunderstanding', vi: 'hiểu lầm' }
+          },
+          {
+            parts: [
+              { text: '誤', reading: 'ご' },
+              { text: '字', reading: 'じ' }
+            ],
+            meaning: { en: 'misprint, wrong character', vi: 'lỗi chữ' }
+          },
+          {
+            parts: [
+              { text: '誤', reading: 'あやま' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to err, to make a mistake', vi: 'sai, nhầm' }
+          }
+        ]
+      },
+      {
+        char: '討',
+        meaning: { en: 'discuss; attack, subjugate', vi: 'thảo - bàn bạc; đánh dẹp' },
+        onyomi: ['トウ'],
+        kunyomi: ['う.つ'],
+        components: ['言', '寸'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '寸', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '検', reading: 'けん' },
+              { text: '討', reading: 'とう' }
+            ],
+            meaning: { en: 'examination, study', vi: 'xem xét, cân nhắc' }
+          },
+          {
+            parts: [
+              { text: '討', reading: 'とう' },
+              { text: '論', reading: 'ろん' }
+            ],
+            meaning: { en: 'debate', vi: 'thảo luận, tranh luận' }
+          },
+          {
+            parts: [
+              { text: '討', reading: 'とう' },
+              { text: '議', reading: 'ぎ' }
+            ],
+            meaning: { en: 'deliberation', vi: 'bàn bạc' }
+          }
+        ]
+      },
+      {
+        char: '簡',
+        meaning: { en: 'simple, brief; letter', vi: 'giản - đơn giản; thư' },
+        onyomi: ['カン'],
+        kunyomi: [],
+        components: ['竹', '間'],
+        parts: [
+          { char: '竹', role: 'radical' },
+          { char: '間', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '簡', reading: 'かん' },
+              { text: '単', reading: 'たん' }
+            ],
+            meaning: { en: 'simple, easy', vi: 'đơn giản' }
+          },
+          {
+            parts: [
+              { text: '簡', reading: 'かん' },
+              { text: '潔', reading: 'けつ' }
+            ],
+            meaning: { en: 'concise', vi: 'ngắn gọn, súc tích' }
+          },
+          {
+            parts: [
+              { text: '書', reading: 'しょ' },
+              { text: '簡', reading: 'かん' }
+            ],
+            meaning: { en: 'letter, correspondence', vi: 'thư từ' }
+          }
+        ]
+      },
+      {
+        char: '朗',
+        meaning: { en: 'clear, bright, cheerful', vi: 'lãng - trong trẻo, vui tươi' },
+        onyomi: ['ロウ'],
+        kunyomi: ['ほが.らか'],
+        components: ['良', '月'],
+        parts: [
+          { char: '良', role: 'phonetic' },
+          { char: '月', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '朗', reading: 'ろう' },
+              { text: '読', reading: 'どく' }
+            ],
+            meaning: { en: 'reading aloud', vi: 'đọc to, ngâm đọc' }
+          },
+          {
+            parts: [
+              { text: '明', reading: 'めい' },
+              { text: '朗', reading: 'ろう' }
+            ],
+            meaning: { en: 'cheerful, bright', vi: 'sáng sủa, vui vẻ' }
+          },
+          {
+            parts: [
+              { text: '朗', reading: 'ほが' },
+              { text: 'らか', reading: 'らか' }
+            ],
+            meaning: { en: 'cheerful, merry', vi: 'vui tươi, hồ hởi' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Home & space',
+      vi: 'Nhà ở & không gian'
+    },
+    kanji: [
+      {
+        char: '宅',
+        meaning: { en: 'home, residence', vi: 'trạch - nhà ở' },
+        onyomi: ['タク'],
+        kunyomi: [],
+        components: ['宀', '乇'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '乇', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '住', reading: 'じゅう' },
+              { text: '宅', reading: 'たく' }
+            ],
+            meaning: { en: 'residence, housing', vi: 'nhà ở, chỗ ở' }
+          },
+          {
+            parts: [
+              { text: '帰', reading: 'き' },
+              { text: '宅', reading: 'たく' }
+            ],
+            meaning: { en: 'returning home', vi: 'về nhà' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '宅', reading: 'たく' }
+            ],
+            meaning: { en: "one's own home", vi: 'nhà riêng' }
+          }
+        ]
+      },
+      {
+        char: '宙',
+        meaning: { en: 'mid-air; space', vi: 'trụ - không trung; vũ trụ' },
+        onyomi: ['チュウ'],
+        kunyomi: [],
+        components: ['宀', '由'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '由', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '宇', reading: 'う' },
+              { text: '宙', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'universe, space', vi: 'vũ trụ' }
+          },
+          {
+            parts: [
+              { text: '宙', reading: 'ちゅう' },
+              { text: '返', reading: 'がえ' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'somersault', vi: 'lộn nhào' }
+          },
+          {
+            parts: [
+              { text: '宙', reading: 'ちゅう' },
+              { text: '吊', reading: 'づ' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'suspended in mid-air', vi: 'treo lơ lửng' }
+          }
+        ]
+      },
+      {
+        char: '宇',
+        meaning: { en: 'eaves; universe, space', vi: 'vũ - mái hiên; vũ trụ' },
+        onyomi: ['ウ'],
+        kunyomi: [],
+        components: ['宀', '于'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '于', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '宇', reading: 'う' },
+              { text: '宙', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'universe, space', vi: 'vũ trụ' }
+          },
+          {
+            parts: [
+              { text: '宇', reading: 'う' },
+              { text: '宙', reading: 'ちゅう' },
+              { text: '船', reading: 'せん' }
+            ],
+            meaning: { en: 'spaceship', vi: 'tàu vũ trụ' }
+          },
+          {
+            parts: [
+              { text: '気', reading: 'き' },
+              { text: '宇', reading: 'う' }
+            ],
+            meaning: { en: 'magnanimity, scale of mind', vi: 'khí độ' }
+          }
+        ]
+      },
+      {
+        char: '宝',
+        meaning: { en: 'treasure', vi: 'bảo - của quý' },
+        onyomi: ['ホウ'],
+        kunyomi: ['たから'],
+        components: ['宀', '玉'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '玉', role: 'semantic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '宝', reading: 'たから' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'treasure', vi: 'báu vật' }
+          },
+          {
+            parts: [
+              { text: '国', reading: 'こく' },
+              { text: '宝', reading: 'ほう' }
+            ],
+            meaning: { en: 'national treasure', vi: 'quốc bảo' }
+          },
+          {
+            parts: [
+              { text: '財', reading: 'ざい' },
+              { text: '宝', reading: 'ほう' }
+            ],
+            meaning: { en: 'treasure, riches', vi: 'của cải quý giá' }
+          }
+        ]
+      },
+      {
+        char: '密',
+        meaning: { en: 'dense; secret; close', vi: 'mật - dày đặc; bí mật; khít' },
+        onyomi: ['ミツ'],
+        kunyomi: [],
+        components: ['宀', '必', '山'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '必', role: 'phonetic' },
+          { char: '山', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '秘', reading: 'ひ' },
+              { text: '密', reading: 'みつ' }
+            ],
+            meaning: { en: 'secret', vi: 'bí mật' }
+          },
+          {
+            parts: [
+              { text: '密', reading: 'みっ' },
+              { text: '接', reading: 'せつ' }
+            ],
+            meaning: { en: 'close, intimate', vi: 'mật thiết' }
+          },
+          {
+            parts: [
+              { text: '密', reading: 'みつ' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'density', vi: 'mật độ' }
+          }
+        ]
+      },
+      {
+        char: '宗',
+        meaning: { en: 'religion, sect; origin', vi: 'tông - tông phái; tổ tông' },
+        onyomi: ['シュウ', 'ソウ'],
+        kunyomi: [],
+        components: ['宀', '示'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '示', role: 'semantic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '宗', reading: 'しゅう' },
+              { text: '教', reading: 'きょう' }
+            ],
+            meaning: { en: 'religion', vi: 'tôn giáo' }
+          },
+          {
+            parts: [
+              { text: '宗', reading: 'しゅう' },
+              { text: '派', reading: 'は' }
+            ],
+            meaning: { en: 'sect, denomination', vi: 'tông phái' }
+          },
+          {
+            parts: [
+              { text: '改', reading: 'かい' },
+              { text: '宗', reading: 'しゅう' }
+            ],
+            meaning: { en: 'religious conversion', vi: 'cải đạo' }
+          }
+        ]
+      },
+      {
+        char: '座',
+        meaning: { en: 'seat; sit', vi: 'tọa - chỗ ngồi; ngồi' },
+        onyomi: ['ザ'],
+        kunyomi: ['すわ.る'],
+        components: ['广', '坐'],
+        parts: [
+          { char: '广', role: 'radical' },
+          { char: '坐', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '座', reading: 'ざ' },
+              { text: '席', reading: 'せき' }
+            ],
+            meaning: { en: 'seat', vi: 'chỗ ngồi' }
+          },
+          {
+            parts: [
+              { text: '正', reading: 'せい' },
+              { text: '座', reading: 'ざ' }
+            ],
+            meaning: { en: 'sitting upright (seiza)', vi: 'ngồi quỳ ngay ngắn' }
+          },
+          {
+            parts: [
+              { text: '座', reading: 'すわ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to sit down', vi: 'ngồi' }
+          }
+        ]
+      },
+      {
+        char: '閣',
+        meaning: { en: 'palace; cabinet (government)', vi: 'các - lầu gác; nội các' },
+        onyomi: ['カク'],
+        kunyomi: [],
+        components: ['門', '各'],
+        parts: [
+          { char: '門', role: 'radical' },
+          { char: '各', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '内', reading: 'ない' },
+              { text: '閣', reading: 'かく' }
+            ],
+            meaning: { en: 'cabinet (government)', vi: 'nội các' }
+          },
+          {
+            parts: [
+              { text: '閣', reading: 'かく' },
+              { text: '議', reading: 'ぎ' }
+            ],
+            meaning: { en: 'cabinet meeting', vi: 'họp nội các' }
+          },
+          {
+            parts: [
+              { text: '天', reading: 'てん' },
+              { text: '守', reading: 'しゅ' },
+              { text: '閣', reading: 'かく' }
+            ],
+            meaning: { en: 'castle tower', vi: 'tháp canh lâu đài' }
+          }
+        ]
+      },
+      {
+        char: '窓',
+        meaning: { en: 'window', vi: 'song - cửa sổ' },
+        onyomi: ['ソウ'],
+        kunyomi: ['まど'],
+        components: ['穴', '心'],
+        parts: [
+          { char: '穴', role: 'radical' },
+          { char: '心', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '窓', reading: 'まど' },
+              { text: '口', reading: 'ぐち' }
+            ],
+            meaning: { en: 'service window, counter', vi: 'quầy giao dịch' }
+          },
+          {
+            parts: [
+              { text: '同', reading: 'どう' },
+              { text: '窓', reading: 'そう' }
+            ],
+            meaning: { en: 'schoolmate, alumnus', vi: 'bạn học cùng trường' }
+          },
+          {
+            parts: [
+              { text: '車', reading: 'しゃ' },
+              { text: '窓', reading: 'そう' }
+            ],
+            meaning: { en: 'train/car window', vi: 'cửa sổ tàu xe' }
+          }
+        ]
+      },
+      {
+        char: '穴',
+        meaning: { en: 'hole, cave', vi: 'huyệt - lỗ, hang' },
+        onyomi: ['ケツ'],
+        kunyomi: ['あな'],
+        components: ['穴'],
+        parts: [{ char: '穴', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '穴', reading: 'あな' },
+              { text: '場', reading: 'ば' }
+            ],
+            meaning: { en: 'little-known good spot', vi: 'chỗ hay ít người biết' }
+          },
+          {
+            parts: [
+              { text: '墓', reading: 'ぼ' },
+              { text: '穴', reading: 'けつ' }
+            ],
+            meaning: { en: 'grave pit; self-ruin', vi: 'huyệt mộ; tự chuốc họa' }
+          },
+          {
+            parts: [
+              { text: '穴', reading: 'あな' },
+              { text: '埋', reading: 'う' },
+              { text: 'め', reading: 'め' }
+            ],
+            meaning: { en: 'filling a gap', vi: 'lấp chỗ trống' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Actions & effort',
+      vi: 'Thao tác & nỗ lực'
+    },
+    kanji: [
+      {
+        char: '拡',
+        meaning: { en: 'extend, enlarge', vi: 'khoách - mở rộng' },
+        onyomi: ['カク'],
+        kunyomi: [],
+        components: ['扌', '広'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '広', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '拡', reading: 'かく' },
+              { text: '大', reading: 'だい' }
+            ],
+            meaning: { en: 'enlargement, expansion', vi: 'mở rộng, phóng to' }
+          },
+          {
+            parts: [
+              { text: '拡', reading: 'かく' },
+              { text: '張', reading: 'ちょう' }
+            ],
+            meaning: { en: 'extension, expansion', vi: 'khuếch trương' }
+          },
+          {
+            parts: [
+              { text: '拡', reading: 'かく' },
+              { text: '散', reading: 'さん' }
+            ],
+            meaning: { en: 'diffusion, spread', vi: 'khuếch tán, lan rộng' }
+          }
+        ]
+      },
+      {
+        char: '揮',
+        meaning: { en: 'wield, brandish; command', vi: 'huy - vung; chỉ huy' },
+        onyomi: ['キ'],
+        kunyomi: [],
+        components: ['扌', '軍'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '軍', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '指', reading: 'し' },
+              { text: '揮', reading: 'き' }
+            ],
+            meaning: { en: 'command, direction', vi: 'chỉ huy' }
+          },
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '揮', reading: 'き' }
+            ],
+            meaning: { en: 'display, exhibit (ability)', vi: 'phát huy' }
+          },
+          {
+            parts: [
+              { text: '揮', reading: 'き' },
+              { text: '発', reading: 'はつ' }
+            ],
+            meaning: { en: 'volatilization', vi: 'bay hơi' }
+          }
+        ]
+      },
+      {
+        char: '捨',
+        meaning: { en: 'throw away, discard', vi: 'xả - vứt bỏ' },
+        onyomi: ['シャ'],
+        kunyomi: ['す.てる'],
+        components: ['扌', '舎'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '舎', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '取', reading: 'しゅ' },
+              { text: '捨', reading: 'しゃ' }
+            ],
+            meaning: { en: 'adoption or rejection', vi: 'chọn lọc, lấy bỏ' }
+          },
+          {
+            parts: [
+              { text: '四', reading: 'し' },
+              { text: '捨', reading: 'しゃ' },
+              { text: '五', reading: 'ご' },
+              { text: '入', reading: 'にゅう' }
+            ],
+            meaning: { en: 'rounding off', vi: 'làm tròn số' }
+          },
+          {
+            parts: [
+              { text: '捨', reading: 'す' },
+              { text: 'てる', reading: 'てる' }
+            ],
+            meaning: { en: 'to throw away', vi: 'vứt bỏ' }
+          }
+        ]
+      },
+      {
+        char: '担',
+        meaning: { en: 'carry, bear; take charge', vi: 'đảm - gánh; đảm nhận' },
+        onyomi: ['タン'],
+        kunyomi: ['にな.う', 'かつ.ぐ'],
+        components: ['扌', '旦'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '旦', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '担', reading: 'たん' },
+              { text: '当', reading: 'とう' }
+            ],
+            meaning: { en: 'being in charge', vi: 'phụ trách' }
+          },
+          {
+            parts: [
+              { text: '負', reading: 'ふ' },
+              { text: '担', reading: 'たん' }
+            ],
+            meaning: { en: 'burden, load', vi: 'gánh nặng' }
+          },
+          {
+            parts: [
+              { text: '担', reading: 'たん' },
+              { text: '任', reading: 'にん' }
+            ],
+            meaning: { en: 'homeroom teacher; charge', vi: 'giáo viên chủ nhiệm' }
+          }
+        ]
+      },
+      {
+        char: '探',
+        meaning: { en: 'search, look for', vi: 'tham - tìm, dò' },
+        onyomi: ['タン'],
+        kunyomi: ['さぐ.る', 'さが.す'],
+        components: ['扌'],
+        parts: [{ char: '扌', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '探', reading: 'たん' },
+              { text: '検', reading: 'けん' }
+            ],
+            meaning: { en: 'exploration', vi: 'thám hiểm' }
+          },
+          {
+            parts: [
+              { text: '探', reading: 'たん' },
+              { text: '求', reading: 'きゅう' }
+            ],
+            meaning: { en: 'pursuit, quest', vi: 'tìm tòi, truy tìm' }
+          },
+          {
+            parts: [
+              { text: '探', reading: 'さが' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to look for', vi: 'tìm kiếm' }
+          }
+        ]
+      },
+      {
+        char: '推',
+        meaning: { en: 'push; infer, recommend', vi: 'suy - đẩy; suy đoán, tiến cử' },
+        onyomi: ['スイ'],
+        kunyomi: ['お.す'],
+        components: ['扌', '隹'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '隹', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '推', reading: 'すい' },
+              { text: '理', reading: 'り' }
+            ],
+            meaning: { en: 'reasoning, deduction', vi: 'suy luận' }
+          },
+          {
+            parts: [
+              { text: '推', reading: 'すい' },
+              { text: '薦', reading: 'せん' }
+            ],
+            meaning: { en: 'recommendation', vi: 'tiến cử' }
+          },
+          {
+            parts: [
+              { text: '推', reading: 'すい' },
+              { text: '測', reading: 'そく' }
+            ],
+            meaning: { en: 'conjecture, guess', vi: 'suy đoán' }
+          }
+        ]
+      },
+      {
+        char: '操',
+        meaning: { en: 'manipulate, handle', vi: 'thao - điều khiển, thao tác' },
+        onyomi: ['ソウ'],
+        kunyomi: ['あやつ.る', 'みさお'],
+        components: ['扌', '喿'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '喿', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '操', reading: 'そう' },
+              { text: '作', reading: 'さ' }
+            ],
+            meaning: { en: 'operation, handling', vi: 'thao tác, vận hành' }
+          },
+          {
+            parts: [
+              { text: '体', reading: 'たい' },
+              { text: '操', reading: 'そう' }
+            ],
+            meaning: { en: 'gymnastics, exercise', vi: 'thể dục' }
+          },
+          {
+            parts: [
+              { text: '操', reading: 'あやつ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to manipulate, to operate', vi: 'điều khiển' }
+          }
+        ]
+      },
+      {
+        char: '拝',
+        meaning: { en: 'worship, bow; humbly', vi: 'bái - lạy, vái' },
+        onyomi: ['ハイ'],
+        kunyomi: ['おが.む'],
+        components: ['扌'],
+        parts: [{ char: '扌', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '参', reading: 'さん' },
+              { text: '拝', reading: 'ぱい' }
+            ],
+            meaning: { en: 'visiting a shrine/temple', vi: 'đi lễ, tham bái' }
+          },
+          {
+            parts: [
+              { text: '拝', reading: 'はい' },
+              { text: '見', reading: 'けん' }
+            ],
+            meaning: { en: 'to see (humble)', vi: 'xem (khiêm nhường)' }
+          },
+          {
+            parts: [
+              { text: '拝', reading: 'おが' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to pray to, to worship', vi: 'vái lạy, khấn' }
+          }
+        ]
+      },
+      {
+        char: '批',
+        meaning: { en: 'criticize; comment', vi: 'phê - phê bình' },
+        onyomi: ['ヒ'],
+        kunyomi: [],
+        components: ['扌', '比'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '比', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '批', reading: 'ひ' },
+              { text: '判', reading: 'はん' }
+            ],
+            meaning: { en: 'criticism', vi: 'phê phán' }
+          },
+          {
+            parts: [
+              { text: '批', reading: 'ひ' },
+              { text: '評', reading: 'ひょう' }
+            ],
+            meaning: { en: 'criticism, review', vi: 'phê bình' }
+          },
+          {
+            parts: [
+              { text: '批', reading: 'ひ' },
+              { text: '准', reading: 'じゅん' }
+            ],
+            meaning: { en: 'ratification', vi: 'phê chuẩn' }
+          }
+        ]
+      },
+      {
+        char: '勤',
+        meaning: { en: 'work, serve; diligence', vi: 'cần - làm việc; chuyên cần' },
+        onyomi: ['キン', 'ゴン'],
+        kunyomi: ['つと.める'],
+        components: ['堇', '力'],
+        parts: [
+          { char: '堇', role: 'phonetic' },
+          { char: '力', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '勤', reading: 'きん' },
+              { text: '務', reading: 'む' }
+            ],
+            meaning: { en: 'service, duty (work)', vi: 'làm việc, công vụ' }
+          },
+          {
+            parts: [
+              { text: '通', reading: 'つう' },
+              { text: '勤', reading: 'きん' }
+            ],
+            meaning: { en: 'commuting to work', vi: 'đi làm' }
+          },
+          {
+            parts: [
+              { text: '勤', reading: 'つと' },
+              { text: 'める', reading: 'める' }
+            ],
+            meaning: { en: 'to work (for), to serve', vi: 'làm việc, phục vụ' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Water, earth & nature',
+      vi: 'Nước, đất & thiên nhiên'
+    },
+    kanji: [
+      {
+        char: '灰',
+        meaning: { en: 'ash; gray', vi: 'hôi - tro; màu xám' },
+        onyomi: ['カイ'],
+        kunyomi: ['はい'],
+        components: ['厂', '火'],
+        parts: [
+          { char: '厂', role: 'other' },
+          { char: '火', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '灰', reading: 'はい' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'gray (color)', vi: 'màu xám' }
+          },
+          {
+            parts: [
+              { text: '石', reading: 'せっ' },
+              { text: '灰', reading: 'かい' }
+            ],
+            meaning: { en: 'lime (mineral)', vi: 'vôi' }
+          },
+          {
+            parts: [
+              { text: '灰', reading: 'はい' },
+              { text: '皿', reading: 'ざら' }
+            ],
+            meaning: { en: 'ashtray', vi: 'gạt tàn' }
+          }
+        ]
+      },
+      {
+        char: '砂',
+        meaning: { en: 'sand', vi: 'sa - cát' },
+        onyomi: ['サ', 'シャ'],
+        kunyomi: ['すな'],
+        components: ['石', '少'],
+        parts: [
+          { char: '石', role: 'radical' },
+          { char: '少', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '砂', reading: 'さ' },
+              { text: '糖', reading: 'とう' }
+            ],
+            meaning: { en: 'sugar', vi: 'đường' }
+          },
+          {
+            parts: [
+              { text: '砂', reading: 'さ' },
+              { text: '漠', reading: 'ばく' }
+            ],
+            meaning: { en: 'desert', vi: 'sa mạc' }
+          },
+          {
+            parts: [
+              { text: '砂', reading: 'すな' },
+              { text: '場', reading: 'ば' }
+            ],
+            meaning: { en: 'sandbox', vi: 'hố cát' }
+          }
+        ]
+      },
+      {
+        char: '泉',
+        meaning: { en: 'spring, fountain', vi: 'tuyền - suối nguồn' },
+        onyomi: ['セン'],
+        kunyomi: ['いずみ'],
+        components: ['白', '水'],
+        parts: [
+          { char: '白', role: 'other' },
+          { char: '水', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '温', reading: 'おん' },
+              { text: '泉', reading: 'せん' }
+            ],
+            meaning: { en: 'hot spring', vi: 'suối nước nóng' }
+          },
+          {
+            parts: [
+              { text: '源', reading: 'げん' },
+              { text: '泉', reading: 'せん' }
+            ],
+            meaning: { en: 'source, fountainhead', vi: 'nguồn cội' }
+          },
+          {
+            parts: [
+              { text: '泉', reading: 'せん' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'spring water', vi: 'nước suối' }
+          }
+        ]
+      },
+      {
+        char: '源',
+        meaning: { en: 'source, origin', vi: 'nguyên - nguồn gốc' },
+        onyomi: ['ゲン'],
+        kunyomi: ['みなもと'],
+        components: ['氵', '原'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '原', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '資', reading: 'し' },
+              { text: '源', reading: 'げん' }
+            ],
+            meaning: { en: 'resources', vi: 'tài nguyên' }
+          },
+          {
+            parts: [
+              { text: '起', reading: 'き' },
+              { text: '源', reading: 'げん' }
+            ],
+            meaning: { en: 'origin', vi: 'khởi nguồn' }
+          },
+          {
+            parts: [
+              { text: '電', reading: 'でん' },
+              { text: '源', reading: 'げん' }
+            ],
+            meaning: { en: 'power source', vi: 'nguồn điện' }
+          }
+        ]
+      },
+      {
+        char: '潮',
+        meaning: { en: 'tide; current, trend', vi: 'triều - thủy triều; trào lưu' },
+        onyomi: ['チョウ'],
+        kunyomi: ['しお'],
+        components: ['氵', '朝'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '朝', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '潮', reading: 'ちょう' },
+              { text: '流', reading: 'りゅう' }
+            ],
+            meaning: { en: 'tidal current; trend', vi: 'dòng triều; trào lưu' }
+          },
+          {
+            parts: [
+              { text: '満', reading: 'まん' },
+              { text: '潮', reading: 'ちょう' }
+            ],
+            meaning: { en: 'high tide', vi: 'triều lên' }
+          },
+          {
+            parts: [
+              { text: '潮', reading: 'しお' },
+              { text: '風', reading: 'かぜ' }
+            ],
+            meaning: { en: 'sea breeze', vi: 'gió biển' }
+          }
+        ]
+      },
+      {
+        char: '蒸',
+        meaning: { en: 'steam, evaporate', vi: 'chưng - hấp, bốc hơi' },
+        onyomi: ['ジョウ'],
+        kunyomi: ['む.す'],
+        components: ['艹', '烝'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '烝', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '蒸', reading: 'じょう' },
+              { text: '気', reading: 'き' }
+            ],
+            meaning: { en: 'steam, vapor', vi: 'hơi nước' }
+          },
+          {
+            parts: [
+              { text: '蒸', reading: 'じょう' },
+              { text: '発', reading: 'はつ' }
+            ],
+            meaning: { en: 'evaporation', vi: 'bốc hơi' }
+          },
+          {
+            parts: [
+              { text: '蒸', reading: 'む' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to steam', vi: 'hấp' }
+          }
+        ]
+      },
+      {
+        char: '洗',
+        meaning: { en: 'wash', vi: 'tẩy - rửa, giặt' },
+        onyomi: ['セン'],
+        kunyomi: ['あら.う'],
+        components: ['氵', '先'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '先', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '洗', reading: 'せん' },
+              { text: '濯', reading: 'たく' }
+            ],
+            meaning: { en: 'laundry, washing', vi: 'giặt giũ' }
+          },
+          {
+            parts: [
+              { text: '洗', reading: 'せん' },
+              { text: '面', reading: 'めん' }
+            ],
+            meaning: { en: 'washing the face', vi: 'rửa mặt' }
+          },
+          {
+            parts: [
+              { text: '洗', reading: 'あら' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to wash', vi: 'rửa, giặt' }
+          }
+        ]
+      },
+      {
+        char: '染',
+        meaning: { en: 'dye; be infected', vi: 'nhiễm - nhuộm; lây nhiễm' },
+        onyomi: ['セン'],
+        kunyomi: ['そ.める', 'し.みる'],
+        components: ['氵', '九', '木'],
+        parts: [
+          { char: '氵', role: 'other' },
+          { char: '九', role: 'other' },
+          { char: '木', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '感', reading: 'かん' },
+              { text: '染', reading: 'せん' }
+            ],
+            meaning: { en: 'infection', vi: 'lây nhiễm' }
+          },
+          {
+            parts: [
+              { text: '染', reading: 'せん' },
+              { text: '色', reading: 'しょく' }
+            ],
+            meaning: { en: 'dyeing', vi: 'nhuộm màu' }
+          },
+          {
+            parts: [
+              { text: '染', reading: 'そ' },
+              { text: 'める', reading: 'める' }
+            ],
+            meaning: { en: 'to dye', vi: 'nhuộm' }
+          }
+        ]
+      },
+      {
+        char: '干',
+        meaning: { en: 'dry; low tide', vi: 'can - phơi khô; nước ròng' },
+        onyomi: ['カン'],
+        kunyomi: ['ほ.す', 'ひ.る'],
+        components: ['干'],
+        parts: [{ char: '干', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '干', reading: 'かん' },
+              { text: '潮', reading: 'ちょう' }
+            ],
+            meaning: { en: 'low tide, ebb', vi: 'triều xuống' }
+          },
+          {
+            parts: [
+              { text: '若', reading: 'じゃっ' },
+              { text: '干', reading: 'かん' }
+            ],
+            meaning: { en: 'some, a few', vi: 'một chút, đôi chút' }
+          },
+          {
+            parts: [
+              { text: '干', reading: 'ほ' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to dry, to air', vi: 'phơi khô' }
+          }
+        ]
+      },
+      {
+        char: '暖',
+        meaning: { en: 'warm', vi: 'noãn - ấm áp' },
+        onyomi: ['ダン'],
+        kunyomi: ['あたた.かい'],
+        components: ['日', '爰'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '爰', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '暖', reading: 'だん' },
+              { text: '房', reading: 'ぼう' }
+            ],
+            meaning: { en: 'heating', vi: 'hệ thống sưởi' }
+          },
+          {
+            parts: [
+              { text: '温', reading: 'おん' },
+              { text: '暖', reading: 'だん' }
+            ],
+            meaning: { en: 'warm (climate)', vi: 'ôn hòa, ấm' }
+          },
+          {
+            parts: [
+              { text: '暖', reading: 'あたた' },
+              { text: 'かい', reading: 'かい' }
+            ],
+            meaning: { en: 'warm', vi: 'ấm áp' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Fibers & farm products',
+      vi: 'Sợi vải & nông sản'
+    },
+    kanji: [
+      {
+        char: '絹',
+        meaning: { en: 'silk', vi: 'quyên - lụa' },
+        onyomi: ['ケン'],
+        kunyomi: ['きぬ'],
+        components: ['糸'],
+        parts: [{ char: '糸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '絹', reading: 'けん' },
+              { text: '糸', reading: 'し' }
+            ],
+            meaning: { en: 'silk thread', vi: 'sợi tơ' }
+          },
+          {
+            parts: [
+              { text: '絹', reading: 'きぬ' },
+              { text: '織', reading: 'おり' },
+              { text: '物', reading: 'もの' }
+            ],
+            meaning: { en: 'silk fabric', vi: 'hàng dệt lụa' }
+          },
+          {
+            parts: [
+              { text: '人', reading: 'じん' },
+              { text: '絹', reading: 'けん' }
+            ],
+            meaning: { en: 'rayon (artificial silk)', vi: 'tơ nhân tạo' }
+          }
+        ]
+      },
+      {
+        char: '純',
+        meaning: { en: 'pure, genuine', vi: 'thuần - thuần khiết' },
+        onyomi: ['ジュン'],
+        kunyomi: [],
+        components: ['糸', '屯'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '屯', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '純', reading: 'じゅん' },
+              { text: '粋', reading: 'すい' }
+            ],
+            meaning: { en: 'pure, genuine', vi: 'thuần túy' }
+          },
+          {
+            parts: [
+              { text: '単', reading: 'たん' },
+              { text: '純', reading: 'じゅん' }
+            ],
+            meaning: { en: 'simple, plain', vi: 'đơn thuần' }
+          },
+          {
+            parts: [
+              { text: '純', reading: 'じゅん' },
+              { text: '真', reading: 'しん' }
+            ],
+            meaning: { en: 'innocent, naive', vi: 'ngây thơ, thuần chân' }
+          }
+        ]
+      },
+      {
+        char: '縦',
+        meaning: { en: 'vertical, lengthwise', vi: 'túng - chiều dọc' },
+        onyomi: ['ジュウ'],
+        kunyomi: ['たて'],
+        components: ['糸', '従'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '従', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '縦', reading: 'じゅう' },
+              { text: '横', reading: 'おう' }
+            ],
+            meaning: { en: 'length and breadth', vi: 'dọc ngang' }
+          },
+          {
+            parts: [
+              { text: '操', reading: 'そう' },
+              { text: '縦', reading: 'じゅう' }
+            ],
+            meaning: { en: 'piloting, control', vi: 'điều khiển (lái)' }
+          },
+          {
+            parts: [
+              { text: '縦', reading: 'たて' },
+              { text: '書', reading: 'が' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'vertical writing', vi: 'viết dọc' }
+          }
+        ]
+      },
+      {
+        char: '縮',
+        meaning: { en: 'shrink, shorten', vi: 'súc - co lại, rút ngắn' },
+        onyomi: ['シュク'],
+        kunyomi: ['ちぢ.む'],
+        components: ['糸', '宿'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '宿', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '縮', reading: 'しゅく' },
+              { text: '小', reading: 'しょう' }
+            ],
+            meaning: { en: 'reduction', vi: 'thu nhỏ' }
+          },
+          {
+            parts: [
+              { text: '短', reading: 'たん' },
+              { text: '縮', reading: 'しゅく' }
+            ],
+            meaning: { en: 'shortening', vi: 'rút ngắn' }
+          },
+          {
+            parts: [
+              { text: '縮', reading: 'ちぢ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to shrink', vi: 'co lại' }
+          }
+        ]
+      },
+      {
+        char: '系',
+        meaning: { en: 'lineage, system', vi: 'hệ - dòng dõi, hệ thống' },
+        onyomi: ['ケイ'],
+        kunyomi: [],
+        components: ['糸'],
+        parts: [{ char: '糸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '体', reading: 'たい' },
+              { text: '系', reading: 'けい' }
+            ],
+            meaning: { en: 'system, organization', vi: 'hệ thống' }
+          },
+          {
+            parts: [
+              { text: '系', reading: 'けい' },
+              { text: '統', reading: 'とう' }
+            ],
+            meaning: { en: 'system, lineage', vi: 'hệ thống, dòng dõi' }
+          },
+          {
+            parts: [
+              { text: '家', reading: 'か' },
+              { text: '系', reading: 'けい' }
+            ],
+            meaning: { en: 'family line', vi: 'gia hệ' }
+          }
+        ]
+      },
+      {
+        char: '紅',
+        meaning: { en: 'crimson, deep red', vi: 'hồng - đỏ thắm' },
+        onyomi: ['コウ', 'ク'],
+        kunyomi: ['べに', 'くれない'],
+        components: ['糸', '工'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '工', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '紅', reading: 'こう' },
+              { text: '茶', reading: 'ちゃ' }
+            ],
+            meaning: { en: 'black tea', vi: 'trà đen (hồng trà)' }
+          },
+          {
+            parts: [
+              { text: '紅', reading: 'こう' },
+              { text: '葉', reading: 'よう' }
+            ],
+            meaning: { en: 'autumn leaves', vi: 'lá đỏ mùa thu' }
+          },
+          {
+            parts: [
+              { text: '口', reading: 'くち' },
+              { text: '紅', reading: 'べに' }
+            ],
+            meaning: { en: 'lipstick', vi: 'son môi' }
+          }
+        ]
+      },
+      {
+        char: '革',
+        meaning: { en: 'leather; reform', vi: 'cách - da thuộc; cải cách' },
+        onyomi: ['カク'],
+        kunyomi: ['かわ'],
+        components: ['革'],
+        parts: [{ char: '革', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '革', reading: 'かく' },
+              { text: '命', reading: 'めい' }
+            ],
+            meaning: { en: 'revolution', vi: 'cách mạng' }
+          },
+          {
+            parts: [
+              { text: '改', reading: 'かい' },
+              { text: '革', reading: 'かく' }
+            ],
+            meaning: { en: 'reform', vi: 'cải cách' }
+          },
+          {
+            parts: [
+              { text: '皮', reading: 'ひ' },
+              { text: '革', reading: 'かく' }
+            ],
+            meaning: { en: 'leather, hide', vi: 'da thuộc' }
+          }
+        ]
+      },
+      {
+        char: '蚕',
+        meaning: { en: 'silkworm', vi: 'tàm - con tằm' },
+        onyomi: ['サン'],
+        kunyomi: ['かいこ'],
+        components: ['天', '虫'],
+        parts: [
+          { char: '天', role: 'other' },
+          { char: '虫', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '養', reading: 'よう' },
+              { text: '蚕', reading: 'さん' }
+            ],
+            meaning: { en: 'silkworm raising', vi: 'nuôi tằm' }
+          },
+          {
+            parts: [
+              { text: '蚕', reading: 'さん' },
+              { text: '糸', reading: 'し' }
+            ],
+            meaning: { en: 'silk thread (industry)', vi: 'tơ tằm' }
+          },
+          {
+            parts: [
+              { text: '蚕', reading: 'さん' },
+              { text: '食', reading: 'しょく' }
+            ],
+            meaning: { en: 'encroachment', vi: 'lấn dần (tằm ăn)' }
+          }
+        ]
+      },
+      {
+        char: '糖',
+        meaning: { en: 'sugar', vi: 'đường - đường (chất)' },
+        onyomi: ['トウ'],
+        kunyomi: [],
+        components: ['米', '唐'],
+        parts: [
+          { char: '米', role: 'radical' },
+          { char: '唐', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '砂', reading: 'さ' },
+              { text: '糖', reading: 'とう' }
+            ],
+            meaning: { en: 'sugar', vi: 'đường' }
+          },
+          {
+            parts: [
+              { text: '糖', reading: 'とう' },
+              { text: '分', reading: 'ぶん' }
+            ],
+            meaning: { en: 'sugar content', vi: 'lượng đường' }
+          },
+          {
+            parts: [
+              { text: '血', reading: 'けっ' },
+              { text: '糖', reading: 'とう' }
+            ],
+            meaning: { en: 'blood sugar', vi: 'đường huyết' }
+          }
+        ]
+      },
+      {
+        char: '穀',
+        meaning: { en: 'grain, cereal', vi: 'cốc - ngũ cốc' },
+        onyomi: ['コク'],
+        kunyomi: [],
+        components: ['禾', '殳'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '殳', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '穀', reading: 'こく' },
+              { text: '物', reading: 'もつ' }
+            ],
+            meaning: { en: 'grain, cereals', vi: 'ngũ cốc' }
+          },
+          {
+            parts: [
+              { text: '穀', reading: 'こく' },
+              { text: '倉', reading: 'そう' }
+            ],
+            meaning: { en: 'granary', vi: 'kho lúa' }
+          },
+          {
+            parts: [
+              { text: '雑', reading: 'ざっ' },
+              { text: '穀', reading: 'こく' }
+            ],
+            meaning: { en: 'miscellaneous grains', vi: 'ngũ cốc phụ' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Danger & difficulty',
+      vi: 'Nguy hiểm & khó khăn'
+    },
+    kanji: [
+      {
+        char: '危',
+        meaning: { en: 'danger, peril', vi: 'nguy - nguy hiểm' },
+        onyomi: ['キ'],
+        kunyomi: ['あぶ.ない', 'あや.うい'],
+        components: ['卩'],
+        parts: [{ char: '卩', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '危', reading: 'き' },
+              { text: '険', reading: 'けん' }
+            ],
+            meaning: { en: 'danger', vi: 'nguy hiểm' }
+          },
+          {
+            parts: [
+              { text: '危', reading: 'き' },
+              { text: '機', reading: 'き' }
+            ],
+            meaning: { en: 'crisis', vi: 'nguy cơ, khủng hoảng' }
+          },
+          {
+            parts: [
+              { text: '危', reading: 'あぶ' },
+              { text: 'ない', reading: 'ない' }
+            ],
+            meaning: { en: 'dangerous', vi: 'nguy hiểm' }
+          }
+        ]
+      },
+      {
+        char: '難',
+        meaning: { en: 'difficult; hardship', vi: 'nan - khó; tai ương' },
+        onyomi: ['ナン'],
+        kunyomi: ['むずか.しい', 'かた.い'],
+        components: ['隹'],
+        parts: [{ char: '隹', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '困', reading: 'こん' },
+              { text: '難', reading: 'なん' }
+            ],
+            meaning: { en: 'difficulty, hardship', vi: 'khó khăn' }
+          },
+          {
+            parts: [
+              { text: '難', reading: 'なん' },
+              { text: '問', reading: 'もん' }
+            ],
+            meaning: { en: 'difficult problem', vi: 'câu hỏi khó' }
+          },
+          {
+            parts: [
+              { text: '難', reading: 'むずか' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'difficult', vi: 'khó' }
+          }
+        ]
+      },
+      {
+        char: '疑',
+        meaning: { en: 'doubt, suspect', vi: 'nghi - nghi ngờ' },
+        onyomi: ['ギ'],
+        kunyomi: ['うたが.う'],
+        components: ['疋'],
+        parts: [{ char: '疋', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '疑', reading: 'ぎ' },
+              { text: '問', reading: 'もん' }
+            ],
+            meaning: { en: 'question, doubt', vi: 'nghi vấn' }
+          },
+          {
+            parts: [
+              { text: '容', reading: 'よう' },
+              { text: '疑', reading: 'ぎ' }
+            ],
+            meaning: { en: 'suspicion (of a crime)', vi: 'tình nghi' }
+          },
+          {
+            parts: [
+              { text: '疑', reading: 'うたが' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to doubt, to suspect', vi: 'nghi ngờ' }
+          }
+        ]
+      },
+      {
+        char: '困',
+        meaning: { en: 'be troubled, distressed', vi: 'khốn - khốn khó, bối rối' },
+        onyomi: ['コン'],
+        kunyomi: ['こま.る'],
+        components: ['囗', '木'],
+        parts: [
+          { char: '囗', role: 'radical' },
+          { char: '木', role: 'semantic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '困', reading: 'こん' },
+              { text: '難', reading: 'なん' }
+            ],
+            meaning: { en: 'difficulty, hardship', vi: 'khó khăn' }
+          },
+          {
+            parts: [
+              { text: '貧', reading: 'ひん' },
+              { text: '困', reading: 'こん' }
+            ],
+            meaning: { en: 'poverty', vi: 'nghèo khó' }
+          },
+          {
+            parts: [
+              { text: '困', reading: 'こま' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to be troubled', vi: 'bối rối, khốn đốn' }
+          }
+        ]
+      },
+      {
+        char: '傷',
+        meaning: { en: 'wound, injury', vi: 'thương - vết thương' },
+        onyomi: ['ショウ'],
+        kunyomi: ['きず', 'いた.む'],
+        components: ['亻'],
+        parts: [{ char: '亻', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '負', reading: 'ふ' },
+              { text: '傷', reading: 'しょう' }
+            ],
+            meaning: { en: 'injury', vi: 'bị thương' }
+          },
+          {
+            parts: [
+              { text: '傷', reading: 'しょう' },
+              { text: '害', reading: 'がい' }
+            ],
+            meaning: { en: 'bodily injury', vi: 'thương tích' }
+          },
+          {
+            parts: [
+              { text: '中', reading: 'ちゅう' },
+              { text: '傷', reading: 'しょう' }
+            ],
+            meaning: { en: 'slander, defamation', vi: 'bôi nhọ, vu khống' }
+          }
+        ]
+      },
+      {
+        char: '敵',
+        meaning: { en: 'enemy, rival', vi: 'địch - kẻ thù' },
+        onyomi: ['テキ'],
+        kunyomi: ['かたき'],
+        components: ['啇', '攵'],
+        parts: [
+          { char: '啇', role: 'phonetic' },
+          { char: '攵', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '敵', reading: 'てき' },
+              { text: '対', reading: 'たい' }
+            ],
+            meaning: { en: 'hostility, antagonism', vi: 'đối địch' }
+          },
+          {
+            parts: [
+              { text: '強', reading: 'きょう' },
+              { text: '敵', reading: 'てき' }
+            ],
+            meaning: { en: 'formidable enemy', vi: 'kẻ thù mạnh' }
+          },
+          {
+            parts: [
+              { text: '無', reading: 'む' },
+              { text: '敵', reading: 'てき' }
+            ],
+            meaning: { en: 'invincible', vi: 'vô địch' }
+          }
+        ]
+      },
+      {
+        char: '激',
+        meaning: { en: 'violent, intense', vi: 'kích - dữ dội, mãnh liệt' },
+        onyomi: ['ゲキ'],
+        kunyomi: ['はげ.しい'],
+        components: ['氵', '敫'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '敫', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '激', reading: 'げき' },
+              { text: '増', reading: 'ぞう' }
+            ],
+            meaning: { en: 'sharp increase', vi: 'tăng vọt' }
+          },
+          {
+            parts: [
+              { text: '感', reading: 'かん' },
+              { text: '激', reading: 'げき' }
+            ],
+            meaning: { en: 'deep emotion', vi: 'cảm kích' }
+          },
+          {
+            parts: [
+              { text: '激', reading: 'はげ' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'intense, fierce', vi: 'dữ dội' }
+          }
+        ]
+      },
+      {
+        char: '厳',
+        meaning: { en: 'strict, solemn', vi: 'nghiêm - nghiêm khắc' },
+        onyomi: ['ゲン', 'ゴン'],
+        kunyomi: ['おごそ.か', 'きび.しい'],
+        components: ['厂', '敢'],
+        parts: [
+          { char: '厂', role: 'radical' },
+          { char: '敢', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '厳', reading: 'げん' },
+              { text: '重', reading: 'じゅう' }
+            ],
+            meaning: { en: 'strict, severe', vi: 'nghiêm trọng, nghiêm ngặt' }
+          },
+          {
+            parts: [
+              { text: '厳', reading: 'げん' },
+              { text: '格', reading: 'かく' }
+            ],
+            meaning: { en: 'strict, rigorous', vi: 'nghiêm khắc' }
+          },
+          {
+            parts: [
+              { text: '厳', reading: 'きび' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'strict, harsh', vi: 'khắt khe' }
+          }
+        ]
+      },
+      {
+        char: '劇',
+        meaning: { en: 'drama, play; severe', vi: 'kịch - vở kịch; kịch liệt' },
+        onyomi: ['ゲキ'],
+        kunyomi: [],
+        components: ['豦', '刂'],
+        parts: [
+          { char: '豦', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '劇', reading: 'げき' },
+              { text: '場', reading: 'じょう' }
+            ],
+            meaning: { en: 'theater', vi: 'nhà hát, rạp' }
+          },
+          {
+            parts: [
+              { text: '演', reading: 'えん' },
+              { text: '劇', reading: 'げき' }
+            ],
+            meaning: { en: 'drama, play', vi: 'kịch nghệ' }
+          },
+          {
+            parts: [
+              { text: '悲', reading: 'ひ' },
+              { text: '劇', reading: 'げき' }
+            ],
+            meaning: { en: 'tragedy', vi: 'bi kịch' }
+          }
+        ]
+      },
+      {
+        char: '警',
+        meaning: { en: 'guard; warn, alert', vi: 'cảnh - canh phòng; cảnh báo' },
+        onyomi: ['ケイ'],
+        kunyomi: ['いまし.める'],
+        components: ['敬', '言'],
+        parts: [
+          { char: '敬', role: 'phonetic' },
+          { char: '言', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '警', reading: 'けい' },
+              { text: '察', reading: 'さつ' }
+            ],
+            meaning: { en: 'police', vi: 'cảnh sát' }
+          },
+          {
+            parts: [
+              { text: '警', reading: 'けい' },
+              { text: '告', reading: 'こく' }
+            ],
+            meaning: { en: 'warning', vi: 'cảnh cáo' }
+          },
+          {
+            parts: [
+              { text: '警', reading: 'けい' },
+              { text: '備', reading: 'び' }
+            ],
+            meaning: { en: 'security, guard', vi: 'cảnh bị, canh gác' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Movement & change',
+      vi: 'Động tác & thay đổi vị trí'
+    },
+    kanji: [
+      {
+        char: '延',
+        meaning: { en: 'extend, prolong', vi: 'diên - kéo dài' },
+        onyomi: ['エン'],
+        kunyomi: ['の.びる', 'の.べる'],
+        components: ['廴'],
+        parts: [{ char: '廴', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '延', reading: 'えん' },
+              { text: '長', reading: 'ちょう' }
+            ],
+            meaning: { en: 'extension, prolongation', vi: 'kéo dài' }
+          },
+          {
+            parts: [
+              { text: '延', reading: 'えん' },
+              { text: '期', reading: 'き' }
+            ],
+            meaning: { en: 'postponement', vi: 'hoãn lại' }
+          },
+          {
+            parts: [
+              { text: '延', reading: 'の' },
+              { text: 'びる', reading: 'びる' }
+            ],
+            meaning: { en: 'to be extended, to stretch', vi: 'dài ra, hoãn lại' }
+          }
+        ]
+      },
+      {
+        char: '沿',
+        meaning: { en: 'run along, follow', vi: 'duyên - men theo' },
+        onyomi: ['エン'],
+        kunyomi: ['そ.う'],
+        components: ['氵'],
+        parts: [{ char: '氵', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '沿', reading: 'えん' },
+              { text: '岸', reading: 'がん' }
+            ],
+            meaning: { en: 'coast, shore', vi: 'ven bờ' }
+          },
+          {
+            parts: [
+              { text: '沿', reading: 'えん' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'along a railway line', vi: 'dọc tuyến đường' }
+          },
+          {
+            parts: [
+              { text: '沿', reading: 'そ' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to run along, to follow', vi: 'men theo' }
+          }
+        ]
+      },
+      {
+        char: '降',
+        meaning: { en: 'descend; fall (rain)', vi: 'giáng - xuống; rơi (mưa)' },
+        onyomi: ['コウ'],
+        kunyomi: ['お.りる', 'ふ.る'],
+        components: ['阝', '夅'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '夅', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '下', reading: 'か' },
+              { text: '降', reading: 'こう' }
+            ],
+            meaning: { en: 'descent, fall', vi: 'hạ xuống' }
+          },
+          {
+            parts: [
+              { text: '降', reading: 'こう' },
+              { text: '車', reading: 'しゃ' }
+            ],
+            meaning: { en: 'getting off (a vehicle)', vi: 'xuống xe' }
+          },
+          {
+            parts: [
+              { text: '降', reading: 'ふ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to fall (rain, snow)', vi: 'rơi (mưa, tuyết)' }
+          }
+        ]
+      },
+      {
+        char: '退',
+        meaning: { en: 'retreat, withdraw', vi: 'thoái - lùi, rút lui' },
+        onyomi: ['タイ'],
+        kunyomi: ['しりぞ.く'],
+        components: ['辶', '艮'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '艮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '退', reading: 'たい' },
+              { text: '職', reading: 'しょく' }
+            ],
+            meaning: { en: 'retirement (from a job)', vi: 'nghỉ việc' }
+          },
+          {
+            parts: [
+              { text: '引', reading: 'いん' },
+              { text: '退', reading: 'たい' }
+            ],
+            meaning: { en: 'retirement', vi: 'giải nghệ, rút lui' }
+          },
+          {
+            parts: [
+              { text: '退', reading: 'しりぞ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to step back, to retreat', vi: 'lùi bước' }
+          }
+        ]
+      },
+      {
+        char: '除',
+        meaning: { en: 'remove, exclude', vi: 'trừ - loại bỏ' },
+        onyomi: ['ジョ', 'ジ'],
+        kunyomi: ['のぞ.く'],
+        components: ['阝', '余'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '余', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '除', reading: 'じょ' },
+              { text: '去', reading: 'きょ' }
+            ],
+            meaning: { en: 'removal, elimination', vi: 'loại trừ' }
+          },
+          {
+            parts: [
+              { text: '掃', reading: 'そう' },
+              { text: '除', reading: 'じ' }
+            ],
+            meaning: { en: 'cleaning', vi: 'dọn dẹp' }
+          },
+          {
+            parts: [
+              { text: '除', reading: 'のぞ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to remove, to exclude', vi: 'loại bỏ' }
+          }
+        ]
+      },
+      {
+        char: '割',
+        meaning: { en: 'divide, split; proportion', vi: 'cát - chia, cắt; tỷ lệ' },
+        onyomi: ['カツ'],
+        kunyomi: ['わ.る', 'わり'],
+        components: ['害', '刂'],
+        parts: [
+          { char: '害', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '分', reading: 'ぶん' },
+              { text: '割', reading: 'かつ' }
+            ],
+            meaning: { en: 'division, splitting', vi: 'phân chia' }
+          },
+          {
+            parts: [
+              { text: '役', reading: 'やく' },
+              { text: '割', reading: 'わり' }
+            ],
+            meaning: { en: 'role, part', vi: 'vai trò' }
+          },
+          {
+            parts: [
+              { text: '割', reading: 'わ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to divide, to break', vi: 'chia, làm vỡ' }
+          }
+        ]
+      },
+      {
+        char: '刻',
+        meaning: { en: 'carve, engrave; time', vi: 'khắc - khắc; khoảnh khắc' },
+        onyomi: ['コク'],
+        kunyomi: ['きざ.む'],
+        components: ['亥', '刂'],
+        parts: [
+          { char: '亥', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '時', reading: 'じ' },
+              { text: '刻', reading: 'こく' }
+            ],
+            meaning: { en: 'time, moment', vi: 'thời khắc' }
+          },
+          {
+            parts: [
+              { text: '深', reading: 'しん' },
+              { text: '刻', reading: 'こく' }
+            ],
+            meaning: { en: 'serious, grave', vi: 'nghiêm trọng' }
+          },
+          {
+            parts: [
+              { text: '刻', reading: 'きざ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to carve, to mince', vi: 'khắc, băm nhỏ' }
+          }
+        ]
+      },
+      {
+        char: '射',
+        meaning: { en: 'shoot; fire', vi: 'xạ - bắn' },
+        onyomi: ['シャ'],
+        kunyomi: ['い.る'],
+        components: ['身', '寸'],
+        parts: [
+          { char: '身', role: 'semantic' },
+          { char: '寸', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '射', reading: 'しゃ' }
+            ],
+            meaning: { en: 'firing, launching', vi: 'phóng, bắn ra' }
+          },
+          {
+            parts: [
+              { text: '注', reading: 'ちゅう' },
+              { text: '射', reading: 'しゃ' }
+            ],
+            meaning: { en: 'injection', vi: 'tiêm' }
+          },
+          {
+            parts: [
+              { text: '反', reading: 'はん' },
+              { text: '射', reading: 'しゃ' }
+            ],
+            meaning: { en: 'reflection, reflex', vi: 'phản xạ' }
+          }
+        ]
+      },
+      {
+        char: '垂',
+        meaning: { en: 'hang down, droop', vi: 'thùy - rủ xuống, thẳng đứng' },
+        onyomi: ['スイ'],
+        kunyomi: ['た.れる'],
+        components: ['土'],
+        parts: [{ char: '土', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '垂', reading: 'すい' },
+              { text: '直', reading: 'ちょく' }
+            ],
+            meaning: { en: 'perpendicular, vertical', vi: 'thẳng đứng, vuông góc' }
+          },
+          {
+            parts: [
+              { text: '垂', reading: 'すい' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'perpendicular line', vi: 'đường vuông góc' }
+          },
+          {
+            parts: [
+              { text: '垂', reading: 'た' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to hang down, to droop', vi: 'rủ xuống' }
+          }
+        ]
+      },
+      {
+        char: '承',
+        meaning: { en: 'consent; receive, hear', vi: 'thừa - nhận, vâng' },
+        onyomi: ['ショウ'],
+        kunyomi: ['うけたまわ.る'],
+        components: ['手'],
+        parts: [{ char: '手', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '承', reading: 'しょう' },
+              { text: '知', reading: 'ち' }
+            ],
+            meaning: { en: 'consent, acknowledgment', vi: 'đồng ý, biết rõ' }
+          },
+          {
+            parts: [
+              { text: '了', reading: 'りょう' },
+              { text: '承', reading: 'しょう' }
+            ],
+            meaning: { en: 'acknowledgment, approval', vi: 'chấp thuận' }
+          },
+          {
+            parts: [
+              { text: '承', reading: 'しょう' },
+              { text: '諾', reading: 'だく' }
+            ],
+            meaning: { en: 'consent, acceptance', vi: 'ưng thuận' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'People & society',
+      vi: 'Con người & xã hội'
+    },
+    kanji: [
+      {
+        char: '私',
+        meaning: { en: 'private; I, me', vi: 'tư - riêng tư; tôi' },
+        onyomi: ['シ'],
+        kunyomi: ['わたくし', 'わたし'],
+        components: ['禾', '厶'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '厶', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '私', reading: 'し' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'private (institution)', vi: 'tư lập' }
+          },
+          {
+            parts: [
+              { text: '私', reading: 'し' },
+              { text: '鉄', reading: 'てつ' }
+            ],
+            meaning: { en: 'private railway', vi: 'đường sắt tư nhân' }
+          },
+          {
+            parts: [
+              { text: '公', reading: 'こう' },
+              { text: '私', reading: 'し' }
+            ],
+            meaning: { en: 'public and private', vi: 'công và tư' }
+          }
+        ]
+      },
+      {
+        char: '衆',
+        meaning: { en: 'masses, multitude', vi: 'chúng - đông người, quần chúng' },
+        onyomi: ['シュウ', 'シュ'],
+        kunyomi: [],
+        components: ['血'],
+        parts: [{ char: '血', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '大', reading: 'たい' },
+              { text: '衆', reading: 'しゅう' }
+            ],
+            meaning: { en: 'the masses, general public', vi: 'đại chúng' }
+          },
+          {
+            parts: [
+              { text: '観', reading: 'かん' },
+              { text: '衆', reading: 'しゅう' }
+            ],
+            meaning: { en: 'spectators, audience', vi: 'khán giả' }
+          },
+          {
+            parts: [
+              { text: '民', reading: 'みん' },
+              { text: '衆', reading: 'しゅう' }
+            ],
+            meaning: { en: 'the people, populace', vi: 'dân chúng' }
+          }
+        ]
+      },
+      {
+        char: '従',
+        meaning: { en: 'obey, follow; subordinate', vi: 'tùng - theo, tuân theo' },
+        onyomi: ['ジュウ'],
+        kunyomi: ['したが.う'],
+        components: ['彳'],
+        parts: [{ char: '彳', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '従', reading: 'じゅう' },
+              { text: '業', reading: 'ぎょう' },
+              { text: '員', reading: 'いん' }
+            ],
+            meaning: { en: 'employee', vi: 'nhân viên' }
+          },
+          {
+            parts: [
+              { text: '服', reading: 'ふく' },
+              { text: '従', reading: 'じゅう' }
+            ],
+            meaning: { en: 'obedience, submission', vi: 'phục tùng' }
+          },
+          {
+            parts: [
+              { text: '従', reading: 'したが' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to follow, to obey', vi: 'tuân theo' }
+          }
+        ]
+      },
+      {
+        char: '就',
+        meaning: { en: 'take up (a post); settle into', vi: 'tựu - nhận (chức); bắt đầu' },
+        onyomi: ['シュウ'],
+        kunyomi: ['つ.く'],
+        components: ['京', '尤'],
+        parts: [
+          { char: '京', role: 'other' },
+          { char: '尤', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '就', reading: 'しゅう' },
+              { text: '職', reading: 'しょく' }
+            ],
+            meaning: { en: 'finding employment', vi: 'xin việc, có việc làm' }
+          },
+          {
+            parts: [
+              { text: '就', reading: 'しゅう' },
+              { text: '任', reading: 'にん' }
+            ],
+            meaning: { en: 'taking office', vi: 'nhậm chức' }
+          },
+          {
+            parts: [
+              { text: '就', reading: 'つ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to take up (a position)', vi: 'nhận (chức, việc)' }
+          }
+        ]
+      },
+      {
+        char: '郷',
+        meaning: { en: 'hometown, village', vi: 'hương - quê hương' },
+        onyomi: ['キョウ', 'ゴウ'],
+        kunyomi: ['さと'],
+        components: ['阝'],
+        parts: [{ char: '阝', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '故', reading: 'こ' },
+              { text: '郷', reading: 'きょう' }
+            ],
+            meaning: { en: 'hometown', vi: 'cố hương, quê nhà' }
+          },
+          {
+            parts: [
+              { text: '郷', reading: 'きょう' },
+              { text: '土', reading: 'ど' }
+            ],
+            meaning: { en: 'local, native place', vi: 'quê hương, bản xứ' }
+          },
+          {
+            parts: [
+              { text: '郷', reading: 'きょう' },
+              { text: '里', reading: 'り' }
+            ],
+            meaning: { en: 'one\u2019s hometown', vi: 'quê quán' }
+          }
+        ]
+      },
+      {
+        char: '尊',
+        meaning: { en: 'revere, respect; noble', vi: 'tôn - tôn kính; cao quý' },
+        onyomi: ['ソン'],
+        kunyomi: ['たっと.い', 'とうと.い'],
+        components: ['酋', '寸'],
+        parts: [
+          { char: '酋', role: 'phonetic' },
+          { char: '寸', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '尊', reading: 'そん' },
+              { text: '敬', reading: 'けい' }
+            ],
+            meaning: { en: 'respect, esteem', vi: 'tôn kính' }
+          },
+          {
+            parts: [
+              { text: '尊', reading: 'そん' },
+              { text: '重', reading: 'ちょう' }
+            ],
+            meaning: { en: 'respect, valuing', vi: 'tôn trọng' }
+          },
+          {
+            parts: [
+              { text: '尊', reading: 'とうと' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'precious, noble', vi: 'cao quý' }
+          }
+        ]
+      },
+      {
+        char: '聖',
+        meaning: { en: 'holy, sacred; sage', vi: 'thánh - thần thánh; thánh nhân' },
+        onyomi: ['セイ'],
+        kunyomi: ['ひじり'],
+        components: ['耳', '口', '王'],
+        parts: [
+          { char: '耳', role: 'radical' },
+          { char: '口', role: 'other' },
+          { char: '王', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '聖', reading: 'せい' },
+              { text: '書', reading: 'しょ' }
+            ],
+            meaning: { en: 'the Bible, scripture', vi: 'kinh thánh' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'しん' },
+              { text: '聖', reading: 'せい' }
+            ],
+            meaning: { en: 'holy, sacred', vi: 'thần thánh' }
+          },
+          {
+            parts: [
+              { text: '聖', reading: 'せい' },
+              { text: '火', reading: 'か' }
+            ],
+            meaning: { en: 'sacred flame (Olympic)', vi: 'ngọn lửa thiêng' }
+          }
+        ]
+      },
+      {
+        char: '諸',
+        meaning: { en: 'various, several', vi: 'chư - các, nhiều' },
+        onyomi: ['ショ'],
+        kunyomi: ['もろ'],
+        components: ['言', '者'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '者', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '諸', reading: 'しょ' },
+              { text: '国', reading: 'こく' }
+            ],
+            meaning: { en: 'various countries', vi: 'các nước' }
+          },
+          {
+            parts: [
+              { text: '諸', reading: 'しょ' },
+              { text: '君', reading: 'くん' }
+            ],
+            meaning: { en: 'everyone, gentlemen', vi: 'các bạn (trang trọng)' }
+          },
+          {
+            parts: [
+              { text: '諸', reading: 'しょ' },
+              { text: '島', reading: 'とう' }
+            ],
+            meaning: { en: 'archipelago', vi: 'quần đảo' }
+          }
+        ]
+      },
+      {
+        char: '俳',
+        meaning: { en: 'haiku; actor', vi: 'bài - thơ haiku; diễn viên' },
+        onyomi: ['ハイ'],
+        kunyomi: [],
+        components: ['亻', '非'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '非', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '俳', reading: 'はい' },
+              { text: '句', reading: 'く' }
+            ],
+            meaning: { en: 'haiku poem', vi: 'thơ haiku' }
+          },
+          {
+            parts: [
+              { text: '俳', reading: 'はい' },
+              { text: '優', reading: 'ゆう' }
+            ],
+            meaning: { en: 'actor, actress', vi: 'diễn viên' }
+          },
+          {
+            parts: [
+              { text: '俳', reading: 'はい' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'haiku poet', vi: 'nhà thơ haiku' }
+          }
+        ]
+      },
+      {
+        char: '優',
+        meaning: { en: 'superior; gentle; actor', vi: 'ưu - xuất sắc; dịu dàng; diễn viên' },
+        onyomi: ['ユウ'],
+        kunyomi: ['やさ.しい', 'すぐ.れる'],
+        components: ['亻', '憂'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '憂', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '優', reading: 'ゆう' },
+              { text: '勝', reading: 'しょう' }
+            ],
+            meaning: { en: 'victory, championship', vi: 'vô địch' }
+          },
+          {
+            parts: [
+              { text: '優', reading: 'ゆう' },
+              { text: '秀', reading: 'しゅう' }
+            ],
+            meaning: { en: 'excellent, superior', vi: 'ưu tú' }
+          },
+          {
+            parts: [
+              { text: '優', reading: 'やさ' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'gentle, kind', vi: 'dịu dàng, hiền' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Creation & structure',
+      vi: 'Tạo lập & cấu trúc'
+    },
+    kanji: [
+      {
+        char: '創',
+        meaning: { en: 'create, originate', vi: 'sáng - sáng tạo, khởi lập' },
+        onyomi: ['ソウ'],
+        kunyomi: ['つく.る'],
+        components: ['倉', '刂'],
+        parts: [
+          { char: '倉', role: 'phonetic' },
+          { char: '刂', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '創', reading: 'そう' },
+              { text: '造', reading: 'ぞう' }
+            ],
+            meaning: { en: 'creation', vi: 'sáng tạo' }
+          },
+          {
+            parts: [
+              { text: '創', reading: 'そう' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'founding, establishment', vi: 'sáng lập' }
+          },
+          {
+            parts: [
+              { text: '独', reading: 'どく' },
+              { text: '創', reading: 'そう' }
+            ],
+            meaning: { en: 'originality', vi: 'độc sáng, sáng tạo riêng' }
+          }
+        ]
+      },
+      {
+        char: '奏',
+        meaning: { en: 'play (music); present', vi: 'tấu - tấu nhạc; trình tấu' },
+        onyomi: ['ソウ'],
+        kunyomi: ['かな.でる'],
+        components: ['大'],
+        parts: [{ char: '大', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '演', reading: 'えん' },
+              { text: '奏', reading: 'そう' }
+            ],
+            meaning: { en: 'musical performance', vi: 'biểu diễn nhạc' }
+          },
+          {
+            parts: [
+              { text: '合', reading: 'がっ' },
+              { text: '奏', reading: 'そう' }
+            ],
+            meaning: { en: 'ensemble, concert', vi: 'hòa tấu' }
+          },
+          {
+            parts: [
+              { text: '奏', reading: 'かな' },
+              { text: 'でる', reading: 'でる' }
+            ],
+            meaning: { en: 'to play (an instrument)', vi: 'tấu, chơi nhạc' }
+          }
+        ]
+      },
+      {
+        char: '装',
+        meaning: { en: 'dress, equip; pretend', vi: 'trang - trang bị; giả trang' },
+        onyomi: ['ソウ', 'ショウ'],
+        kunyomi: ['よそお.う'],
+        components: ['壮', '衣'],
+        parts: [
+          { char: '壮', role: 'phonetic' },
+          { char: '衣', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '装', reading: 'そう' },
+              { text: '置', reading: 'ち' }
+            ],
+            meaning: { en: 'device, apparatus', vi: 'thiết bị' }
+          },
+          {
+            parts: [
+              { text: '服', reading: 'ふく' },
+              { text: '装', reading: 'そう' }
+            ],
+            meaning: { en: 'clothing, attire', vi: 'trang phục' }
+          },
+          {
+            parts: [
+              { text: '変', reading: 'へん' },
+              { text: '装', reading: 'そう' }
+            ],
+            meaning: { en: 'disguise', vi: 'cải trang' }
+          }
+        ]
+      },
+      {
+        char: '展',
+        meaning: { en: 'unfold, expand; exhibit', vi: 'triển - mở ra; trưng bày' },
+        onyomi: ['テン'],
+        kunyomi: [],
+        components: ['尸'],
+        parts: [{ char: '尸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '展', reading: 'てん' },
+              { text: '開', reading: 'かい' }
+            ],
+            meaning: { en: 'development, unfolding', vi: 'triển khai' }
+          },
+          {
+            parts: [
+              { text: '展', reading: 'てん' },
+              { text: '示', reading: 'じ' }
+            ],
+            meaning: { en: 'exhibition, display', vi: 'trưng bày' }
+          },
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '展', reading: 'てん' }
+            ],
+            meaning: { en: 'development, growth', vi: 'phát triển' }
+          }
+        ]
+      },
+      {
+        char: '層',
+        meaning: { en: 'layer, stratum; class', vi: 'tầng - lớp, tầng' },
+        onyomi: ['ソウ'],
+        kunyomi: [],
+        components: ['尸', '曽'],
+        parts: [
+          { char: '尸', role: 'radical' },
+          { char: '曽', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '階', reading: 'かい' },
+              { text: '層', reading: 'そう' }
+            ],
+            meaning: { en: 'social stratum, class', vi: 'tầng lớp' }
+          },
+          {
+            parts: [
+              { text: '高', reading: 'こう' },
+              { text: '層', reading: 'そう' }
+            ],
+            meaning: { en: 'high-rise, high-altitude', vi: 'cao tầng' }
+          },
+          {
+            parts: [
+              { text: '断', reading: 'だん' },
+              { text: '層', reading: 'そう' }
+            ],
+            meaning: { en: 'fault (geology); gap', vi: 'đứt gãy; khoảng cách' }
+          }
+        ]
+      },
+      {
+        char: '蔵',
+        meaning: { en: 'storehouse; store away', vi: 'tàng - kho; cất chứa' },
+        onyomi: ['ゾウ'],
+        kunyomi: ['くら'],
+        components: ['艹', '臧'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '臧', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '冷', reading: 'れい' },
+              { text: '蔵', reading: 'ぞう' },
+              { text: '庫', reading: 'こ' }
+            ],
+            meaning: { en: 'refrigerator', vi: 'tủ lạnh' }
+          },
+          {
+            parts: [
+              { text: '貯', reading: 'ちょ' },
+              { text: '蔵', reading: 'ぞう' }
+            ],
+            meaning: { en: 'storage', vi: 'tích trữ' }
+          },
+          {
+            parts: [
+              { text: '蔵', reading: 'ぞう' },
+              { text: '書', reading: 'しょ' }
+            ],
+            meaning: { en: 'book collection', vi: 'sách lưu trữ' }
+          }
+        ]
+      },
+      {
+        char: '存',
+        meaning: { en: 'exist; know, suppose', vi: 'tồn - tồn tại; biết' },
+        onyomi: ['ソン', 'ゾン'],
+        kunyomi: [],
+        components: ['子'],
+        parts: [{ char: '子', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '存', reading: 'そん' },
+              { text: '在', reading: 'ざい' }
+            ],
+            meaning: { en: 'existence', vi: 'tồn tại' }
+          },
+          {
+            parts: [
+              { text: '保', reading: 'ほ' },
+              { text: '存', reading: 'ぞん' }
+            ],
+            meaning: { en: 'preservation, saving', vi: 'lưu giữ, bảo tồn' }
+          },
+          {
+            parts: [
+              { text: '存', reading: 'そん' },
+              { text: '続', reading: 'ぞく' }
+            ],
+            meaning: { en: 'continued existence', vi: 'tồn tại tiếp tục' }
+          }
+        ]
+      },
+      {
+        char: '盛',
+        meaning: { en: 'prosper; heap up', vi: 'thịnh - hưng thịnh; chất đầy' },
+        onyomi: ['セイ', 'ジョウ'],
+        kunyomi: ['も.る', 'さか.ん'],
+        components: ['成', '皿'],
+        parts: [
+          { char: '成', role: 'phonetic' },
+          { char: '皿', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '盛', reading: 'せい' },
+              { text: '大', reading: 'だい' }
+            ],
+            meaning: { en: 'grand, magnificent', vi: 'long trọng, hoành tráng' }
+          },
+          {
+            parts: [
+              { text: '全', reading: 'ぜん' },
+              { text: '盛', reading: 'せい' }
+            ],
+            meaning: { en: 'height, prime', vi: 'toàn thịnh, đỉnh cao' }
+          },
+          {
+            parts: [
+              { text: '盛', reading: 'も' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to heap up, to serve', vi: 'xới, chất đầy' }
+          }
+        ]
+      },
+      {
+        char: '段',
+        meaning: { en: 'step, grade; means', vi: 'đoạn - bậc, cấp; biện pháp' },
+        onyomi: ['ダン'],
+        kunyomi: [],
+        components: ['殳'],
+        parts: [{ char: '殳', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '段', reading: 'だん' },
+              { text: '階', reading: 'かい' }
+            ],
+            meaning: { en: 'stage, phase', vi: 'giai đoạn' }
+          },
+          {
+            parts: [
+              { text: '階', reading: 'かい' },
+              { text: '段', reading: 'だん' }
+            ],
+            meaning: { en: 'stairs', vi: 'cầu thang' }
+          },
+          {
+            parts: [
+              { text: '手', reading: 'しゅ' },
+              { text: '段', reading: 'だん' }
+            ],
+            meaning: { en: 'means, method', vi: 'phương tiện, thủ đoạn' }
+          }
+        ]
+      },
+      {
+        char: '尺',
+        meaning: { en: 'shaku (length unit); scale', vi: 'xích - thước (đơn vị dài)' },
+        onyomi: ['シャク'],
+        kunyomi: [],
+        components: ['尸'],
+        parts: [{ char: '尸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '尺', reading: 'しゃく' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'scale, measure, yardstick', vi: 'thước đo, tiêu chuẩn' }
+          },
+          {
+            parts: [
+              { text: '縮', reading: 'しゅく' },
+              { text: '尺', reading: 'しゃく' }
+            ],
+            meaning: { en: 'reduced scale', vi: 'tỷ lệ thu nhỏ' }
+          },
+          {
+            parts: [
+              { text: '尺', reading: 'しゃく' },
+              { text: '八', reading: 'はち' }
+            ],
+            meaning: { en: 'shakuhachi (bamboo flute)', vi: 'sáo trúc shakuhachi' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Objects & materials',
+      vi: 'Đồ vật & vật liệu'
+    },
+    kanji: [
+      {
+        char: '机',
+        meaning: { en: 'desk', vi: 'kỷ - bàn (học, làm việc)' },
+        onyomi: ['キ'],
+        kunyomi: ['つくえ'],
+        components: ['木', '几'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '几', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '机', reading: 'き' },
+              { text: '上', reading: 'じょう' }
+            ],
+            meaning: { en: 'on the desk; theoretical', vi: 'trên bàn; lý thuyết suông' }
+          },
+          {
+            parts: [
+              { text: '学', reading: 'がく' },
+              { text: '習', reading: 'しゅう' },
+              { text: '机', reading: 'づくえ' }
+            ],
+            meaning: { en: 'study desk', vi: 'bàn học' }
+          },
+          {
+            parts: [
+              { text: '事', reading: 'じ' },
+              { text: '務', reading: 'む' },
+              { text: '机', reading: 'づくえ' }
+            ],
+            meaning: { en: 'office desk', vi: 'bàn làm việc' }
+          }
+        ]
+      },
+      {
+        char: '棒',
+        meaning: { en: 'rod, pole, stick', vi: 'bổng - cây gậy, thanh' },
+        onyomi: ['ボウ'],
+        kunyomi: [],
+        components: ['木', '奉'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '奉', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '鉄', reading: 'てつ' },
+              { text: '棒', reading: 'ぼう' }
+            ],
+            meaning: { en: 'iron bar; horizontal bar', vi: 'thanh sắt; xà đơn' }
+          },
+          {
+            parts: [
+              { text: '棒', reading: 'ぼう' },
+              { text: '読', reading: 'よ' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'monotonous reading', vi: 'đọc đều đều vô cảm' }
+          },
+          {
+            parts: [
+              { text: '相', reading: 'あい' },
+              { text: '棒', reading: 'ぼう' }
+            ],
+            meaning: { en: 'partner, accomplice', vi: 'cộng sự, đồng bọn' }
+          }
+        ]
+      },
+      {
+        char: '樹',
+        meaning: { en: 'tree; establish', vi: 'thụ - cây; dựng nên' },
+        onyomi: ['ジュ'],
+        kunyomi: [],
+        components: ['木', '尌'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '尌', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '樹', reading: 'じゅ' },
+              { text: '木', reading: 'もく' }
+            ],
+            meaning: { en: 'trees', vi: 'cây cối' }
+          },
+          {
+            parts: [
+              { text: '樹', reading: 'じゅ' },
+              { text: '立', reading: 'りつ' }
+            ],
+            meaning: { en: 'establishment (of a record)', vi: 'thiết lập (kỷ lục)' }
+          },
+          {
+            parts: [
+              { text: '街', reading: 'がい' },
+              { text: '路', reading: 'ろ' },
+              { text: '樹', reading: 'じゅ' }
+            ],
+            meaning: { en: 'roadside trees', vi: 'cây ven đường' }
+          }
+        ]
+      },
+      {
+        char: '模',
+        meaning: { en: 'model, pattern; copy', vi: 'mô - mẫu, khuôn; mô phỏng' },
+        onyomi: ['モ', 'ボ'],
+        kunyomi: [],
+        components: ['木', '莫'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '莫', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '模', reading: 'も' },
+              { text: '型', reading: 'けい' }
+            ],
+            meaning: { en: 'model, miniature', vi: 'mô hình' }
+          },
+          {
+            parts: [
+              { text: '規', reading: 'き' },
+              { text: '模', reading: 'ぼ' }
+            ],
+            meaning: { en: 'scale, scope', vi: 'quy mô' }
+          },
+          {
+            parts: [
+              { text: '模', reading: 'も' },
+              { text: '様', reading: 'よう' }
+            ],
+            meaning: { en: 'pattern, design', vi: 'hoa văn, tình hình' }
+          }
+        ]
+      },
+      {
+        char: '枚',
+        meaning: { en: 'counter for flat objects', vi: 'mai - tấm (đếm vật mỏng)' },
+        onyomi: ['マイ'],
+        kunyomi: [],
+        components: ['木', '攵'],
+        parts: [
+          { char: '木', role: 'radical' },
+          { char: '攵', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '枚', reading: 'まい' },
+              { text: '数', reading: 'すう' }
+            ],
+            meaning: { en: 'number of sheets', vi: 'số tờ, số tấm' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いち' },
+              { text: '枚', reading: 'まい' }
+            ],
+            meaning: { en: 'one sheet (counter)', vi: 'một tờ' }
+          },
+          {
+            parts: [
+              { text: '大', reading: 'たい' },
+              { text: '枚', reading: 'まい' }
+            ],
+            meaning: { en: 'large sum of money', vi: 'món tiền lớn' }
+          }
+        ]
+      },
+      {
+        char: '鋼',
+        meaning: { en: 'steel', vi: 'cương - thép' },
+        onyomi: ['コウ'],
+        kunyomi: ['はがね'],
+        components: ['金', '岡'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '岡', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '鋼', reading: 'こう' },
+              { text: '鉄', reading: 'てつ' }
+            ],
+            meaning: { en: 'steel', vi: 'thép' }
+          },
+          {
+            parts: [
+              { text: '製', reading: 'せい' },
+              { text: '鋼', reading: 'こう' }
+            ],
+            meaning: { en: 'steel manufacturing', vi: 'luyện thép' }
+          },
+          {
+            parts: [
+              { text: '鉄', reading: 'てっ' },
+              { text: '鋼', reading: 'こう' }
+            ],
+            meaning: { en: 'iron and steel', vi: 'gang thép' }
+          }
+        ]
+      },
+      {
+        char: '針',
+        meaning: { en: 'needle; pointer', vi: 'châm - kim' },
+        onyomi: ['シン'],
+        kunyomi: ['はり'],
+        components: ['金', '十'],
+        parts: [
+          { char: '金', role: 'radical' },
+          { char: '十', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '方', reading: 'ほう' },
+              { text: '針', reading: 'しん' }
+            ],
+            meaning: { en: 'policy, course', vi: 'phương châm' }
+          },
+          {
+            parts: [
+              { text: '針', reading: 'しん' },
+              { text: '路', reading: 'ろ' }
+            ],
+            meaning: { en: 'course, heading', vi: 'lộ trình, hướng đi' }
+          },
+          {
+            parts: [
+              { text: '針', reading: 'はり' },
+              { text: '金', reading: 'がね' }
+            ],
+            meaning: { en: 'wire', vi: 'dây kẽm' }
+          }
+        ]
+      },
+      {
+        char: '磁',
+        meaning: { en: 'magnetism; porcelain', vi: 'từ - từ tính; đồ sứ' },
+        onyomi: ['ジ'],
+        kunyomi: [],
+        components: ['石', '茲'],
+        parts: [
+          { char: '石', role: 'radical' },
+          { char: '茲', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '磁', reading: 'じ' },
+              { text: '石', reading: 'しゃく' }
+            ],
+            meaning: { en: 'magnet', vi: 'nam châm' }
+          },
+          {
+            parts: [
+              { text: '磁', reading: 'じ' },
+              { text: '気', reading: 'き' }
+            ],
+            meaning: { en: 'magnetism', vi: 'từ khí' }
+          },
+          {
+            parts: [
+              { text: '陶', reading: 'とう' },
+              { text: '磁', reading: 'じ' },
+              { text: '器', reading: 'き' }
+            ],
+            meaning: { en: 'ceramics, china', vi: 'đồ gốm sứ' }
+          }
+        ]
+      },
+      {
+        char: '幕',
+        meaning: { en: 'curtain; act; shogunate', vi: 'mạc - màn; mạc phủ' },
+        onyomi: ['マク', 'バク'],
+        kunyomi: [],
+        components: ['莫', '巾'],
+        parts: [
+          { char: '莫', role: 'phonetic' },
+          { char: '巾', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '幕', reading: 'ばく' },
+              { text: '府', reading: 'ふ' }
+            ],
+            meaning: { en: 'shogunate', vi: 'mạc phủ' }
+          },
+          {
+            parts: [
+              { text: '開', reading: 'かい' },
+              { text: '幕', reading: 'まく' }
+            ],
+            meaning: { en: 'opening (of an event)', vi: 'khai mạc' }
+          },
+          {
+            parts: [
+              { text: '字', reading: 'じ' },
+              { text: '幕', reading: 'まく' }
+            ],
+            meaning: { en: 'subtitles', vi: 'phụ đề' }
+          }
+        ]
+      },
+      {
+        char: '券',
+        meaning: { en: 'ticket, coupon', vi: 'khoán - vé, phiếu' },
+        onyomi: ['ケン'],
+        kunyomi: [],
+        components: ['刀'],
+        parts: [{ char: '刀', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '乗', reading: 'じょう' },
+              { text: '車', reading: 'しゃ' },
+              { text: '券', reading: 'けん' }
+            ],
+            meaning: { en: 'passenger ticket', vi: 'vé xe' }
+          },
+          {
+            parts: [
+              { text: '入', reading: 'にゅう' },
+              { text: '場', reading: 'じょう' },
+              { text: '券', reading: 'けん' }
+            ],
+            meaning: { en: 'admission ticket', vi: 'vé vào cửa' }
+          },
+          {
+            parts: [
+              { text: '旅', reading: 'りょ' },
+              { text: '券', reading: 'けん' }
+            ],
+            meaning: { en: 'passport', vi: 'hộ chiếu' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Will & expression',
+      vi: 'Ý chí & phát ngôn'
+    },
+    kanji: [
+      {
+        char: '欲',
+        meaning: { en: 'desire, want', vi: 'dục - ham muốn' },
+        onyomi: ['ヨク'],
+        kunyomi: ['ほ.しい'],
+        components: ['谷', '欠'],
+        parts: [
+          { char: '谷', role: 'phonetic' },
+          { char: '欠', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '欲', reading: 'よく' },
+              { text: '望', reading: 'ぼう' }
+            ],
+            meaning: { en: 'desire, ambition', vi: 'dục vọng' }
+          },
+          {
+            parts: [
+              { text: '意', reading: 'い' },
+              { text: '欲', reading: 'よく' }
+            ],
+            meaning: { en: 'motivation, drive', vi: 'ý chí, động lực' }
+          },
+          {
+            parts: [
+              { text: '食', reading: 'しょく' },
+              { text: '欲', reading: 'よく' }
+            ],
+            meaning: { en: 'appetite', vi: 'sự thèm ăn' }
+          }
+        ]
+      },
+      {
+        char: '奮',
+        meaning: { en: 'be roused, stirred up', vi: 'phấn - phấn chấn, hăng hái' },
+        onyomi: ['フン'],
+        kunyomi: ['ふる.う'],
+        components: ['大', '隹', '田'],
+        parts: [
+          { char: '大', role: 'radical' },
+          { char: '隹', role: 'other' },
+          { char: '田', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '興', reading: 'こう' },
+              { text: '奮', reading: 'ふん' }
+            ],
+            meaning: { en: 'excitement', vi: 'hưng phấn' }
+          },
+          {
+            parts: [
+              { text: '奮', reading: 'ふん' },
+              { text: '闘', reading: 'とう' }
+            ],
+            meaning: { en: 'hard struggle', vi: 'phấn đấu' }
+          },
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '奮', reading: 'ぷん' }
+            ],
+            meaning: { en: 'stirring oneself up', vi: 'phát phấn, gắng sức' }
+          }
+        ]
+      },
+      {
+        char: '忘',
+        meaning: { en: 'forget', vi: 'vong - quên' },
+        onyomi: ['ボウ'],
+        kunyomi: ['わす.れる'],
+        components: ['亡', '心'],
+        parts: [
+          { char: '亡', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '忘', reading: 'ぼう' },
+              { text: '年', reading: 'ねん' },
+              { text: '会', reading: 'かい' }
+            ],
+            meaning: { en: 'year-end party', vi: 'tiệc tất niên' }
+          },
+          {
+            parts: [
+              { text: '備', reading: 'び' },
+              { text: '忘', reading: 'ぼう' },
+              { text: '録', reading: 'ろく' }
+            ],
+            meaning: { en: 'memorandum', vi: 'sổ ghi nhớ' }
+          },
+          {
+            parts: [
+              { text: '忘', reading: 'わす' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to forget', vi: 'quên' }
+          }
+        ]
+      },
+      {
+        char: '秘',
+        meaning: { en: 'secret, conceal', vi: 'bí - bí mật, giấu' },
+        onyomi: ['ヒ'],
+        kunyomi: ['ひ.める'],
+        components: ['禾', '必'],
+        parts: [
+          { char: '禾', role: 'radical' },
+          { char: '必', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '秘', reading: 'ひ' },
+              { text: '密', reading: 'みつ' }
+            ],
+            meaning: { en: 'secret', vi: 'bí mật' }
+          },
+          {
+            parts: [
+              { text: '神', reading: 'しん' },
+              { text: '秘', reading: 'ぴ' }
+            ],
+            meaning: { en: 'mystery, mystique', vi: 'thần bí' }
+          },
+          {
+            parts: [
+              { text: '秘', reading: 'ひ' },
+              { text: '書', reading: 'しょ' }
+            ],
+            meaning: { en: 'secretary', vi: 'thư ký' }
+          }
+        ]
+      },
+      {
+        char: '認',
+        meaning: { en: 'recognize, approve', vi: 'nhận - công nhận, thừa nhận' },
+        onyomi: ['ニン'],
+        kunyomi: ['みと.める'],
+        components: ['言', '忍'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '忍', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '認', reading: 'にん' },
+              { text: '識', reading: 'しき' }
+            ],
+            meaning: { en: 'recognition, cognition', vi: 'nhận thức' }
+          },
+          {
+            parts: [
+              { text: '確', reading: 'かく' },
+              { text: '認', reading: 'にん' }
+            ],
+            meaning: { en: 'confirmation', vi: 'xác nhận' }
+          },
+          {
+            parts: [
+              { text: '認', reading: 'みと' },
+              { text: 'める', reading: 'める' }
+            ],
+            meaning: { en: 'to recognize, to admit', vi: 'công nhận' }
+          }
+        ]
+      },
+      {
+        char: '否',
+        meaning: { en: 'deny; no', vi: 'phủ - không, phủ định' },
+        onyomi: ['ヒ'],
+        kunyomi: ['いな'],
+        components: ['不', '口'],
+        parts: [
+          { char: '不', role: 'phonetic' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '否', reading: 'ひ' },
+              { text: '定', reading: 'てい' }
+            ],
+            meaning: { en: 'denial, negation', vi: 'phủ định' }
+          },
+          {
+            parts: [
+              { text: '拒', reading: 'きょ' },
+              { text: '否', reading: 'ひ' }
+            ],
+            meaning: { en: 'refusal, rejection', vi: 'cự tuyệt' }
+          },
+          {
+            parts: [
+              { text: '安', reading: 'あん' },
+              { text: '否', reading: 'ぴ' }
+            ],
+            meaning: { en: 'safety, well-being', vi: 'an nguy, bình an' }
+          }
+        ]
+      },
+      {
+        char: '専',
+        meaning: { en: 'specialize; exclusive', vi: 'chuyên - chuyên môn; riêng' },
+        onyomi: ['セン'],
+        kunyomi: ['もっぱ.ら'],
+        components: ['寸'],
+        parts: [{ char: '寸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '専', reading: 'せん' },
+              { text: '門', reading: 'もん' }
+            ],
+            meaning: { en: 'specialty, expertise', vi: 'chuyên môn' }
+          },
+          {
+            parts: [
+              { text: '専', reading: 'せん' },
+              { text: '用', reading: 'よう' }
+            ],
+            meaning: { en: 'exclusive use', vi: 'dùng riêng' }
+          },
+          {
+            parts: [
+              { text: '専', reading: 'せん' },
+              { text: '攻', reading: 'こう' }
+            ],
+            meaning: { en: 'major (of study)', vi: 'chuyên ngành' }
+          }
+        ]
+      },
+      {
+        char: '宣',
+        meaning: { en: 'proclaim, declare', vi: 'tuyên - tuyên bố' },
+        onyomi: ['セン'],
+        kunyomi: [],
+        components: ['宀', '亘'],
+        parts: [
+          { char: '宀', role: 'radical' },
+          { char: '亘', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '宣', reading: 'せん' },
+              { text: '言', reading: 'げん' }
+            ],
+            meaning: { en: 'declaration', vi: 'tuyên ngôn' }
+          },
+          {
+            parts: [
+              { text: '宣', reading: 'せん' },
+              { text: '伝', reading: 'でん' }
+            ],
+            meaning: { en: 'propaganda, advertising', vi: 'tuyên truyền' }
+          },
+          {
+            parts: [
+              { text: '宣', reading: 'せん' },
+              { text: '告', reading: 'こく' }
+            ],
+            meaning: { en: 'pronouncement, sentence', vi: 'tuyên cáo' }
+          }
+        ]
+      },
+      {
+        char: '将',
+        meaning: { en: 'general, commander; future', vi: 'tướng - tướng lĩnh; sắp tới' },
+        onyomi: ['ショウ'],
+        kunyomi: [],
+        components: ['爿', '寸'],
+        parts: [
+          { char: '爿', role: 'phonetic' },
+          { char: '寸', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '将', reading: 'しょう' },
+              { text: '来', reading: 'らい' }
+            ],
+            meaning: { en: 'future', vi: 'tương lai' }
+          },
+          {
+            parts: [
+              { text: '将', reading: 'しょう' },
+              { text: '軍', reading: 'ぐん' }
+            ],
+            meaning: { en: 'general, shogun', vi: 'tướng quân' }
+          },
+          {
+            parts: [
+              { text: '主', reading: 'しゅ' },
+              { text: '将', reading: 'しょう' }
+            ],
+            meaning: { en: 'captain (of a team)', vi: 'đội trưởng' }
+          }
+        ]
+      },
+      {
+        char: '誕',
+        meaning: { en: 'birth; be born', vi: 'đản - sinh ra' },
+        onyomi: ['タン'],
+        kunyomi: [],
+        components: ['言', '延'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '延', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '誕', reading: 'たん' },
+              { text: '生', reading: 'じょう' }
+            ],
+            meaning: { en: 'birth', vi: 'sự ra đời' }
+          },
+          {
+            parts: [
+              { text: '誕', reading: 'たん' },
+              { text: '生', reading: 'じょう' },
+              { text: '日', reading: 'び' }
+            ],
+            meaning: { en: 'birthday', vi: 'sinh nhật' }
+          },
+          {
+            parts: [
+              { text: '生', reading: 'せい' },
+              { text: '誕', reading: 'たん' }
+            ],
+            meaning: { en: 'birth (of a notable person)', vi: 'ngày sinh' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Time & age',
+      vi: 'Thời gian & tuổi tác'
+    },
+    kanji: [
+      {
+        char: '晩',
+        meaning: { en: 'evening, night', vi: 'vãn - buổi tối' },
+        onyomi: ['バン'],
+        kunyomi: [],
+        components: ['日', '免'],
+        parts: [
+          { char: '日', role: 'radical' },
+          { char: '免', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '今', reading: 'こん' },
+              { text: '晩', reading: 'ばん' }
+            ],
+            meaning: { en: 'tonight', vi: 'tối nay' }
+          },
+          {
+            parts: [
+              { text: '毎', reading: 'まい' },
+              { text: '晩', reading: 'ばん' }
+            ],
+            meaning: { en: 'every evening', vi: 'mỗi tối' }
+          },
+          {
+            parts: [
+              { text: '晩', reading: 'ばん' },
+              { text: '御', reading: 'ご' },
+              { text: '飯', reading: 'はん' }
+            ],
+            meaning: { en: 'dinner', vi: 'bữa tối' }
+          }
+        ]
+      },
+      {
+        char: '暮',
+        meaning: { en: 'grow dark; live', vi: 'mộ - chiều tối; sinh sống' },
+        onyomi: ['ボ'],
+        kunyomi: ['く.れる', 'く.らす'],
+        components: ['莫', '日'],
+        parts: [
+          { char: '莫', role: 'phonetic' },
+          { char: '日', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '歳', reading: 'せい' },
+              { text: '暮', reading: 'ぼ' }
+            ],
+            meaning: { en: 'year-end (gift)', vi: 'quà cuối năm' }
+          },
+          {
+            parts: [
+              { text: '暮', reading: 'く' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to get dark, to end (of year)', vi: 'trời tối; hết năm' }
+          },
+          {
+            parts: [
+              { text: '暮', reading: 'く' },
+              { text: 'らす', reading: 'らす' }
+            ],
+            meaning: { en: 'to live, to get by', vi: 'sinh sống' }
+          }
+        ]
+      },
+      {
+        char: '翌',
+        meaning: { en: 'the following (day, year)', vi: 'dực - kế tiếp (ngày, năm)' },
+        onyomi: ['ヨク'],
+        kunyomi: [],
+        components: ['羽', '立'],
+        parts: [
+          { char: '羽', role: 'radical' },
+          { char: '立', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '翌', reading: 'よく' },
+              { text: '日', reading: 'じつ' }
+            ],
+            meaning: { en: 'the next day', vi: 'ngày hôm sau' }
+          },
+          {
+            parts: [
+              { text: '翌', reading: 'よく' },
+              { text: '朝', reading: 'あさ' }
+            ],
+            meaning: { en: 'the next morning', vi: 'sáng hôm sau' }
+          },
+          {
+            parts: [
+              { text: '翌', reading: 'よく' },
+              { text: '年', reading: 'ねん' }
+            ],
+            meaning: { en: 'the following year', vi: 'năm sau' }
+          }
+        ]
+      },
+      {
+        char: '幼',
+        meaning: { en: 'infant, very young', vi: 'ấu - thơ ấu, nhỏ' },
+        onyomi: ['ヨウ'],
+        kunyomi: ['おさな.い'],
+        components: ['幺', '力'],
+        parts: [
+          { char: '幺', role: 'radical' },
+          { char: '力', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '幼', reading: 'よう' },
+              { text: '児', reading: 'じ' }
+            ],
+            meaning: { en: 'infant, small child', vi: 'trẻ nhỏ' }
+          },
+          {
+            parts: [
+              { text: '幼', reading: 'よう' },
+              { text: '稚', reading: 'ち' }
+            ],
+            meaning: { en: 'childish, infantile', vi: 'ấu trĩ, non nớt' }
+          },
+          {
+            parts: [
+              { text: '幼', reading: 'おさな' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'very young', vi: 'thơ ấu' }
+          }
+        ]
+      },
+      {
+        char: '若',
+        meaning: { en: 'young; if', vi: 'nhược - trẻ; nếu' },
+        onyomi: ['ジャク'],
+        kunyomi: ['わか.い'],
+        components: ['艹', '右'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '右', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '若', reading: 'わか' },
+              { text: '者', reading: 'もの' }
+            ],
+            meaning: { en: 'young person', vi: 'người trẻ' }
+          },
+          {
+            parts: [
+              { text: '若', reading: 'じゃっ' },
+              { text: '干', reading: 'かん' }
+            ],
+            meaning: { en: 'some, a little', vi: 'đôi chút' }
+          },
+          {
+            parts: [
+              { text: '若', reading: 'わか' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'young', vi: 'trẻ' }
+          }
+        ]
+      },
+      {
+        char: '熟',
+        meaning: { en: 'ripen; mature; master', vi: 'thục - chín; thành thục' },
+        onyomi: ['ジュク'],
+        kunyomi: ['う.れる'],
+        components: ['孰', '灬'],
+        parts: [
+          { char: '孰', role: 'phonetic' },
+          { char: '灬', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '熟', reading: 'じゅく' },
+              { text: '語', reading: 'ご' }
+            ],
+            meaning: { en: 'idiom, compound word', vi: 'từ ghép, thành ngữ' }
+          },
+          {
+            parts: [
+              { text: '成', reading: 'せい' },
+              { text: '熟', reading: 'じゅく' }
+            ],
+            meaning: { en: 'maturity, ripeness', vi: 'trưởng thành, chín muồi' }
+          },
+          {
+            parts: [
+              { text: '熟', reading: 'う' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to ripen', vi: 'chín (quả)' }
+          }
+        ]
+      },
+      {
+        char: '至',
+        meaning: { en: 'reach; utmost', vi: 'chí - đến; tột cùng' },
+        onyomi: ['シ'],
+        kunyomi: ['いた.る'],
+        components: ['至'],
+        parts: [{ char: '至', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '至', reading: 'し' },
+              { text: '急', reading: 'きゅう' }
+            ],
+            meaning: { en: 'urgent', vi: 'khẩn cấp' }
+          },
+          {
+            parts: [
+              { text: '冬', reading: 'とう' },
+              { text: '至', reading: 'じ' }
+            ],
+            meaning: { en: 'winter solstice', vi: 'đông chí' }
+          },
+          {
+            parts: [
+              { text: '至', reading: 'いた' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to reach, to lead to', vi: 'đạt đến' }
+          }
+        ]
+      },
+      {
+        char: '頂',
+        meaning: { en: 'summit; receive (humble)', vi: 'đính - đỉnh; nhận (khiêm nhường)' },
+        onyomi: ['チョウ'],
+        kunyomi: ['いただ.く'],
+        components: ['丁', '頁'],
+        parts: [
+          { char: '丁', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '頂', reading: 'ちょう' },
+              { text: '点', reading: 'てん' }
+            ],
+            meaning: { en: 'peak, apex', vi: 'đỉnh điểm' }
+          },
+          {
+            parts: [
+              { text: '頂', reading: 'ちょう' },
+              { text: '上', reading: 'じょう' }
+            ],
+            meaning: { en: 'summit, top', vi: 'đỉnh núi' }
+          },
+          {
+            parts: [
+              { text: '頂', reading: 'いただ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to receive (humble)', vi: 'nhận (khiêm nhường)' }
+          }
+        ]
+      },
+      {
+        char: '臨',
+        meaning: { en: 'face, attend; be present', vi: 'lâm - đối mặt; đến dự' },
+        onyomi: ['リン'],
+        kunyomi: ['のぞ.む'],
+        components: ['臣'],
+        parts: [{ char: '臣', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '臨', reading: 'りん' },
+              { text: '時', reading: 'じ' }
+            ],
+            meaning: { en: 'temporary, extraordinary', vi: 'lâm thời' }
+          },
+          {
+            parts: [
+              { text: '臨', reading: 'りん' },
+              { text: '海', reading: 'かい' }
+            ],
+            meaning: { en: 'seaside, coastal', vi: 'ven biển' }
+          },
+          {
+            parts: [
+              { text: '臨', reading: 'のぞ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to face, to attend', vi: 'đối mặt, tham dự' }
+          }
+        ]
+      },
+      {
+        char: '届',
+        meaning: { en: 'reach; deliver; report', vi: 'giới - đến nơi; gửi; trình báo' },
+        onyomi: [],
+        kunyomi: ['とど.く', 'とど.ける'],
+        components: ['尸', '由'],
+        parts: [
+          { char: '尸', role: 'radical' },
+          { char: '由', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '届', reading: 'とど' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to reach, to arrive', vi: 'tới nơi' }
+          },
+          {
+            parts: [
+              { text: '届', reading: 'とど' },
+              { text: 'け', reading: 'け' },
+              { text: '出', reading: 'で' }
+            ],
+            meaning: { en: 'notification, report', vi: 'đơn trình báo' }
+          },
+          {
+            parts: [
+              { text: '行', reading: 'い' },
+              { text: 'き', reading: 'き' },
+              { text: '届', reading: 'とど' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to be thorough, attentive', vi: 'chu đáo, tận tình' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Society & relations',
+      vi: 'Xã hội & quan hệ'
+    },
+    kanji: [
+      {
+        char: '派',
+        meaning: { en: 'faction, group; send', vi: 'phái - phe nhóm; phái đi' },
+        onyomi: ['ハ'],
+        kunyomi: [],
+        components: ['氵'],
+        parts: [{ char: '氵', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '派', reading: 'は' },
+              { text: '手', reading: 'で' }
+            ],
+            meaning: { en: 'showy, flashy', vi: 'hào nhoáng, lòe loẹt' }
+          },
+          {
+            parts: [
+              { text: '立', reading: 'りっ' },
+              { text: '派', reading: 'ぱ' }
+            ],
+            meaning: { en: 'splendid, fine', vi: 'xuất sắc, đàng hoàng' }
+          },
+          {
+            parts: [
+              { text: '流', reading: 'りゅう' },
+              { text: '派', reading: 'は' }
+            ],
+            meaning: { en: 'school, style (of art)', vi: 'trường phái' }
+          }
+        ]
+      },
+      {
+        char: '班',
+        meaning: { en: 'squad, group', vi: 'ban - tổ, nhóm' },
+        onyomi: ['ハン'],
+        kunyomi: [],
+        components: ['王', '刂'],
+        parts: [
+          { char: '王', role: 'radical' },
+          { char: '刂', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '班', reading: 'はん' },
+              { text: '長', reading: 'ちょう' }
+            ],
+            meaning: { en: 'group leader', vi: 'tổ trưởng' }
+          },
+          {
+            parts: [
+              { text: '救', reading: 'きゅう' },
+              { text: '護', reading: 'ご' },
+              { text: '班', reading: 'はん' }
+            ],
+            meaning: { en: 'rescue team', vi: 'đội cứu hộ' }
+          },
+          {
+            parts: [
+              { text: '各', reading: 'かく' },
+              { text: '班', reading: 'はん' }
+            ],
+            meaning: { en: 'each group', vi: 'mỗi tổ' }
+          }
+        ]
+      },
+      {
+        char: '盟',
+        meaning: { en: 'alliance, oath', vi: 'minh - liên minh, thề' },
+        onyomi: ['メイ'],
+        kunyomi: [],
+        components: ['明', '皿'],
+        parts: [
+          { char: '明', role: 'phonetic' },
+          { char: '皿', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '同', reading: 'どう' },
+              { text: '盟', reading: 'めい' }
+            ],
+            meaning: { en: 'alliance', vi: 'đồng minh' }
+          },
+          {
+            parts: [
+              { text: '連', reading: 'れん' },
+              { text: '盟', reading: 'めい' }
+            ],
+            meaning: { en: 'league, federation', vi: 'liên minh' }
+          },
+          {
+            parts: [
+              { text: '加', reading: 'か' },
+              { text: '盟', reading: 'めい' }
+            ],
+            meaning: { en: 'joining (an alliance)', vi: 'gia nhập' }
+          }
+        ]
+      },
+      {
+        char: '並',
+        meaning: { en: 'line up; ordinary', vi: 'tịnh - xếp hàng; thường' },
+        onyomi: ['ヘイ'],
+        kunyomi: ['なら.べる', 'な.み'],
+        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '並', reading: 'へい' },
+              { text: '行', reading: 'こう' }
+            ],
+            meaning: { en: 'parallel; going side by side', vi: 'song song' }
+          },
+          {
+            parts: [
+              { text: '並', reading: 'なみ' },
+              { text: '木', reading: 'き' }
+            ],
+            meaning: { en: 'roadside trees', vi: 'hàng cây' }
+          },
+          {
+            parts: [
+              { text: '並', reading: 'なら' },
+              { text: 'べる', reading: 'べる' }
+            ],
+            meaning: { en: 'to line up, to arrange', vi: 'xếp thành hàng' }
+          }
+        ]
+      },
+      {
+        char: '陛',
+        meaning: { en: 'His/Her Majesty', vi: 'bệ - bệ hạ' },
+        onyomi: ['ヘイ'],
+        kunyomi: [],
+        components: ['阝', '比', '土'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '比', role: 'other' },
+          { char: '土', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '陛', reading: 'へい' },
+              { text: '下', reading: 'か' }
+            ],
+            meaning: { en: 'His/Her Majesty', vi: 'bệ hạ' }
+          },
+          {
+            parts: [
+              { text: '天', reading: 'てん' },
+              { text: '皇', reading: 'のう' },
+              { text: '陛', reading: 'へい' },
+              { text: '下', reading: 'か' }
+            ],
+            meaning: { en: 'His Majesty the Emperor', vi: 'Thiên hoàng bệ hạ' }
+          },
+          {
+            parts: [
+              { text: '皇', reading: 'こう' },
+              { text: '后', reading: 'ごう' },
+              { text: '陛', reading: 'へい' },
+              { text: '下', reading: 'か' }
+            ],
+            meaning: { en: 'Her Majesty the Empress', vi: 'Hoàng hậu bệ hạ' }
+          }
+        ]
+      },
+      {
+        char: '著',
+        meaning: { en: 'author, write; remarkable', vi: 'trứ - viết sách; nổi bật' },
+        onyomi: ['チョ'],
+        kunyomi: ['あらわ.す', 'いちじる.しい'],
+        components: ['艹', '者'],
+        parts: [
+          { char: '艹', role: 'radical' },
+          { char: '者', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '著', reading: 'ちょ' },
+              { text: '者', reading: 'しゃ' }
+            ],
+            meaning: { en: 'author', vi: 'tác giả' }
+          },
+          {
+            parts: [
+              { text: '著', reading: 'ちょ' },
+              { text: '名', reading: 'めい' }
+            ],
+            meaning: { en: 'famous, well-known', vi: 'nổi tiếng' }
+          },
+          {
+            parts: [
+              { text: '著', reading: 'いちじる' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'remarkable, striking', vi: 'rõ rệt, đáng kể' }
+          }
+        ]
+      },
+      {
+        char: '訪',
+        meaning: { en: 'visit, call on', vi: 'phỏng - thăm viếng' },
+        onyomi: ['ホウ'],
+        kunyomi: ['おとず.れる', 'たず.ねる'],
+        components: ['言', '方'],
+        parts: [
+          { char: '言', role: 'radical' },
+          { char: '方', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '訪', reading: 'ほう' },
+              { text: '問', reading: 'もん' }
+            ],
+            meaning: { en: 'visit, call', vi: 'thăm viếng' }
+          },
+          {
+            parts: [
+              { text: '来', reading: 'らい' },
+              { text: '訪', reading: 'ほう' }
+            ],
+            meaning: { en: 'a visit (from someone)', vi: 'đến thăm' }
+          },
+          {
+            parts: [
+              { text: '訪', reading: 'おとず' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to visit; to arrive (season)', vi: 'ghé thăm; (mùa) đến' }
+          }
+        ]
+      },
+      {
+        char: '遺',
+        meaning: { en: 'bequeath; leave behind', vi: 'di - để lại, di sản' },
+        onyomi: ['イ', 'ユイ'],
+        kunyomi: ['のこ.す'],
+        components: ['辶', '貴'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '貴', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '遺', reading: 'い' },
+              { text: '産', reading: 'さん' }
+            ],
+            meaning: { en: 'inheritance, heritage', vi: 'di sản' }
+          },
+          {
+            parts: [
+              { text: '遺', reading: 'い' },
+              { text: '跡', reading: 'せき' }
+            ],
+            meaning: { en: 'ruins, remains', vi: 'di tích' }
+          },
+          {
+            parts: [
+              { text: '遺', reading: 'ゆい' },
+              { text: '言', reading: 'ごん' }
+            ],
+            meaning: { en: 'will, testament', vi: 'di ngôn, di chúc' }
+          }
+        ]
+      },
+      {
+        char: '異',
+        meaning: { en: 'different, unusual', vi: 'dị - khác, lạ' },
+        onyomi: ['イ'],
+        kunyomi: ['こと.なる'],
+        components: ['田', '共'],
+        parts: [
+          { char: '田', role: 'radical' },
+          { char: '共', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '異', reading: 'い' },
+              { text: '常', reading: 'じょう' }
+            ],
+            meaning: { en: 'abnormal, unusual', vi: 'dị thường' }
+          },
+          {
+            parts: [
+              { text: '異', reading: 'い' },
+              { text: '議', reading: 'ぎ' }
+            ],
+            meaning: { en: 'objection, dissent', vi: 'dị nghị, phản đối' }
+          },
+          {
+            parts: [
+              { text: '異', reading: 'こと' },
+              { text: 'なる', reading: 'なる' }
+            ],
+            meaning: { en: 'to differ', vi: 'khác biệt' }
+          }
+        ]
+      },
+      {
+        char: '域',
+        meaning: { en: 'region, area, boundary', vi: 'vực - vùng, khu vực' },
+        onyomi: ['イキ'],
+        kunyomi: [],
+        components: ['土', '或'],
+        parts: [
+          { char: '土', role: 'radical' },
+          { char: '或', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '地', reading: 'ち' },
+              { text: '域', reading: 'いき' }
+            ],
+            meaning: { en: 'region, area', vi: 'khu vực, địa phương' }
+          },
+          {
+            parts: [
+              { text: '区', reading: 'く' },
+              { text: '域', reading: 'いき' }
+            ],
+            meaning: { en: 'zone, section', vi: 'khu vực' }
+          },
+          {
+            parts: [
+              { text: '領', reading: 'りょう' },
+              { text: '域', reading: 'いき' }
+            ],
+            meaning: { en: 'domain, territory', vi: 'lãnh vực, lãnh thổ' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Handling & daily life',
+      vi: 'Xử lý & đời sống'
+    },
+    kanji: [
+      {
+        char: '処',
+        meaning: { en: 'deal with, dispose; place', vi: 'xử - xử lý; nơi chốn' },
+        onyomi: ['ショ'],
+        kunyomi: ['ところ'],
+        components: ['夂', '几'],
+        parts: [
+          { char: '夂', role: 'other' },
+          { char: '几', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '処', reading: 'しょ' },
+              { text: '理', reading: 'り' }
+            ],
+            meaning: { en: 'processing, handling', vi: 'xử lý' }
+          },
+          {
+            parts: [
+              { text: '対', reading: 'たい' },
+              { text: '処', reading: 'しょ' }
+            ],
+            meaning: { en: 'dealing with, coping', vi: 'đối phó, xử trí' }
+          },
+          {
+            parts: [
+              { text: '処', reading: 'しょ' },
+              { text: '分', reading: 'ぶん' }
+            ],
+            meaning: { en: 'disposal; punishment', vi: 'xử lý; xử phạt' }
+          }
+        ]
+      },
+      {
+        char: '障',
+        meaning: { en: 'hinder, obstruct', vi: 'chướng - cản trở' },
+        onyomi: ['ショウ'],
+        kunyomi: ['さわ.る'],
+        components: ['阝', '章'],
+        parts: [
+          { char: '阝', role: 'radical' },
+          { char: '章', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '障', reading: 'しょう' },
+              { text: '害', reading: 'がい' }
+            ],
+            meaning: { en: 'obstacle; disability', vi: 'trở ngại; khuyết tật' }
+          },
+          {
+            parts: [
+              { text: '故', reading: 'こ' },
+              { text: '障', reading: 'しょう' }
+            ],
+            meaning: { en: 'breakdown, malfunction', vi: 'hỏng hóc' }
+          },
+          {
+            parts: [
+              { text: '支', reading: 'し' },
+              { text: '障', reading: 'しょう' }
+            ],
+            meaning: { en: 'hindrance, obstacle', vi: 'trở ngại' }
+          }
+        ]
+      },
+      {
+        char: '寸',
+        meaning: { en: 'sun (small unit ~3cm); a little', vi: 'thốn - tấc (đơn vị ~3cm)' },
+        onyomi: ['スン'],
+        kunyomi: [],
+        components: ['寸'],
+        parts: [{ char: '寸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '寸', reading: 'すん' },
+              { text: '法', reading: 'ぽう' }
+            ],
+            meaning: { en: 'dimensions, measurements', vi: 'kích thước' }
+          },
+          {
+            parts: [
+              { text: '寸', reading: 'すん' },
+              { text: '前', reading: 'ぜん' }
+            ],
+            meaning: { en: 'just before, on the verge', vi: 'ngay trước' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '寸', reading: 'すん' }
+            ],
+            meaning: { en: 'one sun; a tiny bit', vi: 'một tấc; chút xíu' }
+          }
+        ]
+      },
+      {
+        char: '俵',
+        meaning: { en: 'straw bale (of rice)', vi: 'biểu - bao (rơm đựng gạo)' },
+        onyomi: ['ヒョウ'],
+        kunyomi: ['たわら'],
+        components: ['亻', '表'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '表', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '土', reading: 'ど' },
+              { text: '俵', reading: 'ひょう' }
+            ],
+            meaning: { en: 'sumo ring', vi: 'vòng đấu sumo' }
+          },
+          {
+            parts: [
+              { text: '米', reading: 'こめ' },
+              { text: '俵', reading: 'だわら' }
+            ],
+            meaning: { en: 'straw rice bag', vi: 'bao gạo rơm' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '俵', reading: 'ぴょう' }
+            ],
+            meaning: { en: 'one bale (counter)', vi: 'một bao' }
+          }
+        ]
+      },
+      {
+        char: '閉',
+        meaning: { en: 'close, shut', vi: 'bế - đóng' },
+        onyomi: ['ヘイ'],
+        kunyomi: ['と.じる', 'し.める'],
+        components: ['門', '才'],
+        parts: [
+          { char: '門', role: 'radical' },
+          { char: '才', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '閉', reading: 'へい' },
+              { text: '店', reading: 'てん' }
+            ],
+            meaning: { en: 'closing a shop', vi: 'đóng cửa hàng' }
+          },
+          {
+            parts: [
+              { text: '閉', reading: 'へい' },
+              { text: '会', reading: 'かい' }
+            ],
+            meaning: { en: 'closing (a meeting)', vi: 'bế mạc' }
+          },
+          {
+            parts: [
+              { text: '閉', reading: 'と' },
+              { text: 'じる', reading: 'じる' }
+            ],
+            meaning: { en: 'to close, to shut', vi: 'đóng lại' }
+          }
+        ]
+      },
+      {
+        char: '片',
+        meaning: { en: 'piece, fragment; one side', vi: 'phiến - mảnh; một phía' },
+        onyomi: ['ヘン'],
+        kunyomi: ['かた'],
+        components: ['片'],
+        parts: [{ char: '片', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '断', reading: 'だん' },
+              { text: '片', reading: 'ぺん' }
+            ],
+            meaning: { en: 'fragment, piece', vi: 'mảnh vụn' }
+          },
+          {
+            parts: [
+              { text: '片', reading: 'かた' },
+              { text: '手', reading: 'て' }
+            ],
+            meaning: { en: 'one hand', vi: 'một tay' }
+          },
+          {
+            parts: [
+              { text: '片', reading: 'かた' },
+              { text: '道', reading: 'みち' }
+            ],
+            meaning: { en: 'one way (trip)', vi: 'một chiều' }
+          }
+        ]
+      },
+      {
+        char: '補',
+        meaning: { en: 'supplement, make up for', vi: 'bổ - bổ sung, bù' },
+        onyomi: ['ホ'],
+        kunyomi: ['おぎな.う'],
+        components: ['衤', '甫'],
+        parts: [
+          { char: '衤', role: 'radical' },
+          { char: '甫', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '補', reading: 'ほ' },
+              { text: '助', reading: 'じょ' }
+            ],
+            meaning: { en: 'assistance, subsidy', vi: 'hỗ trợ, trợ cấp' }
+          },
+          {
+            parts: [
+              { text: '候', reading: 'こう' },
+              { text: '補', reading: 'ほ' }
+            ],
+            meaning: { en: 'candidate', vi: 'ứng cử viên' }
+          },
+          {
+            parts: [
+              { text: '補', reading: 'おぎな' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to supplement, to make up for', vi: 'bù đắp, bổ sung' }
+          }
+        ]
+      },
+      {
+        char: '預',
+        meaning: { en: 'deposit; entrust', vi: 'dự - gửi; ký thác' },
+        onyomi: ['ヨ'],
+        kunyomi: ['あず.ける', 'あず.かる'],
+        components: ['予', '頁'],
+        parts: [
+          { char: '予', role: 'phonetic' },
+          { char: '頁', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '預', reading: 'よ' },
+              { text: '金', reading: 'きん' }
+            ],
+            meaning: { en: 'bank deposit, savings', vi: 'tiền gửi' }
+          },
+          {
+            parts: [
+              { text: '預', reading: 'あず' },
+              { text: 'ける', reading: 'ける' }
+            ],
+            meaning: { en: 'to deposit, to leave in care', vi: 'gửi, ký gửi' }
+          },
+          {
+            parts: [
+              { text: '預', reading: 'あず' },
+              { text: 'かる', reading: 'かる' }
+            ],
+            meaning: { en: 'to keep, to take charge of', vi: 'giữ hộ, nhận giữ' }
+          }
+        ]
+      },
+      {
+        char: '乱',
+        meaning: { en: 'disorder, chaos', vi: 'loạn - rối loạn' },
+        onyomi: ['ラン'],
+        kunyomi: ['みだ.れる', 'みだ.す'],
+        components: ['乙'],
+        parts: [{ char: '乙', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '混', reading: 'こん' },
+              { text: '乱', reading: 'らん' }
+            ],
+            meaning: { en: 'confusion, chaos', vi: 'hỗn loạn' }
+          },
+          {
+            parts: [
+              { text: '乱', reading: 'らん' },
+              { text: '暴', reading: 'ぼう' }
+            ],
+            meaning: { en: 'violence, rough', vi: 'thô bạo' }
+          },
+          {
+            parts: [
+              { text: '乱', reading: 'みだ' },
+              { text: 'れる', reading: 'れる' }
+            ],
+            meaning: { en: 'to be disordered', vi: 'rối loạn' }
+          }
+        ]
+      },
+      {
+        char: '卵',
+        meaning: { en: 'egg', vi: 'noãn - trứng' },
+        onyomi: ['ラン'],
+        kunyomi: ['たまご'],
+        components: ['卩'],
+        parts: [{ char: '卩', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '卵', reading: 'らん' },
+              { text: '子', reading: 'し' }
+            ],
+            meaning: { en: 'ovum, egg cell', vi: 'trứng (noãn)' }
+          },
+          {
+            parts: [
+              { text: '産', reading: 'さん' },
+              { text: '卵', reading: 'らん' }
+            ],
+            meaning: { en: 'egg-laying', vi: 'đẻ trứng' }
+          },
+          {
+            parts: [
+              { text: '生', reading: 'なま' },
+              { text: '卵', reading: 'たまご' }
+            ],
+            meaning: { en: 'raw egg', vi: 'trứng sống' }
+          }
+        ]
+      },
+      {
+        char: '裏',
+        meaning: { en: 'reverse side, back, inside', vi: 'lý - mặt sau, bên trong' },
+        onyomi: ['リ'],
+        kunyomi: ['うら'],
+        components: ['里', '衣'],
+        parts: [
+          { char: '里', role: 'phonetic' },
+          { char: '衣', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '裏', reading: 'り' },
+              { text: '面', reading: 'めん' }
+            ],
+            meaning: { en: 'back side, reverse', vi: 'mặt sau' }
+          },
+          {
+            parts: [
+              { text: '裏', reading: 'うら' },
+              { text: '側', reading: 'がわ' }
+            ],
+            meaning: { en: 'the other side, back', vi: 'phía sau' }
+          },
+          {
+            parts: [
+              { text: '脳', reading: 'のう' },
+              { text: '裏', reading: 'り' }
+            ],
+            meaning: { en: "in one's mind", vi: 'trong tâm trí' }
           }
         ]
       }

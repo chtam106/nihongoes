@@ -21,6 +21,21 @@ export type KanjiExample = {
   meaning: Bilingual;
 };
 
+/**
+ * The role a component plays inside a kanji:
+ * - `radical`: the main dictionary radical (bộ thủ chính) the kanji is filed under.
+ * - `semantic`: a component that hints at the meaning (nghĩa phù).
+ * - `phonetic`: a component that hints at the reading/sound (thanh phù).
+ * - `other`: a building block whose role is unclear or purely structural.
+ */
+export type KanjiComponentRole = 'radical' | 'semantic' | 'phonetic' | 'other';
+
+/** One building block of a kanji, tagged with the role it plays. */
+export type KanjiComponent = {
+  char: string;
+  role: KanjiComponentRole;
+};
+
 export type KanjiEntry = {
   /** The kanji character itself, e.g. 一. */
   char: string;
@@ -31,6 +46,12 @@ export type KanjiEntry = {
   kunyomi: string[];
   /** Radical/component characters that make up the kanji, in reading order (e.g. 休 -> ['亻', '木']). */
   components: string[];
+  /**
+   * Full component breakdown with roles (bộ thủ chính / gợi nghĩa / gợi âm / khác).
+   * When present, the card shows this instead of `components`. List every
+   * building block; exactly one should be `radical` (the dictionary radical).
+   */
+  parts?: KanjiComponent[];
   /** Optional memory aid, e.g. "person 亻 resting by a tree 木 = rest". Only set when there is a good one. */
   mnemonic?: Bilingual;
   /** Optional usage note (reading caveats, common confusions, when to use which reading, etc.). */

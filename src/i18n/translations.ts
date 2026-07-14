@@ -42,7 +42,7 @@ const en: TranslationTree = {
     kanji: {
       title: 'Learn Jōyō Kanji Step by Step',
       description:
-        'Learn the Jōyō kanji in bite-sized lessons of 10 characters each, with meanings, on and kun readings, example words, and native audio.'
+        'Learn the Jōyō kanji in bite-sized lessons, with meanings, on and kun readings, example words, and native audio.'
     },
     alphabet: {
       title: 'Learn the Japanese Alphabet - Hiragana and Katakana',
@@ -316,15 +316,21 @@ const en: TranslationTree = {
     writingKanji: 'Kanji',
     reviewLesson: 'Review lesson',
     radicals: 'Radicals',
+    componentsLabel: 'Components',
+    componentsLegendHeading: 'What the component colors mean',
+    componentsLegendRadical: 'Blue - the main radical the kanji is filed under in dictionaries.',
+    componentsLegendSemantic: 'Green - a component that hints at the meaning.',
+    componentsLegendPhonetic: 'Orange - a component that hints at the reading (sound).',
+    componentsLegendOther: 'Grey - another building block, with no clear meaning or sound role.',
     radicalsTitle: 'Kanji radicals (部首)',
-    radicalsSubtitle: 'The 214 building blocks used to form kanji.',
+    radicalsSubtitle: 'The building blocks used to form kanji.',
     radicalsIntro:
       'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up. They are grouped below by stroke count.',
     radicalsStrokesGroup: '{{count}} strokes',
     radicalsCount: '{{count}} radicals',
     radicalsLegendHeading: 'How to read a radical card',
     radicalsLegendNumber:
-      "Top-left tag - the radical's number in the standard 214-radical order (1-214).",
+      "Top-left tag - the radical's order number in the traditional Kangxi table (1-214). The order follows the table, so a few radicals (e.g. 母, #80, has 5 strokes) may not run consecutively within a stroke group.",
     radicalsLegendChar: 'Large character - the radical in its standalone form.',
     radicalsLegendVariant:
       'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',

@@ -36,7 +36,7 @@ export function NavCardGrid({ items, titleComponent = 'h2' }: NavCardGridProps) 
             <CardActionArea
               component={RouterLink}
               to={item.to}
-              sx={{ height: '100%', alignItems: 'stretch' }}
+              sx={{ height: '100%', alignItems: 'stretch', userSelect: 'text' }}
             >
               <CardContent>
                 <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1 }}>

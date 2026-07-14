@@ -1,4 +1,5 @@
-import { Box, Paper, Stack, Typography } from '@mui/material';
+import { Box, Paper, Typography } from '@mui/material';
+import { alpha, type Theme } from '@mui/material/styles';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -6,10 +7,18 @@ import {
   formatKanjiMeaning,
   getRadicalByChar,
   KANJI_RADICALS_PATH,
+  type KanjiComponent,
   type KanjiEntry,
   type KanjiReadingPart
 } from '@/constants/kanji/index.ts';
+import { COMPONENT_ROLE_COLORS } from '@/theme/kanji-component-colors.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
+
+/** The primary sense of a bilingual radical meaning (first "; "-separated clause). */
+function radicalPrimaryMeaning(vi: string, en: string, locale: 'en' | 'vi'): string {
+  const text = locale === 'vi' ? formatKanjiMeaning(vi) : en;
+  return text.split('; ')[0]!;
+}
 
 /** Full kana reading of an example (also spoken), joined from its parts. */
 function exampleReading(parts: KanjiReadingPart[]): string {
@@ -41,12 +50,26 @@ type InfoRowProps = {
   emphasize?: boolean;
 };
 
+type RowLabelProps = {
+  children: string;
+};
+
+/**
+ * A row label cell. All info rows share one CSS grid (see KanjiCard) so the label
+ * column auto-sizes to the widest label and every value column lines up.
+ */
+function RowLabel({ children }: RowLabelProps) {
+  return (
+    <Typography variant="body2" color="text.secondary">
+      {children}
+    </Typography>
+  );
+}
+
 function InfoRow({ label, value, japanese, emphasize }: InfoRowProps) {
   return (
-    <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline' }}>
-      <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0, minWidth: 88 }}>
-        {label}
-      </Typography>
+    <>
+      <RowLabel>{label}</RowLabel>
       <Typography
         variant="body2"
         lang={japanese ? 'ja' : undefined}
@@ -54,7 +77,7 @@ function InfoRow({ label, value, japanese, emphasize }: InfoRowProps) {
       >
         {value}
       </Typography>
-    </Stack>
+    </>
   );
 }
 
@@ -81,10 +104,8 @@ type ReadingRowProps = {
 /** A label followed by each reading rendered as its own tag/pill. */
 function ReadingRow({ label, readings }: ReadingRowProps) {
   return (
-    <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline' }}>
-      <Typography variant="body2" color="text.secondary" sx={{ flexShrink: 0, minWidth: 88 }}>
-        {label}
-      </Typography>
+    <>
+      <RowLabel>{label}</RowLabel>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
         {readings.map((reading) => (
           <Box key={reading} component="span" lang="ja" sx={readingPillSx}>
@@ -92,7 +113,114 @@ function ReadingRow({ label, readings }: ReadingRowProps) {
           </Box>
         ))}
       </Box>
-    </Stack>
+    </>
+  );
+}
+
+type ComponentsRowProps = {
+  entry: KanjiEntry;
+};
+
+/**
+ * The "Components" row: each building block as a chip colored by its role
+ * (radical / semantic / phonetic / other). Chips whose char is one of the 214
+ * radicals show its meaning and link to the radicals page; others show the char
+ * only. Falls back to the legacy `components` list (all treated as radicals).
+ */
+/**
+ * The components to display for a kanji. Prefers the authored `parts`; otherwise
+ * falls back to the character's own dictionary radical (for atomic kanji that are
+ * themselves a radical, e.g. 木 -> 木), then to the legacy `components` list.
+ */
+function resolveParts(entry: KanjiEntry): KanjiComponent[] {
+  if (entry.parts) {
+    return entry.parts;
+  }
+
+  if (getRadicalByChar(entry.char)) {
+    return [{ char: entry.char, role: 'radical' }];
+  }
+
+  return entry.components.map((char) => ({ char, role: 'radical' as const }));
+}
+
+/** Display order for component chips: radical first, then semantic, phonetic, other. */
+const ROLE_ORDER: Record<KanjiComponent['role'], number> = {
+  radical: 0,
+  semantic: 1,
+  phonetic: 2,
+  other: 3
+};
+
+function ComponentsRow({ entry }: ComponentsRowProps) {
+  const { locale, t } = useTranslation();
+
+  const parts = [...resolveParts(entry)].sort((a, b) => ROLE_ORDER[a.role] - ROLE_ORDER[b.role]);
+
+  if (parts.length < 1) {
+    return null;
+  }
+
+  return (
+    <>
+      <RowLabel>{t('kanji.componentsLabel')}</RowLabel>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
+        {parts.map((part, partIndex) => {
+          const radical = getRadicalByChar(part.char);
+          const color = COMPONENT_ROLE_COLORS[part.role];
+          const key = `${part.char}-${partIndex}`;
+          const chipSx = {
+            display: 'inline-flex',
+            alignItems: 'baseline',
+            gap: 0.5,
+            px: 0.75,
+            py: 0.25,
+            borderRadius: 1,
+            bgcolor: (theme: Theme) => alpha(color, theme.palette.mode === 'light' ? 0.12 : 0.24),
+            boxShadow: PILL_SHADOW
+          };
+          const inner = (
+            <>
+              <Box component="span" lang="ja" sx={{ fontWeight: 600, color }}>
+                {part.char}
+              </Box>
+              {radical && (
+                <Box component="span" sx={{ color: 'text.secondary' }}>
+                  {radicalPrimaryMeaning(radical.meaning.vi, radical.meaning.en, locale)}
+                </Box>
+              )}
+            </>
+          );
+
+          if (!radical) {
+            return (
+              <Box component="span" key={key} sx={chipSx}>
+                {inner}
+              </Box>
+            );
+          }
+
+          return (
+            <Box
+              key={key}
+              component={RouterLink}
+              to={`${KANJI_RADICALS_PATH}#radical-${radical.number}`}
+              sx={[
+                chipSx,
+                {
+                  color: 'text.primary',
+                  textDecoration: 'none',
+                  transition: 'box-shadow 0.2s ease',
+                  '&:hover': { boxShadow: '0 4px 10px rgba(0, 0, 0, 0.12)' }
+                }
+              ]}
+            >
+              {inner}
+            </Box>
+          );
+        })}
+      </Box>
+    </>
   );
 }
 
@@ -157,82 +285,21 @@ export function KanjiCard({ entry, index }: KanjiCardProps) {
           {entry.char}
         </Typography>
         <Box sx={{ width: { xs: '100%', sm: 'auto' }, flex: { sm: 1 }, minWidth: 0 }}>
-          <Stack spacing={0.5}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'auto 1fr',
+              columnGap: 1,
+              rowGap: 0.5,
+              alignItems: 'baseline'
+            }}
+          >
             <InfoRow
               label={t('kanji.meaningLabel')}
               value={locale === 'vi' ? formatKanjiMeaning(entry.meaning.vi) : entry.meaning.en}
               emphasize
             />
-            {entry.components.length >= 2 && (
-              <Stack direction="row" spacing={1} sx={{ alignItems: 'baseline' }}>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ flexShrink: 0, minWidth: 88 }}
-                >
-                  {t('kanji.radicals')}
-                </Typography>
-                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
-                  {entry.components.map((char, componentIndex) => {
-                    const radical = getRadicalByChar(char);
-                    const key = `${char}-${componentIndex}`;
-                    const pillSx = {
-                      display: 'inline-flex',
-                      alignItems: 'baseline',
-                      gap: 0.5,
-                      px: 0.75,
-                      py: 0.25,
-                      borderRadius: 1,
-                      bgcolor: 'background.paper',
-                      boxShadow: PILL_SHADOW
-                    };
-                    const inner = (
-                      <>
-                        <Box component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                          {char}
-                        </Box>
-                        {radical && (
-                          <Box component="span" sx={{ color: 'text.secondary' }}>
-                            {locale === 'vi'
-                              ? formatKanjiMeaning(radical.meaning.vi)
-                              : radical.meaning.en}
-                          </Box>
-                        )}
-                      </>
-                    );
-
-                    if (!radical) {
-                      return (
-                        <Box component="span" key={key} sx={pillSx}>
-                          {inner}
-                        </Box>
-                      );
-                    }
-
-                    return (
-                      <Box
-                        key={key}
-                        component={RouterLink}
-                        to={`${KANJI_RADICALS_PATH}#radical-${radical.number}`}
-                        sx={[
-                          pillSx,
-                          {
-                            color: 'text.primary',
-                            textDecoration: 'none',
-                            transition: 'box-shadow 0.2s ease',
-                            '&:hover': {
-                              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.12)'
-                            }
-                          }
-                        ]}
-                      >
-                        {inner}
-                      </Box>
-                    );
-                  })}
-                </Box>
-              </Stack>
-            )}
+            <ComponentsRow entry={entry} />
             {entry.onyomi.length > 0 && (
               <ReadingRow label={t('kanji.onReading')} readings={entry.onyomi} />
             )}
@@ -242,7 +309,7 @@ export function KanjiCard({ entry, index }: KanjiCardProps) {
                 readings={entry.kunyomi.map(formatReading)}
               />
             )}
-          </Stack>
+          </Box>
         </Box>
       </Paper>
 
