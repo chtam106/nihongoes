@@ -17,23 +17,34 @@ import { interactiveSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 function KanjiHubPage() {
   const { locale, t } = useTranslation();
 
-  const renderTrackCard = (track: KanjiTrack) => (
-    <Card key={track.slug} elevation={0} sx={interactiveSurfaceSx}>
-      <CardActionArea component={RouterLink} to={kanjiTrackPath(track.slug)}>
-        <CardContent>
-          <Box sx={{ minWidth: 0 }}>
-            <Heading component="h3">{track.name[locale]}</Heading>
-            <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-              {track.subtitle[locale]}
-            </Typography>
-            <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-              {t('kanji.lessonCount', { count: track.lessons.length })}
-            </Typography>
-          </Box>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+  const totalKanji = kanjiTracks.reduce(
+    (sum, track) => sum + track.lessons.reduce((n, lesson) => n + lesson.kanji.length, 0),
+    0
   );
+
+  const renderTrackCard = (track: KanjiTrack) => {
+    const kanjiTotal = track.lessons.reduce((sum, lesson) => sum + lesson.kanji.length, 0);
+
+    return (
+      <Card key={track.slug} elevation={0} sx={interactiveSurfaceSx}>
+        <CardActionArea
+          component={RouterLink}
+          to={kanjiTrackPath(track.slug)}
+          sx={{ userSelect: 'text' }}
+        >
+          <CardContent>
+            <Box sx={{ minWidth: 0 }}>
+              <Heading component="h3">{track.name[locale]}</Heading>
+              <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
+                {t('kanji.lessonCount', { count: track.lessons.length })} ·{' '}
+                {t('kanji.kanjiCount', { count: kanjiTotal })}
+              </Typography>
+            </Box>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    );
+  };
 
   return (
     <PageContainer bottomGutter>
@@ -91,7 +102,11 @@ function KanjiHubPage() {
             {t('kanji.radicals')}
           </Heading>
           <Card elevation={0} sx={interactiveSurfaceSx}>
-            <CardActionArea component={RouterLink} to={KANJI_RADICALS_PATH}>
+            <CardActionArea
+              component={RouterLink}
+              to={KANJI_RADICALS_PATH}
+              sx={{ userSelect: 'text' }}
+            >
               <CardContent>
                 <Box sx={{ minWidth: 0 }}>
                   <Heading component="h3">{t('kanji.radicalsTitle')}</Heading>
@@ -113,7 +128,15 @@ function KanjiHubPage() {
 
         <Box>
           <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
-            {t('kanji.collectionsHeading')}
+            {t('kanji.collectionsHeading')}{' '}
+            <Typography
+              component="span"
+              variant="body2"
+              color="text.secondary"
+              sx={{ fontWeight: 400 }}
+            >
+              ({t('kanji.kanjiCount', { count: totalKanji })})
+            </Typography>
           </Heading>
           <Stack spacing={1.5}>{kanjiTracks.map(renderTrackCard)}</Stack>
         </Box>

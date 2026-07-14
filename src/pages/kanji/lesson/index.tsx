@@ -8,6 +8,7 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
 import { KanjiCard } from '@/components/kanji-card';
+import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
@@ -133,6 +134,8 @@ function KanjiLessonPage() {
         <HintText>{t('kanji.detailHint')}</HintText>
 
         <KanjiReadingsNote collapsible />
+
+        <KanjiComponentLegend />
 
         <Stack spacing={5}>
           {lesson.kanji.map((entry, index) => (

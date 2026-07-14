@@ -1,9 +1,23 @@
-import { grade1Lessons, grade2Lessons, grade3Lessons, grade4Lessons } from './lessons.ts';
+import {
+  grade1Lessons,
+  grade2Lessons,
+  grade3Lessons,
+  grade4Lessons,
+  grade5Lessons,
+  grade6Lessons
+} from './lessons.ts';
 import { radicals, type Radical } from './radicals.ts';
 import type { Bilingual, KanjiLesson } from './types.ts';
 
 export * from './types.ts';
-export { grade1Lessons, grade2Lessons, grade3Lessons, grade4Lessons } from './lessons.ts';
+export {
+  grade1Lessons,
+  grade2Lessons,
+  grade3Lessons,
+  grade4Lessons,
+  grade5Lessons,
+  grade6Lessons
+} from './lessons.ts';
 export { radicals };
 export type { Radical };
 
@@ -15,7 +29,6 @@ export const KANJI_RADICALS_PATH = `${KANJI_BASE_PATH}/radicals`;
 export type KanjiTrack = {
   slug: string;
   name: Bilingual;
-  subtitle: Bilingual;
   intro: Bilingual;
   lessons: KanjiLesson[];
 };
@@ -23,13 +36,9 @@ export type KanjiTrack = {
 const grade1Track: KanjiTrack = {
   slug: 'grade-1',
   name: { en: 'Grade 1 kanji', vi: 'Kanji lớp 1' },
-  subtitle: {
-    en: 'The 80 first-grade Jōyō kanji, 10 characters per lesson.',
-    vi: '80 chữ kanji Jōyō lớp 1, mỗi bài 10 chữ.'
-  },
   intro: {
-    en: 'The 80 kanji taught in first grade in Japan: numbers, nature, the body, and other everyday basics. Work through them in small, ordered lessons of 10 characters, each with meanings, on and kun readings, and example words you can tap to hear.',
-    vi: '80 chữ kanji được dạy ở lớp 1 tại Nhật: con số, thiên nhiên, cơ thể và những điều cơ bản hằng ngày. Học theo từng bài nhỏ, có thứ tự, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, và các từ ví dụ có thể bấm để nghe.'
+    en: 'The 80 kanji taught in first grade in Japan: numbers, nature, the body, and other everyday basics.',
+    vi: '80 chữ kanji được dạy ở lớp 1 tại Nhật: con số, thiên nhiên, cơ thể và những điều cơ bản hằng ngày.'
   },
   lessons: grade1Lessons
 };
@@ -37,13 +46,9 @@ const grade1Track: KanjiTrack = {
 const grade2Track: KanjiTrack = {
   slug: 'grade-2',
   name: { en: 'Grade 2 kanji', vi: 'Kanji lớp 2' },
-  subtitle: {
-    en: 'The 160 second-grade Jōyō kanji, 10 characters per lesson.',
-    vi: '160 chữ kanji Jōyō lớp 2, mỗi bài 10 chữ.'
-  },
   intro: {
-    en: 'The 160 kanji taught in second grade in Japan: time, family, directions, verbs, and more. Work through them in small, ordered lessons of 10 characters, each with meanings, on and kun readings, and example words you can tap to hear.',
-    vi: '160 chữ kanji được dạy ở lớp 2 tại Nhật: thời gian, gia đình, phương hướng, động từ và nhiều hơn nữa. Học theo từng bài nhỏ, có thứ tự, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, và các từ ví dụ có thể bấm để nghe.'
+    en: 'The 160 kanji taught in second grade in Japan: time, family, directions, verbs, and more.',
+    vi: '160 chữ kanji được dạy ở lớp 2 tại Nhật: thời gian, gia đình, phương hướng, động từ và nhiều hơn nữa.'
   },
   lessons: grade2Lessons
 };
@@ -51,13 +56,9 @@ const grade2Track: KanjiTrack = {
 const grade3Track: KanjiTrack = {
   slug: 'grade-3',
   name: { en: 'Grade 3 kanji', vi: 'Kanji lớp 3' },
-  subtitle: {
-    en: 'The 200 third-grade Jōyō kanji, 10 characters per lesson.',
-    vi: '200 chữ kanji Jōyō lớp 3, mỗi bài 10 chữ.'
-  },
   intro: {
-    en: 'The 200 kanji taught in third grade in Japan: feelings, study, society, travel, and more. Work through them in small, ordered lessons of 10 characters, each with meanings, on and kun readings, and example words you can tap to hear.',
-    vi: '200 chữ kanji được dạy ở lớp 3 tại Nhật: cảm xúc, học tập, xã hội, đi lại và nhiều hơn nữa. Học theo từng bài nhỏ, có thứ tự, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, và các từ ví dụ có thể bấm để nghe.'
+    en: 'The 200 kanji taught in third grade in Japan: feelings, study, society, travel, and more.',
+    vi: '200 chữ kanji được dạy ở lớp 3 tại Nhật: cảm xúc, học tập, xã hội, đi lại và nhiều hơn nữa.'
   },
   lessons: grade3Lessons
 };
@@ -65,18 +66,41 @@ const grade3Track: KanjiTrack = {
 const grade4Track: KanjiTrack = {
   slug: 'grade-4',
   name: { en: 'Grade 4 kanji', vi: 'Kanji lớp 4' },
-  subtitle: {
-    en: 'The 202 fourth-grade Jōyō kanji, 10 characters per lesson.',
-    vi: '202 chữ kanji Jōyō lớp 4, mỗi bài 10 chữ.'
-  },
   intro: {
-    en: 'The 202 kanji taught in fourth grade in Japan: feelings, society, nature, and more abstract ideas. Work through them in small, ordered lessons of 10 characters, each with meanings, on and kun readings, and example words you can tap to hear.',
-    vi: '202 chữ kanji được dạy ở lớp 4 tại Nhật: cảm xúc, xã hội, thiên nhiên và nhiều khái niệm trừu tượng hơn. Học theo từng bài nhỏ, có thứ tự, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, và các từ ví dụ có thể bấm để nghe.'
+    en: 'The 202 kanji taught in fourth grade in Japan: feelings, society, nature, and more abstract ideas.',
+    vi: '202 chữ kanji được dạy ở lớp 4 tại Nhật: cảm xúc, xã hội, thiên nhiên và nhiều khái niệm trừu tượng hơn.'
   },
   lessons: grade4Lessons
 };
 
-export const kanjiTracks: KanjiTrack[] = [grade1Track, grade2Track, grade3Track, grade4Track];
+const grade5Track: KanjiTrack = {
+  slug: 'grade-5',
+  name: { en: 'Grade 5 kanji', vi: 'Kanji lớp 5' },
+  intro: {
+    en: 'The 193 kanji taught in fifth grade in Japan: feelings, society, science, and many abstract concepts.',
+    vi: '193 chữ kanji được dạy ở lớp 5 tại Nhật: cảm xúc, xã hội, khoa học và nhiều khái niệm trừu tượng.'
+  },
+  lessons: grade5Lessons
+};
+
+const grade6Track: KanjiTrack = {
+  slug: 'grade-6',
+  name: { en: 'Grade 6 kanji', vi: 'Kanji lớp 6' },
+  intro: {
+    en: 'The 191 kanji taught in sixth grade in Japan: the body, character, society, government, and many abstract ideas.',
+    vi: '191 chữ kanji được dạy ở lớp 6 tại Nhật: cơ thể, tâm tính, xã hội, chính trị và nhiều khái niệm trừu tượng.'
+  },
+  lessons: grade6Lessons
+};
+
+export const kanjiTracks: KanjiTrack[] = [
+  grade1Track,
+  grade2Track,
+  grade3Track,
+  grade4Track,
+  grade5Track,
+  grade6Track
+];
 
 export function getKanjiTrack(slug: string): KanjiTrack | undefined {
   return kanjiTracks.find((track) => track.slug === slug);

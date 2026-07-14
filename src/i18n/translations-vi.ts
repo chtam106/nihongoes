@@ -37,7 +37,7 @@ export const viTranslations: TranslationTree = {
     kanji: {
       title: 'Học Kanji thông dụng (Jōyō) từng bước',
       description:
-        'Học kanji thông dụng (Jōyō) theo từng bài nhỏ, mỗi bài 10 chữ, kèm nghĩa, âm ON và KUN, từ ví dụ và phát âm chuẩn.'
+        'Học kanji thông dụng (Jōyō) theo từng bài nhỏ, kèm nghĩa, âm ON và KUN, từ ví dụ và phát âm chuẩn.'
     },
     alphabet: {
       title: 'Bảng chữ cái tiếng Nhật - Hiragana và Katakana',
@@ -308,15 +308,21 @@ export const viTranslations: TranslationTree = {
     writingKanji: 'Kanji',
     reviewLesson: 'Xem lại bài học',
     radicals: 'Bộ thủ',
+    componentsLabel: 'Thành phần',
+    componentsLegendHeading: 'Ý nghĩa màu của thành phần',
+    componentsLegendRadical: 'Xanh dương - bộ thủ chính (bộ dùng để tra chữ trong từ điển).',
+    componentsLegendSemantic: 'Xanh lá - thành phần gợi nghĩa.',
+    componentsLegendPhonetic: 'Cam - thành phần gợi âm (cách đọc).',
+    componentsLegendOther: 'Xám - thành phần khác, không rõ vai trò nghĩa hay âm.',
     radicalsTitle: 'Bộ thủ kanji (部首)',
-    radicalsSubtitle: '214 thành phần cấu tạo nên chữ kanji.',
+    radicalsSubtitle: 'Thành phần cấu tạo nên chữ kanji.',
     radicalsIntro:
       'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn. Bên dưới sắp xếp theo số nét.',
     radicalsStrokesGroup: '{{count}} nét',
     radicalsCount: '{{count}} bộ thủ',
     radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
     radicalsLegendNumber:
-      'Nhãn góc trên trái - số thứ tự của bộ thủ trong bảng 214 bộ chuẩn (1-214).',
+      'Nhãn góc trên trái - số thứ tự của bộ thủ theo bảng Khang Hy (Kangxi) truyền thống (1-214). Thứ tự bám theo bảng này, nên vài bộ (vd 母, #80, có 5 nét) có thể không liền số trong cùng một nhóm nét.',
     radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
     radicalsLegendVariant:
       'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',

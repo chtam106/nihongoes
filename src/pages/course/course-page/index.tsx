@@ -17,7 +17,11 @@ function CoursePage({ level }: CoursePageProps) {
 
   const renderLessonCard = (lesson: Lesson) => (
     <Card key={lesson.id} elevation={0} sx={interactiveSurfaceSx}>
-      <CardActionArea component={RouterLink} to={lessonPath(level, lesson.id)}>
+      <CardActionArea
+        component={RouterLink}
+        to={lessonPath(level, lesson.id)}
+        sx={{ userSelect: 'text' }}
+      >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
             <Chip
