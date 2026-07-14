@@ -16,7 +16,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'one', vi: 'nhất - một' },
         onyomi: ['イチ', 'イツ'],
         kunyomi: ['ひと', 'ひと.つ'],
-        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -46,7 +46,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'two', vi: 'nhị - hai' },
         onyomi: ['ニ'],
         kunyomi: ['ふた', 'ふた.つ'],
-        components: ['一', '一'],
+        parts: [{ char: '二', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -76,7 +76,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'three', vi: 'tam - ba' },
         onyomi: ['サン'],
         kunyomi: ['み', 'み.つ', 'みっ.つ'],
-        components: ['一', '一', '一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -110,7 +109,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'four', vi: 'tứ - bốn' },
         onyomi: ['シ'],
         kunyomi: ['よ', 'よ.つ', 'よっ.つ', 'よん'],
-        components: ['囗', '儿'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '儿', role: 'other' }
@@ -151,7 +149,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'five', vi: 'ngũ - năm' },
         onyomi: ['ゴ'],
         kunyomi: ['いつ', 'いつ.つ'],
-        components: ['一', '一'],
         parts: [{ char: '二', role: 'radical' }],
         examples: [
           {
@@ -185,7 +182,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'six', vi: 'lục - sáu' },
         onyomi: ['ロク'],
         kunyomi: ['む', 'む.つ', 'むっ.つ', 'むい'],
-        components: ['亠', '八'],
         parts: [
           { char: '亠', role: 'other' },
           { char: '八', role: 'radical' }
@@ -215,7 +211,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seven', vi: 'thất - bảy' },
         onyomi: ['シチ'],
         kunyomi: ['なな', 'なな.つ', 'なの'],
-        components: ['一', '乚'],
         parts: [
           { char: '一', role: 'radical' },
           { char: '乚', role: 'other' }
@@ -249,7 +244,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'eight', vi: 'bát - tám' },
         onyomi: ['ハチ'],
         kunyomi: ['や', 'や.つ', 'やっ.つ', 'よう'],
-        components: ['八'],
+        parts: [{ char: '八', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -275,7 +270,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nine', vi: 'cửu - chín' },
         onyomi: ['キュウ', 'ク'],
         kunyomi: ['ここの', 'ここの.つ'],
-        components: ['丿', '乚'],
         parts: [{ char: '乙', role: 'radical' }],
         note: {
           en: 'Read きゅう or く; the month uses く (九月 = くがつ).',
@@ -306,7 +300,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ten', vi: 'thập - mười' },
         onyomi: ['ジュウ', 'ジッ'],
         kunyomi: ['とお', 'と'],
-        components: ['一', '丨'],
+        parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -334,7 +328,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'person', vi: 'nhân - người' },
         onyomi: ['ジン', 'ニン'],
         kunyomi: ['ひと'],
-        components: ['人'],
+        parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -361,7 +355,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'big', vi: 'đại - to, lớn' },
         onyomi: ['ダイ', 'タイ'],
         kunyomi: ['おお', 'おお.きい'],
-        components: ['大'],
+        parts: [{ char: '大', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -388,7 +382,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'small, little', vi: 'tiểu - nhỏ, bé' },
         onyomi: ['ショウ'],
         kunyomi: ['ちい.さい', 'こ', 'お'],
-        components: ['小'],
+        parts: [{ char: '小', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -411,7 +405,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mountain', vi: 'sơn - núi' },
         onyomi: ['サン'],
         kunyomi: ['やま'],
-        components: ['山'],
+        parts: [{ char: '山', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -442,7 +436,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'river', vi: 'xuyên - sông' },
         onyomi: ['セン'],
         kunyomi: ['かわ'],
-        components: ['川'],
+        parts: [{ char: '川', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -465,7 +459,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tree, wood', vi: 'mộc - cây, gỗ' },
         onyomi: ['モク', 'ボク'],
         kunyomi: ['き', 'こ'],
-        components: ['木'],
+        parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -497,7 +491,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fire', vi: 'hỏa - lửa' },
         onyomi: ['カ'],
         kunyomi: ['ひ', 'ほ'],
-        components: ['火'],
+        parts: [{ char: '火', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -527,7 +521,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'water', vi: 'thủy - nước' },
         onyomi: ['スイ'],
         kunyomi: ['みず'],
-        components: ['水'],
+        parts: [{ char: '水', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -551,7 +545,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sun, day', vi: 'nhật - mặt trời, ngày' },
         onyomi: ['ニチ', 'ジツ'],
         kunyomi: ['ひ', 'か'],
-        components: ['日'],
+        parts: [{ char: '日', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -582,7 +576,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'moon, month', vi: 'nguyệt - mặt trăng, tháng' },
         onyomi: ['ゲツ', 'ガツ'],
         kunyomi: ['つき'],
-        components: ['月'],
+        parts: [{ char: '月', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -621,7 +615,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'eye', vi: 'mục - mắt' },
         onyomi: ['モク', 'ボク'],
         kunyomi: ['め', 'ま'],
-        components: ['目'],
+        parts: [{ char: '目', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -644,7 +638,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mouth', vi: 'khẩu - miệng' },
         onyomi: ['コウ', 'ク'],
         kunyomi: ['くち'],
-        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -674,7 +668,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ear', vi: 'nhĩ - tai' },
         onyomi: ['ジ'],
         kunyomi: ['みみ'],
-        components: ['耳'],
+        parts: [{ char: '耳', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -690,7 +684,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hand', vi: 'thủ - tay' },
         onyomi: ['シュ'],
         kunyomi: ['て', 'た'],
-        components: ['手'],
+        parts: [{ char: '手', role: 'radical' }],
         examples: [
           {
             parts: [{ text: '上手', reading: 'じょうず' }],
@@ -710,7 +704,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'foot, leg; be enough', vi: 'túc - chân; đủ' },
         onyomi: ['ソク'],
         kunyomi: ['あし', 'た.りる', 'た.す'],
-        components: ['足'],
+        parts: [{ char: '足', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -740,7 +734,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'power, strength', vi: 'lực - sức mạnh' },
         onyomi: ['リキ', 'リョク'],
         kunyomi: ['ちから'],
-        components: ['力'],
+        parts: [{ char: '力', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -771,7 +765,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'man, male', vi: 'nam - đàn ông, nam giới' },
         onyomi: ['ダン', 'ナン'],
         kunyomi: ['おとこ'],
-        components: ['田', '力'],
         parts: [
           { char: '田', role: 'radical' },
           { char: '力', role: 'semantic' }
@@ -799,7 +792,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'woman, female', vi: 'nữ - phụ nữ' },
         onyomi: ['ジョ', 'ニョ'],
         kunyomi: ['おんな', 'め'],
-        components: ['女'],
+        parts: [{ char: '女', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -823,7 +816,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'child', vi: 'tử - con, trẻ con' },
         onyomi: ['シ', 'ス'],
         kunyomi: ['こ'],
-        components: ['子'],
+        parts: [{ char: '子', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -846,7 +839,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'name; fame, reputation', vi: 'danh - tên, tên gọi; danh tiếng' },
         onyomi: ['メイ', 'ミョウ'],
         kunyomi: ['な'],
-        components: ['夕', '口'],
         parts: [
           { char: '夕', role: 'semantic' },
           { char: '口', role: 'radical' }
@@ -888,7 +880,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'up, above', vi: 'thượng - trên, lên' },
         onyomi: ['ジョウ'],
         kunyomi: ['うえ', 'あ.げる', 'あ.がる', 'のぼ.る'],
-        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -915,7 +907,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'down, below', vi: 'hạ - dưới, xuống' },
         onyomi: ['カ', 'ゲ'],
         kunyomi: ['した', 'さ.げる', 'さ.がる', 'くだ.る', 'お.りる'],
-        components: ['一'],
+        parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -945,7 +937,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'middle, inside', vi: 'trung - giữa, trong' },
         onyomi: ['チュウ'],
         kunyomi: ['なか'],
-        components: ['口', '丨'],
         parts: [
           { char: '口', role: 'other' },
           { char: '丨', role: 'radical' }
@@ -980,7 +971,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'left', vi: 'tả - trái' },
         onyomi: ['サ'],
         kunyomi: ['ひだり'],
-        components: ['工'],
+        parts: [{ char: '工', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -996,7 +987,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'right', vi: 'hữu - phải' },
         onyomi: ['ウ', 'ユウ'],
         kunyomi: ['みぎ'],
-        components: ['口'],
+        parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1019,7 +1010,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sky, heaven', vi: 'thiên - bầu trời' },
         onyomi: ['テン'],
         kunyomi: ['あま', 'あめ'],
-        components: ['一', '大'],
         parts: [
           { char: '一', role: 'other' },
           { char: '大', role: 'radical' }
@@ -1039,7 +1029,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sky; empty', vi: 'không - bầu trời; trống' },
         onyomi: ['クウ'],
         kunyomi: ['そら', 'あ.く', 'から', 'あ.ける'],
-        components: ['穴', '工'],
         parts: [
           { char: '穴', role: 'radical' },
           { char: '工', role: 'phonetic' }
@@ -1073,7 +1062,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rice field', vi: 'điền - ruộng' },
         onyomi: ['デン'],
         kunyomi: ['た'],
-        components: ['田'],
+        parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1096,7 +1085,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'earth, soil', vi: 'thổ - đất' },
         onyomi: ['ド', 'ト'],
         kunyomi: ['つち'],
-        components: ['土'],
+        parts: [{ char: '土', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1127,7 +1116,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stone', vi: 'thạch - đá' },
         onyomi: ['セキ', 'シャク', 'コク'],
         kunyomi: ['いし'],
-        components: ['厂', '口'],
+        parts: [{ char: '石', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1165,7 +1154,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'study, learning', vi: 'học - học tập' },
         onyomi: ['ガク'],
         kunyomi: ['まな.ぶ'],
-        components: ['冖', '子'],
         parts: [
           { char: '冖', role: 'other' },
           { char: '子', role: 'radical' }
@@ -1199,7 +1187,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'school', vi: 'hiệu - trường học' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['木', '交'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '交', role: 'phonetic' }
@@ -1233,7 +1220,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'before, ahead', vi: 'tiên - trước, phía trước' },
         onyomi: ['セン'],
         kunyomi: ['さき'],
-        components: ['儿'],
+        parts: [{ char: '儿', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1263,7 +1250,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'life, be born', vi: 'sinh - sống, sinh' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['い.きる', 'う.まれる', 'なま'],
-        components: ['生'],
+        parts: [{ char: '生', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1307,7 +1294,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'year', vi: 'niên - năm' },
         onyomi: ['ネン'],
         kunyomi: ['とし'],
-        components: ['干'],
+        parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1334,7 +1321,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'writing, sentence', vi: 'văn - chữ viết' },
         onyomi: ['ブン', 'モン'],
         kunyomi: ['ふみ'],
-        components: ['文'],
+        parts: [{ char: '文', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1371,7 +1358,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'character, letter', vi: 'tự - chữ, ký tự' },
         onyomi: ['ジ'],
         kunyomi: ['あざ'],
-        components: ['宀', '子'],
         parts: [
           { char: '宀', role: 'semantic' },
           { char: '子', role: 'radical' }
@@ -1405,7 +1391,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'book; origin; main', vi: 'bản - sách; gốc' },
         onyomi: ['ホン'],
         kunyomi: ['もと'],
-        components: ['木', '一'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '一', role: 'other' }
@@ -1432,7 +1417,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to see', vi: 'kiến - nhìn, thấy' },
         onyomi: ['ケン'],
         kunyomi: ['み.る', 'み.える', 'み.せる'],
-        components: ['目', '儿'],
+        parts: [{ char: '見', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1462,7 +1447,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'spirit, energy, air', vi: 'khí - tinh thần, không khí' },
         onyomi: ['キ', 'ケ'],
         kunyomi: [],
-        components: ['气'],
+        parts: [{ char: '气', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1500,7 +1485,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flower', vi: 'hoa - bông hoa' },
         onyomi: ['カ'],
         kunyomi: ['はな'],
-        components: ['艹', '化'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '化', role: 'phonetic' }
@@ -1527,7 +1511,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grass', vi: 'thảo - cỏ' },
         onyomi: ['ソウ'],
         kunyomi: ['くさ'],
-        components: ['艹', '早'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '早', role: 'phonetic' }
@@ -1554,7 +1537,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bamboo', vi: 'trúc - tre' },
         onyomi: ['チク'],
         kunyomi: ['たけ'],
-        components: ['竹'],
+        parts: [{ char: '竹', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1577,7 +1560,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'woods, grove', vi: 'lâm - rừng nhỏ' },
         onyomi: ['リン'],
         kunyomi: ['はやし'],
-        components: ['木', '木'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '木', role: 'semantic' }
@@ -1611,7 +1593,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'forest', vi: 'sâm - rừng' },
         onyomi: ['シン'],
         kunyomi: ['もり'],
-        components: ['木', '木', '木'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '木', role: 'semantic' },
@@ -1639,7 +1620,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dog', vi: 'khuyển - chó' },
         onyomi: ['ケン'],
         kunyomi: ['いぬ'],
-        components: ['大', '丶'],
+        parts: [{ char: '犬', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1662,7 +1643,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'insect, bug', vi: 'trùng - côn trùng' },
         onyomi: ['チュウ'],
         kunyomi: ['むし'],
-        components: ['虫'],
+        parts: [{ char: '虫', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1685,7 +1666,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shellfish, shell', vi: 'bối - vỏ sò, con sò' },
         onyomi: [],
         kunyomi: ['かい'],
-        components: ['貝'],
+        parts: [{ char: '貝', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1701,7 +1682,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ball, jewel', vi: 'ngọc - viên bi, ngọc' },
         onyomi: ['ギョク'],
         kunyomi: ['たま'],
-        components: ['玉'],
+        parts: [{ char: '玉', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1724,7 +1705,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'gold, metal, money', vi: 'kim - vàng, kim loại, tiền' },
         onyomi: ['キン', 'コン'],
         kunyomi: ['かね', 'かな'],
-        components: ['金'],
+        parts: [{ char: '金', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1756,7 +1737,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rain', vi: 'vũ - mưa' },
         onyomi: ['ウ'],
         kunyomi: ['あめ', 'あま'],
-        components: ['雨'],
+        parts: [{ char: '雨', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1779,7 +1760,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'blue, green', vi: 'thanh - xanh' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['あお', 'あお.い'],
-        components: ['青'],
+        parts: [{ char: '青', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1802,7 +1783,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'red', vi: 'xích - đỏ' },
         onyomi: ['セキ', 'シャク'],
         kunyomi: ['あか', 'あか.い'],
-        components: ['赤'],
+        parts: [{ char: '赤', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1825,7 +1806,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'white', vi: 'bạch - trắng' },
         onyomi: ['ハク', 'ビャク'],
         kunyomi: ['しろ', 'しろ.い', 'しら'],
-        components: ['白'],
+        parts: [{ char: '白', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1849,7 +1830,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thousand', vi: 'thiên - nghìn' },
         onyomi: ['セン'],
         kunyomi: ['ち'],
-        components: ['丿', '十'],
         parts: [
           { char: '丿', role: 'other' },
           { char: '十', role: 'radical' }
@@ -1876,7 +1856,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hundred', vi: 'bách - trăm' },
         onyomi: ['ヒャク'],
         kunyomi: [],
-        components: ['一', '白'],
         parts: [
           { char: '一', role: 'other' },
           { char: '白', role: 'radical' }
@@ -1903,7 +1882,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'yen; circle, round', vi: 'viên - đồng yên; tròn' },
         onyomi: ['エン'],
         kunyomi: ['まる.い'],
-        components: ['冂'],
+        parts: [{ char: '冂', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1926,7 +1905,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'king', vi: 'vương - vua' },
         onyomi: ['オウ'],
         kunyomi: [],
-        components: [],
+        parts: [{ char: '王', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1949,7 +1928,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sound', vi: 'âm - âm thanh' },
         onyomi: ['オン', 'イン'],
         kunyomi: ['おと', 'ね'],
-        components: ['立', '日'],
+        parts: [{ char: '音', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -1972,7 +1951,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to stand; to set up, establish', vi: 'lập - đứng; dựng lên, thành lập' },
         onyomi: ['リツ', 'リュウ'],
         kunyomi: ['た.つ', 'た.てる'],
-        components: ['立'],
+        parts: [{ char: '立', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2010,7 +1989,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rest', vi: 'hưu - nghỉ ngơi' },
         onyomi: ['キュウ'],
         kunyomi: ['やす.む', 'やす.まる'],
-        components: ['亻', '木'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '木', role: 'semantic' }
@@ -2045,7 +2023,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thread', vi: 'ti - sợi chỉ, tơ' },
         onyomi: ['シ'],
         kunyomi: ['いと'],
-        components: [],
+        parts: [{ char: '糸', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2061,7 +2039,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'car, vehicle, wheel', vi: 'xa - xe' },
         onyomi: ['シャ'],
         kunyomi: ['くるま'],
-        components: [],
+        parts: [{ char: '車', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2092,7 +2070,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'go out, exit', vi: 'xuất - ra, đi ra' },
         onyomi: ['シュツ'],
         kunyomi: ['で.る', 'だ.す'],
-        components: [],
         parts: [{ char: '凵', role: 'radical' }],
         examples: [
           {
@@ -2130,7 +2107,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'correct, right', vi: 'chính - đúng, ngay thẳng' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['ただ.しい', 'まさ'],
-        components: ['一', '止'],
         parts: [
           { char: '一', role: 'other' },
           { char: '止', role: 'radical' }
@@ -2164,7 +2140,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'evening', vi: 'tịch - buổi tối, chiều tối' },
         onyomi: ['セキ'],
         kunyomi: ['ゆう'],
-        components: [],
+        parts: [{ char: '夕', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2191,7 +2167,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'early, fast', vi: 'tảo - sớm, nhanh' },
         onyomi: ['ソウ', 'サッ'],
         kunyomi: ['はや.い'],
-        components: ['日', '十'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '十', role: 'other' }
@@ -2225,7 +2200,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'village', vi: 'thôn - làng' },
         onyomi: ['ソン'],
         kunyomi: ['むら'],
-        components: ['木', '寸'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '寸', role: 'phonetic' }
@@ -2252,7 +2226,6 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'town', vi: 'đinh - phố, thị trấn' },
         onyomi: ['チョウ'],
         kunyomi: ['まち'],
-        components: ['田', '丁'],
         parts: [
           { char: '田', role: 'radical' },
           { char: '丁', role: 'phonetic' }
@@ -2279,7 +2252,7 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to enter, go in; to put in', vi: 'nhập - vào, đi vào; cho vào' },
         onyomi: ['ニュウ'],
         kunyomi: ['い.る', 'はい.る', 'い.れる'],
-        components: [],
+        parts: [{ char: '入', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2331,7 +2304,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'now', vi: 'kim - bây giờ' },
         onyomi: ['コン', 'キン'],
         kunyomi: ['いま'],
-        components: [],
         parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
@@ -2359,7 +2331,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'time, hour', vi: 'thời - thời gian, giờ' },
         onyomi: ['ジ'],
         kunyomi: ['とき'],
-        components: ['日', '寺'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '寺', role: 'phonetic' }
@@ -2393,7 +2364,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'morning', vi: 'triêu - buổi sáng' },
         onyomi: ['チョウ'],
         kunyomi: ['あさ'],
-        components: ['日', '月'],
         parts: [
           { char: '日', role: 'semantic' },
           { char: '月', role: 'radical' }
@@ -2420,7 +2390,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'noon, daytime', vi: 'trú - buổi trưa, ban ngày' },
         onyomi: ['チュウ'],
         kunyomi: ['ひる'],
-        components: [],
         parts: [{ char: '日', role: 'radical' }],
         examples: [
           {
@@ -2444,7 +2413,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'night', vi: 'dạ - ban đêm' },
         onyomi: ['ヤ'],
         kunyomi: ['よる', 'よ'],
-        components: [],
         parts: [{ char: '夕', role: 'radical' }],
         examples: [
           {
@@ -2475,7 +2443,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'week', vi: 'chu - tuần' },
         onyomi: ['シュウ'],
         kunyomi: [],
-        components: ['辶', '周'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '周', role: 'phonetic' }
@@ -2509,7 +2476,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'spring', vi: 'xuân - mùa xuân' },
         onyomi: ['シュン'],
         kunyomi: ['はる'],
-        components: [],
         parts: [{ char: '日', role: 'radical' }],
         examples: [
           {
@@ -2541,7 +2507,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'summer', vi: 'hạ - mùa hè' },
         onyomi: ['カ', 'ゲ'],
         kunyomi: ['なつ'],
-        components: [],
         parts: [{ char: '夊', role: 'radical' }],
         examples: [
           {
@@ -2566,7 +2531,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'autumn, fall', vi: 'thu - mùa thu' },
         onyomi: ['シュウ'],
         kunyomi: ['あき'],
-        components: ['禾', '火'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '火', role: 'semantic' }
@@ -2600,7 +2564,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'winter', vi: 'đông - mùa đông' },
         onyomi: ['トウ'],
         kunyomi: ['ふゆ'],
-        components: ['夂', '冫'],
         parts: [
           { char: '夂', role: 'other' },
           { char: '冫', role: 'radical' }
@@ -2636,7 +2599,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'father', vi: 'phụ - cha, bố' },
         onyomi: ['フ'],
         kunyomi: ['ちち'],
-        components: [],
+        parts: [{ char: '父', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2667,7 +2630,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mother', vi: 'mẫu - mẹ' },
         onyomi: ['ボ'],
         kunyomi: ['はは'],
-        components: [],
         parts: [{ char: '母', role: 'radical' }],
         examples: [
           {
@@ -2699,7 +2661,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'older brother', vi: 'huynh - anh trai' },
         onyomi: ['ケイ', 'キョウ'],
         kunyomi: ['あに'],
-        components: ['口', '儿'],
         parts: [
           { char: '口', role: 'other' },
           { char: '儿', role: 'radical' }
@@ -2734,7 +2695,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'younger brother', vi: 'đệ - em trai' },
         onyomi: ['ダイ', 'テイ'],
         kunyomi: ['おとうと'],
-        components: [],
         parts: [{ char: '弓', role: 'radical' }],
         examples: [
           {
@@ -2765,7 +2725,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'older sister', vi: 'tỷ - chị gái' },
         onyomi: ['シ'],
         kunyomi: ['あね'],
-        components: ['女', '市'],
         parts: [
           { char: '女', role: 'radical' },
           { char: '市', role: 'phonetic' }
@@ -2800,7 +2759,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'younger sister', vi: 'muội - em gái' },
         onyomi: ['マイ'],
         kunyomi: ['いもうと'],
-        components: ['女', '未'],
         parts: [
           { char: '女', role: 'radical' },
           { char: '未', role: 'phonetic' }
@@ -2827,7 +2785,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'friend', vi: 'hữu - bạn' },
         onyomi: ['ユウ'],
         kunyomi: ['とも'],
-        components: [],
         parts: [{ char: '又', role: 'radical' }],
         examples: [
           {
@@ -2851,7 +2808,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'parent; intimate', vi: 'thân - cha mẹ; thân thiết' },
         onyomi: ['シン'],
         kunyomi: ['おや', 'した.しい'],
-        components: ['立', '木', '見'],
         parts: [
           { char: '立', role: 'other' },
           { char: '木', role: 'other' },
@@ -2886,7 +2842,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'self', vi: 'tự - tự mình' },
         onyomi: ['ジ', 'シ'],
         kunyomi: ['みずか.ら'],
-        components: [],
+        parts: [{ char: '自', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -2917,7 +2873,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'house, home, family', vi: 'gia - nhà, gia đình' },
         onyomi: ['カ', 'ケ'],
         kunyomi: ['いえ', 'や'],
-        components: ['宀', '豕'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '豕', role: 'semantic' }
@@ -2959,7 +2914,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'east', vi: 'đông - hướng đông' },
         onyomi: ['トウ'],
         kunyomi: ['ひがし'],
-        components: ['木', '日'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '日', role: 'semantic' }
@@ -2993,7 +2947,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'west', vi: 'tây - hướng tây' },
         onyomi: ['セイ', 'サイ'],
         kunyomi: ['にし'],
-        components: [],
+        parts: [{ char: '西', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3016,7 +2970,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'south', vi: 'nam - hướng nam' },
         onyomi: ['ナン'],
         kunyomi: ['みなみ'],
-        components: [],
         parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
@@ -3047,7 +3000,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'north', vi: 'bắc - hướng bắc' },
         onyomi: ['ホク'],
         kunyomi: ['きた'],
-        components: [],
         parts: [{ char: '匕', role: 'radical' }],
         examples: [
           {
@@ -3079,7 +3031,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'front, before', vi: 'tiền - phía trước; trước' },
         onyomi: ['ゼン'],
         kunyomi: ['まえ'],
-        components: [],
         parts: [{ char: '刂', role: 'radical' }],
         examples: [
           {
@@ -3103,7 +3054,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'behind, after', vi: 'hậu - phía sau; sau' },
         onyomi: ['ゴ', 'コウ'],
         kunyomi: ['うし.ろ', 'あと', 'のち'],
-        components: ['彳', '幺', '夂'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '幺', role: 'other' },
@@ -3153,7 +3103,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'inside', vi: 'nội - bên trong' },
         onyomi: ['ナイ'],
         kunyomi: ['うち'],
-        components: ['冂', '人'],
         parts: [
           { char: '冂', role: 'radical' },
           { char: '人', role: 'other' }
@@ -3187,7 +3136,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'outside', vi: 'ngoại - bên ngoài' },
         onyomi: ['ガイ', 'ゲ'],
         kunyomi: ['そと', 'ほか', 'はず.す'],
-        components: ['夕', '卜'],
         parts: [
           { char: '夕', role: 'radical' },
           { char: '卜', role: 'other' }
@@ -3221,7 +3169,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'far, distant', vi: 'viễn - xa, xa xôi' },
         onyomi: ['エン'],
         kunyomi: ['とお.い'],
-        components: ['辶', '袁'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '袁', role: 'phonetic' }
@@ -3255,7 +3202,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'near, close', vi: 'cận - gần' },
         onyomi: ['キン'],
         kunyomi: ['ちか.い'],
-        components: ['辶', '斤'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '斤', role: 'phonetic' }
@@ -3297,7 +3243,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'say, word', vi: 'ngôn - nói, lời' },
         onyomi: ['ゲン', 'ゴン'],
         kunyomi: ['い.う', 'こと'],
-        components: [],
+        parts: [{ char: '言', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3327,7 +3273,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'talk, story', vi: 'thoại - nói chuyện; câu chuyện' },
         onyomi: ['ワ'],
         kunyomi: ['はな.す', 'はなし'],
-        components: ['言', '舌'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '舌', role: 'other' }
@@ -3363,7 +3308,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hear, ask', vi: 'văn - nghe; hỏi' },
         onyomi: ['ブン', 'モン'],
         kunyomi: ['き.く', 'き.こえる'],
-        components: ['門', '耳'],
         parts: [
           { char: '門', role: 'phonetic' },
           { char: '耳', role: 'radical' }
@@ -3397,7 +3341,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to read', vi: 'độc - đọc, đọc sách' },
         onyomi: ['ドク', 'トク'],
         kunyomi: ['よ.む'],
-        components: ['言', '売'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '売', role: 'phonetic' }
@@ -3431,7 +3374,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'write; book', vi: 'thư - viết; sách' },
         onyomi: ['ショ'],
         kunyomi: ['か.く'],
-        components: ['聿', '曰'],
         parts: [
           { char: '聿', role: 'other' },
           { char: '曰', role: 'radical' }
@@ -3465,7 +3407,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to buy, purchase', vi: 'mãi - mua, mua sắm' },
         onyomi: ['バイ'],
         kunyomi: ['か.う'],
-        components: ['罒', '貝'],
         parts: [
           { char: '罒', role: 'semantic' },
           { char: '貝', role: 'radical' }
@@ -3500,7 +3441,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to sell', vi: 'mại - bán, bán ra' },
         onyomi: ['バイ'],
         kunyomi: ['う.る'],
-        components: ['士'],
         parts: [{ char: '士', role: 'radical' }],
         examples: [
           {
@@ -3531,7 +3471,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'go; line', vi: 'hành - đi; hàng' },
         onyomi: ['コウ', 'ギョウ'],
         kunyomi: ['い.く', 'おこな.う'],
-        components: [],
+        parts: [{ char: '行', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3561,7 +3501,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'come', vi: 'lai - đến, tới' },
         onyomi: ['ライ'],
         kunyomi: ['く.る', 'きた.る'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -3592,7 +3531,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'return, go home', vi: 'quy - trở về' },
         onyomi: ['キ'],
         kunyomi: ['かえ.る'],
-        components: ['巾'],
         parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
@@ -3632,7 +3570,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'heart, mind', vi: 'tâm - trái tim, tấm lòng' },
         onyomi: ['シン'],
         kunyomi: ['こころ'],
-        components: [],
+        parts: [{ char: '心', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3663,7 +3601,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'body', vi: 'thể - cơ thể, thân thể' },
         onyomi: ['タイ', 'テイ'],
         kunyomi: ['からだ'],
-        components: ['亻', '木', '一'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '木', role: 'other' },
@@ -3698,7 +3635,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'head', vi: 'đầu - cái đầu' },
         onyomi: ['トウ', 'ズ'],
         kunyomi: ['あたま'],
-        components: ['豆', '頁'],
         parts: [
           { char: '豆', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -3736,7 +3672,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'face', vi: 'nhan - khuôn mặt' },
         onyomi: ['ガン'],
         kunyomi: ['かお'],
-        components: ['彦', '頁'],
         parts: [
           { char: '彦', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -3763,7 +3698,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'neck; head', vi: 'thủ - cái cổ; đầu' },
         onyomi: ['シュ'],
         kunyomi: ['くび'],
-        components: [],
+        parts: [{ char: '首', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3786,7 +3721,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hair, fur', vi: 'mao - lông, tóc' },
         onyomi: ['モウ'],
         kunyomi: ['け'],
-        components: [],
+        parts: [{ char: '毛', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -3809,7 +3744,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'voice', vi: 'thanh - giọng, tiếng' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['こえ'],
-        components: ['士'],
         parts: [{ char: '士', role: 'radical' }],
         examples: [
           {
@@ -3840,7 +3774,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'origin; health', vi: 'nguyên - gốc, nguồn; khỏe' },
         onyomi: ['ゲン', 'ガン'],
         kunyomi: ['もと'],
-        components: ['二', '儿'],
         parts: [
           { char: '二', role: 'other' },
           { char: '儿', role: 'radical' }
@@ -3867,7 +3800,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thick, fat, big', vi: 'thái - to, mập; đậm' },
         onyomi: ['タイ', 'タ'],
         kunyomi: ['ふと.い'],
-        components: ['大', '丶'],
         parts: [
           { char: '大', role: 'radical' },
           { char: '丶', role: 'other' }
@@ -3901,7 +3833,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'strong, powerful', vi: 'cường - mạnh, mạnh mẽ' },
         onyomi: ['キョウ', 'ゴウ'],
         kunyomi: ['つよ.い'],
-        components: ['弓', '虫'],
         parts: [
           { char: '弓', role: 'radical' },
           { char: '虫', role: 'other' }
@@ -3943,7 +3874,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ten thousand', vi: 'vạn - vạn (10.000)' },
         onyomi: ['マン', 'バン'],
         kunyomi: [],
-        components: ['一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -3967,7 +3897,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'half', vi: 'bán - một nửa' },
         onyomi: ['ハン'],
         kunyomi: ['なか.ば'],
-        components: ['十'],
         parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
@@ -3998,7 +3927,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'part, minute, understand', vi: 'phân - chia; phút; hiểu' },
         onyomi: ['ブン', 'フン', 'ブ'],
         kunyomi: ['わ.ける', 'わ.かる'],
-        components: ['八', '刀'],
         parts: [
           { char: '八', role: 'other' },
           { char: '刀', role: 'radical' }
@@ -4036,7 +3964,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'number, count', vi: 'số - con số; đếm' },
         onyomi: ['スウ', 'ス'],
         kunyomi: ['かず', 'かぞ.える'],
-        components: ['婁', '攵'],
         parts: [
           { char: '婁', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -4070,7 +3997,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'talent; age', vi: 'tài - tài năng; tuổi' },
         onyomi: ['サイ'],
         kunyomi: [],
-        components: ['手'],
         parts: [{ char: '手', role: 'radical' }],
         note: {
           en: 'Commonly written for age in place of 歳 (informal), e.g. 五才 = five years old.',
@@ -4105,7 +4031,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'times, turn, rotate', vi: 'hồi - lần; xoay' },
         onyomi: ['カイ', 'エ'],
         kunyomi: ['まわ.る', 'まわ.す'],
-        components: ['囗', '口'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '口', role: 'other' }
@@ -4139,7 +4064,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'number, turn, guard', vi: 'phiên - số thứ tự; phiên gác' },
         onyomi: ['バン'],
         kunyomi: [],
-        components: ['釆', '田'],
         parts: [
           { char: '釆', role: 'other' },
           { char: '田', role: 'radical' }
@@ -4173,7 +4097,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'what', vi: 'hà - cái gì, gì' },
         onyomi: ['カ'],
         kunyomi: ['なに', 'なん'],
-        components: ['亻', '可'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '可', role: 'phonetic' }
@@ -4207,7 +4130,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'every', vi: 'mỗi - mỗi, hằng' },
         onyomi: ['マイ'],
         kunyomi: [],
-        components: ['母'],
         parts: [{ char: '母', role: 'radical' }],
         examples: [
           {
@@ -4238,7 +4160,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'same, identical', vi: 'đồng - giống nhau, cùng' },
         onyomi: ['ドウ'],
         kunyomi: ['おな.じ'],
-        components: ['冂', '一', '口'],
         parts: [
           { char: '冂', role: 'other' },
           { char: '一', role: 'other' },
@@ -4281,7 +4202,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to teach, instruct', vi: 'giáo - dạy, giảng dạy' },
         onyomi: ['キョウ'],
         kunyomi: ['おし.える', 'おそ.わる'],
-        components: ['子', '攵'],
         parts: [
           { char: '子', role: 'other' },
           { char: '攵', role: 'radical' }
@@ -4316,7 +4236,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'subject, department', vi: 'khoa - môn học, khoa' },
         onyomi: ['カ'],
         kunyomi: [],
-        components: ['禾', '斗'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '斗', role: 'other' }
@@ -4350,7 +4269,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'calculate', vi: 'toán - tính toán' },
         onyomi: ['サン'],
         kunyomi: [],
-        components: ['竹', '目', '廾'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '目', role: 'other' },
@@ -4385,7 +4303,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'diagram, plan', vi: 'đồ - sơ đồ, bản vẽ' },
         onyomi: ['ズ', 'ト'],
         kunyomi: ['はか.る'],
-        components: ['囗'],
         parts: [{ char: '囗', role: 'radical' }],
         examples: [
           {
@@ -4417,7 +4334,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reason, logic; manage', vi: 'lý - lẽ, lý; quản lý' },
         onyomi: ['リ'],
         kunyomi: [],
-        components: ['王', '里'],
         parts: [
           { char: '王', role: 'radical' },
           { char: '里', role: 'phonetic' }
@@ -4451,7 +4367,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to think, consider', vi: 'khảo - suy nghĩ, cân nhắc' },
         onyomi: ['コウ'],
         kunyomi: ['かんが.える'],
-        components: ['耂'],
         parts: [{ char: '耂', role: 'radical' }],
         examples: [
           {
@@ -4482,7 +4397,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to know, be aware of', vi: 'tri - biết, hiểu biết' },
         onyomi: ['チ'],
         kunyomi: ['し.る'],
-        components: ['矢', '口'],
         parts: [
           { char: '矢', role: 'radical' },
           { char: '口', role: 'other' }
@@ -4516,7 +4430,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'make, create', vi: 'tác - làm, tạo' },
         onyomi: ['サク', 'サ'],
         kunyomi: ['つく.る'],
-        components: ['亻', '乍'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '乍', role: 'phonetic' }
@@ -4550,7 +4463,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'craft, construction', vi: 'công - thợ, chế tạo' },
         onyomi: ['コウ', 'ク'],
         kunyomi: [],
-        components: [],
+        parts: [{ char: '工', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -4583,7 +4496,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヨウ'],
         kunyomi: ['もち.いる'],
-        components: [],
+        parts: [{ char: '用', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -4621,7 +4534,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shop, store', vi: 'điếm - cửa hàng' },
         onyomi: ['テン'],
         kunyomi: ['みせ'],
-        components: ['广', '卜', '口'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '卜', role: 'other' },
@@ -4656,7 +4568,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'room', vi: 'thất - căn phòng' },
         onyomi: ['シツ'],
         kunyomi: ['むろ'],
-        components: ['宀', '至'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '至', role: 'phonetic' }
@@ -4690,7 +4601,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'place, spot', vi: 'trường - nơi chốn, chỗ' },
         onyomi: ['ジョウ'],
         kunyomi: ['ば'],
-        components: ['土', '日'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '日', role: 'other' }
@@ -4724,7 +4634,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'company; shrine', vi: 'xã - công ty; đền' },
         onyomi: ['シャ'],
         kunyomi: ['やしろ'],
-        components: ['礻', '土'],
         parts: [
           { char: '礻', role: 'radical' },
           { char: '土', role: 'phonetic' }
@@ -4758,7 +4667,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'meeting; to meet', vi: 'hội - gặp gỡ; hội họp' },
         onyomi: ['カイ', 'エ'],
         kunyomi: ['あ.う'],
-        components: ['人', '云'],
         parts: [
           { char: '人', role: 'radical' },
           { char: '云', role: 'other' }
@@ -4792,7 +4700,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'city; market', vi: 'thị - thành phố; chợ' },
         onyomi: ['シ'],
         kunyomi: ['いち'],
-        components: ['亠', '巾'],
         parts: [
           { char: '亠', role: 'other' },
           { char: '巾', role: 'radical' }
@@ -4826,7 +4733,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'capital', vi: 'kinh - kinh đô' },
         onyomi: ['キョウ', 'ケイ'],
         kunyomi: [],
-        components: ['亠', '口', '小'],
         parts: [
           { char: '亠', role: 'radical' },
           { char: '口', role: 'other' },
@@ -4861,7 +4767,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'country', vi: 'quốc - đất nước' },
         onyomi: ['コク'],
         kunyomi: ['くに'],
-        components: ['囗', '玉'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '玉', role: 'semantic' }
@@ -4895,7 +4800,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'garden, park', vi: 'viên - vườn, công viên' },
         onyomi: ['エン'],
         kunyomi: ['その'],
-        components: ['囗', '袁'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '袁', role: 'phonetic' }
@@ -4930,7 +4834,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'road, way', vi: 'đạo - con đường; đạo' },
         onyomi: ['ドウ', 'トウ'],
         kunyomi: ['みち'],
-        components: ['辶', '首'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '首', role: 'semantic' }
@@ -4972,7 +4875,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to run', vi: 'tẩu - chạy, chạy bộ' },
         onyomi: ['ソウ'],
         kunyomi: ['はし.る'],
-        components: [],
+        parts: [{ char: '走', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5002,7 +4905,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to walk', vi: 'bộ - đi bộ, bước đi' },
         onyomi: ['ホ', 'ブ'],
         kunyomi: ['ある.く', 'あゆ.む'],
-        components: ['止'],
         parts: [{ char: '止', role: 'radical' }],
         examples: [
           {
@@ -5033,7 +4935,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to stop', vi: 'chỉ - dừng, ngừng lại' },
         onyomi: ['シ'],
         kunyomi: ['と.まる', 'と.める'],
-        components: [],
+        parts: [{ char: '止', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5063,7 +4965,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pass through; commute', vi: 'thông - đi qua, thông suốt; đi lại' },
         onyomi: ['ツウ', 'ツ'],
         kunyomi: ['とお.る', 'かよ.う'],
-        components: ['辶', '甬'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '甬', role: 'phonetic' }
@@ -5100,7 +5001,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to pull; lead', vi: 'dẫn - kéo, lôi; dẫn dắt' },
         onyomi: ['イン'],
         kunyomi: ['ひ.く'],
-        components: ['弓', '丨'],
         parts: [
           { char: '弓', role: 'radical' },
           { char: '丨', role: 'other' }
@@ -5134,7 +5034,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to eat; food', vi: 'thực - ăn; thức ăn' },
         onyomi: ['ショク', 'ジキ'],
         kunyomi: ['た.べる', 'く.う'],
-        components: [],
+        parts: [{ char: '食', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5164,7 +5064,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rice; America (abbrev.)', vi: 'mễ - gạo; (viết tắt) nước Mỹ' },
         onyomi: ['ベイ', 'マイ'],
         kunyomi: ['こめ'],
-        components: [],
+        parts: [{ char: '米', role: 'radical' }],
         note: {
           en: 'Also abbreviates America (アメリカ), e.g. 米国 = the USA.',
           vi: 'Còn là chữ viết tắt của nước Mỹ (アメリカ), vd 米国 = Hoa Kỳ.'
@@ -5198,7 +5098,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'meat, flesh', vi: 'nhục - thịt' },
         onyomi: ['ニク'],
         kunyomi: [],
-        components: [],
+        parts: [{ char: '肉', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5221,7 +5121,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tea', vi: 'trà - trà, chè' },
         onyomi: ['チャ', 'サ'],
         kunyomi: [],
-        components: ['艹', '木'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '木', role: 'other' }
@@ -5255,7 +5154,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wheat, barley', vi: 'mạch - lúa mì, lúa mạch' },
         onyomi: ['バク'],
         kunyomi: ['むぎ'],
-        components: [],
+        parts: [{ char: '麦', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5286,7 +5185,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'snow', vi: 'tuyết - tuyết' },
         onyomi: ['セツ'],
         kunyomi: ['ゆき'],
-        components: ['雨', '彐'],
         parts: [
           { char: '雨', role: 'radical' },
           { char: '彐', role: 'other' }
@@ -5313,7 +5211,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cloud', vi: 'vân - mây, đám mây' },
         onyomi: ['ウン'],
         kunyomi: ['くも'],
-        components: ['雨', '云'],
         parts: [
           { char: '雨', role: 'radical' },
           { char: '云', role: 'phonetic' }
@@ -5348,7 +5245,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wind; style', vi: 'phong - gió; phong cách' },
         onyomi: ['フウ', 'フ'],
         kunyomi: ['かぜ', 'かざ'],
-        components: ['几', '虫'],
+        parts: [{ char: '風', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5378,7 +5275,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'electricity', vi: 'điện - điện; sấm sét' },
         onyomi: ['デン'],
         kunyomi: [],
-        components: ['雨', '电'],
         parts: [
           { char: '雨', role: 'radical' },
           { char: '电', role: 'other' }
@@ -5412,7 +5308,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'star', vi: 'tinh - ngôi sao' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['ほし'],
-        components: ['日', '生'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '生', role: 'phonetic' }
@@ -5439,7 +5334,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'clear up, fine weather', vi: 'tình - trời quang, nắng ráo' },
         onyomi: ['セイ'],
         kunyomi: ['は.れる'],
-        components: ['日', '青'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '青', role: 'phonetic' }
@@ -5474,7 +5368,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'light; to shine', vi: 'quang - ánh sáng; toả sáng' },
         onyomi: ['コウ'],
         kunyomi: ['ひか.る', 'ひかり'],
-        components: ['儿'],
         parts: [{ char: '儿', role: 'radical' }],
         examples: [
           {
@@ -5506,7 +5399,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sea, ocean', vi: 'hải - biển' },
         onyomi: ['カイ'],
         kunyomi: ['うみ'],
-        components: ['氵', '毎'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '毎', role: 'phonetic' }
@@ -5541,7 +5433,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pond', vi: 'trì - cái ao' },
         onyomi: ['チ'],
         kunyomi: ['いけ'],
-        components: ['氵', '也'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '也', role: 'phonetic' }
@@ -5568,7 +5459,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'valley', vi: 'cốc - thung lũng, hẻm núi' },
         onyomi: ['コク'],
         kunyomi: ['たに'],
-        components: [],
+        parts: [{ char: '谷', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5599,7 +5490,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bird', vi: 'điểu - con chim' },
         onyomi: ['チョウ'],
         kunyomi: ['とり'],
-        components: [],
+        parts: [{ char: '鳥', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5622,7 +5513,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fish', vi: 'ngư - con cá' },
         onyomi: ['ギョ'],
         kunyomi: ['さかな', 'うお'],
-        components: [],
+        parts: [{ char: '魚', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5652,7 +5543,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'horse', vi: 'mã - con ngựa' },
         onyomi: ['バ'],
         kunyomi: ['うま', 'ま'],
-        components: [],
+        parts: [{ char: '馬', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5675,7 +5566,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cow, cattle', vi: 'ngưu - con bò, trâu' },
         onyomi: ['ギュウ'],
         kunyomi: ['うし'],
-        components: [],
+        parts: [{ char: '牛', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5705,7 +5596,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'feather, wing', vi: 'vũ - lông vũ; cánh' },
         onyomi: ['ウ'],
         kunyomi: ['は', 'はね'],
-        components: [],
+        parts: [{ char: '羽', role: 'radical' }],
         note: {
           en: 'Also the counter for birds and rabbits (一羽, 二羽).',
           vi: 'Còn là lượng từ đếm chim và thỏ (一羽, 二羽).'
@@ -5739,7 +5630,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'horn; corner, angle', vi: 'giác - sừng; góc, góc cạnh' },
         onyomi: ['カク'],
         kunyomi: ['つの', 'かど'],
-        components: [],
+        parts: [{ char: '角', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5769,7 +5660,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'chirp, cry; to sound', vi: 'minh - kêu, hót; vang lên' },
         onyomi: ['メイ'],
         kunyomi: ['な.く', 'な.る'],
-        components: ['口', '鳥'],
         parts: [
           { char: '口', role: 'semantic' },
           { char: '鳥', role: 'radical' }
@@ -5804,7 +5694,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'field, plain; the wild', vi: 'dã - cánh đồng, đồng hoang' },
         onyomi: ['ヤ'],
         kunyomi: ['の'],
-        components: ['里', '予'],
         parts: [
           { char: '里', role: 'radical' },
           { char: '予', role: 'phonetic' }
@@ -5838,7 +5727,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'village; ri (old distance unit)', vi: 'lý - làng quê; dặm (ri)' },
         onyomi: ['リ'],
         kunyomi: ['さと'],
-        components: ['田', '土'],
+        parts: [{ char: '里', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5868,7 +5757,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rock, boulder', vi: 'nham - tảng đá, đá lớn' },
         onyomi: ['ガン'],
         kunyomi: ['いわ'],
-        components: ['山', '石'],
         parts: [
           { char: '山', role: 'radical' },
           { char: '石', role: 'semantic' }
@@ -5903,7 +5791,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tall, high; expensive', vi: 'cao - cao; đắt' },
         onyomi: ['コウ'],
         kunyomi: ['たか.い', 'たか'],
-        components: [],
+        parts: [{ char: '高', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -5933,7 +5821,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'many, much', vi: 'đa - nhiều' },
         onyomi: ['タ'],
         kunyomi: ['おお.い'],
-        components: ['夕', '夕'],
         parts: [
           { char: '夕', role: 'radical' },
           { char: '夕', role: 'other' }
@@ -5967,7 +5854,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'few, little', vi: 'thiểu - ít; một chút' },
         onyomi: ['ショウ'],
         kunyomi: ['すく.ない', 'すこ.し'],
-        components: ['小', '丿'],
         parts: [
           { char: '小', role: 'radical' },
           { char: '丿', role: 'other' }
@@ -6002,7 +5888,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'weak, frail', vi: 'nhược - yếu' },
         onyomi: ['ジャク'],
         kunyomi: ['よわ.い'],
-        components: ['弓', '弓'],
         parts: [
           { char: '弓', role: 'radical' },
           { char: '弓', role: 'other' }
@@ -6036,7 +5921,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bright, clear', vi: 'minh - sáng, sáng sủa; rõ ràng' },
         onyomi: ['メイ', 'ミョウ'],
         kunyomi: ['あか.るい', 'あ.ける'],
-        components: ['日', '月'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '月', role: 'semantic' }
@@ -6072,7 +5956,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'old, ancient', vi: 'cổ - cũ, xưa' },
         onyomi: ['コ'],
         kunyomi: ['ふる.い'],
-        components: ['十', '口'],
         parts: [
           { char: '十', role: 'other' },
           { char: '口', role: 'radical' }
@@ -6106,7 +5989,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'new', vi: 'tân - mới' },
         onyomi: ['シン'],
         kunyomi: ['あたら.しい', 'あら.た'],
-        components: ['立', '木', '斤'],
         parts: [
           { char: '立', role: 'other' },
           { char: '木', role: 'other' },
@@ -6142,7 +6024,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'long; chief, head', vi: 'trường/trưởng - dài; người đứng đầu' },
         onyomi: ['チョウ'],
         kunyomi: ['なが.い'],
-        components: [],
+        parts: [{ char: '長', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -6172,7 +6054,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wide, spacious', vi: 'quảng - rộng, rộng rãi' },
         onyomi: ['コウ'],
         kunyomi: ['ひろ.い'],
-        components: ['广', '厶'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '厶', role: 'other' }
@@ -6206,7 +6087,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thin, fine; detailed', vi: 'tế - nhỏ, mảnh; chi tiết' },
         onyomi: ['サイ'],
         kunyomi: ['ほそ.い', 'こま.かい'],
-        components: ['糸', '田'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '田', role: 'phonetic' }
@@ -6250,7 +6130,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'language; word', vi: 'ngữ - ngôn ngữ; lời, từ' },
         onyomi: ['ゴ'],
         kunyomi: ['かた.る'],
-        components: ['言', '口'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '口', role: 'other' }
@@ -6285,7 +6164,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to record, to write down', vi: 'ký - ghi chép, ghi lại' },
         onyomi: ['キ'],
         kunyomi: ['しる.す'],
-        components: ['言', '己'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '己', role: 'phonetic' }
@@ -6319,7 +6197,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to measure, to count; plan', vi: 'kế - đo, tính; kế hoạch' },
         onyomi: ['ケイ'],
         kunyomi: ['はか.る'],
-        components: ['言', '十'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '十', role: 'other' }
@@ -6353,7 +6230,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'picture, drawing; stroke', vi: 'họa/hoạch - tranh vẽ; nét (chữ)' },
         onyomi: ['ガ', 'カク'],
         kunyomi: [],
-        components: ['田'],
         parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
@@ -6384,7 +6260,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shape, form', vi: 'hình - hình dạng, hình thức' },
         onyomi: ['ケイ', 'ギョウ'],
         kunyomi: ['かた', 'かたち'],
-        components: ['开', '彡'],
         parts: [
           { char: '开', role: 'phonetic' },
           { char: '彡', role: 'radical' }
@@ -6419,7 +6294,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'point, dot; score', vi: 'điểm - chấm, điểm; điểm số' },
         onyomi: ['テン'],
         kunyomi: [],
-        components: ['占', '灬'],
         parts: [
           { char: '占', role: 'phonetic' },
           { char: '灬', role: 'radical' }
@@ -6446,7 +6320,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'straight; direct; to fix', vi: 'trực - thẳng; trực tiếp; sửa lại' },
         onyomi: ['チョク', 'ジキ'],
         kunyomi: ['なお.す', 'なお.る'],
-        components: ['十', '目'],
         parts: [
           { char: '十', role: 'other' },
           { char: '目', role: 'radical' }
@@ -6487,7 +6360,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'answer, reply', vi: 'đáp - trả lời; câu trả lời' },
         onyomi: ['トウ'],
         kunyomi: ['こた.える', 'こた.え'],
-        components: ['竹', '口'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '口', role: 'other' }
@@ -6522,7 +6394,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to think, to feel', vi: 'tư - nghĩ, suy nghĩ' },
         onyomi: ['シ'],
         kunyomi: ['おも.う'],
-        components: ['田', '心'],
         parts: [
           { char: '田', role: 'other' },
           { char: '心', role: 'radical' }
@@ -6557,7 +6428,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'paper', vi: 'chỉ - giấy' },
         onyomi: ['シ'],
         kunyomi: ['かみ'],
-        components: ['糸', '氏'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '氏', role: 'phonetic' }
@@ -6600,7 +6470,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'gate', vi: 'môn - cổng, cửa lớn' },
         onyomi: ['モン'],
         kunyomi: ['かど'],
-        components: [],
+        parts: [{ char: '門', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -6623,7 +6493,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'door; household', vi: 'hộ - cửa (một cánh); hộ gia đình' },
         onyomi: ['コ'],
         kunyomi: ['と'],
-        components: [],
+        parts: [{ char: '戸', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -6646,7 +6516,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stand, platform', vi: 'đài - bệ, bục; (đếm máy móc, xe)' },
         onyomi: ['ダイ', 'タイ'],
         kunyomi: [],
-        components: ['厶', '口'],
         parts: [
           { char: '厶', role: 'other' },
           { char: '口', role: 'radical' }
@@ -6677,7 +6546,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ground, land; place', vi: 'địa - đất, mặt đất; nơi chốn' },
         onyomi: ['チ', 'ジ'],
         kunyomi: [],
-        components: ['土', '也'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '也', role: 'phonetic' }
@@ -6711,7 +6579,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'plain, field; origin', vi: 'nguyên - cánh đồng, đồng bằng; nguồn gốc' },
         onyomi: ['ゲン'],
         kunyomi: ['はら'],
-        components: ['厂', '白', '小'],
         parts: [
           { char: '厂', role: 'radical' },
           { char: '白', role: 'other' },
@@ -6739,7 +6606,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'direction; way; person (polite)', vi: 'phương - hướng; cách; vị (người)' },
         onyomi: ['ホウ'],
         kunyomi: ['かた'],
-        components: [],
+        parts: [{ char: '方', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -6769,7 +6636,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'public, official', vi: 'công - công cộng; chung' },
         onyomi: ['コウ'],
         kunyomi: ['おおやけ'],
-        components: ['八', '厶'],
         parts: [
           { char: '八', role: 'radical' },
           { char: '厶', role: 'other' }
@@ -6803,7 +6669,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fit, to match; to join', vi: 'hợp - hợp, khớp; kết hợp' },
         onyomi: ['ゴウ', 'ガッ'],
         kunyomi: ['あ.う', 'あ.わせる'],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -6837,7 +6702,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['コウ'],
         kunyomi: ['まじ.わる', 'ま.ぜる'],
-        components: ['亠'],
         parts: [{ char: '亠', role: 'radical' }],
         examples: [
           {
@@ -6869,7 +6733,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'day of the week', vi: 'diệu - thứ (trong tuần)' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: ['日', '翟'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '翟', role: 'phonetic' }
@@ -6914,7 +6777,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'song; to sing', vi: 'ca - bài hát; hát' },
         onyomi: ['カ'],
         kunyomi: ['うた', 'うた.う'],
-        components: ['哥', '欠'],
         parts: [
           { char: '哥', role: 'phonetic' },
           { char: '欠', role: 'radical' }
@@ -6941,7 +6803,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fun, comfort; music', vi: 'lạc/nhạc - vui, thoải mái; âm nhạc' },
         onyomi: ['ガク', 'ラク'],
         kunyomi: ['たの.しい'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -6973,7 +6834,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lively, active; life', vi: 'hoạt - sống động, hoạt động' },
         onyomi: ['カツ'],
         kunyomi: [],
-        components: ['氵', '舌'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '舌', role: 'phonetic' }
@@ -7007,7 +6867,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'color, hue', vi: 'sắc - màu sắc' },
         onyomi: ['ショク', 'シキ'],
         kunyomi: ['いろ'],
-        components: [],
+        parts: [{ char: '色', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7030,7 +6890,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'yellow', vi: 'hoàng - màu vàng' },
         onyomi: ['コウ', 'オウ'],
         kunyomi: ['き', 'こ'],
-        components: [],
+        parts: [{ char: '黄', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7053,7 +6913,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'black', vi: 'hắc - màu đen' },
         onyomi: ['コク'],
         kunyomi: ['くろ', 'くろ.い'],
-        components: [],
+        parts: [{ char: '黒', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7076,7 +6936,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'round, circle; pill', vi: 'hoàn - tròn; viên (thuốc)' },
         onyomi: ['ガン'],
         kunyomi: ['まる', 'まる.い'],
-        components: ['九', '丶'],
         parts: [
           { char: '九', role: 'other' },
           { char: '丶', role: 'radical' }
@@ -7103,7 +6962,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sword, blade', vi: 'đao - dao, kiếm' },
         onyomi: ['トウ'],
         kunyomi: ['かたな'],
-        components: [],
+        parts: [{ char: '刀', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7134,7 +6993,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bow (for archery)', vi: 'cung - cái cung (bắn tên)' },
         onyomi: ['キュウ'],
         kunyomi: ['ゆみ'],
-        components: [],
+        parts: [{ char: '弓', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7157,7 +7016,7 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'arrow', vi: 'thỉ - mũi tên' },
         onyomi: ['シ'],
         kunyomi: ['や'],
-        components: [],
+        parts: [{ char: '矢', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -7191,7 +7050,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カン', 'ケン'],
         kunyomi: ['あいだ', 'ま'],
-        components: ['門', '日'],
         parts: [
           { char: '門', role: 'radical' },
           { char: '日', role: 'other' }
@@ -7225,7 +7083,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'steam, vapor', vi: 'khí - hơi nước' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['氵', '气'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '气', role: 'phonetic' }
@@ -7259,7 +7116,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'noon, midday', vi: 'ngọ - giữa trưa' },
         onyomi: ['ゴ'],
         kunyomi: [],
-        components: ['十'],
         parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
@@ -7290,7 +7146,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'temple', vi: 'tự - ngôi chùa' },
         onyomi: ['ジ'],
         kunyomi: ['てら'],
-        components: ['土', '寸'],
         parts: [
           { char: '土', role: 'other' },
           { char: '寸', role: 'radical' }
@@ -7325,7 +7180,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to cut; earnest, important', vi: 'thiết - cắt; tha thiết, quan trọng' },
         onyomi: ['セツ', 'サイ'],
         kunyomi: ['き.る', 'き.れる'],
-        components: ['七', '刀'],
         parts: [
           { char: '七', role: 'phonetic' },
           { char: '刀', role: 'radical' }
@@ -7359,7 +7213,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ship, boat', vi: 'thuyền - tàu, thuyền' },
         onyomi: ['セン'],
         kunyomi: ['ふね', 'ふな'],
-        components: ['舟', '八', '口'],
         parts: [
           { char: '舟', role: 'radical' },
           { char: '八', role: 'other' },
@@ -7395,7 +7248,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'line, wire; route', vi: 'tuyến - đường kẻ, dây; tuyến' },
         onyomi: ['セン'],
         kunyomi: [],
-        components: ['糸', '白', '水'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '白', role: 'other' },
@@ -7430,7 +7282,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to assemble; group, class', vi: 'tổ - kết thành nhóm; tổ, nhóm, lớp' },
         onyomi: ['ソ'],
         kunyomi: ['く.む', 'くみ'],
-        components: ['糸', '且'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '且', role: 'phonetic' }
@@ -7469,7 +7320,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['トウ'],
         kunyomi: ['あ.たる', 'あ.てる'],
-        components: ['彐'],
         parts: [{ char: '彐', role: 'radical' }],
         examples: [
           {
@@ -7501,7 +7351,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'picture, drawing, painting', vi: 'hội/họa - bức tranh, tranh vẽ' },
         onyomi: ['カイ', 'エ'],
         kunyomi: [],
-        components: ['糸', '会'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '会', role: 'phonetic' }
@@ -7543,7 +7392,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bad, evil', vi: 'ác - xấu, tệ; ác' },
         onyomi: ['アク', 'オ'],
         kunyomi: ['わる.い'],
-        components: ['亜', '心'],
         parts: [
           { char: '亜', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -7577,7 +7425,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'peaceful, safe; cheap', vi: 'an - yên ổn, an toàn; rẻ' },
         onyomi: ['アン'],
         kunyomi: ['やす.い'],
-        components: ['宀', '女'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '女', role: 'other' }
@@ -7611,7 +7458,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dark, gloomy', vi: 'ám - tối, u tối' },
         onyomi: ['アン'],
         kunyomi: ['くら.い'],
-        components: ['日', '音'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '音', role: 'phonetic' }
@@ -7645,7 +7491,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'happiness, good fortune', vi: 'hạnh - hạnh phúc, may mắn' },
         onyomi: ['コウ'],
         kunyomi: ['しあわ.せ', 'さいわ.い'],
-        components: ['干'],
         parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
@@ -7676,7 +7521,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sad, sorrowful', vi: 'bi - buồn, bi thương' },
         onyomi: ['ヒ'],
         kunyomi: ['かな.しい'],
-        components: ['非', '心'],
         parts: [
           { char: '非', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -7712,7 +7556,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mind, intention; meaning', vi: 'ý - ý nghĩ, ý định; ý nghĩa' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: ['音', '心'],
         parts: [
           { char: '音', role: 'semantic' },
           { char: '心', role: 'radical' }
@@ -7746,7 +7589,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to feel; feeling, emotion', vi: 'cảm - cảm giác, cảm nhận' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['咸', '心'],
         parts: [
           { char: '咸', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -7781,7 +7623,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thought, idea; to imagine', vi: 'tưởng - suy nghĩ, ý tưởng; tưởng tượng' },
         onyomi: ['ソウ', 'ソ'],
         kunyomi: [],
-        components: ['相', '心'],
         parts: [
           { char: '相', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -7818,7 +7659,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ソウ', 'ショウ'],
         kunyomi: ['あい'],
-        components: ['木', '目'],
         parts: [
           { char: '木', role: 'other' },
           { char: '目', role: 'radical' }
@@ -7852,7 +7692,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'breath; son', vi: 'tức - hơi thở; con trai' },
         onyomi: ['ソク'],
         kunyomi: ['いき'],
-        components: ['自', '心'],
         parts: [
           { char: '自', role: 'semantic' },
           { char: '心', role: 'radical' }
@@ -7894,7 +7733,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'medicine; doctor', vi: 'y - y học, thầy thuốc' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: ['匸', '矢'],
         parts: [
           { char: '匸', role: 'radical' },
           { char: '矢', role: 'other' }
@@ -7929,7 +7767,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'illness, disease', vi: 'bệnh - bệnh tật, ốm' },
         onyomi: ['ビョウ'],
         kunyomi: ['や.む', 'やまい'],
-        components: ['疒', '丙'],
         parts: [
           { char: '疒', role: 'radical' },
           { char: '丙', role: 'phonetic' }
@@ -7963,7 +7800,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'death; to die', vi: 'tử - chết, cái chết' },
         onyomi: ['シ'],
         kunyomi: ['し.ぬ'],
-        components: ['歹', '匕'],
         parts: [
           { char: '歹', role: 'radical' },
           { char: '匕', role: 'other' }
@@ -7997,7 +7833,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'blood', vi: 'huyết - máu' },
         onyomi: ['ケツ'],
         kunyomi: ['ち'],
-        components: [],
+        parts: [{ char: '血', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8027,7 +7863,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'medicine, drug', vi: 'dược - thuốc' },
         onyomi: ['ヤク'],
         kunyomi: ['くすり'],
-        components: ['艹', '楽'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '楽', role: 'phonetic' }
@@ -8061,7 +7896,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nose', vi: 'tị - cái mũi' },
         onyomi: ['ビ'],
         kunyomi: ['はな'],
-        components: [],
+        parts: [{ char: '鼻', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8084,7 +7919,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tooth', vi: 'xỉ - răng' },
         onyomi: ['シ'],
         kunyomi: ['は'],
-        components: [],
+        parts: [{ char: '歯', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8108,7 +7943,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'finger; to point', vi: 'chỉ - ngón tay; chỉ, trỏ' },
         onyomi: ['シ'],
         kunyomi: ['ゆび', 'さ.す'],
-        components: ['扌', '旨'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '旨', role: 'phonetic' }
@@ -8142,7 +7976,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'skin, hide; peel', vi: 'bì - da; vỏ' },
         onyomi: ['ヒ'],
         kunyomi: ['かわ'],
-        components: [],
+        parts: [{ char: '皮', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8172,7 +8006,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'body; oneself', vi: 'thân - thân thể; bản thân' },
         onyomi: ['シン'],
         kunyomi: ['み'],
-        components: [],
+        parts: [{ char: '身', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -8203,7 +8037,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'effort, diligence', vi: 'miễn - cố gắng, chăm chỉ' },
         onyomi: ['ベン'],
         kunyomi: [],
-        components: ['免', '力'],
         parts: [
           { char: '免', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -8230,7 +8063,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to learn, to practice', vi: 'tập - học, luyện tập' },
         onyomi: ['シュウ'],
         kunyomi: ['なら.う'],
-        components: ['羽', '白'],
         parts: [
           { char: '羽', role: 'radical' },
           { char: '白', role: 'other' }
@@ -8264,7 +8096,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to research, to investigate', vi: 'cứu - nghiên cứu, tìm tòi' },
         onyomi: ['キュウ'],
         kunyomi: ['きわ.める'],
-        components: ['穴', '九'],
         parts: [
           { char: '穴', role: 'radical' },
           { char: '九', role: 'phonetic' }
@@ -8295,7 +8126,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to polish, to grind; research', vi: 'nghiên - mài; nghiên cứu' },
         onyomi: ['ケン'],
         kunyomi: ['と.ぐ'],
-        components: ['石', '开'],
         parts: [
           { char: '石', role: 'radical' },
           { char: '开', role: 'phonetic' }
@@ -8329,7 +8159,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rank, grade; class', vi: 'cấp - cấp bậc; lớp học' },
         onyomi: ['キュウ'],
         kunyomi: [],
-        components: ['糸', '及'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '及', role: 'phonetic' }
@@ -8363,7 +8192,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'topic, title; problem', vi: 'đề - đề tài, đề mục; bài toán' },
         onyomi: ['ダイ'],
         kunyomi: [],
-        components: ['是', '頁'],
         parts: [
           { char: '是', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -8397,7 +8225,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to ask; question', vi: 'vấn - hỏi; câu hỏi' },
         onyomi: ['モン'],
         kunyomi: ['と.う', 'と.い'],
-        components: ['門', '口'],
         parts: [
           { char: '門', role: 'phonetic' },
           { char: '口', role: 'radical' }
@@ -8431,7 +8258,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'chapter; badge, emblem', vi: 'chương - chương (sách); huy hiệu' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: ['立', '早'],
         parts: [
           { char: '立', role: 'radical' },
           { char: '早', role: 'other' }
@@ -8458,7 +8284,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'poem, poetry', vi: 'thi - thơ, thi ca' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['言', '寺'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '寺', role: 'phonetic' }
@@ -8488,7 +8313,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ギョウ', 'ゴウ'],
         kunyomi: ['わざ'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -8527,7 +8351,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to carry, to transport; luck', vi: 'vận - vận chuyển, chở; vận may' },
         onyomi: ['ウン'],
         kunyomi: ['はこ.ぶ'],
-        components: ['辶', '軍'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '軍', role: 'phonetic' }
@@ -8561,7 +8384,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to move', vi: 'động - chuyển động, cử động' },
         onyomi: ['ドウ'],
         kunyomi: ['うご.く'],
-        components: ['重', '力'],
         parts: [
           { char: '重', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -8595,7 +8417,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to turn, to roll; to tumble', vi: 'chuyển - quay, lăn; ngã' },
         onyomi: ['テン'],
         kunyomi: ['ころ.ぶ', 'ころ.がる'],
-        components: ['車', '云'],
         parts: [
           { char: '車', role: 'radical' },
           { char: '云', role: 'phonetic' }
@@ -8630,7 +8451,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to advance, to progress', vi: 'tiến - tiến lên, tiến bộ' },
         onyomi: ['シン'],
         kunyomi: ['すす.む'],
-        components: ['辶', '隹'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '隹', role: 'phonetic' }
@@ -8664,7 +8484,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to chase, to pursue', vi: 'truy - đuổi theo, truy đuổi' },
         onyomi: ['ツイ'],
         kunyomi: ['お.う'],
-        components: ['辶'],
         parts: [{ char: '辶', role: 'radical' }],
         examples: [
           {
@@ -8697,7 +8516,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to send; to see off', vi: 'tống - gửi, đưa tiễn' },
         onyomi: ['ソウ'],
         kunyomi: ['おく.る'],
-        components: ['辶'],
         parts: [{ char: '辶', role: 'radical' }],
         examples: [
           {
@@ -8729,7 +8547,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to return, to give back', vi: 'phản - trả lại, hoàn lại' },
         onyomi: ['ヘン'],
         kunyomi: ['かえ.す', 'かえ.る'],
-        components: ['辶', '反'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -8763,7 +8580,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to play, to enjoy oneself', vi: 'du - chơi, vui chơi; đi dạo' },
         onyomi: ['ユウ'],
         kunyomi: ['あそ.ぶ'],
-        components: ['辶', '方', '子'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '方', role: 'other' },
@@ -8799,7 +8615,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to swim', vi: 'vịnh - bơi, bơi lội' },
         onyomi: ['エイ'],
         kunyomi: ['およ.ぐ'],
-        components: ['氵', '永'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '永', role: 'phonetic' }
@@ -8834,7 +8649,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'travel, journey', vi: 'lữ - đi du lịch, hành trình' },
         onyomi: ['リョ'],
         kunyomi: ['たび'],
-        components: ['方'],
         parts: [{ char: '方', role: 'radical' }],
         examples: [
           {
@@ -8873,7 +8687,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'warm; temperature', vi: 'ôn - ấm, ấm áp; nhiệt độ' },
         onyomi: ['オン'],
         kunyomi: ['あたた.かい'],
-        components: ['氵', '日', '皿'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '日', role: 'other' },
@@ -8909,7 +8722,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hot water', vi: 'thang - nước nóng' },
         onyomi: ['トウ'],
         kunyomi: ['ゆ'],
-        components: ['氵', '日'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '日', role: 'other' }
@@ -8936,7 +8748,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wave', vi: 'ba - sóng' },
         onyomi: ['ハ'],
         kunyomi: ['なみ'],
-        components: ['氵', '皮'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '皮', role: 'phonetic' }
@@ -8963,7 +8774,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ice', vi: 'băng - nước đá, băng' },
         onyomi: ['ヒョウ'],
         kunyomi: ['こおり', 'ひ'],
-        components: ['水', '丶'],
         parts: [
           { char: '水', role: 'radical' },
           { char: '丶', role: 'other' }
@@ -8990,7 +8800,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lake', vi: 'hồ - cái hồ' },
         onyomi: ['コ'],
         kunyomi: ['みずうみ'],
-        components: ['氵', '胡'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '胡', role: 'phonetic' }
@@ -9024,7 +8833,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'harbor, port', vi: 'cảng - bến cảng' },
         onyomi: ['コウ'],
         kunyomi: ['みなと'],
-        components: ['氵', '巷'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '巷', role: 'phonetic' }
@@ -9051,7 +8859,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'island', vi: 'đảo - hòn đảo' },
         onyomi: ['トウ'],
         kunyomi: ['しま'],
-        components: ['山'],
         parts: [{ char: '山', role: 'radical' }],
         examples: [
           {
@@ -9075,7 +8882,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shore, coast, bank', vi: 'ngạn - bờ (sông, biển)' },
         onyomi: ['ガン'],
         kunyomi: ['きし'],
-        components: ['山', '厂'],
         parts: [
           { char: '山', role: 'radical' },
           { char: '厂', role: 'other' }
@@ -9109,7 +8915,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'charcoal, coal', vi: 'thán - than, than củi' },
         onyomi: ['タン'],
         kunyomi: ['すみ'],
-        components: ['山', '火'],
         parts: [
           { char: '山', role: 'other' },
           { char: '火', role: 'radical' }
@@ -9136,7 +8941,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'oil', vi: 'du - dầu' },
         onyomi: ['ユ'],
         kunyomi: ['あぶら'],
-        components: ['氵', '由'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '由', role: 'phonetic' }
@@ -9171,7 +8975,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to drink', vi: 'ẩm - uống' },
         onyomi: ['イン'],
         kunyomi: ['の.む'],
-        components: ['食', '欠'],
         parts: [
           { char: '食', role: 'radical' },
           { char: '欠', role: 'semantic' }
@@ -9206,7 +9009,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sake, alcohol', vi: 'tửu - rượu' },
         onyomi: ['シュ'],
         kunyomi: ['さけ', 'さか'],
-        components: ['氵', '酉'],
         parts: [
           { char: '氵', role: 'other' },
           { char: '酉', role: 'radical' }
@@ -9241,7 +9043,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'taste, flavor', vi: 'vị - vị, hương vị' },
         onyomi: ['ミ'],
         kunyomi: ['あじ', 'あじ.わう'],
-        components: ['口', '未'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '未', role: 'phonetic' }
@@ -9275,7 +9076,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'goods, article; quality', vi: 'phẩm - hàng hóa, món đồ; phẩm chất' },
         onyomi: ['ヒン'],
         kunyomi: ['しな'],
-        components: ['口', '口', '口'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '口', role: 'other' },
@@ -9313,7 +9113,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['グ'],
         kunyomi: [],
-        components: ['目', '八'],
         parts: [
           { char: '目', role: 'other' },
           { char: '八', role: 'radical' }
@@ -9347,7 +9146,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'luggage, cargo; burden', vi: 'hà - hành lý, hàng hóa; gánh nặng' },
         onyomi: ['カ'],
         kunyomi: ['に'],
-        components: ['艹', '何'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '何', role: 'phonetic' }
@@ -9374,7 +9172,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'box, case', vi: 'sương - cái hộp, thùng' },
         onyomi: [],
         kunyomi: ['はこ'],
-        components: ['竹', '相'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '相', role: 'phonetic' }
@@ -9409,7 +9206,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'plate, dish', vi: 'mãnh - cái đĩa' },
         onyomi: [],
         kunyomi: ['さら'],
-        components: [],
+        parts: [{ char: '皿', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -9443,7 +9240,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['フク'],
         kunyomi: [],
-        components: ['月', '卩', '又'],
         parts: [
           { char: '月', role: 'radical' },
           { char: '卩', role: 'other' },
@@ -9471,7 +9267,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'good fortune, blessing', vi: 'phúc - phúc, may mắn, điều lành' },
         onyomi: ['フク'],
         kunyomi: [],
-        components: ['礻', '畐'],
         parts: [
           { char: '礻', role: 'radical' },
           { char: '畐', role: 'phonetic' }
@@ -9513,7 +9308,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to serve; to do (work)', vi: 'sĩ - phục vụ, làm việc' },
         onyomi: ['シ', 'ジ'],
         kunyomi: ['つか.える'],
-        components: ['亻', '士'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '士', role: 'phonetic' }
@@ -9548,7 +9342,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'matter, thing, affair', vi: 'sự - việc, sự việc' },
         onyomi: ['ジ'],
         kunyomi: ['こと'],
-        components: ['亅'],
         parts: [{ char: '亅', role: 'radical' }],
         examples: [
           {
@@ -9579,7 +9372,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to use; messenger', vi: 'sử - dùng, sử dụng; sứ giả' },
         onyomi: ['シ'],
         kunyomi: ['つか.う'],
-        components: ['亻', '吏'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '吏', role: 'phonetic' }
@@ -9613,7 +9405,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'connection; person in charge', vi: 'hệ - liên quan; người phụ trách' },
         onyomi: ['ケイ'],
         kunyomi: ['かかり', 'かか.る'],
-        components: ['亻', '系'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '系', role: 'phonetic' }
@@ -9640,7 +9431,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'role, post; service', vi: 'dịch - vai trò, chức vụ; phục dịch' },
         onyomi: ['ヤク', 'エキ'],
         kunyomi: [],
-        components: ['彳', '殳'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '殳', role: 'other' }
@@ -9667,7 +9457,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'member, staff, personnel', vi: 'viên - thành viên, nhân viên' },
         onyomi: ['イン'],
         kunyomi: [],
-        components: ['口', '貝'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '貝', role: 'other' }
@@ -9701,7 +9490,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'guest, customer', vi: 'khách - khách, khách mời' },
         onyomi: ['キャク', 'カク'],
         kunyomi: [],
-        components: ['宀', '口'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '口', role: 'other' }
@@ -9728,7 +9516,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'you (familiar); lord', vi: 'quân - anh, cậu (bạn); vua, chúa' },
         onyomi: ['クン'],
         kunyomi: ['きみ'],
-        components: ['尹', '口'],
         parts: [
           { char: '尹', role: 'other' },
           { char: '口', role: 'radical' }
@@ -9762,7 +9549,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'main; master, owner', vi: 'chủ - chính, chủ yếu; chủ nhân' },
         onyomi: ['シュ'],
         kunyomi: ['ぬし', 'おも'],
-        components: ['丶', '王'],
         parts: [
           { char: '丶', role: 'radical' },
           { char: '王', role: 'other' }
@@ -9797,7 +9583,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'person, the one who', vi: 'giả - người, kẻ (làm gì đó)' },
         onyomi: ['シャ'],
         kunyomi: ['もの'],
-        components: ['耂', '日'],
         parts: [
           { char: '耂', role: 'radical' },
           { char: '日', role: 'other' }
@@ -9839,7 +9624,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'roof; shop, store', vi: 'ốc - mái nhà; cửa hàng, tiệm' },
         onyomi: ['オク'],
         kunyomi: ['や'],
-        components: ['尸', '至'],
         parts: [
           { char: '尸', role: 'radical' },
           { char: '至', role: 'other' }
@@ -9873,7 +9657,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bureau, office; station', vi: 'cục - cục, sở; đài (phát thanh...)' },
         onyomi: ['キョク'],
         kunyomi: [],
-        components: ['尸', '口'],
         parts: [
           { char: '尸', role: 'radical' },
           { char: '口', role: 'other' }
@@ -9907,7 +9690,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'palace; shrine', vi: 'cung - cung điện; đền thờ' },
         onyomi: ['キュウ', 'グウ'],
         kunyomi: ['みや'],
-        components: ['宀', '口', '口'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '口', role: 'other' },
@@ -9942,7 +9724,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hall, large building', vi: 'quán - tòa nhà lớn, quán' },
         onyomi: ['カン'],
         kunyomi: ['やかた'],
-        components: ['食', '官'],
         parts: [
           { char: '食', role: 'radical' },
           { char: '官', role: 'phonetic' }
@@ -9977,7 +9758,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'warehouse, storehouse', vi: 'khố - kho, nhà kho' },
         onyomi: ['コ', 'ク'],
         kunyomi: [],
-        components: ['广', '車'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '車', role: 'semantic' }
@@ -10011,7 +9791,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'garden, yard', vi: 'đình - sân, vườn' },
         onyomi: ['テイ'],
         kunyomi: ['にわ'],
-        components: ['广', '廷'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '廷', role: 'phonetic' }
@@ -10045,7 +9824,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'capital, metropolis', vi: 'đô - thủ đô, đô thị' },
         onyomi: ['ト', 'ツ'],
         kunyomi: ['みやこ'],
-        components: ['者', '阝'],
         parts: [
           { char: '者', role: 'phonetic' },
           { char: '阝', role: 'radical' }
@@ -10081,7 +9859,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ward, district; section', vi: 'khu - khu vực; quận' },
         onyomi: ['ク'],
         kunyomi: [],
-        components: ['匸', '乂'],
         parts: [
           { char: '匸', role: 'radical' },
           { char: '乂', role: 'other' }
@@ -10108,7 +9885,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'boundary; world, realm', vi: 'giới - ranh giới; thế giới, giới' },
         onyomi: ['カイ'],
         kunyomi: [],
-        components: ['田', '介'],
         parts: [
           { char: '田', role: 'radical' },
           { char: '介', role: 'phonetic' }
@@ -10142,7 +9918,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'state, province; sandbar', vi: 'châu - châu, bang; bãi giữa sông' },
         onyomi: ['シュウ'],
         kunyomi: ['す'],
-        components: ['川'],
         parts: [{ char: '川', role: 'radical' }],
         examples: [
           {
@@ -10174,7 +9949,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to hit, to strike', vi: 'đả - đánh, đập' },
         onyomi: ['ダ'],
         kunyomi: ['う.つ'],
-        components: ['扌', '丁'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '丁', role: 'phonetic' }
@@ -10208,7 +9982,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to throw', vi: 'đầu - ném, quăng' },
         onyomi: ['トウ'],
         kunyomi: ['な.げる'],
-        components: ['扌', '殳'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '殳', role: 'phonetic' }
@@ -10243,7 +10016,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to hold, to have', vi: 'trì - cầm, giữ; có' },
         onyomi: ['ジ'],
         kunyomi: ['も.つ'],
-        components: ['扌', '寺'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '寺', role: 'phonetic' }
@@ -10278,7 +10050,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to take, to grab', vi: 'thủ - lấy, cầm lấy' },
         onyomi: ['シュ'],
         kunyomi: ['と.る'],
-        components: ['耳', '又'],
         parts: [
           { char: '耳', role: 'other' },
           { char: '又', role: 'radical' }
@@ -10316,7 +10087,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to receive, to accept', vi: 'thụ - nhận, tiếp nhận' },
         onyomi: ['ジュ'],
         kunyomi: ['う.ける'],
-        components: ['爫', '冖', '又'],
         parts: [
           { char: '爫', role: 'other' },
           { char: '冖', role: 'other' },
@@ -10352,7 +10122,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to pick up, to gather', vi: 'thập - nhặt, lượm' },
         onyomi: ['シュウ', 'ジュウ'],
         kunyomi: ['ひろ.う'],
-        components: ['扌', '合'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '合', role: 'phonetic' }
@@ -10380,7 +10149,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to disappear; to erase, to put out', vi: 'tiêu - biến mất; xóa, tắt' },
         onyomi: ['ショウ'],
         kunyomi: ['き.える', 'け.す'],
-        components: ['氵', '肖'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '肖', role: 'phonetic' }
@@ -10415,7 +10183,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to help, to rescue', vi: 'trợ - giúp đỡ, cứu' },
         onyomi: ['ジョ'],
         kunyomi: ['たす.ける', 'たす.かる'],
-        components: ['且', '力'],
         parts: [
           { char: '且', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -10450,7 +10217,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to decide, to settle', vi: 'quyết - quyết định' },
         onyomi: ['ケツ'],
         kunyomi: ['き.める', 'き.まる'],
-        components: ['氵', '夬'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '夬', role: 'phonetic' }
@@ -10485,7 +10251,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to get up, to wake; to occur', vi: 'khởi - dậy, thức dậy; xảy ra' },
         onyomi: ['キ'],
         kunyomi: ['お.きる', 'お.こる'],
-        components: ['走', '己'],
         parts: [
           { char: '走', role: 'radical' },
           { char: '己', role: 'phonetic' }
@@ -10529,7 +10294,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cold', vi: 'hàn - lạnh, rét' },
         onyomi: ['カン'],
         kunyomi: ['さむ.い'],
-        components: ['宀', '冫'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '冫', role: 'other' }
@@ -10563,7 +10327,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hot (weather)', vi: 'thử - nóng (thời tiết)' },
         onyomi: ['ショ'],
         kunyomi: ['あつ.い'],
-        components: ['日', '者'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '者', role: 'phonetic' }
@@ -10597,7 +10360,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'long ago, former times', vi: 'tích - ngày xưa, thời xưa' },
         onyomi: ['セキ', 'シャク'],
         kunyomi: ['むかし'],
-        components: ['廿', '日'],
         parts: [
           { char: '廿', role: 'other' },
           { char: '日', role: 'radical' }
@@ -10624,7 +10386,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'period, term', vi: 'kỳ - kỳ hạn, thời kỳ' },
         onyomi: ['キ', 'ゴ'],
         kunyomi: [],
-        components: ['其', '月'],
         parts: [
           { char: '其', role: 'phonetic' },
           { char: '月', role: 'radical' }
@@ -10658,7 +10419,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hurry; sudden, urgent', vi: 'cấp - vội, gấp; đột ngột' },
         onyomi: ['キュウ'],
         kunyomi: ['いそ.ぐ'],
-        components: ['彐', '心'],
         parts: [
           { char: '彐', role: 'other' },
           { char: '心', role: 'radical' }
@@ -10692,7 +10452,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fast, quick; speed', vi: 'tốc - nhanh, tốc độ' },
         onyomi: ['ソク'],
         kunyomi: ['はや.い'],
-        components: ['辶', '束'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '束', role: 'phonetic' }
@@ -10726,7 +10485,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'degree; a time; extent', vi: 'độ - độ; lần; mức độ' },
         onyomi: ['ド', 'ト'],
         kunyomi: ['たび'],
-        components: ['广', '又'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '又', role: 'other' }
@@ -10760,7 +10518,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'second (of time)', vi: 'miểu - giây (thời gian)' },
         onyomi: ['ビョウ'],
         kunyomi: [],
-        components: ['禾', '少'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '少', role: 'phonetic' }
@@ -10788,7 +10545,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'short; shortcoming', vi: 'đoản - ngắn; thiếu sót' },
         onyomi: ['タン'],
         kunyomi: ['みじか.い'],
-        components: ['矢', '豆'],
         parts: [
           { char: '矢', role: 'radical' },
           { char: '豆', role: 'phonetic' }
@@ -10822,7 +10578,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'double, times, -fold', vi: 'bội - gấp, gấp bội; lần' },
         onyomi: ['バイ'],
         kunyomi: [],
-        components: ['亻', '咅'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '咅', role: 'phonetic' }
@@ -10857,7 +10612,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to raise, to grow up', vi: 'dục - nuôi dưỡng, lớn lên' },
         onyomi: ['イク'],
         kunyomi: ['そだ.てる', 'そだ.つ'],
-        components: ['肉'],
         parts: [{ char: '肉', role: 'radical' }],
         examples: [
           {
@@ -10889,7 +10643,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to plant', vi: 'thực - trồng (cây)' },
         onyomi: ['ショク'],
         kunyomi: ['う.える'],
-        components: ['木', '直'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '直', role: 'phonetic' }
@@ -10925,7 +10678,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'root; root cause', vi: 'căn - rễ; căn nguyên, gốc' },
         onyomi: ['コン'],
         kunyomi: ['ね'],
-        components: ['木', '艮'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '艮', role: 'phonetic' }
@@ -10952,7 +10704,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'leaf', vi: 'diệp - lá (cây)' },
         onyomi: ['ヨウ'],
         kunyomi: ['は'],
-        components: ['艹', '世', '木'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '世', role: 'phonetic' },
@@ -10988,7 +10739,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fruit, nut; truth, real', vi: 'thực - quả, hạt; sự thật, thực' },
         onyomi: ['ジツ'],
         kunyomi: ['み', 'みの.る'],
-        components: ['宀'],
         parts: [{ char: '宀', role: 'radical' }],
         examples: [
           {
@@ -11019,7 +10769,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fall, to drop', vi: 'lạc - rơi, rớt; rụng' },
         onyomi: ['ラク'],
         kunyomi: ['お.ちる', 'お.とす'],
-        components: ['艹', '氵', '各'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '氵', role: 'other' },
@@ -11057,7 +10806,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'green', vi: 'lục - màu xanh lá' },
         onyomi: ['リョク', 'ロク'],
         kunyomi: ['みどり'],
-        components: ['糸', '彔'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '彔', role: 'phonetic' }
@@ -11084,7 +10832,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'field (dry crops)', vi: 'điền - ruộng khô, nương rẫy' },
         onyomi: [],
         kunyomi: ['はた', 'はたけ'],
-        components: ['火', '田'],
         parts: [
           { char: '火', role: 'semantic' },
           { char: '田', role: 'radical' }
@@ -11123,7 +10870,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'agriculture, farming', vi: 'nông - nông nghiệp, làm ruộng' },
         onyomi: ['ノウ'],
         kunyomi: [],
-        components: ['曲', '辰'],
         parts: [
           { char: '曲', role: 'other' },
           { char: '辰', role: 'radical' }
@@ -11160,7 +10906,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ク'],
         kunyomi: ['くる.しい', 'にが.い'],
-        components: ['艹', '古'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '古', role: 'phonetic' }
@@ -11203,7 +10948,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to open', vi: 'khai - mở' },
         onyomi: ['カイ'],
         kunyomi: ['ひら.く', 'あ.ける'],
-        components: ['門', '开'],
         parts: [
           { char: '門', role: 'radical' },
           { char: '开', role: 'other' }
@@ -11238,7 +10982,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'floor, story; rank', vi: 'giai - tầng (lầu); bậc' },
         onyomi: ['カイ'],
         kunyomi: [],
-        components: ['阝', '皆'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '皆', role: 'phonetic' }
@@ -11272,7 +11015,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'institution (hospital, temple, academy)', vi: 'viện - viện, cơ sở' },
         onyomi: ['イン'],
         kunyomi: [],
-        components: ['阝', '完'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '完', role: 'phonetic' }
@@ -11307,7 +11049,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'station', vi: 'dịch - nhà ga, trạm' },
         onyomi: ['エキ'],
         kunyomi: [],
-        components: ['馬', '尺'],
         parts: [
           { char: '馬', role: 'radical' },
           { char: '尺', role: 'phonetic' }
@@ -11334,7 +11075,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'center, middle', vi: 'ương - trung tâm, chính giữa' },
         onyomi: ['オウ'],
         kunyomi: [],
-        components: ['冂', '大'],
         parts: [
           { char: '冂', role: 'other' },
           { char: '大', role: 'radical' }
@@ -11362,7 +11102,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'side, horizontal; beside', vi: 'hoành - ngang; bên cạnh' },
         onyomi: ['オウ'],
         kunyomi: ['よこ'],
-        components: ['木', '黄'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '黄', role: 'phonetic' }
@@ -11390,7 +11129,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pillar, post, column', vi: 'trụ - cột, trụ' },
         onyomi: ['チュウ'],
         kunyomi: ['はしら'],
-        components: ['木', '主'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '主', role: 'phonetic' }
@@ -11425,7 +11163,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'board, plank', vi: 'bản - tấm ván, tấm bảng' },
         onyomi: ['ハン', 'バン'],
         kunyomi: ['いた'],
-        components: ['木', '反'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -11452,7 +11189,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'slope, hill', vi: 'phản - con dốc' },
         onyomi: ['ハン'],
         kunyomi: ['さか'],
-        components: ['土', '反'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -11488,7 +11224,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bridge', vi: 'kiều - cây cầu' },
         onyomi: ['キョウ'],
         kunyomi: ['はし'],
-        components: ['木', '喬'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '喬', role: 'phonetic' }
@@ -11532,7 +11267,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to begin, to start', vi: 'thủy - bắt đầu, khởi đầu' },
         onyomi: ['シ'],
         kunyomi: ['はじ.める', 'はじ.まる'],
-        components: ['女', '台'],
         parts: [
           { char: '女', role: 'radical' },
           { char: '台', role: 'phonetic' }
@@ -11567,7 +11301,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to end, to finish', vi: 'chung - kết thúc, cuối cùng' },
         onyomi: ['シュウ'],
         kunyomi: ['お.わる', 'お.える'],
-        components: ['糸', '冬'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '冬', role: 'phonetic' }
@@ -11602,7 +11335,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to gather, to collect', vi: 'tập - tụ họp, thu thập' },
         onyomi: ['シュウ'],
         kunyomi: ['あつ.める', 'あつ.まる'],
-        components: ['隹', '木'],
         parts: [
           { char: '隹', role: 'radical' },
           { char: '木', role: 'semantic' }
@@ -11637,7 +11369,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to live, to reside', vi: 'trú - sống, cư trú' },
         onyomi: ['ジュウ'],
         kunyomi: ['す.む'],
-        components: ['亻', '主'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '主', role: 'phonetic' }
@@ -11671,7 +11402,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to protect, to guard', vi: 'thủ - bảo vệ, giữ gìn' },
         onyomi: ['シュ', 'ス'],
         kunyomi: ['まも.る'],
-        components: ['宀', '寸'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '寸', role: 'other' }
@@ -11706,7 +11436,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wait', vi: 'đãi - chờ, đợi' },
         onyomi: ['タイ'],
         kunyomi: ['ま.つ'],
-        components: ['彳', '寺'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '寺', role: 'phonetic' }
@@ -11741,7 +11470,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fix, to set, to decide', vi: 'định - định, quy định; cố định' },
         onyomi: ['テイ', 'ジョウ'],
         kunyomi: ['さだ.める'],
-        components: ['宀', '疋'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '疋', role: 'other' }
@@ -11776,7 +11504,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wear; to arrive; to attach', vi: 'trước - mặc; đến nơi; dính' },
         onyomi: ['チャク'],
         kunyomi: ['き.る', 'つ.く'],
-        components: ['羊', '目'],
         parts: [
           { char: '羊', role: 'other' },
           { char: '目', role: 'radical' }
@@ -11810,7 +11537,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to release, to let go; to broadcast', vi: 'phóng - thả, buông; phát' },
         onyomi: ['ホウ'],
         kunyomi: ['はな.す', 'はな.つ'],
-        components: ['方', '攵'],
         parts: [
           { char: '方', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -11844,7 +11570,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to pour; to pay attention', vi: 'chú - rót, đổ; chú ý' },
         onyomi: ['チュウ'],
         kunyomi: ['そそ.ぐ'],
-        components: ['氵', '主'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '主', role: 'phonetic' }
@@ -11886,7 +11611,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'god, spirit; mind', vi: 'thần - thần, thần linh; tinh thần' },
         onyomi: ['シン', 'ジン'],
         kunyomi: ['かみ'],
-        components: ['礻', '申'],
         parts: [
           { char: '礻', role: 'radical' },
           { char: '申', role: 'phonetic' }
@@ -11913,7 +11637,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'true, real; pure', vi: 'chân - thật, chân thật; ngay' },
         onyomi: ['シン'],
         kunyomi: ['ま'],
-        components: ['十', '目', '八'],
         parts: [
           { char: '十', role: 'other' },
           { char: '目', role: 'radical' },
@@ -11949,7 +11672,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'deep', vi: 'thâm - sâu; đậm' },
         onyomi: ['シン'],
         kunyomi: ['ふか.い'],
-        components: ['氵', '罙'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '罙', role: 'phonetic' }
@@ -11983,7 +11705,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to say, to state (humble)', vi: 'thân - thưa, nói (khiêm nhường)' },
         onyomi: ['シン'],
         kunyomi: ['もう.す'],
-        components: ['田'],
         parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
@@ -12017,7 +11738,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'festival; to worship', vi: 'tế - lễ hội; cúng tế' },
         onyomi: ['サイ'],
         kunyomi: ['まつ.り', 'まつ.る'],
-        components: ['夕', '又', '示'],
         parts: [
           { char: '夕', role: 'other' },
           { char: '又', role: 'other' },
@@ -12053,7 +11773,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'courtesy, manners; thanks, a bow', vi: 'lễ - lễ nghi, lễ phép; cảm tạ' },
         onyomi: ['レイ', 'ライ'],
         kunyomi: [],
-        components: ['礻', '乚'],
         parts: [
           { char: '礻', role: 'radical' },
           { char: '乚', role: 'other' }
@@ -12080,7 +11799,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'generation; world; age', vi: 'thế - đời, thế giới; thế hệ' },
         onyomi: ['セイ', 'セ'],
         kunyomi: ['よ'],
-        components: ['一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -12119,7 +11837,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'all, whole; complete', vi: 'toàn - toàn bộ, tất cả; hoàn toàn' },
         onyomi: ['ゼン'],
         kunyomi: ['すべ.て', 'まった.く'],
-        components: ['入', '王'],
         parts: [
           { char: '入', role: 'radical' },
           { char: '王', role: 'other' }
@@ -12160,7 +11877,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tribe, clan, family', vi: 'tộc - dòng họ, bộ tộc' },
         onyomi: ['ゾク'],
         kunyomi: [],
-        components: ['方', '矢'],
         parts: [
           { char: '方', role: 'radical' },
           { char: '矢', role: 'other' }
@@ -12195,7 +11911,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'other, another', vi: 'tha - khác, cái khác' },
         onyomi: ['タ'],
         kunyomi: ['ほか'],
-        components: ['亻', '也'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '也', role: 'phonetic' }
@@ -12237,7 +11952,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to talk, to discuss', vi: 'đàm - trò chuyện, bàn luận' },
         onyomi: ['ダン'],
         kunyomi: [],
-        components: ['言', '炎'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '炎', role: 'phonetic' }
@@ -12274,7 +11988,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['チョウ'],
         kunyomi: ['しら.べる', 'ととの.える'],
-        components: ['言', '周'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '周', role: 'phonetic' }
@@ -12309,7 +12022,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'notebook, register; curtain', vi: 'trướng - sổ tay, sổ sách; màn' },
         onyomi: ['チョウ'],
         kunyomi: [],
-        components: ['巾', '長'],
         parts: [
           { char: '巾', role: 'radical' },
           { char: '長', role: 'phonetic' }
@@ -12343,7 +12055,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ceremony; style; formula', vi: 'thức - nghi thức; kiểu; công thức' },
         onyomi: ['シキ'],
         kunyomi: [],
-        components: ['工', '弋'],
         parts: [
           { char: '工', role: 'other' },
           { char: '弋', role: 'radical' }
@@ -12371,7 +12082,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'number, issue; title', vi: 'hiệu - số, số hiệu; danh hiệu' },
         onyomi: ['ゴウ'],
         kunyomi: [],
-        components: ['口', '丂'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '丂', role: 'other' }
@@ -12405,7 +12115,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ordinal prefix (No.); order', vi: 'đệ - thứ (số thứ tự)' },
         onyomi: ['ダイ'],
         kunyomi: [],
-        components: ['竹', '弟'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '弟', role: 'phonetic' }
@@ -12442,7 +12151,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['チョウ', 'テイ'],
         kunyomi: [],
-        components: ['一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -12476,7 +12184,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['リョウ'],
         kunyomi: [],
-        components: ['一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -12507,7 +12214,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'silver', vi: 'ngân - bạc; ngân hàng' },
         onyomi: ['ギン'],
         kunyomi: [],
-        components: ['金', '艮'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '艮', role: 'phonetic' }
@@ -12534,7 +12240,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to distribute, to hand out; to arrange', vi: 'phối - phân phát; sắp đặt' },
         onyomi: ['ハイ'],
         kunyomi: ['くば.る'],
-        components: ['酉', '己'],
         parts: [
           { char: '酉', role: 'radical' },
           { char: '己', role: 'other' }
@@ -12576,7 +12281,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sheep', vi: 'dương - con cừu' },
         onyomi: ['ヨウ'],
         kunyomi: ['ひつじ'],
-        components: [],
+        parts: [{ char: '羊', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -12599,7 +12304,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ocean; Western', vi: 'dương - đại dương; phương Tây' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: ['氵', '羊'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '羊', role: 'phonetic' }
@@ -12634,7 +12338,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sun; yang, brightness', vi: 'dương - mặt trời; dương, sáng' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: ['阝', '昜'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '昜', role: 'phonetic' }
@@ -12671,7 +12374,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヨウ'],
         kunyomi: ['さま'],
-        components: ['木', '羊'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '羊', role: 'other' }
@@ -12705,7 +12407,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to flow; a current', vi: 'lưu - chảy, trôi; dòng' },
         onyomi: ['リュウ'],
         kunyomi: ['なが.れる', 'なが.す'],
-        components: ['氵', '川'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '川', role: 'other' }
@@ -12740,7 +12441,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flat, level; peaceful', vi: 'bình - bằng phẳng; bình yên' },
         onyomi: ['ヘイ', 'ビョウ'],
         kunyomi: ['たい.ら', 'ひら'],
-        components: ['干'],
         parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
@@ -12774,7 +12474,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヒョウ'],
         kunyomi: ['おもて', 'あらわ.す'],
-        components: ['衣'],
         parts: [{ char: '衣', role: 'radical' }],
         examples: [
           {
@@ -12806,7 +12505,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'anti, opposite; to oppose', vi: 'phản - ngược lại; phản đối; lật' },
         onyomi: ['ハン', 'タン'],
         kunyomi: ['そ.る', 'そ.らす'],
-        components: ['厂', '又'],
         parts: [
           { char: '厂', role: 'other' },
           { char: '又', role: 'radical' }
@@ -12843,7 +12541,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ハツ', 'ホツ'],
         kunyomi: [],
-        components: ['癶'],
         parts: [{ char: '癶', role: 'radical' }],
         examples: [
           {
@@ -12874,7 +12571,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ball, sphere', vi: 'cầu - quả bóng, khối cầu' },
         onyomi: ['キュウ'],
         kunyomi: ['たま'],
-        components: ['王', '求'],
         parts: [
           { char: '王', role: 'radical' },
           { char: '求', role: 'phonetic' }
@@ -12916,7 +12612,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'writing brush', vi: 'bút - cây bút, bút lông' },
         onyomi: ['ヒツ'],
         kunyomi: ['ふで'],
-        components: ['竹', '聿'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '聿', role: 'semantic' }
@@ -12953,7 +12648,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['氵'],
         parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
@@ -12984,7 +12678,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to copy; to photograph', vi: 'tả - sao chép; chụp (ảnh)' },
         onyomi: ['シャ'],
         kunyomi: ['うつ.す', 'うつ.る'],
-        components: ['冖', '与'],
         parts: [
           { char: '冖', role: 'radical' },
           { char: '与', role: 'other' }
@@ -13020,7 +12713,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'child, youngster', vi: 'đồng - trẻ em, nhi đồng' },
         onyomi: ['ドウ'],
         kunyomi: ['わらべ'],
-        components: ['立', '里'],
         parts: [
           { char: '立', role: 'radical' },
           { char: '里', role: 'other' }
@@ -13054,7 +12746,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flute, whistle', vi: 'địch - cái sáo; còi' },
         onyomi: ['テキ'],
         kunyomi: ['ふえ'],
-        components: ['竹', '由'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '由', role: 'phonetic' }
@@ -13089,7 +12780,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'beautiful', vi: 'mỹ - đẹp, xinh đẹp' },
         onyomi: ['ビ'],
         kunyomi: ['うつく.しい'],
-        components: ['羊', '大'],
         parts: [
           { char: '羊', role: 'radical' },
           { char: '大', role: 'other' }
@@ -13124,7 +12814,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to train, to practice; to knead', vi: 'luyện - luyện tập, rèn' },
         onyomi: ['レン'],
         kunyomi: ['ね.る'],
-        components: ['糸', '東'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '東', role: 'phonetic' }
@@ -13158,7 +12847,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'row, line, rank', vi: 'liệt - hàng, dãy' },
         onyomi: ['レツ'],
         kunyomi: [],
-        components: ['歹', '刂'],
         parts: [
           { char: '歹', role: 'other' },
           { char: '刂', role: 'radical' }
@@ -13185,7 +12873,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'equal; grade, class; etc.', vi: 'đẳng - ngang bằng; hạng; vân vân' },
         onyomi: ['トウ'],
         kunyomi: ['ひと.しい', 'など'],
-        components: ['竹', '寺'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '寺', role: 'phonetic' }
@@ -13220,7 +12907,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reason, cause; via, from', vi: 'do - lý do; từ, bởi' },
         onyomi: ['ユ', 'ユウ', 'ユイ'],
         kunyomi: ['よし'],
-        components: ['田'],
         parts: [{ char: '田', role: 'radical' }],
         examples: [
           {
@@ -13259,7 +12945,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'commerce, trade; merchant', vi: 'thương - buôn bán, thương mại' },
         onyomi: ['ショウ'],
         kunyomi: ['あきな.う'],
-        components: ['立', '口'],
         parts: [
           { char: '立', role: 'other' },
           { char: '口', role: 'radical' }
@@ -13293,7 +12978,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to entrust; committee', vi: 'ủy - giao phó, ủy thác' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: ['禾', '女'],
         parts: [
           { char: '禾', role: 'other' },
           { char: '女', role: 'radical' }
@@ -13329,7 +13013,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to change, to transform', vi: 'hóa - biến hóa, thay đổi' },
         onyomi: ['カ', 'ケ'],
         kunyomi: ['ば.ける'],
-        components: ['亻', '匕'],
         parts: [
           { char: '亻', role: 'other' },
           { char: '匕', role: 'radical' }
@@ -13367,7 +13050,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ダイ', 'タイ'],
         kunyomi: ['か.わる', 'よ', 'しろ'],
-        components: ['亻', '弋'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '弋', role: 'phonetic' }
@@ -13403,7 +13085,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'opposite; versus; to face', vi: 'đối - đối diện; đối lập; cặp' },
         onyomi: ['タイ', 'ツイ'],
         kunyomi: [],
-        components: ['文', '寸'],
         parts: [
           { char: '文', role: 'other' },
           { char: '寸', role: 'radical' }
@@ -13438,7 +13119,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to lose; to bear; to owe', vi: 'phụ - thua; gánh vác; âm (số)' },
         onyomi: ['フ'],
         kunyomi: ['ま.ける', 'お.う'],
-        components: ['貝'],
         parts: [{ char: '貝', role: 'radical' }],
         examples: [
           {
@@ -13470,7 +13150,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'part, section, department', vi: 'bộ - bộ phận; ban; câu lạc bộ' },
         onyomi: ['ブ'],
         kunyomi: [],
-        components: ['咅', '阝'],
         parts: [
           { char: '咅', role: 'phonetic' },
           { char: '阝', role: 'radical' }
@@ -13504,7 +13183,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to win, to excel', vi: 'thắng - thắng, chiến thắng; hơn' },
         onyomi: ['ショウ'],
         kunyomi: ['か.つ', 'まさ.る'],
-        components: ['月', '力'],
         parts: [
           { char: '月', role: 'other' },
           { char: '力', role: 'radical' }
@@ -13538,7 +13216,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to ride, to board; to multiply', vi: 'thừa - đi (xe), lên (xe); nhân' },
         onyomi: ['ジョウ'],
         kunyomi: ['の.る', 'の.せる'],
-        components: ['丿'],
         parts: [{ char: '丿', role: 'radical' }],
         examples: [
           {
@@ -13569,7 +13246,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to exist, to have', vi: 'hữu - có, tồn tại' },
         onyomi: ['ユウ', 'ウ'],
         kunyomi: ['あ.る'],
-        components: ['月'],
         parts: [{ char: '月', role: 'radical' }],
         examples: [
           {
@@ -13608,7 +13284,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to leave, to go away; past', vi: 'khứ - rời đi; đã qua' },
         onyomi: ['キョ', 'コ'],
         kunyomi: ['さ.る'],
-        components: ['土', '厶'],
         parts: [
           { char: '土', role: 'other' },
           { char: '厶', role: 'radical' }
@@ -13642,7 +13317,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to bend; crooked; melody', vi: 'khúc - cong, uốn; bản nhạc' },
         onyomi: ['キョク'],
         kunyomi: ['ま.がる', 'ま.げる'],
-        components: ['曰'],
         parts: [{ char: '曰', role: 'radical' }],
         examples: [
           {
@@ -13674,7 +13348,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to face, toward', vi: 'hướng - hướng về, quay về' },
         onyomi: ['コウ'],
         kunyomi: ['む.く', 'む.かう', 'む.こう'],
-        components: ['冂', '口'],
         parts: [
           { char: '冂', role: 'other' },
           { char: '口', role: 'radical' }
@@ -13709,7 +13382,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'next, following; order', vi: 'thứ - tiếp theo; thứ tự' },
         onyomi: ['ジ', 'シ'],
         kunyomi: ['つ.ぐ', 'つぎ'],
-        components: ['冫', '欠'],
         parts: [
           { char: '冫', role: 'other' },
           { char: '欠', role: 'radical' }
@@ -13746,7 +13418,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ジュウ', 'チョウ'],
         kunyomi: ['おも.い', 'かさ.ねる', 'え'],
-        components: ['里'],
         parts: [{ char: '里', role: 'radical' }],
         examples: [
           {
@@ -13778,7 +13449,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lodging, inn; to stay over', vi: 'túc - chỗ trọ, quán trọ; ở lại' },
         onyomi: ['シュク'],
         kunyomi: ['やど', 'やど.る'],
-        components: ['宀', '亻', '百'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '亻', role: 'other' },
@@ -13813,7 +13483,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'place, spot', vi: 'sở - nơi chốn, chỗ' },
         onyomi: ['ショ'],
         kunyomi: ['ところ'],
-        components: ['戸', '斤'],
         parts: [
           { char: '戸', role: 'radical' },
           { char: '斤', role: 'other' }
@@ -13847,7 +13516,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'life; command', vi: 'mệnh - sinh mệnh; mệnh lệnh' },
         onyomi: ['メイ', 'ミョウ'],
         kunyomi: ['いのち'],
-        components: ['口', '卩'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '卩', role: 'other' }
@@ -13881,7 +13549,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'face; surface; mask', vi: 'diện - mặt; bề mặt; mặt nạ' },
         onyomi: ['メン'],
         kunyomi: ['おも', 'つら'],
-        components: [],
+        parts: [{ char: '面', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -13908,7 +13576,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ワ', 'オ'],
         kunyomi: ['やわ.らぐ', 'なご.む'],
-        components: ['禾', '口'],
         parts: [
           { char: '禾', role: 'phonetic' },
           { char: '口', role: 'radical' }
@@ -13950,7 +13617,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'light (not heavy)', vi: 'khinh - nhẹ; nhẹ nhàng' },
         onyomi: ['ケイ'],
         kunyomi: ['かる.い'],
-        components: ['車', '圣'],
         parts: [
           { char: '車', role: 'radical' },
           { char: '圣', role: 'phonetic' }
@@ -13984,7 +13650,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prefecture', vi: 'huyện - tỉnh (đơn vị hành chính)' },
         onyomi: ['ケン'],
         kunyomi: [],
-        components: ['目'],
         parts: [{ char: '目', role: 'radical' }],
         examples: [
           {
@@ -14008,7 +13673,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shining, bright', vi: 'chiêu - sáng, rạng rỡ' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: ['日', '召'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '召', role: 'phonetic' }
@@ -14041,7 +13705,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to arrange, to put in order', vi: 'chỉnh - sắp xếp, chỉnh đốn' },
         onyomi: ['セイ'],
         kunyomi: ['ととの.える', 'ととの.う'],
-        components: ['束', '攵', '正'],
         parts: [
           { char: '束', role: 'other' },
           { char: '攵', role: 'radical' },
@@ -14077,7 +13740,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'iron', vi: 'thiết - sắt' },
         onyomi: ['テツ'],
         kunyomi: [],
-        components: ['金', '失'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '失', role: 'phonetic' }
@@ -14105,7 +13767,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to climb, to ascend', vi: 'đăng - trèo, leo lên' },
         onyomi: ['トウ', 'ト'],
         kunyomi: ['のぼ.る'],
-        components: ['癶', '豆'],
         parts: [
           { char: '癶', role: 'radical' },
           { char: '豆', role: 'other' }
@@ -14139,7 +13800,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thing, object', vi: 'vật - vật, đồ vật' },
         onyomi: ['ブツ', 'モツ'],
         kunyomi: ['もの'],
-        components: ['牛', '勿'],
         parts: [
           { char: '牛', role: 'radical' },
           { char: '勿', role: 'phonetic' }
@@ -14167,7 +13827,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'beforehand, in advance', vi: 'dự - trước, sẵn' },
         onyomi: ['ヨ'],
         kunyomi: [],
-        components: ['亅'],
         parts: [{ char: '亅', role: 'radical' }],
         examples: [
           {
@@ -14198,7 +13857,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'road, path', vi: 'lộ - đường, con đường' },
         onyomi: ['ロ'],
         kunyomi: ['じ'],
-        components: ['足', '各'],
         parts: [
           { char: '足', role: 'radical' },
           { char: '各', role: 'phonetic' }
@@ -14232,7 +13890,7 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bean', vi: 'đậu - hạt đậu' },
         onyomi: ['トウ', 'ズ'],
         kunyomi: ['まめ'],
-        components: [],
+        parts: [{ char: '豆', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -14277,7 +13935,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'law, method, rule', vi: 'pháp - luật pháp; phương pháp' },
         onyomi: ['ホウ', 'ハッ'],
         kunyomi: [],
-        components: ['氵', '去'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '去', role: 'phonetic' }
@@ -14311,7 +13968,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'love, affection', vi: 'ái - yêu, tình yêu' },
         onyomi: ['アイ'],
         kunyomi: [],
-        components: ['爫', '心', '夂'],
         parts: [
           { char: '爫', role: 'other' },
           { char: '心', role: 'radical' },
@@ -14339,7 +13995,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to like; good', vi: 'hảo - thích; tốt' },
         onyomi: ['コウ'],
         kunyomi: ['この.む', 'す.く'],
-        components: ['女', '子'],
         parts: [
           { char: '女', role: 'radical' },
           { char: '子', role: 'semantic' }
@@ -14373,7 +14028,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to cry, to weep', vi: 'khấp - khóc' },
         onyomi: ['キュウ'],
         kunyomi: ['な.く'],
-        components: ['氵', '立'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '立', role: 'phonetic' }
@@ -14408,7 +14062,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to laugh, to smile', vi: 'tiếu - cười' },
         onyomi: ['ショウ'],
         kunyomi: ['わら.う', 'え.む'],
-        components: ['竹', '夭'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '夭', role: 'phonetic' }
@@ -14443,7 +14096,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to hope, to wish; to gaze afar', vi: 'vọng - hy vọng, mong mỏi; ngắm xa' },
         onyomi: ['ボウ', 'モウ'],
         kunyomi: ['のぞ.む'],
-        components: ['亡', '月', '王'],
         parts: [
           { char: '亡', role: 'phonetic' },
           { char: '月', role: 'radical' },
@@ -14478,7 +14130,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wish, to pray, to request', vi: 'nguyện - cầu nguyện, ước nguyện' },
         onyomi: ['ガン'],
         kunyomi: ['ねが.う'],
-        components: ['原', '頁'],
         parts: [
           { char: '原', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -14513,7 +14164,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hope; rare, scarce', vi: 'hy - hy vọng; hiếm' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['巾'],
         parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
@@ -14537,7 +14187,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to seek, to demand', vi: 'cầu - tìm kiếm, yêu cầu' },
         onyomi: ['キュウ'],
         kunyomi: ['もと.める'],
-        components: ['水'],
         parts: [{ char: '水', role: 'radical' }],
         examples: [
           {
@@ -14569,7 +14218,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thought, wish; attention', vi: 'niệm - ý nghĩ; tâm niệm' },
         onyomi: ['ネン'],
         kunyomi: [],
-        components: ['今', '心'],
         parts: [
           { char: '今', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -14611,7 +14259,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fruit; result', vi: 'quả - trái cây; kết quả' },
         onyomi: ['カ'],
         kunyomi: ['は.たす', 'は.てる'],
-        components: ['田', '木'],
         parts: [
           { char: '田', role: 'other' },
           { char: '木', role: 'radical' }
@@ -14646,7 +14293,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bud, sprout', vi: 'nha - mầm, chồi' },
         onyomi: ['ガ'],
         kunyomi: ['め'],
-        components: ['艹', '牙'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '牙', role: 'phonetic' }
@@ -14673,7 +14319,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vegetable, greens', vi: 'thái - rau, rau xanh' },
         onyomi: ['サイ'],
         kunyomi: ['な'],
-        components: ['艹', '采'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '采', role: 'phonetic' }
@@ -14708,7 +14353,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'plum (ume)', vi: 'mai - cây mơ, quả mơ' },
         onyomi: ['バイ'],
         kunyomi: ['うめ'],
-        components: ['木', '毎'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '毎', role: 'phonetic' }
@@ -14732,7 +14376,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seed; kind, type', vi: 'chủng - hạt giống; loại, chủng loại' },
         onyomi: ['シュ'],
         kunyomi: ['たね'],
-        components: ['禾', '重'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '重', role: 'phonetic' }
@@ -14766,7 +14409,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cooked rice; meal', vi: 'phạn - cơm; bữa ăn' },
         onyomi: ['ハン'],
         kunyomi: ['めし'],
-        components: ['食', '反'],
         parts: [
           { char: '食', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -14800,7 +14442,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'salt', vi: 'diêm - muối' },
         onyomi: ['エン'],
         kunyomi: ['しお'],
-        components: ['土'],
         parts: [{ char: '土', role: 'radical' }],
         examples: [
           {
@@ -14824,7 +14465,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'materials, ingredients; fee', vi: 'liệu - nguyên liệu; phí, tiền' },
         onyomi: ['リョウ'],
         kunyomi: [],
-        components: ['米', '斗'],
         parts: [
           { char: '米', role: 'other' },
           { char: '斗', role: 'radical' }
@@ -14858,7 +14498,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to nourish, to raise, to support', vi: 'dưỡng - nuôi dưỡng, bồi dưỡng' },
         onyomi: ['ヨウ'],
         kunyomi: ['やしな.う'],
-        components: ['羊', '食'],
         parts: [
           { char: '羊', role: 'phonetic' },
           { char: '食', role: 'radical' }
@@ -14892,7 +14531,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to burn, to bake, to grill', vi: 'thiêu - đốt, nướng' },
         onyomi: ['ショウ'],
         kunyomi: ['や.く', 'や.ける'],
-        components: ['火', '尭'],
         parts: [
           { char: '火', role: 'radical' },
           { char: '尭', role: 'phonetic' }
@@ -14939,7 +14577,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['エイ'],
         kunyomi: [],
-        components: ['艹', '央'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '央', role: 'phonetic' }
@@ -14977,7 +14614,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カ'],
         kunyomi: [],
-        components: ['言', '果'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '果', role: 'phonetic' }
@@ -15011,7 +14647,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'instruction; kun reading', vi: 'huấn - dạy bảo; âm KUN' },
         onyomi: ['クン'],
         kunyomi: [],
-        components: ['言', '川'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '川', role: 'phonetic' }
@@ -15045,7 +14680,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to try, to test', vi: 'thí - thử; thi, kiểm tra' },
         onyomi: ['シ'],
         kunyomi: ['こころ.みる', 'ため.す'],
-        components: ['言', '式'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '式', role: 'phonetic' }
@@ -15079,7 +14713,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'test, verification; effect', vi: 'nghiệm - thử nghiệm, kiểm chứng' },
         onyomi: ['ケン', 'ゲン'],
         kunyomi: [],
-        components: ['馬', '僉'],
         parts: [
           { char: '馬', role: 'radical' },
           { char: '僉', role: 'phonetic' }
@@ -15116,7 +14749,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['カク'],
         kunyomi: ['おぼ.える', 'さ.める'],
-        components: ['見'],
         parts: [{ char: '見', role: 'radical' }],
         examples: [
           {
@@ -15150,7 +14782,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to explain; a theory', vi: 'thuyết - giải thích; học thuyết' },
         onyomi: ['セツ', 'ゼイ'],
         kunyomi: ['と.く'],
-        components: ['言', '兌'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '兌', role: 'phonetic' }
@@ -15184,7 +14815,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'example; precedent', vi: 'lệ - ví dụ; lệ thường' },
         onyomi: ['レイ'],
         kunyomi: ['たと.える'],
-        components: ['亻', '列'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '列', role: 'phonetic' }
@@ -15215,7 +14845,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['テン'],
         kunyomi: [],
-        components: ['八'],
         parts: [{ char: '八', role: 'radical' }],
         examples: [
           {
@@ -15246,7 +14875,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'complete, finished, whole', vi: 'hoàn - hoàn thành, trọn vẹn' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['宀', '元'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '元', role: 'phonetic' }
@@ -15288,7 +14916,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'people, populace', vi: 'dân - người dân, dân chúng' },
         onyomi: ['ミン'],
         kunyomi: ['たみ'],
-        components: ['氏'],
         parts: [{ char: '氏', role: 'radical' }],
         examples: [
           {
@@ -15319,7 +14946,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'government official; public office', vi: 'quan - quan chức; cơ quan' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['宀'],
         parts: [{ char: '宀', role: 'radical' }],
         examples: [
           {
@@ -15350,7 +14976,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'army, military', vi: 'quân - quân đội' },
         onyomi: ['グン'],
         kunyomi: [],
-        components: ['冖', '車'],
         parts: [
           { char: '冖', role: 'other' },
           { char: '車', role: 'radical' }
@@ -15377,7 +15002,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'soldier', vi: 'binh - lính, binh sĩ' },
         onyomi: ['ヘイ', 'ヒョウ'],
         kunyomi: [],
-        components: ['斤', '八'],
         parts: [
           { char: '斤', role: 'other' },
           { char: '八', role: 'radical' }
@@ -15404,7 +15028,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to administer, to manage', vi: 'ty - cai quản, phụ trách' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -15435,7 +15058,7 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'retainer, subject, minister', vi: 'thần - bề tôi, quan thần' },
         onyomi: ['シン', 'ジン'],
         kunyomi: [],
-        components: [],
+        parts: [{ char: '臣', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -15465,7 +15088,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to deliberate, to discuss', vi: 'nghị - bàn bạc, nghị luận' },
         onyomi: ['ギ'],
         kunyomi: [],
-        components: ['言', '義'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '義', role: 'phonetic' }
@@ -15499,7 +15121,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'county, rural district', vi: 'quận - huyện (hành chính)' },
         onyomi: ['グン'],
         kunyomi: [],
-        components: ['君', '阝'],
         parts: [
           { char: '君', role: 'phonetic' },
           { char: '阝', role: 'radical' }
@@ -15522,7 +15143,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['サン'],
         kunyomi: ['う.む', 'う.まれる'],
-        components: ['生'],
         parts: [{ char: '生', role: 'radical' }],
         examples: [
           {
@@ -15561,7 +15181,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'heat; fever; passion', vi: 'nhiệt - nóng; sốt; nhiệt huyết' },
         onyomi: ['ネツ'],
         kunyomi: ['あつ.い'],
-        components: ['埶', '灬'],
         parts: [
           { char: '埶', role: 'phonetic' },
           { char: '灬', role: 'radical' }
@@ -15598,7 +15217,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['レイ'],
         kunyomi: ['つめ.たい', 'ひ.える', 'さ.める'],
-        components: ['冫', '令'],
         parts: [
           { char: '冫', role: 'radical' },
           { char: '令', role: 'phonetic' }
@@ -15634,7 +15252,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lamp, light', vi: 'đăng - đèn, ánh đèn' },
         onyomi: ['トウ'],
         kunyomi: ['ひ'],
-        components: ['火', '丁'],
         parts: [
           { char: '火', role: 'radical' },
           { char: '丁', role: 'phonetic' }
@@ -15668,7 +15285,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'full; to fill', vi: 'mãn - đầy, tràn đầy' },
         onyomi: ['マン'],
         kunyomi: ['み.ちる', 'み.たす'],
-        components: ['氵'],
         parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
@@ -15700,7 +15316,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shallow', vi: 'thiển - cạn, nông' },
         onyomi: ['セン'],
         kunyomi: ['あさ.い'],
-        components: ['氵', '戔'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '戔', role: 'phonetic' }
@@ -15734,7 +15349,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to bathe', vi: 'dục - tắm' },
         onyomi: ['ヨク'],
         kunyomi: ['あ.びる'],
-        components: ['氵', '谷'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '谷', role: 'phonetic' }
@@ -15770,7 +15384,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'clear, pure, clean', vi: 'thanh - trong, thanh khiết' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['きよ.い'],
-        components: ['氵', '青'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '青', role: 'phonetic' }
@@ -15804,7 +15417,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'quiet, calm, still', vi: 'tĩnh - yên tĩnh, tĩnh lặng' },
         onyomi: ['セイ', 'ジョウ'],
         kunyomi: ['しず.か', 'しず.まる'],
-        components: ['青', '争'],
         parts: [
           { char: '青', role: 'radical' },
           { char: '争', role: 'other' }
@@ -15838,7 +15450,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'land, dry land', vi: 'lục - đất liền, lục địa' },
         onyomi: ['リク'],
         kunyomi: [],
-        components: ['阝', '坴'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '坴', role: 'phonetic' }
@@ -15865,7 +15476,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'health, well-being, peace', vi: 'khang - khỏe mạnh, an khang' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['广'],
         parts: [{ char: '广', role: 'radical' }],
         examples: [
           {
@@ -15897,7 +15507,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to endeavor, to strive', vi: 'nỗ - cố gắng, nỗ lực' },
         onyomi: ['ド'],
         kunyomi: ['つと.める'],
-        components: ['奴', '力'],
         parts: [
           { char: '奴', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -15928,7 +15537,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ロウ'],
         kunyomi: [],
-        components: ['力'],
         parts: [{ char: '力', role: 'radical' }],
         examples: [
           {
@@ -15959,7 +15567,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'achievement, merit', vi: 'công - công lao, thành tích' },
         onyomi: ['コウ', 'ク'],
         kunyomi: [],
-        components: ['工', '力'],
         parts: [
           { char: '工', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -15993,7 +15600,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to work, to labor', vi: 'động - làm việc, lao động' },
         onyomi: ['ドウ'],
         kunyomi: ['はたら.く'],
-        components: ['亻', '動'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '動', role: 'phonetic' }
@@ -16035,7 +15641,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セキ'],
         kunyomi: ['つ.む', 'つ.もる'],
-        components: ['禾', '責'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '責', role: 'phonetic' }
@@ -16069,7 +15674,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'special, particular', vi: 'đặc - đặc biệt, riêng biệt' },
         onyomi: ['トク'],
         kunyomi: [],
-        components: ['牛', '寺'],
         parts: [
           { char: '牛', role: 'radical' },
           { char: '寺', role: 'phonetic' }
@@ -16103,7 +15707,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'single, simple', vi: 'đơn - đơn, đơn giản; đơn lẻ' },
         onyomi: ['タン'],
         kunyomi: [],
-        components: ['十'],
         parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
@@ -16134,7 +15737,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to add, to increase', vi: 'gia - thêm vào, tăng' },
         onyomi: ['カ'],
         kunyomi: ['くわ.える', 'くわ.わる'],
-        components: ['力', '口'],
         parts: [
           { char: '力', role: 'radical' },
           { char: '口', role: 'other' }
@@ -16172,7 +15774,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['アン'],
         kunyomi: [],
-        components: ['安', '木'],
         parts: [
           { char: '安', role: 'phonetic' },
           { char: '木', role: 'radical' }
@@ -16207,7 +15808,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rank, position; unit', vi: 'vị - vị trí, ngôi thứ; đơn vị' },
         onyomi: ['イ'],
         kunyomi: ['くらい'],
-        components: ['亻', '立'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '立', role: 'phonetic' }
@@ -16242,7 +15842,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'low', vi: 'đê - thấp' },
         onyomi: ['テイ'],
         kunyomi: ['ひく.い'],
-        components: ['亻', '氐'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '氐', role: 'phonetic' }
@@ -16276,7 +15875,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bottom', vi: 'để - đáy' },
         onyomi: ['テイ'],
         kunyomi: ['そこ'],
-        components: ['广', '氐'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '氐', role: 'phonetic' }
@@ -16310,7 +15908,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'side, next to', vi: 'trắc - phía, bên' },
         onyomi: ['ソク'],
         kunyomi: ['がわ', 'かわ'],
-        components: ['亻', '則'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '則', role: 'phonetic' }
@@ -16337,7 +15934,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'each, every', vi: 'các - mỗi, các' },
         onyomi: ['カク'],
         kunyomi: ['おのおの'],
-        components: ['夂', '口'],
         parts: [
           { char: '夂', role: 'other' },
           { char: '口', role: 'radical' }
@@ -16364,7 +15960,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seal, stamp; mark', vi: 'ấn - con dấu; dấu hiệu' },
         onyomi: ['イン'],
         kunyomi: ['しるし'],
-        components: ['爪', '卩'],
         parts: [
           { char: '爪', role: 'other' },
           { char: '卩', role: 'radical' }
@@ -16398,7 +15993,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mark, sign; target', vi: 'tiêu - dấu hiệu, mốc; tiêu chuẩn' },
         onyomi: ['ヒョウ'],
         kunyomi: [],
-        components: ['木', '票'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '票', role: 'phonetic' }
@@ -16435,7 +16029,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['テキ'],
         kunyomi: ['まと'],
-        components: ['白', '勺'],
         parts: [
           { char: '白', role: 'radical' },
           { char: '勺', role: 'phonetic' }
@@ -16471,7 +16064,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bundle; to bind; promise', vi: 'thúc - bó; ràng buộc' },
         onyomi: ['ソク'],
         kunyomi: ['たば'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -16503,7 +16095,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to choose, to select', vi: 'tuyển - chọn, tuyển chọn' },
         onyomi: ['セン'],
         kunyomi: ['えら.ぶ'],
-        components: ['辶', '巽'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '巽', role: 'phonetic' }
@@ -16540,7 +16131,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キョ'],
         kunyomi: ['あ.げる'],
-        components: ['手'],
         parts: [{ char: '手', role: 'radical' }],
         examples: [
           {
@@ -16572,7 +16162,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'difference; to hold out', vi: 'sai - sự khác biệt; chìa ra' },
         onyomi: ['サ'],
         kunyomi: ['さ.す'],
-        components: ['工'],
         parts: [{ char: '工', role: 'radical' }],
         examples: [
           {
@@ -16596,7 +16185,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fold, to break, to bend', vi: 'chiết - gấp; bẻ gãy' },
         onyomi: ['セツ'],
         kunyomi: ['お.る', 'お.れる'],
-        components: ['扌', '斤'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '斤', role: 'phonetic' }
@@ -16635,7 +16223,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セツ', 'セチ'],
         kunyomi: ['ふし'],
-        components: ['竹', '即'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '即', role: 'phonetic' }
@@ -16669,7 +16256,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'secondary, deputy, vice-', vi: 'phó - phụ, phó (thứ hai)' },
         onyomi: ['フク'],
         kunyomi: [],
-        components: ['畐', '刂'],
         parts: [
           { char: '畐', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -16703,7 +16289,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'separate, different; to part', vi: 'biệt - riêng, khác; chia tay' },
         onyomi: ['ベツ'],
         kunyomi: ['わか.れる'],
-        components: ['刂'],
         parts: [{ char: '刂', role: 'radical' }],
         examples: [
           {
@@ -16728,7 +16313,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to change; strange', vi: 'biến - thay đổi; kỳ lạ' },
         onyomi: ['ヘン'],
         kunyomi: ['か.わる', 'か.える'],
-        components: ['夂'],
         parts: [{ char: '夂', role: 'radical' }],
         examples: [
           {
@@ -16760,7 +16344,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to continue, to keep on', vi: 'tục - tiếp tục, nối tiếp' },
         onyomi: ['ゾク'],
         kunyomi: ['つづ.く', 'つづ.ける'],
-        components: ['糸', '売'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '売', role: 'phonetic' }
@@ -16798,7 +16381,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ソウ'],
         kunyomi: ['あらそ.う'],
-        components: ['亅'],
         parts: [{ char: '亅', role: 'radical' }],
         examples: [
           {
@@ -16837,7 +16419,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'goods, currency, freight', vi: 'hóa - hàng hóa; tiền tệ' },
         onyomi: ['カ'],
         kunyomi: [],
-        components: ['化', '貝'],
         parts: [
           { char: '化', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -16871,7 +16452,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hundred million', vi: 'ức - trăm triệu (10^8)' },
         onyomi: ['オク'],
         kunyomi: [],
-        components: ['亻', '意'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '意', role: 'phonetic' }
@@ -16898,7 +16478,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'trillion; omen, sign', vi: 'triệu - nghìn tỷ (10^12); điềm báo' },
         onyomi: ['チョウ'],
         kunyomi: ['きざ.し'],
-        components: ['儿'],
         parts: [{ char: '儿', role: 'radical' }],
         examples: [
           {
@@ -16922,7 +16501,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to supply, to give; salary', vi: 'cấp - cấp phát; lương' },
         onyomi: ['キュウ'],
         kunyomi: [],
-        components: ['糸', '合'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '合', role: 'phonetic' }
@@ -16956,7 +16534,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'profit, advantage; sharp', vi: 'lợi - lợi ích; sắc bén' },
         onyomi: ['リ'],
         kunyomi: ['き.く'],
-        components: ['禾', '刂'],
         parts: [
           { char: '禾', role: 'other' },
           { char: '刂', role: 'radical' }
@@ -16993,7 +16570,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ベン', 'ビン'],
         kunyomi: ['たよ.り'],
-        components: ['亻', '更'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '更', role: 'phonetic' }
@@ -17027,7 +16603,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'good, fine', vi: 'lương - tốt, tốt đẹp' },
         onyomi: ['リョウ'],
         kunyomi: ['よ.い', 'い.い'],
-        components: ['艮'],
         parts: [{ char: '艮', role: 'radical' }],
         examples: [
           {
@@ -17058,7 +16633,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vessel, container; instrument', vi: 'khí - đồ đựng, dụng cụ' },
         onyomi: ['キ'],
         kunyomi: ['うつわ'],
-        components: ['口', '犬'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '犬', role: 'other' }
@@ -17100,7 +16674,7 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'clan, surname; Mr.', vi: 'thị - họ; ông (kính)' },
         onyomi: ['シ'],
         kunyomi: ['うじ'],
-        components: [],
+        parts: [{ char: '氏', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17130,7 +16704,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'child, infant', vi: 'nhi - trẻ nhỏ, hài nhi' },
         onyomi: ['ジ', 'ニ'],
         kunyomi: [],
-        components: ['儿'],
         parts: [{ char: '儿', role: 'radical' }],
         examples: [
           {
@@ -17162,7 +16735,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grandchild', vi: 'tôn - cháu (nội, ngoại)' },
         onyomi: ['ソン'],
         kunyomi: ['まご'],
-        components: ['子', '系'],
         parts: [
           { char: '子', role: 'radical' },
           { char: '系', role: 'phonetic' }
@@ -17189,7 +16761,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'husband; man', vi: 'phu - chồng; người đàn ông' },
         onyomi: ['フ', 'フウ'],
         kunyomi: ['おっと'],
-        components: ['大'],
         parts: [{ char: '大', role: 'radical' }],
         examples: [
           {
@@ -17220,7 +16791,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'relationship; go-between', vi: 'trọng - quan hệ; trung gian' },
         onyomi: ['チュウ'],
         kunyomi: ['なか'],
-        components: ['亻', '中'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '中', role: 'phonetic' }
@@ -17248,7 +16818,7 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'old, aged; to grow old', vi: 'lão - già, cao tuổi' },
         onyomi: ['ロウ'],
         kunyomi: ['お.いる', 'ふ.ける'],
-        components: [],
+        parts: [{ char: '老', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -17282,7 +16852,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ト'],
         kunyomi: [],
-        components: ['彳', '走'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '走', role: 'phonetic' }
@@ -17316,7 +16885,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to borrow', vi: 'tá - mượn, vay' },
         onyomi: ['シャク'],
         kunyomi: ['か.りる'],
-        components: ['亻', '昔'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '昔', role: 'phonetic' }
@@ -17351,7 +16919,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'trust, belief; message', vi: 'tín - tin tưởng; tin tức' },
         onyomi: ['シン'],
         kunyomi: [],
-        components: ['亻', '言'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '言', role: 'semantic' }
@@ -17386,7 +16953,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'together, joint, in common', vi: 'cộng - cùng, chung' },
         onyomi: ['キョウ'],
         kunyomi: ['とも'],
-        components: ['八'],
         parts: [{ char: '八', role: 'radical' }],
         examples: [
           {
@@ -17425,7 +16991,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to build, to erect', vi: 'kiến - xây dựng' },
         onyomi: ['ケン', 'コン'],
         kunyomi: ['た.てる', 'た.つ'],
-        components: ['聿', '廴'],
         parts: [
           { char: '聿', role: 'phonetic' },
           { char: '廴', role: 'radical' }
@@ -17460,7 +17025,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'healthy, robust', vi: 'kiện - khỏe mạnh, cường tráng' },
         onyomi: ['ケン'],
         kunyomi: ['すこ.やか'],
-        components: ['亻', '建'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '建', role: 'phonetic' }
@@ -17495,7 +17059,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to tie, to bind; to conclude', vi: 'kết - buộc, thắt; kết thúc' },
         onyomi: ['ケツ'],
         kunyomi: ['むす.ぶ', 'ゆ.う'],
-        components: ['糸', '吉'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '吉', role: 'phonetic' }
@@ -17529,7 +17092,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hard, solid, firm', vi: 'cố - cứng, chắc; kiên cố' },
         onyomi: ['コ'],
         kunyomi: ['かた.い', 'かた.める'],
-        components: ['囗', '古'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '古', role: 'phonetic' }
@@ -17563,7 +17125,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to become, to achieve, to form', vi: 'thành - trở thành; hoàn thành' },
         onyomi: ['セイ', 'ジョウ'],
         kunyomi: ['な.る', 'な.す'],
-        components: ['戈'],
         parts: [{ char: '戈', role: 'radical' }],
         examples: [
           {
@@ -17594,7 +17155,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'timber; material', vi: 'tài - gỗ; nguyên vật liệu' },
         onyomi: ['ザイ'],
         kunyomi: [],
-        components: ['木', '才'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '才', role: 'phonetic' }
@@ -17628,7 +17188,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'machine, device', vi: 'giới - máy móc, khí cụ' },
         onyomi: ['カイ'],
         kunyomi: [],
-        components: ['木', '戒'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '戒', role: 'phonetic' }
@@ -17658,7 +17217,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キ'],
         kunyomi: ['はた'],
-        components: ['木', '幾'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '幾', role: 'phonetic' }
@@ -17693,7 +17251,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pipe, tube; to manage', vi: 'quản - ống; quản lý' },
         onyomi: ['カン'],
         kunyomi: ['くだ'],
-        components: ['竹', '官'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '官', role: 'phonetic' }
@@ -17735,7 +17292,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to shine, to illuminate', vi: 'chiếu - chiếu sáng, rọi' },
         onyomi: ['ショウ'],
         kunyomi: ['て.る', 'て.らす'],
-        components: ['昭', '灬'],
         parts: [
           { char: '昭', role: 'phonetic' },
           { char: '灬', role: 'radical' }
@@ -17770,7 +17326,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'scenery, view', vi: 'cảnh - phong cảnh, cảnh sắc' },
         onyomi: ['ケイ'],
         kunyomi: [],
-        components: ['日', '京'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '京', role: 'phonetic' }
@@ -17804,7 +17359,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to view, to observe; outlook', vi: 'quan - quan sát, ngắm; quan điểm' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['雚', '見'],
         parts: [
           { char: '雚', role: 'phonetic' },
           { char: '見', role: 'radical' }
@@ -17838,7 +17392,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mirror', vi: 'kính - cái gương' },
         onyomi: ['キョウ'],
         kunyomi: ['かがみ'],
-        components: ['金', '竟'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '竟', role: 'phonetic' }
@@ -17869,7 +17422,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['かえり.みる', 'はぶ.く'],
-        components: ['少', '目'],
         parts: [
           { char: '少', role: 'phonetic' },
           { char: '目', role: 'radical' }
@@ -17903,7 +17455,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to perceive, to guess, to inspect', vi: 'sát - xét đoán, quan sát kỹ' },
         onyomi: ['サツ'],
         kunyomi: [],
-        components: ['宀', '祭'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '祭', role: 'phonetic' }
@@ -17941,7 +17492,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キョク', 'ゴク'],
         kunyomi: ['きわ.める'],
-        components: ['木', '亟'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '亟', role: 'phonetic' }
@@ -17976,7 +17526,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'path; diameter', vi: 'kính - đường nhỏ; đường kính' },
         onyomi: ['ケイ'],
         kunyomi: [],
-        components: ['彳', '圣'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '圣', role: 'phonetic' }
@@ -18010,7 +17559,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'art, craft, skill', vi: 'nghệ - nghệ thuật, tài nghệ' },
         onyomi: ['ゲイ'],
         kunyomi: [],
-        components: ['艹', '云'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '云', role: 'phonetic' }
@@ -18040,7 +17588,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ジ', 'チ'],
         kunyomi: ['おさ.める', 'なお.る'],
-        components: ['氵', '台'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '台', role: 'phonetic' }
@@ -18085,7 +17632,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['デン'],
         kunyomi: ['つた.える', 'つた.わる'],
-        components: ['亻', '云'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '云', role: 'phonetic' }
@@ -18121,7 +17667,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to record', vi: 'lục - ghi chép, ghi lại' },
         onyomi: ['ロク'],
         kunyomi: [],
-        components: ['金', '彔'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '彔', role: 'phonetic' }
@@ -18158,7 +17703,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ショウ'],
         kunyomi: ['とな.える'],
-        components: ['口', '昌'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '昌', role: 'phonetic' }
@@ -18193,7 +17737,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'command, order, decree', vi: 'lệnh - mệnh lệnh; ra lệnh' },
         onyomi: ['レイ'],
         kunyomi: [],
-        components: ['人'],
         parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
@@ -18224,7 +17767,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ballot, vote; slip', vi: 'phiếu - lá phiếu; phiếu, vé' },
         onyomi: ['ヒョウ'],
         kunyomi: [],
-        components: ['覀', '示'],
         parts: [
           { char: '覀', role: 'other' },
           { char: '示', role: 'radical' }
@@ -18258,7 +17800,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'order, sequence; obedient', vi: 'thuận - thứ tự; thuận theo' },
         onyomi: ['ジュン'],
         kunyomi: [],
-        components: ['川', '頁'],
         parts: [
           { char: '川', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -18292,7 +17833,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'first, beginning', vi: 'sơ - đầu tiên, lần đầu' },
         onyomi: ['ショ'],
         kunyomi: ['はじ.め', 'はつ', 'そ.める'],
-        components: ['衤', '刀'],
         parts: [
           { char: '衤', role: 'other' },
           { char: '刀', role: 'radical' }
@@ -18327,7 +17867,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'circumference, lap, around', vi: 'chu - chu vi; vòng quanh' },
         onyomi: ['シュウ'],
         kunyomi: ['まわ.り'],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -18366,7 +17905,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'squad, corps, party', vi: 'đội - đội, đoàn' },
         onyomi: ['タイ'],
         kunyomi: [],
-        components: ['阝'],
         parts: [{ char: '阝', role: 'radical' }],
         examples: [
           {
@@ -18397,7 +17935,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to reach, to attain; (plural)', vi: 'đạt - đạt tới; (số nhiều)' },
         onyomi: ['タツ'],
         kunyomi: [],
-        components: ['辶', '幸'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '幸', role: 'phonetic' }
@@ -18432,7 +17969,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'belt, sash; zone; to wear', vi: 'đới - dây lưng; vùng, đới' },
         onyomi: ['タイ'],
         kunyomi: ['お.びる', 'おび'],
-        components: ['巾'],
         parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
@@ -18466,7 +18002,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ソツ'],
         kunyomi: [],
-        components: ['十'],
         parts: [{ char: '十', role: 'radical' }],
         examples: [
           {
@@ -18501,7 +18036,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['サン'],
         kunyomi: ['まい.る'],
-        components: ['厶'],
         parts: [{ char: '厶', role: 'radical' }],
         examples: [
           {
@@ -18532,7 +18066,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to scatter, to disperse', vi: 'tán - phân tán, rải rác' },
         onyomi: ['サン'],
         kunyomi: ['ち.る', 'ち.らす'],
-        components: ['攵'],
         parts: [{ char: '攵', role: 'radical' }],
         examples: [
           {
@@ -18563,7 +18096,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to place, to put, to leave', vi: 'trí - đặt, để' },
         onyomi: ['チ'],
         kunyomi: ['お.く'],
-        components: ['罒', '直'],
         parts: [
           { char: '罒', role: 'radical' },
           { char: '直', role: 'phonetic' }
@@ -18597,7 +18129,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to remain, leftover; cruel', vi: 'tàn - còn lại; tàn nhẫn' },
         onyomi: ['ザン'],
         kunyomi: ['のこ.る', 'のこ.す'],
-        components: ['歹', '戔'],
         parts: [
           { char: '歹', role: 'radical' },
           { char: '戔', role: 'phonetic' }
@@ -18631,7 +18162,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seat', vi: 'tịch - chỗ ngồi' },
         onyomi: ['セキ'],
         kunyomi: [],
-        components: ['广', '巾'],
         parts: [
           { char: '广', role: 'other' },
           { char: '巾', role: 'radical' }
@@ -18658,7 +18188,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nest', vi: 'sào - cái tổ' },
         onyomi: ['ソウ'],
         kunyomi: ['す'],
-        components: ['巛', '木'],
         parts: [
           { char: '巛', role: 'radical' },
           { char: '木', role: 'other' }
@@ -18693,7 +18222,7 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'clothing, garment', vi: 'y - áo, y phục' },
         onyomi: ['イ'],
         kunyomi: ['ころも'],
-        components: [],
+        parts: [{ char: '衣', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -18724,7 +18253,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'certain, without fail; necessary', vi: 'tất - tất yếu, chắc chắn' },
         onyomi: ['ヒツ'],
         kunyomi: ['かなら.ず'],
-        components: ['心'],
         parts: [{ char: '心', role: 'radical' }],
         examples: [
           {
@@ -18755,7 +18283,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'harm, damage, injury', vi: 'hại - tác hại, gây hại' },
         onyomi: ['ガイ'],
         kunyomi: [],
-        components: ['宀', '口'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '口', role: 'other' }
@@ -18785,7 +18312,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['エイ'],
         kunyomi: ['さか.える', 'は.える'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -18817,7 +18343,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to reform, to revise, to change', vi: 'cải - sửa đổi, cải cách' },
         onyomi: ['カイ'],
         kunyomi: ['あらた.める'],
-        components: ['己', '攵'],
         parts: [
           { char: '己', role: 'other' },
           { char: '攵', role: 'radical' }
@@ -18860,7 +18385,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'not, un- (negative prefix)', vi: 'bất - không, chẳng (phủ định)' },
         onyomi: ['フ', 'ブ'],
         kunyomi: [],
-        components: ['一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -18891,7 +18415,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'not yet, un-', vi: 'vị - chưa (phủ định)' },
         onyomi: ['ミ'],
         kunyomi: [],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -18922,7 +18445,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'end, tip', vi: 'mạt - cuối; ngọn' },
         onyomi: ['マツ', 'バツ'],
         kunyomi: ['すえ'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -18953,7 +18475,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nothing, without, un-', vi: 'vô - không, không có' },
         onyomi: ['ム', 'ブ'],
         kunyomi: ['な.い'],
-        components: ['灬'],
         parts: [{ char: '灬', role: 'radical' }],
         examples: [
           {
@@ -18984,7 +18505,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to attach; to hand over', vi: 'phó - gắn vào; giao cho' },
         onyomi: ['フ'],
         kunyomi: ['つ.ける', 'つ.く'],
-        components: ['亻', '寸'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '寸', role: 'phonetic' }
@@ -19022,7 +18542,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['フ'],
         kunyomi: [],
-        components: ['广', '付'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '付', role: 'phonetic' }
@@ -19049,7 +18568,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'quantity, amount; to measure', vi: 'lượng - số lượng; đo lường' },
         onyomi: ['リョウ'],
         kunyomi: ['はか.る'],
-        components: ['里'],
         parts: [{ char: '里', role: 'radical' }],
         examples: [
           {
@@ -19073,7 +18591,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wheel, ring, loop', vi: 'luân - bánh xe; vòng' },
         onyomi: ['リン'],
         kunyomi: ['わ'],
-        components: ['車', '侖'],
         parts: [
           { char: '車', role: 'radical' },
           { char: '侖', role: 'phonetic' }
@@ -19100,7 +18617,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'kind, type, category', vi: 'loại - loại, chủng loại' },
         onyomi: ['ルイ'],
         kunyomi: [],
-        components: ['米', '頁'],
         parts: [
           { char: '米', role: 'other' },
           { char: '頁', role: 'radical' }
@@ -19142,7 +18658,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'war, battle; to fight', vi: 'chiến - chiến tranh; chiến đấu' },
         onyomi: ['セン'],
         kunyomi: ['たたか.う', 'いくさ'],
-        components: ['単', '戈'],
         parts: [
           { char: '単', role: 'phonetic' },
           { char: '戈', role: 'radical' }
@@ -19176,7 +18691,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'defeat, failure; to lose', vi: 'bại - thất bại, thua' },
         onyomi: ['ハイ'],
         kunyomi: ['やぶ.れる'],
-        components: ['貝', '攵'],
         parts: [
           { char: '貝', role: 'other' },
           { char: '攵', role: 'radical' }
@@ -19211,7 +18725,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'courage, bravery', vi: 'dũng - dũng cảm, can đảm' },
         onyomi: ['ユウ'],
         kunyomi: ['いさ.む'],
-        components: ['甬', '力'],
         parts: [
           { char: '甬', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -19245,7 +18758,7 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to lack, to be absent; a gap', vi: 'khiếm - thiếu; vắng' },
         onyomi: ['ケツ'],
         kunyomi: ['か.ける', 'か.く'],
-        components: [],
+        parts: [{ char: '欠', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19276,7 +18789,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to lose, to miss', vi: 'thất - mất, đánh mất' },
         onyomi: ['シツ'],
         kunyomi: ['うしな.う'],
-        components: ['大'],
         parts: [{ char: '大', role: 'radical' }],
         examples: [
           {
@@ -19310,7 +18822,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヨウ'],
         kunyomi: ['い.る', 'かなめ'],
-        components: ['西', '女'],
         parts: [
           { char: '西', role: 'radical' },
           { char: '女', role: 'other' }
@@ -19347,7 +18858,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ヤク'],
         kunyomi: [],
-        components: ['糸', '勺'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '勺', role: 'phonetic' }
@@ -19391,7 +18901,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['コウ'],
         kunyomi: ['そうろう'],
-        components: ['亻'],
         parts: [{ char: '亻', role: 'radical' }],
         examples: [
           {
@@ -19430,7 +18939,7 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to fly, to leap', vi: 'phi - bay; nhảy vọt' },
         onyomi: ['ヒ'],
         kunyomi: ['と.ぶ', 'と.ばす'],
-        components: [],
+        parts: [{ char: '飛', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -19464,7 +18973,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['レン'],
         kunyomi: ['つ.れる', 'つら.なる'],
-        components: ['辶', '車'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '車', role: 'other' }
@@ -19499,7 +19007,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vicinity, area; side', vi: 'biên - vùng lân cận; cạnh (hình học)' },
         onyomi: ['ヘン'],
         kunyomi: ['あた.り', 'べ'],
-        components: ['辶', '刀'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '刀', role: 'other' }
@@ -19533,7 +19040,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'town, street', vi: 'nhai - phố xá, đường phố' },
         onyomi: ['ガイ', 'カイ'],
         kunyomi: ['まち'],
-        components: ['行', '圭'],
         parts: [
           { char: '行', role: 'radical' },
           { char: '圭', role: 'phonetic' }
@@ -19568,7 +19074,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'by means of; from; than', vi: 'dĩ - bằng, lấy; từ' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: ['人'],
         parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
@@ -19599,7 +19104,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'barrier, gate; connection', vi: 'quan - cửa ải; liên quan' },
         onyomi: ['カン'],
         kunyomi: ['せき', 'かか.わる'],
-        components: ['門'],
         parts: [{ char: '門', role: 'radical' }],
         examples: [
           {
@@ -19631,7 +19135,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fishing', vi: 'ngư - đánh bắt cá' },
         onyomi: ['ギョ', 'リョウ'],
         kunyomi: [],
-        components: ['氵', '魚'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '魚', role: 'semantic' }
@@ -19665,7 +19168,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to herd; pasture', vi: 'mục - chăn thả; đồng cỏ' },
         onyomi: ['ボク'],
         kunyomi: ['まき'],
-        components: ['牛', '攵'],
         parts: [
           { char: '牛', role: 'radical' },
           { char: '攵', role: 'other' }
@@ -19699,7 +19201,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to wrap, to wrap up', vi: 'bao - bao bọc, gói' },
         onyomi: ['ホウ'],
         kunyomi: ['つつ.む'],
-        components: ['勹', '巳'],
         parts: [
           { char: '勹', role: 'radical' },
           { char: '巳', role: 'other' }
@@ -19741,7 +19242,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'season', vi: 'quý - mùa' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['禾', '子'],
         parts: [
           { char: '禾', role: 'semantic' },
           { char: '子', role: 'radical' }
@@ -19775,7 +19275,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'most, the -est', vi: 'tối - nhất, cực (nhất)' },
         onyomi: ['サイ'],
         kunyomi: ['もっと.も'],
-        components: ['曰', '取'],
         parts: [
           { char: '曰', role: 'radical' },
           { char: '取', role: 'other' }
@@ -19809,7 +19308,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'yesterday; the previous', vi: 'tạc - hôm qua; trước (ngày/năm qua)' },
         onyomi: ['サク'],
         kunyomi: [],
-        components: ['日', '乍'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '乍', role: 'phonetic' }
@@ -19840,7 +19338,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to cooperate', vi: 'hiệp - hợp tác, hiệp lực' },
         onyomi: ['キョウ'],
         kunyomi: [],
-        components: ['十', '力'],
         parts: [
           { char: '十', role: 'radical' },
           { char: '力', role: 'other' }
@@ -19874,7 +19371,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to compete, to vie', vi: 'cạnh - tranh đua, thi đấu' },
         onyomi: ['キョウ', 'ケイ'],
         kunyomi: ['きそ.う', 'せ.る'],
-        components: ['立'],
         parts: [{ char: '立', role: 'radical' }],
         examples: [
           {
@@ -19905,7 +19401,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to celebrate, to congratulate', vi: 'chúc - chúc mừng; ăn mừng' },
         onyomi: ['シュク'],
         kunyomi: ['いわ.う'],
-        components: ['礻', '兄'],
         parts: [
           { char: '礻', role: 'radical' },
           { char: '兄', role: 'phonetic' }
@@ -19943,7 +19438,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ジ'],
         kunyomi: ['や.める'],
-        components: ['舌', '辛'],
         parts: [
           { char: '舌', role: 'other' },
           { char: '辛', role: 'radical' }
@@ -19978,7 +19472,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tag, label; paper money', vi: 'trát - thẻ, phiếu; tờ tiền' },
         onyomi: ['サツ'],
         kunyomi: ['ふだ'],
-        components: ['木', '乚'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '乚', role: 'phonetic' }
@@ -20013,7 +19506,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to print', vi: 'loát - in ấn' },
         onyomi: ['サツ'],
         kunyomi: ['す.る'],
-        components: ['刂'],
         parts: [{ char: '刂', role: 'radical' }],
         examples: [
           {
@@ -20037,7 +19529,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'flag, banner', vi: 'kỳ - lá cờ' },
         onyomi: ['キ'],
         kunyomi: ['はた'],
-        components: ['方', '其'],
         parts: [
           { char: '方', role: 'radical' },
           { char: '其', role: 'phonetic' }
@@ -20072,7 +19563,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pine tree', vi: 'tùng - cây thông' },
         onyomi: ['ショウ'],
         kunyomi: ['まつ'],
-        components: ['木', '公'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '公', role: 'phonetic' }
@@ -20099,7 +19589,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'state, -like, so', vi: 'nhiên - trạng thái; như vậy' },
         onyomi: ['ゼン', 'ネン'],
         kunyomi: [],
-        components: ['灬'],
         parts: [{ char: '灬', role: 'radical' }],
         examples: [
           {
@@ -20130,7 +19619,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'warehouse, storehouse', vi: 'thương - kho, nhà kho' },
         onyomi: ['ソウ'],
         kunyomi: ['くら'],
-        components: ['人'],
         parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
@@ -20161,7 +19649,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'broad, extensive; doctorate', vi: 'bác - rộng, uyên bác' },
         onyomi: ['ハク', 'バク'],
         kunyomi: [],
-        components: ['十', '尃'],
         parts: [
           { char: '十', role: 'radical' },
           { char: '尃', role: 'phonetic' }
@@ -20196,7 +19683,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'group, flock, crowd', vi: 'quần - bầy, đàn, nhóm' },
         onyomi: ['グン'],
         kunyomi: ['む.れ', 'むら'],
-        components: ['君', '羊'],
         parts: [
           { char: '君', role: 'phonetic' },
           { char: '羊', role: 'radical' }
@@ -20230,7 +19716,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'well', vi: 'tỉnh - cái giếng' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['い'],
-        components: ['二'],
         parts: [{ char: '二', role: 'radical' }],
         examples: [
           {
@@ -20261,7 +19746,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'castle', vi: 'thành - thành, thành lũy' },
         onyomi: ['ジョウ'],
         kunyomi: ['しろ'],
-        components: ['土', '成'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '成', role: 'phonetic' }
@@ -20297,7 +19781,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thorny plant; (Ibaraki)', vi: 'tì - cây gai; (Ibaraki)' },
         onyomi: ['シ'],
         kunyomi: ['いばら'],
-        components: ['艹', '次'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '次', role: 'phonetic' }
@@ -20325,7 +19808,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hill; (place names)', vi: 'cương - gò đồi; (địa danh)' },
         onyomi: ['コウ'],
         kunyomi: ['おか'],
-        components: ['山'],
         parts: [{ char: '山', role: 'radical' }],
         examples: [
           {
@@ -20356,7 +19838,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'open sea, offshore', vi: 'trùng - ngoài khơi' },
         onyomi: ['チュウ'],
         kunyomi: ['おき'],
-        components: ['氵', '中'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '中', role: 'phonetic' }
@@ -20383,7 +19864,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'congratulate; (place names)', vi: 'hạ - chúc mừng; (địa danh)' },
         onyomi: ['ガ'],
         kunyomi: [],
-        components: ['加', '貝'],
         parts: [
           { char: '加', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -20411,7 +19891,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lagoon; (Niigata)', vi: 'tích - đầm phá; (Niigata)' },
         onyomi: ['セキ'],
         kunyomi: ['かた'],
-        components: ['氵'],
         parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
@@ -20435,7 +19914,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fork, branch off', vi: 'kỳ - rẽ nhánh' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['山', '支'],
         parts: [
           { char: '山', role: 'radical' },
           { char: '支', role: 'phonetic' }
@@ -20462,7 +19940,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bear', vi: 'hùng - con gấu' },
         onyomi: ['ユウ'],
         kunyomi: ['くま'],
-        components: ['能', '灬'],
         parts: [
           { char: '能', role: 'phonetic' },
           { char: '灬', role: 'radical' }
@@ -20489,7 +19966,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fragrance, incense', vi: 'hương - hương thơm' },
         onyomi: ['コウ', 'キョウ'],
         kunyomi: ['か', 'かお.り', 'かお.る'],
-        components: ['香'],
         parts: [{ char: '香', role: 'radical' }],
         examples: [
           {
@@ -20520,7 +19996,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'assist; (place names)', vi: 'tá - phụ tá; (địa danh)' },
         onyomi: ['サ'],
         kunyomi: [],
-        components: ['亻', '左'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '左', role: 'phonetic' }
@@ -20547,7 +20022,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'slope; (Osaka)', vi: 'phản - dốc; (Osaka)' },
         onyomi: ['ハン'],
         kunyomi: ['さか'],
-        components: ['阝', '反'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -20574,7 +20048,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cape, promontory', vi: 'khi - mũi đất' },
         onyomi: ['キ'],
         kunyomi: ['さき'],
-        components: ['山', '奇'],
         parts: [
           { char: '山', role: 'radical' },
           { char: '奇', role: 'phonetic' }
@@ -20609,7 +20082,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cape; (Saitama)', vi: 'khi - mũi đất; (Saitama)' },
         onyomi: ['キ'],
         kunyomi: ['さき'],
-        components: ['土', '奇'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '奇', role: 'phonetic' }
@@ -20637,7 +20109,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'nourishing; (Shiga)', vi: 'tư - bồi bổ; (Shiga)' },
         onyomi: ['ジ'],
         kunyomi: [],
-        components: ['氵'],
         parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
@@ -20661,7 +20132,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'deer', vi: 'lộc - con hươu, nai' },
         onyomi: ['ロク'],
         kunyomi: ['しか', 'か'],
-        components: ['鹿'],
         parts: [{ char: '鹿', role: 'radical' }],
         examples: [
           {
@@ -20686,7 +20156,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'virtue', vi: 'đức - đức hạnh' },
         onyomi: ['トク'],
         kunyomi: [],
-        components: ['彳'],
         parts: [{ char: '彳', role: 'radical' }],
         examples: [
           {
@@ -20710,7 +20179,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'horse chestnut; (Tochigi)', vi: 'lịch - cây dẻ ngựa; (Tochigi)' },
         onyomi: [],
         kunyomi: ['とち'],
-        components: ['木'],
         parts: [{ char: '木', role: 'radical' }],
         examples: [
           {
@@ -20735,7 +20203,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: '(used in place names)', vi: 'nại - (dùng trong địa danh)' },
         onyomi: ['ナ'],
         kunyomi: [],
-        components: ['大', '示'],
         parts: [
           { char: '大', role: 'radical' },
           { char: '示', role: 'other' }
@@ -20763,7 +20230,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rope; (Okinawa)', vi: 'thằng - dây thừng; (Okinawa)' },
         onyomi: ['ジョウ'],
         kunyomi: ['なわ'],
-        components: ['糸'],
         parts: [{ char: '糸', role: 'radical' }],
         examples: [
           {
@@ -20788,7 +20254,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'beautiful woman; (Ehime)', vi: 'viên - mỹ nữ; (Ehime)' },
         onyomi: ['エン'],
         kunyomi: ['ひめ'],
-        components: ['女', '爰'],
         parts: [
           { char: '女', role: 'radical' },
           { char: '爰', role: 'phonetic' }
@@ -20815,7 +20280,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wealth, abundance', vi: 'phú - giàu có, phong phú' },
         onyomi: ['フ', 'フウ'],
         kunyomi: ['と.む', 'とみ'],
-        components: ['宀', '畐'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '畐', role: 'phonetic' }
@@ -20850,7 +20314,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hill; (Gifu)', vi: 'phụ - gò đất; (Gifu)' },
         onyomi: ['フ'],
         kunyomi: [],
-        components: ['阜'],
         parts: [{ char: '阜', role: 'radical' }],
         examples: [
           {
@@ -20875,7 +20338,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pear', vi: 'lê - quả lê' },
         onyomi: ['リ'],
         kunyomi: ['なし'],
-        components: ['利', '木'],
         parts: [
           { char: '利', role: 'phonetic' },
           { char: '木', role: 'radical' }
@@ -20917,7 +20379,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'emotion, feeling; situation', vi: 'tình - tình cảm; tình huống' },
         onyomi: ['ジョウ', 'セイ'],
         kunyomi: ['なさ.け'],
-        components: ['忄', '青'],
         parts: [
           { char: '忄', role: 'radical' },
           { char: '青', role: 'phonetic' }
@@ -20954,7 +20415,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: [],
-        components: ['忄', '生'],
         parts: [
           { char: '忄', role: 'radical' },
           { char: '生', role: 'phonetic' }
@@ -20988,7 +20448,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pleasant, comfortable', vi: 'khoái - dễ chịu, sảng khoái' },
         onyomi: ['カイ'],
         kunyomi: ['こころよ.い'],
-        components: ['忄', '夬'],
         parts: [
           { char: '忄', role: 'radical' },
           { char: '夬', role: 'phonetic' }
@@ -21022,7 +20481,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to respond, to comply', vi: 'ứng - đáp ứng; phản ứng' },
         onyomi: ['オウ'],
         kunyomi: ['こた.える'],
-        components: ['广', '心'],
         parts: [
           { char: '广', role: 'other' },
           { char: '心', role: 'radical' }
@@ -21057,7 +20515,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to get used to; custom', vi: 'quán - quen; thói quen' },
         onyomi: ['カン'],
         kunyomi: ['な.れる', 'な.らす'],
-        components: ['忄', '貫'],
         parts: [
           { char: '忄', role: 'radical' },
           { char: '貫', role: 'phonetic' }
@@ -21092,7 +20549,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'will, aspiration, intention', vi: 'chí - ý chí, chí hướng' },
         onyomi: ['シ'],
         kunyomi: ['こころざ.す', 'こころざし'],
-        components: ['士', '心'],
         parts: [
           { char: '士', role: 'other' },
           { char: '心', role: 'radical' }
@@ -21126,7 +20582,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'attitude; state, condition', vi: 'thái - thái độ; trạng thái' },
         onyomi: ['タイ'],
         kunyomi: [],
-        components: ['能', '心'],
         parts: [
           { char: '能', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -21163,7 +20618,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['メイ'],
         kunyomi: ['まよ.う'],
-        components: ['辶', '米'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '米', role: 'phonetic' }
@@ -21197,7 +20651,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dream', vi: 'mộng - giấc mơ' },
         onyomi: ['ム'],
         kunyomi: ['ゆめ'],
-        components: ['夕'],
         parts: [{ char: '夕', role: 'radical' }],
         examples: [
           {
@@ -21236,7 +20689,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'politics, government', vi: 'chính - chính trị' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: ['まつりごと'],
-        components: ['正', '攵'],
         parts: [
           { char: '正', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -21270,7 +20722,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'system, control; rule', vi: 'chế - chế độ; kiểm soát' },
         onyomi: ['セイ'],
         kunyomi: [],
-        components: ['未', '刂'],
         parts: [
           { char: '未', role: 'semantic' },
           { char: '刂', role: 'radical' }
@@ -21304,7 +20755,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'unite, govern; overall', vi: 'thống - thống nhất, thống lĩnh' },
         onyomi: ['トウ'],
         kunyomi: ['す.べる'],
-        components: ['糸', '充'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '充', role: 'phonetic' }
@@ -21339,7 +20789,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'territory, jurisdiction', vi: 'lĩnh - lãnh thổ; lĩnh hội' },
         onyomi: ['リョウ'],
         kunyomi: [],
-        components: ['令', '頁'],
         parts: [
           { char: '令', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -21374,7 +20823,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pass through; manage; sutra', vi: 'kinh - trải qua; kinh tế; kinh sách' },
         onyomi: ['ケイ', 'キョウ'],
         kunyomi: ['へ.る'],
-        components: ['糸', '圣'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '圣', role: 'phonetic' }
@@ -21408,7 +20856,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'run (a business), manage', vi: 'doanh - kinh doanh, điều hành' },
         onyomi: ['エイ'],
         kunyomi: ['いとな.む'],
-        components: ['冖', '口'],
         parts: [
           { char: '冖', role: 'other' },
           { char: '口', role: 'radical' }
@@ -21442,7 +20889,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'expense, cost; spend', vi: 'phí - chi phí; tiêu tốn' },
         onyomi: ['ヒ'],
         kunyomi: ['つい.やす'],
-        components: ['弗', '貝'],
         parts: [
           { char: '弗', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -21476,7 +20922,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tax, duty', vi: 'thuế - thuế' },
         onyomi: ['ゼイ'],
         kunyomi: [],
-        components: ['禾', '兌'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '兌', role: 'phonetic' }
@@ -21511,7 +20956,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prize, reward; praise', vi: 'thưởng - phần thưởng; khen thưởng' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: ['尚', '貝'],
         parts: [
           { char: '尚', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -21553,7 +20997,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'liquid, fluid', vi: 'dịch - chất lỏng' },
         onyomi: ['エキ'],
         kunyomi: [],
-        components: ['氵', '夜'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '夜', role: 'phonetic' }
@@ -21587,7 +21030,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'eternal, long', vi: 'vĩnh - lâu dài, vĩnh viễn' },
         onyomi: ['エイ'],
         kunyomi: ['なが.い'],
-        components: ['水'],
         parts: [{ char: '水', role: 'radical' }],
         examples: [
           {
@@ -21618,7 +21060,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'river', vi: 'hà - sông (lớn)' },
         onyomi: ['カ'],
         kunyomi: ['かわ'],
-        components: ['氵', '可'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '可', role: 'phonetic' }
@@ -21652,7 +21093,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mix, blend; be crowded', vi: 'hỗn - trộn lẫn; hỗn tạp' },
         onyomi: ['コン'],
         kunyomi: ['ま.じる', 'ま.ぜる', 'こ.む'],
-        components: ['氵', '昆'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '昆', role: 'phonetic' }
@@ -21686,7 +21126,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pure, clean', vi: 'khiết - trong sạch' },
         onyomi: ['ケツ'],
         kunyomi: ['いさぎよ.い'],
-        components: ['氵', '絜'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '絜', role: 'phonetic' }
@@ -21720,7 +21159,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'decrease, reduce', vi: 'giảm - giảm bớt' },
         onyomi: ['ゲン'],
         kunyomi: ['へ.る', 'へ.らす'],
-        components: ['氵', '咸'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '咸', role: 'phonetic' }
@@ -21754,7 +21192,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'measure, gauge', vi: 'trắc - đo lường' },
         onyomi: ['ソク'],
         kunyomi: ['はか.る'],
-        components: ['氵', '則'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '則', role: 'phonetic' }
@@ -21788,7 +21225,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'perform, act; lecture', vi: 'diễn - biểu diễn; diễn thuyết' },
         onyomi: ['エン'],
         kunyomi: [],
-        components: ['氵', '寅'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '寅', role: 'phonetic' }
@@ -21822,7 +21258,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'standard; semi-, quasi-', vi: 'chuẩn - tiêu chuẩn; bán, sắp' },
         onyomi: ['ジュン'],
         kunyomi: [],
-        components: ['氵', '隼'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '隼', role: 'phonetic' }
@@ -21856,7 +21291,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'benefit, profit', vi: 'ích - lợi ích' },
         onyomi: ['エキ', 'ヤク'],
         kunyomi: [],
-        components: ['八', '皿'],
         parts: [
           { char: '八', role: 'other' },
           { char: '皿', role: 'radical' }
@@ -21898,7 +21332,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'make, build, create', vi: 'tạo - chế tạo, kiến tạo' },
         onyomi: ['ゾウ'],
         kunyomi: ['つく.る'],
-        components: ['辶', '告'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '告', role: 'phonetic' }
@@ -21932,7 +21365,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'construct, set up; posture', vi: 'cấu - cấu tạo, dựng nên' },
         onyomi: ['コウ'],
         kunyomi: ['かま.える', 'かま.う'],
-        components: ['木', '冓'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '冓', role: 'phonetic' }
@@ -21966,7 +21398,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'build, construct', vi: 'trúc - xây dựng' },
         onyomi: ['チク'],
         kunyomi: ['きず.く'],
-        components: ['竹', '木'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '木', role: 'semantic' }
@@ -22000,7 +21431,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'manufacture, make', vi: 'chế - chế tạo (sản phẩm)' },
         onyomi: ['セイ'],
         kunyomi: [],
-        components: ['制', '衣'],
         parts: [
           { char: '制', role: 'phonetic' },
           { char: '衣', role: 'radical' }
@@ -22035,7 +21465,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'weave', vi: 'chức - dệt' },
         onyomi: ['ショク', 'シキ'],
         kunyomi: ['お.る'],
-        components: ['糸', '戠'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '戠', role: 'phonetic' }
@@ -22069,7 +21498,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'knit, compile, edit', vi: 'biên - đan; biên soạn' },
         onyomi: ['ヘン'],
         kunyomi: ['あ.む'],
-        components: ['糸', '扁'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '扁', role: 'phonetic' }
@@ -22103,7 +21531,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'element; plain, bare', vi: 'tố - yếu tố; mộc mạc' },
         onyomi: ['ソ', 'ス'],
         kunyomi: [],
-        components: ['糸'],
         parts: [{ char: '糸', role: 'radical' }],
         examples: [
           {
@@ -22134,7 +21561,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cotton', vi: 'miên - bông (vải)' },
         onyomi: ['メン'],
         kunyomi: ['わた'],
-        components: ['糸', '白', '巾'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '白', role: 'other' },
@@ -22169,7 +21595,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'copper', vi: 'đồng - đồng (kim loại)' },
         onyomi: ['ドウ'],
         kunyomi: [],
-        components: ['金', '同'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '同', role: 'phonetic' }
@@ -22203,7 +21628,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ore, mineral', vi: 'khoáng - quặng, khoáng vật' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['金', '広'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '広', role: 'phonetic' }
@@ -22237,7 +21661,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'powder, flour', vi: 'phấn - bột, phấn' },
         onyomi: ['フン'],
         kunyomi: ['こ', 'こな'],
-        components: ['米', '分'],
         parts: [
           { char: '米', role: 'radical' },
           { char: '分', role: 'phonetic' }
@@ -22280,7 +21703,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'base, foundation', vi: 'cơ - nền tảng, cơ sở' },
         onyomi: ['キ'],
         kunyomi: ['もと', 'もとい'],
-        components: ['其', '土'],
         parts: [
           { char: '其', role: 'phonetic' },
           { char: '土', role: 'radical' }
@@ -22314,7 +21736,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'standard, rule; compass', vi: 'quy - quy tắc; com-pa' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['夫', '見'],
         parts: [
           { char: '夫', role: 'other' },
           { char: '見', role: 'radical' }
@@ -22348,7 +21769,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'examine, inspect', vi: 'kiểm - kiểm tra' },
         onyomi: ['ケン'],
         kunyomi: [],
-        components: ['木', '僉'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '僉', role: 'phonetic' }
@@ -22382,7 +21802,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lecture, study', vi: 'giảng - giảng giải' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['言', '冓'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '冓', role: 'phonetic' }
@@ -22416,7 +21835,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'evaluate, criticize', vi: 'bình - phê bình, đánh giá' },
         onyomi: ['ヒョウ'],
         kunyomi: [],
-        components: ['言', '平'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '平', role: 'phonetic' }
@@ -22450,7 +21868,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'knowledge, discernment', vi: 'thức - nhận biết, tri thức' },
         onyomi: ['シキ'],
         kunyomi: [],
-        components: ['言', '戠'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '戠', role: 'phonetic' }
@@ -22484,7 +21901,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'quality; substance', vi: 'chất - chất lượng; bản chất' },
         onyomi: ['シツ', 'シチ'],
         kunyomi: [],
-        components: ['斦', '貝'],
         parts: [
           { char: '斦', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -22518,7 +21934,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'discipline, master; repair', vi: 'tu - tu dưỡng, rèn; sửa' },
         onyomi: ['シュウ', 'シュ'],
         kunyomi: ['おさ.める'],
-        components: ['亻', '攵', '彡'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '攵', role: 'other' },
@@ -22553,7 +21968,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'state, mention', vi: 'thuật - trình bày, thuật lại' },
         onyomi: ['ジュツ'],
         kunyomi: ['の.べる'],
-        components: ['辶', '朮'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '朮', role: 'phonetic' }
@@ -22587,7 +22001,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'order, sequence; preface', vi: 'tự - trình tự; lời tựa' },
         onyomi: ['ジョ'],
         kunyomi: [],
-        components: ['广', '予'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '予', role: 'phonetic' }
@@ -22629,7 +22042,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'go, journey; past', vi: 'vãng - đi; đã qua' },
         onyomi: ['オウ'],
         kunyomi: [],
-        components: ['彳', '主'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '主', role: 'phonetic' }
@@ -22663,7 +22075,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'return, restore, repeat', vi: 'phục - trở lại, khôi phục' },
         onyomi: ['フク'],
         kunyomi: [],
-        components: ['彳', '复'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '复', role: 'phonetic' }
@@ -22697,7 +22108,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'move, shift, transfer', vi: 'di - di chuyển, dời' },
         onyomi: ['イ'],
         kunyomi: ['うつ.る', 'うつ.す'],
-        components: ['禾', '多'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '多', role: 'phonetic' }
@@ -22731,7 +22141,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pass, exceed; error', vi: 'quá - đi qua; quá mức' },
         onyomi: ['カ'],
         kunyomi: ['す.ぎる', 'す.ごす', 'あやま.つ'],
-        components: ['辶', '咼'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '咼', role: 'phonetic' }
@@ -22765,7 +22174,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reverse, opposite', vi: 'nghịch - ngược lại' },
         onyomi: ['ギャク'],
         kunyomi: ['さか', 'さか.らう'],
-        components: ['辶', '屰'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '屰', role: 'phonetic' }
@@ -22800,7 +22208,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'increase, add', vi: 'tăng - tăng thêm' },
         onyomi: ['ゾウ'],
         kunyomi: ['ま.す', 'ふ.える', 'ふ.やす'],
-        components: ['土', '曾'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '曾', role: 'phonetic' }
@@ -22834,7 +22241,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cut off; decide; refuse', vi: 'đoạn - cắt đứt; quyết đoán; từ chối' },
         onyomi: ['ダン'],
         kunyomi: ['た.つ', 'ことわ.る'],
-        components: ['米', '斤'],
         parts: [
           { char: '米', role: 'other' },
           { char: '斤', role: 'radical' }
@@ -22868,7 +22274,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stretch, spread; assert', vi: 'trương - căng, giăng' },
         onyomi: ['チョウ'],
         kunyomi: ['は.る'],
-        components: ['弓', '長'],
         parts: [
           { char: '弓', role: 'radical' },
           { char: '長', role: 'phonetic' }
@@ -22902,7 +22307,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stop, halt', vi: 'đình - dừng lại' },
         onyomi: ['テイ'],
         kunyomi: [],
-        components: ['亻', '亭'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '亭', role: 'phonetic' }
@@ -22936,7 +22340,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'propose, present; carry', vi: 'đề - đề xuất; xách' },
         onyomi: ['テイ'],
         kunyomi: ['さ.げる'],
-        components: ['扌', '是'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '是', role: 'phonetic' }
@@ -22970,7 +22373,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to navigate, to sail, to fly', vi: 'hàng - đi (thuyền, máy bay)' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['舟', '亢'],
         parts: [
           { char: '舟', role: 'radical' },
           { char: '亢', role: 'phonetic' }
@@ -23012,7 +22414,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'protect, guard', vi: 'hộ - bảo vệ, che chở' },
         onyomi: ['ゴ'],
         kunyomi: [],
-        components: ['言', '蒦'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '蒦', role: 'phonetic' }
@@ -23046,7 +22447,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'defend, guard', vi: 'vệ - bảo vệ, phòng vệ' },
         onyomi: ['エイ'],
         kunyomi: [],
-        components: ['行', '韋'],
         parts: [
           { char: '行', role: 'radical' },
           { char: '韋', role: 'phonetic' }
@@ -23080,7 +22480,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prevent, defend against', vi: 'phòng - phòng ngừa, ngăn' },
         onyomi: ['ボウ'],
         kunyomi: ['ふせ.ぐ'],
-        components: ['阝', '方'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '方', role: 'phonetic' }
@@ -23114,7 +22513,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'military, martial', vi: 'vũ - võ, quân sự' },
         onyomi: ['ブ', 'ム'],
         kunyomi: [],
-        components: ['戈', '止'],
         parts: [
           { char: '戈', role: 'semantic' },
           { char: '止', role: 'radical' }
@@ -23148,7 +22546,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'duty, serve', vi: 'vụ - nhiệm vụ, phục vụ' },
         onyomi: ['ム'],
         kunyomi: ['つと.める'],
-        components: ['矛', '攵', '力'],
         parts: [
           { char: '矛', role: 'phonetic' },
           { char: '攵', role: 'other' },
@@ -23183,7 +22580,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'blame; responsibility', vi: 'trách - trách nhiệm; khiển trách' },
         onyomi: ['セキ'],
         kunyomi: ['せ.める'],
-        components: ['貝'],
         parts: [{ char: '貝', role: 'radical' }],
         examples: [
           {
@@ -23214,7 +22610,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'entrust, appoint; duty', vi: 'nhiệm - giao phó; nhiệm vụ' },
         onyomi: ['ニン'],
         kunyomi: ['まか.せる', 'まか.す'],
-        components: ['亻', '壬'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '壬', role: 'phonetic' }
@@ -23248,7 +22643,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'approve, support', vi: 'tán - tán thành, ủng hộ' },
         onyomi: ['サン'],
         kunyomi: [],
-        components: ['貝'],
         parts: [{ char: '貝', role: 'radical' }],
         examples: [
           {
@@ -23279,7 +22673,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'effect, efficacy', vi: 'hiệu - hiệu quả' },
         onyomi: ['コウ'],
         kunyomi: ['き.く'],
-        components: ['交', '力'],
         parts: [
           { char: '交', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -23313,7 +22706,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'judge, decide; seal', vi: 'phán - phán xét; con dấu' },
         onyomi: ['ハン', 'バン'],
         kunyomi: [],
-        components: ['半', '刂'],
         parts: [
           { char: '半', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -23347,7 +22739,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'non-, un-; wrong', vi: 'phi - không phải; sai trái' },
         onyomi: ['ヒ'],
         kunyomi: [],
-        components: ['非'],
         parts: [{ char: '非', role: 'radical' }],
         examples: [
           {
@@ -23386,7 +22777,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cultivate, plow', vi: 'canh - cày cấy' },
         onyomi: ['コウ'],
         kunyomi: ['たがや.す'],
-        components: ['耒', '井'],
         parts: [
           { char: '耒', role: 'radical' },
           { char: '井', role: 'phonetic' }
@@ -23420,7 +22810,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'boundary, border', vi: 'cảnh - ranh giới, cảnh giới' },
         onyomi: ['キョウ', 'ケイ'],
         kunyomi: ['さかい'],
-        components: ['土', '竟'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '竟', role: 'phonetic' }
@@ -23454,7 +22843,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'even, equal', vi: 'quân - đều, cân bằng' },
         onyomi: ['キン'],
         kunyomi: [],
-        components: ['土', '勻'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '勻', role: 'phonetic' }
@@ -23488,7 +22876,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'exist, be located', vi: 'tại - tồn tại, ở' },
         onyomi: ['ザイ'],
         kunyomi: ['あ.る'],
-        components: ['才', '土'],
         parts: [
           { char: '才', role: 'phonetic' },
           { char: '土', role: 'radical' }
@@ -23522,7 +22909,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reside, be present', vi: 'cư - cư trú, ở' },
         onyomi: ['キョ'],
         kunyomi: ['い.る'],
-        components: ['尸', '古'],
         parts: [
           { char: '尸', role: 'radical' },
           { char: '古', role: 'phonetic' }
@@ -23556,7 +22942,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hall, temple', vi: 'đường - sảnh, điện' },
         onyomi: ['ドウ'],
         kunyomi: [],
-        components: ['尚', '土'],
         parts: [
           { char: '尚', role: 'phonetic' },
           { char: '土', role: 'radical' }
@@ -23590,7 +22975,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'guide, lead', vi: 'đạo - dẫn dắt, hướng dẫn' },
         onyomi: ['ドウ'],
         kunyomi: ['みちび.く'],
-        components: ['道', '寸'],
         parts: [
           { char: '道', role: 'phonetic' },
           { char: '寸', role: 'radical' }
@@ -23624,7 +23008,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'occasion; edge; contact', vi: 'tế - dịp; ranh; giao tiếp' },
         onyomi: ['サイ'],
         kunyomi: ['きわ'],
-        components: ['阝', '祭'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '祭', role: 'phonetic' }
@@ -23658,7 +23041,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'belong to, genus', vi: 'thuộc - thuộc về' },
         onyomi: ['ゾク'],
         kunyomi: [],
-        components: ['尸'],
         parts: [{ char: '尸', role: 'radical' }],
         examples: [
           {
@@ -23689,7 +23071,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'loss, damage', vi: 'tổn - tổn thất, hư hại' },
         onyomi: ['ソン'],
         kunyomi: ['そこ.なう'],
-        components: ['扌', '員'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '員', role: 'phonetic' }
@@ -23723,7 +23104,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to surround, to enclose', vi: 'vi - bao quanh, vây quanh' },
         onyomi: ['イ'],
         kunyomi: ['かこ.む'],
-        components: ['囗', '井'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '井', role: 'phonetic' }
@@ -23765,7 +23145,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lend, rent out', vi: 'thải - cho vay, cho thuê' },
         onyomi: ['タイ'],
         kunyomi: ['か.す'],
-        components: ['代', '貝'],
         parts: [
           { char: '代', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -23799,7 +23178,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'save up, store', vi: 'trữ - tích trữ, dành dụm' },
         onyomi: ['チョ'],
         kunyomi: [],
-        components: ['貝', '宁'],
         parts: [
           { char: '貝', role: 'radical' },
           { char: '宁', role: 'phonetic' }
@@ -23833,7 +23211,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'trade', vi: 'mậu - mậu dịch, buôn bán' },
         onyomi: ['ボウ'],
         kunyomi: [],
-        components: ['卯', '貝'],
         parts: [
           { char: '卯', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -23869,7 +23246,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wealth, property', vi: 'tài - tài sản, của cải' },
         onyomi: ['ザイ', 'サイ'],
         kunyomi: [],
-        components: ['貝', '才'],
         parts: [
           { char: '貝', role: 'radical' },
           { char: '才', role: 'phonetic' }
@@ -23904,7 +23280,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'resources, capital', vi: 'tư - tư bản, tư liệu' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['次', '貝'],
         parts: [
           { char: '次', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -23938,7 +23313,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'value, price', vi: 'giá - giá trị, giá cả' },
         onyomi: ['カ'],
         kunyomi: ['あたい'],
-        components: ['亻', '西'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '西', role: 'other' }
@@ -23972,7 +23346,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'proof, certificate', vi: 'chứng - chứng minh, chứng cứ' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: ['言', '正'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '正', role: 'phonetic' }
@@ -24006,7 +23379,7 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'support; branch; pay', vi: 'chi - chống đỡ; chi nhánh; chi trả' },
         onyomi: ['シ'],
         kunyomi: ['ささ.える'],
-        components: ['十', '又'],
+        parts: [{ char: '支', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -24036,7 +23409,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cloth; spread', vi: 'bố - vải; trải ra' },
         onyomi: ['フ'],
         kunyomi: ['ぬの'],
-        components: ['巾'],
         parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
@@ -24067,7 +23439,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'amount, sum; forehead; frame', vi: 'ngạch - số tiền; trán; khung' },
         onyomi: ['ガク'],
         kunyomi: ['ひたい'],
-        components: ['客', '頁'],
         parts: [
           { char: '客', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -24109,7 +23480,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wife', vi: 'thê - vợ' },
         onyomi: ['サイ'],
         kunyomi: ['つま'],
-        components: ['女'],
         parts: [{ char: '女', role: 'radical' }],
         examples: [
           {
@@ -24140,7 +23510,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'woman, wife', vi: 'phụ - phụ nữ, người vợ' },
         onyomi: ['フ'],
         kunyomi: [],
-        components: ['女', '帚'],
         parts: [
           { char: '女', role: 'radical' },
           { char: '帚', role: 'phonetic' }
@@ -24174,7 +23543,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ancestor, founder', vi: 'tổ - tổ tiên' },
         onyomi: ['ソ'],
         kunyomi: [],
-        components: ['礻', '且'],
         parts: [
           { char: '礻', role: 'radical' },
           { char: '且', role: 'phonetic' }
@@ -24208,7 +23576,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'teacher, master', vi: 'sư - thầy, bậc thầy' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['巾'],
         parts: [{ char: '巾', role: 'radical' }],
         examples: [
           {
@@ -24239,7 +23606,7 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'gentleman, scholar; expert', vi: 'sĩ - kẻ sĩ; chuyên gia' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['士'],
+        parts: [{ char: '士', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -24267,7 +23634,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'resemble, be similar', vi: 'tự - giống nhau' },
         onyomi: ['ジ'],
         kunyomi: ['に.る'],
-        components: ['亻', '以'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '以', role: 'phonetic' }
@@ -24302,7 +23668,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'individual; counter for items', vi: 'cá - riêng lẻ; lượng từ' },
         onyomi: ['コ'],
         kunyomi: [],
-        components: ['亻', '固'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '固', role: 'phonetic' }
@@ -24336,7 +23701,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'keep, protect, maintain', vi: 'bảo - giữ gìn, bảo vệ' },
         onyomi: ['ホ'],
         kunyomi: ['たも.つ'],
-        components: ['亻', '呆'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '呆', role: 'phonetic' }
@@ -24370,7 +23734,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'occupation, post', vi: 'chức - nghề nghiệp, chức vụ' },
         onyomi: ['ショク'],
         kunyomi: [],
-        components: ['耳', '戠'],
         parts: [
           { char: '耳', role: 'radical' },
           { char: '戠', role: 'phonetic' }
@@ -24404,7 +23767,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'building, quarters', vi: 'xá - nhà, khu nhà' },
         onyomi: ['シャ'],
         kunyomi: [],
-        components: ['人', '舌'],
         parts: [
           { char: '人', role: 'radical' },
           { char: '舌', role: 'other' }
@@ -24446,7 +23808,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'commit (a crime), violate', vi: 'phạm - phạm tội, vi phạm' },
         onyomi: ['ハン'],
         kunyomi: ['おか.す'],
-        components: ['犭'],
         parts: [{ char: '犭', role: 'radical' }],
         examples: [
           {
@@ -24477,7 +23838,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'crime, sin, guilt', vi: 'tội - tội lỗi' },
         onyomi: ['ザイ'],
         kunyomi: ['つみ'],
-        components: ['罒', '非'],
         parts: [
           { char: '罒', role: 'radical' },
           { char: '非', role: 'semantic' }
@@ -24511,7 +23871,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'disaster, calamity', vi: 'tai - tai họa' },
         onyomi: ['サイ'],
         kunyomi: ['わざわ.い'],
-        components: ['巛', '火'],
         parts: [
           { char: '巛', role: 'semantic' },
           { char: '火', role: 'radical' }
@@ -24545,7 +23904,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'kill', vi: 'sát - giết' },
         onyomi: ['サツ', 'サイ'],
         kunyomi: ['ころ.す'],
-        components: ['殳'],
         parts: [{ char: '殳', role: 'radical' }],
         examples: [
           {
@@ -24576,7 +23934,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'poison', vi: 'độc - chất độc' },
         onyomi: ['ドク'],
         kunyomi: [],
-        components: ['母'],
         parts: [{ char: '母', role: 'radical' }],
         examples: [
           {
@@ -24607,7 +23964,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'break, tear, destroy', vi: 'phá - phá vỡ, xé' },
         onyomi: ['ハ'],
         kunyomi: ['やぶ.る', 'やぶ.れる'],
-        components: ['石', '皮'],
         parts: [
           { char: '石', role: 'radical' },
           { char: '皮', role: 'phonetic' }
@@ -24641,7 +23997,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'steep, dangerous', vi: 'hiểm - hiểm trở, nguy hiểm' },
         onyomi: ['ケン'],
         kunyomi: ['けわ.しい'],
-        components: ['阝', '僉'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '僉', role: 'phonetic' }
@@ -24675,7 +24030,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pressure, press', vi: 'áp - áp lực, ép' },
         onyomi: ['アツ'],
         kunyomi: [],
-        components: ['厂', '土'],
         parts: [
           { char: '厂', role: 'other' },
           { char: '土', role: 'radical' }
@@ -24709,7 +24063,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rescue, save', vi: 'cứu - cứu giúp' },
         onyomi: ['キュウ'],
         kunyomi: ['すく.う'],
-        components: ['求', '攵'],
         parts: [
           { char: '求', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -24743,7 +24096,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'limit, restrict', vi: 'hạn - giới hạn' },
         onyomi: ['ゲン'],
         kunyomi: ['かぎ.る'],
-        components: ['阝', '艮'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '艮', role: 'phonetic' }
@@ -24785,7 +24137,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'invite, beckon', vi: 'chiêu - mời, vẫy gọi' },
         onyomi: ['ショウ'],
         kunyomi: ['まね.く'],
-        components: ['扌', '召'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '召', role: 'phonetic' }
@@ -24820,7 +24171,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grant, teach', vi: 'thụ - trao cho, giảng dạy' },
         onyomi: ['ジュ'],
         kunyomi: ['さず.ける'],
-        components: ['扌', '受'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '受', role: 'phonetic' }
@@ -24854,7 +24204,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'touch, connect, receive', vi: 'tiếp - tiếp xúc, nối' },
         onyomi: ['セツ'],
         kunyomi: ['つ.ぐ'],
-        components: ['扌', '妾'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '妾', role: 'phonetic' }
@@ -24888,7 +24237,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pick, gather, adopt', vi: 'thải - hái, chọn lấy' },
         onyomi: ['サイ'],
         kunyomi: ['と.る'],
-        components: ['扌', '采'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '采', role: 'phonetic' }
@@ -24922,7 +24270,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'establish, set up', vi: 'thiết - thiết lập' },
         onyomi: ['セツ'],
         kunyomi: ['もう.ける'],
-        components: ['言', '殳'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '殳', role: 'phonetic' }
@@ -24956,7 +24303,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sever, cease; extremely', vi: 'tuyệt - dứt, tuyệt' },
         onyomi: ['ゼツ'],
         kunyomi: ['た.える', 'た.やす', 'た.つ'],
-        components: ['糸', '色'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '色', role: 'phonetic' }
@@ -24990,7 +24336,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'general, total', vi: 'tổng - tổng, toàn bộ' },
         onyomi: ['ソウ'],
         kunyomi: [],
-        components: ['糸', '悤'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '悤', role: 'phonetic' }
@@ -25024,7 +24369,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'image, statue', vi: 'tượng - hình tượng, tượng' },
         onyomi: ['ゾウ'],
         kunyomi: [],
-        components: ['亻', '象'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '象', role: 'phonetic' }
@@ -25058,7 +24402,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'refined, spirit, energy', vi: 'tinh - tinh túy, tinh thần' },
         onyomi: ['セイ', 'ショウ'],
         kunyomi: [],
-        components: ['米', '青'],
         parts: [
           { char: '米', role: 'radical' },
           { char: '青', role: 'phonetic' }
@@ -25092,7 +24435,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'force, momentum', vi: 'thế - khí thế, đà' },
         onyomi: ['セイ'],
         kunyomi: ['いきお.い'],
-        components: ['埶', '力'],
         parts: [
           { char: '埶', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -25134,7 +24476,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rule, law', vi: 'tắc - quy tắc' },
         onyomi: ['ソク'],
         kunyomi: [],
-        components: ['貝', '刂'],
         parts: [
           { char: '貝', role: 'other' },
           { char: '刂', role: 'radical' }
@@ -25168,7 +24509,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'article, clause; line', vi: 'điều - điều khoản' },
         onyomi: ['ジョウ'],
         kunyomi: [],
-        components: ['夂', '木'],
         parts: [
           { char: '夂', role: 'other' },
           { char: '木', role: 'radical' }
@@ -25202,7 +24542,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'matter, case, item', vi: 'kiện - sự việc, vụ' },
         onyomi: ['ケン'],
         kunyomi: [],
-        components: ['亻', '牛'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '牛', role: 'other' }
@@ -25236,7 +24575,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'status, rank; case (grammar)', vi: 'cách - cách thức, tư cách' },
         onyomi: ['カク', 'コウ'],
         kunyomi: [],
-        components: ['木', '各'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '各', role: 'phonetic' }
@@ -25270,7 +24608,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'certain, confirm', vi: 'xác - chắc chắn, xác nhận' },
         onyomi: ['カク'],
         kunyomi: ['たし.か', 'たし.かめる'],
-        components: ['石', '隺'],
         parts: [
           { char: '石', role: 'radical' },
           { char: '隺', role: 'phonetic' }
@@ -25304,7 +24641,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'untie, solve, understand', vi: 'giải - cởi, giải quyết, hiểu' },
         onyomi: ['カイ', 'ゲ'],
         kunyomi: ['と.く', 'と.ける'],
-        components: ['角', '刀', '牛'],
         parts: [
           { char: '角', role: 'radical' },
           { char: '刀', role: 'semantic' },
@@ -25339,7 +24675,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'suitable, fit', vi: 'thích - thích hợp' },
         onyomi: ['テキ'],
         kunyomi: [],
-        components: ['辶', '啇'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '啇', role: 'phonetic' }
@@ -25373,7 +24708,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'extent, degree; schedule', vi: 'trình - mức độ; lộ trình' },
         onyomi: ['テイ'],
         kunyomi: ['ほど'],
-        components: ['禾', '呈'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '呈', role: 'phonetic' }
@@ -25407,7 +24741,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'easy; divination', vi: 'dị - dễ; (dịch) bói' },
         onyomi: ['エキ', 'イ'],
         kunyomi: ['やさ.しい'],
-        components: ['日', '勿'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '勿', role: 'other' }
@@ -25441,7 +24774,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cause, be based on', vi: 'nhân - nguyên nhân; do bởi' },
         onyomi: ['イン'],
         kunyomi: ['よ.る'],
-        components: ['囗', '大'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '大', role: 'other' }
@@ -25475,7 +24807,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'possible; approve', vi: 'khả - có thể; cho phép' },
         onyomi: ['カ'],
         kunyomi: [],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -25514,7 +24845,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'cherry (blossom)', vi: 'anh - hoa anh đào' },
         onyomi: ['オウ'],
         kunyomi: ['さくら'],
-        components: ['木', '女'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '女', role: 'other' }
@@ -25549,7 +24879,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'trunk, main part', vi: 'cán - thân cây; nòng cốt' },
         onyomi: ['カン'],
         kunyomi: ['みき'],
-        components: ['干'],
         parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
@@ -25581,7 +24910,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'branch, twig', vi: 'chi - cành cây' },
         onyomi: ['シ'],
         kunyomi: ['えだ'],
-        components: ['木', '支'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '支', role: 'phonetic' }
@@ -25616,7 +24944,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'acid; sour', vi: 'toan - axit; chua' },
         onyomi: ['サン'],
         kunyomi: ['す.い'],
-        components: ['酉', '夋'],
         parts: [
           { char: '酉', role: 'radical' },
           { char: '夋', role: 'phonetic' }
@@ -25650,7 +24977,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'eye(ball)', vi: 'nhãn - mắt' },
         onyomi: ['ガン'],
         kunyomi: ['まなこ'],
-        components: ['目', '艮'],
         parts: [
           { char: '目', role: 'radical' },
           { char: '艮', role: 'phonetic' }
@@ -25681,7 +25007,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fat; fertile; fertilizer', vi: 'phì - béo; màu mỡ; phân bón' },
         onyomi: ['ヒ'],
         kunyomi: ['こ.える', 'こ.やす'],
-        components: ['肉', '巴'],
         parts: [
           { char: '肉', role: 'radical' },
           { char: '巴', role: 'phonetic' }
@@ -25715,7 +25040,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'burn', vi: 'nhiên - cháy, đốt' },
         onyomi: ['ネン'],
         kunyomi: ['も.える', 'も.やす'],
-        components: ['火', '然'],
         parts: [
           { char: '火', role: 'radical' },
           { char: '然', role: 'phonetic' }
@@ -25749,7 +25073,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'alone, single', vi: 'độc - một mình, độc lập' },
         onyomi: ['ドク'],
         kunyomi: ['ひと.り'],
-        components: ['犭', '虫'],
         parts: [
           { char: '犭', role: 'radical' },
           { char: '虫', role: 'other' }
@@ -25783,7 +25106,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ability, be able', vi: 'năng - khả năng' },
         onyomi: ['ノウ'],
         kunyomi: [],
-        components: ['肉'],
         parts: [{ char: '肉', role: 'radical' }],
         examples: [
           {
@@ -25814,7 +25136,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'appear, present, current', vi: 'hiện - xuất hiện, hiện tại' },
         onyomi: ['ゲン'],
         kunyomi: ['あらわ.れる', 'あらわ.す'],
-        components: ['王', '見'],
         parts: [
           { char: '王', role: 'radical' },
           { char: '見', role: 'phonetic' }
@@ -25848,7 +25169,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pulse, vein', vi: 'mạch - mạch máu; mạch (núi)' },
         onyomi: ['ミャク'],
         kunyomi: [],
-        components: ['肉'],
         parts: [{ char: '肉', role: 'radical' }],
         examples: [
           {
@@ -25880,7 +25200,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rejoice, delight', vi: 'hỉ - vui mừng' },
         onyomi: ['キ'],
         kunyomi: ['よろこ.ぶ'],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -25911,7 +25230,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'permit, allow', vi: 'hứa - cho phép, tha thứ' },
         onyomi: ['キョ'],
         kunyomi: ['ゆる.す'],
-        components: ['言', '午'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '午', role: 'phonetic' }
@@ -25945,7 +25263,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thank; apologize', vi: 'tạ - cảm tạ; tạ lỗi' },
         onyomi: ['シャ'],
         kunyomi: ['あやま.る'],
-        components: ['言', '射'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '射', role: 'phonetic' }
@@ -25979,7 +25296,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'draw near; contribute', vi: 'ký - ghé lại; gửi, góp' },
         onyomi: ['キ'],
         kunyomi: ['よ.る', 'よ.せる'],
-        components: ['宀', '奇'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '奇', role: 'phonetic' }
@@ -26013,7 +25329,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'skill, technique', vi: 'kỹ - kỹ năng, kỹ thuật' },
         onyomi: ['ギ'],
         kunyomi: ['わざ'],
-        components: ['扌', '支'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '支', role: 'phonetic' }
@@ -26047,7 +25362,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'righteousness, meaning', vi: 'nghĩa - chính nghĩa; nghĩa' },
         onyomi: ['ギ'],
         kunyomi: [],
-        components: ['羊', '我'],
         parts: [
           { char: '羊', role: 'radical' },
           { char: '我', role: 'other' }
@@ -26081,7 +25395,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'interest; flourish', vi: 'hưng - hứng thú; hưng thịnh' },
         onyomi: ['コウ', 'キョウ'],
         kunyomi: ['おこ.る', 'おこ.す'],
-        components: ['臼'],
         parts: [{ char: '臼', role: 'radical' }],
         examples: [
           {
@@ -26112,7 +25425,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'phrase, verse', vi: 'cú - câu, cú (thơ)' },
         onyomi: ['ク'],
         kunyomi: [],
-        components: ['勹', '口'],
         parts: [
           { char: '勹', role: 'other' },
           { char: '口', role: 'radical' }
@@ -26146,7 +25458,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'gain, obtain', vi: 'đắc - được, đạt được' },
         onyomi: ['トク'],
         kunyomi: ['え.る', 'う.る'],
-        components: ['彳', '寸'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '寸', role: 'other' }
@@ -26180,7 +25491,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'usual, constant', vi: 'thường - bình thường, thường xuyên' },
         onyomi: ['ジョウ'],
         kunyomi: ['つね', 'とこ'],
-        components: ['尚', '巾'],
         parts: [
           { char: '尚', role: 'phonetic' },
           { char: '巾', role: 'radical' }
@@ -26217,7 +25527,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['ショウ', 'ゾウ'],
         kunyomi: [],
-        components: ['豕'],
         parts: [{ char: '豕', role: 'radical' }],
         examples: [
           {
@@ -26256,7 +25565,7 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'compare, ratio', vi: 'tỉ - so sánh, tỉ lệ' },
         onyomi: ['ヒ'],
         kunyomi: ['くら.べる'],
-        components: [],
+        parts: [{ char: '比', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -26286,7 +25595,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rate, proportion; lead', vi: 'suất - tỉ lệ; (soái) dẫn dắt' },
         onyomi: ['リツ', 'ソツ'],
         kunyomi: ['ひき.いる'],
-        components: ['玄'],
         parts: [{ char: '玄', role: 'radical' }],
         examples: [
           {
@@ -26317,7 +25625,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'surplus, remainder', vi: 'dư - thừa, dư ra' },
         onyomi: ['ヨ'],
         kunyomi: ['あま.る', 'あま.す'],
-        components: ['人'],
         parts: [{ char: '人', role: 'radical' }],
         examples: [
           {
@@ -26348,7 +25655,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'contain; appearance', vi: 'dung - chứa; dung mạo' },
         onyomi: ['ヨウ'],
         kunyomi: [],
-        components: ['宀', '谷'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '谷', role: 'phonetic' }
@@ -26382,7 +25688,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'abbreviate; strategy', vi: 'lược - lược bớt; sách lược' },
         onyomi: ['リャク'],
         kunyomi: [],
-        components: ['田', '各'],
         parts: [
           { char: '田', role: 'radical' },
           { char: '各', role: 'phonetic' }
@@ -26416,7 +25721,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prepare, equip', vi: 'bị - chuẩn bị, trang bị' },
         onyomi: ['ビ'],
         kunyomi: ['そな.える', 'そな.わる'],
-        components: ['亻'],
         parts: [{ char: '亻', role: 'radical' }],
         examples: [
           {
@@ -26447,7 +25751,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'multiple, complex', vi: 'phức - phức tạp, kép' },
         onyomi: ['フク'],
         kunyomi: [],
-        components: ['衤', '复'],
         parts: [
           { char: '衤', role: 'radical' },
           { char: '复', role: 'phonetic' }
@@ -26481,7 +25784,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'group, association', vi: 'đoàn - đoàn thể' },
         onyomi: ['ダン', 'トン'],
         kunyomi: [],
-        components: ['囗', '寸'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '寸', role: 'other' }
@@ -26515,7 +25817,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'abundant, rich', vi: 'phong - phong phú, dồi dào' },
         onyomi: ['ホウ'],
         kunyomi: ['ゆた.か'],
-        components: ['曲', '豆'],
         parts: [
           { char: '曲', role: 'other' },
           { char: '豆', role: 'radical' }
@@ -26549,7 +25850,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'poor, poverty', vi: 'bần - nghèo' },
         onyomi: ['ヒン', 'ビン'],
         kunyomi: ['まず.しい'],
-        components: ['分', '貝'],
         parts: [
           { char: '分', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -26591,7 +25891,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'printing block, edition', vi: 'bản - bản in, ấn bản' },
         onyomi: ['ハン'],
         kunyomi: [],
-        components: ['片', '反'],
         parts: [
           { char: '片', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -26625,7 +25924,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'publish, print', vi: 'san - ấn hành, xuất bản' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['干', '刂'],
         parts: [
           { char: '干', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -26659,7 +25957,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'history', vi: 'sử - lịch sử' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -26691,7 +25988,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'condition; letter', vi: 'trạng - tình trạng; thư từ' },
         onyomi: ['ジョウ'],
         kunyomi: [],
-        components: ['爿', '犬'],
         parts: [
           { char: '爿', role: 'phonetic' },
           { char: '犬', role: 'radical' }
@@ -26726,7 +26022,7 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'show, indicate', vi: 'thị - chỉ ra, biểu thị' },
         onyomi: ['ジ', 'シ'],
         kunyomi: ['しめ.す'],
-        components: [],
+        parts: [{ char: '示', role: 'radical' }],
         examples: [
           {
             parts: [
@@ -26756,7 +26052,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'report; requite', vi: 'báo - báo cáo; đền đáp' },
         onyomi: ['ホウ'],
         kunyomi: ['むく.いる'],
-        components: ['土'],
         parts: [{ char: '土', role: 'radical' }],
         examples: [
           {
@@ -26787,7 +26082,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'achievements, results', vi: 'tích - thành tích' },
         onyomi: ['セキ'],
         kunyomi: [],
-        components: ['糸', '責'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '責', role: 'phonetic' }
@@ -26821,7 +26115,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'investigate, inspect', vi: 'tra - tra xét, điều tra' },
         onyomi: ['サ'],
         kunyomi: [],
-        components: ['木', '且'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '且', role: 'phonetic' }
@@ -26855,7 +26148,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reason; old; deceased', vi: 'cố - duyên cớ; cũ; cố (đã mất)' },
         onyomi: ['コ'],
         kunyomi: ['ゆえ'],
-        components: ['古', '攵'],
         parts: [
           { char: '古', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -26889,7 +26181,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'again, re-', vi: 'tái - lại, tái' },
         onyomi: ['サイ', 'サ'],
         kunyomi: ['ふたた.び'],
-        components: ['冂'],
         parts: [{ char: '冂', role: 'radical' }],
         examples: [
           {
@@ -26920,7 +26211,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'to tell, to announce', vi: 'cáo - báo, thông báo' },
         onyomi: ['コク'],
         kunyomi: ['つ.げる'],
-        components: ['牛', '口'],
         parts: [
           { char: '牛', role: 'other' },
           { char: '口', role: 'radical' }
@@ -26963,7 +26253,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'temporary, provisional', vi: 'giả - tạm thời, giả' },
         onyomi: ['カ', 'ケ'],
         kunyomi: ['かり'],
-        components: ['亻', '反'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '反', role: 'phonetic' }
@@ -26997,7 +26286,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'long time', vi: 'cửu - lâu dài' },
         onyomi: ['キュウ', 'ク'],
         kunyomi: ['ひさ.しい'],
-        components: ['丿'],
         parts: [{ char: '丿', role: 'radical' }],
         examples: [
           {
@@ -27028,7 +26316,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'old, former', vi: 'cựu - cũ, xưa' },
         onyomi: ['キュウ'],
         kunyomi: [],
-        components: ['丨', '日'],
         parts: [
           { char: '丨', role: 'other' },
           { char: '日', role: 'radical' }
@@ -27062,7 +26349,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prohibit, forbid', vi: 'cấm - ngăn cấm' },
         onyomi: ['キン'],
         kunyomi: [],
-        components: ['林', '示'],
         parts: [
           { char: '林', role: 'other' },
           { char: '示', role: 'radical' }
@@ -27096,7 +26382,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'thick; kind', vi: 'hậu - dày; hậu hĩnh' },
         onyomi: ['コウ'],
         kunyomi: ['あつ.い'],
-        components: ['厂'],
         parts: [{ char: '厂', role: 'radical' }],
         examples: [
           {
@@ -27127,7 +26412,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'miscellaneous, rough', vi: 'tạp - hỗn tạp, lẫn lộn' },
         onyomi: ['ザツ', 'ゾウ'],
         kunyomi: [],
-        components: ['木', '隹'],
         parts: [
           { char: '木', role: 'other' },
           { char: '隹', role: 'radical' }
@@ -27161,7 +26445,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'raise, keep (animals)', vi: 'tự - nuôi (thú)' },
         onyomi: ['シ'],
         kunyomi: ['か.う'],
-        components: ['食', '司'],
         parts: [
           { char: '食', role: 'radical' },
           { char: '司', role: 'phonetic' }
@@ -27198,7 +26481,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['糸', '己'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '己', role: 'phonetic' }
@@ -27235,7 +26517,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         },
         onyomi: ['レキ'],
         kunyomi: [],
-        components: ['厂', '止'],
         parts: [
           { char: '厂', role: 'other' },
           { char: '止', role: 'radical' }
@@ -27277,7 +26558,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'art, technique', vi: 'thuật - kỹ thuật, thuật' },
         onyomi: ['ジュツ'],
         kunyomi: [],
-        components: ['行', '朮'],
         parts: [
           { char: '行', role: 'radical' },
           { char: '朮', role: 'phonetic' }
@@ -27311,7 +26591,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'Buddha; France', vi: 'phật - Phật; (Pháp)' },
         onyomi: ['ブツ', 'フツ'],
         kunyomi: ['ほとけ'],
-        components: ['亻', '厶'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '厶', role: 'other' }
@@ -27345,7 +26624,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'speech; valve; petal', vi: 'biện - biện luận; van' },
         onyomi: ['ベン'],
         kunyomi: [],
-        components: ['厶', '廾'],
         parts: [
           { char: '厶', role: 'other' },
           { char: '廾', role: 'radical' }
@@ -27379,7 +26657,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grave, tomb', vi: 'mộ - mồ mả' },
         onyomi: ['ボ'],
         kunyomi: ['はか'],
-        components: ['莫', '土'],
         parts: [
           { char: '莫', role: 'phonetic' },
           { char: '土', role: 'radical' }
@@ -27414,7 +26691,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'violent, rampage', vi: 'bạo - bạo lực, hung bạo' },
         onyomi: ['ボウ', 'バク'],
         kunyomi: ['あば.れる'],
-        components: ['日'],
         parts: [{ char: '日', role: 'radical' }],
         examples: [
           {
@@ -27445,7 +26721,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'transport, send', vi: 'thâu - vận chuyển' },
         onyomi: ['ユ'],
         kunyomi: [],
-        components: ['車', '兪'],
         parts: [
           { char: '車', role: 'radical' },
           { char: '兪', role: 'phonetic' }
@@ -27479,7 +26754,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stay, detain, fasten', vi: 'lưu - lưu lại, giữ' },
         onyomi: ['リュウ', 'ル'],
         kunyomi: ['と.める', 'と.まる'],
-        components: ['卯', '田'],
         parts: [
           { char: '卯', role: 'phonetic' },
           { char: '田', role: 'radical' }
@@ -27513,7 +26787,6 @@ export const grade5Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mold; type, model', vi: 'hình - khuôn; loại, kiểu' },
         onyomi: ['ケイ'],
         kunyomi: ['かた'],
-        components: ['刑', '土'],
         parts: [
           { char: '刑', role: 'phonetic' },
           { char: '土', role: 'radical' }
@@ -27562,7 +26835,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stomach', vi: 'vị - dạ dày' },
         onyomi: ['イ'],
         kunyomi: [],
-        components: ['田', '肉'],
         parts: [
           { char: '田', role: 'semantic' },
           { char: '肉', role: 'radical' }
@@ -27596,7 +26868,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'intestines', vi: 'tràng - ruột' },
         onyomi: ['チョウ'],
         kunyomi: [],
-        components: ['肉', '昜'],
         parts: [
           { char: '肉', role: 'radical' },
           { char: '昜', role: 'phonetic' }
@@ -27630,7 +26901,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lungs', vi: 'phế - phổi' },
         onyomi: ['ハイ'],
         kunyomi: [],
-        components: ['肉', '巿'],
         parts: [
           { char: '肉', role: 'radical' },
           { char: '巿', role: 'phonetic' }
@@ -27665,7 +26935,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'back; height', vi: 'bối - lưng; chiều cao' },
         onyomi: ['ハイ'],
         kunyomi: ['せ', 'せい', 'そむ.く'],
-        components: ['北', '肉'],
         parts: [
           { char: '北', role: 'phonetic' },
           { char: '肉', role: 'radical' }
@@ -27700,7 +26969,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bone', vi: 'cốt - xương' },
         onyomi: ['コツ'],
         kunyomi: ['ほね'],
-        components: ['骨'],
         parts: [{ char: '骨', role: 'radical' }],
         examples: [
           {
@@ -27731,7 +26999,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'muscle; sinew; plot', vi: 'cân - gân, cơ' },
         onyomi: ['キン'],
         kunyomi: ['すじ'],
-        components: ['竹', '肉', '力'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '肉', role: 'other' },
@@ -27766,7 +27033,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'brain', vi: 'não - não bộ' },
         onyomi: ['ノウ'],
         kunyomi: [],
-        components: ['肉'],
         parts: [{ char: '肉', role: 'radical' }],
         examples: [
           {
@@ -27797,7 +27063,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'milk; breast', vi: 'nhũ - sữa' },
         onyomi: ['ニュウ'],
         kunyomi: ['ちち', 'ち'],
-        components: ['孚', '乙'],
         parts: [
           { char: '孚', role: 'other' },
           { char: '乙', role: 'radical' }
@@ -27831,7 +27096,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pain, ache', vi: 'thống - đau' },
         onyomi: ['ツウ'],
         kunyomi: ['いた.い', 'いた.む'],
-        components: ['疒', '甬'],
         parts: [
           { char: '疒', role: 'radical' },
           { char: '甬', role: 'phonetic' }
@@ -27865,7 +27129,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'call; breathe out', vi: 'hô - gọi; thở ra' },
         onyomi: ['コ'],
         kunyomi: ['よ.ぶ'],
-        components: ['口', '乎'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '乎', role: 'phonetic' }
@@ -27907,7 +27170,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'kindness, debt of gratitude', vi: 'ân - ân huệ, ơn nghĩa' },
         onyomi: ['オン'],
         kunyomi: [],
-        components: ['因', '心'],
         parts: [
           { char: '因', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -27942,7 +27204,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'loyalty', vi: 'trung - trung thành' },
         onyomi: ['チュウ'],
         kunyomi: [],
-        components: ['中', '心'],
         parts: [
           { char: '中', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -27976,7 +27237,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sincerity, truth', vi: 'thành - chân thành' },
         onyomi: ['セイ'],
         kunyomi: ['まこと'],
-        components: ['言', '成'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '成', role: 'phonetic' }
@@ -28010,7 +27270,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'respect, revere', vi: 'kính - kính trọng' },
         onyomi: ['ケイ'],
         kunyomi: ['うやま.う'],
-        components: ['苟', '攵'],
         parts: [
           { char: '苟', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -28044,7 +27303,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'filial piety', vi: 'hiếu - hiếu thảo' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['耂', '子'],
         parts: [
           { char: '耂', role: 'other' },
           { char: '子', role: 'radical' }
@@ -28079,7 +27337,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'benevolence, humanity', vi: 'nhân - lòng nhân' },
         onyomi: ['ジン', 'ニ'],
         kunyomi: [],
-        components: ['亻', '二'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '二', role: 'phonetic' }
@@ -28113,7 +27370,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'good, virtue', vi: 'thiện - tốt, lương thiện' },
         onyomi: ['ゼン'],
         kunyomi: ['よ.い'],
-        components: ['羊', '口'],
         parts: [
           { char: '羊', role: 'other' },
           { char: '口', role: 'radical' }
@@ -28147,7 +27403,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'I, self, ego', vi: 'ngã - ta, cái tôi' },
         onyomi: ['ガ'],
         kunyomi: ['われ', 'わ'],
-        components: ['手', '戈'],
         parts: [
           { char: '手', role: 'other' },
           { char: '戈', role: 'radical' }
@@ -28181,7 +27436,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'self, oneself', vi: 'kỷ - bản thân' },
         onyomi: ['コ', 'キ'],
         kunyomi: ['おのれ'],
-        components: ['己'],
         parts: [{ char: '己', role: 'radical' }],
         examples: [
           {
@@ -28212,7 +27466,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'die; perish; lose', vi: 'vong - chết; mất' },
         onyomi: ['ボウ', 'モウ'],
         kunyomi: ['な.い', 'ほろ.びる'],
-        components: ['亠'],
         parts: [{ char: '亠', role: 'radical' }],
         examples: [
           {
@@ -28251,7 +27504,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'constitution; law', vi: 'hiến - hiến pháp' },
         onyomi: ['ケン'],
         kunyomi: [],
-        components: ['宀', '心'],
         parts: [
           { char: '宀', role: 'other' },
           { char: '心', role: 'radical' }
@@ -28285,7 +27537,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'right; authority, power', vi: 'quyền - quyền lợi; quyền lực' },
         onyomi: ['ケン', 'ゴン'],
         kunyomi: [],
-        components: ['木', '雚'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '雚', role: 'phonetic' }
@@ -28319,7 +27570,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'law, rule; rhythm', vi: 'luật - luật lệ; nhịp' },
         onyomi: ['リツ', 'リチ'],
         kunyomi: [],
-        components: ['彳', '聿'],
         parts: [
           { char: '彳', role: 'radical' },
           { char: '聿', role: 'other' }
@@ -28353,7 +27603,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'judge; cut cloth', vi: 'tài - xét xử; cắt (vải)' },
         onyomi: ['サイ'],
         kunyomi: ['た.つ', 'さば.く'],
-        components: ['衣', '戈'],
         parts: [
           { char: '衣', role: 'radical' },
           { char: '戈', role: 'other' }
@@ -28387,7 +27636,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'political party; faction', vi: 'đảng - đảng phái' },
         onyomi: ['トウ'],
         kunyomi: [],
-        components: ['尚', '儿'],
         parts: [
           { char: '尚', role: 'phonetic' },
           { char: '儿', role: 'radical' }
@@ -28421,7 +27669,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'government office, agency', vi: 'sảnh - cơ quan nhà nước' },
         onyomi: ['チョウ'],
         kunyomi: [],
-        components: ['广', '丁'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '丁', role: 'phonetic' }
@@ -28456,7 +27703,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'government post; to sign', vi: 'thự - sở, cơ quan; ký tên' },
         onyomi: ['ショ'],
         kunyomi: [],
-        components: ['罒', '者'],
         parts: [
           { char: '罒', role: 'radical' },
           { char: '者', role: 'phonetic' }
@@ -28491,7 +27737,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'plan, scheme, policy', vi: 'sách - kế sách, chính sách' },
         onyomi: ['サク'],
         kunyomi: [],
-        components: ['竹', '朿'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '朿', role: 'phonetic' }
@@ -28525,7 +27770,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'emperor, imperial', vi: 'hoàng - vua, hoàng đế' },
         onyomi: ['コウ', 'オウ'],
         kunyomi: [],
-        components: ['白', '王'],
         parts: [
           { char: '白', role: 'radical' },
           { char: '王', role: 'other' }
@@ -28559,7 +27803,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'empress, queen', vi: 'hậu - hoàng hậu' },
         onyomi: ['コウ'],
         kunyomi: [],
-        components: ['口'],
         parts: [{ char: '口', role: 'radical' }],
         examples: [
           {
@@ -28599,7 +27842,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'chest, breast', vi: 'hung - ngực' },
         onyomi: ['キョウ'],
         kunyomi: ['むね', 'むな'],
-        components: ['肉', '匈'],
         parts: [
           { char: '肉', role: 'radical' },
           { char: '匈', role: 'phonetic' }
@@ -28633,7 +27875,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'belly, abdomen', vi: 'phúc - bụng' },
         onyomi: ['フク'],
         kunyomi: ['はら'],
-        components: ['肉', '复'],
         parts: [
           { char: '肉', role: 'radical' },
           { char: '复', role: 'phonetic' }
@@ -28667,7 +27908,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'internal organ, viscera', vi: 'tạng - nội tạng' },
         onyomi: ['ゾウ'],
         kunyomi: [],
-        components: ['肉', '蔵'],
         parts: [
           { char: '肉', role: 'radical' },
           { char: '蔵', role: 'phonetic' }
@@ -28701,7 +27941,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tongue', vi: 'thiệt - lưỡi' },
         onyomi: ['ゼツ'],
         kunyomi: ['した'],
-        components: ['舌'],
         parts: [{ char: '舌', role: 'radical' }],
         examples: [
           {
@@ -28732,7 +27971,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'figure, form, appearance', vi: 'tư - dáng, hình dáng' },
         onyomi: ['シ'],
         kunyomi: ['すがた'],
-        components: ['次', '女'],
         parts: [
           { char: '次', role: 'phonetic' },
           { char: '女', role: 'radical' }
@@ -28766,7 +28004,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'look at, regard', vi: 'thị - nhìn, coi' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['示', '見'],
         parts: [
           { char: '示', role: 'phonetic' },
           { char: '見', role: 'radical' }
@@ -28800,7 +28037,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'watch over, care for', vi: 'khán - trông nom' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['手', '目'],
         parts: [
           { char: '手', role: 'other' },
           { char: '目', role: 'radical' }
@@ -28834,7 +28070,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'look at, view', vi: 'lãm - xem, ngắm' },
         onyomi: ['ラン'],
         kunyomi: [],
-        components: ['監', '見'],
         parts: [
           { char: '監', role: 'phonetic' },
           { char: '見', role: 'radical' }
@@ -28869,7 +28104,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'inhale, suck, absorb', vi: 'hấp - hút, hít' },
         onyomi: ['キュウ'],
         kunyomi: ['す.う'],
-        components: ['口', '及'],
         parts: [
           { char: '口', role: 'radical' },
           { char: '及', role: 'phonetic' }
@@ -28903,7 +28137,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reflect; project; shine', vi: 'ánh - chiếu, phản chiếu' },
         onyomi: ['エイ'],
         kunyomi: ['うつ.る', 'は.える'],
-        components: ['日', '央'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '央', role: 'phonetic' }
@@ -28945,7 +28178,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'coin, money', vi: 'tiền - đồng tiền' },
         onyomi: ['セン'],
         kunyomi: ['ぜに'],
-        components: ['金', '戔'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '戔', role: 'phonetic' }
@@ -28979,7 +28211,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'fare, wages, rent', vi: 'nhẫm - tiền công, tiền thuê' },
         onyomi: ['チン'],
         kunyomi: [],
-        components: ['任', '貝'],
         parts: [
           { char: '任', role: 'phonetic' },
           { char: '貝', role: 'radical' }
@@ -29013,7 +28244,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'finish; settle; economy', vi: 'tế - xong; trả xong; kinh tế' },
         onyomi: ['サイ'],
         kunyomi: ['す.む'],
-        components: ['氵', '斉'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '斉', role: 'phonetic' }
@@ -29047,7 +28277,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'obtain; collect; income', vi: 'thu - thu, gom; thu nhập' },
         onyomi: ['シュウ'],
         kunyomi: ['おさ.める'],
-        components: ['又'],
         parts: [{ char: '又', role: 'radical' }],
         examples: [
           {
@@ -29078,7 +28307,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pay in; store, put away', vi: 'nạp - nộp; cất giữ' },
         onyomi: ['ノウ'],
         kunyomi: ['おさ.める'],
-        components: ['糸', '内'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '内', role: 'phonetic' }
@@ -29112,7 +28340,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'offer, supply; accompany', vi: 'cung - cung cấp; hầu' },
         onyomi: ['キョウ', 'ク'],
         kunyomi: ['そな.える', 'とも'],
-        components: ['亻', '共'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '共', role: 'phonetic' }
@@ -29146,7 +28373,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'price; value', vi: 'trị - giá; giá trị' },
         onyomi: ['チ'],
         kunyomi: ['ね', 'あたい'],
-        components: ['亻', '直'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '直', role: 'phonetic' }
@@ -29180,7 +28406,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'stump; share, stock', vi: 'chu - gốc cây; cổ phần' },
         onyomi: ['シュ'],
         kunyomi: ['かぶ'],
-        components: ['木', '朱'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '朱', role: 'phonetic' }
@@ -29214,7 +28439,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'precious, noble', vi: 'quý - quý giá; cao quý' },
         onyomi: ['キ'],
         kunyomi: ['たっと.い', 'とうと.い'],
-        components: ['貝'],
         parts: [{ char: '貝', role: 'radical' }],
         examples: [
           {
@@ -29245,7 +28469,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mail, post', vi: 'bưu - bưu chính' },
         onyomi: ['ユウ'],
         kunyomi: [],
-        components: ['垂', '阝'],
         parts: [
           { char: '垂', role: 'other' },
           { char: '阝', role: 'radical' }
@@ -29288,7 +28511,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'counter for books; volume', vi: 'sách - cuốn (đếm sách)' },
         onyomi: ['サツ', 'サク'],
         kunyomi: [],
-        components: ['冂'],
         parts: [{ char: '冂', role: 'radical' }],
         examples: [
           {
@@ -29319,7 +28541,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'roll up; volume', vi: 'quyển - cuộn; quyển sách' },
         onyomi: ['カン'],
         kunyomi: ['ま.く', 'まき'],
-        components: ['己'],
         parts: [{ char: '己', role: 'radical' }],
         examples: [
           {
@@ -29350,7 +28571,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'magazine; record', vi: 'chí - tạp chí; ghi chép' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['言', '志'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '志', role: 'phonetic' }
@@ -29384,7 +28604,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'words, part of speech', vi: 'từ - lời, từ loại' },
         onyomi: ['シ'],
         kunyomi: [],
-        components: ['言', '司'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '司', role: 'phonetic' }
@@ -29418,7 +28637,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'argument, theory', vi: 'luận - bàn luận, lý luận' },
         onyomi: ['ロン'],
         kunyomi: [],
-        components: ['言', '侖'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '侖', role: 'phonetic' }
@@ -29452,7 +28670,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'translate; reason, meaning', vi: 'dịch - dịch thuật; lý do' },
         onyomi: ['ヤク'],
         kunyomi: ['わけ'],
-        components: ['言', '尺'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '尺', role: 'phonetic' }
@@ -29487,7 +28704,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mistake, err', vi: 'ngộ - lầm, sai' },
         onyomi: ['ゴ'],
         kunyomi: ['あやま.る'],
-        components: ['言', '呉'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '呉', role: 'phonetic' }
@@ -29521,7 +28737,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'discuss; attack, subjugate', vi: 'thảo - bàn bạc; đánh dẹp' },
         onyomi: ['トウ'],
         kunyomi: ['う.つ'],
-        components: ['言', '寸'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '寸', role: 'other' }
@@ -29555,7 +28770,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'simple, brief; letter', vi: 'giản - đơn giản; thư' },
         onyomi: ['カン'],
         kunyomi: [],
-        components: ['竹', '間'],
         parts: [
           { char: '竹', role: 'radical' },
           { char: '間', role: 'phonetic' }
@@ -29589,7 +28803,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'clear, bright, cheerful', vi: 'lãng - trong trẻo, vui tươi' },
         onyomi: ['ロウ'],
         kunyomi: ['ほが.らか'],
-        components: ['良', '月'],
         parts: [
           { char: '良', role: 'phonetic' },
           { char: '月', role: 'radical' }
@@ -29631,7 +28844,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'home, residence', vi: 'trạch - nhà ở' },
         onyomi: ['タク'],
         kunyomi: [],
-        components: ['宀', '乇'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '乇', role: 'phonetic' }
@@ -29665,7 +28877,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'mid-air; space', vi: 'trụ - không trung; vũ trụ' },
         onyomi: ['チュウ'],
         kunyomi: [],
-        components: ['宀', '由'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '由', role: 'phonetic' }
@@ -29701,7 +28912,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'eaves; universe, space', vi: 'vũ - mái hiên; vũ trụ' },
         onyomi: ['ウ'],
         kunyomi: [],
-        components: ['宀', '于'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '于', role: 'phonetic' }
@@ -29736,7 +28946,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'treasure', vi: 'bảo - của quý' },
         onyomi: ['ホウ'],
         kunyomi: ['たから'],
-        components: ['宀', '玉'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '玉', role: 'semantic' }
@@ -29770,7 +28979,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dense; secret; close', vi: 'mật - dày đặc; bí mật; khít' },
         onyomi: ['ミツ'],
         kunyomi: [],
-        components: ['宀', '必', '山'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '必', role: 'phonetic' },
@@ -29805,7 +29013,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'religion, sect; origin', vi: 'tông - tông phái; tổ tông' },
         onyomi: ['シュウ', 'ソウ'],
         kunyomi: [],
-        components: ['宀', '示'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '示', role: 'semantic' }
@@ -29839,7 +29046,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'seat; sit', vi: 'tọa - chỗ ngồi; ngồi' },
         onyomi: ['ザ'],
         kunyomi: ['すわ.る'],
-        components: ['广', '坐'],
         parts: [
           { char: '广', role: 'radical' },
           { char: '坐', role: 'phonetic' }
@@ -29873,7 +29079,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'palace; cabinet (government)', vi: 'các - lầu gác; nội các' },
         onyomi: ['カク'],
         kunyomi: [],
-        components: ['門', '各'],
         parts: [
           { char: '門', role: 'radical' },
           { char: '各', role: 'phonetic' }
@@ -29908,7 +29113,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'window', vi: 'song - cửa sổ' },
         onyomi: ['ソウ'],
         kunyomi: ['まど'],
-        components: ['穴', '心'],
         parts: [
           { char: '穴', role: 'radical' },
           { char: '心', role: 'other' }
@@ -29942,7 +29146,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hole, cave', vi: 'huyệt - lỗ, hang' },
         onyomi: ['ケツ'],
         kunyomi: ['あな'],
-        components: ['穴'],
         parts: [{ char: '穴', role: 'radical' }],
         examples: [
           {
@@ -29982,7 +29185,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'extend, enlarge', vi: 'khoách - mở rộng' },
         onyomi: ['カク'],
         kunyomi: [],
-        components: ['扌', '広'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '広', role: 'phonetic' }
@@ -30016,7 +29218,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wield, brandish; command', vi: 'huy - vung; chỉ huy' },
         onyomi: ['キ'],
         kunyomi: [],
-        components: ['扌', '軍'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '軍', role: 'phonetic' }
@@ -30050,7 +29251,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'throw away, discard', vi: 'xả - vứt bỏ' },
         onyomi: ['シャ'],
         kunyomi: ['す.てる'],
-        components: ['扌', '舎'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '舎', role: 'phonetic' }
@@ -30086,7 +29286,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'carry, bear; take charge', vi: 'đảm - gánh; đảm nhận' },
         onyomi: ['タン'],
         kunyomi: ['にな.う', 'かつ.ぐ'],
-        components: ['扌', '旦'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '旦', role: 'phonetic' }
@@ -30120,7 +29319,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'search, look for', vi: 'tham - tìm, dò' },
         onyomi: ['タン'],
         kunyomi: ['さぐ.る', 'さが.す'],
-        components: ['扌'],
         parts: [{ char: '扌', role: 'radical' }],
         examples: [
           {
@@ -30151,7 +29349,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'push; infer, recommend', vi: 'suy - đẩy; suy đoán, tiến cử' },
         onyomi: ['スイ'],
         kunyomi: ['お.す'],
-        components: ['扌', '隹'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '隹', role: 'phonetic' }
@@ -30185,7 +29382,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'manipulate, handle', vi: 'thao - điều khiển, thao tác' },
         onyomi: ['ソウ'],
         kunyomi: ['あやつ.る', 'みさお'],
-        components: ['扌', '喿'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '喿', role: 'phonetic' }
@@ -30219,7 +29415,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'worship, bow; humbly', vi: 'bái - lạy, vái' },
         onyomi: ['ハイ'],
         kunyomi: ['おが.む'],
-        components: ['扌'],
         parts: [{ char: '扌', role: 'radical' }],
         examples: [
           {
@@ -30250,7 +29445,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'criticize; comment', vi: 'phê - phê bình' },
         onyomi: ['ヒ'],
         kunyomi: [],
-        components: ['扌', '比'],
         parts: [
           { char: '扌', role: 'radical' },
           { char: '比', role: 'phonetic' }
@@ -30284,7 +29478,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'work, serve; diligence', vi: 'cần - làm việc; chuyên cần' },
         onyomi: ['キン', 'ゴン'],
         kunyomi: ['つと.める'],
-        components: ['堇', '力'],
         parts: [
           { char: '堇', role: 'phonetic' },
           { char: '力', role: 'radical' }
@@ -30326,7 +29519,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ash; gray', vi: 'hôi - tro; màu xám' },
         onyomi: ['カイ'],
         kunyomi: ['はい'],
-        components: ['厂', '火'],
         parts: [
           { char: '厂', role: 'other' },
           { char: '火', role: 'radical' }
@@ -30360,7 +29552,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sand', vi: 'sa - cát' },
         onyomi: ['サ', 'シャ'],
         kunyomi: ['すな'],
-        components: ['石', '少'],
         parts: [
           { char: '石', role: 'radical' },
           { char: '少', role: 'phonetic' }
@@ -30394,7 +29585,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'spring, fountain', vi: 'tuyền - suối nguồn' },
         onyomi: ['セン'],
         kunyomi: ['いずみ'],
-        components: ['白', '水'],
         parts: [
           { char: '白', role: 'other' },
           { char: '水', role: 'radical' }
@@ -30428,7 +29618,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'source, origin', vi: 'nguyên - nguồn gốc' },
         onyomi: ['ゲン'],
         kunyomi: ['みなもと'],
-        components: ['氵', '原'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '原', role: 'phonetic' }
@@ -30462,7 +29651,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tide; current, trend', vi: 'triều - thủy triều; trào lưu' },
         onyomi: ['チョウ'],
         kunyomi: ['しお'],
-        components: ['氵', '朝'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '朝', role: 'phonetic' }
@@ -30496,7 +29684,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'steam, evaporate', vi: 'chưng - hấp, bốc hơi' },
         onyomi: ['ジョウ'],
         kunyomi: ['む.す'],
-        components: ['艹', '烝'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '烝', role: 'phonetic' }
@@ -30530,7 +29717,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wash', vi: 'tẩy - rửa, giặt' },
         onyomi: ['セン'],
         kunyomi: ['あら.う'],
-        components: ['氵', '先'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '先', role: 'phonetic' }
@@ -30564,7 +29750,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dye; be infected', vi: 'nhiễm - nhuộm; lây nhiễm' },
         onyomi: ['セン'],
         kunyomi: ['そ.める', 'し.みる'],
-        components: ['氵', '九', '木'],
         parts: [
           { char: '氵', role: 'other' },
           { char: '九', role: 'other' },
@@ -30599,7 +29784,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dry; low tide', vi: 'can - phơi khô; nước ròng' },
         onyomi: ['カン'],
         kunyomi: ['ほ.す', 'ひ.る'],
-        components: ['干'],
         parts: [{ char: '干', role: 'radical' }],
         examples: [
           {
@@ -30630,7 +29814,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'warm', vi: 'noãn - ấm áp' },
         onyomi: ['ダン'],
         kunyomi: ['あたた.かい'],
-        components: ['日', '爰'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '爰', role: 'phonetic' }
@@ -30672,7 +29855,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'silk', vi: 'quyên - lụa' },
         onyomi: ['ケン'],
         kunyomi: ['きぬ'],
-        components: ['糸'],
         parts: [{ char: '糸', role: 'radical' }],
         examples: [
           {
@@ -30704,7 +29886,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'pure, genuine', vi: 'thuần - thuần khiết' },
         onyomi: ['ジュン'],
         kunyomi: [],
-        components: ['糸', '屯'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '屯', role: 'phonetic' }
@@ -30738,7 +29919,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'vertical, lengthwise', vi: 'túng - chiều dọc' },
         onyomi: ['ジュウ'],
         kunyomi: ['たて'],
-        components: ['糸', '従'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '従', role: 'phonetic' }
@@ -30773,7 +29953,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shrink, shorten', vi: 'súc - co lại, rút ngắn' },
         onyomi: ['シュク'],
         kunyomi: ['ちぢ.む'],
-        components: ['糸', '宿'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '宿', role: 'phonetic' }
@@ -30807,7 +29986,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'lineage, system', vi: 'hệ - dòng dõi, hệ thống' },
         onyomi: ['ケイ'],
         kunyomi: [],
-        components: ['糸'],
         parts: [{ char: '糸', role: 'radical' }],
         examples: [
           {
@@ -30838,7 +30016,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'crimson, deep red', vi: 'hồng - đỏ thắm' },
         onyomi: ['コウ', 'ク'],
         kunyomi: ['べに', 'くれない'],
-        components: ['糸', '工'],
         parts: [
           { char: '糸', role: 'radical' },
           { char: '工', role: 'phonetic' }
@@ -30872,7 +30049,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'leather; reform', vi: 'cách - da thuộc; cải cách' },
         onyomi: ['カク'],
         kunyomi: ['かわ'],
-        components: ['革'],
         parts: [{ char: '革', role: 'radical' }],
         examples: [
           {
@@ -30903,7 +30079,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'silkworm', vi: 'tàm - con tằm' },
         onyomi: ['サン'],
         kunyomi: ['かいこ'],
-        components: ['天', '虫'],
         parts: [
           { char: '天', role: 'other' },
           { char: '虫', role: 'radical' }
@@ -30937,7 +30112,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sugar', vi: 'đường - đường (chất)' },
         onyomi: ['トウ'],
         kunyomi: [],
-        components: ['米', '唐'],
         parts: [
           { char: '米', role: 'radical' },
           { char: '唐', role: 'phonetic' }
@@ -30971,7 +30145,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grain, cereal', vi: 'cốc - ngũ cốc' },
         onyomi: ['コク'],
         kunyomi: [],
-        components: ['禾', '殳'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '殳', role: 'other' }
@@ -31013,7 +30186,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'danger, peril', vi: 'nguy - nguy hiểm' },
         onyomi: ['キ'],
         kunyomi: ['あぶ.ない', 'あや.うい'],
-        components: ['卩'],
         parts: [{ char: '卩', role: 'radical' }],
         examples: [
           {
@@ -31044,7 +30216,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'difficult; hardship', vi: 'nan - khó; tai ương' },
         onyomi: ['ナン'],
         kunyomi: ['むずか.しい', 'かた.い'],
-        components: ['隹'],
         parts: [{ char: '隹', role: 'radical' }],
         examples: [
           {
@@ -31075,7 +30246,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'doubt, suspect', vi: 'nghi - nghi ngờ' },
         onyomi: ['ギ'],
         kunyomi: ['うたが.う'],
-        components: ['疋'],
         parts: [{ char: '疋', role: 'radical' }],
         examples: [
           {
@@ -31106,7 +30276,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'be troubled, distressed', vi: 'khốn - khốn khó, bối rối' },
         onyomi: ['コン'],
         kunyomi: ['こま.る'],
-        components: ['囗', '木'],
         parts: [
           { char: '囗', role: 'radical' },
           { char: '木', role: 'semantic' }
@@ -31140,7 +30309,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'wound, injury', vi: 'thương - vết thương' },
         onyomi: ['ショウ'],
         kunyomi: ['きず', 'いた.む'],
-        components: ['亻'],
         parts: [{ char: '亻', role: 'radical' }],
         examples: [
           {
@@ -31171,7 +30339,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'enemy, rival', vi: 'địch - kẻ thù' },
         onyomi: ['テキ'],
         kunyomi: ['かたき'],
-        components: ['啇', '攵'],
         parts: [
           { char: '啇', role: 'phonetic' },
           { char: '攵', role: 'radical' }
@@ -31205,7 +30372,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'violent, intense', vi: 'kích - dữ dội, mãnh liệt' },
         onyomi: ['ゲキ'],
         kunyomi: ['はげ.しい'],
-        components: ['氵', '敫'],
         parts: [
           { char: '氵', role: 'radical' },
           { char: '敫', role: 'phonetic' }
@@ -31239,7 +30405,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'strict, solemn', vi: 'nghiêm - nghiêm khắc' },
         onyomi: ['ゲン', 'ゴン'],
         kunyomi: ['おごそ.か', 'きび.しい'],
-        components: ['厂', '敢'],
         parts: [
           { char: '厂', role: 'radical' },
           { char: '敢', role: 'phonetic' }
@@ -31273,7 +30438,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'drama, play; severe', vi: 'kịch - vở kịch; kịch liệt' },
         onyomi: ['ゲキ'],
         kunyomi: [],
-        components: ['豦', '刂'],
         parts: [
           { char: '豦', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -31307,7 +30471,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'guard; warn, alert', vi: 'cảnh - canh phòng; cảnh báo' },
         onyomi: ['ケイ'],
         kunyomi: ['いまし.める'],
-        components: ['敬', '言'],
         parts: [
           { char: '敬', role: 'phonetic' },
           { char: '言', role: 'radical' }
@@ -31349,7 +30512,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'extend, prolong', vi: 'diên - kéo dài' },
         onyomi: ['エン'],
         kunyomi: ['の.びる', 'の.べる'],
-        components: ['廴'],
         parts: [{ char: '廴', role: 'radical' }],
         examples: [
           {
@@ -31380,7 +30542,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'run along, follow', vi: 'duyên - men theo' },
         onyomi: ['エン'],
         kunyomi: ['そ.う'],
-        components: ['氵'],
         parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
@@ -31411,7 +30572,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'descend; fall (rain)', vi: 'giáng - xuống; rơi (mưa)' },
         onyomi: ['コウ'],
         kunyomi: ['お.りる', 'ふ.る'],
-        components: ['阝', '夅'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '夅', role: 'phonetic' }
@@ -31445,7 +30605,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'retreat, withdraw', vi: 'thoái - lùi, rút lui' },
         onyomi: ['タイ'],
         kunyomi: ['しりぞ.く'],
-        components: ['辶', '艮'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '艮', role: 'phonetic' }
@@ -31479,7 +30638,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'remove, exclude', vi: 'trừ - loại bỏ' },
         onyomi: ['ジョ', 'ジ'],
         kunyomi: ['のぞ.く'],
-        components: ['阝', '余'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '余', role: 'phonetic' }
@@ -31513,7 +30671,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'divide, split; proportion', vi: 'cát - chia, cắt; tỷ lệ' },
         onyomi: ['カツ'],
         kunyomi: ['わ.る', 'わり'],
-        components: ['害', '刂'],
         parts: [
           { char: '害', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -31547,7 +30704,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'carve, engrave; time', vi: 'khắc - khắc; khoảnh khắc' },
         onyomi: ['コク'],
         kunyomi: ['きざ.む'],
-        components: ['亥', '刂'],
         parts: [
           { char: '亥', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -31581,7 +30737,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shoot; fire', vi: 'xạ - bắn' },
         onyomi: ['シャ'],
         kunyomi: ['い.る'],
-        components: ['身', '寸'],
         parts: [
           { char: '身', role: 'semantic' },
           { char: '寸', role: 'radical' }
@@ -31615,7 +30770,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hang down, droop', vi: 'thùy - rủ xuống, thẳng đứng' },
         onyomi: ['スイ'],
         kunyomi: ['た.れる'],
-        components: ['土'],
         parts: [{ char: '土', role: 'radical' }],
         examples: [
           {
@@ -31646,7 +30800,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'consent; receive, hear', vi: 'thừa - nhận, vâng' },
         onyomi: ['ショウ'],
         kunyomi: ['うけたまわ.る'],
-        components: ['手'],
         parts: [{ char: '手', role: 'radical' }],
         examples: [
           {
@@ -31685,7 +30838,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'private; I, me', vi: 'tư - riêng tư; tôi' },
         onyomi: ['シ'],
         kunyomi: ['わたくし', 'わたし'],
-        components: ['禾', '厶'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '厶', role: 'phonetic' }
@@ -31719,7 +30871,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'masses, multitude', vi: 'chúng - đông người, quần chúng' },
         onyomi: ['シュウ', 'シュ'],
         kunyomi: [],
-        components: ['血'],
         parts: [{ char: '血', role: 'radical' }],
         examples: [
           {
@@ -31750,7 +30901,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'obey, follow; subordinate', vi: 'tùng - theo, tuân theo' },
         onyomi: ['ジュウ'],
         kunyomi: ['したが.う'],
-        components: ['彳'],
         parts: [{ char: '彳', role: 'radical' }],
         examples: [
           {
@@ -31782,7 +30932,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'take up (a post); settle into', vi: 'tựu - nhận (chức); bắt đầu' },
         onyomi: ['シュウ'],
         kunyomi: ['つ.く'],
-        components: ['京', '尤'],
         parts: [
           { char: '京', role: 'other' },
           { char: '尤', role: 'radical' }
@@ -31816,7 +30965,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hometown, village', vi: 'hương - quê hương' },
         onyomi: ['キョウ', 'ゴウ'],
         kunyomi: ['さと'],
-        components: ['阝'],
         parts: [{ char: '阝', role: 'radical' }],
         examples: [
           {
@@ -31847,7 +30995,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'revere, respect; noble', vi: 'tôn - tôn kính; cao quý' },
         onyomi: ['ソン'],
         kunyomi: ['たっと.い', 'とうと.い'],
-        components: ['酋', '寸'],
         parts: [
           { char: '酋', role: 'phonetic' },
           { char: '寸', role: 'radical' }
@@ -31881,7 +31028,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'holy, sacred; sage', vi: 'thánh - thần thánh; thánh nhân' },
         onyomi: ['セイ'],
         kunyomi: ['ひじり'],
-        components: ['耳', '口', '王'],
         parts: [
           { char: '耳', role: 'radical' },
           { char: '口', role: 'other' },
@@ -31916,7 +31062,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'various, several', vi: 'chư - các, nhiều' },
         onyomi: ['ショ'],
         kunyomi: ['もろ'],
-        components: ['言', '者'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '者', role: 'phonetic' }
@@ -31950,7 +31095,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'haiku; actor', vi: 'bài - thơ haiku; diễn viên' },
         onyomi: ['ハイ'],
         kunyomi: [],
-        components: ['亻', '非'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '非', role: 'phonetic' }
@@ -31984,7 +31128,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'superior; gentle; actor', vi: 'ưu - xuất sắc; dịu dàng; diễn viên' },
         onyomi: ['ユウ'],
         kunyomi: ['やさ.しい', 'すぐ.れる'],
-        components: ['亻', '憂'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '憂', role: 'phonetic' }
@@ -32026,7 +31169,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'create, originate', vi: 'sáng - sáng tạo, khởi lập' },
         onyomi: ['ソウ'],
         kunyomi: ['つく.る'],
-        components: ['倉', '刂'],
         parts: [
           { char: '倉', role: 'phonetic' },
           { char: '刂', role: 'radical' }
@@ -32060,7 +31202,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'play (music); present', vi: 'tấu - tấu nhạc; trình tấu' },
         onyomi: ['ソウ'],
         kunyomi: ['かな.でる'],
-        components: ['大'],
         parts: [{ char: '大', role: 'radical' }],
         examples: [
           {
@@ -32091,7 +31232,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'dress, equip; pretend', vi: 'trang - trang bị; giả trang' },
         onyomi: ['ソウ', 'ショウ'],
         kunyomi: ['よそお.う'],
-        components: ['壮', '衣'],
         parts: [
           { char: '壮', role: 'phonetic' },
           { char: '衣', role: 'radical' }
@@ -32125,7 +31265,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'unfold, expand; exhibit', vi: 'triển - mở ra; trưng bày' },
         onyomi: ['テン'],
         kunyomi: [],
-        components: ['尸'],
         parts: [{ char: '尸', role: 'radical' }],
         examples: [
           {
@@ -32156,7 +31295,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'layer, stratum; class', vi: 'tầng - lớp, tầng' },
         onyomi: ['ソウ'],
         kunyomi: [],
-        components: ['尸', '曽'],
         parts: [
           { char: '尸', role: 'radical' },
           { char: '曽', role: 'phonetic' }
@@ -32190,7 +31328,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'storehouse; store away', vi: 'tàng - kho; cất chứa' },
         onyomi: ['ゾウ'],
         kunyomi: ['くら'],
-        components: ['艹', '臧'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '臧', role: 'phonetic' }
@@ -32225,7 +31362,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'exist; know, suppose', vi: 'tồn - tồn tại; biết' },
         onyomi: ['ソン', 'ゾン'],
         kunyomi: [],
-        components: ['子'],
         parts: [{ char: '子', role: 'radical' }],
         examples: [
           {
@@ -32256,7 +31392,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'prosper; heap up', vi: 'thịnh - hưng thịnh; chất đầy' },
         onyomi: ['セイ', 'ジョウ'],
         kunyomi: ['も.る', 'さか.ん'],
-        components: ['成', '皿'],
         parts: [
           { char: '成', role: 'phonetic' },
           { char: '皿', role: 'radical' }
@@ -32290,7 +31425,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'step, grade; means', vi: 'đoạn - bậc, cấp; biện pháp' },
         onyomi: ['ダン'],
         kunyomi: [],
-        components: ['殳'],
         parts: [{ char: '殳', role: 'radical' }],
         examples: [
           {
@@ -32321,7 +31455,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'shaku (length unit); scale', vi: 'xích - thước (đơn vị dài)' },
         onyomi: ['シャク'],
         kunyomi: [],
-        components: ['尸'],
         parts: [{ char: '尸', role: 'radical' }],
         examples: [
           {
@@ -32360,7 +31493,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'desk', vi: 'kỷ - bàn (học, làm việc)' },
         onyomi: ['キ'],
         kunyomi: ['つくえ'],
-        components: ['木', '几'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '几', role: 'phonetic' }
@@ -32396,7 +31528,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'rod, pole, stick', vi: 'bổng - cây gậy, thanh' },
         onyomi: ['ボウ'],
         kunyomi: [],
-        components: ['木', '奉'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '奉', role: 'phonetic' }
@@ -32431,7 +31562,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'tree; establish', vi: 'thụ - cây; dựng nên' },
         onyomi: ['ジュ'],
         kunyomi: [],
-        components: ['木', '尌'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '尌', role: 'phonetic' }
@@ -32466,7 +31596,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'model, pattern; copy', vi: 'mô - mẫu, khuôn; mô phỏng' },
         onyomi: ['モ', 'ボ'],
         kunyomi: [],
-        components: ['木', '莫'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '莫', role: 'phonetic' }
@@ -32500,7 +31629,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'counter for flat objects', vi: 'mai - tấm (đếm vật mỏng)' },
         onyomi: ['マイ'],
         kunyomi: [],
-        components: ['木', '攵'],
         parts: [
           { char: '木', role: 'radical' },
           { char: '攵', role: 'phonetic' }
@@ -32534,7 +31662,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'steel', vi: 'cương - thép' },
         onyomi: ['コウ'],
         kunyomi: ['はがね'],
-        components: ['金', '岡'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '岡', role: 'phonetic' }
@@ -32568,7 +31695,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'needle; pointer', vi: 'châm - kim' },
         onyomi: ['シン'],
         kunyomi: ['はり'],
-        components: ['金', '十'],
         parts: [
           { char: '金', role: 'radical' },
           { char: '十', role: 'phonetic' }
@@ -32602,7 +31728,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'magnetism; porcelain', vi: 'từ - từ tính; đồ sứ' },
         onyomi: ['ジ'],
         kunyomi: [],
-        components: ['石', '茲'],
         parts: [
           { char: '石', role: 'radical' },
           { char: '茲', role: 'phonetic' }
@@ -32637,7 +31762,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'curtain; act; shogunate', vi: 'mạc - màn; mạc phủ' },
         onyomi: ['マク', 'バク'],
         kunyomi: [],
-        components: ['莫', '巾'],
         parts: [
           { char: '莫', role: 'phonetic' },
           { char: '巾', role: 'radical' }
@@ -32671,7 +31795,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ticket, coupon', vi: 'khoán - vé, phiếu' },
         onyomi: ['ケン'],
         kunyomi: [],
-        components: ['刀'],
         parts: [{ char: '刀', role: 'radical' }],
         examples: [
           {
@@ -32712,7 +31835,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'desire, want', vi: 'dục - ham muốn' },
         onyomi: ['ヨク'],
         kunyomi: ['ほ.しい'],
-        components: ['谷', '欠'],
         parts: [
           { char: '谷', role: 'phonetic' },
           { char: '欠', role: 'radical' }
@@ -32746,7 +31868,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'be roused, stirred up', vi: 'phấn - phấn chấn, hăng hái' },
         onyomi: ['フン'],
         kunyomi: ['ふる.う'],
-        components: ['大', '隹', '田'],
         parts: [
           { char: '大', role: 'radical' },
           { char: '隹', role: 'other' },
@@ -32781,7 +31902,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'forget', vi: 'vong - quên' },
         onyomi: ['ボウ'],
         kunyomi: ['わす.れる'],
-        components: ['亡', '心'],
         parts: [
           { char: '亡', role: 'phonetic' },
           { char: '心', role: 'radical' }
@@ -32817,7 +31937,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'secret, conceal', vi: 'bí - bí mật, giấu' },
         onyomi: ['ヒ'],
         kunyomi: ['ひ.める'],
-        components: ['禾', '必'],
         parts: [
           { char: '禾', role: 'radical' },
           { char: '必', role: 'phonetic' }
@@ -32851,7 +31970,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'recognize, approve', vi: 'nhận - công nhận, thừa nhận' },
         onyomi: ['ニン'],
         kunyomi: ['みと.める'],
-        components: ['言', '忍'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '忍', role: 'phonetic' }
@@ -32885,7 +32003,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'deny; no', vi: 'phủ - không, phủ định' },
         onyomi: ['ヒ'],
         kunyomi: ['いな'],
-        components: ['不', '口'],
         parts: [
           { char: '不', role: 'phonetic' },
           { char: '口', role: 'radical' }
@@ -32919,7 +32036,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'specialize; exclusive', vi: 'chuyên - chuyên môn; riêng' },
         onyomi: ['セン'],
         kunyomi: ['もっぱ.ら'],
-        components: ['寸'],
         parts: [{ char: '寸', role: 'radical' }],
         examples: [
           {
@@ -32950,7 +32066,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'proclaim, declare', vi: 'tuyên - tuyên bố' },
         onyomi: ['セン'],
         kunyomi: [],
-        components: ['宀', '亘'],
         parts: [
           { char: '宀', role: 'radical' },
           { char: '亘', role: 'phonetic' }
@@ -32984,7 +32099,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'general, commander; future', vi: 'tướng - tướng lĩnh; sắp tới' },
         onyomi: ['ショウ'],
         kunyomi: [],
-        components: ['爿', '寸'],
         parts: [
           { char: '爿', role: 'phonetic' },
           { char: '寸', role: 'radical' }
@@ -33018,7 +32132,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'birth; be born', vi: 'đản - sinh ra' },
         onyomi: ['タン'],
         kunyomi: [],
-        components: ['言', '延'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '延', role: 'phonetic' }
@@ -33061,7 +32174,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'evening, night', vi: 'vãn - buổi tối' },
         onyomi: ['バン'],
         kunyomi: [],
-        components: ['日', '免'],
         parts: [
           { char: '日', role: 'radical' },
           { char: '免', role: 'phonetic' }
@@ -33096,7 +32208,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'grow dark; live', vi: 'mộ - chiều tối; sinh sống' },
         onyomi: ['ボ'],
         kunyomi: ['く.れる', 'く.らす'],
-        components: ['莫', '日'],
         parts: [
           { char: '莫', role: 'phonetic' },
           { char: '日', role: 'radical' }
@@ -33130,7 +32241,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'the following (day, year)', vi: 'dực - kế tiếp (ngày, năm)' },
         onyomi: ['ヨク'],
         kunyomi: [],
-        components: ['羽', '立'],
         parts: [
           { char: '羽', role: 'radical' },
           { char: '立', role: 'phonetic' }
@@ -33164,7 +32274,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'infant, very young', vi: 'ấu - thơ ấu, nhỏ' },
         onyomi: ['ヨウ'],
         kunyomi: ['おさな.い'],
-        components: ['幺', '力'],
         parts: [
           { char: '幺', role: 'radical' },
           { char: '力', role: 'phonetic' }
@@ -33198,7 +32307,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'young; if', vi: 'nhược - trẻ; nếu' },
         onyomi: ['ジャク'],
         kunyomi: ['わか.い'],
-        components: ['艹', '右'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '右', role: 'phonetic' }
@@ -33232,7 +32340,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'ripen; mature; master', vi: 'thục - chín; thành thục' },
         onyomi: ['ジュク'],
         kunyomi: ['う.れる'],
-        components: ['孰', '灬'],
         parts: [
           { char: '孰', role: 'phonetic' },
           { char: '灬', role: 'radical' }
@@ -33266,7 +32373,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reach; utmost', vi: 'chí - đến; tột cùng' },
         onyomi: ['シ'],
         kunyomi: ['いた.る'],
-        components: ['至'],
         parts: [{ char: '至', role: 'radical' }],
         examples: [
           {
@@ -33297,7 +32403,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'summit; receive (humble)', vi: 'đính - đỉnh; nhận (khiêm nhường)' },
         onyomi: ['チョウ'],
         kunyomi: ['いただ.く'],
-        components: ['丁', '頁'],
         parts: [
           { char: '丁', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -33331,7 +32436,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'face, attend; be present', vi: 'lâm - đối mặt; đến dự' },
         onyomi: ['リン'],
         kunyomi: ['のぞ.む'],
-        components: ['臣'],
         parts: [{ char: '臣', role: 'radical' }],
         examples: [
           {
@@ -33362,7 +32466,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reach; deliver; report', vi: 'giới - đến nơi; gửi; trình báo' },
         onyomi: [],
         kunyomi: ['とど.く', 'とど.ける'],
-        components: ['尸', '由'],
         parts: [
           { char: '尸', role: 'radical' },
           { char: '由', role: 'other' }
@@ -33407,7 +32510,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'faction, group; send', vi: 'phái - phe nhóm; phái đi' },
         onyomi: ['ハ'],
         kunyomi: [],
-        components: ['氵'],
         parts: [{ char: '氵', role: 'radical' }],
         examples: [
           {
@@ -33438,7 +32540,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'squad, group', vi: 'ban - tổ, nhóm' },
         onyomi: ['ハン'],
         kunyomi: [],
-        components: ['王', '刂'],
         parts: [
           { char: '王', role: 'radical' },
           { char: '刂', role: 'other' }
@@ -33473,7 +32574,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'alliance, oath', vi: 'minh - liên minh, thề' },
         onyomi: ['メイ'],
         kunyomi: [],
-        components: ['明', '皿'],
         parts: [
           { char: '明', role: 'phonetic' },
           { char: '皿', role: 'radical' }
@@ -33507,7 +32607,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'line up; ordinary', vi: 'tịnh - xếp hàng; thường' },
         onyomi: ['ヘイ'],
         kunyomi: ['なら.べる', 'な.み'],
-        components: ['一'],
         parts: [{ char: '一', role: 'radical' }],
         examples: [
           {
@@ -33538,7 +32637,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'His/Her Majesty', vi: 'bệ - bệ hạ' },
         onyomi: ['ヘイ'],
         kunyomi: [],
-        components: ['阝', '比', '土'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '比', role: 'other' },
@@ -33577,7 +32675,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'author, write; remarkable', vi: 'trứ - viết sách; nổi bật' },
         onyomi: ['チョ'],
         kunyomi: ['あらわ.す', 'いちじる.しい'],
-        components: ['艹', '者'],
         parts: [
           { char: '艹', role: 'radical' },
           { char: '者', role: 'phonetic' }
@@ -33611,7 +32708,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'visit, call on', vi: 'phỏng - thăm viếng' },
         onyomi: ['ホウ'],
         kunyomi: ['おとず.れる', 'たず.ねる'],
-        components: ['言', '方'],
         parts: [
           { char: '言', role: 'radical' },
           { char: '方', role: 'phonetic' }
@@ -33645,7 +32741,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'bequeath; leave behind', vi: 'di - để lại, di sản' },
         onyomi: ['イ', 'ユイ'],
         kunyomi: ['のこ.す'],
-        components: ['辶', '貴'],
         parts: [
           { char: '辶', role: 'radical' },
           { char: '貴', role: 'phonetic' }
@@ -33679,7 +32774,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'different, unusual', vi: 'dị - khác, lạ' },
         onyomi: ['イ'],
         kunyomi: ['こと.なる'],
-        components: ['田', '共'],
         parts: [
           { char: '田', role: 'radical' },
           { char: '共', role: 'other' }
@@ -33713,7 +32807,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'region, area, boundary', vi: 'vực - vùng, khu vực' },
         onyomi: ['イキ'],
         kunyomi: [],
-        components: ['土', '或'],
         parts: [
           { char: '土', role: 'radical' },
           { char: '或', role: 'phonetic' }
@@ -33755,7 +32848,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'deal with, dispose; place', vi: 'xử - xử lý; nơi chốn' },
         onyomi: ['ショ'],
         kunyomi: ['ところ'],
-        components: ['夂', '几'],
         parts: [
           { char: '夂', role: 'other' },
           { char: '几', role: 'radical' }
@@ -33789,7 +32881,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'hinder, obstruct', vi: 'chướng - cản trở' },
         onyomi: ['ショウ'],
         kunyomi: ['さわ.る'],
-        components: ['阝', '章'],
         parts: [
           { char: '阝', role: 'radical' },
           { char: '章', role: 'phonetic' }
@@ -33823,7 +32914,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'sun (small unit ~3cm); a little', vi: 'thốn - tấc (đơn vị ~3cm)' },
         onyomi: ['スン'],
         kunyomi: [],
-        components: ['寸'],
         parts: [{ char: '寸', role: 'radical' }],
         examples: [
           {
@@ -33854,7 +32944,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'straw bale (of rice)', vi: 'biểu - bao (rơm đựng gạo)' },
         onyomi: ['ヒョウ'],
         kunyomi: ['たわら'],
-        components: ['亻', '表'],
         parts: [
           { char: '亻', role: 'radical' },
           { char: '表', role: 'phonetic' }
@@ -33888,7 +32977,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'close, shut', vi: 'bế - đóng' },
         onyomi: ['ヘイ'],
         kunyomi: ['と.じる', 'し.める'],
-        components: ['門', '才'],
         parts: [
           { char: '門', role: 'radical' },
           { char: '才', role: 'other' }
@@ -33922,7 +33010,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'piece, fragment; one side', vi: 'phiến - mảnh; một phía' },
         onyomi: ['ヘン'],
         kunyomi: ['かた'],
-        components: ['片'],
         parts: [{ char: '片', role: 'radical' }],
         examples: [
           {
@@ -33953,7 +33040,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'supplement, make up for', vi: 'bổ - bổ sung, bù' },
         onyomi: ['ホ'],
         kunyomi: ['おぎな.う'],
-        components: ['衤', '甫'],
         parts: [
           { char: '衤', role: 'radical' },
           { char: '甫', role: 'phonetic' }
@@ -33987,7 +33073,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'deposit; entrust', vi: 'dự - gửi; ký thác' },
         onyomi: ['ヨ'],
         kunyomi: ['あず.ける', 'あず.かる'],
-        components: ['予', '頁'],
         parts: [
           { char: '予', role: 'phonetic' },
           { char: '頁', role: 'radical' }
@@ -34021,7 +33106,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'disorder, chaos', vi: 'loạn - rối loạn' },
         onyomi: ['ラン'],
         kunyomi: ['みだ.れる', 'みだ.す'],
-        components: ['乙'],
         parts: [{ char: '乙', role: 'radical' }],
         examples: [
           {
@@ -34052,7 +33136,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'egg', vi: 'noãn - trứng' },
         onyomi: ['ラン'],
         kunyomi: ['たまご'],
-        components: ['卩'],
         parts: [{ char: '卩', role: 'radical' }],
         examples: [
           {
@@ -34083,7 +33166,6 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
         meaning: { en: 'reverse side, back, inside', vi: 'lý - mặt sau, bên trong' },
         onyomi: ['リ'],
         kunyomi: ['うら'],
-        components: ['里', '衣'],
         parts: [
           { char: '里', role: 'phonetic' },
           { char: '衣', role: 'radical' }
@@ -34109,6 +33191,2675 @@ export const grade6Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '裏', reading: 'り' }
             ],
             meaning: { en: "in one's mind", vi: 'trong tâm trí' }
+          }
+        ]
+      }
+    ]
+  }
+]);
+
+/**
+ * Kanken level 4 (漢検4級) kanji: the first 313 jōyō characters learned in
+ * secondary school (beyond the 1026 elementary kyōiku kanji). Authored by hand
+ * in ordered, themed lessons (~10 per lesson as a loose target, not fixed).
+ */
+export const kanken4Lessons: KanjiLesson[] = withSequentialNumbers([
+  {
+    title: {
+      en: 'Water & liquid',
+      vi: 'Nước & chất lỏng'
+    },
+    kanji: [
+      {
+        char: '汗',
+        meaning: { en: 'sweat, perspiration', vi: 'hãn - mồ hôi' },
+        onyomi: ['カン'],
+        kunyomi: ['あせ'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '干', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '汗', reading: 'かん' }
+            ],
+            meaning: { en: 'perspiration, sweating', vi: 'sự đổ mồ hôi' }
+          },
+          {
+            parts: [
+              { text: '冷', reading: 'ひや' },
+              { text: '汗', reading: 'あせ' }
+            ],
+            meaning: { en: 'cold sweat', vi: 'mồ hôi lạnh' }
+          },
+          {
+            parts: [
+              { text: '汗', reading: 'あせ' },
+              { text: '水', reading: 'みず' }
+            ],
+            meaning: { en: 'sweat (and toil)', vi: 'mồ hôi công sức' }
+          }
+        ]
+      },
+      {
+        char: '沼',
+        meaning: { en: 'marsh, swamp, pond', vi: 'chiểu - đầm, ao' },
+        onyomi: ['ショウ'],
+        kunyomi: ['ぬま'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '召', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '沼', reading: 'ぬま' },
+              { text: '地', reading: 'ち' }
+            ],
+            meaning: { en: 'marshland, swamp', vi: 'vùng đầm lầy' }
+          },
+          {
+            parts: [
+              { text: '湖', reading: 'こ' },
+              { text: '沼', reading: 'しょう' }
+            ],
+            meaning: { en: 'lakes and marshes', vi: 'hồ ao' }
+          },
+          {
+            parts: [
+              { text: '泥', reading: 'どろ' },
+              { text: '沼', reading: 'ぬま' }
+            ],
+            meaning: { en: 'quagmire, bog', vi: 'vũng lầy' }
+          }
+        ]
+      },
+      {
+        char: '浸',
+        meaning: { en: 'soak, immerse, dip', vi: 'xâm - ngâm, thấm' },
+        onyomi: ['シン'],
+        kunyomi: ['ひた.す', 'ひた.る'],
+        parts: [{ char: '氵', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '浸', reading: 'しん' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'flooding, inundation', vi: 'ngập nước' }
+          },
+          {
+            parts: [
+              { text: '浸', reading: 'しん' },
+              { text: '透', reading: 'とう' }
+            ],
+            meaning: { en: 'permeation, infiltration', vi: 'thẩm thấu' }
+          },
+          {
+            parts: [
+              { text: '浸', reading: 'ひた' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to soak, to dip', vi: 'ngâm, nhúng' }
+          }
+        ]
+      },
+      {
+        char: '濁',
+        meaning: { en: 'become muddy, turbid', vi: 'trọc - vẩn đục' },
+        onyomi: ['ダク'],
+        kunyomi: ['にご.る', 'にご.す'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '蜀', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '濁', reading: 'だく' },
+              { text: '流', reading: 'りゅう' }
+            ],
+            meaning: { en: 'muddy stream', vi: 'dòng nước đục' }
+          },
+          {
+            parts: [
+              { text: '汚', reading: 'お' },
+              { text: '濁', reading: 'だく' }
+            ],
+            meaning: { en: 'pollution, contamination', vi: 'ô nhiễm, vẩn đục' }
+          },
+          {
+            parts: [
+              { text: '濁', reading: 'にご' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to become muddy', vi: 'trở nên đục' }
+          }
+        ]
+      },
+      {
+        char: '淡',
+        meaning: { en: 'faint, light, thin', vi: 'đạm - nhạt, thanh đạm' },
+        onyomi: ['タン'],
+        kunyomi: ['あわ.い'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '炎', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '淡', reading: 'たん' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'fresh water', vi: 'nước ngọt' }
+          },
+          {
+            parts: [
+              { text: '冷', reading: 'れい' },
+              { text: '淡', reading: 'たん' }
+            ],
+            meaning: { en: 'cold, indifferent', vi: 'lạnh nhạt' }
+          },
+          {
+            parts: [
+              { text: '淡', reading: 'あわ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'faint, pale', vi: 'nhạt' }
+          }
+        ]
+      },
+      {
+        char: '澄',
+        meaning: { en: 'become clear, limpid', vi: 'trừng - trong veo' },
+        onyomi: ['チョウ'],
+        kunyomi: ['す.む', 'す.ます'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '登', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '清', reading: 'せい' },
+              { text: '澄', reading: 'ちょう' }
+            ],
+            meaning: { en: 'clarity, serenity', vi: 'trong trẻo' }
+          },
+          {
+            parts: [
+              { text: '上', reading: 'うわ' },
+              { text: '澄', reading: 'ず' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'upper clear layer', vi: 'phần nước trong ở trên' }
+          },
+          {
+            parts: [
+              { text: '澄', reading: 'す' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to become clear', vi: 'trở nên trong' }
+          }
+        ]
+      },
+      {
+        char: '沈',
+        meaning: { en: 'sink; be depressed', vi: 'trầm - chìm; trầm lặng' },
+        onyomi: ['チン'],
+        kunyomi: ['しず.む', 'しず.める'],
+        parts: [{ char: '氵', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '沈', reading: 'ちん' },
+              { text: '没', reading: 'ぼつ' }
+            ],
+            meaning: { en: 'sinking, submersion', vi: 'đắm chìm' }
+          },
+          {
+            parts: [
+              { text: '沈', reading: 'ちん' },
+              { text: '黙', reading: 'もく' }
+            ],
+            meaning: { en: 'silence', vi: 'trầm mặc, im lặng' }
+          },
+          {
+            parts: [
+              { text: '沈', reading: 'しず' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to sink', vi: 'chìm' }
+          }
+        ]
+      },
+      {
+        char: '滴',
+        meaning: { en: 'drop, drip', vi: 'trích - giọt' },
+        onyomi: ['テキ'],
+        kunyomi: ['しずく', 'したた.る'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '啇', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '水', reading: 'すい' },
+              { text: '滴', reading: 'てき' }
+            ],
+            meaning: { en: 'drop of water', vi: 'giọt nước' }
+          },
+          {
+            parts: [
+              { text: '点', reading: 'てん' },
+              { text: '滴', reading: 'てき' }
+            ],
+            meaning: { en: 'IV drip', vi: 'truyền dịch' }
+          },
+          {
+            parts: [
+              { text: '一', reading: 'いっ' },
+              { text: '滴', reading: 'てき' }
+            ],
+            meaning: { en: 'a single drop', vi: 'một giọt' }
+          }
+        ]
+      },
+      {
+        char: '濃',
+        meaning: { en: 'thick, dense, concentrated', vi: 'nùng - đậm, đặc' },
+        onyomi: ['ノウ'],
+        kunyomi: ['こ.い'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '農', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '濃', reading: 'のう' },
+              { text: '厚', reading: 'こう' }
+            ],
+            meaning: { en: 'thick, rich', vi: 'đậm đặc' }
+          },
+          {
+            parts: [
+              { text: '濃', reading: 'のう' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'concentration, density', vi: 'nồng độ' }
+          },
+          {
+            parts: [
+              { text: '濃', reading: 'こ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'thick, deep (color)', vi: 'đậm' }
+          }
+        ]
+      },
+      {
+        char: '涙',
+        meaning: { en: 'tears', vi: 'lệ - nước mắt' },
+        onyomi: ['ルイ'],
+        kunyomi: ['なみだ'],
+        parts: [
+          { char: '氵', role: 'radical' },
+          { char: '戻', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '感', reading: 'かん' },
+              { text: '涙', reading: 'るい' }
+            ],
+            meaning: { en: 'tears of emotion', vi: 'giọt lệ cảm động' }
+          },
+          {
+            parts: [
+              { text: '涙', reading: 'るい' },
+              { text: '腺', reading: 'せん' }
+            ],
+            meaning: { en: 'tear gland', vi: 'tuyến lệ' }
+          },
+          {
+            parts: [
+              { text: '涙', reading: 'なみだ' },
+              { text: '声', reading: 'ごえ' }
+            ],
+            meaning: { en: 'tearful voice', vi: 'giọng nghẹn ngào' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Hand actions',
+      vi: 'Động tác tay'
+    },
+    kanji: [
+      {
+        char: '握',
+        meaning: { en: 'grasp, grip', vi: 'ác - nắm' },
+        onyomi: ['アク'],
+        kunyomi: ['にぎ.る'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '屋', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '握', reading: 'あく' },
+              { text: '手', reading: 'しゅ' }
+            ],
+            meaning: { en: 'handshake', vi: 'bắt tay' }
+          },
+          {
+            parts: [
+              { text: '把', reading: 'は' },
+              { text: '握', reading: 'あく' }
+            ],
+            meaning: { en: 'grasp, comprehension', vi: 'nắm bắt' }
+          },
+          {
+            parts: [
+              { text: '握', reading: 'にぎ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to grip, to grasp', vi: 'nắm' }
+          }
+        ]
+      },
+      {
+        char: '押',
+        meaning: { en: 'push, press', vi: 'áp - đẩy, ấn' },
+        onyomi: ['オウ'],
+        kunyomi: ['お.す', 'お.さえる'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '甲', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '押', reading: 'おう' },
+              { text: '収', reading: 'しゅう' }
+            ],
+            meaning: { en: 'seizure, confiscation', vi: 'tịch thu' }
+          },
+          {
+            parts: [
+              { text: '押', reading: 'おう' },
+              { text: '印', reading: 'いん' }
+            ],
+            meaning: { en: 'affixing a seal', vi: 'đóng dấu' }
+          },
+          {
+            parts: [
+              { text: '押', reading: 'お' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to push', vi: 'đẩy, ấn' }
+          }
+        ]
+      },
+      {
+        char: '掘',
+        meaning: { en: 'dig, excavate', vi: 'quật - đào' },
+        onyomi: ['クツ'],
+        kunyomi: ['ほ.る'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '屈', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '発', reading: 'はっ' },
+              { text: '掘', reading: 'くつ' }
+            ],
+            meaning: { en: 'excavation', vi: 'khai quật' }
+          },
+          {
+            parts: [
+              { text: '採', reading: 'さい' },
+              { text: '掘', reading: 'くつ' }
+            ],
+            meaning: { en: 'mining, extraction', vi: 'khai thác (mỏ)' }
+          },
+          {
+            parts: [
+              { text: '掘', reading: 'ほ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to dig', vi: 'đào' }
+          }
+        ]
+      },
+      {
+        char: '撃',
+        meaning: { en: 'attack, strike, fire', vi: 'kích - đánh, bắn' },
+        onyomi: ['ゲキ'],
+        kunyomi: ['う.つ'],
+        parts: [{ char: '手', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '攻', reading: 'こう' },
+              { text: '撃', reading: 'げき' }
+            ],
+            meaning: { en: 'attack, offense', vi: 'tấn công' }
+          },
+          {
+            parts: [
+              { text: '打', reading: 'だ' },
+              { text: '撃', reading: 'げき' }
+            ],
+            meaning: { en: 'blow, shock; batting', vi: 'đả kích; đánh bóng' }
+          },
+          {
+            parts: [
+              { text: '撃', reading: 'う' },
+              { text: 'つ', reading: 'つ' }
+            ],
+            meaning: { en: 'to shoot, to strike', vi: 'bắn, đánh' }
+          }
+        ]
+      },
+      {
+        char: '振',
+        meaning: { en: 'shake, wave, swing', vi: 'chấn - vung, lắc' },
+        onyomi: ['シン'],
+        kunyomi: ['ふ.る', 'ふ.るう'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '辰', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '振', reading: 'しん' },
+              { text: '動', reading: 'どう' }
+            ],
+            meaning: { en: 'vibration', vi: 'dao động, rung' }
+          },
+          {
+            parts: [
+              { text: '不', reading: 'ふ' },
+              { text: '振', reading: 'しん' }
+            ],
+            meaning: { en: 'slump, stagnation', vi: 'sa sút' }
+          },
+          {
+            parts: [
+              { text: '振', reading: 'ふ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to wave, to shake', vi: 'vẫy, lắc' }
+          }
+        ]
+      },
+      {
+        char: '抜',
+        meaning: { en: 'pull out, extract; excel', vi: 'bạt - rút; vượt trội' },
+        onyomi: ['バツ'],
+        kunyomi: ['ぬ.く', 'ぬ.ける'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '犮', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '抜', reading: 'ばつ' },
+              { text: '群', reading: 'ぐん' }
+            ],
+            meaning: { en: 'outstanding, preeminent', vi: 'xuất chúng' }
+          },
+          {
+            parts: [
+              { text: '選', reading: 'せん' },
+              { text: '抜', reading: 'ばつ' }
+            ],
+            meaning: { en: 'selection', vi: 'tuyển chọn' }
+          },
+          {
+            parts: [
+              { text: '抜', reading: 'ぬ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to pull out', vi: 'rút ra' }
+          }
+        ]
+      },
+      {
+        char: '描',
+        meaning: { en: 'draw, depict, sketch', vi: 'miêu - vẽ, miêu tả' },
+        onyomi: ['ビョウ'],
+        kunyomi: ['えが.く', 'か.く'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '苗', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '描', reading: 'びょう' },
+              { text: '写', reading: 'しゃ' }
+            ],
+            meaning: { en: 'depiction, description', vi: 'miêu tả, khắc họa' }
+          },
+          {
+            parts: [
+              { text: '素', reading: 'そ' },
+              { text: '描', reading: 'びょう' }
+            ],
+            meaning: { en: 'sketch, drawing', vi: 'phác họa' }
+          },
+          {
+            parts: [
+              { text: '描', reading: 'えが' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to draw, to depict', vi: 'vẽ, khắc họa' }
+          }
+        ]
+      },
+      {
+        char: '払',
+        meaning: { en: 'pay; sweep away', vi: 'phất - trả tiền; phủi' },
+        onyomi: ['フツ'],
+        kunyomi: ['はら.う'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '厶', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '支', reading: 'し' },
+              { text: '払', reading: 'はら' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'payment', vi: 'chi trả' }
+          },
+          {
+            parts: [
+              { text: '払', reading: 'ふっ' },
+              { text: '底', reading: 'てい' }
+            ],
+            meaning: { en: 'shortage, running out', vi: 'khan hiếm, cạn kiệt' }
+          },
+          {
+            parts: [
+              { text: '払', reading: 'はら' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to pay; to brush off', vi: 'trả; phủi' }
+          }
+        ]
+      },
+      {
+        char: '捕',
+        meaning: { en: 'catch, capture, seize', vi: 'bộ - bắt' },
+        onyomi: ['ホ'],
+        kunyomi: ['と.らえる', 'つか.まえる'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '甫', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '捕', reading: 'ほ' },
+              { text: '獲', reading: 'かく' }
+            ],
+            meaning: { en: 'capture, catch', vi: 'bắt được, săn được' }
+          },
+          {
+            parts: [
+              { text: '逮', reading: 'たい' },
+              { text: '捕', reading: 'ほ' }
+            ],
+            meaning: { en: 'arrest', vi: 'bắt giữ' }
+          },
+          {
+            parts: [
+              { text: '捕', reading: 'つか' },
+              { text: 'まえる', reading: 'まえる' }
+            ],
+            meaning: { en: 'to catch, to seize', vi: 'bắt lấy' }
+          }
+        ]
+      },
+      {
+        char: '抱',
+        meaning: { en: 'embrace, hold; harbor', vi: 'bão - ôm; ấp ủ' },
+        onyomi: ['ホウ'],
+        kunyomi: ['だ.く', 'いだ.く', 'かか.える'],
+        parts: [
+          { char: '扌', role: 'radical' },
+          { char: '包', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '抱', reading: 'ほう' },
+              { text: '負', reading: 'ふ' }
+            ],
+            meaning: { en: 'aspiration, ambition', vi: 'hoài bão' }
+          },
+          {
+            parts: [
+              { text: '介', reading: 'かい' },
+              { text: '抱', reading: 'ほう' }
+            ],
+            meaning: { en: 'nursing, care', vi: 'chăm sóc (người bệnh)' }
+          },
+          {
+            parts: [
+              { text: '抱', reading: 'だ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to hold, to embrace', vi: 'ôm' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Emotions & mind',
+      vi: 'Cảm xúc & tâm trạng'
+    },
+    kanji: [
+      {
+        char: '恐',
+        meaning: { en: 'fear, dread', vi: 'khủng - sợ hãi' },
+        onyomi: ['キョウ'],
+        kunyomi: ['おそ.れる', 'こわ.い'],
+        parts: [
+          { char: '巩', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '恐', reading: 'きょう' },
+              { text: '怖', reading: 'ふ' }
+            ],
+            meaning: { en: 'fear, terror', vi: 'sợ hãi, khủng khiếp' }
+          },
+          {
+            parts: [
+              { text: '恐', reading: 'きょう' },
+              { text: '縮', reading: 'しゅく' }
+            ],
+            meaning: { en: 'feeling obliged/sorry', vi: 'áy náy, ngại quá' }
+          },
+          {
+            parts: [
+              { text: '恐', reading: 'おそ' },
+              { text: 'ろしい', reading: 'ろしい' }
+            ],
+            meaning: { en: 'frightful, terrible', vi: 'đáng sợ' }
+          }
+        ]
+      },
+      {
+        char: '慎',
+        meaning: { en: 'be prudent, discreet', vi: 'thận - thận trọng' },
+        onyomi: ['シン'],
+        kunyomi: ['つつし.む'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '真', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '慎', reading: 'しん' },
+              { text: '重', reading: 'ちょう' }
+            ],
+            meaning: { en: 'prudent, careful', vi: 'thận trọng' }
+          },
+          {
+            parts: [
+              { text: '謹', reading: 'きん' },
+              { text: '慎', reading: 'しん' }
+            ],
+            meaning: { en: 'self-restraint, penance', vi: 'kiềm chế, tự phạt' }
+          },
+          {
+            parts: [
+              { text: '慎', reading: 'つつし' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to be discreet, to refrain', vi: 'thận trọng, kiêng' }
+          }
+        ]
+      },
+      {
+        char: '恥',
+        meaning: { en: 'shame, disgrace', vi: 'sỉ - xấu hổ' },
+        onyomi: ['チ'],
+        kunyomi: ['は.じる', 'は.ずかしい'],
+        parts: [
+          { char: '耳', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '恥', reading: 'ち' },
+              { text: '辱', reading: 'じょく' }
+            ],
+            meaning: { en: 'disgrace, humiliation', vi: 'sỉ nhục' }
+          },
+          {
+            parts: [
+              { text: '無', reading: 'む' },
+              { text: '恥', reading: 'ち' }
+            ],
+            meaning: { en: 'shamelessness', vi: 'vô liêm sỉ' }
+          },
+          {
+            parts: [
+              { text: '恥', reading: 'は' },
+              { text: 'ずかしい', reading: 'ずかしい' }
+            ],
+            meaning: { en: 'embarrassing, shy', vi: 'xấu hổ, ngượng' }
+          }
+        ]
+      },
+      {
+        char: '怒',
+        meaning: { en: 'anger, get angry', vi: 'nộ - giận' },
+        onyomi: ['ド'],
+        kunyomi: ['いか.る', 'おこ.る'],
+        parts: [
+          { char: '奴', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '怒', reading: 'ど' },
+              { text: '号', reading: 'ごう' }
+            ],
+            meaning: { en: 'angry shout, roar', vi: 'quát tháo' }
+          },
+          {
+            parts: [
+              { text: '激', reading: 'げき' },
+              { text: '怒', reading: 'ど' }
+            ],
+            meaning: { en: 'rage, fury', vi: 'phẫn nộ' }
+          },
+          {
+            parts: [
+              { text: '怒', reading: 'おこ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to get angry', vi: 'nổi giận' }
+          }
+        ]
+      },
+      {
+        char: '悩',
+        meaning: { en: 'be troubled, worry', vi: 'não - phiền muộn' },
+        onyomi: ['ノウ'],
+        kunyomi: ['なや.む', 'なや.ます'],
+        parts: [{ char: '忄', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '苦', reading: 'く' },
+              { text: '悩', reading: 'のう' }
+            ],
+            meaning: { en: 'anguish, distress', vi: 'khổ não' }
+          },
+          {
+            parts: [
+              { text: '悩', reading: 'なや' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'worry, trouble', vi: 'nỗi phiền muộn' }
+          },
+          {
+            parts: [
+              { text: '悩', reading: 'なや' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to worry, to be troubled', vi: 'phiền lòng' }
+          }
+        ]
+      },
+      {
+        char: '怖',
+        meaning: { en: 'be afraid, scary', vi: 'bố - sợ' },
+        onyomi: ['フ'],
+        kunyomi: ['こわ.い'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '布', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '恐', reading: 'きょう' },
+              { text: '怖', reading: 'ふ' }
+            ],
+            meaning: { en: 'fear, terror', vi: 'sợ hãi' }
+          },
+          {
+            parts: [
+              { text: '怖', reading: 'こわ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'scary, frightening', vi: 'đáng sợ' }
+          },
+          {
+            parts: [
+              { text: '怖', reading: 'こわ' },
+              { text: 'がる', reading: 'がる' }
+            ],
+            meaning: { en: 'to be afraid', vi: 'sợ, hoảng' }
+          }
+        ]
+      },
+      {
+        char: '忙',
+        meaning: { en: 'busy', vi: 'mang - bận rộn' },
+        onyomi: ['ボウ'],
+        kunyomi: ['いそが.しい'],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '亡', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '多', reading: 'た' },
+              { text: '忙', reading: 'ぼう' }
+            ],
+            meaning: { en: 'very busy', vi: 'bận rộn' }
+          },
+          {
+            parts: [
+              { text: '繁', reading: 'はん' },
+              { text: '忙', reading: 'ぼう' }
+            ],
+            meaning: { en: 'busy, pressed', vi: 'bận rộn tấp nập' }
+          },
+          {
+            parts: [
+              { text: '忙', reading: 'いそが' },
+              { text: 'しい', reading: 'しい' }
+            ],
+            meaning: { en: 'busy', vi: 'bận' }
+          }
+        ]
+      },
+      {
+        char: '慢',
+        meaning: { en: 'pride; laziness; slow', vi: 'mạn - kiêu; chậm' },
+        onyomi: ['マン'],
+        kunyomi: [],
+        parts: [
+          { char: '忄', role: 'radical' },
+          { char: '曼', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '我', reading: 'が' },
+              { text: '慢', reading: 'まん' }
+            ],
+            meaning: { en: 'patience, endurance', vi: 'nhẫn nhịn, chịu đựng' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '慢', reading: 'まん' }
+            ],
+            meaning: { en: 'pride, boasting', vi: 'tự hào, khoe' }
+          },
+          {
+            parts: [
+              { text: '慢', reading: 'まん' },
+              { text: '性', reading: 'せい' }
+            ],
+            meaning: { en: 'chronic', vi: 'mãn tính' }
+          }
+        ]
+      },
+      {
+        char: '恋',
+        meaning: { en: 'love, romance, yearn', vi: 'luyến - tình yêu' },
+        onyomi: ['レン'],
+        kunyomi: ['こい', 'こ.う'],
+        parts: [{ char: '心', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '恋', reading: 'れん' },
+              { text: '愛', reading: 'あい' }
+            ],
+            meaning: { en: 'romantic love', vi: 'tình yêu đôi lứa' }
+          },
+          {
+            parts: [
+              { text: '失', reading: 'しつ' },
+              { text: '恋', reading: 'れん' }
+            ],
+            meaning: { en: 'broken heart, lost love', vi: 'thất tình' }
+          },
+          {
+            parts: [
+              { text: '恋', reading: 'こい' },
+              { text: '人', reading: 'びと' }
+            ],
+            meaning: { en: 'lover, sweetheart', vi: 'người yêu' }
+          }
+        ]
+      },
+      {
+        char: '惑',
+        meaning: { en: 'be puzzled, tempted', vi: 'hoặc - mê hoặc, bối rối' },
+        onyomi: ['ワク'],
+        kunyomi: ['まど.う'],
+        parts: [
+          { char: '或', role: 'phonetic' },
+          { char: '心', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '誘', reading: 'ゆう' },
+              { text: '惑', reading: 'わく' }
+            ],
+            meaning: { en: 'temptation, lure', vi: 'dụ dỗ, cám dỗ' }
+          },
+          {
+            parts: [
+              { text: '疑', reading: 'ぎ' },
+              { text: '惑', reading: 'わく' }
+            ],
+            meaning: { en: 'suspicion, doubt', vi: 'nghi hoặc' }
+          },
+          {
+            parts: [
+              { text: '迷', reading: 'めい' },
+              { text: '惑', reading: 'わく' }
+            ],
+            meaning: { en: 'trouble, nuisance', vi: 'phiền phức' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'The body',
+      vi: 'Cơ thể'
+    },
+    kanji: [
+      {
+        char: '脚',
+        meaning: { en: 'leg; base', vi: 'cước - chân; bệ' },
+        onyomi: ['キャク'],
+        kunyomi: ['あし'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '却', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '脚', reading: 'きゃく' },
+              { text: '本', reading: 'ほん' }
+            ],
+            meaning: { en: 'script, screenplay', vi: 'kịch bản' }
+          },
+          {
+            parts: [
+              { text: '脚', reading: 'きゃっ' },
+              { text: '光', reading: 'こう' }
+            ],
+            meaning: { en: 'limelight, spotlight', vi: 'ánh đèn sân khấu' }
+          },
+          {
+            parts: [
+              { text: '三', reading: 'さん' },
+              { text: '脚', reading: 'きゃく' }
+            ],
+            meaning: { en: 'tripod', vi: 'chân máy ba chân' }
+          }
+        ]
+      },
+      {
+        char: '肩',
+        meaning: { en: 'shoulder', vi: 'kiên - vai' },
+        onyomi: ['ケン'],
+        kunyomi: ['かた'],
+        parts: [
+          { char: '戸', role: 'other' },
+          { char: '肉', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '肩', reading: 'かた' },
+              { text: '車', reading: 'ぐるま' }
+            ],
+            meaning: { en: 'riding on shoulders', vi: 'cõng trên vai' }
+          },
+          {
+            parts: [
+              { text: '双', reading: 'そう' },
+              { text: '肩', reading: 'けん' }
+            ],
+            meaning: { en: 'both shoulders', vi: 'đôi vai' }
+          },
+          {
+            parts: [
+              { text: '肩', reading: 'かた' },
+              { text: '幅', reading: 'はば' }
+            ],
+            meaning: { en: 'shoulder width', vi: 'bề rộng vai' }
+          }
+        ]
+      },
+      {
+        char: '脂',
+        meaning: { en: 'fat, grease', vi: 'chi - mỡ' },
+        onyomi: ['シ'],
+        kunyomi: ['あぶら'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '旨', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '脂', reading: 'し' },
+              { text: '肪', reading: 'ぼう' }
+            ],
+            meaning: { en: 'fat, body fat', vi: 'chất béo' }
+          },
+          {
+            parts: [
+              { text: '油', reading: 'ゆ' },
+              { text: '脂', reading: 'し' }
+            ],
+            meaning: { en: 'oils and fats', vi: 'dầu mỡ' }
+          },
+          {
+            parts: [
+              { text: '樹', reading: 'じゅ' },
+              { text: '脂', reading: 'し' }
+            ],
+            meaning: { en: 'resin', vi: 'nhựa cây' }
+          }
+        ]
+      },
+      {
+        char: '脱',
+        meaning: { en: 'take off; escape; omit', vi: 'thoát - cởi; thoát ra' },
+        onyomi: ['ダツ'],
+        kunyomi: ['ぬ.ぐ', 'ぬ.げる'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '兌', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '脱', reading: 'だっ' },
+              { text: '出', reading: 'しゅつ' }
+            ],
+            meaning: { en: 'escape, breakout', vi: 'thoát ra' }
+          },
+          {
+            parts: [
+              { text: '脱', reading: 'だっ' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'derailment; digression', vi: 'trật đường ray; lạc đề' }
+          },
+          {
+            parts: [
+              { text: '脱', reading: 'ぬ' },
+              { text: 'ぐ', reading: 'ぐ' }
+            ],
+            meaning: { en: 'to take off (clothes)', vi: 'cởi' }
+          }
+        ]
+      },
+      {
+        char: '胴',
+        meaning: { en: 'torso, trunk (of body)', vi: 'động - thân mình' },
+        onyomi: ['ドウ'],
+        kunyomi: [],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '同', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '胴', reading: 'どう' },
+              { text: '体', reading: 'たい' }
+            ],
+            meaning: { en: 'torso, trunk', vi: 'thân người' }
+          },
+          {
+            parts: [
+              { text: '胴', reading: 'どう' },
+              { text: '上', reading: 'あ' },
+              { text: 'げ', reading: 'げ' }
+            ],
+            meaning: { en: 'tossing up in the air', vi: 'tung hô lên' }
+          },
+          {
+            parts: [
+              { text: '胴', reading: 'どう' },
+              { text: '回', reading: 'まわ' },
+              { text: 'り', reading: 'り' }
+            ],
+            meaning: { en: 'girth, waist', vi: 'vòng bụng' }
+          }
+        ]
+      },
+      {
+        char: '腐',
+        meaning: { en: 'rot, decay; tofu', vi: 'hủ - thối, mục' },
+        onyomi: ['フ'],
+        kunyomi: ['くさ.る'],
+        parts: [
+          { char: '府', role: 'phonetic' },
+          { char: '肉', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '腐', reading: 'ふ' },
+              { text: '敗', reading: 'はい' }
+            ],
+            meaning: { en: 'decay; corruption', vi: 'thối rữa; hủ bại' }
+          },
+          {
+            parts: [
+              { text: '豆', reading: 'とう' },
+              { text: '腐', reading: 'ふ' }
+            ],
+            meaning: { en: 'tofu', vi: 'đậu phụ' }
+          },
+          {
+            parts: [
+              { text: '腐', reading: 'くさ' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to rot, to go bad', vi: 'thối, hỏng' }
+          }
+        ]
+      },
+      {
+        char: '膚',
+        meaning: { en: 'skin', vi: 'phu - da' },
+        onyomi: ['フ'],
+        kunyomi: ['はだ'],
+        parts: [
+          { char: '虍', role: 'phonetic' },
+          { char: '肉', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '皮', reading: 'ひ' },
+              { text: '膚', reading: 'ふ' }
+            ],
+            meaning: { en: 'skin', vi: 'da' }
+          },
+          {
+            parts: [
+              { text: '皮', reading: 'ひ' },
+              { text: '膚', reading: 'ふ' },
+              { text: '科', reading: 'か' }
+            ],
+            meaning: { en: 'dermatology', vi: 'khoa da liễu' }
+          },
+          {
+            parts: [
+              { text: '完', reading: 'かん' },
+              { text: '膚', reading: 'ぷ' }
+            ],
+            meaning: { en: 'thoroughly (as in unhurt skin)', vi: 'toàn vẹn (không sứt mẻ)' }
+          }
+        ]
+      },
+      {
+        char: '肪',
+        meaning: { en: 'fat (body fat)', vi: 'phường - mỡ' },
+        onyomi: ['ボウ'],
+        kunyomi: [],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '方', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '脂', reading: 'し' },
+              { text: '肪', reading: 'ぼう' }
+            ],
+            meaning: { en: 'fat, body fat', vi: 'chất béo, mỡ' }
+          },
+          {
+            parts: [
+              { text: '皮', reading: 'ひ' },
+              { text: '下', reading: 'か' },
+              { text: '脂', reading: 'し' },
+              { text: '肪', reading: 'ぼう' }
+            ],
+            meaning: { en: 'subcutaneous fat', vi: 'mỡ dưới da' }
+          },
+          {
+            parts: [
+              { text: '中', reading: 'ちゅう' },
+              { text: '性', reading: 'せい' },
+              { text: '脂', reading: 'し' },
+              { text: '肪', reading: 'ぼう' }
+            ],
+            meaning: { en: 'neutral fat, triglyceride', vi: 'mỡ trung tính' }
+          }
+        ]
+      },
+      {
+        char: '腰',
+        meaning: { en: 'lower back, waist, hips', vi: 'yêu - eo, hông' },
+        onyomi: ['ヨウ'],
+        kunyomi: ['こし'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '要', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '腰', reading: 'よう' },
+              { text: '痛', reading: 'つう' }
+            ],
+            meaning: { en: 'lower back pain', vi: 'đau lưng' }
+          },
+          {
+            parts: [
+              { text: '腰', reading: 'こし' },
+              { text: '掛', reading: 'か' },
+              { text: 'け', reading: 'け' }
+            ],
+            meaning: { en: 'seat, bench', vi: 'ghế ngồi' }
+          },
+          {
+            parts: [
+              { text: '足', reading: 'あし' },
+              { text: '腰', reading: 'こし' }
+            ],
+            meaning: { en: 'legs and lower back', vi: 'chân và lưng' }
+          }
+        ]
+      },
+      {
+        char: '腕',
+        meaning: { en: 'arm; skill', vi: 'oản - cánh tay; tài nghệ' },
+        onyomi: ['ワン'],
+        kunyomi: ['うで'],
+        parts: [
+          { char: '肉', role: 'radical' },
+          { char: '宛', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '腕', reading: 'わん' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'physical strength (of arms)', vi: 'sức tay' }
+          },
+          {
+            parts: [
+              { text: '手', reading: 'しゅ' },
+              { text: '腕', reading: 'わん' }
+            ],
+            meaning: { en: 'ability, skill', vi: 'tài năng, tay nghề' }
+          },
+          {
+            parts: [
+              { text: '腕', reading: 'うで' },
+              { text: '前', reading: 'まえ' }
+            ],
+            meaning: { en: 'skill, ability', vi: 'tay nghề' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Movement',
+      vi: 'Di chuyển'
+    },
+    kanji: [
+      {
+        char: '違',
+        meaning: { en: 'differ; violate', vi: 'vi - khác; vi phạm' },
+        onyomi: ['イ'],
+        kunyomi: ['ちが.う', 'ちが.える'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '韋', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '違', reading: 'い' },
+              { text: '反', reading: 'はん' }
+            ],
+            meaning: { en: 'violation, breach', vi: 'vi phạm' }
+          },
+          {
+            parts: [
+              { text: '相', reading: 'そう' },
+              { text: '違', reading: 'い' }
+            ],
+            meaning: { en: 'difference, discrepancy', vi: 'khác biệt' }
+          },
+          {
+            parts: [
+              { text: '違', reading: 'ちが' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to differ, to be wrong', vi: 'khác, sai' }
+          }
+        ]
+      },
+      {
+        char: '迎',
+        meaning: { en: 'welcome, greet, meet', vi: 'nghênh - đón' },
+        onyomi: ['ゲイ'],
+        kunyomi: ['むか.える'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '卬', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '歓', reading: 'かん' },
+              { text: '迎', reading: 'げい' }
+            ],
+            meaning: { en: 'welcome', vi: 'hoan nghênh' }
+          },
+          {
+            parts: [
+              { text: '送', reading: 'そう' },
+              { text: '迎', reading: 'げい' }
+            ],
+            meaning: { en: 'pick-up and drop-off', vi: 'đưa đón' }
+          },
+          {
+            parts: [
+              { text: '迎', reading: 'むか' },
+              { text: 'える', reading: 'える' }
+            ],
+            meaning: { en: 'to welcome, to greet', vi: 'đón tiếp' }
+          }
+        ]
+      },
+      {
+        char: '遣',
+        meaning: { en: 'dispatch, send', vi: 'khiển - phái đi' },
+        onyomi: ['ケン'],
+        kunyomi: ['つか.う', 'つか.わす'],
+        parts: [{ char: '辶', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '派', reading: 'は' },
+              { text: '遣', reading: 'けん' }
+            ],
+            meaning: { en: 'dispatch, sending', vi: 'phái cử' }
+          },
+          {
+            parts: [
+              { text: '遣', reading: 'けん' },
+              { text: '唐', reading: 'とう' },
+              { text: '使', reading: 'し' }
+            ],
+            meaning: { en: 'envoy to Tang China', vi: 'sứ giả sang nhà Đường' }
+          },
+          {
+            parts: [
+              { text: '小', reading: 'こ' },
+              { text: '遣', reading: 'づか' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'pocket money', vi: 'tiền tiêu vặt' }
+          }
+        ]
+      },
+      {
+        char: '込',
+        meaning: { en: 'be crowded; put into', vi: '(kokuji) - đông; nhồi vào' },
+        onyomi: [],
+        kunyomi: ['こ.む', 'こ.める'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '入', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '申', reading: 'もうし' },
+              { text: '込', reading: 'こ' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'application, booking', vi: 'đăng ký' }
+          },
+          {
+            parts: [
+              { text: '見', reading: 'み' },
+              { text: '込', reading: 'こ' },
+              { text: 'み', reading: 'み' }
+            ],
+            meaning: { en: 'prospect, expectation', vi: 'triển vọng, dự kiến' }
+          },
+          {
+            parts: [
+              { text: '込', reading: 'こ' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to be crowded', vi: 'đông đúc' }
+          }
+        ]
+      },
+      {
+        char: '遅',
+        meaning: { en: 'late; slow', vi: 'trì - trễ; chậm' },
+        onyomi: ['チ'],
+        kunyomi: ['おく.れる', 'おそ.い'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '犀', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '遅', reading: 'ち' },
+              { text: '刻', reading: 'こく' }
+            ],
+            meaning: { en: 'being late, tardiness', vi: 'đến trễ' }
+          },
+          {
+            parts: [
+              { text: '遅', reading: 'ち' },
+              { text: '延', reading: 'えん' }
+            ],
+            meaning: { en: 'delay', vi: 'trì hoãn' }
+          },
+          {
+            parts: [
+              { text: '遅', reading: 'おそ' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'slow, late', vi: 'chậm, muộn' }
+          }
+        ]
+      },
+      {
+        char: '途',
+        meaning: { en: 'way, route, on the way', vi: 'đồ - đường; giữa đường' },
+        onyomi: ['ト'],
+        kunyomi: [],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '余', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '途', reading: 'と' },
+              { text: '中', reading: 'ちゅう' }
+            ],
+            meaning: { en: 'on the way, midway', vi: 'giữa đường, đang dở' }
+          },
+          {
+            parts: [
+              { text: '用', reading: 'よう' },
+              { text: '途', reading: 'と' }
+            ],
+            meaning: { en: 'use, purpose', vi: 'công dụng, mục đích' }
+          },
+          {
+            parts: [
+              { text: '途', reading: 'と' },
+              { text: '端', reading: 'たん' }
+            ],
+            meaning: { en: 'the moment (when)', vi: 'ngay lúc' }
+          }
+        ]
+      },
+      {
+        char: '逃',
+        meaning: { en: 'escape, flee', vi: 'đào - trốn' },
+        onyomi: ['トウ'],
+        kunyomi: ['に.げる', 'のが.す'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '兆', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '逃', reading: 'とう' },
+              { text: '走', reading: 'そう' }
+            ],
+            meaning: { en: 'flight, escape', vi: 'chạy trốn' }
+          },
+          {
+            parts: [
+              { text: '逃', reading: 'とう' },
+              { text: '亡', reading: 'ぼう' }
+            ],
+            meaning: { en: 'fleeing, escape', vi: 'đào tẩu' }
+          },
+          {
+            parts: [
+              { text: '逃', reading: 'に' },
+              { text: 'げる', reading: 'げる' }
+            ],
+            meaning: { en: 'to run away, to flee', vi: 'chạy trốn' }
+          }
+        ]
+      },
+      {
+        char: '透',
+        meaning: { en: 'be transparent; pass through', vi: 'thấu - trong suốt; xuyên qua' },
+        onyomi: ['トウ'],
+        kunyomi: ['す.く', 'す.ける'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '秀', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '透', reading: 'とう' },
+              { text: '明', reading: 'めい' }
+            ],
+            meaning: { en: 'transparent', vi: 'trong suốt' }
+          },
+          {
+            parts: [
+              { text: '浸', reading: 'しん' },
+              { text: '透', reading: 'とう' }
+            ],
+            meaning: { en: 'permeation', vi: 'thẩm thấu' }
+          },
+          {
+            parts: [
+              { text: '透', reading: 'す' },
+              { text: 'ける', reading: 'ける' }
+            ],
+            meaning: { en: 'to be see-through', vi: 'trong, thấy xuyên qua' }
+          }
+        ]
+      },
+      {
+        char: '迫',
+        meaning: { en: 'press, urge, draw near', vi: 'bách - ép, tới gần' },
+        onyomi: ['ハク'],
+        kunyomi: ['せま.る'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '白', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '迫', reading: 'はく' },
+              { text: '力', reading: 'りょく' }
+            ],
+            meaning: { en: 'force, impact (of a scene)', vi: 'sức lôi cuốn' }
+          },
+          {
+            parts: [
+              { text: '圧', reading: 'あっ' },
+              { text: '迫', reading: 'ぱく' }
+            ],
+            meaning: { en: 'pressure, oppression', vi: 'áp bức, đè nén' }
+          },
+          {
+            parts: [
+              { text: '迫', reading: 'せま' },
+              { text: 'る', reading: 'る' }
+            ],
+            meaning: { en: 'to draw near, to press', vi: 'tới gần, thúc ép' }
+          }
+        ]
+      },
+      {
+        char: '避',
+        meaning: { en: 'avoid, evade, shelter', vi: 'tị - tránh' },
+        onyomi: ['ヒ'],
+        kunyomi: ['さ.ける', 'よ.ける'],
+        parts: [
+          { char: '辶', role: 'radical' },
+          { char: '辟', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '避', reading: 'ひ' },
+              { text: '難', reading: 'なん' }
+            ],
+            meaning: { en: 'evacuation, refuge', vi: 'lánh nạn' }
+          },
+          {
+            parts: [
+              { text: '回', reading: 'かい' },
+              { text: '避', reading: 'ひ' }
+            ],
+            meaning: { en: 'avoidance, evasion', vi: 'né tránh' }
+          },
+          {
+            parts: [
+              { text: '避', reading: 'さ' },
+              { text: 'ける', reading: 'ける' }
+            ],
+            meaning: { en: 'to avoid', vi: 'tránh' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Mouth & voice',
+      vi: 'Miệng & âm thanh'
+    },
+    kanji: [
+      {
+        char: '含',
+        meaning: { en: 'contain, include; hold in mouth', vi: 'hàm - chứa; ngậm' },
+        onyomi: ['ガン'],
+        kunyomi: ['ふく.む', 'ふく.める'],
+        parts: [
+          { char: '今', role: 'phonetic' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '含', reading: 'がん' },
+              { text: '有', reading: 'ゆう' }
+            ],
+            meaning: { en: 'containing (a substance)', vi: 'hàm chứa (thành phần)' }
+          },
+          {
+            parts: [
+              { text: '包', reading: 'ほう' },
+              { text: '含', reading: 'がん' }
+            ],
+            meaning: { en: 'inclusion', vi: 'bao hàm' }
+          },
+          {
+            parts: [
+              { text: '含', reading: 'ふく' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to contain, to include', vi: 'bao gồm, ngậm' }
+          }
+        ]
+      },
+      {
+        char: '叫',
+        meaning: { en: 'shout, cry out', vi: 'khiếu - gào, hét' },
+        onyomi: ['キョウ'],
+        kunyomi: ['さけ.ぶ'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '丩', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '絶', reading: 'ぜっ' },
+              { text: '叫', reading: 'きょう' }
+            ],
+            meaning: { en: 'scream, exclamation', vi: 'gào thét' }
+          },
+          {
+            parts: [
+              { text: '叫', reading: 'さけ' },
+              { text: 'ぶ', reading: 'ぶ' }
+            ],
+            meaning: { en: 'to shout, to cry out', vi: 'la hét' }
+          },
+          {
+            parts: [
+              { text: '叫', reading: 'さけ' },
+              { text: 'び', reading: 'び' }
+            ],
+            meaning: { en: 'a shout, a cry', vi: 'tiếng thét' }
+          }
+        ]
+      },
+      {
+        char: '咲',
+        meaning: { en: 'bloom, blossom', vi: '(kokuji) - nở hoa' },
+        onyomi: [],
+        kunyomi: ['さ.く'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '关', role: 'other' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '咲', reading: 'さ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to bloom', vi: 'nở hoa' }
+          },
+          {
+            parts: [
+              { text: '遅', reading: 'おそ' },
+              { text: '咲', reading: 'ざ' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'late blooming', vi: 'nở muộn' }
+          },
+          {
+            parts: [
+              { text: '早', reading: 'はや' },
+              { text: '咲', reading: 'ざ' },
+              { text: 'き', reading: 'き' }
+            ],
+            meaning: { en: 'early blooming', vi: 'nở sớm' }
+          }
+        ]
+      },
+      {
+        char: '召',
+        meaning: { en: 'summon; (honorific) eat, wear', vi: 'triệu - vời; (kính ngữ) dùng' },
+        onyomi: ['ショウ'],
+        kunyomi: ['め.す'],
+        parts: [
+          { char: '刀', role: 'other' },
+          { char: '口', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '召', reading: 'しょう' },
+              { text: '集', reading: 'しゅう' }
+            ],
+            meaning: { en: 'convocation, summons', vi: 'triệu tập' }
+          },
+          {
+            parts: [
+              { text: '召', reading: 'しょう' },
+              { text: '喚', reading: 'かん' }
+            ],
+            meaning: { en: 'summons (to court)', vi: 'triệu hồi, gọi ra' }
+          },
+          {
+            parts: [
+              { text: '召', reading: 'め' },
+              { text: 'し', reading: 'し' },
+              { text: '上', reading: 'あ' },
+              { text: 'がる', reading: 'がる' }
+            ],
+            meaning: { en: 'to eat/drink (honorific)', vi: 'dùng (kính ngữ)' }
+          }
+        ]
+      },
+      {
+        char: '吹',
+        meaning: { en: 'blow (wind, breath)', vi: 'xuy - thổi' },
+        onyomi: ['スイ'],
+        kunyomi: ['ふ.く'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '欠', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '吹', reading: 'すい' },
+              { text: '奏', reading: 'そう' }
+            ],
+            meaning: { en: 'playing wind instruments', vi: 'thổi (nhạc cụ hơi)' }
+          },
+          {
+            parts: [
+              { text: '鼓', reading: 'こ' },
+              { text: '吹', reading: 'すい' }
+            ],
+            meaning: { en: 'advocacy, inspiration', vi: 'cổ vũ, hô hào' }
+          },
+          {
+            parts: [
+              { text: '吹', reading: 'ふ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to blow', vi: 'thổi' }
+          }
+        ]
+      },
+      {
+        char: '嘆',
+        meaning: { en: 'grieve, lament, sigh', vi: 'thán - than thở' },
+        onyomi: ['タン'],
+        kunyomi: ['なげ.く'],
+        parts: [{ char: '口', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '感', reading: 'かん' },
+              { text: '嘆', reading: 'たん' }
+            ],
+            meaning: { en: 'admiration; exclamation', vi: 'cảm thán' }
+          },
+          {
+            parts: [
+              { text: '悲', reading: 'ひ' },
+              { text: '嘆', reading: 'たん' }
+            ],
+            meaning: { en: 'grief, lamentation', vi: 'bi thương' }
+          },
+          {
+            parts: [
+              { text: '嘆', reading: 'なげ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to lament, to grieve', vi: 'than thở' }
+          }
+        ]
+      },
+      {
+        char: '吐',
+        meaning: { en: 'vomit; spit out; express', vi: 'thổ - nôn; nhả; thổ lộ' },
+        onyomi: ['ト'],
+        kunyomi: ['は.く'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '土', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '吐', reading: 'と' },
+              { text: '露', reading: 'ろ' }
+            ],
+            meaning: { en: 'expressing (feelings)', vi: 'thổ lộ' }
+          },
+          {
+            parts: [
+              { text: '吐', reading: 'と' },
+              { text: '息', reading: 'いき' }
+            ],
+            meaning: { en: 'a sigh', vi: 'tiếng thở dài' }
+          },
+          {
+            parts: [
+              { text: '吐', reading: 'は' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to vomit; to spit out', vi: 'nôn; nhả ra' }
+          }
+        ]
+      },
+      {
+        char: '唐',
+        meaning: { en: 'Tang (China); Chinese-style', vi: 'đường - nhà Đường; kiểu Trung Hoa' },
+        onyomi: ['トウ'],
+        kunyomi: ['から'],
+        parts: [{ char: '口', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '唐', reading: 'とう' },
+              { text: '突', reading: 'とつ' }
+            ],
+            meaning: { en: 'abrupt, sudden', vi: 'đột ngột' }
+          },
+          {
+            parts: [
+              { text: '唐', reading: 'から' },
+              { text: '草', reading: 'くさ' }
+            ],
+            meaning: { en: 'arabesque pattern', vi: 'hoa văn dây leo' }
+          },
+          {
+            parts: [
+              { text: '遣', reading: 'けん' },
+              { text: '唐', reading: 'とう' },
+              { text: '使', reading: 'し' }
+            ],
+            meaning: { en: 'envoy to Tang China', vi: 'sứ giả sang nhà Đường' }
+          }
+        ]
+      },
+      {
+        char: '噴',
+        meaning: { en: 'erupt, gush, spew', vi: 'phún - phun' },
+        onyomi: ['フン'],
+        kunyomi: ['ふ.く'],
+        parts: [
+          { char: '口', role: 'radical' },
+          { char: '賁', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '噴', reading: 'ふん' },
+              { text: '火', reading: 'か' }
+            ],
+            meaning: { en: 'volcanic eruption', vi: 'phun trào (núi lửa)' }
+          },
+          {
+            parts: [
+              { text: '噴', reading: 'ふん' },
+              { text: '出', reading: 'しゅつ' }
+            ],
+            meaning: { en: 'gushing out, spewing', vi: 'phun ra' }
+          },
+          {
+            parts: [
+              { text: '噴', reading: 'ふん' },
+              { text: '水', reading: 'すい' }
+            ],
+            meaning: { en: 'fountain', vi: 'đài phun nước' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'People & behavior',
+      vi: 'Người & hành vi'
+    },
+    kanji: [
+      {
+        char: '依',
+        meaning: { en: 'depend on, rely on', vi: 'y - dựa vào' },
+        onyomi: ['イ', 'エ'],
+        kunyomi: ['よ.る'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '衣', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '依', reading: 'い' },
+              { text: '頼', reading: 'らい' }
+            ],
+            meaning: { en: 'request; reliance', vi: 'nhờ vả, ủy thác' }
+          },
+          {
+            parts: [
+              { text: '依', reading: 'い' },
+              { text: '存', reading: 'ぞん' }
+            ],
+            meaning: { en: 'dependence', vi: 'lệ thuộc' }
+          },
+          {
+            parts: [
+              { text: '依', reading: 'い' },
+              { text: '然', reading: 'ぜん' }
+            ],
+            meaning: { en: 'still, as before', vi: 'vẫn như cũ' }
+          }
+        ]
+      },
+      {
+        char: '偉',
+        meaning: { en: 'great, admirable', vi: 'vĩ - vĩ đại' },
+        onyomi: ['イ'],
+        kunyomi: ['えら.い'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '韋', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '偉', reading: 'い' },
+              { text: '大', reading: 'だい' }
+            ],
+            meaning: { en: 'great, grand', vi: 'vĩ đại' }
+          },
+          {
+            parts: [
+              { text: '偉', reading: 'い' },
+              { text: '人', reading: 'じん' }
+            ],
+            meaning: { en: 'great person', vi: 'vĩ nhân' }
+          },
+          {
+            parts: [
+              { text: '偉', reading: 'えら' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'great, admirable', vi: 'giỏi, đáng nể' }
+          }
+        ]
+      },
+      {
+        char: '介',
+        meaning: { en: 'mediate; care for; shellfish', vi: 'giới - trung gian; giúp' },
+        onyomi: ['カイ'],
+        kunyomi: [],
+        parts: [{ char: '人', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '紹', reading: 'しょう' },
+              { text: '介', reading: 'かい' }
+            ],
+            meaning: { en: 'introduction', vi: 'giới thiệu' }
+          },
+          {
+            parts: [
+              { text: '介', reading: 'かい' },
+              { text: '護', reading: 'ご' }
+            ],
+            meaning: { en: 'nursing care', vi: 'chăm sóc, điều dưỡng' }
+          },
+          {
+            parts: [
+              { text: '仲', reading: 'ちゅう' },
+              { text: '介', reading: 'かい' }
+            ],
+            meaning: { en: 'mediation, agency', vi: 'trung gian, môi giới' }
+          }
+        ]
+      },
+      {
+        char: '儀',
+        meaning: { en: 'ceremony, etiquette, affair', vi: 'nghi - nghi thức, lễ nghi' },
+        onyomi: ['ギ'],
+        kunyomi: [],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '義', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '儀', reading: 'ぎ' },
+              { text: '式', reading: 'しき' }
+            ],
+            meaning: { en: 'ceremony, ritual', vi: 'nghi thức, lễ' }
+          },
+          {
+            parts: [
+              { text: '礼', reading: 'れい' },
+              { text: '儀', reading: 'ぎ' }
+            ],
+            meaning: { en: 'manners, courtesy', vi: 'lễ nghi, phép lịch sự' }
+          },
+          {
+            parts: [
+              { text: '行', reading: 'ぎょう' },
+              { text: '儀', reading: 'ぎ' }
+            ],
+            meaning: { en: 'manners, behavior', vi: 'cách cư xử' }
+          }
+        ]
+      },
+      {
+        char: '仰',
+        meaning: { en: 'look up; revere; state', vi: 'ngưỡng - ngước nhìn; kính' },
+        onyomi: ['ギョウ', 'コウ'],
+        kunyomi: ['あお.ぐ', 'おお.せ'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '卬', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '仰', reading: 'ぎょう' },
+              { text: '天', reading: 'てん' }
+            ],
+            meaning: { en: 'looking up to heaven; astonishment', vi: 'ngửa mặt kinh ngạc' }
+          },
+          {
+            parts: [
+              { text: '信', reading: 'しん' },
+              { text: '仰', reading: 'こう' }
+            ],
+            meaning: { en: 'religious faith', vi: 'tín ngưỡng' }
+          },
+          {
+            parts: [
+              { text: '仰', reading: 'あお' },
+              { text: 'ぐ', reading: 'ぐ' }
+            ],
+            meaning: { en: 'to look up; to respect', vi: 'ngước nhìn; kính ngưỡng' }
+          }
+        ]
+      },
+      {
+        char: '傾',
+        meaning: { en: 'lean, incline, tend', vi: 'khuynh - nghiêng' },
+        onyomi: ['ケイ'],
+        kunyomi: ['かたむ.く', 'かたむ.ける'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '頃', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '傾', reading: 'けい' },
+              { text: '向', reading: 'こう' }
+            ],
+            meaning: { en: 'tendency, trend', vi: 'khuynh hướng' }
+          },
+          {
+            parts: [
+              { text: '傾', reading: 'けい' },
+              { text: '斜', reading: 'しゃ' }
+            ],
+            meaning: { en: 'slope, incline', vi: 'độ nghiêng, dốc' }
+          },
+          {
+            parts: [
+              { text: '傾', reading: 'かたむ' },
+              { text: 'く', reading: 'く' }
+            ],
+            meaning: { en: 'to lean, to tilt', vi: 'nghiêng' }
+          }
+        ]
+      },
+      {
+        char: '伺',
+        meaning: { en: 'ask, inquire, visit (humble)', vi: 'tứ - hỏi thăm (khiêm nhường)' },
+        onyomi: ['シ'],
+        kunyomi: ['うかが.う'],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '司', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '伺', reading: 'し' },
+              { text: '候', reading: 'こう' }
+            ],
+            meaning: { en: 'inquiring after (someone)', vi: 'thăm hỏi (kính)' }
+          },
+          {
+            parts: [
+              { text: '伺', reading: 'うかが' },
+              { text: 'う', reading: 'う' }
+            ],
+            meaning: { en: 'to ask/visit (humble)', vi: 'hỏi, đến thăm (khiêm nhường)' }
+          },
+          {
+            parts: [
+              { text: 'お', reading: 'お' },
+              { text: '伺', reading: 'うかが' },
+              { text: 'い', reading: 'い' }
+            ],
+            meaning: { en: 'inquiry (polite)', vi: 'sự hỏi thăm (lịch sự)' }
+          }
+        ]
+      },
+      {
+        char: '侵',
+        meaning: { en: 'invade, encroach', vi: 'xâm - xâm phạm' },
+        onyomi: ['シン'],
+        kunyomi: ['おか.す'],
+        parts: [{ char: '亻', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '侵', reading: 'しん' },
+              { text: '入', reading: 'にゅう' }
+            ],
+            meaning: { en: 'intrusion, invasion', vi: 'xâm nhập' }
+          },
+          {
+            parts: [
+              { text: '侵', reading: 'しん' },
+              { text: '略', reading: 'りゃく' }
+            ],
+            meaning: { en: 'aggression, invasion', vi: 'xâm lược' }
+          },
+          {
+            parts: [
+              { text: '侵', reading: 'おか' },
+              { text: 'す', reading: 'す' }
+            ],
+            meaning: { en: 'to invade, to violate', vi: 'xâm phạm' }
+          }
+        ]
+      },
+      {
+        char: '僧',
+        meaning: { en: 'Buddhist monk, priest', vi: 'tăng - nhà sư' },
+        onyomi: ['ソウ'],
+        kunyomi: [],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '曽', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '僧', reading: 'そう' },
+              { text: '侶', reading: 'りょ' }
+            ],
+            meaning: { en: 'Buddhist monk', vi: 'tăng lữ, nhà sư' }
+          },
+          {
+            parts: [
+              { text: '高', reading: 'こう' },
+              { text: '僧', reading: 'そう' }
+            ],
+            meaning: { en: 'high priest', vi: 'cao tăng' }
+          },
+          {
+            parts: [
+              { text: '尼', reading: 'に' },
+              { text: '僧', reading: 'そう' }
+            ],
+            meaning: { en: 'Buddhist nun', vi: 'ni cô' }
+          }
+        ]
+      },
+      {
+        char: '俗',
+        meaning: { en: 'customs; worldly, vulgar', vi: 'tục - phong tục; thế tục' },
+        onyomi: ['ゾク'],
+        kunyomi: [],
+        parts: [
+          { char: '亻', role: 'radical' },
+          { char: '谷', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '風', reading: 'ふう' },
+              { text: '俗', reading: 'ぞく' }
+            ],
+            meaning: { en: 'customs, manners', vi: 'phong tục' }
+          },
+          {
+            parts: [
+              { text: '俗', reading: 'ぞく' },
+              { text: '語', reading: 'ご' }
+            ],
+            meaning: { en: 'slang, colloquialism', vi: 'tục ngữ, tiếng lóng' }
+          },
+          {
+            parts: [
+              { text: '世', reading: 'せ' },
+              { text: '俗', reading: 'ぞく' }
+            ],
+            meaning: { en: 'worldly affairs', vi: 'thế tục' }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: {
+      en: 'Thread & net',
+      vi: 'Sợi & mạng lưới'
+    },
+    kanji: [
+      {
+        char: '維',
+        meaning: { en: 'fiber; tie; maintain', vi: 'duy - sợi; duy trì' },
+        onyomi: ['イ'],
+        kunyomi: [],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '隹', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '維', reading: 'い' },
+              { text: '持', reading: 'じ' }
+            ],
+            meaning: { en: 'maintenance, upkeep', vi: 'duy trì' }
+          },
+          {
+            parts: [
+              { text: '繊', reading: 'せん' },
+              { text: '維', reading: 'い' }
+            ],
+            meaning: { en: 'fiber', vi: 'chất xơ, sợi' }
+          },
+          {
+            parts: [
+              { text: '維', reading: 'い' },
+              { text: '新', reading: 'しん' }
+            ],
+            meaning: { en: 'restoration (Meiji)', vi: 'duy tân' }
+          }
+        ]
+      },
+      {
+        char: '緯',
+        meaning: { en: 'latitude; weft', vi: 'vĩ - vĩ tuyến; sợi ngang' },
+        onyomi: ['イ'],
+        kunyomi: [],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '韋', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '緯', reading: 'い' },
+              { text: '度', reading: 'ど' }
+            ],
+            meaning: { en: 'latitude', vi: 'vĩ độ' }
+          },
+          {
+            parts: [
+              { text: '経', reading: 'けい' },
+              { text: '緯', reading: 'い' }
+            ],
+            meaning: { en: 'details, circumstances', vi: 'đầu đuôi sự việc' }
+          },
+          {
+            parts: [
+              { text: '北', reading: 'ほく' },
+              { text: '緯', reading: 'い' }
+            ],
+            meaning: { en: 'north latitude', vi: 'vĩ độ Bắc' }
+          }
+        ]
+      },
+      {
+        char: '縁',
+        meaning: { en: 'edge; connection, fate', vi: 'duyên - rìa; duyên phận' },
+        onyomi: ['エン'],
+        kunyomi: ['ふち'],
+        parts: [{ char: '糸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '縁', reading: 'えん' },
+              { text: '側', reading: 'がわ' }
+            ],
+            meaning: { en: 'veranda', vi: 'hiên nhà' }
+          },
+          {
+            parts: [
+              { text: '血', reading: 'けつ' },
+              { text: '縁', reading: 'えん' }
+            ],
+            meaning: { en: 'blood relation', vi: 'huyết thống' }
+          },
+          {
+            parts: [
+              { text: '額', reading: 'がく' },
+              { text: '縁', reading: 'ぶち' }
+            ],
+            meaning: { en: 'picture frame', vi: 'khung tranh' }
+          }
+        ]
+      },
+      {
+        char: '継',
+        meaning: { en: 'inherit, succeed, continue', vi: 'kế - nối tiếp' },
+        onyomi: ['ケイ'],
+        kunyomi: ['つ.ぐ'],
+        parts: [{ char: '糸', role: 'radical' }],
+        examples: [
+          {
+            parts: [
+              { text: '継', reading: 'けい' },
+              { text: '続', reading: 'ぞく' }
+            ],
+            meaning: { en: 'continuation', vi: 'tiếp tục' }
+          },
+          {
+            parts: [
+              { text: '中', reading: 'ちゅう' },
+              { text: '継', reading: 'けい' }
+            ],
+            meaning: { en: 'relay, broadcast', vi: 'tiếp sóng, trung chuyển' }
+          },
+          {
+            parts: [
+              { text: '継', reading: 'つ' },
+              { text: 'ぐ', reading: 'ぐ' }
+            ],
+            meaning: { en: 'to succeed to, to inherit', vi: 'kế thừa, nối' }
+          }
+        ]
+      },
+      {
+        char: '紫',
+        meaning: { en: 'purple, violet', vi: 'tử - màu tím' },
+        onyomi: ['シ'],
+        kunyomi: ['むらさき'],
+        parts: [
+          { char: '此', role: 'phonetic' },
+          { char: '糸', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '紫', reading: 'し' },
+              { text: '外', reading: 'がい' },
+              { text: '線', reading: 'せん' }
+            ],
+            meaning: { en: 'ultraviolet rays', vi: 'tia tử ngoại' }
+          },
+          {
+            parts: [
+              { text: '紫', reading: 'むらさき' },
+              { text: '色', reading: 'いろ' }
+            ],
+            meaning: { en: 'purple (color)', vi: 'màu tím' }
+          },
+          {
+            parts: [
+              { text: '紫', reading: 'し' },
+              { text: '紺', reading: 'こん' }
+            ],
+            meaning: { en: 'bluish purple', vi: 'tím than' }
+          }
+        ]
+      },
+      {
+        char: '紹',
+        meaning: { en: 'introduce, mediate', vi: 'thiệu - giới thiệu' },
+        onyomi: ['ショウ'],
+        kunyomi: [],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '召', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '紹', reading: 'しょう' },
+              { text: '介', reading: 'かい' }
+            ],
+            meaning: { en: 'introduction', vi: 'giới thiệu' }
+          },
+          {
+            parts: [
+              { text: '自', reading: 'じ' },
+              { text: '己', reading: 'こ' },
+              { text: '紹', reading: 'しょう' },
+              { text: '介', reading: 'かい' }
+            ],
+            meaning: { en: 'self-introduction', vi: 'tự giới thiệu' }
+          },
+          {
+            parts: [
+              { text: '紹', reading: 'しょう' },
+              { text: '介', reading: 'かい' },
+              { text: '状', reading: 'じょう' }
+            ],
+            meaning: { en: 'letter of introduction', vi: 'thư giới thiệu' }
+          }
+        ]
+      },
+      {
+        char: '繁',
+        meaning: { en: 'flourish, prosper; frequent', vi: 'phồn - thịnh vượng' },
+        onyomi: ['ハン'],
+        kunyomi: ['しげ.る'],
+        parts: [
+          { char: '敏', role: 'phonetic' },
+          { char: '糸', role: 'radical' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '繁', reading: 'はん' },
+              { text: '栄', reading: 'えい' }
+            ],
+            meaning: { en: 'prosperity', vi: 'phồn vinh' }
+          },
+          {
+            parts: [
+              { text: '繁', reading: 'はん' },
+              { text: '盛', reading: 'じょう' }
+            ],
+            meaning: { en: 'prosperity, booming', vi: 'phát đạt' }
+          },
+          {
+            parts: [
+              { text: '繁', reading: 'はん' },
+              { text: '華', reading: 'か' },
+              { text: '街', reading: 'がい' }
+            ],
+            meaning: { en: 'downtown, busy district', vi: 'khu phố sầm uất' }
+          }
+        ]
+      },
+      {
+        char: '網',
+        meaning: { en: 'net; network', vi: 'võng - lưới; mạng' },
+        onyomi: ['モウ'],
+        kunyomi: ['あみ'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '罔', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '網', reading: 'もう' },
+              { text: '羅', reading: 'ら' }
+            ],
+            meaning: { en: 'comprehensive coverage', vi: 'bao quát, thâu tóm' }
+          },
+          {
+            parts: [
+              { text: '通', reading: 'つう' },
+              { text: '信', reading: 'しん' },
+              { text: '網', reading: 'もう' }
+            ],
+            meaning: { en: 'communication network', vi: 'mạng lưới liên lạc' }
+          },
+          {
+            parts: [
+              { text: '網', reading: 'あみ' },
+              { text: '目', reading: 'め' }
+            ],
+            meaning: { en: 'mesh (of a net)', vi: 'mắt lưới' }
+          }
+        ]
+      },
+      {
+        char: '紋',
+        meaning: { en: 'crest; pattern', vi: 'văn - hoa văn; gia huy' },
+        onyomi: ['モン'],
+        kunyomi: [],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '文', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '紋', reading: 'もん' },
+              { text: '章', reading: 'しょう' }
+            ],
+            meaning: { en: 'crest, emblem', vi: 'huy hiệu' }
+          },
+          {
+            parts: [
+              { text: '家', reading: 'か' },
+              { text: '紋', reading: 'もん' }
+            ],
+            meaning: { en: 'family crest', vi: 'gia huy' }
+          },
+          {
+            parts: [
+              { text: '指', reading: 'し' },
+              { text: '紋', reading: 'もん' }
+            ],
+            meaning: { en: 'fingerprint', vi: 'dấu vân tay' }
+          }
+        ]
+      },
+      {
+        char: '絡',
+        meaning: { en: 'entwine; connect, contact', vi: 'lạc - vướng; liên lạc' },
+        onyomi: ['ラク'],
+        kunyomi: ['から.む', 'から.まる'],
+        parts: [
+          { char: '糸', role: 'radical' },
+          { char: '各', role: 'phonetic' }
+        ],
+        examples: [
+          {
+            parts: [
+              { text: '連', reading: 'れん' },
+              { text: '絡', reading: 'らく' }
+            ],
+            meaning: { en: 'contact, communication', vi: 'liên lạc' }
+          },
+          {
+            parts: [
+              { text: '短', reading: 'たん' },
+              { text: '絡', reading: 'らく' }
+            ],
+            meaning: { en: 'short circuit; jumping to conclusions', vi: 'chập mạch; hấp tấp' }
+          },
+          {
+            parts: [
+              { text: '絡', reading: 'から' },
+              { text: 'む', reading: 'む' }
+            ],
+            meaning: { en: 'to get tangled, to be involved', vi: 'vướng, dính líu' }
           }
         ]
       }

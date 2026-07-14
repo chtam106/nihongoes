@@ -4,7 +4,8 @@ import {
   grade3Lessons,
   grade4Lessons,
   grade5Lessons,
-  grade6Lessons
+  grade6Lessons,
+  kanken4Lessons
 } from './lessons.ts';
 import { radicals, type Radical } from './radicals.ts';
 import type { Bilingual, KanjiLesson } from './types.ts';
@@ -16,7 +17,8 @@ export {
   grade3Lessons,
   grade4Lessons,
   grade5Lessons,
-  grade6Lessons
+  grade6Lessons,
+  kanken4Lessons
 } from './lessons.ts';
 export { radicals };
 export type { Radical };
@@ -93,13 +95,24 @@ const grade6Track: KanjiTrack = {
   lessons: grade6Lessons
 };
 
+const kanken4Track: KanjiTrack = {
+  slug: 'kanken-4',
+  name: { en: 'Kanken level 4 kanji', vi: 'Kanji Kanken 4級' },
+  intro: {
+    en: 'The first 313 secondary-school jōyō kanji (Kanji Kentei level 4, roughly junior high year 1), learned after the 1026 elementary kanji. Since Japan assigns no fixed grade to these, they follow the widely used Kanken progression: study, society, the body, and abstract ideas, grouped into small themed lessons.',
+    vi: '313 chữ jōyō trung học đầu tiên (Kỳ thi năng lực Kanji cấp 4級, tương đương lớp 7), học sau 1026 chữ tiểu học. Vì Nhật không ấn định lớp cố định cho nhóm này, chúng theo lộ trình Kanken thông dụng: học tập, xã hội, cơ thể và các khái niệm trừu tượng, chia thành từng bài nhỏ theo chủ đề.'
+  },
+  lessons: kanken4Lessons
+};
+
 export const kanjiTracks: KanjiTrack[] = [
   grade1Track,
   grade2Track,
   grade3Track,
   grade4Track,
   grade5Track,
-  grade6Track
+  grade6Track,
+  kanken4Track
 ];
 
 export function getKanjiTrack(slug: string): KanjiTrack | undefined {

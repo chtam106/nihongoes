@@ -84,35 +84,19 @@ function InfoRow({ label, value, japanese, emphasize }: InfoRowProps) {
 // Shared soft-shadow pill styling, mirroring the component-radical pills.
 const PILL_SHADOW = '0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1)';
 
-// Pill styling for a single reading.
-const readingPillSx = {
-  display: 'inline-flex',
-  alignItems: 'baseline',
-  px: 0.75,
-  py: 0.25,
-  borderRadius: 1,
-  fontWeight: 600,
-  bgcolor: 'background.paper',
-  boxShadow: PILL_SHADOW
-} as const;
-
 type ReadingRowProps = {
   label: string;
   readings: string[];
 };
 
-/** A label followed by each reading rendered as its own tag/pill. */
+/** A label followed by the readings on one line, separated by " | ". */
 function ReadingRow({ label, readings }: ReadingRowProps) {
   return (
     <>
       <RowLabel>{label}</RowLabel>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75 }}>
-        {readings.map((reading) => (
-          <Box key={reading} component="span" lang="ja" sx={readingPillSx}>
-            {reading}
-          </Box>
-        ))}
-      </Box>
+      <Typography variant="body2" lang="ja" sx={{ fontWeight: 600 }}>
+        {readings.join(' | ')}
+      </Typography>
     </>
   );
 }
@@ -120,29 +104,6 @@ function ReadingRow({ label, readings }: ReadingRowProps) {
 type ComponentsRowProps = {
   entry: KanjiEntry;
 };
-
-/**
- * The "Components" row: each building block as a chip colored by its role
- * (radical / semantic / phonetic / other). Chips whose char is one of the 214
- * radicals show its meaning and link to the radicals page; others show the char
- * only. Falls back to the legacy `components` list (all treated as radicals).
- */
-/**
- * The components to display for a kanji. Prefers the authored `parts`; otherwise
- * falls back to the character's own dictionary radical (for atomic kanji that are
- * themselves a radical, e.g. 木 -> 木), then to the legacy `components` list.
- */
-function resolveParts(entry: KanjiEntry): KanjiComponent[] {
-  if (entry.parts) {
-    return entry.parts;
-  }
-
-  if (getRadicalByChar(entry.char)) {
-    return [{ char: entry.char, role: 'radical' }];
-  }
-
-  return entry.components.map((char) => ({ char, role: 'radical' as const }));
-}
 
 /** Display order for component chips: radical first, then semantic, phonetic, other. */
 const ROLE_ORDER: Record<KanjiComponent['role'], number> = {
@@ -152,10 +113,15 @@ const ROLE_ORDER: Record<KanjiComponent['role'], number> = {
   other: 3
 };
 
+/**
+ * The "Components" row: each building block as a chip colored by its role
+ * (radical / semantic / phonetic / other). Chips whose char is one of the 214
+ * radicals show its meaning and link to the radicals page; others show the char only.
+ */
 function ComponentsRow({ entry }: ComponentsRowProps) {
   const { locale, t } = useTranslation();
 
-  const parts = [...resolveParts(entry)].sort((a, b) => ROLE_ORDER[a.role] - ROLE_ORDER[b.role]);
+  const parts = [...entry.parts].sort((a, b) => ROLE_ORDER[a.role] - ROLE_ORDER[b.role]);
 
   if (parts.length < 1) {
     return null;
