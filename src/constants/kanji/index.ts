@@ -5,7 +5,10 @@ import {
   grade4Lessons,
   grade5Lessons,
   grade6Lessons,
-  kanken4Lessons
+  kanken4Lessons,
+  kanken3Lessons,
+  kankenPre2Lessons,
+  kanken2Lessons
 } from './lessons.ts';
 import { radicals, type Radical } from './radicals.ts';
 import type { Bilingual, KanjiLesson } from './types.ts';
@@ -18,7 +21,10 @@ export {
   grade4Lessons,
   grade5Lessons,
   grade6Lessons,
-  kanken4Lessons
+  kanken4Lessons,
+  kanken3Lessons,
+  kankenPre2Lessons,
+  kanken2Lessons
 } from './lessons.ts';
 export { radicals };
 export type { Radical };
@@ -105,6 +111,36 @@ const kanken4Track: KanjiTrack = {
   lessons: kanken4Lessons
 };
 
+const kanken3Track: KanjiTrack = {
+  slug: 'kanken-3',
+  name: { en: 'Kanken level 3 kanji', vi: 'Kanji Kanken 3級' },
+  intro: {
+    en: 'The 284 secondary-school jōyō kanji of Kanji Kentei level 3 (roughly junior high graduate level), studied after Kanken level 4. Grouped into small themed lessons with meanings, on and kun readings, and tappable example words.',
+    vi: '284 chữ jōyō trung học của Kỳ thi năng lực Kanji cấp 3級 (tương đương tốt nghiệp THCS), học sau Kanken 4級. Chia thành từng bài nhỏ theo chủ đề, kèm nghĩa, âm ON và KUN, và từ ví dụ bấm để nghe.'
+  },
+  lessons: kanken3Lessons
+};
+
+const kankenPre2Track: KanjiTrack = {
+  slug: 'kanken-pre-2',
+  name: { en: 'Kanken level pre-2 kanji', vi: 'Kanji Kanken 準2級' },
+  intro: {
+    en: 'The 328 jōyō kanji of Kanji Kentei level pre-2 (roughly high-school level), studied after Kanken level 3. Grouped into small themed lessons with meanings, on and kun readings, and tappable example words.',
+    vi: '328 chữ jōyō của Kỳ thi năng lực Kanji cấp 準2級 (tương đương trình độ THPT), học sau Kanken 3級. Chia thành từng bài nhỏ theo chủ đề, kèm nghĩa, âm ON và KUN, và từ ví dụ bấm để nghe.'
+  },
+  lessons: kankenPre2Lessons
+};
+
+const kanken2Track: KanjiTrack = {
+  slug: 'kanken-2',
+  name: { en: 'Kanken level 2 kanji', vi: 'Kanji Kanken 2級' },
+  intro: {
+    en: 'The final 185 jōyō kanji of Kanji Kentei level 2 (the full 2136-character jōyō set), studied after Kanken level pre-2. Grouped into small themed lessons with meanings, on and kun readings, and tappable example words.',
+    vi: '185 chữ jōyō cuối cùng của Kỳ thi năng lực Kanji cấp 2級 (trọn bộ 2136 chữ jōyō), học sau Kanken 準2級. Chia thành từng bài nhỏ theo chủ đề, kèm nghĩa, âm ON và KUN, và từ ví dụ bấm để nghe.'
+  },
+  lessons: kanken2Lessons
+};
+
 export const kanjiTracks: KanjiTrack[] = [
   grade1Track,
   grade2Track,
@@ -112,7 +148,10 @@ export const kanjiTracks: KanjiTrack[] = [
   grade4Track,
   grade5Track,
   grade6Track,
-  kanken4Track
+  kanken4Track,
+  kanken3Track,
+  kankenPre2Track,
+  kanken2Track
 ];
 
 export function getKanjiTrack(slug: string): KanjiTrack | undefined {
