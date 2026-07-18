@@ -2,70 +2,75 @@ import SentimentVeryDissatisfiedOutlinedIcon from '@mui/icons-material/Sentiment
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import AppLayout from '@/components/app-layout';
 
-export function ErrorFallback() {
+/**
+ * The themed error screen (icon + message + reload). Rendered by the route-level
+ * `app/[lang]/error.tsx` (inside the app chrome) and as the `Sentry.ErrorBoundary`
+ * fallback for chrome-level render errors (where it centers itself full-height).
+ * It has NO `AppLayout` of its own, so it never re-crashes when the chrome is the
+ * thing that errored.
+ */
+export function ErrorFallbackContent() {
   const { t } = useTranslation();
 
   return (
-    <AppLayout>
-      <Box
+    <Box
+      data-testid="error-boundary"
+      sx={{
+        flexGrow: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        py: 6,
+        px: 2
+      }}
+    >
+      <Stack
+        spacing={2.5}
         sx={{
-          flexGrow: 1,
-          display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          textAlign: 'center',
           width: '100%',
-          py: 6,
-          px: 2
+          maxWidth: 520,
+          mx: 'auto'
         }}
       >
-        <Stack
-          spacing={2.5}
+        <Box
           sx={{
+            width: 72,
+            height: 72,
+            borderRadius: '50%',
+            display: 'inline-flex',
             alignItems: 'center',
-            textAlign: 'center',
-            width: '100%',
-            maxWidth: 520,
-            mx: 'auto'
+            justifyContent: 'center',
+            color: 'error.main',
+            bgcolor: (theme) => alpha(theme.palette.error.main, 0.12)
           }}
         >
-          <Box
-            sx={{
-              width: 72,
-              height: 72,
-              borderRadius: '50%',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'error.main',
-              bgcolor: (theme) => alpha(theme.palette.error.main, 0.12)
-            }}
-          >
-            <SentimentVeryDissatisfiedOutlinedIcon sx={{ fontSize: 38 }} />
-          </Box>
+          <SentimentVeryDissatisfiedOutlinedIcon sx={{ fontSize: 38 }} />
+        </Box>
 
-          <Box>
-            <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 1 }}>
-              {t('errorBoundary.title')}
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              {t('errorBoundary.body')}
-            </Typography>
-          </Box>
+        <Box>
+          <Typography variant="h4" component="h1" sx={{ fontWeight: 600, mb: 1 }}>
+            {t('errorBoundary.title')}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {t('errorBoundary.body')}
+          </Typography>
+        </Box>
 
-          <Stack
-            direction="row"
-            spacing={1.5}
-            useFlexGap
-            sx={{ flexWrap: 'wrap', justifyContent: 'center' }}
-          >
-            <Button size="large" variant="contained" onClick={() => window.location.reload()}>
-              {t('errorBoundary.reload')}
-            </Button>
-          </Stack>
+        <Stack
+          direction="row"
+          spacing={1.5}
+          useFlexGap
+          sx={{ flexWrap: 'wrap', justifyContent: 'center' }}
+        >
+          <Button size="large" variant="contained" onClick={() => window.location.reload()}>
+            {t('errorBoundary.reload')}
+          </Button>
         </Stack>
-      </Box>
-    </AppLayout>
+      </Stack>
+    </Box>
   );
 }
