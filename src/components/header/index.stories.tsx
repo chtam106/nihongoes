@@ -10,7 +10,6 @@ const meta = {
   },
   args: {
     drawerWidth: 320,
-    isMobile: false,
     mobileOpen: false,
     onToggleMobile: fn()
   }
@@ -23,14 +22,10 @@ type Story = StoryObj<typeof meta>;
 export const Desktop: Story = {};
 
 export const Mobile: Story = {
-  args: {
-    isMobile: true
-  }
+  parameters: { viewport: { defaultViewport: 'mobile2' } }
 };
 
 export const MobileOpen: Story = {
-  args: {
-    isMobile: true,
-    mobileOpen: true
-  }
+  args: { mobileOpen: true },
+  parameters: { viewport: { defaultViewport: 'mobile2' } }
 };
