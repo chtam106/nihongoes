@@ -27,6 +27,14 @@ has no matching nav group so it slips through). This ONLY reproduces in a
 PRODUCTION build (`next build` prerenders at `/en/...`), never in `next dev` - so
 validate page health against a prod build, not dev.
 
+CAVEAT: `ErrorBoundary` (`src/components/error-boundary`) also attaches a GLOBAL
+`window 'error'` / `unhandledrejection` listener, so ANY uncaught error on the
+page (even one React would recover from) flips it to the full-screen fallback.
+This is what amplified the small hydration mismatch above into every English page
+showing the fallback. Keep this in mind when debugging "whole page is the error
+screen"; a future improvement is to make the boundary rely on
+`getDerivedStateFromError`/`componentDidCatch` instead of the broad global listener.
+
 ## "Every page works" testing
 
 - The CI `build` job (`pnpm build`) prerenders all ~1,400 pages and fails on any

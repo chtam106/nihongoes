@@ -39,6 +39,8 @@ alwaysApply: true
 - Validate changes with `pnpm run typecheck`, `pnpm run lint`, `pnpm run format` (or `pnpm run check`).
 - Prettier `trailingComma: "none"` — do NOT add trailing commas after the last element/param/property; `prettier --write` enforces this repo-wide.
 - `pnpm-lock.yaml` is in `.prettierignore` — never let `pnpm run format` reformat it (it caused a huge spurious diff once). Don't commit lockfile changes unless `package.json` actually changed.
+- Do NOT run `pnpm build` / `pnpm start` while a `next dev` server is running: they share the `.next` folder and clobber each other (chunks start returning 500 -> blank pages). To run a prod build alongside dev, build into a SEPARATE output dir (add a temporary `distDir: process.env.NEXT_DIST_DIR || '.next'` to `next.config.ts`, then `NEXT_DIST_DIR=.next-prod pnpm build && NEXT_DIST_DIR=.next-prod pnpm start --port <p>`), or just stop dev first. Also add such a temp dir to `.gitignore`/eslint/tsconfig ignores, and note Next auto-adds `.next*/types` includes to `tsconfig.json` (revert with `git checkout tsconfig.json`).
+- `pnpm start`/`pnpm dev` spawn a CHILD `next-server`; killing the pnpm PID does NOT free the port (next-server keeps listening -> `EADDRINUSE` / you silently keep hitting the OLD server). Always free a port with `lsof -ti tcp:<port> | xargs kill -9`.
 
 ## Imports (IMPORTANT)
 - NO parent-relative imports (`../...`). Use the `@/` alias for anything outside the current folder; only same-folder `./...` relative imports are allowed (e.g. a page importing its colocated `./course-quiz.ts`). This is enforced by ESLint `no-restricted-imports` (patterns `../*`, `../**`) in `eslint.config.js`.
