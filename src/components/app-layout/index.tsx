@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
-import { Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Toolbar } from '@mui/material';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
@@ -17,8 +17,9 @@ type AppLayoutProps = {
 
 function AppLayout({ children }: AppLayoutProps) {
   const location = useLocation();
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  // Mobile vs desktop is handled purely with CSS breakpoints (below) so the
+  // server-rendered markup is correct at first paint - no `useMediaQuery` flash
+  // where the desktop drawer briefly appears on mobile.
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
@@ -33,14 +34,12 @@ function AppLayout({ children }: AppLayoutProps) {
 
       <Header
         drawerWidth={drawerWidth}
-        isMobile={isMobile}
         mobileOpen={mobileOpen}
         onToggleMobile={() => setMobileOpen((previous) => !previous)}
       />
 
       <Menu
         drawerWidth={drawerWidth}
-        isMobile={isMobile}
         mobileOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
       />

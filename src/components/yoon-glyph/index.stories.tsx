@@ -19,14 +19,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Compact: Story = {
+export const Small: Story = {
   args: {
-    compact: true
+    size: 'sm'
   }
 };
 
 export const Large: Story = {
   args: {
-    large: true
+    size: 'lg'
+  }
+};
+
+export const Responsive: Story = {
+  args: {
+    size: 'responsive'
   }
 };

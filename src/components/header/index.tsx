@@ -17,12 +17,11 @@ const LanguageSwitcher = lazy(() =>
 
 type HeaderProps = {
   drawerWidth: number;
-  isMobile: boolean;
   mobileOpen: boolean;
   onToggleMobile: () => void;
 };
 
-export function Header({ drawerWidth, isMobile, mobileOpen, onToggleMobile }: HeaderProps) {
+export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps) {
   const { t } = useTranslation();
 
   return (
@@ -45,18 +44,20 @@ export function Header({ drawerWidth, isMobile, mobileOpen, onToggleMobile }: He
           alignItems: 'center'
         }}
       >
-        {isMobile && (
-          <IconButton
-            edge="start"
-            onClick={onToggleMobile}
-            aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen && <CloseIcon />}
-            {!mobileOpen && <MenuIcon />}
-          </IconButton>
-        )}
-        {!isMobile && <Box sx={{ width: drawerWidth, flexShrink: 0 }} aria-hidden />}
+        <IconButton
+          edge="start"
+          onClick={onToggleMobile}
+          aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+          aria-expanded={mobileOpen}
+          sx={{ display: { xs: 'inline-flex', md: 'none' } }}
+        >
+          {mobileOpen && <CloseIcon />}
+          {!mobileOpen && <MenuIcon />}
+        </IconButton>
+        <Box
+          aria-hidden
+          sx={{ display: { xs: 'none', md: 'block' }, width: drawerWidth, flexShrink: 0 }}
+        />
         <Box
           sx={{
             flexGrow: 1,
