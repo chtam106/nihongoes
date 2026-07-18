@@ -19,14 +19,26 @@ export function getLocaleFromPathname(pathname: string): Locale {
   return DEFAULT_LOCALE;
 }
 
-/** Remove any locale prefix, returning the locale-agnostic ("logical") path. */
+/**
+ * Remove any locale prefix, returning the locale-agnostic ("logical") path.
+ *
+ * This strips the default locale prefix (`/en`) too, not just `/vi`: on the
+ * client English lives at the clean root (`/kanji`), but during static prerender
+ * the middleware rewrite means English pages render under the internal `/en/...`
+ * path. Stripping both keeps SSR and client output identical (e.g. active-nav
+ * state), avoiding hydration mismatches.
+ */
 export function stripLocalePrefix(pathname: string): string {
-  if (pathname === LOCALE_PREFIX) {
-    return '/';
-  }
+  for (const locale of LOCALES) {
+    const prefix = `/${locale}`;
 
-  if (pathname.startsWith(`${LOCALE_PREFIX}/`)) {
-    return pathname.slice(LOCALE_PREFIX.length);
+    if (pathname === prefix) {
+      return '/';
+    }
+
+    if (pathname.startsWith(`${prefix}/`)) {
+      return pathname.slice(prefix.length);
+    }
   }
 
   return pathname;
