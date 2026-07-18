@@ -135,5 +135,6 @@ Required token permissions: **Project - Admin**, **Release - Admin**,
 
 ## Further Docs
 
+- Deployment (Vercel): `docs/DEPLOYMENT.md`
 - Performance auditing: `LIGHTHOUSE.md`
 - Testing guide: `docs/TESTING.md`
