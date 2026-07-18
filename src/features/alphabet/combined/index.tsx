@@ -70,10 +70,9 @@ function pairRowsForSection(
 
 type CombinedKanaCellProps = {
   cell: CombinedCell;
-  compact: boolean;
 };
 
-function CombinedKanaCell({ cell, compact }: CombinedKanaCellProps) {
+function CombinedKanaCell({ cell }: CombinedKanaCellProps) {
   const { t } = useTranslation();
 
   return (
@@ -81,23 +80,20 @@ function CombinedKanaCell({ cell, compact }: CombinedKanaCellProps) {
       ariaLabel={t('chart.playAudio', { char: cell.hiragana.char, romaji: cell.romaji })}
       onActivate={() => playKanaAudio(cell.romaji, cell.hiragana.char)}
       romaji={cell.romaji}
-      compact={compact}
     >
       <Stack
         direction="row"
-        spacing={compact ? 0.5 : 1}
+        spacing={{ xs: 0.5, md: 1 }}
         sx={{ alignItems: 'center', justifyContent: 'center' }}
       >
-        <KanaDisplay cell={cell.hiragana} variant="chart" compact={compact} />
-        <KanaDisplay cell={cell.katakana} variant="chart" compact={compact} />
+        <KanaDisplay cell={cell.hiragana} variant="chart" />
+        <KanaDisplay cell={cell.katakana} variant="chart" />
       </Stack>
     </CellButton>
   );
 }
 
-const renderCombinedCell = (cell: CombinedCell, compact: boolean) => (
-  <CombinedKanaCell cell={cell} compact={compact} />
-);
+const renderCombinedCell = (cell: CombinedCell) => <CombinedKanaCell cell={cell} />;
 
 function CombinedChartPage() {
   const { t } = useTranslation();

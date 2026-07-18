@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import type { GridRow } from '@/features/alphabet/gojuon.ts';
 
@@ -7,12 +7,11 @@ type CellButtonProps = {
   ariaLabel: string;
   onActivate: () => void;
   romaji: string;
-  compact: boolean;
   children: ReactNode;
 };
 
 /** Interactive chart cell: a tap/keyboard target that plays audio, with romaji below. */
-export function CellButton({ ariaLabel, onActivate, romaji, compact, children }: CellButtonProps) {
+export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButtonProps) {
   return (
     <Box
       role="button"
@@ -52,7 +51,7 @@ export function CellButton({ ariaLabel, onActivate, romaji, compact, children }:
       <Typography
         variant="caption"
         color="text.secondary"
-        sx={{ lineHeight: 1.1, fontSize: compact ? 13 : 15 }}
+        sx={{ lineHeight: 1.1, fontSize: { xs: 13, md: 15 } }}
       >
         {romaji}
       </Typography>
@@ -69,7 +68,7 @@ const HEADER_LABEL_SX = {
 type GojuonGridProps<T> = {
   rows: GridRow<T>[];
   headers: string[];
-  renderCell: (cell: T, compact: boolean) => ReactNode;
+  renderCell: (cell: T) => ReactNode;
   minCellWidth?: number;
   maxCellWidth?: number;
 };
@@ -81,8 +80,6 @@ export function GojuonGrid<T>({
   minCellWidth = 44,
   maxCellWidth = 96
 }: GojuonGridProps<T>) {
-  const theme = useTheme();
-  const compact = useMediaQuery(theme.breakpoints.down('md'));
   const columnCount = headers.length;
 
   return (
@@ -116,9 +113,7 @@ export function GojuonGrid<T>({
               {row.label}
             </Typography>
             {row.cells.map((cell, colIndex) => (
-              <Box key={`${row.label}-${rowIndex}-${colIndex}`}>
-                {cell && renderCell(cell, compact)}
-              </Box>
+              <Box key={`${row.label}-${rowIndex}-${colIndex}`}>{cell && renderCell(cell)}</Box>
             ))}
           </Box>
         ))}
