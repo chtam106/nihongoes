@@ -1,6 +1,7 @@
 'use client';
 
 import { Component, type ReactNode } from 'react';
+import * as Sentry from '@sentry/nextjs';
 import { useLocation } from '@/i18n/navigation.tsx';
 import { ErrorFallback } from '@/components/error-fallback';
 
@@ -17,6 +18,18 @@ type ErrorBoundaryState = {
   hasError: boolean;
 };
 
+/**
+ * App-level boundary for RENDER errors in the app chrome (`AppLayout` and above
+ * the route segment, which the route-level `app/[lang]/error.tsx` cannot reach).
+ *
+ * It deliberately relies ONLY on React's `getDerivedStateFromError` /
+ * `componentDidCatch` - it does NOT attach global `window 'error'` /
+ * `unhandledrejection` listeners. Those listeners fired for ANY uncaught error on
+ * the page (recoverable hydration errors, event-handler throws, third-party
+ * scripts) and turned each into a full-screen fallback. Uncaught async/handler
+ * errors are still reported by Sentry's own global handlers and should be handled
+ * where they occur, not by blanking the whole app.
+ */
 export class ErrorBoundaryClass extends Component<ErrorBoundaryClassProps, ErrorBoundaryState> {
   state: ErrorBoundaryState = { hasError: false };
 
@@ -24,26 +37,16 @@ export class ErrorBoundaryClass extends Component<ErrorBoundaryClassProps, Error
     return { hasError: true };
   }
 
-  handleError = () => this.setState({ hasError: true });
-
-  componentDidMount() {
-    window.addEventListener('error', this.handleError);
-    window.addEventListener('unhandledrejection', this.handleError);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('error', this.handleError);
-    window.removeEventListener('unhandledrejection', this.handleError);
+  componentDidCatch(error: Error) {
+    // This boundary sits inside Sentry's own error boundary, so an error it
+    // catches would not otherwise reach Sentry - report it explicitly.
+    Sentry.captureException(error);
   }
 
   componentDidUpdate(prevProps: ErrorBoundaryClassProps) {
     if (prevProps.resetKey !== this.props.resetKey && this.state.hasError) {
       this.setState({ hasError: false });
     }
-  }
-
-  componentDidCatch() {
-    this.setState({ hasError: true });
   }
 
   render() {
