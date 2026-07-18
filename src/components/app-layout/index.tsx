@@ -1,12 +1,13 @@
+'use client';
+
 import { useEffect, useState, type ReactNode } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
 import { Box, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
-import { PageMeta } from '@/components/page-meta';
 import { ScrollManager } from '@/components/scroll-manager';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
+import { useLocation } from '@/i18n/navigation.tsx';
 
 const drawerWidth = 320;
 
@@ -29,7 +30,6 @@ function AppLayout({ children }: AppLayoutProps) {
   return (
     <Box sx={{ display: 'flex', minHeight: '100svh' }}>
       <ScrollManager />
-      <PageMeta />
 
       <Header
         drawerWidth={drawerWidth}
@@ -57,7 +57,7 @@ function AppLayout({ children }: AppLayoutProps) {
       >
         <Toolbar />
 
-        {children ?? <Outlet />}
+        {children}
 
         <Footer />
       </Box>

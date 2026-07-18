@@ -1,29 +1,32 @@
-import { forwardRef } from 'react';
-import { Link, NavLink, type LinkProps, type NavLinkProps } from 'react-router-dom';
+'use client';
+
+import { forwardRef, type ComponentPropsWithoutRef } from 'react';
+import NextLink from 'next/link';
 import { withLocale } from '@/i18n/locale-routing.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
+type NextLinkProps = ComponentPropsWithoutRef<typeof NextLink>;
+
+export type LocaleLinkProps = Omit<NextLinkProps, 'href'> & {
+  /** A locale-agnostic ("logical") path; the active locale prefix is added. */
+  to: string;
+};
+
 /**
- * Drop-in replacements for react-router's `Link`/`NavLink` that prefix a string
- * `to` with the active locale, so internal navigation keeps the user in their
- * language (vi stays at the root, en is served under `/en`).
+ * Drop-in replacement for the old react-router `Link`/`NavLink` that prefixes a
+ * string `to` with the active locale, so internal navigation keeps the user in
+ * their language (en stays at the root, vi is served under `/vi`). Backed by
+ * `next/link`.
  */
-export const LocaleLink = forwardRef<HTMLAnchorElement, LinkProps>(function LocaleLink(
+export const LocaleLink = forwardRef<HTMLAnchorElement, LocaleLinkProps>(function LocaleLink(
   { to, ...rest },
   ref
 ) {
   const { locale } = useTranslation();
-  const localizedTo = typeof to === 'string' ? withLocale(to, locale) : to;
 
-  return <Link ref={ref} to={localizedTo} {...rest} />;
+  return <NextLink ref={ref} href={withLocale(to, locale)} {...rest} />;
 });
 
-export const LocaleNavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(function LocaleNavLink(
-  { to, ...rest },
-  ref
-) {
-  const { locale } = useTranslation();
-  const localizedTo = typeof to === 'string' ? withLocale(to, locale) : to;
-
-  return <NavLink ref={ref} to={localizedTo} {...rest} />;
-});
+/** Alias kept for callers that used the old NavLink; active state is handled by
+ * the consumer (e.g. MUI's `selected`), so this behaves like `LocaleLink`. */
+export const LocaleNavLink = LocaleLink;

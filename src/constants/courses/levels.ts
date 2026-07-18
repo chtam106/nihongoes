@@ -11,25 +11,25 @@ export function coursePath(level: CourseLevel): string {
 }
 
 export function lessonPath(level: CourseLevel, id: string): string {
-  return `/${level}/lesson/${id}`;
+  return `/${level}/${id}`;
 }
 
 export function lessonVocabularyPath(level: CourseLevel, id: string): string {
-  return `/${level}/lesson/${id}/vocabulary`;
+  return `/${level}/${id}/vocabulary`;
 }
 
 export function lessonGrammarPath(level: CourseLevel, id: string): string {
-  return `/${level}/lesson/${id}/grammar`;
+  return `/${level}/${id}/grammar`;
 }
 
 export function lessonListeningPath(level: CourseLevel, id: string): string {
-  return `/${level}/lesson/${id}/listening`;
+  return `/${level}/${id}/listening`;
 }
 
 export function lessonReadingPath(level: CourseLevel, id: string): string {
-  return `/${level}/lesson/${id}/reading`;
+  return `/${level}/${id}/reading`;
 }
 
 export function lessonWritingPath(level: CourseLevel, id: string): string {
-  return `/${level}/lesson/${id}/writing`;
+  return `/${level}/${id}/writing`;
 }

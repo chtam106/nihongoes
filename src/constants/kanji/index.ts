@@ -193,7 +193,7 @@ export function kanjiTrackPath(trackSlug: string): string {
 }
 
 export function kanjiLessonPath(trackSlug: string, id: string): string {
-  return `${kanjiTrackPath(trackSlug)}/lesson/${id}`;
+  return `${kanjiTrackPath(trackSlug)}/${id}`;
 }
 
 export function kanjiQuizPath(trackSlug: string, id: string): string {

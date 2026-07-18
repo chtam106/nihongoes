@@ -1,4 +1,4 @@
-import type { AlphabetCell, AlphabetChartRow } from '@/pages/alphabet/alphabet-chart.tsx';
+import type { AlphabetCell, AlphabetChartRow } from '@/features/alphabet/alphabet-chart.tsx';
 import type { TranslateFn } from '@/i18n/language-context.ts';
 import { getYoonDisplayParts } from '@/utils/yoon-display.ts';
 

@@ -19,11 +19,11 @@ import {
   getJapaneseVoices,
   getPreferredVoiceURI,
   getSpeechRate,
-  isSpeechSupported,
   setPreferredVoiceURI,
   setSpeechRate,
   speakJapanese,
-  subscribeVoices
+  subscribeVoices,
+  useSpeechSupported
 } from '@/utils/speech.ts';
 
 const SPEED_OPTIONS = [0.6, 0.75, 0.9, 1, 1.15];
@@ -31,6 +31,7 @@ const SAMPLE_TEXT = 'こんにちは。はじめまして。';
 
 export function AudioSettings() {
   const { t } = useTranslation();
+  const speechSupported = useSpeechSupported();
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>(() => getJapaneseVoices());
   const [voiceURI, setVoiceURI] = useState<string>(() => getPreferredVoiceURI() ?? '');
@@ -46,7 +47,7 @@ export function AudioSettings() {
     };
   }, []);
 
-  if (!isSpeechSupported()) {
+  if (!speechSupported) {
     return null;
   }
 

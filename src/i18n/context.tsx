@@ -1,27 +1,23 @@
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+'use client';
+
+import { useCallback, useEffect, useMemo, type ReactNode } from 'react';
+import { useLocation, useNavigate } from '@/i18n/navigation.tsx';
 import {
   LOCALE_STORAGE_KEY,
   enTranslations,
   type Locale,
   type TranslationTree
 } from '@/i18n/translations.ts';
+import { viTranslations } from '@/i18n/translations-vi.ts';
 import { LanguageContext, type TranslateFn } from '@/i18n/language-context.ts';
 import { getLocaleFromPathname, stripLocalePrefix, withLocale } from '@/i18n/locale-routing.ts';
 
-type TranslationMap = Partial<Record<Locale, TranslationTree>>;
-
-let viTranslationsPromise: Promise<TranslationTree> | null = null;
-
-function loadViTranslations() {
-  if (!viTranslationsPromise) {
-    viTranslationsPromise = import('@/i18n/translations-vi.ts').then(
-      ({ viTranslations }) => viTranslations
-    );
-  }
-
-  return viTranslationsPromise;
-}
+// Both locales are bundled synchronously so statically pre-rendered pages ship
+// the correct language in their HTML (crawlable, no post-hydration text swap).
+const translationsByLocale: Record<Locale, TranslationTree> = {
+  en: enTranslations,
+  vi: viTranslations
+};
 
 function getNestedValue(tree: TranslationTree, key: string): string | undefined {
   const value = key.split('.').reduce<unknown>((current, part) => {
@@ -45,7 +41,6 @@ function interpolate(template: string, params?: Record<string, string | number>)
 
 type LanguageProviderProps = {
   children: ReactNode;
-  initialTranslations?: TranslationMap;
 };
 
 /**
@@ -54,37 +49,15 @@ type LanguageProviderProps = {
  * the equivalent path in the other locale. The choice is mirrored to
  * localStorage purely as a hint for future visits.
  */
-export function LanguageProvider({ children, initialTranslations }: LanguageProviderProps) {
+export function LanguageProvider({ children }: LanguageProviderProps) {
   const location = useLocation();
   const navigate = useNavigate();
   const locale = getLocaleFromPathname(location.pathname);
 
-  const [translationsByLocale, setTranslationsByLocale] = useState<TranslationMap>(() => ({
-    en: enTranslations,
-    ...(initialTranslations ?? {})
-  }));
-
-  // Vietnamese strings are code-split; load them on demand when first needed.
+  // Keep the document language in sync and remember the locale (read from the
+  // URL) for potential future use.
   useEffect(() => {
-    if (locale !== 'vi' || translationsByLocale.vi) {
-      return;
-    }
-
-    let active = true;
-
-    void loadViTranslations().then((viTranslations) => {
-      if (active) {
-        setTranslationsByLocale((previous) => ({ ...previous, vi: viTranslations }));
-      }
-    });
-
-    return () => {
-      active = false;
-    };
-  }, [locale, translationsByLocale.vi]);
-
-  // Remember the locale (read from the URL) for potential future use.
-  useEffect(() => {
+    document.documentElement.lang = locale;
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
   }, [locale]);
 
@@ -100,15 +73,14 @@ export function LanguageProvider({ children, initialTranslations }: LanguageProv
 
   const t = useCallback<TranslateFn>(
     (key, params) => {
-      const localeTree = translationsByLocale[locale];
       const template =
-        (localeTree ? getNestedValue(localeTree, key) : undefined) ??
+        getNestedValue(translationsByLocale[locale], key) ??
         getNestedValue(enTranslations, key) ??
         key;
 
       return interpolate(template, params);
     },
-    [locale, translationsByLocale]
+    [locale]
   );
 
   const value = useMemo(() => ({ locale, setLocale, t }), [locale, setLocale, t]);

@@ -120,7 +120,7 @@ export function isNavGroupActive(group: NavGroup, pathname: string) {
   }
 
   if (group.courseLevel) {
-    return pathname.startsWith(`${group.path}/lesson/`);
+    return pathname.startsWith(`${group.path}/`);
   }
 
   return group.children.some(

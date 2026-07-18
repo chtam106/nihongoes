@@ -1,24 +1,23 @@
-import { MemoryRouter } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { Decorator, Preview } from '@storybook/react-vite';
 import '@/index.css';
 import { LanguageProvider } from '@/i18n/context.tsx';
 import type { Locale } from '@/i18n/translations.ts';
-import { viTranslations } from '@/i18n/translations-vi.ts';
 import { appTheme } from '@/theme/app-theme.ts';
+import { __setStorybookPathname } from './next-navigation-mock.ts';
 
 const withProviders: Decorator = (Story, context) => {
   const locale = context.globals.locale as Locale;
+  // The provider derives its locale from the pathname (en at root, vi under /vi).
+  __setStorybookPathname(locale === 'vi' ? '/vi' : '/');
 
   return (
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
-      {/* The provider derives its locale from the URL; remount on locale change. */}
-      <MemoryRouter key={locale} initialEntries={[locale === 'en' ? '/en' : '/']}>
-        <LanguageProvider initialTranslations={{ vi: viTranslations }}>
-          <Story />
-        </LanguageProvider>
-      </MemoryRouter>
+      {/* Remount on locale change so the provider re-reads the pathname. */}
+      <LanguageProvider key={locale}>
+        <Story />
+      </LanguageProvider>
     </ThemeProvider>
   );
 };

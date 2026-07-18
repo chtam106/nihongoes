@@ -31,11 +31,10 @@ Bilingual content (English and Vietnamese), interactive exercises, native audio 
 
 ## Tech Stack
 
-- React 19, TypeScript, Vite
-- MUI (Material UI)
-- React Router
+- React 19, TypeScript, Next.js (App Router, file-based routing, deployed on a server)
+- MUI (Material UI) with Emotion SSR
 - Sentry (error monitoring, production only)
-- Vitest + Testing Library (unit), Playwright (e2e)
+- Vitest + Testing Library (unit), Playwright (e2e), Storybook
 
 ## Requirements
 
@@ -53,57 +52,84 @@ pnpm install
 pnpm dev
 ```
 
-Open at `http://localhost:5173`.
+Open at `http://localhost:3000`.
 
 ## Available Scripts
 
-| Script                | Description                                                          |
-| --------------------- | -------------------------------------------------------------------- |
-| `pnpm dev`            | Dev server                                                           |
-| `pnpm build`          | Typecheck + build + generate sitemap (uploads source maps to Sentry) |
-| `pnpm build:maps`     | Build without Sentry plugin - source map files kept in `dist/`       |
-| `pnpm preview`        | Preview production build                                             |
-| `pnpm check`          | Typecheck + lint + stylelint + format check                          |
-| `pnpm typecheck`      | TypeScript build check                                               |
-| `pnpm lint`           | ESLint                                                               |
-| `pnpm lint:fix`       | ESLint with auto-fix                                                 |
-| `pnpm lint:style`     | Stylelint for CSS                                                    |
-| `pnpm format`         | Prettier write                                                       |
-| `pnpm format:check`   | Verify formatting                                                    |
-| `pnpm test`           | Vitest unit tests                                                    |
-| `pnpm test:e2e`       | Playwright e2e tests                                                 |
-| `pnpm storybook`      | Storybook dev server                                                 |
-| `pnpm download:audio` | Download kana audio assets                                           |
+| Script                | Description                                 |
+| --------------------- | ------------------------------------------- |
+| `pnpm dev`            | Next.js dev server                          |
+| `pnpm build`          | Next.js production build                    |
+| `pnpm start`          | Serve the production build (`next start`)   |
+| `pnpm check`          | Typecheck + lint + stylelint + format check |
+| `pnpm typecheck`      | TypeScript check (`tsc --noEmit`)           |
+| `pnpm lint`           | ESLint                                      |
+| `pnpm lint:fix`       | ESLint with auto-fix                        |
+| `pnpm lint:style`     | Stylelint for CSS                           |
+| `pnpm format`         | Prettier write                              |
+| `pnpm format:check`   | Verify formatting                           |
+| `pnpm test`           | Vitest unit tests                           |
+| `pnpm test:e2e`       | Playwright e2e tests                        |
+| `pnpm storybook`      | Storybook dev server                        |
+| `pnpm download:audio` | Download kana audio assets                  |
 
 ## Project Structure
 
 ```
+app/
+  layout.tsx           root layout (Emotion SSR, providers, base metadata)
+  not-found.tsx        404 page
+  sitemap.ts           sitemap generation (native)
+  [lang]/              file-based routes for both locales (en, vi)
+    page.tsx           home
+    alphabet/**        alphabet pages + exercises
+    [jlptLevel]/**         course level, lesson, and practice pages
+    kanji/**           kanji hub, tracks, lessons, quiz, writing
+middleware.ts          keeps English at the root, Vietnamese under /vi
 src/
   constants/courses/   course and lesson content (n5-n1, frontend)
-  pages/               route pages
+  features/            page components rendered by the route files (client)
   components/          shared UI components
-  i18n/                translations and locale routing (en default, vi under /vi)
+  i18n/                translations, locale routing, nav shim, SEO metadata, route helpers
   utils/speech.ts      Japanese Web Speech API helpers
   theme/               MUI theme and surface helpers
-scripts/
-  generate-sitemap.ts  sitemap generation
 ```
 
-## Routing
+## Routing & i18n
 
-- Default locale (English) at root: `/`, `/alphabet`, `/n5`, ...
-- Vietnamese locale: `/vi/`, `/vi/alphabet`, `/vi/n5`, ...
-- Course indexes: `/<level>` (e.g. `/n3`, `/frontend`)
-- Lesson route: `/<level>/lesson/<lesson-id>`
-- Exercise/listening/reading: derived from the lesson route
+- File-based routing under `app/[lang]/**`. Each route file is a thin server
+  component: `generateStaticParams` (pre-render both locales) + `generateMetadata`
+  (per-page SEO) + renders its `src/features` view.
+- `middleware.ts` maps clean public URLs onto the internal `[lang]` segment:
+  - Default locale (English) at the root: `/`, `/alphabet`, `/n5/lesson-1`, ...
+  - Vietnamese under `/vi`: `/vi/alphabet`, `/vi/n5/lesson-1`, ...
+  - `/en/...` redirects to the clean root URL.
+- Course routes: `/<level>`, `/<level>/<lesson-id>`, `.../vocabulary|grammar|listening|reading|writing`.
+- Kanji routes: `/kanji`, `/kanji/<track>`, `/kanji/<track>/<lesson-id>`, `.../quiz|writing`.
+- Every route is statically pre-rendered (SSG) at build time; interactive
+  quiz/exercise/writing surfaces render client-only (`<ClientOnly>`).
+
+## Deployment (Vercel)
+
+The app runs on a Node server (for `middleware.ts`), so it deploys to Vercel (or
+any Node host), not a static host. Vercel auto-detects Next.js: connect the repo
+and set the `SENTRY_AUTH_TOKEN` env var for source map upload. The custom domain
+is configured in the Vercel dashboard.
 
 ## Error Monitoring (Sentry)
 
-Sentry is active in production builds only (`import.meta.env.PROD`). It is not initialized during `pnpm dev`.
+Sentry runs in production builds only (guarded by `process.env.NODE_ENV`). It is
+initialized client-side in `instrumentation-client.ts` and is not active during
+`pnpm dev`.
 
-To enable source map upload in CI, set the `SENTRY_AUTH_TOKEN` secret in GitHub repository settings (Settings > Secrets and variables > Actions). The deploy workflow passes it to `pnpm build`, which uploads source maps to Sentry and removes them from `dist/` automatically.
+Source maps are uploaded by `@sentry/nextjs` (`withSentryConfig` in
+`next.config.ts`) so stack traces in Sentry map back to the original source, then
+deleted so they are not served publicly. To enable the upload, set the
+`SENTRY_AUTH_TOKEN` env var on the build (e.g. in the Vercel project settings).
+Without the token the build still succeeds - it just skips the upload.
 
-Required token permissions: **Project - Admin**, **Release - Admin**, **Organization - Read**.
+Required token permissions: **Project - Admin**, **Release - Admin**,
+**Organization - Read**.
 
 ## Further Docs
 

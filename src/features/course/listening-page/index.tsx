@@ -1,0 +1,259 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useParams } from '@/i18n/navigation.tsx';
+import { LocaleLink as RouterLink } from '@/components/locale-link';
+import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined';
+import { Box, Button, IconButton, LinearProgress, Paper, Stack, Typography } from '@mui/material';
+import {
+  getCourse,
+  getLesson,
+  lessonPath,
+  type Course,
+  type CourseLevel,
+  type Lesson
+} from '@/constants/courses/index.ts';
+import { Heading } from '@/components/heading';
+import { PageContainer } from '@/components/page-container';
+import { useTranslation } from '@/i18n/use-translation.ts';
+import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { cancelSpeech, speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
+import { ChoiceButton } from '@/features/course/choice-button';
+import { buildLessonListening, type ListeningQuestion } from './course-listening.ts';
+import { LessonNotFound, LessonQuizHeader, ResultScreen } from '@/features/course/shared';
+
+type ListeningQuizProps = {
+  course: Course;
+  lesson: Lesson;
+};
+
+function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
+  const { locale, t } = useTranslation();
+
+  const [questions, setQuestions] = useState<ListeningQuestion[]>(() =>
+    buildLessonListening(course, lesson, locale)
+  );
+  const [index, setIndex] = useState(0);
+  const [wrongIds, setWrongIds] = useState<string[]>([]);
+  const [correctPicked, setCorrectPicked] = useState(false);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  const total = questions.length;
+  const question = questions[index];
+  const isLast = index === total - 1;
+
+  useEffect(() => {
+    if (finished) {
+      return;
+    }
+
+    speakJapanese(question.audioText);
+
+    return () => {
+      cancelSpeech();
+    };
+  }, [question.audioText, finished]);
+
+  // Auto-advance shortly after a correct answer; wrong answers let you retry.
+  useEffect(() => {
+    if (!correctPicked) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      if (isLast) {
+        cancelSpeech();
+        setFinished(true);
+        return;
+      }
+
+      setIndex((previous) => previous + 1);
+      setWrongIds([]);
+      setCorrectPicked(false);
+    }, 900);
+
+    return () => window.clearTimeout(timer);
+  }, [correctPicked, isLast]);
+
+  // For a wrong choice we only mark that option and let the user choose again.
+  const handleSelect = (optionId: string) => {
+    if (correctPicked || wrongIds.includes(optionId)) {
+      return;
+    }
+
+    if (optionId === question.correctId) {
+      setCorrectPicked(true);
+
+      if (wrongIds.length === 0) {
+        setScore((previous) => previous + 1);
+      }
+    } else {
+      setWrongIds((previous) => [...previous, optionId]);
+    }
+  };
+
+  const handleRetry = () => {
+    setQuestions(buildLessonListening(course, lesson, locale));
+    setIndex(0);
+    setWrongIds([]);
+    setCorrectPicked(false);
+    setScore(0);
+    setFinished(false);
+  };
+
+  return (
+    <PageContainer>
+      <Stack spacing={3}>
+        <LessonQuizHeader level={course.level} lesson={lesson} section="listening" />
+
+        {finished && (
+          <ResultScreen
+            score={score}
+            total={total}
+            level={course.level}
+            lessonId={lesson.id}
+            onRetry={handleRetry}
+          />
+        )}
+        {!finished && (
+          <>
+            <Box>
+              <Stack
+                direction="row"
+                sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
+              >
+                <Typography variant="body2" color="text.secondary">
+                  {t('course.questionProgress', { current: index + 1, total })}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {score} / {total}
+                </Typography>
+              </Stack>
+              <LinearProgress
+                variant="determinate"
+                value={total === 0 ? 0 : (index / total) * 100}
+                sx={{ borderRadius: 1, height: 8 }}
+              />
+            </Box>
+
+            <Paper
+              elevation={0}
+              sx={[
+                elevatedSurfaceSx,
+                {
+                  p: { xs: 3, md: 4 },
+                  textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: 1
+                }
+              ]}
+            >
+              <Typography variant="overline" color="text.secondary">
+                {t('course.listenPrompt')}
+              </Typography>
+              <IconButton
+                onClick={() => speakJapanese(question.audioText)}
+                color="primary"
+                aria-label={t('course.play')}
+                sx={{
+                  width: 84,
+                  height: 84,
+                  border: 2,
+                  borderColor: 'primary.main',
+                  '& svg': { fontSize: 44 }
+                }}
+              >
+                <VolumeUpIcon />
+              </IconButton>
+
+              {correctPicked && (
+                <Box sx={{ mt: 1 }}>
+                  <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>
+                    {formatJapaneseDisplay(question.reveal.jp)}
+                  </Typography>
+                </Box>
+              )}
+            </Paper>
+
+            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+              {question.options.map((option) => {
+                const isCorrectOption = option.id === question.correctId;
+                const showCorrect = correctPicked && isCorrectOption;
+                const showWrong = wrongIds.includes(option.id);
+                const locked = correctPicked || showWrong;
+
+                return (
+                  <ChoiceButton
+                    key={option.id}
+                    onClick={() => handleSelect(option.id)}
+                    dimmed={locked}
+                    state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
+                    lang={option.ja ? 'ja' : undefined}
+                  >
+                    {option.label}
+                  </ChoiceButton>
+                );
+              })}
+            </Box>
+          </>
+        )}
+      </Stack>
+    </PageContainer>
+  );
+}
+
+type SpeechUnavailableProps = {
+  level: CourseLevel;
+  lesson: Lesson;
+};
+
+function SpeechUnavailable({ level, lesson }: SpeechUnavailableProps) {
+  const { t } = useTranslation();
+
+  return (
+    <PageContainer>
+      <Heading component="h1" gutterBottom>
+        {t('course.listening')}
+      </Heading>
+      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+        {t('course.speechUnsupported')}
+      </Typography>
+      <Button component={RouterLink} to={lessonPath(level, lesson.id)} variant="contained">
+        {t('course.reviewLesson')}
+      </Button>
+    </PageContainer>
+  );
+}
+
+type ListeningPageProps = {
+  level: CourseLevel;
+};
+
+function ListeningPage({ level }: ListeningPageProps) {
+  const { lessonId } = useParams<{ lessonId: string }>();
+  const { locale } = useTranslation();
+  const speechSupported = useSpeechSupported();
+  const lesson = lessonId ? getLesson(level, lessonId) : undefined;
+
+  if (!lesson) {
+    return <LessonNotFound level={level} />;
+  }
+
+  if (!speechSupported) {
+    return <SpeechUnavailable level={level} lesson={lesson} />;
+  }
+
+  return (
+    <ListeningQuiz
+      key={`${level}:${lesson.id}:${locale}`}
+      course={getCourse(level)}
+      lesson={lesson}
+    />
+  );
+}
+
+export default ListeningPage;
