@@ -11,7 +11,7 @@ type GlobalErrorProps = {
 // This boundary replaces the whole document (the root layout crashed), so it
 // cannot use MUI/theme/i18n - the providers are gone, and reusing them risks the
 // fallback crashing for the same reason. So it is intentionally self-contained
-// with plain markup + inline styles that MIRROR the themed ErrorFallback (default
+// with plain markup + inline styles that MIRROR the themed ErrorFallbackContent (default
 // MUI palette: primary #1976d2, error #d32f2f, text 0.87/0.6 alpha; uppercase
 // buttons; Noto Sans with a sans-serif fallback).
 const FONT_FAMILY =

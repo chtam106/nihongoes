@@ -2,13 +2,13 @@ import SentimentVeryDissatisfiedOutlinedIcon from '@mui/icons-material/Sentiment
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import AppLayout from '@/components/app-layout';
 
 /**
- * The error screen body (icon + message + actions) WITHOUT app chrome. Use this
- * where the surrounding `AppLayout` is already present (e.g. Next's route-level
- * `error.tsx`, which renders inside the root layout). Use `ErrorFallback` when the
- * chrome is NOT present (the top-level client error boundary).
+ * The themed error screen (icon + message + reload). Rendered by the route-level
+ * `app/[lang]/error.tsx` (inside the app chrome) and as the `Sentry.ErrorBoundary`
+ * fallback for chrome-level render errors (where it centers itself full-height).
+ * It has NO `AppLayout` of its own, so it never re-crashes when the chrome is the
+ * thing that errored.
  */
 export function ErrorFallbackContent() {
   const { t } = useTranslation();
@@ -72,13 +72,5 @@ export function ErrorFallbackContent() {
         </Stack>
       </Stack>
     </Box>
-  );
-}
-
-export function ErrorFallback() {
-  return (
-    <AppLayout>
-      <ErrorFallbackContent />
-    </AppLayout>
   );
 }
