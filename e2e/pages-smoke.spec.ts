@@ -182,6 +182,10 @@ test.describe('coverage & fallbacks', () => {
     const throwButton = page.getByRole('button', { name: 'Throw error' });
     await expect(throwButton).toBeVisible();
 
+    // Wait for hydration so the click's handler is actually wired up (otherwise a
+    // click before hydration is a no-op and the error never fires).
+    await page.waitForLoadState('networkidle').catch(() => undefined);
+
     // Triggering the error swaps in the fallback.
     await throwButton.click();
     await expect(page.getByTestId('error-boundary')).toBeVisible();
