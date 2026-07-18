@@ -130,6 +130,13 @@ alwaysApply: true
 - Keep page-level `h1` typography visually consistent across pages (same size + weight). Use the shared `Heading` component with `component="h1"` and no per-page font-size overrides.
 - Keep heading weights consistent for `h2`/`h3` title text as well (page sections and card/list titles should use `fontWeight: 600` unless there is a deliberate, documented exception).
 
+## Responsive rendering - no flicker (IMPORTANT)
+- NEVER use `useMediaQuery` (or any post-hydration JS check) to decide WHAT to render for responsive layout. It returns the SSR default (usually `false`) on the server + first client render, so the correct layout "pops in" after hydration = a visible flicker (e.g. the desktop drawer flashing on mobile, or the header/nav shifting). This has bitten us repeatedly (mobile layout flash fix; alphabet chart `useMediaQuery` removal).
+- Instead render BOTH variants and toggle with CSS `display` breakpoints (`sx={{ display: { xs, md } }}`) so the server markup is already correct at first paint. See `AppLayout` + `Menu` (both drawers rendered, CSS-toggled) and the alphabet chart.
+- TRADE-OFF (accept it): CSS toggling means the hidden variant still mounts + hydrates (e.g. the desktop drawer's nav content hydrates on mobile). You canNOT skip hydrating it without reintroducing the flicker - a client component under SSG cannot know the viewport at SSR. Zero flicker wins over saving that hydration.
+- For lazy-loaded chrome (e.g. header `AudioSettings`/`LanguageSwitcher` via `lazy` + `Suspense`), give the fallback a FIXED size (reserve width/height) so the chunk loading in causes no layout shift.
+- Do not `setState` in an effect to detect viewport (also violates `react-hooks/set-state-in-effect`); rely on CSS.
+
 ## Component reuse (IMPORTANT)
 - ALWAYS reuse shared components instead of duplicating or re-rendering the same UI inline. Before writing a piece of UI, check whether a component already exists (e.g. `KanjiCard`, `TracingCanvas`, `SpeakableSurface`, `SpeakButton`, `Heading`, `HintText`, `PageContainer`, `ChoiceButton`, `KanjiReadingsNote`) and use it.
 - When the same UI/logic is (or will be) used in 2+ places, extract it into a folder-based shared component under `src/components/<name>/index.tsx` (or a shared page-segment folder for page-only reuse) and import it via the `@/` alias - do NOT copy-paste. Keep a single source of truth.
