@@ -13,6 +13,36 @@ exports `generateStaticParams` (pre-renders both locales), `generateMetadata`
 default component rendering its view. `middleware.ts` keeps English at the root
 (no prefix) and Vietnamese under `/vi` by rewriting `/x` -> `/en/x` internally.
 
+## Locale prefix + hydration (IMPORTANT gotcha, cost a prod outage)
+
+At build/SSR time English pages render under the INTERNAL `/en/...` path (the
+middleware rewrite), but on the client the URL is the clean `/x`. So any RENDERED
+output derived from `usePathname()`/`useLocation().pathname` (active-nav
+`selected` state, expanded groups, links) MUST normalize via `stripLocalePrefix`,
+and `stripLocalePrefix` MUST strip BOTH `/en` and `/vi` (not just `/vi`). If it
+leaves `/en` in place, SSR output differs from the client and React throws a
+hydration mismatch (#418) that - via the global `window 'error'` listener in
+`ErrorBoundary` - trips the error fallback on EVERY non-home English page (home
+has no matching nav group so it slips through). This ONLY reproduces in a
+PRODUCTION build (`next build` prerenders at `/en/...`), never in `next dev` - so
+validate page health against a prod build, not dev.
+
+## "Every page works" testing
+
+- The CI `build` job (`pnpm build`) prerenders all ~1,400 pages and fails on any
+  render error - that is the exhaustive server-render guarantee.
+- `e2e/pages-smoke.spec.ts` covers ONE rich example per page TYPE in both locales
+  (not every page - same type shares one component) and checks health with 5
+  signals: status < 400, no uncaught `pageerror` (catches hydration mismatches),
+  no same-origin 5xx (broken chunk), a real `<h1>` in `<main>`, and NO error
+  boundary (via `data-testid="error-boundary"` on `ErrorFallback` - not localized
+  text, since the fallback ALSO renders an `<h1>`). A sitemap self-check test
+  fails if a new route type has no example; a control test triggers `/sentry-test`
+  to prove the boundary DOES appear on error.
+- E2E runs against a PRODUCTION build in CI / with `E2E_PROD=1` (dev has
+  on-demand-compile flakiness -> transient 500s). `E2E_PORT` reuses a running
+  server. When a new route TYPE is added, add it to `REPRESENTATIVE_PAGES`.
+
 The page VIEW components (the actual UI, client components) live under
 `src/features/`; each `app/[lang]/**/page.tsx` imports its view from there. The
 view file is always `index.tsx`. Views read route params via `useParams` from
