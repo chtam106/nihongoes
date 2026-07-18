@@ -19,6 +19,7 @@ jobs:
       eslint_target_changed: ${{ steps.filter.outputs.eslint_target_changed }}
       typecheck_target_changed: ${{ steps.filter.outputs.typecheck_target_changed }}
       test_target_changed: ${{ steps.filter.outputs.test_target_changed }}
+      build_target_changed: ${{ steps.filter.outputs.build_target_changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -65,6 +66,23 @@ jobs:
               - '**/*.mjs'
               - '**/*.cjs'
               - index.html
+              - package.json
+              - pnpm-lock.yaml
+              - .nvmrc
+              - .github/workflows/ci.yml
+            build_target_changed:
+              - '**/*.ts'
+              - '**/*.tsx'
+              - '**/*.js'
+              - '**/*.jsx'
+              - '**/*.mjs'
+              - '**/*.cjs'
+              - '**/*.css'
+              - '**/*.json'
+              - 'app/**'
+              - 'public/**'
+              - next.config.ts
+              - middleware.ts
               - package.json
               - pnpm-lock.yaml
               - .nvmrc
@@ -166,6 +184,32 @@ jobs:
       - name: Unit tests
         run: pnpm test
 
+  build:
+    name: Build
+    needs: changes
+    if: needs.changes.outputs.build_target_changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Statically prerenders every page (generateStaticParams + dynamicParams=false),
+      # so this fails if ANY of the ~1,400 pages throws while rendering.
+      - name: Build
+        run: pnpm build
+
   e2e:
     name: E2E tests
     needs: changes
@@ -190,6 +234,8 @@ jobs:
       - name: Install Playwright browser
         run: pnpm exec playwright install --with-deps chromium
 
+      # Runs against a production build (CI is auto-detected in playwright.config.ts,
+      # which builds + starts `next start`) so the smoke suite sees real prod output.
       - name: E2E tests
         run: pnpm test:e2e
 
@@ -197,16 +243,17 @@ jobs:
   # deadlocks when unit/e2e are skipped on non-code PRs. Fails if either failed.
   tests-pass:
     name: Tests pass
-    needs: [unit, e2e]
+    needs: [build, unit, e2e]
     if: always()
     runs-on: ubuntu-latest
     steps:
-      - name: Verify unit and e2e results
+      - name: Verify build, unit and e2e results
         run: |
-          echo "unit=${{ needs.unit.result }} e2e=${{ needs.e2e.result }}"
-          if [ "${{ needs.unit.result }}" = "failure" ] || [ "${{ needs.unit.result }}" = "cancelled" ] || \
+          echo "build=${{ needs.build.result }} unit=${{ needs.unit.result }} e2e=${{ needs.e2e.result }}"
+          if [ "${{ needs.build.result }}" = "failure" ] || [ "${{ needs.build.result }}" = "cancelled" ] || \
+             [ "${{ needs.unit.result }}" = "failure" ] || [ "${{ needs.unit.result }}" = "cancelled" ] || \
              [ "${{ needs.e2e.result }}" = "failure" ] || [ "${{ needs.e2e.result }}" = "cancelled" ]; then
-            echo "::error::Required tests failed."
+            echo "::error::Required checks failed."
             exit 1
           fi
-          echo "All required tests passed (or were skipped as not applicable)."
+          echo "All required checks passed (or were skipped as not applicable)."

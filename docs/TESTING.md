@@ -70,16 +70,30 @@ pnpm test:e2e:report  # open the last HTML report / mở báo cáo HTML gần nh
 ```
 
 - Test files live in `e2e/` as `*.spec.ts`.
-- Config lives in `playwright.config.ts`. It auto-starts the Vite dev server (`pnpm dev` on port 5173) and reuses an already-running one locally.
+- Config lives in `playwright.config.ts`. Locally it auto-starts `next dev`; in CI (or with `E2E_PROD=1`) it builds and serves a real production build (`pnpm build && pnpm start`) so tests see prod output and avoid dev's on-demand-compile flakiness.
+- Point the tests at an already-running server with `E2E_PORT` (e.g. `E2E_PORT=3000 pnpm test:e2e` reuses a local `next dev`). To run a prod build next to a dev server, use a separate output dir: `NEXT_DIST_DIR=.next-prod pnpm build && NEXT_DIST_DIR=.next-prod pnpm start --port 5174`.
 - Only Chromium is configured; add more projects in `playwright.config.ts` if needed.
 
 - File test nằm trong `e2e/` dưới dạng `*.spec.ts`.
-- Cấu hình ở `playwright.config.ts`. Nó tự khởi động Vite dev server (`pnpm dev` cổng 5173) và tái dùng server đang chạy ở máy local.
+- Cấu hình ở `playwright.config.ts`. Ở máy local nó tự khởi động `next dev`; trên CI (hoặc khi đặt `E2E_PROD=1`) nó build và chạy bản production thật (`pnpm build && pnpm start`) để test thấy output prod và tránh lỗi chập chờn do dev biên dịch on-demand.
+- Trỏ test vào server đang chạy bằng `E2E_PORT` (vd `E2E_PORT=3000 pnpm test:e2e` dùng lại `next dev` local). Muốn chạy bản prod song song với dev thì build ra thư mục riêng: `NEXT_DIST_DIR=.next-prod pnpm build && NEXT_DIST_DIR=.next-prod pnpm start --port 5174`.
 - Chỉ cấu hình Chromium; thêm project khác trong `playwright.config.ts` nếu cần.
 
 ---
 
 ## 4. What is covered today / Hiện đang phủ những gì
+
+**"Every page works" guarantees / Đảm bảo "mọi trang hoạt động":**
+
+- `pnpm build` (a required CI job) statically prerenders every one of the ~1,400 pages (both locales) via `generateStaticParams` + `dynamicParams=false`, so the build fails if ANY page throws while server-rendering.
+- `e2e/pages-smoke.spec.ts` opens one rich live example of every page TYPE in both locales (against a production build) and asserts the page rendered healthily via 5 signals: HTTP < 400, no uncaught page errors (catches hydration mismatches), no same-origin 5xx (catches a broken JS chunk), a real page heading is visible (content, not blank), and the error boundary is NOT shown (detected by a stable `data-testid`). A self-check test fails if any sitemap page type has no smoke test, and a 404 test verifies unknown routes render the NotFound page.
+
+**Đảm bảo "mọi trang hoạt động":**
+
+- `pnpm build` (một job bắt buộc trên CI) prerender tĩnh toàn bộ ~1.400 trang (cả hai ngôn ngữ) qua `generateStaticParams` + `dynamicParams=false`, nên build sẽ hỏng nếu BẤT KỲ trang nào lỗi khi render phía server.
+- `e2e/pages-smoke.spec.ts` mở một ví dụ giàu dữ liệu của mỗi LOẠI trang ở cả hai ngôn ngữ (trên bản production) và kiểm tra sức khoẻ trang qua 5 tín hiệu: HTTP < 400, không lỗi JS uncaught (bắt hydration mismatch), không tài nguyên same-origin 5xx (bắt chunk JS hỏng), có heading thật hiện ra (content, không trắng), và error boundary KHÔNG hiện (dò bằng `data-testid` ổn định). Một test self-check sẽ đỏ nếu loại trang nào trong sitemap chưa có smoke, và test 404 kiểm route lạ render trang NotFound.
+
+**Other unit/component tests / Các test unit/component khác:**
 
 - `transliterate.test.ts` - kana to romaji conversion, particle `は` accepting both `ha`/`wa`, sokuon, long vowels.
 - `exercise-quiz.test.ts` - the alphabet quiz session logic.

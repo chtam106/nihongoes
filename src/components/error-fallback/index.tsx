@@ -10,6 +10,7 @@ export function ErrorFallback() {
   return (
     <AppLayout>
       <Box
+        data-testid="error-boundary"
         sx={{
           flexGrow: 1,
           display: 'flex',
