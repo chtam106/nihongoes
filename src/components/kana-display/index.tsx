@@ -6,21 +6,15 @@ import { FONT_FAMILY_JP } from '@/theme/fonts.ts';
 type KanaDisplayProps = {
   cell: AlphabetCell;
   variant?: 'prompt' | 'option' | 'chart';
-  compact?: boolean;
 };
 
 const kanaFontSx = { fontFamily: FONT_FAMILY_JP, fontWeight: 400 } as const;
 
-export function KanaDisplay({ cell, variant = 'option', compact = false }: KanaDisplayProps) {
+export function KanaDisplay({ cell, variant = 'option' }: KanaDisplayProps) {
   if (cell.yoonBase && cell.yoonSuffix) {
-    return (
-      <YoonGlyph
-        base={cell.yoonBase}
-        suffix={cell.yoonSuffix}
-        compact={variant === 'option' || compact}
-        large={variant === 'prompt'}
-      />
-    );
+    const size = variant === 'prompt' ? 'lg' : variant === 'chart' ? 'responsive' : 'sm';
+
+    return <YoonGlyph base={cell.yoonBase} suffix={cell.yoonSuffix} size={size} />;
   }
 
   if (variant === 'prompt') {
@@ -32,11 +26,12 @@ export function KanaDisplay({ cell, variant = 'option', compact = false }: KanaD
   }
 
   if (variant === 'chart') {
+    // Small on mobile, larger on desktop via CSS breakpoints (matches the old
+    // h6/h4 sizes) - no useMediaQuery, so no hydration size flash.
     return (
       <Typography
-        variant={compact ? 'h6' : 'h4'}
         component="span"
-        sx={{ ...kanaFontSx, lineHeight: 1.1 }}
+        sx={{ ...kanaFontSx, fontSize: { xs: '1.25rem', md: '2.125rem' }, lineHeight: 1.1 }}
       >
         {cell.char}
       </Typography>

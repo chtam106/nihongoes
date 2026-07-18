@@ -55,10 +55,9 @@ function toVoicedRows(rows: AlphabetChartRow[]): GridRow<AlphabetCell>[] {
 
 type PlayableCellProps = {
   cell: AlphabetCell;
-  compact: boolean;
 };
 
-function PlayableCell({ cell, compact }: PlayableCellProps) {
+function PlayableCell({ cell }: PlayableCellProps) {
   const { t } = useTranslation();
 
   return (
@@ -66,16 +65,13 @@ function PlayableCell({ cell, compact }: PlayableCellProps) {
       ariaLabel={t('chart.playAudio', { char: cell.char, romaji: cell.romaji })}
       onActivate={() => playKanaAudio(cell.romaji, cell.char)}
       romaji={cell.romaji}
-      compact={compact}
     >
-      <KanaDisplay cell={cell} variant="chart" compact={compact} />
+      <KanaDisplay cell={cell} variant="chart" />
     </CellButton>
   );
 }
 
-const renderKanaCell = (cell: AlphabetCell, compact: boolean) => (
-  <PlayableCell cell={cell} compact={compact} />
-);
+const renderKanaCell = (cell: AlphabetCell) => <PlayableCell cell={cell} />;
 
 type AlphabetChartPageProps = {
   script: 'hiragana' | 'katakana';

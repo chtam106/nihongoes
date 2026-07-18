@@ -3,14 +3,13 @@ import { fn } from 'storybook/test';
 import { Menu } from '@/components/menu';
 
 const meta = {
-  title: 'Layout/Menu',
+  title: 'Components/Menu',
   component: Menu,
   parameters: {
     layout: 'fullscreen'
   },
   args: {
     drawerWidth: 320,
-    isMobile: false,
     mobileOpen: false,
     onClose: fn()
   }
@@ -23,8 +22,6 @@ type Story = StoryObj<typeof meta>;
 export const Desktop: Story = {};
 
 export const MobileOpen: Story = {
-  args: {
-    isMobile: true,
-    mobileOpen: true
-  }
+  args: { mobileOpen: true },
+  parameters: { viewport: { defaultViewport: 'mobile2' } }
 };

@@ -1,9 +1,10 @@
 import { DAKUTEN_MARK, HANDAKUTEN_MARK } from '@/constants/kana-terminology.ts';
 import { STORAGE_PREFIX } from '@/constants/site.ts';
+import type { Locale, TranslationParams, TranslationTree } from '@/types/i18n.ts';
 
-export type Locale = 'en' | 'vi';
-
-export type TranslationParams = Record<string, string | number>;
+// i18n types are declared in `@/types/i18n.ts`; re-exported so existing
+// `@/i18n/translations` imports of these types keep working.
+export type { Locale, TranslationParams, TranslationTree } from '@/types/i18n.ts';
 
 const en: TranslationTree = {
   common: {
@@ -415,10 +416,6 @@ const en: TranslationTree = {
     reviewLesson: 'Review lesson'
   }
 } satisfies TranslationTree;
-
-type TranslationLeaf = string;
-type TranslationNode = { [key: string]: TranslationLeaf | TranslationNode };
-export type TranslationTree = TranslationNode;
 
 export const enTranslations: TranslationTree = en;
 

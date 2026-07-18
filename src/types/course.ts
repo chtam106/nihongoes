@@ -1,0 +1,111 @@
+import type { HighlightTerm } from '@/utils/grammar-highlight.ts';
+import type { Locale } from '@/types/i18n.ts';
+
+export type Bilingual = Record<Locale, string>;
+
+export type CourseLevel = 'n5';
+
+export type VocabItem = {
+  kana: string;
+  kanji?: string;
+  romaji: string;
+  /** Override the spoken text when the glyph's reading differs (e.g. particle は -> わ). */
+  speech?: string;
+  meaning: Bilingual;
+};
+
+export type GrammarExample = {
+  jp: string;
+  romaji: string;
+  meaning: Bilingual;
+};
+
+/** A distinct sub-block inside a grammar point, e.g. how to answer the question it teaches. */
+export type GrammarAnswerBlock = {
+  explanation?: Bilingual;
+  examples: GrammarExample[];
+  /** Terms to color in this block's explanation/examples (own palette order). */
+  highlights?: HighlightTerm[];
+  /** Words to protect from highlighting (e.g. は inside はたち). */
+  excludeHighlights?: string[];
+};
+
+export type GrammarPoint = {
+  pattern: string;
+  title: Bilingual;
+  explanation: Bilingual;
+  examples: GrammarExample[];
+  /**
+   * Terms to color in the pattern, explanation, and examples, in palette order.
+   * A nested array marks alternatives that share one color (e.g. ['これ','それ','あれ']).
+   */
+  highlights: HighlightTerm[];
+  /** Words to protect from highlighting (e.g. は inside はたち). */
+  excludeHighlights?: string[];
+  /** Optional companion block rendered separately (e.g. sample answers to this question). */
+  answers?: GrammarAnswerBlock;
+};
+
+export type ReadingLine = {
+  jp: string;
+  romaji: string;
+  meaning: Bilingual;
+};
+
+export type ReadingChoice = {
+  id: string;
+  label: Bilingual;
+};
+
+export type ReadingQuestion = {
+  id: string;
+  question: Bilingual;
+  choices: ReadingChoice[];
+  correctId: string;
+};
+
+export type ReadingPassage = {
+  id: string;
+  title: Bilingual;
+  lines: ReadingLine[];
+  questions: ReadingQuestion[];
+};
+
+/** A titled group of supplementary/reference vocabulary shown separately from the core word list. */
+export type ReferenceGroup = {
+  title: Bilingual;
+  items: VocabItem[];
+};
+
+export type Lesson = {
+  id: string;
+  number: number;
+  title: Bilingual;
+  focus: Bilingual;
+  vocab: VocabItem[];
+  /** Set phrases / fixed expressions (Minna no Nihongo 会話 vocabulary), e.g. おなまえは何ですか. */
+  phrases?: VocabItem[];
+  grammar: GrammarPoint[];
+  reading?: ReadingPassage[];
+  /** Supplementary vocabulary (Minna no Nihongo 参考語彙) kept out of the core list. */
+  reference?: ReferenceGroup[];
+};
+
+/** Optional thematic grouping of a course's lessons, by inclusive lesson-number range. */
+export type CourseModule = {
+  title: Bilingual;
+  from: number;
+  to: number;
+};
+
+export type Course = {
+  level: CourseLevel;
+  code: string;
+  name: Bilingual;
+  subtitle: Bilingual;
+  intro: Bilingual;
+  seoTitle: Bilingual;
+  seoDescription: Bilingual;
+  lessons: Lesson[];
+  modules?: CourseModule[];
+};

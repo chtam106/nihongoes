@@ -1,16 +1,16 @@
 # Nihongoes
 
-A free Japanese alphabet learning app.
+A free Japanese learning app.
 
 **Live site: [nihongoes.com](https://nihongoes.com)**
 
-Bilingual content (English and Vietnamese), interactive exercises, native audio via the Web Speech API, and course-driven routing.
+Bilingual content (English and Vietnamese), interactive exercises, native audio via the Web Speech API, and per-page pre-rendered content for SEO.
 
 ## Learning Tracks
 
 - **Alphabet** - learn and memorize hiragana and katakana with full charts, native audio, and exercises
-- **JLPT** - structured courses from N5 to N1
-- **Frontend** - practical Japanese for software teams (BRSE vocabulary, bug reports, specs, meetings, risk/escalation, handover)
+- **Kanji** - Jōyō kanji by school grade (1-6) plus Kanken levels, with the 214 radicals, meaning quizzes, and writing practice
+- **JLPT courses** - structured lessons (currently N5; the shared course engine supports adding more levels)
 
 ## Alphabet Exercises
 
@@ -23,7 +23,7 @@ Bilingual content (English and Vietnamese), interactive exercises, native audio 
 | Writing practice       | Trace kana by row or write from a romaji prompt, with animated stroke-order |
 | Sentence transcription | Read a kana sentence, type its romaji                                       |
 
-## Course Features (JLPT + Frontend)
+## Course Features
 
 - Vocabulary with kanji, kana, romaji, and meaning
 - Grammar points with pattern chips and speakable examples
@@ -89,7 +89,8 @@ app/
     kanji/**           kanji hub, tracks, lessons, quiz, writing
 middleware.ts          keeps English at the root, Vietnamese under /vi
 src/
-  constants/courses/   course and lesson content (n5-n1, frontend)
+  constants/courses/   course and lesson content (n5)
+  constants/kanji/     kanji tracks, lessons, and radicals
   features/            page components rendered by the route files (client)
   components/          shared UI components
   i18n/                translations, locale routing, nav shim, SEO metadata, route helpers
@@ -135,5 +136,6 @@ Required token permissions: **Project - Admin**, **Release - Admin**,
 
 ## Further Docs
 
-- Performance auditing: `LIGHTHOUSE.md`
+- Deployment (Vercel): `docs/DEPLOYMENT.md`
+- Performance auditing: `docs/LIGHTHOUSE.md`
 - Testing guide: `docs/TESTING.md`
