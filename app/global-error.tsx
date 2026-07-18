@@ -34,22 +34,7 @@ const containedButton: CSSProperties = {
     '0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)'
 };
 
-const outlinedButton: CSSProperties = {
-  padding: '7px 21px',
-  borderRadius: 4,
-  border: '1px solid rgba(25,118,210,0.5)',
-  background: 'transparent',
-  color: '#1976d2',
-  fontFamily: 'inherit',
-  fontSize: '1rem',
-  fontWeight: 500,
-  lineHeight: 1.75,
-  letterSpacing: '0.02857em',
-  textTransform: 'uppercase',
-  cursor: 'pointer'
-};
-
-export default function GlobalError({ error, reset }: GlobalErrorProps) {
+export default function GlobalError({ error }: GlobalErrorProps) {
   useEffect(() => {
     Sentry.captureException(error);
   }, [error]);
@@ -106,11 +91,16 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button type="button" onClick={() => reset()} style={containedButton}>
-              Try again
-            </button>
-            <button type="button" onClick={() => window.location.reload()} style={outlinedButton}>
+          <div
+            style={{
+              display: 'flex',
+              gap: 12,
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              marginTop: 12
+            }}
+          >
+            <button type="button" onClick={() => window.location.reload()} style={containedButton}>
               Reload page
             </button>
           </div>
