@@ -20,20 +20,11 @@ export const Default: Story = {
 };
 
 /**
- * The chrome-less body used by the route-level `app/[lang]/error.tsx`, with the
- * "Try again" (reset) button. In the app it renders inside `AppLayout`'s main;
- * here it is placed in a full-height box so the centering is visible.
+ * The chrome-less body used by the route-level `app/[lang]/error.tsx`. In the app
+ * it renders inside `AppLayout`'s main; here it is placed in a full-height box so
+ * the centering is visible.
  */
-export const RouteErrorWithRetry: Story = {
-  render: () => (
-    <Box sx={{ minHeight: '100vh', display: 'flex' }}>
-      <ErrorFallbackContent onReset={() => {}} />
-    </Box>
-  )
-};
-
-/** Same body without a reset handler (only the "Reload page" action). */
-export const ContentReloadOnly: Story = {
+export const Content: Story = {
   render: () => (
     <Box sx={{ minHeight: '100vh', display: 'flex' }}>
       <ErrorFallbackContent />

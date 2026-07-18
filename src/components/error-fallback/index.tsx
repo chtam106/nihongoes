@@ -4,18 +4,13 @@ import { alpha } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import AppLayout from '@/components/app-layout';
 
-type ErrorFallbackContentProps = {
-  /** When provided, shows a "Try again" button that re-renders in place. */
-  onReset?: () => void;
-};
-
 /**
  * The error screen body (icon + message + actions) WITHOUT app chrome. Use this
  * where the surrounding `AppLayout` is already present (e.g. Next's route-level
  * `error.tsx`, which renders inside the root layout). Use `ErrorFallback` when the
  * chrome is NOT present (the top-level client error boundary).
  */
-export function ErrorFallbackContent({ onReset }: ErrorFallbackContentProps) {
+export function ErrorFallbackContent() {
   const { t } = useTranslation();
 
   return (
@@ -71,16 +66,7 @@ export function ErrorFallbackContent({ onReset }: ErrorFallbackContentProps) {
           useFlexGap
           sx={{ flexWrap: 'wrap', justifyContent: 'center' }}
         >
-          {onReset && (
-            <Button size="large" variant="contained" onClick={onReset}>
-              {t('errorBoundary.tryAgain')}
-            </Button>
-          )}
-          <Button
-            size="large"
-            variant={onReset ? 'outlined' : 'contained'}
-            onClick={() => window.location.reload()}
-          >
+          <Button size="large" variant="contained" onClick={() => window.location.reload()}>
             {t('errorBoundary.reload')}
           </Button>
         </Stack>
