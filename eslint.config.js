@@ -2,18 +2,16 @@ import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
 import storybook from 'eslint-plugin-storybook';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  globalIgnores(['dist', 'node_modules', 'storybook-static']),
+  globalIgnores(['dist', 'out', '.next', 'node_modules', 'storybook-static', 'next-env.d.ts']),
   js.configs.recommended,
   ...tseslint.configs.recommended,
   reactHooks.configs.flat.recommended,
-  reactRefresh.configs.vite,
   // Runs Prettier as an ESLint rule (`prettier/prettier`) and turns off rules
   // that conflict with Prettier - so formatting issues surface as lint errors.
   eslintPluginPrettierRecommended,

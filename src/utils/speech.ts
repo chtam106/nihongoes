@@ -1,3 +1,4 @@
+import { useSyncExternalStore } from 'react';
 import { STORAGE_PREFIX } from '@/constants/site.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 
@@ -7,6 +8,18 @@ const DEFAULT_RATE = 0.9;
 
 export function isSpeechSupported(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window;
+}
+
+const subscribeSpeechSupport = () => () => {};
+
+/**
+ * Hydration-safe variant of `isSpeechSupported` for use in render. Returns
+ * `false` during static pre-rendering and the first client (hydration) render,
+ * then the real value on the next render - so speech-dependent UI never causes a
+ * server/client HTML mismatch.
+ */
+export function useSpeechSupported(): boolean {
+  return useSyncExternalStore(subscribeSpeechSupport, isSpeechSupported, () => false);
 }
 
 export function getJapaneseVoices(): SpeechSynthesisVoice[] {

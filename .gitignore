@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Next.js
+.next
+out
+next-env.d.ts
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
 # Test output (unit -> coverage/unit, e2e -> coverage/e2e)
 coverage
 .playwright

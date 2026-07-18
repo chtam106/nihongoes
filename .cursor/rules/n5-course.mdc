@@ -1,6 +1,6 @@
 ---
 description: Structure of the shared course engine (N5–N1 JLPT + Frontend tracks; lessons, exercise, listening, reading)
-globs: src/pages/course/**,src/constants/courses/**
+globs: src/features/course/**,src/constants/courses/**
 alwaysApply: false
 ---
 
@@ -31,7 +31,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 ## Quizzes: NO romaji (IMPORTANT)
 - Do NOT show romaji/phonetic transcription in the quiz surfaces (exercise / listening / reading). Quiz prompts, the listening reveal, and reading passages display Japanese (and meanings) only — no romaji helper line. Romaji stays on the lesson detail page only.
 
-## Pages (`src/pages/course/`) — generic, take a `level: CourseLevel` prop
+## Pages (`src/features/course/`) — generic, take a `level: CourseLevel` prop
 - `course-page.tsx` – course overview (lesson list, from course data).
 - `lesson-page.tsx` – lesson detail (vocab + grammar with `SpeakButton`s) and CTAs to practice / listening / reading (reading button only if `lessonHasReading`).
 - `exercise-page.tsx` + `course-quiz.ts` – mixed quiz (`ChoiceQuestion` + particle-cloze `InputQuestion`); the builder takes the whole `Course` for distractor pools.
@@ -41,7 +41,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - Quiz state resets by remounting via `key` (e.g. `key={`${level}:${lesson.id}:${locale}`}`), NOT via `setState` in an effect.
 
 ## Wiring
-- Routes are registered ONCE in `src/app.tsx` by looping `COURSE_LEVELS`: `/:level`, `.../lesson/:lessonId`, `.../exercise`, `.../listening`, `.../reading`. `routes.ts` declares per-level index entries for SEO keys.
-- `getSeoRouteKey` maps any `/n5`…`/n1` (and `/frontend`) path to that level key; `page-meta.tsx` builds SEO from the course's `seoTitle`/`seoDescription` (via `isCourseLevel` + `getCourse`).
+- Routes are file-based under `app/[lang]/[jlptLevel]/**/page.tsx`: `/:level`, `/:level/:lessonId`, `.../vocabulary`, `.../grammar`, `.../listening`, `.../reading`, `.../writing` (no `/lesson/` segment). Each route file awaits `[jlptLevel]` and passes it as a prop; the view reads `lessonId` via `useParams`. `generateStaticParams` comes from `@/i18n/route-helpers` (`courseLevelParams`, `courseLessonParams`, and grammar/reading/writing-filtered variants). `routes.ts` declares per-level index entries for SEO keys.
+- `getSeoRouteKey` maps any `/n5`…`/n1` (and `/frontend`) path to that level key; `src/i18n/seo-meta.ts` builds SEO from the course's `seoTitle`/`seoDescription` (via `isCourseLevel` + `getCourse`), consumed by `generateMetadata` in each route file.
 - Each course is a nav group generated from the registry in `src/constants/nav-items.ts`; `app-drawer-content.tsx` renders course-group labels via `group.label[locale]`, while the Home/Alphabet groups use `labelKey` + `t()`.
 - Shared course UI strings live under the `course.*` key namespace in `translations.ts` (en + vi). Per-level titles/intros come from course DATA, not translations.

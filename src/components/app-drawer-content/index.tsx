@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@/i18n/navigation.tsx';
 import { LocaleNavLink as NavLink } from '@/components/locale-link';
 import { stripLocalePrefix } from '@/i18n/locale-routing.ts';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
