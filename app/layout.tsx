@@ -10,10 +10,12 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   icons: {
     icon: [
-      { url: '/favicon-32.png?v=20260626', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon.png?v=20260626', type: 'image/png', sizes: '512x512' }
+      { url: '/favicon.ico?v=20260718', sizes: 'any' },
+      { url: '/favicon-32.png?v=20260718', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon.png?v=20260718', type: 'image/png', sizes: '512x512' }
     ],
-    apple: '/apple-touch-icon.png?v=20260626'
+    shortcut: '/favicon.ico?v=20260718',
+    apple: '/apple-touch-icon.png?v=20260718'
   },
   manifest: '/site.webmanifest'
 };

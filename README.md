@@ -2,6 +2,8 @@
 
 A free Japanese alphabet learning app.
 
+**Live site: [nihongoes.com](https://nihongoes.com)**
+
 Bilingual content (English and Vietnamese), interactive exercises, native audio via the Web Speech API, and course-driven routing.
 
 ## Learning Tracks
