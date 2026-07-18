@@ -11,7 +11,7 @@
 
 ## Quick Start (EN + VI)
 
-### 1) Build and run preview / Build và chạy preview
+### 1) Build and start the production server / Build và chạy server production
 
 ```bash
 nvm use 24
@@ -19,20 +19,20 @@ nvm use 24
 
 ```bash
 pnpm run build
-pnpm run preview
+pnpm start
 ```
 
-- **EN:** Preview URL is usually `http://127.0.0.1:4173`.
-- **VI:** URL preview thường là `http://127.0.0.1:4173`.
+- **EN:** The Next.js server runs at `http://localhost:3000`.
+- **VI:** Server Next.js chạy tại `http://localhost:3000`.
 
 ### 2) Run Lighthouse mobile + desktop / Chạy Lighthouse mobile + desktop
 
 ```bash
-pnpm exec lighthouse "http://127.0.0.1:4173" --quiet --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=".lighthouse/mobile.json"
+pnpm exec lighthouse "http://localhost:3000" --quiet --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=".lighthouse/mobile.json"
 ```
 
 ```bash
-pnpm exec lighthouse "http://127.0.0.1:4173" --preset=desktop --quiet --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=".lighthouse/desktop.json"
+pnpm exec lighthouse "http://localhost:3000" --preset=desktop --quiet --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=".lighthouse/desktop.json"
 ```
 
 ### 3) Read scores quickly / Đọc điểm nhanh
@@ -64,6 +64,9 @@ NODE
 - **VI:** Để ổn định số liệu, chạy mỗi profile 2-3 lần rồi so median.
 
 ## What Was Optimized / Đã Tối Ưu Gì
+
+- **EN:** The notes below are from the earlier Vite optimization pass; some file paths changed after the Next.js migration (e.g. `src/app.tsx`/`src/main.tsx` are gone; routing is file-based under `app/[lang]/**`, views live in `src/features/**`). The techniques (lazy drawer, code-split i18n, deferred JP font) still apply.
+- **VI:** Các ghi chú dưới đây từ đợt tối ưu thời Vite; một số đường dẫn đã đổi sau khi migrate Next.js (VD `src/app.tsx`/`src/main.tsx` không còn; routing file-based trong `app/[lang]/**`, view nằm ở `src/features/**`). Các kỹ thuật (drawer lazy, tách i18n, defer font Nhật) vẫn còn áp dụng.
 
 ### A) Accessibility + navigation semantics / A11y + cấu trúc navigation
 
@@ -101,17 +104,26 @@ NODE
 
 ## Measured Results / Kết Quả Đo
 
-### Mobile (baseline -> optimized) / Mobile (ban đầu -> sau tối ưu)
+- **EN:** Measured on the Next.js production server (`pnpm build && pnpm start`), home page.
+- **VI:** Đo trên server production Next.js (`pnpm build && pnpm start`), trang chủ.
 
-- Performance: `69 -> 93`
-- Accessibility: `100 -> 100`
-- Best Practices: `100 -> 100`
-- SEO: `100 -> 100`
-- FCP: `4.8s -> 2.3s`
-- LCP: `5.0s -> 2.8s`
-- Speed Index: `4.8s -> 2.3s`
-- TTI: `5.1s -> 2.8s`
-- TBT: `50ms -> 30ms`
+### Next.js (current) / Next.js (hiện tại)
+
+| Metric         | Mobile | Desktop |
+| -------------- | ------ | ------- |
+| Performance    | 85     | 100     |
+| Accessibility  | 100    | 100     |
+| Best Practices | 100    | 100     |
+| SEO            | 100    | 100     |
+| FCP            | 1.1s   | 0.3s    |
+| LCP            | 4.2s   | 0.8s    |
+| TBT            | 120ms  | 0ms     |
+| CLS            | 0.015  | 0.001   |
+
+### Vite baseline (historical) / Baseline Vite (lịch sử)
+
+- **EN:** Before the Next.js migration, the Vite SPA reached mobile Performance `69 -> 93` after optimization. Next.js ships more framework/hydration JS, so mobile Performance is a bit lower, but page content and per-page SEO metadata are now server pre-rendered (SSG) instead of client-rendered.
+- **VI:** Trước khi migrate, bản Vite SPA đạt mobile Performance `69 -> 93` sau tối ưu. Next.js kèm nhiều JS framework/hydration hơn nên mobile Performance thấp hơn chút, nhưng nội dung trang và SEO metadata giờ được prerender phía server (SSG) thay vì render ở client.
 
 ## Notes / Ghi Chú
 
