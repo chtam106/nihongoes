@@ -1,7 +1,7 @@
 'use client';
 
 import { type ReactNode } from 'react';
-import { Box, CssBaseline, ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import * as Sentry from '@sentry/nextjs';
 import AppLayout from '@/components/app-layout';
 import { ErrorFallbackContent } from '@/components/error-fallback';
@@ -29,13 +29,7 @@ export function Providers({ children }: ProvidersProps) {
       <CssBaseline />
       <LanguageProvider>
         <AppLayout>
-          <Sentry.ErrorBoundary
-            fallback={
-              <Box sx={{ minHeight: '100svh', display: 'flex' }}>
-                <ErrorFallbackContent />
-              </Box>
-            }
-          >
+          <Sentry.ErrorBoundary fallback={<ErrorFallbackContent />}>
             {children}
           </Sentry.ErrorBoundary>
         </AppLayout>
