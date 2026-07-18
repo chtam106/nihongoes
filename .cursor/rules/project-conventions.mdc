@@ -134,6 +134,11 @@ alwaysApply: true
 - ALWAYS reuse shared components instead of duplicating or re-rendering the same UI inline. Before writing a piece of UI, check whether a component already exists (e.g. `KanjiCard`, `TracingCanvas`, `SpeakableSurface`, `SpeakButton`, `Heading`, `HintText`, `PageContainer`, `ChoiceButton`, `KanjiReadingsNote`) and use it.
 - When the same UI/logic is (or will be) used in 2+ places, extract it into a folder-based shared component under `src/components/<name>/index.tsx` (or a shared page-segment folder for page-only reuse) and import it via the `@/` alias - do NOT copy-paste. Keep a single source of truth.
 
+## Type declarations
+- Shared/domain TYPES live in `src/types/`: `course.ts` (course/lesson data types + `Bilingual`, `CourseLevel`), `kanji.ts` (kanji data types), `i18n.ts` (`Locale`, `TranslationTree`, `TranslationParams`). Declare new domain/shared types here.
+- The old locations re-export from `@/types/` for backward compatibility and keep their RUNTIME code: `constants/courses/types.ts` (re-export + `withSequentialNumbers`), `constants/kanji/types.ts` (re-export + `withSequentialNumbers`), `i18n/translations.ts` (re-export + `enTranslations`/`DEFAULT_LOCALE`/`LOCALE_STORAGE_KEY`). Importing via either `@/types/*` or the old `@/constants/...`/`@/i18n/translations` paths works.
+- Component PROP types stay COLOCATED (see next), NOT in `src/types/`.
+
 ## Component props typing
 - ALWAYS declare props as a named `type <ComponentName>Props = { ... }` above the component (above its doc comment, if any) and annotate the param with it (e.g. `function Foo({ a, b }: FooProps)`). NEVER inline an object type in the parameter list - not even a single-prop one-liner like `({ level }: { level: CourseLevel })`. For generics use `type FooProps<T> = { ... }` + `function Foo<T>({ ... }: FooProps<T>)`.
 
