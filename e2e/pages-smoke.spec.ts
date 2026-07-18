@@ -170,4 +170,20 @@ test.describe('coverage & fallbacks', () => {
     await expect(page.getByRole('heading', { name: 'Page not found' })).toBeVisible();
     await expect(page.getByTestId('error-boundary')).toHaveCount(0);
   });
+
+  // Control test: prove the error boundary DOES appear when a page throws (so the
+  // "no error boundary" assertions above are meaningful, not false negatives).
+  // /sentry-test has a button that throws; the app shows the fallback.
+  test('the error boundary appears when a page throws an error', async ({ page }) => {
+    await page.goto('/sentry-test', { waitUntil: 'domcontentloaded' });
+
+    // The page is healthy before the error is triggered.
+    await expect(page.getByTestId('error-boundary')).toHaveCount(0);
+    const throwButton = page.getByRole('button', { name: 'Throw error' });
+    await expect(throwButton).toBeVisible();
+
+    // Triggering the error swaps in the fallback.
+    await throwButton.click();
+    await expect(page.getByTestId('error-boundary')).toBeVisible();
+  });
 });
