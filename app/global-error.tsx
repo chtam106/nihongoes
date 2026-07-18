@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import * as Sentry from '@sentry/nextjs';
 
 type GlobalErrorProps = {
@@ -8,13 +8,47 @@ type GlobalErrorProps = {
   reset: () => void;
 };
 
-/**
- * Last-resort boundary for errors thrown in the ROOT layout itself (which the
- * route-level `error.tsx` cannot catch, since it lives inside that layout). It
- * replaces the whole document, so it must render its own `<html>`/`<body>` and
- * cannot use the MUI theme or i18n context (the providers are gone here) - hence
- * plain markup and English-only copy. Only active in production.
- */
+// This boundary replaces the whole document (the root layout crashed), so it
+// cannot use MUI/theme/i18n - the providers are gone, and reusing them risks the
+// fallback crashing for the same reason. So it is intentionally self-contained
+// with plain markup + inline styles that MIRROR the themed ErrorFallback (default
+// MUI palette: primary #1976d2, error #d32f2f, text 0.87/0.6 alpha; uppercase
+// buttons; Noto Sans with a sans-serif fallback).
+const FONT_FAMILY =
+  '"Noto Sans Variable", "Noto Sans", "Noto Sans JP Variable", "Noto Sans JP", sans-serif';
+
+const containedButton: CSSProperties = {
+  padding: '8px 22px',
+  borderRadius: 4,
+  border: 'none',
+  background: '#1976d2',
+  color: '#fff',
+  fontFamily: 'inherit',
+  fontSize: '1rem',
+  fontWeight: 500,
+  lineHeight: 1.75,
+  letterSpacing: '0.02857em',
+  textTransform: 'uppercase',
+  cursor: 'pointer',
+  boxShadow:
+    '0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)'
+};
+
+const outlinedButton: CSSProperties = {
+  padding: '7px 21px',
+  borderRadius: 4,
+  border: '1px solid rgba(25,118,210,0.5)',
+  background: 'transparent',
+  color: '#1976d2',
+  fontFamily: 'inherit',
+  fontSize: '1rem',
+  fontWeight: 500,
+  lineHeight: 1.75,
+  letterSpacing: '0.02857em',
+  textTransform: 'uppercase',
+  cursor: 'pointer'
+};
+
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
     Sentry.captureException(error);
@@ -31,11 +65,11 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 16,
+            gap: 20,
             padding: 24,
             textAlign: 'center',
-            fontFamily: 'system-ui, sans-serif',
-            color: '#08060d',
+            fontFamily: FONT_FAMILY,
+            color: 'rgba(0,0,0,0.87)',
             background: '#fff'
           }}
         >
@@ -48,46 +82,35 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
               alignItems: 'center',
               justifyContent: 'center',
               color: '#d32f2f',
-              background: 'rgba(211, 47, 47, 0.12)'
+              background: 'rgba(211,47,47,0.12)'
             }}
           >
             <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M12 13.5c-2.33 0-4.31 1.46-5.11 3.5h10.22c-.8-2.04-2.78-3.5-5.11-3.5M7.82 12l1.06-1.06L9.94 12 11 10.94 9.94 9.88 11 8.82 9.94 7.76 8.88 8.82 7.82 7.76 6.76 8.82l1.06 1.06-1.06 1.06zm4.17-10C6.47 2 2 6.47 2 12s4.47 10 9.99 10S22 17.53 22 12 17.52 2 11.99 2M12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m4.18-12.24-1.06 1.06-1.06-1.06L13 8.82l1.06 1.06L13 10.94 14.06 12l1.06-1.06L16.18 12l1.06-1.06-1.06-1.06 1.06-1.06z" />
             </svg>
           </div>
-          <h1 style={{ fontSize: 24, fontWeight: 600, margin: 0 }}>Oops, something went wrong</h1>
-          <p style={{ margin: 0, color: '#6b6375' }}>
-            An unexpected error occurred. Please reload the page to continue.
-          </p>
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button
-              type="button"
-              onClick={() => reset()}
+
+          <div>
+            <h1
               style={{
-                padding: '10px 20px',
-                borderRadius: 8,
-                border: 'none',
-                background: '#aa3bff',
-                color: '#fff',
-                fontSize: 16,
-                cursor: 'pointer'
+                fontSize: '2.125rem',
+                fontWeight: 600,
+                lineHeight: 1.235,
+                margin: '0 0 8px'
               }}
             >
+              Oops, something went wrong
+            </h1>
+            <p style={{ margin: 0, fontSize: '1rem', lineHeight: 1.5, color: 'rgba(0,0,0,0.6)' }}>
+              An unexpected error occurred. Please reload the page to continue.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button type="button" onClick={() => reset()} style={containedButton}>
               Try again
             </button>
-            <button
-              type="button"
-              onClick={() => window.location.reload()}
-              style={{
-                padding: '10px 20px',
-                borderRadius: 8,
-                border: '1px solid #e5e4e7',
-                background: 'transparent',
-                color: '#08060d',
-                fontSize: 16,
-                cursor: 'pointer'
-              }}
-            >
+            <button type="button" onClick={() => window.location.reload()} style={outlinedButton}>
               Reload page
             </button>
           </div>
