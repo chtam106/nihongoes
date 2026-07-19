@@ -21,8 +21,8 @@ pnpm lighthouse:mobile
 pnpm lighthouse:desktop
 ```
 
-- **EN:** Open the summary at `coverage/lighthouse/mobile/index.html` (or `.../desktop/index.html`): a color-coded score table with a link to each page's full HTML report. The two form factors write to separate folders so they never overwrite each other.
-- **VI:** Mở bảng tổng hợp tại `coverage/lighthouse/mobile/index.html` (hoặc `.../desktop/index.html`): bảng điểm màu kèm link tới report HTML đầy đủ của từng trang. Hai form factor ghi vào thư mục riêng nên không đè lên nhau.
+- **EN:** Open the summary at `.lighthouse/mobile/index.html` (or `.lighthouse/desktop/index.html`): a color-coded score table with a link to each page's full HTML report. The two form factors write to separate folders so they never overwrite each other.
+- **VI:** Mở bảng tổng hợp tại `.lighthouse/mobile/index.html` (hoặc `.lighthouse/desktop/index.html`): bảng điểm màu kèm link tới report HTML đầy đủ của từng trang. Hai form factor ghi vào thư mục riêng nên không đè lên nhau.
 - **EN:** Options: `pnpm lighthouse:mobile --skip-build` reuses the previous build (faster re-runs); `LH_URL=http://localhost:3000 pnpm lighthouse:mobile` audits an already-running server instead of building one.
 - **VI:** Tùy chọn: `pnpm lighthouse:mobile --skip-build` tái dùng build trước (chạy lại nhanh hơn); `LH_URL=http://localhost:3000 pnpm lighthouse:mobile` audit một server đang chạy sẵn thay vì tự build.
 

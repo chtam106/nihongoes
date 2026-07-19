@@ -11,7 +11,7 @@
 //   LH_URL=http://localhost:3000 pnpm lighthouse:mobile   # audit an already-running server
 //
 // Each form factor writes to its own folder so they never overwrite each other:
-// `coverage/lighthouse/mobile/` and `coverage/lighthouse/desktop/` (gitignored).
+// `.lighthouse/mobile/` and `.lighthouse/desktop/` (gitignored).
 
 import { spawn } from 'node:child_process';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -25,7 +25,7 @@ const DIST_DIR = '.next-lh';
 const BASE_URL = EXTERNAL_URL ?? `http://localhost:${PORT}`;
 const DESKTOP = process.argv.includes('--desktop') || process.env.LH_DESKTOP === '1';
 const SKIP_BUILD = process.argv.includes('--skip-build') || process.env.LH_SKIP_BUILD === '1';
-const OUT_DIR = path.join('coverage', 'lighthouse', DESKTOP ? 'desktop' : 'mobile');
+const OUT_DIR = path.join('.lighthouse', DESKTOP ? 'desktop' : 'mobile');
 const NEXT_BIN = path.join('node_modules', '.bin', 'next');
 
 const CATEGORIES = ['performance', 'accessibility', 'best-practices', 'seo'];
