@@ -56,7 +56,7 @@ export const kanji = {
   radicalsTitle: 'Bộ thủ kanji (部首)',
   radicalsSubtitle: 'Thành phần cấu tạo nên chữ kanji.',
   radicalsIntro:
-    'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn. Bên dưới sắp xếp theo số nét.',
+    'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn.',
   radicalsStrokesGroup: '{count} nét',
   radicalsCount: '{count} bộ thủ',
   radicalsFilterAll: 'Tất cả',

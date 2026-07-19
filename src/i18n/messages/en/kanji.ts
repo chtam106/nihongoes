@@ -56,7 +56,7 @@ export const kanji = {
   radicalsTitle: 'Kanji radicals (部首)',
   radicalsSubtitle: 'The building blocks used to form kanji.',
   radicalsIntro:
-    'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up. They are grouped below by stroke count.',
+    'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up.',
   radicalsStrokesGroup: '{count} strokes',
   radicalsCount: '{count} radicals',
   radicalsFilterAll: 'All',
