@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import {
@@ -22,9 +21,9 @@ import {
   kanjiTrackPath,
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
-import { getSeoMetadata } from '@/i18n/seo-meta.ts';
+import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { kanjiTrackParams, toLocale } from '@/i18n/route-helpers.ts';
+import { kanjiTrackParams } from '@/i18n/route-helpers.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -33,15 +32,7 @@ export function generateStaticParams() {
   return kanjiTrackParams();
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string; track: string }>;
-}): Promise<Metadata> {
-  const { locale, track } = await params;
-
-  return getSeoMetadata(kanjiTrackPath(track), toLocale(locale));
-}
+export const generateMetadata = createMetadata((p) => kanjiTrackPath(p.track));
 
 export default async function Page({
   params

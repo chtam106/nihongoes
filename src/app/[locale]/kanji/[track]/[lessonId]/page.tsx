@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -18,9 +17,9 @@ import {
   kanjiLessonPath,
   kanjiTrackPath
 } from '@/constants/kanji/index.ts';
-import { getSeoMetadata } from '@/i18n/seo-meta.ts';
+import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { kanjiLessonParams, toLocale } from '@/i18n/route-helpers.ts';
+import { kanjiLessonParams } from '@/i18n/route-helpers.ts';
 import { KanjiPracticePanel } from './_components/kanji-practice-panel.tsx';
 
 export const dynamicParams = false;
@@ -29,15 +28,7 @@ export function generateStaticParams() {
   return kanjiLessonParams();
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string; track: string; lessonId: string }>;
-}): Promise<Metadata> {
-  const { locale, track, lessonId } = await params;
-
-  return getSeoMetadata(kanjiLessonPath(track, lessonId), toLocale(locale));
-}
+export const generateMetadata = createMetadata((p) => kanjiLessonPath(p.track, p.lessonId));
 
 export default async function Page({
   params

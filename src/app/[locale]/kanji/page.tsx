@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Box, Card, CardActionArea, CardContent, Paper, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
@@ -14,9 +13,9 @@ import {
   radicals,
   type KanjiTrack
 } from '@/constants/kanji/index.ts';
-import { getSeoMetadata } from '@/i18n/seo-meta.ts';
+import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { localeParams, toLocale } from '@/i18n/route-helpers.ts';
+import { localeParams } from '@/i18n/route-helpers.ts';
 import { interactiveSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -25,15 +24,7 @@ export function generateStaticParams() {
   return localeParams;
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-
-  return getSeoMetadata(KANJI_BASE_PATH, toLocale(locale));
-}
+export const generateMetadata = createMetadata(KANJI_BASE_PATH);
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   const locale = await primePageLocale(params);

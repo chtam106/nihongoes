@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { Box, Card, CardActionArea, CardContent, Chip, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
@@ -12,9 +11,9 @@ import {
   type CourseLevel,
   type Lesson
 } from '@/constants/courses/index.ts';
-import { getSeoMetadata } from '@/i18n/seo-meta.ts';
+import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { courseLevelParams, toLocale } from '@/i18n/route-helpers.ts';
+import { courseLevelParams } from '@/i18n/route-helpers.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -23,15 +22,7 @@ export function generateStaticParams() {
   return courseLevelParams();
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string; jlptLevel: string }>;
-}): Promise<Metadata> {
-  const { locale, jlptLevel } = await params;
-
-  return getSeoMetadata(coursePath(jlptLevel as CourseLevel), toLocale(locale));
-}
+export const generateMetadata = createMetadata((p) => coursePath(p.jlptLevel as CourseLevel));
 
 export default async function Page({
   params

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { AlphabetChartPage } from '@/components/alphabet-chart';
 import {
@@ -6,9 +5,9 @@ import {
   hiraganaChouonRules,
   hiraganaYoonChartRows
 } from '@/constants/alphabet-charts.ts';
-import { getSeoMetadata } from '@/i18n/seo-meta.ts';
+import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { localeParams, toLocale } from '@/i18n/route-helpers.ts';
+import { localeParams } from '@/i18n/route-helpers.ts';
 
 export const dynamicParams = false;
 
@@ -16,15 +15,7 @@ export function generateStaticParams() {
   return localeParams;
 }
 
-export async function generateMetadata({
-  params
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-
-  return getSeoMetadata('/alphabet/hiragana', toLocale(locale));
-}
+export const generateMetadata = createMetadata('/alphabet/hiragana');
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
   await primePageLocale(params);
