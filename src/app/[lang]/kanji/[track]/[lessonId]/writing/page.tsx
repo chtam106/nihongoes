@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ClientOnly } from '@/components/client-only';
-import KanjiWritingPage from '@/features/kanji/writing/index.tsx';
+import KanjiWritingPage from './_components/kanji-writing.tsx';
 import { kanjiWritingPath } from '@/constants/kanji/index.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { kanjiLessonParams, toLocale } from '@/i18n/route-helpers.ts';

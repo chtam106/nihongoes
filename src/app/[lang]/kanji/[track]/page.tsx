@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import KanjiTrackPage from '@/features/kanji/track/index.tsx';
+import KanjiTrackPage from './_components/kanji-track.tsx';
 import { kanjiTrackPath } from '@/constants/kanji/index.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { kanjiTrackParams, toLocale } from '@/i18n/route-helpers.ts';

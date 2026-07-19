@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ClientOnly } from '@/components/client-only';
-import KanjiQuizPage from '@/features/kanji/quiz/index.tsx';
+import KanjiQuizPage from './_components/kanji-quiz.tsx';
 import { kanjiQuizPath } from '@/constants/kanji/index.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { kanjiLessonParams, toLocale } from '@/i18n/route-helpers.ts';

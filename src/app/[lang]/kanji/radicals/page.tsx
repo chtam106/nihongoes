@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import KanjiRadicalsPage from '@/features/kanji/radicals/index.tsx';
+import KanjiRadicalsPage from './_components/kanji-radicals.tsx';
 import { KANJI_RADICALS_PATH } from '@/constants/kanji/index.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';

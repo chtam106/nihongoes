@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import SentryTestPage from '@/features/sentry-test/index.tsx';
+import SentryTestPage from './_components/sentry-test.tsx';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';
 

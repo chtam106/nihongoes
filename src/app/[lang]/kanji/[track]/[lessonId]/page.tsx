@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import KanjiLessonPage from '@/features/kanji/lesson/index.tsx';
+import KanjiLessonPage from './_components/kanji-lesson.tsx';
 import { kanjiLessonPath } from '@/constants/kanji/index.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { kanjiLessonParams, toLocale } from '@/i18n/route-helpers.ts';
