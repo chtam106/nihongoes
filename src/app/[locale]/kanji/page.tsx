@@ -8,11 +8,10 @@ import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import {
   KANJI_BASE_PATH,
   KANJI_RADICALS_PATH,
-  kanjiTracks,
   kanjiTrackPath,
-  radicals,
-  type KanjiTrack
+  radicals
 } from '@/constants/kanji/index.ts';
+import { kanjiTracks, type KanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { localeParams, type PageProps } from '@/i18n/route-helpers.ts';

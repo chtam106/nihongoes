@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { routes, SITEMAP_PATHS } from '@/constants/routes.ts';
 import { COURSE_SITEMAP_PATHS } from '@/constants/courses/index.ts';
-import { KANJI_SITEMAP_PATHS } from '@/constants/kanji/index.ts';
+import { KANJI_SITEMAP_PATHS } from '@/constants/kanji/tracks.ts';
 import { SITE_URL } from '@/constants/site.ts';
 import { getPathname } from '@/i18n/navigation.tsx';
 
