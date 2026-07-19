@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import type { SxProps, Theme } from '@mui/material';

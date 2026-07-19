@@ -82,7 +82,7 @@ app/
   layout.tsx           root layout (Emotion SSR, providers, base metadata)
   not-found.tsx        404 page
   sitemap.ts           sitemap generation (native)
-  [lang]/              file-based routes for both locales (en, vi)
+  [locale]/              file-based routes for both locales (en, vi)
     page.tsx           home
     alphabet/**        alphabet pages + exercises
     [jlptLevel]/**         course level, lesson, and practice pages
@@ -100,10 +100,10 @@ src/
 
 ## Routing & i18n
 
-- File-based routing under `app/[lang]/**`. Each route file is a thin server
+- File-based routing under `app/[locale]/**`. Each route file is a thin server
   component: `generateStaticParams` (pre-render both locales) + `generateMetadata`
   (per-page SEO) + renders its `src/features` view.
-- `middleware.ts` maps clean public URLs onto the internal `[lang]` segment:
+- `middleware.ts` maps clean public URLs onto the internal `[locale]` segment:
   - Default locale (English) at the root: `/`, `/alphabet`, `/n5/lesson-1`, ...
   - Vietnamese under `/vi`: `/vi/alphabet`, `/vi/n5/lesson-1`, ...
   - `/en/...` redirects to the clean root URL.

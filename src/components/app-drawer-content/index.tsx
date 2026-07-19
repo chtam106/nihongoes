@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useLocation } from '@/i18n/navigation.tsx';
+import { usePathname } from '@/i18n/navigation.tsx';
 import { LocaleNavLink as NavLink } from '@/components/locale-link';
-import { stripLocalePrefix } from '@/i18n/locale-routing.ts';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
@@ -48,8 +47,7 @@ type AppDrawerContentProps = {
 };
 
 export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
-  const location = useLocation();
-  const logicalPathname = stripLocalePrefix(location.pathname);
+  const logicalPathname = usePathname();
   const { locale, t } = useTranslation();
   const [courseChildrenByLevel, setCourseChildrenByLevel] = useState<
     Partial<Record<CourseLevel, NavItem[]>>

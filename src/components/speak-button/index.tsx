@@ -1,3 +1,5 @@
+'use client';
+
 import type { MouseEvent } from 'react';
 import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined';
 import { IconButton } from '@mui/material';

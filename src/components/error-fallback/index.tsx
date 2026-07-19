@@ -5,7 +5,7 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 
 /**
  * The themed error screen (icon + message + reload). Rendered by the route-level
- * `app/[lang]/error.tsx` (inside the app chrome) and as the `Sentry.ErrorBoundary`
+ * `app/[locale]/error.tsx` (inside the app chrome) and as the `Sentry.ErrorBoundary`
  * fallback for chrome-level render errors (where it centers itself full-height).
  * It has NO `AppLayout` of its own, so it never re-crashes when the chrome is the
  * thing that errored.

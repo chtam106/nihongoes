@@ -3,7 +3,7 @@ import { routes, SITEMAP_PATHS } from '@/constants/routes.ts';
 import { COURSE_SITEMAP_PATHS } from '@/constants/courses/index.ts';
 import { KANJI_SITEMAP_PATHS } from '@/constants/kanji/index.ts';
 import { SITE_URL } from '@/constants/site.ts';
-import { withLocale } from '@/i18n/locale-routing.ts';
+import { getPathname } from '@/i18n/navigation.tsx';
 
 export const dynamic = 'force-static';
 
@@ -12,7 +12,7 @@ const LOGICAL_PATHS = Array.from(
 );
 
 function absoluteUrl(logicalPath: string, locale: 'vi' | 'en') {
-  const path = withLocale(logicalPath, locale);
+  const path = getPathname({ href: logicalPath, locale });
 
   return path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
 }

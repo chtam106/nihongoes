@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Fab, Fade, useMediaQuery, useTheme } from '@mui/material';

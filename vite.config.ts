@@ -19,7 +19,9 @@ export default defineConfig({
     // that Vitest's native resolver chokes on; inline them so Vite transforms them.
     server: {
       deps: {
-        inline: [/@mui\//, 'react-transition-group']
+        // Inline next-intl too so Vite resolves its bare `next/navigation` import
+        // (pnpm isolates it) and the test's `vi.mock('next/navigation')` applies.
+        inline: [/@mui\//, 'react-transition-group', /next-intl/]
       }
     },
     // Unit/component tests live next to the code as *.test.ts(x); the Playwright
