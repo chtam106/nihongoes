@@ -129,7 +129,7 @@ export default async function Page({ params }: PageProps) {
         </Box>
 
         <Box>
-          <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
+          <Heading scale="subsection" component="h2" sx={{ mb: 0.5 }}>
             {t('kanji.collectionsHeading')}{' '}
             <Typography
               component="span"
@@ -140,6 +140,9 @@ export default async function Page({ params }: PageProps) {
               ({t('kanji.kanjiCount', { count: totalKanji })})
             </Typography>
           </Heading>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+            {t('kanji.collectionsSubtitle')}
+          </Typography>
           <Stack spacing={1.5}>{kanjiTracks.map(renderTrackCard)}</Stack>
         </Box>
       </Stack>

@@ -1,6 +1,8 @@
 export const kanji = {
   overviewTitle: 'Kanji',
   collectionsHeading: 'Jōyō kanji theo lớp',
+  collectionsSubtitle:
+    'Kanji Jōyō là khoảng 2.136 chữ được Nhật quy định dùng hằng ngày. Trường học Nhật dạy chúng theo từng lớp - một thứ tự tự nhiên để học.',
   aboutHeading: 'Kanji là gì?',
   aboutWhat:
     'Kanji (漢字) là chữ biểu nghĩa mượn từ tiếng Hán. Mỗi chữ mang một nghĩa và một hoặc nhiều cách đọc, được viết xen kẽ với hai bảng chữ hiragana và katakana.',
