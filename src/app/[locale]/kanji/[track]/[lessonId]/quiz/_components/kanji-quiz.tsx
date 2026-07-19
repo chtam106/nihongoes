@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState, type MouseEvent } from 'react';
-import { useParams } from 'next/navigation';
 import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
@@ -19,11 +18,9 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
-  getKanjiLesson,
-  getKanjiTrack,
-  KANJI_BASE_PATH,
   kanjiLessonPath,
   kanjiTrackPath,
+  type Bilingual,
   type KanjiEntry,
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
@@ -273,34 +270,15 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
   );
 }
 
-function KanjiLessonNotFound() {
-  const { t } = useTranslation();
+type KanjiQuizPageProps = {
+  trackSlug: string;
+  trackName: Bilingual;
+  lesson: KanjiLesson;
+};
 
-  return (
-    <PageContainer>
-      <Heading component="h1" gutterBottom>
-        {t('kanji.notFoundTitle')}
-      </Heading>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-        {t('kanji.notFoundBody')}
-      </Typography>
-      <Button component={RouterLink} to={KANJI_BASE_PATH} variant="contained">
-        {t('common.back')}
-      </Button>
-    </PageContainer>
-  );
-}
-
-function KanjiQuizPage() {
-  const { track: trackSlug, lessonId } = useParams<{ track: string; lessonId: string }>();
+function KanjiQuizPage({ trackSlug, trackName, lesson }: KanjiQuizPageProps) {
   const { locale, t } = useTranslation();
-  const track = trackSlug ? getKanjiTrack(trackSlug) : undefined;
-  const lesson = track && lessonId ? getKanjiLesson(track.slug, lessonId) : undefined;
   const [direction, setDirection] = useState<KanjiQuizDirection>('meaning');
-
-  if (!track || !lesson) {
-    return <KanjiLessonNotFound />;
-  }
 
   const handleDirectionChange = (
     _event: MouseEvent<HTMLElement>,
@@ -322,12 +300,12 @@ function KanjiQuizPage() {
             sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
           >
             <Chip
-              label={track.name[locale]}
+              label={trackName[locale]}
               color="secondary"
               variant="outlined"
               size="small"
               component={RouterLink}
-              to={kanjiTrackPath(track.slug)}
+              to={kanjiTrackPath(trackSlug)}
               clickable
             />
             <Chip
@@ -336,7 +314,7 @@ function KanjiQuizPage() {
               variant="outlined"
               size="small"
               component={RouterLink}
-              to={kanjiLessonPath(track.slug, lesson.id)}
+              to={kanjiLessonPath(trackSlug, lesson.id)}
               clickable
             />
           </Stack>
@@ -356,8 +334,8 @@ function KanjiQuizPage() {
         </ToggleButtonGroup>
 
         <KanjiQuiz
-          key={`${track.slug}:${lesson.id}:${direction}:${locale}`}
-          trackSlug={track.slug}
+          key={`${trackSlug}:${lesson.id}:${direction}:${locale}`}
+          trackSlug={trackSlug}
           lesson={lesson}
           direction={direction}
         />

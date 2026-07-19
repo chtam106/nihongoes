@@ -15,12 +15,12 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import {
-  getKanjiTrack,
   KANJI_BASE_PATH,
   kanjiLessonPath,
   kanjiTrackPath,
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
+import { getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { kanjiTrackParams, type PageProps } from '@/i18n/route-helpers.ts';

@@ -6,7 +6,7 @@ import {
 } from '@/constants/courses/index.ts';
 import { COURSE_LEVELS } from '@/constants/courses/levels.ts';
 import type { Lesson } from '@/constants/courses/types.ts';
-import { kanjiTracks } from '@/constants/kanji/index.ts';
+import { kanjiTracks } from '@/constants/kanji/tracks.ts';
 import { routing } from '@/i18n/routing.ts';
 import type { Locale } from '@/i18n/translations.ts';
 

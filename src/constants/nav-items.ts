@@ -10,7 +10,7 @@ import { COURSE_LEVELS, coursePath, lessonPath } from '@/constants/courses/level
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
 import type { Bilingual, CourseLevel } from '@/constants/courses/types.ts';
 import {
-  kanjiTracks,
+  KANJI_TRACK_META,
   kanjiTrackPath,
   KANJI_BASE_PATH,
   KANJI_RADICALS_PATH
@@ -54,7 +54,7 @@ const kanjiGroup: NavGroup = {
       label: { en: 'Radicals', vi: 'Bộ thủ' },
       path: KANJI_RADICALS_PATH
     },
-    ...kanjiTracks.map((track) => ({
+    ...KANJI_TRACK_META.map((track) => ({
       label: track.name,
       path: kanjiTrackPath(track.slug)
     }))
