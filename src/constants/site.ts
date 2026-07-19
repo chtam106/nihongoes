@@ -9,9 +9,9 @@ export const SITE_URL = 'https://nihongoes.com';
 export const STORAGE_PREFIX = 'nihongoes';
 
 /**
- * Cookie that remembers the visitor's chosen locale so the SERVER (middleware)
+ * Cookie that remembers the visitor's chosen locale so the SERVER (proxy)
  * can honor it on the next visit (localStorage is client-only, unreachable in
- * middleware). Same name as the localStorage key. Refreshed on every visit, so
+ * the proxy). Same name as the localStorage key. Refreshed on every visit, so
  * its 1-year lifetime is a rolling window (only lost after a full year away).
  */
 export const LOCALE_COOKIE = `${STORAGE_PREFIX}-locale`;
