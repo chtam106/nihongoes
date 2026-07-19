@@ -11,6 +11,7 @@ import {
 import { viTranslations } from '@/i18n/translations-vi.ts';
 import { LanguageContext, type TranslateFn } from '@/i18n/language-context.ts';
 import { getLocaleFromPathname, stripLocalePrefix, withLocale } from '@/i18n/locale-routing.ts';
+import { LOCALE_COOKIE, LOCALE_COOKIE_MAX_AGE } from '@/constants/site.ts';
 
 // Both locales are bundled synchronously so statically pre-rendered pages ship
 // the correct language in their HTML (crawlable, no post-hydration text swap).
@@ -54,11 +55,15 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const navigate = useNavigate();
   const locale = getLocaleFromPathname(location.pathname);
 
-  // Keep the document language in sync and remember the locale (read from the
-  // URL) for potential future use.
+  // Keep the document language in sync and remember the locale (from the URL).
+  // localStorage is the durable backup; the cookie is what the server-side
+  // middleware reads to redirect returning visitors to their language. Rewriting
+  // the cookie on every visit gives it a rolling 1-year lifetime (and re-creates
+  // it from the current locale if it had expired).
   useEffect(() => {
     document.documentElement.lang = locale;
     window.localStorage.setItem(LOCALE_STORAGE_KEY, locale);
+    document.cookie = `${LOCALE_COOKIE}=${locale}; path=/; max-age=${LOCALE_COOKIE_MAX_AGE}; samesite=lax`;
   }, [locale]);
 
   const setLocale = useCallback(
