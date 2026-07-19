@@ -8,7 +8,7 @@ export const home = {
   kanjiTitle: 'Kanji',
   kanjiDescription: 'Học kanji Jōyō theo từng lớp.',
   radicalsTitle: 'Bộ thủ',
-  radicalsDescription: 'Duyệt 214 bộ thủ Kangxi - thành phần cấu tạo nên mọi chữ kanji.',
+  radicalsDescription: '214 bộ thủ Kangxi - thành phần cấu tạo nên mọi chữ kanji.',
   alphabetSection: 'Bảng chữ cái & luyện tập',
   kanjiSection: 'Kanji & bộ thủ',
   coursesSection: 'Khóa học'

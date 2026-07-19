@@ -8,7 +8,7 @@ export const home = {
   kanjiTitle: 'Kanji',
   kanjiDescription: 'Study Jōyō kanji grade by grade.',
   radicalsTitle: 'Radicals',
-  radicalsDescription: 'Browse the 214 Kangxi radicals - the building blocks of every kanji.',
+  radicalsDescription: 'The 214 Kangxi radicals - the building blocks of every kanji.',
   alphabetSection: 'Alphabet & practice',
   kanjiSection: 'Kanji & radicals',
   coursesSection: 'Courses'
