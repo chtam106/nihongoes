@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import CombinedChartPage from '@/features/alphabet/combined/index.tsx';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';
+import { CombinedChart } from './_components/combined-chart.tsx';
 
 export const dynamicParams = false;
 
@@ -20,5 +20,5 @@ export async function generateMetadata({
 }
 
 export default function Page() {
-  return <CombinedChartPage />;
+  return <CombinedChart />;
 }

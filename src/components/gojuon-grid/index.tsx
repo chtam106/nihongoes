@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
-import type { GridRow } from '@/features/alphabet/gojuon.ts';
+import type { GridRow } from '@/constants/gojuon.ts';
 
 type CellButtonProps = {
   ariaLabel: string;

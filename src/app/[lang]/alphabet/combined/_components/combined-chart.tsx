@@ -7,7 +7,7 @@ import {
   katakanaChartRows,
   katakanaYoonChartRows
 } from '@/constants/alphabet-charts.ts';
-import { CellButton, ChartBlock, GojuonGrid } from '@/features/alphabet/gojuon-grid.tsx';
+import { CellButton, ChartBlock, GojuonGrid } from '@/components/gojuon-grid';
 import {
   VOWEL_HEADERS,
   YOON_HEADERS,
@@ -18,7 +18,7 @@ import {
   type AlphabetCell,
   type AlphabetChartRow,
   type GridRow
-} from '@/features/alphabet/gojuon.ts';
+} from '@/constants/gojuon.ts';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
 import { KanaDisplay } from '@/components/kana-display';
@@ -95,7 +95,7 @@ function CombinedKanaCell({ cell }: CombinedKanaCellProps) {
 
 const renderCombinedCell = (cell: CombinedCell) => <CombinedKanaCell cell={cell} />;
 
-function CombinedChartPage() {
+export function CombinedChart() {
   const { t } = useTranslation();
   const sectionLabels = getChartSectionLabels(t);
 
@@ -161,5 +161,3 @@ function CombinedChartPage() {
     </PageContainer>
   );
 }
-
-export default CombinedChartPage;

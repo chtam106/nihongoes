@@ -1,6 +1,6 @@
 'use client';
 
-import { AlphabetChartPage } from '@/features/alphabet/alphabet-chart.tsx';
+import { AlphabetChartPage } from '@/components/alphabet-chart';
 import {
   katakanaChartRows,
   katakanaChouonExamples,
@@ -8,7 +8,7 @@ import {
 } from '@/constants/alphabet-charts.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
-function KatakanaPage() {
+export function KatakanaChart() {
   const { t } = useTranslation();
 
   return (
@@ -22,5 +22,3 @@ function KatakanaPage() {
     />
   );
 }
-
-export default KatakanaPage;

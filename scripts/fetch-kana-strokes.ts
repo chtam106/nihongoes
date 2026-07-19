@@ -7,7 +7,7 @@ import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { hiraganaChartRows, katakanaChartRows } from '@/constants/alphabet-charts.ts';
-import type { AlphabetCell } from '@/features/alphabet/gojuon.ts';
+import type { AlphabetCell } from '@/constants/gojuon.ts';
 
 const outFile = join(dirname(fileURLToPath(import.meta.url)), '../src/constants/kana-strokes.ts');
 

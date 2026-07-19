@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import KatakanaPage from '@/features/alphabet/katakana/index.tsx';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';
+import { KatakanaChart } from './_components/katakana-chart.tsx';
 
 export const dynamicParams = false;
 
@@ -20,5 +20,5 @@ export async function generateMetadata({
 }
 
 export default function Page() {
-  return <KatakanaPage />;
+  return <KatakanaChart />;
 }

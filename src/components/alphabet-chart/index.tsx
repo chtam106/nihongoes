@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Box,
   Paper,
@@ -18,7 +20,7 @@ import { PageContainer } from '@/components/page-container';
 import { SpeakButton } from '@/components/speak-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
-import { CellButton, ChartBlock, GojuonGrid } from '@/features/alphabet/gojuon-grid.tsx';
+import { CellButton, ChartBlock, GojuonGrid } from '@/components/gojuon-grid';
 import {
   VOWEL_HEADERS,
   YOON_HEADERS,
@@ -30,11 +32,11 @@ import {
   type AlphabetCell,
   type AlphabetChartRow,
   type GridRow
-} from '@/features/alphabet/gojuon.ts';
+} from '@/constants/gojuon.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { getChartSectionLabels } from '@/i18n/translations.ts';
 
-export type { AlphabetCell, AlphabetChartRow } from '@/features/alphabet/gojuon.ts';
+export type { AlphabetCell, AlphabetChartRow } from '@/constants/gojuon.ts';
 
 function toSeionRows(rows: AlphabetChartRow[]): GridRow<AlphabetCell>[] {
   return rows

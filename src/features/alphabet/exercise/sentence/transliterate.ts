@@ -4,7 +4,7 @@ import {
   katakanaChartRows,
   katakanaYoonChartRows
 } from '@/constants/alphabet-charts.ts';
-import type { AlphabetChartRow } from '@/features/alphabet/alphabet-chart.tsx';
+import type { AlphabetChartRow } from '@/constants/gojuon.ts';
 
 // We compare answers in a single "canonical" romaji form so that Hepburn and
 // Kunrei spellings of the same sound collapse to one string (e.g. shi/si -> si).
