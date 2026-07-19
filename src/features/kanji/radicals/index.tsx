@@ -3,9 +3,13 @@
 import { useMemo, useState } from 'react';
 import { useLocation } from '@/i18n/navigation.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box,
   Button,
+  ButtonBase,
+  Collapse,
   Paper,
   Stack,
   ToggleButton,
@@ -90,6 +94,7 @@ function groupByStrokes(items: Radical[]): RadicalGroup[] {
 /** A color-coded sample card + matching legend explaining each field of a radical card. */
 function RadicalLegend() {
   const { locale, t } = useTranslation();
+  const [open, setOpen] = useState(false);
   const sample = radicals.find((radical) => radical.char === '人');
 
   if (!sample) {
@@ -106,87 +111,107 @@ function RadicalLegend() {
 
   return (
     <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
-      <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
-        {t('kanji.radicalsLegendHeading')}
-      </Heading>
-      <Stack spacing={2}>
-        <Paper
-          elevation={0}
-          sx={[
-            elevatedSurfaceSx,
-            {
-              position: 'relative',
-              p: 1.5,
-              display: 'flex',
-              gap: 1.5,
-              alignItems: 'center',
-              alignSelf: 'flex-start',
-              minWidth: 200
-            }
-          ]}
-        >
-          <Typography
-            component="span"
-            sx={{
-              position: 'absolute',
-              top: 6,
-              left: 8,
-              zIndex: 1,
-              fontSize: 12,
-              lineHeight: 1,
-              fontWeight: 600,
-              color: PART_COLORS.number
-            }}
+      <ButtonBase
+        onClick={() => setOpen((previous) => !previous)}
+        aria-expanded={open}
+        aria-controls="radical-legend-content"
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 1,
+          textAlign: 'left',
+          borderRadius: 1,
+          color: 'text.primary'
+        }}
+      >
+        <Heading scale="subsection" component="span">
+          {t('kanji.radicalsLegendHeading')}
+        </Heading>
+        {open && <ExpandLessIcon />}
+        {!open && <ExpandMoreIcon />}
+      </ButtonBase>
+      <Collapse in={open} unmountOnExit>
+        <Stack id="radical-legend-content" spacing={2} sx={{ mt: 2 }}>
+          <Paper
+            elevation={0}
+            sx={[
+              elevatedSurfaceSx,
+              {
+                position: 'relative',
+                p: 1.5,
+                display: 'flex',
+                gap: 1.5,
+                alignItems: 'center',
+                alignSelf: 'flex-start',
+                minWidth: 200
+              }
+            ]}
           >
-            #{sample.number}
-          </Typography>
-          <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
             <Typography
-              lang="ja"
-              sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1, color: PART_COLORS.char }}
+              component="span"
+              sx={{
+                position: 'absolute',
+                top: 6,
+                left: 8,
+                zIndex: 1,
+                fontSize: 12,
+                lineHeight: 1,
+                fontWeight: 600,
+                color: PART_COLORS.number
+              }}
             >
-              {sample.char}
+              #{sample.number}
             </Typography>
-            {sample.variants && (
+            <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
               <Typography
                 lang="ja"
-                variant="body2"
-                sx={{ lineHeight: 1.2, color: PART_COLORS.variant }}
+                sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1, color: PART_COLORS.char }}
               >
-                {sample.variants.join(' ')}
+                {sample.char}
               </Typography>
-            )}
-          </Box>
-          <Box sx={{ minWidth: 0 }}>
-            <Typography variant="body1" sx={{ fontWeight: 600, color: PART_COLORS.meaning }}>
-              {locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en}
-            </Typography>
-            <Typography lang="ja" variant="body2" sx={{ color: PART_COLORS.name }}>
-              {sample.kana}
-            </Typography>
-          </Box>
-        </Paper>
+              {sample.variants && (
+                <Typography
+                  lang="ja"
+                  variant="body2"
+                  sx={{ lineHeight: 1.2, color: PART_COLORS.variant }}
+                >
+                  {sample.variants.join(' ')}
+                </Typography>
+              )}
+            </Box>
+            <Box sx={{ minWidth: 0 }}>
+              <Typography variant="body1" sx={{ fontWeight: 600, color: PART_COLORS.meaning }}>
+                {locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en}
+              </Typography>
+              <Typography lang="ja" variant="body2" sx={{ color: PART_COLORS.name }}>
+                {sample.kana}
+              </Typography>
+            </Box>
+          </Paper>
 
-        <Stack spacing={1}>
-          {items.map((item) => (
-            <Stack key={item.color} direction="row" spacing={1} sx={{ alignItems: 'flex-start' }}>
-              <Box
-                sx={{
-                  flexShrink: 0,
-                  height: '1.5rem',
-                  display: 'flex',
-                  alignItems: 'center'
-                }}
-              >
-                <Box sx={{ width: 12, height: 12, borderRadius: '3px', bgcolor: item.color }} />
-              </Box>
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.5 }}>
-                {item.text}
-              </Typography>
-            </Stack>
-          ))}
+          <Stack spacing={1}>
+            {items.map((item) => (
+              <Stack key={item.color} direction="row" spacing={1} sx={{ alignItems: 'flex-start' }}>
+                <Box
+                  sx={{
+                    flexShrink: 0,
+                    height: '1.5rem',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
+                  <Box sx={{ width: 12, height: 12, borderRadius: '3px', bgcolor: item.color }} />
+                </Box>
+                <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.5 }}>
+                  {item.text}
+                </Typography>
+              </Stack>
+            ))}
+          </Stack>
         </Stack>
-      </Stack>
+      </Collapse>
     </Paper>
   );
 }
