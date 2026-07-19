@@ -1,6 +1,6 @@
 export const home = {
   title: 'Learn Japanese with Nihongoes',
-  intro: 'Read and practice kana step by step, then keep going with a structured JLPT N5 course.',
+  intro: 'Free and bilingual (English + Vietnamese), taking you from your first kana to JLPT N5.',
   hiraganaDescription: 'Learn the basic syllabary used for native Japanese words.',
   katakanaDescription: 'Learn the script used for loanwords and emphasis.',
   combinedDescription: 'Compare hiragana and katakana side by side in one chart.',

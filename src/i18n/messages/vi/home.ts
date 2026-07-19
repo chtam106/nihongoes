@@ -1,6 +1,6 @@
 export const home = {
   title: 'Học tiếng Nhật cùng Nihongoes',
-  intro: 'Đọc và luyện kana từng bước, rồi học tiếp với khóa JLPT N5 có lộ trình.',
+  intro: 'Miễn phí và song ngữ Anh - Việt, đưa bạn từ chữ kana đầu tiên đến trình độ JLPT N5.',
   hiraganaDescription: 'Học bảng âm cơ bản dùng cho từ tiếng Nhật thuần.',
   katakanaDescription: 'Học bảng chữ dùng cho từ mượn và nhấn mạnh.',
   combinedDescription: 'So sánh hiragana và katakana cạnh nhau trong cùng một bảng.',
