@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     root: import.meta.dirname
   }
   // Runs on a server (Vercel): routes are still statically pre-rendered
-  // (`generateStaticParams`), and `middleware.ts` keeps English at the root while
+  // (`generateStaticParams`), and `proxy.ts` keeps English at the root while
   // Vietnamese lives under `/vi` - so there is no `output: 'export'`.
 };
 

@@ -1,7 +1,7 @@
 # Deployment
 
 Nihongoes is a Next.js (App Router) app deployed on **Vercel**. It runs on a
-Node server (required by `middleware.ts`, which keeps English at the root and
+Node server (required by `proxy.ts`, which keeps English at the root and
 Vietnamese under `/vi`); every route is still statically pre-rendered (SSG).
 
 ## Production branch

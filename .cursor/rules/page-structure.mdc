@@ -7,12 +7,12 @@ alwaysApply: false
 # Page folder structure
 
 The app is a Next.js App Router project deployed on a server (Vercel). The App
-Router lives in `src/app/` (with `src/middleware.ts` and
-`src/instrumentation-client.ts`). Routing is **file-based** under
+Router lives in `src/app/` (with `src/proxy.ts` - the file convention formerly
+called `middleware.ts`, renamed in Next 16 - and `src/instrumentation-client.ts`). Routing is **file-based** under
 `src/app/[locale]/**`: each route has a `page.tsx` that exports
 `generateStaticParams` (pre-renders both locales), `generateMetadata` (per-page
 SEO via `@/i18n/seo-meta`), and `export const dynamicParams = false`. i18n is
-next-intl driven from `src/i18n/routing.ts`: `src/middleware.ts`
+next-intl driven from `src/i18n/routing.ts`: `src/proxy.ts`
 (`createMiddleware`) keeps English at the root (no prefix) and Vietnamese under
 `/vi` (`localePrefix: 'as-needed'`); `app/[locale]/layout.tsx` renders `<html lang>`
 + `NextIntlClientProvider` from the `[locale]` segment (root `app/layout.tsx` is a
@@ -48,7 +48,7 @@ Views read route params via `useParams` from `@/i18n/navigation`.
 ## Locale prefix + hydration (IMPORTANT gotcha, cost a prod outage)
 
 At build/SSR time English pages render under the INTERNAL `/en/...` path (the
-middleware rewrite), but on the client the URL is the clean `/x`. So any RENDERED
+proxy rewrite), but on the client the URL is the clean `/x`. So any RENDERED
 output derived from `usePathname()`/`useLocation().pathname` (active-nav
 `selected` state, expanded groups, links) MUST normalize via `stripLocalePrefix`,
 and `stripLocalePrefix` MUST strip BOTH `/en` and `/vi` (not just `/vi`). If it
