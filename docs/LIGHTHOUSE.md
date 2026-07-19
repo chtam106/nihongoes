@@ -11,57 +11,29 @@
 
 ## Quick Start (EN + VI)
 
-### 1) Build and start the production server / Build và chạy server production
+Prerequisite: `nvm use 24`.
+
+- **EN:** Run one command per form factor. Each is self-contained: it builds a production bundle into a throwaway `.next-lh`, starts a prod server on its own port (so it never touches a running `next dev`), audits ONE representative page per route group, then shuts the server down.
+- **VI:** Chạy một lệnh cho mỗi form factor. Mỗi lệnh tự lo hết: build production vào `.next-lh` tạm, chạy server prod trên cổng riêng (không đụng `next dev`), audit MỘT trang đại diện mỗi nhóm route, rồi tự tắt server.
 
 ```bash
-nvm use 24
+pnpm lighthouse:mobile
+pnpm lighthouse:desktop
 ```
 
-```bash
-pnpm run build
-pnpm start
-```
-
-- **EN:** The Next.js server runs at `http://localhost:3000`.
-- **VI:** Server Next.js chạy tại `http://localhost:3000`.
-
-### 2) Run Lighthouse mobile + desktop / Chạy Lighthouse mobile + desktop
-
-```bash
-pnpm exec lighthouse "http://localhost:3000" --quiet --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=".lighthouse/mobile.json"
-```
-
-```bash
-pnpm exec lighthouse "http://localhost:3000" --preset=desktop --quiet --chrome-flags="--headless=new --no-sandbox" --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=".lighthouse/desktop.json"
-```
-
-### 3) Read scores quickly / Đọc điểm nhanh
-
-```bash
-node - <<'NODE'
-const fs = require('fs');
-for (const [label, path] of [['mobile', '.lighthouse/mobile.json'], ['desktop', '.lighthouse/desktop.json']]) {
-  const r = JSON.parse(fs.readFileSync(path, 'utf8'));
-  console.log(`=== ${label} ===`);
-  for (const key of ['performance', 'accessibility', 'best-practices', 'seo']) {
-    console.log(`${key}: ${Math.round((r.categories[key].score || 0) * 100)}`);
-  }
-  console.log('FCP:', r.audits['first-contentful-paint'].displayValue);
-  console.log('LCP:', r.audits['largest-contentful-paint'].displayValue);
-  console.log('TTI:', r.audits.interactive.displayValue);
-  console.log('TBT:', r.audits['total-blocking-time'].displayValue);
-}
-NODE
-```
+- **EN:** Open the summary at `coverage/lighthouse/mobile/index.html` (or `.../desktop/index.html`): a color-coded score table with a link to each page's full HTML report. The two form factors write to separate folders so they never overwrite each other.
+- **VI:** Mở bảng tổng hợp tại `coverage/lighthouse/mobile/index.html` (hoặc `.../desktop/index.html`): bảng điểm màu kèm link tới report HTML đầy đủ của từng trang. Hai form factor ghi vào thư mục riêng nên không đè lên nhau.
+- **EN:** Options: `pnpm lighthouse:mobile --skip-build` reuses the previous build (faster re-runs); `LH_URL=http://localhost:3000 pnpm lighthouse:mobile` audits an already-running server instead of building one.
+- **VI:** Tùy chọn: `pnpm lighthouse:mobile --skip-build` tái dùng build trước (chạy lại nhanh hơn); `LH_URL=http://localhost:3000 pnpm lighthouse:mobile` audit một server đang chạy sẵn thay vì tự build.
 
 ## Full Measurement Flow / Quy Trình Đo Đầy Đủ
 
-- **EN:** Always use Node 24, build first, then audit the preview server.
-- **VI:** Luôn dùng Node 24, build trước rồi audit trên preview server.
-- **EN:** Keep output files in `.lighthouse/` for repeatable comparisons.
-- **VI:** Lưu kết quả vào `.lighthouse/` để so sánh các lần đo.
-- **EN:** For stable trends, run each profile 2-3 times and compare medians.
-- **VI:** Để ổn định số liệu, chạy mỗi profile 2-3 lần rồi so median.
+- **EN:** The script (`scripts/lighthouse.mjs`) already builds, serves, audits, and tears down in one go, so there is no manual build/start/parse step.
+- **VI:** Script (`scripts/lighthouse.mjs`) đã tự build, chạy server, audit và dọn dẹp trong một lượt, nên không cần bước build/start/parse thủ công.
+- **EN:** Representative pages (one per route group) live in the `PAGES` list at the top of the script; add an entry when a new kind of page is introduced.
+- **VI:** Danh sách trang đại diện (mỗi nhóm route một trang) nằm ở mảng `PAGES` đầu script; thêm một mục khi có loại trang mới.
+- **EN:** For stable trends, run each profile 2-3 times and compare; scores vary with machine load.
+- **VI:** Để ổn định số liệu, chạy mỗi profile 2-3 lần rồi so; điểm dao động theo tải máy.
 
 ## What Was Optimized / Đã Tối Ưu Gì
 
