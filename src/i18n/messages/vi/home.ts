@@ -6,6 +6,11 @@ export const home = {
   katakanaDescription: 'Học bảng chữ dùng cho từ mượn và nhấn mạnh.',
   combinedDescription: 'So sánh hiragana và katakana cạnh nhau trong cùng một bảng.',
   exerciseDescription: 'Tự kiểm tra romaji và chữ kana, có phản hồi âm thanh.',
+  kanjiTitle: 'Kanji',
+  kanjiDescription: 'Học kanji Jōyō theo từng lớp, kèm âm đọc, bộ phận cấu tạo và từ ví dụ.',
+  radicalsTitle: 'Bộ thủ',
+  radicalsDescription: 'Duyệt 214 bộ thủ Kangxi - thành phần cấu tạo nên mọi chữ kanji.',
   alphabetSection: 'Bảng chữ cái & luyện tập',
+  kanjiSection: 'Kanji & bộ thủ',
   coursesSection: 'Khóa học'
 };
