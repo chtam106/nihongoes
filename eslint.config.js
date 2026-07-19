@@ -14,6 +14,7 @@ export default defineConfig([
     '.next',
     '.next-analyze',
     '.next-prod',
+    '.next-lh',
     'node_modules',
     'storybook-static',
     'next-env.d.ts'

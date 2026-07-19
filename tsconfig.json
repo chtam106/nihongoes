@@ -41,5 +41,5 @@
     ".next-analyze/types/**/*.ts",
     ".next-analyze/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "dist", "out", ".next", ".next-analyze", ".next-prod"]
+  "exclude": ["node_modules", "dist", "out", ".next", ".next-analyze", ".next-prod", ".next-lh"]
 }
