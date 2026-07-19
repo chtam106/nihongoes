@@ -7,7 +7,7 @@ import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import { ScrollManager } from '@/components/scroll-manager';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
-import { useLocation } from '@/i18n/navigation.tsx';
+import { usePathname } from '@/i18n/navigation.tsx';
 
 const drawerWidth = 320;
 
@@ -16,17 +16,17 @@ type AppLayoutProps = {
 };
 
 function AppLayout({ children }: AppLayoutProps) {
-  const location = useLocation();
+  const pathname = usePathname();
   // Mobile vs desktop is handled purely with CSS breakpoints (below) so the
   // server-rendered markup is correct at first paint - no `useMediaQuery` flash
   // where the desktop drawer briefly appears on mobile.
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    if (location.pathname !== '/') {
+    if (pathname !== '/') {
       void loadJapaneseUiFont();
     }
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100svh' }}>

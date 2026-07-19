@@ -1,11 +1,4 @@
-import { createContext } from 'react';
-import type { Locale, TranslationParams } from '@/i18n/translations.ts';
+import type { TranslationParams } from '@/i18n/translations.ts';
 
+/** Signature of the `t` translate function returned by `useTranslation`. */
 export type TranslateFn = (key: string, params?: TranslationParams) => string;
-
-export type LanguageContextValue = {
-  locale: Locale;
-  setLocale: (locale: Locale) => void;
-};
-
-export const LanguageContext = createContext<LanguageContextValue | null>(null);

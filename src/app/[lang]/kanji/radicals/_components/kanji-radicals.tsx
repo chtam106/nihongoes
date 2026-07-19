@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { useLocation } from '@/i18n/navigation.tsx';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -322,7 +321,7 @@ function RadicalMeaning({ radical }: RadicalMeaningProps) {
 
 function KanjiRadicalsPage() {
   const { t } = useTranslation();
-  const location = useLocation();
+  const hash = typeof window === 'undefined' ? '' : window.location.hash;
   const [filter, setFilter] = useState<RadicalFilter>('all');
   const groups = useMemo(() => groupByStrokes(radicals), []);
   const usage = useMemo(() => computeRadicalUsage(), []);
@@ -341,9 +340,7 @@ function KanjiRadicalsPage() {
     [commonRadicals, usage]
   );
 
-  const activeNumber = location.hash.startsWith('#radical-')
-    ? Number(location.hash.slice('#radical-'.length))
-    : null;
+  const activeNumber = hash.startsWith('#radical-') ? Number(hash.slice('#radical-'.length)) : null;
 
   return (
     <PageContainer bottomGutter>
