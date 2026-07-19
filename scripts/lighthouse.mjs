@@ -5,12 +5,13 @@
 // By default it is fully self-contained - it builds a production bundle into a
 // throwaway dir and starts a prod server on its own port (so it never touches a
 // running `next dev`), audits, then shuts the server down:
-//   pnpm lighthouse            # build + serve + audit (mobile)
-//   pnpm lighthouse:desktop    # desktop form factor
-//   pnpm lighthouse --skip-build   # reuse the previous build (faster re-runs)
-//   LH_URL=http://localhost:3000 pnpm lighthouse   # audit an already-running server
+//   pnpm lighthouse:mobile         # build + serve + audit (mobile)
+//   pnpm lighthouse:desktop        # desktop form factor
+//   pnpm lighthouse:mobile --skip-build          # reuse the previous build (faster re-runs)
+//   LH_URL=http://localhost:3000 pnpm lighthouse:mobile   # audit an already-running server
 //
-// Reports land in `coverage/lighthouse/` (gitignored).
+// Each form factor writes to its own folder so they never overwrite each other:
+// `coverage/lighthouse/mobile/` and `coverage/lighthouse/desktop/` (gitignored).
 
 import { spawn } from 'node:child_process';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -24,7 +25,7 @@ const DIST_DIR = '.next-lh';
 const BASE_URL = EXTERNAL_URL ?? `http://localhost:${PORT}`;
 const DESKTOP = process.argv.includes('--desktop') || process.env.LH_DESKTOP === '1';
 const SKIP_BUILD = process.argv.includes('--skip-build') || process.env.LH_SKIP_BUILD === '1';
-const OUT_DIR = path.join('coverage', 'lighthouse');
+const OUT_DIR = path.join('coverage', 'lighthouse', DESKTOP ? 'desktop' : 'mobile');
 const NEXT_BIN = path.join('node_modules', '.bin', 'next');
 
 const CATEGORIES = ['performance', 'accessibility', 'best-practices', 'seo'];

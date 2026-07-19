@@ -8,7 +8,7 @@
     "dev": "next dev",
     "build": "next build",
     "analyze": "next experimental-analyze",
-    "lighthouse": "node scripts/lighthouse.mjs",
+    "lighthouse:mobile": "node scripts/lighthouse.mjs",
     "lighthouse:desktop": "node scripts/lighthouse.mjs --desktop",
     "start": "next start",
     "lint": "eslint .",
