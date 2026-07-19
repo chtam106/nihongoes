@@ -8,7 +8,16 @@ import tseslint from 'typescript-eslint';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-  globalIgnores(['dist', 'out', '.next', 'node_modules', 'storybook-static', 'next-env.d.ts']),
+  globalIgnores([
+    'dist',
+    'out',
+    '.next',
+    '.next-analyze',
+    '.next-prod',
+    'node_modules',
+    'storybook-static',
+    'next-env.d.ts'
+  ]),
   js.configs.recommended,
   ...tseslint.configs.recommended,
   reactHooks.configs.flat.recommended,
