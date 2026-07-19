@@ -11,7 +11,7 @@ import { routing } from '@/i18n/routing.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
 /**
- * When building only for a Lighthouse sample (`LH_SAMPLE=1`, set by
+ * When building only for a Lighthouse sample (`LIGHTHOUSE_SAMPLE=1`, set by
  * `scripts/lighthouse.mjs`), pre-render just the representative pages the audit
  * actually visits - English only, the first course level + lesson, the first
  * kanji track + lesson - instead of the full ~1400-page site. This keeps the
@@ -19,9 +19,10 @@ import type { Locale } from '@/i18n/translations.ts';
  * unaffected; `dynamicParams = false` makes the un-generated pages 404, which
  * the audit script skips.
  */
-const LH_SAMPLE = process.env.LH_SAMPLE === '1';
-const LOCALES = LH_SAMPLE ? (['en'] as const) : routing.locales;
-const sample = <T>(items: readonly T[]): readonly T[] => (LH_SAMPLE ? items.slice(0, 1) : items);
+const LIGHTHOUSE_SAMPLE = process.env.LIGHTHOUSE_SAMPLE === '1';
+const LOCALES = LIGHTHOUSE_SAMPLE ? (['en'] as const) : routing.locales;
+const sample = <T>(items: readonly T[]): readonly T[] =>
+  LIGHTHOUSE_SAMPLE ? items.slice(0, 1) : items;
 
 /**
  * Props for a route `page.tsx`. The `locale` param is always present; pass any

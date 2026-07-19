@@ -13,8 +13,8 @@
 
 Prerequisite: `nvm use 24`.
 
-- **EN:** Run one command per form factor. Each is self-contained: it builds a production bundle into a throwaway `.next-lh`, starts a prod server on its own port (so it never touches a running `next dev`), audits ONE representative page per route group, then shuts the server down.
-- **VI:** Chạy một lệnh cho mỗi form factor. Mỗi lệnh tự lo hết: build production vào `.next-lh` tạm, chạy server prod trên cổng riêng (không đụng `next dev`), audit MỘT trang đại diện mỗi nhóm route, rồi tự tắt server.
+- **EN:** Run one command per form factor. Each is self-contained: it builds a production bundle into a throwaway `.next-lighthouse`, starts a prod server on its own port (so it never touches a running `next dev`), audits ONE representative page per route group, then shuts the server down.
+- **VI:** Chạy một lệnh cho mỗi form factor. Mỗi lệnh tự lo hết: build production vào `.next-lighthouse` tạm, chạy server prod trên cổng riêng (không đụng `next dev`), audit MỘT trang đại diện mỗi nhóm route, rồi tự tắt server.
 
 ```bash
 pnpm lighthouse:mobile
@@ -23,8 +23,8 @@ pnpm lighthouse:desktop
 
 - **EN:** Open the summary at `.lighthouse/mobile/index.html` (or `.lighthouse/desktop/index.html`): a color-coded score table with a link to each page's full HTML report. The two form factors write to separate folders so they never overwrite each other.
 - **VI:** Mở bảng tổng hợp tại `.lighthouse/mobile/index.html` (hoặc `.lighthouse/desktop/index.html`): bảng điểm màu kèm link tới report HTML đầy đủ của từng trang. Hai form factor ghi vào thư mục riêng nên không đè lên nhau.
-- **EN:** Options: `pnpm lighthouse:mobile --skip-build` reuses the previous build (faster re-runs); `LH_URL=http://localhost:3000 pnpm lighthouse:mobile` audits an already-running server instead of building one.
-- **VI:** Tùy chọn: `pnpm lighthouse:mobile --skip-build` tái dùng build trước (chạy lại nhanh hơn); `LH_URL=http://localhost:3000 pnpm lighthouse:mobile` audit một server đang chạy sẵn thay vì tự build.
+- **EN:** Options: `pnpm lighthouse:mobile --skip-build` reuses the previous build (faster re-runs); `LIGHTHOUSE_URL=http://localhost:3000 pnpm lighthouse:mobile` audits an already-running server instead of building one.
+- **VI:** Tùy chọn: `pnpm lighthouse:mobile --skip-build` tái dùng build trước (chạy lại nhanh hơn); `LIGHTHOUSE_URL=http://localhost:3000 pnpm lighthouse:mobile` audit một server đang chạy sẵn thay vì tự build.
 
 ## Full Measurement Flow / Quy Trình Đo Đầy Đủ
 

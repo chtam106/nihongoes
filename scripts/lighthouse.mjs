@@ -8,7 +8,7 @@
 //   pnpm lighthouse:mobile         # build + serve + audit (mobile)
 //   pnpm lighthouse:desktop        # desktop form factor
 //   pnpm lighthouse:mobile --skip-build          # reuse the previous build (faster re-runs)
-//   LH_URL=http://localhost:3000 pnpm lighthouse:mobile   # audit an already-running server
+//   LIGHTHOUSE_URL=http://localhost:3000 pnpm lighthouse:mobile   # audit a running server
 //
 // Each form factor writes to its own folder so they never overwrite each other:
 // `.lighthouse/mobile/` and `.lighthouse/desktop/` (gitignored).
@@ -19,12 +19,15 @@ import path from 'node:path';
 import lighthouse from 'lighthouse';
 import * as chromeLauncher from 'chrome-launcher';
 
-const EXTERNAL_URL = process.env.LH_URL ? process.env.LH_URL.replace(/\/+$/, '') : null;
-const PORT = process.env.LH_PORT ?? '3210';
-const DIST_DIR = '.next-lh';
+const EXTERNAL_URL = process.env.LIGHTHOUSE_URL
+  ? process.env.LIGHTHOUSE_URL.replace(/\/+$/, '')
+  : null;
+const PORT = process.env.LIGHTHOUSE_PORT ?? '3210';
+const DIST_DIR = '.next-lighthouse';
 const BASE_URL = EXTERNAL_URL ?? `http://localhost:${PORT}`;
-const DESKTOP = process.argv.includes('--desktop') || process.env.LH_DESKTOP === '1';
-const SKIP_BUILD = process.argv.includes('--skip-build') || process.env.LH_SKIP_BUILD === '1';
+const DESKTOP = process.argv.includes('--desktop') || process.env.LIGHTHOUSE_DESKTOP === '1';
+const SKIP_BUILD =
+  process.argv.includes('--skip-build') || process.env.LIGHTHOUSE_SKIP_BUILD === '1';
 const OUT_DIR = path.join('.lighthouse', DESKTOP ? 'desktop' : 'mobile');
 const NEXT_BIN = path.join('node_modules', '.bin', 'next');
 
@@ -230,7 +233,7 @@ async function main() {
   // An external server was given - just audit it, do not build/serve/teardown.
   if (EXTERNAL_URL) {
     if (!(await reachable(BASE_URL))) {
-      console.error(`Cannot reach ${BASE_URL} (from LH_URL).`);
+      console.error(`Cannot reach ${BASE_URL} (from LIGHTHOUSE_URL).`);
       process.exit(1);
     }
 
@@ -240,15 +243,15 @@ async function main() {
 
   if (!SKIP_BUILD) {
     console.log(`Building production bundle into ${DIST_DIR} (sampled pages only) ...`);
-    // LH_SAMPLE trims generateStaticParams to just the audited representative
-    // pages (see src/i18n/route-helpers.ts), so this builds ~20 pages, not ~1400.
-    // LH_SAMPLE also points canonical/hreflang at the local origin (via
-    // src/constants/site.ts + LH_PORT) so Lighthouse's SEO canonical audit
-    // passes instead of flagging the production canonical on localhost.
+    // LIGHTHOUSE_SAMPLE trims generateStaticParams to just the audited
+    // representative pages (see src/i18n/route-helpers.ts), so this builds ~20
+    // pages, not ~1400. It also points canonical/hreflang at the local origin
+    // (via src/constants/site.ts + LIGHTHOUSE_PORT) so Lighthouse's SEO canonical
+    // audit passes instead of flagging the production canonical on localhost.
     await run(NEXT_BIN, ['build'], {
       NEXT_DIST_DIR: DIST_DIR,
-      LH_SAMPLE: '1',
-      LH_PORT: PORT
+      LIGHTHOUSE_SAMPLE: '1',
+      LIGHTHOUSE_PORT: PORT
     });
   }
 
