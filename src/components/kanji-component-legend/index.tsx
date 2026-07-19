@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
 import { alpha, type Theme } from '@mui/material/styles';

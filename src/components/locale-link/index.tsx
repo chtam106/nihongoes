@@ -1,30 +1,25 @@
 'use client';
 
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
-import NextLink from 'next/link';
-import { withLocale } from '@/i18n/locale-routing.ts';
-import { useTranslation } from '@/i18n/use-translation.ts';
+import { Link } from '@/i18n/navigation.tsx';
 
-type NextLinkProps = ComponentPropsWithoutRef<typeof NextLink>;
+type NextIntlLinkProps = ComponentPropsWithoutRef<typeof Link>;
 
-export type LocaleLinkProps = Omit<NextLinkProps, 'href'> & {
+export type LocaleLinkProps = Omit<NextIntlLinkProps, 'href'> & {
   /** A locale-agnostic ("logical") path; the active locale prefix is added. */
   to: string;
 };
 
 /**
- * Drop-in replacement for the old react-router `Link`/`NavLink` that prefixes a
- * string `to` with the active locale, so internal navigation keeps the user in
- * their language (en stays at the root, vi is served under `/vi`). Backed by
- * `next/link`.
+ * Internal link that keeps the user in their language. A thin wrapper over
+ * next-intl's `Link` (which prefixes the active locale: en at the root, vi under
+ * `/vi`), keeping the `to` prop the app already uses everywhere.
  */
 export const LocaleLink = forwardRef<HTMLAnchorElement, LocaleLinkProps>(function LocaleLink(
   { to, ...rest },
   ref
 ) {
-  const { locale } = useTranslation();
-
-  return <NextLink ref={ref} href={withLocale(to, locale)} {...rest} />;
+  return <Link ref={ref} href={to} {...rest} />;
 });
 
 /** Alias kept for callers that used the old NavLink; active state is handled by

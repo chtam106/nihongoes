@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import { NavCardGrid } from '@/components/nav-card';
 
 const meta = {
@@ -28,13 +26,13 @@ const meta = {
         to: '/hiragana',
         title: 'Hiragana',
         description: 'Learn the foundational Japanese syllabary.',
-        icon: MenuBookOutlinedIcon
+        iconKey: 'book'
       },
       {
         to: '/frontend',
         title: 'Frontend Japanese',
         description: 'Practical Japanese for software engineers.',
-        icon: SchoolOutlinedIcon
+        iconKey: 'school'
       }
     ]
   }
@@ -53,13 +51,13 @@ export const TwoCards: Story = {
         to: '/hiragana',
         title: 'Hiragana',
         description: 'Learn the foundational Japanese syllabary.',
-        icon: MenuBookOutlinedIcon
+        iconKey: 'book'
       },
       {
         to: '/katakana',
         title: 'Katakana',
         description: 'The script used for loanwords and emphasis.',
-        icon: MenuBookOutlinedIcon
+        iconKey: 'book'
       }
     ]
   }

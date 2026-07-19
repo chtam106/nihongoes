@@ -34,7 +34,6 @@
   "include": [
     "next-env.d.ts",
     "src",
-    "app",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",

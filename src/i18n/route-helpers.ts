@@ -7,35 +7,46 @@ import {
 import { COURSE_LEVELS } from '@/constants/courses/levels.ts';
 import type { Lesson } from '@/constants/courses/types.ts';
 import { kanjiTracks } from '@/constants/kanji/index.ts';
-import { LOCALES } from '@/i18n/locale-routing.ts';
+import { routing } from '@/i18n/routing.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
-export type LangParam = { lang: Locale };
+const LOCALES = routing.locales;
 
-/** Static params for the `[lang]` segment (both locales). */
-export const langParams: LangParam[] = LOCALES.map((lang) => ({ lang }));
+/**
+ * Props for a route `page.tsx`. The `locale` param is always present; pass any
+ * extra dynamic segments as the generic, e.g.
+ * `PageProps<{ jlptLevel: string; lessonId: string }>`.
+ */
+export type PageProps<Extra extends Record<string, string> = Record<never, string>> = {
+  params: Promise<{ locale: string } & Extra>;
+};
 
-/** Narrow a raw `[lang]` route param to a `Locale` (defaults to English). */
-export function toLocale(lang: string): Locale {
-  return lang === 'vi' ? 'vi' : 'en';
+export type LocaleParam = { locale: Locale };
+
+/** Static params for the `[locale]` segment (both locales). */
+export const localeParams: LocaleParam[] = LOCALES.map((locale) => ({ locale }));
+
+/** Narrow a raw `[locale]` route param to a `Locale` (defaults to English). */
+export function toLocale(locale: string): Locale {
+  return locale === 'vi' ? 'vi' : 'en';
 }
 
-/** `{ lang, jlptLevel }` for every locale and course level (`[jlptLevel]` segment). */
+/** `{ locale, jlptLevel }` for every locale and course level (`[jlptLevel]` segment). */
 export function courseLevelParams() {
-  return LOCALES.flatMap((lang) => COURSE_LEVELS.map((level) => ({ lang, jlptLevel: level })));
+  return LOCALES.flatMap((locale) => COURSE_LEVELS.map((level) => ({ locale, jlptLevel: level })));
 }
 
 function courseLessonParamsWhere(predicate?: (lesson: Lesson) => boolean) {
-  return LOCALES.flatMap((lang) =>
+  return LOCALES.flatMap((locale) =>
     COURSE_LEVELS.flatMap((level) =>
       getCourse(level)
         .lessons.filter((lesson) => (predicate ? predicate(lesson) : true))
-        .map((lesson) => ({ lang, jlptLevel: level, lessonId: lesson.id }))
+        .map((lesson) => ({ locale, jlptLevel: level, lessonId: lesson.id }))
     )
   );
 }
 
-/** `{ lang, level, lessonId }` for every lesson (detail, vocabulary, listening). */
+/** `{ locale, level, lessonId }` for every lesson (detail, vocabulary, listening). */
 export const courseLessonParams = () => courseLessonParamsWhere();
 /** Only lessons that have grammar points. */
 export const courseGrammarParams = () => courseLessonParamsWhere(lessonHasGrammar);
@@ -44,16 +55,16 @@ export const courseReadingParams = () => courseLessonParamsWhere(lessonHasReadin
 /** Only lessons that contain kanji words (writing practice). */
 export const courseWritingParams = () => courseLessonParamsWhere(lessonHasKanji);
 
-/** `{ lang, track }` for every locale and kanji track. */
+/** `{ locale, track }` for every locale and kanji track. */
 export function kanjiTrackParams() {
-  return LOCALES.flatMap((lang) => kanjiTracks.map((track) => ({ lang, track: track.slug })));
+  return LOCALES.flatMap((locale) => kanjiTracks.map((track) => ({ locale, track: track.slug })));
 }
 
-/** `{ lang, track, lessonId }` for every kanji lesson. */
+/** `{ locale, track, lessonId }` for every kanji lesson. */
 export function kanjiLessonParams() {
-  return LOCALES.flatMap((lang) =>
+  return LOCALES.flatMap((locale) =>
     kanjiTracks.flatMap((track) =>
-      track.lessons.map((lesson) => ({ lang, track: track.slug, lessonId: lesson.id }))
+      track.lessons.map((lesson) => ({ locale, track: track.slug, lessonId: lesson.id }))
     )
   );
 }

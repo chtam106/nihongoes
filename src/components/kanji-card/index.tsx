@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Paper, Typography } from '@mui/material';
 import { alpha, type Theme } from '@mui/material/styles';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
