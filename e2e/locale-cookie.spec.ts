@@ -1,13 +1,10 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type BrowserContext } from '@playwright/test';
 
 // The locale preference cookie (written client-side by LanguageProvider) lets the
 // middleware send a returning visitor to their chosen language on the next visit.
 const LOCALE_COOKIE = 'nihongoes-locale';
 
-async function setLocaleCookie(
-  context: import('@playwright/test').BrowserContext,
-  value: string
-) {
+async function setLocaleCookie(context: BrowserContext, value: string) {
   await context.addCookies([
     { name: LOCALE_COOKIE, value, domain: 'localhost', path: '/', sameSite: 'Lax' }
   ]);
