@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import LessonPage from '@/features/course/lesson-page';
+import LessonPage from './_components/lesson-page.tsx';
 import { lessonPath } from '@/constants/courses/levels.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';

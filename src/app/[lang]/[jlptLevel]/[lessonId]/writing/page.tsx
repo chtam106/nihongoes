@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ClientOnly } from '@/components/client-only';
-import WritingPage from '@/features/course/writing-page';
+import WritingPage from './_components/writing-page.tsx';
 import { lessonWritingPath } from '@/constants/courses/levels.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';

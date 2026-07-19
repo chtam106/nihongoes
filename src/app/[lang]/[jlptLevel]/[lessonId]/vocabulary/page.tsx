@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ClientOnly } from '@/components/client-only';
-import ExercisePage from '@/features/course/exercise-page';
+import ExercisePage from './_components/exercise-page.tsx';
 import { lessonVocabularyPath } from '@/constants/courses/levels.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
