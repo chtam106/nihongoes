@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState, type MouseEvent } from 'react';
-import { useParams } from '@/i18n/navigation.tsx';
+import { useParams } from 'next/navigation';
 import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,

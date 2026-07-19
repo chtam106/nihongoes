@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import { useParams } from '@/i18n/navigation.tsx';
+import { useParams } from 'next/navigation';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Collapse, LinearProgress, Paper, Stack, Typography } from '@mui/material';
 import {

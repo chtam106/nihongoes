@@ -7,8 +7,10 @@ import {
 import { COURSE_LEVELS } from '@/constants/courses/levels.ts';
 import type { Lesson } from '@/constants/courses/types.ts';
 import { kanjiTracks } from '@/constants/kanji/index.ts';
-import { LOCALES } from '@/i18n/locale-routing.ts';
+import { routing } from '@/i18n/routing.ts';
 import type { Locale } from '@/i18n/translations.ts';
+
+const LOCALES = routing.locales;
 
 export type LangParam = { lang: Locale };
 

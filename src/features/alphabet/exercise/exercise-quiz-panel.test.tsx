@@ -2,20 +2,35 @@ import { describe, expect, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { ReactElement } from 'react';
-import { LanguageProvider } from '@/i18n/context.tsx';
+import { NextIntlClientProvider } from 'next-intl';
+import { enTranslations } from '@/i18n/translations.ts';
 import { ExerciseQuizPanel } from '@/features/alphabet/exercise/exercise-quiz-panel.tsx';
 import type { QuizQuestion } from '@/features/alphabet/exercise/exercise-quiz.ts';
 
-// The i18n provider derives its locale from the pathname; the root path selects
-// English. Stub Next's navigation hooks since there is no App Router in tests.
+// Stub Next's navigation hooks since there is no App Router in tests (next-intl's
+// navigation reads them under the hood).
 vi.mock('next/navigation', () => ({
   usePathname: () => '/',
-  useRouter: () => ({ push: vi.fn(), replace: vi.fn() }),
-  useParams: () => ({})
+  useRouter: () => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+    prefetch: vi.fn(),
+    back: vi.fn(),
+    forward: vi.fn(),
+    refresh: vi.fn()
+  }),
+  useParams: () => ({}),
+  useSearchParams: () => new URLSearchParams(),
+  redirect: vi.fn(),
+  permanentRedirect: vi.fn()
 }));
 
 function renderWithI18n(ui: ReactElement) {
-  return render(<LanguageProvider>{ui}</LanguageProvider>);
+  return render(
+    <NextIntlClientProvider locale="en" messages={enTranslations}>
+      {ui}
+    </NextIntlClientProvider>
+  );
 }
 
 const shiQuestion: QuizQuestion = {

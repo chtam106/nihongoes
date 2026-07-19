@@ -1,9 +1,6 @@
 import { type ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
-import { Providers } from '@/components/providers';
 import { SITE_NAME, SITE_URL } from '@/constants/site.ts';
-import '@/index.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -24,14 +21,11 @@ export const viewport: Viewport = {
   themeColor: '#faf7f0'
 };
 
+/**
+ * Passthrough root layout. The document (`<html>`/`<body>`) + providers live in
+ * `app/[lang]/layout.tsx` where the locale is known, so `<html lang>` is correct
+ * server-side. This root only carries global metadata.
+ */
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return (
-    <html lang="en">
-      <body>
-        <AppRouterCacheProvider>
-          <Providers>{children}</Providers>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
-  );
+  return children;
 }

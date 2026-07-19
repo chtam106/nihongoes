@@ -1,39 +1,18 @@
 import type { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 import { isCourseLevel } from '@/constants/courses/levels.ts';
 import { getCourseSeo } from '@/constants/courses/seo.ts';
 import { getSeoRouteKey, type SeoRouteKey } from '@/constants/routes.ts';
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/constants/site.ts';
-import { enTranslations, type Locale, type TranslationTree } from '@/i18n/translations.ts';
-import { viTranslations } from '@/i18n/translations-vi.ts';
-import { withLocale } from '@/i18n/locale-routing.ts';
-
-const trees: Record<Locale, TranslationTree> = {
-  en: enTranslations,
-  vi: viTranslations
-};
-
-function getNestedValue(tree: TranslationTree, key: string): string | undefined {
-  const value = key.split('.').reduce<unknown>((current, part) => {
-    if (current && typeof current === 'object' && part in current) {
-      return (current as Record<string, unknown>)[part];
-    }
-
-    return undefined;
-  }, tree);
-
-  return typeof value === 'string' ? value : undefined;
-}
-
-function translate(locale: Locale, key: string): string {
-  return getNestedValue(trees[locale], key) ?? getNestedValue(enTranslations, key) ?? key;
-}
+import type { Locale } from '@/i18n/translations.ts';
+import { getPathname } from '@/i18n/navigation.tsx';
 
 type SeoText = {
   title: string;
   description: string;
 };
 
-function getSeoText(routeKey: SeoRouteKey, locale: Locale): SeoText {
+async function getSeoText(routeKey: SeoRouteKey, locale: Locale): Promise<SeoText> {
   if (isCourseLevel(routeKey)) {
     const courseSeo = getCourseSeo(routeKey);
 
@@ -43,17 +22,18 @@ function getSeoText(routeKey: SeoRouteKey, locale: Locale): SeoText {
     };
   }
 
-  const description = translate(locale, `seo.${routeKey}.description`);
+  const t = await getTranslations({ locale, namespace: 'seo' });
+  const description = t(`${routeKey}.description`);
 
   if (routeKey === 'home') {
     return { title: `${SITE_NAME} | ${SITE_TAGLINE}`, description };
   }
 
-  return { title: `${SITE_NAME} | ${translate(locale, `seo.${routeKey}.title`)}`, description };
+  return { title: `${SITE_NAME} | ${t(`${routeKey}.title`)}`, description };
 }
 
 function buildUrl(logicalPath: string, locale: Locale) {
-  const path = withLocale(logicalPath, locale);
+  const path = getPathname({ href: logicalPath, locale });
 
   return path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
 }
@@ -61,9 +41,9 @@ function buildUrl(logicalPath: string, locale: Locale) {
 const OG_IMAGE = `${SITE_URL}/og-image.png?v=20260626`;
 
 /** Compute Next.js `Metadata` for a locale-agnostic ("logical") path + locale. */
-export function getSeoMetadata(logicalPath: string, locale: Locale): Metadata {
+export async function getSeoMetadata(logicalPath: string, locale: Locale): Promise<Metadata> {
   const routeKey = getSeoRouteKey(logicalPath);
-  const text = getSeoText(routeKey, locale);
+  const text = await getSeoText(routeKey, locale);
   const canonicalUrl = buildUrl(logicalPath, locale);
   const viUrl = buildUrl(logicalPath, 'vi');
   const enUrl = buildUrl(logicalPath, 'en');
@@ -102,57 +82,4 @@ export function getSeoMetadata(logicalPath: string, locale: Locale): Metadata {
       images: [OG_IMAGE]
     }
   };
-}
-
-/** JSON-LD structured data for a logical path + locale (rendered as a script). */
-export function getStructuredData(logicalPath: string, locale: Locale): unknown {
-  const routeKey = getSeoRouteKey(logicalPath);
-  const text = getSeoText(routeKey, locale);
-  const canonicalUrl = buildUrl(logicalPath, locale);
-
-  const webPage = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: text.title,
-    description: text.description,
-    url: canonicalUrl,
-    isPartOf: {
-      '@type': 'WebSite',
-      name: SITE_NAME,
-      url: SITE_URL
-    },
-    inLanguage: ['en', 'vi']
-  };
-
-  if (routeKey !== 'home') {
-    return webPage;
-  }
-
-  return [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: SITE_NAME,
-      url: SITE_URL,
-      description: text.description,
-      inLanguage: ['en', 'vi']
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebApplication',
-      name: SITE_NAME,
-      url: SITE_URL,
-      applicationCategory: 'EducationalApplication',
-      operatingSystem: 'Any',
-      browserRequirements: 'Requires JavaScript',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD'
-      },
-      description: text.description,
-      inLanguage: ['en', 'vi']
-    },
-    webPage
-  ];
 }

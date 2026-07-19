@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams } from '@/i18n/navigation.tsx';
+import { useParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';

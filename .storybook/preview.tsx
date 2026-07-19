@@ -1,23 +1,29 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { Decorator, Preview } from '@storybook/react-vite';
+import { NextIntlClientProvider } from 'next-intl';
 import '@/index.css';
-import { LanguageProvider } from '@/i18n/context.tsx';
-import type { Locale } from '@/i18n/translations.ts';
+import { enTranslations, type Locale, type TranslationTree } from '@/i18n/translations.ts';
+import { viTranslations } from '@/i18n/translations-vi.ts';
 import { appTheme } from '@/theme/app-theme.ts';
 import { __setStorybookPathname } from './next-navigation-mock.ts';
 
+const messagesByLocale: Record<Locale, TranslationTree> = {
+  en: enTranslations,
+  vi: viTranslations
+};
+
 const withProviders: Decorator = (Story, context) => {
   const locale = context.globals.locale as Locale;
-  // The provider derives its locale from the pathname (en at root, vi under /vi).
+  // Keep the mocked pathname in sync with the toolbar locale (vi under /vi).
   __setStorybookPathname(locale === 'vi' ? '/vi' : '/');
 
   return (
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
-      {/* Remount on locale change so the provider re-reads the pathname. */}
-      <LanguageProvider key={locale}>
+      {/* Remount on locale change so next-intl re-reads the active locale. */}
+      <NextIntlClientProvider key={locale} locale={locale} messages={messagesByLocale[locale]}>
         <Story />
-      </LanguageProvider>
+      </NextIntlClientProvider>
     </ThemeProvider>
   );
 };

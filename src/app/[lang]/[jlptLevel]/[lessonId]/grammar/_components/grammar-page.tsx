@@ -1,6 +1,6 @@
 'use client';
 
-import { useParams } from '@/i18n/navigation.tsx';
+import { useParams } from 'next/navigation';
 import { Box, Paper, Stack, Typography } from '@mui/material';
 import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';

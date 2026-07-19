@@ -11,9 +11,12 @@ Router lives in `src/app/` (with `src/middleware.ts` and
 `src/instrumentation-client.ts`). Routing is **file-based** under
 `src/app/[lang]/**`: each route has a `page.tsx` that exports
 `generateStaticParams` (pre-renders both locales), `generateMetadata` (per-page
-SEO via `@/i18n/seo-meta`), and `export const dynamicParams = false`.
-`src/middleware.ts` keeps English at the root (no prefix) and Vietnamese under
-`/vi` by rewriting `/x` -> `/en/x` internally.
+SEO via `@/i18n/seo-meta`), and `export const dynamicParams = false`. i18n is
+next-intl driven from `src/i18n/routing.ts`: `src/middleware.ts`
+(`createMiddleware`) keeps English at the root (no prefix) and Vietnamese under
+`/vi` (`localePrefix: 'as-needed'`); `app/[lang]/layout.tsx` renders `<html lang>`
++ `NextIntlClientProvider` from the `[lang]` segment (root `app/layout.tsx` is a
+passthrough).
 
 ## Where view code lives (colocation - IMPORTANT)
 
@@ -104,11 +107,13 @@ read `[jlptLevel]`/`[lessonId]` via `useParams`.
 
 ## Navigation & params (Next, not react-router)
 
-- There is NO `react-router-dom`. Client navigation uses `next/link` (wrapped by
-  `LocaleLink`/`LocaleNavLink` in `@/components/locale-link`, which prefix the
-  active locale) and the shim hooks in `@/i18n/navigation` (`useParams`,
-  `usePathname`, `useLocation`, `useNavigate`). Import route params/pathname from
-  `@/i18n/navigation`, never from `react-router-dom`.
+- Navigation is next-intl's `createNavigation` (`@/i18n/navigation`): `Link`
+  (wrapped by `LocaleLink`/`LocaleNavLink` keeping the `to` prop), `usePathname`
+  (returns the locale-agnostic path), `useRouter` (locale-aware; `useTranslation().setLocale`
+  switches language via `router.replace(pathname, { locale })`), and `getPathname`
+  (server-safe, for SEO/sitemap URLs). Route params come from `useParams` in
+  `next/navigation` (client only - do NOT import it from `@/i18n/navigation`, which
+  must stay server-importable for `getPathname`). There is NO `react-router-dom`.
 
 ## Shared components / folders (IMPORTANT)
 
