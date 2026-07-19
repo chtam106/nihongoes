@@ -37,7 +37,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    ".next-analyze/types/**/*.ts",
+    ".next-analyze/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "dist", "out", ".next"]
+  "exclude": ["node_modules", "dist", "out", ".next", ".next-analyze", ".next-prod"]
 }
