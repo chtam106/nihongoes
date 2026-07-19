@@ -338,9 +338,6 @@ function KanjiRadicalsPage() {
           <Heading component="h1" gutterBottom>
             {t('kanji.radicalsTitle')}
           </Heading>
-          <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400, mb: 2 }}>
-            {t('kanji.radicalsSubtitle')}
-          </Typography>
           <Typography variant="body1" color="text.secondary">
             {t('kanji.radicalsIntro')}
           </Typography>

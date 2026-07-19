@@ -260,7 +260,6 @@ export const viTranslations: TranslationTree = {
   },
   kanji: {
     overviewTitle: 'Kanji',
-    overviewSubtitle: 'Chọn một lớp để bắt đầu học.',
     overviewIntro:
       'Học kanji từng bước: chọn một lớp bên dưới và học theo từng bài, kèm nghĩa, âm ON và KUN, từ ví dụ và luyện viết.',
     collectionsHeading: 'Jōyō kanji theo lớp',
