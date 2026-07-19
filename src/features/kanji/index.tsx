@@ -1,12 +1,11 @@
-'use client';
-
 import { Box, Card, CardActionArea, CardContent, Paper, Stack, Typography } from '@mui/material';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import { useTranslation } from '@/i18n/use-translation.ts';
+import type { Locale } from '@/i18n/translations.ts';
 import {
   KANJI_RADICALS_PATH,
   kanjiTracks,
@@ -16,8 +15,9 @@ import {
 } from '@/constants/kanji/index.ts';
 import { interactiveSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
-function KanjiHubPage() {
-  const { locale, t } = useTranslation();
+async function KanjiHubPage() {
+  const t = await getTranslations();
+  const locale = (await getLocale()) as Locale;
 
   const totalKanji = kanjiTracks.reduce(
     (sum, track) => sum + track.lessons.reduce((n, lesson) => n + lesson.kanji.length, 0),

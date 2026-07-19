@@ -1,19 +1,21 @@
-'use client';
-
-import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
-import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
-import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import { Box, Stack, Typography } from '@mui/material';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Heading } from '@/components/heading';
 import { NavCardGrid, type NavCardItem } from '@/components/nav-card';
 import { PageContainer } from '@/components/page-container';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
 import { coursePath } from '@/constants/courses/levels.ts';
 import { routes } from '@/constants/routes.ts';
-import { useTranslation } from '@/i18n/use-translation.ts';
+import type { Locale } from '@/i18n/translations.ts';
 
-function HomePage() {
-  const { locale, t } = useTranslation();
+/**
+ * Home page - a Server Component. It resolves translations on the server via
+ * next-intl (`getTranslations`/`getLocale`), so no translation JS ships for this
+ * page; the interactive card links (`NavCardGrid`) remain client components.
+ */
+async function HomePage() {
+  const t = await getTranslations();
+  const locale = (await getLocale()) as Locale;
 
   const alphabetCards: NavCardItem[] = [
     {
@@ -31,13 +33,13 @@ function HomePage() {
     {
       to: routes.alphabet.combined,
       title: t('nav.combined'),
-      icon: GridViewOutlinedIcon,
+      iconKey: 'grid',
       description: t('home.combinedDescription')
     },
     {
       to: routes.alphabet.exercise.index,
       title: t('nav.exercise'),
-      icon: QuizOutlinedIcon,
+      iconKey: 'quiz',
       description: t('home.exerciseDescription')
     }
   ];
@@ -45,7 +47,7 @@ function HomePage() {
   const courseCards: NavCardItem[] = COURSE_SUMMARIES.map((course) => ({
     to: coursePath(course.level),
     title: course.name[locale],
-    icon: HistoryEduOutlinedIcon,
+    iconKey: 'course',
     description: course.subtitle[locale]
   }));
 

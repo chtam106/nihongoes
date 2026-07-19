@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { setRequestLocale } from 'next-intl/server';
 import KanjiHubPage from '@/features/kanji/index.tsx';
 import { KANJI_BASE_PATH } from '@/constants/kanji/index.ts';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
@@ -20,6 +21,9 @@ export async function generateMetadata({
   return getSeoMetadata(KANJI_BASE_PATH, toLocale(lang));
 }
 
-export default function Page() {
+export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  setRequestLocale(toLocale(lang));
+
   return <KanjiHubPage />;
 }

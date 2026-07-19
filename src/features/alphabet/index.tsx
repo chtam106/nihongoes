@@ -1,17 +1,13 @@
-'use client';
-
-import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
-import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import { Box, Paper, Stack, Typography } from '@mui/material';
+import { getTranslations } from 'next-intl/server';
 import { Heading } from '@/components/heading';
 import { NavCardGrid, type NavCardItem } from '@/components/nav-card';
 import { PageContainer } from '@/components/page-container';
 import { routes } from '@/constants/routes.ts';
-import { useTranslation } from '@/i18n/use-translation.ts';
 import { subtleSurfaceSx } from '@/theme/surfaces.ts';
 
-function AlphabetPage() {
-  const { t } = useTranslation();
+async function AlphabetPage() {
+  const t = await getTranslations();
 
   const cards: NavCardItem[] = [
     {
@@ -29,13 +25,13 @@ function AlphabetPage() {
     {
       to: routes.alphabet.combined,
       title: t('nav.combined'),
-      icon: GridViewOutlinedIcon,
+      iconKey: 'grid',
       description: t('alphabet.combinedDescription')
     },
     {
       to: routes.alphabet.exercise.index,
       title: t('nav.exercise'),
-      icon: QuizOutlinedIcon,
+      iconKey: 'quiz',
       description: t('alphabet.exerciseDescription')
     }
   ];

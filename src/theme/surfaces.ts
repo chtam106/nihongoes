@@ -18,14 +18,15 @@ export const interactiveSurfaceSx = {
   '&:hover': { boxShadow: SHADOW_HOVER }
 } satisfies SxProps<Theme>;
 
-/** Neutral tonal fill for secondary, low-emphasis boxes. */
-export const subtleSurfaceSx = (theme: Theme) => ({
+/**
+ * Neutral tonal fill for secondary, low-emphasis boxes. A plain object (uses the
+ * `grey.100` theme token) so it stays serializable and can be applied from
+ * Server Components too - not just client ones.
+ */
+export const subtleSurfaceSx = {
   borderRadius: 2,
-  backgroundColor:
-    theme.palette.mode === 'light'
-      ? theme.palette.grey[100]
-      : alpha(theme.palette.common.white, 0.06)
-});
+  bgcolor: 'grey.100'
+} satisfies SxProps<Theme>;
 
 /** Primary-tinted tonal fill for emphasised call-to-action surfaces. */
 export const tonalSurfaceSx = (theme: Theme) => ({
