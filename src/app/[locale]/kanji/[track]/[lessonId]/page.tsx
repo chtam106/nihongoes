@@ -19,7 +19,7 @@ import {
 } from '@/constants/kanji/index.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { kanjiLessonParams } from '@/i18n/route-helpers.ts';
+import { kanjiLessonParams, type PageProps } from '@/i18n/route-helpers.ts';
 import { KanjiPracticePanel } from './_components/kanji-practice-panel.tsx';
 
 export const dynamicParams = false;
@@ -30,11 +30,7 @@ export function generateStaticParams() {
 
 export const generateMetadata = createMetadata((p) => kanjiLessonPath(p.track, p.lessonId));
 
-export default async function Page({
-  params
-}: {
-  params: Promise<{ locale: string; track: string; lessonId: string }>;
-}) {
+export default async function Page({ params }: PageProps<{ track: string; lessonId: string }>) {
   const locale = await primePageLocale(params);
   const { track: trackSlug, lessonId } = await params;
   const t = await getTranslations();

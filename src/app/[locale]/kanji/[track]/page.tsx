@@ -23,7 +23,7 @@ import {
 } from '@/constants/kanji/index.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { kanjiTrackParams } from '@/i18n/route-helpers.ts';
+import { kanjiTrackParams, type PageProps } from '@/i18n/route-helpers.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -34,11 +34,7 @@ export function generateStaticParams() {
 
 export const generateMetadata = createMetadata((p) => kanjiTrackPath(p.track));
 
-export default async function Page({
-  params
-}: {
-  params: Promise<{ locale: string; track: string }>;
-}) {
+export default async function Page({ params }: PageProps<{ track: string }>) {
   const locale = await primePageLocale(params);
   const { track: trackSlug } = await params;
   const t = await getTranslations();

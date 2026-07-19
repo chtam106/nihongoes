@@ -13,7 +13,7 @@ import {
 } from '@/constants/courses/index.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { courseLevelParams } from '@/i18n/route-helpers.ts';
+import { courseLevelParams, type PageProps } from '@/i18n/route-helpers.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -24,11 +24,7 @@ export function generateStaticParams() {
 
 export const generateMetadata = createMetadata((p) => coursePath(p.jlptLevel as CourseLevel));
 
-export default async function Page({
-  params
-}: {
-  params: Promise<{ locale: string; jlptLevel: string }>;
-}) {
+export default async function Page({ params }: PageProps<{ jlptLevel: string }>) {
   const locale = await primePageLocale(params);
   const { jlptLevel } = await params;
   const level = jlptLevel as CourseLevel;

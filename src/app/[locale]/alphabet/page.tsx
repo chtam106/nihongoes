@@ -6,7 +6,7 @@ import { PageContainer } from '@/components/page-container';
 import { routes } from '@/constants/routes.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
-import { localeParams } from '@/i18n/route-helpers.ts';
+import { localeParams, type PageProps } from '@/i18n/route-helpers.ts';
 import { subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export const generateMetadata = createMetadata('/alphabet');
 
-export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+export default async function Page({ params }: PageProps) {
   await primePageLocale(params);
   const t = await getTranslations();
 

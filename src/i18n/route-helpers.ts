@@ -12,6 +12,15 @@ import type { Locale } from '@/i18n/translations.ts';
 
 const LOCALES = routing.locales;
 
+/**
+ * Props for a route `page.tsx`. The `locale` param is always present; pass any
+ * extra dynamic segments as the generic, e.g.
+ * `PageProps<{ jlptLevel: string; lessonId: string }>`.
+ */
+export type PageProps<Extra extends Record<string, string> = Record<never, string>> = {
+  params: Promise<{ locale: string } & Extra>;
+};
+
 export type LocaleParam = { locale: Locale };
 
 /** Static params for the `[locale]` segment (both locales). */
