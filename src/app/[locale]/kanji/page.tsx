@@ -61,14 +61,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <PageContainer bottomGutter>
       <Stack spacing={4}>
-        <Box>
-          <Heading component="h1" gutterBottom>
-            {t('kanji.overviewTitle')}
-          </Heading>
-          <Typography variant="body1" color="text.secondary">
-            {t('kanji.overviewIntro')}
-          </Typography>
-        </Box>
+        <Heading component="h1">{t('kanji.overviewTitle')}</Heading>
 
         <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
           <Heading scale="subsection" component="h2" sx={{ mb: 1 }}>

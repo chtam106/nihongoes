@@ -1,6 +1,5 @@
 export const kanji = {
   overviewTitle: 'Kanji',
-  overviewIntro: 'Học kanji từng bước: chọn một lớp bên dưới và học theo từng bài.',
   collectionsHeading: 'Jōyō kanji theo lớp',
   aboutHeading: 'Kanji là gì?',
   aboutWhat:

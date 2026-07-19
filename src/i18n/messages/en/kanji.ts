@@ -1,7 +1,5 @@
 export const kanji = {
   overviewTitle: 'Kanji',
-  overviewIntro:
-    'Study kanji step by step: pick a grade below and work through it lesson by lesson.',
   collectionsHeading: 'Jōyō kanji by grade',
   aboutHeading: 'What is kanji?',
   aboutWhat:
