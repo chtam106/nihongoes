@@ -1,6 +1,18 @@
 export const SITE_NAME = 'Nihongoes';
 export const SITE_TAGLINE = 'Learn Japanese with CHT';
-export const SITE_URL = 'https://nihongoes.com';
+
+/**
+ * Canonical origin for absolute URLs (canonical tags, hreflang, OpenGraph,
+ * sitemap). A local Lighthouse audit build (`LH_SAMPLE=1`, set by
+ * `scripts/lighthouse.mjs`) points it at the local server origin instead, so
+ * the canonical matches the audited URL - otherwise it would reference
+ * production while the audit runs on localhost, which Lighthouse flags and
+ * drops the SEO score. Normal builds use the production origin.
+ */
+export const SITE_URL =
+  process.env.LH_SAMPLE === '1'
+    ? `http://localhost:${process.env.LH_PORT ?? '3210'}`
+    : 'https://nihongoes.com';
 
 /**
  * Prefix for all localStorage keys. Kept as its own constant (not derived from

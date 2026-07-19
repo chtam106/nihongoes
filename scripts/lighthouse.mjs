@@ -242,7 +242,14 @@ async function main() {
     console.log(`Building production bundle into ${DIST_DIR} (sampled pages only) ...`);
     // LH_SAMPLE trims generateStaticParams to just the audited representative
     // pages (see src/i18n/route-helpers.ts), so this builds ~20 pages, not ~1400.
-    await run(NEXT_BIN, ['build'], { NEXT_DIST_DIR: DIST_DIR, LH_SAMPLE: '1' });
+    // LH_SAMPLE also points canonical/hreflang at the local origin (via
+    // src/constants/site.ts + LH_PORT) so Lighthouse's SEO canonical audit
+    // passes instead of flagging the production canonical on localhost.
+    await run(NEXT_BIN, ['build'], {
+      NEXT_DIST_DIR: DIST_DIR,
+      LH_SAMPLE: '1',
+      LH_PORT: PORT
+    });
   }
 
   console.log(`Starting prod server on port ${PORT} ...`);
