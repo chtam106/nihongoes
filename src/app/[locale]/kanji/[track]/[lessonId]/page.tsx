@@ -10,13 +10,8 @@ import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import {
-  getKanjiLesson,
-  getKanjiTrack,
-  KANJI_BASE_PATH,
-  kanjiLessonPath,
-  kanjiTrackPath
-} from '@/constants/kanji/index.ts';
+import { KANJI_BASE_PATH, kanjiLessonPath, kanjiTrackPath } from '@/constants/kanji/index.ts';
+import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { kanjiLessonParams, type PageProps } from '@/i18n/route-helpers.ts';

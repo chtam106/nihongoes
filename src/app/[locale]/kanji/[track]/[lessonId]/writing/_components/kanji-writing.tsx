@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useParams } from 'next/navigation';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {
@@ -23,20 +22,19 @@ import { SpeakableSurface } from '@/components/speakable-surface';
 import { TracingCanvas } from '@/components/tracing-canvas';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
-  getKanjiLesson,
-  getKanjiTrack,
-  KANJI_BASE_PATH,
   kanjiLessonPath,
   kanjiTrackPath,
+  type Bilingual,
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
 
 type KanjiWritingProps = {
   trackSlug: string;
+  trackName: Bilingual;
   lesson: KanjiLesson;
 };
 
-function KanjiWriting({ trackSlug, lesson }: KanjiWritingProps) {
+function KanjiWriting({ trackSlug, trackName, lesson }: KanjiWritingProps) {
   const { locale, t } = useTranslation();
   const [index, setIndex] = useState(0);
   const [showGuide, setShowGuide] = useState(true);
@@ -54,7 +52,7 @@ function KanjiWriting({ trackSlug, lesson }: KanjiWritingProps) {
         <Box>
           <Stack direction="row" spacing={1} useFlexGap sx={{ mb: 1, flexWrap: 'wrap' }}>
             <Chip
-              label={getKanjiTrack(trackSlug)?.name[locale] ?? ''}
+              label={trackName[locale]}
               color="secondary"
               variant="outlined"
               size="small"
@@ -154,29 +152,21 @@ function KanjiWriting({ trackSlug, lesson }: KanjiWritingProps) {
   );
 }
 
-function KanjiWritingPage() {
-  const { track: trackSlug, lessonId } = useParams<{ track: string; lessonId: string }>();
-  const { t } = useTranslation();
-  const track = trackSlug ? getKanjiTrack(trackSlug) : undefined;
-  const lesson = track && lessonId ? getKanjiLesson(track.slug, lessonId) : undefined;
+type KanjiWritingPageProps = {
+  trackSlug: string;
+  trackName: Bilingual;
+  lesson: KanjiLesson;
+};
 
-  if (!track || !lesson) {
-    return (
-      <PageContainer>
-        <Heading component="h1" gutterBottom>
-          {t('kanji.notFoundTitle')}
-        </Heading>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-          {t('kanji.notFoundBody')}
-        </Typography>
-        <Button component={RouterLink} to={KANJI_BASE_PATH} variant="contained">
-          {t('common.back')}
-        </Button>
-      </PageContainer>
-    );
-  }
-
-  return <KanjiWriting key={`${track.slug}:${lesson.id}`} trackSlug={track.slug} lesson={lesson} />;
+function KanjiWritingPage({ trackSlug, trackName, lesson }: KanjiWritingPageProps) {
+  return (
+    <KanjiWriting
+      key={`${trackSlug}:${lesson.id}`}
+      trackSlug={trackSlug}
+      trackName={trackName}
+      lesson={lesson}
+    />
+  );
 }
 
 export default KanjiWritingPage;

@@ -22,9 +22,7 @@ import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
-  getRadicalByChar,
   KANJI_BASE_PATH,
-  kanjiTracks,
   radicals,
   type Radical
 } from '@/constants/kanji/index.ts';
@@ -34,33 +32,6 @@ import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 const COMMON_RADICAL_THRESHOLD = 10;
 
 type RadicalFilter = 'all' | 'common';
-
-/** How many kanji in the lesson data are headed by each radical (keyed by radical number). */
-function computeRadicalUsage(): Map<number, number> {
-  const usage = new Map<number, number>();
-
-  for (const track of kanjiTracks) {
-    for (const lesson of track.lessons) {
-      for (const kanji of lesson.kanji) {
-        const radicalPart = kanji.parts.find((part) => part.role === 'radical');
-
-        if (!radicalPart) {
-          continue;
-        }
-
-        const radical = getRadicalByChar(radicalPart.char);
-
-        if (!radical) {
-          continue;
-        }
-
-        usage.set(radical.number, (usage.get(radical.number) ?? 0) + 1);
-      }
-    }
-  }
-
-  return usage;
-}
 
 // Colors that connect each part of the sample card to its explanation.
 const PART_COLORS = {
@@ -319,24 +290,28 @@ function RadicalMeaning({ radical }: RadicalMeaningProps) {
   );
 }
 
-function KanjiRadicalsPage() {
+type KanjiRadicalsPageProps = {
+  /** How many kanji are headed by each radical, keyed by radical number (computed server-side). */
+  usage: Record<number, number>;
+};
+
+function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
   const { t } = useTranslation();
   const hash = typeof window === 'undefined' ? '' : window.location.hash;
   const [filter, setFilter] = useState<RadicalFilter>('all');
   const groups = useMemo(() => groupByStrokes(radicals), []);
-  const usage = useMemo(() => computeRadicalUsage(), []);
   const commonRadicals = useMemo(
     () =>
       radicals
-        .filter((radical) => (usage.get(radical.number) ?? 0) >= COMMON_RADICAL_THRESHOLD)
+        .filter((radical) => (usage[radical.number] ?? 0) >= COMMON_RADICAL_THRESHOLD)
         .sort((a, b) => {
-          const diff = (usage.get(b.number) ?? 0) - (usage.get(a.number) ?? 0);
+          const diff = (usage[b.number] ?? 0) - (usage[a.number] ?? 0);
           return diff !== 0 ? diff : a.number - b.number;
         }),
     [usage]
   );
   const commonKanjiCount = useMemo(
-    () => commonRadicals.reduce((sum, radical) => sum + (usage.get(radical.number) ?? 0), 0),
+    () => commonRadicals.reduce((sum, radical) => sum + (usage[radical.number] ?? 0), 0),
     [commonRadicals, usage]
   );
 
@@ -418,7 +393,7 @@ function KanjiRadicalsPage() {
                   key={radical.number}
                   radical={radical}
                   highlighted={radical.number === activeNumber}
-                  usageCount={usage.get(radical.number) ?? 0}
+                  usageCount={usage[radical.number] ?? 0}
                 />
               ))}
             </Box>
