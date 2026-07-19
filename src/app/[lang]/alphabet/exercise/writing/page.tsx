@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ClientOnly } from '@/components/client-only';
-import WritingExercisePage from '@/features/alphabet/exercise/writing/index.tsx';
+import WritingExercisePage from './_components/writing-exercise.tsx';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';
 

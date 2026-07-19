@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { ClientOnly } from '@/components/client-only';
-import RomajiExercisePage from '@/features/alphabet/exercise/romaji/index.tsx';
+import RomajiExercisePage from './_components/romaji-exercise.tsx';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';
 
