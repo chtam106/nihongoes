@@ -2,14 +2,15 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { Decorator, Preview } from '@storybook/react-vite';
 import { NextIntlClientProvider } from 'next-intl';
 import '@/index.css';
-import { enTranslations, type Locale, type TranslationTree } from '@/i18n/translations.ts';
-import { viTranslations } from '@/i18n/translations-vi.ts';
+import type { Locale, TranslationTree } from '@/types/i18n.ts';
+import { enMessages } from '@/i18n/messages/en/index.ts';
+import { viMessages } from '@/i18n/messages/vi/index.ts';
 import { appTheme } from '@/theme/app-theme.ts';
 import { __setStorybookPathname } from './next-navigation-mock.ts';
 
 const messagesByLocale: Record<Locale, TranslationTree> = {
-  en: enTranslations,
-  vi: viTranslations
+  en: enMessages,
+  vi: viMessages
 };
 
 const withProviders: Decorator = (Story, context) => {

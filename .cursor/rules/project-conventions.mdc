@@ -71,7 +71,7 @@ alwaysApply: true
 - Script pairing in the quiz works on bilingual `KanaEntry { romaji, hiragana, katakana }` units (built in `exercise-quiz.ts` by zipping the two same-ordered per-script item arrays). The hiragana<->katakana counterpart is the matching field on the entry - do NOT re-pair by romaji (homophones じ/ぢ, ず/づ share a romaji) or by Unicode code-point math.
 
 ## i18n
-- UI chrome text lives in `src/i18n/translations.ts` as nested keys; both `en` and `vi` MUST be kept in sync. Read via `const { t, locale } = useTranslation()`.
+- UI chrome text is split ONE FILE PER NAMESPACE (page/feature) under `src/i18n/messages/en/<namespace>.ts` and `src/i18n/messages/vi/<namespace>.ts` (e.g. `home.ts`, `kanji.ts`, `course.ts`, `nav.ts`, `seo.ts`); `messages/<locale>/index.ts` composes them into the full tree (`enMessages`/`viMessages`, consumed by `src/i18n/request.ts`). Both `en` and `vi` MUST be kept in sync (same namespaces + keys). Read via `const { t, locale } = useTranslation()`; add a new namespace by creating the file in BOTH locales and importing it in both `index.ts`.
 - Bilingual CONTENT data (Japanese + meanings) is stored in data files as `Record<Locale, string>` (type `Bilingual`) and rendered with `value[locale]`, not as translation keys.
 - The header should not show brand logo or slogan; keep only the text brand link in the app bar. The site footer text stays in ENGLISH regardless of locale.
 - On desktop (`md` and up), align the text brand (`Nihongoes`) with the main content text column (same left gutter alignment), not visual center of the viewport.
@@ -145,7 +145,7 @@ alwaysApply: true
 
 ## Type declarations
 - Shared/domain TYPES live in `src/types/`: `course.ts` (course/lesson data types + `Bilingual`, `CourseLevel`), `kanji.ts` (kanji data types), `i18n.ts` (`Locale`, `TranslationTree`, `TranslationParams`). Declare new domain/shared types here.
-- The old locations re-export from `@/types/` for backward compatibility and keep their RUNTIME code: `constants/courses/types.ts` (re-export + `withSequentialNumbers`), `constants/kanji/types.ts` (re-export + `withSequentialNumbers`), `i18n/translations.ts` (re-export + `enTranslations`/`DEFAULT_LOCALE`/`LOCALE_STORAGE_KEY`). Importing via either `@/types/*` or the old `@/constants/...`/`@/i18n/translations` paths works.
+- The old locations re-export from `@/types/` for backward compatibility and keep their RUNTIME code: `constants/courses/types.ts` (re-export + `withSequentialNumbers`), `constants/kanji/types.ts` (re-export + `withSequentialNumbers`), `i18n/translations.ts` (type re-export + `getChartSectionLabels`). Importing via either `@/types/*` or the old `@/constants/...`/`@/i18n/translations` paths works.
 - Component PROP types stay COLOCATED (see next), NOT in `src/types/`.
 
 ## Component props typing

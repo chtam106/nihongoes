@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import type { ReactElement } from 'react';
 import { NextIntlClientProvider } from 'next-intl';
-import { enTranslations } from '@/i18n/translations.ts';
+import { enMessages } from '@/i18n/messages/en/index.ts';
 import { ExerciseQuizPanel } from '@/features/alphabet/exercise/exercise-quiz-panel.tsx';
 import type { QuizQuestion } from '@/features/alphabet/exercise/exercise-quiz.ts';
 
@@ -27,7 +27,7 @@ vi.mock('next/navigation', () => ({
 
 function renderWithI18n(ui: ReactElement) {
   return render(
-    <NextIntlClientProvider locale="en" messages={enTranslations}>
+    <NextIntlClientProvider locale="en" messages={enMessages}>
       {ui}
     </NextIntlClientProvider>
   );
