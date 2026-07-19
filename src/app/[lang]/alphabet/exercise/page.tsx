@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { setRequestLocale } from 'next-intl/server';
 import ExerciseHubPage from '@/features/alphabet/exercise/index.tsx';
 import { getSeoMetadata } from '@/i18n/seo-meta.ts';
+import { primePageLocale } from '@/i18n/server.ts';
 import { langParams, toLocale } from '@/i18n/route-helpers.ts';
 
 export const dynamicParams = false;
@@ -21,8 +21,7 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = await params;
-  setRequestLocale(toLocale(lang));
+  await primePageLocale(params);
 
   return <ExerciseHubPage />;
 }
