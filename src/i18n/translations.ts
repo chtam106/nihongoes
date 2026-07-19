@@ -116,8 +116,8 @@ const en: TranslationTree = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     mainNavigation: 'Main navigation',
-    collapse: 'Collapse {{label}}',
-    expand: 'Expand {{label}}'
+    collapse: 'Collapse {label}',
+    expand: 'Expand {label}'
   },
   home: {
     title: 'Learn Japanese with Nihongoes',
@@ -161,12 +161,12 @@ const en: TranslationTree = {
   },
   chart: {
     seion: 'Seion',
-    voiced: 'Tenten / Maru ({{dakuten}} / {{handakuten}})',
+    voiced: 'Tenten / Maru ({dakuten} / {handakuten})',
     voicedDescription:
-      'Add the tenten mark ({{dakuten}}) to voice a sound: k→g, s→z, t→d, h→b. The maru mark ({{handakuten}}) turns h→p. e.g. {{base}} ({{baseRomaji}}) + {{dakuten}} = {{voiced}} ({{voicedRomaji}}).',
+      'Add the tenten mark ({dakuten}) to voice a sound: k→g, s→z, t→d, h→b. The maru mark ({handakuten}) turns h→p. e.g. {base} ({baseRomaji}) + {dakuten} = {voiced} ({voicedRomaji}).',
     yoon: 'Yoon',
     yoonDescription:
-      'Combined sounds with small {{small1}}, {{small2}}, {{small3}} - e.g. {{base}} + {{small1}} = {{result}} ({{romaji}}).',
+      'Combined sounds with small {small1}, {small2}, {small3} - e.g. {base} + {small1} = {result} ({romaji}).',
     chouon: 'Long vowels (Chouon)',
     chouonHiragana:
       'A long vowel holds the vowel for two beats. In hiragana, add the matching vowel: あ->ああ, い->いい, う->うう. The え-row usually adds い and the お-row usually adds う (so えい sounds like ē and おう like ō).',
@@ -175,7 +175,7 @@ const en: TranslationTree = {
     chouonColVowel: 'Vowel',
     chouonColLong: 'Long vowel',
     chouonColExample: 'Example',
-    playAudio: 'Play {{char}}, {{romaji}}'
+    playAudio: 'Play {char}, {romaji}'
   },
   exercise: {
     title: 'Exercise',
@@ -220,8 +220,8 @@ const en: TranslationTree = {
     sentenceTypeHiragana: 'Hiragana',
     sentenceTypeKatakana: 'Katakana',
     sentenceTypeMixed: 'Mixed',
-    sentenceProgress: 'Sentence {{current}} / {{total}}',
-    sentenceScore: 'Correct: {{correct}} / {{total}}',
+    sentenceProgress: 'Sentence {current} / {total}',
+    sentenceScore: 'Correct: {correct} / {total}',
     sentencePrompt: 'Type the romaji for this sentence',
     sentenceInputPlaceholder: 'Type romaji',
     showAnswer: 'Show answer',
@@ -247,25 +247,25 @@ const en: TranslationTree = {
     pairHiraToKataLabel: 'Hiragana to Katakana',
     pairKataToHiraLabel: 'Katakana to Hiragana',
     pairMixed: 'Mixed',
-    questionListen: 'Which {{script}} character do you hear?',
+    questionListen: 'Which {script} character do you hear?',
     questionScriptPairHiraToKata: 'What is the matching katakana?',
     questionScriptPairKataToHira: 'What is the matching hiragana?',
     replayAudio: 'Replay audio',
-    questionRomaji: 'What is the romaji for this {{script}}?',
-    questionCharacter: 'What is the {{script}} character?',
+    questionRomaji: 'What is the romaji for this {script}?',
+    questionCharacter: 'What is the {script} character?',
     scopeAll: 'All',
     scopeSeion: 'Seion',
     scopeDakuten: 'Tenten',
     scopeHandakuten: 'Maru',
     scopeYoon: 'Yoon',
     scopeLegend:
-      'Seion = the 46 basic kana; Tenten ({{dakuten}}) and Maru ({{handakuten}}) = voiced-sound marks; Yoon = small ゃ/ゅ/ょ blends.',
+      'Seion = the 46 basic kana; Tenten ({dakuten}) and Maru ({handakuten}) = voiced-sound marks; Yoon = small ゃ/ゅ/ょ blends.',
     groupSeionRows: 'Seion rows',
     groupYoonRows: 'Yoon rows',
     rowDefault: 'Row',
     yoonRowDefault: 'Yoon row',
     rowToLast: 'To last row',
-    rowLabel: '{{name}} row ({{char}})'
+    rowLabel: '{name} row ({char})'
   },
   kanji: {
     overviewTitle: 'Kanji',
@@ -287,9 +287,9 @@ const en: TranslationTree = {
     tipsReview:
       'Practice both directions - recognizing meaning and recalling the kanji - and review regularly so readings stick.',
     lessonsHeading: 'Lessons',
-    lessonLabel: 'Lesson {{number}}',
-    lessonCount: '{{count}} lessons',
-    kanjiCount: '{{count}} kanji',
+    lessonLabel: 'Lesson {number}',
+    lessonCount: '{count} lessons',
+    kanjiCount: '{count} kanji',
     detailHint: 'Tap an example word to hear it pronounced.',
     meaningLabel: 'Meaning',
     onReading: "On'yomi",
@@ -304,7 +304,7 @@ const en: TranslationTree = {
     examples: 'Example words',
     mnemonic: 'Mnemonic',
     note: 'Note',
-    kanjiHeading: 'Kanji {{number}}',
+    kanjiHeading: 'Kanji {number}',
     practiceHeading: 'Practice',
     practiceSubtitle: "Test yourself on this lesson's kanji.",
     quizTitle: 'Meaning quiz',
@@ -326,15 +326,15 @@ const en: TranslationTree = {
     radicalsSubtitle: 'The building blocks used to form kanji.',
     radicalsIntro:
       'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up. They are grouped below by stroke count.',
-    radicalsStrokesGroup: '{{count}} strokes',
-    radicalsCount: '{{count}} radicals',
+    radicalsStrokesGroup: '{count} strokes',
+    radicalsCount: '{count} radicals',
     radicalsFilterAll: 'All',
     radicalsFilterCommon: 'Most common',
     radicalsCommonHeading: 'Most common radicals',
     radicalsCommonHint:
       'The radicals that appear in the most kanji across the lessons, ordered by how often they are used.',
-    radicalsCommonStats: '{{radicals}} radicals - found in {{kanji}} kanji',
-    radicalsUsageCount: 'in {{count}} kanji',
+    radicalsCommonStats: '{radicals} radicals - found in {kanji} kanji',
+    radicalsUsageCount: 'in {count} kanji',
     radicalsLegendHeading: 'How to read a radical card',
     radicalsLegendNumber:
       "Top-left tag - the radical's order number in the traditional Kangxi table (1-214). The order follows the table, so a few radicals (e.g. 母, #80, has 5 strokes) may not run consecutively within a stroke group.",
@@ -352,7 +352,7 @@ const en: TranslationTree = {
     referenceHeading: 'Reference vocabulary',
     referenceSubtitle:
       'Extra words related to this lesson, also included in the vocabulary practice.',
-    lessonLabel: 'Lesson {{number}}',
+    lessonLabel: 'Lesson {number}',
     focusLabel: 'In this lesson',
     audioHint: 'Tap any vocabulary word or sentence to hear it pronounced.',
     vocabulary: 'Vocabulary',
@@ -361,7 +361,7 @@ const en: TranslationTree = {
     answers: 'Answers',
     previousLesson: 'Previous',
     nextLesson: 'Next',
-    counts: '{{vocab}} words · {{grammar}} grammar points',
+    counts: '{vocab} words · {grammar} grammar points',
     notFoundTitle: 'Lesson not found',
     notFoundBody: 'This lesson does not exist. Go back to the course overview.',
     practiceHeading: 'Practice',
@@ -397,12 +397,12 @@ const en: TranslationTree = {
     hideTranslation: 'Hide translation',
     showPhonetics: 'Show phonetics',
     hidePhonetics: 'Hide phonetics',
-    questionProgress: 'Question {{current}} of {{total}}',
+    questionProgress: 'Question {current} of {total}',
     chooseAnswer: 'Choose the correct answer',
     typeAnswer: 'Type the missing word',
     inputPlaceholder: 'Your answer (kana)',
     check: 'Check',
-    answerWas: 'Answer: {{answer}}',
+    answerWas: 'Answer: {answer}',
     correct: 'Correct',
     incorrect: 'Incorrect',
     next: 'Next',

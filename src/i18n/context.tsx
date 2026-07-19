@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, type ReactNode } from 'react';
+import { NextIntlClientProvider } from 'next-intl';
 import { useLocation, useNavigate } from '@/i18n/navigation.tsx';
 import {
   LOCALE_STORAGE_KEY,
@@ -9,36 +10,17 @@ import {
   type TranslationTree
 } from '@/i18n/translations.ts';
 import { viTranslations } from '@/i18n/translations-vi.ts';
-import { LanguageContext, type TranslateFn } from '@/i18n/language-context.ts';
+import { LanguageContext } from '@/i18n/language-context.ts';
 import { getLocaleFromPathname, stripLocalePrefix, withLocale } from '@/i18n/locale-routing.ts';
 import { LOCALE_COOKIE, LOCALE_COOKIE_MAX_AGE } from '@/constants/site.ts';
 
 // Both locales are bundled synchronously so statically pre-rendered pages ship
 // the correct language in their HTML (crawlable, no post-hydration text swap).
-const translationsByLocale: Record<Locale, TranslationTree> = {
+// These trees are the next-intl message catalogs (ICU MessageFormat).
+const messagesByLocale: Record<Locale, TranslationTree> = {
   en: enTranslations,
   vi: viTranslations
 };
-
-function getNestedValue(tree: TranslationTree, key: string): string | undefined {
-  const value = key.split('.').reduce<unknown>((current, part) => {
-    if (current && typeof current === 'object' && part in current) {
-      return (current as Record<string, unknown>)[part];
-    }
-
-    return undefined;
-  }, tree);
-
-  return typeof value === 'string' ? value : undefined;
-}
-
-function interpolate(template: string, params?: Record<string, string | number>) {
-  if (!params) {
-    return template;
-  }
-
-  return template.replace(/\{\{(\w+)\}\}/g, (_, name: string) => String(params[name] ?? ''));
-}
 
 type LanguageProviderProps = {
   children: ReactNode;
@@ -49,6 +31,10 @@ type LanguageProviderProps = {
  * so each language has its own crawlable URL. Switching language navigates to
  * the equivalent path in the other locale. The choice is mirrored to
  * localStorage purely as a hint for future visits.
+ *
+ * Translation lookup itself is delegated to next-intl (`NextIntlClientProvider`
+ * + `useTranslations`); this provider only owns the locale + the
+ * language-switch action, exposed via `LanguageContext`.
  */
 export function LanguageProvider({ children }: LanguageProviderProps) {
   const location = useLocation();
@@ -76,19 +62,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     [location.pathname, location.search, location.hash, navigate]
   );
 
-  const t = useCallback<TranslateFn>(
-    (key, params) => {
-      const template =
-        getNestedValue(translationsByLocale[locale], key) ??
-        getNestedValue(enTranslations, key) ??
-        key;
+  const value = useMemo(() => ({ locale, setLocale }), [locale, setLocale]);
 
-      return interpolate(template, params);
-    },
-    [locale]
+  return (
+    <LanguageContext.Provider value={value}>
+      <NextIntlClientProvider
+        locale={locale}
+        messages={messagesByLocale[locale]}
+        // Match the previous behaviour: a missing key silently renders the key
+        // itself instead of throwing (which would trip the global error boundary).
+        onError={() => {}}
+        getMessageFallback={({ key }) => key}
+      >
+        {children}
+      </NextIntlClientProvider>
+    </LanguageContext.Provider>
   );
-
-  const value = useMemo(() => ({ locale, setLocale, t }), [locale, setLocale, t]);
-
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

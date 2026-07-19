@@ -6,7 +6,6 @@ export type TranslateFn = (key: string, params?: TranslationParams) => string;
 export type LanguageContextValue = {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: TranslateFn;
 };
 
 export const LanguageContext = createContext<LanguageContextValue | null>(null);
