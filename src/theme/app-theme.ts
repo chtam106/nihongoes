@@ -16,6 +16,14 @@ export const appTheme = createTheme({
     button: { fontSize: MIN_FONT_SIZE }
   },
   components: {
+    // No Material "ripple" on any clickable surface (buttons, toggles, cards,
+    // nav items). The dark ripple sweeping across an element on click looks out
+    // of place here; hover/selected states already give enough feedback.
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true
+      }
+    },
     MuiChip: {
       styleOverrides: {
         // MUI Chips carry their own font size (13px, 12px when small); floor to 1rem

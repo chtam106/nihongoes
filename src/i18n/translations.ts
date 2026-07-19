@@ -269,7 +269,6 @@ const en: TranslationTree = {
   },
   kanji: {
     overviewTitle: 'Kanji',
-    overviewSubtitle: 'Choose a grade to start studying.',
     overviewIntro:
       "Study kanji step by step: pick a grade below and work through it lesson by lesson, with meanings, on'yomi and kun'yomi readings, example words, and writing practice.",
     collectionsHeading: 'Jōyō kanji by grade',

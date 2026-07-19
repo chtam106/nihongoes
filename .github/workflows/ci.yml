@@ -187,7 +187,9 @@ jobs:
   build:
     name: Build
     needs: changes
-    if: needs.changes.outputs.build_target_changed == 'true'
+    # The full production build (prerenders every page) is expensive, so it only
+    # gates PRs targeting the release branch - not every PR into master.
+    if: needs.changes.outputs.build_target_changed == 'true' && github.base_ref == 'release-production'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

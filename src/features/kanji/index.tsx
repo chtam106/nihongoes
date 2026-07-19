@@ -55,9 +55,6 @@ function KanjiHubPage() {
           <Heading component="h1" gutterBottom>
             {t('kanji.overviewTitle')}
           </Heading>
-          <Typography variant="h6" color="text.secondary" sx={{ fontWeight: 400, mb: 2 }}>
-            {t('kanji.overviewSubtitle')}
-          </Typography>
           <Typography variant="body1" color="text.secondary">
             {t('kanji.overviewIntro')}
           </Typography>
