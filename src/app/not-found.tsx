@@ -1,6 +1,6 @@
 /**
  * Root-level 404 fallback. The root layout is a passthrough (no `<html>`), and
- * the middleware routes real page paths into the `[locale]` tree (which has its own
+ * the proxy routes real page paths into the `[locale]` tree (which has its own
  * chrome-wrapped `not-found`), so this bare document is only an edge fallback for
  * paths that never reach a locale segment.
  */

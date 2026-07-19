@@ -87,7 +87,7 @@ app/
     alphabet/**        alphabet pages + exercises
     [jlptLevel]/**         course level, lesson, and practice pages
     kanji/**           kanji hub, tracks, lessons, quiz, writing
-middleware.ts          keeps English at the root, Vietnamese under /vi
+proxy.ts               keeps English at the root, Vietnamese under /vi
 src/
   constants/courses/   course and lesson content (n5)
   constants/kanji/     kanji tracks, lessons, and radicals
@@ -103,7 +103,7 @@ src/
 - File-based routing under `app/[locale]/**`. Each route file is a thin server
   component: `generateStaticParams` (pre-render both locales) + `generateMetadata`
   (per-page SEO) + renders its `src/features` view.
-- `middleware.ts` maps clean public URLs onto the internal `[locale]` segment:
+- `proxy.ts` maps clean public URLs onto the internal `[locale]` segment:
   - Default locale (English) at the root: `/`, `/alphabet`, `/n5/lesson-1`, ...
   - Vietnamese under `/vi`: `/vi/alphabet`, `/vi/n5/lesson-1`, ...
   - `/en/...` redirects to the clean root URL.
@@ -114,7 +114,7 @@ src/
 
 ## Deployment (Vercel)
 
-The app runs on a Node server (for `middleware.ts`), so it deploys to Vercel (or
+The app runs on a Node server (for `proxy.ts`), so it deploys to Vercel (or
 any Node host), not a static host. Vercel auto-detects Next.js: connect the repo
 and set the `SENTRY_AUTH_TOKEN` env var for source map upload. The custom domain
 is configured in the Vercel dashboard.

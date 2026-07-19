@@ -33,13 +33,15 @@
   },
   "include": [
     "next-env.d.ts",
-    "src",
-    "**/*.ts",
-    "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    ".next-analyze/types/**/*.ts",
-    ".next-analyze/dev/types/**/*.ts"
+    "*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "e2e/**/*.ts",
+    "scripts/**/*.ts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
   ],
-  "exclude": ["node_modules", "dist", "out", ".next", ".next-analyze", ".next-prod", ".next-lh"]
+  "exclude": ["node_modules"]
 }

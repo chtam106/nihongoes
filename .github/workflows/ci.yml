@@ -82,7 +82,7 @@ jobs:
               - 'app/**'
               - 'public/**'
               - next.config.ts
-              - middleware.ts
+              - proxy.ts
               - package.json
               - pnpm-lock.yaml
               - .nvmrc
