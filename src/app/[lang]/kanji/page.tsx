@@ -121,14 +121,22 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
             {t('kanji.radicals')}
           </Heading>
           <Card elevation={0} sx={interactiveSurfaceSx}>
-            <CardActionArea component={RouterLink} to={KANJI_RADICALS_PATH} sx={{ userSelect: 'text' }}>
+            <CardActionArea
+              component={RouterLink}
+              to={KANJI_RADICALS_PATH}
+              sx={{ userSelect: 'text' }}
+            >
               <CardContent>
                 <Box sx={{ minWidth: 0 }}>
                   <Heading component="h3">{t('kanji.radicalsTitle')}</Heading>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                     {t('kanji.radicalsSubtitle')}
                   </Typography>
-                  <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
+                  <Typography
+                    variant="caption"
+                    color="text.secondary"
+                    sx={{ mt: 1, display: 'block' }}
+                  >
                     {t('kanji.radicalsCount', { count: radicals.length })}
                   </Typography>
                 </Box>
@@ -140,7 +148,12 @@ export default async function Page({ params }: { params: Promise<{ lang: string 
         <Box>
           <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
             {t('kanji.collectionsHeading')}{' '}
-            <Typography component="span" variant="body2" color="text.secondary" sx={{ fontWeight: 400 }}>
+            <Typography
+              component="span"
+              variant="body2"
+              color="text.secondary"
+              sx={{ fontWeight: 400 }}
+            >
               ({t('kanji.kanjiCount', { count: totalKanji })})
             </Typography>
           </Heading>

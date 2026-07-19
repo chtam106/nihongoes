@@ -1,17 +1,46 @@
 ---
-description: Page folder structure mirrors URL routes; each page uses index.tsx
-globs: src/features/**/*
+description: Page folder structure - colocate views in the route folder; each page uses page.tsx
+globs: src/app/**/*
 alwaysApply: false
 ---
 
 # Page folder structure
 
-The app is a Next.js App Router project deployed on a server (Vercel). Routing is
-**file-based** under `app/[lang]/**`: one thin server `page.tsx` per route that
-exports `generateStaticParams` (pre-renders both locales), `generateMetadata`
-(per-page SEO via `@/i18n/seo-meta`), `export const dynamicParams = false`, and a
-default component rendering its view. `middleware.ts` keeps English at the root
-(no prefix) and Vietnamese under `/vi` by rewriting `/x` -> `/en/x` internally.
+The app is a Next.js App Router project deployed on a server (Vercel). The App
+Router lives in `src/app/` (with `src/middleware.ts` and
+`src/instrumentation-client.ts`). Routing is **file-based** under
+`src/app/[lang]/**`: each route has a `page.tsx` that exports
+`generateStaticParams` (pre-renders both locales), `generateMetadata` (per-page
+SEO via `@/i18n/seo-meta`), and `export const dynamicParams = false`.
+`src/middleware.ts` keeps English at the root (no prefix) and Vietnamese under
+`/vi` by rewriting `/x` -> `/en/x` internally.
+
+## Where view code lives (colocation - IMPORTANT)
+
+The page VIEW code lives IN the route folder, not in a separate `src/features/`
+tree:
+
+- **Server Component pages** (static, presentational: home, hubs) inline the view
+  directly in `page.tsx` (`async` component, translations via
+  `getTranslations`/`getLocale` from `next-intl/server`; prime the locale with
+  `primePageLocale(params)` from `@/i18n/server` so SSG is preserved).
+- **Client Component pages** (interactive: quizzes, charts, writing, lessons) put
+  the view in a colocated `_components/` folder next to `page.tsx` (Next treats
+  `_`-prefixed folders as private / non-routable). `page.tsx` (server) imports it
+  via `./_components/<name>.tsx` and wraps interactive views in `<ClientOnly>`.
+- **Page-specific** helpers/sub-components go in that route's `_components/` too
+  (same-folder `./` imports).
+- **Shared internal clusters** (used by sibling routes: `course/choice-button`,
+  `course/shared`, the whole `alphabet/exercise/*` helper set) stay in
+  `src/features/<feature>/` and are imported via the `@/features/...` alias. They
+  live here (not in `app/_components`) because the ESLint `no-restricted-imports`
+  ban on `../` makes cross-route colocated imports impractical (`@/app/[lang]/...`
+  is ugly), and non-app code (constants, scripts) must not depend on `app/`.
+- **Globally reusable UI** stays in `src/components/<name>/index.tsx`; shared
+  data/logic imported by non-app code stays in `src/constants` / `src/utils`
+  (e.g. `src/constants/gojuon.ts`, `src/components/alphabet-chart`).
+
+Views read route params via `useParams` from `@/i18n/navigation`.
 
 ## Locale prefix + hydration (IMPORTANT gotcha, cost a prod outage)
 
@@ -51,45 +80,27 @@ screen"; a future improvement is to make the boundary rely on
   on-demand-compile flakiness -> transient 500s). `E2E_PORT` reuses a running
   server. When a new route TYPE is added, add it to `REPRESENTATIVE_PAGES`.
 
-The page VIEW components (the actual UI, client components) live under
-`src/features/`; each `app/[lang]/**/page.tsx` imports its view from there. The
-view file is always `index.tsx`. Views read route params via `useParams` from
-`@/i18n/navigation` (backed by Next's real dynamic segments).
+## Mapping (view code lives in the route folder)
 
-Interactive quiz/exercise/writing views are wrapped in `<ClientOnly>` in their
-`page.tsx` (they pick random questions / read browser state - no SEO value).
-
-## Mapping
-
-| Route | File |
+| Route | View |
 |-------|------|
-| `/` | `src/features/index.tsx` |
-| `/alphabet` | `src/features/alphabet/index.tsx` |
-| `/alphabet/hiragana` | `src/features/alphabet/hiragana/index.tsx` |
-| `/alphabet/katakana` | `src/features/alphabet/katakana/index.tsx` |
-| `/alphabet/exercise` | `src/features/alphabet/exercise/index.tsx` |
-| `/alphabet/exercise/romaji` | `src/features/alphabet/exercise/romaji/index.tsx` |
-| `/alphabet/exercise/character` | `src/features/alphabet/exercise/character/index.tsx` |
-| `/alphabet/exercise/listen` | `src/features/alphabet/exercise/listen/index.tsx` |
-| `/alphabet/exercise/script-pair` | `src/features/alphabet/exercise/script-pair/index.tsx` |
-| `/alphabet/exercise/writing` | `src/features/alphabet/exercise/writing/index.tsx` |
+| `/`, `/alphabet`, `/alphabet/exercise`, `/kanji` | inlined in that route's `page.tsx` (Server Component) |
+| `/alphabet/hiragana` | `src/app/[lang]/alphabet/hiragana/_components/hiragana-chart.tsx` |
+| `/alphabet/katakana` | `.../alphabet/katakana/_components/katakana-chart.tsx` |
+| `/alphabet/combined` | `.../alphabet/combined/_components/combined-chart.tsx` |
+| `/alphabet/exercise/<kind>` | `.../alphabet/exercise/<kind>/_components/<kind>-exercise.tsx` |
+| `/:level` | `src/app/[lang]/[jlptLevel]/_components/course-page.tsx` |
+| `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
+| `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |
+| `/:level/:lessonId/{grammar,listening,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |
+| `/kanji/:track` | `src/app/[lang]/kanji/[track]/_components/kanji-track.tsx` |
+| `/kanji/:track/:lessonId(/quiz/writing)` | `.../[lessonId](/quiz/writing)/_components/kanji-*.tsx` |
+| `/kanji/radicals` | `.../kanji/radicals/_components/kanji-radicals.tsx` |
 
-## Course routes (generic pages, one folder each)
-
-Course pages are shared and parameterized by `level: CourseLevel`. The route file
-`app/[lang]/[jlptLevel]/**/page.tsx` awaits the `[jlptLevel]` param and passes it as a
-prop; the view reads `lessonId` via `useParams`. Each course view gets its OWN folder with the
-page as `index.tsx` (one component = one folder):
-
-| Route | File |
-|-------|------|
-| `/:level` | `src/features/course/course-page/index.tsx` |
-| `/:level/:lessonId` | `src/features/course/lesson-page/index.tsx` |
-| `/:level/:lessonId/vocabulary` | `src/features/course/exercise-page/index.tsx` |
-| `/:level/:lessonId/grammar` | `src/features/course/grammar-page/index.tsx` |
-| `/:level/:lessonId/listening` | `src/features/course/listening-page/index.tsx` |
-| `/:level/:lessonId/reading` | `src/features/course/reading-page/index.tsx` |
-| `/:level/:lessonId/writing` | `src/features/course/writing-page/index.tsx` |
+Page-specific quiz logic is colocated in the same `_components/` folder (e.g.
+`vocabulary/_components/vocab-quiz.ts`, `grammar/_components/grammar-quiz.ts`,
+`listening/_components/course-listening.ts`), imported via `./`. Course views
+read `[jlptLevel]`/`[lessonId]` via `useParams`.
 
 ## Navigation & params (Next, not react-router)
 
@@ -99,29 +110,27 @@ page as `index.tsx` (one component = one folder):
   `usePathname`, `useLocation`, `useNavigate`). Import route params/pathname from
   `@/i18n/navigation`, never from `react-router-dom`.
 
-## One folder per component / page (IMPORTANT)
+## Shared components / folders (IMPORTANT)
 
-- Every component and page lives in its own folder, with the component itself as `index.tsx` (e.g. `src/components/speak-button/index.tsx`, `src/features/course/lesson-page/index.tsx`). Do NOT keep multiple sibling components as flat files in one folder.
-- Import a component/page by its folder, extensionless: `import { SpeakButton } from '@/components/speak-button'` (resolves to `.../speak-button/index.tsx`).
-
-## Colocation
-
-- Put a helper used by only ONE page inside that page's folder (e.g. `course/exercise-page/course-quiz.ts`, `course/listening-page/course-listening.ts`). Reference it relatively as a sibling (`./course-quiz.ts`).
-- A helper/component shared by SIBLING pages gets its own folder in the shared parent (e.g. `course/choice-button/index.tsx`, `course/shared/index.tsx` for `LessonNotFound`/`ResultScreen`), imported via `@/features/course/...`.
-- Shared code for a route segment stays in that segment folder (e.g. `alphabet/alphabet-chart.tsx` for hiragana + katakana).
-- Globally reusable UI stays in `src/components/<name>/index.tsx`.
+- Globally reusable UI lives in its own folder as `src/components/<name>/index.tsx`, imported extensionless: `import { SpeakButton } from '@/components/speak-button'`. Do NOT keep multiple sibling components as flat files in one folder.
+- A page's own view + helpers live in that route's `_components/` (or inline in `page.tsx` for Server Components).
+- A shared internal cluster (used by sibling routes) stays in `src/features/<feature>/` and is imported via `@/features/...` (e.g. `@/components`-style folders `course/choice-button`, `course/shared`, plus the flat `alphabet/exercise/*` helper set).
+- Shared data/logic imported by non-app code (constants, scripts) lives in `src/constants` / `src/utils` (e.g. `src/constants/gojuon.ts`), never inside `app/`.
 - Colocate a `*.test.ts(x)` next to the file it tests.
 
 ## New pages
 
-When adding a route `/foo/bar`, create the view `src/features/foo/bar/index.tsx`
-(`'use client'`) and the route file `app/[lang]/foo/bar/page.tsx` (server:
-`generateStaticParams` + `generateMetadata` + render the view; wrap in
-`<ClientOnly>` if interactive). Register the logical path in
-`src/constants/routes.ts` (or a `*_SITEMAP_PATHS` array) so `app/sitemap.ts`
-includes it. Add param-generation helpers in `@/i18n/route-helpers` when the
-route has dynamic segments.
+When adding a route `/foo/bar`, create `src/app/[lang]/foo/bar/page.tsx` (server:
+`generateStaticParams` + `generateMetadata` + `export const dynamicParams = false`).
+Then either inline the view in `page.tsx` (Server Component - static content,
+translate via `getTranslations` + `primePageLocale(params)`), or put an
+interactive view in `./_components/<name>.tsx` (`'use client'`) and render it
+(wrap in `<ClientOnly>` if it reads browser state / picks random questions).
+Register the logical path in `src/constants/routes.ts` (or a `*_SITEMAP_PATHS`
+array) so `app/sitemap.ts` includes it. Add param-generation helpers in
+`@/i18n/route-helpers` when the route has dynamic segments.
 
 ## Imports
 
-Prefer `@/features/...` and `@/components/...` path aliases (extensionless for folder-based components/pages). Use relative imports only for siblings in the same folder.
+- `./...` for same-folder siblings and this route's `_components/` (e.g. `./_components/foo.tsx`).
+- `@/...` alias for everything else (`@/components/...`, `@/features/...`, `@/constants/...`). NEVER use `../` (ESLint `no-restricted-imports` forbids it), so cross-route sharing must go through `src/` (aliased), not a sibling route's `_components/`.
