@@ -1,5 +1,18 @@
 import type { Bilingual } from './types.ts';
 
+/** The slug of every kanji track. Keep in sync with `KANJI_TRACK_META` below. */
+export type KanjiTrackSlug =
+  | 'grade-1'
+  | 'grade-2'
+  | 'grade-3'
+  | 'grade-4'
+  | 'grade-5'
+  | 'grade-6'
+  | 'kanken-4'
+  | 'kanken-3'
+  | 'kanken-pre-2'
+  | 'kanken-2';
+
 /**
  * Lightweight metadata for a kanji track (slug + display text) WITHOUT the heavy
  * lesson arrays. Client code (e.g. the nav drawer) imports this so it never pulls
@@ -7,7 +20,7 @@ import type { Bilingual } from './types.ts';
  * (metadata + lessons) is built server-side in `tracks.ts`.
  */
 export type KanjiTrackMeta = {
-  slug: string;
+  slug: KanjiTrackSlug;
   name: Bilingual;
   intro: Bilingual;
 };

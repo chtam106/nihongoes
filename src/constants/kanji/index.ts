@@ -3,7 +3,7 @@ import { radicals, type Radical } from './radicals.ts';
 export * from './types.ts';
 export { radicals };
 export type { Radical };
-export { KANJI_TRACK_META, type KanjiTrackMeta } from './track-meta.ts';
+export { KANJI_TRACK_META, type KanjiTrackMeta, type KanjiTrackSlug } from './track-meta.ts';
 export type { KanjiTrack } from './tracks.ts';
 
 export const KANJI_BASE_PATH = '/kanji';

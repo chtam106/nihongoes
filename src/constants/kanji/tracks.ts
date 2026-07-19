@@ -11,7 +11,7 @@ import {
   kanken2Lessons
 } from './lessons.ts';
 import type { KanjiLesson } from './types.ts';
-import { KANJI_TRACK_META, type KanjiTrackMeta } from './track-meta.ts';
+import { KANJI_TRACK_META, type KanjiTrackMeta, type KanjiTrackSlug } from './track-meta.ts';
 import {
   getRadicalByChar,
   kanjiLessonPath,
@@ -33,7 +33,7 @@ export type KanjiTrack = KanjiTrackMeta & {
   lessons: KanjiLesson[];
 };
 
-const lessonsBySlug: Record<string, KanjiLesson[]> = {
+const lessonsBySlug: Record<KanjiTrackSlug, KanjiLesson[]> = {
   'grade-1': grade1Lessons,
   'grade-2': grade2Lessons,
   'grade-3': grade3Lessons,
@@ -48,7 +48,7 @@ const lessonsBySlug: Record<string, KanjiLesson[]> = {
 
 export const kanjiTracks: KanjiTrack[] = KANJI_TRACK_META.map((meta) => ({
   ...meta,
-  lessons: lessonsBySlug[meta.slug] ?? []
+  lessons: lessonsBySlug[meta.slug]
 }));
 
 export function getKanjiTrack(slug: string): KanjiTrack | undefined {
