@@ -4,7 +4,7 @@ export const home = {
   hiraganaDescription: 'Học bảng âm cơ bản dùng cho từ tiếng Nhật thuần.',
   katakanaDescription: 'Học bảng chữ dùng cho từ mượn và nhấn mạnh.',
   combinedDescription: 'So sánh hiragana và katakana cạnh nhau trong cùng một bảng.',
-  exerciseDescription: 'Tự kiểm tra romaji và chữ kana, có phản hồi âm thanh.',
+  exerciseDescription: 'Luyện nhận mặt kana và âm đọc cho tới khi nhớ chắc.',
   kanjiTitle: 'Kanji',
   kanjiDescription: 'Học kanji Jōyō theo từng lớp.',
   radicalsTitle: 'Bộ thủ',

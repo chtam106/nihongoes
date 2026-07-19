@@ -4,7 +4,7 @@ export const home = {
   hiraganaDescription: 'Learn the basic syllabary used for native Japanese words.',
   katakanaDescription: 'Learn the script used for loanwords and emphasis.',
   combinedDescription: 'Compare hiragana and katakana side by side in one chart.',
-  exerciseDescription: 'Quiz yourself on romaji and characters with audio feedback.',
+  exerciseDescription: 'Practice recognizing kana and their readings until they stick.',
   kanjiTitle: 'Kanji',
   kanjiDescription: 'Study Jōyō kanji grade by grade.',
   radicalsTitle: 'Radicals',
