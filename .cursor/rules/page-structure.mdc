@@ -9,13 +9,13 @@ alwaysApply: false
 The app is a Next.js App Router project deployed on a server (Vercel). The App
 Router lives in `src/app/` (with `src/middleware.ts` and
 `src/instrumentation-client.ts`). Routing is **file-based** under
-`src/app/[lang]/**`: each route has a `page.tsx` that exports
+`src/app/[locale]/**`: each route has a `page.tsx` that exports
 `generateStaticParams` (pre-renders both locales), `generateMetadata` (per-page
 SEO via `@/i18n/seo-meta`), and `export const dynamicParams = false`. i18n is
 next-intl driven from `src/i18n/routing.ts`: `src/middleware.ts`
 (`createMiddleware`) keeps English at the root (no prefix) and Vietnamese under
-`/vi` (`localePrefix: 'as-needed'`); `app/[lang]/layout.tsx` renders `<html lang>`
-+ `NextIntlClientProvider` from the `[lang]` segment (root `app/layout.tsx` is a
+`/vi` (`localePrefix: 'as-needed'`); `app/[locale]/layout.tsx` renders `<html lang>`
++ `NextIntlClientProvider` from the `[locale]` segment (root `app/layout.tsx` is a
 passthrough).
 
 ## Where view code lives (colocation - IMPORTANT)
@@ -37,7 +37,7 @@ tree:
   `course/shared`, the whole `alphabet/exercise/*` helper set) stay in
   `src/features/<feature>/` and are imported via the `@/features/...` alias. They
   live here (not in `app/_components`) because the ESLint `no-restricted-imports`
-  ban on `../` makes cross-route colocated imports impractical (`@/app/[lang]/...`
+  ban on `../` makes cross-route colocated imports impractical (`@/app/[locale]/...`
   is ugly), and non-app code (constants, scripts) must not depend on `app/`.
 - **Globally reusable UI** stays in `src/components/<name>/index.tsx`; shared
   data/logic imported by non-app code stays in `src/constants` / `src/utils`
@@ -88,15 +88,15 @@ screen"; a future improvement is to make the boundary rely on
 | Route | View |
 |-------|------|
 | `/`, `/alphabet`, `/alphabet/exercise`, `/kanji` | inlined in that route's `page.tsx` (Server Component) |
-| `/alphabet/hiragana` | `src/app/[lang]/alphabet/hiragana/_components/hiragana-chart.tsx` |
+| `/alphabet/hiragana` | `src/app/[locale]/alphabet/hiragana/_components/hiragana-chart.tsx` |
 | `/alphabet/katakana` | `.../alphabet/katakana/_components/katakana-chart.tsx` |
 | `/alphabet/combined` | `.../alphabet/combined/_components/combined-chart.tsx` |
 | `/alphabet/exercise/<kind>` | `.../alphabet/exercise/<kind>/_components/<kind>-exercise.tsx` |
-| `/:level` | `src/app/[lang]/[jlptLevel]/_components/course-page.tsx` |
+| `/:level` | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx` |
 | `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
 | `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |
 | `/:level/:lessonId/{grammar,listening,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |
-| `/kanji/:track` | `src/app/[lang]/kanji/[track]/_components/kanji-track.tsx` |
+| `/kanji/:track` | `src/app/[locale]/kanji/[track]/_components/kanji-track.tsx` |
 | `/kanji/:track/:lessonId(/quiz/writing)` | `.../[lessonId](/quiz/writing)/_components/kanji-*.tsx` |
 | `/kanji/radicals` | `.../kanji/radicals/_components/kanji-radicals.tsx` |
 
@@ -125,7 +125,7 @@ read `[jlptLevel]`/`[lessonId]` via `useParams`.
 
 ## New pages
 
-When adding a route `/foo/bar`, create `src/app/[lang]/foo/bar/page.tsx` (server:
+When adding a route `/foo/bar`, create `src/app/[locale]/foo/bar/page.tsx` (server:
 `generateStaticParams` + `generateMetadata` + `export const dynamicParams = false`).
 Then either inline the view in `page.tsx` (Server Component - static content,
 translate via `getTranslations` + `primePageLocale(params)`), or put an

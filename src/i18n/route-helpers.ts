@@ -12,32 +12,32 @@ import type { Locale } from '@/i18n/translations.ts';
 
 const LOCALES = routing.locales;
 
-export type LangParam = { lang: Locale };
+export type LocaleParam = { locale: Locale };
 
-/** Static params for the `[lang]` segment (both locales). */
-export const langParams: LangParam[] = LOCALES.map((lang) => ({ lang }));
+/** Static params for the `[locale]` segment (both locales). */
+export const localeParams: LocaleParam[] = LOCALES.map((locale) => ({ locale }));
 
-/** Narrow a raw `[lang]` route param to a `Locale` (defaults to English). */
-export function toLocale(lang: string): Locale {
-  return lang === 'vi' ? 'vi' : 'en';
+/** Narrow a raw `[locale]` route param to a `Locale` (defaults to English). */
+export function toLocale(locale: string): Locale {
+  return locale === 'vi' ? 'vi' : 'en';
 }
 
-/** `{ lang, jlptLevel }` for every locale and course level (`[jlptLevel]` segment). */
+/** `{ locale, jlptLevel }` for every locale and course level (`[jlptLevel]` segment). */
 export function courseLevelParams() {
-  return LOCALES.flatMap((lang) => COURSE_LEVELS.map((level) => ({ lang, jlptLevel: level })));
+  return LOCALES.flatMap((locale) => COURSE_LEVELS.map((level) => ({ locale, jlptLevel: level })));
 }
 
 function courseLessonParamsWhere(predicate?: (lesson: Lesson) => boolean) {
-  return LOCALES.flatMap((lang) =>
+  return LOCALES.flatMap((locale) =>
     COURSE_LEVELS.flatMap((level) =>
       getCourse(level)
         .lessons.filter((lesson) => (predicate ? predicate(lesson) : true))
-        .map((lesson) => ({ lang, jlptLevel: level, lessonId: lesson.id }))
+        .map((lesson) => ({ locale, jlptLevel: level, lessonId: lesson.id }))
     )
   );
 }
 
-/** `{ lang, level, lessonId }` for every lesson (detail, vocabulary, listening). */
+/** `{ locale, level, lessonId }` for every lesson (detail, vocabulary, listening). */
 export const courseLessonParams = () => courseLessonParamsWhere();
 /** Only lessons that have grammar points. */
 export const courseGrammarParams = () => courseLessonParamsWhere(lessonHasGrammar);
@@ -46,16 +46,16 @@ export const courseReadingParams = () => courseLessonParamsWhere(lessonHasReadin
 /** Only lessons that contain kanji words (writing practice). */
 export const courseWritingParams = () => courseLessonParamsWhere(lessonHasKanji);
 
-/** `{ lang, track }` for every locale and kanji track. */
+/** `{ locale, track }` for every locale and kanji track. */
 export function kanjiTrackParams() {
-  return LOCALES.flatMap((lang) => kanjiTracks.map((track) => ({ lang, track: track.slug })));
+  return LOCALES.flatMap((locale) => kanjiTracks.map((track) => ({ locale, track: track.slug })));
 }
 
-/** `{ lang, track, lessonId }` for every kanji lesson. */
+/** `{ locale, track, lessonId }` for every kanji lesson. */
 export function kanjiLessonParams() {
-  return LOCALES.flatMap((lang) =>
+  return LOCALES.flatMap((locale) =>
     kanjiTracks.flatMap((track) =>
-      track.lessons.map((lesson) => ({ lang, track: track.slug, lessonId: lesson.id }))
+      track.lessons.map((lesson) => ({ locale, track: track.slug, lessonId: lesson.id }))
     )
   );
 }

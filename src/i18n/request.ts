@@ -14,7 +14,7 @@ const catalogs: Record<Locale, TranslationTree> = {
 /**
  * Per-request next-intl config, consumed by the server APIs (`getTranslations`,
  * `getMessages`). The active locale comes from `requestLocale`, which each
- * `[lang]` layout/page primes via `setRequestLocale(lang)` so static rendering
+ * `[locale]` layout/page primes via `setRequestLocale(locale)` so static rendering
  * is preserved. A missing message silently renders its key (matching the client
  * provider) instead of throwing and tripping the error boundary.
  */

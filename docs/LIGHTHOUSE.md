@@ -65,8 +65,8 @@ NODE
 
 ## What Was Optimized / Đã Tối Ưu Gì
 
-- **EN:** The notes below are from the earlier Vite optimization pass; some file paths changed after the Next.js migration (e.g. `src/app.tsx`/`src/main.tsx` are gone; routing is file-based under `app/[lang]/**`, views live in `src/features/**`). The techniques (lazy drawer, code-split i18n, deferred JP font) still apply.
-- **VI:** Các ghi chú dưới đây từ đợt tối ưu thời Vite; một số đường dẫn đã đổi sau khi migrate Next.js (VD `src/app.tsx`/`src/main.tsx` không còn; routing file-based trong `app/[lang]/**`, view nằm ở `src/features/**`). Các kỹ thuật (drawer lazy, tách i18n, defer font Nhật) vẫn còn áp dụng.
+- **EN:** The notes below are from the earlier Vite optimization pass; some file paths changed after the Next.js migration (e.g. `src/app.tsx`/`src/main.tsx` are gone; routing is file-based under `app/[locale]/**`, views live in `src/features/**`). The techniques (lazy drawer, code-split i18n, deferred JP font) still apply.
+- **VI:** Các ghi chú dưới đây từ đợt tối ưu thời Vite; một số đường dẫn đã đổi sau khi migrate Next.js (VD `src/app.tsx`/`src/main.tsx` không còn; routing file-based trong `app/[locale]/**`, view nằm ở `src/features/**`). Các kỹ thuật (drawer lazy, tách i18n, defer font Nhật) vẫn còn áp dụng.
 
 ### A) Accessibility + navigation semantics / A11y + cấu trúc navigation
 

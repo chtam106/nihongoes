@@ -15,7 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 /**
- * The themed error screen used by `app/[lang]/error.tsx` and the
+ * The themed error screen used by `app/[locale]/error.tsx` and the
  * `Sentry.ErrorBoundary` chrome fallback. Placed in a full-height box so the
  * centering is visible (in the app the surrounding layout provides the height).
  */

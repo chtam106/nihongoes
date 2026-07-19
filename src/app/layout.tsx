@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 
 /**
  * Passthrough root layout. The document (`<html>`/`<body>`) + providers live in
- * `app/[lang]/layout.tsx` where the locale is known, so `<html lang>` is correct
+ * `app/[locale]/layout.tsx` where the locale is known, so `<html lang>` is correct
  * server-side. This root only carries global metadata.
  */
 export default function RootLayout({ children }: { children: ReactNode }) {
