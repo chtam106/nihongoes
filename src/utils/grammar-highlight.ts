@@ -35,7 +35,7 @@ export type HighlightSegment = {
 // to each other). Lighter/less-readable hues sit at the rarely-used high indices.
 export const GRAMMAR_HIGHLIGHT_PALETTE = [
   '#1565c0', // blue
-  '#e65100', // deep orange
+  '#b34700', // deep orange (darkened for WCAG AA text contrast)
   '#2e7d32', // green
   '#c2185b', // pink
   '#a16207', // gold
