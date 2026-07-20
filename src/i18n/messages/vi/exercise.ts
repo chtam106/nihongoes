@@ -1,6 +1,6 @@
 export const exercise = {
   title: 'Luyện tập',
-  hubSubtitle: 'Chọn loại bài tập.',
+  hubSubtitle: 'Nhiều cách luyện kana khác nhau cho tới khi đọc thành phản xạ.',
   romajiDescription: 'Nhìn chữ kana và gõ romaji.',
   characterDescription: 'Chọn chữ kana đúng từ romaji, hoặc chọn romaji từ kana.',
   characterTabChooseKana: 'Chọn kana',

@@ -1,8 +1,8 @@
 export const kanji = {
   overviewTitle: 'Kanji',
-  overviewIntro:
-    "Study kanji step by step: pick a grade below and work through it lesson by lesson, with meanings, on'yomi and kun'yomi readings, example words, and writing practice.",
   collectionsHeading: 'Jōyō kanji by grade',
+  collectionsSubtitle:
+    'The Jōyō kanji are the ~2,136 characters approved for everyday use in Japan. Japanese schools teach them grade by grade - a natural order to learn them in.',
   aboutHeading: 'What is kanji?',
   aboutWhat:
     'Kanji (漢字) are meaning-based characters adapted from Chinese. Each one carries a meaning and one or more readings, and they are written alongside the hiragana and katakana syllabaries.',
@@ -56,7 +56,7 @@ export const kanji = {
   radicalsTitle: 'Kanji radicals (部首)',
   radicalsSubtitle: 'The building blocks used to form kanji.',
   radicalsIntro:
-    'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up. They are grouped below by stroke count.',
+    'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up.',
   radicalsStrokesGroup: '{count} strokes',
   radicalsCount: '{count} radicals',
   radicalsFilterAll: 'All',

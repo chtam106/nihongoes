@@ -1,6 +1,6 @@
 export const exercise = {
   title: 'Exercise',
-  hubSubtitle: 'Choose an exercise type.',
+  hubSubtitle: 'Different ways to drill the kana until reading them is automatic.',
   romajiDescription: 'See the kana and type its romaji.',
   characterDescription: 'Choose the matching kana from romaji, or the romaji from kana.',
   characterTabChooseKana: 'Choose kana',

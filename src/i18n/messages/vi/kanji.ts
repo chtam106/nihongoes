@@ -1,8 +1,8 @@
 export const kanji = {
   overviewTitle: 'Kanji',
-  overviewIntro:
-    'Học kanji từng bước: chọn một lớp bên dưới và học theo từng bài, kèm nghĩa, âm ON và KUN, từ ví dụ và luyện viết.',
   collectionsHeading: 'Jōyō kanji theo lớp',
+  collectionsSubtitle:
+    'Kanji Jōyō là khoảng 2.136 chữ được Nhật quy định dùng hằng ngày. Trường học Nhật dạy chúng theo từng lớp - một thứ tự tự nhiên để học.',
   aboutHeading: 'Kanji là gì?',
   aboutWhat:
     'Kanji (漢字) là chữ biểu nghĩa mượn từ tiếng Hán. Mỗi chữ mang một nghĩa và một hoặc nhiều cách đọc, được viết xen kẽ với hai bảng chữ hiragana và katakana.',
@@ -56,7 +56,7 @@ export const kanji = {
   radicalsTitle: 'Bộ thủ kanji (部首)',
   radicalsSubtitle: 'Thành phần cấu tạo nên chữ kanji.',
   radicalsIntro:
-    'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn. Bên dưới sắp xếp theo số nét.',
+    'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn.',
   radicalsStrokesGroup: '{count} nét',
   radicalsCount: '{count} bộ thủ',
   radicalsFilterAll: 'Tất cả',

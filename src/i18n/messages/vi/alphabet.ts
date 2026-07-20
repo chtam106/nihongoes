@@ -1,6 +1,5 @@
 export const alphabet = {
   title: 'Bảng chữ cái',
-  subtitle: 'Chọn bảng chữ để học.',
   intro:
     'Tiếng Nhật viết kết hợp ba hệ chữ. Hiragana và katakana là bảng âm tiết - mỗi chữ tương ứng đúng một âm - còn kanji là chữ biểu nghĩa mượn từ tiếng Hán. Hãy học hai bảng kana trước: chúng bao trùm mọi âm trong tiếng Nhật và là nền tảng cho mọi thứ về sau.',
   systemsHeading: 'Hệ thống chữ viết tiếng Nhật',
