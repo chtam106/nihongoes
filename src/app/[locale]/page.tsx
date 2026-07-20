@@ -5,6 +5,7 @@ import { NavCardGrid, type NavCardItem } from '@/components/nav-card';
 import { PageContainer } from '@/components/page-container';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
 import { coursePath } from '@/constants/courses/levels.ts';
+import { KANJI_BASE_PATH, KANJI_RADICALS_PATH } from '@/constants/kanji/index.ts';
 import { routes } from '@/constants/routes.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
@@ -54,6 +55,21 @@ export default async function Page({ params }: PageProps) {
     }
   ];
 
+  const kanjiCards: NavCardItem[] = [
+    {
+      to: KANJI_BASE_PATH,
+      title: t('home.kanjiTitle'),
+      symbol: '漢',
+      description: t('home.kanjiDescription')
+    },
+    {
+      to: KANJI_RADICALS_PATH,
+      title: t('home.radicalsTitle'),
+      symbol: '部',
+      description: t('home.radicalsDescription')
+    }
+  ];
+
   const courseCards: NavCardItem[] = COURSE_SUMMARIES.map((course) => ({
     to: coursePath(course.level),
     title: course.name[locale],
@@ -78,6 +94,13 @@ export default async function Page({ params }: PageProps) {
             {t('home.alphabetSection')}
           </Typography>
           <NavCardGrid items={alphabetCards} titleComponent="h3" />
+        </Stack>
+
+        <Stack spacing={1.5}>
+          <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+            {t('home.kanjiSection')}
+          </Typography>
+          <NavCardGrid items={kanjiCards} titleComponent="h3" />
         </Stack>
 
         <Stack spacing={1.5}>

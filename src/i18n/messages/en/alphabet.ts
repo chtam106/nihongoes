@@ -1,6 +1,5 @@
 export const alphabet = {
   title: 'Alphabet',
-  subtitle: 'Choose a writing system to study.',
   intro:
     'Written Japanese combines three scripts. Hiragana and katakana are phonetic syllabaries - each character is exactly one sound - while kanji are meaning-based characters borrowed from Chinese. Learn the two kana sets first: together they cover every sound in the language and are the foundation for everything else.',
   systemsHeading: 'The Japanese writing system',

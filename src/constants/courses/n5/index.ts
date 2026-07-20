@@ -9,8 +9,8 @@ export const n5Course: Course = {
     vi: 'Xây nền tảng vững chắc, từng bài một.'
   },
   intro: {
-    en: 'A step-by-step JLPT N5 path modeled on Minna no Nihongo Shokyu I. Every lesson pairs the core vocabulary and sentence patterns with supplementary reference words and a short conversation.',
-    vi: 'Lộ trình JLPT N5 từng bước, bám theo giáo trình Minna no Nihongo Sơ cấp I. Mỗi bài kết hợp từ vựng cốt lõi và mẫu câu với từ tham khảo mở rộng cùng một đoạn hội thoại ngắn.'
+    en: 'A step-by-step JLPT N5 path modeled on Minna no Nihongo Shokyu I.',
+    vi: 'Lộ trình JLPT N5 từng bước, bám theo giáo trình Minna no Nihongo Sơ cấp I.'
   },
   seoTitle: {
     en: 'JLPT N5 Course - Vocabulary & Grammar',

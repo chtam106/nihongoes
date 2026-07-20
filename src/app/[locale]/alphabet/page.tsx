@@ -78,10 +78,6 @@ export default async function Page({ params }: PageProps) {
         </Stack>
       </Paper>
 
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-        {t('alphabet.subtitle')}
-      </Typography>
-
       <NavCardGrid items={cards} />
     </PageContainer>
   );
