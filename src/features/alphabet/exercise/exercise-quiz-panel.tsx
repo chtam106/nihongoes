@@ -206,7 +206,7 @@ export function ExerciseQuizPanel({
 
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 3, textAlign: 'center' }]}>
-      <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 2 }}>
+      <Typography variant="subtitle2" component="p" color="text.secondary" sx={{ mb: 2 }}>
         {getQuestionLabel(mode, scriptLabel, t, question.pairDirection)}
       </Typography>
 
