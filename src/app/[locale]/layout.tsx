@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Script from 'next/script';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -34,6 +35,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   setRequestLocale(locale);
   const messages = await getMessages();
 
+  // Cloudflare Web Analytics beacon. Since the site is served from Vercel (DNS
+  // not proxied through Cloudflare), this client-side beacon is how Cloudflare
+  // can still count traffic. Set NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN (from the
+  // Cloudflare "Web Analytics" site) to enable it; unset = no script.
+  const cloudflareBeaconToken = process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN;
+
   return (
     <html lang={locale}>
       <head>
@@ -51,6 +58,13 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             <Providers>{children}</Providers>
           </NextIntlClientProvider>
         </AppRouterCacheProvider>
+        {cloudflareBeaconToken && (
+          <Script
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            strategy="afterInteractive"
+            data-cf-beacon={JSON.stringify({ token: cloudflareBeaconToken })}
+          />
+        )}
       </body>
     </html>
   );
