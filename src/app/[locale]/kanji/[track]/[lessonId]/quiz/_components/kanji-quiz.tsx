@@ -223,6 +223,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
         <LinearProgress
           variant="determinate"
           value={total === 0 ? 0 : (index / total) * 100}
+          aria-label={t('course.questionProgress', { current: index + 1, total })}
           sx={{ borderRadius: 1, height: 8 }}
         />
       </Box>

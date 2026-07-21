@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined';
@@ -44,8 +44,19 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
   const question = questions[index];
   const isLast = index === total - 1;
 
+  // Auto-play the clip when the QUESTION changes, but never on the first mount:
+  // `speechSynthesis.speak()` before any user gesture is deprecated (and blocked
+  // by browsers). The user taps Play for the first question; later questions play
+  // right after their answer tap, which counts as a user activation.
+  const autoPlayedRef = useRef(false);
+
   useEffect(() => {
     if (finished) {
+      return;
+    }
+
+    if (!autoPlayedRef.current) {
+      autoPlayedRef.current = true;
       return;
     }
 
@@ -134,6 +145,7 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
               <LinearProgress
                 variant="determinate"
                 value={total === 0 ? 0 : (index / total) * 100}
+                aria-label={t('course.questionProgress', { current: index + 1, total })}
                 sx={{ borderRadius: 1, height: 8 }}
               />
             </Box>
