@@ -19,3 +19,17 @@ Production is driven by the **`release-production`** branch:
 3. When ready to ship, merge into **`release-production`**.
 4. Vercel builds and deploys to production automatically. Watch the deploy in
    the Vercel dashboard (Deployments tab).
+
+## Analytics (Cloudflare Web Analytics)
+
+The site is served from Vercel with DNS pointing straight at Vercel (not proxied
+through Cloudflare), so Cloudflare cannot count traffic server-side. A
+client-side Cloudflare Web Analytics beacon is embedded instead - it renders
+only when `CLOUDFLARE_BEACON_TOKEN` is set:
+
+1. In the Cloudflare dashboard, add a **Web Analytics** site for `nihongoes.com`
+   and copy its beacon **token**.
+2. In Vercel, set `CLOUDFLARE_BEACON_TOKEN` to that token (all environments),
+   then redeploy - the token is read server-side and bakes into the
+   pre-rendered HTML at build time.
+3. Left unset (e.g. locally) the beacon script is simply not rendered.
