@@ -37,7 +37,7 @@ type RadicalFilter = 'all' | 'common';
 const PART_COLORS = {
   number: '#c2185b',
   char: '#1565c0',
-  variant: '#b34700',
+  variant: '#e65100',
   meaning: '#2e7d32',
   name: '#6a1b9a'
 } as const;

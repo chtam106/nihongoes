@@ -7,12 +7,6 @@ import { FONT_FAMILY_UI } from './fonts.ts';
 const MIN_FONT_SIZE = '1rem';
 
 export const appTheme = createTheme({
-  palette: {
-    // Darker than MUI's default primary (#1976d2), which only reached ~4.3:1
-    // contrast as text on the light primary tints (selected toggle buttons,
-    // tonal surfaces) - below WCAG AA. #1565c0 clears 4.5:1 there.
-    primary: { main: '#1565c0' }
-  },
   typography: {
     fontFamily: FONT_FAMILY_UI,
     body2: { fontSize: MIN_FONT_SIZE },
