@@ -37,9 +37,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
   // Cloudflare Web Analytics beacon. Since the site is served from Vercel (DNS
   // not proxied through Cloudflare), this client-side beacon is how Cloudflare
-  // can still count traffic. Set NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN (from the
-  // Cloudflare "Web Analytics" site) to enable it; unset = no script.
-  const cloudflareBeaconToken = process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN;
+  // can still count traffic. Set CLOUDFLARE_BEACON_TOKEN (from the Cloudflare
+  // "Web Analytics" site) to enable it; unset = no script. Read server-side and
+  // baked into the pre-rendered HTML, so it needs no NEXT_PUBLIC_ prefix.
+  const cloudflareBeaconToken = process.env.CLOUDFLARE_BEACON_TOKEN;
 
   return (
     <html lang={locale}>
