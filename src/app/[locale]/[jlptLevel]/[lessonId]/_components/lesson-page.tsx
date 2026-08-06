@@ -201,7 +201,9 @@ type ConversationSectionProps = {
 const SPEAKER_COLORS = ['#1976d2', '#2e7d32', '#ed6c02', '#9c27b0', '#00838f'] as const;
 
 function buildSpeakerColorMap(speakers: ConversationSpeaker[]): Map<string, string> {
-  return new Map(speakers.map((speaker, index) => [speaker.id, SPEAKER_COLORS[index % SPEAKER_COLORS.length]]));
+  return new Map(
+    speakers.map((speaker, index) => [speaker.id, SPEAKER_COLORS[index % SPEAKER_COLORS.length]])
+  );
 }
 
 type SpeakerLegendProps = {
@@ -269,7 +271,12 @@ function ConversationSceneBlock({
         <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
           {scene.title[locale]}
         </Heading>
-        <Button size="small" variant="outlined" onClick={onToggleTranslation} sx={{ minWidth: 'auto', px: 1.25 }}>
+        <Button
+          size="small"
+          variant="outlined"
+          onClick={onToggleTranslation}
+          sx={{ minWidth: 'auto', px: 1.25 }}
+        >
           {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
         </Button>
       </Stack>
@@ -299,7 +306,9 @@ function ConversationSceneBlock({
 
 function ConversationSection({ lesson }: ConversationSectionProps) {
   const { locale, t } = useTranslation();
-  const [showTranslationsByScene, setShowTranslationsByScene] = useState<Record<string, boolean>>({});
+  const [showTranslationsByScene, setShowTranslationsByScene] = useState<Record<string, boolean>>(
+    {}
+  );
 
   if (!lesson.conversation || lesson.conversation.length === 0) {
     return null;

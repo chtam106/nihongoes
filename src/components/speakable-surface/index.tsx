@@ -6,7 +6,7 @@ import { Paper } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
-import { elevatedSurfaceSx, interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 type SpeakableSurfaceProps = {
   /** Japanese text spoken when the whole surface is activated. */
@@ -43,11 +43,7 @@ export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) 
             }
           : undefined
       }
-      sx={[
-        elevatedSurfaceSx,
-        { cursor: canSpeak ? 'pointer' : undefined },
-        ...sxOverrides
-      ]}
+      sx={[elevatedSurfaceSx, { cursor: canSpeak ? 'pointer' : undefined }, ...sxOverrides]}
     >
       {children}
     </Paper>

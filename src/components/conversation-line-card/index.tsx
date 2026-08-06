@@ -10,7 +10,12 @@ type ConversationLineCardProps = {
   color: string;
 };
 
-export function ConversationLineCard({ line, locale, showTranslation, color }: ConversationLineCardProps) {
+export function ConversationLineCard({
+  line,
+  locale,
+  showTranslation,
+  color
+}: ConversationLineCardProps) {
   return (
     <SpeakableSurface
       text={line.jp}
