@@ -214,9 +214,159 @@ export const n5Course: Course = {
           meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
         },
         {
-          kana: 'こちらは ミラーさんです。',
-          romaji: 'Kochira wa Mirā-san desu.',
-          meaning: { en: 'This is Mr. Miller.', vi: 'Đây là anh Miller.' }
+          kana: 'こちらは アレックスさんです。',
+          romaji: 'Kochira wa Arekkusu-san desu.',
+          meaning: { en: 'This is Alex.', vi: 'Đây là anh Alex.' }
+        }
+      ],
+      conversation: [
+        {
+          id: 'conv-1',
+          title: { en: 'First meeting', vi: 'Lần đầu gặp mặt' },
+          speakers: [
+            {
+              id: 'alex',
+              name: 'アレックス'
+            },
+            {
+              id: 'yamada',
+              name: 'やまだ'
+            }
+          ],
+          lines: [
+            {
+              speakerId: 'alex',
+              jp: 'はじめまして。わたしは アレックス・リバラです。',
+              romaji: 'Hajimemashite. Watashi wa Arekkusu Ribara desu.',
+              meaning: {
+                en: 'Nice to meet you. I am Alex Rivera.',
+                vi: 'Rất vui được gặp. Tôi là Alex Rivera.'
+              }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'アメリカから きました。',
+              romaji: 'Amerika kara kimashita.',
+              meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'さくらしょうじの かいしゃいんです。どうぞ よろしく おねがいします。',
+              romaji: 'Sakura shōji no kaishain desu. Dōzo yoroshiku onegaishimasu.',
+              meaning: {
+                en: 'I am an employee at Sakura Trading. Pleased to meet you.',
+                vi: 'Tôi là nhân viên công ty Sakura. Rất mong được giúp đỡ.'
+              }
+            },
+            {
+              speakerId: 'yamada',
+              jp: 'やまだです。にほんごの せんせいです。',
+              romaji: 'Yamada desu. Nihongo no sensei desu.',
+              meaning: {
+                en: 'I am Yamada. I am a Japanese teacher.',
+                vi: 'Tôi là Yamada. Tôi là giáo viên tiếng Nhật.'
+              }
+            }
+          ]
+        },
+        {
+          id: 'conv-2',
+          title: { en: 'At the office', vi: 'Tại văn phòng' },
+          speakers: [
+            {
+              id: 'alex',
+              name: 'アレックス'
+            },
+            {
+              id: 'maria',
+              name: 'マリア'
+            }
+          ],
+          lines: [
+            {
+              speakerId: 'alex',
+              jp: 'しつれいですが、おなまえは なんですか。',
+              romaji: 'Shitsurei desu ga, onamae wa nan desu ka.',
+              meaning: {
+                en: 'Excuse me, but what is your name?',
+                vi: 'Xin lỗi, cho hỏi bạn tên là gì?'
+              }
+            },
+            {
+              speakerId: 'maria',
+              jp: 'マリア・コスタです。ブラジルから きました。',
+              romaji: 'Maria Kosta desu. Burajiru kara kimashita.',
+              meaning: {
+                en: 'I am Maria Costa. I came from Brazil.',
+                vi: 'Tôi là Maria Costa. Tôi đến từ Brazil.'
+              }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'マリアさんも かいしゃいんですか。',
+              romaji: 'Maria-san mo kaishain desu ka.',
+              meaning: {
+                en: 'Are you a company employee too, Maria?',
+                vi: 'Chị Maria cũng là nhân viên công ty phải không?'
+              }
+            },
+            {
+              speakerId: 'maria',
+              jp: 'はい、さくらしょうじの かいしゃいんです。',
+              romaji: 'Hai, Sakura shōji no kaishain desu.',
+              meaning: {
+                en: 'Yes, I am an employee at Sakura Trading.',
+                vi: 'Vâng, tôi là nhân viên công ty Sakura.'
+              }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'わたしも かいしゃいんです。',
+              romaji: 'Watashi mo kaishain desu.',
+              meaning: {
+                en: 'I am a company employee too.',
+                vi: 'Tôi cũng là nhân viên công ty.'
+              }
+            }
+          ]
+        },
+        {
+          id: 'conv-3',
+          title: { en: 'Introducing Yuki', vi: 'Giới thiệu Yuki' },
+          speakers: [
+            {
+              id: 'maria',
+              name: 'マリア'
+            },
+            {
+              id: 'alex',
+              name: 'アレックス'
+            },
+            {
+              id: 'yuki',
+              name: 'ゆき'
+            }
+          ],
+          lines: [
+            {
+              speakerId: 'maria',
+              jp: 'こちらは ゆきちゃんです。',
+              romaji: 'Kochira wa Yuki-chan desu.',
+              meaning: { en: 'This is Yuki.', vi: 'Đây là bé Yuki.' }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'ゆきちゃんは なんさいですか。',
+              romaji: 'Yuki-chan wa nansai desu ka.',
+              meaning: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' }
+            },
+            {
+              speakerId: 'maria',
+              jp: '9さいです。',
+              romaji: 'Kyū-sai desu.',
+              meaning: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' }
+            }
+          ]
         }
       ],
       grammar: [
@@ -238,11 +388,11 @@ export const n5Course: Course = {
               meaning: { en: 'I am a student.', vi: 'Tôi là học sinh.' }
             },
             {
-              jp: 'ミラーさんは かいしゃいんです。',
-              romaji: 'Mirā-san wa kaishain desu.',
+              jp: 'アレックスさんは かいしゃいんです。',
+              romaji: 'Arekkusu-san wa kaishain desu.',
               meaning: {
-                en: 'Mr. Miller is a company employee.',
-                vi: 'Anh Miller là nhân viên công ty.'
+                en: 'Alex is a company employee.',
+                vi: 'Anh Alex là nhân viên công ty.'
               }
             }
           ]
@@ -262,9 +412,9 @@ export const n5Course: Course = {
               meaning: { en: 'I am not a teacher.', vi: 'Tôi không phải là giáo viên.' }
             },
             {
-              jp: 'ミラーさんは いしゃじゃありません。',
-              romaji: 'Mirā-san wa isha ja arimasen.',
-              meaning: { en: 'Mr. Miller is not a doctor.', vi: 'Anh Miller không phải là bác sĩ.' }
+              jp: 'アレックスさんは いしゃじゃありません。',
+              romaji: 'Arekkusu-san wa isha ja arimasen.',
+              meaning: { en: 'Alex is not a doctor.', vi: 'Anh Alex không phải là bác sĩ.' }
             }
           ]
         },
@@ -343,11 +493,11 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'ミラーさんも かいしゃいんです。',
-              romaji: 'Mirā-san mo kaishain desu.',
+              jp: 'アレックスさんも かいしゃいんです。',
+              romaji: 'Arekkusu-san mo kaishain desu.',
               meaning: {
-                en: 'Mr. Miller is a company employee too.',
-                vi: 'Anh Miller cũng là nhân viên công ty.'
+                en: 'Alex is a company employee too.',
+                vi: 'Anh Alex cũng là nhân viên công ty.'
               }
             },
             {
@@ -414,9 +564,9 @@ export const n5Course: Course = {
             },
             examples: [
               {
-                jp: 'あのひとは ミラーさんです。',
-                romaji: 'Ano hito wa Mirā-san desu.',
-                meaning: { en: 'That person is Mr. Miller.', vi: 'Người kia là anh Miller.' }
+                jp: 'あのひとは アレックスさんです。',
+                romaji: 'Ano hito wa Arekkusu-san desu.',
+                meaning: { en: 'That person is Alex.', vi: 'Người kia là anh Alex.' }
               },
               {
                 jp: 'あのかたは やまだせんせいです。',
@@ -436,9 +586,9 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'テレサちゃんは なんさいですか。',
-              romaji: 'Teresa-chan wa nansai desu ka.',
-              meaning: { en: 'How old is Teresa?', vi: 'Bé Teresa bao nhiêu tuổi?' }
+              jp: 'ゆきちゃんは なんさいですか。',
+              romaji: 'Yuki-chan wa nansai desu ka.',
+              meaning: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' }
             },
             {
               jp: 'おいくつですか。',
@@ -476,11 +626,11 @@ export const n5Course: Course = {
           title: { en: 'Nice to meet you', vi: 'Rất vui được gặp' },
           lines: [
             {
-              jp: 'はじめまして。わたしは マイク・ミラーです。',
-              romaji: 'Hajimemashite. Watashi wa Maiku Mirā desu.',
+              jp: 'はじめまして。わたしは アレックス・リバラです。',
+              romaji: 'Hajimemashite. Watashi wa Arekkusu Ribara desu.',
               meaning: {
-                en: 'Nice to meet you. I am Mike Miller.',
-                vi: 'Rất vui được gặp. Tôi là Mike Miller.'
+                en: 'Nice to meet you. I am Alex Rivera.',
+                vi: 'Rất vui được gặp. Tôi là Alex Rivera.'
               }
             },
             {
@@ -489,18 +639,18 @@ export const n5Course: Course = {
               meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
             },
             {
-              jp: 'かいしゃいんです。どうぞ よろしく おねがいします。',
-              romaji: 'Kaishain desu. Dōzo yoroshiku onegaishimasu.',
+              jp: 'さくらしょうじの かいしゃいんです。どうぞ よろしく おねがいします。',
+              romaji: 'Sakura shōji no kaishain desu. Dōzo yoroshiku onegaishimasu.',
               meaning: {
-                en: 'I am a company employee. Pleased to meet you.',
-                vi: 'Tôi là nhân viên công ty. Rất mong được giúp đỡ.'
+                en: 'I am an employee at Sakura Trading. Pleased to meet you.',
+                vi: 'Tôi là nhân viên công ty Sakura. Rất mong được giúp đỡ.'
               }
             }
           ],
           questions: [
             {
               id: 'q1',
-              question: { en: 'Where did Mr. Miller come from?', vi: 'Anh Miller đến từ đâu?' },
+              question: { en: 'Where did Alex come from?', vi: 'Anh Alex đến từ đâu?' },
               choices: [
                 { id: 'a', label: { en: 'America', vi: 'Mỹ' } },
                 { id: 'b', label: { en: 'Japan', vi: 'Nhật Bản' } },
@@ -511,7 +661,7 @@ export const n5Course: Course = {
             },
             {
               id: 'q2',
-              question: { en: "What is Mr. Miller's job?", vi: 'Anh Miller làm nghề gì?' },
+              question: { en: "What is Alex's job?", vi: 'Anh Alex làm nghề gì?' },
               choices: [
                 { id: 'a', label: { en: 'Student', vi: 'Học sinh' } },
                 { id: 'b', label: { en: 'Company employee', vi: 'Nhân viên công ty' } },
@@ -859,6 +1009,82 @@ export const n5Course: Course = {
           kana: 'どうぞ。',
           romaji: 'Dōzo.',
           meaning: { en: 'Here you are. / Please.', vi: 'Mời bạn. / Xin mời.' }
+        }
+      ],
+      conversation: [
+        {
+          id: 'conv-lesson2-1',
+          title: { en: 'What is this?', vi: 'Đây là cái gì?' },
+          speakers: [
+            { id: 'alex', name: 'アレックス' },
+            { id: 'maria', name: 'マリア' }
+          ],
+          lines: [
+            {
+              speakerId: 'alex',
+              jp: 'すみません。これは なんですか。',
+              romaji: 'Sumimasen. Kore wa nan desu ka.',
+              meaning: { en: 'Excuse me. What is this?', vi: 'Xin lỗi. Đây là cái gì?' }
+            },
+            {
+              speakerId: 'maria',
+              jp: 'それは ほんです。',
+              romaji: 'Sore wa hon desu.',
+              meaning: { en: 'That is a book.', vi: 'Đó là quyển sách.' }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'あれは なんですか。',
+              romaji: 'Are wa nan desu ka.',
+              meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' }
+            },
+            {
+              speakerId: 'maria',
+              jp: 'あれは かさです。',
+              romaji: 'Are wa kasa desu.',
+              meaning: { en: 'That over there is an umbrella.', vi: 'Cái kia là cái ô.' }
+            }
+          ]
+        },
+        {
+          id: 'conv-lesson2-2',
+          title: { en: 'Whose bag is this?', vi: 'Cái cặp này là của ai?' },
+          speakers: [
+            { id: 'alex', name: 'アレックス' },
+            { id: 'maria', name: 'マリア' }
+          ],
+          lines: [
+            {
+              speakerId: 'alex',
+              jp: 'この かばんは だれのですか。',
+              romaji: 'Kono kaban wa dare no desu ka.',
+              meaning: { en: 'Whose bag is this?', vi: 'Cái cặp này là của ai?' }
+            },
+            {
+              speakerId: 'maria',
+              jp: 'その かばんは わたしのです。',
+              romaji: 'Sono kaban wa watashi no desu.',
+              meaning: { en: 'That bag is mine.', vi: 'Cái cặp đó là của tôi.' }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'この ほんは なんですか。',
+              romaji: 'Kono hon wa nan desu ka.',
+              meaning: { en: 'What is this book?', vi: 'Quyển sách này là gì?' }
+            },
+            {
+              speakerId: 'maria',
+              jp: 'それは にほんごの じしょです。',
+              romaji: 'Sore wa nihongo no jisho desu.',
+              meaning: { en: 'It is a Japanese dictionary.', vi: 'Đó là từ điển tiếng Nhật.' }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'そうですか。',
+              romaji: 'Sō desu ka.',
+              meaning: { en: 'I see.', vi: 'Vậy à.' }
+            }
+          ]
         }
       ],
       grammar: [

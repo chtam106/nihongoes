@@ -44,7 +44,7 @@ export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) 
           : undefined
       }
       sx={[
-        canSpeak ? interactiveSurfaceSx : elevatedSurfaceSx,
+        elevatedSurfaceSx,
         { cursor: canSpeak ? 'pointer' : undefined },
         ...sxOverrides
       ]}

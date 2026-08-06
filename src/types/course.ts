@@ -71,6 +71,26 @@ export type ReadingPassage = {
   questions: ReadingQuestion[];
 };
 
+export type ConversationSpeaker = {
+  id: string;
+  /** Display name in Japanese (e.g. アレックス). */
+  name: string;
+};
+
+export type ConversationLine = {
+  speakerId: string;
+  jp: string;
+  romaji: string;
+  meaning: Bilingual;
+};
+
+export type ConversationScene = {
+  id: string;
+  title: Bilingual;
+  speakers: ConversationSpeaker[];
+  lines: ConversationLine[];
+};
+
 /** A titled group of supplementary/reference vocabulary shown separately from the core word list. */
 export type ReferenceGroup = {
   title: Bilingual;
@@ -85,6 +105,8 @@ export type Lesson = {
   vocab: VocabItem[];
   /** Set phrases / fixed expressions (Minna no Nihongo 会話 vocabulary), e.g. おなまえは何ですか. */
   phrases?: VocabItem[];
+  /** Dialogue scenes using this lesson's vocabulary and grammar (original text, not from the textbook). */
+  conversation?: ConversationScene[];
   grammar: GrammarPoint[];
   reading?: ReadingPassage[];
   /** Supplementary vocabulary (Minna no Nihongo 参考語彙) kept out of the core list. */
