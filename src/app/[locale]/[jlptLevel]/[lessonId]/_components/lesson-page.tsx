@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
@@ -8,12 +9,14 @@ import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
+import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import {
   coursePath,
   getCourse,
@@ -28,8 +31,11 @@ import {
   lessonWritingPath,
   type CourseLevel,
   type Lesson,
-  type VocabItem
+  type VocabItem,
+  type ConversationScene,
+  type ConversationSpeaker
 } from '@/constants/courses/index.ts';
+import { ConversationLineCard } from '@/components/conversation-line-card';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
@@ -78,6 +84,9 @@ function SectionNav({ lesson }: SectionNavProps) {
     { id: 'vocab', label: t('course.vocabulary') },
     ...(lesson.phrases && lesson.phrases.length > 0
       ? [{ id: 'phrases', label: t('course.phrasesHeading') }]
+      : []),
+    ...(lesson.conversation && lesson.conversation.length > 0
+      ? [{ id: 'conversation', label: t('course.conversationHeading') }]
       : []),
     ...(lesson.grammar.length > 0 ? [{ id: 'grammar', label: t('course.grammar') }] : []),
     { id: 'practice', label: t('course.practiceHeading') },
@@ -180,6 +189,161 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
             </Typography>
           </SpeakableSurface>
         ))}
+      </Stack>
+    </Box>
+  );
+}
+
+type ConversationSectionProps = {
+  lesson: Lesson;
+};
+
+const SPEAKER_COLORS = ['#1976d2', '#2e7d32', '#ed6c02', '#9c27b0', '#00838f'] as const;
+
+function buildSpeakerColorMap(speakers: ConversationSpeaker[]): Map<string, string> {
+  return new Map(
+    speakers.map((speaker, index) => [speaker.id, SPEAKER_COLORS[index % SPEAKER_COLORS.length]])
+  );
+}
+
+type SpeakerLegendProps = {
+  speakers: ConversationSpeaker[];
+  colorMap: Map<string, string>;
+};
+
+function SpeakerLegend({ speakers, colorMap }: SpeakerLegendProps) {
+  return (
+    <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap', mb: 2 }}>
+      {speakers.map((speaker) => {
+        const color = colorMap.get(speaker.id) ?? SPEAKER_COLORS[0];
+
+        return (
+          <Box
+            key={speaker.id}
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              px: 1,
+              py: 0.6,
+              borderRadius: '999px',
+              border: '1px solid',
+              borderColor: (theme) => alpha(color, theme.palette.mode === 'light' ? 0.35 : 0.5),
+              bgcolor: (theme) => alpha(color, theme.palette.mode === 'light' ? 0.08 : 0.16),
+              color
+            }}
+          >
+            <Typography variant="body2" sx={{ fontWeight: 600, lineHeight: 1.2 }}>
+              {speaker.name}
+            </Typography>
+          </Box>
+        );
+      })}
+    </Stack>
+  );
+}
+
+type ConversationSceneBlockProps = {
+  scene: ConversationScene;
+  locale: 'en' | 'vi';
+  colorMap: Map<string, string>;
+  showTranslation: boolean;
+  onToggleTranslation: () => void;
+  t: ReturnType<typeof useTranslation>['t'];
+};
+
+function ConversationSceneBlock({
+  scene,
+  locale,
+  colorMap,
+  showTranslation,
+  onToggleTranslation,
+  t
+}: ConversationSceneBlockProps) {
+  const speakerById = new Map(scene.speakers.map((speaker) => [speaker.id, speaker]));
+
+  return (
+    <Box>
+      <Stack
+        direction="row"
+        spacing={1}
+        sx={{ alignItems: 'center', mb: 1.5, gap: 1, flexWrap: 'wrap' }}
+      >
+        <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
+          {scene.title[locale]}
+        </Heading>
+        <Button
+          size="small"
+          variant="outlined"
+          onClick={onToggleTranslation}
+          sx={{ minWidth: 'auto', px: 1.25 }}
+        >
+          {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
+        </Button>
+      </Stack>
+      <SpeakerLegend speakers={scene.speakers} colorMap={colorMap} />
+      <Stack spacing={1.5}>
+        {scene.lines.map((line, index) => {
+          const speaker = speakerById.get(line.speakerId);
+
+          if (!speaker) {
+            return null;
+          }
+
+          return (
+            <ConversationLineCard
+              key={`${scene.id}-${index}`}
+              line={line}
+              locale={locale}
+              showTranslation={showTranslation}
+              color={colorMap.get(line.speakerId) ?? SPEAKER_COLORS[0]}
+            />
+          );
+        })}
+      </Stack>
+    </Box>
+  );
+}
+
+function ConversationSection({ lesson }: ConversationSectionProps) {
+  const { locale, t } = useTranslation();
+  const [showTranslationsByScene, setShowTranslationsByScene] = useState<Record<string, boolean>>(
+    {}
+  );
+
+  if (!lesson.conversation || lesson.conversation.length === 0) {
+    return null;
+  }
+
+  const toggleSceneTranslation = (sceneId: string) => {
+    setShowTranslationsByScene((previous) => ({
+      ...previous,
+      [sceneId]: !previous[sceneId]
+    }));
+  };
+
+  return (
+    <Box id="conversation" sx={SECTION_ANCHOR_SX}>
+      <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
+        <ForumOutlinedIcon color="primary" />
+        <Heading component="h2">{t('course.conversationHeading')}</Heading>
+      </Stack>
+
+      <Stack spacing={3}>
+        {lesson.conversation.map((scene) => {
+          const colorMap = buildSpeakerColorMap(scene.speakers);
+
+          return (
+            <ConversationSceneBlock
+              key={scene.id}
+              scene={scene}
+              locale={locale}
+              colorMap={colorMap}
+              showTranslation={Boolean(showTranslationsByScene[scene.id])}
+              onToggleTranslation={() => toggleSceneTranslation(scene.id)}
+              t={t}
+            />
+          );
+        })}
       </Stack>
     </Box>
   );
@@ -413,6 +577,7 @@ function LessonPage({ level }: LessonPageProps) {
 
         <VocabularySection lesson={lesson} />
         <PhrasesSection lesson={lesson} />
+        <ConversationSection lesson={lesson} />
         <GrammarSection lesson={lesson} />
 
         <PracticePanel level={level} lesson={lesson} />

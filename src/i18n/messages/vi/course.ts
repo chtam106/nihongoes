@@ -1,6 +1,7 @@
 export const course = {
   lessonsHeading: 'Danh sách bài học',
   phrasesHeading: 'Mẫu câu',
+  conversationHeading: 'Hội thoại',
   referenceHeading: 'Từ vựng tham khảo',
   referenceSubtitle: 'Từ mở rộng liên quan tới bài học, cũng có trong bài luyện từ vựng.',
   lessonLabel: 'Bài {number}',
