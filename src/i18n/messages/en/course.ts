@@ -1,6 +1,7 @@
 export const course = {
   lessonsHeading: 'Lessons',
   phrasesHeading: 'Useful phrases',
+  conversationHeading: 'Conversation',
   referenceHeading: 'Reference vocabulary',
   referenceSubtitle:
     'Extra words related to this lesson, also included in the vocabulary practice.',
