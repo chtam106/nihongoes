@@ -1,4 +1,4 @@
-import type { Course, Lesson } from '@/constants/courses/index.ts';
+import type { Course, Lesson, RubySegment } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
 export type ListeningOption = {
@@ -12,6 +12,7 @@ type ListeningKind = 'word-meaning' | 'word-script' | 'sentence-meaning';
 type ListeningReveal = {
   jp: string;
   meaning: string;
+  ruby?: RubySegment[];
 };
 
 export type ListeningQuestion = {
@@ -96,7 +97,11 @@ export function buildLessonListening(
   lesson.vocab.forEach((item, index) => {
     const word = vocabWord(item);
     const meaning = item.meaning[locale];
-    const reveal: ListeningReveal = { jp: word, meaning };
+    const reveal: ListeningReveal = {
+      jp: word,
+      meaning,
+      ruby: item.kanji ? item.ruby : undefined
+    };
 
     if (index % 2 === 0) {
       const { options, correctId } = buildOptions(meaning, false, pools.meanings);
@@ -137,7 +142,7 @@ export function buildLessonListening(
         optionsJa: false,
         options,
         correctId,
-        reveal: { jp: example.jp, meaning: example.meaning[locale] }
+        reveal: { jp: example.jp, meaning: example.meaning[locale], ruby: example.ruby }
       });
     });
   });

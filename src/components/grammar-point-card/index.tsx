@@ -1,7 +1,7 @@
-import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Card, CardContent, Stack } from '@mui/material';
 import type { GrammarExample, GrammarPoint } from '@/constants/courses/types.ts';
 import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
-import { formatGrammarPatternDisplay, type HighlightTerm } from '@/utils/grammar-highlight.ts';
+import { formatGrammarPatternDisplay, isGrammarTitleRedundant } from '@/utils/grammar-highlight.ts';
 import { Heading } from '@/components/heading';
 import { TranslationLine } from '@/components/translation-line';
 import { SpeakableSurface } from '@/components/speakable-surface';
@@ -10,41 +10,44 @@ import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 type ExampleListProps = {
   examples: GrammarExample[];
-  /** Terms to color in each sentence. Omit/empty to render the sentences plainly. */
-  highlights?: HighlightTerm[];
-  /** Words to protect from highlighting (e.g. は inside はたち). */
-  exclude?: string[];
-  /** Shift palette colors by this many slots (so a sub-block starts on new colors). */
-  colorOffset?: number;
 };
 
 /** Speakable list of example sentences, optionally coloring the given highlight terms. */
-function ExampleList({ examples, highlights, exclude, colorOffset = 0 }: ExampleListProps) {
+function ExampleList({ examples }: ExampleListProps) {
   const { locale } = useTranslation();
-  const hasHighlights = Boolean(highlights && highlights.length > 0);
 
   return (
-    <Stack spacing={1.5}>
+    <Stack spacing={2}>
       {examples.map((example) => (
-        <SpeakableSurface key={example.jp} text={example.jp} sx={{ p: 1.5 }}>
-          {hasHighlights && (
+        <Box
+          key={example.jp}
+          sx={{
+            borderLeft: 4,
+            borderColor: 'primary.main',
+            pl: 2,
+            pr: 1.5
+          }}
+        >
+          <SpeakableSurface
+            text={example.jp}
+            sx={{
+              boxShadow: 'none',
+              bgcolor: 'transparent',
+              borderRadius: 1,
+              px: 0.5,
+              mx: -0.5
+            }}
+          >
             <GrammarHighlightedText
               text={example.jp}
-              highlights={highlights!}
-              exclude={exclude}
-              colorOffset={colorOffset}
+              ruby={example.ruby}
               variant="body1"
               lang="ja"
               sx={{ fontWeight: 500 }}
             />
-          )}
-          {!hasHighlights && (
-            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
-              {example.jp}
-            </Typography>
-          )}
-          <TranslationLine translation={example.meaning[locale]} />
-        </SpeakableSurface>
+            <TranslationLine translation={example.meaning[locale]} />
+          </SpeakableSurface>
+        </Box>
       ))}
     </Stack>
   );
@@ -59,6 +62,7 @@ type GrammarPointCardProps = {
 /** A grammar point: numbered pattern chip, title, explanation, and speakable examples. */
 export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
   const { locale, t } = useTranslation();
+  const showTitle = !isGrammarTitleRedundant(point.pattern, point.title[locale]);
 
   return (
     <Card elevation={0} sx={elevatedSurfaceSx}>
@@ -96,8 +100,6 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
           >
             <GrammarHighlightedText
               text={formatGrammarPatternDisplay(point.pattern)}
-              highlights={point.highlights}
-              exclude={point.excludeHighlights}
               component="span"
               lang="ja"
               sx={{
@@ -109,26 +111,19 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
             />
           </Box>
         </Stack>
-        <Heading component="h3" gutterBottom>
-          {point.title[locale]}
-        </Heading>
+        {showTitle && (
+          <Heading component="h3" gutterBottom>
+            {point.title[locale]}
+          </Heading>
+        )}
         <GrammarHighlightedText
           text={point.explanation[locale]}
-          highlights={point.highlights}
-          exclude={point.excludeHighlights}
           variant="body2"
           color="text.secondary"
-          sx={{ mb: 2 }}
+          sx={{ mb: point.examples.length > 0 ? 1.5 : 0 }}
         />
 
-        <Typography variant="overline" color="text.secondary" sx={{ display: 'block', mb: 0.5 }}>
-          {t('course.examples')}
-        </Typography>
-        <ExampleList
-          examples={point.examples}
-          highlights={point.highlights}
-          exclude={point.excludeHighlights}
-        />
+        <ExampleList examples={point.examples} />
 
         {point.answers && (
           <Box sx={{ mt: 2 }}>
@@ -138,20 +133,12 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
             {point.answers.explanation && (
               <GrammarHighlightedText
                 text={point.answers.explanation[locale]}
-                highlights={point.answers.highlights ?? []}
-                exclude={point.answers.excludeHighlights}
-                colorOffset={point.highlights.length}
                 variant="body2"
                 color="text.secondary"
                 sx={{ mb: 1.5 }}
               />
             )}
-            <ExampleList
-              examples={point.answers.examples}
-              highlights={point.answers.highlights}
-              exclude={point.answers.excludeHighlights}
-              colorOffset={point.highlights.length}
-            />
+            <ExampleList examples={point.answers.examples} />
           </Box>
         )}
       </CardContent>

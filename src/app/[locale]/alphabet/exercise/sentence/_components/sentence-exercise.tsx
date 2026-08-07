@@ -96,7 +96,7 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
       setValue('');
       setStatus('idle');
       setRevealed(false);
-    }, 1000);
+    }, 100);
 
     return () => window.clearTimeout(timer);
   }, [status, index, total]);

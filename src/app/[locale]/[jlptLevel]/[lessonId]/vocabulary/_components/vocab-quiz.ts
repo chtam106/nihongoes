@@ -1,4 +1,4 @@
-import type { Lesson, VocabItem } from '@/constants/courses/index.ts';
+import type { Lesson, RubySegment, VocabItem } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
 export type VocabMode = 'word-meaning' | 'meaning-word';
@@ -17,6 +17,8 @@ export type VocabQuestion = {
   /** Text shown as the prompt (a Japanese word, or a meaning). */
   promptText: string;
   promptJa: boolean;
+  /** Per-kanji ruby for Japanese prompt text. */
+  promptRuby?: RubySegment[];
   /** Kana reading of the word, for text-to-speech. */
   speech: string;
   options: VocabOption[];
@@ -38,6 +40,7 @@ type VocabEntry = {
   surface: string;
   speech: string;
   meaning: string;
+  ruby?: RubySegment[];
 };
 
 const OPTION_COUNT = 4;
@@ -85,7 +88,7 @@ export function buildVocabEntries(
     }
 
     if ((script === 'kanji' || script === 'all') && hasKanji) {
-      entries.push({ surface: item.kanji!, speech, meaning });
+      entries.push({ surface: item.kanji!, speech, meaning, ruby: item.ruby });
     }
   }
 
@@ -121,6 +124,7 @@ function buildQuestion(
       mode,
       promptText: entry.surface,
       promptJa: true,
+      promptRuby: entry.ruby,
       speech: entry.speech,
       options,
       correctId

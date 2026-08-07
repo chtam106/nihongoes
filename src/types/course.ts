@@ -5,12 +5,20 @@ export type Bilingual = Record<Locale, string>;
 
 export type CourseLevel = 'n5';
 
+/** One kanji (usually a single character) with its reading for ruby display. */
+export type RubySegment = {
+  base: string;
+  reading: string;
+};
+
 export type VocabItem = {
   kana: string;
   kanji?: string;
   romaji: string;
   /** Override the spoken text when the glyph's reading differs (e.g. particle は -> わ). */
   speech?: string;
+  /** Per-kanji ruby for the kanji form, in surface order. */
+  ruby?: RubySegment[];
   meaning: Bilingual;
 };
 
@@ -18,6 +26,8 @@ export type GrammarExample = {
   jp: string;
   romaji: string;
   meaning: Bilingual;
+  /** Per-kanji ruby annotations in surface order. */
+  ruby?: RubySegment[];
 };
 
 /** A distinct sub-block inside a grammar point, e.g. how to answer the question it teaches. */
@@ -50,6 +60,8 @@ export type ReadingLine = {
   jp: string;
   romaji: string;
   meaning: Bilingual;
+  /** Per-kanji ruby annotations in surface order. */
+  ruby?: RubySegment[];
 };
 
 export type ReadingChoice = {
@@ -82,6 +94,8 @@ export type ConversationLine = {
   jp: string;
   romaji: string;
   meaning: Bilingual;
+  /** Per-kanji ruby annotations in surface order. */
+  ruby?: RubySegment[];
 };
 
 export type ConversationScene = {

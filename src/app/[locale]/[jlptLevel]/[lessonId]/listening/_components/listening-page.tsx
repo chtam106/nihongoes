@@ -16,7 +16,7 @@ import {
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { cancelSpeech, speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
@@ -83,7 +83,7 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
       setIndex((previous) => previous + 1);
       setWrongIds([]);
       setCorrectPicked(false);
-    }, 900);
+    }, 100);
 
     return () => window.clearTimeout(timer);
   }, [correctPicked, isLast]);
@@ -117,7 +117,7 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={course.level} lesson={lesson} section="listening" />
+        <LessonQuizHeader lesson={lesson} section="listening" />
 
         {finished && (
           <ResultScreen
@@ -185,7 +185,7 @@ function ListeningQuiz({ course, lesson }: ListeningQuizProps) {
               {correctPicked && (
                 <Box sx={{ mt: 1 }}>
                   <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>
-                    {formatJapaneseDisplay(question.reveal.jp)}
+                    {renderJapaneseText(question.reveal.jp, question.reveal.ruby)}
                   </Typography>
                 </Box>
               )}

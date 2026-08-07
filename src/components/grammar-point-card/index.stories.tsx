@@ -38,3 +38,25 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const RedundantTitleHidden: Story = {
+  args: {
+    index: 4,
+    point: {
+      pattern: 'どこ / どちら',
+      highlights: [['どこ', 'どちら']],
+      title: { en: 'どこ / どちら', vi: 'どこ / どちら' },
+      explanation: {
+        en: 'どこ asks where a place is. どちら is more polite and can also ask which direction or which place.',
+        vi: 'どこ hỏi nơi chốn. どちら lịch sự hơn và cũng hỏi được phương hướng hoặc địa điểm.'
+      },
+      examples: [
+        {
+          jp: 'お手洗いは どこですか。',
+          romaji: 'Otearai wa doko desu ka.',
+          meaning: { en: 'Where is the restroom?', vi: 'Nhà vệ sinh ở đâu?' }
+        }
+      ]
+    }
+  }
+};
