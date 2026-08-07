@@ -14,7 +14,7 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
-type LessonQuizSection = 'vocabulary' | 'grammar' | 'listening' | 'reading' | 'writing';
+type LessonQuizSection = 'vocabulary' | 'grammar' | 'reading' | 'writing';
 
 type LessonQuizHeaderProps = {
   lesson: Lesson;
@@ -27,8 +27,6 @@ function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
       return 'course.vocabularyPractice';
     case 'grammar':
       return 'course.grammarPractice';
-    case 'listening':
-      return 'course.listeningPractice';
     case 'reading':
       return 'course.readingPractice';
     case 'writing':
@@ -37,7 +35,7 @@ function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
 }
 
 /**
- * Shared header for the lesson practice / listening / reading pages.
+ * Shared header for the lesson practice / reading pages.
  */
 export function LessonQuizHeader({ lesson, section }: LessonQuizHeaderProps) {
   const { locale, t } = useTranslation();

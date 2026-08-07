@@ -14,14 +14,21 @@ type UseVocabQuizOptions = {
   locale: Locale;
   mode: VocabMode;
   script: VocabScript;
+  includeReference: boolean;
 };
 
 // No effect-driven reset: the consumer remounts the quiz via a `key` derived
-// from lesson/locale/mode/script, which reruns the `useState` initializer with a
-// fresh endless session.
-export function useVocabQuiz({ lesson, locale, mode, script }: UseVocabQuizOptions) {
+// from lesson/locale/mode/script/includeReference, which reruns the `useState`
+// initializer with a fresh endless session.
+export function useVocabQuiz({
+  lesson,
+  locale,
+  mode,
+  script,
+  includeReference
+}: UseVocabQuizOptions) {
   const [initial] = useState(() => {
-    const session = createVocabSession(lesson, locale, mode, script);
+    const session = createVocabSession(lesson, locale, mode, script, includeReference);
 
     return { session, question: session.next() };
   });

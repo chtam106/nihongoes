@@ -69,8 +69,8 @@ async function expectPageHealthy(page: Page, logicalPath: string, locale: Locale
   expect(sameOriginServerErrors, `5xx resources on ${url}`).toEqual([]);
 }
 
-// One rich live example of every page type. `n5/lesson-1` has all of
-// vocabulary/grammar/listening/reading/writing, and grade-1/lesson-1 covers the
+// One rich live example of every page type. `n5/lesson-1` has
+// vocabulary/grammar/reading/writing, and grade-1/lesson-1 covers the
 // kanji lesson/quiz/writing pages. The "covers every sitemap type" test below
 // fails if a new route type appears without an example here.
 const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
@@ -80,7 +80,6 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   { name: 'lesson detail', path: '/n5/lesson-1' },
   { name: 'lesson vocabulary', path: '/n5/lesson-1/vocabulary' },
   { name: 'lesson grammar', path: '/n5/lesson-1/grammar' },
-  { name: 'lesson listening', path: '/n5/lesson-1/listening' },
   { name: 'lesson reading', path: '/n5/lesson-1/reading' },
   { name: 'lesson writing', path: '/n5/lesson-1/writing' },
   // Alphabet

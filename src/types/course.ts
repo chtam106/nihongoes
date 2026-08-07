@@ -105,11 +105,103 @@ export type ConversationScene = {
   lines: ConversationLine[];
 };
 
-/** A titled group of supplementary/reference vocabulary shown separately from the core word list. */
-export type ReferenceGroup = {
+/** A titled group of supplementary vocabulary in the reference section. */
+export type ReferenceVocabGroup = {
+  kind: 'vocab';
   title: Bilingual;
+  intro?: Bilingual;
   items: VocabItem[];
+  notes?: Bilingual[];
+  /** When false, items are reference-only (e.g. surname lists) and never enter the vocab quiz. Default true. */
+  includeInQuiz?: boolean;
 };
+
+/** Numbered how-to steps with optional footnotes. */
+export type ReferenceStepsGroup = {
+  kind: 'steps';
+  title: Bilingual;
+  intro?: Bilingual;
+  steps: { text: Bilingual }[];
+  notes?: Bilingual[];
+};
+
+/** A row in a reference list (e.g. emergency phone numbers). */
+export type ReferenceListRow = {
+  number?: string;
+  /** Bilingual gloss for the floor/row label (`number`). */
+  numberMeaning?: Bilingual;
+  numberRuby?: RubySegment[];
+  jp?: string;
+  ruby?: RubySegment[];
+  meaning: Bilingual;
+  /** Optional cultural/context note on its own row below the meaning. */
+  note?: Bilingual;
+};
+
+/** Labelled rows such as special phone numbers. */
+export type ReferenceListGroup = {
+  kind: 'list';
+  title: Bilingual;
+  intro?: Bilingual;
+  /** `stacked` puts each label and translation on its own row; default `compact` keeps inline columns on wide screens. */
+  layout?: 'stacked' | 'compact';
+  rows: ReferenceListRow[];
+  notes?: Bilingual[];
+};
+
+/** One labelled part of a sample Japanese address. */
+export type ReferenceAddressPart = {
+  label: Bilingual;
+  text: string;
+  ruby?: RubySegment[];
+};
+
+/** Sample address with part labels (large -> small). */
+export type ReferenceAddressGroup = {
+  kind: 'address';
+  title: Bilingual;
+  intro?: Bilingual;
+  sample: { jp: string; ruby?: RubySegment[] };
+  parts: ReferenceAddressPart[];
+};
+
+/** Japanese text cell for reference tables (country / person / language). */
+export type ReferenceTableJpCell = {
+  jp: string;
+  ruby?: RubySegment[];
+  meaning?: Bilingual;
+  /** Override TTS when the spoken form differs from the surface. */
+  speech?: string;
+};
+
+export type ReferenceTableRow = {
+  country: ReferenceTableJpCell;
+  person: ReferenceTableJpCell;
+  languages: ReferenceTableJpCell[];
+};
+
+/** Three-column table such as country · nationality · language. */
+export type ReferenceTableGroup = {
+  kind: 'table';
+  title: Bilingual;
+  intro?: Bilingual;
+  columns: {
+    country: Bilingual;
+    person: Bilingual;
+    language: Bilingual;
+  };
+  rows: ReferenceTableRow[];
+};
+
+export type ReferenceBlock =
+  | ReferenceVocabGroup
+  | ReferenceStepsGroup
+  | ReferenceListGroup
+  | ReferenceAddressGroup
+  | ReferenceTableGroup;
+
+/** @deprecated Use `ReferenceVocabGroup` - kept as alias for older mentions. */
+export type ReferenceGroup = ReferenceVocabGroup;
 
 export type Lesson = {
   id: string;
@@ -122,9 +214,10 @@ export type Lesson = {
   /** Dialogue scenes using this lesson's vocabulary and grammar (original text, not from the textbook). */
   conversation?: ConversationScene[];
   grammar: GrammarPoint[];
+  /** Original reading passages for comprehension practice; count varies by lesson. */
   reading?: ReadingPassage[];
-  /** Supplementary vocabulary (Minna no Nihongo 参考語彙) kept out of the core list. */
-  reference?: ReferenceGroup[];
+  /** Supplementary reference blocks: vocab lists, how-to steps, notes, etc. */
+  reference?: ReferenceBlock[];
 };
 
 /** Optional thematic grouping of a course's lessons, by inclusive lesson-number range. */

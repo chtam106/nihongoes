@@ -1,10 +1,9 @@
 import { n5Course } from './n5/index.ts';
-import type { Course, CourseLevel, Lesson, VocabItem } from './types.ts';
+import type { Course, CourseLevel, Lesson, ReferenceBlock, VocabItem } from './types.ts';
 import {
   COURSE_LEVELS,
   coursePath,
   lessonGrammarPath,
-  lessonListeningPath,
   lessonPath,
   lessonReadingPath,
   lessonVocabularyPath,
@@ -30,6 +29,29 @@ export function getLesson(level: CourseLevel, id: string): Lesson | undefined {
   return courses[level].lessons.find((lesson) => lesson.id === id);
 }
 
+/** Vocabulary items from reference blocks (vocab groups only). */
+export function referenceVocabItems(
+  reference?: ReferenceBlock[],
+  options?: { quizOnly?: boolean }
+): VocabItem[] {
+  return (reference ?? []).flatMap((block) => {
+    if (block.kind !== 'vocab') {
+      return [];
+    }
+
+    if (options?.quizOnly && block.includeInQuiz === false) {
+      return [];
+    }
+
+    return block.items;
+  });
+}
+
+/** True when the lesson has reference vocab eligible for the optional quiz pool. */
+export function lessonHasReferenceQuizVocab(lesson: Lesson): boolean {
+  return referenceVocabItems(lesson.reference, { quizOnly: true }).length > 0;
+}
+
 export function lessonHasReading(lesson: Lesson): boolean {
   return Boolean(lesson.reading && lesson.reading.length > 0);
 }
@@ -42,7 +64,7 @@ export function lessonHasGrammar(lesson: Lesson): boolean {
 export function lessonKanjiWords(lesson: Lesson): VocabItem[] {
   const sources: VocabItem[] = [
     ...lesson.vocab,
-    ...(lesson.reference?.flatMap((group) => group.items) ?? [])
+    ...(lesson.reference?.flatMap((block) => (block.kind === 'vocab' ? block.items : [])) ?? [])
   ];
 
   const seen = new Set<string>();
@@ -72,7 +94,6 @@ export const COURSE_SITEMAP_PATHS: string[] = COURSE_LEVELS.flatMap((level) => {
     ...lessons.map((lesson) => lessonPath(level, lesson.id)),
     ...lessons.map((lesson) => lessonVocabularyPath(level, lesson.id)),
     ...lessons.filter(lessonHasGrammar).map((lesson) => lessonGrammarPath(level, lesson.id)),
-    ...lessons.map((lesson) => lessonListeningPath(level, lesson.id)),
     ...lessons.filter(lessonHasReading).map((lesson) => lessonReadingPath(level, lesson.id)),
     ...lessons.filter(lessonHasKanji).map((lesson) => lessonWritingPath(level, lesson.id))
   ];

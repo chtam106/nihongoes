@@ -1,3 +1,4 @@
+import { referenceVocabItems } from '@/constants/courses/index.ts';
 import type { Lesson, RubySegment, VocabItem } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
@@ -60,25 +61,31 @@ function unique(values: string[]): string[] {
   return Array.from(new Set(values));
 }
 
-function collectItems(lesson: Lesson): VocabItem[] {
-  const referenceItems = (lesson.reference ?? []).flatMap((group) => group.items);
+function collectItems(lesson: Lesson, includeReference: boolean): VocabItem[] {
+  const core = [...lesson.vocab, ...(lesson.phrases ?? [])];
 
-  return [...lesson.vocab, ...(lesson.phrases ?? []), ...referenceItems];
+  if (!includeReference) {
+    return core;
+  }
+
+  return [...core, ...referenceVocabItems(lesson.reference, { quizOnly: true })];
 }
 
 /**
- * Expand the lesson's core + reference vocabulary into per-surface quiz entries.
+ * Expand the lesson vocabulary into per-surface quiz entries.
  * `script` picks the written form: `kana` uses every word's kana form, `kanji`
  * only the words that have a kanji form (in kanji), and `all` uses both.
+ * Core pool is lesson vocab + phrases; set `includeReference` to add quiz-eligible reference vocab groups.
  */
 export function buildVocabEntries(
   lesson: Lesson,
   locale: Locale,
-  script: VocabScript
+  script: VocabScript,
+  includeReference = false
 ): VocabEntry[] {
   const entries: VocabEntry[] = [];
 
-  for (const item of collectItems(lesson)) {
+  for (const item of collectItems(lesson, includeReference)) {
     const meaning = item.meaning[locale];
     const speech = item.speech ?? item.kana;
     const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
@@ -153,9 +160,10 @@ export function createVocabSession(
   lesson: Lesson,
   locale: Locale,
   mode: VocabMode,
-  script: VocabScript
+  script: VocabScript,
+  includeReference = false
 ): VocabSession {
-  const entries = buildVocabEntries(lesson, locale, script);
+  const entries = buildVocabEntries(lesson, locale, script, includeReference);
   const meaningPool = unique(entries.map((entry) => entry.meaning));
   let remaining = shuffle([...entries]);
 

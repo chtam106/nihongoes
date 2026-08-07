@@ -671,75 +671,589 @@ export const n5Course: Course = {
               correctId: 'b'
             }
           ]
-        }
-      ],
-      reference: [
-        {
-          title: { en: 'Countries', vi: 'Quốc gia' },
-          items: [
-            {
-              kana: 'にほん',
-              kanji: '日本',
-              romaji: 'nihon',
-              meaning: { en: 'Japan', vi: 'Nhật Bản' }
-            },
-            { kana: 'アメリカ', romaji: 'amerika', meaning: { en: 'USA', vi: 'Mỹ' } },
-            { kana: 'イギリス', romaji: 'igirisu', meaning: { en: 'UK', vi: 'Anh' } },
-            {
-              kana: 'ちゅうごく',
-              kanji: '中国',
-              romaji: 'chūgoku',
-              meaning: { en: 'China', vi: 'Trung Quốc' }
-            },
-            {
-              kana: 'かんこく',
-              kanji: '韓国',
-              romaji: 'kankoku',
-              meaning: { en: 'South Korea', vi: 'Hàn Quốc' }
-            },
-            { kana: 'ドイツ', romaji: 'doitsu', meaning: { en: 'Germany', vi: 'Đức' } },
-            { kana: 'フランス', romaji: 'furansu', meaning: { en: 'France', vi: 'Pháp' } },
-            { kana: 'ブラジル', romaji: 'burajiru', meaning: { en: 'Brazil', vi: 'Brazil' } },
-            { kana: 'タイ', romaji: 'tai', meaning: { en: 'Thailand', vi: 'Thái Lan' } },
-            { kana: 'ベトナム', romaji: 'betonamu', meaning: { en: 'Vietnam', vi: 'Việt Nam' } }
-          ]
         },
         {
-          title: { en: 'Languages', vi: 'Ngôn ngữ' },
-          items: [
+          id: 'reading-2',
+          title: { en: 'Colleagues at Sakura', vi: 'Đồng nghiệp ở Sakura' },
+          lines: [
             {
-              kana: 'にほんご',
-              kanji: '日本語',
-              romaji: 'nihongo',
-              meaning: { en: 'Japanese', vi: 'tiếng Nhật' }
+              jp: 'マリア・コスタさんは ブラジルから きました。',
+              romaji: 'Maria Kosta-san wa Burajiru kara kimashita.',
+              meaning: {
+                en: 'Maria Costa came from Brazil.',
+                vi: 'Chị Maria Costa đến từ Brazil.'
+              }
             },
             {
-              kana: 'えいご',
-              kanji: '英語',
-              romaji: 'eigo',
-              meaning: { en: 'English', vi: 'tiếng Anh' }
+              jp: 'マリアさんも さくらしょうじの かいしゃいんです。',
+              romaji: 'Maria-san mo Sakura shōji no kaishain desu.',
+              meaning: {
+                en: 'Maria is also an employee at Sakura Trading.',
+                vi: 'Chị Maria cũng là nhân viên công ty Sakura.'
+              },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
             },
             {
-              kana: 'ちゅうごくご',
-              kanji: '中国語',
-              romaji: 'chūgokugo',
-              meaning: { en: 'Chinese', vi: 'tiếng Trung' }
+              jp: 'わたしも かいしゃいんです。',
+              romaji: 'Watashi mo kaishain desu.',
+              meaning: { en: 'I am a company employee too.', vi: 'Tôi cũng là nhân viên công ty.' },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: { en: 'Where is Maria from?', vi: 'Chị Maria đến từ đâu?' },
+              choices: [
+                { id: 'a', label: { en: 'Brazil', vi: 'Brazil' } },
+                { id: 'b', label: { en: 'America', vi: 'Mỹ' } },
+                { id: 'c', label: { en: 'Japan', vi: 'Nhật Bản' } },
+                { id: 'd', label: { en: 'Vietnam', vi: 'Việt Nam' } }
+              ],
+              correctId: 'a'
             },
             {
-              kana: 'かんこくご',
-              kanji: '韓国語',
-              romaji: 'kankokugo',
-              meaning: { en: 'Korean', vi: 'tiếng Hàn' }
-            },
-            {
-              kana: 'ベトナムご',
-              kanji: 'ベトナム語',
-              romaji: 'betonamugo',
-              meaning: { en: 'Vietnamese', vi: 'tiếng Việt' }
+              id: 'q2',
+              question: {
+                en: 'Where do Maria and the speaker work?',
+                vi: 'Chị Maria và người nói làm ở đâu?'
+              },
+              choices: [
+                { id: 'a', label: { en: 'Sakura Trading', vi: 'Công ty Sakura' } },
+                { id: 'b', label: { en: 'A hospital', vi: 'Bệnh viện' } },
+                { id: 'c', label: { en: 'A university', vi: 'Trường đại học' } },
+                { id: 'd', label: { en: 'A bank', vi: 'Ngân hàng' } }
+              ],
+              correctId: 'a'
             }
           ]
         },
         {
+          id: 'reading-3',
+          title: { en: 'Introducing Yuki', vi: 'Giới thiệu Yuki' },
+          lines: [
+            {
+              jp: 'こちらは ゆきちゃんです。',
+              romaji: 'Kochira wa Yuki-chan desu.',
+              meaning: { en: 'This is Yuki.', vi: 'Đây là bé Yuki.' }
+            },
+            {
+              jp: 'ゆきちゃんは 9さいです。',
+              romaji: 'Yuki-chan wa kyū-sai desu.',
+              meaning: { en: 'Yuki is nine years old.', vi: 'Bé Yuki 9 tuổi.' },
+              ruby: [{ base: '歳', reading: 'さい' }]
+            },
+            {
+              jp: 'ゆきちゃんは がくせいじゃありません。',
+              romaji: 'Yuki-chan wa gakusei ja arimasen.',
+              meaning: { en: 'Yuki is not a student.', vi: 'Bé Yuki không phải là sinh viên.' },
+              ruby: [
+                { base: '学', reading: 'がく' },
+                { base: '生', reading: 'せい' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: { en: 'Who is being introduced?', vi: 'Người được giới thiệu là ai?' },
+              choices: [
+                { id: 'a', label: { en: 'Yuki', vi: 'Yuki' } },
+                { id: 'b', label: { en: 'Maria', vi: 'Maria' } },
+                { id: 'c', label: { en: 'Alex', vi: 'Alex' } },
+                { id: 'd', label: { en: 'Yamada', vi: 'Yamada' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' },
+              choices: [
+                { id: 'a', label: { en: '9 years old', vi: '9 tuổi' } },
+                { id: 'b', label: { en: '20 years old', vi: '20 tuổi' } },
+                { id: 'c', label: { en: '25 years old', vi: '25 tuổi' } },
+                { id: 'd', label: { en: '8 years old', vi: '8 tuổi' } }
+              ],
+              correctId: 'a'
+            }
+          ]
+        }
+      ],
+      reference: [
+        {
+          kind: 'table',
+          title: { en: 'Countries, people & languages', vi: 'Nước, người & ngôn ngữ' },
+          intro: {
+            en: 'Country names (国), nationalities with 〜人, and languages with 〜語.',
+            vi: 'Tên nước (国), quốc tịch với 〜人 và ngôn ngữ với 〜語.'
+          },
+          columns: {
+            country: { en: 'Country (国)', vi: 'Nước (国)' },
+            person: { en: 'Person (人)', vi: 'Người (人)' },
+            language: { en: 'Language (語)', vi: 'Ngôn ngữ (語)' }
+          },
+          rows: [
+            {
+              country: { jp: 'アメリカ', meaning: { en: 'USA', vi: 'Mỹ' } },
+              person: {
+                jp: 'アメリカ人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'アメリカじん'
+              },
+              languages: [
+                {
+                  jp: '英語',
+                  ruby: [
+                    { base: '英', reading: 'えい' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'English', vi: 'tiếng Anh' },
+                  speech: 'えいご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'イギリス', meaning: { en: 'UK', vi: 'Anh' } },
+              person: {
+                jp: 'イギリス人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'イギリスじん'
+              },
+              languages: [
+                {
+                  jp: '英語',
+                  ruby: [
+                    { base: '英', reading: 'えい' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'English', vi: 'tiếng Anh' },
+                  speech: 'えいご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'イタリア', meaning: { en: 'Italy', vi: 'Ý' } },
+              person: {
+                jp: 'イタリア人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'イタリアじん'
+              },
+              languages: [
+                {
+                  jp: 'イタリア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Italian', vi: 'tiếng Ý' },
+                  speech: 'イタリアご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'イラン', meaning: { en: 'Iran', vi: 'Iran' } },
+              person: {
+                jp: 'イラン人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'イランじん'
+              },
+              languages: [
+                {
+                  jp: 'ペルシア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Persian', vi: 'tiếng Ba Tư' },
+                  speech: 'ペルシアご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'インド', meaning: { en: 'India', vi: 'Ấn Độ' } },
+              person: {
+                jp: 'インド人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'インドじん'
+              },
+              languages: [
+                {
+                  jp: 'ヒンディー語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Hindi', vi: 'tiếng Hin-đi' },
+                  speech: 'ヒンディーご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'インドネシア', meaning: { en: 'Indonesia', vi: 'In-đô-nê-xi-a' } },
+              person: {
+                jp: 'インドネシア人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'インドネシアじん'
+              },
+              languages: [
+                {
+                  jp: 'インドネシア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Indonesian', vi: 'tiếng In-đô-nê-xi-a' },
+                  speech: 'インドネシアご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'エジプト', meaning: { en: 'Egypt', vi: 'Ai Cập' } },
+              person: {
+                jp: 'エジプト人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'エジプトじん'
+              },
+              languages: [
+                {
+                  jp: 'アラビア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Arabic', vi: 'tiếng Ả-rập' },
+                  speech: 'アラビアご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'オーストラリア', meaning: { en: 'Australia', vi: 'Úc' } },
+              person: {
+                jp: 'オーストラリア人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'オーストラリアじん'
+              },
+              languages: [
+                {
+                  jp: '英語',
+                  ruby: [
+                    { base: '英', reading: 'えい' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'English', vi: 'tiếng Anh' },
+                  speech: 'えいご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'カナダ', meaning: { en: 'Canada', vi: 'Canada' } },
+              person: {
+                jp: 'カナダ人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'カナダじん'
+              },
+              languages: [
+                {
+                  jp: '英語',
+                  ruby: [
+                    { base: '英', reading: 'えい' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'English', vi: 'tiếng Anh' },
+                  speech: 'えいご'
+                },
+                {
+                  jp: 'フランス語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'French', vi: 'tiếng Pháp' },
+                  speech: 'フランスご'
+                }
+              ]
+            },
+            {
+              country: {
+                jp: '韓国',
+                ruby: [
+                  { base: '韓', reading: 'かん' },
+                  { base: '国', reading: 'こく' }
+                ],
+                meaning: { en: 'South Korea', vi: 'Hàn Quốc' },
+                speech: 'かんこく'
+              },
+              person: {
+                jp: '韓国人',
+                ruby: [
+                  { base: '韓', reading: 'かん' },
+                  { base: '国', reading: 'こく' },
+                  { base: '人', reading: 'じん' }
+                ],
+                speech: 'かんこくじん'
+              },
+              languages: [
+                {
+                  jp: '韓国語',
+                  ruby: [
+                    { base: '韓', reading: 'かん' },
+                    { base: '国', reading: 'こく' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'Korean', vi: 'tiếng Hàn Quốc' },
+                  speech: 'かんこくご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'サウジアラビア', meaning: { en: 'Saudi Arabia', vi: 'Ả-rập Xê-út' } },
+              person: {
+                jp: 'サウジアラビア人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'サウジアラビアじん'
+              },
+              languages: [
+                {
+                  jp: 'アラビア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Arabic', vi: 'tiếng Ả-rập' },
+                  speech: 'アラビアご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'シンガポール', meaning: { en: 'Singapore', vi: 'Singapore' } },
+              person: {
+                jp: 'シンガポール人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'シンガポールじん'
+              },
+              languages: [
+                {
+                  jp: '英語',
+                  ruby: [
+                    { base: '英', reading: 'えい' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'English', vi: 'tiếng Anh' },
+                  speech: 'えいご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'スペイン', meaning: { en: 'Spain', vi: 'Tây Ban Nha' } },
+              person: {
+                jp: 'スペイン人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'スペインじん'
+              },
+              languages: [
+                {
+                  jp: 'スペイン語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Spanish', vi: 'tiếng Tây Ban Nha' },
+                  speech: 'スペインご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'タイ', meaning: { en: 'Thailand', vi: 'Thái Lan' } },
+              person: { jp: 'タイ人', ruby: [{ base: '人', reading: 'じん' }], speech: 'タイじん' },
+              languages: [
+                {
+                  jp: 'タイ語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Thai', vi: 'tiếng Thái' },
+                  speech: 'タイご'
+                }
+              ]
+            },
+            {
+              country: {
+                jp: '中国',
+                ruby: [
+                  { base: '中', reading: 'ちゅう' },
+                  { base: '国', reading: 'ごく' }
+                ],
+                meaning: { en: 'China', vi: 'Trung Quốc' },
+                speech: 'ちゅうごく'
+              },
+              person: {
+                jp: '中国人',
+                ruby: [
+                  { base: '中', reading: 'ちゅう' },
+                  { base: '国', reading: 'ごく' },
+                  { base: '人', reading: 'じん' }
+                ],
+                speech: 'ちゅうごくじん'
+              },
+              languages: [
+                {
+                  jp: '中国語',
+                  ruby: [
+                    { base: '中', reading: 'ちゅう' },
+                    { base: '国', reading: 'ごく' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'Chinese', vi: 'tiếng Trung Quốc' },
+                  speech: 'ちゅうごくご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'ドイツ', meaning: { en: 'Germany', vi: 'Đức' } },
+              person: {
+                jp: 'ドイツ人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'ドイツじん'
+              },
+              languages: [
+                {
+                  jp: 'ドイツ語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'German', vi: 'tiếng Đức' },
+                  speech: 'ドイツご'
+                }
+              ]
+            },
+            {
+              country: {
+                jp: '日本',
+                ruby: [
+                  { base: '日', reading: 'に' },
+                  { base: '本', reading: 'ほん' }
+                ],
+                meaning: { en: 'Japan', vi: 'Nhật Bản' },
+                speech: 'にほん'
+              },
+              person: {
+                jp: '日本人',
+                ruby: [
+                  { base: '日', reading: 'に' },
+                  { base: '本', reading: 'ほん' },
+                  { base: '人', reading: 'じん' }
+                ],
+                speech: 'にほんじん'
+              },
+              languages: [
+                {
+                  jp: '日本語',
+                  ruby: [
+                    { base: '日', reading: 'に' },
+                    { base: '本', reading: 'ほん' },
+                    { base: '語', reading: 'ご' }
+                  ],
+                  meaning: { en: 'Japanese', vi: 'tiếng Nhật' },
+                  speech: 'にほんご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'フランス', meaning: { en: 'France', vi: 'Pháp' } },
+              person: {
+                jp: 'フランス人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'フランスじん'
+              },
+              languages: [
+                {
+                  jp: 'フランス語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'French', vi: 'tiếng Pháp' },
+                  speech: 'フランスご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'フィリピン', meaning: { en: 'Philippines', vi: 'Philippine' } },
+              person: {
+                jp: 'フィリピン人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'フィリピンじん'
+              },
+              languages: [
+                {
+                  jp: 'フィリピノ語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Filipino', vi: 'tiếng Philippine' },
+                  speech: 'フィリピノご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'ブラジル', meaning: { en: 'Brazil', vi: 'Brazil' } },
+              person: {
+                jp: 'ブラジル人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'ブラジルじん'
+              },
+              languages: [
+                {
+                  jp: 'ポルトガル語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Portuguese', vi: 'tiếng Bồ Đào Nha' },
+                  speech: 'ポルトガルご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'ベトナム', meaning: { en: 'Vietnam', vi: 'Việt Nam' } },
+              person: {
+                jp: 'ベトナム人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'ベトナムじん'
+              },
+              languages: [
+                {
+                  jp: 'ベトナム語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Vietnamese', vi: 'tiếng Việt' },
+                  speech: 'ベトナムご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'マレーシア', meaning: { en: 'Malaysia', vi: 'Malaysia' } },
+              person: {
+                jp: 'マレーシア人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'マレーシアじん'
+              },
+              languages: [
+                {
+                  jp: 'マレーシア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Malay', vi: 'tiếng Mã Lai' },
+                  speech: 'マレーシアご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'メキシコ', meaning: { en: 'Mexico', vi: 'Mexico' } },
+              person: {
+                jp: 'メキシコ人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'メキシコじん'
+              },
+              languages: [
+                {
+                  jp: 'スペイン語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Spanish', vi: 'tiếng Tây Ban Nha' },
+                  speech: 'スペインご'
+                }
+              ]
+            },
+            {
+              country: { jp: 'ロシア', meaning: { en: 'Russia', vi: 'Nga' } },
+              person: {
+                jp: 'ロシア人',
+                ruby: [{ base: '人', reading: 'じん' }],
+                speech: 'ロシアじん'
+              },
+              languages: [
+                {
+                  jp: 'ロシア語',
+                  ruby: [{ base: '語', reading: 'ご' }],
+                  meaning: { en: 'Russian', vi: 'tiếng Nga' },
+                  speech: 'ロシアご'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          kind: 'vocab',
           title: { en: 'More occupations', vi: 'Nghề nghiệp khác' },
           items: [
             {
@@ -771,41 +1285,6 @@ export const n5Course: Course = {
               kanji: '警察官',
               romaji: 'keisatsukan',
               meaning: { en: 'police officer', vi: 'cảnh sát' }
-            }
-          ]
-        },
-        {
-          title: { en: 'Nationalities (〜じん)', vi: 'Quốc tịch (〜じん)' },
-          items: [
-            {
-              kana: 'にほんじん',
-              kanji: '日本人',
-              romaji: 'nihonjin',
-              meaning: { en: 'Japanese person', vi: 'người Nhật' }
-            },
-            {
-              kana: 'アメリカじん',
-              kanji: 'アメリカ人',
-              romaji: 'amerikajin',
-              meaning: { en: 'American', vi: 'người Mỹ' }
-            },
-            {
-              kana: 'ちゅうごくじん',
-              kanji: '中国人',
-              romaji: 'chūgokujin',
-              meaning: { en: 'Chinese person', vi: 'người Trung Quốc' }
-            },
-            {
-              kana: 'かんこくじん',
-              kanji: '韓国人',
-              romaji: 'kankokujin',
-              meaning: { en: 'Korean person', vi: 'người Hàn Quốc' }
-            },
-            {
-              kana: 'ベトナムじん',
-              kanji: 'ベトナム人',
-              romaji: 'betonamujin',
-              meaning: { en: 'Vietnamese person', vi: 'người Việt Nam' }
             }
           ]
         }
@@ -1266,10 +1745,374 @@ export const n5Course: Course = {
               correctId: 'b'
             }
           ]
+        },
+        {
+          id: 'reading-2',
+          title: { en: 'Things on the desk', vi: 'Đồ trên bàn' },
+          lines: [
+            {
+              jp: 'これは ほんです。',
+              romaji: 'Kore wa hon desu.',
+              meaning: { en: 'This is a book.', vi: 'Đây là quyển sách.' },
+              ruby: [{ base: '本', reading: 'ほん' }]
+            },
+            {
+              jp: 'あれは かさです。',
+              romaji: 'Are wa kasa desu.',
+              meaning: { en: 'That over there is an umbrella.', vi: 'Cái kia là cái ô.' },
+              ruby: [{ base: '傘', reading: 'かさ' }]
+            },
+            {
+              jp: 'この かばんは だれのですか。',
+              romaji: 'Kono kaban wa dare no desu ka.',
+              meaning: { en: 'Whose bag is this?', vi: 'Cái cặp này là của ai?' }
+            },
+            {
+              jp: 'その かばんは わたしのです。',
+              romaji: 'Sono kaban wa watashi no desu.',
+              meaning: { en: 'That bag is mine.', vi: 'Cái cặp đó là của tôi.' },
+              ruby: [{ base: '私', reading: 'わたし' }]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: { en: 'What is that over there (あれ)?', vi: 'Cái kia (あれ) là gì?' },
+              choices: [
+                { id: 'a', label: { en: 'An umbrella', vi: 'Cái ô' } },
+                { id: 'b', label: { en: 'A book', vi: 'Quyển sách' } },
+                { id: 'c', label: { en: 'A bag', vi: 'Cái cặp' } },
+                { id: 'd', label: { en: 'A key', vi: 'Chìa khóa' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'Whose bag is it?', vi: 'Cái cặp là của ai?' },
+              choices: [
+                { id: 'a', label: { en: 'The speaker', vi: 'Người nói' } },
+                { id: 'b', label: { en: 'Maria', vi: 'Maria' } },
+                { id: 'c', label: { en: 'The teacher', vi: 'Giáo viên' } },
+                { id: 'd', label: { en: 'Nobody knows', vi: 'Không ai biết' } }
+              ],
+              correctId: 'a'
+            }
+          ]
+        },
+        {
+          id: 'reading-3',
+          title: { en: 'Is that right?', vi: 'Có đúng không?' },
+          lines: [
+            {
+              jp: 'その とけいは にほんの ですか。',
+              romaji: 'Sono tokei wa nihon no desu ka.',
+              meaning: {
+                en: 'Is that watch Japanese?',
+                vi: 'Cái đồng hồ đó là hàng Nhật phải không?'
+              },
+              ruby: [
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' }
+              ]
+            },
+            {
+              jp: 'はい、そうです。',
+              romaji: 'Hai, sō desu.',
+              meaning: { en: 'Yes, that is right.', vi: 'Vâng, đúng vậy.' }
+            },
+            {
+              jp: 'これは かぎですか。',
+              romaji: 'Kore wa kagi desu ka.',
+              meaning: { en: 'Is this a key?', vi: 'Cái này là chìa khóa phải không?' },
+              ruby: [{ base: '鍵', reading: 'かぎ' }]
+            },
+            {
+              jp: 'いいえ、ちがいます。これは えんぴつです。',
+              romaji: 'Iie, chigaimasu. Kore wa enpitsu desu.',
+              meaning: {
+                en: 'No, it is not. This is a pencil.',
+                vi: 'Không, không phải. Đây là bút chì.'
+              },
+              ruby: [
+                { base: '違', reading: 'ちが' },
+                { base: '鉛', reading: 'えん' },
+                { base: '筆', reading: 'ぴつ' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: { en: 'Is the watch Japanese?', vi: 'Đồng hồ có phải hàng Nhật không?' },
+              choices: [
+                { id: 'a', label: { en: 'Yes', vi: 'Có' } },
+                { id: 'b', label: { en: 'No', vi: 'Không' } },
+                { id: 'c', label: { en: 'Not mentioned', vi: 'Không nói' } },
+                { id: 'd', label: { en: 'It is broken', vi: 'Bị hỏng' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'What is this object really?', vi: 'Vật này thực ra là gì?' },
+              choices: [
+                { id: 'a', label: { en: 'A pencil', vi: 'Bút chì' } },
+                { id: 'b', label: { en: 'A key', vi: 'Chìa khóa' } },
+                { id: 'c', label: { en: 'A book', vi: 'Quyển sách' } },
+                { id: 'd', label: { en: 'A clock', vi: 'Đồng hồ' } }
+              ],
+              correctId: 'a'
+            }
+          ]
         }
       ],
       reference: [
         {
+          kind: 'vocab',
+          title: { en: 'Common Japanese surnames', vi: 'Họ thường gặp' },
+          includeInQuiz: false,
+          intro: {
+            en: 'Surnames (姓): the 20 most common Japanese family names.',
+            vi: 'Họ (姓): 20 họ phổ biến nhất ở Nhật Bản.'
+          },
+          items: [
+            {
+              kana: 'さとう',
+              kanji: '佐藤',
+              romaji: 'Satō',
+              meaning: { en: 'Satō', vi: 'Satō' },
+              ruby: [
+                { base: '佐', reading: 'さ' },
+                { base: '藤', reading: 'とう' }
+              ]
+            },
+            {
+              kana: 'すずき',
+              kanji: '鈴木',
+              romaji: 'Suzuki',
+              meaning: { en: 'Suzuki', vi: 'Suzuki' },
+              ruby: [
+                { base: '鈴', reading: 'すず' },
+                { base: '木', reading: 'き' }
+              ]
+            },
+            {
+              kana: 'たかはし',
+              kanji: '高橋',
+              romaji: 'Takahashi',
+              meaning: { en: 'Takahashi', vi: 'Takahashi' },
+              ruby: [
+                { base: '高', reading: 'たか' },
+                { base: '橋', reading: 'はし' }
+              ]
+            },
+            {
+              kana: 'たなか',
+              kanji: '田中',
+              romaji: 'Tanaka',
+              meaning: { en: 'Tanaka', vi: 'Tanaka' },
+              ruby: [
+                { base: '田', reading: 'た' },
+                { base: '中', reading: 'なか' }
+              ]
+            },
+            {
+              kana: 'わたなべ',
+              kanji: '渡辺',
+              romaji: 'Watanabe',
+              meaning: { en: 'Watanabe', vi: 'Watanabe' },
+              ruby: [
+                { base: '渡', reading: 'わた' },
+                { base: '辺', reading: 'なべ' }
+              ]
+            },
+            {
+              kana: 'いとう',
+              kanji: '伊藤',
+              romaji: 'Itō',
+              meaning: { en: 'Itō', vi: 'Itō' },
+              ruby: [
+                { base: '伊', reading: 'い' },
+                { base: '藤', reading: 'とう' }
+              ]
+            },
+            {
+              kana: 'やまもと',
+              kanji: '山本',
+              romaji: 'Yamamoto',
+              meaning: { en: 'Yamamoto', vi: 'Yamamoto' },
+              ruby: [
+                { base: '山', reading: 'やま' },
+                { base: '本', reading: 'もと' }
+              ]
+            },
+            {
+              kana: 'なかむら',
+              kanji: '中村',
+              romaji: 'Nakamura',
+              meaning: { en: 'Nakamura', vi: 'Nakamura' },
+              ruby: [
+                { base: '中', reading: 'なか' },
+                { base: '村', reading: 'むら' }
+              ]
+            },
+            {
+              kana: 'こばやし',
+              kanji: '小林',
+              romaji: 'Kobayashi',
+              meaning: { en: 'Kobayashi', vi: 'Kobayashi' },
+              ruby: [
+                { base: '小', reading: 'こ' },
+                { base: '林', reading: 'ばやし' }
+              ]
+            },
+            {
+              kana: 'かとう',
+              kanji: '加藤',
+              romaji: 'Katō',
+              meaning: { en: 'Katō', vi: 'Katō' },
+              ruby: [
+                { base: '加', reading: 'か' },
+                { base: '藤', reading: 'とう' }
+              ]
+            },
+            {
+              kana: 'よしだ',
+              kanji: '吉田',
+              romaji: 'Yoshida',
+              meaning: { en: 'Yoshida', vi: 'Yoshida' },
+              ruby: [
+                { base: '吉', reading: 'よし' },
+                { base: '田', reading: 'だ' }
+              ]
+            },
+            {
+              kana: 'やまだ',
+              kanji: '山田',
+              romaji: 'Yamada',
+              meaning: { en: 'Yamada', vi: 'Yamada' },
+              ruby: [
+                { base: '山', reading: 'やま' },
+                { base: '田', reading: 'だ' }
+              ]
+            },
+            {
+              kana: 'ささき',
+              kanji: '佐々木',
+              romaji: 'Sasaki',
+              meaning: { en: 'Sasaki', vi: 'Sasaki' },
+              ruby: [
+                { base: '佐', reading: 'さ' },
+                { base: '々', reading: 'さ' },
+                { base: '木', reading: 'き' }
+              ]
+            },
+            {
+              kana: 'さいとう',
+              kanji: '斎藤',
+              romaji: 'Saitō',
+              meaning: { en: 'Saitō', vi: 'Saitō' },
+              ruby: [
+                { base: '斎', reading: 'さい' },
+                { base: '藤', reading: 'とう' }
+              ]
+            },
+            {
+              kana: 'やまぐち',
+              kanji: '山口',
+              romaji: 'Yamaguchi',
+              meaning: { en: 'Yamaguchi', vi: 'Yamaguchi' },
+              ruby: [
+                { base: '山', reading: 'やま' },
+                { base: '口', reading: 'ぐち' }
+              ]
+            },
+            {
+              kana: 'まつもと',
+              kanji: '松本',
+              romaji: 'Matsumoto',
+              meaning: { en: 'Matsumoto', vi: 'Matsumoto' },
+              ruby: [
+                { base: '松', reading: 'まつ' },
+                { base: '本', reading: 'もと' }
+              ]
+            },
+            {
+              kana: 'いのうえ',
+              kanji: '井上',
+              romaji: 'Inoue',
+              meaning: { en: 'Inoue', vi: 'Inoue' },
+              ruby: [
+                { base: '井', reading: 'い' },
+                { base: '上', reading: 'のうえ' }
+              ]
+            },
+            {
+              kana: 'きむら',
+              kanji: '木村',
+              romaji: 'Kimura',
+              meaning: { en: 'Kimura', vi: 'Kimura' },
+              ruby: [
+                { base: '木', reading: 'き' },
+                { base: '村', reading: 'むら' }
+              ]
+            },
+            {
+              kana: 'はやし',
+              kanji: '林',
+              romaji: 'Hayashi',
+              meaning: { en: 'Hayashi', vi: 'Hayashi' },
+              ruby: [{ base: '林', reading: 'はやし' }]
+            },
+            {
+              kana: 'しみず',
+              kanji: '清水',
+              romaji: 'Shimizu',
+              meaning: { en: 'Shimizu', vi: 'Shimizu' },
+              ruby: [
+                { base: '清', reading: 'し' },
+                { base: '水', reading: 'みず' }
+              ]
+            }
+          ],
+          notes: [
+            {
+              en: "Source: excerpt from Keiji Shirooka and Tadashige Murayama's nationwide Japanese surname ranking database (August 2011).",
+              vi: 'Nguồn: trích từ cơ sở dữ liệu xếp hạng họ người Nhật toàn quốc của Keiji Shirooka và Tadashige Murayama (tháng 8/2011).'
+            }
+          ]
+        },
+        {
+          kind: 'list',
+          title: { en: 'Greetings in context', vi: 'Chào hỏi' },
+          rows: [
+            {
+              jp: 'はじめまして。',
+              meaning: {
+                en: 'Nice to meet you. Said when meeting someone for the first time.',
+                vi: 'Rất vui được gặp bạn. Dùng khi lần đầu gặp ai đó.'
+              },
+              note: {
+                en: 'In business, people often exchange business cards when meeting for the first time.',
+                vi: 'Trong công việc, khi lần đầu gặp nhau người Nhật thường trao đổi danh thiếp.'
+              }
+            },
+            {
+              jp: 'どうぞ よろしく お願いします。',
+              meaning: {
+                en: 'Please treat me well. I look forward to your support.',
+                vi: 'Rất mong được giúp đỡ. Xin được giúp đỡ.'
+              },
+              note: {
+                en: 'When moving to a new neighborhood, people greet neighbors and bring a small gift such as towels, soap, or sweets.',
+                vi: 'Khi chuyển nhà, người Nhật thường sang chào hàng xóm và mang quà nhỏ như khăn tắm, xà phòng, bánh kẹo, v.v.'
+              },
+              ruby: [{ base: '願', reading: 'ねが' }]
+            }
+          ]
+        },
+        {
+          kind: 'vocab',
           title: { en: 'School supplies', vi: 'Đồ dùng học tập' },
           items: [
             {
@@ -1296,6 +2139,7 @@ export const n5Course: Course = {
           ]
         },
         {
+          kind: 'vocab',
           title: { en: 'Electronics', vi: 'Đồ điện tử' },
           items: [
             { kana: 'パソコン', romaji: 'pasokon', meaning: { en: 'PC', vi: 'máy tính' } },
@@ -1328,6 +2172,7 @@ export const n5Course: Course = {
           ]
         },
         {
+          kind: 'vocab',
           title: { en: 'Question words', vi: 'Từ để hỏi' },
           items: [
             { kana: 'どれ', romaji: 'dore', meaning: { en: 'which one', vi: 'cái nào' } },
@@ -1344,6 +2189,7 @@ export const n5Course: Course = {
           ]
         },
         {
+          kind: 'vocab',
           title: { en: 'More everyday objects', vi: 'Đồ vật thường ngày khác' },
           items: [
             {
@@ -1902,10 +2748,319 @@ export const n5Course: Course = {
               correctId: 'a'
             }
           ]
+        },
+        {
+          id: 'reading-2',
+          title: { en: 'Asking for directions', vi: 'Hỏi đường' },
+          lines: [
+            {
+              jp: 'すみません。トイレは どこですか。',
+              romaji: 'Sumimasen. Toire wa doko desu ka.',
+              meaning: { en: 'Excuse me. Where is the toilet?', vi: 'Xin lỗi. Nhà vệ sinh ở đâu?' }
+            },
+            {
+              jp: 'あちらです。',
+              romaji: 'Achira desu.',
+              meaning: { en: 'It is over there.', vi: 'Ở phía kia.' }
+            },
+            {
+              jp: 'かいぎしつは どちらですか。',
+              romaji: 'Kaigishitsu wa dochira desu ka.',
+              meaning: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
+              ]
+            },
+            {
+              jp: 'かいぎしつは そちらです。',
+              romaji: 'Kaigishitsu wa sochira desu.',
+              meaning: { en: 'The meeting room is there.', vi: 'Phòng họp ở phía đó.' },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: {
+                en: 'What place did the visitor ask about first?',
+                vi: 'Người hỏi hỏi địa điểm nào trước?'
+              },
+              choices: [
+                { id: 'a', label: { en: 'The toilet', vi: 'Nhà vệ sinh' } },
+                { id: 'b', label: { en: 'The meeting room', vi: 'Phòng họp' } },
+                { id: 'c', label: { en: 'The cafeteria', vi: 'Nhà ăn' } },
+                { id: 'd', label: { en: 'The elevator', vi: 'Thang máy' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' },
+              choices: [
+                { id: 'a', label: { en: 'Over there (そちら)', vi: 'Phía đó (そちら)' } },
+                { id: 'b', label: { en: 'Over there (あちら)', vi: 'Phía kia (あちら)' } },
+                { id: 'c', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' } },
+                { id: 'd', label: { en: 'On the 2nd floor', vi: 'Tầng 2' } }
+              ],
+              correctId: 'a'
+            }
+          ]
+        },
+        {
+          id: 'reading-3',
+          title: { en: 'Inside the building', vi: 'Trong tòa nhà' },
+          lines: [
+            {
+              jp: 'ここは うけつけです。',
+              romaji: 'Koko wa uketsuke desu.',
+              meaning: { en: 'This is the reception.', vi: 'Đây là quầy tiếp tân.' },
+              ruby: [
+                { base: '受', reading: 'う' },
+                { base: '付', reading: 'け' }
+              ]
+            },
+            {
+              jp: 'しょくどうは あそこです。',
+              romaji: 'Shokudō wa asoko desu.',
+              meaning: { en: 'The cafeteria is over there.', vi: 'Nhà ăn ở đằng kia.' },
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '堂', reading: 'どう' }
+              ]
+            },
+            {
+              jp: 'きょうしつは 2階です。',
+              romaji: 'Kyōshitsu wa nikai desu.',
+              meaning: { en: 'The classroom is on the 2nd floor.', vi: 'Phòng học ở tầng 2.' },
+              ruby: [
+                { base: '教', reading: 'きょう' },
+                { base: '室', reading: 'しつ' },
+                { base: '階', reading: 'かい' }
+              ]
+            },
+            {
+              jp: 'エレベーターは こちらです。',
+              romaji: 'Erebētā wa kochira desu.',
+              meaning: { en: 'The elevator is this way.', vi: 'Thang máy ở phía này.' }
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: { en: 'Where is the cafeteria?', vi: 'Nhà ăn ở đâu?' },
+              choices: [
+                { id: 'a', label: { en: 'Over there (あそこ)', vi: 'Đằng kia (あそこ)' } },
+                { id: 'b', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' } },
+                { id: 'c', label: { en: 'This way (こちら)', vi: 'Phía này (こちら)' } },
+                { id: 'd', label: { en: 'On the 2nd floor', vi: 'Tầng 2' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'What floor is the classroom on?', vi: 'Phòng học ở tầng mấy?' },
+              choices: [
+                { id: 'a', label: { en: '2nd floor', vi: 'Tầng 2' } },
+                { id: 'b', label: { en: '1st floor', vi: 'Tầng 1' } },
+                { id: 'c', label: { en: 'Basement', vi: 'Tầng hầm' } },
+                { id: 'd', label: { en: '3rd floor', vi: 'Tầng 3' } }
+              ],
+              correctId: 'a'
+            }
+          ]
         }
       ],
       reference: [
         {
+          kind: 'list',
+          title: { en: 'Department store floors', vi: 'Sơ đồ tầng đepaato' },
+          layout: 'stacked',
+          intro: {
+            en: 'Typical floor layout in a Japanese department store (デパート).',
+            vi: 'Bố trí tầng thường gặp trong cửa hàng bách hóa (デパート) ở Nhật.'
+          },
+          rows: [
+            {
+              number: '屋上',
+              numberMeaning: { en: 'Rooftop', vi: 'Tầng thượng' },
+              numberRuby: [
+                { base: '屋', reading: 'おく' },
+                { base: '上', reading: 'じょう' }
+              ],
+              jp: '遊園地',
+              ruby: [
+                { base: '遊', reading: 'ゆう' },
+                { base: '園', reading: 'えん' },
+                { base: '地', reading: 'ち' }
+              ],
+              meaning: { en: 'Amusement park', vi: 'Công viên giải trí' }
+            },
+            {
+              number: '8階',
+              numberMeaning: { en: '8th floor', vi: 'Tầng 8' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: 'レストラン・催し物会場',
+              ruby: [
+                { base: '催', reading: 'もよお' },
+                { base: '物', reading: 'もの' },
+                { base: '会', reading: 'かい' },
+                { base: '場', reading: 'じょう' }
+              ],
+              meaning: {
+                en: 'Restaurants, event hall',
+                vi: 'Nhà hàng, phòng tổ chức sự kiện'
+              }
+            },
+            {
+              number: '7階',
+              numberMeaning: { en: '7th floor', vi: 'Tầng 7' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: '時計・眼鏡',
+              ruby: [
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' },
+                { base: '眼', reading: 'め' },
+                { base: '鏡', reading: 'がね' }
+              ],
+              meaning: { en: 'Watches, eyeglasses', vi: 'Đồng hồ, kính mắt' }
+            },
+            {
+              number: '6階',
+              numberMeaning: { en: '6th floor', vi: 'Tầng 6' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: 'スポーツ用品・旅行用品',
+              ruby: [
+                { base: '用', reading: 'よう' },
+                { base: '品', reading: 'ひん' },
+                { base: '旅', reading: 'りょ' },
+                { base: '行', reading: 'こう' },
+                { base: '用', reading: 'よう' },
+                { base: '品', reading: 'ひん' }
+              ],
+              meaning: {
+                en: 'Sports goods, travel goods',
+                vi: 'Dụng cụ thể thao, đồ du lịch'
+              }
+            },
+            {
+              number: '5階',
+              numberMeaning: { en: '5th floor', vi: 'Tầng 5' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: '子ども服・おもちゃ・本・文房具',
+              ruby: [
+                { base: '子', reading: 'こ' },
+                { base: '服', reading: 'ふく' },
+                { base: '本', reading: 'ほん' },
+                { base: '文', reading: 'ぶん' },
+                { base: '房', reading: 'ぼう' },
+                { base: '具', reading: 'ぐ' }
+              ],
+              meaning: {
+                en: "Children's clothes, toys, books, stationery",
+                vi: 'Quần áo trẻ em, đồ chơi, sách, văn phòng phẩm'
+              }
+            },
+            {
+              number: '4階',
+              numberMeaning: { en: '4th floor', vi: 'Tầng 4' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: '家具・食器・電化製品',
+              ruby: [
+                { base: '家', reading: 'か' },
+                { base: '具', reading: 'ぐ' },
+                { base: '食', reading: 'しょ' },
+                { base: '器', reading: 'き' },
+                { base: '電', reading: 'でん' },
+                { base: '化', reading: 'か' },
+                { base: '製', reading: 'せい' },
+                { base: '品', reading: 'ひん' }
+              ],
+              meaning: {
+                en: 'Furniture, tableware, home appliances',
+                vi: 'Nội thất, bát đũa, đồ điện gia dụng'
+              }
+            },
+            {
+              number: '3階',
+              numberMeaning: { en: '3rd floor', vi: 'Tầng 3' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: '紳士服',
+              ruby: [
+                { base: '紳', reading: 'しん' },
+                { base: '士', reading: 'し' },
+                { base: '服', reading: 'ふく' }
+              ],
+              meaning: { en: "Men's clothing", vi: 'Quần áo nam' }
+            },
+            {
+              number: '2階',
+              numberMeaning: { en: '2nd floor', vi: 'Tầng 2' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: '婦人服',
+              ruby: [
+                { base: '婦', reading: 'ふ' },
+                { base: '人', reading: 'じん' },
+                { base: '服', reading: 'ふく' }
+              ],
+              meaning: { en: "Women's clothing", vi: 'Quần áo nữ' }
+            },
+            {
+              number: '1階',
+              numberMeaning: { en: '1st floor', vi: 'Tầng 1' },
+              numberRuby: [{ base: '階', reading: 'かい' }],
+              jp: '靴・かばん・アクセサリー・化粧品',
+              ruby: [
+                { base: '靴', reading: 'くつ' },
+                { base: '化', reading: 'け' },
+                { base: '粧', reading: 'しょう' },
+                { base: '品', reading: 'ひん' }
+              ],
+              meaning: {
+                en: 'Shoes, bags, accessories, cosmetics',
+                vi: 'Giày, túi xách, phụ kiện, mỹ phẩm'
+              }
+            },
+            {
+              number: '地下1階',
+              numberMeaning: { en: 'Basement 1', vi: 'Tầng hầm 1' },
+              numberRuby: [
+                { base: '地', reading: 'ち' },
+                { base: '下', reading: 'か' },
+                { base: '階', reading: 'かい' }
+              ],
+              jp: '食品',
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '品', reading: 'ひん' }
+              ],
+              meaning: { en: 'Food', vi: 'Thực phẩm' }
+            },
+            {
+              number: '地下2階',
+              numberMeaning: { en: 'Basement 2', vi: 'Tầng hầm 2' },
+              numberRuby: [
+                { base: '地', reading: 'ち' },
+                { base: '下', reading: 'か' },
+                { base: '階', reading: 'かい' }
+              ],
+              jp: '駐車場',
+              ruby: [
+                { base: '駐', reading: 'ちゅう' },
+                { base: '車', reading: 'しゃ' },
+                { base: '場', reading: 'じょう' }
+              ],
+              meaning: { en: 'Parking lot', vi: 'Bãi đỗ xe' }
+            }
+          ]
+        },
+        {
+          kind: 'vocab',
           title: { en: 'Floors (〜階)', vi: 'Tầng (〜階)' },
           items: [
             {
@@ -1947,6 +3102,7 @@ export const n5Course: Course = {
           ]
         },
         {
+          kind: 'vocab',
           title: { en: 'Around town', vi: 'Địa điểm quanh phố' },
           items: [
             {
@@ -1977,6 +3133,7 @@ export const n5Course: Course = {
           ]
         },
         {
+          kind: 'vocab',
           title: { en: 'Big numbers (for prices)', vi: 'Số lớn (cho giá tiền)' },
           items: [
             { kana: 'ひゃく', kanji: '百', romaji: 'hyaku', meaning: { en: '100', vi: '100' } },
@@ -2006,6 +3163,1355 @@ export const n5Course: Course = {
               meaning: { en: '8,000', vi: '8.000' }
             },
             { kana: 'まん', kanji: '万', romaji: 'man', meaning: { en: '10,000', vi: '10.000' } }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'lesson-4',
+      number: 4,
+      title: {
+        en: 'What time is it?',
+        vi: 'Mấy giờ rồi?'
+      },
+      focus: {
+        en: 'Tell the time, name days of the week, and describe daily activities and schedules.',
+        vi: 'Nói giờ, các thứ trong tuần và sinh hoạt hàng ngày.'
+      },
+      vocab: [
+        {
+          kana: 'おきます',
+          kanji: '起きます',
+          romaji: 'okimasu',
+          meaning: { en: 'to wake up, get up', vi: 'dậy, thức dậy' },
+          ruby: [{ base: '起', reading: 'お' }]
+        },
+        {
+          kana: 'ねます',
+          kanji: '寝ます',
+          romaji: 'nemasu',
+          meaning: { en: 'to sleep, go to bed', vi: 'ngủ, đi ngủ' },
+          ruby: [{ base: '寝', reading: 'ね' }]
+        },
+        {
+          kana: 'はたらきます',
+          kanji: '働きます',
+          romaji: 'hatarakimasu',
+          meaning: { en: 'to work', vi: 'làm việc' },
+          ruby: [{ base: '働', reading: 'はたら' }]
+        },
+        {
+          kana: 'やすみます',
+          kanji: '休みます',
+          romaji: 'yasumimasu',
+          meaning: { en: 'to rest, take a break', vi: 'nghỉ, nghỉ ngơi' },
+          ruby: [{ base: '休', reading: 'やす' }]
+        },
+        {
+          kana: 'べんきょうします',
+          kanji: '勉強します',
+          romaji: 'benkyō shimasu',
+          meaning: { en: 'to study', vi: 'học' },
+          ruby: [
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' }
+          ]
+        },
+        {
+          kana: 'おわります',
+          kanji: '終わります',
+          romaji: 'owarimasu',
+          meaning: { en: 'to finish, end', vi: 'hết, kết thúc, xong' },
+          ruby: [{ base: '終', reading: 'お' }]
+        },
+        {
+          kana: 'デパート',
+          romaji: 'depāto',
+          meaning: { en: 'department store', vi: 'bách hóa' }
+        },
+        {
+          kana: 'ぎんこう',
+          kanji: '銀行',
+          romaji: 'ginkō',
+          meaning: { en: 'bank', vi: 'ngân hàng' },
+          ruby: [
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' }
+          ]
+        },
+        {
+          kana: 'ゆうびんきょく',
+          kanji: '郵便局',
+          romaji: 'yūbinkyoku',
+          meaning: { en: 'post office', vi: 'bưu điện' },
+          ruby: [
+            { base: '郵', reading: 'ゆう' },
+            { base: '便', reading: 'びん' },
+            { base: '局', reading: 'きょく' }
+          ]
+        },
+        {
+          kana: 'としょかん',
+          kanji: '図書館',
+          romaji: 'toshokan',
+          meaning: { en: 'library', vi: 'thư viện' },
+          ruby: [
+            { base: '図', reading: 'と' },
+            { base: '書', reading: 'しょ' },
+            { base: '館', reading: 'かん' }
+          ]
+        },
+        {
+          kana: 'びじゅつかん',
+          kanji: '美術館',
+          romaji: 'bijutsukan',
+          meaning: { en: 'art museum', vi: 'bảo tàng mỹ thuật' },
+          ruby: [
+            { base: '美', reading: 'び' },
+            { base: '術', reading: 'じゅつ' },
+            { base: '館', reading: 'かん' }
+          ]
+        },
+        {
+          kana: 'いま',
+          kanji: '今',
+          romaji: 'ima',
+          meaning: { en: 'now', vi: 'bây giờ' },
+          ruby: [{ base: '今', reading: 'いま' }]
+        },
+        {
+          kana: '〜じ',
+          kanji: '〜時',
+          romaji: '~ji',
+          speech: 'じ',
+          meaning: { en: "o'clock (~ hour)", vi: '~ giờ' },
+          ruby: [{ base: '時', reading: 'じ' }]
+        },
+        {
+          kana: '〜ふん',
+          kanji: '〜分',
+          romaji: '~fun (~pun)',
+          speech: 'ふん',
+          meaning: {
+            en: '~ minute(s) (〜ぷん after 5, 7, 9...)',
+            vi: '~ phút (〜ぷん sau 5, 7, 9...)'
+          },
+          ruby: [{ base: '分', reading: 'ふん' }]
+        },
+        {
+          kana: 'はん',
+          kanji: '半',
+          romaji: 'han',
+          meaning: { en: 'half (past the hour)', vi: 'rưỡi, nửa' },
+          ruby: [{ base: '半', reading: 'はん' }]
+        },
+        {
+          kana: 'なんじ',
+          kanji: '何時',
+          romaji: 'nanji',
+          meaning: { en: 'what time', vi: 'mấy giờ' },
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' }
+          ]
+        },
+        {
+          kana: 'なんぷん',
+          kanji: '何分',
+          romaji: 'nanpun',
+          meaning: { en: 'how many minutes', vi: 'mấy phút' },
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '分', reading: 'ぷん' }
+          ]
+        },
+        {
+          kana: 'ごぜん',
+          kanji: '午前',
+          romaji: 'gozen',
+          meaning: { en: 'a.m., before noon', vi: 'sáng, trước mười hai giờ trưa' },
+          ruby: [
+            { base: '午', reading: 'ご' },
+            { base: '前', reading: 'ぜん' }
+          ]
+        },
+        {
+          kana: 'ごご',
+          kanji: '午後',
+          romaji: 'gogo',
+          meaning: { en: 'p.m., after noon', vi: 'chiều, sau mười hai giờ trưa' },
+          ruby: [
+            { base: '午', reading: 'ご' },
+            { base: '後', reading: 'ご' }
+          ]
+        },
+        {
+          kana: 'あさ',
+          kanji: '朝',
+          romaji: 'asa',
+          meaning: { en: 'morning', vi: 'buổi sáng, sáng' },
+          ruby: [{ base: '朝', reading: 'あさ' }]
+        },
+        {
+          kana: 'ひる',
+          kanji: '昼',
+          romaji: 'hiru',
+          meaning: { en: 'noon, midday', vi: 'buổi trưa, trưa' },
+          ruby: [{ base: '昼', reading: 'ひる' }]
+        },
+        {
+          kana: 'ばん',
+          kanji: '晩',
+          romaji: 'ban',
+          meaning: { en: 'evening, night (よる)', vi: 'buổi tối, tối (よる)' },
+          ruby: [{ base: '晩', reading: 'ばん' }]
+        },
+        {
+          kana: 'おととい',
+          romaji: 'ototoi',
+          meaning: { en: 'the day before yesterday', vi: 'hôm kia' }
+        },
+        {
+          kana: 'きのう',
+          romaji: 'kinō',
+          meaning: { en: 'yesterday', vi: 'hôm qua' }
+        },
+        {
+          kana: 'きょう',
+          kanji: '今日',
+          romaji: 'kyō',
+          meaning: { en: 'today', vi: 'hôm nay' },
+          ruby: [
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' }
+          ]
+        },
+        {
+          kana: 'あした',
+          romaji: 'ashita',
+          meaning: { en: 'tomorrow', vi: 'ngày mai' }
+        },
+        {
+          kana: 'あさって',
+          romaji: 'asatte',
+          meaning: { en: 'the day after tomorrow', vi: 'ngày kia' }
+        },
+        {
+          kana: 'けさ',
+          romaji: 'kesa',
+          meaning: { en: 'this morning', vi: 'sáng nay' }
+        },
+        {
+          kana: 'こんばん',
+          kanji: '今晩',
+          romaji: 'konban',
+          meaning: { en: 'tonight, this evening', vi: 'tối nay' },
+          ruby: [
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' }
+          ]
+        },
+        {
+          kana: 'やすみ',
+          kanji: '休み',
+          romaji: 'yasumi',
+          meaning: { en: 'rest, day off, vacation', vi: 'nghỉ, nghỉ phép, ngày nghỉ' },
+          ruby: [{ base: '休', reading: 'やす' }]
+        },
+        {
+          kana: 'ひるやすみ',
+          kanji: '昼休み',
+          romaji: 'hiruyasumi',
+          meaning: { en: 'lunch break', vi: 'nghỉ trưa' },
+          ruby: [
+            { base: '昼', reading: 'ひる' },
+            { base: '休', reading: 'やす' }
+          ]
+        },
+        {
+          kana: 'しけん',
+          kanji: '試験',
+          romaji: 'shiken',
+          meaning: { en: 'exam, test', vi: 'thi, kỳ thi, kiểm tra' },
+          ruby: [
+            { base: '試', reading: 'し' },
+            { base: '験', reading: 'けん' }
+          ]
+        },
+        {
+          kana: 'かいぎ',
+          kanji: '会議',
+          romaji: 'kaigi',
+          meaning: {
+            en: 'meeting (会議をします: to hold a meeting)',
+            vi: 'cuộc họp, hội nghị (会議をします: tổ chức cuộc họp)'
+          },
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' }
+          ]
+        },
+        {
+          kana: 'えいが',
+          kanji: '映画',
+          romaji: 'eiga',
+          meaning: { en: 'movie, film', vi: 'phim, điện ảnh' },
+          ruby: [
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' }
+          ]
+        },
+        {
+          kana: 'まいあさ',
+          kanji: '毎朝',
+          romaji: 'maiasa',
+          meaning: { en: 'every morning', vi: 'hàng sáng, mỗi sáng' },
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' }
+          ]
+        },
+        {
+          kana: 'まいばん',
+          kanji: '毎晩',
+          romaji: 'maiban',
+          meaning: { en: 'every evening', vi: 'hàng tối, mỗi tối' },
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '晩', reading: 'ばん' }
+          ]
+        },
+        {
+          kana: 'まいにち',
+          kanji: '毎日',
+          romaji: 'mainichi',
+          meaning: { en: 'every day', vi: 'hàng ngày, mỗi ngày' },
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' }
+          ]
+        },
+        {
+          kana: 'げつようび',
+          kanji: '月曜日',
+          romaji: 'getsuyōbi',
+          meaning: { en: 'Monday', vi: 'thứ hai' },
+          ruby: [
+            { base: '月', reading: 'げつ' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'かようび',
+          kanji: '火曜日',
+          romaji: 'kayōbi',
+          meaning: { en: 'Tuesday', vi: 'thứ ba' },
+          ruby: [
+            { base: '火', reading: 'か' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'すいようび',
+          kanji: '水曜日',
+          romaji: 'suiyōbi',
+          meaning: { en: 'Wednesday', vi: 'thứ tư' },
+          ruby: [
+            { base: '水', reading: 'すい' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'もくようび',
+          kanji: '木曜日',
+          romaji: 'mokuyōbi',
+          meaning: { en: 'Thursday', vi: 'thứ năm' },
+          ruby: [
+            { base: '木', reading: 'もく' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'きんようび',
+          kanji: '金曜日',
+          romaji: "kin'yōbi",
+          meaning: { en: 'Friday', vi: 'thứ sáu' },
+          ruby: [
+            { base: '金', reading: 'きん' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'どようび',
+          kanji: '土曜日',
+          romaji: 'doyōbi',
+          meaning: { en: 'Saturday', vi: 'thứ bảy' },
+          ruby: [
+            { base: '土', reading: 'ど' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'にちようび',
+          kanji: '日曜日',
+          romaji: 'nichiyōbi',
+          meaning: { en: 'Sunday', vi: 'chủ nhật' },
+          ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: 'なんようび',
+          kanji: '何曜日',
+          romaji: "nan'yōbi",
+          meaning: { en: 'what day of the week', vi: 'thứ mấy' },
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          kana: '〜から',
+          romaji: '~kara',
+          speech: 'から',
+          meaning: { en: 'from ~', vi: '~ từ' }
+        },
+        {
+          kana: '〜まで',
+          romaji: '~made',
+          speech: 'まで',
+          meaning: { en: 'until ~, to ~', vi: '~ đến' }
+        },
+        {
+          kana: '〜と〜',
+          romaji: '~ to ~',
+          meaning: { en: '~ and ~ (links nouns)', vi: '~ và ~ (nối danh từ)' }
+        }
+      ],
+      phrases: [
+        {
+          kana: 'たいへんですね。',
+          kanji: '大変ですね。',
+          romaji: 'taihen desu ne.',
+          meaning: {
+            en: "That's tough, isn't it? (sympathy)",
+            vi: 'Vất vả quá nhỉ. (thông cảm)'
+          },
+          ruby: [
+            { base: '大', reading: 'たい' },
+            { base: '変', reading: 'へん' }
+          ]
+        }
+      ],
+      conversation: [
+        {
+          id: 'conv-lesson4-phone',
+          title: { en: 'Asking for a phone number', vi: 'Hỏi số điện thoại' },
+          speakers: [
+            { id: 'alex', name: 'アレックス' },
+            { id: 'yamada', name: 'やまだ' }
+          ],
+          lines: [
+            {
+              speakerId: 'alex',
+              jp: 'すみません。「あすか」の 電話番号は 何番ですか。',
+              romaji: 'Sumimasen. "Asuka" no denwa bangō wa nanban desu ka.',
+              meaning: {
+                en: 'Excuse me. What is the phone number for "Asuka"?',
+                vi: 'Xin lỗi. Số điện thoại của "Asuka" là số mấy?'
+              },
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' },
+                { base: '番', reading: 'ばん' },
+                { base: '号', reading: 'ごう' },
+                { base: '何', reading: 'なん' },
+                { base: '番', reading: 'ばん' }
+              ]
+            },
+            {
+              speakerId: 'yamada',
+              jp: '「あすか」ですか。5275 の 2725 です。',
+              romaji: '"Asuka" desu ka. Gofutahyaku nijūnana no nihyakunijūgo desu.',
+              meaning: {
+                en: '"Asuka"? It is 5275-2725.',
+                vi: '"Asuka" à. Số 5275-2725.'
+              }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'どうも ありがとう ございます。',
+              romaji: 'Dōmo arigatō gozaimasu.',
+              meaning: { en: 'Thank you very much.', vi: 'Cảm ơn nhiều.' }
+            }
+          ]
+        },
+        {
+          id: 'conv-lesson4-shop-hours',
+          title: { en: 'Calling the shop', vi: 'Gọi điện cho cửa hàng' },
+          speakers: [
+            { id: 'clerk', name: '店員' },
+            { id: 'alex', name: 'アレックス' }
+          ],
+          lines: [
+            {
+              speakerId: 'clerk',
+              jp: 'はい、「あすか」です。',
+              romaji: 'Hai, "Asuka" desu.',
+              meaning: { en: 'Hello, this is "Asuka".', vi: 'Dạ, đây là "Asuka".' }
+            },
+            {
+              speakerId: 'alex',
+              jp: 'すみません。そちらは なんじまでですか。',
+              romaji: 'Sumimasen. Sochira wa nanji made desu ka.',
+              meaning: {
+                en: 'Excuse me. Until what time are you open?',
+                vi: 'Xin lỗi. Bên anh/chị đóng cửa lúc mấy giờ?'
+              },
+              ruby: [
+                { base: '何', reading: 'なん' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              speakerId: 'clerk',
+              jp: '10時までです。',
+              romaji: 'Jū-ji made desu.',
+              meaning: { en: 'Until 10.', vi: 'Đến 10 giờ.' },
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              speakerId: 'alex',
+              jp: '休みは 何曜日ですか。',
+              romaji: 'Yasumi wa nan-yōbi desu ka.',
+              meaning: { en: 'What day is your day off?', vi: 'Ngày nghỉ là thứ mấy?' },
+              ruby: [
+                { base: '休', reading: 'やす' },
+                { base: '何', reading: 'なん' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              speakerId: 'clerk',
+              jp: '日曜日です。',
+              romaji: 'Nichiyōbi desu.',
+              meaning: { en: 'Sunday.', vi: 'Chủ nhật.' },
+              ruby: [
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              speakerId: 'alex',
+              jp: 'そうですか。どうも。',
+              romaji: 'Sō desu ka. Dōmo.',
+              meaning: { en: 'I see. Thanks.', vi: 'Thế à. Cảm ơn.' }
+            }
+          ]
+        }
+      ],
+      grammar: [
+        {
+          pattern: 'N 時 N 分 です',
+          highlights: ['時', '分', 'です', '何'],
+          title: { en: 'Telling the time', vi: 'Nói giờ' },
+          explanation: {
+            en: 'Add 時 (hours) and 分 (minutes) after numbers. 分 is ~fun after 2, 5, 7, 9 and ~pun after 1, 3, 4, 6, 8, 10 (e.g. 10分 = juppun). Ask the time with 今 何時ですか; ask minutes with 何分.',
+            vi: 'Thêm 時 (giờ) và 分 (phút) sau số. 分 đọc ~fun sau 2, 5, 7, 9 và ~pun sau 1, 3, 4, 6, 8, 10 (vd. 10分 = juppun). Hỏi giờ với 今 何時ですか; hỏi phút với 何分.'
+          },
+          examples: [
+            {
+              jp: '今 何時ですか。',
+              romaji: 'Ima nan-ji desu ka.',
+              meaning: { en: 'What time is it now?', vi: 'Bây giờ là mấy giờ?' },
+              ruby: [
+                { base: '今', reading: 'いま' },
+                { base: '何', reading: 'なん' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              jp: '7時10分です。',
+              romaji: 'Shichi-ji juppun desu.',
+              meaning: { en: "It's 7:10.", vi: '7 giờ 10 phút.' },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '分', reading: 'ぷん' }
+              ]
+            }
+          ]
+        },
+        {
+          pattern: 'V ます',
+          highlights: ['ます', 'ません', 'ました', 'ませんでした'],
+          title: { en: 'Verb ます forms', vi: 'Động từ thể ます' },
+          explanation: {
+            en: 'The ます form is the polite predicate: ます (present/future), ません (negative), ました (past), ませんでした (past negative). It states habits, general truths, or future actions.',
+            vi: 'Thể ます là vị ngữ lịch sự: ます (hiện tại/tương lai), ません (phủ định), ました (quá khứ), ませんでした (quá khứ phủ định). Dùng cho thói quen, sự thật chung hoặc hành động tương lai.'
+          },
+          examples: [
+            {
+              jp: 'わたしは 毎日 勉強します。',
+              romaji: 'Watashi wa mainichi benkyō shimasu.',
+              meaning: { en: 'I study every day.', vi: 'Tôi học hàng ngày.' },
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '日', reading: 'にち' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              jp: '毎朝 6時に 起きます。',
+              romaji: 'Maiasa rokuji ni okimasu.',
+              meaning: { en: 'I get up at 6 every morning.', vi: 'Mỗi sáng tôi dậy lúc 6 giờ.' },
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '朝', reading: 'あさ' },
+                { base: '時', reading: 'じ' },
+                { base: '起', reading: 'お' }
+              ]
+            },
+            {
+              jp: 'あした 6時に 起きます。',
+              romaji: 'Ashita rokuji ni okimasu.',
+              meaning: {
+                en: 'Tomorrow I will get up at 6.',
+                vi: 'Ngày mai tôi (sẽ) dậy lúc 6 giờ.'
+              },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '起', reading: 'お' }
+              ]
+            },
+            {
+              jp: 'けさ 6時に 起きました。',
+              romaji: 'Kesa rokuji ni okimashita.',
+              meaning: {
+                en: 'This morning I got up at 6.',
+                vi: 'Sáng nay tôi (đã) dậy lúc 6 giờ.'
+              },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '起', reading: 'お' }
+              ]
+            }
+          ]
+        },
+        {
+          pattern: 'V ますか',
+          highlights: ['ます', 'か', '何', 'に'],
+          title: { en: 'Verb questions', vi: 'Câu hỏi với động từ' },
+          explanation: {
+            en: 'Add か to make a yes/no question; word order stays the same. Put the question word where the answer goes. Repeat the verb in the answer - do not use そうです or ちがいます alone for verb questions.',
+            vi: 'Thêm か để hỏi có/không; trật tự câu giữ nguyên. Đặt từ để hỏi vào vị trí phần cần hỏi. Trả lời lặp lại động từ - không dùng một mình そうです hay ちがいます cho câu hỏi động từ.'
+          },
+          examples: [
+            {
+              jp: 'きのう 勉強しましたか。',
+              romaji: 'Kinō benkyō shimashita ka.',
+              meaning: { en: 'Did you study yesterday?', vi: 'Hôm qua anh/chị có học không?' },
+              ruby: [
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              jp: '毎朝 何時に 起きますか。',
+              romaji: 'Maiasa nan-ji ni okimasu ka.',
+              meaning: {
+                en: 'What time do you get up every morning?',
+                vi: 'Mỗi sáng anh/chị dậy lúc mấy giờ?'
+              },
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '朝', reading: 'あさ' },
+                { base: '何', reading: 'なん' },
+                { base: '時', reading: 'じ' },
+                { base: '起', reading: 'お' }
+              ]
+            }
+          ],
+          answers: {
+            highlights: ['ました', 'ませんでした', 'に', 'ます'],
+            explanation: {
+              en: 'Answer はい/いいえ plus the verb form, or give the time with ～に ～ます.',
+              vi: 'Trả lời はい/いいえ kèm động từ, hoặc nêu giờ với ～に ～ます.'
+            },
+            examples: [
+              {
+                jp: 'はい、勉強しました。',
+                romaji: 'Hai, benkyō shimashita.',
+                meaning: { en: 'Yes, I studied.', vi: 'Vâng, hôm qua tôi có học.' },
+                ruby: [
+                  { base: '勉', reading: 'べん' },
+                  { base: '強', reading: 'きょう' }
+                ]
+              },
+              {
+                jp: 'いいえ、勉強しませんでした。',
+                romaji: 'Iie, benkyō shimasen deshita.',
+                meaning: { en: "No, I didn't study.", vi: 'Không, hôm qua tôi không học.' },
+                ruby: [
+                  { base: '勉', reading: 'べん' },
+                  { base: '強', reading: 'きょう' }
+                ]
+              },
+              {
+                jp: '6時に 起きます。',
+                romaji: 'Rokuji ni okimasu.',
+                meaning: { en: 'I get up at 6.', vi: 'Tôi dậy lúc 6 giờ.' },
+                ruby: [
+                  { base: '時', reading: 'じ' },
+                  { base: '起', reading: 'お' }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          pattern: 'N (time) に V',
+          highlights: ['に'],
+          title: { en: 'Time + に + verb', vi: 'Thời gian + に + động từ' },
+          explanation: {
+            en: 'Put に after a time noun for when an action happens (6時半に 起きます). Do NOT use に after きょう, あした, きのう, けさ, こんばん, いま, 毎朝, etc. に is optional after days of the week and あさ/ひる/ばん.',
+            vi: 'Thêm に sau danh từ chỉ thời điểm (6時半に 起きます). KHÔNG dùng に sau きょう, あした, きのう, けさ, こんばん, いま, 毎朝, v.v. に có thể lược sau thứ trong tuần và あさ/ひる/ばん.'
+          },
+          examples: [
+            {
+              jp: '6時半に 起きます。',
+              romaji: 'Roku-ji han ni okimasu.',
+              meaning: { en: 'I get up at 6:30.', vi: 'Tôi dậy lúc 6 giờ rưỡi.' },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '半', reading: 'はん' },
+                { base: '起', reading: 'お' }
+              ]
+            },
+            {
+              jp: '日曜日に 休みます。',
+              romaji: 'Nichiyōbi ni yasumimasu.',
+              meaning: { en: 'I rest on Sundays.', vi: 'Chủ nhật tôi nghỉ.' },
+              ruby: [
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' },
+                { base: '休', reading: 'やす' }
+              ]
+            }
+          ]
+        },
+        {
+          pattern: 'N1 から N2 まで',
+          highlights: ['から', 'まで'],
+          title: { en: 'From ~ to ~ (から / まで)', vi: 'Từ ~ đến ~ (から / まで)' },
+          explanation: {
+            en: 'から marks the start and まで the end of a time or place range. They can be used together or alone. With nouns and です, state opening hours or a time span.',
+            vi: 'から đánh dấu điểm bắt đầu, まで điểm kết thúc (thời gian hoặc nơi chốn). Có thể dùng riêng hoặc kết hợp. Với danh từ + です, nêu giờ mở cửa hoặc khoảng thời gian.'
+          },
+          examples: [
+            {
+              jp: '9時から 5時まで 勉強します。',
+              romaji: 'Ku-ji kara go-ji made benkyō shimasu.',
+              meaning: { en: 'I study from 9 to 5.', vi: 'Tôi học từ 9 giờ đến 5 giờ.' },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              jp: '9時から 働きます。',
+              romaji: 'Ku-ji kara hatarakimasu.',
+              meaning: { en: 'I work starting at 9.', vi: 'Tôi làm việc từ 9 giờ.' },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '働', reading: 'はたら' }
+              ]
+            },
+            {
+              jp: '銀行は 9時から 3時までです。',
+              romaji: 'Ginkō wa ku-ji kara san-ji made desu.',
+              meaning: {
+                en: 'The bank is open from 9 to 3.',
+                vi: 'Ngân hàng mở cửa từ 9 giờ đến 3 giờ.'
+              },
+              ruby: [
+                { base: '銀', reading: 'ぎん' },
+                { base: '行', reading: 'こう' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              jp: '昼休みは 12時からです。',
+              romaji: 'Hiruyasumi wa jūni-ji kara desu.',
+              meaning: {
+                en: 'The lunch break starts at 12.',
+                vi: 'Giờ nghỉ trưa bắt đầu từ 12 giờ.'
+              },
+              ruby: [
+                { base: '昼', reading: 'ひる' },
+                { base: '休', reading: 'やす' },
+                { base: '時', reading: 'じ' }
+              ]
+            }
+          ]
+        },
+        {
+          pattern: 'N1 と N2',
+          highlights: ['と'],
+          title: { en: 'と (and, linking nouns)', vi: 'と (và, nối danh từ)' },
+          explanation: {
+            en: 'と connects two nouns of equal status, like "and" in English.',
+            vi: 'と nối hai danh từ ngang hàng, tương đương "và" trong tiếng Việt.'
+          },
+          examples: [
+            {
+              jp: '銀行の 休みは 土曜日と 日曜日です。',
+              romaji: 'Ginkō no yasumi wa doyōbi to nichiyōbi desu.',
+              meaning: {
+                en: 'The bank is closed on Saturday and Sunday.',
+                vi: 'Ngân hàng đóng cửa vào thứ bảy và chủ nhật.'
+              },
+              ruby: [
+                { base: '銀', reading: 'ぎん' },
+                { base: '行', reading: 'こう' },
+                { base: '休', reading: 'やす' },
+                { base: '土', reading: 'ど' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' },
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            }
+          ]
+        },
+        {
+          pattern: '～ ね',
+          highlights: ['ね'],
+          title: { en: 'Sentence-ending ね', vi: 'Cuối câu ね' },
+          explanation: {
+            en: 'ね at the end seeks agreement, sympathy, or confirms what was just said.',
+            vi: 'ね ở cuối câu thể hiện mong đợi sự đồng ý, thông cảm hoặc xác nhận lại thông tin.'
+          },
+          examples: [
+            {
+              jp: '毎日 10時まで 勉強します。',
+              romaji: 'Mainichi jū-ji made benkyō shimasu.',
+              meaning: { en: 'I study until 10 every day.', vi: 'Hàng ngày tôi học đến 10 giờ.' },
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '日', reading: 'にち' },
+                { base: '時', reading: 'じ' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              jp: '大変ですね。',
+              romaji: 'Taihen desu ne.',
+              meaning: { en: "That's tough, isn't it?", vi: 'Vất vả quá nhỉ.' },
+              ruby: [
+                { base: '大', reading: 'たい' },
+                { base: '変', reading: 'へん' }
+              ]
+            },
+            {
+              jp: '山田さんの 電話番号は 871 の 6813 です。',
+              romaji: 'Yamada-san no denwa bangō wa hachihyaku nanajū no roppesen jūsan desu.',
+              meaning: {
+                en: "Mr. Yamada's phone number is 871-6813.",
+                vi: 'Số điện thoại của anh Yamada là 871-6813.'
+              },
+              ruby: [
+                { base: '山', reading: 'やま' },
+                { base: '田', reading: 'だ' },
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' },
+                { base: '番', reading: 'ばん' },
+                { base: '号', reading: 'ごう' }
+              ]
+            },
+            {
+              jp: '871 の 6813 ですね。',
+              romaji: 'Hachihyaku nanajū no roppesen jūsan desu ne.',
+              meaning: { en: '871-6813, right?', vi: '871-6813, đúng không ạ.' }
+            }
+          ]
+        }
+      ],
+      reading: [
+        {
+          id: 'reading-1',
+          title: { en: 'Shop hours', vi: 'Giờ mở cửa' },
+          lines: [
+            {
+              jp: '「あすか」は 9時から 10時までです。',
+              romaji: '"Asuka" wa ku-ji kara jū-ji made desu.',
+              meaning: {
+                en: '"Asuka" is open from 9 to 10.',
+                vi: 'Cửa hàng "Asuka" mở cửa từ 9 giờ đến 10 giờ.'
+              },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              jp: '休みは 日曜日です。',
+              romaji: 'Yasumi wa nichiyōbi desu.',
+              meaning: { en: 'The day off is Sunday.', vi: 'Ngày nghỉ là chủ nhật.' },
+              ruby: [
+                { base: '休', reading: 'やす' },
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              jp: '土曜日は 11時までです。',
+              romaji: 'Doyōbi wa jūichi-ji made desu.',
+              meaning: {
+                en: 'On Saturdays it is open until 11.',
+                vi: 'Thứ bảy mở cửa đến 11 giờ.'
+              },
+              ruby: [
+                { base: '土', reading: 'ど' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              jp: '電話番号は 5275 の 2725 です。',
+              romaji: 'Denwa bangō wa go sen nihyaku nanajū go no nihyaku nijūgo desu.',
+              meaning: {
+                en: 'The phone number is 5275-2725.',
+                vi: 'Số điện thoại là 5275-2725.'
+              },
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' },
+                { base: '番', reading: 'ばん' },
+                { base: '号', reading: 'ごう' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: {
+                en: 'Until what time is the shop open on weekdays?',
+                vi: 'Ngày thường cửa hàng mở đến mấy giờ?'
+              },
+              choices: [
+                { id: 'a', label: { en: "10 o'clock", vi: '10 giờ' } },
+                { id: 'b', label: { en: "9 o'clock", vi: '9 giờ' } },
+                { id: 'c', label: { en: "11 o'clock", vi: '11 giờ' } },
+                { id: 'd', label: { en: "8 o'clock", vi: '8 giờ' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'What day is the shop closed?', vi: 'Cửa hàng nghỉ ngày nào?' },
+              choices: [
+                { id: 'a', label: { en: 'Sunday', vi: 'Chủ nhật' } },
+                { id: 'b', label: { en: 'Saturday', vi: 'Thứ bảy' } },
+                { id: 'c', label: { en: 'Monday', vi: 'Thứ hai' } },
+                { id: 'd', label: { en: 'Wednesday', vi: 'Thứ tư' } }
+              ],
+              correctId: 'a'
+            }
+          ]
+        },
+        {
+          id: 'reading-2',
+          title: { en: 'Daily schedule', vi: 'Sinh hoạt hàng ngày' },
+          lines: [
+            {
+              jp: 'わたしは 毎朝 6時半に 起きます。',
+              romaji: 'Watashi wa maiasa roku-ji han ni okimasu.',
+              meaning: {
+                en: 'I get up at 6:30 every morning.',
+                vi: 'Mỗi sáng tôi dậy lúc 6 giờ rưỡi.'
+              },
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '朝', reading: 'あさ' },
+                { base: '時', reading: 'じ' },
+                { base: '半', reading: 'はん' },
+                { base: '起', reading: 'お' }
+              ]
+            },
+            {
+              jp: '7時から 8時まで 勉強します。',
+              romaji: 'Shichi-ji kara hachi-ji made benkyō shimasu.',
+              meaning: { en: 'I study from 7 to 8.', vi: 'Tôi học từ 7 giờ đến 8 giờ.' },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              jp: '9時から 5時まで 働きます。',
+              romaji: 'Ku-ji kara go-ji made hatarakimasu.',
+              meaning: { en: 'I work from 9 to 5.', vi: 'Tôi làm việc từ 9 giờ đến 5 giờ.' },
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' },
+                { base: '働', reading: 'はたら' }
+              ]
+            },
+            {
+              jp: '昼休みは 12時から 1時までです。',
+              romaji: 'Hiruyasumi wa jūni-ji kara ichi-ji made desu.',
+              meaning: {
+                en: 'Lunch break is from 12 to 1.',
+                vi: 'Nghỉ trưa từ 12 giờ đến 1 giờ.'
+              },
+              ruby: [
+                { base: '昼', reading: 'ひる' },
+                { base: '休', reading: 'やす' },
+                { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              jp: '毎晩 10時に 寝ます。',
+              romaji: 'Maiban jū-ji ni nemasu.',
+              meaning: {
+                en: 'I go to bed at 10 every evening.',
+                vi: 'Mỗi tối tôi đi ngủ lúc 10 giờ.'
+              },
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '晩', reading: 'ばん' },
+                { base: '時', reading: 'じ' },
+                { base: '寝', reading: 'ね' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: {
+                en: 'What time does the speaker get up?',
+                vi: 'Người nói dậy lúc mấy giờ?'
+              },
+              choices: [
+                { id: 'a', label: { en: '6:30', vi: '6 giờ rưỡi' } },
+                { id: 'b', label: { en: '7:00', vi: '7 giờ' } },
+                { id: 'c', label: { en: '6:00', vi: '6 giờ' } },
+                { id: 'd', label: { en: '8:00', vi: '8 giờ' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: {
+                en: 'When does the speaker go to bed?',
+                vi: 'Người nói đi ngủ lúc mấy giờ?'
+              },
+              choices: [
+                { id: 'a', label: { en: '10 p.m.', vi: '10 giờ tối' } },
+                { id: 'b', label: { en: '9 p.m.', vi: '9 giờ tối' } },
+                { id: 'c', label: { en: '11 p.m.', vi: '11 giờ tối' } },
+                { id: 'd', label: { en: '8 p.m.', vi: '8 giờ tối' } }
+              ],
+              correctId: 'a'
+            }
+          ]
+        },
+        {
+          id: 'reading-3',
+          title: { en: 'At the library', vi: 'Ở thư viện' },
+          lines: [
+            {
+              jp: '今日 わたしは 図書館で 勉強します。',
+              romaji: 'Kyō watashi wa toshokan de benkyō shimasu.',
+              meaning: {
+                en: 'Today I study at the library.',
+                vi: 'Hôm nay tôi học ở thư viện.'
+              },
+              ruby: [
+                { base: '今', reading: 'きょ' },
+                { base: '日', reading: 'う' },
+                { base: '図', reading: 'と' },
+                { base: '書', reading: 'しょ' },
+                { base: '館', reading: 'かん' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              jp: '図書館は 9時から 6時までです。',
+              romaji: 'Toshokan wa ku-ji kara roku-ji made desu.',
+              meaning: {
+                en: 'The library is open from 9 to 6.',
+                vi: 'Thư viện mở cửa từ 9 giờ đến 6 giờ.'
+              },
+              ruby: [
+                { base: '図', reading: 'と' },
+                { base: '書', reading: 'しょ' },
+                { base: '館', reading: 'かん' },
+                { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              jp: '今 何時ですか。3時10分です。',
+              romaji: 'Ima nan-ji desu ka. San-ji juppun desu.',
+              meaning: {
+                en: 'What time is it now? It is 3:10.',
+                vi: 'Bây giờ mấy giờ? 3 giờ 10 phút.'
+              },
+              ruby: [
+                { base: '今', reading: 'いま' },
+                { base: '何', reading: 'なん' },
+                { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' },
+                { base: '分', reading: 'ぷん' }
+              ]
+            }
+          ],
+          questions: [
+            {
+              id: 'q1',
+              question: {
+                en: 'Where does the speaker study today?',
+                vi: 'Hôm nay người nói học ở đâu?'
+              },
+              choices: [
+                { id: 'a', label: { en: 'The library', vi: 'Thư viện' } },
+                { id: 'b', label: { en: 'The bank', vi: 'Ngân hàng' } },
+                { id: 'c', label: { en: 'The post office', vi: 'Bưu điện' } },
+                { id: 'd', label: { en: 'The art museum', vi: 'Bảo tàng mỹ thuật' } }
+              ],
+              correctId: 'a'
+            },
+            {
+              id: 'q2',
+              question: { en: 'What time is it now?', vi: 'Bây giờ mấy giờ?' },
+              choices: [
+                { id: 'a', label: { en: '3:10', vi: '3 giờ 10 phút' } },
+                { id: 'b', label: { en: '9:00', vi: '9 giờ' } },
+                { id: 'c', label: { en: '6:00', vi: '6 giờ' } },
+                { id: 'd', label: { en: '3:00', vi: '3 giờ' } }
+              ],
+              correctId: 'a'
+            }
+          ]
+        }
+      ],
+      reference: [
+        {
+          kind: 'vocab',
+          title: { en: 'Telephone & mail', vi: 'Điện thoại & thư tín' },
+          items: [
+            {
+              kana: 'でんわ',
+              kanji: '電話',
+              romaji: 'denwa',
+              meaning: { en: 'telephone', vi: 'điện thoại' },
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' }
+              ]
+            },
+            {
+              kana: 'てがみ',
+              kanji: '手紙',
+              romaji: 'tegami',
+              meaning: { en: 'letter', vi: 'thư tín' },
+              ruby: [
+                { base: '手', reading: 'て' },
+                { base: '紙', reading: 'がみ' }
+              ]
+            },
+            {
+              kana: 'ばんごう',
+              kanji: '番号',
+              romaji: 'bangō',
+              meaning: { en: 'number (sequence)', vi: 'số (thứ tự)' },
+              ruby: [
+                { base: '番', reading: 'ばん' },
+                { base: '号', reading: 'ごう' }
+              ]
+            },
+            {
+              kana: 'なんばん',
+              kanji: '何番',
+              romaji: 'nanban',
+              meaning: { en: 'what number', vi: 'số mấy, số bao nhiêu' },
+              ruby: [
+                { base: '何', reading: 'なん' },
+                { base: '番', reading: 'ばん' }
+              ]
+            },
+            {
+              kana: 'テレホンカード',
+              romaji: 'terehon kādo',
+              meaning: { en: 'telephone card', vi: 'thẻ điện thoại' }
+            }
+          ]
+        },
+        {
+          kind: 'steps',
+          title: { en: 'Using a public phone', vi: 'Gọi điện thoại công cộng' },
+          steps: [
+            {
+              text: { en: 'Pick up the receiver.', vi: 'Nhấc ống nghe.' }
+            },
+            {
+              text: {
+                en: 'Insert coins or a telephone card.',
+                vi: 'Cho tiền xu hoặc thẻ điện thoại vào.'
+              }
+            },
+            {
+              text: { en: 'Dial the number.', vi: 'Ấn số.' }
+            },
+            {
+              text: { en: 'Hang up the receiver.', vi: 'Gác ống nghe.' }
+            },
+            {
+              text: {
+                en: 'Take back any change or your telephone card.',
+                vi: 'Lấy lại tiền thừa (nếu có) hoặc thẻ điện thoại.'
+              }
+            }
+          ],
+          notes: [
+            {
+              en: 'Public phones accept telephone cards or 10-yen and 100-yen coins. A 100-yen coin is not returned as change.',
+              vi: 'Máy công cộng dùng thẻ hoặc xu 10 yên và 100 yên. Cho xu 100 yên thì máy không trả lại tiền thừa.'
+            },
+            {
+              en: 'If the phone has a start button, press it after dialing.',
+              vi: 'Nếu máy có nút bắt đầu, ấn nút đó sau khi quay số.'
+            }
+          ]
+        },
+        {
+          kind: 'list',
+          title: { en: 'Special phone numbers', vi: 'Số điện thoại đặc biệt' },
+          rows: [
+            {
+              number: '110',
+              jp: '警察署',
+              ruby: [
+                { base: '警', reading: 'けい' },
+                { base: '察', reading: 'さつ' },
+                { base: '署', reading: 'しょ' }
+              ],
+              meaning: { en: 'Police', vi: 'Cảnh sát' }
+            },
+            {
+              number: '119',
+              jp: '消防署',
+              ruby: [
+                { base: '消', reading: 'しょう' },
+                { base: '防', reading: 'ぼう' },
+                { base: '署', reading: 'しょ' }
+              ],
+              meaning: { en: 'Fire department', vi: 'Cứu hỏa' }
+            },
+            {
+              number: '117',
+              jp: '時報',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '報', reading: 'ほう' }
+              ],
+              meaning: { en: 'Time service', vi: 'Dịch vụ hỏi giờ' }
+            },
+            {
+              number: '177',
+              jp: '天気予報',
+              ruby: [
+                { base: '天', reading: 'てん' },
+                { base: '気', reading: 'き' },
+                { base: '予', reading: 'よ' },
+                { base: '報', reading: 'ほう' }
+              ],
+              meaning: { en: 'Weather forecast service', vi: 'Dịch vụ dự báo thời tiết' }
+            },
+            {
+              number: '104',
+              jp: '電話番号案内',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' },
+                { base: '番', reading: 'ばん' },
+                { base: '号', reading: 'ごう' },
+                { base: '案', reading: 'あん' },
+                { base: '内', reading: 'ない' }
+              ],
+              meaning: { en: 'Directory assistance', vi: 'Tra cứu số điện thoại' }
+            }
+          ]
+        },
+        {
+          kind: 'address',
+          title: { en: 'How to write an address', vi: 'Cách viết địa chỉ' },
+          intro: {
+            en: 'Japanese addresses run large to small. Prefecture, city, and ward are written consecutively without spaces; use line breaks between the postcode, street line, and building line.',
+            vi: 'Địa chỉ viết từ rộng đến hẹp. Tỉnh, thành phố, quận viết liền không cách; xuống dòng giữa mã bưu điện, dòng phố, và dòng tòa nhà.'
+          },
+          sample: {
+            jp: '〒658-0063\n兵庫県神戸市中央区三宮1-23\nコウベハイツ405号'
+          },
+          parts: [
+            { label: { en: 'Postcode', vi: 'Mã bưu điện' }, text: '〒658-0063' },
+            {
+              label: { en: 'Prefecture', vi: 'Tỉnh' },
+              text: '兵庫県',
+              ruby: [
+                { base: '兵', reading: 'ひょう' },
+                { base: '庫', reading: 'ご' },
+                { base: '県', reading: 'けん' }
+              ]
+            },
+            {
+              label: { en: 'City', vi: 'Thành phố' },
+              text: '神戸市',
+              ruby: [
+                { base: '神', reading: 'こう' },
+                { base: '戸', reading: 'べ' },
+                { base: '市', reading: 'し' }
+              ]
+            },
+            {
+              label: { en: 'Ward', vi: 'Quận' },
+              text: '中央区',
+              ruby: [
+                { base: '中', reading: 'ちゅう' },
+                { base: '央', reading: 'おう' },
+                { base: '区', reading: 'く' }
+              ]
+            },
+            { label: { en: 'District / block', vi: 'Khu phố' }, text: '三宮1-23' },
+            { label: { en: 'Building name', vi: 'Tên tòa nhà' }, text: 'コウベハイツ' },
+            {
+              label: { en: 'Room number', vi: 'Số phòng' },
+              text: '405号',
+              ruby: [{ base: '号', reading: 'ごう' }]
+            }
           ]
         }
       ]

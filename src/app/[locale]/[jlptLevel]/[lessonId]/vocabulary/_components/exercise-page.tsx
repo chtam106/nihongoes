@@ -1,9 +1,23 @@
 'use client';
 
-import { useState, type MouseEvent } from 'react';
+import { useState, type ChangeEvent, type MouseEvent } from 'react';
 import { useParams } from 'next/navigation';
-import { Box, Paper, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
-import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
+import {
+  Box,
+  FormControlLabel,
+  Paper,
+  Stack,
+  Switch,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography
+} from '@mui/material';
+import {
+  getLesson,
+  lessonHasReferenceQuizVocab,
+  type CourseLevel,
+  type Lesson
+} from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
@@ -20,17 +34,19 @@ type VocabQuizProps = {
   locale: Locale;
   mode: VocabMode;
   script: VocabScript;
+  includeReference: boolean;
 };
 
 /** The endless per-question panel: prompt + answer choices with auto-advance. */
-function VocabQuiz({ lesson, locale, mode, script }: VocabQuizProps) {
+function VocabQuiz({ lesson, locale, mode, script, includeReference }: VocabQuizProps) {
   const { t } = useTranslation();
   const canSpeak = useSpeechSupported();
   const { question, wrongIds, answeredCorrectly, handleSelect } = useVocabQuiz({
     lesson,
     locale,
     mode,
-    script
+    script,
+    includeReference
   });
 
   const promptLabel =
@@ -108,6 +124,8 @@ function VocabExercise({ lesson }: VocabExerciseProps) {
   const { locale, t } = useTranslation();
   const [mode, setMode] = useState<VocabMode>('word-meaning');
   const [script, setScript] = useState<VocabScript>('kana');
+  const [includeReference, setIncludeReference] = useState(false);
+  const showReferenceToggle = lessonHasReferenceQuizVocab(lesson);
 
   const handleModeChange = (_event: MouseEvent<HTMLElement>, value: VocabMode | null) => {
     if (value) {
@@ -119,6 +137,10 @@ function VocabExercise({ lesson }: VocabExerciseProps) {
     if (value) {
       setScript(value);
     }
+  };
+
+  const handleReferenceChange = (_event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
+    setIncludeReference(checked);
   };
 
   return (
@@ -151,12 +173,26 @@ function VocabExercise({ lesson }: VocabExerciseProps) {
           <ToggleButton value="all">{t('course.vocabScriptAll')}</ToggleButton>
         </ToggleButtonGroup>
 
+        {showReferenceToggle && (
+          <FormControlLabel
+            control={
+              <Switch
+                checked={includeReference}
+                onChange={handleReferenceChange}
+                aria-label={t('course.vocabIncludeReference')}
+              />
+            }
+            label={t('course.vocabIncludeReference')}
+          />
+        )}
+
         <VocabQuiz
-          key={`${mode}:${script}`}
+          key={`${mode}:${script}:${includeReference}`}
           lesson={lesson}
           locale={locale}
           mode={mode}
           script={script}
+          includeReference={includeReference}
         />
       </Stack>
     </PageContainer>
