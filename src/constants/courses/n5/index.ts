@@ -4470,23 +4470,11 @@ export const n5Course: Course = {
           kind: 'address',
           title: { en: 'How to write an address', vi: 'Cách viết địa chỉ' },
           intro: {
-            en: 'Japanese addresses run from the largest area to the smallest, then the building and room number.',
-            vi: 'Địa chỉ tiếng Nhật viết từ vùng rộng đến nhỏ, rồi tên tòa nhà và số phòng.'
+            en: 'Japanese addresses run large to small. Prefecture, city, and ward are written consecutively without spaces; use line breaks between the postcode, street line, and building line.',
+            vi: 'Địa chỉ viết từ rộng đến hẹp. Tỉnh, thành phố, quận viết liền không cách; xuống dòng giữa mã bưu điện, dòng phố, và dòng tòa nhà.'
           },
           sample: {
-            jp: '〒658-0063\n兵庫県 神戸市 中央区 三宮 1-23\nコウベハイツ 405号',
-            ruby: [
-              { base: '兵', reading: 'ひょう' },
-              { base: '庫', reading: 'ご' },
-              { base: '県', reading: 'けん' },
-              { base: '神', reading: 'こう' },
-              { base: '戸', reading: 'べ' },
-              { base: '市', reading: 'し' },
-              { base: '中', reading: 'ちゅう' },
-              { base: '央', reading: 'おう' },
-              { base: '区', reading: 'く' },
-              { base: '号', reading: 'ごう' }
-            ]
+            jp: '〒658-0063\n兵庫県神戸市中央区三宮1-23\nコウベハイツ405号'
           },
           parts: [
             { label: { en: 'Postcode', vi: 'Mã bưu điện' }, text: '〒658-0063' },
@@ -4517,7 +4505,7 @@ export const n5Course: Course = {
                 { base: '区', reading: 'く' }
               ]
             },
-            { label: { en: 'District / block', vi: 'Khu phố' }, text: '三宮 1-23' },
+            { label: { en: 'District / block', vi: 'Khu phố' }, text: '三宮1-23' },
             { label: { en: 'Building name', vi: 'Tên tòa nhà' }, text: 'コウベハイツ' },
             {
               label: { en: 'Room number', vi: 'Số phòng' },
