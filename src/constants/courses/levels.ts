@@ -22,10 +22,6 @@ export function lessonGrammarPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/grammar`;
 }
 
-export function lessonListeningPath(level: CourseLevel, id: string): string {
-  return `/${level}/${id}/listening`;
-}
-
 export function lessonReadingPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/reading`;
 }

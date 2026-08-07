@@ -60,7 +60,7 @@ function courseLessonParamsWhere(predicate?: (lesson: Lesson) => boolean) {
   );
 }
 
-/** `{ locale, level, lessonId }` for every lesson (detail, vocabulary, listening). */
+/** `{ locale, level, lessonId }` for every lesson (detail, vocabulary, etc.). */
 export const courseLessonParams = () => courseLessonParamsWhere();
 /** Only lessons that have grammar points. */
 export const courseGrammarParams = () => courseLessonParamsWhere(lessonHasGrammar);

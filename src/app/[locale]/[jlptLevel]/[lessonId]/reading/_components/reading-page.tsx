@@ -8,7 +8,8 @@ import {
   getLesson,
   type CourseLevel,
   type Lesson,
-  type ReadingPassage
+  type ReadingPassage,
+  type ReadingQuestion
 } from '@/constants/courses/index.ts';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -30,6 +31,24 @@ function shuffle<T>(items: T[]): T[] {
   }
 
   return copy;
+}
+
+type FlatQuestion = ReadingQuestion & { flatId: string };
+
+function flattenQuestions(passages: ReadingPassage[]): FlatQuestion[] {
+  return passages.flatMap((passage) =>
+    passage.questions.map((question) => ({
+      ...question,
+      flatId: `${passage.id}-${question.id}`
+    }))
+  );
+}
+
+function shuffleQuestions(questions: FlatQuestion[]): FlatQuestion[] {
+  return questions.map((question) => ({
+    ...question,
+    choices: shuffle(question.choices)
+  }));
 }
 
 type PassageCardProps = {
@@ -122,14 +141,9 @@ type ReadingQuizProps = {
 
 function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const { locale, t } = useTranslation();
-  const passage = lesson.reading![0];
+  const passages = lesson.reading!;
 
-  const [questions, setQuestions] = useState(() =>
-    passage.questions.map((question) => ({
-      ...question,
-      choices: shuffle(question.choices)
-    }))
-  );
+  const [questions, setQuestions] = useState(() => shuffleQuestions(flattenQuestions(passages)));
   const [index, setIndex] = useState(0);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [correctPicked, setCorrectPicked] = useState(false);
@@ -178,7 +192,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   };
 
   const handleRetry = () => {
-    setQuestions(passage.questions.map((item) => ({ ...item, choices: shuffle(item.choices) })));
+    setQuestions(shuffleQuestions(flattenQuestions(passages)));
     setIndex(0);
     setWrongIds([]);
     setCorrectPicked(false);
@@ -191,7 +205,11 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
       <Stack spacing={3}>
         <LessonQuizHeader lesson={lesson} section="reading" />
 
-        <PassageCard passage={passage} />
+        <Stack spacing={2}>
+          {passages.map((passage) => (
+            <PassageCard key={passage.id} passage={passage} />
+          ))}
+        </Stack>
 
         {finished && (
           <ResultScreen

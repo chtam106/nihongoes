@@ -95,14 +95,13 @@ screen"; a future improvement is to make the boundary rely on
 | `/:level` | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx` |
 | `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
 | `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |
-| `/:level/:lessonId/{grammar,listening,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |
+| `/:level/:lessonId/{grammar,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |
 | `/kanji/:track` | `src/app/[locale]/kanji/[track]/_components/kanji-track.tsx` |
 | `/kanji/:track/:lessonId(/quiz/writing)` | `.../[lessonId](/quiz/writing)/_components/kanji-*.tsx` |
 | `/kanji/radicals` | `.../kanji/radicals/_components/kanji-radicals.tsx` |
 
 Page-specific quiz logic is colocated in the same `_components/` folder (e.g.
-`vocabulary/_components/vocab-quiz.ts`, `grammar/_components/grammar-quiz.ts`,
-`listening/_components/course-listening.ts`), imported via `./`. Course views
+`vocabulary/_components/vocab-quiz.ts`, `grammar/_components/grammar-quiz.ts`), imported via `./`. Course views
 read `[jlptLevel]`/`[lessonId]` via `useParams`.
 
 ## Navigation & params (Next, not react-router)

@@ -10,9 +10,9 @@ import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
+import { ReferenceBlockView } from '@/components/reference-block';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Link, Paper, Stack, Typography } from '@mui/material';
@@ -22,7 +22,6 @@ import {
   lessonGrammarPath,
   lessonHasKanji,
   lessonHasReading,
-  lessonListeningPath,
   lessonPath,
   lessonReadingPath,
   lessonVocabularyPath,
@@ -336,32 +335,12 @@ function ReferenceSection({ lesson }: ReferenceSectionProps) {
       </Typography>
 
       <Stack spacing={3}>
-        {lesson.reference.map((group) => (
-          <Box key={group.title.en}>
-            <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
-              {group.title[locale]}
-            </Heading>
-            <Box
-              sx={{
-                display: 'grid',
-                gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-                gap: 1.5
-              }}
-            >
-              {group.items.map((item, index) => (
-                <SpeakableSurface
-                  key={`ref-${group.title.en}-${index}-${item.kana}`}
-                  text={item.speech ?? item.kana}
-                  sx={{ p: 1.5 }}
-                >
-                  <VocabHeadword item={item} />
-                  <Typography variant="body2" sx={{ mt: 0.5 }}>
-                    {item.meaning[locale]}
-                  </Typography>
-                </SpeakableSurface>
-              ))}
-            </Box>
-          </Box>
+        {lesson.reference.map((block, index) => (
+          <ReferenceBlockView
+            key={`${block.kind}-${block.title.en}-${index}`}
+            block={block}
+            locale={locale}
+          />
         ))}
       </Stack>
     </Box>
@@ -433,12 +412,6 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
           }
         ]
       : []),
-    {
-      key: 'listening',
-      to: lessonListeningPath(level, lesson.id),
-      icon: <HeadphonesOutlinedIcon />,
-      label: t('course.startListening')
-    },
     ...(hasKanji
       ? [
           {

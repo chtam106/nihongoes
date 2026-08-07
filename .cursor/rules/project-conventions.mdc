@@ -7,6 +7,8 @@ alwaysApply: true
 
 ## Courses (N5–N1 + Frontend)
 - Author lesson content (vocab, phrases, grammar, reading, reference) by hand in each `<course>/index.ts` (or its `lessons-*.ts` part files) following the shape of the existing lessons. Do NOT use a code generator for lesson data. When listing a lesson's vocabulary, cross-check against the Minna no Nihongo word list so nothing is missed (see the "never list less than the textbook" rule) - use the textbook/an authoritative list as a reference while you write, but keep our own EN/VI meanings.
+- **Reading count is flexible** per lesson: add as many `ReadingPassage` entries as needed (each with its own `lines` + `questions`) so reading practice covers most of the lesson's vocab, grammar, and conversation themes. See the `n5-course` rule for authoring details.
+- **Reference blocks** (`reference?: ReferenceBlock[]`) may mix `vocab`, `steps`, `list`, `address`, and `table` kinds - not vocabulary only. Vocab quiz uses lesson `vocab` + `phrases` by default; a toggle adds `kind: 'vocab'` groups with `includeInQuiz !== false`. Mark reference-only lists (e.g. surnames) with `includeInQuiz: false`. Render all blocks with `<ReferenceBlockView>`.
 - Lesson count per level is NOT fixed — author enough lessons to cover the full standard JLPT grammar syllabus for that level; reorder/renumber lessons freely. See the `n5-course` rule for details.
 - Keep frontend/software-engineering Japanese content in a dedicated top-level `frontend` course track; do NOT mix frontend lessons into JLPT levels (`n5`-`n1`).
 - In `src/constants/courses`, keep one folder per course level/track (`n5`, `n4`, `n3`, `n2`, `n1`, `frontend`), with each course definition in `<course>/index.ts`; keep the `courses/` root as registry/types only.
@@ -68,7 +70,7 @@ alwaysApply: true
 - Store ruby in CONTENT DATA, not via dictionary lookup. Type: `RubySegment { base, reading }` in `@/types/course.ts`. Optional `ruby?: RubySegment[]` on `GrammarExample`, `ReadingLine`, `ConversationLine`, and `VocabItem` (when the kanji form needs furigana in quiz/phrases).
 - Author **one segment per kanji** in surface order (e.g. 山田 -> `[{ base:'山', reading:'やま' }, { base:'田', reading:'だ' }]`). Plain kana/particles in `jp` stay unrubied; do NOT include okurigana or suffixes like `さん` in ruby segments.
 - Render with `renderJapaneseText(jp, ruby?)` (`src/utils/japanese-text.tsx`). No `ruby` -> plain text. Do NOT import course data into the renderer and do NOT guess readings automatically.
-- Pass `ruby` through from data in grammar examples, conversation lines, reading lines, listening reveal, and vocab quiz prompts. Vocab/reference grids keep the `漢字（かな）` headword layout (no ruby there).
+- Pass `ruby` through from data in grammar examples, conversation lines, reading lines, and vocab quiz prompts. Vocab/reference grids keep the `漢字（かな）` headword layout (no ruby there).
 
 ## Text & typography (IMPORTANT)
 - Keep UI copy (titles, intros, card descriptions) SHORT and declarative. Do NOT tack on a trailing comma-separated feature/enumeration clause just to sound fuller - e.g. avoid `... - interactive charts, audio, quizzes, and writing practice` or `... kèm âm đọc, bộ phận cấu tạo và từ ví dụ`. State the one main thing and stop. Only enumerate when the list itself is the point (e.g. a real feature grid), not as decorative padding on a description.
@@ -114,7 +116,7 @@ alwaysApply: true
 ## Quiz feedback styling
 - Keep answer feedback colors consistent across course quizzes and alphabet quizzes: correct uses a light blue tone, wrong uses a light pink tone (soft fill + soft border, not saturated green/red).
 - Do NOT show a "Correct"/"Incorrect" text label or success/error icons; rely on the choice color feedback only.
-- Quizzes RETRY until correct, then AUTO-ADVANCE: 100ms after a correct answer the course exercise/listening/reading (and the alphabet quizzes) move to the next question on their own. A wrong answer just marks that attempt (wrong choice tinted pink and locked, or fill-in field turned red) and lets the user try again - do NOT reveal the correct answer and do NOT show a Next button on a wrong attempt. Provide a separate "Show answer" toggle (reuse `exercise.showAnswer`/`exercise.hideAnswer`, grid-overlay style so it never shifts layout) for fill-in questions instead. Score a question as correct only when it is solved on the first attempt.
+- Quizzes RETRY until correct, then AUTO-ADVANCE: 100ms after a correct answer the course exercise/reading (and the alphabet quizzes) move to the next question on their own. A wrong answer just marks that attempt (wrong choice tinted pink and locked, or fill-in field turned red) and lets the user try again - do NOT reveal the correct answer and do NOT show a Next button on a wrong attempt. Provide a separate "Show answer" toggle (reuse `exercise.showAnswer`/`exercise.hideAnswer`, grid-overlay style so it never shifts layout) for fill-in questions instead. Score a question as correct only when it is solved on the first attempt.
 - Implement the auto-advance delay with a `setTimeout` inside a `useEffect` (set state in the timer callback, never directly in the effect body).
 
 ## Hints / annotations
