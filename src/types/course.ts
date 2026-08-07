@@ -28,6 +28,8 @@ export type GrammarExample = {
   meaning: Bilingual;
   /** Per-kanji ruby annotations in surface order. */
   ruby?: RubySegment[];
+  /** Consecutive examples in the same list that form a mini-dialogue (no separate answers block). */
+  dialogueGroup?: string;
 };
 
 /** A distinct sub-block inside a grammar point, e.g. how to answer the question it teaches. */

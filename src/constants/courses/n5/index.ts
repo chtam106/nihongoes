@@ -3735,6 +3735,7 @@ export const n5Course: Course = {
               jp: '今 何時ですか。',
               romaji: 'Ima nan-ji desu ka.',
               meaning: { en: 'What time is it now?', vi: 'Bây giờ là mấy giờ?' },
+              dialogueGroup: 'time-now',
               ruby: [
                 { base: '今', reading: 'いま' },
                 { base: '何', reading: 'なん' },
@@ -3745,6 +3746,7 @@ export const n5Course: Course = {
               jp: '7時10分です。',
               romaji: 'Shichi-ji juppun desu.',
               meaning: { en: "It's 7:10.", vi: '7 giờ 10 phút.' },
+              dialogueGroup: 'time-now',
               ruby: [
                 { base: '時', reading: 'じ' },
                 { base: '分', reading: 'ぷん' }
@@ -4001,16 +4003,17 @@ export const n5Course: Course = {
         {
           pattern: '～ ね',
           highlights: ['ね'],
-          title: { en: 'Sentence-ending ね', vi: 'Cuối câu ね' },
+          title: { en: "Sentence-ending ね (isn't it?)", vi: 'ね (nhỉ / đúng không ạ)' },
           explanation: {
             en: 'ね at the end seeks agreement, sympathy, or confirms what was just said.',
-            vi: 'ね ở cuối câu thể hiện mong đợi sự đồng ý, thông cảm hoặc xác nhận lại thông tin.'
+            vi: 'Thêm ね cuối câu để xin đồng ý, thể hiện đồng cảm, hoặc xác nhận lại — giống "nhỉ", "đúng không" trong tiếng Việt.'
           },
           examples: [
             {
               jp: '毎日 10時まで 勉強します。',
               romaji: 'Mainichi jū-ji made benkyō shimasu.',
               meaning: { en: 'I study until 10 every day.', vi: 'Hàng ngày tôi học đến 10 giờ.' },
+              dialogueGroup: 'sympathy',
               ruby: [
                 { base: '毎', reading: 'まい' },
                 { base: '日', reading: 'にち' },
@@ -4023,6 +4026,7 @@ export const n5Course: Course = {
               jp: '大変ですね。',
               romaji: 'Taihen desu ne.',
               meaning: { en: "That's tough, isn't it?", vi: 'Vất vả quá nhỉ.' },
+              dialogueGroup: 'sympathy',
               ruby: [
                 { base: '大', reading: 'たい' },
                 { base: '変', reading: 'へん' }
@@ -4035,6 +4039,7 @@ export const n5Course: Course = {
                 en: "Mr. Yamada's phone number is 871-6813.",
                 vi: 'Số điện thoại của anh Yamada là 871-6813.'
               },
+              dialogueGroup: 'confirm',
               ruby: [
                 { base: '山', reading: 'やま' },
                 { base: '田', reading: 'だ' },
@@ -4047,7 +4052,8 @@ export const n5Course: Course = {
             {
               jp: '871 の 6813 ですね。',
               romaji: 'Hachihyaku nanajū no roppesen jūsan desu ne.',
-              meaning: { en: '871-6813, right?', vi: '871-6813, đúng không ạ.' }
+              meaning: { en: '871-6813, right?', vi: '871-6813, đúng không ạ.' },
+              dialogueGroup: 'confirm'
             }
           ]
         }
