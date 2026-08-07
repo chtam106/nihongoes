@@ -15,10 +15,8 @@ import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlin
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { Box, Button, Link, Paper, Stack, Typography } from '@mui/material';
 import {
-  coursePath,
   getCourse,
   getLesson,
   lessonGrammarPath,
@@ -35,7 +33,7 @@ import {
   type ConversationScene,
   type ConversationSpeaker
 } from '@/constants/courses/index.ts';
-import { ConversationLineCard } from '@/components/conversation-line-card';
+import { ConversationTurnGroup, groupConversationTurns } from '@/components/conversation-line-card';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
@@ -43,6 +41,7 @@ import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
@@ -139,9 +138,9 @@ function VocabularySection({ lesson }: VocabularySectionProps) {
           gap: 1.5
         }}
       >
-        {lesson.vocab.map((item) => (
+        {lesson.vocab.map((item, index) => (
           <SpeakableSurface
-            key={`${item.kana}-${item.romaji}`}
+            key={`vocab-${index}-${item.kana}`}
             text={item.speech ?? item.kana}
             sx={{ p: 1.5 }}
           >
@@ -174,20 +173,35 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
         <Heading component="h2">{t('course.phrasesHeading')}</Heading>
       </Stack>
 
-      <Stack spacing={1.5}>
-        {lesson.phrases.map((phrase) => (
-          <SpeakableSurface
-            key={`${phrase.kana}-${phrase.romaji}`}
-            text={phrase.speech ?? phrase.kana}
-            sx={{ p: 1.5 }}
+      <Stack spacing={2}>
+        {lesson.phrases.map((phrase, index) => (
+          <Box
+            key={`phrase-${index}-${phrase.kana}`}
+            sx={{
+              borderLeft: 4,
+              borderColor: 'primary.main',
+              pl: 2,
+              pr: 1.5
+            }}
           >
-            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
-              {phrase.kanji ?? phrase.kana}
-            </Typography>
-            <Typography variant="body2" sx={{ mt: 0.25 }}>
-              {phrase.meaning[locale]}
-            </Typography>
-          </SpeakableSurface>
+            <SpeakableSurface
+              text={phrase.speech ?? phrase.kana}
+              sx={{
+                boxShadow: 'none',
+                bgcolor: 'transparent',
+                borderRadius: 1,
+                px: 0.5,
+                mx: -0.5
+              }}
+            >
+              <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+                {renderJapaneseText(phrase.kanji ?? phrase.kana, phrase.ruby)}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                {phrase.meaning[locale]}
+              </Typography>
+            </SpeakableSurface>
+          </Box>
         ))}
       </Stack>
     </Box>
@@ -203,42 +217,6 @@ const SPEAKER_COLORS = ['#1976d2', '#2e7d32', '#ed6c02', '#9c27b0', '#00838f'] a
 function buildSpeakerColorMap(speakers: ConversationSpeaker[]): Map<string, string> {
   return new Map(
     speakers.map((speaker, index) => [speaker.id, SPEAKER_COLORS[index % SPEAKER_COLORS.length]])
-  );
-}
-
-type SpeakerLegendProps = {
-  speakers: ConversationSpeaker[];
-  colorMap: Map<string, string>;
-};
-
-function SpeakerLegend({ speakers, colorMap }: SpeakerLegendProps) {
-  return (
-    <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap', mb: 2 }}>
-      {speakers.map((speaker) => {
-        const color = colorMap.get(speaker.id) ?? SPEAKER_COLORS[0];
-
-        return (
-          <Box
-            key={speaker.id}
-            sx={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              px: 1,
-              py: 0.6,
-              borderRadius: '999px',
-              border: '1px solid',
-              borderColor: (theme) => alpha(color, theme.palette.mode === 'light' ? 0.35 : 0.5),
-              bgcolor: (theme) => alpha(color, theme.palette.mode === 'light' ? 0.08 : 0.16),
-              color
-            }}
-          >
-            <Typography variant="body2" sx={{ fontWeight: 600, lineHeight: 1.2 }}>
-              {speaker.name}
-            </Typography>
-          </Box>
-        );
-      })}
-    </Stack>
   );
 }
 
@@ -260,45 +238,32 @@ function ConversationSceneBlock({
   t
 }: ConversationSceneBlockProps) {
   const speakerById = new Map(scene.speakers.map((speaker) => [speaker.id, speaker]));
+  const turns = groupConversationTurns(scene.lines, speakerById, colorMap, SPEAKER_COLORS[0]);
 
   return (
     <Box>
-      <Stack
-        direction="row"
-        spacing={1}
-        sx={{ alignItems: 'center', mb: 1.5, gap: 1, flexWrap: 'wrap' }}
+      <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
+        {scene.title[locale]}
+      </Heading>
+      <Link
+        component="button"
+        type="button"
+        variant="body2"
+        underline="hover"
+        onClick={onToggleTranslation}
+        sx={{ lineHeight: 1.66, mb: 1.5, display: 'block' }}
       >
-        <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
-          {scene.title[locale]}
-        </Heading>
-        <Button
-          size="small"
-          variant="outlined"
-          onClick={onToggleTranslation}
-          sx={{ minWidth: 'auto', px: 1.25 }}
-        >
-          {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
-        </Button>
-      </Stack>
-      <SpeakerLegend speakers={scene.speakers} colorMap={colorMap} />
-      <Stack spacing={1.5}>
-        {scene.lines.map((line, index) => {
-          const speaker = speakerById.get(line.speakerId);
-
-          if (!speaker) {
-            return null;
-          }
-
-          return (
-            <ConversationLineCard
-              key={`${scene.id}-${index}`}
-              line={line}
-              locale={locale}
-              showTranslation={showTranslation}
-              color={colorMap.get(line.speakerId) ?? SPEAKER_COLORS[0]}
-            />
-          );
-        })}
+        {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
+      </Link>
+      <Stack spacing={1}>
+        {turns.map((turn, index) => (
+          <ConversationTurnGroup
+            key={`${scene.id}-${turn.speakerId}-${index}`}
+            turn={turn}
+            locale={locale}
+            showTranslation={showTranslation}
+          />
+        ))}
       </Stack>
     </Box>
   );
@@ -383,9 +348,9 @@ function ReferenceSection({ lesson }: ReferenceSectionProps) {
                 gap: 1.5
               }}
             >
-              {group.items.map((item) => (
+              {group.items.map((item, index) => (
                 <SpeakableSurface
-                  key={`${item.kana}-${item.romaji}`}
+                  key={`ref-${group.title.en}-${index}-${item.kana}`}
                   text={item.speech ?? item.kana}
                   sx={{ p: 1.5 }}
                 >
@@ -541,26 +506,6 @@ function LessonPage({ level }: LessonPageProps) {
     <PageContainer bottomGutter>
       <Stack spacing={4}>
         <Box>
-          <Stack
-            direction="row"
-            spacing={1}
-            useFlexGap
-            sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
-          >
-            <Chip
-              label={course.code}
-              color="secondary"
-              variant="outlined"
-              component={RouterLink}
-              to={coursePath(level)}
-              clickable
-            />
-            <Chip
-              label={t('course.lessonLabel', { number: lesson.number })}
-              color="primary"
-              variant="outlined"
-            />
-          </Stack>
           <Heading component="h1">{lesson.title[locale]}</Heading>
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>

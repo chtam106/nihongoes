@@ -3,6 +3,7 @@ import {
   formatGrammarPatternDisplay,
   getGrammarHighlightTermGroups,
   getGrammarHighlightTerms,
+  isGrammarTitleRedundant,
   splitGrammarHighlightedText,
   splitHighlightedText
 } from '@/utils/grammar-highlight.ts';
@@ -180,5 +181,23 @@ describe('splitGrammarHighlightedText', () => {
       { text: 'あります', termIndex: 2 },
       { text: '。', termIndex: null }
     ]);
+  });
+});
+
+describe('isGrammarTitleRedundant', () => {
+  it('returns true when the title repeats the pattern', () => {
+    expect(isGrammarTitleRedundant('どこ / どちら', 'どこ / どちら')).toBe(true);
+    expect(
+      isGrammarTitleRedundant(
+        'ここ / そこ / あそこ / こちら / そちら / あちら',
+        'ここ / そこ / あそこ / こちら / そちら / あちら'
+      )
+    ).toBe(true);
+  });
+
+  it('returns false when the title adds context beyond the pattern', () => {
+    expect(isGrammarTitleRedundant('N1 は N2 です', 'A is B (statement)')).toBe(false);
+    expect(isGrammarTitleRedundant('どこ の N です', 'Where it is from (どこの)')).toBe(false);
+    expect(isGrammarTitleRedundant('N も', 'も (also, too)')).toBe(false);
   });
 });

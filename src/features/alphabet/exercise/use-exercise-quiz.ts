@@ -68,7 +68,7 @@ export function useExerciseQuiz({
       setQuestionNumber((previous) => previous + 1);
       setWrongAnswers([]);
       setAnsweredCorrectly(false);
-    }, 1000);
+    }, 100);
 
     return () => {
       window.clearTimeout(timer);

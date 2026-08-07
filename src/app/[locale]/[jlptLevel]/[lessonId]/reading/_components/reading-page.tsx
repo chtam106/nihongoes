@@ -15,6 +15,7 @@ import { PageContainer } from '@/components/page-container';
 import { SpeakButton } from '@/components/speak-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
@@ -97,7 +98,7 @@ function PassageCard({ passage }: PassageCardProps) {
                     }
                     sx={{ fontWeight: 500, cursor: canSpeak ? 'pointer' : undefined }}
                   >
-                    {displayJp}
+                    {renderJapaneseText(line.jp, line.ruby)}
                   </Typography>
                   <Collapse in={showTranslation}>
                     <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
@@ -154,7 +155,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
       setIndex((previous) => previous + 1);
       setWrongIds([]);
       setCorrectPicked(false);
-    }, 900);
+    }, 100);
 
     return () => window.clearTimeout(timer);
   }, [correctPicked, isLast]);
@@ -188,7 +189,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={level} lesson={lesson} section="reading" />
+        <LessonQuizHeader lesson={lesson} section="reading" />
 
         <PassageCard passage={passage} />
 

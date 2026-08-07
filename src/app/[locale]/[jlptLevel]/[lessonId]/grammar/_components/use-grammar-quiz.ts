@@ -45,7 +45,7 @@ export function useGrammarQuiz({ lesson, locale }: UseGrammarQuizOptions) {
       setQuestionNumber((previous) => previous + 1);
       setWrongIds([]);
       setAnsweredCorrectly(false);
-    }, 900);
+    }, 100);
 
     return () => {
       window.clearTimeout(timer);

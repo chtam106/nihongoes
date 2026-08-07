@@ -6,7 +6,7 @@ import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/in
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
@@ -54,7 +54,7 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
           {t('course.grammarClozePrompt')}
         </Typography>
         <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600, mt: 0.5 }}>
-          {formatJapaneseDisplay(question.before)}
+          {renderJapaneseText(question.before)}
           <Box
             component="span"
             sx={{
@@ -69,7 +69,7 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
           >
             {answeredCorrectly ? question.answer : '\u3000'}
           </Box>
-          {formatJapaneseDisplay(question.after)}
+          {renderJapaneseText(question.after)}
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
           {question.meaning}
@@ -101,17 +101,16 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
 }
 
 type GrammarExerciseProps = {
-  level: CourseLevel;
   lesson: Lesson;
 };
 
-function GrammarExercise({ level, lesson }: GrammarExerciseProps) {
+function GrammarExercise({ lesson }: GrammarExerciseProps) {
   const { locale } = useTranslation();
 
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={level} lesson={lesson} section="grammar" />
+        <LessonQuizHeader lesson={lesson} section="grammar" />
 
         <GrammarQuiz key={`${lesson.id}:${locale}`} lesson={lesson} locale={locale} />
       </Stack>
@@ -131,7 +130,7 @@ function GrammarPage({ level }: GrammarPageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <GrammarExercise key={`${level}:${lesson.id}`} level={level} lesson={lesson} />;
+  return <GrammarExercise key={`${level}:${lesson.id}`} lesson={lesson} />;
 }
 
 export default GrammarPage;

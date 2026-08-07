@@ -1308,7 +1308,11 @@ export const n5Course: Course = {
               kana: 'でんわ',
               kanji: '電話',
               romaji: 'denwa',
-              meaning: { en: 'telephone', vi: 'điện thoại' }
+              meaning: { en: 'telephone', vi: 'điện thoại' },
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' }
+              ]
             },
             {
               kana: 'れいぞうこ',
@@ -1422,7 +1426,12 @@ export const n5Course: Course = {
           kana: 'じむしょ',
           kanji: '事務所',
           romaji: 'jimusho',
-          meaning: { en: 'office', vi: 'văn phòng' }
+          meaning: { en: 'office', vi: 'văn phòng' },
+          ruby: [
+            { base: '事', reading: 'じ' },
+            { base: '務', reading: 'む' },
+            { base: '所', reading: 'しょ' }
+          ]
         },
         {
           kana: 'かいぎしつ',
@@ -1453,19 +1462,53 @@ export const n5Course: Course = {
         },
         { kana: 'くに', kanji: '国', romaji: 'kuni', meaning: { en: 'country', vi: 'đất nước' } },
         {
+          kana: 'がっこう',
+          kanji: '学校',
+          romaji: 'gakkō',
+          meaning: { en: 'school', vi: 'trường học' },
+          ruby: [
+            { base: '学', reading: 'がっ' },
+            { base: '校', reading: 'こう' }
+          ]
+        },
+        {
           kana: 'かいしゃ',
           kanji: '会社',
           romaji: 'kaisha',
-          meaning: { en: 'company', vi: 'công ty' }
+          meaning: { en: 'company', vi: 'công ty' },
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' }
+          ]
         },
         { kana: 'うち', romaji: 'uchi', meaning: { en: 'home, house', vi: 'nhà' } },
         { kana: 'くつ', kanji: '靴', romaji: 'kutsu', meaning: { en: 'shoes', vi: 'giày' } },
         { kana: 'ネクタイ', romaji: 'nekutai', meaning: { en: 'necktie', vi: 'cà vạt' } },
+        { kana: 'ワイン', romaji: 'wain', meaning: { en: 'wine', vi: 'rượu vang' } },
         {
           kana: 'うりば',
           kanji: '売り場',
           romaji: 'uriba',
           meaning: { en: 'sales floor, department', vi: 'quầy hàng, khu bán' }
+        },
+        {
+          kana: 'ちか',
+          kanji: '地下',
+          romaji: 'chika',
+          meaning: { en: 'underground level, basement', vi: 'tầng hầm, dưới mặt đất' }
+        },
+        {
+          kana: '〜かい',
+          kanji: '〜階',
+          romaji: 'kai',
+          speech: 'かい',
+          meaning: { en: '~th floor (counter)', vi: 'tầng thứ ~' }
+        },
+        {
+          kana: 'なんがい',
+          kanji: '何階',
+          romaji: 'nangai',
+          meaning: { en: 'what floor', vi: 'tầng mấy' }
         },
         {
           kana: '〜えん',
@@ -1474,14 +1517,7 @@ export const n5Course: Course = {
           speech: 'えん',
           meaning: { en: '~ yen', vi: '~ yên' }
         },
-        { kana: 'いくら', romaji: 'ikura', meaning: { en: 'how much', vi: 'bao nhiêu tiền' } },
-        {
-          kana: '〜かい',
-          kanji: '〜階',
-          romaji: 'kai',
-          speech: 'かい',
-          meaning: { en: '~th floor (counter)', vi: 'tầng ~ (lượng từ)' }
-        }
+        { kana: 'いくら', romaji: 'ikura', meaning: { en: 'how much', vi: 'bao nhiêu tiền' } }
       ],
       phrases: [
         {
@@ -1510,99 +1546,305 @@ export const n5Course: Course = {
           meaning: { en: 'Please. (making a request)', vi: 'Làm ơn / nhờ bạn.' }
         }
       ],
+      conversation: [
+        {
+          id: 'conv-lesson3-shop',
+          title: { en: 'At the shop', vi: 'Ở cửa hàng' },
+          speakers: [
+            { id: 'clerk', name: '店員' },
+            { id: 'customer', name: 'おきゃくさま' }
+          ],
+          lines: [
+            {
+              speakerId: 'clerk',
+              jp: 'いらっしゃいませ。',
+              romaji: 'Irasshaimase.',
+              meaning: { en: 'Welcome.', vi: 'Xin mời.' }
+            },
+            {
+              speakerId: 'customer',
+              jp: 'これは いくらですか。',
+              romaji: 'Kore wa ikura desu ka.',
+              meaning: { en: 'How much is this?', vi: 'Cái này bao nhiêu tiền?' }
+            },
+            {
+              speakerId: 'clerk',
+              jp: 'それは 3000えんです。',
+              romaji: 'Sore wa sanzen en desu.',
+              meaning: { en: 'That is 3000 yen.', vi: 'Cái đó 3000 yên.' }
+            },
+            {
+              speakerId: 'customer',
+              jp: 'ちょっと みせて ください。',
+              romaji: 'Chotto misete kudasai.',
+              meaning: { en: 'Please show me it for a moment.', vi: 'Cho tôi xem một chút.' }
+            },
+            {
+              speakerId: 'clerk',
+              jp: 'はい、どうぞ。',
+              romaji: 'Hai, dōzo.',
+              meaning: { en: 'Here you are.', vi: 'Đây, mời bạn.' }
+            },
+            {
+              speakerId: 'customer',
+              jp: 'これを ください。',
+              romaji: 'Kore o kudasai.',
+              meaning: { en: "I'll take this, please.", vi: 'Cho tôi cái này.' }
+            }
+          ]
+        },
+        {
+          id: 'conv-lesson3-direction',
+          title: { en: 'Asking for directions', vi: 'Hỏi đường' },
+          speakers: [
+            { id: 'visitor', name: 'おとこのひと' },
+            { id: 'reception', name: 'うけつけ' }
+          ],
+          lines: [
+            {
+              speakerId: 'visitor',
+              jp: 'すみません。トイレは どこですか。',
+              romaji: 'Sumimasen. Toire wa doko desu ka.',
+              meaning: { en: 'Excuse me. Where is the toilet?', vi: 'Xin lỗi. Nhà vệ sinh ở đâu?' }
+            },
+            {
+              speakerId: 'reception',
+              jp: 'あちらです。',
+              romaji: 'Achira desu.',
+              meaning: { en: 'It is over there.', vi: 'Ở phía kia.' }
+            },
+            {
+              speakerId: 'visitor',
+              jp: 'かいぎしつは どちらですか。',
+              romaji: 'Kaigishitsu wa dochira desu ka.',
+              meaning: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' }
+            },
+            {
+              speakerId: 'reception',
+              jp: 'かいぎしつは そちらです。',
+              romaji: 'Kaigishitsu wa sochira desu.',
+              meaning: { en: 'The meeting room is there.', vi: 'Phòng họp ở phía đó.' }
+            }
+          ]
+        }
+      ],
       grammar: [
         {
-          pattern: 'ここ / そこ / あそこ は N です',
-          highlights: [['ここ', 'そこ', 'あそこ'], 'は', 'です'],
+          pattern: 'ここ / そこ / あそこ / こちら / そちら / あちら',
+          highlights: [['ここ', 'そこ', 'あそこ'], ['こちら', 'そちら', 'あちら'], 'は', 'です'],
           title: {
-            en: 'ここ / そこ / あそこ (here / there / over there)',
-            vi: 'ここ / そこ / あそこ (ở đây / ở đó / ở kia)'
+            en: 'ここ / そこ / あそこ / こちら / そちら / あちら',
+            vi: 'ここ / そこ / あそこ / こちら / そちら / あちら'
           },
           explanation: {
-            en: 'These name a place: ここ near the speaker, そこ near the listener, あそこ far from both.',
-            vi: 'Nhóm này chỉ nơi chốn: ここ gần người nói, そこ gần người nghe, あそこ xa cả hai.'
+            en: 'These words point to a place. ここ is near the speaker, そこ is near the listener, and あそこ is far from both. こちら/そちら/あちら are the polite forms and may also refer to direction.',
+            vi: 'Các từ này chỉ địa điểm. ここ gần người nói, そこ gần người nghe, あそこ xa cả hai. こちら/そちら/あちら là dạng lịch sự và cũng dùng để chỉ phương hướng.'
           },
           examples: [
             {
               jp: 'ここは きょうしつです。',
               romaji: 'Koko wa kyōshitsu desu.',
-              meaning: { en: 'This place is the classroom.', vi: 'Đây là phòng học.' }
+              meaning: { en: 'This place is the classroom.', vi: 'Đây là phòng học.' },
+              ruby: [
+                { base: '教', reading: 'きょう' },
+                { base: '室', reading: 'しつ' }
+              ]
             },
             {
               jp: 'そこは じむしょです。',
               romaji: 'Soko wa jimusho desu.',
-              meaning: { en: 'That place is the office.', vi: 'Đó là văn phòng.' }
+              meaning: { en: 'That place is the office.', vi: 'Đó là văn phòng.' },
+              ruby: [
+                { base: '事', reading: 'じ' },
+                { base: '務', reading: 'む' },
+                { base: '所', reading: 'しょ' }
+              ]
             },
             {
               jp: 'あそこは しょくどうです。',
               romaji: 'Asoko wa shokudō desu.',
-              meaning: { en: 'Over there is the cafeteria.', vi: 'Kia là nhà ăn.' }
-            }
-          ]
-        },
-        {
-          pattern: 'N は どこ ですか',
-          highlights: ['は', 'どこ', 'です', 'か'],
-          title: { en: 'Asking where (どこ)', vi: 'Hỏi ở đâu (どこ)' },
-          explanation: {
-            en: 'どこ means "where". Use it to ask the location of a place or thing.',
-            vi: 'どこ nghĩa là "ở đâu". Dùng để hỏi vị trí của nơi chốn hoặc đồ vật.'
-          },
-          examples: [
-            {
-              jp: 'トイレは どこですか。',
-              romaji: 'Toire wa doko desu ka.',
-              meaning: { en: 'Where is the toilet?', vi: 'Nhà vệ sinh ở đâu?' }
+              meaning: { en: 'Over there is the cafeteria.', vi: 'Kia là nhà ăn.' },
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '堂', reading: 'どう' }
+              ]
             },
-            {
-              jp: 'うけつけは どこですか。',
-              romaji: 'Uketsuke wa doko desu ka.',
-              meaning: { en: 'Where is the reception?', vi: 'Quầy tiếp tân ở đâu?' }
-            }
-          ]
-        },
-        {
-          pattern: 'こちら / そちら / あちら',
-          highlights: [['こちら', 'そちら', 'あちら']],
-          title: {
-            en: 'こちら / そちら / あちら (polite direction)',
-            vi: 'こちら / そちら / あちら (hướng, lịch sự)'
-          },
-          explanation: {
-            en: 'The polite version of ここ/そこ/あそこ; also used to point out a direction.',
-            vi: 'Dạng lịch sự của ここ/そこ/あそこ; cũng dùng để chỉ hướng.'
-          },
-          examples: [
             {
               jp: 'エレベーターは こちらです。',
               romaji: 'Erebētā wa kochira desu.',
               meaning: { en: 'The elevator is this way.', vi: 'Thang máy ở phía này.' }
-            },
-            {
-              jp: 'かいぎしつは あちらです。',
-              romaji: 'Kaigishitsu wa achira desu.',
-              meaning: { en: 'The meeting room is that way.', vi: 'Phòng họp ở phía kia.' }
             }
           ]
+        },
+        {
+          pattern: 'N は 〜です',
+          highlights: ['は', 'です'],
+          title: { en: 'Noun + です for location', vi: 'Danh từ は です (địa điểm)' },
+          explanation: {
+            en: 'Use a noun plus です to say where something is located. This pattern describes the place of an object or person.',
+            vi: 'Dùng danh từ + です để nói nơi chốn của một vật hoặc người. Mẫu này diễn tả vị trí.'
+          },
+          examples: [
+            {
+              jp: 'お手洗いは あそこです。',
+              romaji: 'Otearai wa asoko desu.',
+              meaning: { en: 'The restroom is over there.', vi: 'Nhà vệ sinh ở đằng kia.' },
+              ruby: [
+                { base: '手', reading: 'て' },
+                { base: '洗', reading: 'あら' }
+              ]
+            },
+            {
+              jp: '電話は ２階です。',
+              romaji: 'Denwa wa nikai desu.',
+              meaning: { en: 'The phone is on the second floor.', vi: 'Điện thoại ở tầng hai.' },
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' },
+                { base: '階', reading: 'かい' }
+              ]
+            },
+            {
+              jp: '山田さんは 事務所です。',
+              romaji: 'Yamada-san wa jimusho desu.',
+              meaning: { en: 'Mr. Yamada is in the office.', vi: 'Anh Yamada ở văn phòng.' },
+              ruby: [
+                { base: '山', reading: 'やま' },
+                { base: '田', reading: 'だ' },
+                { base: '事', reading: 'じ' },
+                { base: '務', reading: 'む' },
+                { base: '所', reading: 'しょ' }
+              ]
+            }
+          ]
+        },
+        {
+          pattern: 'N は どこ / どちら ですか',
+          highlights: [['どこ', 'どちら'], 'は', 'です', 'か'],
+          title: { en: 'どこ / どちら (questions)', vi: 'どこ / どちら (câu hỏi)' },
+          explanation: {
+            en: 'どこ asks where a place or thing is. どちら is more polite and can ask direction or location. When asking the name of a school, company, or similar organization, use どこ or どちら instead of なん.',
+            vi: 'どこ hỏi nơi chốn của vật hoặc địa điểm. どちら lịch sự hơn, hỏi được phương hướng hoặc vị trí. Khi hỏi tên trường, công ty hay tổ chức tương tự, dùng どこ hoặc どちら thay vì なん.'
+          },
+          examples: [
+            {
+              jp: 'お手洗いは どこですか。',
+              romaji: 'Otearai wa doko desu ka.',
+              meaning: { en: 'Where is the restroom?', vi: 'Nhà vệ sinh ở đâu?' },
+              ruby: [
+                { base: '手', reading: 'て' },
+                { base: '洗', reading: 'あら' }
+              ]
+            },
+            {
+              jp: 'エレベーターは どちらですか。',
+              romaji: 'Erebētā wa dochira desu ka.',
+              meaning: { en: 'Which way is the elevator?', vi: 'Thang máy ở chỗ nào vậy?' }
+            },
+            {
+              jp: '学校は どこですか。',
+              romaji: 'Gakkō wa doko desu ka.',
+              meaning: { en: 'Which school do you go to?', vi: 'Bạn học trường nào?' },
+              ruby: [
+                { base: '学', reading: 'がっ' },
+                { base: '校', reading: 'こう' }
+              ]
+            },
+            {
+              jp: '会社は どちらですか。',
+              romaji: 'Kaisha wa dochira desu ka.',
+              meaning: { en: 'Which company do you work for?', vi: 'Bạn làm công ty nào?' },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' }
+              ]
+            }
+          ],
+          answers: {
+            examples: [
+              {
+                jp: 'あそこです。',
+                romaji: 'Asoko desu.',
+                meaning: { en: 'Over there.', vi: 'Ở đằng kia.' }
+              },
+              {
+                jp: 'あちらです。',
+                romaji: 'Achira desu.',
+                meaning: { en: 'Over there (polite).', vi: 'Ở phía kia ạ.' }
+              }
+            ]
+          }
         },
         {
           pattern: 'どこ の N です',
           highlights: ['どこ', 'の', 'です'],
           title: { en: 'Where it is from (どこの)', vi: 'Xuất xứ (どこの)' },
           explanation: {
-            en: 'どこの asks which country or maker something is from; answer with 国/company + の.',
-            vi: 'どこの hỏi đồ vật đến từ nước nào / hãng nào; trả lời bằng tên nước/hãng + の.'
+            en: 'When N1 is a country or company and N2 is a product, の links the maker or origin to the item. どこの asks which country or company it is from.',
+            vi: 'Khi N1 là nước hoặc công ty và N2 là sản phẩm, の nối nguồn gốc với đồ vật. どこの hỏi đồ vật đến từ nước hoặc hãng nào.'
           },
           examples: [
             {
-              jp: 'これは どこの くるまですか。',
-              romaji: 'Kore wa doko no kuruma desu ka.',
-              meaning: { en: 'Which country is this car from?', vi: 'Xe này của nước nào?' }
+              jp: 'これは どこの コンピューターですか。',
+              romaji: 'Kore wa doko no konpyūtā desu ka.',
+              meaning: {
+                en: 'Which country or company is this computer from?',
+                vi: 'Máy tính này của nước/hãng nào?'
+              }
             },
             {
-              jp: 'にほんの くるまです。',
-              romaji: 'Nihon no kuruma desu.',
-              meaning: { en: 'It is a Japanese car.', vi: 'Là xe của Nhật.' }
+              jp: 'これは どこの 車ですか。',
+              romaji: 'Kore wa doko no kuruma desu ka.',
+              meaning: { en: 'Which country is this car from?', vi: 'Xe này của nước nào?' },
+              ruby: [{ base: '車', reading: 'くるま' }]
+            }
+          ],
+          answers: {
+            examples: [
+              {
+                jp: 'にほんの コンピューターです。',
+                romaji: 'Nihon no konpyūtā desu.',
+                meaning: { en: 'It is a Japanese computer.', vi: 'Là máy tính của Nhật.' }
+              },
+              {
+                jp: 'さくら でんきの コンピューターです。',
+                romaji: 'Sakura denki no konpyūtā desu.',
+                meaning: {
+                  en: 'It is a computer from Sakura Electric.',
+                  vi: 'Là máy tính của công ty điện Sakura.'
+                },
+                ruby: [
+                  { base: '電', reading: 'でん' },
+                  { base: '気', reading: 'き' }
+                ]
+              },
+              {
+                jp: '日本の 車です。',
+                romaji: 'Nihon no kuruma desu.',
+                meaning: { en: 'It is a Japanese car.', vi: 'Là xe của Nhật.' },
+                ruby: [
+                  { base: '日', reading: 'に' },
+                  { base: '本', reading: 'ほん' },
+                  { base: '車', reading: 'くるま' }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          pattern: 'お + N',
+          highlights: ['お', 'どちら', 'です', 'か'],
+          title: { en: 'Honorific prefix お', vi: 'Tiền tố lịch sự お' },
+          explanation: {
+            en: 'Add お before a word related to the listener or a third person to show respect.',
+            vi: 'Thêm お trước từ liên quan đến người nghe hoặc người thứ ba để bày tỏ sự kính trọng.'
+          },
+          examples: [
+            {
+              jp: 'お国は どちらですか。',
+              romaji: 'O-kuni wa dochira desu ka.',
+              meaning: { en: 'What country are you from?', vi: 'Anh/Chị là người nước nào?' },
+              ruby: [{ base: '国', reading: 'くに' }]
             }
           ]
         }

@@ -7,7 +7,7 @@ import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/in
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
@@ -37,7 +37,7 @@ function VocabQuiz({ lesson, locale, mode, script }: VocabQuizProps) {
     mode === 'word-meaning' ? t('course.vocabPromptMeaning') : t('course.vocabPromptWord');
   const canPlayPrompt = canSpeak && question.promptJa;
   const displayPrompt = question.promptJa
-    ? formatJapaneseDisplay(question.promptText)
+    ? renderJapaneseText(question.promptText, question.promptRuby)
     : question.promptText;
 
   return (
@@ -101,11 +101,10 @@ function VocabQuiz({ lesson, locale, mode, script }: VocabQuizProps) {
 }
 
 type VocabExerciseProps = {
-  level: CourseLevel;
   lesson: Lesson;
 };
 
-function VocabExercise({ level, lesson }: VocabExerciseProps) {
+function VocabExercise({ lesson }: VocabExerciseProps) {
   const { locale, t } = useTranslation();
   const [mode, setMode] = useState<VocabMode>('word-meaning');
   const [script, setScript] = useState<VocabScript>('kana');
@@ -125,7 +124,7 @@ function VocabExercise({ level, lesson }: VocabExerciseProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={level} lesson={lesson} section="vocabulary" />
+        <LessonQuizHeader lesson={lesson} section="vocabulary" />
 
         <ToggleButtonGroup
           exclusive
@@ -177,7 +176,7 @@ function ExercisePage({ level }: ExercisePageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} level={level} lesson={lesson} />;
+  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} lesson={lesson} />;
 }
 
 export default ExercisePage;

@@ -2,11 +2,10 @@
 
 import ReplayIcon from '@mui/icons-material/Replay';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import {
   coursePath,
-  getCourse,
   lessonPath,
   type CourseLevel,
   type Lesson
@@ -15,62 +14,39 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
+type LessonQuizSection = 'vocabulary' | 'grammar' | 'listening' | 'reading' | 'writing';
+
 type LessonQuizHeaderProps = {
-  level: CourseLevel;
   lesson: Lesson;
-  section: 'vocabulary' | 'grammar' | 'listening' | 'reading' | 'writing';
+  section: LessonQuizSection;
 };
 
+function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
+  switch (section) {
+    case 'vocabulary':
+      return 'course.vocabularyPractice';
+    case 'grammar':
+      return 'course.grammarPractice';
+    case 'listening':
+      return 'course.listeningPractice';
+    case 'reading':
+      return 'course.readingPractice';
+    case 'writing':
+      return 'course.writingPractice';
+  }
+}
+
 /**
- * Shared header for the lesson practice / listening / reading pages: shows the
- * lesson number, the course code and the section as tags above the lesson
- * title, instead of baking the section into the title text.
+ * Shared header for the lesson practice / listening / reading pages.
  */
-export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderProps) {
+export function LessonQuizHeader({ lesson, section }: LessonQuizHeaderProps) {
   const { locale, t } = useTranslation();
-  const course = getCourse(level);
-  const sectionLabel =
-    section === 'vocabulary'
-      ? t('course.vocabulary')
-      : section === 'grammar'
-        ? t('course.grammar')
-        : section === 'listening'
-          ? t('course.listening')
-          : section === 'reading'
-            ? t('course.reading')
-            : t('course.writing');
 
   return (
     <Box>
-      <Stack
-        direction="row"
-        spacing={1}
-        useFlexGap
-        sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
-      >
-        {course && (
-          <Chip
-            label={course.code}
-            color="secondary"
-            variant="outlined"
-            size="small"
-            component={RouterLink}
-            to={coursePath(level)}
-            clickable
-          />
-        )}
-        <Chip
-          label={t('course.lessonLabel', { number: lesson.number })}
-          color="primary"
-          variant="outlined"
-          size="small"
-          component={RouterLink}
-          to={lessonPath(level, lesson.id)}
-          clickable
-        />
-        <Chip label={sectionLabel} variant="outlined" size="small" />
-      </Stack>
-      <Heading component="h1">{lesson.title[locale]}</Heading>
+      <Heading component="h1">
+        {lesson.title[locale]} | {t(practiceTitleKey(section))}
+      </Heading>
     </Box>
   );
 }

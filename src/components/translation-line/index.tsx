@@ -7,10 +7,10 @@ type TranslationLineProps = {
 };
 
 /**
- * The meaning (translation) line for an example sentence. Hidden by default,
- * showing only a "show" button; once revealed, the translation sits on its own
- * row with the "hide" button on the row below it. Stops click/key propagation so
- * it doesn't trigger a surrounding speakable surface.
+ * The meaning (translation) for an example sentence. A single show/hide link
+ * stays in a fixed spot below the Japanese line; the translation appears
+ * underneath when revealed. Stops click/key propagation so it does not trigger
+ * a surrounding speakable surface.
  */
 export function TranslationLine({ translation }: TranslationLineProps) {
   const { t } = useTranslation();
@@ -20,42 +20,24 @@ export function TranslationLine({ translation }: TranslationLineProps) {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-      {!shown && (
-        <Link
-          component="button"
-          type="button"
-          variant="body2"
-          underline="hover"
-          onClick={(event) => {
-            event.stopPropagation();
-            setShown(true);
-          }}
-          onKeyDown={stopKeyPropagation}
-          sx={{ lineHeight: 1.66 }}
-        >
-          {t('course.showTranslation')}
-        </Link>
-      )}
+      <Link
+        component="button"
+        type="button"
+        variant="body2"
+        underline="hover"
+        onClick={(event) => {
+          event.stopPropagation();
+          setShown((previous) => !previous);
+        }}
+        onKeyDown={stopKeyPropagation}
+        sx={{ lineHeight: 1.66 }}
+      >
+        {shown ? t('course.hideTranslation') : t('course.showTranslation')}
+      </Link>
       {shown && (
-        <>
-          <Typography variant="body2" sx={{ lineHeight: 1.66 }}>
-            {translation}
-          </Typography>
-          <Link
-            component="button"
-            type="button"
-            variant="body2"
-            underline="hover"
-            onClick={(event) => {
-              event.stopPropagation();
-              setShown(false);
-            }}
-            onKeyDown={stopKeyPropagation}
-            sx={{ lineHeight: 1.66 }}
-          >
-            {t('course.hideTranslation')}
-          </Link>
-        </>
+        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.66 }}>
+          {translation}
+        </Typography>
       )}
     </Box>
   );
