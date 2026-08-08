@@ -292,13 +292,10 @@ function ReferenceSection({ lesson }: ReferenceSectionProps) {
 
   return (
     <Box id="reference" sx={SECTION_ANCHOR_SX}>
-      <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 0.5 }}>
+      <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <LibraryBooksOutlinedIcon color="primary" />
         <Heading component="h2">{t('course.referenceHeading')}</Heading>
       </Stack>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-        {t('course.referenceSubtitle')}
-      </Typography>
 
       <Stack spacing={3}>
         {lesson.reference.map((block, index) => (
