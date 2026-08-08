@@ -9,7 +9,6 @@ import {
 import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
 import { SpeakerIconColumn } from '@/components/dialogue-speaker-icon';
 import { formatGrammarPatternDisplay, isGrammarTitleRedundant } from '@/utils/grammar-highlight.ts';
-import { Heading } from '@/components/heading';
 import { TranslationLine } from '@/components/translation-line';
 import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { SpeakableSurface } from '@/components/speakable-surface';
@@ -188,6 +187,13 @@ type GrammarPointCardProps = {
   index: number;
 };
 
+const GRAMMAR_SUBLABEL_SX = {
+  m: 0,
+  fontSize: '1.125rem',
+  fontWeight: 500,
+  lineHeight: 1.4
+} as const;
+
 /** A grammar point: numbered pattern, title, explanation, and speakable examples. */
 export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
   const { locale, t } = useTranslation();
@@ -196,58 +202,71 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
   return (
     <Card elevation={0} sx={elevatedSurfaceSx}>
       <CardContent>
-        <Box
-          sx={[
-            elevatedSurfaceSx,
-            subtleSurfaceSx,
-            {
-              display: 'inline-flex',
-              flexWrap: 'wrap',
-              alignItems: 'baseline',
-              gap: 0.75,
-              maxWidth: '100%',
-              px: 1.5,
-              py: 0.75,
-              mb: 1.5
-            }
-          ]}
-        >
-          <Typography
-            component="span"
-            aria-hidden
-            sx={{
-              fontWeight: 600,
-              fontSize: '1.05rem',
-              lineHeight: 1.5,
-              color: 'text.secondary',
-              fontVariantNumeric: 'tabular-nums'
-            }}
-          >
-            {index}.
-          </Typography>
-          <GrammarHighlightedText
-            text={formatGrammarPatternDisplay(point.pattern)}
-            ruby={point.patternRuby}
-            component="span"
-            lang="ja"
-            sx={{
-              fontWeight: 600,
-              fontSize: '1.05rem',
-              lineHeight: 1.5,
-              color: 'text.primary'
-            }}
-          />
-        </Box>
-        {showTitle && (
-          <GrammarHighlightedText
-            text={point.title[locale]}
-            ruby={point.titleRuby}
+        <Box sx={{ mb: 1.5 }}>
+          <Box
             component="h3"
-            variant="h6"
-            gutterBottom
-            sx={{ fontWeight: 600, lineHeight: 1.35 }}
-          />
-        )}
+            sx={[
+              (theme) => ({
+                ...theme.typography.h5,
+                fontWeight: 600,
+                lineHeight: 1.3
+              }),
+              {
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'nowrap',
+                alignItems: 'baseline',
+                gap: 0.5,
+                maxWidth: '100%',
+                mb: showTitle ? 0.25 : 0,
+                m: 0
+              }
+            ]}
+          >
+            <Box
+              component="span"
+              aria-hidden
+              sx={{
+                flex: '0 0 auto',
+                font: 'inherit',
+                letterSpacing: 'inherit',
+                color: 'text.secondary',
+                fontVariantNumeric: 'tabular-nums'
+              }}
+            >
+              {index}.
+            </Box>
+            <Box
+              component="span"
+              sx={{ flex: '1 1 0', minWidth: 0, font: 'inherit', letterSpacing: 'inherit' }}
+            >
+              <GrammarHighlightedText
+                text={formatGrammarPatternDisplay(point.pattern)}
+                ruby={point.patternRuby}
+                component="span"
+                variant="inherit"
+                lang="ja"
+                sx={{
+                  font: 'inherit',
+                  letterSpacing: 'inherit',
+                  m: 0,
+                  color: 'text.primary',
+                  overflowWrap: 'anywhere'
+                }}
+              />
+            </Box>
+          </Box>
+          {showTitle && (
+            <GrammarHighlightedText
+              text={point.title[locale]}
+              ruby={point.titleRuby}
+              component="p"
+              variant="body2"
+              color="text.secondary"
+              sx={GRAMMAR_SUBLABEL_SX}
+            />
+          )}
+        </Box>
         <GrammarHighlightedText
           text={point.explanation[locale]}
           ruby={point.explanationRuby}
@@ -260,9 +279,14 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
 
         {point.answers && (
           <Box sx={{ mt: 2 }}>
-            <Heading component="h4" scale="subsection" sx={{ mb: 0.75 }}>
+            <Typography
+              component="h4"
+              variant="body2"
+              color="text.secondary"
+              sx={[GRAMMAR_SUBLABEL_SX, { mb: 0.75 }]}
+            >
               {t('course.answers')}
-            </Heading>
+            </Typography>
             {point.answers.explanation && (
               <GrammarHighlightedText
                 text={point.answers.explanation[locale]}

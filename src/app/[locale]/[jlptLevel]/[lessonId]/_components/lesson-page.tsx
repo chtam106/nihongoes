@@ -7,7 +7,6 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
@@ -37,8 +36,8 @@ import { SectionHeaderWithTranslationToggle } from '@/components/section-header-
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
+import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
@@ -47,51 +46,6 @@ import { LessonNotFound } from '@/features/course/shared';
 
 // Offset anchored sections below the fixed app bar when scrolled to.
 const SECTION_ANCHOR_SX = { scrollMarginTop: { xs: 72, md: 88 } } as const;
-
-type SectionNavProps = {
-  lesson: Lesson;
-};
-
-function SectionNav({ lesson }: SectionNavProps) {
-  const { t } = useTranslation();
-
-  const items = [
-    { id: 'vocab', label: t('course.vocabulary') },
-    ...(lesson.phrases && lesson.phrases.length > 0
-      ? [{ id: 'phrases', label: t('course.phrasesHeading') }]
-      : []),
-    ...(lesson.conversation && lesson.conversation.length > 0
-      ? [{ id: 'conversation', label: t('course.conversationHeading') }]
-      : []),
-    ...(lesson.grammar.length > 0 ? [{ id: 'grammar', label: t('course.grammar') }] : []),
-    { id: 'practice', label: t('course.practiceHeading') },
-    ...(lesson.reference && lesson.reference.length > 0
-      ? [{ id: 'reference', label: t('course.referenceHeading') }]
-      : [])
-  ];
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  return (
-    <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap' }}>
-      {items.map((item) => (
-        <Button
-          key={item.id}
-          variant="outlined"
-          size="medium"
-          color="primary"
-          endIcon={<KeyboardArrowDownIcon />}
-          onClick={() => scrollToSection(item.id)}
-          sx={{ textTransform: 'none', fontSize: (theme) => theme.typography.body1.fontSize }}
-        >
-          {item.label}
-        </Button>
-      ))}
-    </Stack>
-  );
-}
 
 type VocabularySectionProps = {
   lesson: Lesson;
@@ -439,27 +393,22 @@ function LessonPage({ level }: LessonPageProps) {
   const next = index < lessons.length - 1 ? lessons[index + 1] : undefined;
 
   return (
-    <PageContainer bottomGutter>
+    <PageContainer>
       <Stack spacing={4}>
         <Box>
           <Heading component="h1">{lesson.title[locale]}</Heading>
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
-            <Typography variant="overline" color="text.secondary">
-              {t('course.focusLabel')}
-            </Typography>
             <Typography variant="body1">{lesson.focus[locale]}</Typography>
           </Paper>
 
           <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
         </Box>
 
-        <SectionNav lesson={lesson} />
-
         <VocabularySection lesson={lesson} />
         <PhrasesSection lesson={lesson} />
-        <ConversationSection lesson={lesson} />
         <GrammarSection lesson={lesson} />
+        <ConversationSection lesson={lesson} />
 
         <PracticePanel level={level} lesson={lesson} />
 
@@ -495,7 +444,7 @@ function LessonPage({ level }: LessonPageProps) {
         </Stack>
       </Stack>
 
-      <ScrollToTopButton />
+      <LessonSectionNav lesson={lesson} />
     </PageContainer>
   );
 }
