@@ -15,7 +15,7 @@ import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import { ReferenceBlockView } from '@/components/reference-block';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import { Box, Button, Link, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import {
   getCourse,
   getLesson,
@@ -31,7 +31,9 @@ import {
   type ConversationScene,
   type ConversationSpeaker
 } from '@/constants/courses/index.ts';
+import { DIALOGUE_SPEAKER_COLORS } from '@/constants/dialogue-speaker-colors.ts';
 import { ConversationTurnGroup, groupConversationTurns } from '@/components/conversation-line-card';
+import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
@@ -40,8 +42,7 @@ import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
-import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
 // Offset anchored sections below the fixed app bar when scrolled to.
@@ -148,37 +149,26 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
         <Heading component="h2">{t('course.phrasesHeading')}</Heading>
       </Stack>
 
-      <Stack spacing={2}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+          gap: 1.5
+        }}
+      >
         {lesson.phrases.map((phrase, index) => (
-          <Box
+          <SpeakableSurface
             key={`phrase-${index}-${phrase.kana}`}
-            sx={{
-              borderLeft: 4,
-              borderColor: 'primary.main',
-              pl: 2,
-              pr: 1.5
-            }}
+            text={phrase.speech ?? phrase.kana}
+            sx={{ p: 1.5 }}
           >
-            <SpeakableSurface
-              text={phrase.speech ?? phrase.kana}
-              sx={{
-                boxShadow: 'none',
-                bgcolor: 'transparent',
-                borderRadius: 1,
-                px: 0.5,
-                mx: -0.5
-              }}
-            >
-              <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
-                {renderJapaneseText(phrase.kanji ?? phrase.kana, phrase.ruby)}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {phrase.meaning[locale]}
-              </Typography>
-            </SpeakableSurface>
-          </Box>
+            <VocabHeadword item={phrase} />
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
+              {phrase.meaning[locale]}
+            </Typography>
+          </SpeakableSurface>
         ))}
-      </Stack>
+      </Box>
     </Box>
   );
 }
@@ -187,11 +177,12 @@ type ConversationSectionProps = {
   lesson: Lesson;
 };
 
-const SPEAKER_COLORS = ['#1976d2', '#2e7d32', '#ed6c02', '#9c27b0', '#00838f'] as const;
-
 function buildSpeakerColorMap(speakers: ConversationSpeaker[]): Map<string, string> {
   return new Map(
-    speakers.map((speaker, index) => [speaker.id, SPEAKER_COLORS[index % SPEAKER_COLORS.length]])
+    speakers.map((speaker, index) => [
+      speaker.id,
+      DIALOGUE_SPEAKER_COLORS[index % DIALOGUE_SPEAKER_COLORS.length]
+    ])
   );
 }
 
@@ -201,7 +192,6 @@ type ConversationSceneBlockProps = {
   colorMap: Map<string, string>;
   showTranslation: boolean;
   onToggleTranslation: () => void;
-  t: ReturnType<typeof useTranslation>['t'];
 };
 
 function ConversationSceneBlock({
@@ -209,27 +199,27 @@ function ConversationSceneBlock({
   locale,
   colorMap,
   showTranslation,
-  onToggleTranslation,
-  t
+  onToggleTranslation
 }: ConversationSceneBlockProps) {
   const speakerById = new Map(scene.speakers.map((speaker) => [speaker.id, speaker]));
-  const turns = groupConversationTurns(scene.lines, speakerById, colorMap, SPEAKER_COLORS[0]);
+  const turns = groupConversationTurns(
+    scene.lines,
+    speakerById,
+    colorMap,
+    DIALOGUE_SPEAKER_COLORS[0]
+  );
 
   return (
     <Box>
-      <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
-        {scene.title[locale]}
-      </Heading>
-      <Link
-        component="button"
-        type="button"
-        variant="body2"
-        underline="hover"
-        onClick={onToggleTranslation}
-        sx={{ lineHeight: 1.66, mb: 1.5, display: 'block' }}
-      >
-        {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
-      </Link>
+      <SectionHeaderWithTranslationToggle
+        showTranslation={showTranslation}
+        onToggle={onToggleTranslation}
+        title={
+          <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
+            {scene.title[locale]}
+          </Heading>
+        }
+      />
       <Stack spacing={1}>
         {turns.map((turn, index) => (
           <ConversationTurnGroup
@@ -268,20 +258,20 @@ function ConversationSection({ lesson }: ConversationSectionProps) {
         <Heading component="h2">{t('course.conversationHeading')}</Heading>
       </Stack>
 
-      <Stack spacing={3}>
+      <Stack spacing={2}>
         {lesson.conversation.map((scene) => {
           const colorMap = buildSpeakerColorMap(scene.speakers);
 
           return (
-            <ConversationSceneBlock
-              key={scene.id}
-              scene={scene}
-              locale={locale}
-              colorMap={colorMap}
-              showTranslation={Boolean(showTranslationsByScene[scene.id])}
-              onToggleTranslation={() => toggleSceneTranslation(scene.id)}
-              t={t}
-            />
+            <Paper key={scene.id} elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
+              <ConversationSceneBlock
+                scene={scene}
+                locale={locale}
+                colorMap={colorMap}
+                showTranslation={Boolean(showTranslationsByScene[scene.id])}
+                onToggleTranslation={() => toggleSceneTranslation(scene.id)}
+              />
+            </Paper>
           );
         })}
       </Stack>
