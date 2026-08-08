@@ -81,7 +81,7 @@ export function ScrollToTopButton() {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         sx={{
           position: 'fixed',
-          right: `${gap}px`,
+          right: { xs: 16, md: 20 },
           bottom: `${bottom}px`,
           zIndex: (muiTheme) => muiTheme.zIndex.fab,
           bgcolor: 'background.paper',

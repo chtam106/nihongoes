@@ -188,6 +188,13 @@ type GrammarPointCardProps = {
   index: number;
 };
 
+const GRAMMAR_SUBLABEL_SX = {
+  m: 0,
+  fontSize: '1.125rem',
+  fontWeight: 500,
+  lineHeight: 1.4
+} as const;
+
 /** A grammar point: numbered pattern, title, explanation, and speakable examples. */
 export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
   const { locale, t } = useTranslation();
@@ -196,58 +203,39 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
   return (
     <Card elevation={0} sx={elevatedSurfaceSx}>
       <CardContent>
-        <Box
-          sx={[
-            elevatedSurfaceSx,
-            subtleSurfaceSx,
-            {
-              display: 'inline-flex',
-              flexWrap: 'wrap',
-              alignItems: 'baseline',
-              gap: 0.75,
-              maxWidth: '100%',
-              px: 1.5,
-              py: 0.75,
-              mb: 1.5
-            }
-          ]}
-        >
-          <Typography
-            component="span"
-            aria-hidden
-            sx={{
-              fontWeight: 600,
-              fontSize: '1.05rem',
-              lineHeight: 1.5,
-              color: 'text.secondary',
-              fontVariantNumeric: 'tabular-nums'
-            }}
-          >
-            {index}.
-          </Typography>
-          <GrammarHighlightedText
-            text={formatGrammarPatternDisplay(point.pattern)}
-            ruby={point.patternRuby}
-            component="span"
-            lang="ja"
-            sx={{
-              fontWeight: 600,
-              fontSize: '1.05rem',
-              lineHeight: 1.5,
-              color: 'text.primary'
-            }}
-          />
+        <Box sx={{ mb: 1.5 }}>
+          <Heading component="h3" scale="section" sx={{ mb: showTitle ? 0.25 : 0 }}>
+            <Typography
+              component="span"
+              variant="inherit"
+              aria-hidden
+              sx={{
+                color: 'text.secondary',
+                fontVariantNumeric: 'tabular-nums'
+              }}
+            >
+              {index}.{' '}
+            </Typography>
+            <GrammarHighlightedText
+              text={formatGrammarPatternDisplay(point.pattern)}
+              ruby={point.patternRuby}
+              component="span"
+              variant="inherit"
+              lang="ja"
+              sx={{ color: 'text.primary' }}
+            />
+          </Heading>
+          {showTitle && (
+            <GrammarHighlightedText
+              text={point.title[locale]}
+              ruby={point.titleRuby}
+              component="p"
+              variant="body2"
+              color="text.secondary"
+              sx={GRAMMAR_SUBLABEL_SX}
+            />
+          )}
         </Box>
-        {showTitle && (
-          <GrammarHighlightedText
-            text={point.title[locale]}
-            ruby={point.titleRuby}
-            component="h3"
-            variant="h6"
-            gutterBottom
-            sx={{ fontWeight: 600, lineHeight: 1.35 }}
-          />
-        )}
         <GrammarHighlightedText
           text={point.explanation[locale]}
           ruby={point.explanationRuby}
@@ -260,9 +248,14 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
 
         {point.answers && (
           <Box sx={{ mt: 2 }}>
-            <Heading component="h4" scale="subsection" sx={{ mb: 0.75 }}>
+            <Typography
+              component="h4"
+              variant="body2"
+              color="text.secondary"
+              sx={[GRAMMAR_SUBLABEL_SX, { mb: 0.75 }]}
+            >
               {t('course.answers')}
-            </Heading>
+            </Typography>
             {point.answers.explanation && (
               <GrammarHighlightedText
                 text={point.answers.explanation[locale]}

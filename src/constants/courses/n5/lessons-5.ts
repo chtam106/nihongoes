@@ -1013,8 +1013,8 @@ export const n5Lesson5: Lesson = {
       ],
       answers: {
         explanation: {
-          en: 'Ask the companion with だれと.',
-          vi: 'Hỏi người đi cùng bằng だれと.'
+          en: 'Ask who someone goes with using だれと. Answer with person + と + the movement verb.',
+          vi: 'Hỏi ai đi cùng bằng だれと. Trả lời bằng người + と + động từ di chuyển.'
         },
         highlights: ['だれ', 'と', 'か'],
         examples: [
