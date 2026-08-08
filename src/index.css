@@ -58,6 +58,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: auto;
+}
+
 html,
 body,
 .thin-scrollbar {

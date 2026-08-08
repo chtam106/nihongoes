@@ -78,7 +78,7 @@ export function ScrollToTopButton() {
       <Fab
         size="medium"
         aria-label={t('common.scrollTop')}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => window.scrollTo({ top: 0 })}
         sx={{
           position: 'fixed',
           right: { xs: 16, md: 20 },

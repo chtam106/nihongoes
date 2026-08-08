@@ -144,6 +144,7 @@ alwaysApply: true
 
 ## Scrollbars
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and local scroll containers (e.g. drawer/menu lists) must use the same `thin-scrollbar` appearance defined in `src/index.css`.
+- Do NOT use smooth scrolling anywhere: keep `html { scroll-behavior: auto; }` in `src/index.css` and never pass `behavior: 'smooth'` to `scrollTo` / `scrollIntoView`.
 
 ## Page layout
 - Wrap every page's content in the shared `<PageContainer>` (`src/components/page-container/index.tsx`) — do NOT use `<Container>` directly in pages. Content width/padding live in `PageContainer` + the `MuiContainer` theme overrides in `src/theme/app-theme.ts`, with a global max width of `1200px`.
