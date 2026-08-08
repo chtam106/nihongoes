@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Box, Card, CardActionArea, CardContent, Chip, Stack, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -40,14 +40,9 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
       >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
-            <Chip
-              label={t('course.lessonLabel', { number: lesson.number })}
-              size="small"
-              color="primary"
-              variant="outlined"
-              sx={{ mb: 1 }}
-            />
-            <Heading component="h3">{lesson.title[locale]}</Heading>
+            <Heading component="h3">
+              {t('course.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+            </Heading>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
               {lesson.focus[locale]}
             </Typography>
