@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Fab, useMediaQuery, useTheme } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useIsClient } from '@/utils/use-is-client.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 
 /** Show only once the page is scrolled past this fraction of its scrollable height. */
 const SHOW_AFTER_PROGRESS = 0.15;
@@ -20,6 +22,8 @@ const SCROLL_IDLE_DELAY = 90;
  */
 export function ScrollToTopButton() {
   const { t } = useTranslation();
+  const isClient = useIsClient();
+  const [preferences] = useUserPreferences();
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
   const gap = isDesktop ? 20 : 16;
@@ -77,6 +81,10 @@ export function ScrollToTopButton() {
     setVisible(false);
     window.scrollTo({ top: 0 });
   };
+
+  if (!isClient || !preferences.showScrollToTop) {
+    return null;
+  }
 
   if (!visible) {
     return null;

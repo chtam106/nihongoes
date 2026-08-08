@@ -6,8 +6,8 @@ import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
-const AudioSettings = lazy(() =>
-  import('@/components/audio-settings').then((module) => ({ default: module.AudioSettings }))
+const AppSettings = lazy(() =>
+  import('@/components/app-settings').then((module) => ({ default: module.AppSettings }))
 );
 const LanguageSwitcher = lazy(() =>
   import('@/components/language-switcher').then((module) => ({
@@ -72,7 +72,7 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
             <Box sx={{ flexGrow: 1 }} />
             <Stack direction="row" spacing={0.5}>
               <Suspense fallback={<Box sx={{ width: 80, height: 40 }} aria-hidden />}>
-                <AudioSettings />
+                <AppSettings />
                 <LanguageSwitcher />
               </Suspense>
             </Stack>
