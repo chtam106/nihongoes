@@ -42,7 +42,11 @@ export function replaceSectionHash(id: string) {
   const nextHash = `#${id}`;
 
   if (window.location.hash !== nextHash) {
-    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
+    window.history.replaceState(
+      null,
+      '',
+      `${window.location.pathname}${window.location.search}${nextHash}`
+    );
   }
 
   scrollToHashTarget(nextHash);
