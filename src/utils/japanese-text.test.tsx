@@ -50,6 +50,20 @@ describe('renderJapaneseText', () => {
     expect(rendered).toContain('<ruby>日<rt style="color:#1565c0">に</rt></ruby>本語');
   });
 
+  it('alternates two furigana colors on consecutive kanji', () => {
+    const rendered = renderNode(
+      <>
+        {renderJapaneseText('定規', [
+          { base: '定', reading: 'じょう' },
+          { base: '規', reading: 'ぎ' }
+        ])}
+      </>
+    );
+
+    expect(rendered).toContain('<ruby>定<rt style="color:#1565c0">じょう</rt></ruby>');
+    expect(rendered).toContain('<ruby>規<rt style="color:#e65100">ぎ</rt></ruby>');
+  });
+
   it('colors separated ruby segments each with the default blue tone', () => {
     const rendered = renderNode(
       <>

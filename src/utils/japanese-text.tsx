@@ -5,15 +5,8 @@ import type { KanjiReadingPart } from '@/types/kanji.ts';
 
 const kanjiChar = /[\u4e00-\u9fff]/;
 
-/** Adjacent entries use contrasting hues (no blue-teal or blue-green pairs). */
-const RUBY_SEGMENT_COLORS = [
-  '#1565c0',
-  '#e65100',
-  '#388e3c',
-  '#c2185b',
-  '#a16207',
-  '#d32f2f'
-] as const;
+/** Blue + orange alternate on consecutive kanji; singles use blue. */
+const RUBY_SEGMENT_COLORS = ['#1565c0', '#e65100'] as const;
 
 function rubySegmentRtStyle(toneIndex: number): CSSProperties {
   return {
@@ -22,7 +15,7 @@ function rubySegmentRtStyle(toneIndex: number): CSSProperties {
 }
 
 type RenderJapaneseTextOptions = {
-  /** When false, keep furigana plain. Default: colorize (blue for singles, palette for adjacent runs). */
+  /** When false, keep furigana plain. Default: blue for singles, two-tone alternation for adjacent runs. */
   colorizeRuby?: boolean;
 };
 
@@ -52,7 +45,7 @@ function collectRubyMatches(text: string, ruby: RubySegment[]): RubyMatch[] {
   return matches;
 }
 
-/** Assign tone indices: singles use blue (0); consecutive runs cycle the palette. */
+/** Assign tone indices: singles use blue (0); consecutive runs alternate blue/orange. */
 function toneIndexByPosition(
   text: string,
   ruby: RubySegment[],

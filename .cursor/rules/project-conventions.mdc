@@ -72,7 +72,7 @@ alwaysApply: true
 - Author **one segment per kanji** in surface order (e.g. 山田 -> `[{ base:'山', reading:'やま' }, { base:'田', reading:'だ' }]`). Plain kana/particles in `jp` stay unrubied; do NOT include okurigana or suffixes like `さん` in ruby segments.
 - Render with `renderJapaneseText(jp, ruby?)` (`src/utils/japanese-text.tsx`). No `ruby` -> plain text. Do NOT import course data into the renderer and do NOT infer readings at runtime.
 - Global furigana size: `ruby rt { font-size: 0.7em }` in `src/index.css` (applies site-wide).
-- **Adjacent furigana colors**: every ruby segment gets a palette color (singles use the first blue `#1565c0`); when 2+ segments are consecutive in the surface text (no kana/kanji gap), cycle through the palette in `japanese-text.tsx` (text color only). This requires **one segment per kanji** in data - a compound `{ base:'教室', reading:'きょうしつ' }` will NOT alternate colors.
+- **Adjacent furigana colors**: every ruby segment gets a color (singles use blue `#1565c0`); when 2+ segments are consecutive in the surface text (no kana/kanji gap), alternate blue and orange (`#1565c0` / `#e65100`) in `japanese-text.tsx` (text color only). This requires **one segment per kanji** in data - a compound `{ base:'教室', reading:'きょうしつ' }` will NOT alternate colors.
 - Pass `ruby` through from data in grammar examples, conversation lines, reading lines, and vocab quiz prompts. Vocab/reference card grids use `<VocabHeadword>` with the item's authored `ruby`.
 
 ## Text & typography (IMPORTANT)
