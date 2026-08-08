@@ -1,14 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  Stack,
-  Typography
-} from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
