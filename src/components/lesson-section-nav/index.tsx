@@ -12,6 +12,7 @@ import {
   FLOATING_RAIL_EDGE_OPEN_SHADOW,
   FLOATING_RAIL_EDGE_SHADOW
 } from '@/theme/floating-rail.ts';
+import { replaceSectionHash } from '@/utils/scroll-to-hash.ts';
 
 type LessonSectionNavItem = {
   id: string;
@@ -215,7 +216,7 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
 
   const scrollToSection = (id: string) => {
     setActiveId(id);
-    document.getElementById(id)?.scrollIntoView({ block: 'start' });
+    replaceSectionHash(id);
     closeMenu();
   };
 

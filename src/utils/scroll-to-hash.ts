@@ -36,3 +36,14 @@ export function scrollToHashTarget(rawHash: string) {
     cancelAnimationFrame(raf);
   };
 }
+
+/** Update the URL hash without adding a browser history entry, then scroll to it. */
+export function replaceSectionHash(id: string) {
+  const nextHash = `#${id}`;
+
+  if (window.location.hash !== nextHash) {
+    window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
+  }
+
+  scrollToHashTarget(nextHash);
+}
