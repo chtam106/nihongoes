@@ -12,6 +12,7 @@ import {
   FLOATING_RAIL_EDGE_OPEN_SHADOW,
   FLOATING_RAIL_EDGE_SHADOW
 } from '@/theme/floating-rail.ts';
+import { replaceSectionHash } from '@/utils/scroll-to-hash.ts';
 
 type LessonSectionNavItem = {
   id: string;
@@ -56,6 +57,9 @@ const TAB_RAIL_BUTTON_SX = {
 } as const;
 const MENU_PADDING_Y = 1;
 const MENU_PADDING_X = 1.5;
+const MENU_ITEM_MIN_HEIGHT = 44;
+const MENU_ITEM_PX = 2;
+const MENU_ITEM_PY = 1;
 
 function resolveScrollOffset() {
   return window.matchMedia('(min-width:900px)').matches ? 88 : 72;
@@ -109,9 +113,12 @@ function SectionMenu({ items, activeId, onSelect }: SectionMenuProps) {
             aria-current={isActive ? 'location' : undefined}
             onClick={() => onSelect(item.id)}
             sx={{
-              display: 'block',
-              px: 1.75,
-              py: 0.75,
+              display: 'flex',
+              alignItems: 'center',
+              width: '100%',
+              px: MENU_ITEM_PX,
+              py: MENU_ITEM_PY,
+              minHeight: MENU_ITEM_MIN_HEIGHT,
               border: 'none',
               borderRadius: 0,
               bgcolor: 'transparent',
@@ -183,6 +190,22 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
     };
   }, [items]);
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const handleScroll = () => {
+      setOpen(false);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true, capture: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, { capture: true });
+    };
+  }, [open]);
+
   const closeMenu = () => {
     setOpen(false);
   };
@@ -193,7 +216,7 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
 
   const scrollToSection = (id: string) => {
     setActiveId(id);
-    document.getElementById(id)?.scrollIntoView({ block: 'start' });
+    replaceSectionHash(id);
     closeMenu();
   };
 

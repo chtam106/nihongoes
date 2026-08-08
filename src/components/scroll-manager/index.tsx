@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { usePathname } from '@/i18n/navigation.tsx';
+import { scrollToHashTarget } from '@/utils/scroll-to-hash.ts';
 
 /**
  * Next's App Router already scrolls to top on forward navigation and restores
@@ -13,42 +14,7 @@ export function ScrollManager() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const rawHash = window.location.hash;
-
-    if (!rawHash) {
-      return;
-    }
-
-    const id = decodeURIComponent(rawHash.slice(1));
-    let raf = 0;
-    let frames = 0;
-    let lastTop = Number.NaN;
-
-    const scrollToHash = () => {
-      frames += 1;
-      const target = document.getElementById(id);
-
-      if (target) {
-        target.scrollIntoView({ block: 'start' });
-        const top = Math.round(target.getBoundingClientRect().top);
-
-        if (top === lastTop) {
-          return;
-        }
-
-        lastTop = top;
-      }
-
-      if (frames < 60) {
-        raf = requestAnimationFrame(scrollToHash);
-      }
-    };
-
-    scrollToHash();
-
-    return () => {
-      cancelAnimationFrame(raf);
-    };
+    return scrollToHashTarget(window.location.hash);
   }, [pathname]);
 
   return null;

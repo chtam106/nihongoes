@@ -129,7 +129,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     }
 
     previousPassageIdRef.current = currentPassageId;
-    passageAnchorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    passageAnchorRef.current?.scrollIntoView({ block: 'start' });
   }, [currentPassageId, finished]);
 
   // Auto-advance shortly after a correct answer; wrong answers let you retry.
