@@ -6,7 +6,6 @@ import {
   Card,
   CardActionArea,
   CardContent,
-  Chip,
   Stack,
   Typography
 } from '@mui/material';
@@ -65,14 +64,9 @@ export default async function Page({ params }: PageProps<{ track: string }>) {
       >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
-            <Chip
-              label={t('kanji.lessonLabel', { number: lesson.number })}
-              size="small"
-              color="primary"
-              variant="outlined"
-              sx={{ mb: 1 }}
-            />
-            <Heading component="h3">{lesson.title[locale]}</Heading>
+            <Heading component="h3">
+              {t('kanji.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+            </Heading>
             <Typography
               lang="ja"
               sx={{ mt: 0.75, fontWeight: 600, letterSpacing: 2, color: 'text.primary' }}
