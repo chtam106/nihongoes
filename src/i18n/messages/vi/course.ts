@@ -4,6 +4,8 @@ export const course = {
   conversationHeading: 'Hội thoại',
   referenceHeading: 'Tham khảo',
   sectionNav: 'Đến phần',
+  sectionNavPrevious: 'Phần trước',
+  sectionNavNext: 'Phần sau',
   lessonLabel: 'Bài {number}',
   audioHint: 'Bấm vào bất kỳ từ vựng hoặc câu nào để nghe phát âm.',
   vocabulary: 'Từ vựng',

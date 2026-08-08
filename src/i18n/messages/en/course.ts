@@ -4,6 +4,8 @@ export const course = {
   conversationHeading: 'Conversation',
   referenceHeading: 'Reference',
   sectionNav: 'Jump to section',
+  sectionNavPrevious: 'Previous section',
+  sectionNavNext: 'Next section',
   lessonLabel: 'Lesson {number}',
   audioHint: 'Tap any vocabulary word or sentence to hear it pronounced.',
   vocabulary: 'Vocabulary',

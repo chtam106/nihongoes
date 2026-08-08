@@ -1,6 +1,8 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
 import { Box, ClickAwayListener, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
@@ -20,11 +22,38 @@ type LessonSectionNavProps = {
   lesson: Lesson;
 };
 
-const TAB_WIDTH = 36;
+const TAB_WIDTH = 44;
 const TAB_ICON_SIZE = 22;
-const TAB_CLOSED_PY = 0.75;
+const TAB_ARROW_ICON_SIZE = 22;
+const TAB_TOUCH_MIN_HEIGHT = 44;
+const TAB_TOGGLE_PY = 0.875;
 const TAB_RADIUS = '10px 0 0 10px';
 const TAB_CLOSED_RADIUS = '4px 0 0 4px';
+
+const TAB_RAIL_BUTTON_SX = {
+  width: TAB_WIDTH,
+  px: 0,
+  border: 'none',
+  bgcolor: 'transparent',
+  color: 'text.primary',
+  cursor: 'pointer',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexShrink: 0,
+  WebkitTapHighlightColor: 'transparent',
+  outline: 'none',
+  '&:focus': {
+    color: 'text.primary'
+  },
+  '&:active': {
+    color: 'text.primary'
+  },
+  '&:disabled': {
+    color: 'text.disabled',
+    cursor: 'default'
+  }
+} as const;
 const MENU_PADDING_Y = 1;
 const MENU_PADDING_X = 1.5;
 
@@ -164,8 +193,21 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
 
   const scrollToSection = (id: string) => {
     setActiveId(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.getElementById(id)?.scrollIntoView({ block: 'start' });
     closeMenu();
+  };
+
+  const activeIndex = items.findIndex((item) => item.id === activeId);
+  const canGoPrev = activeIndex > 0;
+  const canGoNext = activeIndex >= 0 && activeIndex < items.length - 1;
+
+  const scrollToAdjacentSection = (direction: 'prev' | 'next') => {
+    const index = items.findIndex((item) => item.id === activeId);
+    const targetIndex = direction === 'prev' ? index - 1 : index + 1;
+    if (targetIndex < 0 || targetIndex >= items.length) {
+      return;
+    }
+    scrollToSection(items[targetIndex].id);
   };
 
   return (
@@ -205,40 +247,73 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
             <SectionMenu items={items} activeId={activeId} onSelect={scrollToSection} />
           </Box>
 
-          <Box
-            component="button"
-            type="button"
-            aria-label={t('course.sectionNav')}
-            aria-expanded={open}
-            aria-haspopup="menu"
-            onClick={toggleMenu}
+          <Stack
+            spacing={0}
             sx={{
-              width: TAB_WIDTH,
               alignSelf: 'start',
-              px: 0,
-              py: TAB_CLOSED_PY,
-              border: 'none',
+              width: TAB_WIDTH,
+              display: open ? 'none' : 'flex',
               borderRadius: TAB_CLOSED_RADIUS,
               bgcolor: 'background.paper',
-              color: 'text.primary',
-              cursor: 'pointer',
-              display: open ? 'none' : 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
               boxShadow: FLOATING_RAIL_EDGE_SHADOW,
-              WebkitTapHighlightColor: 'transparent',
-              outline: 'none',
-              transition: 'color 0.2s ease',
-              '@media (hover: hover)': {
-                '&:hover': {
-                  color: 'primary.main'
-                }
-              }
+              overflow: 'hidden'
             }}
           >
-            <SubjectOutlinedIcon sx={{ fontSize: TAB_ICON_SIZE }} />
-          </Box>
+            <Box
+              component="button"
+              type="button"
+              aria-label={t('course.sectionNavPrevious')}
+              disabled={!canGoPrev}
+              onClick={() => scrollToAdjacentSection('prev')}
+              sx={[
+                TAB_RAIL_BUTTON_SX,
+                {
+                  minHeight: TAB_TOUCH_MIN_HEIGHT,
+                  borderBottom: (theme) =>
+                    `1px solid ${alpha(
+                      theme.palette.text.primary,
+                      theme.palette.mode === 'light' ? 0.08 : 0.16
+                    )}`
+                }
+              ]}
+            >
+              <KeyboardArrowUpIcon sx={{ fontSize: TAB_ARROW_ICON_SIZE }} />
+            </Box>
+
+            <Box
+              component="button"
+              type="button"
+              aria-label={t('course.sectionNav')}
+              aria-expanded={open}
+              aria-haspopup="menu"
+              onClick={toggleMenu}
+              sx={[
+                TAB_RAIL_BUTTON_SX,
+                {
+                  minHeight: TAB_TOUCH_MIN_HEIGHT,
+                  py: TAB_TOGGLE_PY,
+                  borderBottom: (theme) =>
+                    `1px solid ${alpha(
+                      theme.palette.text.primary,
+                      theme.palette.mode === 'light' ? 0.08 : 0.16
+                    )}`
+                }
+              ]}
+            >
+              <SubjectOutlinedIcon sx={{ fontSize: TAB_ICON_SIZE }} />
+            </Box>
+
+            <Box
+              component="button"
+              type="button"
+              aria-label={t('course.sectionNavNext')}
+              disabled={!canGoNext}
+              onClick={() => scrollToAdjacentSection('next')}
+              sx={[TAB_RAIL_BUTTON_SX, { minHeight: TAB_TOUCH_MIN_HEIGHT }]}
+            >
+              <KeyboardArrowDownIcon sx={{ fontSize: TAB_ARROW_ICON_SIZE }} />
+            </Box>
+          </Stack>
         </Box>
       </ClickAwayListener>
     </Box>
