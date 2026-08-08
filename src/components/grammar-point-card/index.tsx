@@ -9,7 +9,6 @@ import {
 import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
 import { SpeakerIconColumn } from '@/components/dialogue-speaker-icon';
 import { formatGrammarPatternDisplay, isGrammarTitleRedundant } from '@/utils/grammar-highlight.ts';
-import { Heading } from '@/components/heading';
 import { TranslationLine } from '@/components/translation-line';
 import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { SpeakableSurface } from '@/components/speakable-surface';
@@ -204,27 +203,59 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
     <Card elevation={0} sx={elevatedSurfaceSx}>
       <CardContent>
         <Box sx={{ mb: 1.5 }}>
-          <Heading component="h3" scale="section" sx={{ mb: showTitle ? 0.25 : 0 }}>
-            <Typography
+          <Box
+            component="h3"
+            sx={[
+              (theme) => ({
+                ...theme.typography.h5,
+                fontWeight: 600,
+                lineHeight: 1.3
+              }),
+              {
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'nowrap',
+                alignItems: 'baseline',
+                gap: 0.5,
+                maxWidth: '100%',
+                mb: showTitle ? 0.25 : 0,
+                m: 0
+              }
+            ]}
+          >
+            <Box
               component="span"
-              variant="inherit"
               aria-hidden
               sx={{
+                flex: '0 0 auto',
+                font: 'inherit',
+                letterSpacing: 'inherit',
                 color: 'text.secondary',
                 fontVariantNumeric: 'tabular-nums'
               }}
             >
-              {index}.{' '}
-            </Typography>
-            <GrammarHighlightedText
-              text={formatGrammarPatternDisplay(point.pattern)}
-              ruby={point.patternRuby}
+              {index}.
+            </Box>
+            <Box
               component="span"
-              variant="inherit"
-              lang="ja"
-              sx={{ color: 'text.primary' }}
-            />
-          </Heading>
+              sx={{ flex: '1 1 0', minWidth: 0, font: 'inherit', letterSpacing: 'inherit' }}
+            >
+              <GrammarHighlightedText
+                text={formatGrammarPatternDisplay(point.pattern)}
+                ruby={point.patternRuby}
+                component="span"
+                variant="inherit"
+                lang="ja"
+                sx={{
+                  font: 'inherit',
+                  letterSpacing: 'inherit',
+                  m: 0,
+                  color: 'text.primary',
+                  overflowWrap: 'anywhere'
+                }}
+              />
+            </Box>
+          </Box>
           {showTitle && (
             <GrammarHighlightedText
               text={point.title[locale]}
