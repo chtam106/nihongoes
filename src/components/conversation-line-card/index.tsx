@@ -1,10 +1,17 @@
-import { Box, Stack, Typography } from '@mui/material';
+import type { ReactNode } from 'react';
+import { Stack, Typography } from '@mui/material';
+import {
+  DialogueLineLayout,
+  dialogueJapaneseTypographySx
+} from '@/components/dialogue-line-layout';
+import { SpeakerIconColumn, SpeakerIconSpacer } from '@/components/dialogue-speaker-icon';
 import type { ConversationLine, ConversationSpeaker } from '@/constants/courses/index.ts';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 
 export type ConversationTurn = {
   speakerId: string;
+  speakerName: string;
   color: string;
   lines: ConversationLine[];
 };
@@ -34,6 +41,7 @@ export function groupConversationTurns(
 
     turns.push({
       speakerId: line.speakerId,
+      speakerName: speaker.name,
       color: colorMap.get(line.speakerId) ?? fallbackColor,
       lines: [line]
     });
@@ -42,33 +50,42 @@ export function groupConversationTurns(
   return turns;
 }
 
+const speakableSurfaceSx = {
+  boxShadow: 'none',
+  bgcolor: 'transparent',
+  borderRadius: 1,
+  px: 0.5,
+  mx: -0.5
+} as const;
+
 type ConversationLineRowProps = {
   line: ConversationLine;
   locale: 'en' | 'vi';
   showTranslation: boolean;
+  icon: ReactNode;
 };
 
-function ConversationLineRow({ line, locale, showTranslation }: ConversationLineRowProps) {
+function ConversationLineRow({ line, locale, showTranslation, icon }: ConversationLineRowProps) {
+  const hasRuby = Boolean(line.ruby?.length);
+
   return (
-    <SpeakableSurface
-      text={line.jp}
-      sx={{
-        boxShadow: 'none',
-        bgcolor: 'transparent',
-        borderRadius: 1,
-        px: 0.5,
-        mx: -0.5
-      }}
-    >
-      <Typography variant="body1" lang="ja" sx={{ fontWeight: 500, lineHeight: 1.35 }}>
-        {renderJapaneseText(line.jp, line.ruby)}
-      </Typography>
-      {showTranslation && (
-        <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.35 }}>
-          {line.meaning[locale]}
-        </Typography>
-      )}
-    </SpeakableSurface>
+    <DialogueLineLayout
+      icon={icon}
+      japanese={
+        <SpeakableSurface text={line.jp} sx={speakableSurfaceSx}>
+          <Typography variant="body1" lang="ja" sx={dialogueJapaneseTypographySx(hasRuby)}>
+            {renderJapaneseText(line.jp, line.ruby)}
+          </Typography>
+        </SpeakableSurface>
+      }
+      translation={
+        showTranslation && (
+          <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.35 }}>
+            {line.meaning[locale]}
+          </Typography>
+        )
+      }
+    />
   );
 }
 
@@ -78,31 +95,29 @@ type ConversationTurnGroupProps = {
   showTranslation: boolean;
 };
 
-/** One speaker turn: consecutive lines with a colored left accent. */
+/** One speaker turn: consecutive lines with a colored speaker icon. */
 export function ConversationTurnGroup({
   turn,
   locale,
   showTranslation
 }: ConversationTurnGroupProps) {
   return (
-    <Box
-      sx={{
-        borderLeft: 4,
-        borderColor: turn.color,
-        pl: 2,
-        pr: 1.5
-      }}
-    >
-      <Stack spacing={0}>
-        {turn.lines.map((line, index) => (
-          <ConversationLineRow
-            key={`${line.jp}-${index}`}
-            line={line}
-            locale={locale}
-            showTranslation={showTranslation}
-          />
-        ))}
-      </Stack>
-    </Box>
+    <Stack spacing={1}>
+      {turn.lines.map((line, index) => (
+        <ConversationLineRow
+          key={`${line.jp}-${index}`}
+          line={line}
+          locale={locale}
+          showTranslation={showTranslation}
+          icon={
+            index === 0 ? (
+              <SpeakerIconColumn color={turn.color} label={turn.speakerName} />
+            ) : (
+              <SpeakerIconSpacer />
+            )
+          }
+        />
+      ))}
+    </Stack>
   );
 }

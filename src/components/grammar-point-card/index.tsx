@@ -1,9 +1,17 @@
+import { useState } from 'react';
 import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
 import type { GrammarExample, GrammarPoint } from '@/constants/courses/types.ts';
+import { DIALOGUE_SPEAKER_COLORS } from '@/constants/dialogue-speaker-colors.ts';
+import {
+  DialogueLineLayout,
+  dialogueJapaneseTypographySx
+} from '@/components/dialogue-line-layout';
 import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
+import { SpeakerIconColumn } from '@/components/dialogue-speaker-icon';
 import { formatGrammarPatternDisplay, isGrammarTitleRedundant } from '@/utils/grammar-highlight.ts';
 import { Heading } from '@/components/heading';
 import { TranslationLine } from '@/components/translation-line';
+import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
@@ -74,50 +82,63 @@ type DialogueExampleGroupProps = {
 };
 
 function DialogueExampleGroup({ examples }: DialogueExampleGroupProps) {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const [showTranslation, setShowTranslation] = useState(false);
   const speakerLabels = [t('course.grammarDialogueSpeakerA'), t('course.grammarDialogueSpeakerB')];
 
   return (
-    <Box
-      sx={[
-        subtleSurfaceSx,
-        {
-          borderLeft: 4,
-          borderColor: 'primary.main',
-          pl: 2,
-          pr: 1.5,
-          py: 1.5
+    <Box sx={[subtleSurfaceSx, { px: 1.5, py: 1.5 }]}>
+      <SectionHeaderWithTranslationToggle
+        showTranslation={showTranslation}
+        onToggle={() => setShowTranslation((previous) => !previous)}
+        title={
+          <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
+            {t('course.grammarMiniDialogue')}
+          </Typography>
         }
-      ]}
-    >
-      <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600, mb: 1 }}>
-        {t('course.grammarMiniDialogue')}
-      </Typography>
-      <Stack spacing={1.5} divider={<Box sx={{ borderBottom: 1, borderColor: 'divider' }} />}>
-        {examples.map((example, lineIndex) => (
-          <Box
-            key={`${example.jp}-${lineIndex}`}
-            sx={{ display: 'flex', gap: 1.25, alignItems: 'flex-start' }}
-          >
-            <Typography
-              component="span"
-              aria-hidden
-              sx={{
-                flexShrink: 0,
-                width: '1.25rem',
-                fontWeight: 600,
-                color: 'text.secondary',
-                fontVariantNumeric: 'tabular-nums',
-                lineHeight: 1.5
-              }}
-            >
-              {speakerLabels[lineIndex] ?? lineIndex + 1}
-            </Typography>
-            <Box sx={{ minWidth: 0, flex: 1 }}>
-              <ExampleRow example={example} />
-            </Box>
-          </Box>
-        ))}
+      />
+      <Stack spacing={1.5}>
+        {examples.map((example, lineIndex) => {
+          const speakerIndex = lineIndex % speakerLabels.length;
+          const label = speakerLabels[speakerIndex] ?? String(lineIndex + 1);
+          const hasRuby = Boolean(example.ruby?.length);
+
+          return (
+            <DialogueLineLayout
+              key={`${example.jp}-${lineIndex}`}
+              icon={
+                <SpeakerIconColumn color={DIALOGUE_SPEAKER_COLORS[speakerIndex]} label={label} />
+              }
+              japanese={
+                <SpeakableSurface
+                  text={example.jp}
+                  sx={{
+                    boxShadow: 'none',
+                    bgcolor: 'transparent',
+                    borderRadius: 1,
+                    px: 0.5,
+                    mx: -0.5
+                  }}
+                >
+                  <GrammarHighlightedText
+                    text={example.jp}
+                    ruby={example.ruby}
+                    variant="body1"
+                    lang="ja"
+                    sx={dialogueJapaneseTypographySx(hasRuby)}
+                  />
+                </SpeakableSurface>
+              }
+              translation={
+                showTranslation && (
+                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.35 }}>
+                    {example.meaning[locale]}
+                  </Typography>
+                )
+              }
+            />
+          );
+        })}
       </Stack>
     </Box>
   );
@@ -140,7 +161,7 @@ function ExampleList({ examples }: ExampleListProps) {
               key={segment.example.jp}
               sx={{
                 borderLeft: 4,
-                borderColor: 'primary.main',
+                borderColor: 'text.primary',
                 pl: 2,
                 pr: 1.5
               }}
