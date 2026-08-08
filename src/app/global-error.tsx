@@ -1,6 +1,12 @@
 'use client';
 
-import { type CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
+import * as Sentry from '@sentry/nextjs';
+
+type GlobalErrorProps = {
+  error: Error & { digest?: string };
+  reset: () => void;
+};
 
 // This boundary replaces the whole document (the root layout crashed), so it
 // cannot use MUI/theme/i18n - the providers are gone, and reusing them risks the
@@ -28,7 +34,11 @@ const containedButton: CSSProperties = {
     '0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)'
 };
 
-export default function GlobalError() {
+export default function GlobalError({ error }: GlobalErrorProps) {
+  useEffect(() => {
+    Sentry.captureException(error);
+  }, [error]);
+
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
