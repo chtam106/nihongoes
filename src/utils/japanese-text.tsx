@@ -22,7 +22,7 @@ function rubySegmentRtStyle(toneIndex: number): CSSProperties {
 }
 
 type RenderJapaneseTextOptions = {
-  /** When false, keep furigana plain. Default: colorize adjacent runs of 2+. */
+  /** When false, keep furigana plain. Default: colorize (blue for singles, palette for adjacent runs). */
   colorizeRuby?: boolean;
 };
 
@@ -52,7 +52,7 @@ function collectRubyMatches(text: string, ruby: RubySegment[]): RubyMatch[] {
   return matches;
 }
 
-/** Assign tone indices only within runs of 2+ consecutive ruby segments. */
+/** Assign tone indices: singles use blue (0); consecutive runs cycle the palette. */
 function toneIndexByPosition(
   text: string,
   ruby: RubySegment[],
@@ -80,11 +80,9 @@ function toneIndexByPosition(
 
     const run = matches.slice(runStart, runEnd);
 
-    if (run.length >= 2) {
-      run.forEach((match, toneIndex) => {
-        toneByPosition.set(match.position, toneIndex);
-      });
-    }
+    run.forEach((match, toneIndex) => {
+      toneByPosition.set(match.position, toneIndex);
+    });
 
     runStart = runEnd;
   }

@@ -42,16 +42,15 @@ describe('renderJapaneseText', () => {
     expect(rendered.match(/<rt style=/g)?.length).toBe(5);
   });
 
-  it('skips furigana colors when only one ruby segment is authored', () => {
+  it('colors a lone ruby segment with the default blue tone', () => {
     const rendered = renderNode(
       <>{renderJapaneseText('日本語', [{ base: '日', reading: 'に' }])}</>
     );
 
-    expect(rendered).toBe('<ruby>日<rt>に</rt></ruby>本語');
-    expect(rendered).not.toContain('<rt style=');
+    expect(rendered).toContain('<ruby>日<rt style="color:#1565c0">に</rt></ruby>本語');
   });
 
-  it('skips furigana colors when ruby segments are separated by plain text', () => {
+  it('colors separated ruby segments each with the default blue tone', () => {
     const rendered = renderNode(
       <>
         {renderJapaneseText('日本人', [
@@ -61,8 +60,8 @@ describe('renderJapaneseText', () => {
       </>
     );
 
-    expect(rendered).toBe('<ruby>日<rt>に</rt></ruby>本<ruby>人<rt>じん</rt></ruby>');
-    expect(rendered).not.toContain('<rt style=');
+    expect(rendered).toContain('<ruby>日<rt style="color:#1565c0">に</rt></ruby>本');
+    expect(rendered).toContain('<ruby>人<rt style="color:#1565c0">じん</rt></ruby>');
   });
 
   it('can disable furigana colors explicitly', () => {

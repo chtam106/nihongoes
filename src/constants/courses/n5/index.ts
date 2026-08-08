@@ -1485,30 +1485,54 @@ export const n5Course: Course = {
               kana: 'こうむいん',
               kanji: '公務員',
               romaji: 'kōmuin',
+              ruby: [
+                { base: '公', reading: 'こう' },
+                { base: '務', reading: 'む' },
+                { base: '員', reading: 'いん' }
+              ],
               meaning: { en: 'civil servant', vi: 'công chức' }
             },
             {
               kana: 'べんごし',
               kanji: '弁護士',
               romaji: 'bengoshi',
+              ruby: [
+                { base: '弁', reading: 'べん' },
+                { base: '護', reading: 'ご' },
+                { base: '士', reading: 'し' }
+              ],
               meaning: { en: 'lawyer', vi: 'luật sư' }
             },
             {
               kana: 'かんごし',
               kanji: '看護師',
               romaji: 'kangoshi',
+              ruby: [
+                { base: '看', reading: 'かん' },
+                { base: '護', reading: 'ご' },
+                { base: '師', reading: 'し' }
+              ],
               meaning: { en: 'nurse', vi: 'y tá' }
             },
             {
               kana: 'しゅふ',
               kanji: '主婦',
               romaji: 'shufu',
+              ruby: [
+                { base: '主', reading: 'しゅ' },
+                { base: '婦', reading: 'ふ' }
+              ],
               meaning: { en: 'homemaker', vi: 'nội trợ' }
             },
             {
               kana: 'けいさつかん',
               kanji: '警察官',
               romaji: 'keisatsukan',
+              ruby: [
+                { base: '警', reading: 'けい' },
+                { base: '察', reading: 'さつ' },
+                { base: '官', reading: 'かん' }
+              ],
               meaning: { en: 'police officer', vi: 'cảnh sát' }
             }
           ]
@@ -2509,12 +2533,17 @@ export const n5Course: Course = {
               kana: 'けしゴム',
               kanji: '消しゴム',
               romaji: 'keshigomu',
+              ruby: [{ base: '消', reading: 'け' }],
               meaning: { en: 'eraser', vi: 'cục tẩy' }
             },
             {
               kana: 'じょうぎ',
               kanji: '定規',
               romaji: 'jōgi',
+              ruby: [
+                { base: '定', reading: 'じょう' },
+                { base: '規', reading: 'ぎ' }
+              ],
               meaning: { en: 'ruler', vi: 'thước kẻ' }
             },
             { kana: 'はさみ', romaji: 'hasami', meaning: { en: 'scissors', vi: 'cái kéo' } },
@@ -2523,6 +2552,10 @@ export const n5Course: Course = {
               kana: 'ふでばこ',
               kanji: '筆箱',
               romaji: 'fudebako',
+              ruby: [
+                { base: '筆', reading: 'ふで' },
+                { base: '箱', reading: 'ばこ' }
+              ],
               meaning: { en: 'pencil case', vi: 'hộp bút' }
             },
             { kana: 'カレンダー', romaji: 'karendā', meaning: { en: 'calendar', vi: 'lịch' } }
@@ -2552,6 +2585,11 @@ export const n5Course: Course = {
               kana: 'れいぞうこ',
               kanji: '冷蔵庫',
               romaji: 'reizōko',
+              ruby: [
+                { base: '冷', reading: 'れい' },
+                { base: '蔵', reading: 'ぞう' },
+                { base: '庫', reading: 'こ' }
+              ],
               meaning: { en: 'refrigerator', vi: 'tủ lạnh' }
             },
             {
@@ -2586,19 +2624,39 @@ export const n5Course: Course = {
               kana: 'おかね',
               kanji: 'お金',
               romaji: 'okane',
+              ruby: [{ base: '金', reading: 'かね' }],
               meaning: { en: 'money', vi: 'tiền' }
             },
-            { kana: 'さいふ', kanji: '財布', romaji: 'saifu', meaning: { en: 'wallet', vi: 'ví' } },
+            {
+              kana: 'さいふ',
+              kanji: '財布',
+              romaji: 'saifu',
+              ruby: [
+                { base: '財', reading: 'さい' },
+                { base: '布', reading: 'ふ' }
+              ],
+              meaning: { en: 'wallet', vi: 'ví' }
+            },
             {
               kana: 'めがね',
               kanji: '眼鏡',
               romaji: 'megane',
+              ruby: [
+                { base: '眼', reading: 'め' },
+                { base: '鏡', reading: 'がね' }
+              ],
               meaning: { en: 'glasses', vi: 'kính mắt' }
             },
             {
               kana: 'けいたいでんわ',
               kanji: '携帯電話',
               romaji: 'keitai denwa',
+              ruby: [
+                { base: '携', reading: 'けい' },
+                { base: '帯', reading: 'たい' },
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' }
+              ],
               meaning: { en: 'mobile phone', vi: 'điện thoại di động' }
             },
             {
@@ -3531,36 +3589,45 @@ export const n5Course: Course = {
               kana: 'いっかい',
               kanji: '1階',
               romaji: 'ikkai',
+              ruby: [{ base: '階', reading: 'かい' }],
               meaning: { en: '1st floor', vi: 'tầng 1' }
             },
             {
               kana: 'にかい',
               kanji: '2階',
               romaji: 'nikai',
+              ruby: [{ base: '階', reading: 'かい' }],
               meaning: { en: '2nd floor', vi: 'tầng 2' }
             },
             {
               kana: 'さんがい',
               kanji: '3階',
               romaji: 'sangai',
+              ruby: [{ base: '階', reading: 'がい' }],
               meaning: { en: '3rd floor', vi: 'tầng 3' }
             },
             {
               kana: 'よんかい',
               kanji: '4階',
               romaji: 'yonkai',
+              ruby: [{ base: '階', reading: 'かい' }],
               meaning: { en: '4th floor', vi: 'tầng 4' }
             },
             {
               kana: 'ごかい',
               kanji: '5階',
               romaji: 'gokai',
+              ruby: [{ base: '階', reading: 'かい' }],
               meaning: { en: '5th floor', vi: 'tầng 5' }
             },
             {
               kana: 'ちか',
               kanji: '地下',
               romaji: 'chika',
+              ruby: [
+                { base: '地', reading: 'ち' },
+                { base: '下', reading: 'か' }
+              ],
               meaning: { en: 'basement', vi: 'tầng hầm' }
             }
           ]
@@ -3573,19 +3640,39 @@ export const n5Course: Course = {
               kana: 'ぎんこう',
               kanji: '銀行',
               romaji: 'ginkō',
+              ruby: [
+                { base: '銀', reading: 'ぎん' },
+                { base: '行', reading: 'こう' }
+              ],
               meaning: { en: 'bank', vi: 'ngân hàng' }
             },
             {
               kana: 'ゆうびんきょく',
               kanji: '郵便局',
               romaji: 'yūbinkyoku',
+              ruby: [
+                { base: '郵', reading: 'ゆう' },
+                { base: '便', reading: 'びん' },
+                { base: '局', reading: 'きょく' }
+              ],
               meaning: { en: 'post office', vi: 'bưu điện' }
             },
-            { kana: 'えき', kanji: '駅', romaji: 'eki', meaning: { en: 'station', vi: 'nhà ga' } },
+            {
+              kana: 'えき',
+              kanji: '駅',
+              romaji: 'eki',
+              ruby: [{ base: '駅', reading: 'えき' }],
+              meaning: { en: 'station', vi: 'nhà ga' }
+            },
             {
               kana: 'としょかん',
               kanji: '図書館',
               romaji: 'toshokan',
+              ruby: [
+                { base: '図', reading: 'と' },
+                { base: '書', reading: 'しょ' },
+                { base: '館', reading: 'かん' }
+              ],
               meaning: { en: 'library', vi: 'thư viện' }
             },
             {
@@ -3600,33 +3687,67 @@ export const n5Course: Course = {
           kind: 'vocab',
           title: { en: 'Big numbers (for prices)', vi: 'Số lớn (cho giá tiền)' },
           items: [
-            { kana: 'ひゃく', kanji: '百', romaji: 'hyaku', meaning: { en: '100', vi: '100' } },
+            {
+              kana: 'ひゃく',
+              kanji: '百',
+              romaji: 'hyaku',
+              ruby: [{ base: '百', reading: 'ひゃく' }],
+              meaning: { en: '100', vi: '100' }
+            },
             {
               kana: 'さんびゃく',
               kanji: '三百',
               romaji: 'sanbyaku',
+              ruby: [
+                { base: '三', reading: 'さん' },
+                { base: '百', reading: 'びゃく' }
+              ],
               meaning: { en: '300', vi: '300' }
             },
             {
               kana: 'ろっぴゃく',
               kanji: '六百',
               romaji: 'roppyaku',
+              ruby: [
+                { base: '六', reading: 'ろっ' },
+                { base: '百', reading: 'ぴゃく' }
+              ],
               meaning: { en: '600', vi: '600' }
             },
             {
               kana: 'はっぴゃく',
               kanji: '八百',
               romaji: 'happyaku',
+              ruby: [
+                { base: '八', reading: 'はっ' },
+                { base: '百', reading: 'ぴゃく' }
+              ],
               meaning: { en: '800', vi: '800' }
             },
-            { kana: 'せん', kanji: '千', romaji: 'sen', meaning: { en: '1,000', vi: '1.000' } },
+            {
+              kana: 'せん',
+              kanji: '千',
+              romaji: 'sen',
+              ruby: [{ base: '千', reading: 'せん' }],
+              meaning: { en: '1,000', vi: '1.000' }
+            },
             {
               kana: 'はっせん',
               kanji: '八千',
               romaji: 'hassen',
+              ruby: [
+                { base: '八', reading: 'はっ' },
+                { base: '千', reading: 'せん' }
+              ],
               meaning: { en: '8,000', vi: '8.000' }
             },
-            { kana: 'まん', kanji: '万', romaji: 'man', meaning: { en: '10,000', vi: '10.000' } }
+            {
+              kana: 'まん',
+              kanji: '万',
+              romaji: 'man',
+              ruby: [{ base: '万', reading: 'まん' }],
+              meaning: { en: '10,000', vi: '10.000' }
+            }
           ]
         }
       ]

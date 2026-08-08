@@ -23,12 +23,9 @@ function inferVocabRuby(kanjiForm, kanaReading) {
       continue;
     }
 
-    let kanjiEnd = surfaceIndex;
-    while (kanjiEnd < kanjiForm.length && isKanjiChar(kanjiForm[kanjiEnd])) {
-      kanjiEnd += 1;
-    }
+    let kanjiEnd = surfaceIndex + 1;
 
-    const base = kanjiForm.slice(surfaceIndex, kanjiEnd);
+    const base = kanjiForm[surfaceIndex];
 
     let okuriganaEnd = kanjiEnd;
     while (okuriganaEnd < kanjiForm.length && !isKanjiChar(kanjiForm[okuriganaEnd])) {
@@ -44,6 +41,8 @@ function inferVocabRuby(kanjiForm, kanaReading) {
       }
       ruby.push({ base, reading: kanaReading.slice(readingIndex, okuriStart) });
       readingIndex = okuriStart + okurigana.length;
+    } else if (kanjiEnd < kanjiForm.length && isKanjiChar(kanjiForm[kanjiEnd])) {
+      return undefined;
     } else {
       ruby.push({ base, reading: kanaReading.slice(readingIndex) });
       readingIndex = kanaReading.length;
@@ -140,9 +139,8 @@ function patchFile(path) {
       if (idx === -1) break;
 
       if (label === 'items: [') {
-        const blockStart = text.lastIndexOf('{', idx);
-        const block = text.slice(blockStart, idx);
-        if (!block.includes("kind: 'vocab'")) {
+        const lookback = text.slice(Math.max(0, idx - 800), idx);
+        if (!lookback.includes("kind: 'vocab'")) {
           searchFrom = idx + label.length;
           continue;
         }
@@ -167,6 +165,6 @@ function patchFile(path) {
   console.log('patched', path);
 }
 
-for (const file of ['src/constants/courses/n5/index.ts']) {
+for (const file of ['src/constants/courses/n5/index.ts', 'src/constants/courses/n5/lessons-5.ts']) {
   patchFile(file);
 }
