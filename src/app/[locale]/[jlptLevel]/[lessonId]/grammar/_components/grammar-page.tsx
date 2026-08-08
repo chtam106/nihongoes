@@ -76,7 +76,13 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
         </Typography>
       </Paper>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+          gap: 1.5
+        }}
+      >
         {question.options.map((option) => {
           const isCorrectOption = option.id === question.correctId;
           const showCorrect = answeredCorrectly && isCorrectOption;

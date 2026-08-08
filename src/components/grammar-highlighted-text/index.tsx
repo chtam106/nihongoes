@@ -15,7 +15,7 @@ export function GrammarHighlightedText({
   sx,
   ...typographyProps
 }: GrammarHighlightedTextProps) {
-  const displayText = typographyProps.lang === 'ja' ? renderJapaneseText(text, ruby) : text;
+  const displayText = ruby?.length ? renderJapaneseText(text, ruby) : text;
 
   return (
     <Typography

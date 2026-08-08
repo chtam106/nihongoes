@@ -10,6 +10,7 @@ import {
   FormControl,
   InputLabel,
   MenuItem,
+  Paper,
   Select,
   Stack,
   Typography
@@ -22,10 +23,9 @@ import {
   type Lesson
 } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
-import { SpeakButton } from '@/components/speak-button';
-import { SpeakableSurface } from '@/components/speakable-surface';
 import { TracingCanvas } from '@/components/tracing-canvas';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
 
 // Matches anything that is NOT a CJK kanji (kana, 〜, punctuation, latin, etc.).
@@ -62,7 +62,6 @@ function KanjiWriting({ lesson }: KanjiWritingProps) {
 
   const guide = kanjiOnly(current.kanji ?? '') || current.kana;
   const guideFontSize = `min(${Math.round(72 / guide.length)}vw, ${Math.round(300 / guide.length)}px)`;
-  const speechText = current.speech ?? current.kana;
 
   return (
     <PageContainer>
@@ -96,20 +95,17 @@ function KanjiWriting({ lesson }: KanjiWritingProps) {
             </Select>
           </FormControl>
 
-          <SpeakableSurface text={speechText} sx={{ p: 1.5 }}>
+          <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 1.5 }]}>
             <Stack spacing={0.5} sx={{ alignItems: 'center', textAlign: 'center' }}>
-              <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center' }}>
-                <Typography variant="subtitle1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                  {current.kanji}
-                  <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
-                    {current.kana}
-                  </Box>
-                </Typography>
-                <SpeakButton text={speechText} />
-              </Stack>
+              <Typography variant="subtitle1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
+                {current.kanji}
+                <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
+                  {current.kana}
+                </Box>
+              </Typography>
               <Typography variant="body2">{current.meaning[locale]}</Typography>
             </Stack>
-          </SpeakableSurface>
+          </Paper>
 
           <TracingCanvas
             key={`${guide}:${index}`}

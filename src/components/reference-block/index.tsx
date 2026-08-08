@@ -189,14 +189,31 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
       {block.kind === 'list' && (
         <Stack spacing={1.5}>
           {block.intro && (
-            <Typography variant="body1" color="text.secondary">
+            <Typography variant="body1" color="text.secondary" component="div">
+              {block.introTerm && (
+                <>
+                  <Box component="span" lang="ja" sx={{ fontWeight: 600, color: 'text.primary' }}>
+                    {renderJapaneseText(block.introTerm.jp, block.introTerm.ruby)}
+                  </Box>
+                  {': '}
+                </>
+              )}
               {block.intro[locale]}
             </Typography>
           )}
-          <Stack spacing={1}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns:
+                block.layout === 'stacked-2col' ? { xs: '1fr', md: 'repeat(2, 1fr)' } : '1fr',
+              gap: 1
+            }}
+          >
             {block.rows.map((row, index) => {
               const isPhraseRow = Boolean(row.jp && !row.number);
-              const isStackedRow = block.layout === 'stacked' && Boolean(row.number);
+              const isStackedRow =
+                (block.layout === 'stacked' || block.layout === 'stacked-2col') &&
+                Boolean(row.number);
 
               return (
                 <Paper key={index} elevation={0} sx={[elevatedSurfaceSx, { p: 1.5 }]}>
@@ -297,7 +314,7 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                 </Paper>
               );
             })}
-          </Stack>
+          </Box>
           {block.notes?.map((note, index) => (
             <HintText key={index} sx={{ display: 'block' }}>
               {note[locale]}

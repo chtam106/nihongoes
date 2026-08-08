@@ -1,3 +1,4 @@
+import { n5Lesson5 } from '@/constants/courses/n5/lessons-5.ts';
 import { withSequentialNumbers, type Course } from '@/constants/courses/types.ts';
 
 export const n5Course: Course = {
@@ -197,7 +198,12 @@ export const n5Course: Course = {
           kana: 'おなまえは なんですか。',
           kanji: 'お名前は何ですか。',
           romaji: 'Onamae wa nan desu ka.',
-          meaning: { en: 'What is your name?', vi: 'Bạn tên là gì?' }
+          meaning: { en: 'What is your name?', vi: 'Bạn tên là gì?' },
+          ruby: [
+            { base: '名', reading: 'な' },
+            { base: '前', reading: 'まえ' },
+            { base: '何', reading: 'なん' }
+          ]
         },
         {
           kana: 'しつれいですが。',
@@ -206,7 +212,11 @@ export const n5Course: Course = {
           meaning: {
             en: 'Excuse me, but... (polite lead-in)',
             vi: 'Xin lỗi, cho hỏi... (mở đầu lịch sự)'
-          }
+          },
+          ruby: [
+            { base: '失', reading: 'しつ' },
+            { base: '礼', reading: 'れい' }
+          ]
         },
         {
           kana: 'アメリカから きました。',
@@ -236,36 +246,53 @@ export const n5Course: Course = {
           lines: [
             {
               speakerId: 'alex',
-              jp: 'はじめまして。わたしは アレックス・リバラです。',
+              jp: 'はじめまして。私は アレックス・リバラです。',
               romaji: 'Hajimemashite. Watashi wa Arekkusu Ribara desu.',
               meaning: {
                 en: 'Nice to meet you. I am Alex Rivera.',
                 vi: 'Rất vui được gặp. Tôi là Alex Rivera.'
-              }
+              },
+              ruby: [{ base: '私', reading: 'わたし' }]
             },
             {
               speakerId: 'alex',
-              jp: 'アメリカから きました。',
+              jp: 'アメリカから 来ました。',
               romaji: 'Amerika kara kimashita.',
-              meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
+              meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' },
+              ruby: [{ base: '来', reading: 'き' }]
             },
             {
               speakerId: 'alex',
-              jp: 'さくらしょうじの かいしゃいんです。どうぞ よろしく おねがいします。',
+              jp: 'さくら商事の 会社員です。どうぞ よろしく お願いします。',
               romaji: 'Sakura shōji no kaishain desu. Dōzo yoroshiku onegaishimasu.',
               meaning: {
                 en: 'I am an employee at Sakura Trading. Pleased to meet you.',
                 vi: 'Tôi là nhân viên công ty Sakura. Rất mong được giúp đỡ.'
-              }
+              },
+              ruby: [
+                { base: '商', reading: 'しょう' },
+                { base: '事', reading: 'じ' },
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' },
+                { base: '願', reading: 'ねが' }
+              ]
             },
             {
               speakerId: 'yamada',
-              jp: 'やまだです。にほんごの せんせいです。',
+              jp: 'やまだです。日本語の 先生です。',
               romaji: 'Yamada desu. Nihongo no sensei desu.',
               meaning: {
                 en: 'I am Yamada. I am a Japanese teacher.',
                 vi: 'Tôi là Yamada. Tôi là giáo viên tiếng Nhật.'
-              }
+              },
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '語', reading: 'ご' },
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
             }
           ]
         },
@@ -285,48 +312,74 @@ export const n5Course: Course = {
           lines: [
             {
               speakerId: 'alex',
-              jp: 'しつれいですが、おなまえは なんですか。',
+              jp: '失礼ですが、お名前は 何ですか。',
               romaji: 'Shitsurei desu ga, onamae wa nan desu ka.',
               meaning: {
                 en: 'Excuse me, but what is your name?',
                 vi: 'Xin lỗi, cho hỏi bạn tên là gì?'
-              }
+              },
+              ruby: [
+                { base: '失', reading: 'しつ' },
+                { base: '礼', reading: 'れい' },
+                { base: '名', reading: 'な' },
+                { base: '前', reading: 'まえ' },
+                { base: '何', reading: 'なん' }
+              ]
             },
             {
               speakerId: 'maria',
-              jp: 'マリア・コスタです。ブラジルから きました。',
+              jp: 'マリア・コスタです。ブラジルから 来ました。',
               romaji: 'Maria Kosta desu. Burajiru kara kimashita.',
               meaning: {
                 en: 'I am Maria Costa. I came from Brazil.',
                 vi: 'Tôi là Maria Costa. Tôi đến từ Brazil.'
-              }
+              },
+              ruby: [{ base: '来', reading: 'き' }]
             },
             {
               speakerId: 'alex',
-              jp: 'マリアさんも かいしゃいんですか。',
+              jp: 'マリアさんも 会社員ですか。',
               romaji: 'Maria-san mo kaishain desu ka.',
               meaning: {
                 en: 'Are you a company employee too, Maria?',
                 vi: 'Chị Maria cũng là nhân viên công ty phải không?'
-              }
+              },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
             },
             {
               speakerId: 'maria',
-              jp: 'はい、さくらしょうじの かいしゃいんです。',
+              jp: 'はい、さくら商事の 会社員です。',
               romaji: 'Hai, Sakura shōji no kaishain desu.',
               meaning: {
                 en: 'Yes, I am an employee at Sakura Trading.',
                 vi: 'Vâng, tôi là nhân viên công ty Sakura.'
-              }
+              },
+              ruby: [
+                { base: '商', reading: 'しょう' },
+                { base: '事', reading: 'じ' },
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
             },
             {
               speakerId: 'alex',
-              jp: 'わたしも かいしゃいんです。',
+              jp: '私も 会社員です。',
               romaji: 'Watashi mo kaishain desu.',
               meaning: {
                 en: 'I am a company employee too.',
                 vi: 'Tôi cũng là nhân viên công ty.'
-              }
+              },
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
             }
           ]
         },
@@ -356,15 +409,20 @@ export const n5Course: Course = {
             },
             {
               speakerId: 'alex',
-              jp: 'ゆきちゃんは なんさいですか。',
+              jp: 'ゆきちゃんは 何歳ですか。',
               romaji: 'Yuki-chan wa nansai desu ka.',
-              meaning: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' }
+              meaning: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' },
+              ruby: [
+                { base: '何', reading: 'なん' },
+                { base: '歳', reading: 'さい' }
+              ]
             },
             {
               speakerId: 'maria',
-              jp: '9さいです。',
+              jp: '9歳です。',
               romaji: 'Kyū-sai desu.',
-              meaning: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' }
+              meaning: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' },
+              ruby: [{ base: '歳', reading: 'さい' }]
             }
           ]
         }
@@ -383,17 +441,27 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'わたしは がくせいです。',
+              jp: '私は 学生です。',
               romaji: 'Watashi wa gakusei desu.',
-              meaning: { en: 'I am a student.', vi: 'Tôi là học sinh.' }
+              meaning: { en: 'I am a student.', vi: 'Tôi là học sinh.' },
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '学', reading: 'がく' },
+                { base: '生', reading: 'せい' }
+              ]
             },
             {
-              jp: 'アレックスさんは かいしゃいんです。',
+              jp: 'アレックスさんは 会社員です。',
               romaji: 'Arekkusu-san wa kaishain desu.',
               meaning: {
                 en: 'Alex is a company employee.',
                 vi: 'Anh Alex là nhân viên công ty.'
-              }
+              },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
             }
           ]
         },
@@ -407,14 +475,23 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'わたしは せんせいじゃありません。',
+              jp: '私は 先生じゃありません。',
               romaji: 'Watashi wa sensei ja arimasen.',
-              meaning: { en: 'I am not a teacher.', vi: 'Tôi không phải là giáo viên.' }
+              meaning: { en: 'I am not a teacher.', vi: 'Tôi không phải là giáo viên.' },
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
             },
             {
-              jp: 'アレックスさんは いしゃじゃありません。',
+              jp: 'アレックスさんは 医者じゃありません。',
               romaji: 'Arekkusu-san wa isha ja arimasen.',
-              meaning: { en: 'Alex is not a doctor.', vi: 'Anh Alex không phải là bác sĩ.' }
+              meaning: { en: 'Alex is not a doctor.', vi: 'Anh Alex không phải là bác sĩ.' },
+              ruby: [
+                { base: '医', reading: 'い' },
+                { base: '者', reading: 'しゃ' }
+              ]
             }
           ]
         },
@@ -431,14 +508,26 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'あなたは がくせいですか。',
+              jp: 'あなたは 学生ですか。',
               romaji: 'Anata wa gakusei desu ka.',
-              meaning: { en: 'Are you a student?', vi: 'Bạn là học sinh phải không?' }
+              meaning: { en: 'Are you a student?', vi: 'Bạn là học sinh phải không?' },
+              ruby: [
+                { base: '学', reading: 'がく' },
+                { base: '生', reading: 'せい' }
+              ]
             },
             {
-              jp: 'あのひとは せんせいですか。',
+              jp: 'あの人は 先生ですか。',
               romaji: 'Ano hito wa sensei desu ka.',
-              meaning: { en: 'Is that person a teacher?', vi: 'Người kia là giáo viên phải không?' }
+              meaning: {
+                en: 'Is that person a teacher?',
+                vi: 'Người kia là giáo viên phải không?'
+              },
+              ruby: [
+                { base: '人', reading: 'ひと' },
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
             }
           ],
           answers: {
@@ -449,20 +538,28 @@ export const n5Course: Course = {
             },
             examples: [
               {
-                jp: 'はい、がくせいです。',
+                jp: 'はい、学生です。',
                 romaji: 'Hai, gakusei desu.',
                 meaning: {
                   en: "Yes, I'm a student. (full affirmative)",
                   vi: 'Vâng, tôi là học sinh. (khẳng định đầy đủ)'
-                }
+                },
+                ruby: [
+                  { base: '学', reading: 'がく' },
+                  { base: '生', reading: 'せい' }
+                ]
               },
               {
-                jp: 'いいえ、がくせいじゃありません。',
+                jp: 'いいえ、学生じゃありません。',
                 romaji: 'Iie, gakusei ja arimasen.',
                 meaning: {
                   en: "No, I'm not a student. (full negative)",
                   vi: 'Không, tôi không phải học sinh. (phủ định đầy đủ)'
-                }
+                },
+                ruby: [
+                  { base: '学', reading: 'がく' },
+                  { base: '生', reading: 'せい' }
+                ]
               },
               {
                 jp: 'はい、そうです。',
@@ -473,12 +570,13 @@ export const n5Course: Course = {
                 }
               },
               {
-                jp: 'いいえ、ちがいます。',
+                jp: 'いいえ、違います。',
                 romaji: 'Iie, chigaimasu.',
                 meaning: {
                   en: "No, that's wrong. (short negative)",
                   vi: 'Không, không phải. (phủ định gọn)'
-                }
+                },
+                ruby: [{ base: '違', reading: 'ちが' }]
               }
             ]
           }
@@ -493,17 +591,27 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'アレックスさんも かいしゃいんです。',
+              jp: 'アレックスさんも 会社員です。',
               romaji: 'Arekkusu-san mo kaishain desu.',
               meaning: {
                 en: 'Alex is a company employee too.',
                 vi: 'Anh Alex cũng là nhân viên công ty.'
-              }
+              },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
             },
             {
-              jp: 'わたしも がくせいです。',
+              jp: '私も 学生です。',
               romaji: 'Watashi mo gakusei desu.',
-              meaning: { en: 'I am a student too.', vi: 'Tôi cũng là học sinh.' }
+              meaning: { en: 'I am a student too.', vi: 'Tôi cũng là học sinh.' },
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '学', reading: 'がく' },
+                { base: '生', reading: 'せい' }
+              ]
             }
           ]
         },
@@ -518,42 +626,60 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'わたしは さくらだいがくの がくせいです。',
+              jp: '私は さくら大学の 学生です。',
               romaji: 'Watashi wa Sakura daigaku no gakusei desu.',
               meaning: {
                 en: 'I am a student at Sakura University.',
                 vi: 'Tôi là sinh viên trường đại học Sakura.'
-              }
+              },
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' },
+                { base: '学', reading: 'がく' },
+                { base: '生', reading: 'せい' }
+              ]
             },
             {
-              jp: 'あのひとは にほんごの せんせいです。',
+              jp: 'あの人は 日本語の 先生です。',
               romaji: 'Ano hito wa nihongo no sensei desu.',
               meaning: {
                 en: 'That person is a Japanese teacher.',
                 vi: 'Người kia là giáo viên tiếng Nhật.'
-              }
+              },
+              ruby: [
+                { base: '人', reading: 'ひと' },
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '語', reading: 'ご' },
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
             }
           ]
         },
         {
           pattern: 'N は だれ ですか',
           highlights: ['は', 'だれ', 'どなた', 'です', 'か'],
-          excludeHighlights: ['あのかた'],
+          excludeHighlights: ['あの方'],
           title: { en: 'Asking who (だれ / どなた)', vi: 'Hỏi "ai" (だれ / どなた)' },
           explanation: {
             en: 'Ask who someone is with だれ. どなた is the polite version, used with あの方.',
             vi: 'Hỏi ai đó là ai với だれ. どなた là cách nói lịch sự, dùng với あの方.'
           },
+          explanationRuby: [{ base: '方', reading: 'かた' }],
           examples: [
             {
-              jp: 'あのひとは だれですか。',
+              jp: 'あの人は だれですか。',
               romaji: 'Ano hito wa dare desu ka.',
-              meaning: { en: 'Who is that person?', vi: 'Người kia là ai?' }
+              meaning: { en: 'Who is that person?', vi: 'Người kia là ai?' },
+              ruby: [{ base: '人', reading: 'ひと' }]
             },
             {
-              jp: 'あのかたは どなたですか。',
+              jp: 'あの方は どなたですか。',
               romaji: 'Ano kata wa donata desu ka.',
-              meaning: { en: 'Who is that person? (polite)', vi: 'Vị kia là ai? (lịch sự)' }
+              meaning: { en: 'Who is that person? (polite)', vi: 'Vị kia là ai? (lịch sự)' },
+              ruby: [{ base: '方', reading: 'かた' }]
             }
           ],
           answers: {
@@ -564,31 +690,53 @@ export const n5Course: Course = {
             },
             examples: [
               {
-                jp: 'あのひとは アレックスさんです。',
+                jp: 'あの人は アレックスさんです。',
                 romaji: 'Ano hito wa Arekkusu-san desu.',
-                meaning: { en: 'That person is Alex.', vi: 'Người kia là anh Alex.' }
+                meaning: { en: 'That person is Alex.', vi: 'Người kia là anh Alex.' },
+                ruby: [{ base: '人', reading: 'ひと' }]
               },
               {
-                jp: 'あのかたは やまだせんせいです。',
+                jp: 'あの方は やまだ先生です。',
                 romaji: 'Ano kata wa Yamada-sensei desu.',
-                meaning: { en: 'That person is Professor Yamada.', vi: 'Vị kia là thầy Yamada.' }
+                meaning: { en: 'That person is Professor Yamada.', vi: 'Vị kia là thầy Yamada.' },
+                ruby: [
+                  { base: '方', reading: 'かた' },
+                  { base: '先', reading: 'せん' },
+                  { base: '生', reading: 'せい' }
+                ]
               }
             ]
           }
         },
         {
-          pattern: 'N は なんさい ですか',
-          highlights: ['は', 'なんさい', 'おいくつ', 'です', 'か'],
-          title: { en: 'Asking age (なんさい / おいくつ)', vi: 'Hỏi tuổi (なんさい / おいくつ)' },
+          pattern: 'N は 何歳 ですか',
+          patternRuby: [
+            { base: '何', reading: 'なん' },
+            { base: '歳', reading: 'さい' }
+          ],
+          highlights: ['は', '何', '歳', 'おいくつ', 'です', 'か'],
+          title: { en: 'Asking age (何歳 / おいくつ)', vi: 'Hỏi tuổi (何歳 / おいくつ)' },
+          titleRuby: [
+            { base: '何', reading: 'なん' },
+            { base: '歳', reading: 'さい' }
+          ],
           explanation: {
-            en: 'Ask age with なんさい. おいくつ is the polite version.',
-            vi: 'Hỏi tuổi với なんさい. おいくつ là cách nói lịch sự.'
+            en: 'Ask age with 何歳. おいくつ is the polite version.',
+            vi: 'Hỏi tuổi với 何歳. おいくつ là cách nói lịch sự.'
           },
+          explanationRuby: [
+            { base: '何', reading: 'なん' },
+            { base: '歳', reading: 'さい' }
+          ],
           examples: [
             {
-              jp: 'ゆきちゃんは なんさいですか。',
+              jp: 'ゆきちゃんは 何歳ですか。',
               romaji: 'Yuki-chan wa nansai desu ka.',
-              meaning: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' }
+              meaning: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' },
+              ruby: [
+                { base: '何', reading: 'なん' },
+                { base: '歳', reading: 'さい' }
+              ]
             },
             {
               jp: 'おいくつですか。',
@@ -597,16 +745,19 @@ export const n5Course: Course = {
             }
           ],
           answers: {
-            highlights: ['さい', 'です'],
+            highlights: ['歳', 'です'],
+            excludeHighlights: ['はたち'],
             explanation: {
-              en: 'Answer with a number + さい; 20 years old is the special reading はたち.',
-              vi: 'Trả lời bằng số + さい; 20 tuổi đọc đặc biệt là はたち.'
+              en: 'Answer with a number + 歳; 20 years old is the special reading はたち.',
+              vi: 'Trả lời bằng số + 歳; 20 tuổi đọc đặc biệt là はたち.'
             },
+            explanationRuby: [{ base: '歳', reading: 'さい' }],
             examples: [
               {
-                jp: '9さいです。',
+                jp: '9歳です。',
                 romaji: 'Kyū-sai desu.',
-                meaning: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' }
+                meaning: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' },
+                ruby: [{ base: '歳', reading: 'さい' }]
               },
               {
                 jp: 'はたちです。',
@@ -626,25 +777,35 @@ export const n5Course: Course = {
           title: { en: 'Nice to meet you', vi: 'Rất vui được gặp' },
           lines: [
             {
-              jp: 'はじめまして。わたしは アレックス・リバラです。',
+              jp: 'はじめまして。私は アレックス・リバラです。',
               romaji: 'Hajimemashite. Watashi wa Arekkusu Ribara desu.',
               meaning: {
                 en: 'Nice to meet you. I am Alex Rivera.',
                 vi: 'Rất vui được gặp. Tôi là Alex Rivera.'
-              }
+              },
+              ruby: [{ base: '私', reading: 'わたし' }]
             },
             {
-              jp: 'アメリカから きました。',
+              jp: 'アメリカから 来ました。',
               romaji: 'Amerika kara kimashita.',
-              meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
+              meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' },
+              ruby: [{ base: '来', reading: 'き' }]
             },
             {
-              jp: 'さくらしょうじの かいしゃいんです。どうぞ よろしく おねがいします。',
+              jp: 'さくら商事の 会社員です。どうぞ よろしく お願いします。',
               romaji: 'Sakura shōji no kaishain desu. Dōzo yoroshiku onegaishimasu.',
               meaning: {
                 en: 'I am an employee at Sakura Trading. Pleased to meet you.',
                 vi: 'Tôi là nhân viên công ty Sakura. Rất mong được giúp đỡ.'
-              }
+              },
+              ruby: [
+                { base: '商', reading: 'しょう' },
+                { base: '事', reading: 'じ' },
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' },
+                { base: '願', reading: 'ねが' }
+              ]
             }
           ],
           questions: [
@@ -677,31 +838,35 @@ export const n5Course: Course = {
           title: { en: 'Colleagues at Sakura', vi: 'Đồng nghiệp ở Sakura' },
           lines: [
             {
-              jp: 'マリア・コスタさんは ブラジルから きました。',
+              jp: 'マリア・コスタさんは ブラジルから 来ました。',
               romaji: 'Maria Kosta-san wa Burajiru kara kimashita.',
               meaning: {
                 en: 'Maria Costa came from Brazil.',
                 vi: 'Chị Maria Costa đến từ Brazil.'
-              }
+              },
+              ruby: [{ base: '来', reading: 'き' }]
             },
             {
-              jp: 'マリアさんも さくらしょうじの かいしゃいんです。',
+              jp: 'マリアさんも さくら商事の 会社員です。',
               romaji: 'Maria-san mo Sakura shōji no kaishain desu.',
               meaning: {
                 en: 'Maria is also an employee at Sakura Trading.',
                 vi: 'Chị Maria cũng là nhân viên công ty Sakura.'
               },
               ruby: [
+                { base: '商', reading: 'しょう' },
+                { base: '事', reading: 'じ' },
                 { base: '会', reading: 'かい' },
                 { base: '社', reading: 'しゃ' },
                 { base: '員', reading: 'いん' }
               ]
             },
             {
-              jp: 'わたしも かいしゃいんです。',
+              jp: '私も 会社員です。',
               romaji: 'Watashi mo kaishain desu.',
               meaning: { en: 'I am a company employee too.', vi: 'Tôi cũng là nhân viên công ty.' },
               ruby: [
+                { base: '私', reading: 'わたし' },
                 { base: '会', reading: 'かい' },
                 { base: '社', reading: 'しゃ' },
                 { base: '員', reading: 'いん' }
@@ -746,13 +911,13 @@ export const n5Course: Course = {
               meaning: { en: 'This is Yuki.', vi: 'Đây là bé Yuki.' }
             },
             {
-              jp: 'ゆきちゃんは 9さいです。',
+              jp: 'ゆきちゃんは 9歳です。',
               romaji: 'Yuki-chan wa kyū-sai desu.',
               meaning: { en: 'Yuki is nine years old.', vi: 'Bé Yuki 9 tuổi.' },
               ruby: [{ base: '歳', reading: 'さい' }]
             },
             {
-              jp: 'ゆきちゃんは がくせいじゃありません。',
+              jp: 'ゆきちゃんは 学生じゃありません。',
               romaji: 'Yuki-chan wa gakusei ja arimasen.',
               meaning: { en: 'Yuki is not a student.', vi: 'Bé Yuki không phải là sinh viên.' },
               ruby: [
@@ -1472,7 +1637,8 @@ export const n5Course: Course = {
           kana: 'これは なんですか。',
           kanji: 'これは何ですか。',
           romaji: 'Kore wa nan desu ka.',
-          meaning: { en: 'What is this?', vi: 'Cái này là gì?' }
+          meaning: { en: 'What is this?', vi: 'Cái này là gì?' },
+          ruby: [{ base: '何', reading: 'なん' }]
         },
         {
           kana: 'そうですか。',
@@ -1501,27 +1667,31 @@ export const n5Course: Course = {
           lines: [
             {
               speakerId: 'alex',
-              jp: 'すみません。これは なんですか。',
+              jp: 'すみません。これは 何ですか。',
               romaji: 'Sumimasen. Kore wa nan desu ka.',
-              meaning: { en: 'Excuse me. What is this?', vi: 'Xin lỗi. Đây là cái gì?' }
+              meaning: { en: 'Excuse me. What is this?', vi: 'Xin lỗi. Đây là cái gì?' },
+              ruby: [{ base: '何', reading: 'なん' }]
             },
             {
               speakerId: 'maria',
-              jp: 'それは ほんです。',
+              jp: 'それは 本です。',
               romaji: 'Sore wa hon desu.',
-              meaning: { en: 'That is a book.', vi: 'Đó là quyển sách.' }
+              meaning: { en: 'That is a book.', vi: 'Đó là quyển sách.' },
+              ruby: [{ base: '本', reading: 'ほん' }]
             },
             {
               speakerId: 'alex',
-              jp: 'あれは なんですか。',
+              jp: 'あれは 何ですか。',
               romaji: 'Are wa nan desu ka.',
-              meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' }
+              meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' },
+              ruby: [{ base: '何', reading: 'なん' }]
             },
             {
               speakerId: 'maria',
-              jp: 'あれは かさです。',
+              jp: 'あれは 傘です。',
               romaji: 'Are wa kasa desu.',
-              meaning: { en: 'That over there is an umbrella.', vi: 'Cái kia là cái ô.' }
+              meaning: { en: 'That over there is an umbrella.', vi: 'Cái kia là cái ô.' },
+              ruby: [{ base: '傘', reading: 'かさ' }]
             }
           ]
         },
@@ -1541,21 +1711,33 @@ export const n5Course: Course = {
             },
             {
               speakerId: 'maria',
-              jp: 'その かばんは わたしのです。',
+              jp: 'その かばんは 私のです。',
               romaji: 'Sono kaban wa watashi no desu.',
-              meaning: { en: 'That bag is mine.', vi: 'Cái cặp đó là của tôi.' }
+              meaning: { en: 'That bag is mine.', vi: 'Cái cặp đó là của tôi.' },
+              ruby: [{ base: '私', reading: 'わたし' }]
             },
             {
               speakerId: 'alex',
-              jp: 'この ほんは なんですか。',
+              jp: 'この 本は 何ですか。',
               romaji: 'Kono hon wa nan desu ka.',
-              meaning: { en: 'What is this book?', vi: 'Quyển sách này là gì?' }
+              meaning: { en: 'What is this book?', vi: 'Quyển sách này là gì?' },
+              ruby: [
+                { base: '本', reading: 'ほん' },
+                { base: '何', reading: 'なん' }
+              ]
             },
             {
               speakerId: 'maria',
-              jp: 'それは にほんごの じしょです。',
+              jp: 'それは 日本語の 辞書です。',
               romaji: 'Sore wa nihongo no jisho desu.',
-              meaning: { en: 'It is a Japanese dictionary.', vi: 'Đó là từ điển tiếng Nhật.' }
+              meaning: { en: 'It is a Japanese dictionary.', vi: 'Đó là từ điển tiếng Nhật.' },
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '語', reading: 'ご' },
+                { base: '辞', reading: 'じ' },
+                { base: '書', reading: 'しょ' }
+              ]
             },
             {
               speakerId: 'alex',
@@ -1580,19 +1762,28 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'これは じしょです。',
+              jp: 'これは 辞書です。',
               romaji: 'Kore wa jisho desu.',
-              meaning: { en: 'This is a dictionary.', vi: 'Đây là từ điển.' }
+              meaning: { en: 'This is a dictionary.', vi: 'Đây là từ điển.' },
+              ruby: [
+                { base: '辞', reading: 'じ' },
+                { base: '書', reading: 'しょ' }
+              ]
             },
             {
-              jp: 'それは ほんですか。',
+              jp: 'それは 本ですか。',
               romaji: 'Sore wa hon desu ka.',
-              meaning: { en: 'Is that a book?', vi: 'Cái đó là sách phải không?' }
+              meaning: { en: 'Is that a book?', vi: 'Cái đó là sách phải không?' },
+              ruby: [{ base: '本', reading: 'ほん' }]
             },
             {
-              jp: 'あれは とけいです。',
+              jp: 'あれは 時計です。',
               romaji: 'Are wa tokei desu.',
-              meaning: { en: 'That over there is a clock.', vi: 'Cái kia là đồng hồ.' }
+              meaning: { en: 'That over there is a clock.', vi: 'Cái kia là đồng hồ.' },
+              ruby: [
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' }
+              ]
             }
           ]
         },
@@ -1604,21 +1795,33 @@ export const n5Course: Course = {
             en: 'Unlike これ/それ/あれ, these always come right before a noun: この本 = "this book". Never say これ本.',
             vi: 'Khác với これ/それ/あれ, nhóm này luôn đứng ngay trước danh từ: この本 = "quyển sách này". Không nói これ本.'
           },
+          explanationRuby: [
+            { base: '本', reading: 'ほん' },
+            { base: '本', reading: 'ほん' }
+          ],
           examples: [
             {
-              jp: 'この かばんは わたしのです。',
+              jp: 'この かばんは 私のです。',
               romaji: 'Kono kaban wa watashi no desu.',
-              meaning: { en: 'This bag is mine.', vi: 'Cái cặp này là của tôi.' }
+              meaning: { en: 'This bag is mine.', vi: 'Cái cặp này là của tôi.' },
+              ruby: [{ base: '私', reading: 'わたし' }]
             },
             {
-              jp: 'その とけいは にほんのです。',
+              jp: 'その 時計は 日本のです。',
               romaji: 'Sono tokei wa nihon no desu.',
-              meaning: { en: 'That watch is a Japanese one.', vi: 'Cái đồng hồ đó là hàng Nhật.' }
+              meaning: { en: 'That watch is a Japanese one.', vi: 'Cái đồng hồ đó là hàng Nhật.' },
+              ruby: [
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' },
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' }
+              ]
             },
             {
-              jp: 'あの ひとは だれですか。',
+              jp: 'あの 人は だれですか。',
               romaji: 'Ano hito wa dare desu ka.',
-              meaning: { en: 'Who is that person over there?', vi: 'Người kia là ai vậy?' }
+              meaning: { en: 'Who is that person over there?', vi: 'Người kia là ai vậy?' },
+              ruby: [{ base: '人', reading: 'ひと' }]
             }
           ]
         },
@@ -1632,40 +1835,57 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'これは わたしの ほんです。',
+              jp: 'これは 私の 本です。',
               romaji: 'Kore wa watashi no hon desu.',
-              meaning: { en: 'This is my book.', vi: 'Đây là sách của tôi.' }
+              meaning: { en: 'This is my book.', vi: 'Đây là sách của tôi.' },
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '本', reading: 'ほん' }
+              ]
             },
             {
-              jp: 'それは にほんごの ざっしです。',
+              jp: 'それは 日本語の 雑誌です。',
               romaji: 'Sore wa nihongo no zasshi desu.',
-              meaning: { en: 'That is a Japanese magazine.', vi: 'Cái đó là tạp chí tiếng Nhật.' }
+              meaning: { en: 'That is a Japanese magazine.', vi: 'Cái đó là tạp chí tiếng Nhật.' },
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '語', reading: 'ご' },
+                { base: '雑', reading: 'ざっ' },
+                { base: '誌', reading: 'し' }
+              ]
             },
             {
-              jp: 'あれは だれの かさですか。',
+              jp: 'あれは だれの 傘ですか。',
               romaji: 'Are wa dare no kasa desu ka.',
-              meaning: { en: 'Whose umbrella is that over there?', vi: 'Cái ô kia là của ai?' }
+              meaning: { en: 'Whose umbrella is that over there?', vi: 'Cái ô kia là của ai?' },
+              ruby: [{ base: '傘', reading: 'かさ' }]
             }
           ]
         },
         {
-          pattern: 'N は なん ですか',
-          highlights: ['は', 'なん', 'です', 'か'],
+          pattern: 'N は 何 ですか',
+          patternRuby: [{ base: '何', reading: 'なん' }],
+          highlights: ['は', '何', 'です', 'か'],
           title: { en: 'Asking "what is it?" with 何', vi: 'Hỏi "là cái gì?" với 何' },
+          titleRuby: [{ base: '何', reading: 'なん' }],
           explanation: {
             en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is.',
             vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì.'
           },
+          explanationRuby: [{ base: '何', reading: 'なん' }],
           examples: [
             {
-              jp: 'これは なんですか。',
+              jp: 'これは 何ですか。',
               romaji: 'Kore wa nan desu ka.',
-              meaning: { en: 'What is this?', vi: 'Đây là cái gì?' }
+              meaning: { en: 'What is this?', vi: 'Đây là cái gì?' },
+              ruby: [{ base: '何', reading: 'なん' }]
             },
             {
-              jp: 'あれは なんですか。',
+              jp: 'あれは 何ですか。',
               romaji: 'Are wa nan desu ka.',
-              meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' }
+              meaning: { en: 'What is that over there?', vi: 'Cái kia là gì?' },
+              ruby: [{ base: '何', reading: 'なん' }]
             }
           ],
           answers: {
@@ -1676,14 +1896,16 @@ export const n5Course: Course = {
             },
             examples: [
               {
-                jp: 'それは ほんです。',
+                jp: 'それは 本です。',
                 romaji: 'Sore wa hon desu.',
-                meaning: { en: 'It is a book.', vi: 'Đó là quyển sách.' }
+                meaning: { en: 'It is a book.', vi: 'Đó là quyển sách.' },
+                ruby: [{ base: '本', reading: 'ほん' }]
               },
               {
-                jp: 'これは かぎです。',
+                jp: 'これは 鍵です。',
                 romaji: 'Kore wa kagi desu.',
-                meaning: { en: 'This is a key.', vi: 'Đây là chìa khóa.' }
+                meaning: { en: 'This is a key.', vi: 'Đây là chìa khóa.' },
+                ruby: [{ base: '鍵', reading: 'かぎ' }]
               }
             ]
           }
@@ -1695,30 +1917,43 @@ export const n5Course: Course = {
           title: { en: 'What is that?', vi: 'Cái đó là gì?' },
           lines: [
             {
-              jp: 'すみません。それは なんですか。',
+              jp: 'すみません。それは 何ですか。',
               romaji: 'Sumimasen. Sore wa nan desu ka.',
-              meaning: { en: 'Excuse me. What is that?', vi: 'Xin lỗi. Cái đó là gì vậy?' }
+              meaning: { en: 'Excuse me. What is that?', vi: 'Xin lỗi. Cái đó là gì vậy?' },
+              ruby: [{ base: '何', reading: 'なん' }]
             },
             {
-              jp: 'これですか。これは にほんごの じしょです。',
+              jp: 'これですか。これは 日本語の 辞書です。',
               romaji: 'Kore desu ka. Kore wa nihongo no jisho desu.',
               meaning: {
                 en: 'This one? This is a Japanese dictionary.',
                 vi: 'Cái này à? Đây là từ điển tiếng Nhật.'
-              }
+              },
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '語', reading: 'ご' },
+                { base: '辞', reading: 'じ' },
+                { base: '書', reading: 'しょ' }
+              ]
             },
             {
-              jp: 'その じしょは あなたのですか。',
+              jp: 'その 辞書は あなたのですか。',
               romaji: 'Sono jisho wa anata no desu ka.',
               meaning: {
                 en: 'Is that dictionary yours?',
                 vi: 'Cuốn từ điển đó là của bạn phải không?'
-              }
+              },
+              ruby: [
+                { base: '辞', reading: 'じ' },
+                { base: '書', reading: 'しょ' }
+              ]
             },
             {
-              jp: 'はい、わたしのです。',
+              jp: 'はい、私のです。',
               romaji: 'Hai, watashi no desu.',
-              meaning: { en: 'Yes, it is mine.', vi: 'Vâng, của tôi.' }
+              meaning: { en: 'Yes, it is mine.', vi: 'Vâng, của tôi.' },
+              ruby: [{ base: '私', reading: 'わたし' }]
             }
           ],
           questions: [
@@ -1751,13 +1986,13 @@ export const n5Course: Course = {
           title: { en: 'Things on the desk', vi: 'Đồ trên bàn' },
           lines: [
             {
-              jp: 'これは ほんです。',
+              jp: 'これは 本です。',
               romaji: 'Kore wa hon desu.',
               meaning: { en: 'This is a book.', vi: 'Đây là quyển sách.' },
               ruby: [{ base: '本', reading: 'ほん' }]
             },
             {
-              jp: 'あれは かさです。',
+              jp: 'あれは 傘です。',
               romaji: 'Are wa kasa desu.',
               meaning: { en: 'That over there is an umbrella.', vi: 'Cái kia là cái ô.' },
               ruby: [{ base: '傘', reading: 'かさ' }]
@@ -1768,7 +2003,7 @@ export const n5Course: Course = {
               meaning: { en: 'Whose bag is this?', vi: 'Cái cặp này là của ai?' }
             },
             {
-              jp: 'その かばんは わたしのです。',
+              jp: 'その かばんは 私のです。',
               romaji: 'Sono kaban wa watashi no desu.',
               meaning: { en: 'That bag is mine.', vi: 'Cái cặp đó là của tôi.' },
               ruby: [{ base: '私', reading: 'わたし' }]
@@ -1804,7 +2039,7 @@ export const n5Course: Course = {
           title: { en: 'Is that right?', vi: 'Có đúng không?' },
           lines: [
             {
-              jp: 'その とけいは にほんの ですか。',
+              jp: 'その 時計は 日本の ですか。',
               romaji: 'Sono tokei wa nihon no desu ka.',
               meaning: {
                 en: 'Is that watch Japanese?',
@@ -1812,7 +2047,9 @@ export const n5Course: Course = {
               },
               ruby: [
                 { base: '時', reading: 'と' },
-                { base: '計', reading: 'けい' }
+                { base: '計', reading: 'けい' },
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' }
               ]
             },
             {
@@ -1821,13 +2058,13 @@ export const n5Course: Course = {
               meaning: { en: 'Yes, that is right.', vi: 'Vâng, đúng vậy.' }
             },
             {
-              jp: 'これは かぎですか。',
+              jp: 'これは 鍵ですか。',
               romaji: 'Kore wa kagi desu ka.',
               meaning: { en: 'Is this a key?', vi: 'Cái này là chìa khóa phải không?' },
               ruby: [{ base: '鍵', reading: 'かぎ' }]
             },
             {
-              jp: 'いいえ、ちがいます。これは えんぴつです。',
+              jp: 'いいえ、違います。これは 鉛筆です。',
               romaji: 'Iie, chigaimasu. Kore wa enpitsu desu.',
               meaning: {
                 en: 'No, it is not. This is a pencil.',
@@ -2415,15 +2652,17 @@ export const n5Course: Course = {
             },
             {
               speakerId: 'clerk',
-              jp: 'それは 3000えんです。',
+              jp: 'それは 3000円です。',
               romaji: 'Sore wa sanzen en desu.',
-              meaning: { en: 'That is 3000 yen.', vi: 'Cái đó 3000 yên.' }
+              meaning: { en: 'That is 3000 yen.', vi: 'Cái đó 3000 yên.' },
+              ruby: [{ base: '円', reading: 'えん' }]
             },
             {
               speakerId: 'customer',
-              jp: 'ちょっと みせて ください。',
+              jp: 'ちょっと 見せて ください。',
               romaji: 'Chotto misete kudasai.',
-              meaning: { en: 'Please show me it for a moment.', vi: 'Cho tôi xem một chút.' }
+              meaning: { en: 'Please show me it for a moment.', vi: 'Cho tôi xem một chút.' },
+              ruby: [{ base: '見', reading: 'み' }]
             },
             {
               speakerId: 'clerk',
@@ -2461,15 +2700,25 @@ export const n5Course: Course = {
             },
             {
               speakerId: 'visitor',
-              jp: 'かいぎしつは どちらですか。',
+              jp: '会議室は どちらですか。',
               romaji: 'Kaigishitsu wa dochira desu ka.',
-              meaning: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' }
+              meaning: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
+              ]
             },
             {
               speakerId: 'reception',
-              jp: 'かいぎしつは そちらです。',
+              jp: '会議室は そちらです。',
               romaji: 'Kaigishitsu wa sochira desu.',
-              meaning: { en: 'The meeting room is there.', vi: 'Phòng họp ở phía đó.' }
+              meaning: { en: 'The meeting room is there.', vi: 'Phòng họp ở phía đó.' },
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
+              ]
             }
           ]
         }
@@ -2488,7 +2737,7 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'ここは きょうしつです。',
+              jp: 'ここは 教室です。',
               romaji: 'Koko wa kyōshitsu desu.',
               meaning: { en: 'This place is the classroom.', vi: 'Đây là phòng học.' },
               ruby: [
@@ -2497,7 +2746,7 @@ export const n5Course: Course = {
               ]
             },
             {
-              jp: 'そこは じむしょです。',
+              jp: 'そこは 事務所です。',
               romaji: 'Soko wa jimusho desu.',
               meaning: { en: 'That place is the office.', vi: 'Đó là văn phòng.' },
               ruby: [
@@ -2507,7 +2756,7 @@ export const n5Course: Course = {
               ]
             },
             {
-              jp: 'あそこは しょくどうです。',
+              jp: 'あそこは 食堂です。',
               romaji: 'Asoko wa shokudō desu.',
               meaning: { en: 'Over there is the cafeteria.', vi: 'Kia là nhà ăn.' },
               ruby: [
@@ -2648,12 +2897,16 @@ export const n5Course: Course = {
           answers: {
             examples: [
               {
-                jp: 'にほんの コンピューターです。',
+                jp: '日本の コンピューターです。',
                 romaji: 'Nihon no konpyūtā desu.',
-                meaning: { en: 'It is a Japanese computer.', vi: 'Là máy tính của Nhật.' }
+                meaning: { en: 'It is a Japanese computer.', vi: 'Là máy tính của Nhật.' },
+                ruby: [
+                  { base: '日', reading: 'に' },
+                  { base: '本', reading: 'ほん' }
+                ]
               },
               {
-                jp: 'さくら でんきの コンピューターです。',
+                jp: 'さくら 電気の コンピューターです。',
                 romaji: 'Sakura denki no konpyūtā desu.',
                 meaning: {
                   en: 'It is a computer from Sakura Electric.',
@@ -2701,17 +2954,19 @@ export const n5Course: Course = {
           title: { en: 'At the shop', vi: 'Ở cửa hàng' },
           lines: [
             {
-              jp: 'すみません、その くつは いくらですか。',
+              jp: 'すみません、その 靴は いくらですか。',
               romaji: 'Sumimasen, sono kutsu wa ikura desu ka.',
               meaning: {
                 en: 'Excuse me, how much are those shoes?',
                 vi: 'Xin lỗi, đôi giày đó bao nhiêu tiền?'
-              }
+              },
+              ruby: [{ base: '靴', reading: 'くつ' }]
             },
             {
-              jp: 'これですか。8000えんです。',
+              jp: 'これですか。8000円です。',
               romaji: 'Kore desu ka. Hassen en desu.',
-              meaning: { en: 'These? They are 8000 yen.', vi: 'Đôi này à? 8000 yên.' }
+              meaning: { en: 'These? They are 8000 yen.', vi: 'Đôi này à? 8000 yên.' },
+              ruby: [{ base: '円', reading: 'えん' }]
             },
             {
               jp: 'じゃ、これを ください。',
@@ -2764,7 +3019,7 @@ export const n5Course: Course = {
               meaning: { en: 'It is over there.', vi: 'Ở phía kia.' }
             },
             {
-              jp: 'かいぎしつは どちらですか。',
+              jp: '会議室は どちらですか。',
               romaji: 'Kaigishitsu wa dochira desu ka.',
               meaning: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' },
               ruby: [
@@ -2774,7 +3029,7 @@ export const n5Course: Course = {
               ]
             },
             {
-              jp: 'かいぎしつは そちらです。',
+              jp: '会議室は そちらです。',
               romaji: 'Kaigishitsu wa sochira desu.',
               meaning: { en: 'The meeting room is there.', vi: 'Phòng họp ở phía đó.' },
               ruby: [
@@ -2817,7 +3072,7 @@ export const n5Course: Course = {
           title: { en: 'Inside the building', vi: 'Trong tòa nhà' },
           lines: [
             {
-              jp: 'ここは うけつけです。',
+              jp: 'ここは 受付です。',
               romaji: 'Koko wa uketsuke desu.',
               meaning: { en: 'This is the reception.', vi: 'Đây là quầy tiếp tân.' },
               ruby: [
@@ -2826,7 +3081,7 @@ export const n5Course: Course = {
               ]
             },
             {
-              jp: 'しょくどうは あそこです。',
+              jp: '食堂は あそこです。',
               romaji: 'Shokudō wa asoko desu.',
               meaning: { en: 'The cafeteria is over there.', vi: 'Nhà ăn ở đằng kia.' },
               ruby: [
@@ -2835,7 +3090,7 @@ export const n5Course: Course = {
               ]
             },
             {
-              jp: 'きょうしつは 2階です。',
+              jp: '教室は 2階です。',
               romaji: 'Kyōshitsu wa nikai desu.',
               meaning: { en: 'The classroom is on the 2nd floor.', vi: 'Phòng học ở tầng 2.' },
               ruby: [
@@ -3671,7 +3926,7 @@ export const n5Course: Course = {
             },
             {
               speakerId: 'alex',
-              jp: 'すみません。そちらは なんじまでですか。',
+              jp: 'すみません。そちらは 何時までですか。',
               romaji: 'Sumimasen. Sochira wa nanji made desu ka.',
               meaning: {
                 en: 'Excuse me. Until what time are you open?',
@@ -3724,12 +3979,27 @@ export const n5Course: Course = {
       grammar: [
         {
           pattern: 'N 時 N 分 です',
+          patternRuby: [
+            { base: '時', reading: 'じ' },
+            { base: '分', reading: 'ふん' }
+          ],
           highlights: ['時', '分', 'です', '何'],
           title: { en: 'Telling the time', vi: 'Nói giờ' },
           explanation: {
             en: 'Add 時 (hours) and 分 (minutes) after numbers. 分 is ~fun after 2, 5, 7, 9 and ~pun after 1, 3, 4, 6, 8, 10 (e.g. 10分 = juppun). Ask the time with 今 何時ですか; ask minutes with 何分.',
             vi: 'Thêm 時 (giờ) và 分 (phút) sau số. 分 đọc ~fun sau 2, 5, 7, 9 và ~pun sau 1, 3, 4, 6, 8, 10 (vd. 10分 = juppun). Hỏi giờ với 今 何時ですか; hỏi phút với 何分.'
           },
+          explanationRuby: [
+            { base: '時', reading: 'じ' },
+            { base: '分', reading: 'ふん' },
+            { base: '分', reading: 'ふん' },
+            { base: '分', reading: 'ぷん' },
+            { base: '今', reading: 'いま' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '何', reading: 'なん' },
+            { base: '分', reading: 'ふん' }
+          ],
           examples: [
             {
               jp: '今 何時ですか。',
@@ -3764,10 +4034,11 @@ export const n5Course: Course = {
           },
           examples: [
             {
-              jp: 'わたしは 毎日 勉強します。',
+              jp: '私は 毎日 勉強します。',
               romaji: 'Watashi wa mainichi benkyō shimasu.',
               meaning: { en: 'I study every day.', vi: 'Tôi học hàng ngày.' },
               ruby: [
+                { base: '私', reading: 'わたし' },
                 { base: '毎', reading: 'まい' },
                 { base: '日', reading: 'にち' },
                 { base: '勉', reading: 'べん' },
@@ -3890,6 +4161,13 @@ export const n5Course: Course = {
             en: 'Put に after a time noun for when an action happens (6時半に 起きます). Do NOT use に after きょう, あした, きのう, けさ, こんばん, いま, 毎朝, etc. に is optional after days of the week and あさ/ひる/ばん.',
             vi: 'Thêm に sau danh từ chỉ thời điểm (6時半に 起きます). KHÔNG dùng に sau きょう, あした, きのう, けさ, こんばん, いま, 毎朝, v.v. に có thể lược sau thứ trong tuần và あさ/ひる/ばん.'
           },
+          explanationRuby: [
+            { base: '時', reading: 'じ' },
+            { base: '半', reading: 'はん' },
+            { base: '起', reading: 'お' },
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' }
+          ],
           examples: [
             {
               jp: '6時半に 起きます。',
@@ -3929,6 +4207,7 @@ export const n5Course: Course = {
               meaning: { en: 'I study from 9 to 5.', vi: 'Tôi học từ 9 giờ đến 5 giờ.' },
               ruby: [
                 { base: '時', reading: 'じ' },
+                { base: '時', reading: 'じ' },
                 { base: '勉', reading: 'べん' },
                 { base: '強', reading: 'きょう' }
               ]
@@ -3952,6 +4231,7 @@ export const n5Course: Course = {
               ruby: [
                 { base: '銀', reading: 'ぎん' },
                 { base: '行', reading: 'こう' },
+                { base: '時', reading: 'じ' },
                 { base: '時', reading: 'じ' }
               ]
             },
@@ -4148,13 +4428,14 @@ export const n5Course: Course = {
           title: { en: 'Daily schedule', vi: 'Sinh hoạt hàng ngày' },
           lines: [
             {
-              jp: 'わたしは 毎朝 6時半に 起きます。',
+              jp: '私は 毎朝 6時半に 起きます。',
               romaji: 'Watashi wa maiasa roku-ji han ni okimasu.',
               meaning: {
                 en: 'I get up at 6:30 every morning.',
                 vi: 'Mỗi sáng tôi dậy lúc 6 giờ rưỡi.'
               },
               ruby: [
+                { base: '私', reading: 'わたし' },
                 { base: '毎', reading: 'まい' },
                 { base: '朝', reading: 'あさ' },
                 { base: '時', reading: 'じ' },
@@ -4248,7 +4529,7 @@ export const n5Course: Course = {
           title: { en: 'At the library', vi: 'Ở thư viện' },
           lines: [
             {
-              jp: '今日 わたしは 図書館で 勉強します。',
+              jp: '今日 私は 図書館で 勉強します。',
               romaji: 'Kyō watashi wa toshokan de benkyō shimasu.',
               meaning: {
                 en: 'Today I study at the library.',
@@ -4257,6 +4538,7 @@ export const n5Course: Course = {
               ruby: [
                 { base: '今', reading: 'きょ' },
                 { base: '日', reading: 'う' },
+                { base: '私', reading: 'わたし' },
                 { base: '図', reading: 'と' },
                 { base: '書', reading: 'しょ' },
                 { base: '館', reading: 'かん' },
@@ -4480,7 +4762,21 @@ export const n5Course: Course = {
             vi: 'Địa chỉ viết từ rộng đến hẹp. Tỉnh, thành phố, quận viết liền không cách; xuống dòng giữa mã bưu điện, dòng phố, và dòng tòa nhà.'
           },
           sample: {
-            jp: '〒658-0063\n兵庫県神戸市中央区三宮1-23\nコウベハイツ405号'
+            jp: '〒658-0063\n兵庫県神戸市中央区三宮1-23\nコウベハイツ405号',
+            ruby: [
+              { base: '兵', reading: 'ひょう' },
+              { base: '庫', reading: 'ご' },
+              { base: '県', reading: 'けん' },
+              { base: '神', reading: 'こう' },
+              { base: '戸', reading: 'べ' },
+              { base: '市', reading: 'し' },
+              { base: '中', reading: 'ちゅう' },
+              { base: '央', reading: 'おう' },
+              { base: '区', reading: 'く' },
+              { base: '三', reading: 'み' },
+              { base: '宮', reading: 'や' },
+              { base: '号', reading: 'ごう' }
+            ]
           },
           parts: [
             { label: { en: 'Postcode', vi: 'Mã bưu điện' }, text: '〒658-0063' },
@@ -4511,7 +4807,14 @@ export const n5Course: Course = {
                 { base: '区', reading: 'く' }
               ]
             },
-            { label: { en: 'District / block', vi: 'Khu phố' }, text: '三宮1-23' },
+            {
+              label: { en: 'District / block', vi: 'Khu phố' },
+              text: '三宮1-23',
+              ruby: [
+                { base: '三', reading: 'み' },
+                { base: '宮', reading: 'や' }
+              ]
+            },
             { label: { en: 'Building name', vi: 'Tên tòa nhà' }, text: 'コウベハイツ' },
             {
               label: { en: 'Room number', vi: 'Số phòng' },
@@ -4521,6 +4824,7 @@ export const n5Course: Course = {
           ]
         }
       ]
-    }
+    },
+    n5Lesson5
   ])
 };

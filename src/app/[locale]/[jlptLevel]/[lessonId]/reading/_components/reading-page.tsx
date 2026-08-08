@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Collapse, LinearProgress, Paper, Stack, Typography } from '@mui/material';
@@ -13,11 +13,8 @@ import {
 } from '@/constants/courses/index.ts';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
-import { SpeakButton } from '@/components/speak-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader, ResultScreen } from '@/features/course/shared';
@@ -33,13 +30,14 @@ function shuffle<T>(items: T[]): T[] {
   return copy;
 }
 
-type FlatQuestion = ReadingQuestion & { flatId: string };
+type FlatQuestion = ReadingQuestion & { flatId: string; passageId: string };
 
 function flattenQuestions(passages: ReadingPassage[]): FlatQuestion[] {
   return passages.flatMap((passage) =>
     passage.questions.map((question) => ({
       ...question,
-      flatId: `${passage.id}-${question.id}`
+      flatId: `${passage.id}-${question.id}`,
+      passageId: passage.id
     }))
   );
 }
@@ -58,12 +56,6 @@ type PassageCardProps = {
 function PassageCard({ passage }: PassageCardProps) {
   const { locale, t } = useTranslation();
   const [showTranslation, setShowTranslation] = useState(false);
-  const canSpeak = useSpeechSupported();
-
-  const fullText = useMemo(
-    () => passage.lines.map((line) => formatJapaneseDisplay(line.jp)).join(''),
-    [passage.lines]
-  );
 
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
@@ -75,60 +67,29 @@ function PassageCard({ passage }: PassageCardProps) {
         <Heading scale="subsection" component="h2">
           {passage.title[locale]}
         </Heading>
-        <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', flexShrink: 0 }}>
-          <SpeakButton text={fullText} size="medium" />
-          <Button
-            size="small"
-            startIcon={<TranslateOutlinedIcon />}
-            onClick={() => setShowTranslation((previous) => !previous)}
-          >
-            {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
-          </Button>
-        </Stack>
+        <Button
+          size="small"
+          startIcon={<TranslateOutlinedIcon />}
+          onClick={() => setShowTranslation((previous) => !previous)}
+          sx={{ flexShrink: 0 }}
+        >
+          {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
+        </Button>
       </Stack>
 
       <Stack spacing={1.5}>
-        {passage.lines.map((line) => {
-          const displayJp = formatJapaneseDisplay(line.jp);
-
-          return (
-            <Box key={line.jp}>
-              <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
-                <Box sx={{ alignSelf: 'flex-start', position: 'relative', top: -2 }}>
-                  <SpeakButton text={line.jp} />
-                </Box>
-                <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography
-                    variant="body1"
-                    lang="ja"
-                    onClick={canSpeak ? () => speakJapanese(displayJp) : undefined}
-                    role={canSpeak ? 'button' : undefined}
-                    tabIndex={canSpeak ? 0 : undefined}
-                    aria-label={canSpeak ? t('common.playAudio') : undefined}
-                    onKeyDown={
-                      canSpeak
-                        ? (event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                              event.preventDefault();
-                              speakJapanese(displayJp);
-                            }
-                          }
-                        : undefined
-                    }
-                    sx={{ fontWeight: 500, cursor: canSpeak ? 'pointer' : undefined }}
-                  >
-                    {renderJapaneseText(line.jp, line.ruby)}
-                  </Typography>
-                  <Collapse in={showTranslation}>
-                    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
-                      {line.meaning[locale]}
-                    </Typography>
-                  </Collapse>
-                </Box>
-              </Stack>
-            </Box>
-          );
-        })}
+        {passage.lines.map((line) => (
+          <Box key={line.jp}>
+            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+              {renderJapaneseText(line.jp, line.ruby)}
+            </Typography>
+            <Collapse in={showTranslation}>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
+                {line.meaning[locale]}
+              </Typography>
+            </Collapse>
+          </Box>
+        ))}
       </Stack>
     </Paper>
   );
@@ -149,10 +110,27 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+  const passageAnchorRef = useRef<HTMLDivElement>(null);
+  const previousPassageIdRef = useRef<string | undefined>(undefined);
 
   const total = questions.length;
   const question = questions[index];
   const isLast = index === total - 1;
+  const currentPassage = passages.find((passage) => passage.id === question?.passageId);
+  const currentPassageId = question?.passageId;
+
+  useEffect(() => {
+    if (finished || !currentPassageId) {
+      return;
+    }
+
+    if (previousPassageIdRef.current === currentPassageId) {
+      return;
+    }
+
+    previousPassageIdRef.current = currentPassageId;
+    passageAnchorRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [currentPassageId, finished]);
 
   // Auto-advance shortly after a correct answer; wrong answers let you retry.
   useEffect(() => {
@@ -198,6 +176,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     setCorrectPicked(false);
     setScore(0);
     setFinished(false);
+    previousPassageIdRef.current = undefined;
   };
 
   return (
@@ -205,11 +184,11 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
       <Stack spacing={3}>
         <LessonQuizHeader lesson={lesson} section="reading" />
 
-        <Stack spacing={2}>
-          {passages.map((passage) => (
-            <PassageCard key={passage.id} passage={passage} />
-          ))}
-        </Stack>
+        {!finished && currentPassage && (
+          <Box ref={passageAnchorRef} sx={{ scrollMarginTop: { xs: 72, md: 88 } }}>
+            <PassageCard key={currentPassage.id} passage={currentPassage} />
+          </Box>
+        )}
 
         {finished && (
           <ResultScreen
@@ -243,15 +222,18 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
             </Box>
 
             <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
-              <Typography variant="overline" color="text.secondary">
-                {t('course.comprehension')}
-              </Typography>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mt: 0.5 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600 }}>
                 {question.question[locale]}
               </Typography>
             </Paper>
 
-            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+                gap: 1.5
+              }}
+            >
               {question.choices.map((choice) => {
                 const isCorrectChoice = choice.id === question.correctId;
                 const showCorrect = correctPicked && isCorrectChoice;
