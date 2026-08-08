@@ -111,7 +111,11 @@ export function ConversationTurnGroup({
           showTranslation={showTranslation}
           icon={
             index === 0 ? (
-              <SpeakerIconColumn color={turn.color} label={turn.speakerName} />
+              <SpeakerIconColumn
+                color={turn.color}
+                label={turn.speakerName}
+                hasRuby={Boolean(line.ruby?.length)}
+              />
             ) : (
               <SpeakerIconSpacer />
             )

@@ -1,4 +1,4 @@
-import { Fragment, type CSSProperties, type ReactNode } from 'react';
+import { type CSSProperties, type ReactNode } from 'react';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import type { RubySegment } from '@/types/course.ts';
 import type { KanjiReadingPart } from '@/types/kanji.ts';
@@ -128,20 +128,33 @@ export function renderJapaneseText(
   const rendered: ReactNode[] = [];
   let position = 0;
   let rubyIndex = 0;
+  let plainRun = '';
+
+  const flushPlainRun = () => {
+    if (plainRun.length === 0) {
+      return;
+    }
+
+    rendered.push(plainRun);
+    plainRun = '';
+  };
 
   while (position < text.length) {
     const segment = ruby[rubyIndex];
 
     if (segment && text.startsWith(segment.base, position)) {
+      flushPlainRun();
       rendered.push(renderRubySegment(segment, position, toneByPosition.get(position)));
       position += segment.base.length;
       rubyIndex += 1;
       continue;
     }
 
-    rendered.push(<Fragment key={`char-${position}`}>{text[position]}</Fragment>);
+    plainRun += text[position];
     position += 1;
   }
+
+  flushPlainRun();
 
   if (rendered.length === 1) {
     return rendered[0];
