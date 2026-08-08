@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { Fab, Fade, useMediaQuery, useTheme } from '@mui/material';
+import { Fab, useMediaQuery, useTheme } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 /** Show only once the page is scrolled past this fraction of its scrollable height. */
@@ -73,25 +73,32 @@ export function ScrollToTopButton() {
     };
   }, [gap]);
 
+  const handleScrollToTop = () => {
+    setVisible(false);
+    window.scrollTo({ top: 0 });
+  };
+
+  if (!visible) {
+    return null;
+  }
+
   return (
-    <Fade in={visible} unmountOnExit>
-      <Fab
-        size="medium"
-        aria-label={t('common.scrollTop')}
-        onClick={() => window.scrollTo({ top: 0 })}
-        sx={{
-          position: 'fixed',
-          right: { xs: 16, md: 20 },
-          bottom: `${bottom}px`,
-          zIndex: (muiTheme) => muiTheme.zIndex.fab,
-          bgcolor: 'background.paper',
-          color: 'text.primary',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.14)',
-          '&:hover': { bgcolor: 'background.paper' }
-        }}
-      >
-        <KeyboardArrowUpIcon />
-      </Fab>
-    </Fade>
+    <Fab
+      size="medium"
+      aria-label={t('common.scrollTop')}
+      onClick={handleScrollToTop}
+      sx={{
+        position: 'fixed',
+        right: { xs: 16, md: 20 },
+        bottom: `${bottom}px`,
+        zIndex: (muiTheme) => muiTheme.zIndex.fab,
+        bgcolor: 'background.paper',
+        color: 'text.primary',
+        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.14)',
+        '&:hover': { bgcolor: 'background.paper' }
+      }}
+    >
+      <KeyboardArrowUpIcon />
+    </Fab>
   );
 }
