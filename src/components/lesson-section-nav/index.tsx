@@ -183,6 +183,22 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
     };
   }, [items]);
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const handleScroll = () => {
+      setOpen(false);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true, capture: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, { capture: true });
+    };
+  }, [open]);
+
   const closeMenu = () => {
     setOpen(false);
   };
