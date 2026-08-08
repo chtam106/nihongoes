@@ -3,8 +3,6 @@ export const course = {
   phrasesHeading: 'Mẫu câu',
   conversationHeading: 'Hội thoại',
   referenceHeading: 'Tham khảo',
-  referenceSubtitle:
-    'Từ vựng bổ sung và thông tin hữu ích của bài học. Có thể bật thêm từ tham khảo khi luyện từ vựng.',
   lessonLabel: 'Bài {number}',
   focusLabel: 'Trong bài này',
   audioHint: 'Bấm vào bất kỳ từ vựng hoặc câu nào để nghe phát âm.',

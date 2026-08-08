@@ -3,8 +3,6 @@ export const course = {
   phrasesHeading: 'Useful phrases',
   conversationHeading: 'Conversation',
   referenceHeading: 'Reference',
-  referenceSubtitle:
-    'Extra vocabulary and useful notes from this lesson. Optional reference word lists can be added in vocabulary practice.',
   lessonLabel: 'Lesson {number}',
   focusLabel: 'In this lesson',
   audioHint: 'Tap any vocabulary word or sentence to hear it pronounced.',
