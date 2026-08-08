@@ -77,7 +77,7 @@ screen"; a future improvement is to make the boundary rely on
   no same-origin 5xx (broken chunk), a real `<h1>` in `<main>`, and NO error
   boundary (via `data-testid="error-boundary"` on `ErrorFallback` - not localized
   text, since the fallback ALSO renders an `<h1>`). A sitemap self-check test
-  fails if a new route type has no example; a control test triggers `/error-test`
+  fails if a new route type has no example; a control test triggers `/sentry-test`
   to prove the boundary DOES appear on error.
 - E2E runs against a PRODUCTION build in CI / with `E2E_PROD=1` (dev has
   on-demand-compile flakiness -> transient 500s). `E2E_PORT` reuses a running
