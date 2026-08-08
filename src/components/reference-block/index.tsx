@@ -10,23 +10,9 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { VocabHeadword } from '@/components/vocab-headword';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
-
-type VocabHeadwordProps = {
-  item: { kana: string; kanji?: string };
-};
-
-function VocabHeadword({ item }: VocabHeadwordProps) {
-  const display =
-    item.kanji && item.kanji !== item.kana ? `${item.kanji}（${item.kana}）` : item.kana;
-
-  return (
-    <Typography variant="body1" lang="ja" sx={{ fontWeight: 600 }}>
-      {display}
-    </Typography>
-  );
-}
 
 type SpeakableTableTextProps = {
   text: string;
@@ -147,7 +133,7 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                 text={item.speech ?? item.kana}
                 sx={{ p: 1.5 }}
               >
-                <VocabHeadword item={item} />
+                <VocabHeadword item={item} variant="body1" />
                 <Typography variant="body2" sx={{ mt: 0.5 }}>
                   {item.meaning[locale]}
                 </Typography>

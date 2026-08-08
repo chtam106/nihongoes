@@ -6,6 +6,7 @@ import type { SxProps, Theme } from '@mui/material';
 import { Box, Collapse, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { KANJI_SHOW_ON_KUN_READINGS } from '@/constants/kanji/index.ts';
 import { subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 type KanjiReadingsNoteProps = {
@@ -22,6 +23,11 @@ type KanjiReadingsNoteProps = {
 export function KanjiReadingsNote({ sx, collapsible = false }: KanjiReadingsNoteProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(!collapsible);
+
+  if (!KANJI_SHOW_ON_KUN_READINGS) {
+    return null;
+  }
+
   const overrides = Array.isArray(sx) ? sx : [sx];
 
   const details = (
