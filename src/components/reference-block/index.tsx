@@ -410,7 +410,7 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                       overflowWrap: 'break-word'
                     }}
                   >
-                    <ReferenceTableCell cell={row.country} locale={locale} />
+                    <ReferenceTableCell cell={row.country} locale={locale} speak />
                   </Box>
                   <Box
                     component="td"
