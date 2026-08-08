@@ -13,6 +13,8 @@ import {
   FLOATING_RAIL_EDGE_SHADOW
 } from '@/theme/floating-rail.ts';
 import { replaceSectionHash } from '@/utils/scroll-to-hash.ts';
+import { useIsClient } from '@/utils/use-is-client.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 
 type LessonSectionNavItem = {
   id: string;
@@ -155,6 +157,8 @@ function SectionMenu({ items, activeId, onSelect }: SectionMenuProps) {
 /** Fixed right-edge tab that opens an attached section jump menu for long lesson pages. */
 export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
   const { t } = useTranslation();
+  const isClient = useIsClient();
+  const [preferences] = useUserPreferences();
   const [open, setOpen] = useState(false);
   const items = useMemo((): LessonSectionNavItem[] => {
     return [
@@ -232,6 +236,10 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
     }
     scrollToSection(items[targetIndex].id);
   };
+
+  if (!isClient || !preferences.showSectionNav) {
+    return null;
+  }
 
   return (
     <Box
