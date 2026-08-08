@@ -36,14 +36,3 @@ export function scrollToHashTarget(rawHash: string) {
     cancelAnimationFrame(raf);
   };
 }
-
-/** Push a section id onto the URL hash without triggering a browser scroll jump. */
-export function pushSectionHash(id: string) {
-  const nextHash = `#${id}`;
-
-  if (window.location.hash === nextHash) {
-    return;
-  }
-
-  window.history.pushState(null, '', `${window.location.pathname}${window.location.search}${nextHash}`);
-}

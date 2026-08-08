@@ -17,17 +17,5 @@ export function ScrollManager() {
     return scrollToHashTarget(window.location.hash);
   }, [pathname]);
 
-  useEffect(() => {
-    const handlePopState = () => {
-      scrollToHashTarget(window.location.hash);
-    };
-
-    window.addEventListener('popstate', handlePopState);
-
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
-
   return null;
 }
