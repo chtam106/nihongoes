@@ -71,7 +71,7 @@ alwaysApply: true
 - Store ruby in CONTENT DATA, not via dictionary lookup. Type: `RubySegment { base, reading }` in `@/types/course.ts`. Optional `ruby?: RubySegment[]` on `GrammarExample`, `ReadingLine`, `ConversationLine`, and `VocabItem` (when the kanji form needs furigana in quiz/phrases).
 - Author **one segment per kanji** in surface order (e.g. 山田 -> `[{ base:'山', reading:'やま' }, { base:'田', reading:'だ' }]`). Plain kana/particles in `jp` stay unrubied; do NOT include okurigana or suffixes like `さん` in ruby segments.
 - Render with `renderJapaneseText(jp, ruby?)` (`src/utils/japanese-text.tsx`). No `ruby` -> plain text. Do NOT import course data into the renderer and do NOT infer readings at runtime.
-- Global furigana size: `ruby rt { font-size: 0.6em }` in `src/index.css`. Vocab/reference card headwords (`<VocabHeadword>`) override to **0.7em** via `sx` (`& ruby rt`).
+- Global furigana size: `ruby rt { font-size: 0.7em }` in `src/index.css` (applies site-wide).
 - **Adjacent furigana colors**: when 2+ ruby segments are consecutive in the surface text (no kana/kanji gap), tint each `rt` with the palette in `japanese-text.tsx` (text color only). Single segments or separated rubies stay plain. This requires **one segment per kanji** in data - a compound `{ base:'教室', reading:'きょうしつ' }` will NOT colorize.
 - Pass `ruby` through from data in grammar examples, conversation lines, reading lines, and vocab quiz prompts. Vocab/reference card grids use `<VocabHeadword>` with the item's authored `ruby`.
 

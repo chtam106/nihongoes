@@ -25,11 +25,7 @@ export function VocabHeadword({ item, variant = 'subtitle1' }: VocabHeadwordProp
       variant={variant}
       component="div"
       lang="ja"
-      sx={{
-        fontWeight: 600,
-        lineHeight: 1.3,
-        '& ruby rt': { fontSize: '0.7em' }
-      }}
+      sx={{ fontWeight: 600, lineHeight: 1.3 }}
     >
       {display}
     </Typography>
