@@ -7,6 +7,7 @@ import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import { ScrollManager } from '@/components/scroll-manager';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
+import { installRubyAwareCopyHandler } from '@/utils/ruby-selection.ts';
 import { usePathname } from '@/i18n/navigation.tsx';
 
 const drawerWidth = 320;
@@ -27,6 +28,8 @@ function AppLayout({ children }: AppLayoutProps) {
       void loadJapaneseUiFont();
     }
   }, [pathname]);
+
+  useEffect(() => installRubyAwareCopyHandler(), []);
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100svh' }}>

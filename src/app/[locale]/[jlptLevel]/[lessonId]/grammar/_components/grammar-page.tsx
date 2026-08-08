@@ -1,5 +1,6 @@
 'use client';
 
+import { useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { Box, Paper, Stack, Typography } from '@mui/material';
 import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
@@ -7,7 +8,7 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
@@ -29,12 +30,15 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
 
   // Only reveal audio once solved, so it never speaks the answer beforehand.
   const canPlay = canSpeak && answeredCorrectly;
+  const handleSpeak = useCallback(() => speakJapanese(question.fullText), [question.fullText]);
+  const speechClick = useSpeechClickHandler(handleSpeak);
 
   return (
     <Stack spacing={3}>
       <Paper
         elevation={0}
-        onClick={canPlay ? () => speakJapanese(question.fullText) : undefined}
+        onPointerDown={canPlay ? speechClick.onPointerDown : undefined}
+        onClick={canPlay ? speechClick.onClick : undefined}
         role={canPlay ? 'button' : undefined}
         tabIndex={canPlay ? 0 : undefined}
         aria-label={canPlay ? t('common.playAudio') : undefined}
@@ -76,7 +80,13 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
         </Typography>
       </Paper>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+          gap: 1.5
+        }}
+      >
         {question.options.map((option) => {
           const isCorrectOption = option.id === question.correctId;
           const showCorrect = answeredCorrectly && isCorrectOption;

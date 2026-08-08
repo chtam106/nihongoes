@@ -1,6 +1,6 @@
 'use client';
 
-import type { KeyboardEvent, ReactNode } from 'react';
+import { useCallback, type KeyboardEvent, type ReactNode } from 'react';
 import { Box, Paper, Stack, Typography } from '@mui/material';
 import type { ReferenceBlock, ReferenceTableJpCell } from '@/constants/courses/index.ts';
 import { Heading } from '@/components/heading';
@@ -10,23 +10,9 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { VocabHeadword } from '@/components/vocab-headword';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
-
-type VocabHeadwordProps = {
-  item: { kana: string; kanji?: string };
-};
-
-function VocabHeadword({ item }: VocabHeadwordProps) {
-  const display =
-    item.kanji && item.kanji !== item.kana ? `${item.kanji}（${item.kana}）` : item.kana;
-
-  return (
-    <Typography variant="body1" lang="ja" sx={{ fontWeight: 600 }}>
-      {display}
-    </Typography>
-  );
-}
+import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
 
 type SpeakableTableTextProps = {
   text: string;
@@ -38,6 +24,8 @@ function SpeakableTableText({ text, children }: SpeakableTableTextProps) {
   const { t } = useTranslation();
   const canSpeak = useSpeechSupported();
   const spokenText = formatJapaneseDisplay(text);
+  const handleSpeak = useCallback(() => speakJapanese(spokenText), [spokenText]);
+  const speechClick = useSpeechClickHandler(handleSpeak);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -51,7 +39,8 @@ function SpeakableTableText({ text, children }: SpeakableTableTextProps) {
       role={canSpeak ? 'button' : undefined}
       tabIndex={canSpeak ? 0 : undefined}
       aria-label={canSpeak ? t('common.playAudio') : undefined}
-      onClick={canSpeak ? () => speakJapanese(spokenText) : undefined}
+      onPointerDown={canSpeak ? speechClick.onPointerDown : undefined}
+      onClick={canSpeak ? speechClick.onClick : undefined}
       onKeyDown={canSpeak ? handleKeyDown : undefined}
       sx={{ cursor: canSpeak ? 'pointer' : undefined }}
     >
@@ -147,7 +136,7 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                 text={item.speech ?? item.kana}
                 sx={{ p: 1.5 }}
               >
-                <VocabHeadword item={item} />
+                <VocabHeadword item={item} variant="body1" />
                 <Typography variant="body2" sx={{ mt: 0.5 }}>
                   {item.meaning[locale]}
                 </Typography>
@@ -189,14 +178,31 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
       {block.kind === 'list' && (
         <Stack spacing={1.5}>
           {block.intro && (
-            <Typography variant="body1" color="text.secondary">
+            <Typography variant="body1" color="text.secondary" component="div">
+              {block.introTerm && (
+                <>
+                  <Box component="span" lang="ja" sx={{ fontWeight: 600, color: 'text.primary' }}>
+                    {renderJapaneseText(block.introTerm.jp, block.introTerm.ruby)}
+                  </Box>
+                  {': '}
+                </>
+              )}
               {block.intro[locale]}
             </Typography>
           )}
-          <Stack spacing={1}>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns:
+                block.layout === 'stacked-2col' ? { xs: '1fr', md: 'repeat(2, 1fr)' } : '1fr',
+              gap: 1
+            }}
+          >
             {block.rows.map((row, index) => {
               const isPhraseRow = Boolean(row.jp && !row.number);
-              const isStackedRow = block.layout === 'stacked' && Boolean(row.number);
+              const isStackedRow =
+                (block.layout === 'stacked' || block.layout === 'stacked-2col') &&
+                Boolean(row.number);
 
               return (
                 <Paper key={index} elevation={0} sx={[elevatedSurfaceSx, { p: 1.5 }]}>
@@ -297,7 +303,7 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                 </Paper>
               );
             })}
-          </Stack>
+          </Box>
           {block.notes?.map((note, index) => (
             <HintText key={index} sx={{ display: 'block' }}>
               {note[locale]}

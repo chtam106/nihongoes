@@ -21,6 +21,12 @@ All course levels share ONE engine. Adding/extending a level = editing data file
   - Pair questions with answers: whenever a grammar point teaches how to ASK something (a か yes/no question, or a question word like 何/どこ/だれ/いくら/なんじ), ALWAYS show how to ANSWER it. Do NOT make the answers a separate grammar point; attach them to the SAME `GrammarPoint` via its optional `answers` block (`{ explanation?, examples }`), which `GrammarPointCard` renders as a separate labelled "Answers"/"Cách trả lời" sub-block inside the point. E.g. the か question point carries `はい、そうです / はい、～です / いいえ、ちがいます` in `answers`, and `N は なんですか` carries `(これ/それ)は N です` in `answers`.
 - Only the word/phrase/pattern LISTS must match the textbook. Example sentences, 会話 dialogues, and reading passages must be ORIGINAL — never copy the textbook's copyrighted text.
 - When adding/reviewing a lesson, cross-check the textbook's full vocab + expression + grammar lists before finishing; a missing item is a bug.
+- Ruby in authored sentences: every kanji in a `GrammarExample`, `ConversationLine`, or `ReadingLine` `jp` string needs a `ruby` segment in surface order - including question words (何, 何時), verbs (行, 食), and holiday names. Partial ruby (e.g. only 行 in 何で 行きますか) is a bug.
+- Every `VocabItem` (and reference `kind: 'vocab'` item) with a `kanji` form needs authored `ruby` - one segment per kanji, not a compound `{ base:'教室', ... }` - for `<VocabHeadword>` and the kanji-script vocab quiz.
+- When a word has a standard kanji form taught in the lesson, write it as kanji in `jp` (with `ruby`) - not kana-only (e.g. 何ですか not なんですか, 本 not ほん). Keep title, explanation, and examples consistent. Grammar `pattern` strings follow the same rule (e.g. `N は 何 ですか` not `N は なん ですか`); add `patternRuby` when the pattern chip shows kanji.
+- Grammar `explanation` / `answers.explanation` strings that cite Japanese (e.g. 何時, 3月25日に) need matching `explanationRuby` on the point or answers block (same segment order in en + vi).
+- Grammar `title` copy that embeds kanji (e.g. `Hỏi "là cái gì?" với 何`) needs `titleRuby` on the point.
+- Reference list rows with a Japanese `number` date (e.g. 5月3日, 7月第3月曜日) need matching `numberRuby` for every kanji in that string, same as `ruby` on `jp`. A list `introTerm` (e.g. 祝祭日) needs `introTerm.ruby` too.
 
 ## Reference section (IMPORTANT)
 - `reference?: ReferenceBlock[]` is NOT limited to vocabulary. Each block has a `kind`:

@@ -90,7 +90,6 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   { name: 'alphabet exercise hub', path: '/alphabet/exercise' },
   { name: 'romaji exercise', path: '/alphabet/exercise/romaji' },
   { name: 'character exercise', path: '/alphabet/exercise/character' },
-  { name: 'listen exercise', path: '/alphabet/exercise/listen' },
   { name: 'script-pair exercise', path: '/alphabet/exercise/script-pair' },
   { name: 'writing exercise', path: '/alphabet/exercise/writing' },
   { name: 'sentence exercise', path: '/alphabet/exercise/sentence' },

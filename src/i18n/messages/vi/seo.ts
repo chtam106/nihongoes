@@ -33,8 +33,7 @@ export const seo = {
     },
     exercise: {
       title: 'Bài tập & Quiz Kana tiếng Nhật',
-      description:
-        'Luyện hiragana và katakana qua quiz romaji, chọn chữ, nghe chọn chữ và ghép cặp bảng chữ.',
+      description: 'Luyện hiragana và katakana qua quiz romaji, chọn chữ và ghép cặp bảng chữ.',
       romaji: {
         title: 'Quiz Romaji - Luyện Hiragana & Katakana',
         description: 'Nhìn chữ kana và chọn romaji đúng. Luyện đọc hiragana và katakana từng bước.'
@@ -43,10 +42,6 @@ export const seo = {
         title: 'Quiz Chọn chữ Kana',
         description:
           'Nhìn romaji và chọn chữ hiragana hoặc katakana đúng. Rèn nhận diện kana với phản hồi tức thì.'
-      },
-      listen: {
-        title: 'Quiz Nghe & Chọn chữ Kana',
-        description: 'Nghe phát âm chuẩn và chọn đúng chữ hiragana hoặc katakana.'
       },
       scriptPair: {
         title: 'Quiz Ghép Hiragana ↔ Katakana',

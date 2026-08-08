@@ -34,7 +34,7 @@ export const seo = {
     exercise: {
       title: 'Japanese Kana Exercises & Quizzes',
       description:
-        'Practice hiragana and katakana with romaji, character, listening, and script-matching quizzes.',
+        'Practice hiragana and katakana with romaji, character, and script-matching quizzes.',
       romaji: {
         title: 'Romaji Quiz - Hiragana & Katakana Practice',
         description:
@@ -44,11 +44,6 @@ export const seo = {
         title: 'Choose the Kana Character Quiz',
         description:
           'See romaji and pick the matching hiragana or katakana character. Build kana recognition with instant feedback.'
-      },
-      listen: {
-        title: 'Listen & Choose Kana Quiz',
-        description:
-          'Train your ear with native audio and pick the correct hiragana or katakana character.'
       },
       scriptPair: {
         title: 'Hiragana ↔ Katakana Matching Quiz',

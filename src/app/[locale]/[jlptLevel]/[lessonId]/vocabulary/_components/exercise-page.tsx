@@ -22,7 +22,6 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
@@ -40,7 +39,6 @@ type VocabQuizProps = {
 /** The endless per-question panel: prompt + answer choices with auto-advance. */
 function VocabQuiz({ lesson, locale, mode, script, includeReference }: VocabQuizProps) {
   const { t } = useTranslation();
-  const canSpeak = useSpeechSupported();
   const { question, wrongIds, answeredCorrectly, handleSelect } = useVocabQuiz({
     lesson,
     locale,
@@ -51,34 +49,13 @@ function VocabQuiz({ lesson, locale, mode, script, includeReference }: VocabQuiz
 
   const promptLabel =
     mode === 'word-meaning' ? t('course.vocabPromptMeaning') : t('course.vocabPromptWord');
-  const canPlayPrompt = canSpeak && question.promptJa;
   const displayPrompt = question.promptJa
     ? renderJapaneseText(question.promptText, question.promptRuby)
     : question.promptText;
 
   return (
     <Stack spacing={3}>
-      <Paper
-        elevation={0}
-        onClick={canPlayPrompt ? () => speakJapanese(question.speech) : undefined}
-        role={canPlayPrompt ? 'button' : undefined}
-        tabIndex={canPlayPrompt ? 0 : undefined}
-        aria-label={canPlayPrompt ? t('common.playAudio') : undefined}
-        onKeyDown={
-          canPlayPrompt
-            ? (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  speakJapanese(question.speech);
-                }
-              }
-            : undefined
-        }
-        sx={[
-          elevatedSurfaceSx,
-          { p: { xs: 2.5, md: 3 }, cursor: canPlayPrompt ? 'pointer' : undefined }
-        ]}
-      >
+      <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
         <Typography variant="overline" color="text.secondary">
           {promptLabel}
         </Typography>
@@ -92,7 +69,13 @@ function VocabQuiz({ lesson, locale, mode, script, includeReference }: VocabQuiz
         </Typography>
       </Paper>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+          gap: 1.5
+        }}
+      >
         {question.options.map((option) => {
           const isCorrectOption = option.id === question.correctId;
           const showCorrect = answeredCorrectly && isCorrectOption;

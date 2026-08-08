@@ -35,6 +35,8 @@ export type GrammarExample = {
 /** A distinct sub-block inside a grammar point, e.g. how to answer the question it teaches. */
 export type GrammarAnswerBlock = {
   explanation?: Bilingual;
+  /** Ruby for kanji cited in `explanation` (same segment order in en + vi when both quote the same Japanese). */
+  explanationRuby?: RubySegment[];
   examples: GrammarExample[];
   /** Terms to color in this block's explanation/examples (own palette order). */
   highlights?: HighlightTerm[];
@@ -44,8 +46,14 @@ export type GrammarAnswerBlock = {
 
 export type GrammarPoint = {
   pattern: string;
+  /** Ruby for kanji in `pattern` when shown on the pattern chip (e.g. 何 in N は 何 ですか). */
+  patternRuby?: RubySegment[];
   title: Bilingual;
+  /** Ruby for kanji cited in `title` when en/vi copy embeds Japanese (e.g. "with 何"). */
+  titleRuby?: RubySegment[];
   explanation: Bilingual;
+  /** Ruby for kanji cited in `explanation` (same segment order in en + vi when both quote the same Japanese). */
+  explanationRuby?: RubySegment[];
   examples: GrammarExample[];
   /**
    * Terms to color in the pattern, explanation, and examples, in palette order.
@@ -145,8 +153,10 @@ export type ReferenceListGroup = {
   kind: 'list';
   title: Bilingual;
   intro?: Bilingual;
-  /** `stacked` puts each label and translation on its own row; default `compact` keeps inline columns on wide screens. */
-  layout?: 'stacked' | 'compact';
+  /** Optional Japanese headword at the start of the intro (e.g. 祝祭日), rendered with ruby before the intro sentence. */
+  introTerm?: { jp: string; ruby?: RubySegment[] };
+  /** `stacked` puts each label and translation on its own row; `stacked-2col` is the same card on a 2-column grid from md up; default `compact` keeps inline columns on wide screens. */
+  layout?: 'stacked' | 'stacked-2col' | 'compact';
   rows: ReferenceListRow[];
   notes?: Bilingual[];
 };

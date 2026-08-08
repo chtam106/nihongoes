@@ -124,6 +124,16 @@ p {
   margin: 0;
 }
 
+/* Furigana: browser default ~0.5em is hard to read; 0.7em improves legibility. */
+ruby {
+  ruby-align: center;
+}
+
+ruby rt {
+  font-size: 0.7em;
+  user-select: none;
+}
+
 code,
 .counter {
   font-family: var(--mono);

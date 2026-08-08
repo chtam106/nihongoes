@@ -1,11 +1,11 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useCallback, type ReactNode } from 'react';
 import type { SxProps, Theme } from '@mui/material';
 import { Paper } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 type SpeakableSurfaceProps = {
@@ -25,6 +25,8 @@ export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) 
   const canSpeak = useSpeechSupported();
   const spokenText = formatJapaneseDisplay(text);
   const sxOverrides = Array.isArray(sx) ? sx : [sx];
+  const handleSpeak = useCallback(() => speakJapanese(spokenText), [spokenText]);
+  const speechClick = useSpeechClickHandler(handleSpeak);
 
   return (
     <Paper
@@ -32,7 +34,8 @@ export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) 
       role={canSpeak ? 'button' : undefined}
       tabIndex={canSpeak ? 0 : undefined}
       aria-label={canSpeak ? t('common.playAudio') : undefined}
-      onClick={canSpeak ? () => speakJapanese(spokenText) : undefined}
+      onPointerDown={canSpeak ? speechClick.onPointerDown : undefined}
+      onClick={canSpeak ? speechClick.onClick : undefined}
       onKeyDown={
         canSpeak
           ? (event) => {

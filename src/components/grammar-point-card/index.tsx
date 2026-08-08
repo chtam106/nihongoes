@@ -206,6 +206,7 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
           </Typography>
           <GrammarHighlightedText
             text={formatGrammarPatternDisplay(point.pattern)}
+            ruby={point.patternRuby}
             component="span"
             lang="ja"
             sx={{
@@ -217,12 +218,18 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
           />
         </Box>
         {showTitle && (
-          <Heading component="h3" gutterBottom>
-            {point.title[locale]}
-          </Heading>
+          <GrammarHighlightedText
+            text={point.title[locale]}
+            ruby={point.titleRuby}
+            component="h3"
+            variant="h6"
+            gutterBottom
+            sx={{ fontWeight: 600, lineHeight: 1.35 }}
+          />
         )}
         <GrammarHighlightedText
           text={point.explanation[locale]}
+          ruby={point.explanationRuby}
           variant="body2"
           color="text.secondary"
           sx={{ mb: point.examples.length > 0 ? 1.5 : 0 }}
@@ -238,6 +245,7 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
             {point.answers.explanation && (
               <GrammarHighlightedText
                 text={point.answers.explanation[locale]}
+                ruby={point.answers.explanationRuby}
                 variant="body2"
                 color="text.secondary"
                 sx={{ mb: 1.5 }}

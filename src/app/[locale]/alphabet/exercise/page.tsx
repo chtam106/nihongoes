@@ -34,12 +34,6 @@ export default async function Page({ params }: PageProps) {
       iconKey: 'spellcheck'
     },
     {
-      to: routes.alphabet.exercise.listen,
-      title: t('exercise.listenPickShort'),
-      description: t('exercise.listenDescription'),
-      iconKey: 'headphones'
-    },
-    {
       to: routes.alphabet.exercise.scriptPair,
       title: t('exercise.scriptPair'),
       description: t('exercise.scriptPairDescription'),

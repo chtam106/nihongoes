@@ -95,7 +95,12 @@ export function buildVocabEntries(
     }
 
     if ((script === 'kanji' || script === 'all') && hasKanji) {
-      entries.push({ surface: item.kanji!, speech, meaning, ruby: item.ruby });
+      entries.push({
+        surface: item.kanji!,
+        speech,
+        meaning,
+        ruby: item.ruby
+      });
     }
   }
 

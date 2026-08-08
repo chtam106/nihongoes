@@ -28,7 +28,6 @@ import {
   lessonWritingPath,
   type CourseLevel,
   type Lesson,
-  type VocabItem,
   type ConversationScene,
   type ConversationSpeaker
 } from '@/constants/courses/index.ts';
@@ -40,36 +39,13 @@ import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { VocabHeadword } from '@/components/vocab-headword';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
 // Offset anchored sections below the fixed app bar when scrolled to.
 const SECTION_ANCHOR_SX = { scrollMarginTop: { xs: 72, md: 88 } } as const;
-
-type VocabHeadwordProps = {
-  item: VocabItem;
-};
-
-/**
- * A vocab card's headword. When the word has a kanji form, it is shown inline as
- * `漢字（かな）` (kanji first, then the kana reading); a kana-only word is shown
- * plainly.
- */
-function VocabHeadword({ item }: VocabHeadwordProps) {
-  const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
-
-  return (
-    <Typography
-      variant="subtitle1"
-      component="div"
-      lang="ja"
-      sx={{ fontWeight: 600, lineHeight: 1.3 }}
-    >
-      {hasKanji ? `${item.kanji}（${item.kana}）` : item.kana}
-    </Typography>
-  );
-}
 
 type SectionNavProps = {
   lesson: Lesson;
