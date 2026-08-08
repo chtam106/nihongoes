@@ -133,13 +133,13 @@ function patchVocabArray(text, arrayStart, arrayEnd) {
 function patchFile(path) {
   let text = fs.readFileSync(path, 'utf8');
 
-  for (const label of ['vocab: [', "items: ["]) {
+  for (const label of ['vocab: [', 'items: [']) {
     let searchFrom = 0;
     while (searchFrom < text.length) {
       const idx = text.indexOf(label, searchFrom);
       if (idx === -1) break;
 
-      if (label === "items: [") {
+      if (label === 'items: [') {
         const blockStart = text.lastIndexOf('{', idx);
         const block = text.slice(blockStart, idx);
         if (!block.includes("kind: 'vocab'")) {

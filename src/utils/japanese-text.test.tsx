@@ -61,20 +61,16 @@ describe('renderJapaneseText', () => {
       </>
     );
 
-    expect(rendered).toBe(
-      '<ruby>日<rt>に</rt></ruby>本<ruby>人<rt>じん</rt></ruby>'
-    );
+    expect(rendered).toBe('<ruby>日<rt>に</rt></ruby>本<ruby>人<rt>じん</rt></ruby>');
     expect(rendered).not.toContain('<rt style=');
   });
 
   it('can disable furigana colors explicitly', () => {
     const rendered = renderNode(
       <>
-        {renderJapaneseText(
-          '山田さんは事務所です。',
-          [...yamadaJimushoRuby],
-          { colorizeRuby: false }
-        )}
+        {renderJapaneseText('山田さんは事務所です。', [...yamadaJimushoRuby], {
+          colorizeRuby: false
+        })}
       </>
     );
 
