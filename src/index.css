@@ -131,6 +131,7 @@ ruby {
 
 ruby rt {
   font-size: 0.7em;
+  user-select: none;
 }
 
 code,

@@ -1,6 +1,6 @@
 'use client';
 
-import type { KeyboardEvent, ReactNode } from 'react';
+import { useCallback, type KeyboardEvent, type ReactNode } from 'react';
 import { Box, Paper, Stack, Typography } from '@mui/material';
 import type { ReferenceBlock, ReferenceTableJpCell } from '@/constants/courses/index.ts';
 import { Heading } from '@/components/heading';
@@ -12,7 +12,7 @@ import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
 
 type SpeakableTableTextProps = {
   text: string;
@@ -24,6 +24,8 @@ function SpeakableTableText({ text, children }: SpeakableTableTextProps) {
   const { t } = useTranslation();
   const canSpeak = useSpeechSupported();
   const spokenText = formatJapaneseDisplay(text);
+  const handleSpeak = useCallback(() => speakJapanese(spokenText), [spokenText]);
+  const speechClick = useSpeechClickHandler(handleSpeak);
 
   const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -37,7 +39,8 @@ function SpeakableTableText({ text, children }: SpeakableTableTextProps) {
       role={canSpeak ? 'button' : undefined}
       tabIndex={canSpeak ? 0 : undefined}
       aria-label={canSpeak ? t('common.playAudio') : undefined}
-      onClick={canSpeak ? () => speakJapanese(spokenText) : undefined}
+      onPointerDown={canSpeak ? speechClick.onPointerDown : undefined}
+      onClick={canSpeak ? speechClick.onClick : undefined}
       onKeyDown={canSpeak ? handleKeyDown : undefined}
       sx={{ cursor: canSpeak ? 'pointer' : undefined }}
     >
