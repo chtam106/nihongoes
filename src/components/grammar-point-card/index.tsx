@@ -106,7 +106,11 @@ function DialogueExampleGroup({ examples }: DialogueExampleGroupProps) {
             <DialogueLineLayout
               key={`${example.jp}-${lineIndex}`}
               icon={
-                <SpeakerIconColumn color={DIALOGUE_SPEAKER_COLORS[speakerIndex]} label={label} />
+                <SpeakerIconColumn
+                  color={DIALOGUE_SPEAKER_COLORS[speakerIndex]}
+                  label={label}
+                  hasRuby={hasRuby}
+                />
               }
               japanese={
                 <SpeakableSurface
