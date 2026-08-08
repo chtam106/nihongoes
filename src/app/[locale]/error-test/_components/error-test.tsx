@@ -3,14 +3,13 @@
 import { useState } from 'react';
 import { Box, Button, Typography } from '@mui/material';
 
-function SentryTestPage() {
+function ErrorTestPage() {
   const [crash, setCrash] = useState(false);
 
   // Throw during RENDER (not in the click handler) so it exercises the real
-  // React error boundary path (route-level app/[locale]/error.tsx catches it),
-  // which is also how Sentry captures a render error.
+  // React error boundary path (route-level app/[locale]/error.tsx catches it).
   if (crash) {
-    throw new Error('[Sentry test] Render error from /sentry-test');
+    throw new Error('[Error test] Render error from /error-test');
   }
 
   return (
@@ -25,7 +24,7 @@ function SentryTestPage() {
       }}
     >
       <Typography variant="h5" sx={{ fontWeight: 600 }}>
-        Sentry test
+        Error test
       </Typography>
       <Button variant="contained" color="error" onClick={() => setCrash(true)}>
         Throw error
@@ -34,4 +33,4 @@ function SentryTestPage() {
   );
 }
 
-export default SentryTestPage;
+export default ErrorTestPage;

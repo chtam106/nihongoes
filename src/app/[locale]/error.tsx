@@ -1,25 +1,13 @@
 'use client';
 
-import { useEffect } from 'react';
-import * as Sentry from '@sentry/nextjs';
 import { ErrorFallbackContent } from '@/components/error-fallback';
-
-type ErrorProps = {
-  error: Error & { digest?: string };
-  reset: () => void;
-};
 
 /**
  * Route-level error boundary for all localized pages. Next renders this in place
  * of the page content when a page (or its descendants) throws while rendering,
  * so the shared app chrome (header, nav, footer) stays mounted. Handler/async
- * errors are NOT caught here - handle those where they occur; Sentry still
- * reports everything.
+ * errors are NOT caught here - handle those where they occur.
  */
-export default function Error({ error }: ErrorProps) {
-  useEffect(() => {
-    Sentry.captureException(error);
-  }, [error]);
-
+export default function Error() {
   return <ErrorFallbackContent />;
 }

@@ -35,7 +35,6 @@ Bilingual content (English and Vietnamese), interactive exercises, native audio 
 
 - React 19, TypeScript, Next.js (App Router, file-based routing, deployed on a server)
 - MUI (Material UI) with Emotion SSR
-- Sentry (error monitoring, production only)
 - Vitest + Testing Library (unit), Playwright (e2e), Storybook
 
 ## Requirements
@@ -115,24 +114,8 @@ src/
 ## Deployment (Vercel)
 
 The app runs on a Node server (for `proxy.ts`), so it deploys to Vercel (or
-any Node host), not a static host. Vercel auto-detects Next.js: connect the repo
-and set the `SENTRY_AUTH_TOKEN` env var for source map upload. The custom domain
-is configured in the Vercel dashboard.
-
-## Error Monitoring (Sentry)
-
-Sentry runs in production builds only (guarded by `process.env.NODE_ENV`). It is
-initialized client-side in `instrumentation-client.ts` and is not active during
-`pnpm dev`.
-
-Source maps are uploaded by `@sentry/nextjs` (`withSentryConfig` in
-`next.config.ts`) so stack traces in Sentry map back to the original source, then
-deleted so they are not served publicly. To enable the upload, set the
-`SENTRY_AUTH_TOKEN` env var on the build (e.g. in the Vercel project settings).
-Without the token the build still succeeds - it just skips the upload.
-
-Required token permissions: **Project - Admin**, **Release - Admin**,
-**Organization - Read**.
+any Node host), not a static host. Vercel auto-detects Next.js: connect the repo.
+The custom domain is configured in the Vercel dashboard.
 
 ## Further Docs
 

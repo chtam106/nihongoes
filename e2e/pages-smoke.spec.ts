@@ -171,9 +171,9 @@ test.describe('coverage & fallbacks', () => {
 
   // Control test: prove the error boundary DOES appear when a page throws (so the
   // "no error boundary" assertions above are meaningful, not false negatives).
-  // /sentry-test has a button that throws; the app shows the fallback.
+  // /error-test has a button that throws; the app shows the fallback.
   test('the error boundary appears when a page throws an error', async ({ page }) => {
-    await page.goto('/sentry-test', { waitUntil: 'domcontentloaded' });
+    await page.goto('/error-test', { waitUntil: 'domcontentloaded' });
 
     // The page is healthy before the error is triggered.
     await expect(page.getByTestId('error-boundary')).toHaveCount(0);
