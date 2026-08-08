@@ -13,9 +13,7 @@ import {
   Typography
 } from '@mui/material';
 import { HintText } from '@/components/hint-text';
-import { SpeakButton } from '@/components/speak-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { speakJapanese } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ExercisePageLayout } from '@/features/alphabet/exercise/exercise-page-layout.tsx';
 import { useSentenceExercisePreferences } from '@/features/alphabet/exercise/use-exercise-preferences.ts';
@@ -141,82 +139,62 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
         </Typography>
       </Stack>
 
-      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1, mb: 4 }}>
-        <SpeakButton text={kanaText} size="medium" />
-        <Box sx={{ flex: 1, minWidth: 0 }}>
-          <Typography
-            component="p"
-            lang="ja"
-            role="button"
-            tabIndex={0}
-            aria-label={t('common.playAudio')}
-            onClick={() => speakJapanese(kanaText)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                speakJapanese(kanaText);
-              }
-            }}
+      <Box sx={{ mb: 4 }}>
+        <Typography
+          component="p"
+          lang="ja"
+          sx={{
+            fontSize: { xs: 26, sm: 32 },
+            lineHeight: 1.4,
+            fontWeight: 500
+          }}
+        >
+          {kanaText}
+        </Typography>
+
+        <Box aria-live="polite" sx={{ mt: 1, display: 'grid', justifyItems: 'start' }}>
+          <Link
+            component="button"
+            type="button"
+            variant="body1"
+            underline="hover"
+            onClick={handleToggleAnswer}
             sx={{
-              fontSize: { xs: 26, sm: 32 },
-              lineHeight: 1.4,
-              fontWeight: 500,
-              cursor: 'pointer',
-              borderRadius: 1,
-              '&:focus-visible': {
-                outline: '2px solid',
-                outlineColor: 'primary.main',
-                outlineOffset: 2
-              }
+              gridArea: '1 / 1',
+              lineHeight: 1.66,
+              visibility: answerShown ? 'hidden' : 'visible'
             }}
           >
-            {kanaText}
-          </Typography>
-
-          <Box aria-live="polite" sx={{ mt: 1, display: 'grid', justifyItems: 'start' }}>
+            {t('exercise.showAnswer')}
+          </Link>
+          <Stack
+            direction="row"
+            spacing={1}
+            sx={{
+              gridArea: '1 / 1',
+              alignItems: 'baseline',
+              flexWrap: 'wrap',
+              visibility: answerShown ? 'visible' : 'hidden'
+            }}
+          >
             <Link
               component="button"
               type="button"
               variant="body1"
               underline="hover"
               onClick={handleToggleAnswer}
-              sx={{
-                gridArea: '1 / 1',
-                lineHeight: 1.66,
-                visibility: answerShown ? 'hidden' : 'visible'
-              }}
+              sx={{ lineHeight: 1.66 }}
             >
-              {t('exercise.showAnswer')}
+              {t('exercise.hideAnswer')}
             </Link>
-            <Stack
-              direction="row"
-              spacing={1}
-              sx={{
-                gridArea: '1 / 1',
-                alignItems: 'baseline',
-                flexWrap: 'wrap',
-                visibility: answerShown ? 'visible' : 'hidden'
-              }}
+            <Typography
+              lang="en"
+              variant="body1"
+              sx={{ color: 'text.secondary', fontWeight: 500, lineHeight: 1.66 }}
             >
-              <Link
-                component="button"
-                type="button"
-                variant="body1"
-                underline="hover"
-                onClick={handleToggleAnswer}
-                sx={{ lineHeight: 1.66 }}
-              >
-                {t('exercise.hideAnswer')}
-              </Link>
-              <Typography
-                lang="en"
-                variant="body1"
-                sx={{ color: 'text.secondary', fontWeight: 500, lineHeight: 1.66 }}
-              >
-                {display}
-              </Typography>
-            </Stack>
-          </Box>
+              {display}
+            </Typography>
+          </Stack>
         </Box>
       </Box>
 
