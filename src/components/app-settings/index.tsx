@@ -1,10 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import {
-  Button,
   Checkbox,
   Divider,
   FormControl,
@@ -115,7 +113,7 @@ export function AppSettings() {
           </Typography>
 
           {showAudio && (
-            <Stack spacing={2}>
+            <Stack spacing={1.5}>
               <FormControl size="small" fullWidth disabled={voices.length === 0}>
                 <InputLabel id="app-settings-voice-label">{t('audio.voice')}</InputLabel>
                 <Select
@@ -152,22 +150,12 @@ export function AppSettings() {
               {voices.length === 0 && (
                 <Typography color="text.secondary">{t('audio.noVoices')}</Typography>
               )}
-              {voices.length > 0 && (
-                <Button
-                  startIcon={<PlayArrowIcon />}
-                  variant="outlined"
-                  size="small"
-                  onClick={() => speakJapanese(SAMPLE_TEXT)}
-                >
-                  {t('audio.test')}
-                </Button>
-              )}
             </Stack>
           )}
 
           {showAudio && <Divider />}
 
-          <Stack spacing={0.25} sx={{ alignItems: 'flex-start', width: '100%' }}>
+          <Stack spacing={0.5} sx={{ alignItems: 'flex-start', width: '100%' }}>
             <FormControlLabel
               sx={CHECKBOX_LABEL_SX}
               control={
