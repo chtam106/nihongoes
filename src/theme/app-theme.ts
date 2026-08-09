@@ -12,7 +12,7 @@ export const appTheme = createTheme({
     body2: { fontSize: MIN_FONT_SIZE },
     subtitle2: { fontSize: MIN_FONT_SIZE },
     caption: { fontSize: MIN_FONT_SIZE },
-    overline: { fontSize: MIN_FONT_SIZE },
+    overline: { fontSize: MIN_FONT_SIZE, textTransform: 'none' },
     button: { fontSize: MIN_FONT_SIZE }
   },
   components: {
@@ -30,6 +30,24 @@ export const appTheme = createTheme({
         // and grow the container height proportionally so the label isn't cramped.
         root: { fontSize: MIN_FONT_SIZE, height: 40 },
         sizeSmall: { fontSize: MIN_FONT_SIZE, height: 32 }
+      }
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          fontSize: MIN_FONT_SIZE,
+          lineHeight: 1.25,
+          padding: '10px 12px',
+          textTransform: 'none'
+        },
+        sizeSmall: {
+          fontSize: MIN_FONT_SIZE,
+          padding: '8px 10px'
+        },
+        sizeLarge: {
+          fontSize: MIN_FONT_SIZE,
+          padding: '12px 14px'
+        }
       }
     },
     MuiContainer: {

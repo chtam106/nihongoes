@@ -5,7 +5,6 @@ import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import type { Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
-import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useVocabMatch } from './use-vocab-quiz.ts';
@@ -124,7 +123,7 @@ const MatchWordCell = memo(function MatchWordCell({
         locked={locked}
         onClick={onSelect}
       >
-        {renderJapaneseText(pair.surface, pair.ruby)}
+        {pair.surface}
       </MatchChip>
     </Box>
   );

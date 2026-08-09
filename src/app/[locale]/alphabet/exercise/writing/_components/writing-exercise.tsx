@@ -37,6 +37,7 @@ import {
 import { KanaDisplay } from '@/components/kana-display';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ExercisePageLayout } from '@/features/alphabet/exercise/exercise-page-layout.tsx';
+import { SEGMENT_BUTTON_STACK_SPACING } from '@/features/alphabet/exercise/control-styles.ts';
 import { buttonSizedSelectSx } from '@/features/alphabet/exercise/control-styles.ts';
 import type { Script } from '@/features/alphabet/exercise/exercise-quiz.ts';
 import type { WritingMode } from '@/features/alphabet/exercise/exercise-preferences.ts';
@@ -543,7 +544,7 @@ function WritingExercisePage() {
       note={<HintText>{t('exercise.strokeOrderNote')}</HintText>}
     >
       <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: 380, md: 420 }, mx: 'auto' }}>
-        <Stack spacing={2}>
+        <Stack spacing={SEGMENT_BUTTON_STACK_SPACING}>
           <ToggleButtonGroup
             exclusive
             fullWidth

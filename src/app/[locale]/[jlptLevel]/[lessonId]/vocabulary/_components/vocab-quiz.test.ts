@@ -4,6 +4,7 @@ import {
   VOCAB_MATCH_BATCH_SIZE,
   buildVocabEntries,
   createVocabMatchSession,
+  createVocabSession,
   initialVocabMatchSlotCount,
   shuffleMatchMeanings
 } from './vocab-quiz.ts';
@@ -61,6 +62,60 @@ describe('buildVocabEntries', () => {
     expect(lesson1.phrases?.length).toBeGreaterThan(0);
     expect(entries.some((entry) => entry.surface === 'はじめまして。')).toBe(false);
     expect(entries.some((entry) => entry.surface === 'お名前は何ですか。')).toBe(false);
+  });
+});
+
+describe('createVocabSession', () => {
+  it('draws every surface once before repeating (no-repeat cycle)', () => {
+    const entries = buildVocabEntries(lesson1, 'en', 'all');
+    const session = createVocabSession(lesson1, 'en', 'word-meaning', 'all');
+
+    const drawn = Array.from({ length: session.total }, () => session.next().promptText);
+
+    expect([...drawn].sort()).toEqual(entries.map((entry) => entry.surface).sort());
+  });
+
+  it('reshuffles into a new cycle once the pool is exhausted', () => {
+    const entries = buildVocabEntries(lesson1, 'en', 'all');
+    const surfaces = new Set(entries.map((entry) => entry.surface));
+    const session = createVocabSession(lesson1, 'en', 'word-meaning', 'all');
+
+    for (let i = 0; i < session.total; i += 1) {
+      session.next();
+    }
+
+    expect(surfaces.has(session.next().promptText)).toBe(true);
+  });
+
+  it('builds well-formed word-meaning questions', () => {
+    const session = createVocabSession(lesson1, 'en', 'word-meaning', 'all');
+    const question = session.next();
+
+    expect(question.promptJa).toBe(true);
+    expect(question.options.every((option) => option.ja === false)).toBe(true);
+    expect(question.options.map((option) => option.id)).toContain(question.correctId);
+  });
+
+  it('builds well-formed meaning-word questions', () => {
+    const session = createVocabSession(lesson1, 'en', 'meaning-word', 'all');
+    const question = session.next();
+
+    expect(question.promptJa).toBe(false);
+    expect(question.options.every((option) => option.ja === true)).toBe(true);
+    expect(question.options.map((option) => option.id)).toContain(question.correctId);
+  });
+
+  it('never offers a kana + kanji twin as two correct meaning-word options', () => {
+    const session = createVocabSession(lesson1, 'en', 'meaning-word', 'all');
+
+    for (let i = 0; i < session.total * 3; i += 1) {
+      const question = session.next();
+
+      if (question.promptText === 'I, me') {
+        const twins = question.options.filter((option) => ['私', 'わたし'].includes(option.label));
+        expect(twins).toHaveLength(1);
+      }
+    }
   });
 });
 

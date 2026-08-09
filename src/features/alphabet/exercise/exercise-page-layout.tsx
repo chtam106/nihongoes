@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
+import { SEGMENT_BUTTON_CONTROLS_GAP } from '@/features/alphabet/exercise/control-styles.ts';
 
 type ExercisePageLayoutProps = {
   title: string;
@@ -37,7 +38,7 @@ export function ExercisePageLayout({
               xs: 'repeat(2, minmax(0, 1fr))',
               lg: 'repeat(4, minmax(0, 1fr))'
             },
-            gap: 2,
+            gap: SEGMENT_BUTTON_CONTROLS_GAP,
             mb: 4
           }}
         >
