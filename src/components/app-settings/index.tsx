@@ -148,6 +148,19 @@ export function AppSettings() {
               control={
                 <Checkbox
                   size="small"
+                  checked={preferences.showTranslationsByDefault}
+                  onChange={(_event, checked) =>
+                    setPreferences({ ...preferences, showTranslationsByDefault: checked })
+                  }
+                />
+              }
+              label={t('settings.showTranslationsByDefault')}
+            />
+            <FormControlLabel
+              sx={CHECKBOX_LABEL_SX}
+              control={
+                <Checkbox
+                  size="small"
                   checked={preferences.showFurigana}
                   onChange={(_event, checked) =>
                     setPreferences({ ...preferences, showFurigana: checked })

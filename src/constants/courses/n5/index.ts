@@ -2873,7 +2873,7 @@ export const n5Course: Course = {
         {
           kana: 'いらっしゃいませ。',
           romaji: 'Irasshaimase.',
-          meaning: { en: 'Welcome. (in a shop)', vi: 'Xin mời. (trong cửa hàng)' }
+          meaning: { en: 'Welcome. (in a shop)', vi: 'Xin chào quý khách. (trong cửa hàng)' }
         },
         {
           kana: 'これを ください。',
@@ -2909,7 +2909,7 @@ export const n5Course: Course = {
               speakerId: 'clerk',
               jp: 'いらっしゃいませ。',
               romaji: 'Irasshaimase.',
-              meaning: { en: 'Welcome.', vi: 'Xin mời.' }
+              meaning: { en: 'Welcome.', vi: 'Xin chào quý khách.' }
             },
             {
               speakerId: 'customer',

@@ -22,6 +22,7 @@ type ExampleRowProps = {
 
 function ExampleRow({ example }: ExampleRowProps) {
   const { locale } = useTranslation();
+  const [preferences] = useUserPreferences();
 
   return (
     <SpeakableSurface
@@ -41,7 +42,10 @@ function ExampleRow({ example }: ExampleRowProps) {
         lang="ja"
         sx={{ fontWeight: 500 }}
       />
-      <TranslationLine translation={example.meaning[locale]} />
+      <TranslationLine
+        key={String(preferences.showTranslationsByDefault)}
+        translation={example.meaning[locale]}
+      />
     </SpeakableSurface>
   );
 }
@@ -84,12 +88,15 @@ type DialogueExampleGroupProps = {
 function DialogueExampleGroup({ examples }: DialogueExampleGroupProps) {
   const { t, locale } = useTranslation();
   const [preferences] = useUserPreferences();
-  const [showTranslation, setShowTranslation] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(preferences.showTranslationsByDefault);
   const speakerLabels = [t('course.grammarDialogueSpeakerA'), t('course.grammarDialogueSpeakerB')];
   const revealTranslation = showTranslation;
 
   return (
-    <Box sx={[subtleSurfaceSx, { px: 1.5, py: 1.5 }]}>
+    <Box
+      key={String(preferences.showTranslationsByDefault)}
+      sx={[subtleSurfaceSx, { px: 1.5, py: 1.5 }]}
+    >
       {preferences.showTranslation && (
         <SectionHeaderWithTranslationToggle
           showTranslation={showTranslation}

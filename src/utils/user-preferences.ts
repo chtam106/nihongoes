@@ -7,6 +7,7 @@ export type UserPreferences = {
   showFurigana: boolean;
   allowTts: boolean;
   showTranslation: boolean;
+  showTranslationsByDefault: boolean;
 };
 
 export const DEFAULT_USER_PREFERENCES: UserPreferences = {
@@ -14,7 +15,8 @@ export const DEFAULT_USER_PREFERENCES: UserPreferences = {
   showSectionNav: true,
   showFurigana: true,
   allowTts: true,
-  showTranslation: true
+  showTranslation: true,
+  showTranslationsByDefault: false
 };
 
 const USER_PREFERENCES_KEY = `${STORAGE_PREFIX}-user-preferences`;
@@ -44,7 +46,11 @@ function sanitizeUserPreferences(value: unknown): UserPreferences {
     showTranslation:
       typeof record.showTranslation === 'boolean'
         ? record.showTranslation
-        : DEFAULT_USER_PREFERENCES.showTranslation
+        : DEFAULT_USER_PREFERENCES.showTranslation,
+    showTranslationsByDefault:
+      typeof record.showTranslationsByDefault === 'boolean'
+        ? record.showTranslationsByDefault
+        : DEFAULT_USER_PREFERENCES.showTranslationsByDefault
   };
 }
 

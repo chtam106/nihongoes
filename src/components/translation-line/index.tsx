@@ -18,7 +18,7 @@ type TranslationLineProps = {
 export function TranslationLine({ translation }: TranslationLineProps) {
   const { t } = useTranslation();
   const [preferences] = useUserPreferences();
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(preferences.showTranslationsByDefault);
 
   const showToggle = preferences.showTranslation;
 

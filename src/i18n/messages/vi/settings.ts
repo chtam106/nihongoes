@@ -4,5 +4,6 @@ export const settings = {
   showSectionNav: 'Menu chuyển phần bài học',
   showFurigana: 'Furigana',
   allowTts: 'Đọc văn bản',
-  showTranslation: 'Bản dịch'
+  showTranslation: 'Ẩn / hiện bản dịch',
+  showTranslationsByDefault: 'Mặc định hiện bản dịch'
 };

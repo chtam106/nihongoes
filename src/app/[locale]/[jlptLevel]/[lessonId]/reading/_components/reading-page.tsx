@@ -57,10 +57,14 @@ type PassageCardProps = {
 function PassageCard({ passage }: PassageCardProps) {
   const { locale, t } = useTranslation();
   const [preferences] = useUserPreferences();
-  const [showTranslation, setShowTranslation] = useState(false);
+  const [showTranslation, setShowTranslation] = useState(preferences.showTranslationsByDefault);
 
   return (
-    <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
+    <Paper
+      key={String(preferences.showTranslationsByDefault)}
+      elevation={0}
+      sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}
+    >
       <Stack
         direction="row"
         spacing={1}
