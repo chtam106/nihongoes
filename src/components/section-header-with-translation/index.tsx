@@ -37,13 +37,16 @@ export function SectionHeaderWithTranslationToggle({
         component="button"
         type="button"
         variant="body2"
-        underline="hover"
+        underline="none"
         onClick={onToggle}
         sx={{
           flex: '0 0 auto',
           flexShrink: 0,
           lineHeight: 1.66,
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          textDecoration: 'none',
+          '&:hover': { textDecoration: 'none' },
+          '&:active': { textDecoration: 'none' }
         }}
       >
         {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}

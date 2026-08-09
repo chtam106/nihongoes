@@ -1,14 +1,20 @@
 import { STORAGE_PREFIX } from '@/constants/site.ts';
-import { usePersistentState } from '@/utils/use-persistent-state.ts';
+import { readPersistedValue, usePersistentState } from '@/utils/use-persistent-state.ts';
 
 export type UserPreferences = {
   showScrollToTop: boolean;
   showSectionNav: boolean;
+  showFurigana: boolean;
+  allowTts: boolean;
+  showTranslation: boolean;
 };
 
 export const DEFAULT_USER_PREFERENCES: UserPreferences = {
   showScrollToTop: true,
-  showSectionNav: true
+  showSectionNav: true,
+  showFurigana: true,
+  allowTts: true,
+  showTranslation: true
 };
 
 const USER_PREFERENCES_KEY = `${STORAGE_PREFIX}-user-preferences`;
@@ -28,8 +34,26 @@ function sanitizeUserPreferences(value: unknown): UserPreferences {
     showSectionNav:
       typeof record.showSectionNav === 'boolean'
         ? record.showSectionNav
-        : DEFAULT_USER_PREFERENCES.showSectionNav
+        : DEFAULT_USER_PREFERENCES.showSectionNav,
+    showFurigana:
+      typeof record.showFurigana === 'boolean'
+        ? record.showFurigana
+        : DEFAULT_USER_PREFERENCES.showFurigana,
+    allowTts:
+      typeof record.allowTts === 'boolean' ? record.allowTts : DEFAULT_USER_PREFERENCES.allowTts,
+    showTranslation:
+      typeof record.showTranslation === 'boolean'
+        ? record.showTranslation
+        : DEFAULT_USER_PREFERENCES.showTranslation
   };
+}
+
+export function readUserPreferences(): UserPreferences {
+  return readPersistedValue(
+    USER_PREFERENCES_KEY,
+    DEFAULT_USER_PREFERENCES,
+    sanitizeUserPreferences
+  );
 }
 
 export function useUserPreferences() {

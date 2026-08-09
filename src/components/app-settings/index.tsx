@@ -49,8 +49,9 @@ const CHECKBOX_LABEL_SX = {
 
 export function AppSettings() {
   const { t } = useTranslation();
-  const speechSupported = useSpeechSupported();
   const [preferences, setPreferences] = useUserPreferences();
+  const speechSupported = useSpeechSupported();
+  const showAudioControls = speechSupported && preferences.allowTts;
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>(() => getJapaneseVoices());
   const [voiceURI, setVoiceURI] = useState<string>(() => getPreferredVoiceURI() ?? '');
@@ -88,8 +89,6 @@ export function AppSettings() {
     ? voiceURI
     : defaultVoiceURI;
 
-  const showAudio = speechSupported;
-
   return (
     <>
       <IconButton
@@ -112,48 +111,54 @@ export function AppSettings() {
             {t('settings.title')}
           </Typography>
 
-          {showAudio && (
-            <Stack spacing={1.5}>
-              <FormControl size="small" fullWidth disabled={voices.length === 0}>
-                <InputLabel id="app-settings-voice-label">{t('audio.voice')}</InputLabel>
-                <Select
-                  labelId="app-settings-voice-label"
-                  label={t('audio.voice')}
-                  value={selectedVoice}
-                  onChange={(event) => handleVoiceChange(String(event.target.value))}
-                >
-                  <MenuItem value="">{t('audio.auto')}</MenuItem>
-                  {voices.map((voice) => (
-                    <MenuItem key={voice.voiceURI} value={voice.voiceURI}>
-                      {voice.name}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+          <Stack spacing={0.5} sx={{ alignItems: 'flex-start', width: '100%' }}>
+            {speechSupported && (
+              <FormControlLabel
+                sx={CHECKBOX_LABEL_SX}
+                control={
+                  <Checkbox
+                    size="small"
+                    checked={preferences.allowTts}
+                    onChange={(_event, checked) => {
+                      if (!checked) {
+                        cancelSpeech();
+                      }
+                      setPreferences({ ...preferences, allowTts: checked });
+                    }}
+                  />
+                }
+                label={t('settings.allowTts')}
+              />
+            )}
+            <FormControlLabel
+              sx={CHECKBOX_LABEL_SX}
+              control={
+                <Checkbox
+                  size="small"
+                  checked={preferences.showTranslation}
+                  onChange={(_event, checked) =>
+                    setPreferences({ ...preferences, showTranslation: checked })
+                  }
+                />
+              }
+              label={t('settings.showTranslation')}
+            />
+            <FormControlLabel
+              sx={CHECKBOX_LABEL_SX}
+              control={
+                <Checkbox
+                  size="small"
+                  checked={preferences.showFurigana}
+                  onChange={(_event, checked) =>
+                    setPreferences({ ...preferences, showFurigana: checked })
+                  }
+                />
+              }
+              label={t('settings.showFurigana')}
+            />
+          </Stack>
 
-              <FormControl size="small" fullWidth>
-                <InputLabel id="app-settings-speed-label">{t('audio.speed')}</InputLabel>
-                <Select
-                  labelId="app-settings-speed-label"
-                  label={t('audio.speed')}
-                  value={rate}
-                  onChange={(event) => handleRateChange(Number(event.target.value))}
-                >
-                  {SPEED_OPTIONS.map((speed) => (
-                    <MenuItem key={speed} value={speed}>
-                      {speed}x
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
-
-              {voices.length === 0 && (
-                <Typography color="text.secondary">{t('audio.noVoices')}</Typography>
-              )}
-            </Stack>
-          )}
-
-          {showAudio && <Divider />}
+          <Divider />
 
           <Stack spacing={0.5} sx={{ alignItems: 'flex-start', width: '100%' }}>
             <FormControlLabel
@@ -183,6 +188,50 @@ export function AppSettings() {
               label={t('settings.showSectionNav')}
             />
           </Stack>
+
+          {showAudioControls && (
+            <>
+              <Divider />
+              <Stack spacing={1.5}>
+                <FormControl size="small" fullWidth disabled={voices.length === 0}>
+                  <InputLabel id="app-settings-voice-label">{t('audio.voice')}</InputLabel>
+                  <Select
+                    labelId="app-settings-voice-label"
+                    label={t('audio.voice')}
+                    value={selectedVoice}
+                    onChange={(event) => handleVoiceChange(String(event.target.value))}
+                  >
+                    <MenuItem value="">{t('audio.auto')}</MenuItem>
+                    {voices.map((voice) => (
+                      <MenuItem key={voice.voiceURI} value={voice.voiceURI}>
+                        {voice.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+
+                <FormControl size="small" fullWidth>
+                  <InputLabel id="app-settings-speed-label">{t('audio.speed')}</InputLabel>
+                  <Select
+                    labelId="app-settings-speed-label"
+                    label={t('audio.speed')}
+                    value={rate}
+                    onChange={(event) => handleRateChange(Number(event.target.value))}
+                  >
+                    {SPEED_OPTIONS.map((speed) => (
+                      <MenuItem key={speed} value={speed}>
+                        {speed}x
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+
+                {voices.length === 0 && (
+                  <Typography color="text.secondary">{t('audio.noVoices')}</Typography>
+                )}
+              </Stack>
+            </>
+          )}
         </Stack>
       </Popover>
     </>

@@ -14,6 +14,7 @@ import {
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
@@ -55,6 +56,7 @@ type PassageCardProps = {
 
 function PassageCard({ passage }: PassageCardProps) {
   const { locale, t } = useTranslation();
+  const [preferences] = useUserPreferences();
   const [showTranslation, setShowTranslation] = useState(false);
 
   return (
@@ -67,14 +69,16 @@ function PassageCard({ passage }: PassageCardProps) {
         <Heading scale="subsection" component="h2">
           {passage.title[locale]}
         </Heading>
-        <Button
-          size="small"
-          startIcon={<TranslateOutlinedIcon />}
-          onClick={() => setShowTranslation((previous) => !previous)}
-          sx={{ flexShrink: 0 }}
-        >
-          {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
-        </Button>
+        {preferences.showTranslation && (
+          <Button
+            size="small"
+            startIcon={<TranslateOutlinedIcon />}
+            onClick={() => setShowTranslation((previous) => !previous)}
+            sx={{ flexShrink: 0 }}
+          >
+            {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
+          </Button>
+        )}
       </Stack>
 
       <Stack spacing={1.5}>

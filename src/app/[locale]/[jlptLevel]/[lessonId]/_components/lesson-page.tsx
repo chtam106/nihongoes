@@ -40,6 +40,7 @@ import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
@@ -155,6 +156,7 @@ function ConversationSceneBlock({
   showTranslation,
   onToggleTranslation
 }: ConversationSceneBlockProps) {
+  const [preferences] = useUserPreferences();
   const speakerById = new Map(scene.speakers.map((speaker) => [speaker.id, speaker]));
   const turns = groupConversationTurns(
     scene.lines,
@@ -162,25 +164,33 @@ function ConversationSceneBlock({
     colorMap,
     DIALOGUE_SPEAKER_COLORS[0]
   );
+  const revealTranslation = showTranslation;
 
   return (
     <Box>
-      <SectionHeaderWithTranslationToggle
-        showTranslation={showTranslation}
-        onToggle={onToggleTranslation}
-        title={
-          <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
-            {scene.title[locale]}
-          </Heading>
-        }
-      />
+      {preferences.showTranslation && (
+        <SectionHeaderWithTranslationToggle
+          showTranslation={showTranslation}
+          onToggle={onToggleTranslation}
+          title={
+            <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
+              {scene.title[locale]}
+            </Heading>
+          }
+        />
+      )}
+      {!preferences.showTranslation && (
+        <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
+          {scene.title[locale]}
+        </Heading>
+      )}
       <Stack spacing={1}>
         {turns.map((turn, index) => (
           <ConversationTurnGroup
             key={`${scene.id}-${turn.speakerId}-${index}`}
             turn={turn}
             locale={locale}
-            showTranslation={showTranslation}
+            showTranslation={revealTranslation}
           />
         ))}
       </Stack>
