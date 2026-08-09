@@ -109,11 +109,7 @@ function DialogueExampleGroup({ examples }: DialogueExampleGroupProps) {
         />
       )}
       {!preferences.showTranslation && (
-        <Typography
-          variant="body2"
-          color="text.secondary"
-          sx={{ fontWeight: 600, mb: 1.5 }}
-        >
+        <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600, mb: 1.5 }}>
           {t('course.grammarMiniDialogue')}
         </Typography>
       )}

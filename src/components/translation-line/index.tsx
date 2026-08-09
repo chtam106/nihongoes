@@ -32,23 +32,23 @@ export function TranslationLine({ translation }: TranslationLineProps) {
     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
       {showToggle && (
         <Link
-        component="button"
-        type="button"
-        variant="body2"
-        underline="none"
-        onClick={(event) => {
-          event.stopPropagation();
-          setShown((previous) => !previous);
-        }}
-        onKeyDown={stopKeyPropagation}
-        sx={{
-          lineHeight: 1.66,
-          textDecoration: 'none',
-          '&:hover': { textDecoration: 'none' },
-          '&:active': { textDecoration: 'none' }
-        }}
-      >
-        {shown ? t('course.hideTranslation') : t('course.showTranslation')}
+          component="button"
+          type="button"
+          variant="body2"
+          underline="none"
+          onClick={(event) => {
+            event.stopPropagation();
+            setShown((previous) => !previous);
+          }}
+          onKeyDown={stopKeyPropagation}
+          sx={{
+            lineHeight: 1.66,
+            textDecoration: 'none',
+            '&:hover': { textDecoration: 'none' },
+            '&:active': { textDecoration: 'none' }
+          }}
+        >
+          {shown ? t('course.hideTranslation') : t('course.showTranslation')}
         </Link>
       )}
       {shown && (
