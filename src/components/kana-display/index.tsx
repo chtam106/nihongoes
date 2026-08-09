@@ -26,12 +26,11 @@ export function KanaDisplay({ cell, variant = 'option' }: KanaDisplayProps) {
   }
 
   if (variant === 'chart') {
-    // Small on mobile, larger on desktop via CSS breakpoints (matches the old
-    // h6/h4 sizes) - no useMediaQuery, so no hydration size flash.
+    // Small on mobile, larger on desktop via CSS breakpoints - no useMediaQuery flash.
     return (
       <Typography
         component="span"
-        sx={{ ...kanaFontSx, fontSize: { xs: '1.25rem', md: '2.125rem' }, lineHeight: 1.1 }}
+        sx={{ ...kanaFontSx, fontSize: { xs: '1.25rem', md: '1.75rem' }, lineHeight: 1.1 }}
       >
         {cell.char}
       </Typography>
