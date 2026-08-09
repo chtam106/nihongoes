@@ -50,6 +50,36 @@ export const appTheme = createTheme({
         }
       }
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            backgroundColor: 'transparent'
+          },
+          '&:active': {
+            backgroundColor: 'transparent'
+          }
+        }
+      }
+    },
+    MuiSwitch: {
+      styleOverrides: {
+        switchBase: {
+          '&:hover': {
+            backgroundColor: 'transparent'
+          },
+          '&:active': {
+            backgroundColor: 'transparent'
+          },
+          '&.Mui-checked:hover': {
+            backgroundColor: 'transparent'
+          },
+          '&.Mui-checked:active': {
+            backgroundColor: 'transparent'
+          }
+        }
+      }
+    },
     MuiContainer: {
       styleOverrides: {
         root: ({ ownerState, theme: muiTheme }) =>

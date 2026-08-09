@@ -40,9 +40,12 @@ const CHECKBOX_LABEL_SX = {
   ml: 0,
   pl: 0,
   my: 0,
+  width: '100%',
   alignItems: 'center',
+  justifyContent: 'flex-start',
   '& .MuiCheckbox-root': {
-    py: 0.25
+    py: 0.25,
+    ml: '-9px'
   }
 } as const;
 
@@ -164,7 +167,7 @@ export function AppSettings() {
 
           {showAudio && <Divider />}
 
-          <Stack spacing={0.25}>
+          <Stack spacing={0.25} sx={{ alignItems: 'flex-start', width: '100%' }}>
             <FormControlLabel
               sx={CHECKBOX_LABEL_SX}
               control={
