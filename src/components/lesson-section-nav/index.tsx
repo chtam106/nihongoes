@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
-import { Box, ClickAwayListener, Stack, Typography } from '@mui/material';
+import { Box, Backdrop, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import type { Lesson } from '@/constants/courses/index.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -242,16 +242,23 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
   }
 
   return (
-    <Box
-      sx={{
-        position: 'fixed',
-        right: 0,
-        top: '50%',
-        transform: 'translateY(-50%)',
-        zIndex: (theme) => theme.zIndex.fab
-      }}
-    >
-      <ClickAwayListener onClickAway={closeMenu}>
+    <>
+      <Backdrop
+        open={open}
+        onClick={closeMenu}
+        invisible
+        sx={{ zIndex: (theme) => theme.zIndex.fab - 1 }}
+      />
+
+      <Box
+        sx={{
+          position: 'fixed',
+          right: 0,
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: (theme) => theme.zIndex.fab
+        }}
+      >
         <Box
           sx={{
             display: 'grid',
@@ -346,7 +353,7 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
             </Box>
           </Stack>
         </Box>
-      </ClickAwayListener>
-    </Box>
+      </Box>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import {
   Button,
+  Checkbox,
   Divider,
   FormControl,
   FormControlLabel,
@@ -14,7 +15,6 @@ import {
   Popover,
   Select,
   Stack,
-  Switch,
   Typography
 } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -35,13 +35,14 @@ import {
 const SPEED_OPTIONS = [0.6, 0.75, 0.9, 1, 1.15];
 const SAMPLE_TEXT = 'こんにちは。はじめまして。';
 
-const TOGGLE_LABEL_SX = {
+const CHECKBOX_LABEL_SX = {
   mx: 0,
   ml: 0,
   pl: 0,
+  my: 0,
   alignItems: 'center',
-  '& .MuiSwitch-root': {
-    ml: '-9px'
+  '& .MuiCheckbox-root': {
+    py: 0.25
   }
 } as const;
 
@@ -163,11 +164,12 @@ export function AppSettings() {
 
           {showAudio && <Divider />}
 
-          <Stack spacing={0.5}>
+          <Stack spacing={0.25}>
             <FormControlLabel
-              sx={TOGGLE_LABEL_SX}
+              sx={CHECKBOX_LABEL_SX}
               control={
-                <Switch
+                <Checkbox
+                  size="small"
                   checked={preferences.showScrollToTop}
                   onChange={(_event, checked) =>
                     setPreferences({ ...preferences, showScrollToTop: checked })
@@ -177,9 +179,10 @@ export function AppSettings() {
               label={t('settings.showScrollToTop')}
             />
             <FormControlLabel
-              sx={TOGGLE_LABEL_SX}
+              sx={CHECKBOX_LABEL_SX}
               control={
-                <Switch
+                <Checkbox
+                  size="small"
                   checked={preferences.showSectionNav}
                   onChange={(_event, checked) =>
                     setPreferences({ ...preferences, showSectionNav: checked })

@@ -400,9 +400,8 @@ function LessonPage({ level }: LessonPageProps) {
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
             <Typography variant="body1">{lesson.focus[locale]}</Typography>
+            <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
           </Paper>
-
-          <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
         </Box>
 
         <VocabularySection lesson={lesson} />

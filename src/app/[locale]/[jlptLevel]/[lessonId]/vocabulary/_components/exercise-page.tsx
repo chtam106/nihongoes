@@ -2,7 +2,7 @@
 
 import { type ChangeEvent, type MouseEvent } from 'react';
 import { useParams } from 'next/navigation';
-import { FormControlLabel, Stack, Switch, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Checkbox, FormControlLabel, Stack, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import {
   getLesson,
   lessonHasReferenceQuizVocab,
@@ -102,8 +102,9 @@ function VocabExercise({ lesson }: VocabExerciseProps) {
 
           {showReferenceToggle && (
             <FormControlLabel
+              sx={{ mx: 0, ml: 0, pl: 0, my: 0, alignItems: 'center' }}
               control={
-                <Switch
+                <Checkbox
                   size="small"
                   checked={prefs.includeReference}
                   onChange={handleReferenceChange}
