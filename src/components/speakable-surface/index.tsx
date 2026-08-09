@@ -5,7 +5,7 @@ import type { SxProps, Theme } from '@mui/material';
 import { Paper } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
-import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 type SpeakableSurfaceProps = {
@@ -22,7 +22,7 @@ type SpeakableSurfaceProps = {
  */
 export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) {
   const { t } = useTranslation();
-  const canSpeak = useSpeechSupported();
+  const canSpeak = useSpeechEnabled();
   const spokenText = formatJapaneseDisplay(text);
   const sxOverrides = Array.isArray(sx) ? sx : [sx];
   const handleSpeak = useCallback(() => speakJapanese(spokenText), [spokenText]);

@@ -8,7 +8,7 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
@@ -22,7 +22,7 @@ type GrammarQuizProps = {
 /** The endless fill-in-the-blank panel: a sentence with one grammar gap + choices. */
 function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
   const { t } = useTranslation();
-  const canSpeak = useSpeechSupported();
+  const canSpeak = useSpeechEnabled();
   const { question, wrongIds, answeredCorrectly, handleSelect } = useGrammarQuiz({
     lesson,
     locale

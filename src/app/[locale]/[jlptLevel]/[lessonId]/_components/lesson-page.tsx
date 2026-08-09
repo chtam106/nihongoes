@@ -40,6 +40,7 @@ import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
@@ -155,6 +156,7 @@ function ConversationSceneBlock({
   showTranslation,
   onToggleTranslation
 }: ConversationSceneBlockProps) {
+  const [preferences] = useUserPreferences();
   const speakerById = new Map(scene.speakers.map((speaker) => [speaker.id, speaker]));
   const turns = groupConversationTurns(
     scene.lines,
@@ -162,25 +164,33 @@ function ConversationSceneBlock({
     colorMap,
     DIALOGUE_SPEAKER_COLORS[0]
   );
+  const revealTranslation = showTranslation;
 
   return (
     <Box>
-      <SectionHeaderWithTranslationToggle
-        showTranslation={showTranslation}
-        onToggle={onToggleTranslation}
-        title={
-          <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
-            {scene.title[locale]}
-          </Heading>
-        }
-      />
+      {preferences.showTranslation && (
+        <SectionHeaderWithTranslationToggle
+          showTranslation={showTranslation}
+          onToggle={onToggleTranslation}
+          title={
+            <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
+              {scene.title[locale]}
+            </Heading>
+          }
+        />
+      )}
+      {!preferences.showTranslation && (
+        <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
+          {scene.title[locale]}
+        </Heading>
+      )}
       <Stack spacing={1}>
         {turns.map((turn, index) => (
           <ConversationTurnGroup
             key={`${scene.id}-${turn.speakerId}-${index}`}
             turn={turn}
             locale={locale}
-            showTranslation={showTranslation}
+            showTranslation={revealTranslation}
           />
         ))}
       </Stack>
@@ -190,6 +200,7 @@ function ConversationSceneBlock({
 
 function ConversationSection({ lesson }: ConversationSectionProps) {
   const { locale, t } = useTranslation();
+  const [preferences] = useUserPreferences();
   const [showTranslationsByScene, setShowTranslationsByScene] = useState<Record<string, boolean>>(
     {}
   );
@@ -199,10 +210,14 @@ function ConversationSection({ lesson }: ConversationSectionProps) {
   }
 
   const toggleSceneTranslation = (sceneId: string) => {
-    setShowTranslationsByScene((previous) => ({
-      ...previous,
-      [sceneId]: !previous[sceneId]
-    }));
+    setShowTranslationsByScene((previous) => {
+      const current = previous[sceneId] ?? preferences.showTranslationsByDefault;
+
+      return {
+        ...previous,
+        [sceneId]: !current
+      };
+    });
   };
 
   return (
@@ -212,7 +227,7 @@ function ConversationSection({ lesson }: ConversationSectionProps) {
         <Heading component="h2">{t('course.conversationHeading')}</Heading>
       </Stack>
 
-      <Stack spacing={2}>
+      <Stack spacing={2} key={String(preferences.showTranslationsByDefault)}>
         {lesson.conversation.map((scene) => {
           const colorMap = buildSpeakerColorMap(scene.speakers);
 
@@ -222,7 +237,9 @@ function ConversationSection({ lesson }: ConversationSectionProps) {
                 scene={scene}
                 locale={locale}
                 colorMap={colorMap}
-                showTranslation={Boolean(showTranslationsByScene[scene.id])}
+                showTranslation={
+                  showTranslationsByScene[scene.id] ?? preferences.showTranslationsByDefault
+                }
                 onToggleTranslation={() => toggleSceneTranslation(scene.id)}
               />
             </Paper>

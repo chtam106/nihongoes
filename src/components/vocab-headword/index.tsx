@@ -1,6 +1,9 @@
+'use client';
+
 import type { ReactNode } from 'react';
 import { Typography, type TypographyProps } from '@mui/material';
 import type { VocabItem } from '@/types/course.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 
 type VocabHeadwordProps = {
@@ -10,14 +13,17 @@ type VocabHeadwordProps = {
 
 /** Vocab card headword with authored furigana when the word has a kanji form. */
 export function VocabHeadword({ item, variant = 'subtitle1' }: VocabHeadwordProps) {
+  const [preferences] = useUserPreferences();
   const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
 
   let display: ReactNode = item.kana;
 
   if (hasKanji && item.kanji) {
-    display = item.ruby?.length
-      ? renderJapaneseText(item.kanji, item.ruby)
-      : `${item.kanji}（${item.kana}）`;
+    if (preferences.showFurigana && item.ruby?.length) {
+      display = renderJapaneseText(item.kanji, item.ruby);
+    } else {
+      display = item.kanji;
+    }
   }
 
   return (

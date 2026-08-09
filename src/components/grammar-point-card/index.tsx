@@ -13,6 +13,7 @@ import { TranslationLine } from '@/components/translation-line';
 import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
 type ExampleRowProps = {
@@ -21,6 +22,7 @@ type ExampleRowProps = {
 
 function ExampleRow({ example }: ExampleRowProps) {
   const { locale } = useTranslation();
+  const [preferences] = useUserPreferences();
 
   return (
     <SpeakableSurface
@@ -40,7 +42,10 @@ function ExampleRow({ example }: ExampleRowProps) {
         lang="ja"
         sx={{ fontWeight: 500 }}
       />
-      <TranslationLine translation={example.meaning[locale]} />
+      <TranslationLine
+        key={String(preferences.showTranslationsByDefault)}
+        translation={example.meaning[locale]}
+      />
     </SpeakableSurface>
   );
 }
@@ -82,20 +87,32 @@ type DialogueExampleGroupProps = {
 
 function DialogueExampleGroup({ examples }: DialogueExampleGroupProps) {
   const { t, locale } = useTranslation();
-  const [showTranslation, setShowTranslation] = useState(false);
+  const [preferences] = useUserPreferences();
+  const [showTranslation, setShowTranslation] = useState(preferences.showTranslationsByDefault);
   const speakerLabels = [t('course.grammarDialogueSpeakerA'), t('course.grammarDialogueSpeakerB')];
+  const revealTranslation = showTranslation;
 
   return (
-    <Box sx={[subtleSurfaceSx, { px: 1.5, py: 1.5 }]}>
-      <SectionHeaderWithTranslationToggle
-        showTranslation={showTranslation}
-        onToggle={() => setShowTranslation((previous) => !previous)}
-        title={
-          <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
-            {t('course.grammarMiniDialogue')}
-          </Typography>
-        }
-      />
+    <Box
+      key={String(preferences.showTranslationsByDefault)}
+      sx={[subtleSurfaceSx, { px: 1.5, py: 1.5 }]}
+    >
+      {preferences.showTranslation && (
+        <SectionHeaderWithTranslationToggle
+          showTranslation={showTranslation}
+          onToggle={() => setShowTranslation((previous) => !previous)}
+          title={
+            <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600 }}>
+              {t('course.grammarMiniDialogue')}
+            </Typography>
+          }
+        />
+      )}
+      {!preferences.showTranslation && (
+        <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 600, mb: 1.5 }}>
+          {t('course.grammarMiniDialogue')}
+        </Typography>
+      )}
       <Stack spacing={1.5}>
         {examples.map((example, lineIndex) => {
           const speakerIndex = lineIndex % speakerLabels.length;
@@ -133,7 +150,7 @@ function DialogueExampleGroup({ examples }: DialogueExampleGroupProps) {
                 </SpeakableSurface>
               }
               translation={
-                showTranslation && (
+                revealTranslation && (
                   <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.35 }}>
                     {example.meaning[locale]}
                   </Typography>

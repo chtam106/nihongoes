@@ -138,6 +138,10 @@ ruby rt {
   user-select: none;
 }
 
+html[data-show-furigana='false'] ruby rt {
+  display: none;
+}
+
 code,
 .counter {
   font-family: var(--mono);

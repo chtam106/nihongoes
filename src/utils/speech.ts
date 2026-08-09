@@ -7,6 +7,7 @@ import {
 } from 'react';
 import { STORAGE_PREFIX } from '@/constants/site.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { readUserPreferences, useUserPreferences } from '@/utils/user-preferences.ts';
 
 const VOICE_STORAGE_KEY = `${STORAGE_PREFIX}-voice`;
 const RATE_STORAGE_KEY = `${STORAGE_PREFIX}-rate`;
@@ -26,6 +27,14 @@ const subscribeSpeechSupport = () => () => {};
  */
 export function useSpeechSupported(): boolean {
   return useSyncExternalStore(subscribeSpeechSupport, isSpeechSupported, () => false);
+}
+
+/** Browser TTS is available and the user has not disabled it in settings. */
+export function useSpeechEnabled(): boolean {
+  const supported = useSpeechSupported();
+  const [preferences] = useUserPreferences();
+
+  return supported && preferences.allowTts;
 }
 
 export function getJapaneseVoices(): SpeechSynthesisVoice[] {
@@ -97,7 +106,7 @@ function resolveVoice(): SpeechSynthesisVoice | undefined {
 }
 
 export function speakJapanese(text: string, rate = getSpeechRate()): void {
-  if (!isSpeechSupported()) {
+  if (!isSpeechSupported() || !readUserPreferences().allowTts) {
     return;
   }
 

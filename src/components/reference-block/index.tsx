@@ -12,7 +12,7 @@ import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
-import { speakJapanese, useSpeechClickHandler, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 
 type SpeakableTableTextProps = {
   text: string;
@@ -22,7 +22,7 @@ type SpeakableTableTextProps = {
 /** Clickable Japanese text for table cells - no card/button chrome. */
 function SpeakableTableText({ text, children }: SpeakableTableTextProps) {
   const { t } = useTranslation();
-  const canSpeak = useSpeechSupported();
+  const canSpeak = useSpeechEnabled();
   const spokenText = formatJapaneseDisplay(text);
   const handleSpeak = useCallback(() => speakJapanese(spokenText), [spokenText]);
   const speechClick = useSpeechClickHandler(handleSpeak);
