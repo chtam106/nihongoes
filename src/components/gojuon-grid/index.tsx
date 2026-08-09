@@ -1,8 +1,11 @@
+'use client';
+
 import type { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import type { GridRow } from '@/constants/gojuon.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { useSpeechEnabled } from '@/utils/speech.ts';
 
 type CellButtonProps = {
   ariaLabel: string;
@@ -13,18 +16,24 @@ type CellButtonProps = {
 
 /** Interactive chart cell: a tap/keyboard target that plays audio, with romaji below. */
 export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButtonProps) {
+  const canSpeak = useSpeechEnabled();
+
   return (
     <Box
-      role="button"
-      tabIndex={0}
-      aria-label={ariaLabel}
-      onClick={onActivate}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          onActivate();
-        }
-      }}
+      role={canSpeak ? 'button' : undefined}
+      tabIndex={canSpeak ? 0 : undefined}
+      aria-label={canSpeak ? ariaLabel : undefined}
+      onClick={canSpeak ? onActivate : undefined}
+      onKeyDown={
+        canSpeak
+          ? (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onActivate();
+              }
+            }
+          : undefined
+      }
       sx={[
         interactiveSurfaceSx,
         {
@@ -37,7 +46,7 @@ export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButt
           justifyContent: 'center',
           gap: 0.25,
           bgcolor: 'background.paper',
-          cursor: 'pointer',
+          cursor: canSpeak ? 'pointer' : undefined,
           '&:focus-visible': {
             outline: '2px solid',
             outlineColor: 'primary.main',
@@ -88,14 +97,15 @@ export function GojuonGrid<T>({
         overflowX: 'auto',
         pt: 0.5,
         pb: 2,
-        px: 0.5
+        pr: 0.5
       }}
     >
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: `28px repeat(${columnCount}, minmax(${minCellWidth}px, ${maxCellWidth}px))`,
-          gap: 0.5,
+          gridTemplateColumns: `auto repeat(${columnCount}, minmax(${minCellWidth}px, ${maxCellWidth}px))`,
+          columnGap: { xs: 1, md: 1.5 },
+          rowGap: { xs: 1, md: 1.5 },
           width: 'fit-content',
           maxWidth: '100%'
         }}
@@ -114,7 +124,8 @@ export function GojuonGrid<T>({
                 ...HEADER_LABEL_SX,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'flex-start',
+                pr: 0.5
               }}
             >
               {row.label}

@@ -7,6 +7,7 @@ import {
 } from 'react';
 import { STORAGE_PREFIX } from '@/constants/site.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { stopKanaAudio } from '@/utils/kana-audio.ts';
 import { readUserPreferences, useUserPreferences } from '@/utils/user-preferences.ts';
 
 const VOICE_STORAGE_KEY = `${STORAGE_PREFIX}-voice`;
@@ -138,6 +139,8 @@ export function subscribeVoices(callback: () => void): () => void {
 }
 
 export function cancelSpeech(): void {
+  stopKanaAudio();
+
   if (isSpeechSupported()) {
     window.speechSynthesis.cancel();
   }
