@@ -97,15 +97,14 @@ export function GojuonGrid<T>({
         overflowX: 'auto',
         pt: 0.5,
         pb: 2,
-        pr: 0.5
+        px: 0.5
       }}
     >
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: `auto repeat(${columnCount}, minmax(${minCellWidth}px, ${maxCellWidth}px))`,
-          columnGap: { xs: 1, md: 1.5 },
-          rowGap: { xs: 1, md: 1.5 },
+          gridTemplateColumns: `28px repeat(${columnCount}, minmax(${minCellWidth}px, ${maxCellWidth}px))`,
+          gap: 0.5,
           width: 'fit-content',
           maxWidth: '100%'
         }}
@@ -124,8 +123,7 @@ export function GojuonGrid<T>({
                 ...HEADER_LABEL_SX,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start',
-                pr: 0.5
+                justifyContent: 'center'
               }}
             >
               {row.label}
