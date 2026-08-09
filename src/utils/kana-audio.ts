@@ -1,4 +1,5 @@
 import { getKanaAudioLocalPath, kanaRomajiToAudioIndex } from '@/constants/kana-audio-map.ts';
+import { readUserPreferences } from '@/utils/user-preferences.ts';
 
 const WRONG_ANSWER_AUDIO_PATH = '/audio/wrong.m4a';
 
@@ -101,7 +102,15 @@ export function playWrongAnswerSound() {
   });
 }
 
+export function stopKanaAudio(): void {
+  stopPlayback();
+}
+
 export function playKanaAudio(romaji: string, char: string) {
+  if (!readUserPreferences().allowTts) {
+    return;
+  }
+
   if (!(romaji in kanaRomajiToAudioIndex)) {
     speakJapaneseFallback(char);
     return;

@@ -1,8 +1,11 @@
+'use client';
+
 import type { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import type { GridRow } from '@/constants/gojuon.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { useSpeechEnabled } from '@/utils/speech.ts';
 
 type CellButtonProps = {
   ariaLabel: string;
@@ -13,18 +16,24 @@ type CellButtonProps = {
 
 /** Interactive chart cell: a tap/keyboard target that plays audio, with romaji below. */
 export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButtonProps) {
+  const canSpeak = useSpeechEnabled();
+
   return (
     <Box
-      role="button"
-      tabIndex={0}
-      aria-label={ariaLabel}
-      onClick={onActivate}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          onActivate();
-        }
-      }}
+      role={canSpeak ? 'button' : undefined}
+      tabIndex={canSpeak ? 0 : undefined}
+      aria-label={canSpeak ? ariaLabel : undefined}
+      onClick={canSpeak ? onActivate : undefined}
+      onKeyDown={
+        canSpeak
+          ? (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onActivate();
+              }
+            }
+          : undefined
+      }
       sx={[
         interactiveSurfaceSx,
         {
@@ -37,7 +46,7 @@ export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButt
           justifyContent: 'center',
           gap: 0.25,
           bgcolor: 'background.paper',
-          cursor: 'pointer',
+          cursor: canSpeak ? 'pointer' : undefined,
           '&:focus-visible': {
             outline: '2px solid',
             outlineColor: 'primary.main',
