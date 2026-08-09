@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { AlphabetChartPage } from '@/components/alphabet-chart';
 import {
   hiraganaChartRows,
-  hiraganaChouonRules,
+  hiraganaChouonExamples,
   hiraganaYoonChartRows
 } from '@/constants/alphabet-charts.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -28,7 +28,7 @@ export default async function Page({ params }: PageProps) {
       description={t('alphabet.hiraganaPageDescription')}
       chartRows={hiraganaChartRows}
       yoonChartRows={hiraganaYoonChartRows}
-      chouonRules={hiraganaChouonRules}
+      chouonExamples={hiraganaChouonExamples}
     />
   );
 }
