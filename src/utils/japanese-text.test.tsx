@@ -15,9 +15,13 @@ const yamadaJimushoRuby = [
 ] as const;
 
 describe('renderJapaneseText', () => {
-  it('returns plain text when there is no ruby data', () => {
-    expect(renderJapaneseText('hello world')).toBe('hello world');
-    expect(renderJapaneseText('山田さんは事務所です。')).toBe('山田さんは事務所です。');
+  it('wraps plain text in lang="ja" when there is no ruby data', () => {
+    expect(renderNode(<>{renderJapaneseText('hello world')}</>)).toBe(
+      '<span lang="ja">hello world</span>'
+    );
+    expect(renderNode(<>{renderJapaneseText('山田さんは事務所です。')}</>)).toBe(
+      '<span lang="ja">山田さんは事務所です。</span>'
+    );
   });
 
   it('renders per-kanji ruby from authored segments', () => {
@@ -25,10 +29,10 @@ describe('renderJapaneseText', () => {
       <>{renderJapaneseText('山田さんは事務所です。', [...yamadaJimushoRuby])}</>
     );
 
-    expect(rendered).toContain('<ruby>山<rt style=');
-    expect(rendered).toContain('>やま</rt></ruby><ruby>田<rt style=');
-    expect(rendered).toContain('>だ</rt></ruby>さんは');
-    expect(rendered).toContain('<ruby>所<rt style=');
+    expect(rendered).toContain('<ruby lang="ja">山<rt style=');
+    expect(rendered).toContain('>やま</rt></ruby><ruby lang="ja">田<rt style=');
+    expect(rendered).toContain('>だ</rt></ruby><span lang="ja">さんは</span>');
+    expect(rendered).toContain('<ruby lang="ja">所<rt style=');
     expect(rendered.match(/<rt style=/g)?.length).toBe(5);
   });
 
@@ -37,8 +41,8 @@ describe('renderJapaneseText', () => {
       <>{renderJapaneseText('山田さんは 事務所です。', [...yamadaJimushoRuby])}</>
     );
 
-    expect(rendered).toContain('<ruby>山<rt style=');
-    expect(rendered).toContain('>しょ</rt></ruby>です。');
+    expect(rendered).toContain('<ruby lang="ja">山<rt style=');
+    expect(rendered).toContain('>しょ</rt></ruby><span lang="ja">です。</span>');
     expect(rendered.match(/<rt style=/g)?.length).toBe(5);
   });
 
@@ -47,7 +51,8 @@ describe('renderJapaneseText', () => {
       <>{renderJapaneseText('日本語', [{ base: '日', reading: 'に' }])}</>
     );
 
-    expect(rendered).toContain('<ruby>日<rt style="color:#1565c0">に</rt></ruby>本語');
+    expect(rendered).toContain('<ruby lang="ja">日<rt style="color:#1565c0">に</rt></ruby>');
+    expect(rendered).toContain('<span lang="ja">本語</span>');
   });
 
   it('alternates two furigana colors on consecutive kanji', () => {
@@ -60,8 +65,8 @@ describe('renderJapaneseText', () => {
       </>
     );
 
-    expect(rendered).toContain('<ruby>定<rt style="color:#1565c0">じょう</rt></ruby>');
-    expect(rendered).toContain('<ruby>規<rt style="color:#e65100">ぎ</rt></ruby>');
+    expect(rendered).toContain('<ruby lang="ja">定<rt style="color:#1565c0">じょう</rt></ruby>');
+    expect(rendered).toContain('<ruby lang="ja">規<rt style="color:#e65100">ぎ</rt></ruby>');
   });
 
   it('colors separated ruby segments each with the default blue tone', () => {
@@ -74,8 +79,9 @@ describe('renderJapaneseText', () => {
       </>
     );
 
-    expect(rendered).toContain('<ruby>日<rt style="color:#1565c0">に</rt></ruby>本');
-    expect(rendered).toContain('<ruby>人<rt style="color:#1565c0">じん</rt></ruby>');
+    expect(rendered).toContain('<ruby lang="ja">日<rt style="color:#1565c0">に</rt></ruby>');
+    expect(rendered).toContain('<span lang="ja">本</span>');
+    expect(rendered).toContain('<ruby lang="ja">人<rt style="color:#1565c0">じん</rt></ruby>');
   });
 
   it('can disable furigana colors explicitly', () => {
@@ -88,7 +94,7 @@ describe('renderJapaneseText', () => {
     );
 
     expect(rendered).toBe(
-      '<ruby>山<rt>やま</rt></ruby><ruby>田<rt>だ</rt></ruby>さんは<ruby>事<rt>じ</rt></ruby><ruby>務<rt>む</rt></ruby><ruby>所<rt>しょ</rt></ruby>です。'
+      '<ruby lang="ja">山<rt>やま</rt></ruby><ruby lang="ja">田<rt>だ</rt></ruby><span lang="ja">さんは</span><ruby lang="ja">事<rt>じ</rt></ruby><ruby lang="ja">務<rt>む</rt></ruby><ruby lang="ja">所<rt>しょ</rt></ruby><span lang="ja">です。</span>'
     );
   });
 
@@ -97,6 +103,6 @@ describe('renderJapaneseText', () => {
       <>{renderJapaneseText('こんにちは', [{ base: '今', reading: 'こん' }])}</>
     );
 
-    expect(rendered).toBe('こんにちは');
+    expect(rendered).toBe('<span lang="ja">こんにちは</span>');
   });
 });

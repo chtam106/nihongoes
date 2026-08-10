@@ -238,11 +238,13 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                           fontWeight: 600
                         }}
                       >
-                        <Box component="span">
+                        <Box component="span" lang="ja">
                           {renderJapaneseText(row.number!, row.numberRuby)}
                         </Box>
                         {row.jp && (
-                          <Box component="span">{renderJapaneseText(row.jp, row.ruby)}</Box>
+                          <Box component="span" lang="ja">
+                            {renderJapaneseText(row.jp, row.ruby)}
+                          </Box>
                         )}
                       </Typography>
                       <Typography variant="body1" sx={{ fontWeight: 500 }}>

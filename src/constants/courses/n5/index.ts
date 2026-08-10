@@ -2850,12 +2850,12 @@ export const n5Course: Course = {
           meaning: { en: '~th floor (counter)', vi: 'tầng thứ ~' }
         },
         {
-          kana: 'なんがい',
+          kana: 'なんかい',
           kanji: '何階',
-          romaji: 'nangai',
+          romaji: 'nankai',
           ruby: [
             { base: '何', reading: 'なん' },
-            { base: '階', reading: 'がい' }
+            { base: '階', reading: 'かい' }
           ],
           meaning: { en: 'what floor', vi: 'tầng mấy' }
         },
@@ -3401,7 +3401,7 @@ export const n5Course: Course = {
       reference: [
         {
           kind: 'list',
-          title: { en: 'Department store floors', vi: 'Sơ đồ tầng đepaato' },
+          title: { en: 'Department store floors', vi: 'Sơ đồ tầng cửa hàng bách hóa' },
           layout: 'stacked',
           intro: {
             en: 'Typical floor layout in a Japanese department store (デパート).',
@@ -3511,7 +3511,7 @@ export const n5Course: Course = {
             {
               number: '3階',
               numberMeaning: { en: '3rd floor', vi: 'Tầng 3' },
-              numberRuby: [{ base: '階', reading: 'かい' }],
+              numberRuby: [{ base: '階', reading: 'がい' }],
               jp: '紳士服',
               ruby: [
                 { base: '紳', reading: 'しん' },
@@ -3583,14 +3583,27 @@ export const n5Course: Course = {
         },
         {
           kind: 'vocab',
-          title: { en: 'Floors (〜階)', vi: 'Tầng (〜階)' },
+          title: { en: 'Floor terms', vi: 'Tầng (thuật ngữ)' },
           items: [
             {
-              kana: 'いっかい',
-              kanji: '1階',
-              romaji: 'ikkai',
-              ruby: [{ base: '階', reading: 'かい' }],
-              meaning: { en: '1st floor', vi: 'tầng 1' }
+              kana: 'おくじょう',
+              kanji: '屋上',
+              romaji: 'okujō',
+              ruby: [
+                { base: '屋', reading: 'おく' },
+                { base: '上', reading: 'じょう' }
+              ],
+              meaning: { en: 'rooftop, top floor', vi: 'tầng thượng, sân thượng' }
+            },
+            {
+              kana: 'ちか',
+              kanji: '地下',
+              romaji: 'chika',
+              ruby: [
+                { base: '地', reading: 'ち' },
+                { base: '下', reading: 'か' }
+              ],
+              meaning: { en: 'basement, underground level', vi: 'tầng hầm, dưới mặt đất' }
             },
             {
               kana: 'にかい',
@@ -3605,30 +3618,6 @@ export const n5Course: Course = {
               romaji: 'sangai',
               ruby: [{ base: '階', reading: 'がい' }],
               meaning: { en: '3rd floor', vi: 'tầng 3' }
-            },
-            {
-              kana: 'よんかい',
-              kanji: '4階',
-              romaji: 'yonkai',
-              ruby: [{ base: '階', reading: 'かい' }],
-              meaning: { en: '4th floor', vi: 'tầng 4' }
-            },
-            {
-              kana: 'ごかい',
-              kanji: '5階',
-              romaji: 'gokai',
-              ruby: [{ base: '階', reading: 'かい' }],
-              meaning: { en: '5th floor', vi: 'tầng 5' }
-            },
-            {
-              kana: 'ちか',
-              kanji: '地下',
-              romaji: 'chika',
-              ruby: [
-                { base: '地', reading: 'ち' },
-                { base: '下', reading: 'か' }
-              ],
-              meaning: { en: 'basement', vi: 'tầng hầm' }
             }
           ]
         },
