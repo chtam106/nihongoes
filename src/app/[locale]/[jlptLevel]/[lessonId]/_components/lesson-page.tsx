@@ -38,6 +38,7 @@ import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
 import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
+import { MixedLocaleText } from '@/components/mixed-locale-text';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
@@ -416,7 +417,7 @@ function LessonPage({ level }: LessonPageProps) {
           <Heading component="h1">{lesson.title[locale]}</Heading>
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
-            <Typography variant="body1">{lesson.focus[locale]}</Typography>
+            <MixedLocaleText text={lesson.focus[locale]} variant="body1" component="div" />
             <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
           </Paper>
         </Box>

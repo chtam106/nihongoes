@@ -1,5 +1,5 @@
 import { Typography, type TypographyProps } from '@mui/material';
-import { renderJapaneseText } from '@/utils/japanese-text.tsx';
+import { renderJapaneseText, renderLocaleText } from '@/utils/japanese-text.tsx';
 import type { RubySegment } from '@/types/course.ts';
 import { FONT_FAMILY_JP } from '@/theme/fonts.ts';
 
@@ -15,15 +15,15 @@ export function GrammarHighlightedText({
   sx,
   ...typographyProps
 }: GrammarHighlightedTextProps) {
-  const displayText = ruby?.length ? renderJapaneseText(text, ruby) : text;
+  const isJapaneseBlock = typographyProps.lang === 'ja';
+  const displayText = isJapaneseBlock
+    ? renderJapaneseText(text, ruby)
+    : renderLocaleText(text, ruby);
 
   return (
     <Typography
       {...typographyProps}
-      sx={[
-        typographyProps.lang === 'ja' && { fontFamily: FONT_FAMILY_JP },
-        ...(Array.isArray(sx) ? sx : [sx])
-      ]}
+      sx={[isJapaneseBlock && { fontFamily: FONT_FAMILY_JP }, ...(Array.isArray(sx) ? sx : [sx])]}
     >
       {displayText}
     </Typography>

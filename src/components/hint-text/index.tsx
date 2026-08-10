@@ -1,5 +1,6 @@
 import type { SxProps, Theme } from '@mui/material';
 import { Box, Typography } from '@mui/material';
+import { renderLocaleText } from '@/utils/japanese-text.tsx';
 
 type HintTextProps = {
   children: string;
@@ -31,7 +32,7 @@ export function HintText({ children, sx }: HintTextProps) {
         *
       </Box>
       <Box component="span" sx={{ minWidth: 0 }}>
-        {children}
+        {renderLocaleText(children)}
       </Box>
     </Typography>
   );

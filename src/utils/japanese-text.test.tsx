@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { renderJapaneseText } from '@/utils/japanese-text.tsx';
+import { renderJapaneseText, renderLocaleText } from '@/utils/japanese-text.tsx';
+import { LOCALE_JA_CLOSE, LOCALE_JA_OPEN } from '@/utils/locale-text.ts';
 
 function renderNode(node: Parameters<typeof renderToStaticMarkup>[0]): string {
   return renderToStaticMarkup(node);
@@ -104,5 +105,35 @@ describe('renderJapaneseText', () => {
     );
 
     expect(rendered).toBe('<span lang="ja">こんにちは</span>');
+  });
+});
+
+describe('renderLocaleText', () => {
+  it('wraps marked Japanese in lang="ja" spans', () => {
+    const rendered = renderNode(
+      <>
+        {renderLocaleText(
+          `Typical floor layout in a Japanese department store (${LOCALE_JA_OPEN}デパート${LOCALE_JA_CLOSE}).`
+        )}
+      </>
+    );
+
+    expect(rendered).toBe(
+      'Typical floor layout in a Japanese department store (<span lang="ja">デパート</span>).'
+    );
+  });
+
+  it('applies ruby to kanji inside marked spans', () => {
+    const rendered = renderNode(
+      <>
+        {renderLocaleText(
+          `${LOCALE_JA_OPEN}何${LOCALE_JA_CLOSE} (${LOCALE_JA_OPEN}なん${LOCALE_JA_CLOSE}) means "what".`,
+          [{ base: '何', reading: 'なん' }]
+        )}
+      </>
+    );
+
+    expect(rendered).toContain('<ruby lang="ja">何<rt>なん</rt></ruby>');
+    expect(rendered).toContain('(<span lang="ja">なん</span>) means');
   });
 });

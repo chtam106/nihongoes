@@ -30,8 +30,8 @@ export const n5Course: Course = {
         vi: 'Giới thiệu bản thân'
       },
       focus: {
-        en: 'Introduce yourself and others: state nationality, job, and affiliation with は, です, も, and の.',
-        vi: 'Giới thiệu bản thân và người khác: nói quốc tịch, nghề nghiệp và nơi trực thuộc với は, です, も và の.'
+        en: 'Introduce yourself and others: state nationality, job, and affiliation with <ja>は</ja>, <ja>です</ja>, <ja>も</ja>, and <ja>の</ja>.',
+        vi: 'Giới thiệu bản thân và người khác: nói quốc tịch, nghề nghiệp và nơi trực thuộc với <ja>は</ja>, <ja>です</ja>, <ja>も</ja> và <ja>の</ja>.'
       },
       vocab: [
         {
@@ -492,12 +492,12 @@ export const n5Course: Course = {
           pattern: 'N1 は N2 です',
           highlights: ['は', 'です'],
           title: {
-            en: 'N1 is N2 (statement with です)',
-            vi: 'N1 là N2 (câu khẳng định với です)'
+            en: 'N1 is N2 (statement with <ja>です</ja>)',
+            vi: 'N1 là N2 (câu khẳng định với <ja>です</ja>)'
           },
           explanation: {
-            en: 'は (read "wa") marks the topic; です ends a polite statement and works like "is/am/are".',
-            vi: 'は (đọc là "wa") đánh dấu chủ đề; です kết thúc câu lịch sự, tương đương "là".'
+            en: '<ja>は</ja> (read "wa") marks the topic; <ja>です</ja> ends a polite statement and works like "is/am/are".',
+            vi: '<ja>は</ja> (đọc là "wa") đánh dấu chủ đề; <ja>です</ja> kết thúc câu lịch sự, tương đương "là".'
           },
           examples: [
             {
@@ -530,8 +530,8 @@ export const n5Course: Course = {
           highlights: ['は', 'じゃありません'],
           title: { en: 'N1 is not N2 (negative)', vi: 'N1 không phải là N2 (phủ định)' },
           explanation: {
-            en: 'Replace です with じゃありません (or the more formal ではありません) to make it negative.',
-            vi: 'Thay です bằng じゃありません (hoặc ではありません trang trọng hơn) để phủ định.'
+            en: 'Replace <ja>です</ja> with <ja>じゃありません</ja> (or the more formal <ja>ではありません</ja>) to make it negative.',
+            vi: 'Thay <ja>です</ja> bằng <ja>じゃありません</ja> (hoặc <ja>ではありません</ja> trang trọng hơn) để phủ định.'
           },
           examples: [
             {
@@ -559,12 +559,12 @@ export const n5Course: Course = {
           pattern: 'N1 は N2 ですか',
           highlights: ['は', 'です', 'か'],
           title: {
-            en: 'Yes/no question with か',
-            vi: 'Câu hỏi có/không với か'
+            en: 'Yes/no question with <ja>か</ja>',
+            vi: 'Câu hỏi có/không với <ja>か</ja>'
           },
           explanation: {
-            en: 'Add か to the end to make a yes/no question. No question mark is needed in Japanese.',
-            vi: 'Thêm か vào cuối câu để tạo câu hỏi có/không. Tiếng Nhật không cần dấu chấm hỏi.'
+            en: 'Add <ja>か</ja> to the end to make a yes/no question. No question mark is needed in Japanese.',
+            vi: 'Thêm <ja>か</ja> vào cuối câu để tạo câu hỏi có/không. Tiếng Nhật không cần dấu chấm hỏi.'
           },
           examples: [
             {
@@ -593,8 +593,8 @@ export const n5Course: Course = {
           answers: {
             highlights: ['です', 'じゃありません', 'そうです', 'ちがいます'],
             explanation: {
-              en: 'Answer はい、そうです ("yes, that\'s right") or いいえ、ちがいます ("no, that\'s wrong"); you can also answer with the full sentence - affirmative (はい、～です) or negative (いいえ、～じゃありません).',
-              vi: 'Trả lời はい、そうです ("vâng, đúng vậy") hoặc いいえ、ちがいます ("không, không phải"); cũng có thể trả lời bằng cả câu - khẳng định (はい、～です) hoặc phủ định (いいえ、～じゃありません).'
+              en: 'Answer <ja>はい、そうです</ja> ("yes, that\'s right") or <ja>いいえ、ちがいます</ja> ("no, that\'s wrong"); you can also answer with the full sentence - affirmative (<ja>はい、～です</ja>) or negative (<ja>いいえ、～じゃありません</ja>).',
+              vi: 'Trả lời <ja>はい、そうです</ja> ("vâng, đúng vậy") hoặc <ja>いいえ、ちがいます</ja> ("không, không phải"); cũng có thể trả lời bằng cả câu - khẳng định (<ja>はい、～です</ja>) hoặc phủ định (<ja>いいえ、～じゃありません</ja>).'
             },
             examples: [
               {
@@ -644,10 +644,10 @@ export const n5Course: Course = {
         {
           pattern: 'N も',
           highlights: ['も'],
-          title: { en: 'も (also, too)', vi: 'も (cũng)' },
+          title: { en: '<ja>も</ja> (also, too)', vi: '<ja>も</ja> (cũng)' },
           explanation: {
-            en: 'も replaces は to say the same thing is also true for another topic ("...too").',
-            vi: 'も thay cho は để nói điều đó cũng đúng với một chủ đề khác ("... cũng ...").'
+            en: '<ja>も</ja> replaces <ja>は</ja> to say the same thing is also true for another topic ("...too").',
+            vi: '<ja>も</ja> thay cho <ja>は</ja> để nói điều đó cũng đúng với một chủ đề khác ("... cũng ...").'
           },
           examples: [
             {
@@ -679,10 +679,13 @@ export const n5Course: Course = {
           pattern: 'N1 の N2',
           highlights: ['の'],
           excludeHighlights: ['この', 'その', 'あの', 'どの'],
-          title: { en: 'の (affiliation / belonging)', vi: 'の (nơi trực thuộc / thuộc về)' },
+          title: {
+            en: '<ja>の</ja> (affiliation / belonging)',
+            vi: '<ja>の</ja> (nơi trực thuộc / thuộc về)'
+          },
           explanation: {
-            en: 'の links two nouns; here the first noun (company, school, country) tells which group the second belongs to.',
-            vi: 'の nối hai danh từ; ở đây danh từ đầu (công ty, trường, quốc gia) cho biết danh từ sau thuộc nhóm nào.'
+            en: '<ja>の</ja> links two nouns; here the first noun (company, school, country) tells which group the second belongs to.',
+            vi: '<ja>の</ja> nối hai danh từ; ở đây danh từ đầu (công ty, trường, quốc gia) cho biết danh từ sau thuộc nhóm nào.'
           },
           examples: [
             {
@@ -722,10 +725,13 @@ export const n5Course: Course = {
           pattern: 'N は だれ ですか',
           highlights: ['は', 'だれ', 'どなた', 'です', 'か'],
           excludeHighlights: ['あの方'],
-          title: { en: 'Asking who (だれ / どなた)', vi: 'Hỏi "ai" (だれ / どなた)' },
+          title: {
+            en: 'Asking who (<ja>だれ</ja> / <ja>どなた</ja>)',
+            vi: 'Hỏi "ai" (<ja>だれ</ja> / <ja>どなた</ja>)'
+          },
           explanation: {
-            en: 'Ask who someone is with だれ. どなた is the polite version, used with あの方.',
-            vi: 'Hỏi ai đó là ai với だれ. どなた là cách nói lịch sự, dùng với あの方.'
+            en: 'Ask who someone is with <ja>だれ</ja>. <ja>どなた</ja> is the polite version, used with <ja>あの方</ja>.',
+            vi: 'Hỏi ai đó là ai với <ja>だれ</ja>. <ja>どなた</ja> là cách nói lịch sự, dùng với <ja>あの方</ja>.'
           },
           explanationRuby: [{ base: '方', reading: 'かた' }],
           examples: [
@@ -745,8 +751,8 @@ export const n5Course: Course = {
           answers: {
             highlights: ['は', 'です'],
             explanation: {
-              en: 'Answer by naming the person or their role with N1 は N2 です.',
-              vi: 'Trả lời bằng cách nêu tên hoặc vai trò của người đó với N1 は N2 です.'
+              en: 'Answer by naming the person or their role with N1 <ja>は</ja> N2 <ja>です</ja>.',
+              vi: 'Trả lời bằng cách nêu tên hoặc vai trò của người đó với N1 <ja>は</ja> N2 <ja>です</ja>.'
             },
             examples: [
               {
@@ -775,14 +781,17 @@ export const n5Course: Course = {
             { base: '歳', reading: 'さい' }
           ],
           highlights: ['は', '何', '歳', 'おいくつ', 'です', 'か'],
-          title: { en: 'Asking age (何歳 / おいくつ)', vi: 'Hỏi tuổi (何歳 / おいくつ)' },
+          title: {
+            en: 'Asking age (<ja>何歳</ja> / <ja>おいくつ</ja>)',
+            vi: 'Hỏi tuổi (<ja>何歳</ja> / <ja>おいくつ</ja>)'
+          },
           titleRuby: [
             { base: '何', reading: 'なん' },
             { base: '歳', reading: 'さい' }
           ],
           explanation: {
-            en: 'Ask age with 何歳. おいくつ is the polite version.',
-            vi: 'Hỏi tuổi với 何歳. おいくつ là cách nói lịch sự.'
+            en: 'Ask age with <ja>何歳</ja>. <ja>おいくつ</ja> is the polite version.',
+            vi: 'Hỏi tuổi với <ja>何歳</ja>. <ja>おいくつ</ja> là cách nói lịch sự.'
           },
           explanationRuby: [
             { base: '何', reading: 'なん' },
@@ -808,8 +817,8 @@ export const n5Course: Course = {
             highlights: ['歳', 'です'],
             excludeHighlights: ['はたち'],
             explanation: {
-              en: 'Answer with a number + 歳; 20 years old is the special reading はたち.',
-              vi: 'Trả lời bằng số + 歳; 20 tuổi đọc đặc biệt là はたち.'
+              en: 'Answer with a number + <ja>歳</ja>; 20 years old is the special reading <ja>はたち</ja>.',
+              vi: 'Trả lời bằng số + <ja>歳</ja>; 20 tuổi đọc đặc biệt là <ja>はたち</ja>.'
             },
             explanationRuby: [{ base: '歳', reading: 'さい' }],
             examples: [
@@ -1017,13 +1026,13 @@ export const n5Course: Course = {
           kind: 'table',
           title: { en: 'Countries, people & languages', vi: 'Nước, người & ngôn ngữ' },
           intro: {
-            en: 'Country names (国), nationalities with 〜人, and languages with 〜語.',
-            vi: 'Tên nước (国), quốc tịch với 〜人 và ngôn ngữ với 〜語.'
+            en: 'Country names (<ja>国</ja>), nationalities with <ja>〜人</ja>, and languages with <ja>〜語</ja>.',
+            vi: 'Tên nước (<ja>国</ja>), quốc tịch với <ja>〜人</ja> và ngôn ngữ với <ja>〜語</ja>.'
           },
           columns: {
-            country: { en: 'Country (国)', vi: 'Nước (国)' },
-            person: { en: 'Person (人)', vi: 'Người (人)' },
-            language: { en: 'Language (語)', vi: 'Ngôn ngữ (語)' }
+            country: { en: 'Country (<ja>国</ja>)', vi: 'Nước (<ja>国</ja>)' },
+            person: { en: 'Person (<ja>人</ja>)', vi: 'Người (<ja>人</ja>)' },
+            language: { en: 'Language (<ja>語</ja>)', vi: 'Ngôn ngữ (<ja>語</ja>)' }
           },
           rows: [
             {
@@ -1547,8 +1556,8 @@ export const n5Course: Course = {
         vi: 'Đồ vật xung quanh'
       },
       focus: {
-        en: 'Point out and identify objects with これ/それ/あれ, この/その/あの, and の, and answer with そうです / ちがいます.',
-        vi: 'Chỉ và gọi tên đồ vật với これ/それ/あれ, この/その/あの và の, rồi trả lời bằng そうです / ちがいます.'
+        en: 'Point out and identify objects with <ja>これ</ja>/<ja>それ</ja>/<ja>あれ</ja>, <ja>この</ja>/<ja>その</ja>/<ja>あの</ja>, and <ja>の</ja>, and answer with <ja>そうです</ja> / <ja>ちがいます</ja>.',
+        vi: 'Chỉ và gọi tên đồ vật với <ja>これ</ja>/<ja>それ</ja>/<ja>あれ</ja>, <ja>この</ja>/<ja>その</ja>/<ja>あの</ja> và <ja>の</ja>, rồi trả lời bằng <ja>そうです</ja> / <ja>ちがいます</ja>.'
       },
       vocab: [
         {
@@ -1930,12 +1939,12 @@ export const n5Course: Course = {
           pattern: 'これ / それ / あれ は N です',
           highlights: [['これ', 'それ', 'あれ'], 'は', 'です'],
           title: {
-            en: 'これ / それ / あれ (this / that / that over there)',
-            vi: 'これ / それ / あれ (cái này / cái đó / cái kia)'
+            en: '<ja>これ</ja> / <ja>それ</ja> / <ja>あれ</ja> (this / that / that over there)',
+            vi: '<ja>これ</ja> / <ja>それ</ja> / <ja>あれ</ja> (cái này / cái đó / cái kia)'
           },
           explanation: {
-            en: 'これ = near the speaker, それ = near the listener, あれ = far from both. They stand alone as "this/that".',
-            vi: 'これ = gần người nói, それ = gần người nghe, あれ = xa cả hai. Chúng đứng độc lập như "cái này/đó/kia".'
+            en: '<ja>これ</ja> = near the speaker, <ja>それ</ja> = near the listener, <ja>あれ</ja> = far from both. They stand alone as "this/that".',
+            vi: '<ja>これ</ja> = gần người nói, <ja>それ</ja> = gần người nghe, <ja>あれ</ja> = xa cả hai. Chúng đứng độc lập như "cái này/đó/kia".'
           },
           examples: [
             {
@@ -1967,10 +1976,13 @@ export const n5Course: Course = {
         {
           pattern: 'この / その / あの N',
           highlights: [['この', 'その', 'あの']],
-          title: { en: 'この / その / あの + noun', vi: 'この / その / あの + danh từ' },
+          title: {
+            en: '<ja>この</ja> / <ja>その</ja> / <ja>あの</ja> + noun',
+            vi: '<ja>この</ja> / <ja>その</ja> / <ja>あの</ja> + danh từ'
+          },
           explanation: {
-            en: 'Unlike これ/それ/あれ, these always come right before a noun: この本 = "this book". Never say これ本.',
-            vi: 'Khác với これ/それ/あれ, nhóm này luôn đứng ngay trước danh từ: この本 = "quyển sách này". Không nói これ本.'
+            en: 'Unlike <ja>これ</ja>/<ja>それ</ja>/<ja>あれ</ja>, these always come right before a noun: <ja>この本</ja> = "this book". Never say <ja>これ本</ja>.',
+            vi: 'Khác với <ja>これ</ja>/<ja>それ</ja>/<ja>あれ</ja>, nhóm này luôn đứng ngay trước danh từ: <ja>この本</ja> = "quyển sách này". Không nói <ja>これ本</ja>.'
           },
           explanationRuby: [
             { base: '本', reading: 'ほん' },
@@ -2005,10 +2017,13 @@ export const n5Course: Course = {
         {
           pattern: 'N1 の N2',
           highlights: ['の'],
-          title: { en: 'の (possession / content)', vi: 'の (sở hữu / nội dung)' },
+          title: {
+            en: '<ja>の</ja> (possession / content)',
+            vi: '<ja>の</ja> (sở hữu / nội dung)'
+          },
           explanation: {
-            en: 'の links two nouns to show an owner ("my book") or the content/type ("Japanese book").',
-            vi: 'の nối hai danh từ để chỉ người sở hữu ("sách của tôi") hoặc nội dung/loại ("sách tiếng Nhật").'
+            en: '<ja>の</ja> links two nouns to show an owner ("my book") or the content/type ("Japanese book").',
+            vi: '<ja>の</ja> nối hai danh từ để chỉ người sở hữu ("sách của tôi") hoặc nội dung/loại ("sách tiếng Nhật").'
           },
           examples: [
             {
@@ -2044,11 +2059,14 @@ export const n5Course: Course = {
           pattern: 'N は 何 ですか',
           patternRuby: [{ base: '何', reading: 'なん' }],
           highlights: ['は', '何', 'です', 'か'],
-          title: { en: 'Asking "what is it?" with 何', vi: 'Hỏi "là cái gì?" với 何' },
+          title: {
+            en: 'Asking "what is it?" with <ja>何</ja>',
+            vi: 'Hỏi "là cái gì?" với <ja>何</ja>'
+          },
           titleRuby: [{ base: '何', reading: 'なん' }],
           explanation: {
-            en: '何 (なん) means "what". Put it where the unknown noun would go to ask what something is.',
-            vi: '何 (なん) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì.'
+            en: '<ja>何</ja> (<ja>なん</ja>) means "what". Put it where the unknown noun would go to ask what something is.',
+            vi: '<ja>何</ja> (<ja>なん</ja>) nghĩa là "cái gì". Đặt vào vị trí danh từ chưa biết để hỏi đó là gì.'
           },
           explanationRuby: [{ base: '何', reading: 'なん' }],
           examples: [
@@ -2068,8 +2086,8 @@ export const n5Course: Course = {
           answers: {
             highlights: ['は', 'です'],
             explanation: {
-              en: 'Answer by naming the thing with the affirmative sentence: (これ / それ) は ～です.',
-              vi: 'Trả lời bằng cách gọi tên vật đó với câu khẳng định: (これ / それ) は ～です.'
+              en: 'Answer by naming the thing with the affirmative sentence: (<ja>これ</ja> / <ja>それ</ja>) <ja>は</ja> <ja>～です</ja>.',
+              vi: 'Trả lời bằng cách gọi tên vật đó với câu khẳng định: (<ja>これ</ja> / <ja>それ</ja>) <ja>は</ja> <ja>～です</ja>.'
             },
             examples: [
               {
@@ -2189,7 +2207,10 @@ export const n5Course: Course = {
           questions: [
             {
               id: 'q1',
-              question: { en: 'What is that over there (あれ)?', vi: 'Cái kia (あれ) là gì?' },
+              question: {
+                en: 'What is that over there (<ja>あれ</ja>)?',
+                vi: 'Cái kia (<ja>あれ</ja>) là gì?'
+              },
               choices: [
                 { id: 'a', label: { en: 'An umbrella', vi: 'Cái ô' } },
                 { id: 'b', label: { en: 'A book', vi: 'Quyển sách' } },
@@ -2286,8 +2307,8 @@ export const n5Course: Course = {
           title: { en: 'Common Japanese surnames', vi: 'Họ thường gặp' },
           includeInQuiz: false,
           intro: {
-            en: 'Surnames (姓): the 20 most common Japanese family names.',
-            vi: 'Họ (姓): 20 họ phổ biến nhất ở Nhật Bản.'
+            en: 'Surnames (<ja>姓</ja>): the 20 most common Japanese family names.',
+            vi: 'Họ (<ja>姓</ja>): 20 họ phổ biến nhất ở Nhật Bản.'
           },
           items: [
             {
@@ -2676,8 +2697,8 @@ export const n5Course: Course = {
         vi: 'Nơi chốn & mua sắm'
       },
       focus: {
-        en: 'Point out places with ここ/そこ/あそこ, ask where things are, and talk about prices.',
-        vi: 'Chỉ nơi chốn với ここ/そこ/あそこ, hỏi vật ở đâu và nói về giá cả.'
+        en: 'Point out places with <ja>ここ</ja>/<ja>そこ</ja>/<ja>あそこ</ja>, ask where things are, and talk about prices.',
+        vi: 'Chỉ nơi chốn với <ja>ここ</ja>/<ja>そこ</ja>/<ja>あそこ</ja>, hỏi vật ở đâu và nói về giá cả.'
       },
       vocab: [
         { kana: 'ここ', romaji: 'koko', meaning: { en: 'here', vi: 'ở đây' } },
@@ -2999,8 +3020,8 @@ export const n5Course: Course = {
             vi: 'ここ / そこ / あそこ / こちら / そちら / あちら'
           },
           explanation: {
-            en: 'These words point to a place. ここ is near the speaker, そこ is near the listener, and あそこ is far from both. こちら/そちら/あちら are the polite forms and may also refer to direction.',
-            vi: 'Các từ này chỉ địa điểm. ここ gần người nói, そこ gần người nghe, あそこ xa cả hai. こちら/そちら/あちら là dạng lịch sự và cũng dùng để chỉ phương hướng.'
+            en: 'These words point to a place. <ja>ここ</ja> is near the speaker, <ja>そこ</ja> is near the listener, and <ja>あそこ</ja> is far from both. <ja>こちら</ja>/<ja>そちら</ja>/<ja>あちら</ja> are the polite forms and may also refer to direction.',
+            vi: 'Các từ này chỉ địa điểm. <ja>ここ</ja> gần người nói, <ja>そこ</ja> gần người nghe, <ja>あそこ</ja> xa cả hai. <ja>こちら</ja>/<ja>そちら</ja>/<ja>あちら</ja> là dạng lịch sự và cũng dùng để chỉ phương hướng.'
           },
           examples: [
             {
@@ -3041,10 +3062,13 @@ export const n5Course: Course = {
         {
           pattern: 'N は 〜です',
           highlights: ['は', 'です'],
-          title: { en: 'Noun + です for location', vi: 'Danh từ は です (địa điểm)' },
+          title: {
+            en: 'Noun + <ja>です</ja> for location',
+            vi: 'Danh từ <ja>は</ja> <ja>です</ja> (địa điểm)'
+          },
           explanation: {
-            en: 'Use a noun plus です to say where something is located. This pattern describes the place of an object or person.',
-            vi: 'Dùng danh từ + です để nói nơi chốn của một vật hoặc người. Mẫu này diễn tả vị trí.'
+            en: 'Use a noun plus <ja>です</ja> to say where something is located. This pattern describes the place of an object or person.',
+            vi: 'Dùng danh từ + <ja>です</ja> để nói nơi chốn của một vật hoặc người. Mẫu này diễn tả vị trí.'
           },
           examples: [
             {
@@ -3083,10 +3107,13 @@ export const n5Course: Course = {
         {
           pattern: 'N は どこ / どちら ですか',
           highlights: [['どこ', 'どちら'], 'は', 'です', 'か'],
-          title: { en: 'どこ / どちら (questions)', vi: 'どこ / どちら (câu hỏi)' },
+          title: {
+            en: '<ja>どこ</ja> / <ja>どちら</ja> (questions)',
+            vi: '<ja>どこ</ja> / <ja>どちら</ja> (câu hỏi)'
+          },
           explanation: {
-            en: 'どこ asks where a place or thing is. どちら is more polite and can ask direction or location. When asking the name of a school, company, or similar organization, use どこ or どちら instead of なん.',
-            vi: 'どこ hỏi nơi chốn của vật hoặc địa điểm. どちら lịch sự hơn, hỏi được phương hướng hoặc vị trí. Khi hỏi tên trường, công ty hay tổ chức tương tự, dùng どこ hoặc どちら thay vì なん.'
+            en: '<ja>どこ</ja> asks where a place or thing is. <ja>どちら</ja> is more polite and can ask direction or location. When asking the name of a school, company, or similar organization, use <ja>どこ</ja> or <ja>どちら</ja> instead of <ja>なん</ja>.',
+            vi: '<ja>どこ</ja> hỏi nơi chốn của vật hoặc địa điểm. <ja>どちら</ja> lịch sự hơn, hỏi được phương hướng hoặc vị trí. Khi hỏi tên trường, công ty hay tổ chức tương tự, dùng <ja>どこ</ja> hoặc <ja>どちら</ja> thay vì <ja>なん</ja>.'
           },
           examples: [
             {
@@ -3140,10 +3167,10 @@ export const n5Course: Course = {
         {
           pattern: 'どこ の N です',
           highlights: ['どこ', 'の', 'です'],
-          title: { en: 'Where it is from (どこの)', vi: 'Xuất xứ (どこの)' },
+          title: { en: 'Where it is from (<ja>どこの</ja>)', vi: 'Xuất xứ (<ja>どこの</ja>)' },
           explanation: {
-            en: 'When N1 is a country or company and N2 is a product, の links the maker or origin to the item. どこの asks which country or company it is from.',
-            vi: 'Khi N1 là nước hoặc công ty và N2 là sản phẩm, の nối nguồn gốc với đồ vật. どこの hỏi đồ vật đến từ nước hoặc hãng nào.'
+            en: 'When N1 is a country or company and N2 is a product, <ja>の</ja> links the maker or origin to the item. <ja>どこの</ja> asks which country or company it is from.',
+            vi: 'Khi N1 là nước hoặc công ty và N2 là sản phẩm, <ja>の</ja> nối nguồn gốc với đồ vật. <ja>どこの</ja> hỏi đồ vật đến từ nước hoặc hãng nào.'
           },
           examples: [
             {
@@ -3200,10 +3227,10 @@ export const n5Course: Course = {
         {
           pattern: 'お + N',
           highlights: ['お', 'どちら', 'です', 'か'],
-          title: { en: 'Honorific prefix お', vi: 'Tiền tố lịch sự お' },
+          title: { en: 'Honorific prefix <ja>お</ja>', vi: 'Tiền tố lịch sự <ja>お</ja>' },
           explanation: {
-            en: 'Add お before a word related to the listener or a third person to show respect.',
-            vi: 'Thêm お trước từ liên quan đến người nghe hoặc người thứ ba để bày tỏ sự kính trọng.'
+            en: 'Add <ja>お</ja> before a word related to the listener or a third person to show respect.',
+            vi: 'Thêm <ja>お</ja> trước từ liên quan đến người nghe hoặc người thứ ba để bày tỏ sự kính trọng.'
           },
           examples: [
             {
@@ -3325,9 +3352,15 @@ export const n5Course: Course = {
               id: 'q2',
               question: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' },
               choices: [
-                { id: 'a', label: { en: 'Over there (そちら)', vi: 'Phía đó (そちら)' } },
-                { id: 'b', label: { en: 'Over there (あちら)', vi: 'Phía kia (あちら)' } },
-                { id: 'c', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' } },
+                {
+                  id: 'a',
+                  label: { en: 'Over there (<ja>そちら</ja>)', vi: 'Phía đó (<ja>そちら</ja>)' }
+                },
+                {
+                  id: 'b',
+                  label: { en: 'Over there (<ja>あちら</ja>)', vi: 'Phía kia (<ja>あちら</ja>)' }
+                },
+                { id: 'c', label: { en: 'Here (<ja>ここ</ja>)', vi: 'Ở đây (<ja>ここ</ja>)' } },
                 { id: 'd', label: { en: 'On the 2nd floor', vi: 'Tầng 2' } }
               ],
               correctId: 'a'
@@ -3377,9 +3410,15 @@ export const n5Course: Course = {
               id: 'q1',
               question: { en: 'Where is the cafeteria?', vi: 'Nhà ăn ở đâu?' },
               choices: [
-                { id: 'a', label: { en: 'Over there (あそこ)', vi: 'Đằng kia (あそこ)' } },
-                { id: 'b', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' } },
-                { id: 'c', label: { en: 'This way (こちら)', vi: 'Phía này (こちら)' } },
+                {
+                  id: 'a',
+                  label: { en: 'Over there (<ja>あそこ</ja>)', vi: 'Đằng kia (<ja>あそこ</ja>)' }
+                },
+                { id: 'b', label: { en: 'Here (<ja>ここ</ja>)', vi: 'Ở đây (<ja>ここ</ja>)' } },
+                {
+                  id: 'c',
+                  label: { en: 'This way (<ja>こちら</ja>)', vi: 'Phía này (<ja>こちら</ja>)' }
+                },
                 { id: 'd', label: { en: 'On the 2nd floor', vi: 'Tầng 2' } }
               ],
               correctId: 'a'
@@ -3404,8 +3443,8 @@ export const n5Course: Course = {
           title: { en: 'Department store floors', vi: 'Sơ đồ tầng cửa hàng bách hóa' },
           layout: 'stacked',
           intro: {
-            en: 'Typical floor layout in a Japanese department store (デパート).',
-            vi: 'Bố trí tầng thường gặp trong cửa hàng bách hóa (デパート) ở Nhật.'
+            en: 'Typical floor layout in a Japanese department store (<ja>デパート</ja>).',
+            vi: 'Bố trí tầng thường gặp trong cửa hàng bách hóa (<ja>デパート</ja>) ở Nhật.'
           },
           rows: [
             {
@@ -3867,8 +3906,8 @@ export const n5Course: Course = {
           romaji: '~fun (~pun)',
           speech: 'ふん',
           meaning: {
-            en: '~ minute(s) (〜ぷん after 5, 7, 9...)',
-            vi: '~ phút (〜ぷん sau 5, 7, 9...)'
+            en: '~ minute(s) (<ja>〜ぷん</ja> after 5, 7, 9...)',
+            vi: '~ phút (<ja>〜ぷん</ja> sau 5, 7, 9...)'
           },
           ruby: [{ base: '分', reading: 'ふん' }]
         },
@@ -3937,7 +3976,7 @@ export const n5Course: Course = {
           kana: 'ばん',
           kanji: '晩',
           romaji: 'ban',
-          meaning: { en: 'evening, night (よる)', vi: 'buổi tối, tối (よる)' },
+          meaning: { en: 'evening, night (<ja>よる</ja>)', vi: 'buổi tối, tối (<ja>よる</ja>)' },
           ruby: [{ base: '晩', reading: 'ばん' }]
         },
         {
@@ -4017,8 +4056,8 @@ export const n5Course: Course = {
           kanji: '会議',
           romaji: 'kaigi',
           meaning: {
-            en: 'meeting (会議をします: to hold a meeting)',
-            vi: 'cuộc họp, hội nghị (会議をします: tổ chức cuộc họp)'
+            en: 'meeting (<ja>会議をします</ja>: to hold a meeting)',
+            vi: 'cuộc họp, hội nghị (<ja>会議をします</ja>: tổ chức cuộc họp)'
           },
           ruby: [
             { base: '会', reading: 'かい' },
@@ -4305,8 +4344,8 @@ export const n5Course: Course = {
           highlights: ['時', '分', 'です', '何'],
           title: { en: 'Telling the time', vi: 'Nói giờ' },
           explanation: {
-            en: 'Add 時 (hours) and 分 (minutes) after numbers. 分 is ~fun after 2, 5, 7, 9 and ~pun after 1, 3, 4, 6, 8, 10 (e.g. 10分 = juppun). Ask the time with 今 何時ですか; ask minutes with 何分.',
-            vi: 'Thêm 時 (giờ) và 分 (phút) sau số. 分 đọc ~fun sau 2, 5, 7, 9 và ~pun sau 1, 3, 4, 6, 8, 10 (vd. 10分 = juppun). Hỏi giờ với 今 何時ですか; hỏi phút với 何分.'
+            en: 'Add <ja>時</ja> (hours) and <ja>分</ja> (minutes) after numbers. <ja>分</ja> is ~fun after 2, 5, 7, 9 and ~pun after 1, 3, 4, 6, 8, 10 (e.g. 10<ja>分</ja> = juppun). Ask the time with <ja>今</ja> <ja>何時ですか</ja>; ask minutes with <ja>何分</ja>.',
+            vi: 'Thêm <ja>時</ja> (giờ) và <ja>分</ja> (phút) sau số. <ja>分</ja> đọc ~fun sau 2, 5, 7, 9 và ~pun sau 1, 3, 4, 6, 8, 10 (vd. 10<ja>分</ja> = juppun). Hỏi giờ với <ja>今</ja> <ja>何時ですか</ja>; hỏi phút với <ja>何分</ja>.'
           },
           explanationRuby: [
             { base: '時', reading: 'じ' },
@@ -4346,10 +4385,10 @@ export const n5Course: Course = {
         {
           pattern: 'V ます',
           highlights: ['ます', 'ません', 'ました', 'ませんでした'],
-          title: { en: 'Verb ます forms', vi: 'Động từ thể ます' },
+          title: { en: 'Verb <ja>ます</ja> forms', vi: 'Động từ thể <ja>ます</ja>' },
           explanation: {
-            en: 'The ます form is the polite predicate: ます (present/future), ません (negative), ました (past), ませんでした (past negative). It states habits, general truths, or future actions.',
-            vi: 'Thể ます là vị ngữ lịch sự: ます (hiện tại/tương lai), ません (phủ định), ました (quá khứ), ませんでした (quá khứ phủ định). Dùng cho thói quen, sự thật chung hoặc hành động tương lai.'
+            en: 'The <ja>ます</ja> form is the polite predicate: <ja>ます</ja> (present/future), <ja>ません</ja> (negative), <ja>ました</ja> (past), <ja>ませんでした</ja> (past negative). It states habits, general truths, or future actions.',
+            vi: 'Thể <ja>ます</ja> là vị ngữ lịch sự: <ja>ます</ja> (hiện tại/tương lai), <ja>ません</ja> (phủ định), <ja>ました</ja> (quá khứ), <ja>ませんでした</ja> (quá khứ phủ định). Dùng cho thói quen, sự thật chung hoặc hành động tương lai.'
           },
           examples: [
             {
@@ -4406,8 +4445,8 @@ export const n5Course: Course = {
           highlights: ['ます', 'か', '何', 'に'],
           title: { en: 'Verb questions', vi: 'Câu hỏi với động từ' },
           explanation: {
-            en: 'Add か to make a yes/no question; word order stays the same. Put the question word where the answer goes. Repeat the verb in the answer - do not use そうです or ちがいます alone for verb questions.',
-            vi: 'Thêm か để hỏi có/không; trật tự câu giữ nguyên. Đặt từ để hỏi vào vị trí phần cần hỏi. Trả lời lặp lại động từ - không dùng một mình そうです hay ちがいます cho câu hỏi động từ.'
+            en: 'Add <ja>か</ja> to make a yes/no question; word order stays the same. Put the question word where the answer goes. Repeat the verb in the answer - do not use <ja>そうです</ja> or <ja>ちがいます</ja> alone for verb questions.',
+            vi: 'Thêm <ja>か</ja> để hỏi có/không; trật tự câu giữ nguyên. Đặt từ để hỏi vào vị trí phần cần hỏi. Trả lời lặp lại động từ - không dùng một mình <ja>そうです</ja> hay <ja>ちがいます</ja> cho câu hỏi động từ.'
           },
           examples: [
             {
@@ -4438,8 +4477,8 @@ export const n5Course: Course = {
           answers: {
             highlights: ['ました', 'ませんでした', 'に', 'ます'],
             explanation: {
-              en: 'Answer はい/いいえ plus the verb form, or give the time with ～に ～ます.',
-              vi: 'Trả lời はい/いいえ kèm động từ, hoặc nêu giờ với ～に ～ます.'
+              en: 'Answer <ja>はい</ja>/<ja>いいえ</ja> plus the verb form, or give the time with <ja>～に</ja> <ja>～ます</ja>.',
+              vi: 'Trả lời <ja>はい</ja>/<ja>いいえ</ja> kèm động từ, hoặc nêu giờ với <ja>～に</ja> <ja>～ます</ja>.'
             },
             examples: [
               {
@@ -4475,10 +4514,10 @@ export const n5Course: Course = {
         {
           pattern: 'N (time) に V',
           highlights: ['に'],
-          title: { en: 'Time + に + verb', vi: 'Thời gian + に + động từ' },
+          title: { en: 'Time + <ja>に</ja> + verb', vi: 'Thời gian + <ja>に</ja> + động từ' },
           explanation: {
-            en: 'Put に after a time noun for when an action happens (6時半に 起きます). Do NOT use に after きょう, あした, きのう, けさ, こんばん, いま, 毎朝, etc. に is optional after days of the week and あさ/ひる/ばん.',
-            vi: 'Thêm に sau danh từ chỉ thời điểm (6時半に 起きます). KHÔNG dùng に sau きょう, あした, きのう, けさ, こんばん, いま, 毎朝, v.v. に có thể lược sau thứ trong tuần và あさ/ひる/ばん.'
+            en: 'Put <ja>に</ja> after a time noun for when an action happens (6<ja>時半に</ja> <ja>起きます</ja>). Do NOT use <ja>に</ja> after <ja>きょう</ja>, <ja>あした</ja>, <ja>きのう</ja>, <ja>けさ</ja>, <ja>こんばん</ja>, <ja>いま</ja>, <ja>毎朝</ja>, etc. <ja>に</ja> is optional after days of the week and <ja>あさ</ja>/<ja>ひる</ja>/<ja>ばん</ja>.',
+            vi: 'Thêm <ja>に</ja> sau danh từ chỉ thời điểm (6<ja>時半に</ja> <ja>起きます</ja>). KHÔNG dùng <ja>に</ja> sau <ja>きょう</ja>, <ja>あした</ja>, <ja>きのう</ja>, <ja>けさ</ja>, <ja>こんばん</ja>, <ja>いま</ja>, <ja>毎朝</ja>, v.v. <ja>に</ja> có thể lược sau thứ trong tuần và <ja>あさ</ja>/<ja>ひる</ja>/<ja>ばん</ja>.'
           },
           explanationRuby: [
             { base: '時', reading: 'じ' },
@@ -4514,10 +4553,13 @@ export const n5Course: Course = {
         {
           pattern: 'N1 から N2 まで',
           highlights: ['から', 'まで'],
-          title: { en: 'From ~ to ~ (から / まで)', vi: 'Từ ~ đến ~ (から / まで)' },
+          title: {
+            en: 'From ~ to ~ (<ja>から</ja> / <ja>まで</ja>)',
+            vi: 'Từ ~ đến ~ (<ja>から</ja> / <ja>まで</ja>)'
+          },
           explanation: {
-            en: 'から marks the start and まで the end of a time or place range. They can be used together or alone. With nouns and です, state opening hours or a time span.',
-            vi: 'から đánh dấu điểm bắt đầu, まで điểm kết thúc (thời gian hoặc nơi chốn). Có thể dùng riêng hoặc kết hợp. Với danh từ + です, nêu giờ mở cửa hoặc khoảng thời gian.'
+            en: '<ja>から</ja> marks the start and <ja>まで</ja> the end of a time or place range. They can be used together or alone. With nouns and <ja>です</ja>, state opening hours or a time span.',
+            vi: '<ja>から</ja> đánh dấu điểm bắt đầu, <ja>まで</ja> điểm kết thúc (thời gian hoặc nơi chốn). Có thể dùng riêng hoặc kết hợp. Với danh từ + <ja>です</ja>, nêu giờ mở cửa hoặc khoảng thời gian.'
           },
           examples: [
             {
@@ -4572,10 +4614,10 @@ export const n5Course: Course = {
         {
           pattern: 'N1 と N2',
           highlights: ['と'],
-          title: { en: 'と (and, linking nouns)', vi: 'と (và, nối danh từ)' },
+          title: { en: '<ja>と</ja> (and, linking nouns)', vi: '<ja>と</ja> (và, nối danh từ)' },
           explanation: {
-            en: 'と connects two nouns of equal status, like "and" in English.',
-            vi: 'と nối hai danh từ ngang hàng, tương đương "và" trong tiếng Việt.'
+            en: '<ja>と</ja> connects two nouns of equal status, like "and" in English.',
+            vi: '<ja>と</ja> nối hai danh từ ngang hàng, tương đương "và" trong tiếng Việt.'
           },
           examples: [
             {
@@ -4602,10 +4644,10 @@ export const n5Course: Course = {
         {
           pattern: '～ ね',
           highlights: ['ね'],
-          title: { en: "Sentence-ending ね (isn't it?)", vi: 'ね (nhỉ / đúng không ạ)' },
+          title: { en: "Sentence-ending ね (isn't it?)", vi: '<ja>ね</ja> (nhỉ / đúng không ạ)' },
           explanation: {
-            en: 'ね at the end seeks agreement, sympathy, or confirms what was just said.',
-            vi: 'Thêm ね cuối câu để xin đồng ý, thể hiện đồng cảm, hoặc xác nhận lại — giống "nhỉ", "đúng không" trong tiếng Việt.'
+            en: '<ja>ね</ja> at the end seeks agreement, sympathy, or confirms what was just said.',
+            vi: 'Thêm <ja>ね</ja> cuối câu để xin đồng ý, thể hiện đồng cảm, hoặc xác nhận lại — giống "nhỉ", "đúng không" trong tiếng Việt.'
           },
           examples: [
             {

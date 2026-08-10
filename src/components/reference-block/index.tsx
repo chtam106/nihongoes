@@ -11,6 +11,7 @@ import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
+import { MixedLocaleText } from '@/components/mixed-locale-text';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 
@@ -119,9 +120,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
       {block.kind === 'vocab' && (
         <Stack spacing={1.5}>
           {block.intro && (
-            <Typography variant="body1" color="text.secondary">
-              {block.intro[locale]}
-            </Typography>
+            <MixedLocaleText
+              text={block.intro[locale]}
+              variant="body1"
+              color="text.secondary"
+              component="div"
+            />
           )}
           <Box
             sx={{
@@ -154,16 +158,22 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
       {block.kind === 'steps' && (
         <Stack spacing={1.5}>
           {block.intro && (
-            <Typography variant="body1" color="text.secondary">
-              {block.intro[locale]}
-            </Typography>
+            <MixedLocaleText
+              text={block.intro[locale]}
+              variant="body1"
+              color="text.secondary"
+              component="div"
+            />
           )}
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
             <Stack component="ol" spacing={1.25} sx={{ m: 0, pl: 2.5 }}>
               {block.steps.map((step, index) => (
-                <Typography key={index} component="li" variant="body1">
-                  {step.text[locale]}
-                </Typography>
+                <MixedLocaleText
+                  key={index}
+                  component="li"
+                  variant="body1"
+                  text={step.text[locale]}
+                />
               ))}
             </Stack>
           </Paper>
@@ -187,7 +197,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                   {': '}
                 </>
               )}
-              {block.intro[locale]}
+              <MixedLocaleText
+                text={block.intro[locale]}
+                component="span"
+                variant="inherit"
+                color="inherit"
+              />
             </Typography>
           )}
           <Box
@@ -216,9 +231,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                       </Typography>
                       {row.note && (
                         <Box sx={[subtleSurfaceSx, { px: 1.25, py: 1, mt: 0.25 }]}>
-                          <Typography variant="body1" color="text.secondary">
-                            {row.note[locale]}
-                          </Typography>
+                          <MixedLocaleText
+                            text={row.note[locale]}
+                            variant="body1"
+                            color="text.secondary"
+                            component="div"
+                          />
                         </Box>
                       )}
                     </Stack>
@@ -254,9 +272,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                       </Typography>
                       {row.note && (
                         <Box sx={[subtleSurfaceSx, { px: 1.25, py: 1, mt: 0.25 }]}>
-                          <Typography variant="body1" color="text.secondary">
-                            {row.note[locale]}
-                          </Typography>
+                          <MixedLocaleText
+                            text={row.note[locale]}
+                            variant="body1"
+                            color="text.secondary"
+                            component="div"
+                          />
                         </Box>
                       )}
                     </Stack>
@@ -296,8 +317,14 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                           variant="body1"
                           color="text.secondary"
                           sx={{ gridColumn: '1 / -1', mt: 0.5 }}
+                          component="div"
                         >
-                          {row.note[locale]}
+                          <MixedLocaleText
+                            text={row.note[locale]}
+                            variant="inherit"
+                            color="inherit"
+                            component="span"
+                          />
                         </Typography>
                       )}
                     </Box>
@@ -317,9 +344,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
       {block.kind === 'address' && (
         <Stack spacing={1.5}>
           {block.intro && (
-            <Typography variant="body1" color="text.secondary">
-              {block.intro[locale]}
-            </Typography>
+            <MixedLocaleText
+              text={block.intro[locale]}
+              variant="body1"
+              color="text.secondary"
+              component="div"
+            />
           )}
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
             <Typography variant="body1" lang="ja" sx={{ fontWeight: 500, whiteSpace: 'pre-line' }}>
@@ -341,9 +371,13 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                   display: 'contents'
                 }}
               >
-                <Typography variant="body1" color="text.secondary" sx={{ fontWeight: 600 }}>
-                  {part.label[locale]}
-                </Typography>
+                <MixedLocaleText
+                  text={part.label[locale]}
+                  variant="body1"
+                  color="text.secondary"
+                  sx={{ fontWeight: 600 }}
+                  component="span"
+                />
                 <Typography variant="body1" lang="ja">
                   {renderJapaneseText(part.text, part.ruby)}
                 </Typography>
@@ -356,9 +390,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
       {block.kind === 'table' && (
         <Stack spacing={1.5}>
           {block.intro && (
-            <Typography variant="body1" color="text.secondary">
-              {block.intro[locale]}
-            </Typography>
+            <MixedLocaleText
+              text={block.intro[locale]}
+              variant="body1"
+              color="text.secondary"
+              component="div"
+            />
           )}
 
           <Box
@@ -392,9 +429,12 @@ export function ReferenceBlockView({ block, locale }: ReferenceBlockViewProps) {
                         overflowWrap: 'break-word'
                       }}
                     >
-                      <Typography variant="body1" component="span">
-                        {label[locale]}
-                      </Typography>
+                      <MixedLocaleText
+                        text={label[locale]}
+                        variant="body1"
+                        component="span"
+                        sx={{ fontWeight: 600 }}
+                      />
                     </Box>
                   )
                 )}

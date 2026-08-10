@@ -1,9 +1,28 @@
 import { type CSSProperties, type ReactNode } from 'react';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { LOCALE_JA_CLOSE, LOCALE_JA_OPEN } from '@/utils/locale-text.ts';
 import type { RubySegment } from '@/types/course.ts';
 import type { KanjiReadingPart } from '@/types/kanji.ts';
 
 const kanjiChar = /[\u4e00-\u9fff]/;
+
+function collectRubyForJapaneseSegment(segment: string, ruby: RubySegment[]): RubySegment[] {
+  const matched: RubySegment[] = [];
+  let searchFrom = 0;
+
+  for (const entry of ruby) {
+    const position = segment.indexOf(entry.base, searchFrom);
+
+    if (position === -1) {
+      continue;
+    }
+
+    matched.push(entry);
+    searchFrom = position + entry.base.length;
+  }
+
+  return matched;
+}
 
 /** Blue + orange alternate on consecutive kanji; singles use blue. */
 const RUBY_SEGMENT_COLORS = ['#1565c0', '#e65100'] as const;
@@ -169,4 +188,51 @@ export function renderJapaneseText(
   }
 
   return rendered;
+}
+
+const localeJaTagPattern = new RegExp(
+  `${LOCALE_JA_OPEN.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([\\s\\S]*?)${LOCALE_JA_CLOSE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`,
+  'g'
+);
+
+/** Render EN/VI copy with `<ja>...</ja>` spans authored in course data. */
+export function renderLocaleText(text: string, ruby?: RubySegment[]): ReactNode {
+  if (!text.includes(LOCALE_JA_OPEN)) {
+    return text;
+  }
+
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let tagIndex = 0;
+
+  localeJaTagPattern.lastIndex = 0;
+
+  while ((match = localeJaTagPattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+
+    const japanese = match[1]!;
+    const segmentRuby = ruby?.length ? collectRubyForJapaneseSegment(japanese, ruby) : [];
+
+    if (segmentRuby.length > 0) {
+      parts.push(renderJapaneseText(japanese, segmentRuby, { colorizeRuby: false }));
+    } else {
+      parts.push(japaneseLangSpan(japanese, `locale-ja-${tagIndex}`));
+    }
+
+    tagIndex += 1;
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  if (parts.length === 1) {
+    return parts[0];
+  }
+
+  return parts;
 }
