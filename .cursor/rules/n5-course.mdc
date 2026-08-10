@@ -26,6 +26,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - When a word has a standard kanji form taught in the lesson, write it as kanji in `jp` (with `ruby`) - not kana-only (e.g. 何ですか not なんですか, 本 not ほん). Keep title, explanation, and examples consistent. Grammar `pattern` strings follow the same rule (e.g. `N は 何 ですか` not `N は なん ですか`); add `patternRuby` when the pattern chip shows kanji.
 - Grammar `explanation` / `answers.explanation` strings that cite Japanese (e.g. 何時, 3月25日に) need matching `explanationRuby` on the point or answers block (same segment order in en + vi).
 - Grammar `title` copy that embeds kanji (e.g. `Hỏi "là cái gì?" với 何`) needs `titleRuby` on the point.
+- EN/VI UI strings (`Bilingual`) that embed Japanese for the reader (e.g. `(デパート)`, `何 (なん)`) must wrap each Japanese run in `<ja>...</ja>` (see `src/utils/locale-text.ts`). Render via `renderLocaleText` / `<MixedLocaleText>` so those spans get `lang="ja"`. Do NOT rely on auto-detect at render time.
 - Reference list rows with a Japanese `number` date (e.g. 5月3日, 7月第3月曜日) need matching `numberRuby` for every kanji in that string, same as `ruby` on `jp`. A list `introTerm` (e.g. 祝祭日) needs `introTerm.ruby` too.
 
 ## Reference section (IMPORTANT)

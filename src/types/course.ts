@@ -1,6 +1,7 @@
 import type { HighlightTerm } from '@/utils/grammar-highlight.ts';
 import type { Locale } from '@/types/i18n.ts';
 
+/** In EN/VI strings, wrap embedded Japanese in `<ja>...</ja>` for `renderLocaleText`. */
 export type Bilingual = Record<Locale, string>;
 
 export type CourseLevel = 'n5';

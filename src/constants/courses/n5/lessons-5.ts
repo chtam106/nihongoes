@@ -499,8 +499,8 @@ export const n5Lesson5: Lesson = {
       kana: 'ありがとうございました。',
       romaji: 'arigatō gozaimashita.',
       meaning: {
-        en: 'Thank you very much. (often with どうも)',
-        vi: 'Xin cảm ơn anh/chị rất nhiều. (thường kèm どうも)'
+        en: 'Thank you very much. (often with <ja>どうも</ja>)',
+        vi: 'Xin cảm ơn anh/chị rất nhiều. (thường kèm <ja>どうも</ja>)'
       }
     },
     {
@@ -769,10 +769,10 @@ export const n5Lesson5: Lesson = {
         { base: '帰', reading: 'かえ' }
       ],
       highlights: ['へ', ['行きます', '来ます', '帰ります']],
-      title: { en: 'Destination with へ', vi: 'Điểm đến với へ' },
+      title: { en: 'Destination with <ja>へ</ja>', vi: 'Điểm đến với <ja>へ</ja>' },
       explanation: {
-        en: 'With movement verbs, へ marks the direction. It is pronounced "e", not "he". Common verbs: 行きます (go), 来ます (come), 帰ります (return / go home).',
-        vi: 'Với động từ di chuyển, へ chỉ hướng đi. Đọc là "e", không phải "he". Các động từ thường gặp: 行きます (đi), 来ます (đến), 帰ります (về).'
+        en: 'With movement verbs, <ja>へ</ja> marks the direction. It is pronounced "e", not "he". Common verbs: <ja>行きます</ja> (go), <ja>来ます</ja> (come), <ja>帰ります</ja> (return / go home).',
+        vi: 'Với động từ di chuyển, <ja>へ</ja> chỉ hướng đi. Đọc là "e", không phải "he". Các động từ thường gặp: <ja>行きます</ja> (đi), <ja>来ます</ja> (đến), <ja>帰ります</ja> (về).'
       },
       explanationRuby: [
         { base: '行', reading: 'い' },
@@ -809,8 +809,8 @@ export const n5Lesson5: Lesson = {
       ],
       answers: {
         explanation: {
-          en: 'Ask the destination with どこへ. Answer with a place + へ + the movement verb, or use total negation (next point).',
-          vi: 'Hỏi điểm đến bằng どこへ. Trả lời bằng địa điểm + へ + động từ di chuyển, hoặc phủ định toàn bộ (mục tiếp).'
+          en: 'Ask the destination with <ja>どこへ</ja>. Answer with a place + <ja>へ</ja> + the movement verb, or use total negation (next point).',
+          vi: 'Hỏi điểm đến bằng <ja>どこへ</ja>. Trả lời bằng địa điểm + <ja>へ</ja> + động từ di chuyển, hoặc phủ định toàn bộ (mục tiếp).'
         },
         highlights: ['どこ', 'へ', 'か'],
         examples: [
@@ -839,10 +839,10 @@ export const n5Lesson5: Lesson = {
       pattern: 'どこ [へ] も 行きません',
       patternRuby: [{ base: '行', reading: 'い' }],
       highlights: ['どこ', 'へ', 'も', ['行きません', '行きませんでした']],
-      title: { en: 'Total negation (どこも)', vi: 'Phủ định toàn bộ (どこも)' },
+      title: { en: 'Total negation (<ja>どこも</ja>)', vi: 'Phủ định toàn bộ (<ja>どこも</ja>)' },
       explanation: {
-        en: 'To negate a question word completely, add も after it (どこも, なにも, だれも) and use the negative verb. へ after どこ is optional: どこへも / どこも.',
-        vi: 'Để phủ định hoàn toàn một nghi vấn từ, thêm も sau nó (どこも, なにも, だれも) và dùng động từ phủ định. へ sau どこ có thể lược: どこへも / どこも.'
+        en: 'To negate a question word completely, add <ja>も</ja> after it (<ja>どこも</ja>, <ja>なにも</ja>, <ja>だれも</ja>) and use the negative verb. <ja>へ</ja> after <ja>どこ</ja> is optional: <ja>どこへも</ja> / <ja>どこも</ja>.',
+        vi: 'Để phủ định hoàn toàn một nghi vấn từ, thêm <ja>も</ja> sau nó (<ja>どこも</ja>, <ja>なにも</ja>, <ja>だれも</ja>) và dùng động từ phủ định. <ja>へ</ja> sau <ja>どこ</ja> có thể lược: <ja>どこへも</ja> / <ja>どこも</ja>.'
       },
       examples: [
         {
@@ -890,10 +890,10 @@ export const n5Lesson5: Lesson = {
         { base: '帰', reading: 'かえ' }
       ],
       highlights: ['で', ['行きます', '来ます', '帰ります']],
-      title: { en: 'Means of transport (で)', vi: 'Phương tiện (で)' },
+      title: { en: 'Means of transport (<ja>で</ja>)', vi: 'Phương tiện (<ja>で</ja>)' },
       explanation: {
-        en: 'で after a transport noun marks the means: 電車で 行きます. For walking, use 歩いて without で.',
-        vi: 'で sau danh từ phương tiện chỉ cách thức: 電車で 行きます. Đi bộ dùng 歩いて, không thêm で.'
+        en: '<ja>で</ja> after a transport noun marks the means: <ja>電車で</ja> <ja>行きます</ja>. For walking, use <ja>歩いて</ja> without <ja>で</ja>.',
+        vi: '<ja>で</ja> sau danh từ phương tiện chỉ cách thức: <ja>電車で</ja> <ja>行きます</ja>. Đi bộ dùng <ja>歩いて</ja>, không thêm <ja>で</ja>.'
       },
       explanationRuby: [
         { base: '電', reading: 'でん' },
@@ -934,8 +934,8 @@ export const n5Lesson5: Lesson = {
       ],
       answers: {
         explanation: {
-          en: 'Ask the means with 何で. Answer with transport + で, or 歩いて.',
-          vi: 'Hỏi phương tiện bằng 何で. Trả lời bằng phương tiện + で, hoặc 歩いて.'
+          en: 'Ask the means with <ja>何で</ja>. Answer with transport + <ja>で</ja>, or <ja>歩いて</ja>.',
+          vi: 'Hỏi phương tiện bằng <ja>何で</ja>. Trả lời bằng phương tiện + <ja>で</ja>, hoặc <ja>歩いて</ja>.'
         },
         explanationRuby: [
           { base: '何', reading: 'なん' },
@@ -973,10 +973,10 @@ export const n5Lesson5: Lesson = {
     {
       pattern: 'N と V',
       highlights: ['と'],
-      title: { en: 'Companion with と', vi: 'Người đi cùng với と' },
+      title: { en: 'Companion with <ja>と</ja>', vi: 'Người đi cùng với <ja>と</ja>' },
       explanation: {
-        en: 'と after a person (or animal) marks who you do the action with. To say you act alone, use 一人で - do not use と.',
-        vi: 'と sau người (hoặc động vật) chỉ người cùng thực hiện hành động. Nếu làm một mình, dùng 一人で - không dùng と.'
+        en: '<ja>と</ja> after a person (or animal) marks who you do the action with. To say you act alone, use <ja>一人で</ja> - do not use <ja>と</ja>.',
+        vi: '<ja>と</ja> sau người (hoặc động vật) chỉ người cùng thực hiện hành động. Nếu làm một mình, dùng <ja>一人で</ja> - không dùng <ja>と</ja>.'
       },
       explanationRuby: [
         { base: '一', reading: 'ひと' },
@@ -1013,8 +1013,8 @@ export const n5Lesson5: Lesson = {
       ],
       answers: {
         explanation: {
-          en: 'Ask who someone goes with using だれと. Answer with person + と + the movement verb.',
-          vi: 'Hỏi ai đi cùng bằng だれと. Trả lời bằng người + と + động từ di chuyển.'
+          en: 'Ask who someone goes with using <ja>だれと</ja>. Answer with person + <ja>と</ja> + the movement verb.',
+          vi: 'Hỏi ai đi cùng bằng <ja>だれと</ja>. Trả lời bằng người + <ja>と</ja> + động từ di chuyển.'
         },
         highlights: ['だれ', 'と', 'か'],
         examples: [
@@ -1049,10 +1049,10 @@ export const n5Lesson5: Lesson = {
     {
       pattern: 'いつ',
       highlights: ['いつ'],
-      title: { en: 'Asking when (いつ)', vi: 'Hỏi khi nào (いつ)' },
+      title: { en: 'Asking when (<ja>いつ</ja>)', vi: 'Hỏi khi nào (<ja>いつ</ja>)' },
       explanation: {
-        en: 'いつ asks about time in a broad way (alongside 何時, 何曜日, 何月何日). Do not put に after いつ. Specific dates in the answer often take に (3月25日に).',
-        vi: 'いつ hỏi thời điểm một cách rộng (cùng với 何時, 何曜日, 何月何日). Không thêm に sau いつ. Ngày cụ thể trong câu trả lời thường có に (3月25日に).'
+        en: '<ja>いつ</ja> asks about time in a broad way (alongside <ja>何時</ja>, <ja>何曜日</ja>, <ja>何月何日</ja>). Do not put <ja>に</ja> after <ja>いつ</ja>. Specific dates in the answer often take <ja>に</ja> (3<ja>月</ja>25<ja>日に</ja>).',
+        vi: '<ja>いつ</ja> hỏi thời điểm một cách rộng (cùng với <ja>何時</ja>, <ja>何曜日</ja>, <ja>何月何日</ja>). Không thêm <ja>に</ja> sau <ja>いつ</ja>. Ngày cụ thể trong câu trả lời thường có <ja>に</ja> (3<ja>月</ja>25<ja>日に</ja>).'
       },
       explanationRuby: [
         { base: '何', reading: 'なん' },
@@ -1115,8 +1115,8 @@ export const n5Lesson5: Lesson = {
       ],
       answers: {
         explanation: {
-          en: 'For birthdays and calendar dates, answer with month + day (〜月〜日).',
-          vi: 'Với sinh nhật và ngày lịch, trả lời bằng tháng + ngày (〜月〜日).'
+          en: 'For birthdays and calendar dates, answer with month + day (<ja>〜月〜日</ja>).',
+          vi: 'Với sinh nhật và ngày lịch, trả lời bằng tháng + ngày (<ja>〜月〜日</ja>).'
         },
         explanationRuby: [
           { base: '月', reading: 'がつ' },
@@ -1151,10 +1151,10 @@ export const n5Lesson5: Lesson = {
     {
       pattern: '～ よ',
       highlights: ['よ'],
-      title: { en: 'Sentence-ending よ', vi: 'Trợ từ cuối câu よ' },
+      title: { en: 'Sentence-ending <ja>よ</ja>', vi: 'Trợ từ cuối câu <ja>よ</ja>' },
       explanation: {
         en: "よ at the end of a sentence emphasizes information the listener may not know, or softens the speaker's judgment / advice.",
-        vi: 'よ ở cuối câu nhấn mạnh thông tin người nghe có thể chưa biết, hoặc truyền đạt phán đoán / ý kiến của người nói.'
+        vi: '<ja>よ</ja> ở cuối câu nhấn mạnh thông tin người nghe có thể chưa biết, hoặc truyền đạt phán đoán / ý kiến của người nói.'
       },
       examples: [
         {
@@ -1194,10 +1194,10 @@ export const n5Lesson5: Lesson = {
     {
       pattern: 'そうですね',
       highlights: ['そうですね'],
-      title: { en: 'そうですね (agreement)', vi: 'そうですね (đồng ý)' },
+      title: { en: '<ja>そうですね</ja> (agreement)', vi: '<ja>そうですね</ja> (đồng ý)' },
       explanation: {
-        en: 'そうですね shows agreement or shared feeling with what the other person said. It differs from そうですか (Lesson 2), which marks new information you did not know.',
-        vi: 'そうですね thể hiện đồng ý hoặc đồng cảm với điều đối phương nói. Khác với そうですか (Bài 2), vốn đánh dấu thông tin mới mà bạn chưa biết.'
+        en: '<ja>そうですね</ja> shows agreement or shared feeling with what the other person said. It differs from <ja>そうですか</ja> (Lesson 2), which marks new information you did not know.',
+        vi: '<ja>そうですね</ja> thể hiện đồng ý hoặc đồng cảm với điều đối phương nói. Khác với <ja>そうですか</ja> (Bài 2), vốn đánh dấu thông tin mới mà bạn chưa biết.'
       },
       examples: [
         {
@@ -1739,8 +1739,8 @@ export const n5Lesson5: Lesson = {
           vi: 'Nếu ngày nghỉ quốc gia rơi vào chủ nhật thì thứ hai liền sau được nghỉ bù.'
         },
         {
-          en: 'The stretch from April 29 to May 5 is called Golden Week (ゴールデンウィーク). Some companies give the whole week off.',
-          vi: 'Kỳ nghỉ liền từ 29/4 đến 5/5 gọi là ゴールデンウィーク (Tuần lễ vàng). Một số công ty cho nghỉ cả tuần.'
+          en: 'The stretch from April 29 to May 5 is called Golden Week (<ja>ゴールデンウィーク</ja>). Some companies give the whole week off.',
+          vi: 'Kỳ nghỉ liền từ 29/4 đến 5/5 gọi là <ja>ゴールデンウィーク</ja> (Tuần lễ vàng). Một số công ty cho nghỉ cả tuần.'
         }
       ]
     },
