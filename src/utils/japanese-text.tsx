@@ -104,10 +104,18 @@ function renderRubySegment(segment: RubySegment, position: number, toneIndex?: n
   const rtStyle = toneIndex !== undefined ? rubySegmentRtStyle(toneIndex) : undefined;
 
   return (
-    <ruby key={`ruby-${position}-${segment.base}`}>
+    <ruby lang="ja" key={`ruby-${position}-${segment.base}`}>
       {segment.base}
       <rt style={rtStyle}>{segment.reading}</rt>
     </ruby>
+  );
+}
+
+function japaneseLangSpan(text: string, key?: string): ReactNode {
+  return (
+    <span lang="ja" key={key}>
+      {text}
+    </span>
   );
 }
 
@@ -120,7 +128,7 @@ export function renderJapaneseText(
   const text = formatJapaneseDisplay(jp);
 
   if (!ruby?.length) {
-    return text;
+    return japaneseLangSpan(text);
   }
 
   const colorize = options?.colorizeRuby !== false;
@@ -135,7 +143,7 @@ export function renderJapaneseText(
       return;
     }
 
-    rendered.push(plainRun);
+    rendered.push(japaneseLangSpan(plainRun, `plain-${rendered.length}`));
     plainRun = '';
   };
 
