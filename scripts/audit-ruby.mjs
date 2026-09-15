@@ -149,6 +149,7 @@ const l24 = fs.readFileSync('src/constants/courses/n5/lessons-24.ts', 'utf8');
 const l25 = fs.readFileSync('src/constants/courses/n5/lessons-25.ts', 'utf8');
 const l26 = fs.readFileSync('src/constants/courses/n4/lessons-26.ts', 'utf8');
 const l27 = fs.readFileSync('src/constants/courses/n4/lessons-27.ts', 'utf8');
+const l28 = fs.readFileSync('src/constants/courses/n4/lessons-28.ts', 'utf8');
 const l34 = fs.readFileSync('src/constants/courses/n4/lessons-34.ts', 'utf8');
 const end = index.lastIndexOf('    n5Lesson5');
 const all = [
@@ -176,6 +177,7 @@ const all = [
   ...scanChunk(l25, 'L25'),
   ...scanChunk(l26, 'L26'),
   ...scanChunk(l27, 'L27'),
+  ...scanChunk(l28, 'L28'),
   ...scanChunk(l34, 'L34')
 ];
 console.log(JSON.stringify(all, null, 2));
