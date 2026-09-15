@@ -1,4 +1,5 @@
 import { withSequentialNumbers, type Course } from '@/constants/courses/types.ts';
+import { n4Lesson26 } from '@/constants/courses/n4/lessons-26.ts';
 
 /** Minna no Nihongo Shokyu II - lessons 26-50 (N4). Part files appended as authored. */
 export const n4Course: Course = {
@@ -21,5 +22,5 @@ export const n4Course: Course = {
     en: 'A structured JLPT N4 course based on Minna no Nihongo Shokyu II. Lessons 26-50 with vocabulary, grammar, and reading practice in English and Vietnamese.',
     vi: 'Khóa học JLPT N4 theo Minna Sơ cấp II. Bài 26-50 với từ vựng, ngữ pháp và bài đọc hiểu song ngữ Anh - Việt.'
   },
-  lessons: withSequentialNumbers([], 26)
+  lessons: withSequentialNumbers([n4Lesson26], 26)
 };
