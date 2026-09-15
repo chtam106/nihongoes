@@ -5,7 +5,9 @@ type RouteNode = string | { readonly [key: string]: RouteNode };
 export const routes = {
   home: '/',
   n5: {
-    index: '/n5'
+    index: '/n5',
+    intro: '/n5/intro',
+    reference: '/n5/reference'
   },
   n4: {
     index: '/n4'
@@ -59,6 +61,14 @@ const pathToSeoKey = Object.fromEntries(routeEntries.map((entry) => [entry.path,
 export type SeoRouteKey = (typeof routeEntries)[number]['seoKey'] | 'notFound';
 
 export function getSeoRouteKey(pathname: string): SeoRouteKey {
+  if (pathname === routes.n5.intro) {
+    return 'n5.intro' as SeoRouteKey;
+  }
+
+  if (pathname === routes.n5.reference) {
+    return 'n5.reference' as SeoRouteKey;
+  }
+
   for (const level of COURSE_LEVELS) {
     if (pathname === coursePath(level) || pathname.startsWith(`${coursePath(level)}/`)) {
       return level as SeoRouteKey;

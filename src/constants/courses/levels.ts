@@ -29,3 +29,11 @@ export function lessonReadingPath(level: CourseLevel, id: string): string {
 export function lessonWritingPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/writing`;
 }
+
+export function courseIntroPath(level: CourseLevel): string {
+  return `/${level}/intro`;
+}
+
+export function courseReferencePath(level: CourseLevel): string {
+  return `/${level}/reference`;
+}

@@ -12,6 +12,18 @@ export const seo = {
     description:
       'Learn the Jōyō kanji in bite-sized lessons, with meanings, on and kun readings, example words, and native audio.'
   },
+  n5: {
+    intro: {
+      title: 'N5 Getting Started - Japanese Basics & Classroom Phrases',
+      description:
+        'Start Minna no Nihongo N5 here: how Japanese works, classroom Japanese, and everyday greetings before Lesson 1.'
+    },
+    reference: {
+      title: 'N5 Reference - Numbers, Time, Counters & Verbs',
+      description:
+        'Minna no Nihongo N5 back-matter reference: grammar notes, number charts, time expressions, counters, and verb conjugation tables.'
+    }
+  },
   alphabet: {
     title: 'Learn the Japanese Alphabet - Hiragana and Katakana',
     description:

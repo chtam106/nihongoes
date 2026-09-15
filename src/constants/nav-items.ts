@@ -6,7 +6,14 @@ import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
-import { COURSE_LEVELS, coursePath, lessonPath } from '@/constants/courses/levels.ts';
+import {
+  COURSE_LEVELS,
+  courseIntroPath,
+  coursePath,
+  courseReferencePath,
+  lessonPath
+} from '@/constants/courses/levels.ts';
+import { n5Intro } from '@/constants/courses/n5/intro.ts';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
 import type { Bilingual, CourseLevel } from '@/constants/courses/types.ts';
 import {
@@ -132,8 +139,21 @@ export function isNavGroupActive(group: NavGroup, pathname: string) {
 export async function loadCourseLessonNavItems(level: CourseLevel): Promise<NavItem[]> {
   const lessons = await courseLessonLoaders[level]();
 
-  return lessons.map((lesson) => ({
+  const items = lessons.map((lesson) => ({
     label: formatLessonNavLabel(lesson.number, lesson.title),
     path: lessonPath(level, lesson.id)
   }));
+
+  if (level === 'n5') {
+    items.unshift({
+      label: n5Intro.title,
+      path: courseIntroPath(level)
+    });
+    items.push({
+      label: { en: 'Reference', vi: 'Tham khảo' },
+      path: courseReferencePath(level)
+    });
+  }
+
+  return items;
 }
