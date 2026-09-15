@@ -417,7 +417,7 @@ export const n4Lesson37: Lesson = {
             { base: '金', reading: 'きん' },
             { base: '閣', reading: 'かく' },
             { base: '寺', reading: 'じ' },
-            { base: '世', reading: 'せい' },
+            { base: '世', reading: 'せ' },
             { base: '紀', reading: 'き' },
             { base: '建', reading: 'た' },
             { base: '年', reading: 'ねん' },
@@ -425,7 +425,8 @@ export const n4Lesson37: Lesson = {
             { base: '度', reading: 'ど' },
             { base: '焼', reading: 'や' },
             { base: '再', reading: 'さい' },
-            { base: '建', reading: 'けん' },
+            { base: '建', reading: 'た' },
+            { base: '年', reading: 'ねん' },
             { base: '世', reading: 'せ' },
             { base: '界', reading: 'かい' },
             { base: '遺', reading: 'い' },
@@ -456,7 +457,10 @@ export const n4Lesson37: Lesson = {
             en: 'Yes. About 20 kilograms were used.',
             vi: 'Vâng. Khoảng 20 kg vàng đã được dùng.'
           },
-          ruby: [{ base: '使', reading: 'つか' }]
+          ruby: [
+            { base: '約', reading: 'やく' },
+            { base: '使', reading: 'つか' }
+          ]
         },
         {
           speakerId: 'karina',
@@ -464,7 +468,7 @@ export const n4Lesson37: Lesson = {
           romaji: 'Naka ni hairemasu ka.',
           meaning: { en: 'Can we go inside?', vi: 'Có vào được bên trong không?' },
           ruby: [
-            { base: '中', reading: 'なか' },
+            { base: '中', reading: 'じゅう' },
             { base: '入', reading: 'はい' }
           ]
         },
@@ -477,8 +481,8 @@ export const n4Lesson37: Lesson = {
             vi: 'Không vào được bên trong. Chi hãy đi quanh hồ và ngắm xem nhé.'
           },
           ruby: [
-            { base: '中', reading: 'なか' },
-            { base: '見', reading: 'けん' },
+            { base: '中', reading: 'じゅう' },
+            { base: '見', reading: 'み' },
             { base: '学', reading: 'がく' },
             { base: '池', reading: 'いけ' },
             { base: '周', reading: 'まわ' },
@@ -499,6 +503,11 @@ export const n4Lesson37: Lesson = {
         vi: 'Khi ai làm gì với bạn, tác nhân dùng に, bạn là chủ ngữ: 先生に 褒められました. Chia bị động như nhóm II: 書きます→書かれます.'
       },
       explanationRuby: [
+        { base: '先', reading: 'せん' },
+        { base: '生', reading: 'せい' },
+        { base: '褒', reading: 'ほ' },
+        { base: '書', reading: 'か' },
+        { base: '書', reading: 'か' },
         { base: '先', reading: 'せん' },
         { base: '生', reading: 'せい' },
         { base: '褒', reading: 'ほ' },
@@ -542,6 +551,8 @@ export const n4Lesson37: Lesson = {
       },
       explanationRuby: [
         { base: '弟', reading: 'おとうと' },
+        { base: '壊', reading: 'こわ' },
+        { base: '弟', reading: 'おとうと' },
         { base: '壊', reading: 'こわ' }
       ],
       examples: [
@@ -583,7 +594,18 @@ export const n4Lesson37: Lesson = {
         { base: '寺', reading: 'じ' },
         { base: '年', reading: 'ねん' },
         { base: '建', reading: 'た' },
-        { base: '大', reading: 'おお' },
+        { base: '大', reading: 'だい' },
+        { base: '阪', reading: 'さか' },
+        { base: '展', reading: 'てん' },
+        { base: '覧', reading: 'らん' },
+        { base: '会', reading: 'かい' },
+        { base: '開', reading: 'ひら' },
+        { base: '法', reading: 'ほう' },
+        { base: '隆', reading: 'りゅう' },
+        { base: '寺', reading: 'じ' },
+        { base: '年', reading: 'ねん' },
+        { base: '建', reading: 'た' },
+        { base: '大', reading: 'だい' },
         { base: '阪', reading: 'さか' },
         { base: '展', reading: 'てん' },
         { base: '覧', reading: 'らん' },
@@ -598,8 +620,7 @@ export const n4Lesson37: Lesson = {
           ruby: [
             { base: '新', reading: 'あたら' },
             { base: '星', reading: 'ほし' },
-            { base: '見', reading: 'み' },
-            { base: '付', reading: 'つ' }
+            { base: '見', reading: 'み' }
           ]
         },
         {
@@ -624,6 +645,7 @@ export const n4Lesson37: Lesson = {
     },
     {
       pattern: 'N から / N で 作ります',
+      patternRuby: [{ base: '作', reading: 'つく' }],
       highlights: ['から', 'で', '作'],
       title: { en: 'Materials: から and で', vi: 'Nguyên liệu: から và で' },
       explanation: {
@@ -631,6 +653,10 @@ export const n4Lesson37: Lesson = {
         vi: 'から chỉ nguyên liệu lấy từ đâu: ビールは 麦から 作ります. で chỉ chất liệu tạo thành: この ビールは 麦で 作りました (đây là nguyên liệu).'
       },
       explanationRuby: [
+        { base: '麦', reading: 'むぎ' },
+        { base: '作', reading: 'つく' },
+        { base: '麦', reading: 'むぎ' },
+        { base: '作', reading: 'つく' },
         { base: '麦', reading: 'むぎ' },
         { base: '作', reading: 'つく' },
         { base: '麦', reading: 'むぎ' },
@@ -663,6 +689,16 @@ export const n4Lesson37: Lesson = {
     },
     {
       pattern: 'N の 中 / 外 / 上 / 下 / 前 / 後 / 右 / 左',
+      patternRuby: [
+        { base: '中', reading: 'なか' },
+        { base: '外', reading: 'そと' },
+        { base: '上', reading: 'うえ' },
+        { base: '下', reading: 'した' },
+        { base: '前', reading: 'まえ' },
+        { base: '後', reading: 'うし' },
+        { base: '右', reading: 'みぎ' },
+        { base: '左', reading: 'ひだ' }
+      ],
       highlights: ['中', '外', '上', '下', '前', '後', '右', '左'],
       title: { en: 'Location particles', vi: 'Trợ từ vị trí' },
       explanation: {
@@ -671,12 +707,20 @@ export const n4Lesson37: Lesson = {
       },
       explanationRuby: [
         { base: '箱', reading: 'はこ' },
-        { base: '中', reading: 'なか' },
+        { base: '中', reading: 'じゅう' },
         { base: '駅', reading: 'えき' },
         { base: '前', reading: 'まえ' },
         { base: '机', reading: 'つくえ' },
         { base: '上', reading: 'うえ' },
-        { base: '中', reading: 'なか' },
+        { base: '中', reading: 'じゅう' },
+        { base: '入', reading: 'はい' },
+        { base: '箱', reading: 'はこ' },
+        { base: '中', reading: 'じゅう' },
+        { base: '駅', reading: 'えき' },
+        { base: '前', reading: 'まえ' },
+        { base: '机', reading: 'つくえ' },
+        { base: '上', reading: 'うえ' },
+        { base: '中', reading: 'じゅう' },
         { base: '入', reading: 'はい' }
       ],
       examples: [
@@ -685,7 +729,7 @@ export const n4Lesson37: Lesson = {
           romaji: 'Naka ni hairemasu ka.',
           meaning: { en: 'Can we go inside?', vi: 'Có vào được bên trong không?' },
           ruby: [
-            { base: '中', reading: 'なか' },
+            { base: '中', reading: 'じゅう' },
             { base: '入', reading: 'はい' }
           ]
         },
@@ -784,7 +828,10 @@ export const n4Lesson37: Lesson = {
       title: { en: 'Accidents and incidents', vi: 'Tai nạn và vụ án' },
       introTerm: {
         jp: '事故',
-        ruby: [{ base: '事', reading: 'じ' }]
+        ruby: [
+          { base: '事', reading: 'じ' },
+          { base: '故', reading: 'こ' }
+        ]
       },
       layout: 'stacked',
       rows: [

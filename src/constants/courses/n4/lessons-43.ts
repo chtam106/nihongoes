@@ -342,19 +342,7 @@ export const n4Lesson43: Lesson = {
         en: 'Verb masu-stem + そうです shows a sign something is about to happen (often with いまにも, もうすぐ). i-adj drops い; na-adj drops な (いい→よさ). It can also describe how someone appears to feel.',
         vi: 'Động từ thể ます + そうです cho thấy sắp xảy ra (thường với いまにも, もうすぐ). Tính từ い bỏ い; な bỏ な (いい→よさ). Cũng mô tả cảm xúc bên ngoài của người khác.'
       },
-      explanationRuby: [
-        { base: '今', reading: 'いま' },
-        { base: '桜', reading: 'さくら' },
-        { base: '咲', reading: 'さ' },
-        { base: '寒', reading: 'さむ' },
-        { base: '料', reading: 'りょう' },
-        { base: '理', reading: 'り' },
-        { base: '辛', reading: 'から' },
-        { base: '頭', reading: 'あたま' },
-        { base: '机', reading: 'つくえ' },
-        { base: '丈', reading: 'じょう' },
-        { base: '夫', reading: 'じょう' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: '今にも 雨が 降りそうです。',
@@ -395,6 +383,7 @@ export const n4Lesson43: Lesson = {
     },
     {
       pattern: 'V-te 来ます',
+      patternRuby: [{ base: '来', reading: 'き' }],
       highlights: ['来'],
       title: { en: 'Go and come back (V-te 来ます)', vi: 'Đi làm rồi về (V-te 来ます)' },
       explanation: {
@@ -402,18 +391,24 @@ export const n4Lesson43: Lesson = {
         vi: 'V-te 来ます: đi làm việc rồi quay lại: たばこを 買って 来ます. Dùng で cho nơi làm (スーパーで), から khi mang từ nơi đó (台所から). N へ 行って 来ます bỏ hành động; 出かけて 来ます bỏ đích.'
       },
       explanationRuby: [
+        { base: '来', reading: 'き' },
         { base: '買', reading: 'か' },
         { base: '来', reading: 'き' },
-        { base: '牛', reading: 'ぎゅう' },
-        { base: '乳', reading: 'にゅう' },
         { base: '台', reading: 'だい' },
         { base: '所', reading: 'どころ' },
-        { base: '取', reading: 'と' },
-        { base: '郵', reading: 'ゆう' },
-        { base: '便', reading: 'びん' },
-        { base: '局', reading: 'きょく' },
         { base: '行', reading: 'い' },
-        { base: '出', reading: 'で' }
+        { base: '来', reading: 'き' },
+        { base: '出', reading: 'で' },
+        { base: '来', reading: 'き' },
+        { base: '来', reading: 'き' },
+        { base: '買', reading: 'か' },
+        { base: '来', reading: 'き' },
+        { base: '台', reading: 'だい' },
+        { base: '所', reading: 'どころ' },
+        { base: '行', reading: 'い' },
+        { base: '来', reading: 'き' },
+        { base: '出', reading: 'で' },
+        { base: '来', reading: 'き' }
       ],
       examples: [
         {
@@ -534,8 +529,7 @@ export const n4Lesson43: Lesson = {
           ruby: [
             { base: '知', reading: 'し' },
             { base: '人', reading: 'ひと' },
-            { base: '近', reading: 'ちか' },
-            { base: '来', reading: 'き' }
+            { base: '近', reading: 'ちか' }
           ]
         },
         {
@@ -548,8 +542,7 @@ export const n4Lesson43: Lesson = {
           ruby: [
             { base: '私', reading: 'わたし' },
             { base: '庭', reading: 'にわ' },
-            { base: '言', reading: 'い' },
-            { base: '謝', reading: 'あや' }
+            { base: '言', reading: 'い' }
           ]
         },
         {

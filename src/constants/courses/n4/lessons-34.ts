@@ -448,9 +448,9 @@ export const n4Lesson34: Lesson = {
             vi: 'Tôi muốn xem thử trà đạo một lần...'
           },
           ruby: [
-            { base: '茶', reading: 'さ' },
+            { base: '茶', reading: 'ちゃ' },
             { base: '道', reading: 'どう' },
-            { base: '一', reading: 'いち' },
+            { base: '一', reading: 'いっ' },
             { base: '度', reading: 'ど' },
             { base: '見', reading: 'み' }
           ]
@@ -488,7 +488,7 @@ export const n4Lesson34: Lesson = {
             { base: '茶', reading: 'ちゃ' },
             { base: '点', reading: 'た' },
             { base: '菓', reading: 'か' },
-            { base: '子', reading: 'し' }
+            { base: '子', reading: 'こ' }
           ]
         },
         {
@@ -498,7 +498,7 @@ export const n4Lesson34: Lesson = {
           meaning: { en: 'Oh, do we eat sweets first?', vi: 'Ôi, bánh ăn trước ạ?' },
           ruby: [
             { base: '菓', reading: 'か' },
-            { base: '子', reading: 'し' },
+            { base: '子', reading: 'こ' },
             { base: '先', reading: 'さき' }
           ]
         },
@@ -513,7 +513,7 @@ export const n4Lesson34: Lesson = {
           ruby: [
             { base: '甘', reading: 'あま' },
             { base: '菓', reading: 'か' },
-            { base: '子', reading: 'し' },
+            { base: '子', reading: 'こ' },
             { base: '食', reading: 'た' },
             { base: '茶', reading: 'ちゃ' },
             { base: '飲', reading: 'の' }
@@ -607,7 +607,12 @@ export const n4Lesson34: Lesson = {
       explanationRuby: [
         { base: '説', reading: 'せつ' },
         { base: '明', reading: 'めい' },
-        { base: '書', reading: 'しょ' },
+        { base: '書', reading: 'か' },
+        { base: '組', reading: 'く' },
+        { base: '立', reading: 'た' },
+        { base: '説', reading: 'せつ' },
+        { base: '明', reading: 'めい' },
+        { base: '書', reading: 'か' },
         { base: '組', reading: 'く' },
         { base: '立', reading: 'た' }
       ],
@@ -641,7 +646,7 @@ export const n4Lesson34: Lesson = {
           ruby: [
             { base: '説', reading: 'せつ' },
             { base: '明', reading: 'めい' },
-            { base: '書', reading: 'しょ' },
+            { base: '書', reading: 'か' },
             { base: '家', reading: 'か' },
             { base: '具', reading: 'ぐ' },
             { base: '組', reading: 'く' },
@@ -674,7 +679,7 @@ export const n4Lesson34: Lesson = {
           },
           ruby: [
             { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' },
+            { base: '事', reading: 'じ' },
             { base: '飲', reading: 'の' },
             { base: '行', reading: 'い' }
           ]
@@ -684,7 +689,7 @@ export const n4Lesson34: Lesson = {
           romaji: 'Shokuji no ato de, ha o migakimasu.',
           meaning: { en: 'I brush my teeth after meals.', vi: 'Sau khi ăn cơm tôi đánh răng.' },
           ruby: [
-            { base: '食', reading: 'しょく' },
+            { base: '食', reading: 'た' },
             { base: '事', reading: 'じ' },
             { base: '歯', reading: 'は' },
             { base: '磨', reading: 'みが' }
@@ -729,7 +734,10 @@ export const n4Lesson34: Lesson = {
         en: 'V1-て V2 shows V2 done with V1 as an accompanying action or state. The subject of both verbs is the same: しょうゆを つけて 食べます.',
         vi: 'V1-て V2 cho biết V2 được thực hiện kèm hành động hoặc trạng thái V1. Chủ thể của cả hai động từ giống nhau: しょうゆを つけて 食べます.'
       },
-      explanationRuby: [{ base: '食', reading: 'た' }],
+      explanationRuby: [
+        { base: '食', reading: 'た' },
+        { base: '食', reading: 'た' }
+      ],
       examples: [
         {
           jp: 'しょうゆを つけて 食べます。',
@@ -769,6 +777,8 @@ export const n4Lesson34: Lesson = {
       },
       explanationRuby: [
         { base: '行', reading: 'い' },
+        { base: '休', reading: 'やす' },
+        { base: '行', reading: 'い' },
         { base: '休', reading: 'やす' }
       ],
       examples: [
@@ -797,7 +807,7 @@ export const n4Lesson34: Lesson = {
             vi: 'Chủ nhật tôi không đi đâu mà ở nhà nghỉ ngơi.'
           },
           ruby: [
-            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'び' },
             { base: '曜', reading: 'よう' },
             { base: '日', reading: 'び' },
             { base: '行', reading: 'い' },
@@ -837,7 +847,8 @@ export const n4Lesson34: Lesson = {
             vi: 'Hôm nay tôi nấu oyakodon. Nguyên liệu gồm 200 gam thịt gà, 1 củ hành tây và 3 quả trứng.'
           },
           ruby: [
-            { base: '今日', reading: 'きょう' },
+            { base: '今', reading: 'きょう' },
+            { base: '日', reading: 'び' },
             { base: '親', reading: 'おや' },
             { base: '子', reading: 'こ' },
             { base: '作', reading: 'つく' },

@@ -417,18 +417,7 @@ export const n4Lesson46: Lesson = {
         en: 'V-る ところです = about to do; V-ている ところです = in the middle of doing; V-た ところです = just finished. ところ literally means "point/ stage".',
         vi: 'V-る ところです = sắp làm; V-ている ところです = đang làm dở; V-た ところです = vừa làm xong. ところ nghĩa là "giai đoạn/lúc".'
       },
-      explanationRuby: [
-        { base: '会', reading: 'かい' },
-        { base: '議', reading: 'ぎ' },
-        { base: '始', reading: 'はじ' },
-        { base: '電', reading: 'でん' },
-        { base: '車', reading: 'しゃ' },
-        { base: '乗', reading: 'の' },
-        { base: '原', reading: 'げん' },
-        { base: '因', reading: 'いん' },
-        { base: '調', reading: 'しら' },
-        { base: '帰', reading: 'かえ' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: '会議は これから 始める ところ です。',
@@ -487,10 +476,17 @@ export const n4Lesson46: Lesson = {
         vi: 'V-た ばかり cho thấy việc vừa mới xảy ra và trạng thái còn mới: 3月に 卒業した ばかり, 先週 買った ばかり.'
       },
       explanationRuby: [
+        { base: '月', reading: 'げつ' },
         { base: '卒', reading: 'そつ' },
         { base: '業', reading: 'ぎょう' },
-        { base: '月', reading: 'がつ' },
-        { base: '入', reading: 'はい' },
+        { base: '先', reading: 'せん' },
+        { base: '週', reading: 'しゅう' },
+        { base: '買', reading: 'か' },
+        { base: '月', reading: 'げつ' },
+        { base: '卒', reading: 'そつ' },
+        { base: '業', reading: 'ぎょう' },
+        { base: '先', reading: 'せん' },
+        { base: '週', reading: 'しゅう' },
         { base: '買', reading: 'か' }
       ],
       examples: [
@@ -502,8 +498,8 @@ export const n4Lesson46: Lesson = {
             vi: 'Anh ấy mới tốt nghiệp đại học vào tháng 3.'
           },
           ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '大', reading: 'だい' },
+            { base: '月', reading: 'げつ' },
+            { base: '大', reading: 'たい' },
             { base: '学', reading: 'がく' },
             { base: '卒', reading: 'そつ' },
             { base: '業', reading: 'ぎょう' }
@@ -542,6 +538,11 @@ export const n4Lesson46: Lesson = {
     },
     {
       pattern: 'N / Adj / V 普通形 はずです',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
+      ],
       highlights: ['はず'],
       title: { en: 'Should be, expected to (はずです)', vi: 'Chắc là, lẽ ra (はずです)' },
       explanation: {
@@ -552,8 +553,9 @@ export const n4Lesson46: Lesson = {
         { base: '会', reading: 'かい' },
         { base: '議', reading: 'ぎ' },
         { base: '室', reading: 'しつ' },
-        { base: '駅', reading: 'えき' },
-        { base: '着', reading: 'つ' }
+        { base: '会', reading: 'かい' },
+        { base: '議', reading: 'ぎ' },
+        { base: '室', reading: 'しつ' }
       ],
       examples: [
         {

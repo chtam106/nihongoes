@@ -350,7 +350,7 @@ export const n4Lesson49: Lesson = {
           romaji: 'Sore wa taihen desu ne.',
           meaning: { en: 'That is tough.', vi: 'Thế thì gay nhỉ.' },
           ruby: [
-            { base: '大', reading: 'たい' },
+            { base: '大', reading: 'おお' },
             { base: '変', reading: 'へん' }
           ]
         },
@@ -363,7 +363,7 @@ export const n4Lesson49: Lesson = {
             vi: 'Vì thế hôm nay tôi cho cháu nghỉ ở nhà, nhờ thầy nhắn lại với cô Ito giúp.'
           },
           ruby: [
-            { base: '学', reading: 'がっ' },
+            { base: '学', reading: 'がく' },
             { base: '校', reading: 'こう' },
             { base: '休', reading: 'やす' },
             { base: '伝', reading: 'つた' }
@@ -378,7 +378,7 @@ export const n4Lesson49: Lesson = {
             vi: 'Vâng, được rồi ạ. Mong cháu mau khỏe bệnh.'
           },
           ruby: [
-            { base: '大', reading: 'だい' },
+            { base: '大', reading: 'おお' },
             { base: '事', reading: 'じ' }
           ]
         },
@@ -408,12 +408,14 @@ export const n4Lesson49: Lesson = {
         { base: '中', reading: 'なか' },
         { base: '村', reading: 'むら' },
         { base: '時', reading: 'じ' },
-        { base: '来', reading: 'こ' },
+        { base: '来', reading: 'き' },
         { base: '酒', reading: 'さけ' },
-        { base: '部', reading: 'ぶ' },
-        { base: '長', reading: 'ちょう' },
-        { base: '奥', reading: 'おく' },
-        { base: '行', reading: 'い' }
+        { base: '尊', reading: 'そん' },
+        { base: '敬', reading: 'けい' },
+        { base: '語', reading: 'ご' },
+        { base: '謙', reading: 'けん' },
+        { base: '譲', reading: 'じょう' },
+        { base: '語', reading: 'ご' }
       ],
       examples: [
         {
@@ -424,7 +426,7 @@ export const n4Lesson49: Lesson = {
             { base: '中', reading: 'なか' },
             { base: '村', reading: 'むら' },
             { base: '時', reading: 'じ' },
-            { base: '来', reading: 'こ' }
+            { base: '来', reading: 'き' }
           ]
         },
         {
@@ -439,7 +441,7 @@ export const n4Lesson49: Lesson = {
             { base: '長', reading: 'ちょう' },
             { base: '奥', reading: 'おく' },
             { base: '様', reading: 'さま' },
-            { base: '行', reading: 'い' }
+            { base: '行', reading: 'ぎょう' }
           ]
         }
       ]
@@ -452,7 +454,7 @@ export const n4Lesson49: Lesson = {
         en: 'お + verb masu-stem + になります is a highly respectful form. Do not use it with one-syllable stems (みます, ねます), Group III verbs, or verbs that already have a special honorific form.',
         vi: 'お + thân ます + になります là cách kính ngữ cao. Không dùng với thân một âm tiết (みます, ねます), động từ nhóm III, hoặc động từ đã có dạng kính ngữ riêng.'
       },
-      explanationRuby: [{ base: '社', reading: 'しゃ' }],
+      explanationRuby: [],
       examples: [
         {
           jp: '社長は もう お帰りに なりました。',
@@ -481,17 +483,18 @@ export const n4Lesson49: Lesson = {
         vi: 'Một số động từ có dạng kính ngữ riêng: います/行きます/来ます→いらっしゃいます, たべます/のみます→召し上がります, いいます→おっしゃいます, します→なさいます, みます→ご覧になります, しっています→ご存じです. いらっしゃる chia bất quy tắc (いらっしゃいます, không いらっしゃります).'
       },
       explanationRuby: [
-        { base: '行', reading: 'い' },
+        { base: '行', reading: 'ぎょう' },
         { base: '来', reading: 'き' },
         { base: '召', reading: 'め' },
         { base: '上', reading: 'あ' },
         { base: '覧', reading: 'らん' },
         { base: '存', reading: 'ぞん' },
-        { base: '先', reading: 'せん' },
-        { base: '生', reading: 'せい' },
-        { base: '研', reading: 'けん' },
-        { base: '究', reading: 'きゅう' },
-        { base: '室', reading: 'しつ' }
+        { base: '行', reading: 'ぎょう' },
+        { base: '来', reading: 'き' },
+        { base: '召', reading: 'め' },
+        { base: '上', reading: 'あ' },
+        { base: '覧', reading: 'らん' },
+        { base: '存', reading: 'ぞん' }
       ],
       examples: [
         {
@@ -520,7 +523,7 @@ export const n4Lesson49: Lesson = {
           romaji: 'O-namae wa nan to osshaimasu ka.',
           meaning: { en: 'What is your name?', vi: 'Anh/Chị tên là gì ạ?' },
           ruby: [
-            { base: '名', reading: 'な' },
+            { base: '名', reading: 'めい' },
             { base: '前', reading: 'まえ' },
             { base: '何', reading: 'なん' }
           ]
@@ -535,13 +538,7 @@ export const n4Lesson49: Lesson = {
         en: 'More polite than 〜てください: Group I/II verbs use お + masu-stem + ください; Group III noun+します uses ご + noun + ください. Verbs with special honorific forms use those instead: また いらっしゃって ください.',
         vi: 'Lịch sự hơn 〜てください: nhóm I/II dùng お + thân ます + ください; nhóm III (N+します) dùng ご + N + ください. Động từ kính ngữ đặc biệt dùng dạng riêng: また いらっしゃって ください.'
       },
-      explanationRuby: [
-        { base: '入', reading: 'はい' },
-        { base: '忘', reading: 'わす' },
-        { base: '物', reading: 'もの' },
-        { base: '注', reading: 'ちゅう' },
-        { base: '意', reading: 'い' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: 'どうぞ お入り ください。',
@@ -572,7 +569,19 @@ export const n4Lesson49: Lesson = {
       },
       explanationRuby: [
         { base: '国', reading: 'くに' },
-        { base: '名', reading: 'な' },
+        { base: '名', reading: 'めい' },
+        { base: '前', reading: 'まえ' },
+        { base: '元', reading: 'げん' },
+        { base: '気', reading: 'き' },
+        { base: '忙', reading: 'いそが' },
+        { base: '家', reading: 'か' },
+        { base: '族', reading: 'ぞく' },
+        { base: '意', reading: 'い' },
+        { base: '見', reading: 'けん' },
+        { base: '自', reading: 'じ' },
+        { base: '由', reading: 'ゆう' },
+        { base: '国', reading: 'くに' },
+        { base: '名', reading: 'めい' },
         { base: '前', reading: 'まえ' },
         { base: '元', reading: 'げん' },
         { base: '気', reading: 'き' },
@@ -802,7 +811,7 @@ export const n4Lesson49: Lesson = {
             { base: '日', reading: 'にち' }
           ],
           jp: 'こどもの日',
-          ruby: [{ base: '日', reading: 'ひ' }],
+          ruby: [{ base: '日', reading: 'にち' }],
           meaning: { en: "Children's Day", vi: 'Ngày Trẻ em' },
           note: {
             en: 'Celebrates child growth and health; carp streamers are flown.',
@@ -848,7 +857,7 @@ export const n4Lesson49: Lesson = {
           ],
           jp: 'お月見',
           ruby: [
-            { base: '月', reading: 'つき' },
+            { base: '月', reading: 'がつ' },
             { base: '見', reading: 'けん' }
           ],
           meaning: { en: 'Moon viewing', vi: 'Hội ngắm trăng' },

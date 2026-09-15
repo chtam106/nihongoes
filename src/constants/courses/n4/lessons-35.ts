@@ -385,8 +385,9 @@ export const n4Lesson35: Lesson = {
             { base: '木', reading: 'き' },
             { base: '冬', reading: 'ふゆ' },
             { base: '休', reading: 'やす' },
-            { base: '所', reading: 'ところ' },
-            { base: '知', reading: 'し' }
+            { base: '行', reading: 'い' },
+            { base: '所', reading: 'じょ' },
+            { base: '知', reading: 'ち' }
           ]
         },
         {
@@ -396,7 +397,7 @@ export const n4Lesson35: Lesson = {
           meaning: { en: 'About how many days do you plan to go?', vi: 'Anh định đi mấy ngày?' },
           ruby: [
             { base: '何', reading: 'なん' },
-            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'にっ' },
             { base: '行', reading: 'い' }
           ]
         },
@@ -405,10 +406,7 @@ export const n4Lesson35: Lesson = {
           jp: '3日くらい です。',
           romaji: 'Mikka kurai desu.',
           meaning: { en: 'About three days.', vi: 'Khoảng 3 ngày.' },
-          ruby: [
-            { base: '日', reading: 'か' },
-            { base: '日', reading: 'にち' }
-          ]
+          ruby: [{ base: '日', reading: 'にっ' }]
         },
         {
           speakerId: 'suzuki',
@@ -450,14 +448,16 @@ export const n4Lesson35: Lesson = {
             { base: '行', reading: 'い' },
             { base: '夜', reading: 'や' },
             { base: '行', reading: 'こう' },
-            { base: '行', reading: 'い' }
+            { base: '行', reading: 'い' },
+            { base: '安', reading: 'やす' }
           ]
         },
         {
           speakerId: 'thawaphon',
           jp: 'どちらが 安いですか。',
           romaji: 'Dochira ga yasui desu ka.',
-          meaning: { en: 'Which is cheaper?', vi: 'Đi thế nào rẻ hơn?' }
+          meaning: { en: 'Which is cheaper?', vi: 'Đi thế nào rẻ hơn?' },
+          ruby: [{ base: '安', reading: 'やす' }]
         },
         {
           speakerId: 'suzuki',
@@ -536,7 +536,13 @@ export const n4Lesson35: Lesson = {
             en: 'If you go to Hokkaido, June is good.',
             vi: 'Nếu đi du lịch Hokkaido thì tháng 6 hay.'
           },
-          ruby: [{ base: '月', reading: 'がつ' }]
+          ruby: [
+            { base: '北', reading: 'ほっ' },
+            { base: '海', reading: 'かい' },
+            { base: '道', reading: 'どう' },
+            { base: '行', reading: 'い' },
+            { base: '月', reading: 'がつ' }
+          ]
         }
       ],
       answers: {
@@ -547,7 +553,12 @@ export const n4Lesson35: Lesson = {
         explanationRuby: [
           { base: '田', reading: 'た' },
           { base: '中', reading: 'なか' },
-          { base: '来', reading: 'き' },
+          { base: '来', reading: 'らい' },
+          { base: '会', reading: 'あ' },
+          { base: '行', reading: 'い' },
+          { base: '田', reading: 'た' },
+          { base: '中', reading: 'なか' },
+          { base: '来', reading: 'らい' },
           { base: '会', reading: 'あ' },
           { base: '行', reading: 'い' }
         ],
@@ -561,7 +572,7 @@ export const n4Lesson35: Lesson = {
             },
             ruby: [
               { base: '明', reading: 'あ' },
-              { base: '日', reading: 'し' },
+              { base: '日', reading: 'にっ' },
               { base: '出', reading: 'だ' }
             ]
           },
@@ -579,7 +590,7 @@ export const n4Lesson35: Lesson = {
               { base: '週', reading: 'しゅう' },
               { base: '金', reading: 'きん' },
               { base: '曜', reading: 'よう' },
-              { base: '日', reading: 'び' },
+              { base: '日', reading: 'にっ' },
               { base: '出', reading: 'だ' }
             ]
           }
@@ -599,6 +610,8 @@ export const n4Lesson35: Lesson = {
         vi: 'Hỏi cách làm việc gì: 本を 借りたいんですが、どうすれば いいですか. Cùng mẫu với ～たら いいですか bài 26, nhưng có từ nghi vấn.'
       },
       explanationRuby: [
+        { base: '本', reading: 'ほん' },
+        { base: '借', reading: 'か' },
         { base: '本', reading: 'ほん' },
         { base: '借', reading: 'か' }
       ],
@@ -644,6 +657,7 @@ export const n4Lesson35: Lesson = {
       explanationRuby: [
         { base: '歴', reading: 'れき' },
         { base: '史', reading: 'し' },
+        { base: '長', reading: 'なが' },
         { base: '温', reading: 'おん' },
         { base: '泉', reading: 'せん' },
         { base: '白', reading: 'はく' },
@@ -658,12 +672,12 @@ export const n4Lesson35: Lesson = {
             vi: 'Tôi muốn đi du lịch hai, ba ngày. Anh/chị biết chỗ nào hay không?'
           },
           ruby: [
-            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'にっ' },
             { base: '旅', reading: 'りょ' },
-            { base: '行', reading: 'こう' },
             { base: '行', reading: 'い' },
-            { base: '所', reading: 'ところ' },
-            { base: '知', reading: 'し' }
+            { base: '行', reading: 'い' },
+            { base: '所', reading: 'じょ' },
+            { base: '知', reading: 'ち' }
           ]
         },
         {
@@ -674,7 +688,7 @@ export const n4Lesson35: Lesson = {
             vi: '...Nếu hai, ba ngày thì tôi nghĩ Hakone hoặc Nikko hay.'
           },
           ruby: [
-            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'にっ' },
             { base: '箱', reading: 'はこ' },
             { base: '根', reading: 'ね' },
             { base: '日', reading: 'にっ' },
@@ -693,6 +707,8 @@ export const n4Lesson35: Lesson = {
         vi: 'Câu hỏi phủ định mời ý kiến hoặc để đối phương từ chối dễ hơn: ほかに 意見が ないか. Lịch sự hơn câu hỏi khẳng định khi hỏi ý kiến.'
       },
       explanationRuby: [
+        { base: '意', reading: 'い' },
+        { base: '見', reading: 'けん' },
         { base: '意', reading: 'い' },
         { base: '見', reading: 'けん' }
       ],
@@ -737,8 +753,7 @@ export const n4Lesson35: Lesson = {
           meaning: { en: 'Japan has many proverbs.', vi: 'Ở Nhật có rất nhiều tục ngữ.' },
           ruby: [
             { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '諺', reading: 'ことわ' }
+            { base: '本', reading: 'ほん' }
           ]
         },
         {
@@ -752,8 +767,9 @@ export const n4Lesson35: Lesson = {
           ruby: [
             { base: '住', reading: 'す' },
             { base: '都', reading: 'みやこ' },
+            { base: '住', reading: 'す' },
             { base: '慣', reading: 'な' },
-            { base: '所', reading: 'ところ' },
+            { base: '所', reading: 'じょ' },
             { base: '一', reading: 'いち' },
             { base: '番', reading: 'ばん' },
             { base: '意', reading: 'い' },
@@ -770,7 +786,7 @@ export const n4Lesson35: Lesson = {
           ruby: [
             { base: '近', reading: 'きん' },
             { base: '所', reading: 'じょ' },
-            { base: '人', reading: 'ひと' },
+            { base: '人', reading: 'にん' },
             { base: '仲', reading: 'なか' },
             { base: '生', reading: 'せい' },
             { base: '活', reading: 'かつ' },

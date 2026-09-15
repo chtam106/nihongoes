@@ -396,7 +396,7 @@ export const n4Lesson47: Lesson = {
             { base: '早', reading: 'はや' },
             { base: '帰', reading: 'かえ' },
             { base: '恋', reading: 'こい' },
-            { base: '人', reading: 'びと' }
+            { base: '人', reading: 'ひと' }
           ]
         },
         {
@@ -424,8 +424,7 @@ export const n4Lesson47: Lesson = {
             { base: '本', reading: 'ほん' },
             { base: '当', reading: 'とう' },
             { base: '相', reading: 'あい' },
-            { base: '手', reading: 'て' },
-            { base: '誰', reading: 'だれ' }
+            { base: '手', reading: 'て' }
           ]
         },
         {
@@ -479,7 +478,7 @@ export const n4Lesson47: Lesson = {
             { base: '仕', reading: 'し' },
             { base: '事', reading: 'ごと' },
             { base: '恋', reading: 'こい' },
-            { base: '人', reading: 'びと' }
+            { base: '人', reading: 'ひと' }
           ]
         }
       ]
@@ -488,6 +487,11 @@ export const n4Lesson47: Lesson = {
   grammar: [
     {
       pattern: 'N / Adj / V 普通形 そうです',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
+      ],
       highlights: ['そう'],
       title: { en: 'I hear that ~ (hearsay そうです)', vi: 'Nghe nói ~ (そうです truyền tin)' },
       explanation: {
@@ -495,13 +499,8 @@ export const n4Lesson47: Lesson = {
         vi: 'Thể thường + そうです truyền tin nghe/đọc được - KHÔNG phải vẻ ngoài (đó là 〜そうです sau thể ます ở Bài 43). Hearsay giữ ない: 雨が 降らない そうです.'
       },
       explanationRuby: [
-        { base: '天', reading: 'てん' },
-        { base: '気', reading: 'き' },
-        { base: '予', reading: 'よ' },
-        { base: '報', reading: 'ほう' },
-        { base: '寒', reading: 'さむ' },
-        { base: '婚', reading: 'こん' },
-        { base: '約', reading: 'やく' }
+        { base: '雨', reading: 'あめ' },
+        { base: '降', reading: 'ふ' }
       ],
       examples: [
         {
@@ -555,6 +554,11 @@ export const n4Lesson47: Lesson = {
     },
     {
       pattern: 'N / Adj / V 普通形 ようです',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
+      ],
       highlights: ['よう'],
       title: { en: 'It seems ~ (〜ようです)', vi: 'Hình như ~ (〜ようです)' },
       explanation: {
@@ -566,7 +570,10 @@ export const n4Lesson47: Lesson = {
         { base: '部', reading: 'へ' },
         { base: '屋', reading: 'や' },
         { base: '人', reading: 'ひと' },
-        { base: '恋', reading: 'こい' }
+        { base: '隣', reading: 'とな' },
+        { base: '部', reading: 'へ' },
+        { base: '屋', reading: 'や' },
+        { base: '人', reading: 'ひと' }
       ],
       examples: [
         {
@@ -592,7 +599,7 @@ export const n4Lesson47: Lesson = {
           },
           ruby: [
             { base: '恋', reading: 'こい' },
-            { base: '人', reading: 'びと' }
+            { base: '人', reading: 'ひと' }
           ]
         },
         {
@@ -605,7 +612,8 @@ export const n4Lesson47: Lesson = {
           ruby: [
             { base: '人', reading: 'ひと' },
             { base: '集', reading: 'あつ' },
-            { base: '事故', reading: 'じこ' }
+            { base: '事', reading: 'ごと' },
+            { base: '故', reading: 'じ' }
           ]
         }
       ]
@@ -620,10 +628,9 @@ export const n4Lesson47: Lesson = {
       },
       explanationRuby: [
         { base: '音', reading: 'おと' },
-        { base: '楽', reading: 'たの' },
-        { base: '花', reading: 'はな' },
-        { base: '匂', reading: 'にお' },
-        { base: '人', reading: 'ひと' }
+        { base: '声', reading: 'こえ' },
+        { base: '味', reading: 'あじ' },
+        { base: '感', reading: 'かん' }
       ],
       examples: [
         {
@@ -632,7 +639,7 @@ export const n4Lesson47: Lesson = {
           meaning: { en: 'I hear a fun sound.', vi: 'Tiếng người nghe vui nhộn nhỉ.' },
           ruby: [
             { base: '楽', reading: 'たの' },
-            { base: '音', reading: 'おと' }
+            { base: '音', reading: 'おん' }
           ]
         },
         {
@@ -673,7 +680,7 @@ export const n4Lesson47: Lesson = {
             { base: '男', reading: 'だん' },
             { base: '性', reading: 'せい' },
             { base: '長', reading: 'なが' },
-            { base: '生', reading: 'い' }
+            { base: '生', reading: 'せい' }
           ]
         },
         {
@@ -686,7 +693,7 @@ export const n4Lesson47: Lesson = {
           ruby: [
             { base: '理', reading: 'り' },
             { base: '由', reading: 'ゆう' },
-            { base: '一', reading: 'ひと' },
+            { base: '一', reading: 'いち' },
             { base: '化', reading: 'け' },
             { base: '粧', reading: 'しょう' },
             { base: '世', reading: 'せ' },

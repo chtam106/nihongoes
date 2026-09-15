@@ -308,7 +308,7 @@ export const n4Lesson50: Lesson = {
           ruby: [
             { base: '練', reading: 'れん' },
             { base: '習', reading: 'しゅう' },
-            { base: '大', reading: 'たい' },
+            { base: '大', reading: 'おお' },
             { base: '変', reading: 'へん' }
           ]
         },
@@ -380,7 +380,7 @@ export const n4Lesson50: Lesson = {
             { base: '自', reading: 'し' },
             { base: '然', reading: 'ぜん' },
             { base: '中', reading: 'なか' },
-            { base: '見', reading: 'み' }
+            { base: '見', reading: 'けん' }
           ]
         },
         {
@@ -424,30 +424,17 @@ export const n4Lesson50: Lesson = {
       highlights: ['お', 'ご', 'し'],
       title: { en: 'Humble verbs (お/ご 〜 します)', vi: 'Khiêm nhường ngữ I (お/ご 〜 します)' },
       explanation: {
-        en: 'Kenjougo I lowers your own actions toward the listener: Group I/II お + masu-stem + します; Group III ご + noun + します. Not used with one-syllable stems (みます) or verbs with special humble forms. Some Group III verbs take お (電話します, 約束します).',
+        en: 'Kenjougo I (謙譲語 I) lowers your own actions toward the listener: Group I/II お + masu-stem + します; Group III ご + noun + します. Not used with one-syllable stems (みます) or verbs with special humble forms. Some Group III verbs take お (電話します, 約束します).',
         vi: '謙譲語 I hạ thấp hành động của mình với người nghe: nhóm I/II お + thân ます + します; nhóm III ご + danh từ + します. Không dùng với thân một âm tiết (みます) hoặc động từ có dạng khiêm nhường riêng. Một số nhóm III dùng お (電話します, 約束します).'
       },
       explanationRuby: [
-        { base: '持', reading: 'も' },
-        { base: '社', reading: 'しゃ' },
-        { base: '長', reading: 'ちょう' },
-        { base: '知', reading: 'し' },
-        { base: '兄', reading: 'あに' },
-        { base: '車', reading: 'くるま' },
-        { base: '送', reading: 'おく' },
-        { base: '江', reading: 'え' },
-        { base: '戸', reading: 'と' },
-        { base: '東', reading: 'とう' },
-        { base: '京', reading: 'きょう' },
-        { base: '博', reading: 'はく' },
-        { base: '物', reading: 'ぶつ' },
-        { base: '館', reading: 'かん' },
-        { base: '案', reading: 'あん' },
-        { base: '内', reading: 'ない' },
-        { base: '予', reading: 'よ' },
-        { base: '定', reading: 'てい' },
-        { base: '説', reading: 'せつ' },
-        { base: '明', reading: 'めい' }
+        { base: '謙', reading: 'けん' },
+        { base: '譲', reading: 'じょう' },
+        { base: '語', reading: 'ご' },
+        { base: '電', reading: 'でん' },
+        { base: '話', reading: 'わ' },
+        { base: '約', reading: 'やく' },
+        { base: '束', reading: 'そく' }
       ],
       examples: [
         {
@@ -506,11 +493,15 @@ export const n4Lesson50: Lesson = {
       },
       explanationRuby: [
         { base: '目', reading: 'め' },
-        { base: '社', reading: 'しゃ' },
-        { base: '長', reading: 'ちょう' },
-        { base: '奥', reading: 'おく' },
-        { base: '手', reading: 'て' },
-        { base: '伝', reading: 'つだ' }
+        { base: '伺', reading: 'うかが' },
+        { base: '拝', reading: 'はい' },
+        { base: '見', reading: 'けん' },
+        { base: '存', reading: 'ぞん' },
+        { base: '目', reading: 'め' },
+        { base: '伺', reading: 'うかが' },
+        { base: '拝', reading: 'はい' },
+        { base: '見', reading: 'けん' },
+        { base: '存', reading: 'ぞん' }
       ],
       examples: [
         {
@@ -542,18 +533,22 @@ export const n4Lesson50: Lesson = {
     },
     {
       pattern: 'Kenjougo II (参る, 申す, いたす, おります)',
+      patternRuby: [
+        { base: '参', reading: 'まい' },
+        { base: '申', reading: 'もう' }
+      ],
       highlights: ['参', '申', 'いた', 'おり'],
       title: { en: 'Humble verbs II (参る, 申す)', vi: 'Khiêm nhường ngữ II (参る, 申す)' },
       explanation: {
-        en: 'Kenjougo II politely describes your own actions to the listener: いきます/きます→参ります, いいます→申します, します→いたします, います→おります. Use these when speaking about yourself to someone you respect.',
+        en: 'Kenjougo II (謙譲語 II) politely describes your own actions to the listener: いきます/きます→参ります, いいます→申します, します→いたします, います→おります. Use these when speaking about yourself to someone you respect.',
         vi: '謙譲語 II mô tả lịch sự hành vi của bản thân với người nghe: いきます/きます→参ります, いいます→申します, します→いたします, います→おります. Dùng khi nói về mình với người cần kính trọng.'
       },
       explanationRuby: [
-        { base: '私', reading: 'わたくし' },
+        { base: '謙', reading: 'けん' },
+        { base: '譲', reading: 'じょう' },
+        { base: '語', reading: 'ご' },
         { base: '参', reading: 'まい' },
-        { base: '申', reading: 'もう' },
-        { base: '失', reading: 'しつ' },
-        { base: '礼', reading: 'れい' }
+        { base: '申', reading: 'もう' }
       ],
       examples: [
         {
@@ -626,7 +621,7 @@ export const n4Lesson50: Lesson = {
             { base: '気', reading: 'き' },
             { base: '前', reading: 'ぜん' },
             { base: '回', reading: 'かい' },
-            { base: '大', reading: 'たい' },
+            { base: '大', reading: 'おお' },
             { base: '変', reading: 'へん' },
             { base: '世', reading: 'せ' },
             { base: '話', reading: 'わ' }

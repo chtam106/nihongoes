@@ -338,7 +338,7 @@ export const n4Lesson39: Lesson = {
           ruby: [
             { base: '部', reading: 'ぶ' },
             { base: '長', reading: 'ちょう' },
-            { base: '遅', reading: 'ち' },
+            { base: '遅', reading: 'おく' },
             { base: '刻', reading: 'こく' }
           ]
         },
@@ -401,6 +401,7 @@ export const n4Lesson39: Lesson = {
             { base: '変', reading: 'へん' },
             { base: '連', reading: 'れん' },
             { base: '絡', reading: 'らく' },
+            { base: '取', reading: 'と' },
             { base: '心', reading: 'しん' },
             { base: '配', reading: 'ぱい' }
           ]
@@ -415,7 +416,7 @@ export const n4Lesson39: Lesson = {
           },
           ruby: [
             { base: '電', reading: 'でん' },
-            { base: '話', reading: 'わ' },
+            { base: '話', reading: 'はな' },
             { base: '家', reading: 'いえ' },
             { base: '忘', reading: 'わす' }
           ]
@@ -429,7 +430,7 @@ export const n4Lesson39: Lesson = {
             vi: 'Được rồi. Thôi, chúng ta bắt đầu cuộc họp thôi.'
           },
           ruby: [
-            { base: '会', reading: 'かい' },
+            { base: '会', reading: 'あ' },
             { base: '議', reading: 'ぎ' },
             { base: '始', reading: 'はじ' }
           ]
@@ -447,6 +448,9 @@ export const n4Lesson39: Lesson = {
         vi: 'Gắn から vào mệnh đề lý do; kết quả đứng sau: 道が 込んで いる から、バスが 遅れます. Trước から dùng thể thường (tính từ い bỏ い, な + な, danh từ + な/の).'
       },
       explanationRuby: [
+        { base: '道', reading: 'みち' },
+        { base: '込', reading: 'こ' },
+        { base: '遅', reading: 'おく' },
         { base: '道', reading: 'みち' },
         { base: '込', reading: 'こ' },
         { base: '遅', reading: 'おく' }
@@ -503,6 +507,10 @@ export const n4Lesson39: Lesson = {
         { base: '用', reading: 'よう' },
         { base: '事', reading: 'じ' },
         { base: '先', reading: 'さき' },
+        { base: '帰', reading: 'かえ' },
+        { base: '用', reading: 'よう' },
+        { base: '事', reading: 'じ' },
+        { base: '先', reading: 'さき' },
         { base: '帰', reading: 'かえ' }
       ],
       examples: [
@@ -517,7 +525,6 @@ export const n4Lesson39: Lesson = {
             { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' },
             { base: '語', reading: 'ご' },
-            { base: '分', reading: 'わ' },
             { base: '英', reading: 'えい' },
             { base: '語', reading: 'ご' },
             { base: '話', reading: 'はな' }
@@ -552,7 +559,9 @@ export const n4Lesson39: Lesson = {
         { base: '泣', reading: 'な' },
         { base: '複', reading: 'ふく' },
         { base: '雑', reading: 'ざつ' },
-        { base: '分', reading: 'わ' }
+        { base: '泣', reading: 'な' },
+        { base: '複', reading: 'ふく' },
+        { base: '雑', reading: 'ざつ' }
       ],
       examples: [
         {
@@ -569,6 +578,9 @@ export const n4Lesson39: Lesson = {
             { base: '人', reading: 'ひと' },
             { base: '写', reading: 'しゃ' },
             { base: '真', reading: 'しん' },
+            { base: '魅', reading: 'み' },
+            { base: '力', reading: 'りょく' },
+            { base: '的', reading: 'てき' },
             { base: '会', reading: 'あ' }
           ]
         }
@@ -576,6 +588,10 @@ export const n4Lesson39: Lesson = {
     },
     {
       pattern: '途中で',
+      patternRuby: [
+        { base: '途', reading: 'と' },
+        { base: '中', reading: 'ちゅう' }
+      ],
       highlights: ['途中', 'で'],
       title: { en: 'On the way (途中で)', vi: 'Trên đường (途中で)' },
       explanation: {
@@ -586,8 +602,19 @@ export const n4Lesson39: Lesson = {
         { base: '途', reading: 'と' },
         { base: '中', reading: 'ちゅう' },
         { base: '来', reading: 'き' },
+        { base: '途', reading: 'と' },
+        { base: '中', reading: 'ちゅう' },
         { base: '事', reading: 'じ' },
-        { base: '故', reading: 'こ' }
+        { base: '故', reading: 'こ' },
+        { base: '道', reading: 'みち' },
+        { base: '途', reading: 'と' },
+        { base: '中', reading: 'ちゅう' },
+        { base: '来', reading: 'き' },
+        { base: '途', reading: 'と' },
+        { base: '中', reading: 'ちゅう' },
+        { base: '事', reading: 'じ' },
+        { base: '故', reading: 'こ' },
+        { base: '道', reading: 'みち' }
       ],
       examples: [
         {

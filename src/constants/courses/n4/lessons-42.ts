@@ -443,8 +443,8 @@ export const n4Lesson42: Lesson = {
           romaji: 'Ashita desu. Tanoshimi desu ne.',
           meaning: { en: 'Tomorrow. Looking forward to it.', vi: 'Ngày mai. Mong phết nhỉ.' },
           ruby: [
-            { base: '明', reading: 'あ' },
-            { base: '日', reading: 'し' },
+            { base: '明', reading: 'めい' },
+            { base: '日', reading: 'にち' },
             { base: '楽', reading: 'たの' }
           ]
         },
@@ -474,11 +474,11 @@ export const n4Lesson42: Lesson = {
           ruby: [
             { base: '自', reading: 'じ' },
             { base: '転', reading: 'てん' },
-            { base: '車', reading: 'しゃ' },
+            { base: '車', reading: 'くる' },
             { base: '買', reading: 'か' },
             { base: '旅', reading: 'りょ' },
             { base: '行', reading: 'こう' },
-            { base: '行', reading: 'い' }
+            { base: '行', reading: 'こう' }
           ]
         },
         {
@@ -486,7 +486,10 @@ export const n4Lesson42: Lesson = {
           jp: '貯金しないんですか。',
           romaji: 'Chokin shinai n desu ka.',
           meaning: { en: "Aren't you saving money?", vi: 'Anh không để dành tiền à?' },
-          ruby: [{ base: '貯', reading: 'ちょ' }]
+          ruby: [
+            { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' }
+          ]
         },
         {
           speakerId: 'suzuki',
@@ -498,6 +501,7 @@ export const n4Lesson42: Lesson = {
           },
           ruby: [
             { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' },
             { base: '考', reading: 'かんが' }
           ]
         },
@@ -510,7 +514,8 @@ export const n4Lesson42: Lesson = {
             { base: '私', reading: 'わたし' },
             { base: '半', reading: 'はん' },
             { base: '分', reading: 'ぶん' },
-            { base: '貯', reading: 'ちょ' }
+            { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' }
           ]
         },
         {
@@ -524,7 +529,8 @@ export const n4Lesson42: Lesson = {
           ruby: [
             { base: '半', reading: 'はん' },
             { base: '分', reading: 'ぶん' },
-            { base: '貯', reading: 'ちょ' }
+            { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' }
           ]
         },
         {
@@ -535,7 +541,10 @@ export const n4Lesson42: Lesson = {
             en: 'Yes. Because I plan to study abroad in England someday.',
             vi: 'Vâng, vì tôi đang định lúc nào đó sẽ đi du học ở Anh.'
           },
-          ruby: [{ base: '留', reading: 'りゅう' }]
+          ruby: [
+            { base: '留', reading: 'りゅう' },
+            { base: '学', reading: 'がく' }
+          ]
         },
         {
           speakerId: 'ogawa',
@@ -574,6 +583,7 @@ export const n4Lesson42: Lesson = {
             { base: '育', reading: 'いく' },
             { base: '費', reading: 'ひ' },
             { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' },
             { base: '残', reading: 'のこ' }
           ]
         }
@@ -589,39 +599,7 @@ export const n4Lesson42: Lesson = {
         en: 'V-dictionary form or N+の + ために expresses purpose: "in order to ~", "for ~". N+のために can also mean "for the benefit of N". Compare with 〜ように (Lesson 36): ために before volitional verbs; ように before non-volitional or potential forms.',
         vi: 'Thể từ điển hoặc N+の + ために biểu thị mục đích: "để ~", "vì ~". N+のために còn có nghĩa "vì lợi ích của N". So với 〜ように (Bài 36): ために đứng trước động từ chủ ý; ように trước động từ phi chủ ý hoặc thể khả năng.'
       },
-      explanationRuby: [
-        { base: '自', reading: 'じ' },
-        { base: '分', reading: 'ぶん' },
-        { base: '店', reading: 'みせ' },
-        { base: '持', reading: 'も' },
-        { base: '貯', reading: 'ちょ' },
-        { base: '引', reading: 'ひ' },
-        { base: '越', reading: 'こ' },
-        { base: '車', reading: 'くる' },
-        { base: '借', reading: 'か' },
-        { base: '健', reading: 'けん' },
-        { base: '康', reading: 'こう' },
-        { base: '毎', reading: 'まい' },
-        { base: '朝', reading: 'あさ' },
-        { base: '走', reading: 'はし' },
-        { base: '家', reading: 'か' },
-        { base: '族', reading: 'ぞく' },
-        { base: '建', reading: 'た' },
-        { base: '弁', reading: 'べん' },
-        { base: '護', reading: 'ご' },
-        { base: '士', reading: 'し' },
-        { base: '法', reading: 'ほう' },
-        { base: '律', reading: 'りつ' },
-        { base: '勉', reading: 'べん' },
-        { base: '強', reading: 'きょう' },
-        { base: '日', reading: 'に' },
-        { base: '本', reading: 'ほん' },
-        { base: '語', reading: 'ご' },
-        { base: '上', reading: 'じょう' },
-        { base: '手', reading: 'ず' },
-        { base: '毎', reading: 'まい' },
-        { base: '日', reading: 'にち' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: '私は 自分の 店を 持つ ために、貯金 しています。',
@@ -636,7 +614,8 @@ export const n4Lesson42: Lesson = {
             { base: '分', reading: 'ぶん' },
             { base: '店', reading: 'みせ' },
             { base: '持', reading: 'も' },
-            { base: '貯', reading: 'ちょ' }
+            { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' }
           ]
         },
         {
@@ -713,7 +692,16 @@ export const n4Lesson42: Lesson = {
         { base: '立', reading: 'た' },
         { base: '時', reading: 'じ' },
         { base: '間', reading: 'かん' },
-        { base: '金', reading: 'かね' },
+        { base: '金', reading: 'かな' },
+        { base: '適', reading: 'てき' },
+        { base: '使', reading: 'つか' },
+        { base: '便', reading: 'べん' },
+        { base: '利', reading: 'り' },
+        { base: '役', reading: 'やく' },
+        { base: '立', reading: 'た' },
+        { base: '時', reading: 'じ' },
+        { base: '間', reading: 'かん' },
+        { base: '金', reading: 'かな' },
         { base: '適', reading: 'てき' }
       ],
       examples: [
@@ -768,10 +756,10 @@ export const n4Lesson42: Lesson = {
           },
           ruby: [
             { base: '電', reading: 'でん' },
-            { base: '話', reading: 'わ' },
+            { base: '話', reading: 'はな' },
             { base: '番', reading: 'ばん' },
             { base: '号', reading: 'ごう' },
-            { base: '調', reading: 'しら' },
+            { base: '調', reading: 'ちょう' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' }
           ]
@@ -790,9 +778,19 @@ export const n4Lesson42: Lesson = {
         { base: '半', reading: 'はん' },
         { base: '分', reading: 'ぶん' },
         { base: '貯', reading: 'ちょ' },
+        { base: '金', reading: 'かな' },
         { base: '半', reading: 'はん' },
         { base: '分', reading: 'ぶん' },
-        { base: '貯', reading: 'ちょ' }
+        { base: '貯', reading: 'ちょ' },
+        { base: '金', reading: 'かな' },
+        { base: '半', reading: 'はん' },
+        { base: '分', reading: 'ぶん' },
+        { base: '貯', reading: 'ちょ' },
+        { base: '金', reading: 'かな' },
+        { base: '半', reading: 'はん' },
+        { base: '分', reading: 'ぶん' },
+        { base: '貯', reading: 'ちょ' },
+        { base: '金', reading: 'かな' }
       ],
       examples: [
         {
@@ -806,7 +804,8 @@ export const n4Lesson42: Lesson = {
             { base: '私', reading: 'わたし' },
             { base: '半', reading: 'はん' },
             { base: '分', reading: 'ぶん' },
-            { base: '貯', reading: 'ちょ' }
+            { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' }
           ]
         },
         {
@@ -819,7 +818,8 @@ export const n4Lesson42: Lesson = {
           ruby: [
             { base: '半', reading: 'はん' },
             { base: '分', reading: 'ぶん' },
-            { base: '貯', reading: 'ちょ' }
+            { base: '貯', reading: 'ちょ' },
+            { base: '金', reading: 'かな' }
           ]
         }
       ]
@@ -839,14 +839,19 @@ export const n4Lesson42: Lesson = {
         { base: '書', reading: 'か' },
         { base: '発', reading: 'はつ' },
         { base: '明', reading: 'めい' },
-        { base: '発', reading: 'はっ' },
+        { base: '発', reading: 'はつ' },
         { base: '見', reading: 'けん' },
         { base: '安', reading: 'あん' },
         { base: '藤', reading: 'どう' },
         { base: '百', reading: 'もも' },
         { base: '福', reading: 'ふく' },
         { base: '発', reading: 'はつ' },
-        { base: '明', reading: 'めい' }
+        { base: '明', reading: 'めい' },
+        { base: '書', reading: 'か' },
+        { base: '発', reading: 'はつ' },
+        { base: '明', reading: 'めい' },
+        { base: '発', reading: 'はつ' },
+        { base: '見', reading: 'けん' }
       ],
       examples: [
         {
@@ -887,7 +892,8 @@ export const n4Lesson42: Lesson = {
             { base: '場', reading: 'じょう' },
             { base: '調', reading: 'ちょう' },
             { base: '査', reading: 'さ' },
-            { base: '料', reading: 'し' },
+            { base: '資', reading: 'し' },
+            { base: '料', reading: 'りょう' },
             { base: '話', reading: 'はな' },
             { base: '読', reading: 'よ' }
           ]

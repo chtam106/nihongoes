@@ -453,6 +453,7 @@ export const n4Lesson41: Lesson = {
             { base: '授', reading: 'じゅ' },
             { base: '業', reading: 'ぎょう' },
             { base: '楽', reading: 'たの' },
+            { base: '実', reading: 'じつ' },
             { base: '同', reading: 'おな' }
           ]
         },
@@ -535,9 +536,8 @@ export const n4Lesson41: Lesson = {
           },
           ruby: [
             { base: '母', reading: 'はは' },
-            { base: '猿', reading: 'さる' },
             { base: '菓', reading: 'か' },
-            { base: '子', reading: 'し' }
+            { base: '子', reading: 'こ' }
           ]
         }
       ],
@@ -555,7 +555,6 @@ export const n4Lesson41: Lesson = {
               vi: '...Không được. Kia có ghi "Không được cho (khi) ăn" đấy.'
             },
             ruby: [
-              { base: '猿', reading: 'さる' },
               { base: '食', reading: 'た' },
               { base: '物', reading: 'もの' }
             ]
@@ -572,6 +571,12 @@ export const n4Lesson41: Lesson = {
         vi: 'Thể て + あげる/もらう/くれる cho việc giúp: 部長が 報告書を 直して くれました. Hướng giống động từ cho/nhận đồ.'
       },
       explanationRuby: [
+        { base: '部', reading: 'ぶ' },
+        { base: '長', reading: 'ちょう' },
+        { base: '報', reading: 'ほう' },
+        { base: '告', reading: 'こく' },
+        { base: '書', reading: 'しょ' },
+        { base: '直', reading: 'なお' },
         { base: '部', reading: 'ぶ' },
         { base: '長', reading: 'ちょう' },
         { base: '報', reading: 'ほう' },
@@ -617,7 +622,7 @@ export const n4Lesson41: Lesson = {
             { base: '子', reading: 'こ' },
             { base: '紙', reading: 'かみ' },
             { base: '飛', reading: 'ひ' },
-            { base: '行', reading: 'こう' },
+            { base: '行', reading: 'い' },
             { base: '機', reading: 'き' },
             { base: '作', reading: 'つく' }
           ]
@@ -634,6 +639,13 @@ export const n4Lesson41: Lesson = {
       },
       explanationRuby: [
         { base: '新', reading: 'あたら' },
+        { base: '機', reading: 'き' },
+        { base: '使', reading: 'つか' },
+        { base: '方', reading: 'かた' },
+        { base: '教', reading: 'おし' },
+        { base: '教', reading: 'おし' },
+        { base: '新', reading: 'あたら' },
+        { base: '機', reading: 'き' },
         { base: '使', reading: 'つか' },
         { base: '方', reading: 'かた' },
         { base: '教', reading: 'おし' },
@@ -649,6 +661,7 @@ export const n4Lesson41: Lesson = {
           },
           ruby: [
             { base: '新', reading: 'あたら' },
+            { base: '機', reading: 'き' },
             { base: '使', reading: 'つか' },
             { base: '方', reading: 'かた' },
             { base: '教', reading: 'おし' }
@@ -673,10 +686,24 @@ export const n4Lesson41: Lesson = {
         { base: '祝', reading: 'いわ' },
         { base: '皿', reading: 'さら' },
         { base: '北', reading: 'ほっ' },
-        { base: '海', reading: 'かい' },
+        { base: '海', reading: 'うみ' },
         { base: '道', reading: 'どう' },
         { base: '旅', reading: 'りょ' },
-        { base: '行', reading: 'こう' },
+        { base: '行', reading: 'い' },
+        { base: '土', reading: 'み' },
+        { base: '産', reading: 'やげ' },
+        { base: '人', reading: 'にん' },
+        { base: '形', reading: 'ぎょう' },
+        { base: '買', reading: 'か' },
+        { base: '結', reading: 'けっ' },
+        { base: '婚', reading: 'こん' },
+        { base: '祝', reading: 'いわ' },
+        { base: '皿', reading: 'さら' },
+        { base: '北', reading: 'ほっ' },
+        { base: '海', reading: 'うみ' },
+        { base: '道', reading: 'どう' },
+        { base: '旅', reading: 'りょ' },
+        { base: '行', reading: 'い' },
         { base: '土', reading: 'み' },
         { base: '産', reading: 'やげ' },
         { base: '人', reading: 'にん' },
@@ -737,6 +764,7 @@ export const n4Lesson41: Lesson = {
             { base: '亀', reading: 'かめ' },
             { base: '礼', reading: 'れい' },
             { base: '男', reading: 'おとこ' },
+            { base: '子', reading: 'こ' },
             { base: '海', reading: 'うみ' },
             { base: '宮', reading: 'きゅう' },
             { base: '殿', reading: 'でん' },
@@ -757,6 +785,7 @@ export const n4Lesson41: Lesson = {
           },
           ruby: [
             { base: '男', reading: 'おとこ' },
+            { base: '子', reading: 'こ' },
             { base: '楽', reading: 'たの' },
             { base: '暮', reading: 'く' },
             { base: '陸', reading: 'りく' },
@@ -805,7 +834,15 @@ export const n4Lesson41: Lesson = {
     {
       kind: 'list',
       title: { en: 'Useful services', vi: 'Thông tin bổ ích' },
-      introTerm: { jp: '便利情報' },
+      introTerm: {
+        jp: '便利情報',
+        ruby: [
+          { base: '便', reading: 'べん' },
+          { base: '利', reading: 'り' },
+          { base: '情', reading: 'じょう' },
+          { base: '報', reading: 'ほう' }
+        ]
+      },
       layout: 'stacked',
       rows: [
         {

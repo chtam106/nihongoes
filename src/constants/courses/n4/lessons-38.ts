@@ -462,7 +462,7 @@ export const n4Lesson38: Lesson = {
           },
           ruby: [
             { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
+            { base: '生', reading: 'う' },
             { base: '回', reading: 'かい' },
             { base: '覧', reading: 'らん' }
           ]
@@ -497,8 +497,8 @@ export const n4Lesson38: Lesson = {
             { base: '室', reading: 'しつ' },
             { base: '整', reading: 'せい' },
             { base: '理', reading: 'り' },
-            { base: '上', reading: 'じょう' },
-            { base: '手', reading: 'ず' }
+            { base: '上', reading: 'うえ' },
+            { base: '手', reading: 'て' }
           ]
         },
         {
@@ -526,8 +526,8 @@ export const n4Lesson38: Lesson = {
             vi: 'Nghe nói thầy đã viết cuốn "Phương pháp sắp xếp khéo léo".'
           },
           ruby: [
-            { base: '上', reading: 'じょう' },
-            { base: '手', reading: 'ず' },
+            { base: '上', reading: 'うえ' },
+            { base: '手', reading: 'て' },
             { base: '整', reading: 'せい' },
             { base: '理', reading: 'り' },
             { base: '方', reading: 'ほう' },
@@ -544,7 +544,12 @@ export const n4Lesson38: Lesson = {
             en: 'Yes. If you like, I will give you a copy.',
             vi: 'Vâng. Nếu chị thích tôi tặng chị một quyển nhé.'
           },
-          ruby: [{ base: '冊', reading: 'さつ' }]
+          ruby: [
+            { base: '一', reading: 'いっ' },
+            { base: '冊', reading: 'さつ' },
+            { base: '差', reading: 'さ' },
+            { base: '上', reading: 'あ' }
+          ]
         }
       ]
     }
@@ -561,7 +566,14 @@ export const n4Lesson38: Lesson = {
       explanationRuby: [
         { base: '絵', reading: 'え' },
         { base: '描', reading: 'か' },
-        { base: '楽', reading: 'たの' }
+        { base: '楽', reading: 'がく' },
+        { base: '絵', reading: 'え' },
+        { base: '描', reading: 'か' },
+        { base: '絵', reading: 'え' },
+        { base: '描', reading: 'か' },
+        { base: '絵', reading: 'え' },
+        { base: '描', reading: 'か' },
+        { base: '楽', reading: 'がく' }
       ],
       examples: [
         {
@@ -589,6 +601,13 @@ export const n4Lesson38: Lesson = {
     },
     {
       pattern: 'V-plain の が 好き / 上手 / 下手',
+      patternRuby: [
+        { base: '好', reading: 'す' },
+        { base: '上', reading: 'うえ' },
+        { base: '手', reading: 'て' },
+        { base: '下', reading: 'へ' },
+        { base: '手', reading: 'て' }
+      ],
       highlights: ['の', 'が'],
       title: { en: 'の with skill/like adjectives', vi: 'の với tính từ thích/giỏi/dở' },
       explanation: {
@@ -603,7 +622,17 @@ export const n4Lesson38: Lesson = {
         { base: '歌', reading: 'うた' },
         { base: '歌', reading: 'うた' },
         { base: '下', reading: 'へ' },
-        { base: '手', reading: 'た' }
+        { base: '手', reading: 'た' },
+        { base: '好', reading: 'す' },
+        { base: '嫌', reading: 'きら' },
+        { base: '上', reading: 'じょう' },
+        { base: '手', reading: 'ず' },
+        { base: '下', reading: 'へ' },
+        { base: '手', reading: 'た' },
+        { base: '得', reading: 'とく' },
+        { base: '意', reading: 'い' },
+        { base: '苦', reading: 'にが' },
+        { base: '手', reading: 'て' }
       ],
       examples: [
         {
@@ -634,6 +663,7 @@ export const n4Lesson38: Lesson = {
     },
     {
       pattern: 'V-plain の に なれます / 忘れます',
+      patternRuby: [{ base: '忘', reading: 'わす' }],
       highlights: ['の', 'に'],
       title: {
         en: 'Habit with の (なれます, 忘れます)',
@@ -644,6 +674,15 @@ export const n4Lesson38: Lesson = {
         vi: 'Với thói quen, の đứng trước なれます hoặc 忘れました: 牛乳を 買う のに なりました, 車の 窓を 閉める のを 忘れました.'
       },
       explanationRuby: [
+        { base: '忘', reading: 'わす' },
+        { base: '牛', reading: 'ぎゅう' },
+        { base: '乳', reading: 'にゅう' },
+        { base: '買', reading: 'か' },
+        { base: '車', reading: 'くるま' },
+        { base: '窓', reading: 'まど' },
+        { base: '閉', reading: 'し' },
+        { base: '忘', reading: 'わす' },
+        { base: '忘', reading: 'わす' },
         { base: '牛', reading: 'ぎゅう' },
         { base: '乳', reading: 'にゅう' },
         { base: '買', reading: 'か' },
@@ -668,6 +707,7 @@ export const n4Lesson38: Lesson = {
     },
     {
       pattern: '～知っていますか',
+      patternRuby: [{ base: '知', reading: 'し' }],
       highlights: ['知', 'て', 'い', 'ます', 'か'],
       title: { en: 'Do you know...? (知っていますか)', vi: 'Anh/chị có biết...? (知っていますか)' },
       explanation: {
@@ -675,6 +715,10 @@ export const n4Lesson38: Lesson = {
         vi: '知っていますか hỏi người nghe đã biết sự thật chưa. 知っていませんか mời thông tin mới. Trả lời: 知っています / 知りません.'
       },
       explanationRuby: [
+        { base: '知', reading: 'し' },
+        { base: '知', reading: 'し' },
+        { base: '知', reading: 'し' },
+        { base: '知', reading: 'し' },
         { base: '知', reading: 'し' },
         { base: '知', reading: 'し' },
         { base: '知', reading: 'し' },
@@ -709,6 +753,7 @@ export const n4Lesson38: Lesson = {
     },
     {
       pattern: 'N / V-plain 時',
+      patternRuby: [{ base: '時', reading: 'じ' }],
       highlights: ['時'],
       title: { en: 'When (時)', vi: 'Khi (時)' },
       explanation: {
@@ -716,14 +761,25 @@ export const n4Lesson38: Lesson = {
         vi: '時 chỉ thời điểm: 日本に 来た 時, 小学校の 時. Có thể làm rõ hoặc sửa thông tin: 生まれた のは チェンマイ です.'
       },
       explanationRuby: [
-        { base: '日', reading: 'に' },
+        { base: '時', reading: 'じ' },
+        { base: '日', reading: 'か' },
         { base: '本', reading: 'ほん' },
         { base: '来', reading: 'き' },
-        { base: '時', reading: 'とき' },
+        { base: '時', reading: 'じ' },
         { base: '小', reading: 'しょう' },
         { base: '学', reading: 'がっ' },
         { base: '校', reading: 'こう' },
-        { base: '時', reading: 'とき' },
+        { base: '時', reading: 'じ' },
+        { base: '生', reading: 'う' },
+        { base: '時', reading: 'じ' },
+        { base: '日', reading: 'か' },
+        { base: '本', reading: 'ほん' },
+        { base: '来', reading: 'き' },
+        { base: '時', reading: 'じ' },
+        { base: '小', reading: 'しょう' },
+        { base: '学', reading: 'がっ' },
+        { base: '校', reading: 'こう' },
+        { base: '時', reading: 'じ' },
         { base: '生', reading: 'う' }
       ],
       examples: [
@@ -736,6 +792,8 @@ export const n4Lesson38: Lesson = {
           },
           ruby: [
             { base: '初', reading: 'はじ' },
+            { base: '恋', reading: 'こ' },
+            { base: '人', reading: 'い' },
             { base: '会', reading: 'あ' },
             { base: '時', reading: 'とき' },
             { base: '小', reading: 'しょう' },
@@ -758,7 +816,11 @@ export const n4Lesson38: Lesson = {
         vi: 'のに thể hiện kết quả trái mong đợi: 3日しか 書かなかった のに、続ける のは 難しい. Thường dùng khi nỗ lực và kết quả không khớp.'
       },
       explanationRuby: [
-        { base: '日', reading: 'にち' },
+        { base: '日', reading: 'か' },
+        { base: '書', reading: 'か' },
+        { base: '続', reading: 'つづ' },
+        { base: '難', reading: 'むずか' },
+        { base: '日', reading: 'か' },
         { base: '書', reading: 'か' },
         { base: '続', reading: 'つづ' },
         { base: '難', reading: 'むずか' }
@@ -772,7 +834,7 @@ export const n4Lesson38: Lesson = {
             vi: 'Tôi bắt đầu viết nhật ký, nhưng chỉ ba ngày là bỏ.'
           },
           ruby: [
-            { base: '日', reading: 'にっ' },
+            { base: '日', reading: 'か' },
             { base: '記', reading: 'き' },
             { base: '書', reading: 'か' },
             { base: '始', reading: 'はじ' },
@@ -797,6 +859,7 @@ export const n4Lesson38: Lesson = {
           ruby: [
             { base: '姉', reading: 'しま' },
             { base: '妹', reading: 'い' },
+            { base: '顔', reading: 'かお' },
             { base: '似', reading: 'に' },
             { base: '性', reading: 'せい' },
             { base: '格', reading: 'かく' },
@@ -833,7 +896,9 @@ export const n4Lesson38: Lesson = {
             { base: '経', reading: 'た' },
             { base: '互', reading: 'たが' },
             { base: '世', reading: 'せ' },
-            { base: '話', reading: 'わ' }
+            { base: '話', reading: 'わ' },
+            { base: '当', reading: 'あた' },
+            { base: '前', reading: 'まえ' }
           ]
         }
       ],
@@ -878,7 +943,10 @@ export const n4Lesson38: Lesson = {
       title: { en: 'Position words', vi: 'Vị trí' },
       introTerm: {
         jp: '位置',
-        ruby: [{ base: '位', reading: 'い' }]
+        ruby: [
+          { base: '位', reading: 'い' },
+          { base: '置', reading: 'ち' }
+        ]
       },
       layout: 'stacked',
       rows: [

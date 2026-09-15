@@ -232,7 +232,7 @@ export const n4Lesson48: Lesson = {
           jp: '何 ですか。',
           romaji: 'Nan desu ka.',
           meaning: { en: 'What is it?', vi: 'Chuyện gì thế?' },
-          ruby: [{ base: '何', reading: 'なん' }]
+          ruby: [{ base: '何', reading: 'なに' }]
         },
         {
           speakerId: 'miller',
@@ -243,7 +243,7 @@ export const n4Lesson48: Lesson = {
             vi: 'Từ ngày mồng 7 tháng sau, cho tôi xin phép nghỉ 10 ngày có được không ạ?'
           },
           ruby: [
-            { base: '来', reading: 'らい' },
+            { base: '来', reading: 'こ' },
             { base: '月', reading: 'げつ' },
             { base: '日', reading: 'にち' },
             { base: '日', reading: 'にち' },
@@ -287,7 +287,7 @@ export const n4Lesson48: Lesson = {
             vi: 'Thế à. Tháng sau ngày 20 có cuộc họp về kinh doanh, cậu có thể trở lại trước thời điểm đó được chứ?'
           },
           ruby: [
-            { base: '来', reading: 'らい' },
+            { base: '来', reading: 'こ' },
             { base: '月', reading: 'げつ' },
             { base: '日', reading: 'にち' },
             { base: '営', reading: 'えい' },
@@ -342,16 +342,8 @@ export const n4Lesson48: Lesson = {
         vi: 'Thể sai khiến: bắt hoặc cho ai làm gì. Nhóm I: かきます→かかせます; nhóm II: たべます→たべさせます; 来ます→こさせます; します→させます. Chia như động từ nhóm II. Người cấp dưới không dùng sai khiến với cấp trên - dùng 〜て いただきます hoặc 〜て もらいます.'
       },
       explanationRuby: [
-        { base: '来', reading: 'き' },
         { base: '来', reading: 'こ' },
-        { base: '部', reading: 'ぶ' },
-        { base: '長', reading: 'ちょう' },
-        { base: '出', reading: 'しゅっ' },
-        { base: '張', reading: 'ちょう' },
-        { base: '娘', reading: 'むすめ' },
-        { base: '自', reading: 'じ' },
-        { base: '由', reading: 'ゆう' },
-        { base: '遊', reading: 'あそ' }
+        { base: '来', reading: 'こ' }
       ],
       examples: [
         {
@@ -405,15 +397,25 @@ export const n4Lesson48: Lesson = {
         { base: '備', reading: 'び' },
         { base: '手', reading: 'て' },
         { base: '伝', reading: 'つだ' },
+        { base: '子', reading: 'こ' },
         { base: '道', reading: 'みち' },
         { base: '右', reading: 'みぎ' },
         { base: '側', reading: 'がわ' },
         { base: '歩', reading: 'ある' },
-        { base: '先', reading: 'せん' },
-        { base: '生', reading: 'せい' },
-        { base: '意', reading: 'い' },
-        { base: '見', reading: 'けん' },
-        { base: '言', reading: 'い' }
+        { base: '子', reading: 'こ' },
+        { base: '早', reading: 'はや' },
+        { base: '起', reading: 'お' },
+        { base: '娘', reading: 'むすめ' },
+        { base: '朝', reading: 'あさ' },
+        { base: '準', reading: 'じゅん' },
+        { base: '備', reading: 'び' },
+        { base: '手', reading: 'て' },
+        { base: '伝', reading: 'つだ' },
+        { base: '子', reading: 'こ' },
+        { base: '道', reading: 'みち' },
+        { base: '右', reading: 'みぎ' },
+        { base: '側', reading: 'がわ' },
+        { base: '歩', reading: 'ある' }
       ],
       examples: [
         {
@@ -534,7 +536,7 @@ export const n4Lesson48: Lesson = {
             { base: '庭', reading: 'てい' },
             { base: '週', reading: 'しゅう' },
             { base: '末', reading: 'まつ' },
-            { base: '習', reading: 'しゅう' },
+            { base: '習', reading: 'なら' },
             { base: '字', reading: 'じ' }
           ]
         },
@@ -551,7 +553,7 @@ export const n4Lesson48: Lesson = {
             { base: '多', reading: 'おお' },
             { base: '塾', reading: 'じゅく' },
             { base: '普', reading: 'ふ' },
-            { base: '通', reading: 'つう' },
+            { base: '通', reading: 'かよ' },
             { base: '学', reading: 'がく' },
             { base: '校', reading: 'こう' },
             { base: '持', reading: 'も' },
@@ -640,7 +642,7 @@ export const n4Lesson48: Lesson = {
         {
           jp: '自然の中で 遊ぶ',
           ruby: [
-            { base: '自', reading: 'し' },
+            { base: '自', reading: 'じ' },
             { base: '然', reading: 'ぜん' },
             { base: '中', reading: 'なか' },
             { base: '遊', reading: 'あそ' }
@@ -682,7 +684,7 @@ export const n4Lesson48: Lesson = {
           ruby: [
             { base: '年', reading: 'とし' },
             { base: '寄', reading: 'よ' },
-            { base: '話', reading: 'はなし' },
+            { base: '話', reading: 'わ' },
             { base: '聞', reading: 'き' }
           ],
           meaning: { en: 'listen to older people', vi: 'nghe chuyện của người già' }

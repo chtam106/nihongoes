@@ -359,8 +359,8 @@ export const n4Lesson36: Lesson = {
             vi: 'Khách mời hôm nay là bà Ogawa Yone, 80 tuổi.'
           },
           ruby: [
-            { base: '今', reading: 'きょう' },
-            { base: '日', reading: 'ひ' },
+            { base: '今', reading: 'いま' },
+            { base: '日', reading: 'にち' },
             { base: '客', reading: 'きゃく' },
             { base: '様', reading: 'さま' },
             { base: '小', reading: 'お' },
@@ -386,6 +386,7 @@ export const n4Lesson36: Lesson = {
           ruby: [
             { base: '毎', reading: 'まい' },
             { base: '日', reading: 'にち' },
+            { base: '何', reading: 'なに' },
             { base: '特', reading: 'とく' },
             { base: '別', reading: 'べつ' }
           ]
@@ -404,7 +405,7 @@ export const n4Lesson36: Lesson = {
             { base: '運', reading: 'うん' },
             { base: '動', reading: 'どう' },
             { base: '水', reading: 'すい' },
-            { base: '泳', reading: 'えい' },
+            { base: '泳', reading: 'およ' },
             { base: '剣', reading: 'けん' },
             { base: '道', reading: 'どう' }
           ]
@@ -417,7 +418,11 @@ export const n4Lesson36: Lesson = {
             en: 'Recently you have become able to swim 500 meters.',
             vi: 'Gần đây bà đã có thể bơi xa được 500 mét.'
           },
-          ruby: [{ base: '最', reading: 'さい' }]
+          ruby: [
+            { base: '最', reading: 'さい' },
+            { base: '近', reading: 'きん' },
+            { base: '泳', reading: 'およ' }
+          ]
         },
         {
           speakerId: 'yone',
@@ -429,8 +434,10 @@ export const n4Lesson36: Lesson = {
           },
           ruby: [
             { base: '何', reading: 'なん' },
+            { base: '食', reading: 'た' },
             { base: '特', reading: 'とく' },
-            { base: '魚', reading: 'さかな' }
+            { base: '魚', reading: 'さかな' },
+            { base: '好', reading: 'す' }
           ]
         },
         {
@@ -465,7 +472,7 @@ export const n4Lesson36: Lesson = {
             { base: '強', reading: 'きょう' },
             { base: '気', reading: 'き' },
             { base: '持', reading: 'も' },
-            { base: '大', reading: 'たい' },
+            { base: '大', reading: 'おお' },
             { base: '切', reading: 'せつ' }
           ]
         }
@@ -489,6 +496,11 @@ export const n4Lesson36: Lesson = {
         { base: '日', reading: 'にち' },
         { base: '練', reading: 'れん' },
         { base: '習', reading: 'しゅう' },
+        { base: '泳', reading: 'およ' },
+        { base: '毎', reading: 'まい' },
+        { base: '日', reading: 'にち' },
+        { base: '練', reading: 'れん' },
+        { base: '習', reading: 'しゅう' },
         { base: '泳', reading: 'およ' }
       ],
       examples: [
@@ -503,7 +515,7 @@ export const n4Lesson36: Lesson = {
             { base: '毎', reading: 'まい' },
             { base: '日', reading: 'にち' },
             { base: '練', reading: 'れん' },
-            { base: '習', reading: 'しゅ' },
+            { base: '習', reading: 'しゅう' },
             { base: '泳', reading: 'およ' }
           ]
         },
@@ -527,6 +539,10 @@ export const n4Lesson36: Lesson = {
         vi: 'ようになりました đánh dấu chuyển sang trạng thái mới: やっと 自転車に 乗れる ようになりました. Với ない: từ không làm được sang làm được, hoặc có thói quen mới.'
       },
       explanationRuby: [
+        { base: '自', reading: 'じ' },
+        { base: '転', reading: 'てん' },
+        { base: '車', reading: 'しゃ' },
+        { base: '乗', reading: 'の' },
         { base: '自', reading: 'じ' },
         { base: '転', reading: 'てん' },
         { base: '車', reading: 'しゃ' },
@@ -581,7 +597,10 @@ export const n4Lesson36: Lesson = {
       explanationRuby: [
         { base: '野', reading: 'や' },
         { base: '菜', reading: 'さい' },
-        { base: '食', reading: 'た' }
+        { base: '食', reading: 'しょく' },
+        { base: '野', reading: 'や' },
+        { base: '菜', reading: 'さい' },
+        { base: '食', reading: 'しょく' }
       ],
       examples: [
         {
@@ -603,7 +622,7 @@ export const n4Lesson36: Lesson = {
           ruby: [
             { base: '野', reading: 'や' },
             { base: '菜', reading: 'さい' },
-            { base: '食', reading: 'た' }
+            { base: '食', reading: 'しょく' }
           ]
         }
       ]
@@ -621,6 +640,11 @@ export const n4Lesson36: Lesson = {
         { base: '毎', reading: 'まい' },
         { base: '日', reading: 'にち' },
         { base: '運', reading: 'うん' },
+        { base: '動', reading: 'どう' },
+        { base: '体', reading: 'から' },
+        { base: '毎', reading: 'まい' },
+        { base: '日', reading: 'にち' },
+        { base: '運', reading: 'うん' },
         { base: '動', reading: 'どう' }
       ],
       examples: [
@@ -634,7 +658,7 @@ export const n4Lesson36: Lesson = {
           ruby: [
             { base: '体', reading: 'から' },
             { base: '甘', reading: 'あま' },
-            { base: '食', reading: 'た' }
+            { base: '食', reading: 'しょく' }
           ]
         },
         {
@@ -676,7 +700,7 @@ export const n4Lesson36: Lesson = {
             { base: '大', reading: 'おお' },
             { base: '勢', reading: 'ぜい' },
             { base: '人', reading: 'ひと' },
-            { base: '運', reading: 'はこ' }
+            { base: '運', reading: 'うん' }
           ]
         },
         {
@@ -693,7 +717,8 @@ export const n4Lesson36: Lesson = {
             { base: '物', reading: 'もの' },
             { base: '自', reading: 'じ' },
             { base: '由', reading: 'ゆう' },
-            { base: '利', reading: 'り' }
+            { base: '利', reading: 'り' },
+            { base: '用', reading: 'よう' }
           ]
         },
         {
@@ -774,13 +799,17 @@ export const n4Lesson36: Lesson = {
           ruby: [
             { base: '早', reading: 'はや' },
             { base: '寝', reading: 'ね' },
+            { base: '早', reading: 'はや' },
             { base: '起', reading: 'お' }
           ],
           meaning: { en: 'Early to bed, early to rise', vi: 'Ngủ sớm, dậy sớm' }
         },
         {
           jp: '運動・スポーツ',
-          ruby: [{ base: '運', reading: 'うん' }],
+          ruby: [
+            { base: '運', reading: 'うん' },
+            { base: '動', reading: 'どう' }
+          ],
           meaning: { en: 'Exercise and sports', vi: 'Vận động / chơi thể thao' }
         },
         {

@@ -444,15 +444,7 @@ export const n4Lesson44: Lesson = {
         en: 'Verb masu-stem + すぎます, i-adj (drop い) + すぎます, or na-adj stem + すぎます shows an action or state has gone beyond what is appropriate. It often describes something undesirable.',
         vi: 'Động từ thể ます + すぎます, tính từ い (bỏ い) + すぎます, hoặc tính từ な (bỏ な) + すぎます cho thấy hành động hoặc trạng thái vượt quá mức thích hợp, thường là điều không mong muốn.'
       },
-      explanationRuby: [
-        { base: '酒', reading: 'さけ' },
-        { base: '飲', reading: 'の' },
-        { base: '大', reading: 'おお' },
-        { base: '簡', reading: 'かん' },
-        { base: '単', reading: 'たん' },
-        { base: '運', reading: 'うん' },
-        { base: '転', reading: 'てん' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: 'ゆうべ お酒を 飲みすぎました。',
@@ -501,12 +493,7 @@ export const n4Lesson44: Lesson = {
         en: 'Verb masu-stem + やすい means easy to do (volitional verbs) or prone to happen (non-volitional verbs). It conjugates like an i-adjective.',
         vi: 'Động từ thể ます + やすい: với động từ ý chí nghĩa "dễ làm"; với động từ không ý chí nghĩa "dễ xảy ra". Chia như tính từ い.'
       },
-      explanationRuby: [
-        { base: '使', reading: 'つか' },
-        { base: '住', reading: 'す' },
-        { base: '汚', reading: 'よご' },
-        { base: '乾', reading: 'かわ' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: 'この パソコンは 使いやすいです。',
@@ -533,11 +520,7 @@ export const n4Lesson44: Lesson = {
         en: 'Verb masu-stem + にくい means hard to do or unlikely to happen. It conjugates like an i-adjective.',
         vi: 'Động từ thể ます + にくい nghĩa khó làm hoặc khó xảy ra. Chia như tính từ い.'
       },
-      explanationRuby: [
-        { base: '住', reading: 'す' },
-        { base: '乾', reading: 'かわ' },
-        { base: '割', reading: 'わ' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: '東京は 住みにくいです。',
@@ -558,7 +541,7 @@ export const n4Lesson44: Lesson = {
           },
           ruby: [
             { base: '雨', reading: 'あめ' },
-            { base: '日', reading: 'ひ' },
+            { base: '日', reading: 'にち' },
             { base: '洗', reading: 'せん' },
             { base: '濯', reading: 'たく' },
             { base: '物', reading: 'もの' },
@@ -591,16 +574,7 @@ export const n4Lesson44: Lesson = {
         en: 'Unlike 〜く/に なります (the subject changes), N を i-adj く します or N を na-adj に します means you deliberately change something. N を N に します sets an amount.',
         vi: 'Khác với 〜く/に なります (chủ thể tự đổi), N を tính từ い く します hoặc N を tính từ な に します là làm cho đối tượng thay đổi. N を N に します đặt mức lượng.'
       },
-      explanationRuby: [
-        { base: '音', reading: 'おと' },
-        { base: '大', reading: 'おお' },
-        { base: '部', reading: 'へ' },
-        { base: '屋', reading: 'や' },
-        { base: '塩', reading: 'しお' },
-        { base: '量', reading: 'りょう' },
-        { base: '半', reading: 'はん' },
-        { base: '分', reading: 'ぶん' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: '音を 大きく します。',
@@ -644,14 +618,7 @@ export const n4Lesson44: Lesson = {
         en: 'N に します expresses a choice or decision: a room type, a drink, a date, and so on.',
         vi: 'N に します biểu thị sự lựa chọn hoặc quyết định: loại phòng, đồ uống, ngày họp, v.v.'
       },
-      explanationRuby: [
-        { base: '部', reading: 'へ' },
-        { base: '屋', reading: 'や' },
-        { base: '会', reading: 'かい' },
-        { base: '議', reading: 'ぎ' },
-        { base: '明', reading: 'あ' },
-        { base: '日', reading: 'した' }
-      ],
+      explanationRuby: [],
       examples: [
         {
           jp: '部屋は シングルに しますか、ツインに しますか。',
@@ -674,9 +641,7 @@ export const n4Lesson44: Lesson = {
           },
           ruby: [
             { base: '会', reading: 'かい' },
-            { base: '議', reading: 'ぎ' },
-            { base: '明', reading: 'あ' },
-            { base: '日', reading: 'した' }
+            { base: '議', reading: 'ぎ' }
           ]
         }
       ]
@@ -695,7 +660,7 @@ export const n4Lesson44: Lesson = {
             vi: 'Ở Nhật có trình tự cho các từ dùng trong lễ cưới.'
           },
           ruby: [
-            { base: '日', reading: 'に' },
+            { base: '日', reading: 'にち' },
             { base: '本', reading: 'ほん' },
             { base: '結', reading: 'けっ' },
             { base: '婚', reading: 'こん' },
@@ -722,7 +687,7 @@ export const n4Lesson44: Lesson = {
             { base: '起', reading: 'ぎ' },
             { base: '悪', reading: 'わる' },
             { base: '人', reading: 'ひと' },
-            { base: '言', reading: 'い' },
+            { base: '言', reading: 'こと' },
             { base: '換', reading: 'か' }
           ]
         },

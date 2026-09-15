@@ -450,6 +450,7 @@ export const n4Lesson40: Lesson = {
             { base: '績', reading: 'せき' },
             { base: '算', reading: 'さん' },
             { base: '数', reading: 'すう' },
+            { base: '特', reading: 'とく' },
             { base: '上', reading: 'じょう' },
             { base: '手', reading: 'ず' }
           ]
@@ -467,7 +468,7 @@ export const n4Lesson40: Lesson = {
             { base: '動', reading: 'どう' },
             { base: '会', reading: 'かい' },
             { base: '父', reading: 'ちち' },
-            { base: '来', reading: 'こ' }
+            { base: '来', reading: 'く' }
           ]
         },
         {
@@ -479,9 +480,9 @@ export const n4Lesson40: Lesson = {
             vi: 'Tất nhiên. Xin mời đến xem em Hans thế nào nhé.'
           },
           ruby: [
-            { base: '来', reading: 'き' },
+            { base: '来', reading: 'く' },
             { base: '様', reading: 'よう' },
-            { base: '子', reading: 'す' },
+            { base: '子', reading: 'こ' },
             { base: '見', reading: 'み' }
           ]
         }
@@ -506,7 +507,18 @@ export const n4Lesson40: Lesson = {
         { base: '忘', reading: 'ぼう' },
         { base: '年', reading: 'ねん' },
         { base: '会', reading: 'かい' },
-        { base: '教', reading: 'おし' }
+        { base: '出', reading: 'で' },
+        { base: '教', reading: 'きょう' },
+        { base: '便', reading: 'びん' },
+        { base: '何', reading: 'なん' },
+        { base: '時', reading: 'じ' },
+        { base: '着', reading: 'つ' },
+        { base: '調', reading: 'しら' },
+        { base: '忘', reading: 'ぼう' },
+        { base: '年', reading: 'ねん' },
+        { base: '会', reading: 'かい' },
+        { base: '出', reading: 'で' },
+        { base: '教', reading: 'きょう' }
       ],
       examples: [
         {
@@ -532,12 +544,12 @@ export const n4Lesson40: Lesson = {
             vi: 'Chưa biết bão số 9 có đến Tokyo hay không.'
           },
           ruby: [
+            { base: '号', reading: 'ごう' },
             { base: '台', reading: 'たい' },
             { base: '風', reading: 'ふう' },
             { base: '東', reading: 'とう' },
             { base: '京', reading: 'きょう' },
-            { base: '来', reading: 'く' },
-            { base: '分', reading: 'わ' }
+            { base: '来', reading: 'く' }
           ]
         }
       ]
@@ -551,6 +563,11 @@ export const n4Lesson40: Lesson = {
         vi: 'てみます nghĩa thử làm xem sao: この ズボンを 履いて みます, 北海道へ 行って みたい です.'
       },
       explanationRuby: [
+        { base: '履', reading: 'は' },
+        { base: '北', reading: 'ほっ' },
+        { base: '海', reading: 'かい' },
+        { base: '道', reading: 'どう' },
+        { base: '行', reading: 'い' },
         { base: '履', reading: 'は' },
         { base: '北', reading: 'ほっ' },
         { base: '海', reading: 'かい' },
@@ -603,6 +620,16 @@ export const n4Lesson40: Lesson = {
         { base: '大', reading: 'おお' },
         { base: '大', reading: 'おお' },
         { base: '必', reading: 'ひつ' },
+        { base: '要', reading: 'よう' },
+        { base: '必', reading: 'ひつ' },
+        { base: '要', reading: 'よう' },
+        { base: '高', reading: 'たか' },
+        { base: '高', reading: 'たか' },
+        { base: '大', reading: 'おお' },
+        { base: '大', reading: 'おお' },
+        { base: '必', reading: 'ひつ' },
+        { base: '要', reading: 'よう' },
+        { base: '必', reading: 'ひつ' },
         { base: '要', reading: 'よう' }
       ],
       examples: [
@@ -644,6 +671,8 @@ export const n4Lesson40: Lesson = {
         vi: 'かな ở cuối câu hỏi thể hiện tự hỏi, không đòi câu trả lời: ハンスは 元気かな. Nhẹ nhàng hơn hỏi trực tiếp.'
       },
       explanationRuby: [
+        { base: '元', reading: 'げん' },
+        { base: '気', reading: 'き' },
         { base: '元', reading: 'げん' },
         { base: '気', reading: 'き' }
       ],

@@ -282,7 +282,7 @@ export const n4Lesson45: Lesson = {
             { base: '日', reading: 'にち' },
             { base: '健', reading: 'けん' },
             { base: '康', reading: 'こう' },
-            { base: '大', reading: 'たい' },
+            { base: '大', reading: 'だい' },
             { base: '会', reading: 'かい' },
             { base: '無', reading: 'む' },
             { base: '理', reading: 'り' },
@@ -290,7 +290,8 @@ export const n4Lesson45: Lesson = {
             { base: '体', reading: 'たい' },
             { base: '調', reading: 'ちょう' },
             { base: '悪', reading: 'わる' },
-            { base: '場合', reading: 'ばあい' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' },
             { base: '係', reading: 'かか' },
             { base: '員', reading: 'いん' },
             { base: '知', reading: 'し' }
@@ -307,7 +308,8 @@ export const n4Lesson45: Lesson = {
           ruby: [
             { base: '間', reading: 'ま' },
             { base: '違', reading: 'ちが' },
-            { base: '場合', reading: 'ばあい' }
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' }
           ]
         },
         {
@@ -319,7 +321,8 @@ export const n4Lesson45: Lesson = {
             vi: 'Trường hợp đó thì hãy quay lại chỗ nhầm và tiếp tục chạy.'
           },
           ruby: [
-            { base: '場合', reading: 'ばあい' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' },
             { base: '間', reading: 'ま' },
             { base: '違', reading: 'ちが' },
             { base: '所', reading: 'ところ' },
@@ -337,8 +340,9 @@ export const n4Lesson45: Lesson = {
           },
           ruby: [
             { base: '途', reading: 'と' },
-            { base: '中', reading: 'ちゅう' },
-            { base: '場合', reading: 'ばあい' }
+            { base: '中', reading: 'なか' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' }
           ]
         },
         {
@@ -351,7 +355,8 @@ export const n4Lesson45: Lesson = {
             vi: 'Trường hợp đó thì hãy nói tên với người phụ trách gần nhất rồi về. Bây giờ xuất phát.'
           },
           ruby: [
-            { base: '場合', reading: 'ばあい' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' },
             { base: '近', reading: 'ちか' },
             { base: '係', reading: 'かか' },
             { base: '員', reading: 'いん' },
@@ -404,7 +409,7 @@ export const n4Lesson45: Lesson = {
           romaji: 'Rainen mata arimasu yo.',
           meaning: { en: 'There will be another one next year.', vi: 'Sang năm lại có nữa mà.' },
           ruby: [
-            { base: '来', reading: 'らい' },
+            { base: '来', reading: 'き' },
             { base: '年', reading: 'ねん' }
           ]
         }
@@ -414,21 +419,32 @@ export const n4Lesson45: Lesson = {
   grammar: [
     {
       pattern: 'N / V-た / Adj 普通形 場合は',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' },
+        { base: '場', reading: 'ば' },
+        { base: '合', reading: 'あい' }
+      ],
       highlights: ['場合', 'は'],
       title: { en: 'In case ~ (〜場合は)', vi: 'Trong trường hợp ~ (〜場合は)' },
       explanation: {
         en: 'N 普通形 場合(は), V-た 場合(は), or Adj 普通形 場合(は) gives instructions or advice for a specific situation. は is often omitted.',
-        vi: 'N/V-た/Adj thể thường + 場合(は) nêu hướng dẫn hoặc lời khuyên trong tình huống cụ thể. は thường có thể lược bỏ.'
+        vi: 'N 普通形 場合(は), V-た 場合(は), hoặc Adj 普通形 場合(は) nêu hướng dẫn hoặc lời khuyên trong tình huống cụ thể. は thường có thể lược bỏ.'
       },
       explanationRuby: [
-        { base: '場合', reading: 'ばあい' },
-        { base: '地震', reading: 'じしん' },
-        { base: '電', reading: 'でん' },
-        { base: '車', reading: 'しゃ' },
-        { base: '保', reading: 'ほ' },
-        { base: '証', reading: 'しょう' },
-        { base: '火', reading: 'か' },
-        { base: '災', reading: 'さい' }
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' },
+        { base: '場', reading: 'ば' },
+        { base: '合', reading: 'あい' },
+        { base: '場', reading: 'ば' },
+        { base: '合', reading: 'あい' },
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' },
+        { base: '場', reading: 'ば' },
+        { base: '合', reading: 'あい' }
       ],
       examples: [
         {
@@ -439,11 +455,13 @@ export const n4Lesson45: Lesson = {
             vi: 'Trường hợp tàu điện không hoạt động do động đất thì đừng cố về nhà mà hãy ở lại công ty.'
           },
           ruby: [
-            { base: '地震', reading: 'じしん' },
+            { base: '地', reading: 'じしん' },
+            { base: '震', reading: 'じしん' },
             { base: '電', reading: 'でん' },
             { base: '車', reading: 'しゃ' },
             { base: '動', reading: 'うご' },
-            { base: '場合', reading: 'ばあい' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' },
             { base: '無', reading: 'む' },
             { base: '理', reading: 'り' },
             { base: '帰', reading: 'かえ' },
@@ -463,8 +481,10 @@ export const n4Lesson45: Lesson = {
             { base: '保', reading: 'ほ' },
             { base: '証', reading: 'しょう' },
             { base: '書', reading: 'しょ' },
-            { base: '故障', reading: 'こしょう' },
-            { base: '場合', reading: 'ばあい' },
+            { base: '故', reading: 'こしょう' },
+            { base: '障', reading: 'こしょう' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' },
             { base: '番', reading: 'ばん' },
             { base: '号', reading: 'ごう' },
             { base: '電', reading: 'でん' },
@@ -481,8 +501,10 @@ export const n4Lesson45: Lesson = {
           ruby: [
             { base: '火', reading: 'か' },
             { base: '事', reading: 'じ' },
-            { base: '地震', reading: 'じしん' },
-            { base: '場合', reading: 'ばあい' },
+            { base: '地', reading: 'じしん' },
+            { base: '震', reading: 'じしん' },
+            { base: '場', reading: 'ばあい' },
+            { base: '合', reading: 'ばあい' },
             { base: '使', reading: 'つか' }
           ]
         }
@@ -490,22 +512,21 @@ export const n4Lesson45: Lesson = {
     },
     {
       pattern: 'V-た / Adj 普通形 のに',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
+      ],
       highlights: ['の', 'に'],
       title: { en: 'Although ~ (〜のに)', vi: 'Mặc dù ~ (〜のに)' },
       explanation: {
         en: 'V-た のに or Adj 普通形 のに shows a result that goes against what was expected. It often carries disappointment or surprise.',
-        vi: 'V-た のに hoặc Adj thể thường + のに cho kết quả trái với kỳ vọng, thường kèm tiếc nuối hoặc ngạc nhiên.'
+        vi: 'V-た のに hoặc Adj 普通形 のに cho kết quả trái với kỳ vọng, thường kèm tiếc nuối hoặc ngạc nhiên.'
       },
       explanationRuby: [
-        { base: '約', reading: 'やく' },
-        { base: '束', reading: 'そく' },
-        { base: '来', reading: 'こ' },
-        { base: '練', reading: 'れん' },
-        { base: '習', reading: 'しゅう' },
-        { base: '忘', reading: 'わす' },
-        { base: '冬', reading: 'ふゆ' },
-        { base: '桜', reading: 'さくら' },
-        { base: '梅', reading: 'うめ' }
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
       ],
       examples: [
         {
@@ -532,7 +553,7 @@ export const n4Lesson45: Lesson = {
             { base: '練', reading: 'れん' },
             { base: '習', reading: 'しゅう' },
             { base: '途', reading: 'と' },
-            { base: '中', reading: 'ちゅう' },
+            { base: '中', reading: 'なか' },
             { base: '忘', reading: 'わす' }
           ]
         },
@@ -573,7 +594,7 @@ export const n4Lesson45: Lesson = {
             { base: '田', reading: 'た' },
             { base: '中', reading: 'なか' },
             { base: '目', reading: 'め' },
-            { base: '覚', reading: 'ざ' },
+            { base: '覚', reading: 'さ' },
             { base: '悩', reading: 'なや' }
           ]
         },
