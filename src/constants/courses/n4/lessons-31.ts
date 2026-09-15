@@ -410,6 +410,7 @@ export const n4Lesson31: Lesson = {
             vi: 'Vợ con anh không đi cùng à?'
           },
           ruby: [
+            { base: '奥', reading: 'おく' },
             { base: '子', reading: 'こ' },
             { base: '一', reading: 'いっ' },
             { base: '緒', reading: 'しょ' },
@@ -433,11 +434,13 @@ export const n4Lesson31: Lesson = {
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
             { base: '入', reading: 'にゅう' },
+            { base: '学', reading: 'がく' },
             { base: '試', reading: 'し' },
             { base: '験', reading: 'けん' },
             { base: '東', reading: 'とう' },
             { base: '京', reading: 'きょう' },
             { base: '残', reading: 'のこ' },
+            { base: '言', reading: 'い' },
             { base: '妻', reading: 'つま' },
             { base: '今', reading: 'いま' },
             { base: '会', reading: 'かい' },
@@ -453,6 +456,7 @@ export const n4Lesson31: Lesson = {
           ruby: [
             { base: '家', reading: 'か' },
             { base: '族', reading: 'ぞく' },
+            { base: '離', reading: 'はな' },
             { base: '離', reading: 'はな' }
           ]
         },
@@ -477,7 +481,10 @@ export const n4Lesson31: Lesson = {
           jp: '大変ですね。',
           romaji: 'Taihen desu ne.',
           meaning: { en: 'That is tough.', vi: 'Vất vả quá nhỉ.' },
-          ruby: [{ base: '大', reading: 'たい' }]
+          ruby: [
+            { base: '大', reading: 'たい' },
+            { base: '変', reading: 'へん' }
+          ]
         },
         {
           speakerId: 'ogawa',
@@ -520,18 +527,25 @@ export const n4Lesson31: Lesson = {
             en: 'Shall we rest a bit? ...Yeah, let us rest.',
             vi: 'Nghỉ chút nhé? ...Ừ, nghỉ thôi.'
           },
-          ruby: [{ base: '休', reading: 'やす' }]
+          ruby: [
+            { base: '休', reading: 'やす' },
+            { base: '休', reading: 'やす' }
+          ]
         },
         {
           jp: '手伝おうか。',
           romaji: 'Tetsudao ka.',
           meaning: { en: 'Shall I help?', vi: 'Tôi giúp nhé?' },
-          ruby: [{ base: '手', reading: 'て' }]
+          ruby: [
+            { base: '手', reading: 'て' },
+            { base: '伝', reading: 'つだ' }
+          ]
         }
       ]
     },
     {
       pattern: 'V-volitional と 思っています',
+      patternRuby: [{ base: '思', reading: 'おも' }],
       highlights: ['と', '思'],
       title: { en: 'Ongoing intention (〜と思っています)', vi: 'Ý định đã có (〜と思っています)' },
       explanation: {
@@ -539,10 +553,12 @@ export const n4Lesson31: Lesson = {
         vi: 'Thể ý định + と思っています diễn tả kế hoạch đã hình thành và vẫn giữ: 週末は 海へ 行こうと 思っています. と思います dùng khi vừa quyết định.'
       },
       explanationRuby: [
+        { base: '思', reading: 'おも' },
         { base: '週', reading: 'しゅう' },
         { base: '末', reading: 'まつ' },
         { base: '海', reading: 'うみ' },
         { base: '行', reading: 'い' },
+        { base: '思', reading: 'おも' },
         { base: '思', reading: 'おも' }
       ],
       examples: [
@@ -605,6 +621,10 @@ export const n4Lesson31: Lesson = {
     },
     {
       pattern: 'V-dictionary / N の + 予定です',
+      patternRuby: [
+        { base: '予', reading: 'よ' },
+        { base: '定', reading: 'てい' }
+      ],
       highlights: ['予', '定'],
       title: { en: 'Schedule (予定です)', vi: 'Kế hoạch (予定です)' },
       explanation: {
@@ -612,6 +632,8 @@ export const n4Lesson31: Lesson = {
         vi: 'Thể nguyên dạng hoặc danh từ + の + 予定です nói lịch trình: 7月の 終わりに ドイツへ 出張する 予定です.'
       },
       explanationRuby: [
+        { base: '予', reading: 'よ' },
+        { base: '定', reading: 'てい' },
         { base: '月', reading: 'がつ' },
         { base: '終', reading: 'お' },
         { base: '出', reading: 'しゅっ' },
@@ -655,7 +677,10 @@ export const n4Lesson31: Lesson = {
             en: 'Have you finished the report? ...No, I have not written it yet.',
             vi: 'Anh viết xong báo cáo chưa? ...Chưa, tôi chưa viết xong.'
           },
-          ruby: [{ base: '書', reading: 'か' }]
+          ruby: [
+            { base: '書', reading: 'か' },
+            { base: '書', reading: 'か' }
+          ]
         }
       ]
     },
@@ -776,7 +801,10 @@ export const n4Lesson31: Lesson = {
       rows: [
         {
           jp: '医学',
-          ruby: [{ base: '医', reading: 'い' }],
+          ruby: [
+            { base: '医', reading: 'い' },
+            { base: '学', reading: 'がく' }
+          ],
           meaning: { en: 'medicine', vi: 'y học' }
         },
         {
@@ -790,12 +818,18 @@ export const n4Lesson31: Lesson = {
         },
         {
           jp: '工学',
-          ruby: [{ base: '工', reading: 'こう' }],
+          ruby: [
+            { base: '工', reading: 'こう' },
+            { base: '学', reading: 'がく' }
+          ],
           meaning: { en: 'engineering', vi: 'kỹ thuật' }
         },
         {
           jp: '文学',
-          ruby: [{ base: '文', reading: 'ぶん' }],
+          ruby: [
+            { base: '文', reading: 'ぶん' },
+            { base: '学', reading: 'がく' }
+          ],
           meaning: { en: 'literature', vi: 'văn học' }
         },
         {
