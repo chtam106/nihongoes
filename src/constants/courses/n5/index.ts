@@ -1,5 +1,6 @@
 import { n5Lesson5 } from '@/constants/courses/n5/lessons-5.ts';
 import { n5Lesson6 } from '@/constants/courses/n5/lessons-6.ts';
+import { n5Lesson7 } from '@/constants/courses/n5/lessons-7.ts';
 import { withSequentialNumbers, type Course } from '@/constants/courses/types.ts';
 
 export const n5Course: Course = {
@@ -5146,6 +5147,7 @@ export const n5Course: Course = {
       ]
     },
     n5Lesson5,
-    n5Lesson6
+    n5Lesson6,
+    n5Lesson7
   ])
 };
