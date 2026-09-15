@@ -505,9 +505,11 @@ export const n4Lesson33: Lesson = {
             { base: '駐', reading: 'ちゅう' },
             { base: '車', reading: 'しゃ' },
             { base: '所', reading: 'ところ' },
-            { base: '止', reading: 'と' },
+            { base: '駐', reading: 'ちゅう' },
+            { base: '車', reading: 'しゃ' },
             { base: '意', reading: 'い' },
-            { base: '味', reading: 'み' }
+            { base: '味', reading: 'み' },
+            { base: '止', reading: 'と' }
           ]
         },
         {
@@ -572,7 +574,8 @@ export const n4Lesson33: Lesson = {
           ruby: [
             { base: '円', reading: 'えん' },
             { base: '雑', reading: 'ざっ' },
-            { base: '誌', reading: 'し' }
+            { base: '誌', reading: 'し' },
+            { base: '円', reading: 'えん' }
           ]
         }
       ]
@@ -585,16 +588,14 @@ export const n4Lesson33: Lesson = {
       title: { en: 'Imperative and prohibitive forms', vi: 'Thể mệnh lệnh và cấm chỉ' },
       explanation: {
         en: 'Group I imperative: change the vowel before ます to /e/ + ろ (書く→書け). Group II: add ろ (食べろ). Group III: しろ, 来い. Prohibitive: dictionary form + な (走るな). Used in emergencies, sports cheering, and signs.',
-        vi: 'Nhóm I mệnh lệnh: đổi nguyên âm trước ます thành /e/ + ろ. Nhóm II: thêm ろ. Nhóm III: しろ, 来い. Cấm chỉ: nguyên dạng + な. Dùng trong khẩn cấp, cổ vũ, biển báo.'
+        vi: 'Nhóm I mệnh lệnh: đổi nguyên âm trước ます thành /e/ + ろ (書く→書け). Nhóm II: thêm ろ (食べろ). Nhóm III: しろ, 来い. Cấm chỉ: nguyên dạng + な (走るな). Dùng trong khẩn cấp, cổ vũ, biển báo.'
       },
       explanationRuby: [
         { base: '書', reading: 'か' },
+        { base: '書', reading: 'か' },
         { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
-        { base: '走', reading: 'はし' },
-        { base: '逃', reading: 'に' },
-        { base: '頑', reading: 'がん' },
-        { base: '張', reading: 'ば' }
+        { base: '走', reading: 'はし' }
       ],
       examples: [
         {
@@ -649,6 +650,10 @@ export const n4Lesson33: Lesson = {
     },
     {
       pattern: 'X は Y と 書いて あります / Y と 読みます',
+      patternRuby: [
+        { base: '書', reading: 'か' },
+        { base: '読', reading: 'よ' }
+      ],
       highlights: ['と', '書', '読'],
       title: {
         en: 'How it is written/read (〜と書いてあります)',
@@ -659,11 +664,10 @@ export const n4Lesson33: Lesson = {
         vi: 'Dùng と với 書いてあります hoặc 読みます để nói cách viết/đọc: あそこに「止まれ」と 書いて あります.'
       },
       explanationRuby: [
-        { base: '止', reading: 'と' },
         { base: '書', reading: 'か' },
-        { base: '漢', reading: 'かん' },
-        { base: '字', reading: 'じ' },
-        { base: '読', reading: 'よ' }
+        { base: '読', reading: 'よ' },
+        { base: '止', reading: 'と' },
+        { base: '書', reading: 'か' }
       ],
       examples: [
         {
@@ -690,6 +694,10 @@ export const n4Lesson33: Lesson = {
     },
     {
       pattern: 'X は Y という 意味です',
+      patternRuby: [
+        { base: '意', reading: 'い' },
+        { base: '味', reading: 'み' }
+      ],
       highlights: ['と', 'いう', '意', '味'],
       title: { en: 'Meaning (〜という意味です)', vi: 'Nghĩa (〜という意味です)' },
       explanation: {
@@ -699,12 +707,8 @@ export const n4Lesson33: Lesson = {
       explanationRuby: [
         { base: '意', reading: 'い' },
         { base: '味', reading: 'み' },
-        { base: '立', reading: 'たち' },
-        { base: '入', reading: 'い' },
-        { base: '禁', reading: 'きん' },
-        { base: '止', reading: 'し' },
-        { base: '洗', reading: 'せん' },
-        { base: '濯', reading: 'たく' }
+        { base: '意', reading: 'い' },
+        { base: '味', reading: 'み' }
       ],
       examples: [
         {
@@ -737,13 +741,16 @@ export const n4Lesson33: Lesson = {
             { base: '洗', reading: 'せん' },
             { base: '濯', reading: 'たく' },
             { base: '機', reading: 'き' },
-            { base: '洗', reading: 'あ' }
+            { base: '洗', reading: 'あ' },
+            { base: '意', reading: 'い' },
+            { base: '味', reading: 'み' }
           ]
         }
       ]
     },
     {
       pattern: 'Plain form + と 言っていました',
+      patternRuby: [{ base: '言', reading: 'い' }],
       highlights: ['と', '言'],
       title: {
         en: 'Reported speech (〜と言っていました)',
@@ -754,6 +761,7 @@ export const n4Lesson33: Lesson = {
         vi: 'Thể thông thường + と言っていました chuyển l lời người thứ ba: 田中さんは あした 休むと 言っていました.'
       },
       explanationRuby: [
+        { base: '言', reading: 'い' },
         { base: '田', reading: 'た' },
         { base: '中', reading: 'なか' },
         { base: '休', reading: 'やす' },
@@ -769,7 +777,8 @@ export const n4Lesson33: Lesson = {
             vi: 'Ông Gupta nói đang vắng, khoảng 30 phút nữa sẽ về.'
           },
           ruby: [
-            { base: '留', reading: 'るす' },
+            { base: '留', reading: 'る' },
+            { base: '守', reading: 'す' },
             { base: '言', reading: 'い' },
             { base: '分', reading: 'ぷん' },
             { base: '戻', reading: 'もど' }
@@ -779,6 +788,7 @@ export const n4Lesson33: Lesson = {
     },
     {
       pattern: 'Plain form + と 伝えていただけませんか',
+      patternRuby: [{ base: '伝', reading: 'つた' }],
       highlights: ['と', '伝'],
       title: {
         en: 'Could you pass on a message? (〜と伝えていただけませんか)',
@@ -854,7 +864,8 @@ export const n4Lesson33: Lesson = {
             { base: '地', reading: 'じ' },
             { base: '震', reading: 'しん' },
             { base: '助', reading: 'たす' },
-            { base: '合', reading: 'あ' }
+            { base: '合', reading: 'あ' },
+            { base: '増', reading: 'ふ' }
           ]
         }
       ],
