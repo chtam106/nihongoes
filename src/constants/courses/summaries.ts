@@ -22,6 +22,14 @@ const summaryByLevel: Record<CourseLevel, CourseSummary> = {
       en: 'Build a solid foundation, one lesson at a time.',
       vi: 'Xây nền tảng vững chắc, từng bài một.'
     }
+  },
+  n4: {
+    level: 'n4',
+    name: { en: 'JLPT N4 Course', vi: 'Khóa học JLPT N4' },
+    subtitle: {
+      en: 'Minna no Nihongo Shokyu II - lessons 26 through 50.',
+      vi: 'Minna no Nihongo Sơ cấp II - bài 26 đến 50.'
+    }
   }
 };
 

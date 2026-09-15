@@ -1,6 +1,6 @@
 import type { CourseLevel } from './types.ts';
 
-export const COURSE_LEVELS: CourseLevel[] = ['n5'];
+export const COURSE_LEVELS: CourseLevel[] = ['n5', 'n4'];
 
 export function isCourseLevel(value: string): value is CourseLevel {
   return (COURSE_LEVELS as string[]).includes(value);

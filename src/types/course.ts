@@ -3,7 +3,7 @@ import type { Locale } from '@/types/i18n.ts';
 
 export type Bilingual = Record<Locale, string>;
 
-export type CourseLevel = 'n5';
+export type CourseLevel = 'n5' | 'n4';
 
 /** One kanji (usually a single character) with its reading for ruby display. */
 export type RubySegment = {

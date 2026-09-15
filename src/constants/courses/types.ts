@@ -8,10 +8,10 @@ export * from '@/types/course.ts';
  * Renumbers a composed list of lessons sequentially (1..N), so course content can be
  * split across part files and reordered freely without worrying about `id`/`number`.
  */
-export function withSequentialNumbers(lessons: Lesson[]): Lesson[] {
+export function withSequentialNumbers(lessons: Lesson[], start = 1): Lesson[] {
   return lessons.map((lesson, index) => ({
     ...lesson,
-    number: index + 1,
-    id: `lesson-${index + 1}`
+    number: start + index,
+    id: `lesson-${start + index}`
   }));
 }
