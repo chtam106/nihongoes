@@ -3,7 +3,9 @@ import { n5Course } from './n5/index.ts';
 import type { Course, CourseLevel, Lesson, ReferenceBlock, VocabItem } from './types.ts';
 import {
   COURSE_LEVELS,
+  courseIntroPath,
   coursePath,
+  courseReferencePath,
   lessonGrammarPath,
   lessonPath,
   lessonReadingPath,
@@ -93,6 +95,7 @@ export const COURSE_SITEMAP_PATHS: string[] = COURSE_LEVELS.flatMap((level) => {
 
   return [
     coursePath(level),
+    ...(level === 'n5' ? [courseIntroPath(level), courseReferencePath(level)] : []),
     ...lessons.map((lesson) => lessonPath(level, lesson.id)),
     ...lessons.map((lesson) => lessonVocabularyPath(level, lesson.id)),
     ...lessons.filter(lessonHasGrammar).map((lesson) => lessonGrammarPath(level, lesson.id)),

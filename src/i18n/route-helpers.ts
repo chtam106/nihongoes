@@ -50,6 +50,16 @@ export function courseLevelParams() {
   );
 }
 
+/** `{ locale, jlptLevel }` for course intro pages (N5 only for now). */
+export function courseIntroParams() {
+  return LOCALES.flatMap((locale) => [{ locale, jlptLevel: 'n5' }]);
+}
+
+/** `{ locale, jlptLevel }` for course reference pages (N5 only for now). */
+export function courseReferenceParams() {
+  return LOCALES.flatMap((locale) => [{ locale, jlptLevel: 'n5' }]);
+}
+
 function courseLessonParamsWhere(predicate?: (lesson: Lesson) => boolean) {
   return LOCALES.flatMap((locale) =>
     sample(COURSE_LEVELS).flatMap((level) =>

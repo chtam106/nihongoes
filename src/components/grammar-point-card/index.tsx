@@ -6,49 +6,15 @@ import {
   DialogueLineLayout,
   dialogueJapaneseTypographySx
 } from '@/components/dialogue-line-layout';
+import { GrammarExampleSentence } from '@/components/grammar-example-sentence';
 import { GrammarHighlightedText } from '@/components/grammar-highlighted-text';
 import { SpeakerIconColumn } from '@/components/dialogue-speaker-icon';
 import { formatGrammarPatternDisplay, isGrammarTitleRedundant } from '@/utils/grammar-highlight.ts';
-import { TranslationLine } from '@/components/translation-line';
 import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
-
-type ExampleRowProps = {
-  example: GrammarExample;
-};
-
-function ExampleRow({ example }: ExampleRowProps) {
-  const { locale } = useTranslation();
-  const [preferences] = useUserPreferences();
-
-  return (
-    <SpeakableSurface
-      text={example.jp}
-      sx={{
-        boxShadow: 'none',
-        bgcolor: 'transparent',
-        borderRadius: 1,
-        px: 0.5,
-        mx: -0.5
-      }}
-    >
-      <GrammarHighlightedText
-        text={example.jp}
-        ruby={example.ruby}
-        variant="body1"
-        lang="ja"
-        sx={{ fontWeight: 500 }}
-      />
-      <TranslationLine
-        key={String(preferences.showTranslationsByDefault)}
-        translation={example.meaning[locale]}
-      />
-    </SpeakableSurface>
-  );
-}
 
 type ExampleSegment =
   | { kind: 'single'; example: GrammarExample }
@@ -176,19 +142,7 @@ function ExampleList({ examples }: ExampleListProps) {
     <Stack spacing={2}>
       {segments.map((segment, index) => {
         if (segment.kind === 'single') {
-          return (
-            <Box
-              key={segment.example.jp}
-              sx={{
-                borderLeft: 4,
-                borderColor: 'text.primary',
-                pl: 2,
-                pr: 1.5
-              }}
-            >
-              <ExampleRow example={segment.example} />
-            </Box>
-          );
+          return <GrammarExampleSentence key={segment.example.jp} example={segment.example} />;
         }
 
         return (
