@@ -151,7 +151,18 @@ const l26 = fs.readFileSync('src/constants/courses/n4/lessons-26.ts', 'utf8');
 const l27 = fs.readFileSync('src/constants/courses/n4/lessons-27.ts', 'utf8');
 const l28 = fs.readFileSync('src/constants/courses/n4/lessons-28.ts', 'utf8');
 const l29 = fs.readFileSync('src/constants/courses/n4/lessons-29.ts', 'utf8');
+const l30 = fs.readFileSync('src/constants/courses/n4/lessons-30.ts', 'utf8');
+const l31 = fs.readFileSync('src/constants/courses/n4/lessons-31.ts', 'utf8');
 const l34 = fs.readFileSync('src/constants/courses/n4/lessons-34.ts', 'utf8');
+const l42 = fs.readFileSync('src/constants/courses/n4/lessons-42.ts', 'utf8');
+const l43 = fs.readFileSync('src/constants/courses/n4/lessons-43.ts', 'utf8');
+const l44 = fs.readFileSync('src/constants/courses/n4/lessons-44.ts', 'utf8');
+const l45 = fs.readFileSync('src/constants/courses/n4/lessons-45.ts', 'utf8');
+const l46 = fs.readFileSync('src/constants/courses/n4/lessons-46.ts', 'utf8');
+const l47 = fs.readFileSync('src/constants/courses/n4/lessons-47.ts', 'utf8');
+const l48 = fs.readFileSync('src/constants/courses/n4/lessons-48.ts', 'utf8');
+const l49 = fs.readFileSync('src/constants/courses/n4/lessons-49.ts', 'utf8');
+const l50 = fs.readFileSync('src/constants/courses/n4/lessons-50.ts', 'utf8');
 const end = index.lastIndexOf('    n5Lesson5');
 const all = [
   ...scanChunk(end > 0 ? index.slice(0, end) : index, 'L1-4'),
@@ -180,7 +191,18 @@ const all = [
   ...scanChunk(l27, 'L27'),
   ...scanChunk(l28, 'L28'),
   ...scanChunk(l29, 'L29'),
-  ...scanChunk(l34, 'L34')
+  ...scanChunk(l30, 'L30'),
+  ...scanChunk(l31, 'L31'),
+  ...scanChunk(l34, 'L34'),
+  ...scanChunk(l42, 'L42'),
+  ...scanChunk(l43, 'L43'),
+  ...scanChunk(l44, 'L44'),
+  ...scanChunk(l45, 'L45'),
+  ...scanChunk(l46, 'L46'),
+  ...scanChunk(l47, 'L47'),
+  ...scanChunk(l48, 'L48'),
+  ...scanChunk(l49, 'L49'),
+  ...scanChunk(l50, 'L50')
 ];
 console.log(JSON.stringify(all, null, 2));
 console.error('count', all.length);

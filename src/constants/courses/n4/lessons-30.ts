@@ -475,7 +475,6 @@ export const n4Lesson30: Lesson = {
             { base: '常', reading: 'じょう' },
             { base: '時', reading: 'じ' },
             { base: '使', reading: 'つか' },
-            { base: '物', reading: 'もの' },
             { base: '入', reading: 'い' },
             { base: '袋', reading: 'ふくろ' },
             { base: '停', reading: 'てい' },
@@ -559,6 +558,8 @@ export const n4Lesson30: Lesson = {
         { base: '机', reading: 'つくえ' },
         { base: '上', reading: 'うえ' },
         { base: '置', reading: 'お' },
+        { base: '窓', reading: 'まど' },
+        { base: '閉', reading: 'し' },
         { base: '窓', reading: 'まど' },
         { base: '閉', reading: 'し' }
       ],
@@ -681,6 +682,10 @@ export const n4Lesson30: Lesson = {
         en: 'とか lists examples like や but is more colloquial and can follow the last item: テニスとか 水泳とか.',
         vi: 'とか liệt kê ví dụ như や nhưng khẩu ngữ hơn và có thể đứng sau mục cuối: テニスとか 水泳とか.'
       },
+      explanationRuby: [
+        { base: '水', reading: 'すい' },
+        { base: '泳', reading: 'えい' }
+      ],
       examples: [
         {
           jp: 'どんな スポーツを して いますか。……テニスとか 水泳とか……。',
@@ -689,7 +694,10 @@ export const n4Lesson30: Lesson = {
             en: 'What sports do you play? ...Things like tennis and swimming...',
             vi: 'Anh/chị chơi môn gì? ...Ten-nít, bơi lội, v.v...'
           },
-          ruby: [{ base: '水', reading: 'すい' }]
+          ruby: [
+            { base: '水', reading: 'すい' },
+            { base: '泳', reading: 'えい' }
+          ]
         }
       ]
     },
@@ -701,6 +709,7 @@ export const n4Lesson30: Lesson = {
         en: 'When も combines with a noun that already has a particle, が and を drop but others stay: ほかにも, どこ [へ] も 行きません.',
         vi: 'Khi も kết hợp với danh từ đã có trợ từ, が và を lược bỏ; trợ từ khác giữ lại: ほかにも, どこ [へ] も 行きません.'
       },
+      explanationRuby: [{ base: '行', reading: 'い' }],
       examples: [
         {
           jp: 'ほかにも いろいろ あります。',
