@@ -6,7 +6,6 @@ import { n4Lesson29 } from '@/constants/courses/n4/lessons-29.ts';
 import { n4Lesson30 } from '@/constants/courses/n4/lessons-30.ts';
 import { n4Lesson31 } from '@/constants/courses/n4/lessons-31.ts';
 import { n4Lesson32 } from '@/constants/courses/n4/lessons-32.ts';
-import { n4Lesson32 } from '@/constants/courses/n4/lessons-32.ts';
 import { n4Lesson33 } from '@/constants/courses/n4/lessons-33.ts';
 import { n4Lesson34 } from '@/constants/courses/n4/lessons-34.ts';
 import { n4Lesson35 } from '@/constants/courses/n4/lessons-35.ts';
