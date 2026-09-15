@@ -5,8 +5,8 @@ export const n4Lesson44: Lesson = {
   id: 'lesson-44',
   number: 44,
   title: {
-    en: 'Too much and easy or hard',
-    vi: 'Quá mức và dễ hay khó'
+    en: 'Overdoing and easy or hard',
+    vi: 'Làm quá và dễ hay khó'
   },
   focus: {
     en: 'Say something is excessive with 〜すぎます, describe ease or difficulty with 〜やすい/にくい, change something with Nを Adj く/に します, and state a choice with Nに します.',

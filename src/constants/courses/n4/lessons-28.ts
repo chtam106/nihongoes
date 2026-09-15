@@ -5,8 +5,8 @@ export const n4Lesson28: Lesson = {
   id: 'lesson-28',
   number: 28,
   title: {
-    en: 'While doing and listing reasons',
-    vi: 'Vừa làm vừa và liệt kê lý do'
+    en: 'Simultaneous actions and listing reasons',
+    vi: 'Làm đồng thời và liệt kê lý do'
   },
   focus: {
     en: 'Describe simultaneous actions with V-ながら, habitual routines with 〜ています, list qualities or reasons with 〜し〜し, connect results with それで, and use particles after とき.',

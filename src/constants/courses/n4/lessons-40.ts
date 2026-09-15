@@ -5,8 +5,8 @@ export const n4Lesson40: Lesson = {
   id: 'lesson-40',
   number: 40,
   title: {
-    en: 'Asking and trying',
-    vi: 'Hỏi lồng và thử làm'
+    en: 'Embedded questions and trying things',
+    vi: 'Câu hỏi lồng nhau và thử làm'
   },
   focus: {
     en: 'Embed questions with か/かどうか, try actions with てみます, nominalize adjectives with ～さ, and wonder softly with ～かな.',

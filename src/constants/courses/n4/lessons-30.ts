@@ -5,8 +5,8 @@ export const n4Lesson30: Lesson = {
   id: 'lesson-30',
   number: 30,
   title: {
-    en: 'Prepared and in place',
-    vi: 'Chuẩn bị sẵn và để nguyên'
+    en: 'Left in place and prepared ahead',
+    vi: 'Đặt sẵn chỗ và chuẩn bị trước'
   },
   focus: {
     en: 'Describe intentional placement with V-てあります, prepare in advance with V-ておきます, keep something ongoing with まだ, list examples with とか, and emphasize with particle + も.',

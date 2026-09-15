@@ -5,8 +5,8 @@ export const n4Lesson38: Lesson = {
   id: 'lesson-38',
   number: 38,
   title: {
-    en: 'Nominalizing with の',
-    vi: 'Danh từ hóa với の'
+    en: 'Turning actions into nouns with の',
+    vi: 'Dùng の làm danh từ'
   },
   focus: {
     en: 'Turn actions into topics with の, ask whether someone knows with 知っていますか, state when with 時, and express contrast with ～のに.',

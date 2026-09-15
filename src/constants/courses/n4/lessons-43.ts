@@ -5,8 +5,8 @@ export const n4Lesson43: Lesson = {
   id: 'lesson-43',
   number: 43,
   title: {
-    en: 'Looks like and going to do',
-    vi: 'Có vẻ và đi làm rồi về'
+    en: 'Appearance and going and returning',
+    vi: 'Vẻ ngoài và đi rồi về'
   },
   focus: {
     en: 'Describe imminent change or appearance with 〜そうです, say you will go do something and return with V-te 来ます, and make polite requests with V-te くれませんか.',

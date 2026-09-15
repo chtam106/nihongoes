@@ -5,8 +5,8 @@ export const n5Lesson16: Lesson = {
   id: 'lesson-16',
   number: 16,
   title: {
-    en: 'How to get there',
-    vi: 'Cách đi và sử dụng'
+    en: 'Chaining actions and asking how',
+    vi: 'Nối hành động và hỏi cách'
   },
   focus: {
     en: 'Chain actions with the て-form, ask how with どうやって, choose with どの/どれ, and describe parts of the body.',

@@ -6,7 +6,7 @@ export const n5Lesson23: Lesson = {
   number: 23,
   title: {
     en: 'When and if',
-    vi: 'Khi nào và nếu thì'
+    vi: 'Khi nào và nếu'
   },
   focus: {
     en: 'Describe when something happens with 〜とき, express natural results with と, and use movement verbs with を and が.',

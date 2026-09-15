@@ -6,7 +6,7 @@ export const n4Lesson35: Lesson = {
   number: 35,
   title: {
     en: 'When and if',
-    vi: 'Khi thì và nếu thì'
+    vi: 'Khi và nếu'
   },
   focus: {
     en: 'Express conditions with V-たら, ask how to do something with question word + V-たら, give topical information with N は N, and ask politely with ～ないか.',

@@ -6,7 +6,7 @@ export const n4Lesson29: Lesson = {
   number: 29,
   title: {
     en: 'States and things left behind',
-    vi: 'Trạng thái và đồ để quên'
+    vi: 'Trạng thái và quên đồ'
   },
   focus: {
     en: 'Describe resulting states with V-ています, express completion or regret with V-てしまいました, refer back with それ/その/そう, and report discovery with ありました.',

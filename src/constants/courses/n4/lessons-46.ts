@@ -5,8 +5,8 @@ export const n4Lesson46: Lesson = {
   id: 'lesson-46',
   number: 46,
   title: {
-    en: 'About to, just done, and should be',
-    vi: 'Sắp, vừa mới và chắc là'
+    en: 'About to, just finished, and ought to be',
+    vi: 'Sắp làm, vừa xong và chắc là'
   },
   focus: {
     en: 'Say something is about to happen, in progress, or just finished with V ところです, that it just happened with V-た ばかり, and that something is expected with はずです.',

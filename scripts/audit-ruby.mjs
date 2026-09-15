@@ -123,7 +123,10 @@ function scanChunk(chunk, label) {
   return issues;
 }
 
-const index = fs.readFileSync('src/constants/courses/n5/index.ts', 'utf8');
+const l1 = fs.readFileSync('src/constants/courses/n5/lessons-1.ts', 'utf8');
+const l2 = fs.readFileSync('src/constants/courses/n5/lessons-2.ts', 'utf8');
+const l3 = fs.readFileSync('src/constants/courses/n5/lessons-3.ts', 'utf8');
+const l4 = fs.readFileSync('src/constants/courses/n5/lessons-4.ts', 'utf8');
 const l5 = fs.readFileSync('src/constants/courses/n5/lessons-5.ts', 'utf8');
 const l6 = fs.readFileSync('src/constants/courses/n5/lessons-6.ts', 'utf8');
 const l7 = fs.readFileSync('src/constants/courses/n5/lessons-7.ts', 'utf8');
@@ -170,9 +173,11 @@ const l47 = fs.readFileSync('src/constants/courses/n4/lessons-47.ts', 'utf8');
 const l48 = fs.readFileSync('src/constants/courses/n4/lessons-48.ts', 'utf8');
 const l49 = fs.readFileSync('src/constants/courses/n4/lessons-49.ts', 'utf8');
 const l50 = fs.readFileSync('src/constants/courses/n4/lessons-50.ts', 'utf8');
-const end = index.lastIndexOf('    n5Lesson5');
 const all = [
-  ...scanChunk(end > 0 ? index.slice(0, end) : index, 'L1-4'),
+  ...scanChunk(l1, 'L1'),
+  ...scanChunk(l2, 'L2'),
+  ...scanChunk(l3, 'L3'),
+  ...scanChunk(l4, 'L4'),
   ...scanChunk(l5, 'L5'),
   ...scanChunk(l6, 'L6'),
   ...scanChunk(l7, 'L7'),

@@ -5,7 +5,7 @@ export const n4Lesson48: Lesson = {
   id: 'lesson-48',
   number: 48,
   title: {
-    en: 'Making someone do',
+    en: 'Making someone do and asking permission',
     vi: 'Sai khiến và xin phép'
   },
   focus: {
