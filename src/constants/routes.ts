@@ -7,6 +7,9 @@ export const routes = {
   n5: {
     index: '/n5'
   },
+  n4: {
+    index: '/n4'
+  },
   kanji: {
     index: '/kanji'
   },

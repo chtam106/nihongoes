@@ -1,3 +1,4 @@
+import { n4Course } from './n4/index.ts';
 import { n5Course } from './n5/index.ts';
 import type { Course, CourseLevel, Lesson, ReferenceBlock, VocabItem } from './types.ts';
 import {
@@ -18,7 +19,8 @@ export * from './summaries.ts';
 export * from './seo.ts';
 
 const courses: Record<CourseLevel, Course> = {
-  n5: n5Course
+  n5: n5Course,
+  n4: n4Course
 };
 
 export function getCourse(level: CourseLevel): Course {

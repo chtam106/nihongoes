@@ -73,7 +73,8 @@ const courseLessonLoaders: Record<
   CourseLevel,
   () => Promise<Array<{ id: string; number: number; title: Bilingual }>>
 > = {
-  n5: () => import('@/constants/courses/n5/index.ts').then(({ n5Course }) => n5Course.lessons)
+  n5: () => import('@/constants/courses/n5/index.ts').then(({ n5Course }) => n5Course.lessons),
+  n4: () => import('@/constants/courses/n4/index.ts').then(({ n4Course }) => n4Course.lessons)
 };
 
 export const navGroups: NavGroup[] = [
