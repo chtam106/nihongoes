@@ -11,4 +11,5 @@ alwaysApply: false
 - Lesson files: `src/constants/courses/n4/lessons-N.ts` exporting `n4LessonN`. Wire in `n4/index.ts` + `withSequentialNumbers([...], 26)` so ids are `lesson-26` … `lesson-50` and numbers match Minna.
 - Follow all rules in `n5-course.mdc` (full vocab/phrases/grammar from textbook lists, original dialogues/readings, ruby audit, reference blocks).
 - After each lesson: extend `scripts/audit-ruby.mjs` with `lN` scan chunk; run `pnpm run format`, `node scripts/audit-ruby.mjs` (0 issues), `pnpm run typecheck`, `pnpm run lint`; commit + push. Auto-continue to next lesson without asking.
+- **Parallel subagents:** each agent owns ONLY its `lessons-N.ts` files. Do NOT edit `n4/index.ts` or `scripts/audit-ruby.mjs` — a single wiring pass merges imports + audit chunks after all lesson files exist.
 - Do NOT merge PRs unless explicitly asked.
