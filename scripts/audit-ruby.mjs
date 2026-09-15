@@ -153,23 +153,6 @@ const l30 = fs.readFileSync('src/constants/courses/n4/lessons-30.ts', 'utf8');
 const l31 = fs.readFileSync('src/constants/courses/n4/lessons-31.ts', 'utf8');
 const l32 = fs.readFileSync('src/constants/courses/n4/lessons-32.ts', 'utf8');
 const l33 = fs.readFileSync('src/constants/courses/n4/lessons-33.ts', 'utf8');
-const l34 = fs.readFileSync('src/constants/courses/n4/lessons-34.ts', 'utf8');
-const l35 = fs.readFileSync('src/constants/courses/n4/lessons-35.ts', 'utf8');
-const l36 = fs.readFileSync('src/constants/courses/n4/lessons-36.ts', 'utf8');
-const l37 = fs.readFileSync('src/constants/courses/n4/lessons-37.ts', 'utf8');
-const l38 = fs.readFileSync('src/constants/courses/n4/lessons-38.ts', 'utf8');
-const l39 = fs.readFileSync('src/constants/courses/n4/lessons-39.ts', 'utf8');
-const l40 = fs.readFileSync('src/constants/courses/n4/lessons-40.ts', 'utf8');
-const l41 = fs.readFileSync('src/constants/courses/n4/lessons-41.ts', 'utf8');
-const l42 = fs.readFileSync('src/constants/courses/n4/lessons-42.ts', 'utf8');
-const l43 = fs.readFileSync('src/constants/courses/n4/lessons-43.ts', 'utf8');
-const l44 = fs.readFileSync('src/constants/courses/n4/lessons-44.ts', 'utf8');
-const l45 = fs.readFileSync('src/constants/courses/n4/lessons-45.ts', 'utf8');
-const l46 = fs.readFileSync('src/constants/courses/n4/lessons-46.ts', 'utf8');
-const l47 = fs.readFileSync('src/constants/courses/n4/lessons-47.ts', 'utf8');
-const l48 = fs.readFileSync('src/constants/courses/n4/lessons-48.ts', 'utf8');
-const l49 = fs.readFileSync('src/constants/courses/n4/lessons-49.ts', 'utf8');
-const l50 = fs.readFileSync('src/constants/courses/n4/lessons-50.ts', 'utf8');
 const end = index.lastIndexOf('    n5Lesson5');
 const all = [
   ...scanChunk(end > 0 ? index.slice(0, end) : index, 'L1-4'),
@@ -201,24 +184,7 @@ const all = [
   ...scanChunk(l30, 'L30'),
   ...scanChunk(l31, 'L31'),
   ...scanChunk(l32, 'L32'),
-  ...scanChunk(l33, 'L33'),
-  ...scanChunk(l34, 'L34'),
-  ...scanChunk(l35, 'L35'),
-  ...scanChunk(l36, 'L36'),
-  ...scanChunk(l37, 'L37'),
-  ...scanChunk(l38, 'L38'),
-  ...scanChunk(l39, 'L39'),
-  ...scanChunk(l40, 'L40'),
-  ...scanChunk(l41, 'L41'),
-  ...scanChunk(l42, 'L42'),
-  ...scanChunk(l43, 'L43'),
-  ...scanChunk(l44, 'L44'),
-  ...scanChunk(l45, 'L45'),
-  ...scanChunk(l46, 'L46'),
-  ...scanChunk(l47, 'L47'),
-  ...scanChunk(l48, 'L48'),
-  ...scanChunk(l49, 'L49'),
-  ...scanChunk(l50, 'L50')
+  ...scanChunk(l33, 'L33')
 ];
 console.log(JSON.stringify(all, null, 2));
 console.error('count', all.length);
