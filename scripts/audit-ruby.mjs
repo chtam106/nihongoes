@@ -56,11 +56,6 @@ function objectBoundsContaining(text, fromIndex, needle) {
   return objectBounds(text, fromIndex);
 }
 
-function outerObjectBounds(text, fromIndex) {
-  const [innerStart] = objectBounds(text, fromIndex);
-  return objectBounds(text, innerStart - 1);
-}
-
 function scanChunk(chunk, label) {
   const issues = [];
 
@@ -88,7 +83,11 @@ function scanChunk(chunk, label) {
     const pattern = m[1];
     const [objStart, objEnd] = objectBounds(chunk, m.index);
     const obj = chunk.slice(objStart, objEnd);
-    if (/なん[^']/.test(pattern)) issues.push({ file: label, kind: 'pattern-kana', pattern });
+    // A pattern that contrasts both readings of 何 is about the readings themselves, so kana is intended.
+    const contrastsNanReadings = pattern.includes('なん') && pattern.includes('なに');
+    if (/なん[^']/.test(pattern) && !contrastsNanReadings) {
+      issues.push({ file: label, kind: 'pattern-kana', pattern });
+    }
     if (kanji.test(pattern) && !obj.includes('patternRuby')) {
       issues.push({ file: label, kind: 'pattern-no-ruby', pattern });
     }
@@ -97,15 +96,15 @@ function scanChunk(chunk, label) {
   for (const m of chunk.matchAll(
     /explanation:\s*\{\s*en:\s*'((?:\\'|[^'])*)',\s*vi:\s*'((?:\\'|[^'])*)'\s*\}/g
   )) {
-    const [objStart, objEnd] = outerObjectBounds(chunk, m.index);
-    const obj = chunk.slice(objStart, objEnd);
+    // By convention `explanationRuby` is authored directly after its `explanation`.
+    const after = chunk.slice(m.index + m[0].length);
     for (const [loc, raw] of [
       ['en', m[1]],
       ['vi', m[2]]
     ]) {
       const text = raw.replace(/\\'/g, "'");
       if (!kanji.test(text)) continue;
-      const rm = obj.match(/explanationRuby:\s*\[([\s\S]*?)\]/);
+      const rm = after.match(/^\s*,\s*explanationRuby:\s*\[([\s\S]*?)\]/);
       if (!rm) {
         issues.push({ file: label, kind: 'explanation-no-ruby', loc, text: text.slice(0, 100) });
       } else {
@@ -128,7 +127,12 @@ function scanChunk(chunk, label) {
 
 const index = fs.readFileSync('src/constants/courses/n5/index.ts', 'utf8');
 const l5 = fs.readFileSync('src/constants/courses/n5/lessons-5.ts', 'utf8');
+const l6 = fs.readFileSync('src/constants/courses/n5/lessons-6.ts', 'utf8');
 const end = index.lastIndexOf('    n5Lesson5');
-const all = [...scanChunk(end > 0 ? index.slice(0, end) : index, 'L1-4'), ...scanChunk(l5, 'L5')];
+const all = [
+  ...scanChunk(end > 0 ? index.slice(0, end) : index, 'L1-4'),
+  ...scanChunk(l5, 'L5'),
+  ...scanChunk(l6, 'L6')
+];
 console.log(JSON.stringify(all, null, 2));
 console.error('count', all.length);
