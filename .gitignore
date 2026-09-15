@@ -41,3 +41,6 @@ storybook-static
 
 # Lighthouse reports
 .lighthouse
+
+# Local textbook scans used only as an authoring reference (copyrighted)
+pdf
