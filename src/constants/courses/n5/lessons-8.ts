@@ -1323,33 +1323,46 @@ export const n5Lesson8: Lesson = {
       ]
     },
     {
-      kind: 'list',
+      kind: 'vocab',
       title: { en: 'Four seasons in Japan', vi: 'Bốn mùa ở Nhật' },
       intro: {
-        en: 'Japan has four distinct seasons. August is usually the hottest month; January and February the coldest, though averages vary by region.',
-        vi: 'Nhật Bản có bốn mùa rõ rệt. Tháng 8 thường nóng nhất; tháng 1 và 2 lạnh nhất, nhưng nhiệt độ trung bình khác nhau theo vùng.'
+        en: 'Japan has four distinct seasons (四季).',
+        vi: 'Nhật Bản có bốn mùa rõ rệt (四季).'
       },
-      layout: 'stacked',
-      rows: [
+      items: [
         {
-          number: '春',
-          numberRuby: [{ base: '春', reading: 'はる' }],
-          meaning: { en: 'Spring (Mar-May)', vi: 'Xuân (tháng 3-5)' }
+          kana: 'はる',
+          kanji: '春',
+          romaji: 'haru',
+          meaning: { en: 'spring (Mar-May)', vi: 'xuân (tháng 3-5)' },
+          ruby: [{ base: '春', reading: 'はる' }]
         },
         {
-          number: '夏',
-          numberRuby: [{ base: '夏', reading: 'なつ' }],
-          meaning: { en: 'Summer (Jun-Aug)', vi: 'Hạ (tháng 6-8)' }
+          kana: 'なつ',
+          kanji: '夏',
+          romaji: 'natsu',
+          meaning: { en: 'summer (Jun-Aug)', vi: 'hạ (tháng 6-8)' },
+          ruby: [{ base: '夏', reading: 'なつ' }]
         },
         {
-          number: '秋',
-          numberRuby: [{ base: '秋', reading: 'あき' }],
-          meaning: { en: 'Autumn (Sep-Nov)', vi: 'Thu (tháng 9-11)' }
+          kana: 'あき',
+          kanji: '秋',
+          romaji: 'aki',
+          meaning: { en: 'autumn (Sep-Nov)', vi: 'thu (tháng 9-11)' },
+          ruby: [{ base: '秋', reading: 'あき' }]
         },
         {
-          number: '冬',
-          numberRuby: [{ base: '冬', reading: 'ふゆ' }],
-          meaning: { en: 'Winter (Dec-Feb)', vi: 'Đông (tháng 12-2)' }
+          kana: 'ふゆ',
+          kanji: '冬',
+          romaji: 'fuyu',
+          meaning: { en: 'winter (Dec-Feb)', vi: 'đông (tháng 12-2)' },
+          ruby: [{ base: '冬', reading: 'ふゆ' }]
+        }
+      ],
+      notes: [
+        {
+          en: 'August is usually the hottest month; January and February the coldest, though averages vary by region.',
+          vi: 'Tháng 8 thường nóng nhất; tháng 1 và 2 lạnh nhất, nhưng nhiệt độ trung bình khác nhau theo vùng.'
         }
       ]
     },
