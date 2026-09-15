@@ -454,7 +454,10 @@ export const n4Lesson32: Lesson = {
             en: 'Mr. Schmidt, you do not look well. What happened?',
             vi: 'Anh Schmidt, anh có vẻ không khỏe. Anh bị sao?'
           },
-          ruby: [{ base: '元', reading: 'げん' }]
+          ruby: [
+            { base: '元', reading: 'げん' },
+            { base: '気', reading: 'き' }
+          ]
         },
         {
           speakerId: 'schmidt',
@@ -471,7 +474,8 @@ export const n4Lesson32: Lesson = {
             { base: '時', reading: 'とき' },
             { base: '頭', reading: 'あたま' },
             { base: '痛', reading: 'いた' },
-            { base: '胃', reading: 'い' }
+            { base: '胃', reading: 'い' },
+            { base: '痛', reading: 'いた' }
           ]
         },
         {
@@ -509,6 +513,8 @@ export const n4Lesson32: Lesson = {
             vi: 'Có lẽ do căng thẳng. Anh nên đi bệnh viện khám một lần.'
           },
           ruby: [
+            { base: '原', reading: 'げん' },
+            { base: '因', reading: 'いん' },
             { base: '一', reading: 'いち' },
             { base: '度', reading: 'ど' },
             { base: '病', reading: 'びょう' },
@@ -548,6 +554,7 @@ export const n4Lesson32: Lesson = {
           ruby: [
             { base: '今', reading: 'いま' },
             { base: '担', reading: 'たん' },
+            { base: '当', reading: 'とう' },
             { base: '仕', reading: 'し' },
             { base: '事', reading: 'ごと' },
             { base: '終', reading: 'お' },
@@ -643,6 +650,8 @@ export const n4Lesson32: Lesson = {
           },
           ruby: [
             { base: '合', reading: 'ごう' },
+            { base: '格', reading: 'かく' },
+            { base: '合', reading: 'ごう' },
             { base: '格', reading: 'かく' }
           ]
         }
@@ -661,6 +670,7 @@ export const n4Lesson32: Lesson = {
         { base: '束', reading: 'そく' },
         { base: '時', reading: 'じ' },
         { base: '間', reading: 'かん' },
+        { base: '間', reading: 'ま' },
         { base: '合', reading: 'あ' }
       ],
       examples: [
@@ -676,6 +686,7 @@ export const n4Lesson32: Lesson = {
             { base: '束', reading: 'そく' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' },
+            { base: '間', reading: 'ま' },
             { base: '合', reading: 'あ' }
           ]
         },
@@ -750,17 +761,23 @@ export const n4Lesson32: Lesson = {
       highlights: ['なに', 'か', 'こと'],
       title: { en: 'Something + adjective + こと', vi: 'なにか + tính từ + こと' },
       explanation: {
-        en: 'Use なにか + adjective + こと (not しんぱいな なにか): なにか 心配な ことが ありますか. Similar: なにか ～もの, どこか ～ところ.',
-        vi: 'Dùng なにか + tính từ + こと (không nói しんぱいな なにか): なにか 心配な ことが ありますか. Tương tự: なにか ～もの, どこか ～ところ.'
+        en: 'Use 何か + adjective + こと (not 心配な 何か): 何か 心配な ことが ありますか. Similar: 何か ～もの, どこか ～ところ.',
+        vi: 'Dùng 何か + tính từ + こと (không nói 心配な 何か): 何か 心配な ことが ありますか. Tương tự: 何か ～もの, どこか ～ところ.'
       },
       explanationRuby: [
         { base: '何', reading: 'なに' },
         { base: '心', reading: 'しん' },
-        { base: '配', reading: 'ぱい' }
+        { base: '配', reading: 'ぱい' },
+        { base: '何', reading: 'なに' },
+        { base: '何', reading: 'なに' },
+        { base: '心', reading: 'しん' },
+        { base: '配', reading: 'ぱい' },
+        { base: '何', reading: 'なに' },
+        { base: '何', reading: 'なに' }
       ],
       examples: [
         {
-          jp: 'なにか 心配な ことが あるんですか。',
+          jp: '何か 心配な ことが あるんですか。',
           romaji: 'Nanika shinpai na koto ga aru n desu ka.',
           meaning: { en: 'Is something worrying you?', vi: 'Anh/chị có gì lo lắng à?' },
           ruby: [
@@ -806,10 +823,12 @@ export const n4Lesson32: Lesson = {
           ruby: [
             { base: '健', reading: 'けん' },
             { base: '康', reading: 'こう' },
+            { base: '運', reading: 'うん' },
             { base: '普', reading: 'ふ' },
             { base: '通', reading: 'つう' },
             { base: '恋', reading: 'れん' },
             { base: '愛', reading: 'あい' },
+            { base: '運', reading: 'うん' },
             { base: '石', reading: 'いし' }
           ]
         }
