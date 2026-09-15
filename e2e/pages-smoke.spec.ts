@@ -77,6 +77,8 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   { name: 'home', path: '/' },
   // Course (N5)
   { name: 'course overview', path: '/n5' },
+  { name: 'course intro', path: '/n5/intro' },
+  { name: 'course reference', path: '/n5/reference' },
   { name: 'lesson detail', path: '/n5/lesson-1' },
   { name: 'lesson vocabulary', path: '/n5/lesson-1/vocabulary' },
   { name: 'lesson grammar', path: '/n5/lesson-1/grammar' },
