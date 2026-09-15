@@ -142,6 +142,8 @@ const l17 = fs.readFileSync('src/constants/courses/n5/lessons-17.ts', 'utf8');
 const l18 = fs.readFileSync('src/constants/courses/n5/lessons-18.ts', 'utf8');
 const l19 = fs.readFileSync('src/constants/courses/n5/lessons-19.ts', 'utf8');
 const l20 = fs.readFileSync('src/constants/courses/n5/lessons-20.ts', 'utf8');
+const l21 = fs.readFileSync('src/constants/courses/n5/lessons-21.ts', 'utf8');
+const l22 = fs.readFileSync('src/constants/courses/n5/lessons-22.ts', 'utf8');
 const end = index.lastIndexOf('    n5Lesson5');
 const all = [
   ...scanChunk(end > 0 ? index.slice(0, end) : index, 'L1-4'),
@@ -160,7 +162,9 @@ const all = [
   ...scanChunk(l17, 'L17'),
   ...scanChunk(l18, 'L18'),
   ...scanChunk(l19, 'L19'),
-  ...scanChunk(l20, 'L20')
+  ...scanChunk(l20, 'L20'),
+  ...scanChunk(l21, 'L21'),
+  ...scanChunk(l22, 'L22')
 ];
 console.log(JSON.stringify(all, null, 2));
 console.error('count', all.length);
