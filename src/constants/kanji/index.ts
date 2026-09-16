@@ -8,6 +8,9 @@ export type { KanjiTrack } from './tracks.ts';
 
 export const KANJI_BASE_PATH = '/kanji';
 
+/** Temporary: hide On/Kun reading rows on kanji cards and the readings explainer. */
+export const KANJI_SHOW_ON_KUN_READINGS = false;
+
 export const KANJI_RADICALS_PATH = `${KANJI_BASE_PATH}/radicals`;
 
 /** Find a radical by its standalone character or any of its combining variants. */

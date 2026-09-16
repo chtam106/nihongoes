@@ -43,6 +43,10 @@ const YOON_ROMAJI_PARTS: Record<string, { baseRomaji: string; suffix: YoonSuffix
   pyo: { baseRomaji: 'pi', suffix: 'yo' }
 };
 
+export function getYoonBaseRomaji(romaji: string): string | null {
+  return YOON_ROMAJI_PARTS[romaji]?.baseRomaji ?? null;
+}
+
 export function getYoonDisplayParts(
   romaji: string,
   script: 'hiragana' | 'katakana',

@@ -167,6 +167,19 @@ export function formatGrammarPatternDisplay(pattern: string): string {
     .join('/');
 }
 
+function normalizeGrammarHeading(text: string): string {
+  return text.replace(/\s+/g, '').toLowerCase();
+}
+
+/** True when the title repeats the pattern chip without adding useful context. */
+export function isGrammarTitleRedundant(pattern: string, title: string): boolean {
+  const normalizedTitle = normalizeGrammarHeading(title);
+
+  return [formatGrammarPatternDisplay(pattern), pattern].some(
+    (candidate) => normalizeGrammarHeading(candidate) === normalizedTitle
+  );
+}
+
 function extractJapaneseTokensFromBranch(branch: string): string[] {
   const tokens: string[] = [];
 

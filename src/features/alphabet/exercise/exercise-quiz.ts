@@ -8,7 +8,7 @@ export type { ExerciseScope };
 
 export type Script = 'hiragana' | 'katakana';
 export type ExerciseScript = Script | 'all';
-export type ExerciseMode = 'romaji' | 'character' | 'kana-romaji' | 'listen' | 'script-pair';
+export type ExerciseMode = 'romaji' | 'character' | 'kana-romaji' | 'script-pair';
 export type ScriptPairDirection = 'hiragana-to-katakana' | 'katakana-to-hiragana' | 'mixed';
 export type ResolvedScriptPairDirection = 'hiragana-to-katakana' | 'katakana-to-hiragana';
 
@@ -233,5 +233,5 @@ export function getOptionValue(item: AlphabetCell, mode: ExerciseMode) {
 }
 
 export function usesCharacterOptions(mode: ExerciseMode) {
-  return mode === 'character' || mode === 'listen' || mode === 'script-pair';
+  return mode === 'character' || mode === 'script-pair';
 }

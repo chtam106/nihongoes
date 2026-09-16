@@ -1,114 +1,41 @@
 'use client';
 
-import { useState, type MouseEvent } from 'react';
+import { type ChangeEvent, type MouseEvent } from 'react';
 import { useParams } from 'next/navigation';
-import { Box, Paper, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
-import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
+import { Checkbox, FormControlLabel, Stack, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import {
+  getLesson,
+  lessonHasReferenceQuizVocab,
+  type CourseLevel,
+  type Lesson
+} from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import type { Locale } from '@/i18n/translations.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
-import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
-import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
-import { useVocabQuiz } from './use-vocab-quiz.ts';
-import type { VocabMode, VocabScript } from './vocab-quiz.ts';
-
-type VocabQuizProps = {
-  lesson: Lesson;
-  locale: Locale;
-  mode: VocabMode;
-  script: VocabScript;
-};
-
-/** The endless per-question panel: prompt + answer choices with auto-advance. */
-function VocabQuiz({ lesson, locale, mode, script }: VocabQuizProps) {
-  const { t } = useTranslation();
-  const canSpeak = useSpeechSupported();
-  const { question, wrongIds, answeredCorrectly, handleSelect } = useVocabQuiz({
-    lesson,
-    locale,
-    mode,
-    script
-  });
-
-  const promptLabel =
-    mode === 'word-meaning' ? t('course.vocabPromptMeaning') : t('course.vocabPromptWord');
-  const canPlayPrompt = canSpeak && question.promptJa;
-  const displayPrompt = question.promptJa
-    ? formatJapaneseDisplay(question.promptText)
-    : question.promptText;
-
-  return (
-    <Stack spacing={3}>
-      <Paper
-        elevation={0}
-        onClick={canPlayPrompt ? () => speakJapanese(question.speech) : undefined}
-        role={canPlayPrompt ? 'button' : undefined}
-        tabIndex={canPlayPrompt ? 0 : undefined}
-        aria-label={canPlayPrompt ? t('common.playAudio') : undefined}
-        onKeyDown={
-          canPlayPrompt
-            ? (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  speakJapanese(question.speech);
-                }
-              }
-            : undefined
-        }
-        sx={[
-          elevatedSurfaceSx,
-          { p: { xs: 2.5, md: 3 }, cursor: canPlayPrompt ? 'pointer' : undefined }
-        ]}
-      >
-        <Typography variant="overline" color="text.secondary">
-          {promptLabel}
-        </Typography>
-        <Typography
-          variant={question.promptJa ? 'h3' : 'h5'}
-          component="p"
-          sx={{ fontWeight: 600, mt: 0.5 }}
-          lang={question.promptJa ? 'ja' : undefined}
-        >
-          {displayPrompt}
-        </Typography>
-      </Paper>
-
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
-        {question.options.map((option) => {
-          const isCorrectOption = option.id === question.correctId;
-          const showCorrect = answeredCorrectly && isCorrectOption;
-          const showWrong = wrongIds.includes(option.id);
-          const locked = answeredCorrectly || showWrong;
-
-          return (
-            <ChoiceButton
-              key={option.id}
-              onClick={() => handleSelect(option.id)}
-              dimmed={locked}
-              state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
-              lang={option.ja ? 'ja' : undefined}
-            >
-              {option.label}
-            </ChoiceButton>
-          );
-        })}
-      </Box>
-    </Stack>
-  );
-}
+import { SEGMENT_BUTTON_STACK_SPACING } from '@/features/alphabet/exercise/control-styles.ts';
+import { useVocabExercisePreferences } from './use-vocab-exercise-preferences.ts';
+import VocabMatchPanel from './vocab-match-panel.tsx';
+import VocabMcqPanel from './vocab-mcq-panel.tsx';
+import type { VocabExerciseFormat, VocabMode, VocabScript } from './vocab-quiz.ts';
 
 type VocabExerciseProps = {
-  level: CourseLevel;
   lesson: Lesson;
 };
 
-function VocabExercise({ level, lesson }: VocabExerciseProps) {
+function VocabExercise({ lesson }: VocabExerciseProps) {
   const { locale, t } = useTranslation();
-  const [mode, setMode] = useState<VocabMode>('word-meaning');
-  const [script, setScript] = useState<VocabScript>('kana');
+  const { prefs, setExerciseFormat, setMode, setScript, setIncludeReference } =
+    useVocabExercisePreferences();
+  const showReferenceToggle = lessonHasReferenceQuizVocab(lesson);
+
+  const handleFormatChange = (
+    _event: MouseEvent<HTMLElement>,
+    value: VocabExerciseFormat | null
+  ) => {
+    if (value) {
+      setExerciseFormat(value);
+    }
+  };
 
   const handleModeChange = (_event: MouseEvent<HTMLElement>, value: VocabMode | null) => {
     if (value) {
@@ -122,43 +49,93 @@ function VocabExercise({ level, lesson }: VocabExerciseProps) {
     }
   };
 
+  const handleReferenceChange = (_event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
+    setIncludeReference(checked);
+  };
+
+  const panelKey = `${prefs.exerciseFormat}:${prefs.mode}:${prefs.script}:${prefs.includeReference}`;
+
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={level} lesson={lesson} section="vocabulary" />
+        <LessonQuizHeader lesson={lesson} section="vocabulary" />
 
-        <ToggleButtonGroup
-          exclusive
-          fullWidth
-          color="primary"
-          value={mode}
-          onChange={handleModeChange}
-          aria-label={t('course.vocabulary')}
-        >
-          <ToggleButton value="word-meaning">{t('course.vocabWordToMeaning')}</ToggleButton>
-          <ToggleButton value="meaning-word">{t('course.vocabMeaningToWord')}</ToggleButton>
-        </ToggleButtonGroup>
+        <Stack spacing={SEGMENT_BUTTON_STACK_SPACING}>
+          <ToggleButtonGroup
+            exclusive
+            fullWidth
+            color="primary"
+            value={prefs.exerciseFormat}
+            onChange={handleFormatChange}
+            aria-label={t('course.vocabExerciseFormat')}
+          >
+            <ToggleButton value="match">{t('course.vocabExerciseMatch')}</ToggleButton>
+            <ToggleButton value="mcq">{t('course.vocabExerciseMcq')}</ToggleButton>
+          </ToggleButtonGroup>
 
-        <ToggleButtonGroup
-          exclusive
-          fullWidth
-          color="primary"
-          value={script}
-          onChange={handleScriptChange}
-          aria-label={t('course.vocabScript')}
-        >
-          <ToggleButton value="kana">{t('course.vocabScriptKana')}</ToggleButton>
-          <ToggleButton value="kanji">{t('course.vocabScriptKanji')}</ToggleButton>
-          <ToggleButton value="all">{t('course.vocabScriptAll')}</ToggleButton>
-        </ToggleButtonGroup>
+          {prefs.exerciseFormat === 'mcq' && (
+            <ToggleButtonGroup
+              exclusive
+              fullWidth
+              color="primary"
+              value={prefs.mode}
+              onChange={handleModeChange}
+              aria-label={t('course.vocabulary')}
+            >
+              <ToggleButton value="word-meaning">{t('course.vocabWordToMeaning')}</ToggleButton>
+              <ToggleButton value="meaning-word">{t('course.vocabMeaningToWord')}</ToggleButton>
+            </ToggleButtonGroup>
+          )}
 
-        <VocabQuiz
-          key={`${mode}:${script}`}
-          lesson={lesson}
-          locale={locale}
-          mode={mode}
-          script={script}
-        />
+          <ToggleButtonGroup
+            exclusive
+            fullWidth
+            color="primary"
+            value={prefs.script}
+            onChange={handleScriptChange}
+            aria-label={t('course.vocabScript')}
+          >
+            <ToggleButton value="kana">{t('course.vocabScriptKana')}</ToggleButton>
+            <ToggleButton value="kanji">{t('course.vocabScriptKanji')}</ToggleButton>
+            <ToggleButton value="all">{t('course.vocabScriptAll')}</ToggleButton>
+          </ToggleButtonGroup>
+
+          {showReferenceToggle && (
+            <FormControlLabel
+              sx={{ mx: 0, ml: 0, pl: 0, my: 0, alignItems: 'center' }}
+              control={
+                <Checkbox
+                  size="small"
+                  checked={prefs.includeReference}
+                  onChange={handleReferenceChange}
+                  aria-label={t('course.vocabIncludeReference')}
+                />
+              }
+              label={t('course.vocabIncludeReference')}
+            />
+          )}
+        </Stack>
+
+        {prefs.exerciseFormat === 'match' && (
+          <VocabMatchPanel
+            key={panelKey}
+            lesson={lesson}
+            locale={locale}
+            script={prefs.script}
+            includeReference={prefs.includeReference}
+          />
+        )}
+
+        {prefs.exerciseFormat === 'mcq' && (
+          <VocabMcqPanel
+            key={panelKey}
+            lesson={lesson}
+            locale={locale}
+            mode={prefs.mode}
+            script={prefs.script}
+            includeReference={prefs.includeReference}
+          />
+        )}
       </Stack>
     </PageContainer>
   );
@@ -177,7 +154,7 @@ function ExercisePage({ level }: ExercisePageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} level={level} lesson={lesson} />;
+  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} lesson={lesson} />;
 }
 
 export default ExercisePage;

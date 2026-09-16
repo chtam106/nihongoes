@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import { Box, Button, IconButton, Link, Paper, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 import {
   getOptionValue,
   isQuizAnswerCorrect,
@@ -16,7 +15,6 @@ import { resultBorderSx } from '@/features/alphabet/exercise/exercise-ui.ts';
 import { useExerciseQuiz } from '@/features/alphabet/exercise/use-exercise-quiz.ts';
 import { KanaDisplay } from '@/components/kana-display';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { playKanaAudio } from '@/utils/kana-audio.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 // On touch devices auto-focusing the answer field on the first question would
@@ -181,8 +179,6 @@ function getQuestionLabel(
       return t('exercise.questionRomaji', { script: scriptLabel });
     case 'character':
       return t('exercise.questionCharacter', { script: scriptLabel });
-    case 'listen':
-      return t('exercise.questionListen', { script: scriptLabel });
     case 'script-pair':
       return pairDirection === 'hiragana-to-katakana'
         ? t('exercise.questionScriptPairHiraToKata')
@@ -201,8 +197,6 @@ export function ExerciseQuizPanel({
 }: ExerciseQuizPanelProps) {
   const { t } = useTranslation();
   const characterOptions = usesCharacterOptions(mode);
-  const playPromptAudio = () =>
-    playKanaAudio(question.correctItem.romaji, question.correctItem.char);
 
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 3, textAlign: 'center' }]}>
@@ -222,67 +216,13 @@ export function ExerciseQuizPanel({
         }}
       >
         {(mode === 'romaji' || mode === 'kana-romaji') && (
-          <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-            <Box sx={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-              <Box
-                onClick={playPromptAudio}
-                role="button"
-                tabIndex={0}
-                aria-label={t('chart.playAudio', {
-                  char: question.correctItem.char,
-                  romaji: question.correctItem.romaji
-                })}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    playPromptAudio();
-                  }
-                }}
-                sx={{ cursor: 'pointer' }}
-              >
-                <KanaDisplay cell={question.correctItem} variant="prompt" />
-              </Box>
-              <IconButton
-                aria-label={t('chart.playAudio', {
-                  char: question.correctItem.char,
-                  romaji: question.correctItem.romaji
-                })}
-                onClick={playPromptAudio}
-                sx={{
-                  color: 'text.secondary',
-                  position: 'absolute',
-                  right: '100%',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  mr: 0.5
-                }}
-              >
-                <VolumeUpIcon sx={{ fontSize: 32 }} />
-              </IconButton>
-            </Box>
-          </Box>
+          <KanaDisplay cell={question.correctItem} variant="prompt" />
         )}
 
         {mode === 'character' && (
           <Typography variant="h2" component="span" sx={{ lineHeight: 1.1 }}>
             {question.correctItem.romaji}
           </Typography>
-        )}
-
-        {mode === 'listen' && (
-          <IconButton
-            aria-label={t('exercise.replayAudio')}
-            onClick={playPromptAudio}
-            sx={{
-              color: 'primary.main',
-              bgcolor: 'action.hover',
-              width: 72,
-              height: 72,
-              '&:hover': { bgcolor: 'action.selected' }
-            }}
-          >
-            <VolumeUpIcon sx={{ fontSize: 40 }} />
-          </IconButton>
         )}
 
         {mode === 'script-pair' && question.promptItem && (

@@ -1,7 +1,11 @@
+'use client';
+
 import type { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import type { GridRow } from '@/constants/gojuon.ts';
+import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { useSpeechEnabled } from '@/utils/speech.ts';
 
 type CellButtonProps = {
   ariaLabel: string;
@@ -12,40 +16,44 @@ type CellButtonProps = {
 
 /** Interactive chart cell: a tap/keyboard target that plays audio, with romaji below. */
 export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButtonProps) {
+  const canSpeak = useSpeechEnabled();
+
   return (
     <Box
-      role="button"
-      tabIndex={0}
-      aria-label={ariaLabel}
-      onClick={onActivate}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          onActivate();
+      role={canSpeak ? 'button' : undefined}
+      tabIndex={canSpeak ? 0 : undefined}
+      aria-label={canSpeak ? ariaLabel : undefined}
+      onClick={canSpeak ? onActivate : undefined}
+      onKeyDown={
+        canSpeak
+          ? (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                onActivate();
+              }
+            }
+          : undefined
+      }
+      sx={[
+        interactiveSurfaceSx,
+        {
+          minHeight: { xs: 52, md: 68 },
+          py: { xs: 0.75, md: 1 },
+          px: 0.25,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 0.25,
+          bgcolor: 'background.paper',
+          cursor: canSpeak ? 'pointer' : undefined,
+          '&:focus-visible': {
+            outline: '2px solid',
+            outlineColor: 'primary.main',
+            outlineOffset: 2
+          }
         }
-      }}
-      sx={{
-        height: '100%',
-        minHeight: { xs: 52, md: 68 },
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 0.25,
-        borderRadius: 2,
-        cursor: 'pointer',
-        bgcolor: 'action.hover',
-        transition: 'background-color 0.15s ease, box-shadow 0.15s ease',
-        '&:hover': {
-          bgcolor: 'action.selected',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12)'
-        },
-        '&:focus-visible': {
-          outline: '2px solid',
-          outlineColor: 'primary.main',
-          outlineOffset: 2
-        }
-      }}
+      ]}
     >
       {children}
       <Typography
@@ -83,7 +91,15 @@ export function GojuonGrid<T>({
   const columnCount = headers.length;
 
   return (
-    <Box sx={{ width: '100%', overflowX: 'auto' }}>
+    <Box
+      sx={{
+        width: '100%',
+        overflowX: 'auto',
+        pt: 0.5,
+        pb: 2,
+        px: 0.5
+      }}
+    >
       <Box
         sx={{
           display: 'grid',
@@ -113,7 +129,9 @@ export function GojuonGrid<T>({
               {row.label}
             </Typography>
             {row.cells.map((cell, colIndex) => (
-              <Box key={`${row.label}-${rowIndex}-${colIndex}`}>{cell && renderCell(cell)}</Box>
+              <Box key={`${row.label}-${rowIndex}-${colIndex}`} sx={{ overflow: 'visible' }}>
+                {cell && renderCell(cell)}
+              </Box>
             ))}
           </Box>
         ))}

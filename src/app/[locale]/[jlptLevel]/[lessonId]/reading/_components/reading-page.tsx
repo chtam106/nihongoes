@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Collapse, LinearProgress, Paper, Stack, Typography } from '@mui/material';
@@ -8,14 +8,14 @@ import {
   getLesson,
   type CourseLevel,
   type Lesson,
-  type ReadingPassage
+  type ReadingPassage,
+  type ReadingQuestion
 } from '@/constants/courses/index.ts';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
-import { SpeakButton } from '@/components/speak-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader, ResultScreen } from '@/features/course/shared';
@@ -31,22 +31,40 @@ function shuffle<T>(items: T[]): T[] {
   return copy;
 }
 
+type FlatQuestion = ReadingQuestion & { flatId: string; passageId: string };
+
+function flattenQuestions(passages: ReadingPassage[]): FlatQuestion[] {
+  return passages.flatMap((passage) =>
+    passage.questions.map((question) => ({
+      ...question,
+      flatId: `${passage.id}-${question.id}`,
+      passageId: passage.id
+    }))
+  );
+}
+
+function shuffleQuestions(questions: FlatQuestion[]): FlatQuestion[] {
+  return questions.map((question) => ({
+    ...question,
+    choices: shuffle(question.choices)
+  }));
+}
+
 type PassageCardProps = {
   passage: ReadingPassage;
 };
 
 function PassageCard({ passage }: PassageCardProps) {
   const { locale, t } = useTranslation();
-  const [showTranslation, setShowTranslation] = useState(false);
-  const canSpeak = useSpeechSupported();
-
-  const fullText = useMemo(
-    () => passage.lines.map((line) => formatJapaneseDisplay(line.jp)).join(''),
-    [passage.lines]
-  );
+  const [preferences] = useUserPreferences();
+  const [showTranslation, setShowTranslation] = useState(preferences.showTranslationsByDefault);
 
   return (
-    <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
+    <Paper
+      key={String(preferences.showTranslationsByDefault)}
+      elevation={0}
+      sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 } }]}
+    >
       <Stack
         direction="row"
         spacing={1}
@@ -55,60 +73,31 @@ function PassageCard({ passage }: PassageCardProps) {
         <Heading scale="subsection" component="h2">
           {passage.title[locale]}
         </Heading>
-        <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', flexShrink: 0 }}>
-          <SpeakButton text={fullText} size="medium" />
+        {preferences.showTranslation && (
           <Button
             size="small"
             startIcon={<TranslateOutlinedIcon />}
             onClick={() => setShowTranslation((previous) => !previous)}
+            sx={{ flexShrink: 0 }}
           >
             {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
           </Button>
-        </Stack>
+        )}
       </Stack>
 
       <Stack spacing={1.5}>
-        {passage.lines.map((line) => {
-          const displayJp = formatJapaneseDisplay(line.jp);
-
-          return (
-            <Box key={line.jp}>
-              <Stack direction="row" spacing={0.5} sx={{ alignItems: 'flex-start' }}>
-                <Box sx={{ alignSelf: 'flex-start', position: 'relative', top: -2 }}>
-                  <SpeakButton text={line.jp} />
-                </Box>
-                <Box sx={{ flex: 1, minWidth: 0 }}>
-                  <Typography
-                    variant="body1"
-                    lang="ja"
-                    onClick={canSpeak ? () => speakJapanese(displayJp) : undefined}
-                    role={canSpeak ? 'button' : undefined}
-                    tabIndex={canSpeak ? 0 : undefined}
-                    aria-label={canSpeak ? t('common.playAudio') : undefined}
-                    onKeyDown={
-                      canSpeak
-                        ? (event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                              event.preventDefault();
-                              speakJapanese(displayJp);
-                            }
-                          }
-                        : undefined
-                    }
-                    sx={{ fontWeight: 500, cursor: canSpeak ? 'pointer' : undefined }}
-                  >
-                    {displayJp}
-                  </Typography>
-                  <Collapse in={showTranslation}>
-                    <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
-                      {line.meaning[locale]}
-                    </Typography>
-                  </Collapse>
-                </Box>
-              </Stack>
-            </Box>
-          );
-        })}
+        {passage.lines.map((line) => (
+          <Box key={line.jp}>
+            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
+              {renderJapaneseText(line.jp, line.ruby)}
+            </Typography>
+            <Collapse in={showTranslation}>
+              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.25 }}>
+                {line.meaning[locale]}
+              </Typography>
+            </Collapse>
+          </Box>
+        ))}
       </Stack>
     </Paper>
   );
@@ -121,23 +110,35 @@ type ReadingQuizProps = {
 
 function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const { locale, t } = useTranslation();
-  const passage = lesson.reading![0];
+  const passages = lesson.reading!;
 
-  const [questions, setQuestions] = useState(() =>
-    passage.questions.map((question) => ({
-      ...question,
-      choices: shuffle(question.choices)
-    }))
-  );
+  const [questions, setQuestions] = useState(() => shuffleQuestions(flattenQuestions(passages)));
   const [index, setIndex] = useState(0);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+  const passageAnchorRef = useRef<HTMLDivElement>(null);
+  const previousPassageIdRef = useRef<string | undefined>(undefined);
 
   const total = questions.length;
   const question = questions[index];
   const isLast = index === total - 1;
+  const currentPassage = passages.find((passage) => passage.id === question?.passageId);
+  const currentPassageId = question?.passageId;
+
+  useEffect(() => {
+    if (finished || !currentPassageId) {
+      return;
+    }
+
+    if (previousPassageIdRef.current === currentPassageId) {
+      return;
+    }
+
+    previousPassageIdRef.current = currentPassageId;
+    passageAnchorRef.current?.scrollIntoView({ block: 'start' });
+  }, [currentPassageId, finished]);
 
   // Auto-advance shortly after a correct answer; wrong answers let you retry.
   useEffect(() => {
@@ -154,7 +155,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
       setIndex((previous) => previous + 1);
       setWrongIds([]);
       setCorrectPicked(false);
-    }, 900);
+    }, 100);
 
     return () => window.clearTimeout(timer);
   }, [correctPicked, isLast]);
@@ -177,20 +178,25 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   };
 
   const handleRetry = () => {
-    setQuestions(passage.questions.map((item) => ({ ...item, choices: shuffle(item.choices) })));
+    setQuestions(shuffleQuestions(flattenQuestions(passages)));
     setIndex(0);
     setWrongIds([]);
     setCorrectPicked(false);
     setScore(0);
     setFinished(false);
+    previousPassageIdRef.current = undefined;
   };
 
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={level} lesson={lesson} section="reading" />
+        <LessonQuizHeader lesson={lesson} section="reading" />
 
-        <PassageCard passage={passage} />
+        {!finished && currentPassage && (
+          <Box ref={passageAnchorRef} sx={{ scrollMarginTop: { xs: 72, md: 88 } }}>
+            <PassageCard key={currentPassage.id} passage={currentPassage} />
+          </Box>
+        )}
 
         {finished && (
           <ResultScreen
@@ -224,15 +230,18 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
             </Box>
 
             <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
-              <Typography variant="overline" color="text.secondary">
-                {t('course.comprehension')}
-              </Typography>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600, mt: 0.5 }}>
+              <Typography variant="h6" component="p" sx={{ fontWeight: 600 }}>
                 {question.question[locale]}
               </Typography>
             </Paper>
 
-            <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+                gap: 1.5
+              }}
+            >
               {question.choices.map((choice) => {
                 const isCorrectChoice = choice.id === question.correctId;
                 const showCorrect = correctPicked && isCorrectChoice;

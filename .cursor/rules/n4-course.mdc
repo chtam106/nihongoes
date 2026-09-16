@@ -1,0 +1,16 @@
+---
+description: Minna Shokyu II (N4) lesson authoring - lessons 26-50 from pdf/n4
+globs: src/constants/courses/n4/**
+alwaysApply: false
+---
+
+# N4 course (Minna Shokyu II, lessons 26-50)
+
+- PDF source: `pdf/n4/Bản dịch và giải thiệch ngữ pháp - Tập 2.pdf` (grammar + vocab VI translation). Render with `python scripts/pdf-pages-to-png.py $pdf pdf/render/n4 "START-END" --dpi 150` where `$pdf = (Get-ChildItem pdf\n4\*ng*.pdf).FullName`.
+- Page map (~6 pages/lesson): L26=29-34, L27=35-40, L28=41-46, … L50=173-178. Formula: pages `29+(N-26)*6` through `34+(N-26)*6`.
+- Lesson files: `src/constants/courses/n4/lessons-N.ts` exporting `n4LessonN`. Wire in `n4/index.ts` + `withSequentialNumbers([...], 26)` so ids are `lesson-26` … `lesson-50` and numbers match Minna.
+- Follow all rules in `n5-course.mdc` (full vocab/phrases/grammar from textbook lists, original dialogues/readings, ruby audit, reference blocks).
+- **Lesson `title` (EN + VI):** short theme label for nav/chips - NOT a grammar dump. Use `[chủ đề 1] và [chủ đề 2]` when the lesson has two main points (e.g. `Có thể và không thể`, `Lý do và cảm xúc`). Each side must be a complete noun phrase - never a dangling fragment like `Vừa làm vừa và …`. Prefer plain meaning over pattern names (`Làm đồng thời và liệt kê lý do`, not `V-ながら và 〜し〜し`). Save pattern labels for grammar-point `title` fields (e.g. `Vừa ... vừa ... (V-ながら)`). Keep EN/VI parallel.
+- After each lesson: extend `scripts/audit-ruby.mjs` with `lN` scan chunk; run `pnpm run format`, `node scripts/audit-ruby.mjs` (0 issues), `pnpm run typecheck`, `pnpm run lint`; commit + push. Auto-continue to next lesson without asking.
+- **Parallel subagents:** each agent owns ONLY its `lessons-N.ts` files. Do NOT edit `n4/index.ts` or `scripts/audit-ruby.mjs` — a single wiring pass merges imports + audit chunks after all lesson files exist.
+- Do NOT merge PRs unless explicitly asked.

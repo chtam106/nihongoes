@@ -1,15 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  Chip,
-  Stack,
-  Typography
-} from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -65,14 +56,9 @@ export default async function Page({ params }: PageProps<{ track: string }>) {
       >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
-            <Chip
-              label={t('kanji.lessonLabel', { number: lesson.number })}
-              size="small"
-              color="primary"
-              variant="outlined"
-              sx={{ mb: 1 }}
-            />
-            <Heading component="h3">{lesson.title[locale]}</Heading>
+            <Heading component="h3">
+              {t('kanji.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+            </Heading>
             <Typography
               lang="ja"
               sx={{ mt: 0.75, fontWeight: 600, letterSpacing: 2, color: 'text.primary' }}

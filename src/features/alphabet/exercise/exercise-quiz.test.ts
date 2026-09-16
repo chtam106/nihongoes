@@ -39,7 +39,6 @@ describe('getOptionValue', () => {
   it('uses romaji for the romaji mode and the character otherwise', () => {
     expect(getOptionValue(cell, 'romaji')).toBe('ka');
     expect(getOptionValue(cell, 'character')).toBe('か');
-    expect(getOptionValue(cell, 'listen')).toBe('か');
   });
 });
 
@@ -47,7 +46,6 @@ describe('usesCharacterOptions', () => {
   it('is false for romaji and true for the character-based modes', () => {
     expect(usesCharacterOptions('romaji')).toBe(false);
     expect(usesCharacterOptions('character')).toBe(true);
-    expect(usesCharacterOptions('listen')).toBe(true);
     expect(usesCharacterOptions('script-pair')).toBe(true);
   });
 });
@@ -115,7 +113,7 @@ describe('character mode (see romaji, pick kana)', () => {
 });
 
 describe('every choice-mode question is answerable', () => {
-  const modes: ExerciseMode[] = ['character', 'listen', 'script-pair'];
+  const modes: ExerciseMode[] = ['character', 'script-pair'];
   const scripts: ExerciseScript[] = ['hiragana', 'katakana', 'all'];
 
   for (const mode of modes) {

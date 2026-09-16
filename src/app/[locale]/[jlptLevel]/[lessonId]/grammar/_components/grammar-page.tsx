@@ -1,13 +1,14 @@
 'use client';
 
+import { useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { Box, Paper, Stack, Typography } from '@mui/material';
 import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { renderJapaneseText } from '@/utils/japanese-text.tsx';
+import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
@@ -21,7 +22,7 @@ type GrammarQuizProps = {
 /** The endless fill-in-the-blank panel: a sentence with one grammar gap + choices. */
 function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
   const { t } = useTranslation();
-  const canSpeak = useSpeechSupported();
+  const canSpeak = useSpeechEnabled();
   const { question, wrongIds, answeredCorrectly, handleSelect } = useGrammarQuiz({
     lesson,
     locale
@@ -29,12 +30,15 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
 
   // Only reveal audio once solved, so it never speaks the answer beforehand.
   const canPlay = canSpeak && answeredCorrectly;
+  const handleSpeak = useCallback(() => speakJapanese(question.fullText), [question.fullText]);
+  const speechClick = useSpeechClickHandler(handleSpeak);
 
   return (
     <Stack spacing={3}>
       <Paper
         elevation={0}
-        onClick={canPlay ? () => speakJapanese(question.fullText) : undefined}
+        onPointerDown={canPlay ? speechClick.onPointerDown : undefined}
+        onClick={canPlay ? speechClick.onClick : undefined}
         role={canPlay ? 'button' : undefined}
         tabIndex={canPlay ? 0 : undefined}
         aria-label={canPlay ? t('common.playAudio') : undefined}
@@ -54,7 +58,7 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
           {t('course.grammarClozePrompt')}
         </Typography>
         <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600, mt: 0.5 }}>
-          {formatJapaneseDisplay(question.before)}
+          {renderJapaneseText(question.before)}
           <Box
             component="span"
             sx={{
@@ -69,14 +73,20 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
           >
             {answeredCorrectly ? question.answer : '\u3000'}
           </Box>
-          {formatJapaneseDisplay(question.after)}
+          {renderJapaneseText(question.after)}
         </Typography>
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
           {question.meaning}
         </Typography>
       </Paper>
 
-      <Box sx={{ display: 'grid', gridTemplateColumns: '1fr', gap: 1.5 }}>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+          gap: 1.5
+        }}
+      >
         {question.options.map((option) => {
           const isCorrectOption = option.id === question.correctId;
           const showCorrect = answeredCorrectly && isCorrectOption;
@@ -101,17 +111,16 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
 }
 
 type GrammarExerciseProps = {
-  level: CourseLevel;
   lesson: Lesson;
 };
 
-function GrammarExercise({ level, lesson }: GrammarExerciseProps) {
+function GrammarExercise({ lesson }: GrammarExerciseProps) {
   const { locale } = useTranslation();
 
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader level={level} lesson={lesson} section="grammar" />
+        <LessonQuizHeader lesson={lesson} section="grammar" />
 
         <GrammarQuiz key={`${lesson.id}:${locale}`} lesson={lesson} locale={locale} />
       </Stack>
@@ -131,7 +140,7 @@ function GrammarPage({ level }: GrammarPageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <GrammarExercise key={`${level}:${lesson.id}`} level={level} lesson={lesson} />;
+  return <GrammarExercise key={`${level}:${lesson.id}`} lesson={lesson} />;
 }
 
 export default GrammarPage;

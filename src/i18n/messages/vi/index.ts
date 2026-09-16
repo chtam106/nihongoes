@@ -11,6 +11,7 @@ import { alphabet } from './alphabet.ts';
 import { chart } from './chart.ts';
 import { exercise } from './exercise.ts';
 import { kanji } from './kanji.ts';
+import { settings } from './settings.ts';
 import { course } from './course.ts';
 
 /** Vietnamese messages, composed from one file per namespace (page/feature). */
@@ -18,6 +19,7 @@ export const viMessages = {
   common,
   errorBoundary,
   audio,
+  settings,
   seo,
   language,
   nav,

@@ -15,6 +15,7 @@ import {
   firstCell,
   getVoicedDescription,
   getYoonDescription,
+  yoonRowLabel,
   type AlphabetCell,
   type AlphabetChartRow,
   type GridRow
@@ -49,7 +50,8 @@ function zipCells(
 function pairRowsForSection(
   hiraganaRows: AlphabetChartRow[],
   katakanaRows: AlphabetChartRow[],
-  section: SectionKey
+  section: SectionKey,
+  getRowLabel: (cells: (AlphabetCell | null)[]) => string = consonantLabel
 ): GridRow<CombinedCell>[] {
   const rows: GridRow<CombinedCell>[] = [];
 
@@ -60,7 +62,7 @@ function pairRowsForSection(
     if (!hiraganaCells || !katakanaCells || !firstCell(hiraganaCells)) return;
 
     rows.push({
-      label: consonantLabel(hiraganaCells),
+      label: getRowLabel(hiraganaCells),
       cells: zipCells(hiraganaCells, katakanaCells)
     });
   });
@@ -105,7 +107,9 @@ export function CombinedChart() {
     ...pairRowsForSection(hiraganaChartRows, katakanaChartRows, 'handakuten')
   ];
   const yoonRows = (['seion', 'dakuten', 'handakuten'] as const satisfies readonly SectionKey[])
-    .flatMap((section) => pairRowsForSection(hiraganaYoonChartRows, katakanaYoonChartRows, section))
+    .flatMap((section) =>
+      pairRowsForSection(hiraganaYoonChartRows, katakanaYoonChartRows, section, yoonRowLabel)
+    )
     .map((row) => ({
       label: row.label,
       cells: row.cells.filter((cell): cell is CombinedCell => cell !== null)

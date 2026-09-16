@@ -56,7 +56,6 @@ const PAGES = [
   { name: 'course-vocabulary', path: '/n5/lesson-1/vocabulary' },
   { name: 'course-grammar', path: '/n5/lesson-1/grammar' },
   { name: 'course-reading', path: '/n5/lesson-1/reading' },
-  { name: 'course-listening', path: '/n5/lesson-1/listening' },
   { name: 'course-writing', path: '/n5/lesson-1/writing' }
 ];
 

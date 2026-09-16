@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { Box, Card, CardActionArea, CardContent, Chip, Stack, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -7,6 +7,8 @@ import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import {
   getCourse,
   coursePath,
+  courseIntroPath,
+  courseReferencePath,
   lessonPath,
   type CourseLevel,
   type Lesson
@@ -40,14 +42,9 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
       >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
-            <Chip
-              label={t('course.lessonLabel', { number: lesson.number })}
-              size="small"
-              color="primary"
-              variant="outlined"
-              sx={{ mb: 1 }}
-            />
-            <Heading component="h3">{lesson.title[locale]}</Heading>
+            <Heading component="h3">
+              {t('course.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+            </Heading>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
               {lesson.focus[locale]}
             </Typography>
@@ -77,6 +74,23 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
             {t('course.lessonsHeading')}
           </Heading>
 
+          {level === 'n5' && (
+            <Card elevation={0} sx={[interactiveSurfaceSx, { mb: 2 }]}>
+              <CardActionArea
+                component={RouterLink}
+                to={courseIntroPath(level)}
+                sx={{ userSelect: 'text' }}
+              >
+                <CardContent>
+                  <Heading component="h3">{t('course.introPageTitle')}</Heading>
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+                    {t('course.introPageIntro')}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          )}
+
           {course.modules && (
             <Stack spacing={3}>
               {course.modules.map((module) => (
@@ -97,6 +111,23 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
           )}
 
           {!course.modules && <Stack spacing={1.5}>{course.lessons.map(renderLessonCard)}</Stack>}
+
+          {level === 'n5' && (
+            <Card elevation={0} sx={[interactiveSurfaceSx, { mt: 2 }]}>
+              <CardActionArea
+                component={RouterLink}
+                to={courseReferencePath(level)}
+                sx={{ userSelect: 'text' }}
+              >
+                <CardContent>
+                  <Heading component="h3">{t('course.referencePageTitle')}</Heading>
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+                    {t('course.referencePageIntro')}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
+          )}
         </Box>
       </Stack>
 

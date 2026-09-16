@@ -29,8 +29,8 @@ const METRICS: Record<YoonGlyphSize, Metrics> = {
   md: { baseFontSize: '2.125rem', suffixSize: '0.95rem', suffixMb: '0.12em' },
   lg: { baseFontSize: '3.75rem', suffixSize: '1.35rem', suffixMb: '0.18em' },
   responsive: {
-    baseFontSize: { xs: '1.25rem', md: '2.125rem' },
-    suffixSize: { xs: '0.55rem', md: '0.95rem' },
+    baseFontSize: { xs: '1.25rem', md: '1.75rem' },
+    suffixSize: { xs: '0.55rem', md: '0.85rem' },
     suffixMb: { xs: '0.08em', md: '0.12em' }
   }
 };

@@ -1,6 +1,14 @@
-import { useSyncExternalStore } from 'react';
+import {
+  useCallback,
+  useRef,
+  useSyncExternalStore,
+  type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent
+} from 'react';
 import { STORAGE_PREFIX } from '@/constants/site.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { stopKanaAudio } from '@/utils/kana-audio.ts';
+import { readUserPreferences, useUserPreferences } from '@/utils/user-preferences.ts';
 
 const VOICE_STORAGE_KEY = `${STORAGE_PREFIX}-voice`;
 const RATE_STORAGE_KEY = `${STORAGE_PREFIX}-rate`;
@@ -20,6 +28,14 @@ const subscribeSpeechSupport = () => () => {};
  */
 export function useSpeechSupported(): boolean {
   return useSyncExternalStore(subscribeSpeechSupport, isSpeechSupported, () => false);
+}
+
+/** Browser TTS is available and the user has not disabled it in settings. */
+export function useSpeechEnabled(): boolean {
+  const supported = useSpeechSupported();
+  const [preferences] = useUserPreferences();
+
+  return supported && preferences.allowTts;
 }
 
 export function getJapaneseVoices(): SpeechSynthesisVoice[] {
@@ -91,7 +107,7 @@ function resolveVoice(): SpeechSynthesisVoice | undefined {
 }
 
 export function speakJapanese(text: string, rate = getSpeechRate()): void {
-  if (!isSpeechSupported()) {
+  if (!isSpeechSupported() || !readUserPreferences().allowTts) {
     return;
   }
 
@@ -123,7 +139,71 @@ export function subscribeVoices(callback: () => void): () => void {
 }
 
 export function cancelSpeech(): void {
+  stopKanaAudio();
+
   if (isSpeechSupported()) {
     window.speechSynthesis.cancel();
   }
+}
+
+const SPEECH_DRAG_THRESHOLD_PX = 5;
+
+type PointerOrigin = { x: number; y: number };
+
+export function hasActiveTextSelection(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const selection = window.getSelection();
+
+  return Boolean(selection && selection.toString().length > 0);
+}
+
+function isSpeechDrag(event: MouseEvent, origin: PointerOrigin | null): boolean {
+  if (!origin) {
+    return false;
+  }
+
+  const dx = event.clientX - origin.x;
+  const dy = event.clientY - origin.y;
+
+  return Math.hypot(dx, dy) > SPEECH_DRAG_THRESHOLD_PX;
+}
+
+/** Ignore clicks that follow text selection or a drag across the surface. */
+export function shouldSpeakOnPointerClick(
+  event: MouseEvent,
+  origin: PointerOrigin | null
+): boolean {
+  if (hasActiveTextSelection() || isSpeechDrag(event, origin)) {
+    return false;
+  }
+
+  return true;
+}
+
+/** Wire pointer-down + click so speech skips drag-select gestures. */
+export function useSpeechClickHandler(onSpeak: () => void) {
+  const originRef = useRef<PointerOrigin | null>(null);
+
+  const onPointerDown = useCallback((event: ReactPointerEvent) => {
+    originRef.current = { x: event.clientX, y: event.clientY };
+  }, []);
+
+  const onClick = useCallback(
+    (event: ReactMouseEvent) => {
+      const origin = originRef.current;
+      originRef.current = null;
+
+      if (!shouldSpeakOnPointerClick(event.nativeEvent, origin)) {
+        return;
+      }
+
+      onSpeak();
+    },
+    [onSpeak]
+  );
+
+  return { onPointerDown, onClick };
 }

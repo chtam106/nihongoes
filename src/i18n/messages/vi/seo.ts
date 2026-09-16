@@ -12,6 +12,18 @@ export const seo = {
     description:
       'Học kanji thông dụng (Jōyō) theo từng bài nhỏ, kèm nghĩa, âm ON và KUN, từ ví dụ và phát âm chuẩn.'
   },
+  n5: {
+    intro: {
+      title: 'N5 Mở đầu - Cơ bản tiếng Nhật & câu lớp học',
+      description:
+        'Bắt đầu Minna N5 tại đây: đặc điểm tiếng Nhật, câu trong lớp và chào hỏi hàng ngày trước Bài 1.'
+    },
+    reference: {
+      title: 'N5 Tham khảo - Số, thời gian, trợ số từ & động từ',
+      description:
+        'Phần tham khảo cuối sách Minna N5: chuyên đề ngữ pháp, bảng số, cách nói thời gian, trợ số từ và biến đổi động từ.'
+    }
+  },
   alphabet: {
     title: 'Bảng chữ cái tiếng Nhật - Hiragana và Katakana',
     description:
@@ -33,8 +45,7 @@ export const seo = {
     },
     exercise: {
       title: 'Bài tập & Quiz Kana tiếng Nhật',
-      description:
-        'Luyện hiragana và katakana qua quiz romaji, chọn chữ, nghe chọn chữ và ghép cặp bảng chữ.',
+      description: 'Luyện hiragana và katakana qua quiz romaji, chọn chữ và ghép cặp bảng chữ.',
       romaji: {
         title: 'Quiz Romaji - Luyện Hiragana & Katakana',
         description: 'Nhìn chữ kana và chọn romaji đúng. Luyện đọc hiragana và katakana từng bước.'
@@ -43,10 +54,6 @@ export const seo = {
         title: 'Quiz Chọn chữ Kana',
         description:
           'Nhìn romaji và chọn chữ hiragana hoặc katakana đúng. Rèn nhận diện kana với phản hồi tức thì.'
-      },
-      listen: {
-        title: 'Quiz Nghe & Chọn chữ Kana',
-        description: 'Nghe phát âm chuẩn và chọn đúng chữ hiragana hoặc katakana.'
       },
       scriptPair: {
         title: 'Quiz Ghép Hiragana ↔ Katakana',

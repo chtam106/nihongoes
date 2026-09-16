@@ -1,6 +1,6 @@
 import type { CourseLevel } from './types.ts';
 
-export const COURSE_LEVELS: CourseLevel[] = ['n5'];
+export const COURSE_LEVELS: CourseLevel[] = ['n5', 'n4'];
 
 export function isCourseLevel(value: string): value is CourseLevel {
   return (COURSE_LEVELS as string[]).includes(value);
@@ -22,14 +22,18 @@ export function lessonGrammarPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/grammar`;
 }
 
-export function lessonListeningPath(level: CourseLevel, id: string): string {
-  return `/${level}/${id}/listening`;
-}
-
 export function lessonReadingPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/reading`;
 }
 
 export function lessonWritingPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/writing`;
+}
+
+export function courseIntroPath(level: CourseLevel): string {
+  return `/${level}/intro`;
+}
+
+export function courseReferencePath(level: CourseLevel): string {
+  return `/${level}/reference`;
 }

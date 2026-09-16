@@ -9,12 +9,14 @@ import {
   formatKanjiMeaning,
   getRadicalByChar,
   KANJI_RADICALS_PATH,
+  KANJI_SHOW_ON_KUN_READINGS,
   type KanjiComponent,
   type KanjiEntry,
   type KanjiReadingPart
 } from '@/constants/kanji/index.ts';
 import { COMPONENT_ROLE_COLORS } from '@/theme/kanji-component-colors.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
+import { renderKanjiExampleText } from '@/utils/japanese-text.tsx';
 
 /** The primary sense of a bilingual radical meaning (first "; "-separated clause). */
 function radicalPrimaryMeaning(vi: string, en: string, locale: 'en' | 'vi'): string {
@@ -268,10 +270,10 @@ export function KanjiCard({ entry, index }: KanjiCardProps) {
               emphasize
             />
             <ComponentsRow entry={entry} />
-            {entry.onyomi.length > 0 && (
+            {KANJI_SHOW_ON_KUN_READINGS && entry.onyomi.length > 0 && (
               <ReadingRow label={t('kanji.onReading')} readings={entry.onyomi} />
             )}
-            {entry.kunyomi.length > 0 && (
+            {KANJI_SHOW_ON_KUN_READINGS && entry.kunyomi.length > 0 && (
               <ReadingRow
                 label={t('kanji.kunReading')}
                 readings={entry.kunyomi.map(formatReading)}
@@ -328,10 +330,7 @@ export function KanjiCard({ entry, index }: KanjiCardProps) {
               }}
             >
               <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                {exampleWord(example.parts)}
-                <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400, ml: 1 }}>
-                  {exampleReading(example.parts)}
-                </Box>
+                {renderKanjiExampleText(example.parts)}
               </Typography>
               <Typography variant="body2" sx={{ mt: 0.25 }}>
                 {example.meaning[locale]}

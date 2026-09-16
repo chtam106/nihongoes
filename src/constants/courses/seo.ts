@@ -21,6 +21,16 @@ const courseSeoByLevel: Record<CourseLevel, CourseSeo> = {
       en: 'A free, structured JLPT N5 course. Each lesson teaches essential Japanese vocabulary and grammar with example sentences and reading practice in English and Vietnamese.',
       vi: 'Khóa học JLPT N5 miễn phí, có lộ trình. Mỗi bài dạy từ vựng và ngữ pháp tiếng Nhật cốt lõi kèm câu ví dụ và bài đọc hiểu song ngữ Anh - Việt.'
     }
+  },
+  n4: {
+    seoTitle: {
+      en: 'JLPT N4 Course - Vocabulary & Grammar',
+      vi: 'Khóa học JLPT N4 - Từ vựng & Ngữ pháp'
+    },
+    seoDescription: {
+      en: 'A structured JLPT N4 course based on Minna no Nihongo Shokyu II. Lessons 26-50 with vocabulary, grammar, and reading practice in English and Vietnamese.',
+      vi: 'Khóa học JLPT N4 theo Minna Sơ cấp II. Bài 26-50 với từ vựng, ngữ pháp và bài đọc hiểu song ngữ Anh - Việt.'
+    }
   }
 };
 

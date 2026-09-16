@@ -25,11 +25,9 @@ import {
 import { useExerciseScope } from '@/features/alphabet/exercise/use-exercise-scope.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
 
-type ScriptScopeExercise = 'romaji' | 'listen';
-
-function useScriptScopeExercise(exercise: ScriptScopeExercise) {
+function useScriptScopeExercise() {
   const [prefs, setPrefs] = usePersistentState(
-    EXERCISE_STORAGE_KEYS[exercise],
+    EXERCISE_STORAGE_KEYS.romaji,
     DEFAULT_SCRIPT_SCOPE_PREFERENCES,
     sanitizeScriptScopePreferences
   );
@@ -50,11 +48,7 @@ function useScriptScopeExercise(exercise: ScriptScopeExercise) {
 }
 
 export function useRomajiExercisePreferences() {
-  return useScriptScopeExercise('romaji');
-}
-
-export function useListenExercisePreferences() {
-  return useScriptScopeExercise('listen');
+  return useScriptScopeExercise();
 }
 
 export function useCharacterExercisePreferences() {

@@ -356,7 +356,7 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
             alignSelf: 'center',
             width: '100%',
             maxWidth: 420,
-            '& .MuiToggleButton-root': { flex: 1, py: 1.25 }
+            '& .MuiToggleButton-root': { flex: 1 }
           }}
         >
           <ToggleButton value="all">{t('kanji.radicalsFilterAll')}</ToggleButton>

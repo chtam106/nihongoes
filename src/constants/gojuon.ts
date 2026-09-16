@@ -1,4 +1,5 @@
 import { DAKUTEN_MARK, HANDAKUTEN_MARK } from '@/constants/kana-terminology.ts';
+import { getYoonBaseRomaji } from '@/utils/yoon-display.ts';
 
 type TranslateFn = (key: string, params?: Record<string, string | number>) => string;
 
@@ -27,12 +28,20 @@ export function firstCell(cells: (AlphabetCell | null)[]) {
   return cells.find((cell): cell is AlphabetCell => cell !== null);
 }
 
-/** Leading consonant of a row, e.g. か→"k", さ→"s", あ→"-", きゃ→"ky". */
+/** Leading consonant of a seion row, e.g. か→"k", さ→"s", あ→"-". */
 export function consonantLabel(cells: (AlphabetCell | null)[]) {
   const cell = firstCell(cells);
   if (!cell) return '';
   const match = cell.romaji.toLowerCase().match(/^[^aeiou]+/);
   return match ? match[0] : '-';
+}
+
+/** Yoon row label: base mora romaji (ki, shi), not the combined prefix (ky, sh). */
+export function yoonRowLabel(cells: (AlphabetCell | null)[]) {
+  const cell = firstCell(cells);
+  if (!cell) return '';
+
+  return getYoonBaseRomaji(cell.romaji) ?? consonantLabel(cells);
 }
 
 /** Script-correct example for the dakuten explanation, e.g. か→が (or カ→ガ). */
@@ -70,15 +79,15 @@ export function getVoicedDescription(t: TranslateFn, rows: AlphabetChartRow[]) {
 export function toYoonGridRows(rows: AlphabetChartRow[]): GridRow<AlphabetCell>[] {
   const seion = rows
     .filter((row) => firstCell(row.seion))
-    .map((row) => ({ label: consonantLabel(row.seion), cells: row.seion }));
+    .map((row) => ({ label: yoonRowLabel(row.seion), cells: row.seion }));
 
   const dakuten = rows
     .filter((row) => row.dakuten && firstCell(row.dakuten))
-    .map((row) => ({ label: consonantLabel(row.dakuten!), cells: row.dakuten! }));
+    .map((row) => ({ label: yoonRowLabel(row.dakuten!), cells: row.dakuten! }));
 
   const handakuten = rows
     .filter((row) => row.handakuten && firstCell(row.handakuten))
-    .map((row) => ({ label: consonantLabel(row.handakuten!), cells: row.handakuten! }));
+    .map((row) => ({ label: yoonRowLabel(row.handakuten!), cells: row.handakuten! }));
 
   return [...seion, ...dakuten, ...handakuten].map((row) => ({
     label: row.label,

@@ -127,7 +127,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
       setIndex((previous) => previous + 1);
       setWrongIds([]);
       setCorrectPicked(false);
-    }, 900);
+    }, 100);
 
     return () => window.clearTimeout(timer);
   }, [correctPicked, isLast]);

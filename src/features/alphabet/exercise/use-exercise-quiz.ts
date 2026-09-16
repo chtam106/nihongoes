@@ -9,7 +9,6 @@ import {
   type QuizSession,
   type ScriptPairDirection
 } from '@/features/alphabet/exercise/exercise-quiz.ts';
-import { playKanaAudio } from '@/utils/kana-audio.ts';
 
 type UseExerciseQuizOptions = {
   mode: ExerciseMode;
@@ -38,14 +37,6 @@ export function useExerciseQuiz({
   const [wrongAnswers, setWrongAnswers] = useState<string[]>([]);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
 
-  useEffect(() => {
-    if (mode !== 'listen' || answeredCorrectly) {
-      return;
-    }
-
-    playKanaAudio(question.correctItem.romaji, question.correctItem.char);
-  }, [mode, question.correctItem.char, question.correctItem.romaji, answeredCorrectly]);
-
   const handleAnswer = (answer: string) => {
     if (answeredCorrectly || wrongAnswers.includes(answer)) {
       return;
@@ -68,7 +59,7 @@ export function useExerciseQuiz({
       setQuestionNumber((previous) => previous + 1);
       setWrongAnswers([]);
       setAnsweredCorrectly(false);
-    }, 1000);
+    }, 100);
 
     return () => {
       window.clearTimeout(timer);

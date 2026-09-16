@@ -5,7 +5,7 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUpOutlined';
 import { IconButton } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
-import { speakJapanese, useSpeechSupported } from '@/utils/speech.ts';
+import { speakJapanese, useSpeechEnabled } from '@/utils/speech.ts';
 
 type SpeakButtonProps = {
   text: string;
@@ -14,9 +14,9 @@ type SpeakButtonProps = {
 
 export function SpeakButton({ text, size = 'small' }: SpeakButtonProps) {
   const { t } = useTranslation();
-  const speechSupported = useSpeechSupported();
+  const speechEnabled = useSpeechEnabled();
 
-  if (!speechSupported) {
+  if (!speechEnabled) {
     return null;
   }
 

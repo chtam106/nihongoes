@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, Chip, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
@@ -10,7 +10,7 @@ import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
-import { KANJI_BASE_PATH, kanjiLessonPath, kanjiTrackPath } from '@/constants/kanji/index.ts';
+import { KANJI_BASE_PATH, kanjiLessonPath } from '@/constants/kanji/index.ts';
 import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
@@ -57,28 +57,6 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
     <PageContainer bottomGutter>
       <Stack spacing={3}>
         <Box>
-          <Stack
-            direction="row"
-            spacing={1}
-            useFlexGap
-            sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
-          >
-            <Chip
-              label={track.name[locale]}
-              color="secondary"
-              variant="outlined"
-              size="small"
-              component={RouterLink}
-              to={kanjiTrackPath(track.slug)}
-              clickable
-            />
-            <Chip
-              label={t('kanji.lessonLabel', { number: lesson.number })}
-              color="primary"
-              variant="outlined"
-              size="small"
-            />
-          </Stack>
           <Heading component="h1">{lesson.title[locale]}</Heading>
         </Box>
 

@@ -7,116 +7,46 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
+import { ReferenceBlockView } from '@/components/reference-block';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import {
-  coursePath,
   getCourse,
   getLesson,
   lessonGrammarPath,
   lessonHasKanji,
   lessonHasReading,
-  lessonListeningPath,
   lessonPath,
   lessonReadingPath,
   lessonVocabularyPath,
   lessonWritingPath,
   type CourseLevel,
   type Lesson,
-  type VocabItem,
   type ConversationScene,
   type ConversationSpeaker
 } from '@/constants/courses/index.ts';
-import { ConversationLineCard } from '@/components/conversation-line-card';
+import { DIALOGUE_SPEAKER_COLORS } from '@/constants/dialogue-speaker-colors.ts';
+import { ConversationTurnGroup, groupConversationTurns } from '@/components/conversation-line-card';
+import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
+import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
+import { useUserPreferences } from '@/utils/user-preferences.ts';
+import { VocabHeadword } from '@/components/vocab-headword';
+import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
 // Offset anchored sections below the fixed app bar when scrolled to.
 const SECTION_ANCHOR_SX = { scrollMarginTop: { xs: 72, md: 88 } } as const;
-
-type VocabHeadwordProps = {
-  item: VocabItem;
-};
-
-/**
- * A vocab card's headword. When the word has a kanji form, it is shown inline as
- * `漢字（かな）` (kanji first, then the kana reading); a kana-only word is shown
- * plainly.
- */
-function VocabHeadword({ item }: VocabHeadwordProps) {
-  const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
-
-  return (
-    <Typography
-      variant="subtitle1"
-      component="div"
-      lang="ja"
-      sx={{ fontWeight: 600, lineHeight: 1.3 }}
-    >
-      {hasKanji ? `${item.kanji}（${item.kana}）` : item.kana}
-    </Typography>
-  );
-}
-
-type SectionNavProps = {
-  lesson: Lesson;
-};
-
-function SectionNav({ lesson }: SectionNavProps) {
-  const { t } = useTranslation();
-
-  const items = [
-    { id: 'vocab', label: t('course.vocabulary') },
-    ...(lesson.phrases && lesson.phrases.length > 0
-      ? [{ id: 'phrases', label: t('course.phrasesHeading') }]
-      : []),
-    ...(lesson.conversation && lesson.conversation.length > 0
-      ? [{ id: 'conversation', label: t('course.conversationHeading') }]
-      : []),
-    ...(lesson.grammar.length > 0 ? [{ id: 'grammar', label: t('course.grammar') }] : []),
-    { id: 'practice', label: t('course.practiceHeading') },
-    ...(lesson.reference && lesson.reference.length > 0
-      ? [{ id: 'reference', label: t('course.referenceHeading') }]
-      : [])
-  ];
-
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
-
-  return (
-    <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap' }}>
-      {items.map((item) => (
-        <Button
-          key={item.id}
-          variant="outlined"
-          size="medium"
-          color="primary"
-          endIcon={<KeyboardArrowDownIcon />}
-          onClick={() => scrollToSection(item.id)}
-          sx={{ textTransform: 'none', fontSize: (theme) => theme.typography.body1.fontSize }}
-        >
-          {item.label}
-        </Button>
-      ))}
-    </Stack>
-  );
-}
 
 type VocabularySectionProps = {
   lesson: Lesson;
@@ -139,9 +69,9 @@ function VocabularySection({ lesson }: VocabularySectionProps) {
           gap: 1.5
         }}
       >
-        {lesson.vocab.map((item) => (
+        {lesson.vocab.map((item, index) => (
           <SpeakableSurface
-            key={`${item.kana}-${item.romaji}`}
+            key={`vocab-${index}-${item.kana}`}
             text={item.speech ?? item.kana}
             sx={{ p: 1.5 }}
           >
@@ -174,22 +104,26 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
         <Heading component="h2">{t('course.phrasesHeading')}</Heading>
       </Stack>
 
-      <Stack spacing={1.5}>
-        {lesson.phrases.map((phrase) => (
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },
+          gap: 1.5
+        }}
+      >
+        {lesson.phrases.map((phrase, index) => (
           <SpeakableSurface
-            key={`${phrase.kana}-${phrase.romaji}`}
+            key={`phrase-${index}-${phrase.kana}`}
             text={phrase.speech ?? phrase.kana}
             sx={{ p: 1.5 }}
           >
-            <Typography variant="body1" lang="ja" sx={{ fontWeight: 500 }}>
-              {phrase.kanji ?? phrase.kana}
-            </Typography>
-            <Typography variant="body2" sx={{ mt: 0.25 }}>
+            <VocabHeadword item={phrase} />
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
               {phrase.meaning[locale]}
             </Typography>
           </SpeakableSurface>
         ))}
-      </Stack>
+      </Box>
     </Box>
   );
 }
@@ -198,47 +132,12 @@ type ConversationSectionProps = {
   lesson: Lesson;
 };
 
-const SPEAKER_COLORS = ['#1976d2', '#2e7d32', '#ed6c02', '#9c27b0', '#00838f'] as const;
-
 function buildSpeakerColorMap(speakers: ConversationSpeaker[]): Map<string, string> {
   return new Map(
-    speakers.map((speaker, index) => [speaker.id, SPEAKER_COLORS[index % SPEAKER_COLORS.length]])
-  );
-}
-
-type SpeakerLegendProps = {
-  speakers: ConversationSpeaker[];
-  colorMap: Map<string, string>;
-};
-
-function SpeakerLegend({ speakers, colorMap }: SpeakerLegendProps) {
-  return (
-    <Stack direction="row" spacing={1} useFlexGap sx={{ flexWrap: 'wrap', mb: 2 }}>
-      {speakers.map((speaker) => {
-        const color = colorMap.get(speaker.id) ?? SPEAKER_COLORS[0];
-
-        return (
-          <Box
-            key={speaker.id}
-            sx={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              px: 1,
-              py: 0.6,
-              borderRadius: '999px',
-              border: '1px solid',
-              borderColor: (theme) => alpha(color, theme.palette.mode === 'light' ? 0.35 : 0.5),
-              bgcolor: (theme) => alpha(color, theme.palette.mode === 'light' ? 0.08 : 0.16),
-              color
-            }}
-          >
-            <Typography variant="body2" sx={{ fontWeight: 600, lineHeight: 1.2 }}>
-              {speaker.name}
-            </Typography>
-          </Box>
-        );
-      })}
-    </Stack>
+    speakers.map((speaker, index) => [
+      speaker.id,
+      DIALOGUE_SPEAKER_COLORS[index % DIALOGUE_SPEAKER_COLORS.length]
+    ])
   );
 }
 
@@ -248,7 +147,6 @@ type ConversationSceneBlockProps = {
   colorMap: Map<string, string>;
   showTranslation: boolean;
   onToggleTranslation: () => void;
-  t: ReturnType<typeof useTranslation>['t'];
 };
 
 function ConversationSceneBlock({
@@ -256,49 +154,45 @@ function ConversationSceneBlock({
   locale,
   colorMap,
   showTranslation,
-  onToggleTranslation,
-  t
+  onToggleTranslation
 }: ConversationSceneBlockProps) {
+  const [preferences] = useUserPreferences();
   const speakerById = new Map(scene.speakers.map((speaker) => [speaker.id, speaker]));
+  const turns = groupConversationTurns(
+    scene.lines,
+    speakerById,
+    colorMap,
+    DIALOGUE_SPEAKER_COLORS[0]
+  );
+  const revealTranslation = showTranslation;
 
   return (
     <Box>
-      <Stack
-        direction="row"
-        spacing={1}
-        sx={{ alignItems: 'center', mb: 1.5, gap: 1, flexWrap: 'wrap' }}
-      >
-        <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
+      {preferences.showTranslation && (
+        <SectionHeaderWithTranslationToggle
+          showTranslation={showTranslation}
+          onToggle={onToggleTranslation}
+          title={
+            <Heading scale="subsection" component="h3" sx={{ mb: 0 }}>
+              {scene.title[locale]}
+            </Heading>
+          }
+        />
+      )}
+      {!preferences.showTranslation && (
+        <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
           {scene.title[locale]}
         </Heading>
-        <Button
-          size="small"
-          variant="outlined"
-          onClick={onToggleTranslation}
-          sx={{ minWidth: 'auto', px: 1.25 }}
-        >
-          {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
-        </Button>
-      </Stack>
-      <SpeakerLegend speakers={scene.speakers} colorMap={colorMap} />
-      <Stack spacing={1.5}>
-        {scene.lines.map((line, index) => {
-          const speaker = speakerById.get(line.speakerId);
-
-          if (!speaker) {
-            return null;
-          }
-
-          return (
-            <ConversationLineCard
-              key={`${scene.id}-${index}`}
-              line={line}
-              locale={locale}
-              showTranslation={showTranslation}
-              color={colorMap.get(line.speakerId) ?? SPEAKER_COLORS[0]}
-            />
-          );
-        })}
+      )}
+      <Stack spacing={1}>
+        {turns.map((turn, index) => (
+          <ConversationTurnGroup
+            key={`${scene.id}-${turn.speakerId}-${index}`}
+            turn={turn}
+            locale={locale}
+            showTranslation={revealTranslation}
+          />
+        ))}
       </Stack>
     </Box>
   );
@@ -306,6 +200,7 @@ function ConversationSceneBlock({
 
 function ConversationSection({ lesson }: ConversationSectionProps) {
   const { locale, t } = useTranslation();
+  const [preferences] = useUserPreferences();
   const [showTranslationsByScene, setShowTranslationsByScene] = useState<Record<string, boolean>>(
     {}
   );
@@ -315,10 +210,14 @@ function ConversationSection({ lesson }: ConversationSectionProps) {
   }
 
   const toggleSceneTranslation = (sceneId: string) => {
-    setShowTranslationsByScene((previous) => ({
-      ...previous,
-      [sceneId]: !previous[sceneId]
-    }));
+    setShowTranslationsByScene((previous) => {
+      const current = previous[sceneId] ?? preferences.showTranslationsByDefault;
+
+      return {
+        ...previous,
+        [sceneId]: !current
+      };
+    });
   };
 
   return (
@@ -328,20 +227,22 @@ function ConversationSection({ lesson }: ConversationSectionProps) {
         <Heading component="h2">{t('course.conversationHeading')}</Heading>
       </Stack>
 
-      <Stack spacing={3}>
+      <Stack spacing={2} key={String(preferences.showTranslationsByDefault)}>
         {lesson.conversation.map((scene) => {
           const colorMap = buildSpeakerColorMap(scene.speakers);
 
           return (
-            <ConversationSceneBlock
-              key={scene.id}
-              scene={scene}
-              locale={locale}
-              colorMap={colorMap}
-              showTranslation={Boolean(showTranslationsByScene[scene.id])}
-              onToggleTranslation={() => toggleSceneTranslation(scene.id)}
-              t={t}
-            />
+            <Paper key={scene.id} elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
+              <ConversationSceneBlock
+                scene={scene}
+                locale={locale}
+                colorMap={colorMap}
+                showTranslation={
+                  showTranslationsByScene[scene.id] ?? preferences.showTranslationsByDefault
+                }
+                onToggleTranslation={() => toggleSceneTranslation(scene.id)}
+              />
+            </Paper>
           );
         })}
       </Stack>
@@ -362,41 +263,18 @@ function ReferenceSection({ lesson }: ReferenceSectionProps) {
 
   return (
     <Box id="reference" sx={SECTION_ANCHOR_SX}>
-      <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 0.5 }}>
+      <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <LibraryBooksOutlinedIcon color="primary" />
         <Heading component="h2">{t('course.referenceHeading')}</Heading>
       </Stack>
-      <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-        {t('course.referenceSubtitle')}
-      </Typography>
 
       <Stack spacing={3}>
-        {lesson.reference.map((group) => (
-          <Box key={group.title.en}>
-            <Heading scale="subsection" component="h3" sx={{ mb: 1.5 }}>
-              {group.title[locale]}
-            </Heading>
-            <Box
-              sx={{
-                display: 'grid',
-                gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-                gap: 1.5
-              }}
-            >
-              {group.items.map((item) => (
-                <SpeakableSurface
-                  key={`${item.kana}-${item.romaji}`}
-                  text={item.speech ?? item.kana}
-                  sx={{ p: 1.5 }}
-                >
-                  <VocabHeadword item={item} />
-                  <Typography variant="body2" sx={{ mt: 0.5 }}>
-                    {item.meaning[locale]}
-                  </Typography>
-                </SpeakableSurface>
-              ))}
-            </Box>
-          </Box>
+        {lesson.reference.map((block, index) => (
+          <ReferenceBlockView
+            key={`${block.kind}-${block.title.en}-${index}`}
+            block={block}
+            locale={locale}
+          />
         ))}
       </Stack>
     </Box>
@@ -468,12 +346,6 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
           }
         ]
       : []),
-    {
-      key: 'listening',
-      to: lessonListeningPath(level, lesson.id),
-      icon: <HeadphonesOutlinedIcon />,
-      label: t('course.startListening')
-    },
     ...(hasKanji
       ? [
           {
@@ -538,47 +410,21 @@ function LessonPage({ level }: LessonPageProps) {
   const next = index < lessons.length - 1 ? lessons[index + 1] : undefined;
 
   return (
-    <PageContainer bottomGutter>
+    <PageContainer>
       <Stack spacing={4}>
         <Box>
-          <Stack
-            direction="row"
-            spacing={1}
-            useFlexGap
-            sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
-          >
-            <Chip
-              label={course.code}
-              color="secondary"
-              variant="outlined"
-              component={RouterLink}
-              to={coursePath(level)}
-              clickable
-            />
-            <Chip
-              label={t('course.lessonLabel', { number: lesson.number })}
-              color="primary"
-              variant="outlined"
-            />
-          </Stack>
           <Heading component="h1">{lesson.title[locale]}</Heading>
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
-            <Typography variant="overline" color="text.secondary">
-              {t('course.focusLabel')}
-            </Typography>
             <Typography variant="body1">{lesson.focus[locale]}</Typography>
+            <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
           </Paper>
-
-          <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
         </Box>
-
-        <SectionNav lesson={lesson} />
 
         <VocabularySection lesson={lesson} />
         <PhrasesSection lesson={lesson} />
-        <ConversationSection lesson={lesson} />
         <GrammarSection lesson={lesson} />
+        <ConversationSection lesson={lesson} />
 
         <PracticePanel level={level} lesson={lesson} />
 
@@ -614,7 +460,7 @@ function LessonPage({ level }: LessonPageProps) {
         </Stack>
       </Stack>
 
-      <ScrollToTopButton />
+      <LessonSectionNav lesson={lesson} />
     </PageContainer>
   );
 }
