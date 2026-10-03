@@ -162,7 +162,7 @@ code {
   and last page). Empty margin boxes replace Chrome 131+ default date/title/URL.
 */
 @page {
-  size: A4;
+  size: a4;
   margin: 16mm 18mm;
 
   @top-left {
@@ -229,14 +229,11 @@ code {
     gap: 0;
     height: 250mm;
     break-inside: avoid;
-    page-break-inside: avoid;
     break-after: page;
-    page-break-after: always;
   }
 
   .vocab-print-side:last-child {
     break-after: auto;
-    page-break-after: auto;
   }
 
   /* Dashed cut lines only - no ::before crop marks (those blanked Chrome print). */
