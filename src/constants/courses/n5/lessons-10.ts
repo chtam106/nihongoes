@@ -195,14 +195,21 @@ export const n5Lesson10: Lesson = {
       kanji: '公園',
       romaji: 'kōen',
       meaning: { en: 'park', vi: 'công viên' },
-      ruby: [{ base: '公', reading: 'こう' }]
+      ruby: [
+        { base: '公', reading: 'こう' },
+        { base: '園', reading: 'えん' }
+      ]
     },
     {
       kana: 'きっさてん',
       kanji: '喫茶店',
       romaji: 'kissaten',
       meaning: { en: 'coffee shop', vi: 'quán cà phê' },
-      ruby: [{ base: '喫', reading: 'きっ' }]
+      ruby: [
+        { base: '喫', reading: 'きっ' },
+        { base: '茶', reading: 'さ' },
+        { base: '店', reading: 'てん' }
+      ]
     },
     {
       kana: '～や',
@@ -216,7 +223,10 @@ export const n5Lesson10: Lesson = {
       kanji: '乗り場',
       romaji: 'noriba',
       meaning: { en: 'boarding place, stop', vi: 'điểm đón (tắc-xi, tàu...)' },
-      ruby: [{ base: '乗', reading: 'の' }]
+      ruby: [
+        { base: '乗', reading: 'の' },
+        { base: '場', reading: 'ば' }
+      ]
     },
     {
       kana: 'けん',
@@ -1030,7 +1040,10 @@ export const n5Lesson10: Lesson = {
           kanji: '玄関',
           romaji: 'genkan',
           meaning: { en: 'entrance', vi: 'cửa ra vào' },
-          ruby: [{ base: '玄', reading: 'げん' }]
+          ruby: [
+            { base: '玄', reading: 'げん' },
+            { base: '関', reading: 'かん' }
+          ]
         },
         {
           kana: 'トイレ',
@@ -1042,49 +1055,72 @@ export const n5Lesson10: Lesson = {
           kanji: '風呂場',
           romaji: 'furoba',
           meaning: { en: 'bathroom (tub area)', vi: 'phòng tắm' },
-          ruby: [{ base: '風', reading: 'ふ' }]
+          ruby: [
+            { base: '風', reading: 'ふ' },
+            { base: '呂', reading: 'ろ' },
+            { base: '場', reading: 'ば' }
+          ]
         },
         {
           kana: 'せんめんじょ',
           kanji: '洗面所',
           romaji: 'senmenjo',
           meaning: { en: 'washroom, sink area', vi: 'bồn rửa' },
-          ruby: [{ base: '洗', reading: 'せん' }]
+          ruby: [
+            { base: '洗', reading: 'せん' },
+            { base: '面', reading: 'めん' },
+            { base: '所', reading: 'じょ' }
+          ]
         },
         {
           kana: 'だいどころ',
           kanji: '台所',
           romaji: 'daidokoro',
           meaning: { en: 'kitchen', vi: 'bếp' },
-          ruby: [{ base: '台', reading: 'だい' }]
+          ruby: [
+            { base: '台', reading: 'だい' },
+            { base: '所', reading: 'どころ' }
+          ]
         },
         {
           kana: 'しょくどう',
           kanji: '食堂',
           romaji: 'shokudō',
           meaning: { en: 'dining room', vi: 'phòng ăn' },
-          ruby: [{ base: '食', reading: 'しょく' }]
+          ruby: [
+            { base: '食', reading: 'しょく' },
+            { base: '堂', reading: 'どう' }
+          ]
         },
         {
           kana: 'いま',
           kanji: '居間',
           romaji: 'ima',
           meaning: { en: 'living room', vi: 'phòng khách' },
-          ruby: [{ base: '居', reading: 'い' }]
+          ruby: [
+            { base: '居', reading: 'い' },
+            { base: '間', reading: 'ま' }
+          ]
         },
         {
           kana: 'しんしつ',
           kanji: '寝室',
           romaji: 'shinshitsu',
           meaning: { en: 'bedroom', vi: 'phòng ngủ' },
-          ruby: [{ base: '寝', reading: 'しん' }]
+          ruby: [
+            { base: '寝', reading: 'しん' },
+            { base: '室', reading: 'しつ' }
+          ]
         },
         {
           kana: 'ろうか',
           kanji: '廊下',
           romaji: 'rōka',
           meaning: { en: 'hallway', vi: 'hành lang' },
-          ruby: [{ base: '廊', reading: 'ろう' }]
+          ruby: [
+            { base: '廊', reading: 'ろう' },
+            { base: '下', reading: 'か' }
+          ]
         },
         {
           kana: 'ベランダ',

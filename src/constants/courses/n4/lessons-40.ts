@@ -25,7 +25,10 @@ export const n4Lesson40: Lesson = {
       kanji: '測ります、量ります',
       romaji: 'hakarimasu',
       meaning: { en: 'to measure, to weigh', vi: 'đo, cân' },
-      ruby: [{ base: '測', reading: 'はか' }]
+      ruby: [
+        { base: '測', reading: 'はか' },
+        { base: '量', reading: 'はか' }
+      ]
     },
     {
       kana: 'たしかめます',
@@ -85,7 +88,10 @@ export const n4Lesson40: Lesson = {
       kanji: '相談します',
       romaji: 'sōdan shimasu',
       meaning: { en: 'to consult, to discuss', vi: 'nói chuyện, thảo luận' },
-      ruby: [{ base: '相', reading: 'そう' }]
+      ruby: [
+        { base: '相', reading: 'そう' },
+        { base: '談', reading: 'だん' }
+      ]
     },
     {
       kana: 'ひつよう',

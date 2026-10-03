@@ -18,7 +18,10 @@ export const n4Lesson48: Lesson = {
       kanji: '降ろします、下ろします',
       romaji: 'oroshimasu',
       meaning: { en: 'to take down, to unload', vi: 'hạ xuống, dỡ xuống' },
-      ruby: [{ base: '降', reading: 'お' }]
+      ruby: [
+        { base: '降', reading: 'お' },
+        { base: '下', reading: 'お' }
+      ]
     },
     {
       kana: 'とどけます',
@@ -32,21 +35,30 @@ export const n4Lesson48: Lesson = {
       kanji: '世話を します',
       romaji: 'sewa o shimasu',
       meaning: { en: 'to take care (of someone)', vi: 'chăm sóc' },
-      ruby: [{ base: '世', reading: 'せ' }]
+      ruby: [
+        { base: '世', reading: 'せ' },
+        { base: '話', reading: 'わ' }
+      ]
     },
     {
       kana: 'ろくおん',
       kanji: '録音',
       romaji: 'rokuon',
       meaning: { en: 'recording', vi: 'ghi âm' },
-      ruby: [{ base: '録', reading: 'ろく' }]
+      ruby: [
+        { base: '録', reading: 'ろく' },
+        { base: '音', reading: 'おん' }
+      ]
     },
     {
       kana: 'ろくおんします',
       kanji: '録音します',
       romaji: 'rokuon shimasu',
       meaning: { en: 'to record (audio)', vi: 'ghi âm' },
-      ruby: [{ base: '録', reading: 'ろく' }]
+      ruby: [
+        { base: '録', reading: 'ろく' },
+        { base: '音', reading: 'おん' }
+      ]
     },
     {
       kana: 'いや',
@@ -67,7 +79,10 @@ export const n4Lesson48: Lesson = {
       kanji: '生徒',
       romaji: 'seito',
       meaning: { en: 'student (school pupil)', vi: 'học sinh' },
-      ruby: [{ base: '生', reading: 'せい' }]
+      ruby: [
+        { base: '生', reading: 'せい' },
+        { base: '徒', reading: 'と' }
+      ]
     },
     {
       kana: 'ファイル',
@@ -96,7 +111,10 @@ export const n4Lesson48: Lesson = {
       kanji: '営業',
       romaji: 'eigyō',
       meaning: { en: 'sales, business operations', vi: 'kinh doanh' },
-      ruby: [{ base: '営', reading: 'えい' }]
+      ruby: [
+        { base: '営', reading: 'えい' },
+        { base: '業', reading: 'ぎょう' }
+      ]
     },
     {
       kana: 'それまでに',

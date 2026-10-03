@@ -71,14 +71,20 @@ export const n5Lesson21: Lesson = {
       kanji: '無駄 [な]',
       romaji: 'muda [na]',
       meaning: { en: 'wasteful (na-adj)', vi: 'lãng phí, vô ích (tính từ な)' },
-      ruby: [{ base: '無', reading: 'む' }]
+      ruby: [
+        { base: '無', reading: 'む' },
+        { base: '駄', reading: 'だ' }
+      ]
     },
     {
       kana: 'ふべん [な]',
       kanji: '不便 [な]',
       romaji: 'fuben [na]',
       meaning: { en: 'inconvenient (na-adj)', vi: 'bất tiện (tính từ な)' },
-      ruby: [{ base: '不', reading: 'ふ' }]
+      ruby: [
+        { base: '不', reading: 'ふ' },
+        { base: '便', reading: 'べん' }
+      ]
     },
     {
       kana: 'おなじ',
@@ -118,7 +124,10 @@ export const n5Lesson21: Lesson = {
       kanji: '政治',
       romaji: 'seiji',
       meaning: { en: 'politics', vi: 'chính trị' },
-      ruby: [{ base: '政', reading: 'せい' }]
+      ruby: [
+        { base: '政', reading: 'せい' },
+        { base: '治', reading: 'じ' }
+      ]
     },
     {
       kana: 'ニュース',
@@ -138,7 +147,10 @@ export const n5Lesson21: Lesson = {
       kanji: '試合',
       romaji: 'shiai',
       meaning: { en: 'game, match', vi: 'trận đấu' },
-      ruby: [{ base: '試', reading: 'し' }]
+      ruby: [
+        { base: '試', reading: 'し' },
+        { base: '合', reading: 'あい' }
+      ]
     },
     {
       kana: 'アルバイト',
@@ -153,7 +165,10 @@ export const n5Lesson21: Lesson = {
       kanji: '意見',
       romaji: 'iken',
       meaning: { en: 'opinion', vi: 'ý kiến' },
-      ruby: [{ base: '意', reading: 'い' }]
+      ruby: [
+        { base: '意', reading: 'い' },
+        { base: '見', reading: 'けん' }
+      ]
     },
     {
       kana: 'はなし',
@@ -180,7 +195,10 @@ export const n5Lesson21: Lesson = {
       kanji: '交通',
       romaji: 'kōtsū',
       meaning: { en: 'transportation, traffic', vi: 'giao thông' },
-      ruby: [{ base: '交', reading: 'こう' }]
+      ruby: [
+        { base: '交', reading: 'こう' },
+        { base: '通', reading: 'つう' }
+      ]
     },
     {
       kana: 'ラッシュ',
@@ -192,7 +210,10 @@ export const n5Lesson21: Lesson = {
       kanji: '最近',
       romaji: 'saikin',
       meaning: { en: 'recently, these days', vi: 'gần đây' },
-      ruby: [{ base: '近', reading: 'きん' }]
+      ruby: [
+        { base: '最', reading: 'さい' },
+        { base: '近', reading: 'きん' }
+      ]
     },
     {
       kana: 'たぶん',

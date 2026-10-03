@@ -235,7 +235,10 @@ export const n4Lesson39: Lesson = {
       kanji: '操作',
       romaji: 'sōsa',
       meaning: { en: 'operation, handling', vi: 'thao tác' },
-      ruby: [{ base: '操', reading: 'そう' }]
+      ruby: [
+        { base: '操', reading: 'そう' },
+        { base: '作', reading: 'さ' }
+      ]
     },
     {
       kana: 'かいじょう',

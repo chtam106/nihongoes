@@ -74,6 +74,7 @@ alwaysApply: true
 - Global furigana size: `ruby rt { font-size: 0.7em }` in `src/index.css` (applies site-wide).
 - **Adjacent furigana colors**: every ruby segment gets a color (singles use blue `#1565c0`); when 2+ segments are consecutive in the surface text (no kana/kanji gap), alternate blue and orange (`#1565c0` / `#e65100`) in `japanese-text.tsx` (text color only). This requires **one segment per kanji** in data - a compound `{ base:'教室', reading:'きょうしつ' }` will NOT alternate colors.
 - Pass `ruby` through from data in grammar examples, conversation lines, and reading lines. Vocab/reference card grids use `<VocabHeadword>` with the item's authored `ruby`; vocab exercises do not.
+- Ruby audit is ONLY `scripts/audit-ruby.mjs`. Extend that file (`jp:`, `kanji:`, patterns, explanations). Do NOT add a second `audit-*-ruby.mjs`.
 
 ## Text & typography (IMPORTANT)
 - Keep UI copy (titles, intros, card descriptions) SHORT and declarative. Do NOT tack on a trailing comma-separated feature/enumeration clause just to sound fuller - e.g. avoid `... - interactive charts, audio, quizzes, and writing practice` or `... kèm âm đọc, bộ phận cấu tạo và từ ví dụ`. State the one main thing and stop. Only enumerate when the list itself is the point (e.g. a real feature grid), not as decorative padding on a description.
@@ -150,6 +151,8 @@ alwaysApply: true
 - Wrap every page's content in the shared `<PageContainer>` (`src/components/page-container/index.tsx`) — do NOT use `<Container>` directly in pages. Content width/padding live in `PageContainer` + the `MuiContainer` theme overrides in `src/theme/app-theme.ts`, with a global max width of `1200px`.
 - On desktop, keep app bar inner content constrained to the same `1200px` max width and gutter alignment as page content.
 - Page headers: put the back button on its own row (wrapped in a `Box`), then the lesson/section chip, then the title — never let the back button and chip share a line.
+- Course-level "one lesson vs all" filters (e.g. the vocab index at `/:level/vocabulary`) use a MUI `Select` dropdown, not a wrap row of Chip/button toggles. Use `size="small"` like the app-settings selects - not a full-width medium field. Render the filtered words as one continuous `VocabCardGrid` - no per-lesson chips, headings, or section gaps.
+- Vocab index print is duplex flashcards: hide screen chrome (`.no-print`), show `.print-only` sheets in `@media print`. Odd pages = Japanese only, even pages = meanings, same 3x8 grid, even pages row-reversed for long-edge flip. Each `.vocab-print-side` must fit one A4 page (`height: 250mm`, `1fr` rows, no container padding) so `break-after: page` does not insert a blank sheet. Print type is 1.5rem in `@media print` only. Cut guides are dashed `border-right` / `border-bottom` on cells, omitted on the page's right column and bottom row - do NOT use `::before` crop marks or many `linear-gradient` backgrounds (Chrome print preview goes blank). Never use `display: contents` in print CSS.
 - Keep page-level `h1` typography visually consistent across pages (same size + weight). Use the shared `Heading` component with `component="h1"` and no per-page font-size overrides.
 - Keep heading weights consistent for `h2`/`h3` title text as well (page sections and card/list titles should use `fontWeight: 600` unless there is a deliberate, documented exception).
 

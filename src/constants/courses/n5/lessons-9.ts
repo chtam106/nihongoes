@@ -114,7 +114,10 @@ export const n5Lesson9: Lesson = {
         en: 'travel, trip (~[を] します: to travel)',
         vi: 'du lịch (~[を] します: đi du lịch)'
       },
-      ruby: [{ base: '旅', reading: 'りょ' }]
+      ruby: [
+        { base: '旅', reading: 'りょ' },
+        { base: '行', reading: 'こう' }
+      ]
     },
     {
       kana: 'おんがく',
@@ -235,7 +238,10 @@ export const n5Lesson9: Lesson = {
       kanji: '用事',
       romaji: 'yōji',
       meaning: { en: 'errand, business to attend to', vi: 'việc bận, công chuyện' },
-      ruby: [{ base: '用', reading: 'よう' }]
+      ruby: [
+        { base: '用', reading: 'よう' },
+        { base: '事', reading: 'じ' }
+      ]
     },
     {
       kana: 'やくそく',
@@ -245,7 +251,10 @@ export const n5Lesson9: Lesson = {
         en: 'promise, appointment (~[を] します: to promise)',
         vi: 'cuộc hẹn, lời hứa (~[を] します: hứa, hẹn)'
       },
-      ruby: [{ base: '約', reading: 'やく' }]
+      ruby: [
+        { base: '約', reading: 'やく' },
+        { base: '束', reading: 'そく' }
+      ]
     },
     {
       kana: 'アルバイト',
@@ -320,7 +329,10 @@ export const n5Lesson9: Lesson = {
       kanji: '全然',
       romaji: 'zenzen',
       meaning: { en: 'not at all (with negative)', vi: 'hoàn toàn không (với phủ định)' },
-      ruby: [{ base: '全', reading: 'ぜん' }]
+      ruby: [
+        { base: '全', reading: 'ぜん' },
+        { base: '然', reading: 'ぜん' }
+      ]
     },
     {
       kana: 'はやく',
@@ -358,7 +370,10 @@ export const n5Lesson9: Lesson = {
       kanji: '残念ですが。',
       romaji: 'Zannen desu ga.',
       meaning: { en: 'I am sorry, but... / What a pity.', vi: 'Tiếc quá, nhưng... / Đáng tiếc.' },
-      ruby: [{ base: '残', reading: 'ざん' }]
+      ruby: [
+        { base: '残', reading: 'ざん' },
+        { base: '念', reading: 'ねん' }
+      ]
     },
     {
       kana: 'ああ。',
@@ -1198,14 +1213,20 @@ export const n5Lesson9: Lesson = {
           kanji: '民謡',
           romaji: 'minyō',
           meaning: { en: 'folk song', vi: 'dân ca' },
-          ruby: [{ base: '民', reading: 'みん' }]
+          ruby: [
+            { base: '民', reading: 'みん' },
+            { base: '謡', reading: 'よう' }
+          ]
         },
         {
           kana: 'えんか',
           kanji: '演歌',
           romaji: 'enka',
           meaning: { en: 'enka (ballad)', vi: 'enka (dòng nhạc Nhật)' },
-          ruby: [{ base: '演', reading: 'えん' }]
+          ruby: [
+            { base: '演', reading: 'えん' },
+            { base: '歌', reading: 'か' }
+          ]
         },
         { kana: 'ミュージカル', romaji: 'myūjikaru', meaning: { en: 'musical', vi: 'nhạc kịch' } },
         { kana: 'オペラ', romaji: 'opera', meaning: { en: 'opera', vi: 'opera' } }
@@ -1229,7 +1250,10 @@ export const n5Lesson9: Lesson = {
           kanji: '恋愛',
           romaji: 'renai',
           meaning: { en: 'romance', vi: 'tình cảm' },
-          ruby: [{ base: '恋', reading: 'れん' }]
+          ruby: [
+            { base: '恋', reading: 'れん' },
+            { base: '愛', reading: 'あい' }
+          ]
         },
         { kana: 'ミステリー', romaji: 'misuterī', meaning: { en: 'mystery', vi: 'bí ẩn' } },
         {
@@ -1237,14 +1261,20 @@ export const n5Lesson9: Lesson = {
           kanji: '文芸',
           romaji: 'bungē',
           meaning: { en: 'literary drama', vi: 'văn nghệ' },
-          ruby: [{ base: '文', reading: 'ぶん' }]
+          ruby: [
+            { base: '文', reading: 'ぶん' },
+            { base: '芸', reading: 'げい' }
+          ]
         },
         {
           kana: 'せんそう',
           kanji: '戦争',
           romaji: 'sensō',
           meaning: { en: 'war', vi: 'chiến tranh' },
-          ruby: [{ base: '戦', reading: 'せん' }]
+          ruby: [
+            { base: '戦', reading: 'せん' },
+            { base: '争', reading: 'そう' }
+          ]
         },
         { kana: 'アクション', romaji: 'akushon', meaning: { en: 'action', vi: 'hành động' } },
         {
@@ -1252,7 +1282,10 @@ export const n5Lesson9: Lesson = {
           kanji: '喜劇',
           romaji: 'kigeki',
           meaning: { en: 'comedy', vi: 'hài kịch' },
-          ruby: [{ base: '喜', reading: 'き' }]
+          ruby: [
+            { base: '喜', reading: 'き' },
+            { base: '劇', reading: 'げき' }
+          ]
         }
       ]
     },
@@ -1308,21 +1341,30 @@ export const n5Lesson9: Lesson = {
           kanji: '相撲',
           romaji: 'sumō',
           meaning: { en: 'sumo', vi: 'sumo' },
-          ruby: [{ base: '相', reading: 'す' }]
+          ruby: [
+            { base: '相', reading: 'す' },
+            { base: '撲', reading: 'もう' }
+          ]
         },
         {
           kana: 'じゅうどう',
           kanji: '柔道',
           romaji: 'jūdō',
           meaning: { en: 'judo', vi: 'judo' },
-          ruby: [{ base: '柔', reading: 'じゅう' }]
+          ruby: [
+            { base: '柔', reading: 'じゅう' },
+            { base: '道', reading: 'どう' }
+          ]
         },
         {
           kana: 'けんどう',
           kanji: '剣道',
           romaji: 'kendō',
           meaning: { en: 'kendo', vi: 'kendo' },
-          ruby: [{ base: '剣', reading: 'けん' }]
+          ruby: [
+            { base: '剣', reading: 'けん' },
+            { base: '道', reading: 'どう' }
+          ]
         },
         {
           kana: 'すいえい',

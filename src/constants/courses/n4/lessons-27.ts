@@ -64,7 +64,10 @@ export const n4Lesson27: Lesson = {
       kanji: '心配',
       romaji: 'shinpai',
       meaning: { en: 'worried (na-adj)', vi: 'lo lắng (tính từ な)' },
-      ruby: [{ base: '心', reading: 'しん' }]
+      ruby: [
+        { base: '心', reading: 'しん' },
+        { base: '配', reading: 'ぱい' }
+      ]
     },
     {
       kana: 'ペット',
@@ -107,7 +110,10 @@ export const n4Lesson27: Lesson = {
       kanji: '道具',
       romaji: 'dōgu',
       meaning: { en: 'tool', vi: 'dụng cụ' },
-      ruby: [{ base: '道', reading: 'どう' }]
+      ruby: [
+        { base: '道', reading: 'どう' },
+        { base: '具', reading: 'ぐ' }
+      ]
     },
     {
       kana: 'クリーニング',
@@ -180,7 +186,10 @@ export const n4Lesson27: Lesson = {
       kanji: '家具',
       romaji: 'kagu',
       meaning: { en: 'furniture', vi: 'đồ nội thất' },
-      ruby: [{ base: '家', reading: 'か' }]
+      ruby: [
+        { base: '家', reading: 'か' },
+        { base: '具', reading: 'ぐ' }
+      ]
     },
     {
       kana: 'ほんだな',

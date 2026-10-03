@@ -74,7 +74,10 @@ export const n5Lesson22: Lesson = {
       kanji: '帽子',
       romaji: 'bōshi',
       meaning: { en: 'hat, cap', vi: 'mũ, nón' },
-      ruby: [{ base: '帽', reading: 'ぼう' }]
+      ruby: [
+        { base: '帽', reading: 'ぼう' },
+        { base: '子', reading: 'し' }
+      ]
     },
     {
       kana: 'めがね',
@@ -129,7 +132,10 @@ export const n5Lesson22: Lesson = {
       kanji: '和室',
       romaji: 'washitsu',
       meaning: { en: 'Japanese-style room', vi: 'phòng kiểu Nhật' },
-      ruby: [{ base: '和', reading: 'わ' }]
+      ruby: [
+        { base: '和', reading: 'わ' },
+        { base: '室', reading: 'しつ' }
+      ]
     },
     {
       kana: 'おしいれ',
@@ -146,7 +152,10 @@ export const n5Lesson22: Lesson = {
       kanji: '布団',
       romaji: 'futon',
       meaning: { en: 'futon, Japanese bedding', vi: 'futon, nệm gấp kiểu Nhật' },
-      ruby: [{ base: '布', reading: 'ふ' }]
+      ruby: [
+        { base: '布', reading: 'ふ' },
+        { base: '団', reading: 'とん' }
+      ]
     },
     {
       kana: 'アパート',
@@ -714,21 +723,30 @@ export const n5Lesson22: Lesson = {
           kanji: '寝室',
           romaji: 'shinshitsu',
           meaning: { en: 'bedroom', vi: 'phòng ngủ' },
-          ruby: [{ base: '寝', reading: 'しん' }]
+          ruby: [
+            { base: '寝', reading: 'しん' },
+            { base: '室', reading: 'しつ' }
+          ]
         },
         {
           kana: 'だいどころ',
           kanji: '台所',
           romaji: 'daidokoro',
           meaning: { en: 'kitchen', vi: 'bếp, nhà bếp' },
-          ruby: [{ base: '台', reading: 'だい' }]
+          ruby: [
+            { base: '台', reading: 'だい' },
+            { base: '所', reading: 'どころ' }
+          ]
         },
         {
           kana: 'ふろ',
           kanji: '風呂',
           romaji: 'furo',
           meaning: { en: 'bath, bathtub', vi: 'bồn tắm, phòng tắm' },
-          ruby: [{ base: '風', reading: 'ふ' }]
+          ruby: [
+            { base: '風', reading: 'ふ' },
+            { base: '呂', reading: 'ろ' }
+          ]
         },
         {
           kana: 'トイレ',
@@ -740,7 +758,10 @@ export const n5Lesson22: Lesson = {
           kanji: '玄関',
           romaji: 'genkan',
           meaning: { en: 'entryway, genkan', vi: 'lối vào, sảnh cửa' },
-          ruby: [{ base: '玄', reading: 'げん' }]
+          ruby: [
+            { base: '玄', reading: 'げん' },
+            { base: '関', reading: 'かん' }
+          ]
         },
         {
           kana: 'ベランダ',

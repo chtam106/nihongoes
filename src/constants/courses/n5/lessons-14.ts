@@ -74,7 +74,10 @@ export const n5Lesson14: Lesson = {
       kanji: '手伝います',
       romaji: 'tetsudaimasu',
       meaning: { en: 'to help (with a task)', vi: 'giúp (làm việc gì)' },
-      ruby: [{ base: '手', reading: 'て' }]
+      ruby: [
+        { base: '手', reading: 'て' },
+        { base: '伝', reading: 'つだ' }
+      ]
     },
     {
       kana: 'よびます',
@@ -172,7 +175,10 @@ export const n5Lesson14: Lesson = {
       kanji: '電気',
       romaji: 'denki',
       meaning: { en: 'electricity, electric light', vi: 'điện, đèn điện' },
-      ruby: [{ base: '電', reading: 'でん' }]
+      ruby: [
+        { base: '電', reading: 'でん' },
+        { base: '気', reading: 'き' }
+      ]
     },
     {
       kana: 'エアコン',
@@ -189,21 +195,30 @@ export const n5Lesson14: Lesson = {
       kanji: '名前',
       romaji: 'namae',
       meaning: { en: 'name', vi: 'tên' },
-      ruby: [{ base: '名', reading: 'な' }]
+      ruby: [
+        { base: '名', reading: 'な' },
+        { base: '前', reading: 'まえ' }
+      ]
     },
     {
       kana: 'じゅうしょ',
       kanji: '住所',
       romaji: 'jūsho',
       meaning: { en: 'address', vi: 'địa chỉ' },
-      ruby: [{ base: '住', reading: 'じゅう' }]
+      ruby: [
+        { base: '住', reading: 'じゅう' },
+        { base: '所', reading: 'しょ' }
+      ]
     },
     {
       kana: 'ちず',
       kanji: '地図',
       romaji: 'chizu',
       meaning: { en: 'map', vi: 'bản đồ' },
-      ruby: [{ base: '地', reading: 'ち' }]
+      ruby: [
+        { base: '地', reading: 'ち' },
+        { base: '図', reading: 'ず' }
+      ]
     },
     {
       kana: 'しお',
@@ -217,14 +232,20 @@ export const n5Lesson14: Lesson = {
       kanji: '砂糖',
       romaji: 'satō',
       meaning: { en: 'sugar', vi: 'đường' },
-      ruby: [{ base: '砂', reading: 'さ' }]
+      ruby: [
+        { base: '砂', reading: 'さ' },
+        { base: '糖', reading: 'とう' }
+      ]
     },
     {
       kana: 'もんだい',
       kanji: '問題',
       romaji: 'mondai',
       meaning: { en: 'question, problem', vi: 'câu hỏi, vấn đề' },
-      ruby: [{ base: '問', reading: 'もん' }]
+      ruby: [
+        { base: '問', reading: 'もん' },
+        { base: '題', reading: 'だい' }
+      ]
     },
     {
       kana: 'こたえ',
@@ -238,7 +259,10 @@ export const n5Lesson14: Lesson = {
       kanji: '読み方',
       romaji: 'yomikata',
       meaning: { en: 'way of reading, how to read', vi: 'cách đọc' },
-      ruby: [{ base: '読', reading: 'よ' }]
+      ruby: [
+        { base: '読', reading: 'よ' },
+        { base: '方', reading: 'かた' }
+      ]
     },
     {
       kana: '～かた',
@@ -957,77 +981,118 @@ export const n5Lesson14: Lesson = {
           kanji: '切符売り場',
           romaji: 'kippu uriba',
           meaning: { en: 'ticket counter', vi: 'chỗ bán vé' },
-          ruby: [{ base: '切', reading: 'きっ' }]
+          ruby: [
+            { base: '切', reading: 'きっ' },
+            { base: '符', reading: 'ぷ' },
+            { base: '売', reading: 'う' },
+            { base: '場', reading: 'ば' }
+          ]
         },
         {
           kana: 'じどうけんばいき',
           kanji: '自動券売機',
           romaji: 'jidō kenbaiki',
           meaning: { en: 'ticket vending machine', vi: 'máy bán vé tự động' },
-          ruby: [{ base: '自', reading: 'じ' }]
+          ruby: [
+            { base: '自', reading: 'じ' },
+            { base: '動', reading: 'どう' },
+            { base: '券', reading: 'けん' },
+            { base: '売', reading: 'ばい' },
+            { base: '機', reading: 'き' }
+          ]
         },
         {
           kana: 'せいさんき',
           kanji: '精算機',
           romaji: 'seisanki',
           meaning: { en: 'fare adjustment machine', vi: 'máy thanh toán tiền vé còn thiếu' },
-          ruby: [{ base: '精', reading: 'せい' }]
+          ruby: [
+            { base: '精', reading: 'せい' },
+            { base: '算', reading: 'さん' },
+            { base: '機', reading: 'き' }
+          ]
         },
         {
           kana: 'かいさつぐち',
           kanji: '改札口',
           romaji: 'kaisatsuguchi',
           meaning: { en: 'ticket gate', vi: 'cửa soát vé' },
-          ruby: [{ base: '改', reading: 'かい' }]
+          ruby: [
+            { base: '改', reading: 'かい' },
+            { base: '札', reading: 'さつ' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'でぐち',
           kanji: '出口',
           romaji: 'deguchi',
           meaning: { en: 'exit', vi: 'cửa ra' },
-          ruby: [{ base: '出', reading: 'で' }]
+          ruby: [
+            { base: '出', reading: 'で' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'いりぐち',
           kanji: '入口',
           romaji: 'iriguchi',
           meaning: { en: 'entrance', vi: 'cửa vào' },
-          ruby: [{ base: '入', reading: 'い' }]
+          ruby: [
+            { base: '入', reading: 'い' },
+            { base: '口', reading: 'りぐち' }
+          ]
         },
         {
           kana: 'ひがしぐち',
           kanji: '東口',
           romaji: 'higashiguchi',
           meaning: { en: 'east exit', vi: 'cửa Đông' },
-          ruby: [{ base: '東', reading: 'ひがし' }]
+          ruby: [
+            { base: '東', reading: 'ひがし' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'にしぐち',
           kanji: '西口',
           romaji: 'nishiguchi',
           meaning: { en: 'west exit', vi: 'cửa Tây' },
-          ruby: [{ base: '西', reading: 'にし' }]
+          ruby: [
+            { base: '西', reading: 'にし' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'みなみぐち',
           kanji: '南口',
           romaji: 'minamiguchi',
           meaning: { en: 'south exit', vi: 'cửa Nam' },
-          ruby: [{ base: '南', reading: 'みなみ' }]
+          ruby: [
+            { base: '南', reading: 'みなみ' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'きたぐち',
           kanji: '北口',
           romaji: 'kitaguchi',
           meaning: { en: 'north exit', vi: 'cửa Bắc' },
-          ruby: [{ base: '北', reading: 'きた' }]
+          ruby: [
+            { base: '北', reading: 'きた' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'ちゅうおうぐち',
           kanji: '中央口',
           romaji: 'chūōguchi',
           meaning: { en: 'central exit', vi: 'cửa Trung tâm' },
-          ruby: [{ base: '中', reading: 'ちゅう' }]
+          ruby: [
+            { base: '中', reading: 'ちゅう' },
+            { base: '央', reading: 'おう' },
+            { base: '口', reading: 'ぐち' }
+          ]
         },
         {
           kana: 'ホーム',
@@ -1039,7 +1104,10 @@ export const n5Lesson14: Lesson = {
           kanji: '売店',
           romaji: 'baiten',
           meaning: { en: 'kiosk, shop', vi: 'quầy bán hàng, ki-ốt' },
-          ruby: [{ base: '売', reading: 'ばい' }]
+          ruby: [
+            { base: '売', reading: 'ばい' },
+            { base: '店', reading: 'てん' }
+          ]
         },
         {
           kana: 'コインロッカー',
@@ -1047,11 +1115,14 @@ export const n5Lesson14: Lesson = {
           meaning: { en: 'coin locker', vi: 'hòm để đồ cho thuê bằng tiền xu' }
         },
         {
-          kana: 'タクシー乗り場',
+          kana: 'タクシーのりば',
           kanji: 'タクシー乗り場',
           romaji: 'takushī noriba',
           meaning: { en: 'taxi stand', vi: 'điểm lên xe tắc-xi' },
-          ruby: [{ base: '乗', reading: 'の' }]
+          ruby: [
+            { base: '乗', reading: 'の' },
+            { base: '場', reading: 'ば' }
+          ]
         },
         {
           kana: 'バスターミナル',
@@ -1059,7 +1130,7 @@ export const n5Lesson14: Lesson = {
           meaning: { en: 'bus terminal', vi: 'bến xe buýt' }
         },
         {
-          kana: 'バス停',
+          kana: 'バスてい',
           kanji: 'バス停',
           romaji: 'basutei',
           meaning: { en: 'bus stop', vi: 'điểm lên xuống xe buýt' },
@@ -1070,42 +1141,61 @@ export const n5Lesson14: Lesson = {
           kanji: '特急',
           romaji: 'tokkyū',
           meaning: { en: 'limited express', vi: 'tốc hành đặc biệt' },
-          ruby: [{ base: '特', reading: 'とっ' }]
+          ruby: [
+            { base: '特', reading: 'とっ' },
+            { base: '急', reading: 'きゅう' }
+          ]
         },
         {
           kana: 'きゅうこう',
           kanji: '急行',
           romaji: 'kyūkō',
           meaning: { en: 'express train', vi: 'tốc hành' },
-          ruby: [{ base: '急', reading: 'きゅう' }]
+          ruby: [
+            { base: '急', reading: 'きゅう' },
+            { base: '行', reading: 'こう' }
+          ]
         },
         {
           kana: 'かいそく',
           kanji: '快速',
           romaji: 'kaisoku',
           meaning: { en: 'rapid (train)', vi: 'nhanh' },
-          ruby: [{ base: '快', reading: 'かい' }]
+          ruby: [
+            { base: '快', reading: 'かい' },
+            { base: '速', reading: 'そく' }
+          ]
         },
         {
           kana: 'じゅんきゅう',
           kanji: '準急',
           romaji: 'junkyū',
           meaning: { en: 'semi-express', vi: 'bán tốc hành' },
-          ruby: [{ base: '準', reading: 'じゅん' }]
+          ruby: [
+            { base: '準', reading: 'じゅん' },
+            { base: '急', reading: 'きゅう' }
+          ]
         },
         {
           kana: 'ふつう',
           kanji: '普通',
           romaji: 'futsū',
           meaning: { en: 'local (train)', vi: 'tàu thường, địa phương' },
-          ruby: [{ base: '普', reading: 'ふ' }]
+          ruby: [
+            { base: '普', reading: 'ふ' },
+            { base: '通', reading: 'つう' }
+          ]
         },
         {
           kana: 'じこくひょう',
           kanji: '時刻表',
           romaji: 'jikokuhyō',
           meaning: { en: 'timetable', vi: 'bảng giờ chạy tàu' },
-          ruby: [{ base: '時', reading: 'じ' }]
+          ruby: [
+            { base: '時', reading: 'じ' },
+            { base: '刻', reading: 'こく' },
+            { base: '表', reading: 'ひょう' }
+          ]
         },
         {
           kana: '～はつ',
@@ -1133,28 +1223,42 @@ export const n5Lesson14: Lesson = {
           kanji: '定期券',
           romaji: 'teikiken',
           meaning: { en: 'commuter pass', vi: 'vé tháng' },
-          ruby: [{ base: '定', reading: 'てい' }]
+          ruby: [
+            { base: '定', reading: 'てい' },
+            { base: '期', reading: 'き' },
+            { base: '券', reading: 'けん' }
+          ]
         },
         {
           kana: 'かいすうけん',
           kanji: '回数券',
           romaji: 'kaisūken',
           meaning: { en: 'coupon tickets', vi: 'vé giảm giá khi đi nhiều' },
-          ruby: [{ base: '回', reading: 'かい' }]
+          ruby: [
+            { base: '回', reading: 'かい' },
+            { base: '数', reading: 'すう' },
+            { base: '券', reading: 'けん' }
+          ]
         },
         {
           kana: 'かたみち',
           kanji: '片道',
           romaji: 'katamichi',
           meaning: { en: 'one way', vi: 'một chiều' },
-          ruby: [{ base: '片', reading: 'かた' }]
+          ruby: [
+            { base: '片', reading: 'かた' },
+            { base: '道', reading: 'みち' }
+          ]
         },
         {
           kana: 'おうふく',
           kanji: '往復',
           romaji: 'ōfuku',
           meaning: { en: 'round trip', vi: 'hai chiều, đi và về' },
-          ruby: [{ base: '往', reading: 'おう' }]
+          ruby: [
+            { base: '往', reading: 'おう' },
+            { base: '復', reading: 'ふく' }
+          ]
         }
       ]
     },

@@ -23,7 +23,10 @@ export const n4Lesson36: Lesson = {
       kanji: '貯金します',
       romaji: 'chokin shimasu',
       meaning: { en: 'to save money', vi: 'tiết kiệm tiền' },
-      ruby: [{ base: '貯', reading: 'ちょ' }]
+      ruby: [
+        { base: '貯', reading: 'ちょ' },
+        { base: '金', reading: 'きん' }
+      ]
     },
     {
       kana: 'すぎます',
@@ -294,7 +297,10 @@ export const n4Lesson36: Lesson = {
       kanji: '利用します',
       romaji: 'riyō shimasu',
       meaning: { en: 'to use, to utilize', vi: 'sử dụng' },
-      ruby: [{ base: '利', reading: 'り' }]
+      ruby: [
+        { base: '利', reading: 'り' },
+        { base: '用', reading: 'よう' }
+      ]
     },
     {
       kana: 'じゆうに',

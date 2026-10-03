@@ -35,7 +35,10 @@ export const n5Lesson25: Lesson = {
       kanji: '留学します',
       romaji: 'ryūgaku shimasu',
       meaning: { en: 'to study abroad', vi: 'du học' },
-      ruby: [{ base: '留', reading: 'りゅう' }]
+      ruby: [
+        { base: '留', reading: 'りゅう' },
+        { base: '学', reading: 'がく' }
+      ]
     },
     {
       kana: 'としをとります',
@@ -52,7 +55,10 @@ export const n5Lesson25: Lesson = {
       kanji: '田舎',
       romaji: 'inaka',
       meaning: { en: 'countryside, hometown', vi: 'nông thôn, quê' },
-      ruby: [{ base: '田', reading: 'いな' }]
+      ruby: [
+        { base: '田', reading: 'いな' },
+        { base: '舎', reading: 'か' }
+      ]
     },
     {
       kana: 'たいしかん',
@@ -97,14 +103,20 @@ export const n5Lesson25: Lesson = {
       kanji: '転勤',
       romaji: 'tenkin',
       meaning: { en: 'job transfer (to another office)', vi: 'chuyển công tác' },
-      ruby: [{ base: '転', reading: 'てん' }]
+      ruby: [
+        { base: '転', reading: 'てん' },
+        { base: '勤', reading: 'きん' }
+      ]
     },
     {
       kana: 'てんきんします',
       kanji: '転勤します',
       romaji: 'tenkin shimasu',
       meaning: { en: 'to be transferred (to another office)', vi: 'bị chuyển công tác' },
-      ruby: [{ base: '転', reading: 'てん' }]
+      ruby: [
+        { base: '転', reading: 'てん' },
+        { base: '勤', reading: 'きん' }
+      ]
     },
     {
       kana: 'こと',
@@ -137,21 +149,30 @@ export const n5Lesson25: Lesson = {
         en: 'Thank you for all your help.',
         vi: 'Cảm ơn đã giúp đỡ nhiều.'
       },
-      ruby: [{ base: '世', reading: 'せ' }]
+      ruby: [
+        { base: '世', reading: 'せ' },
+        { base: '話', reading: 'わ' }
+      ]
     },
     {
       kana: 'がんばります。',
       kanji: '頑張ります。',
       romaji: 'Ganbarimasu.',
       meaning: { en: 'I will do my best.', vi: 'Tôi sẽ cố gắng.' },
-      ruby: [{ base: '頑', reading: 'がん' }]
+      ruby: [
+        { base: '頑', reading: 'がん' },
+        { base: '張', reading: 'ば' }
+      ]
     },
     {
       kana: 'どうぞ おげんきで。',
       kanji: 'どうぞ お元気で。',
       romaji: 'Dōzo o-genki de.',
       meaning: { en: 'Please take care. (farewell)', vi: 'Chúc anh/chị mạnh khỏe. (tạm biệt)' },
-      ruby: [{ base: '元', reading: 'げん' }]
+      ruby: [
+        { base: '元', reading: 'げん' },
+        { base: '気', reading: 'き' }
+      ]
     }
   ],
   conversation: [
@@ -606,14 +627,20 @@ export const n5Lesson25: Lesson = {
           kanji: 'お大事に',
           romaji: 'Odaiji ni',
           meaning: { en: 'Take care (when someone is ill)', vi: 'Giữ gìn sức khỏe (khi ai ốm)' },
-          ruby: [{ base: '大', reading: 'だい' }]
+          ruby: [
+            { base: '大', reading: 'だい' },
+            { base: '事', reading: 'じ' }
+          ]
         },
         {
           kana: 'おつかれさまでした',
           kanji: 'お疲れ様でした',
           romaji: 'Otsukaresama deshita',
           meaning: { en: 'Thank you for your hard work.', vi: 'Cảm ơn vì đã vất vả.' },
-          ruby: [{ base: '疲', reading: 'つか' }]
+          ruby: [
+            { base: '疲', reading: 'つか' },
+            { base: '様', reading: 'さま' }
+          ]
         },
         {
           kana: 'いってらっしゃい',

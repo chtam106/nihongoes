@@ -42,7 +42,10 @@ export const n5Lesson20: Lesson = {
       kanji: '修理します',
       romaji: 'shūri shimasu',
       meaning: { en: 'to repair', vi: 'sửa chữa' },
-      ruby: [{ base: '修', reading: 'しゅう' }]
+      ruby: [
+        { base: '修', reading: 'しゅう' },
+        { base: '理', reading: 'り' }
+      ]
     },
     {
       kana: 'でんわします',
@@ -95,7 +98,10 @@ export const n5Lesson20: Lesson = {
       kanji: '言葉',
       romaji: 'kotoba',
       meaning: { en: 'word, language', vi: 'từ, ngôn ngữ' },
-      ruby: [{ base: '言', reading: 'こと' }]
+      ruby: [
+        { base: '言', reading: 'こと' },
+        { base: '葉', reading: 'ば' }
+      ]
     },
     {
       kana: 'ぶっか',
@@ -112,7 +118,10 @@ export const n5Lesson20: Lesson = {
       kanji: '着物',
       romaji: 'kimono',
       meaning: { en: 'kimono', vi: 'kimono' },
-      ruby: [{ base: '着', reading: 'き' }]
+      ruby: [
+        { base: '着', reading: 'き' },
+        { base: '物', reading: 'もの' }
+      ]
     },
     {
       kana: 'ビザ',

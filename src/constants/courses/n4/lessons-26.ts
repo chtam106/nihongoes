@@ -118,7 +118,10 @@ export const n4Lesson26: Lesson = {
       kanji: '場所',
       romaji: 'basho',
       meaning: { en: 'place, location', vi: 'địa điểm, nơi' },
-      ruby: [{ base: '場', reading: 'ば' }]
+      ruby: [
+        { base: '場', reading: 'ば' },
+        { base: '所', reading: 'しょ' }
+      ]
     },
     {
       kana: 'ボランティア',
@@ -130,7 +133,10 @@ export const n4Lesson26: Lesson = {
       kanji: '財布',
       romaji: 'saifu',
       meaning: { en: 'wallet, purse', vi: 'ví' },
-      ruby: [{ base: '財', reading: 'さい' }]
+      ruby: [
+        { base: '財', reading: 'さい' },
+        { base: '布', reading: 'ふ' }
+      ]
     },
     {
       kana: 'ごみ',
@@ -307,7 +313,10 @@ export const n4Lesson26: Lesson = {
       kanji: '宇宙',
       romaji: 'uchū',
       meaning: { en: 'universe, space', vi: 'vũ trụ' },
-      ruby: [{ base: '宇', reading: 'う' }]
+      ruby: [
+        { base: '宇', reading: 'う' },
+        { base: '宙', reading: 'ちゅう' }
+      ]
     },
     {
       kana: '～さま',

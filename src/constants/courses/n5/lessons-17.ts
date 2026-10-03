@@ -77,10 +77,7 @@ export const n5Lesson17: Lesson = {
       kanji: '持っていきます',
       romaji: 'motte ikimasu',
       meaning: { en: 'to take (something along)', vi: 'mang theo, mang đi' },
-      ruby: [
-        { base: '持', reading: 'も' },
-        { base: '行', reading: 'い' }
-      ]
+      ruby: [{ base: '持', reading: 'も' }]
     },
     {
       kana: 'もってきます',
@@ -175,7 +172,10 @@ export const n5Lesson17: Lesson = {
       kanji: '問題',
       romaji: 'mondai',
       meaning: { en: 'problem, question', vi: 'vấn đề, câu hỏi' },
-      ruby: [{ base: '問', reading: 'もん' }]
+      ruby: [
+        { base: '問', reading: 'もん' },
+        { base: '題', reading: 'だい' }
+      ]
     },
     {
       kana: 'こたえ',
@@ -212,7 +212,10 @@ export const n5Lesson17: Lesson = {
       kanji: '風邪',
       romaji: 'kaze',
       meaning: { en: 'cold (illness)', vi: 'cảm, cảm cúm' },
-      ruby: [{ base: '風', reading: 'かぜ' }]
+      ruby: [
+        { base: '風', reading: 'かぜ' },
+        { base: '邪', reading: '' }
+      ]
     },
     {
       kana: 'ねつ',
@@ -243,7 +246,10 @@ export const n5Lesson17: Lesson = {
       kanji: 'お風呂',
       romaji: 'ofuro',
       meaning: { en: 'bath', vi: 'bồn tắm, tắm' },
-      ruby: [{ base: '風', reading: 'ふ' }]
+      ruby: [
+        { base: '風', reading: 'ふ' },
+        { base: '呂', reading: 'ろ' }
+      ]
     },
     {
       kana: 'うわぎ',
@@ -1275,7 +1281,10 @@ export const n5Lesson17: Lesson = {
           kanji: '風邪',
           romaji: 'kaze',
           meaning: { en: 'cold (illness)', vi: 'cảm' },
-          ruby: [{ base: '風', reading: 'かぜ' }]
+          ruby: [
+            { base: '風', reading: 'かぜ' },
+            { base: '邪', reading: '' }
+          ]
         },
         {
           kana: 'インフルエンザ',
