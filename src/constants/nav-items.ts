@@ -11,6 +11,7 @@ import {
   courseIntroPath,
   coursePath,
   courseReferencePath,
+  courseVocabularyPath,
   lessonPath
 } from '@/constants/courses/levels.ts';
 import { n5Intro } from '@/constants/courses/n5/intro.ts';
@@ -143,6 +144,11 @@ export async function loadCourseLessonNavItems(level: CourseLevel): Promise<NavI
     label: formatLessonNavLabel(lesson.number, lesson.title),
     path: lessonPath(level, lesson.id)
   }));
+
+  items.push({
+    label: { en: 'All vocabulary', vi: 'Tổng hợp từ vựng' },
+    path: courseVocabularyPath(level)
+  });
 
   if (level === 'n5') {
     items.unshift({

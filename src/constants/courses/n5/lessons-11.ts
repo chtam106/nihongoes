@@ -189,7 +189,10 @@ export const n5Lesson11: Lesson = {
       kanji: '切手',
       romaji: 'kitte',
       meaning: { en: 'postage stamp', vi: 'tem' },
-      ruby: [{ base: '切', reading: 'きっ' }]
+      ruby: [
+        { base: '切', reading: 'きっ' },
+        { base: '手', reading: 'て' }
+      ]
     },
     {
       kana: 'はがき',
@@ -201,21 +204,30 @@ export const n5Lesson11: Lesson = {
       kanji: '封筒',
       romaji: 'fūtō',
       meaning: { en: 'envelope', vi: 'phong bì' },
-      ruby: [{ base: '封', reading: 'ふう' }]
+      ruby: [
+        { base: '封', reading: 'ふう' },
+        { base: '筒', reading: 'とう' }
+      ]
     },
     {
       kana: 'りょうしん',
       kanji: '両親',
       romaji: 'ryōshin',
       meaning: { en: 'parents', vi: 'bố mẹ' },
-      ruby: [{ base: '両', reading: 'りょう' }]
+      ruby: [
+        { base: '両', reading: 'りょう' },
+        { base: '親', reading: 'しん' }
+      ]
     },
     {
       kana: 'きょうだい',
       kanji: '兄弟',
       romaji: 'kyōdai',
       meaning: { en: 'siblings', vi: 'anh chị em' },
-      ruby: [{ base: '兄', reading: 'きょう' }]
+      ruby: [
+        { base: '兄', reading: 'きょう' },
+        { base: '弟', reading: 'だい' }
+      ]
     },
     {
       kana: 'あに',
@@ -278,14 +290,21 @@ export const n5Lesson11: Lesson = {
       kanji: '外国',
       romaji: 'gaikoku',
       meaning: { en: 'foreign country', vi: 'nước ngoài' },
-      ruby: [{ base: '外', reading: 'がい' }]
+      ruby: [
+        { base: '外', reading: 'がい' },
+        { base: '国', reading: 'こく' }
+      ]
     },
     {
       kana: 'りゅうがくせい',
       kanji: '留学生',
       romaji: 'ryūgakusei',
       meaning: { en: 'international student', vi: 'du học sinh' },
-      ruby: [{ base: '留', reading: 'りゅう' }]
+      ruby: [
+        { base: '留', reading: 'りゅう' },
+        { base: '学', reading: 'がく' },
+        { base: '生', reading: 'せい' }
+      ]
     },
     {
       kana: 'クラス',
@@ -307,7 +326,10 @@ export const n5Lesson11: Lesson = {
       kanji: '～週間',
       romaji: '~shūkan',
       meaning: { en: 'counter for weeks', vi: 'counter tuần' },
-      ruby: [{ base: '週', reading: 'しゅう' }]
+      ruby: [
+        { base: '週', reading: 'しゅう' },
+        { base: '間', reading: 'かん' }
+      ]
     },
     {
       kana: '～かげつ',
@@ -338,7 +360,10 @@ export const n5Lesson11: Lesson = {
       kanji: '全部で',
       romaji: 'zenbu de',
       meaning: { en: 'in total', vi: 'tổng cộng' },
-      ruby: [{ base: '全', reading: 'ぜん' }]
+      ruby: [
+        { base: '全', reading: 'ぜん' },
+        { base: '部', reading: 'ぶ' }
+      ]
     },
     {
       kana: 'みんな',
@@ -355,14 +380,21 @@ export const n5Lesson11: Lesson = {
       kanji: '船便',
       romaji: 'funabin',
       meaning: { en: 'surface mail (by sea)', vi: 'gửi bằng đường biển' },
-      ruby: [{ base: '船', reading: 'ふな' }]
+      ruby: [
+        { base: '船', reading: 'ふな' },
+        { base: '便', reading: 'びん' }
+      ]
     },
     {
       kana: 'こうくうびん',
       kanji: '航空便',
       romaji: 'kōkūbin',
       meaning: { en: 'airmail', vi: 'gửi bằng đường hàng không' },
-      ruby: [{ base: '航', reading: 'こう' }]
+      ruby: [
+        { base: '航', reading: 'こう' },
+        { base: '空', reading: 'くう' },
+        { base: '便', reading: 'びん' }
+      ]
     }
   ],
   phrases: [
@@ -376,7 +408,10 @@ export const n5Lesson11: Lesson = {
       kanji: 'いい お天気ですね。',
       romaji: 'Ii o-tenki desu ne.',
       meaning: { en: 'Nice weather, is it not?', vi: 'Trời đẹp nhỉ.' },
-      ruby: [{ base: '天', reading: 'てん' }]
+      ruby: [
+        { base: '天', reading: 'てん' },
+        { base: '気', reading: 'き' }
+      ]
     },
     {
       kana: 'おでかけですか。',
@@ -1103,7 +1138,10 @@ export const n5Lesson11: Lesson = {
           kanji: '定食',
           romaji: 'teishoku',
           meaning: { en: 'set meal', vi: 'cơm suất' },
-          ruby: [{ base: '定', reading: 'てい' }]
+          ruby: [
+            { base: '定', reading: 'てい' },
+            { base: '食', reading: 'しょく' }
+          ]
         },
         {
           kana: 'てんどん',
@@ -1117,7 +1155,10 @@ export const n5Lesson11: Lesson = {
           kanji: '親子どん',
           romaji: 'oyakodon',
           meaning: { en: 'chicken and egg rice bowl', vi: 'cơm gà trứng' },
-          ruby: [{ base: '親', reading: 'おや' }]
+          ruby: [
+            { base: '親', reading: 'おや' },
+            { base: '子', reading: 'こ' }
+          ]
         },
         {
           kana: 'ぎゅうどん',
@@ -1131,7 +1172,10 @@ export const n5Lesson11: Lesson = {
           kanji: '焼き肉',
           romaji: 'yakiniku',
           meaning: { en: 'grilled meat', vi: 'thịt nướng' },
-          ruby: [{ base: '焼', reading: 'や' }]
+          ruby: [
+            { base: '焼', reading: 'や' },
+            { base: '肉', reading: 'にく' }
+          ]
         },
         {
           kana: 'みそしる',
@@ -1150,7 +1194,10 @@ export const n5Lesson11: Lesson = {
           kanji: '寿司',
           romaji: 'sushi',
           meaning: { en: 'sushi', vi: 'sushi' },
-          ruby: [{ base: '寿', reading: 'す' }]
+          ruby: [
+            { base: '寿', reading: 'す' },
+            { base: '司', reading: 'し' }
+          ]
         },
         {
           kana: 'うどん',
@@ -1182,7 +1229,10 @@ export const n5Lesson11: Lesson = {
           kanji: '紅茶',
           romaji: 'kōcha',
           meaning: { en: 'black tea', vi: 'trà đen' },
-          ruby: [{ base: '紅', reading: 'こう' }]
+          ruby: [
+            { base: '紅', reading: 'こう' },
+            { base: '茶', reading: 'ちゃ' }
+          ]
         },
         {
           kana: 'ジュース',

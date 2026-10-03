@@ -242,7 +242,7 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
   }
 
   return (
-    <>
+    <Box className="no-print">
       <Backdrop
         open={open}
         onClick={closeMenu}
@@ -354,6 +354,6 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
           </Stack>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }

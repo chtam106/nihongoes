@@ -75,6 +75,7 @@ function PassageCard({ passage }: PassageCardProps) {
         </Heading>
         {preferences.showTranslation && (
           <Button
+            className="no-print"
             size="small"
             startIcon={<TranslateOutlinedIcon />}
             onClick={() => setShowTranslation((previous) => !previous)}

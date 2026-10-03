@@ -155,7 +155,10 @@ export const n4Lesson43: Lesson = {
       kanji: '理由',
       romaji: 'riyuu',
       meaning: { en: 'reason', vi: 'lý do' },
-      ruby: [{ base: '理', reading: 'り' }]
+      ruby: [
+        { base: '理', reading: 'り' },
+        { base: '由', reading: 'ゆう' }
+      ]
     },
     {
       kana: 'あやまります',

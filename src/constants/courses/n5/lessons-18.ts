@@ -1217,7 +1217,10 @@ export const n5Lesson18: Lesson = {
           kanji: '逆立ちする',
           romaji: 'sakadachi suru',
           meaning: { en: 'to do a handstand', vi: 'lộn ngược, trồng cây chuối' },
-          ruby: [{ base: '逆', reading: 'さか' }]
+          ruby: [
+            { base: '逆', reading: 'さか' },
+            { base: '立', reading: 'だ' }
+          ]
         },
         {
           kana: 'はう',

@@ -367,10 +367,7 @@ export const n4Lesson28: Lesson = {
       kanji: '日にち',
       romaji: 'hinichi',
       meaning: { en: 'date, day (of an event)', vi: 'ngày, thời gian (sự kiện)' },
-      ruby: [
-        { base: '日', reading: 'ひ' },
-        { base: '日', reading: 'にち' }
-      ]
+      ruby: [{ base: '日', reading: 'ひ' }]
     },
     {
       kana: 'ど',

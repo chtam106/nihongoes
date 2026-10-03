@@ -174,7 +174,10 @@ export const n4Lesson46: Lesson = {
       kanji: '具合',
       romaji: 'guai',
       meaning: { en: 'condition, state', vi: 'tình trạng, trạng thái' },
-      ruby: [{ base: '具', reading: 'ぐ' }]
+      ruby: [
+        { base: '具', reading: 'ぐ' },
+        { base: '合', reading: 'あい' }
+      ]
     },
     {
       kana: 'むかいます',

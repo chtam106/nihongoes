@@ -16,6 +16,7 @@ import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import {
+  courseVocabularyPath,
   getCourse,
   getLesson,
   lessonGrammarPath,
@@ -41,7 +42,9 @@ import { PageContainer } from '@/components/page-container';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
+import { VocabCardGrid } from '@/components/vocab-card-grid';
 import { VocabHeadword } from '@/components/vocab-headword';
+import { hideOnPrintSx } from '@/theme/print.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
@@ -62,26 +65,7 @@ function VocabularySection({ lesson }: VocabularySectionProps) {
         <Heading component="h2">{t('course.vocabulary')}</Heading>
       </Stack>
 
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-          gap: 1.5
-        }}
-      >
-        {lesson.vocab.map((item, index) => (
-          <SpeakableSurface
-            key={`vocab-${index}-${item.kana}`}
-            text={item.speech ?? item.kana}
-            sx={{ p: 1.5 }}
-          >
-            <VocabHeadword item={item} />
-            <Typography variant="body2" sx={{ mt: 0.5 }}>
-              {item.meaning[locale]}
-            </Typography>
-          </SpeakableSurface>
-        ))}
-      </Box>
+      <VocabCardGrid items={lesson.vocab} locale={locale} />
     </Box>
   );
 }
@@ -360,6 +344,7 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
 
   return (
     <Paper
+      className="no-print"
       id="practice"
       elevation={0}
       sx={[tonalSurfaceSx, SECTION_ANCHOR_SX, { p: { xs: 2.5, md: 3 } }]}
@@ -417,7 +402,7 @@ function LessonPage({ level }: LessonPageProps) {
 
           <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
             <Typography variant="body1">{lesson.focus[locale]}</Typography>
-            <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
+            <HintText sx={[hideOnPrintSx, { mt: 1.5 }]}>{t('course.audioHint')}</HintText>
           </Paper>
         </Box>
 
@@ -430,7 +415,12 @@ function LessonPage({ level }: LessonPageProps) {
 
         <ReferenceSection lesson={lesson} />
 
-        <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'space-between' }}>
+        <Stack
+          className="no-print"
+          direction="row"
+          spacing={1.5}
+          sx={{ justifyContent: 'space-between' }}
+        >
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
             {previous && (
               <Button
@@ -454,6 +444,17 @@ function LessonPage({ level }: LessonPageProps) {
                 sx={{ px: 0 }}
               >
                 {t('course.nextLesson')}
+              </Button>
+            )}
+            {!next && (
+              <Button
+                component={RouterLink}
+                to={courseVocabularyPath(level)}
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                sx={{ px: 0 }}
+              >
+                {t('course.vocabIndexHeading')}
               </Button>
             )}
           </Box>

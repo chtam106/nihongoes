@@ -18,7 +18,10 @@ export const n5Lesson12: Lesson = {
       kanji: '簡単 [な]',
       romaji: 'kantan [na]',
       meaning: { en: 'simple, easy (na-adj)', vi: 'đơn giản, dễ (tính từ な)' },
-      ruby: [{ base: '簡', reading: 'かん' }]
+      ruby: [
+        { base: '簡', reading: 'かん' },
+        { base: '単', reading: 'たん' }
+      ]
     },
     {
       kana: 'ちかい',
@@ -56,14 +59,20 @@ export const n5Lesson12: Lesson = {
       kanji: '多い [人が～]',
       romaji: 'ōi [hito ga ~]',
       meaning: { en: 'many (people)', vi: 'nhiều (người)' },
-      ruby: [{ base: '多', reading: 'おお' }]
+      ruby: [
+        { base: '多', reading: 'おお' },
+        { base: '人', reading: 'ひと' }
+      ]
     },
     {
       kana: 'すくない [ひとが～]',
       kanji: '少ない [人が～]',
       romaji: 'sukunai [hito ga ~]',
       meaning: { en: 'few (people)', vi: 'ít (người)' },
-      ruby: [{ base: '少', reading: 'すく' }]
+      ruby: [
+        { base: '少', reading: 'すく' },
+        { base: '人', reading: 'ひと' }
+      ]
     },
     {
       kana: 'あたたかい',
@@ -123,7 +132,10 @@ export const n5Lesson12: Lesson = {
       kanji: '季節',
       romaji: 'kisetsu',
       meaning: { en: 'season', vi: 'mùa' },
-      ruby: [{ base: '季', reading: 'き' }]
+      ruby: [
+        { base: '季', reading: 'き' },
+        { base: '節', reading: 'せつ' }
+      ]
     },
     {
       kana: 'はる',
@@ -305,7 +317,10 @@ export const n5Lesson12: Lesson = {
       kanji: '紅葉',
       romaji: 'momiji',
       meaning: { en: 'red maple leaves', vi: 'lá đỏ, lá phong' },
-      ruby: [{ base: '紅', reading: 'もみ' }]
+      ruby: [
+        { base: '紅', reading: 'もみ' },
+        { base: '葉', reading: 'じ' }
+      ]
     },
     {
       kana: 'どちら',
@@ -1179,7 +1194,8 @@ export const n5Lesson12: Lesson = {
           meaning: { en: 'Gion Festival (Kyoto)', vi: 'Lễ hội Gion (Kyoto)' },
           ruby: [
             { base: '祇', reading: 'ぎ' },
-            { base: '園', reading: 'おん' }
+            { base: '園', reading: 'おん' },
+            { base: '祭', reading: 'まつり' }
           ]
         },
         {
@@ -1189,7 +1205,8 @@ export const n5Lesson12: Lesson = {
           meaning: { en: 'Kanda Festival (Tokyo)', vi: 'Lễ hội Kanda (Tokyo)' },
           ruby: [
             { base: '神', reading: 'かん' },
-            { base: '田', reading: 'だ' }
+            { base: '田', reading: 'だ' },
+            { base: '祭', reading: 'まつり' }
           ]
         },
         {
@@ -1199,7 +1216,8 @@ export const n5Lesson12: Lesson = {
           meaning: { en: 'Tenjin Festival (Osaka)', vi: 'Lễ hội Tenjin (Osaka)' },
           ruby: [
             { base: '天', reading: 'てん' },
-            { base: '神', reading: 'じん' }
+            { base: '神', reading: 'じん' },
+            { base: '祭', reading: 'まつり' }
           ]
         },
         {
@@ -1207,7 +1225,11 @@ export const n5Lesson12: Lesson = {
           kanji: '鹿苑寺',
           romaji: 'Rokuon-ji',
           meaning: { en: 'Rokuon-ji (Golden Pavilion, Kyoto)', vi: 'Chùa Rokuon (Kinkaku, Kyoto)' },
-          ruby: [{ base: '鹿', reading: 'ろく' }]
+          ruby: [
+            { base: '鹿', reading: 'ろく' },
+            { base: '苑', reading: 'おん' },
+            { base: '寺', reading: 'じ' }
+          ]
         },
         {
           kana: 'ふじさん',
@@ -1236,7 +1258,10 @@ export const n5Lesson12: Lesson = {
           kanji: '皇居',
           romaji: 'Kōkyo',
           meaning: { en: 'Imperial Palace (Tokyo)', vi: 'Hoàng cung (Tokyo)' },
-          ruby: [{ base: '皇', reading: 'こう' }]
+          ruby: [
+            { base: '皇', reading: 'こう' },
+            { base: '居', reading: 'きょ' }
+          ]
         },
         {
           kana: 'とうだいじ',
@@ -1254,7 +1279,10 @@ export const n5Lesson12: Lesson = {
           kanji: '原爆ドーム',
           romaji: 'Genbaku Dōmu',
           meaning: { en: 'Atomic Bomb Dome (Hiroshima)', vi: 'Nhà dom Genbaku (Hiroshima)' },
-          ruby: [{ base: '原', reading: 'げん' }]
+          ruby: [
+            { base: '原', reading: 'げん' },
+            { base: '爆', reading: 'ばく' }
+          ]
         },
         {
           kana: 'ひめじじょう',
@@ -1279,7 +1307,10 @@ export const n5Lesson12: Lesson = {
           kanji: '香港',
           romaji: 'Honkon',
           meaning: { en: 'Hong Kong', vi: 'Hồng Kông' },
-          ruby: [{ base: '香', reading: 'ホン' }]
+          ruby: [
+            { base: '香', reading: 'ホン' },
+            { base: '港', reading: 'コン' }
+          ]
         },
         {
           kana: 'シンガポール',

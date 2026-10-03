@@ -1,4 +1,4 @@
-import { COURSE_LEVELS, coursePath } from '@/constants/courses/levels.ts';
+import { COURSE_LEVELS, coursePath, courseVocabularyPath } from '@/constants/courses/levels.ts';
 
 type RouteNode = string | { readonly [key: string]: RouteNode };
 
@@ -58,7 +58,7 @@ export const SITEMAP_PATHS = routeEntries.map((entry) => entry.path);
 
 const pathToSeoKey = Object.fromEntries(routeEntries.map((entry) => [entry.path, entry.seoKey]));
 
-export type SeoRouteKey = (typeof routeEntries)[number]['seoKey'] | 'notFound';
+export type SeoRouteKey = (typeof routeEntries)[number]['seoKey'] | 'notFound' | 'courseVocabulary';
 
 export function getSeoRouteKey(pathname: string): SeoRouteKey {
   if (pathname === routes.n5.intro) {
@@ -70,6 +70,10 @@ export function getSeoRouteKey(pathname: string): SeoRouteKey {
   }
 
   for (const level of COURSE_LEVELS) {
+    if (pathname === courseVocabularyPath(level)) {
+      return 'courseVocabulary';
+    }
+
     if (pathname === coursePath(level) || pathname.startsWith(`${coursePath(level)}/`)) {
       return level as SeoRouteKey;
     }

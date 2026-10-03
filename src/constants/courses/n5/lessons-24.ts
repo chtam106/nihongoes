@@ -59,21 +59,30 @@ export const n5Lesson24: Lesson = {
       kanji: '紹介します',
       romaji: 'shōkai shimasu',
       meaning: { en: 'to introduce', vi: 'giới thiệu' },
-      ruby: [{ base: '紹', reading: 'しょう' }]
+      ruby: [
+        { base: '紹', reading: 'しょう' },
+        { base: '介', reading: 'かい' }
+      ]
     },
     {
       kana: 'あんないします',
       kanji: '案内します',
       romaji: 'annai shimasu',
       meaning: { en: 'to show around, to guide', vi: 'hướng dẫn, dẫn đi tham quan' },
-      ruby: [{ base: '案', reading: 'あん' }]
+      ruby: [
+        { base: '案', reading: 'あん' },
+        { base: '内', reading: 'ない' }
+      ]
     },
     {
       kana: 'せつめいします',
       kanji: '説明します',
       romaji: 'setsumei shimasu',
       meaning: { en: 'to explain', vi: 'giải thích' },
-      ruby: [{ base: '説', reading: 'せつ' }]
+      ruby: [
+        { base: '説', reading: 'せつ' },
+        { base: '明', reading: 'めい' }
+      ]
     },
     {
       kana: 'コーヒーをいれます',
@@ -105,42 +114,60 @@ export const n5Lesson24: Lesson = {
       kanji: '準備',
       romaji: 'junbi',
       meaning: { en: 'preparation', vi: 'sự chuẩn bị' },
-      ruby: [{ base: '準', reading: 'じゅん' }]
+      ruby: [
+        { base: '準', reading: 'じゅん' },
+        { base: '備', reading: 'び' }
+      ]
     },
     {
       kana: 'じゅんびします',
       kanji: '準備します',
       romaji: 'junbi shimasu',
       meaning: { en: 'to prepare', vi: 'chuẩn bị' },
-      ruby: [{ base: '準', reading: 'じゅん' }]
+      ruby: [
+        { base: '準', reading: 'じゅん' },
+        { base: '備', reading: 'び' }
+      ]
     },
     {
       kana: 'いみ',
       kanji: '意味',
       romaji: 'imi',
       meaning: { en: 'meaning', vi: 'nghĩa' },
-      ruby: [{ base: '意', reading: 'い' }]
+      ruby: [
+        { base: '意', reading: 'い' },
+        { base: '味', reading: 'み' }
+      ]
     },
     {
       kana: 'おかし',
       kanji: 'お菓子',
       romaji: 'okashi',
       meaning: { en: 'sweets, snacks', vi: 'bánh kẹo, đồ ngọt' },
-      ruby: [{ base: '菓', reading: 'か' }]
+      ruby: [
+        { base: '菓', reading: 'か' },
+        { base: '子', reading: 'し' }
+      ]
     },
     {
       kana: 'ぜんぶ',
       kanji: '全部',
       romaji: 'zenbu',
       meaning: { en: 'all, everything', vi: 'tất cả, toàn bộ' },
-      ruby: [{ base: '全', reading: 'ぜん' }]
+      ruby: [
+        { base: '全', reading: 'ぜん' },
+        { base: '部', reading: 'ぶ' }
+      ]
     },
     {
       kana: 'じぶんで',
       kanji: '自分で',
       romaji: 'jibun de',
       meaning: { en: "by oneself, on one's own", vi: 'tự mình, tự làm' },
-      ruby: [{ base: '自', reading: 'じ' }]
+      ruby: [
+        { base: '自', reading: 'じ' },
+        { base: '分', reading: 'ぶん' }
+      ]
     },
     {
       kana: 'ほかに',
@@ -159,7 +186,10 @@ export const n5Lesson24: Lesson = {
       kanji: '弁当',
       romaji: 'bentō',
       meaning: { en: 'boxed lunch', vi: 'cơm hộp' },
-      ruby: [{ base: '弁', reading: 'べん' }]
+      ruby: [
+        { base: '弁', reading: 'べん' },
+        { base: '当', reading: 'とう' }
+      ]
     }
   ],
   phrases: [],
@@ -651,7 +681,10 @@ export const n5Lesson24: Lesson = {
           kanji: '子供',
           romaji: 'kodomo',
           meaning: { en: 'child, children', vi: 'con, trẻ em' },
-          ruby: [{ base: '子', reading: 'こ' }]
+          ruby: [
+            { base: '子', reading: 'こ' },
+            { base: '供', reading: 'ども' }
+          ]
         }
       ]
     }

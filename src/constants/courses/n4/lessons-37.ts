@@ -117,7 +117,10 @@ export const n4Lesson37: Lesson = {
       kanji: '翻訳します',
       romaji: 'honyaku shimasu',
       meaning: { en: 'to translate', vi: 'biên dịch' },
-      ruby: [{ base: '翻', reading: 'ほん' }]
+      ruby: [
+        { base: '翻', reading: 'ほん' },
+        { base: '訳', reading: 'やく' }
+      ]
     },
     {
       kana: 'はつめいします',

@@ -92,6 +92,7 @@ export function ScrollToTopButton() {
 
   return (
     <Fab
+      className="no-print"
       size="medium"
       aria-label={t('common.scrollTop')}
       onClick={handleScrollToTop}

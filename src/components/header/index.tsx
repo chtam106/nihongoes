@@ -26,6 +26,7 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
 
   return (
     <AppBar
+      className="no-print"
       position="fixed"
       elevation={0}
       sx={{

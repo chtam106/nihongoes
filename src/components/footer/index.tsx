@@ -10,6 +10,7 @@ export function Footer() {
 
   return (
     <Box
+      className="no-print"
       component="footer"
       sx={{
         mt: 'auto',

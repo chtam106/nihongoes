@@ -49,21 +49,30 @@ export const n5Lesson13: Lesson = {
       kanji: '結婚します',
       romaji: 'kekkon shimasu',
       meaning: { en: 'to get married', vi: 'kết hôn, cưới' },
-      ruby: [{ base: '結', reading: 'けっ' }]
+      ruby: [
+        { base: '結', reading: 'けっ' },
+        { base: '婚', reading: 'こん' }
+      ]
     },
     {
       kana: 'かいものします',
       kanji: '買い物します',
       romaji: 'kaimono shimasu',
       meaning: { en: 'to shop', vi: 'mua sắm' },
-      ruby: [{ base: '買', reading: 'か' }]
+      ruby: [
+        { base: '買', reading: 'か' },
+        { base: '物', reading: 'もの' }
+      ]
     },
     {
       kana: 'しょくじします',
       kanji: '食事します',
       romaji: 'shokuji shimasu',
       meaning: { en: 'to have a meal', vi: 'ăn cơm, dùng bữa' },
-      ruby: [{ base: '食', reading: 'しょく' }]
+      ruby: [
+        { base: '食', reading: 'しょく' },
+        { base: '事', reading: 'じ' }
+      ]
     },
     {
       kana: 'さんぽします',
@@ -73,14 +82,20 @@ export const n5Lesson13: Lesson = {
         en: 'to take a walk (公園を～: walk in the park)',
         vi: 'đi dạo (公園を～: dạo ở công viên)'
       },
-      ruby: [{ base: '散', reading: 'さん' }]
+      ruby: [
+        { base: '散', reading: 'さん' },
+        { base: '歩', reading: 'ぽ' }
+      ]
     },
     {
       kana: 'たいへん [な]',
       kanji: '大変 [な]',
       romaji: 'taihen [na]',
       meaning: { en: 'tough, hard (na-adj)', vi: 'vất vả, khó khăn (tính từ な)' },
-      ruby: [{ base: '大', reading: 'たい' }]
+      ruby: [
+        { base: '大', reading: 'たい' },
+        { base: '変', reading: 'へん' }
+      ]
     },
     {
       kana: 'ほしい',
@@ -120,7 +135,10 @@ export const n5Lesson13: Lesson = {
       kanji: '美術',
       romaji: 'bijutsu',
       meaning: { en: 'fine arts', vi: 'mỹ thuật' },
-      ruby: [{ base: '美', reading: 'び' }]
+      ruby: [
+        { base: '美', reading: 'び' },
+        { base: '術', reading: 'じゅつ' }
+      ]
     },
     {
       kana: 'つり',
@@ -139,14 +157,20 @@ export const n5Lesson13: Lesson = {
       kanji: '週末',
       romaji: 'shūmatsu',
       meaning: { en: 'weekend', vi: 'cuối tuần' },
-      ruby: [{ base: '週', reading: 'しゅう' }]
+      ruby: [
+        { base: '週', reading: 'しゅう' },
+        { base: '末', reading: 'まつ' }
+      ]
     },
     {
       kana: 'おしょうがつ',
       kanji: 'お正月',
       romaji: 'oshōgatsu',
       meaning: { en: 'New Year', vi: 'Tết' },
-      ruby: [{ base: '正', reading: 'しょう' }]
+      ruby: [
+        { base: '正', reading: 'しょう' },
+        { base: '月', reading: 'がつ' }
+      ]
     },
     {
       kana: '～ごろ',
@@ -205,7 +229,10 @@ export const n5Lesson13: Lesson = {
       kanji: '定食',
       romaji: 'teishoku',
       meaning: { en: 'set meal', vi: 'cơm suất' },
-      ruby: [{ base: '定', reading: 'てい' }]
+      ruby: [
+        { base: '定', reading: 'てい' },
+        { base: '食', reading: 'しょく' }
+      ]
     },
     {
       kana: 'ぎゅうどん',
@@ -1095,7 +1122,11 @@ export const n5Lesson13: Lesson = {
           kanji: '博物館',
           romaji: 'hakubutsukan',
           meaning: { en: 'museum', vi: 'bảo tàng' },
-          ruby: [{ base: '博', reading: 'はく' }]
+          ruby: [
+            { base: '博', reading: 'はく' },
+            { base: '物', reading: 'ぶつ' },
+            { base: '館', reading: 'かん' }
+          ]
         },
         {
           kana: 'びじゅつかん',
@@ -1104,7 +1135,8 @@ export const n5Lesson13: Lesson = {
           meaning: { en: 'art museum', vi: 'bảo tàng mỹ thuật' },
           ruby: [
             { base: '美', reading: 'び' },
-            { base: '術', reading: 'じゅつ' }
+            { base: '術', reading: 'じゅつ' },
+            { base: '館', reading: 'かん' }
           ]
         },
         {
@@ -1112,28 +1144,43 @@ export const n5Lesson13: Lesson = {
           kanji: '図書館',
           romaji: 'toshokan',
           meaning: { en: 'library', vi: 'thư viện' },
-          ruby: [{ base: '図', reading: 'と' }]
+          ruby: [
+            { base: '図', reading: 'と' },
+            { base: '書', reading: 'しょ' },
+            { base: '館', reading: 'かん' }
+          ]
         },
         {
           kana: 'えいがかん',
           kanji: '映画館',
           romaji: 'eigakan',
           meaning: { en: 'movie theater', vi: 'rạp chiếu phim' },
-          ruby: [{ base: '映', reading: 'えい' }]
+          ruby: [
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '館', reading: 'かん' }
+          ]
         },
         {
           kana: 'こうえん',
           kanji: '公園',
           romaji: 'kōen',
           meaning: { en: 'park', vi: 'công viên' },
-          ruby: [{ base: '公', reading: 'こう' }]
+          ruby: [
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' }
+          ]
         },
         {
           kana: 'ゆうえんち',
           kanji: '遊園地',
           romaji: 'yūenchi',
           meaning: { en: 'amusement park', vi: 'công viên giải trí' },
-          ruby: [{ base: '遊', reading: 'ゆう' }]
+          ruby: [
+            { base: '遊', reading: 'ゆう' },
+            { base: '園', reading: 'えん' },
+            { base: '地', reading: 'ち' }
+          ]
         },
         {
           kana: 'おてら',
@@ -1147,28 +1194,41 @@ export const n5Lesson13: Lesson = {
           kanji: '神社',
           romaji: 'jinja',
           meaning: { en: 'Shinto shrine', vi: 'đền thờ đạo Thần' },
-          ruby: [{ base: '神', reading: 'じん' }]
+          ruby: [
+            { base: '神', reading: 'じん' },
+            { base: '社', reading: 'じゃ' }
+          ]
         },
         {
           kana: 'だいがく',
           kanji: '大学',
           romaji: 'daigaku',
           meaning: { en: 'university', vi: 'trường đại học' },
-          ruby: [{ base: '大', reading: 'だい' }]
+          ruby: [
+            { base: '大', reading: 'だい' },
+            { base: '学', reading: 'がく' }
+          ]
         },
         {
           kana: 'けいさつしょ',
           kanji: '警察署',
           romaji: 'keisatsusho',
           meaning: { en: 'police station', vi: 'đồn cảnh sát' },
-          ruby: [{ base: '警', reading: 'けい' }]
+          ruby: [
+            { base: '警', reading: 'けい' },
+            { base: '察', reading: 'さつ' },
+            { base: '署', reading: 'しょ' }
+          ]
         },
         {
           kana: 'こうばん',
           kanji: '交番',
           romaji: 'kōban',
           meaning: { en: 'police box', vi: 'bốt cảnh sát' },
-          ruby: [{ base: '交', reading: 'こう' }]
+          ruby: [
+            { base: '交', reading: 'こう' },
+            { base: '番', reading: 'ばん' }
+          ]
         },
         {
           kana: 'コンビニ',
@@ -1190,7 +1250,11 @@ export const n5Lesson13: Lesson = {
           kanji: '喫茶店',
           romaji: 'kissaten',
           meaning: { en: 'coffee shop, cafe', vi: 'quán giải khát' },
-          ruby: [{ base: '喫', reading: 'きっ' }]
+          ruby: [
+            { base: '喫', reading: 'きっ' },
+            { base: '茶', reading: 'さ' },
+            { base: '店', reading: 'てん' }
+          ]
         }
       ]
     },

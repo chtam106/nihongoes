@@ -79,6 +79,28 @@ function scanChunk(chunk, label) {
     }
   }
 
+  for (const m of chunk.matchAll(/kanji:\s*'((?:\\'|[^'])*)'/g)) {
+    const surface = m[1].replace(/\\'/g, "'");
+    if (!kanji.test(surface)) continue;
+
+    const needle = m[0];
+    const [objStart, objEnd] = objectBoundsContaining(chunk, m.index, needle);
+    const obj = chunk.slice(objStart, objEnd);
+    const kanaM = obj.match(/kana:\s*'((?:\\'|[^'])*)'/);
+    const kana = kanaM ? kanaM[1].replace(/\\'/g, "'") : '';
+    if (kana && surface === kana) continue;
+
+    const rm = obj.match(/ruby:\s*\[([\s\S]*?)\]/);
+    const bases = parseBases(rm?.[1]);
+    if (!bases.length) issues.push({ file: label, kind: 'kanji-no-ruby', kanji: surface });
+    else {
+      const { miss, stuck } = auditJp(surface, bases);
+      if (miss.length || stuck.length) {
+        issues.push({ file: label, kind: 'ruby-mismatch', kanji: surface, miss, stuck });
+      }
+    }
+  }
+
   for (const m of chunk.matchAll(/pattern:\s*'([^']*)'/g)) {
     const pattern = m[1];
     const [objStart, objEnd] = objectBounds(chunk, m.index);

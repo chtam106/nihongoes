@@ -282,7 +282,10 @@ export const n5Lesson16: Lesson = {
       kanji: '神社',
       romaji: 'jinja',
       meaning: { en: 'Shinto shrine', vi: 'đền thờ đạo Thần' },
-      ruby: [{ base: '神', reading: 'じん' }]
+      ruby: [
+        { base: '神', reading: 'じん' },
+        { base: '社', reading: 'じゃ' }
+      ]
     },
     {
       kana: '～ばん',
@@ -1342,7 +1345,10 @@ export const n5Lesson16: Lesson = {
           kanji: 'お振り込み',
           romaji: 'o-furikomi',
           meaning: { en: 'bank transfer (to another account)', vi: 'chuyển khoản' },
-          ruby: [{ base: '振', reading: 'ふ' }]
+          ruby: [
+            { base: '振', reading: 'ふ' },
+            { base: '込', reading: 'こ' }
+          ]
         },
         {
           kana: 'おふりかえ',
@@ -1352,7 +1358,10 @@ export const n5Lesson16: Lesson = {
             en: 'transfer between your own accounts',
             vi: 'chuyển giữa các tài khoản của mình'
           },
-          ruby: [{ base: '振', reading: 'ふ' }]
+          ruby: [
+            { base: '振', reading: 'ふ' },
+            { base: '替', reading: 'か' }
+          ]
         },
         {
           kana: 'おひきだし',

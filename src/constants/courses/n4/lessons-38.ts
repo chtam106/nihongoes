@@ -287,7 +287,10 @@ export const n4Lesson38: Lesson = {
       kanji: '整理します',
       romaji: 'seiri shimasu',
       meaning: { en: 'to organize, to tidy up', vi: 'sắp xếp' },
-      ruby: [{ base: '整', reading: 'せい' }]
+      ruby: [
+        { base: '整', reading: 'せい' },
+        { base: '理', reading: 'り' }
+      ]
     },
     {
       kana: 'ほうほう',
@@ -309,7 +312,10 @@ export const n4Lesson38: Lesson = {
       kanji: '判子',
       romaji: 'hanko',
       meaning: { en: 'personal seal, stamp', vi: 'con dấu' },
-      ruby: [{ base: '判', reading: 'はん' }]
+      ruby: [
+        { base: '判', reading: 'はん' },
+        { base: '子', reading: 'こ' }
+      ]
     },
     {
       kana: 'おします',
@@ -323,14 +329,20 @@ export const n4Lesson38: Lesson = {
       kanji: '双子',
       romaji: 'futago',
       meaning: { en: 'twins', vi: 'sinh đôi' },
-      ruby: [{ base: '双', reading: 'ふた' }]
+      ruby: [
+        { base: '双', reading: 'ふた' },
+        { base: '子', reading: 'ご' }
+      ]
     },
     {
       kana: 'しまい',
       kanji: '姉妹',
       romaji: 'shimai',
       meaning: { en: 'sisters', vi: 'chị em' },
-      ruby: [{ base: '姉', reading: 'しま' }]
+      ruby: [
+        { base: '姉', reading: 'しま' },
+        { base: '妹', reading: 'い' }
+      ]
     },
     {
       kana: 'にています',
@@ -368,8 +380,7 @@ export const n4Lesson38: Lesson = {
       meaning: { en: 'time passes', vi: 'thời gian trôi' },
       ruby: [
         { base: '時', reading: 'じ' },
-        { base: '間', reading: 'かん' },
-        { base: '立', reading: 'た' }
+        { base: '間', reading: 'かん' }
       ]
     },
     {
