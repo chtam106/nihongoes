@@ -32,7 +32,7 @@ function AppLayout({ children }: AppLayoutProps) {
   useEffect(() => installRubyAwareCopyHandler(), []);
 
   return (
-    <Box sx={{ display: 'flex', minHeight: '100svh' }}>
+    <Box sx={{ display: 'flex', minHeight: '100svh', '@media print': { minHeight: 'auto' } }}>
       <ScrollManager />
 
       <Header
@@ -54,10 +54,11 @@ function AppLayout({ children }: AppLayoutProps) {
           width: { md: `calc(100% - ${drawerWidth}px)` },
           minWidth: 0,
           display: 'flex',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          '@media print': { width: '100%' }
         }}
       >
-        <Toolbar />
+        <Toolbar className="no-print" />
 
         {children}
 

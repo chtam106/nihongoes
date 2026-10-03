@@ -38,7 +38,7 @@ export function KanjiPracticePanel({ trackSlug, lesson }: KanjiPracticePanelProp
   ];
 
   return (
-    <Paper elevation={0} sx={[tonalSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
+    <Paper className="no-print" elevation={0} sx={[tonalSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
       <Box sx={{ mb: 2 }}>
         <Heading scale="subsection" component="h2">
           {t('kanji.practiceHeading')}

@@ -40,6 +40,7 @@ export function Menu({ drawerWidth, mobileOpen, onClose }: MenuProps) {
 
   return (
     <Box
+      className="no-print"
       component="nav"
       aria-label={t('nav.mainNavigation')}
       sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}

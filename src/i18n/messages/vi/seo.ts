@@ -7,6 +7,10 @@ export const seo = {
     title: 'Không tìm thấy trang (404)',
     description: 'Không tìm thấy trang bạn yêu cầu.'
   },
+  courseVocabulary: {
+    title: 'Tổng hợp từ vựng',
+    description: 'Toàn bộ từ vựng của khóa học JLPT này, gom theo từng bài.'
+  },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
     description:

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Box, Link } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { hideOnPrintSx } from '@/theme/print.ts';
 
 type SectionHeaderWithTranslationToggleProps = {
   title: ReactNode;
@@ -34,12 +35,14 @@ export function SectionHeaderWithTranslationToggle({
     >
       <Box sx={{ flex: '0 1 auto', minWidth: 0, maxWidth: '100%' }}>{title}</Box>
       <Link
+        className="no-print"
         component="button"
         type="button"
         variant="body2"
         underline="none"
         onClick={onToggle}
         sx={{
+          ...hideOnPrintSx,
           flex: '0 0 auto',
           flexShrink: 0,
           lineHeight: 1.66,
