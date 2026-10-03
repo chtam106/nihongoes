@@ -9,6 +9,7 @@ import { KanjiCard } from '@/components/kanji-card';
 import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
+import { hideOnPrintSx } from '@/theme/print.ts';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { KANJI_BASE_PATH, kanjiLessonPath } from '@/constants/kanji/index.ts';
 import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
@@ -60,7 +61,7 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
           <Heading component="h1">{lesson.title[locale]}</Heading>
         </Box>
 
-        <HintText>{t('kanji.detailHint')}</HintText>
+        <HintText sx={hideOnPrintSx}>{t('kanji.detailHint')}</HintText>
 
         <KanjiReadingsNote collapsible />
 
@@ -74,7 +75,12 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
 
         <KanjiPracticePanel trackSlug={track.slug} lesson={lesson} />
 
-        <Stack direction="row" spacing={1.5} sx={{ justifyContent: 'space-between' }}>
+        <Stack
+          className="no-print"
+          direction="row"
+          spacing={1.5}
+          sx={{ justifyContent: 'space-between' }}
+        >
           <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
             {previous && (
               <Button

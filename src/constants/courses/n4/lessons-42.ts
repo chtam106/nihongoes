@@ -56,7 +56,10 @@ export const n4Lesson42: Lesson = {
       kanji: '丈夫[な]',
       romaji: 'jōbu [na]',
       meaning: { en: 'sturdy, durable', vi: 'chắc chắn' },
-      ruby: [{ base: '丈', reading: 'じょう' }]
+      ruby: [
+        { base: '丈', reading: 'じょう' },
+        { base: '夫', reading: 'ぶ' }
+      ]
     },
     {
       kana: 'アパート',
@@ -991,7 +994,10 @@ export const n4Lesson42: Lesson = {
           kanji: '画鋲',
           romaji: 'gabyō',
           meaning: { en: 'thumbtack', vi: 'cái đinh bấm, đinh mũ' },
-          ruby: [{ base: '画', reading: 'が' }]
+          ruby: [
+            { base: '画', reading: 'が' },
+            { base: '鋲', reading: 'びょう' }
+          ]
         },
         {
           kana: 'カッター',
@@ -1056,7 +1062,10 @@ export const n4Lesson42: Lesson = {
           kanji: '定規',
           romaji: 'jōgi',
           meaning: { en: 'ruler', vi: 'cái thước' },
-          ruby: [{ base: '定', reading: 'じょう' }]
+          ruby: [
+            { base: '定', reading: 'じょう' },
+            { base: '規', reading: 'ぎ' }
+          ]
         },
         {
           kana: 'のこぎり',

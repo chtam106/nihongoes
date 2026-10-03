@@ -7,6 +7,10 @@ export const seo = {
     title: 'Page Not Found (404)',
     description: 'The page you requested could not be found.'
   },
+  courseVocabulary: {
+    title: 'All vocabulary',
+    description: 'Every vocabulary word from this JLPT course, grouped by lesson.'
+  },
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
     description:

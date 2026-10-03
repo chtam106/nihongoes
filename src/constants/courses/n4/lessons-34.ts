@@ -45,10 +45,7 @@ export const n4Lesson34: Lesson = {
         en: 'to notice, to become aware of [忘れ物に～: things left behind]',
         vi: 'để ý, chú ý [忘れ物に～: đồ để quên]'
       },
-      ruby: [
-        { base: '気', reading: 'き' },
-        { base: '付', reading: 'つ' }
-      ]
+      ruby: [{ base: '気', reading: 'き' }]
     },
     {
       kana: 'つけます',
@@ -63,10 +60,7 @@ export const n4Lesson34: Lesson = {
       kanji: '見つかります',
       romaji: 'mitsukarimasu',
       meaning: { en: 'to be found [かぎが～: a key]', vi: 'tìm thấy [かぎが～: chìa khóa]' },
-      ruby: [
-        { base: '見', reading: 'み' },
-        { base: '付', reading: 'つ' }
-      ]
+      ruby: [{ base: '見', reading: 'み' }]
     },
     {
       kana: 'しつもんします',
@@ -268,10 +262,7 @@ export const n4Lesson34: Lesson = {
       kanji: 'お茶をたてます',
       romaji: 'o-cha o tatemasu',
       meaning: { en: 'to make tea (in a tea ceremony)', vi: 'đánh trà (trong trà đạo)' },
-      ruby: [
-        { base: '茶', reading: 'ちゃ' },
-        { base: '点', reading: 'た' }
-      ]
+      ruby: [{ base: '茶', reading: 'ちゃ' }]
     },
     {
       kana: 'さきに',
@@ -345,10 +336,7 @@ export const n4Lesson34: Lesson = {
       kanji: '4分の1',
       romaji: 'yon-bun no ichi',
       meaning: { en: 'one fourth', vi: 'một phần tư' },
-      ruby: [
-        { base: '分', reading: 'ぶん' },
-        { base: '一', reading: 'いち' }
-      ]
+      ruby: [{ base: '分', reading: 'ぶん' }]
     },
     {
       kana: 'ちょうみりょう',

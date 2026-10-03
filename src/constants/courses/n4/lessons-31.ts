@@ -25,10 +25,7 @@ export const n4Lesson31: Lesson = {
       kanji: '見つけます',
       romaji: 'mitsukemasu',
       meaning: { en: 'to find', vi: 'tìm thấy' },
-      ruby: [
-        { base: '見', reading: 'み' },
-        { base: '付', reading: 'つ' }
-      ]
+      ruby: [{ base: '見', reading: 'み' }]
     },
     {
       kana: 'とります',

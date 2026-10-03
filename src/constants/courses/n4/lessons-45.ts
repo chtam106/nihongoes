@@ -109,7 +109,10 @@ export const n4Lesson45: Lesson = {
       kanji: '無理に',
       romaji: 'muri ni',
       meaning: { en: 'unreasonably, by force', vi: 'cố, gắng (làm không hợp lý)' },
-      ruby: [{ base: '無', reading: 'む' }]
+      ruby: [
+        { base: '無', reading: 'む' },
+        { base: '理', reading: 'り' }
+      ]
     },
     {
       kana: 'たのしみに しています',

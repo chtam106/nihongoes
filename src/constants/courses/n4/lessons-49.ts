@@ -18,7 +18,10 @@ export const n4Lesson49: Lesson = {
       kanji: '利用します',
       romaji: 'riyō shimasu',
       meaning: { en: 'to use, to utilize', vi: 'sử dụng' },
-      ruby: [{ base: '利', reading: 'り' }]
+      ruby: [
+        { base: '利', reading: 'り' },
+        { base: '用', reading: 'よう' }
+      ]
     },
     {
       kana: 'つとめます',
@@ -102,7 +105,10 @@ export const n4Lesson49: Lesson = {
       kanji: '旅館',
       romaji: 'ryokan',
       meaning: { en: 'Japanese-style inn', vi: 'nhà khách kiểu Nhật truyền thống' },
-      ruby: [{ base: '旅', reading: 'りょ' }]
+      ruby: [
+        { base: '旅', reading: 'りょ' },
+        { base: '館', reading: 'かん' }
+      ]
     },
     {
       kana: 'バスてい',
@@ -119,7 +125,10 @@ export const n4Lesson49: Lesson = {
         en: "someone else's wife (honorific of おくさん)",
         vi: 'vợ của người khác (kính ngữ của おくさん)'
       },
-      ruby: [{ base: '奥', reading: 'おく' }]
+      ruby: [
+        { base: '奥', reading: 'おく' },
+        { base: '様', reading: 'さま' }
+      ]
     },
     {
       kana: '〜さま',
@@ -148,7 +157,10 @@ export const n4Lesson49: Lesson = {
       kanji: '経歴',
       romaji: 'keireki',
       meaning: { en: 'career history, background', vi: 'lí lịch' },
-      ruby: [{ base: '経', reading: 'けい' }]
+      ruby: [
+        { base: '経', reading: 'けい' },
+        { base: '歴', reading: 'れき' }
+      ]
     },
     {
       kana: 'いがくぶ',
@@ -166,7 +178,10 @@ export const n4Lesson49: Lesson = {
       kanji: '目指します',
       romaji: 'mezashimasu',
       meaning: { en: 'to aim for, to aspire to', vi: 'hướng đến, muốn trở thành' },
-      ruby: [{ base: '目', reading: 'め' }]
+      ruby: [
+        { base: '目', reading: 'め' },
+        { base: '指', reading: 'ざ' }
+      ]
     },
     {
       kana: 'すすみます',
@@ -180,14 +195,20 @@ export const n4Lesson49: Lesson = {
       kanji: 'iPS 細胞',
       romaji: 'iPS saibō',
       meaning: { en: 'iPS cell', vi: 'tế bào iPS' },
-      ruby: [{ base: '細', reading: 'さい' }]
+      ruby: [
+        { base: '細', reading: 'さい' },
+        { base: '胞', reading: 'ぼう' }
+      ]
     },
     {
       kana: 'かいはつします',
       kanji: '開発します',
       romaji: 'kaihatsu shimasu',
       meaning: { en: 'to develop', vi: 'phát triển' },
-      ruby: [{ base: '開', reading: 'かい' }]
+      ruby: [
+        { base: '開', reading: 'かい' },
+        { base: '発', reading: 'はつ' }
+      ]
     },
     {
       kana: 'マウス',
@@ -204,7 +225,10 @@ export const n4Lesson49: Lesson = {
       kanji: '受賞します',
       romaji: 'jushō shimasu',
       meaning: { en: 'to receive a prize or award', vi: 'nhận giải thưởng' },
-      ruby: [{ base: '受', reading: 'じゅ' }]
+      ruby: [
+        { base: '受', reading: 'じゅ' },
+        { base: '賞', reading: 'しょう' }
+      ]
     },
     {
       kana: 'こうえんかい',
@@ -256,7 +280,10 @@ export const n4Lesson49: Lesson = {
         en: 'Excuse me for ending the call. (humble of 失礼します)',
         vi: 'Xin phép thầy tôi cúp máy ạ.'
       },
-      ruby: [{ base: '失', reading: 'しつ' }]
+      ruby: [
+        { base: '失', reading: 'しつ' },
+        { base: '礼', reading: 'れい' }
+      ]
     }
   ],
   conversation: [

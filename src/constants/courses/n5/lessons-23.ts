@@ -140,7 +140,10 @@ export const n5Lesson23: Lesson = {
       kanji: '機械',
       romaji: 'kikai',
       meaning: { en: 'machine', vi: 'máy móc' },
-      ruby: [{ base: '機', reading: 'き' }]
+      ruby: [
+        { base: '機', reading: 'き' },
+        { base: '械', reading: 'かい' }
+      ]
     },
     {
       kana: 'つまみ',
@@ -152,14 +155,20 @@ export const n5Lesson23: Lesson = {
       kanji: '故障',
       romaji: 'koshō',
       meaning: { en: 'breakdown, malfunction', vi: 'hỏng, sự cố' },
-      ruby: [{ base: '故', reading: 'こ' }]
+      ruby: [
+        { base: '故', reading: 'こ' },
+        { base: '障', reading: 'しょう' }
+      ]
     },
     {
       kana: 'こしょうします',
       kanji: '故障します',
       romaji: 'koshō shimasu',
       meaning: { en: 'to break down, to malfunction', vi: 'bị hỏng, trục trặc' },
-      ruby: [{ base: '故', reading: 'こ' }]
+      ruby: [
+        { base: '故', reading: 'こ' },
+        { base: '障', reading: 'しょう' }
+      ]
     },
     {
       kana: 'みち',
@@ -226,14 +235,20 @@ export const n5Lesson23: Lesson = {
       kanji: '正月',
       romaji: 'shōgatsu',
       meaning: { en: 'New Year (January)', vi: 'Tết, năm mới (tháng Giêng)' },
-      ruby: [{ base: '正', reading: 'しょう' }]
+      ruby: [
+        { base: '正', reading: 'しょう' },
+        { base: '月', reading: 'がつ' }
+      ]
     },
     {
       kana: 'たてもの',
       kanji: '建物',
       romaji: 'tatemono',
       meaning: { en: 'building', vi: 'tòa nhà, công trình' },
-      ruby: [{ base: '建', reading: 'たて' }]
+      ruby: [
+        { base: '建', reading: 'たて' },
+        { base: '物', reading: 'もの' }
+      ]
     },
     {
       kana: 'がいこくじんとうろくしょう',
@@ -759,14 +774,20 @@ export const n5Lesson23: Lesson = {
           kanji: '交差',
           romaji: 'kōsa',
           meaning: { en: 'crossing, intersection', vi: 'giao nhau' },
-          ruby: [{ base: '交', reading: 'こう' }]
+          ruby: [
+            { base: '交', reading: 'こう' },
+            { base: '差', reading: 'さ' }
+          ]
         },
         {
           kana: 'いち',
           kanji: '位置',
           romaji: 'ichi',
           meaning: { en: 'location, position', vi: 'vị trí' },
-          ruby: [{ base: '位', reading: 'い' }]
+          ruby: [
+            { base: '位', reading: 'い' },
+            { base: '置', reading: 'ち' }
+          ]
         },
         {
           kana: 'とまれ',

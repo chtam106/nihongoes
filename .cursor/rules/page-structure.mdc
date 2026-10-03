@@ -93,6 +93,9 @@ screen"; a future improvement is to make the boundary rely on
 | `/alphabet/combined` | `.../alphabet/combined/_components/combined-chart.tsx` |
 | `/alphabet/exercise/<kind>` | `.../alphabet/exercise/<kind>/_components/<kind>-exercise.tsx` |
 | `/:level` | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx` |
+| `/:level/intro` | `.../[jlptLevel]/intro/page.tsx` |
+| `/:level/vocabulary` | `.../[jlptLevel]/vocabulary/_components/vocab-index-page.tsx` |
+| `/:level/reference` | `.../[jlptLevel]/reference/page.tsx` |
 | `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
 | `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |
 | `/:level/:lessonId/{grammar,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |

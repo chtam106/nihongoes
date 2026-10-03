@@ -6,6 +6,7 @@ import {
   courseIntroPath,
   coursePath,
   courseReferencePath,
+  courseVocabularyPath,
   lessonGrammarPath,
   lessonPath,
   lessonReadingPath,
@@ -95,6 +96,7 @@ export const COURSE_SITEMAP_PATHS: string[] = COURSE_LEVELS.flatMap((level) => {
 
   return [
     coursePath(level),
+    courseVocabularyPath(level),
     ...(level === 'n5' ? [courseIntroPath(level), courseReferencePath(level)] : []),
     ...lessons.map((lesson) => lessonPath(level, lesson.id)),
     ...lessons.map((lesson) => lessonVocabularyPath(level, lesson.id)),

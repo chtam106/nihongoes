@@ -59,7 +59,10 @@ export const n4Lesson50: Lesson = {
         en: 'to see, to look (humble of みます)',
         vi: 'xem (khiêm nhường ngữ của みます)'
       },
-      ruby: [{ base: '拝', reading: 'はい' }]
+      ruby: [
+        { base: '拝', reading: 'はい' },
+        { base: '見', reading: 'けん' }
+      ]
     },
     {
       kana: 'ぞんじます',
@@ -164,14 +167,20 @@ export const n4Lesson50: Lesson = {
       kanji: '緊張します',
       romaji: 'kinchō shimasu',
       meaning: { en: 'to be nervous', vi: 'hồi hộp' },
-      ruby: [{ base: '緊', reading: 'きん' }]
+      ruby: [
+        { base: '緊', reading: 'きん' },
+        { base: '張', reading: 'ちょう' }
+      ]
     },
     {
       kana: 'しょうきん',
       kanji: '賞金',
       romaji: 'shōkin',
       meaning: { en: 'prize money', vi: 'tiền thưởng' },
-      ruby: [{ base: '賞', reading: 'しょう' }]
+      ruby: [
+        { base: '賞', reading: 'しょう' },
+        { base: '金', reading: 'きん' }
+      ]
     },
     {
       kana: 'きりん',
@@ -196,7 +205,10 @@ export const n4Lesson50: Lesson = {
       kanji: '応援します',
       romaji: 'ōen shimasu',
       meaning: { en: 'to support, to cheer on', vi: 'động viên' },
-      ruby: [{ base: '応', reading: 'おう' }]
+      ruby: [
+        { base: '応', reading: 'おう' },
+        { base: '援', reading: 'えん' }
+      ]
     },
     {
       kana: 'こころから',
@@ -210,7 +222,10 @@ export const n4Lesson50: Lesson = {
       kanji: '感謝します',
       romaji: 'kansha shimasu',
       meaning: { en: 'to thank, to express gratitude', vi: 'cám ơn' },
-      ruby: [{ base: '感', reading: 'かん' }]
+      ruby: [
+        { base: '感', reading: 'かん' },
+        { base: '謝', reading: 'しゃ' }
+      ]
     },
     {
       kana: 'おれい',

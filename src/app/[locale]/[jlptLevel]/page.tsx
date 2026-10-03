@@ -9,6 +9,7 @@ import {
   coursePath,
   courseIntroPath,
   courseReferencePath,
+  courseVocabularyPath,
   lessonPath,
   type CourseLevel,
   type Lesson
@@ -111,6 +112,30 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
           )}
 
           {!course.modules && <Stack spacing={1.5}>{course.lessons.map(renderLessonCard)}</Stack>}
+
+          <Card elevation={0} sx={[interactiveSurfaceSx, { mt: 2 }]}>
+            <CardActionArea
+              component={RouterLink}
+              to={courseVocabularyPath(level)}
+              sx={{ userSelect: 'text' }}
+            >
+              <CardContent>
+                <Heading component="h3">{t('course.vocabIndexHeading')}</Heading>
+                <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+                  {t('course.vocabIndexIntro', { code: course.code })}
+                </Typography>
+                <Typography
+                  variant="caption"
+                  color="text.secondary"
+                  sx={{ mt: 1, display: 'block' }}
+                >
+                  {t('course.vocabIndexCount', {
+                    count: course.lessons.reduce((sum, lesson) => sum + lesson.vocab.length, 0)
+                  })}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
 
           {level === 'n5' && (
             <Card elevation={0} sx={[interactiveSurfaceSx, { mt: 2 }]}>

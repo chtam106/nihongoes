@@ -38,14 +38,20 @@ export const n5Lesson19: Lesson = {
       kanji: '掃除します',
       romaji: 'sōji shimasu',
       meaning: { en: 'to clean (a room)', vi: 'dọn vệ sinh (căn phòng)' },
-      ruby: [{ base: '掃', reading: 'そう' }]
+      ruby: [
+        { base: '掃', reading: 'そう' },
+        { base: '除', reading: 'じ' }
+      ]
     },
     {
       kana: 'せんたくします',
       kanji: '洗濯します',
       romaji: 'sentaku shimasu',
       meaning: { en: 'to do laundry', vi: 'giặt (áo quần)' },
-      ruby: [{ base: '洗', reading: 'せん' }]
+      ruby: [
+        { base: '洗', reading: 'せん' },
+        { base: '濯', reading: 'たく' }
+      ]
     },
     {
       kana: 'なります',
@@ -81,7 +87,10 @@ export const n5Lesson19: Lesson = {
         en: 'practice (～を します: practice)',
         vi: 'sự luyện tập (～を します: luyện tập)'
       },
-      ruby: [{ base: '練', reading: 'れん' }]
+      ruby: [
+        { base: '練', reading: 'れん' },
+        { base: '習', reading: 'しゅう' }
+      ]
     },
     {
       kana: 'ゴルフ',
@@ -120,7 +129,10 @@ export const n5Lesson19: Lesson = {
       kanji: '調子',
       romaji: 'chōshi',
       meaning: { en: 'condition, state', vi: 'tình trạng, trạng thái' },
-      ruby: [{ base: '調', reading: 'ちょう' }]
+      ruby: [
+        { base: '調', reading: 'ちょう' },
+        { base: '子', reading: 'し' }
+      ]
     },
     {
       kana: 'いちど',
@@ -193,7 +205,10 @@ export const n5Lesson19: Lesson = {
       kanji: '無理 [な]',
       romaji: 'muri [na]',
       meaning: { en: 'excessive, impossible', vi: 'không thể, quá sức' },
-      ruby: [{ base: '無', reading: 'む' }]
+      ruby: [
+        { base: '無', reading: 'む' },
+        { base: '理', reading: 'り' }
+      ]
     },
     {
       kana: 'からだに いい',

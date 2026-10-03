@@ -64,7 +64,10 @@ export const n4Lesson35: Lesson = {
       kanji: '入力します',
       romaji: 'nyūryoku shimasu',
       meaning: { en: 'to enter, to input', vi: 'nhập vào' },
-      ruby: [{ base: '入', reading: 'にゅう' }]
+      ruby: [
+        { base: '入', reading: 'にゅう' },
+        { base: '力', reading: 'りょく' }
+      ]
     },
     {
       kana: 'ただしい',
