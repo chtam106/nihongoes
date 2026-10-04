@@ -341,7 +341,7 @@ export const n4Lesson32: Lesson = {
       meaning: { en: 'horoscope, fortune-telling by stars', vi: 'bói sao' },
       ruby: [
         { base: '星', reading: 'ほし' },
-        { base: '占', reading: 'うら' }
+        { base: '占', reading: 'うらな' }
       ]
     },
     {

@@ -253,8 +253,8 @@ export const n5Lesson12: Lesson = {
       romaji: 'sashimi',
       meaning: { en: 'sashimi (raw fish)', vi: 'sashimi, gỏi cá sống' },
       ruby: [
-        { base: '刺', reading: 'さ' },
-        { base: '身', reading: 'し' }
+        { base: '刺', reading: 'さし' },
+        { base: '身', reading: 'み' }
       ]
     },
     {
@@ -309,7 +309,7 @@ export const n5Lesson12: Lesson = {
       },
       ruby: [
         { base: '生', reading: 'い' },
-        { base: '花', reading: 'け' }
+        { base: '花', reading: 'ばな' }
       ]
     },
     {

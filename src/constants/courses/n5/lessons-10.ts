@@ -308,7 +308,7 @@ export const n5Lesson10: Lesson = {
       kanji: '間',
       romaji: 'aida',
       meaning: { en: 'between', vi: 'ở giữa' },
-      ruby: [{ base: '間', reading: 'あい' }]
+      ruby: [{ base: '間', reading: 'あいだ' }]
     },
     {
       kana: '～や ～[など]',
@@ -678,7 +678,7 @@ export const n5Lesson10: Lesson = {
         { base: '外', reading: 'そと' },
         { base: '隣', reading: 'となり' },
         { base: '近', reading: 'ちか' },
-        { base: '間', reading: 'あい' }
+        { base: '間', reading: 'あいだ' }
       ],
       highlights: ['の', 'に', 'あります'],
       title: { en: 'Relative position (N1 の N2)', vi: 'Vị trí tương đối (N1 の N2)' },
@@ -731,7 +731,7 @@ export const n5Lesson10: Lesson = {
             { base: '屋', reading: 'や' },
             { base: '花', reading: 'はな' },
             { base: '屋', reading: 'や' },
-            { base: '間', reading: 'あい' }
+            { base: '間', reading: 'あいだ' }
           ]
         }
       ]

@@ -252,7 +252,7 @@ export const n4Lesson49: Lesson = {
         { base: '一', reading: 'いち' },
         { base: '年', reading: 'ねん' },
         { base: '一', reading: 'いっ' },
-        { base: '組', reading: 'く' }
+        { base: '組', reading: 'くみ' }
       ]
     },
     {
@@ -305,7 +305,7 @@ export const n4Lesson49: Lesson = {
           },
           ruby: [
             { base: '小', reading: 'しょう' },
-            { base: '学', reading: 'がく' },
+            { base: '学', reading: 'がっ' },
             { base: '校', reading: 'こう' }
           ]
         },
@@ -924,7 +924,7 @@ export const n4Lesson49: Lesson = {
           },
           ruby: [
             { base: '小', reading: 'しょう' },
-            { base: '学', reading: 'がく' },
+            { base: '学', reading: 'がっ' },
             { base: '校', reading: 'こう' }
           ]
         },

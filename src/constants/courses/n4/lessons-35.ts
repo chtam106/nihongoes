@@ -95,7 +95,7 @@ export const n4Lesson35: Lesson = {
       kanji: '港',
       romaji: 'minato',
       meaning: { en: 'port, harbor', vi: 'cảng' },
-      ruby: [{ base: '港', reading: 'みな' }]
+      ruby: [{ base: '港', reading: 'みなと' }]
     },
     {
       kana: 'きんじょ',
@@ -302,7 +302,7 @@ export const n4Lesson35: Lesson = {
       kanji: '諺',
       romaji: 'kotowaza',
       meaning: { en: 'proverb', vi: 'tục ngữ, thành ngữ' },
-      ruby: [{ base: '諺', reading: 'ことわ' }]
+      ruby: [{ base: '諺', reading: 'ことわざ' }]
     },
     {
       kana: 'かんけい',
@@ -334,7 +334,7 @@ export const n4Lesson35: Lesson = {
   ],
   phrases: [
     {
-      kana: 'いい ところ、知っていますか。',
+      kana: 'いい ところ、しっていますか。',
       kanji: 'いい 所、知っていますか。',
       romaji: 'Ii tokoro, shitte imasu ka.',
       meaning: { en: 'Do you know a good place?', vi: 'Anh/chị biết chỗ nào hay không?' },
@@ -856,7 +856,7 @@ export const n4Lesson35: Lesson = {
       title: { en: 'Japanese proverbs', vi: 'Tục ngữ Nhật' },
       introTerm: {
         jp: 'ことわざ',
-        ruby: [{ base: '諺', reading: 'ことわ' }]
+        ruby: [{ base: '諺', reading: 'ことわざ' }]
       },
       layout: 'stacked',
       rows: [

@@ -1041,7 +1041,7 @@ export const n4Lesson34: Lesson = {
           kanji: '油',
           romaji: 'abura',
           meaning: { en: 'cooking oil', vi: 'dầu ăn' },
-          ruby: [{ base: '油', reading: 'あぶ' }]
+          ruby: [{ base: '油', reading: 'あぶら' }]
         }
       ]
     }

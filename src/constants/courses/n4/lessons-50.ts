@@ -473,7 +473,7 @@ export const n4Lesson50: Lesson = {
           },
           ruby: [
             { base: '江', reading: 'え' },
-            { base: '戸', reading: 'と' },
+            { base: '戸', reading: 'ど' },
             { base: '東', reading: 'とう' },
             { base: '京', reading: 'きょう' },
             { base: '博', reading: 'はく' },
@@ -821,7 +821,7 @@ export const n4Lesson50: Lesson = {
           meaning: { en: 'Edo-Tokyo Museum', vi: 'Bảo tàng Edo Tokyo' },
           ruby: [
             { base: '江', reading: 'え' },
-            { base: '戸', reading: 'と' },
+            { base: '戸', reading: 'ど' },
             { base: '東', reading: 'とう' },
             { base: '京', reading: 'きょう' },
             { base: '博', reading: 'はく' },

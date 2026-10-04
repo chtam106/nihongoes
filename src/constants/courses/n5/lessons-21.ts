@@ -178,7 +178,7 @@ export const n5Lesson21: Lesson = {
         en: 'talk, story (～を します: tell a story)',
         vi: 'câu chuyện (～を します: kể chuyện)'
       },
-      ruby: [{ base: '話', reading: 'はな' }]
+      ruby: [{ base: '話', reading: 'はなし' }]
     },
     {
       kana: 'ユーモア',

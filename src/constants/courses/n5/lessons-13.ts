@@ -242,7 +242,7 @@ export const n5Lesson13: Lesson = {
       ruby: [{ base: '牛', reading: 'ぎゅう' }]
     },
     {
-      kana: 'しょうしょう お待ちください。',
+      kana: 'しょうしょう おまちください。',
       kanji: '少々 お待ちください。',
       romaji: 'Shōshō omachi kudasai.',
       meaning: { en: 'Please wait a moment.', vi: 'Xin vui lòng đợi một chút.' },

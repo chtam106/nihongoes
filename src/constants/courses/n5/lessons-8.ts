@@ -126,7 +126,7 @@ export const n5Lesson8: Lesson = {
       kanji: '良い',
       romaji: 'ii',
       meaning: { en: 'good (also read よい)', vi: 'tốt (cũng đọc よい)' },
-      ruby: [{ base: '良', reading: 'よ' }]
+      ruby: [{ base: '良', reading: 'い' }]
     },
     {
       kana: 'わるい',

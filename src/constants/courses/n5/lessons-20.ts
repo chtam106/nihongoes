@@ -109,7 +109,7 @@ export const n5Lesson20: Lesson = {
       romaji: 'bukka',
       meaning: { en: 'prices, cost of living', vi: 'giá cả, mức giá' },
       ruby: [
-        { base: '物', reading: 'ぶつ' },
+        { base: '物', reading: 'ぶっ' },
         { base: '価', reading: 'か' }
       ]
     },
