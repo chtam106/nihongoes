@@ -104,7 +104,10 @@ export const n5Lesson9: Lesson = {
     {
       kana: 'ダンス',
       romaji: 'dansu',
-      meaning: { en: 'dance (~を します: to dance)', vi: 'nhảy, khiêu vũ (~を します: nhảy)' }
+      meaning: {
+        en: 'dance (~を します: to dance)',
+        vi: 'nhảy, khiêu vũ (~を します: nhảy, khiêu vũ)'
+      }
     },
     {
       kana: 'りょこう',
@@ -112,7 +115,7 @@ export const n5Lesson9: Lesson = {
       romaji: 'ryokō',
       meaning: {
         en: 'travel, trip (~[を] します: to travel)',
-        vi: 'du lịch (~[を] します: đi du lịch)'
+        vi: 'du lịch, chuyến du lịch (~[を] します: đi du lịch)'
       },
       ruby: [
         { base: '旅', reading: 'りょ' },
@@ -369,7 +372,10 @@ export const n5Lesson9: Lesson = {
       kana: 'ざんねんですが。',
       kanji: '残念ですが。',
       romaji: 'Zannen desu ga.',
-      meaning: { en: 'I am sorry, but... / What a pity.', vi: 'Tiếc quá, nhưng... / Đáng tiếc.' },
+      meaning: {
+        en: 'I am sorry, but... / What a pity.',
+        vi: 'Tôi xin lỗi, nhưng... / Đáng tiếc là...'
+      },
       ruby: [
         { base: '残', reading: 'ざん' },
         { base: '念', reading: 'ねん' }
@@ -383,14 +389,14 @@ export const n5Lesson9: Lesson = {
     {
       kana: 'いっしょに いかがですか。',
       romaji: 'Issho ni ikaga desu ka.',
-      meaning: { en: 'Would you like to join me?', vi: 'Anh/Chị cùng tôi nhé?' }
+      meaning: { en: 'Would you like to join me?', vi: 'Anh/Chị cùng với tôi không?' }
     },
     {
       kana: 'ちょっと……',
       romaji: 'Chotto...',
       meaning: {
         en: 'Well... (soft way to decline an invitation)',
-        vi: 'Hơi... (từ chối khéo một lời mời)'
+        vi: 'À thì... (từ chối khéo một lời mời)'
       }
     },
     {
@@ -403,8 +409,8 @@ export const n5Lesson9: Lesson = {
       kanji: 'また 今度 お願いします。',
       romaji: 'Mata kondo onegaishimasu.',
       meaning: {
-        en: 'Please ask me again another time.',
-        vi: 'Hẹn anh/chị dịp khác vậy.'
+        en: 'Another time, please. (polite way to decline)',
+        vi: 'Hẹn anh/chị lần sau vậy. (cách từ chối khéo)'
       },
       ruby: [
         { base: '今', reading: 'こん' },
@@ -440,7 +446,7 @@ export const n5Lesson9: Lesson = {
           romaji: 'Kurashikku no konsāto ni issho ni ikaga desu ka.',
           meaning: {
             en: 'Would you like to go to a classical concert with me?',
-            vi: 'Chị cùng anh đi buổi hòa nhạc cổ điển nhé?'
+            vi: 'Chị cùng anh đi buổi hòa nhạc cổ điển không?'
           }
         },
         {
@@ -486,7 +492,7 @@ export const n5Lesson9: Lesson = {
           romaji: 'Zannen desu ga, yakusoku ga arimasu kara.',
           meaning: {
             en: 'I am sorry, but I already have an appointment.',
-            vi: 'Tiếc quá, nhưng tôi có hẹn rồi.'
+            vi: 'Tôi xin lỗi, nhưng tôi có hẹn rồi.'
           },
           ruby: [
             { base: '残', reading: 'ざん' },
@@ -505,7 +511,7 @@ export const n5Lesson9: Lesson = {
           speakerId: 'yuki',
           jp: 'また 今度 お願いします。',
           romaji: 'Mata kondo onegaishimasu.',
-          meaning: { en: 'Please ask me again another time.', vi: 'Hẹn anh dịp khác vậy.' },
+          meaning: { en: 'Another time, please.', vi: 'Hẹn lần sau vậy.' },
           ruby: [
             { base: '今', reading: 'こん' },
             { base: '度', reading: 'ど' },

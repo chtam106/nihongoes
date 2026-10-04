@@ -51,7 +51,7 @@ export const n5Lesson8: Lesson = {
       romaji: 'shinsetsu',
       meaning: {
         en: 'kind, helpful (na-adj; not used for your own family)',
-        vi: 'tốt bụng, thân thiện (tính từ な; không dùng cho người trong gia đình mình)'
+        vi: 'tốt bụng, chu đáo (tính từ な; không dùng cho người trong gia đình mình)'
       },
       ruby: [
         { base: '親', reading: 'しん' },

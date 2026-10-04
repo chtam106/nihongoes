@@ -53,17 +53,51 @@ export const n5Lesson21: Lesson = {
       romaji: 'arimasu',
       meaning: {
         en: 'to be held, to take place (お祭りが～: a festival is held)',
-        vi: 'diễn ra (お祭りが～: có lễ hội)'
+        vi: 'được tổ chức, diễn ra (お祭りが～: lễ hội được tổ chức)'
       }
     },
     {
       kana: 'やくにたちます',
       kanji: '役に立ちます',
       romaji: 'yaku ni tachimasu',
-      meaning: { en: 'to be useful', vi: 'có ích' },
+      meaning: { en: 'to be useful, to be helpful', vi: 'hữu ích, giúp ích' },
       ruby: [
         { base: '役', reading: 'やく' },
         { base: '立', reading: 'た' }
+      ]
+    },
+    {
+      kana: 'うごきます',
+      kanji: '動きます',
+      romaji: 'ugokimasu',
+      meaning: { en: 'to move, to run (a machine)', vi: 'chuyển động, chạy' },
+      ruby: [{ base: '動', reading: 'うご' }]
+    },
+    {
+      kana: 'やめます',
+      kanji: '辞めます',
+      romaji: 'yamemasu',
+      meaning: {
+        en: 'to quit, to stop (会社を～: quit a company)',
+        vi: 'bỏ, thôi (会社を～: việc công ty)'
+      },
+      ruby: [{ base: '辞', reading: 'や' }]
+    },
+    {
+      kana: 'きをつけます',
+      kanji: '気をつけます',
+      romaji: 'ki o tsukemasu',
+      meaning: { en: 'to be careful, to watch out', vi: 'chú ý, bảo trọng' },
+      ruby: [{ base: '気', reading: 'き' }]
+    },
+    {
+      kana: 'りゅうがくします',
+      kanji: '留学します',
+      romaji: 'ryūgaku shimasu',
+      meaning: { en: 'to study abroad', vi: 'du học' },
+      ruby: [
+        { base: '留', reading: 'りゅう' },
+        { base: '学', reading: 'がく' }
       ]
     },
     {
@@ -96,7 +130,85 @@ export const n5Lesson21: Lesson = {
     {
       kana: 'すごい',
       romaji: 'sugoi',
-      meaning: { en: 'great, amazing (expresses admiration)', vi: 'tuyệt, ghê (khen ngợi)' }
+      meaning: {
+        en: 'amazing (surprise or admiration)',
+        vi: 'ghê quá, giỏi quá (ngạc nhiên hoặc thán phục)'
+      }
+    },
+    {
+      kana: 'ほんとう',
+      kanji: '本当',
+      romaji: 'hontō',
+      meaning: { en: 'truth', vi: 'sự thật' },
+      ruby: [
+        { base: '本', reading: 'ほん' },
+        { base: '当', reading: 'とう' }
+      ]
+    },
+    {
+      kana: 'うそ',
+      kanji: '嘘',
+      romaji: 'uso',
+      meaning: { en: 'lie, falsehood', vi: 'sự giả dối, giả dối' },
+      ruby: [{ base: '嘘', reading: 'うそ' }]
+    },
+    {
+      kana: 'じどうしゃ',
+      kanji: '自動車',
+      romaji: 'jidōsha',
+      meaning: { en: 'car, automobile', vi: 'ô tô, xe hơi' },
+      ruby: [
+        { base: '自', reading: 'じ' },
+        { base: '動', reading: 'どう' },
+        { base: '車', reading: 'しゃ' }
+      ]
+    },
+    {
+      kana: 'ぶっか',
+      kanji: '物価',
+      romaji: 'bukka',
+      meaning: { en: 'prices, cost of living', vi: 'giá cả, mức giá, vật giá' },
+      ruby: [
+        { base: '物', reading: 'ぶっ' },
+        { base: '価', reading: 'か' }
+      ]
+    },
+    {
+      kana: 'ほうそう',
+      kanji: '放送',
+      romaji: 'hōsō',
+      meaning: { en: 'broadcast', vi: 'phát, phát thanh' },
+      ruby: [
+        { base: '放', reading: 'ほう' },
+        { base: '送', reading: 'そう' }
+      ]
+    },
+    {
+      kana: 'アニメ',
+      romaji: 'anime',
+      meaning: { en: 'anime (Japanese animation)', vi: 'phim hoạt hình (Nhật Bản)' }
+    },
+    {
+      kana: 'マンガ',
+      romaji: 'manga',
+      meaning: { en: 'comic, manga', vi: 'truyện tranh' }
+    },
+    {
+      kana: 'ゆめ',
+      kanji: '夢',
+      romaji: 'yume',
+      meaning: { en: 'dream', vi: 'giấc mơ' },
+      ruby: [{ base: '夢', reading: 'ゆめ' }]
+    },
+    {
+      kana: 'てんさい',
+      kanji: '天才',
+      romaji: 'tensai',
+      meaning: { en: 'genius', vi: 'thiên tài' },
+      ruby: [
+        { base: '天', reading: 'てん' },
+        { base: '才', reading: 'さい' }
+      ]
     },
     {
       kana: 'しゅしょう',
@@ -132,7 +244,7 @@ export const n5Lesson21: Lesson = {
     {
       kana: 'ニュース',
       romaji: 'nyūsu',
-      meaning: { en: 'news', vi: 'tin tức' }
+      meaning: { en: 'news, news broadcast', vi: 'tin tức, bản tin' }
     },
     {
       kana: 'スピーチ',
@@ -146,7 +258,10 @@ export const n5Lesson21: Lesson = {
       kana: 'しあい',
       kanji: '試合',
       romaji: 'shiai',
-      meaning: { en: 'game, match', vi: 'trận đấu' },
+      meaning: {
+        en: 'game, match (～を します: have a match)',
+        vi: 'trận đấu (～を します: có trận đấu)'
+      },
       ruby: [
         { base: '試', reading: 'し' },
         { base: '合', reading: 'あい' }
@@ -175,10 +290,27 @@ export const n5Lesson21: Lesson = {
       kanji: '話',
       romaji: 'hanashi',
       meaning: {
-        en: 'talk, story (～を します: tell a story)',
-        vi: 'câu chuyện (～を します: kể chuyện)'
+        en: 'talk, story (～を します: talk, tell a story)',
+        vi: 'câu chuyện, bài nói chuyện (～を します: nói chuyện)'
       },
       ruby: [{ base: '話', reading: 'はなし' }]
+    },
+    {
+      kana: 'ちきゅう',
+      kanji: '地球',
+      romaji: 'chikyū',
+      meaning: { en: 'the earth', vi: 'trái đất' },
+      ruby: [
+        { base: '地', reading: 'ち' },
+        { base: '球', reading: 'きゅう' }
+      ]
+    },
+    {
+      kana: 'つき',
+      kanji: '月',
+      romaji: 'tsuki',
+      meaning: { en: 'the moon', vi: 'mặt trăng, trăng' },
+      ruby: [{ base: '月', reading: 'つき' }]
     },
     {
       kana: 'ユーモア',
@@ -194,7 +326,7 @@ export const n5Lesson21: Lesson = {
       kana: 'こうつう',
       kanji: '交通',
       romaji: 'kōtsū',
-      meaning: { en: 'transportation, traffic', vi: 'giao thông' },
+      meaning: { en: 'transportation, traffic', vi: 'giao thông, đi lại' },
       ruby: [
         { base: '交', reading: 'こう' },
         { base: '通', reading: 'つう' }
@@ -218,12 +350,12 @@ export const n5Lesson21: Lesson = {
     {
       kana: 'たぶん',
       romaji: 'tabun',
-      meaning: { en: 'probably, perhaps', vi: 'có lẽ, chắc là' }
+      meaning: { en: 'probably, perhaps', vi: 'chắc, có thể' }
     },
     {
       kana: 'きっと',
       romaji: 'kitto',
-      meaning: { en: 'surely, definitely', vi: 'chắc chắn' }
+      meaning: { en: 'surely, definitely', vi: 'chắc chắn, nhất định' }
     },
     {
       kana: 'ほんとうに',
