@@ -808,6 +808,38 @@ export const n5Lesson1: Lesson = {
           }
         ]
       }
+    },
+    {
+      pattern: '〜さん',
+      highlights: ['さん'],
+      title: { en: 'Polite name suffix さん', vi: 'Hậu tố lịch sự さん' },
+      explanation: {
+        en: "Add さん after the other person's name. Do not add it to your own name. For a small child, use ちゃん instead. Once you know the name, say that name plus さん, not あなた.",
+        vi: 'Thêm さん sau tên người khác. Không thêm vào tên của chính mình. Với trẻ nhỏ thì dùng ちゃん. Khi đã biết tên, gọi bằng tên + さん, không dùng あなた.'
+      },
+      examples: [
+        {
+          jp: 'あの人は アレックスさんです。',
+          romaji: 'Ano hito wa Arekkusu-san desu.',
+          meaning: { en: 'That person is Alex.', vi: 'Người kia là anh Alex.' },
+          ruby: [{ base: '人', reading: 'ひと' }]
+        },
+        {
+          jp: '私は アレックスです。',
+          romaji: 'Watashi wa Arekkusu desu.',
+          meaning: { en: 'I am Alex.', vi: 'Tôi là Alex.' },
+          ruby: [{ base: '私', reading: 'わたし' }]
+        },
+        {
+          jp: 'ゆきちゃんは 学生です。',
+          romaji: 'Yuki-chan wa gakusei desu.',
+          meaning: { en: 'Yuki is a student.', vi: 'Bé Yuki là học sinh.' },
+          ruby: [
+            { base: '学', reading: 'がく' },
+            { base: '生', reading: 'せい' }
+          ]
+        }
+      ]
     }
   ],
   reading: [
@@ -1456,6 +1488,7 @@ export const n5Lesson1: Lesson = {
         }
       ]
     },
+
     {
       kind: 'vocab',
       title: { en: 'More occupations', vi: 'Nghề nghiệp khác' },
@@ -1513,6 +1546,76 @@ export const n5Lesson1: Lesson = {
             { base: '官', reading: 'かん' }
           ],
           meaning: { en: 'police officer', vi: 'cảnh sát' }
+        }
+      ]
+    },
+    {
+      kind: 'vocab',
+      title: { en: 'Names in this lesson', vi: 'Tên riêng trong bài' },
+      includeInQuiz: false,
+      intro: {
+        en: 'Fictional companies, an organization, a hospital, and universities the textbook uses in its examples.',
+        vi: 'Công ty, tổ chức, bệnh viện và trường đại học giả định mà giáo trình dùng trong ví dụ.'
+      },
+      items: [
+        {
+          kana: 'IMC',
+          romaji: 'Ai-emu-shī',
+          meaning: { en: 'IMC (fictional company)', vi: 'IMC (công ty giả định)' }
+        },
+        {
+          kana: 'パワーでんき',
+          kanji: 'パワー電気',
+          romaji: 'Pawā denki',
+          ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '気', reading: 'き' }
+          ],
+          meaning: { en: 'Power Electric (fictional company)', vi: 'Điện Power (công ty giả định)' }
+        },
+        {
+          kana: 'ブラジルエアー',
+          romaji: 'Burajiru eā',
+          meaning: { en: 'Brazil Air (fictional airline)', vi: 'Brazil Air (hãng bay giả định)' }
+        },
+        {
+          kana: 'AKC',
+          romaji: 'Ē-kē-shī',
+          meaning: { en: 'AKC (fictional organization)', vi: 'AKC (tổ chức giả định)' }
+        },
+        {
+          kana: 'こうべびょういん',
+          kanji: '神戸病院',
+          romaji: 'Kōbe byōin',
+          ruby: [
+            { base: '神', reading: 'こう' },
+            { base: '戸', reading: 'べ' },
+            { base: '病', reading: 'びょう' },
+            { base: '院', reading: 'いん' }
+          ],
+          meaning: { en: 'Kobe Hospital (fictional)', vi: 'Bệnh viện Kobe (giả định)' }
+        },
+        {
+          kana: 'さくらだいがく',
+          kanji: 'さくら大学',
+          romaji: 'Sakura daigaku',
+          ruby: [
+            { base: '大', reading: 'だい' },
+            { base: '学', reading: 'がく' }
+          ],
+          meaning: { en: 'Sakura University (fictional)', vi: 'Đại học Sakura (giả định)' }
+        },
+        {
+          kana: 'ふじだいがく',
+          kanji: '富士大学',
+          romaji: 'Fuji daigaku',
+          ruby: [
+            { base: '富', reading: 'ふ' },
+            { base: '士', reading: 'じ' },
+            { base: '大', reading: 'だい' },
+            { base: '学', reading: 'がく' }
+          ],
+          meaning: { en: 'Fuji University (fictional)', vi: 'Đại học Fuji (giả định)' }
         }
       ]
     }
