@@ -91,7 +91,7 @@ export const n5Lesson13: Lesson = {
       kana: 'たいへん [な]',
       kanji: '大変 [な]',
       romaji: 'taihen [na]',
-      meaning: { en: 'tough, hard (na-adj)', vi: 'vất vả, khó khăn, khổ (tính từ な)' },
+      meaning: { en: 'tough, hard', vi: 'vất vả, khó khăn, khổ' },
       ruby: [
         { base: '大', reading: 'たい' },
         { base: '変', reading: 'へん' }

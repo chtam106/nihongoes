@@ -94,10 +94,10 @@ export const n4Lesson40: Lesson = {
       ]
     },
     {
-      kana: 'ひつよう',
-      kanji: '必要',
-      romaji: 'hitsuyō',
-      meaning: { en: 'necessary (na-adj)', vi: 'cần thiết (tính từ な)' },
+      kana: 'ひつよう [な]',
+      kanji: '必要 [な]',
+      romaji: 'hitsuyō [na]',
+      meaning: { en: 'necessary', vi: 'cần thiết' },
       ruby: [
         { base: '必', reading: 'ひつ' },
         { base: '要', reading: 'よう' }

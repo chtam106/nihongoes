@@ -399,10 +399,10 @@ export const n4Lesson38: Lesson = {
       meaning: { en: 'to quarrel', vi: 'cãi nhau' }
     },
     {
-      kana: 'ふしぎ',
-      kanji: '不思議',
-      romaji: 'fushigi',
-      meaning: { en: 'strange, mysterious (na-adj)', vi: 'kỳ lạ (tính từ な)' },
+      kana: 'ふしぎ [な]',
+      kanji: '不思議 [な]',
+      romaji: 'fushigi [na]',
+      meaning: { en: 'strange, mysterious', vi: 'kỳ lạ' },
       ruby: [
         { base: '不', reading: 'ふ' },
         { base: '思', reading: 'し' },

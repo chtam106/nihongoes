@@ -17,7 +17,7 @@ export const n5Lesson12: Lesson = {
       kana: 'かんたん [な]',
       kanji: '簡単 [な]',
       romaji: 'kantan [na]',
-      meaning: { en: 'simple, easy (na-adj)', vi: 'đơn giản, dễ (tính từ な)' },
+      meaning: { en: 'simple, easy', vi: 'đơn giản, dễ' },
       ruby: [
         { base: '簡', reading: 'かん' },
         { base: '単', reading: 'たん' }

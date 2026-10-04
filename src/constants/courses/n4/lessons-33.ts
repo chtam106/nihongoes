@@ -109,9 +109,9 @@ export const n4Lesson33: Lesson = {
       meaning: { en: 'to recycle', vi: 'tái chế' }
     },
     {
-      kana: 'だめ',
-      romaji: 'dame',
-      meaning: { en: 'no good, not allowed (na-adj)', vi: 'không được (tính từ な)' }
+      kana: 'だめ [な]',
+      romaji: 'dame [na]',
+      meaning: { en: 'no good, not allowed', vi: 'không được' }
     },
     {
       kana: 'おなじ',

@@ -52,8 +52,8 @@ export const n4Lesson42: Lesson = {
       ruby: [{ base: '並', reading: 'なら' }]
     },
     {
-      kana: 'じょうぶ[な]',
-      kanji: '丈夫[な]',
+      kana: 'じょうぶ [な]',
+      kanji: '丈夫 [な]',
       romaji: 'jōbu [na]',
       meaning: { en: 'sturdy, durable', vi: 'chắc chắn' },
       ruby: [

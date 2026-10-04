@@ -71,20 +71,20 @@ export const n4Lesson44: Lesson = {
       ]
     },
     {
-      kana: 'あんぜん[な]',
-      kanji: '安全[な]',
+      kana: 'あんぜん [な]',
+      kanji: '安全 [な]',
       romaji: 'anzen [na]',
-      meaning: { en: 'safe (na-adj)', vi: 'an toàn (tính từ な)' },
+      meaning: { en: 'safe', vi: 'an toàn' },
       ruby: [
         { base: '安', reading: 'あん' },
         { base: '全', reading: 'ぜん' }
       ]
     },
     {
-      kana: 'きけん[な]',
-      kanji: '危険[な]',
+      kana: 'きけん [な]',
+      kanji: '危険 [な]',
       romaji: 'kiken [na]',
-      meaning: { en: 'dangerous (na-adj)', vi: 'nguy hiểm (tính từ な)' },
+      meaning: { en: 'dangerous', vi: 'nguy hiểm' },
       ruby: [
         { base: '危', reading: 'き' },
         { base: '険', reading: 'けん' }
@@ -235,10 +235,10 @@ export const n4Lesson44: Lesson = {
       ]
     },
     {
-      kana: 'あんしん[な]',
-      kanji: '安心[な]',
+      kana: 'あんしん [な]',
+      kanji: '安心 [な]',
       romaji: 'anshin [na]',
-      meaning: { en: 'relieved, at ease (na-adj)', vi: 'yên tâm (tính từ な)' },
+      meaning: { en: 'relieved, at ease', vi: 'yên tâm' },
       ruby: [
         { base: '安', reading: 'あん' },
         { base: '心', reading: 'しん' }

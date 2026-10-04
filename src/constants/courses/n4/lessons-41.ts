@@ -341,10 +341,10 @@ export const n4Lesson41: Lesson = {
       ruby: [{ base: '煙', reading: 'けむり' }]
     },
     {
-      kana: 'まっしろ',
-      kanji: '真っ白',
-      romaji: 'masshiro',
-      meaning: { en: 'pure white (na-adj)', vi: 'trắng toát (tính từ な)' },
+      kana: 'まっしろ [な]',
+      kanji: '真っ白 [な]',
+      romaji: 'masshiro [na]',
+      meaning: { en: 'pure white', vi: 'trắng toát' },
       ruby: [
         { base: '真', reading: 'ま' },
         { base: '白', reading: 'しろ' }
