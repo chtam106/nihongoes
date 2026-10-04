@@ -16,12 +16,15 @@ export const n5Lesson10: Lesson = {
     {
       kana: 'あります',
       romaji: 'arimasu',
-      meaning: { en: 'to exist, to be (things)', vi: 'có, ở (đồ vật, cây cối)' }
+      meaning: { en: 'to exist, to be (things)', vi: 'ở (tồn tại, dùng cho đồ vật)' }
     },
     {
       kana: 'います',
       romaji: 'imasu',
-      meaning: { en: 'to exist, to be (people, animals)', vi: 'có, ở (người, động vật)' }
+      meaning: {
+        en: 'to exist, to be (people, animals)',
+        vi: 'ở (tồn tại, dùng cho người và động vật)'
+      }
     },
     {
       kana: 'いろいろ [な]',
@@ -155,7 +158,7 @@ export const n5Lesson10: Lesson = {
       kana: 'たな',
       kanji: '棚',
       romaji: 'tana',
-      meaning: { en: 'shelf', vi: 'giá, kệ' },
+      meaning: { en: 'shelf', vi: 'giá sách, kệ sách' },
       ruby: [{ base: '棚', reading: 'たな' }]
     },
     {
@@ -173,7 +176,7 @@ export const n5Lesson10: Lesson = {
     {
       kana: 'ポスト',
       romaji: 'posuto',
-      meaning: { en: 'mailbox', vi: 'hòm thư' }
+      meaning: { en: 'mailbox', vi: 'hộp thư, hòm thư' }
     },
     {
       kana: 'ビル',
@@ -204,7 +207,7 @@ export const n5Lesson10: Lesson = {
       kana: 'きっさてん',
       kanji: '喫茶店',
       romaji: 'kissaten',
-      meaning: { en: 'coffee shop', vi: 'quán cà phê' },
+      meaning: { en: 'coffee shop, cafe', vi: 'quán giải khát, quán cà phê' },
       ruby: [
         { base: '喫', reading: 'きっ' },
         { base: '茶', reading: 'さ' },

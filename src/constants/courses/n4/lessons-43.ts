@@ -247,7 +247,7 @@ export const n4Lesson43: Lesson = {
           speakerId: 'hayashi',
           jp: '元気そう ですね。',
           romaji: 'Genki sō desu ne.',
-          meaning: { en: 'He looks healthy.', vi: 'Cháu trông có vẻ khỏe mạnh nhỉ.' },
+          meaning: { en: "He looks healthy, doesn't he?", vi: 'Trông cậu bé khỏe mạnh nhỉ.' },
           ruby: [
             { base: '元', reading: 'げん' },
             { base: '気', reading: 'き' }

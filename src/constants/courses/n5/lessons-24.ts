@@ -433,7 +433,7 @@ export const n5Lesson24: Lesson = {
           romaji: 'Zenbu jibun de dekimasen. Tetsudatte moraimashita.',
           meaning: {
             en: 'I could not do everything alone. I got help.',
-            vi: 'Tôi không làm hết một mình. Tôi nhờ giúp.'
+            vi: 'Tôi không làm hết một mình. Tôi được giúp.'
           },
           ruby: [
             { base: '全', reading: 'ぜん' },

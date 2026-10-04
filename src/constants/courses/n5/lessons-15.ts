@@ -24,7 +24,7 @@ export const n5Lesson15: Lesson = {
       kana: 'つくります',
       kanji: '作ります',
       romaji: 'tsukurimasu',
-      meaning: { en: 'to make', vi: 'làm, chế tạo' },
+      meaning: { en: 'to make, to produce', vi: 'làm, chế tạo, sản xuất' },
       ruby: [{ base: '作', reading: 'つく' }]
     },
     {
@@ -48,7 +48,7 @@ export const n5Lesson15: Lesson = {
       kana: 'すみます',
       kanji: '住みます',
       romaji: 'sumimasu',
-      meaning: { en: 'to live, to reside', vi: 'sống, cư trú' },
+      meaning: { en: 'to live, to reside', vi: 'sống, ở' },
       ruby: [{ base: '住', reading: 'す' }]
     },
     {
@@ -131,7 +131,7 @@ export const n5Lesson15: Lesson = {
       kana: 'でんしじしょ',
       kanji: '電子辞書',
       romaji: 'denshi jisho',
-      meaning: { en: 'electronic dictionary', vi: 'từ điển điện tử' },
+      meaning: { en: 'electronic dictionary', vi: 'kim từ điển' },
       ruby: [
         { base: '電', reading: 'でん' },
         { base: '子', reading: 'し' },
@@ -153,7 +153,7 @@ export const n5Lesson15: Lesson = {
       kana: 'しやくしょ',
       kanji: '市役所',
       romaji: 'shiyakusho',
-      meaning: { en: 'city hall', vi: 'ủy ban thành phố' },
+      meaning: { en: 'city hall', vi: 'tòa thị chính' },
       ruby: [
         { base: '市', reading: 'し' },
         { base: '役', reading: 'やく' },

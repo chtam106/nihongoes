@@ -183,7 +183,7 @@ export const n5Lesson14: Lesson = {
     {
       kana: 'エアコン',
       romaji: 'eakon',
-      meaning: { en: 'air conditioner', vi: 'máy điều hòa' }
+      meaning: { en: 'air conditioner', vi: 'máy điều hòa (nhiệt độ)' }
     },
     {
       kana: 'パスポート',

@@ -498,7 +498,7 @@ export const n4Lesson46: Lesson = {
           romaji: 'Sangatsu ni daigaku o sotsugyō shita bakari desu.',
           meaning: {
             en: 'I just graduated from university in March.',
-            vi: 'Anh ấy mới tốt nghiệp đại học vào tháng 3.'
+            vi: 'Tôi vừa mới tốt nghiệp đại học vào tháng 3.'
           },
           ruby: [
             { base: '月', reading: 'げつ' },

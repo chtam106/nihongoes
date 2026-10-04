@@ -27,14 +27,14 @@ export const n5Lesson20: Lesson = {
       kana: 'しらべます',
       kanji: '調べます',
       romaji: 'shirabemasu',
-      meaning: { en: 'to check, to investigate', vi: 'tra, kiểm tra' },
+      meaning: { en: 'to look into, to check, to investigate', vi: 'tìm hiểu, kiểm tra, điều tra' },
       ruby: [{ base: '調', reading: 'しら' }]
     },
     {
       kana: 'なおします',
       kanji: '直します',
       romaji: 'naoshimasu',
-      meaning: { en: 'to repair, to fix', vi: 'sửa, chỉnh' },
+      meaning: { en: 'to repair, to fix', vi: 'sửa chữa, tu sửa' },
       ruby: [{ base: '直', reading: 'なお' }]
     },
     {
@@ -97,7 +97,7 @@ export const n5Lesson20: Lesson = {
       kana: 'ことば',
       kanji: '言葉',
       romaji: 'kotoba',
-      meaning: { en: 'word, language', vi: 'từ, ngôn ngữ' },
+      meaning: { en: 'word, language', vi: 'từ, tiếng' },
       ruby: [
         { base: '言', reading: 'こと' },
         { base: '葉', reading: 'ば' }
@@ -204,7 +204,7 @@ export const n5Lesson20: Lesson = {
     {
       kana: 'よかったら',
       romaji: 'yokattara',
-      meaning: { en: 'if you like, if you want', vi: 'nếu anh/chị muốn' }
+      meaning: { en: 'if you like', vi: 'nếu anh/chị thích thì' }
     },
     {
       kana: 'いろいろ',

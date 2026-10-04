@@ -379,7 +379,7 @@ export const n5Lesson11: Lesson = {
       kana: 'ふなびん',
       kanji: '船便',
       romaji: 'funabin',
-      meaning: { en: 'surface mail (by sea)', vi: 'gửi bằng đường biển' },
+      meaning: { en: 'surface mail (by sea)', vi: 'thư đường biển' },
       ruby: [
         { base: '船', reading: 'ふな' },
         { base: '便', reading: 'びん' }
@@ -389,7 +389,7 @@ export const n5Lesson11: Lesson = {
       kana: 'こうくうびん',
       kanji: '航空便',
       romaji: 'kōkūbin',
-      meaning: { en: 'airmail', vi: 'gửi bằng đường hàng không' },
+      meaning: { en: 'airmail', vi: 'thư đường hàng không' },
       ruby: [
         { base: '航', reading: 'こう' },
         { base: '空', reading: 'くう' },

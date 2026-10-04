@@ -123,8 +123,8 @@ export const n5Lesson12: Lesson = {
       kana: 'いい [コーヒーが～]',
       romaji: 'ii [kōhī ga ~]',
       meaning: {
-        en: 'good (choose or prefer, e.g. coffee)',
-        vi: 'tốt, chọn, dùng (vd. cà phê)'
+        en: 'preferred (choose or use, e.g. coffee)',
+        vi: 'thích, chọn, dùng (vd. cà phê)'
       }
     },
     {
