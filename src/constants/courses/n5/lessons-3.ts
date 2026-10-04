@@ -102,6 +102,16 @@ export const n5Lesson3: Lesson = {
     },
     { kana: 'トイレ', romaji: 'toire', meaning: { en: 'toilet', vi: 'nhà vệ sinh' } },
     {
+      kana: 'おてあらい',
+      kanji: 'お手洗い',
+      romaji: 'otearai',
+      ruby: [
+        { base: '手', reading: 'て' },
+        { base: '洗', reading: 'あら' }
+      ],
+      meaning: { en: 'restroom (polite)', vi: 'nhà vệ sinh (lịch sự)' }
+    },
+    {
       kana: 'かいだん',
       kanji: '階段',
       romaji: 'kaidan',
@@ -116,6 +126,29 @@ export const n5Lesson3: Lesson = {
       kana: 'エスカレーター',
       romaji: 'esukarētā',
       meaning: { en: 'escalator', vi: 'thang cuốn' }
+    },
+    {
+      kana: 'じどうはんばいき',
+      kanji: '自動販売機',
+      romaji: 'jidōhanbaiki',
+      ruby: [
+        { base: '自', reading: 'じ' },
+        { base: '動', reading: 'どう' },
+        { base: '販', reading: 'はん' },
+        { base: '売', reading: 'ばい' },
+        { base: '機', reading: 'き' }
+      ],
+      meaning: { en: 'vending machine', vi: 'máy bán hàng tự động' }
+    },
+    {
+      kana: 'でんわ',
+      kanji: '電話',
+      romaji: 'denwa',
+      ruby: [
+        { base: '電', reading: 'でん' },
+        { base: '話', reading: 'わ' }
+      ],
+      meaning: { en: 'telephone', vi: 'điện thoại' }
     },
     {
       kana: 'くに',
@@ -227,6 +260,24 @@ export const n5Lesson3: Lesson = {
       kana: 'おねがいします。',
       romaji: 'Onegaishimasu.',
       meaning: { en: 'Please. (making a request)', vi: 'Làm ơn / nhờ bạn.' }
+    },
+    {
+      kana: 'すみません。',
+      romaji: 'Sumimasen.',
+      meaning: { en: 'Excuse me. / I am sorry.', vi: 'Xin lỗi. / Làm phiền.' }
+    },
+    {
+      kana: 'どうも。',
+      romaji: 'Dōmo.',
+      meaning: {
+        en: 'Thanks. (short for どうもありがとうございます)',
+        vi: 'Cảm ơn. (rút gọn của どうもありがとうございます)'
+      }
+    },
+    {
+      kana: 'じゃ。',
+      romaji: 'Ja.',
+      meaning: { en: 'Well then. / In that case.', vi: 'Thế thì. / Vậy thì.' }
     }
   ],
   conversation: [
@@ -1069,6 +1120,30 @@ export const n5Lesson3: Lesson = {
           romaji: 'man',
           ruby: [{ base: '万', reading: 'まん' }],
           meaning: { en: '10,000', vi: '10.000' }
+        }
+      ]
+    },
+    {
+      kind: 'vocab',
+      title: { en: 'Place names', vi: 'Địa danh' },
+      includeInQuiz: false,
+      items: [
+        { kana: 'イタリア', romaji: 'Itaria', meaning: { en: 'Italy', vi: 'Ý' } },
+        { kana: 'スイス', romaji: 'Suisu', meaning: { en: 'Switzerland', vi: 'Thụy Sĩ' } },
+        { kana: 'フランス', romaji: 'Furansu', meaning: { en: 'France', vi: 'Pháp' } },
+        { kana: 'ジャカルタ', romaji: 'Jakuruta', meaning: { en: 'Jakarta', vi: 'Gia-các-ta' } },
+        { kana: 'バンコク', romaji: 'Bankoku', meaning: { en: 'Bangkok', vi: 'Băng-cốc' } },
+        { kana: 'ベルリン', romaji: 'Berurin', meaning: { en: 'Berlin', vi: 'Béc-lin' } },
+        {
+          kana: 'しんおおさか',
+          kanji: '新大阪',
+          romaji: 'Shin-Ōsaka',
+          ruby: [
+            { base: '新', reading: 'しん' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' }
+          ],
+          meaning: { en: 'Shin-Osaka (station in Osaka)', vi: 'Shin-Osaka (ga ở Osaka)' }
         }
       ]
     }

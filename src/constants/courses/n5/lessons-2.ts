@@ -101,7 +101,11 @@ export const n5Lesson2: Lesson = {
       ],
       meaning: { en: 'pocket notebook, planner', vi: 'sổ tay' }
     },
-    { kana: 'カード', romaji: 'kādo', meaning: { en: 'card', vi: 'thẻ' } },
+    {
+      kana: 'カード',
+      romaji: 'kādo',
+      meaning: { en: 'card (credit card, etc.)', vi: 'thẻ (tín dụng), các' }
+    },
     {
       kana: 'テレホンカード',
       romaji: 'terehon kādo',
@@ -152,6 +156,7 @@ export const n5Lesson2: Lesson = {
       meaning: { en: 'umbrella', vi: 'ô, dù' }
     },
     { kana: 'かばん', romaji: 'kaban', meaning: { en: 'bag', vi: 'cặp, túi xách' } },
+    { kana: 'CD', romaji: 'shīdī', meaning: { en: 'CD', vi: 'đĩa CD' } },
     { kana: 'テレビ', romaji: 'terebi', meaning: { en: 'TV', vi: 'tivi' } },
     { kana: 'ラジオ', romaji: 'rajio', meaning: { en: 'radio', vi: 'radio' } },
     { kana: 'カメラ', romaji: 'kamera', meaning: { en: 'camera', vi: 'máy ảnh' } },
@@ -293,6 +298,37 @@ export const n5Lesson2: Lesson = {
       kana: 'どうぞ。',
       romaji: 'Dōzo.',
       meaning: { en: 'Here you are. / Please.', vi: 'Mời bạn. / Xin mời.' }
+    },
+    {
+      kana: 'えっ。',
+      romaji: 'E.',
+      meaning: { en: 'Huh? (surprised, did not expect it)', vi: 'Hả? (nghe điều không ngờ)' }
+    },
+    {
+      kana: 'あ。',
+      romaji: 'A.',
+      meaning: { en: 'Oh! (just realized something)', vi: 'Ồ! (vừa nhận ra điều gì)' }
+    },
+    {
+      kana: 'これから おせわに なります。',
+      kanji: 'これから お世話に なります。',
+      romaji: 'Korekara osewa ni narimasu.',
+      meaning: {
+        en: 'I look forward to your help from now on.',
+        vi: 'Từ nay mong được anh/chị giúp đỡ.'
+      },
+      ruby: [
+        { base: '世', reading: 'せ' },
+        { base: '話', reading: 'わ' }
+      ]
+    },
+    {
+      kana: 'こちらこそ どうぞ よろしく おねがいします。',
+      romaji: 'Kochira koso dōzo yoroshiku onegaishimasu.',
+      meaning: {
+        en: 'The pleasure is mine. (reply to どうぞよろしく)',
+        vi: 'Chính tôi mới phải nói thế. (đáp lại どうぞよろしく)'
+      }
     }
   ],
   conversation: [
@@ -469,9 +505,13 @@ export const n5Lesson2: Lesson = {
       highlights: ['の'],
       title: { en: 'の (possession / content)', vi: 'の (sở hữu / nội dung)' },
       explanation: {
-        en: 'の links two nouns to show an owner ("my book") or the content/type ("Japanese book").',
-        vi: 'の nối hai danh từ để chỉ người sở hữu ("sách của tôi") hoặc nội dung/loại ("sách tiếng Nhật").'
+        en: 'の links two nouns to show an owner ("my book") or the content/type ("Japanese book"). Once the thing is clear, の can stand in for it: 山田さんのです = "Yamada\'s". Use this only for things, not for people.',
+        vi: 'の nối hai danh từ để chỉ người sở hữu ("sách của tôi") hoặc nội dung/loại ("sách tiếng Nhật"). Khi vật đã rõ, の có thể thay cho danh từ đó: 山田さんのです = "của anh Yamada". Chỉ dùng cách này với đồ vật, không với người.'
       },
+      explanationRuby: [
+        { base: '山', reading: 'やま' },
+        { base: '田', reading: 'だ' }
+      ],
       examples: [
         {
           jp: 'これは 私の 本です。',
@@ -499,6 +539,15 @@ export const n5Lesson2: Lesson = {
           romaji: 'Are wa dare no kasa desu ka.',
           meaning: { en: 'Whose umbrella is that over there?', vi: 'Cái ô kia là của ai?' },
           ruby: [{ base: '傘', reading: 'かさ' }]
+        },
+        {
+          jp: '山田さんのです。',
+          romaji: 'Yamada-san no desu.',
+          meaning: { en: "It is Yamada's.", vi: 'Của anh Yamada.' },
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '田', reading: 'だ' }
+          ]
         }
       ]
     },
@@ -548,6 +597,135 @@ export const n5Lesson2: Lesson = {
           }
         ]
       }
+    },
+    {
+      pattern: 'はい、そうです / いいえ、違います',
+      patternRuby: [{ base: '違', reading: 'ちが' }],
+      highlights: ['はい', 'そうです', 'いいえ', '違います'],
+      title: { en: 'Yes and no for a noun sentence', vi: 'Trả lời có/không cho câu danh từ' },
+      explanation: {
+        en: 'Answer a noun yes/no question with はい、そうです. For "no", そうではありません is uncommon; say 違います, or give the right noun.',
+        vi: 'Câu hỏi danh từ đúng/sai thì trả lời はい、そうです. Phủ định ít dùng そうではありません; nói 違います, hoặc nêu đúng danh từ đó.'
+      },
+      explanationRuby: [{ base: '違', reading: 'ちが' }],
+      examples: [
+        {
+          jp: 'それは 辞書ですか。',
+          romaji: 'Sore wa jisho desu ka.',
+          meaning: { en: 'Is that a dictionary?', vi: 'Cái đó là từ điển phải không?' },
+          ruby: [
+            { base: '辞', reading: 'じ' },
+            { base: '書', reading: 'しょ' }
+          ]
+        },
+        {
+          jp: 'はい、そうです。',
+          romaji: 'Hai, sō desu.',
+          meaning: { en: 'Yes, it is.', vi: 'Vâng, đúng rồi.' }
+        },
+        {
+          jp: 'これは シャープペンシルですか。',
+          romaji: 'Kore wa shāpupenshiru desu ka.',
+          meaning: { en: 'Is this a mechanical pencil?', vi: 'Đây là bút chì bấm phải không?' }
+        },
+        {
+          jp: 'いいえ、違います。ボールペンです。',
+          romaji: 'Iie, chigaimasu. Bōrupen desu.',
+          meaning: {
+            en: 'No, it is not. It is a ballpoint pen.',
+            vi: 'Không, không phải. Là bút bi.'
+          },
+          ruby: [{ base: '違', reading: 'ちが' }]
+        }
+      ]
+    },
+    {
+      pattern: '～か、～か',
+      highlights: ['か', 'か'],
+      title: { en: 'Choosing between two options', vi: 'Chọn một trong hai' },
+      explanation: {
+        en: 'Line up two questions with か to make the listener pick one. Answer with the chosen option, not はい or いいえ.',
+        vi: 'Xếp hai câu hỏi với か để người nghe chọn một. Trả lời bằng phương án đã chọn, không dùng はい hay いいえ.'
+      },
+      examples: [
+        {
+          jp: 'これは 本ですか、雑誌ですか。',
+          romaji: 'Kore wa hon desu ka, zasshi desu ka.',
+          meaning: { en: 'Is this a book or a magazine?', vi: 'Đây là sách hay tạp chí?' },
+          ruby: [
+            { base: '本', reading: 'ほん' },
+            { base: '雑', reading: 'ざっ' },
+            { base: '誌', reading: 'し' }
+          ]
+        }
+      ],
+      answers: {
+        highlights: ['です'],
+        examples: [
+          {
+            jp: '本です。',
+            romaji: 'Hon desu.',
+            meaning: { en: 'It is a book.', vi: 'Là sách.' },
+            ruby: [{ base: '本', reading: 'ほん' }]
+          }
+        ]
+      }
+    },
+    {
+      pattern: 'お～',
+      highlights: ['お'],
+      title: { en: 'Polite prefix お', vi: 'Tiền tố lịch sự お' },
+      explanation: {
+        en: 'お before a noun adds politeness, as in お土産.',
+        vi: 'お đứng trước danh từ để lịch sự hơn, như お土産.'
+      },
+      explanationRuby: [
+        { base: '土', reading: 'み' },
+        { base: '産', reading: 'やげ' }
+      ],
+      examples: [
+        {
+          jp: 'これは お土産です。',
+          romaji: 'Kore wa omiyage desu.',
+          meaning: { en: 'This is a souvenir.', vi: 'Đây là quà.' },
+          ruby: [
+            { base: '土', reading: 'み' },
+            { base: '産', reading: 'やげ' }
+          ]
+        }
+      ]
+    },
+    {
+      pattern: 'そうですか',
+      highlights: ['そう', 'です', 'か'],
+      title: { en: 'Acknowledging new information', vi: 'Xác nhận thông tin mới' },
+      explanation: {
+        en: 'そうですか shows you heard something new and understood it. Say it with a falling tone.',
+        vi: 'そうですか bày tỏ vừa nhận được thông tin mới và đã hiểu. Đọc với giọng xuống.'
+      },
+      examples: [
+        {
+          jp: 'この 傘は あなたの ですか。',
+          romaji: 'Kono kasa wa anata no desu ka.',
+          meaning: { en: 'Is this umbrella yours?', vi: 'Cái ô này là của bạn phải không?' },
+          ruby: [{ base: '傘', reading: 'かさ' }]
+        },
+        {
+          jp: 'いいえ、違います。山田さんのです。',
+          romaji: 'Iie, chigaimasu. Yamada-san no desu.',
+          meaning: { en: "No. It is Yamada's.", vi: 'Không. Của anh Yamada.' },
+          ruby: [
+            { base: '違', reading: 'ちが' },
+            { base: '山', reading: 'やま' },
+            { base: '田', reading: 'だ' }
+          ]
+        },
+        {
+          jp: 'そうですか。',
+          romaji: 'Sō desu ka.',
+          meaning: { en: 'I see.', vi: 'Vậy à.' }
+        }
+      ]
     }
   ],
   reading: [
