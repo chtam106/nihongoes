@@ -240,7 +240,7 @@ export const n4Lesson46: Lesson = {
       romaji: 'dekigoto',
       meaning: { en: 'event, incident', vi: 'sự việc' },
       ruby: [
-        { base: '出', reading: 'でき' },
+        { base: '出', reading: 'で' },
         { base: '来', reading: 'き' },
         { base: '事', reading: 'ごと' }
       ]
@@ -498,7 +498,7 @@ export const n4Lesson46: Lesson = {
           romaji: 'Sangatsu ni daigaku o sotsugyō shita bakari desu.',
           meaning: {
             en: 'I just graduated from university in March.',
-            vi: 'Anh ấy mới tốt nghiệp đại học vào tháng 3.'
+            vi: 'Tôi vừa mới tốt nghiệp đại học vào tháng 3.'
           },
           ruby: [
             { base: '月', reading: 'げつ' },

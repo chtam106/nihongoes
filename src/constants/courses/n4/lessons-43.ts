@@ -165,7 +165,7 @@ export const n4Lesson43: Lesson = {
       kanji: '謝ります',
       romaji: 'ayamarimasu',
       meaning: { en: 'to apologize', vi: 'xin lỗi' },
-      ruby: [{ base: '謝', reading: 'あや' }]
+      ruby: [{ base: '謝', reading: 'あやま' }]
     },
     {
       kana: 'しりあいます',
@@ -180,7 +180,7 @@ export const n4Lesson43: Lesson = {
   ],
   phrases: [
     {
-      kana: 'いまにも 雨が 降りそうです。',
+      kana: 'いまにも あめが ふりそうです。',
       kanji: '今にも 雨が 降りそうです。',
       romaji: 'Ima ni mo ame ga furisō desu.',
       meaning: {
@@ -194,7 +194,7 @@ export const n4Lesson43: Lesson = {
       ]
     },
     {
-      kana: 'ちょっと 切符を 買って きます。',
+      kana: 'ちょっと きっぷを かって きます。',
       kanji: 'ちょっと 切符を 買って 来ます。',
       romaji: 'Chotto kippu o katte kimasu.',
       meaning: { en: 'I will go buy a ticket and come back.', vi: 'Tôi đi mua vé một chút.' },
@@ -247,7 +247,7 @@ export const n4Lesson43: Lesson = {
           speakerId: 'hayashi',
           jp: '元気そう ですね。',
           romaji: 'Genki sō desu ne.',
-          meaning: { en: 'He looks healthy.', vi: 'Cháu trông có vẻ khỏe mạnh nhỉ.' },
+          meaning: { en: "He looks healthy, doesn't he?", vi: 'Trông cậu bé khỏe mạnh nhỉ.' },
           ruby: [
             { base: '元', reading: 'げん' },
             { base: '気', reading: 'き' }

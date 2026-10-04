@@ -338,7 +338,7 @@ export const n4Lesson41: Lesson = {
       kanji: '煙',
       romaji: 'kemuri',
       meaning: { en: 'smoke', vi: 'khói' },
-      ruby: [{ base: '煙', reading: 'けむ' }]
+      ruby: [{ base: '煙', reading: 'けむり' }]
     },
     {
       kana: 'まっしろ',

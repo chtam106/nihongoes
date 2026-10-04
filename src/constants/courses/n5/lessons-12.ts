@@ -123,8 +123,8 @@ export const n5Lesson12: Lesson = {
       kana: 'いい [コーヒーが～]',
       romaji: 'ii [kōhī ga ~]',
       meaning: {
-        en: 'good (choose or prefer, e.g. coffee)',
-        vi: 'tốt, chọn, dùng (vd. cà phê)'
+        en: 'preferred (choose or use, e.g. coffee)',
+        vi: 'thích, chọn, dùng (vd. cà phê)'
       }
     },
     {
@@ -253,8 +253,8 @@ export const n5Lesson12: Lesson = {
       romaji: 'sashimi',
       meaning: { en: 'sashimi (raw fish)', vi: 'sashimi, gỏi cá sống' },
       ruby: [
-        { base: '刺', reading: 'さ' },
-        { base: '身', reading: 'し' }
+        { base: '刺', reading: 'さし' },
+        { base: '身', reading: 'み' }
       ]
     },
     {
@@ -309,7 +309,7 @@ export const n5Lesson12: Lesson = {
       },
       ruby: [
         { base: '生', reading: 'い' },
-        { base: '花', reading: 'け' }
+        { base: '花', reading: 'ばな' }
       ]
     },
     {

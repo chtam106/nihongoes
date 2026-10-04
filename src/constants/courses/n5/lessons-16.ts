@@ -171,7 +171,7 @@ export const n5Lesson16: Lesson = {
       kanji: '暗い',
       romaji: 'kurai',
       meaning: { en: 'dark', vi: 'tối' },
-      ruby: [{ base: '暗', reading: 'く' }]
+      ruby: [{ base: '暗', reading: 'くら' }]
     },
     {
       kana: 'からだ',
@@ -1254,7 +1254,7 @@ export const n5Lesson16: Lesson = {
           romaji: 'Onaka mo sukimashita. Mizu o nonde, sukoshi yasumimasu.',
           meaning: {
             en: 'He is hungry too. He drinks water and rests a little.',
-            vi: 'Bụng cũng đói. Anh uống nước và nghỉ một chút.'
+            vi: 'Anh ấy cũng đói. Anh ấy uống nước và nghỉ một chút.'
           },
           ruby: [
             { base: '水', reading: 'みず' },

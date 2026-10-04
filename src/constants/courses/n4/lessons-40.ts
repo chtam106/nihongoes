@@ -202,7 +202,7 @@ export const n4Lesson40: Lesson = {
       kana: 'きず',
       kanji: '傷',
       romaji: 'kizu',
-      meaning: { en: 'injury, scratch', vi: 'vết thương, vết trầy' },
+      meaning: { en: 'injury, scratch', vi: 'vết thương, vết trầy, vết xước' },
       ruby: [{ base: '傷', reading: 'きず' }]
     },
     {
@@ -217,7 +217,7 @@ export const n4Lesson40: Lesson = {
       meaning: { en: 'elderly person (polite)', vi: 'người già, người cao tuổi' },
       ruby: [
         { base: '年', reading: 'とし' },
-        { base: '寄', reading: 'より' }
+        { base: '寄', reading: 'よ' }
       ]
     },
     {

@@ -143,7 +143,7 @@ export const n5Lesson22: Lesson = {
       romaji: 'oshiire',
       meaning: { en: 'closet (in a Japanese room)', vi: 'tủ đựng đồ (trong phòng Nhật)' },
       ruby: [
-        { base: '押', reading: 'お' },
+        { base: '押', reading: 'おし' },
         { base: '入', reading: 'い' }
       ]
     },

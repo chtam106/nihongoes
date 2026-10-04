@@ -1401,6 +1401,72 @@ export const n5Lesson4: Lesson = {
           ruby: [{ base: '号', reading: 'ごう' }]
         }
       ]
+    },
+    {
+      kind: 'vocab',
+      title: { en: 'Place names', vi: 'Địa danh' },
+      includeInQuiz: false,
+      items: [
+        { kana: 'ニューヨーク', romaji: 'Nyūyōku', meaning: { en: 'New York', vi: 'New York' } },
+        { kana: 'ペキン', romaji: 'Pekin', meaning: { en: 'Beijing', vi: 'Bắc Kinh' } },
+        {
+          kana: 'ロサンゼルス',
+          romaji: 'Rosanzerusu',
+          meaning: { en: 'Los Angeles', vi: 'Los Angeles' }
+        },
+        { kana: 'ロンドン', romaji: 'Rondon', meaning: { en: 'London', vi: 'Luân Đôn' } }
+      ]
+    },
+    {
+      kind: 'vocab',
+      title: { en: 'Names in this lesson', vi: 'Tên riêng trong bài' },
+      includeInQuiz: false,
+      intro: {
+        en: 'Fictional businesses the textbook uses in its examples.',
+        vi: 'Cơ sở giả định mà giáo trình dùng trong ví dụ.'
+      },
+      items: [
+        {
+          kana: 'あすか',
+          romaji: 'Asuka',
+          meaning: { en: 'Asuka (fictional restaurant)', vi: 'Asuka (nhà hàng giả định)' }
+        },
+        {
+          kana: 'アップルぎんこう',
+          kanji: 'アップル銀行',
+          romaji: 'Appuru ginkō',
+          ruby: [
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' }
+          ],
+          meaning: { en: 'Apple Bank (fictional)', vi: 'Ngân hàng Apple (giả định)' }
+        },
+        {
+          kana: 'みどりとしょかん',
+          kanji: 'みどり図書館',
+          romaji: 'Midori toshokan',
+          ruby: [
+            { base: '図', reading: 'と' },
+            { base: '書', reading: 'しょ' },
+            { base: '館', reading: 'かん' }
+          ],
+          meaning: { en: 'Midori Library (fictional)', vi: 'Thư viện Midori (giả định)' }
+        },
+        {
+          kana: 'やまとびじゅつかん',
+          kanji: 'やまと美術館',
+          romaji: 'Yamato bijutsukan',
+          ruby: [
+            { base: '美', reading: 'び' },
+            { base: '術', reading: 'じゅつ' },
+            { base: '館', reading: 'かん' }
+          ],
+          meaning: {
+            en: 'Yamato Art Museum (fictional)',
+            vi: 'Bảo tàng mỹ thuật Yamato (giả định)'
+          }
+        }
+      ]
     }
   ]
 };

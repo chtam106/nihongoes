@@ -183,7 +183,7 @@ export const n5Lesson14: Lesson = {
     {
       kana: 'エアコン',
       romaji: 'eakon',
-      meaning: { en: 'air conditioner', vi: 'máy điều hòa' }
+      meaning: { en: 'air conditioner', vi: 'máy điều hòa (nhiệt độ)' }
     },
     {
       kana: 'パスポート',
@@ -1039,8 +1039,8 @@ export const n5Lesson14: Lesson = {
           romaji: 'iriguchi',
           meaning: { en: 'entrance', vi: 'cửa vào' },
           ruby: [
-            { base: '入', reading: 'い' },
-            { base: '口', reading: 'りぐち' }
+            { base: '入', reading: 'いり' },
+            { base: '口', reading: 'ぐち' }
           ]
         },
         {

@@ -8,6 +8,59 @@ function parseBases(s) {
   return s ? [...s.matchAll(/base:\s*'([^']+)'/g)].map((m) => m[1]) : [];
 }
 
+function parseSegments(s) {
+  return s
+    ? [...s.matchAll(/base:\s*'([^']+)',\s*reading:\s*'([^']+)'/g)].map((m) => ({
+        base: m[1],
+        reading: m[2]
+      }))
+    : [];
+}
+
+/**
+ * Rebuild a word's reading by swapping each rubied kanji for its reading and
+ * keeping the kana in between. Catches a truncated reading (間 as あい instead
+ * of あいだ) that a base-coverage check cannot see. 々 repeats the preceding
+ * reading (少々 -> しょうしょう).
+ */
+function spellOut(surface, segments) {
+  let out = '';
+  let last = '';
+  let pos = 0;
+  let si = 0;
+  while (pos < surface.length) {
+    const seg = segments[si];
+    if (seg && surface.startsWith(seg.base, pos)) {
+      out += seg.reading;
+      last = seg.reading;
+      pos += seg.base.length;
+      si += 1;
+      continue;
+    }
+    if (surface[pos] === '々') {
+      out += last;
+    } else {
+      out += surface[pos];
+      last = surface[pos];
+    }
+    pos += 1;
+  }
+  return out;
+}
+
+const digit = /[0-9\uff10-\uff19]/;
+const stripSpace = (s) => s.replace(/[\s\u3000]/g, '');
+
+/**
+ * A headword may list interchangeable kanji forms (速い、早い) while `kana`
+ * holds the single shared reading, so accept any one alternative.
+ */
+function readingMatches(surface, kana, segments) {
+  const want = stripSpace(kana);
+  const candidates = [surface, ...surface.split('、')];
+  return candidates.some((candidate) => stripSpace(spellOut(candidate, segments)) === want);
+}
+
 function auditJp(text, bases) {
   const miss = [];
   const stuck = [];
@@ -97,6 +150,27 @@ function scanChunk(chunk, label) {
       const { miss, stuck } = auditJp(surface, bases);
       if (miss.length || stuck.length) {
         issues.push({ file: label, kind: 'ruby-mismatch', kanji: surface, miss, stuck });
+        continue;
+      }
+
+      if (kanji.test(kana)) {
+        issues.push({ file: label, kind: 'kana-has-kanji', kanji: surface, kana });
+        continue;
+      }
+
+      // A digit is spelled out in `kana` (2階 -> にかい), so the surface cannot
+      // be reconstructed from ruby alone.
+      if (digit.test(surface)) continue;
+
+      const segments = parseSegments(rm?.[1]);
+      if (kana && !readingMatches(surface, kana, segments)) {
+        issues.push({
+          file: label,
+          kind: 'reading-mismatch',
+          kanji: surface,
+          kana,
+          spelled: spellOut(surface, segments)
+        });
       }
     }
   }

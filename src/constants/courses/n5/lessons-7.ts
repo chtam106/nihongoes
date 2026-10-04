@@ -254,7 +254,7 @@ export const n5Lesson7: Lesson = {
     {
       kana: 'まだ',
       romaji: 'mada',
-      meaning: { en: 'not yet, still', vi: 'chưa' }
+      meaning: { en: 'not yet', vi: 'chưa' }
     },
     {
       kana: 'これから',
@@ -305,8 +305,8 @@ export const n5Lesson7: Lesson = {
       kana: 'いただきます。',
       romaji: 'itadakimasu.',
       meaning: {
-        en: 'Thank you for the food. (said before eating)',
-        vi: 'Tôi xin dùng. (nói trước khi ăn)'
+        en: 'I will start the meal. (said before eating or drinking)',
+        vi: 'Tôi xin dùng. (nói trước khi ăn hoặc uống)'
       }
     },
     {
@@ -389,7 +389,7 @@ export const n5Lesson7: Lesson = {
           speakerId: 'alex',
           jp: '母に もらいました。',
           romaji: 'Haha ni moraimashita.',
-          meaning: { en: 'I got it from my mother.', vi: 'Tôi được mẹ tặng.' },
+          meaning: { en: 'I got it from my mother.', vi: 'Tôi được mẹ cho.' },
           ruby: [{ base: '母', reading: 'はは' }]
         },
         {

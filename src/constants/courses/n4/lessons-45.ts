@@ -94,7 +94,10 @@ export const n4Lesson45: Lesson = {
       kana: '119ばん',
       kanji: '119番',
       romaji: '119-ban',
-      meaning: { en: '119 (fire/ambulance emergency number)', vi: '119 (số báo cháy khẩn cấp)' },
+      meaning: {
+        en: '119 (fire and ambulance emergency number)',
+        vi: '119 (số báo cháy và cấp cứu khẩn cấp)'
+      },
       ruby: [{ base: '番', reading: 'ばん' }]
     },
     {
@@ -137,7 +140,7 @@ export const n4Lesson45: Lesson = {
       romaji: 'kakariin',
       meaning: { en: 'staff member, person in charge', vi: 'người phụ trách' },
       ruby: [
-        { base: '係', reading: 'かか' },
+        { base: '係', reading: 'かかり' },
         { base: '員', reading: 'いん' }
       ]
     },

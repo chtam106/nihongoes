@@ -16,12 +16,15 @@ export const n5Lesson10: Lesson = {
     {
       kana: 'あります',
       romaji: 'arimasu',
-      meaning: { en: 'to exist, to be (things)', vi: 'có, ở (đồ vật, cây cối)' }
+      meaning: { en: 'to exist, to be (things)', vi: 'ở (tồn tại, dùng cho đồ vật)' }
     },
     {
       kana: 'います',
       romaji: 'imasu',
-      meaning: { en: 'to exist, to be (people, animals)', vi: 'có, ở (người, động vật)' }
+      meaning: {
+        en: 'to exist, to be (people, animals)',
+        vi: 'ở (tồn tại, dùng cho người và động vật)'
+      }
     },
     {
       kana: 'いろいろ [な]',
@@ -155,7 +158,7 @@ export const n5Lesson10: Lesson = {
       kana: 'たな',
       kanji: '棚',
       romaji: 'tana',
-      meaning: { en: 'shelf', vi: 'giá, kệ' },
+      meaning: { en: 'shelf', vi: 'giá sách, kệ sách' },
       ruby: [{ base: '棚', reading: 'たな' }]
     },
     {
@@ -173,7 +176,7 @@ export const n5Lesson10: Lesson = {
     {
       kana: 'ポスト',
       romaji: 'posuto',
-      meaning: { en: 'mailbox', vi: 'hòm thư' }
+      meaning: { en: 'mailbox', vi: 'hộp thư, hòm thư' }
     },
     {
       kana: 'ビル',
@@ -204,7 +207,7 @@ export const n5Lesson10: Lesson = {
       kana: 'きっさてん',
       kanji: '喫茶店',
       romaji: 'kissaten',
-      meaning: { en: 'coffee shop', vi: 'quán cà phê' },
+      meaning: { en: 'coffee shop, cafe', vi: 'quán giải khát, quán cà phê' },
       ruby: [
         { base: '喫', reading: 'きっ' },
         { base: '茶', reading: 'さ' },
@@ -308,7 +311,7 @@ export const n5Lesson10: Lesson = {
       kanji: '間',
       romaji: 'aida',
       meaning: { en: 'between', vi: 'ở giữa' },
-      ruby: [{ base: '間', reading: 'あい' }]
+      ruby: [{ base: '間', reading: 'あいだ' }]
     },
     {
       kana: '～や ～[など]',
@@ -678,7 +681,7 @@ export const n5Lesson10: Lesson = {
         { base: '外', reading: 'そと' },
         { base: '隣', reading: 'となり' },
         { base: '近', reading: 'ちか' },
-        { base: '間', reading: 'あい' }
+        { base: '間', reading: 'あいだ' }
       ],
       highlights: ['の', 'に', 'あります'],
       title: { en: 'Relative position (N1 の N2)', vi: 'Vị trí tương đối (N1 の N2)' },
@@ -731,7 +734,7 @@ export const n5Lesson10: Lesson = {
             { base: '屋', reading: 'や' },
             { base: '花', reading: 'はな' },
             { base: '屋', reading: 'や' },
-            { base: '間', reading: 'あい' }
+            { base: '間', reading: 'あいだ' }
           ]
         }
       ]

@@ -213,8 +213,8 @@ export const n5Lesson17: Lesson = {
       romaji: 'kaze',
       meaning: { en: 'cold (illness)', vi: 'cảm, cảm cúm' },
       ruby: [
-        { base: '風', reading: 'かぜ' },
-        { base: '邪', reading: '' }
+        { base: '風', reading: 'か' },
+        { base: '邪', reading: 'ぜ' }
       ]
     },
     {
@@ -239,7 +239,7 @@ export const n5Lesson17: Lesson = {
       kanji: '薬',
       romaji: 'kusuri',
       meaning: { en: 'medicine', vi: 'thuốc' },
-      ruby: [{ base: '薬', reading: 'くす' }]
+      ruby: [{ base: '薬', reading: 'くすり' }]
     },
     {
       kana: 'おふろ',
@@ -1282,8 +1282,8 @@ export const n5Lesson17: Lesson = {
           romaji: 'kaze',
           meaning: { en: 'cold (illness)', vi: 'cảm' },
           ruby: [
-            { base: '風', reading: 'かぜ' },
-            { base: '邪', reading: '' }
+            { base: '風', reading: 'か' },
+            { base: '邪', reading: 'ぜ' }
           ]
         },
         {
@@ -1292,7 +1292,7 @@ export const n5Lesson17: Lesson = {
           meaning: { en: 'influenza, flu', vi: 'cúm' }
         },
         {
-          kana: 'はなはなびょう',
+          kana: 'かふんしょう',
           kanji: '花粉症',
           romaji: 'kafun-shō',
           meaning: { en: 'hay fever, pollen allergy', vi: 'dị ứng phấn hoa' },
@@ -1338,7 +1338,7 @@ export const n5Lesson17: Lesson = {
           kanji: '薬',
           romaji: 'kusuri',
           meaning: { en: 'medicine', vi: 'thuốc' },
-          ruby: [{ base: '薬', reading: 'くす' }]
+          ruby: [{ base: '薬', reading: 'くすり' }]
         }
       ]
     }

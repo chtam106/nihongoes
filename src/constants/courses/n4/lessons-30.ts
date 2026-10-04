@@ -36,7 +36,7 @@ export const n4Lesson30: Lesson = {
       kana: 'ならべます',
       kanji: '並べます',
       romaji: 'narabemasu',
-      meaning: { en: 'to line up, to arrange', vi: 'sắp xếp, xếp hàng' },
+      meaning: { en: 'to arrange, to line up', vi: 'sắp xếp' },
       ruby: [{ base: '並', reading: 'なら' }]
     },
     {
@@ -56,7 +56,7 @@ export const n4Lesson30: Lesson = {
     {
       kana: 'まとめます',
       romaji: 'matomemasu',
-      meaning: { en: 'to put together, to pack up', vi: 'thu dọn, gom lại' }
+      meaning: { en: 'to pack up (luggage), to put together', vi: 'thu dọn (hành lý), gom lại' }
     },
     {
       kana: 'しまいます',
@@ -278,7 +278,7 @@ export const n4Lesson30: Lesson = {
     {
       kana: 'まだ',
       romaji: 'mada',
-      meaning: { en: 'still, not yet', vi: 'vẫn, vẫn còn' }
+      meaning: { en: 'still', vi: 'vẫn' }
     },
     {
       kana: 'リュック',

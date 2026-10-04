@@ -44,17 +44,24 @@ export const n5Lesson25: Lesson = {
       kana: 'としをとります',
       kanji: '年を取ります',
       romaji: 'toshi o torimasu',
-      meaning: { en: 'to grow old, to age', vi: 'già đi, lớn tuổi' },
+      meaning: { en: 'to grow older (年を～: gain years)', vi: 'có thêm tuổi, già đi (年を～)' },
       ruby: [
         { base: '年', reading: 'とし' },
         { base: '取', reading: 'と' }
       ]
     },
     {
+      kana: 'たります',
+      kanji: '足ります',
+      romaji: 'tarimasu',
+      meaning: { en: 'to be enough, to be sufficient', vi: 'đủ' },
+      ruby: [{ base: '足', reading: 'た' }]
+    },
+    {
       kana: 'いなか',
       kanji: '田舎',
       romaji: 'inaka',
-      meaning: { en: 'countryside, hometown', vi: 'nông thôn, quê' },
+      meaning: { en: "countryside, one's hometown", vi: 'quê, nông thôn' },
       ruby: [
         { base: '田', reading: 'いな' },
         { base: '舎', reading: 'か' }
@@ -82,10 +89,20 @@ export const n5Lesson25: Lesson = {
       meaning: { en: 'chance, opportunity', vi: 'cơ hội' }
     },
     {
+      kana: 'いみ',
+      kanji: '意味',
+      romaji: 'imi',
+      meaning: { en: 'meaning', vi: 'nghĩa, ý nghĩa' },
+      ruby: [
+        { base: '意', reading: 'い' },
+        { base: '味', reading: 'み' }
+      ]
+    },
+    {
       kana: 'おく',
       kanji: '億',
       romaji: 'oku',
-      meaning: { en: '100 million', vi: '100 triệu (một ức)' },
+      meaning: { en: '100 million', vi: 'một trăm triệu (một ức)' },
       ruby: [{ base: '億', reading: 'おく' }]
     },
     {
@@ -131,7 +148,7 @@ export const n5Lesson25: Lesson = {
   ],
   phrases: [
     {
-      kana: 'いっぱい 飲みましょう。',
+      kana: 'いっぱい のみましょう。',
       kanji: '一杯 飲みましょう。',
       romaji: 'Ippai nomimashō.',
       meaning: { en: 'Let us have a drink.', vi: 'Uống một ly nhé.' },

@@ -48,7 +48,7 @@ export const n5Lesson13: Lesson = {
       kana: 'けっこんします',
       kanji: '結婚します',
       romaji: 'kekkon shimasu',
-      meaning: { en: 'to get married', vi: 'kết hôn, cưới' },
+      meaning: { en: 'to get married', vi: 'kết hôn, lập gia đình, cưới' },
       ruby: [
         { base: '結', reading: 'けっ' },
         { base: '婚', reading: 'こん' }
@@ -58,7 +58,7 @@ export const n5Lesson13: Lesson = {
       kana: 'かいものします',
       kanji: '買い物します',
       romaji: 'kaimono shimasu',
-      meaning: { en: 'to shop', vi: 'mua sắm' },
+      meaning: { en: 'to shop', vi: 'mua sắm, mua hàng' },
       ruby: [
         { base: '買', reading: 'か' },
         { base: '物', reading: 'もの' }
@@ -91,7 +91,7 @@ export const n5Lesson13: Lesson = {
       kana: 'たいへん [な]',
       kanji: '大変 [な]',
       romaji: 'taihen [na]',
-      meaning: { en: 'tough, hard (na-adj)', vi: 'vất vả, khó khăn (tính từ な)' },
+      meaning: { en: 'tough, hard (na-adj)', vi: 'vất vả, khó khăn, khổ (tính từ な)' },
       ruby: [
         { base: '大', reading: 'たい' },
         { base: '変', reading: 'へん' }
@@ -242,7 +242,7 @@ export const n5Lesson13: Lesson = {
       ruby: [{ base: '牛', reading: 'ぎゅう' }]
     },
     {
-      kana: 'しょうしょう お待ちください。',
+      kana: 'しょうしょう おまちください。',
       kanji: '少々 お待ちください。',
       romaji: 'Shōshō omachi kudasai.',
       meaning: { en: 'Please wait a moment.', vi: 'Xin vui lòng đợi một chút.' },
@@ -291,7 +291,7 @@ export const n5Lesson13: Lesson = {
           speakerId: 'miller',
           jp: '行きましょう。',
           romaji: 'Ikimashō.',
-          meaning: { en: 'Let\u0027s go.', vi: 'Có.' },
+          meaning: { en: 'Let\u0027s go.', vi: 'Đi thôi.' },
           ruby: [{ base: '行', reading: 'い' }]
         },
         {

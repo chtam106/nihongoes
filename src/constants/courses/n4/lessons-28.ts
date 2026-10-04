@@ -1315,8 +1315,8 @@ export const n4Lesson28: Lesson = {
           romaji: 'oshiire',
           meaning: { en: 'closet (tatami room storage)', vi: 'tủ đựng đồ (phòng tatami)' },
           ruby: [
-            { base: '押', reading: 'お' },
-            { base: '入', reading: 'しい' }
+            { base: '押', reading: 'おし' },
+            { base: '入', reading: 'いれ' }
           ]
         }
       ]

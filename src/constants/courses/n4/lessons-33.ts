@@ -153,7 +153,7 @@ export const n4Lesson33: Lesson = {
       romaji: 'shimekiri',
       meaning: { en: 'deadline', vi: 'hạn chót, hạn cuối' },
       ruby: [
-        { base: '締', reading: 'しめ' },
+        { base: '締', reading: 'し' },
         { base: '切', reading: 'き' }
       ]
     },
@@ -217,7 +217,7 @@ export const n4Lesson33: Lesson = {
       romaji: 'iriguchi',
       meaning: { en: 'entrance', vi: 'lối vào' },
       ruby: [
-        { base: '入', reading: 'い' },
+        { base: '入', reading: 'いり' },
         { base: '口', reading: 'ぐち' }
       ]
     },
