@@ -325,10 +325,10 @@ export const n4Lesson37: Lesson = {
       ruby: [{ base: '美', reading: 'うつく' }]
     },
     {
-      kana: 'ごうか',
-      kanji: '豪華',
-      romaji: 'gōka',
-      meaning: { en: 'luxurious (na-adj)', vi: 'sang trọng, hoành tráng (tính từ な)' },
+      kana: 'ごうか [な]',
+      kanji: '豪華 [な]',
+      romaji: 'gōka [na]',
+      meaning: { en: 'luxurious', vi: 'sang trọng, hoành tráng' },
       ruby: [
         { base: '豪', reading: 'ごう' },
         { base: '華', reading: 'か' }

@@ -104,7 +104,7 @@ export const n5Lesson21: Lesson = {
       kana: 'むだ [な]',
       kanji: '無駄 [な]',
       romaji: 'muda [na]',
-      meaning: { en: 'wasteful (na-adj)', vi: 'lãng phí, vô ích (tính từ な)' },
+      meaning: { en: 'wasteful', vi: 'lãng phí, vô ích' },
       ruby: [
         { base: '無', reading: 'む' },
         { base: '駄', reading: 'だ' }
@@ -114,7 +114,7 @@ export const n5Lesson21: Lesson = {
       kana: 'ふべん [な]',
       kanji: '不便 [な]',
       romaji: 'fuben [na]',
-      meaning: { en: 'inconvenient (na-adj)', vi: 'bất tiện (tính từ な)' },
+      meaning: { en: 'inconvenient', vi: 'bất tiện' },
       ruby: [
         { base: '不', reading: 'ふ' },
         { base: '便', reading: 'べん' }

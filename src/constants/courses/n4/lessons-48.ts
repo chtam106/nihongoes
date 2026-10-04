@@ -61,10 +61,10 @@ export const n4Lesson48: Lesson = {
       ]
     },
     {
-      kana: 'いや',
-      kanji: '嫌',
-      romaji: 'iya',
-      meaning: { en: 'dislike, unpleasant (na-adj)', vi: 'chán, không thích (tính từ な)' },
+      kana: 'いや [な]',
+      kanji: '嫌 [な]',
+      romaji: 'iya [na]',
+      meaning: { en: 'dislike, unpleasant', vi: 'chán, không thích' },
       ruby: [{ base: '嫌', reading: 'いや' }]
     },
     {

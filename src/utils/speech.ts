@@ -6,7 +6,7 @@ import {
   type PointerEvent as ReactPointerEvent
 } from 'react';
 import { STORAGE_PREFIX } from '@/constants/site.ts';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { spokenJapanese } from '@/utils/japanese-display.ts';
 import { stopKanaAudio } from '@/utils/kana-audio.ts';
 import { readUserPreferences, useUserPreferences } from '@/utils/user-preferences.ts';
 
@@ -113,7 +113,7 @@ export function speakJapanese(text: string, rate = getSpeechRate()): void {
 
   window.speechSynthesis.cancel();
 
-  const utterance = new SpeechSynthesisUtterance(formatJapaneseDisplay(text));
+  const utterance = new SpeechSynthesisUtterance(spokenJapanese(text));
   utterance.lang = 'ja-JP';
   utterance.rate = rate;
 

@@ -127,10 +127,10 @@ export const n4Lesson32: Lesson = {
       ]
     },
     {
-      kana: 'じゅうぶん',
-      kanji: '十分',
-      romaji: 'jūbun',
-      meaning: { en: 'enough (na-adj)', vi: 'đủ (tính từ な)' },
+      kana: 'じゅうぶん [な]',
+      kanji: '十分 [な]',
+      romaji: 'jūbun [na]',
+      meaning: { en: 'enough', vi: 'đủ' },
       ruby: [
         { base: '十', reading: 'じゅう' },
         { base: '分', reading: 'ぶん' }

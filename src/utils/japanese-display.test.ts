@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatJapaneseDisplay } from '@/utils/japanese-display.ts';
+import { formatJapaneseDisplay, spokenJapanese } from '@/utils/japanese-display.ts';
 
 describe('formatJapaneseDisplay', () => {
   it('removes spaces between Japanese words in examples', () => {
@@ -15,5 +15,13 @@ describe('formatJapaneseDisplay', () => {
 
   it('passes through text without Japanese', () => {
     expect(formatJapaneseDisplay('hello world')).toBe('hello world');
+  });
+});
+
+describe('spokenJapanese', () => {
+  it('drops the na-adjective tag so TTS does not say な', () => {
+    expect(spokenJapanese('すき [な]')).toBe('すき');
+    expect(spokenJapanese('じょうぶ[な]')).toBe('じょうぶ');
+    expect(formatJapaneseDisplay('すき [な]')).toBe('すき [な]');
   });
 });

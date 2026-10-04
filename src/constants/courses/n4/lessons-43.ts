@@ -66,24 +66,24 @@ export const n4Lesson43: Lesson = {
       meaning: { en: 'to run out [ガソリンが～: gas]', vi: 'hết [xăng ~]' }
     },
     {
-      kana: 'へん',
-      kanji: '変',
-      romaji: 'hen',
-      meaning: { en: 'strange (na-adj)', vi: 'lạ (tính từ な)' },
+      kana: 'へん [な]',
+      kanji: '変 [な]',
+      romaji: 'hen [na]',
+      meaning: { en: 'strange', vi: 'lạ' },
       ruby: [{ base: '変', reading: 'へん' }]
     },
     {
-      kana: 'しあわせ',
-      kanji: '幸せ',
-      romaji: 'shiawase',
-      meaning: { en: 'happy (na-adj)', vi: 'hạnh phúc (tính từ な)' },
+      kana: 'しあわせ [な]',
+      kanji: '幸せ [な]',
+      romaji: 'shiawase [na]',
+      meaning: { en: 'happy', vi: 'hạnh phúc' },
       ruby: [{ base: '幸', reading: 'しあわ' }]
     },
     {
-      kana: 'らく',
-      kanji: '楽',
-      romaji: 'raku',
-      meaning: { en: 'comfortable, easy (na-adj)', vi: 'nhàn, nhàn nhã (tính từ な)' },
+      kana: 'らく [な]',
+      kanji: '楽 [な]',
+      romaji: 'raku [na]',
+      meaning: { en: 'comfortable, easy', vi: 'nhàn, nhàn nhã' },
       ruby: [{ base: '楽', reading: 'らく' }]
     },
     {
@@ -650,32 +650,32 @@ export const n4Lesson43: Lesson = {
           meaning: { en: 'short-tempered', vi: 'thiếu kiên nhẫn, nóng tính' }
         },
         {
-          jp: '活発',
+          jp: '活発 [な]',
           ruby: [
             { base: '活', reading: 'かっ' },
             { base: '発', reading: 'はつ' }
           ],
-          meaning: { en: 'lively (na-adj)', vi: 'hoạt bát' }
+          meaning: { en: 'lively', vi: 'hoạt bát' }
         },
         {
-          jp: '誠実',
+          jp: '誠実 [な]',
           ruby: [
             { base: '誠', reading: 'せい' },
             { base: '実', reading: 'じつ' }
           ],
-          meaning: { en: 'sincere (na-adj)', vi: 'thành thật' }
+          meaning: { en: 'sincere', vi: 'thành thật' }
         },
         {
-          jp: 'まじめ',
-          meaning: { en: 'serious (na-adj)', vi: 'nghiêm túc' }
+          jp: 'まじめ [な]',
+          meaning: { en: 'serious', vi: 'nghiêm túc' }
         },
         {
-          jp: '素直',
+          jp: '素直 [な]',
           ruby: [
             { base: '素', reading: 'す' },
             { base: '直', reading: 'なお' }
           ],
-          meaning: { en: 'obedient, honest (na-adj)', vi: 'dễ bảo, ngoan ngoãn' }
+          meaning: { en: 'obedient, honest', vi: 'dễ bảo, ngoan ngoãn' }
         }
       ]
     }

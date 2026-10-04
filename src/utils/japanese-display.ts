@@ -19,3 +19,10 @@ export function formatJapaneseDisplay(text: string): string {
 
   return result;
 }
+
+const NA_ADJ_MARKER = / ?\[な\]/g;
+
+/** Japanese text for TTS. The na-adjective `[な]` tag stays on screen but is not spoken. */
+export function spokenJapanese(text: string): string {
+  return formatJapaneseDisplay(text).replace(NA_ADJ_MARKER, '');
+}
