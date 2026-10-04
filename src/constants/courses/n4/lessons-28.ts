@@ -55,15 +55,15 @@ export const n4Lesson28: Lesson = {
       meaning: { en: 'to take notes, to memo', vi: 'ghi chép, ghi memo' }
     },
     {
-      kana: 'まじめ',
-      romaji: 'majime',
-      meaning: { en: 'serious, earnest (na-adj)', vi: 'nghiêm túc, ngoan (tính từ な)' }
+      kana: 'まじめ [な]',
+      romaji: 'majime [na]',
+      meaning: { en: 'serious, earnest', vi: 'nghiêm túc, ngoan' }
     },
     {
-      kana: 'ねっしん',
-      kanji: '熱心',
-      romaji: 'nesshin',
-      meaning: { en: 'enthusiastic (na-adj)', vi: 'nhiệt tình (tính từ な)' },
+      kana: 'ねっしん [な]',
+      kanji: '熱心 [な]',
+      romaji: 'nesshin [na]',
+      meaning: { en: 'enthusiastic', vi: 'nhiệt tình' },
       ruby: [
         { base: '熱', reading: 'ねっ' },
         { base: '心', reading: 'しん' }

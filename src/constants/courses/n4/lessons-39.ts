@@ -89,20 +89,20 @@ export const n4Lesson39: Lesson = {
       meaning: { en: 'to lose weight', vi: 'gầy đi' }
     },
     {
-      kana: 'ふくざつ',
-      kanji: '複雑',
-      romaji: 'fukuzatsu',
-      meaning: { en: 'complicated (na-adj)', vi: 'phức tạp (tính từ な)' },
+      kana: 'ふくざつ [な]',
+      kanji: '複雑 [な]',
+      romaji: 'fukuzatsu [na]',
+      meaning: { en: 'complicated', vi: 'phức tạp' },
       ruby: [
         { base: '複', reading: 'ふく' },
         { base: '雑', reading: 'ざつ' }
       ]
     },
     {
-      kana: 'じゃま',
-      kanji: '邪魔',
-      romaji: 'jama',
-      meaning: { en: 'in the way (na-adj)', vi: 'vướng, vướng víu (tính từ な)' },
+      kana: 'じゃま [な]',
+      kanji: '邪魔 [な]',
+      romaji: 'jama [na]',
+      meaning: { en: 'in the way', vi: 'vướng, vướng víu' },
       ruby: [
         { base: '邪', reading: 'じゃ' },
         { base: '魔', reading: 'ま' }

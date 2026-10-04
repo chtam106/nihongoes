@@ -14,44 +14,44 @@ export const n5Lesson8: Lesson = {
   },
   vocab: [
     {
-      kana: 'ハンサム',
-      romaji: 'hansamu',
-      meaning: { en: 'handsome (na-adj)', vi: 'đẹp trai (tính từ な)' }
+      kana: 'ハンサム [な]',
+      romaji: 'hansamu [na]',
+      meaning: { en: 'handsome', vi: 'đẹp trai' }
     },
     {
-      kana: 'きれい',
-      romaji: 'kirei',
-      meaning: { en: 'beautiful, clean (na-adj)', vi: 'đẹp, sạch (tính từ な)' }
+      kana: 'きれい [な]',
+      romaji: 'kirei [na]',
+      meaning: { en: 'beautiful, clean', vi: 'đẹp, sạch' }
     },
     {
-      kana: 'しずか',
-      kanji: '静か',
-      romaji: 'shizuka',
-      meaning: { en: 'quiet (na-adj)', vi: 'yên tĩnh (tính từ な)' },
+      kana: 'しずか [な]',
+      kanji: '静か [な]',
+      romaji: 'shizuka [na]',
+      meaning: { en: 'quiet', vi: 'yên tĩnh' },
       ruby: [{ base: '静', reading: 'しず' }]
     },
     {
-      kana: 'にぎやか',
-      romaji: 'nigiyaka',
-      meaning: { en: 'lively, bustling (na-adj)', vi: 'náo nhiệt (tính từ な)' }
+      kana: 'にぎやか [な]',
+      romaji: 'nigiyaka [na]',
+      meaning: { en: 'lively, bustling', vi: 'náo nhiệt' }
     },
     {
-      kana: 'ゆうめい',
-      kanji: '有名',
-      romaji: 'yūmei',
-      meaning: { en: 'famous (na-adj)', vi: 'nổi tiếng (tính từ な)' },
+      kana: 'ゆうめい [な]',
+      kanji: '有名 [な]',
+      romaji: 'yūmei [na]',
+      meaning: { en: 'famous', vi: 'nổi tiếng' },
       ruby: [
         { base: '有', reading: 'ゆう' },
         { base: '名', reading: 'めい' }
       ]
     },
     {
-      kana: 'しんせつ',
-      kanji: '親切',
-      romaji: 'shinsetsu',
+      kana: 'しんせつ [な]',
+      kanji: '親切 [な]',
+      romaji: 'shinsetsu [na]',
       meaning: {
-        en: 'kind, helpful (na-adj; not used for your own family)',
-        vi: 'tốt bụng, chu đáo (tính từ な; không dùng cho người trong gia đình mình)'
+        en: 'kind, helpful (not used for your own family)',
+        vi: 'tốt bụng, chu đáo (không dùng cho người trong gia đình mình)'
       },
       ruby: [
         { base: '親', reading: 'しん' },
@@ -59,36 +59,36 @@ export const n5Lesson8: Lesson = {
       ]
     },
     {
-      kana: 'げんき',
-      kanji: '元気',
-      romaji: 'genki',
-      meaning: { en: 'healthy, energetic (na-adj)', vi: 'khỏe, khỏe khoắn (tính từ な)' },
+      kana: 'げんき [な]',
+      kanji: '元気 [な]',
+      romaji: 'genki [na]',
+      meaning: { en: 'healthy, energetic', vi: 'khỏe, khỏe khoắn' },
       ruby: [
         { base: '元', reading: 'げん' },
         { base: '気', reading: 'き' }
       ]
     },
     {
-      kana: 'ひま',
-      kanji: '暇',
-      romaji: 'hima',
-      meaning: { en: 'free, not busy (na-adj)', vi: 'rảnh rỗi (tính từ な)' },
+      kana: 'ひま [な]',
+      kanji: '暇 [な]',
+      romaji: 'hima [na]',
+      meaning: { en: 'free, not busy', vi: 'rảnh rỗi' },
       ruby: [{ base: '暇', reading: 'ひま' }]
     },
     {
-      kana: 'べんり',
-      kanji: '便利',
-      romaji: 'benri',
-      meaning: { en: 'convenient (na-adj)', vi: 'tiện lợi (tính từ な)' },
+      kana: 'べんり [な]',
+      kanji: '便利 [な]',
+      romaji: 'benri [na]',
+      meaning: { en: 'convenient', vi: 'tiện lợi' },
       ruby: [
         { base: '便', reading: 'べん' },
         { base: '利', reading: 'り' }
       ]
     },
     {
-      kana: 'すてき',
-      romaji: 'suteki',
-      meaning: { en: 'lovely, nice (na-adj)', vi: 'đẹp, hay (tính từ な)' }
+      kana: 'すてき [な]',
+      romaji: 'suteki [na]',
+      meaning: { en: 'lovely, nice', vi: 'đẹp, hay' }
     },
     {
       kana: 'おおきい',

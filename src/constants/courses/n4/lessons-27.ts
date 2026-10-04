@@ -60,10 +60,10 @@ export const n4Lesson27: Lesson = {
       ruby: [{ base: '開', reading: 'ひら' }]
     },
     {
-      kana: 'しんぱい',
-      kanji: '心配',
-      romaji: 'shinpai',
-      meaning: { en: 'worried (na-adj)', vi: 'lo lắng (tính từ な)' },
+      kana: 'しんぱい [な]',
+      kanji: '心配 [な]',
+      romaji: 'shinpai [na]',
+      meaning: { en: 'worried', vi: 'lo lắng' },
       ruby: [
         { base: '心', reading: 'しん' },
         { base: '配', reading: 'ぱい' }
@@ -226,10 +226,10 @@ export const n4Lesson27: Lesson = {
       ruby: [{ base: '子', reading: 'こ' }]
     },
     {
-      kana: 'だいすき',
-      kanji: '大好き',
-      romaji: 'daisuki',
-      meaning: { en: 'love, like very much (na-adj)', vi: 'rất thích (tính từ な)' },
+      kana: 'だいすき [な]',
+      kanji: '大好き [な]',
+      romaji: 'daisuki [na]',
+      meaning: { en: 'love, like very much', vi: 'rất thích' },
       ruby: [
         { base: '大', reading: 'だい' },
         { base: '好', reading: 'す' }
@@ -254,10 +254,10 @@ export const n4Lesson27: Lesson = {
       ruby: [{ base: '形', reading: 'かたち' }]
     },
     {
-      kana: 'ふしぎ',
-      kanji: '不思議',
-      romaji: 'fushigi',
-      meaning: { en: 'strange, mysterious (na-adj)', vi: 'kỳ lạ (tính từ な)' },
+      kana: 'ふしぎ [な]',
+      kanji: '不思議 [な]',
+      romaji: 'fushigi [na]',
+      meaning: { en: 'strange, mysterious', vi: 'kỳ lạ' },
       ruby: [
         { base: '不', reading: 'ふ' },
         { base: '思', reading: 'し' },

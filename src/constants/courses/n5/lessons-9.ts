@@ -27,21 +27,21 @@ export const n5Lesson9: Lesson = {
       kana: 'すき [な]',
       kanji: '好き [な]',
       romaji: 'suki [na]',
-      meaning: { en: 'to like, fond of (na-adj)', vi: 'thích (tính từ な)' },
+      meaning: { en: 'to like, fond of', vi: 'thích' },
       ruby: [{ base: '好', reading: 'す' }]
     },
     {
       kana: 'きらい [な]',
       kanji: '嫌い [な]',
       romaji: 'kirai [na]',
-      meaning: { en: 'to dislike (na-adj)', vi: 'ghét, không thích (tính từ な)' },
+      meaning: { en: 'to dislike', vi: 'ghét, không thích' },
       ruby: [{ base: '嫌', reading: 'きら' }]
     },
     {
       kana: 'じょうず [な]',
       kanji: '上手 [な]',
       romaji: 'jōzu [na]',
-      meaning: { en: 'skillful, good at (na-adj)', vi: 'giỏi, khéo (tính từ な)' },
+      meaning: { en: 'skillful, good at', vi: 'giỏi, khéo' },
       ruby: [
         { base: '上', reading: 'じょう' },
         { base: '手', reading: 'ず' }
@@ -51,7 +51,7 @@ export const n5Lesson9: Lesson = {
       kana: 'へた [な]',
       kanji: '下手 [な]',
       romaji: 'heta [na]',
-      meaning: { en: 'unskillful, poor at (na-adj)', vi: 'kém, dở (tính từ な)' },
+      meaning: { en: 'unskillful, poor at', vi: 'kém, dở' },
       ruby: [
         { base: '下', reading: 'へ' },
         { base: '手', reading: 'た' }

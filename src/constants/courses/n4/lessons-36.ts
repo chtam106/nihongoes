@@ -190,10 +190,10 @@ export const n4Lesson36: Lesson = {
       ]
     },
     {
-      kana: 'とくべつ',
-      kanji: '特別',
-      romaji: 'tokubetsu',
-      meaning: { en: 'special (na-adj)', vi: 'đặc biệt (tính từ な)' },
+      kana: 'とくべつ [な]',
+      kanji: '特別 [な]',
+      romaji: 'tokubetsu [na]',
+      meaning: { en: 'special', vi: 'đặc biệt' },
       ruby: [
         { base: '特', reading: 'とく' },
         { base: '別', reading: 'べつ' }

@@ -29,7 +29,7 @@ export const n5Lesson10: Lesson = {
     {
       kana: 'いろいろ [な]',
       romaji: 'iroiro [na]',
-      meaning: { en: 'various (na-adj)', vi: 'nhiều loại, đa dạng (tính từ な)' }
+      meaning: { en: 'various', vi: 'nhiều loại, đa dạng' }
     },
     {
       kana: 'おとこの ひと',

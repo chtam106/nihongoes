@@ -143,7 +143,7 @@ export const n5Lesson17: Lesson = {
       kana: 'たいせつ [な]',
       kanji: '大切 [な]',
       romaji: 'taisetsu [na]',
-      meaning: { en: 'important, precious (na-adj)', vi: 'quan trọng (tính từ な)' },
+      meaning: { en: 'important, precious', vi: 'quan trọng' },
       ruby: [
         { base: '大', reading: 'たい' },
         { base: '切', reading: 'せつ' }
@@ -153,7 +153,7 @@ export const n5Lesson17: Lesson = {
       kana: 'だいじょうぶ [な]',
       kanji: '大丈夫 [な]',
       romaji: 'daijōbu [na]',
-      meaning: { en: 'all right, fine (na-adj)', vi: 'ổn, không sao (tính từ な)' },
+      meaning: { en: 'all right, fine', vi: 'ổn, không sao' },
       ruby: [
         { base: '大', reading: 'だい' },
         { base: '丈', reading: 'じょう' },
