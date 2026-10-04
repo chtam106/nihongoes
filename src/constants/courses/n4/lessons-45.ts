@@ -137,7 +137,7 @@ export const n4Lesson45: Lesson = {
       romaji: 'kakariin',
       meaning: { en: 'staff member, person in charge', vi: 'người phụ trách' },
       ruby: [
-        { base: '係', reading: 'かか' },
+        { base: '係', reading: 'かかり' },
         { base: '員', reading: 'いん' }
       ]
     },

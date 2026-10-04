@@ -809,9 +809,9 @@ export const n5Lesson23: Lesson = {
           ]
         },
         {
-          kana: 'いっこうつうこう',
+          kana: 'いっぽうつうこう',
           kanji: '一方通行',
-          romaji: 'ikkō tsūkō',
+          romaji: 'ippō tsūkō',
           meaning: { en: 'One-way traffic', vi: 'Đường một chiều' },
           ruby: [
             { base: '一', reading: 'いっ' },

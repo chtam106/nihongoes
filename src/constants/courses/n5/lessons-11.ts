@@ -269,7 +269,7 @@ export const n5Lesson11: Lesson = {
       kanji: '弟さん',
       romaji: 'otōtosan',
       meaning: { en: "someone else's younger brother", vi: 'em trai (của người khác)' },
-      ruby: [{ base: '弟', reading: 'とうと' }]
+      ruby: [{ base: '弟', reading: 'おとうと' }]
     },
     {
       kana: 'いもうと',
@@ -283,7 +283,7 @@ export const n5Lesson11: Lesson = {
       kanji: '妹さん',
       romaji: 'imōtosan',
       meaning: { en: "someone else's younger sister", vi: 'em gái (của người khác)' },
-      ruby: [{ base: '妹', reading: 'もうと' }]
+      ruby: [{ base: '妹', reading: 'いもうと' }]
     },
     {
       kana: 'がいこく',
@@ -430,14 +430,14 @@ export const n5Lesson11: Lesson = {
       kanji: '行ってらっしゃい。',
       romaji: 'Itterasshai.',
       meaning: { en: 'See you. / Take care (to someone leaving).', vi: 'Anh/Chị đi nhé.' },
-      ruby: [{ base: '行', reading: 'いっ' }]
+      ruby: [{ base: '行', reading: 'い' }]
     },
     {
       kana: 'いってきます。',
       kanji: '行ってきます。',
       romaji: 'Itte kimasu.',
       meaning: { en: 'I am off. / I will be back.', vi: 'Tôi đi đây.' },
-      ruby: [{ base: '行', reading: 'いっ' }]
+      ruby: [{ base: '行', reading: 'い' }]
     }
   ],
   conversation: [

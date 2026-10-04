@@ -120,14 +120,14 @@ export const n4Lesson39: Lesson = {
       kanji: '軟らかい',
       romaji: 'yawarakai',
       meaning: { en: 'soft', vi: 'mềm' },
-      ruby: [{ base: '軟', reading: 'やわら' }]
+      ruby: [{ base: '軟', reading: 'やわ' }]
     },
     {
       kana: 'きたない',
       kanji: '汚い',
       romaji: 'kitanai',
       meaning: { en: 'dirty', vi: 'bẩn' },
-      ruby: [{ base: '汚', reading: 'きた' }]
+      ruby: [{ base: '汚', reading: 'きたな' }]
     },
     {
       kana: 'うれしい',
@@ -146,7 +146,7 @@ export const n4Lesson39: Lesson = {
       kanji: '恥ずかしい',
       romaji: 'hazukashii',
       meaning: { en: 'embarrassed, shy', vi: 'xấu hổ, ngượng' },
-      ruby: [{ base: '恥', reading: 'はず' }]
+      ruby: [{ base: '恥', reading: 'は' }]
     },
     {
       kana: 'しゅしょう',
@@ -193,7 +193,7 @@ export const n4Lesson39: Lesson = {
       kanji: '雷',
       romaji: 'kaminari',
       meaning: { en: 'thunder, lightning', vi: 'sấm' },
-      ruby: [{ base: '雷', reading: 'かみな' }]
+      ruby: [{ base: '雷', reading: 'かみなり' }]
     },
     {
       kana: 'かじ',

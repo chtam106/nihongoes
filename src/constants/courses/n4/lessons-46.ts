@@ -240,7 +240,7 @@ export const n4Lesson46: Lesson = {
       romaji: 'dekigoto',
       meaning: { en: 'event, incident', vi: 'sự việc' },
       ruby: [
-        { base: '出', reading: 'でき' },
+        { base: '出', reading: 'で' },
         { base: '来', reading: 'き' },
         { base: '事', reading: 'ごと' }
       ]

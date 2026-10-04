@@ -244,7 +244,7 @@ export const n4Lesson42: Lesson = {
       meaning: { en: 'canned food', vi: 'đồ hộp, thực phẩm đóng hộp' },
       ruby: [
         { base: '缶', reading: 'かん' },
-        { base: '詰', reading: 'づ' }
+        { base: '詰', reading: 'づめ' }
       ]
     },
     {
@@ -1026,7 +1026,7 @@ export const n4Lesson42: Lesson = {
           meaning: { en: 'pencil sharpener', vi: 'cái gọt bút chì' },
           ruby: [
             { base: '鉛', reading: 'えん' },
-            { base: '筆', reading: 'ひつ' },
+            { base: '筆', reading: 'ぴつ' },
             { base: '削', reading: 'けず' }
           ]
         },

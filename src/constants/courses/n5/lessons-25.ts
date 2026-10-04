@@ -131,7 +131,7 @@ export const n5Lesson25: Lesson = {
   ],
   phrases: [
     {
-      kana: 'いっぱい 飲みましょう。',
+      kana: 'いっぱい のみましょう。',
       kanji: '一杯 飲みましょう。',
       romaji: 'Ippai nomimashō.',
       meaning: { en: 'Let us have a drink.', vi: 'Uống một ly nhé.' },

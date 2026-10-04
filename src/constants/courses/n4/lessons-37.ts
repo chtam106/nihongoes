@@ -359,7 +359,7 @@ export const n4Lesson37: Lesson = {
       kanji: '鼠',
       romaji: 'nezumi',
       meaning: { en: 'mouse, rat', vi: 'chuột' },
-      ruby: [{ base: '鼠', reading: 'ねず' }]
+      ruby: [{ base: '鼠', reading: 'ねずみ' }]
     }
   ],
   phrases: [

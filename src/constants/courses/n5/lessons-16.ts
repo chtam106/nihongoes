@@ -171,7 +171,7 @@ export const n5Lesson16: Lesson = {
       kanji: '暗い',
       romaji: 'kurai',
       meaning: { en: 'dark', vi: 'tối' },
-      ruby: [{ base: '暗', reading: 'く' }]
+      ruby: [{ base: '暗', reading: 'くら' }]
     },
     {
       kana: 'からだ',
