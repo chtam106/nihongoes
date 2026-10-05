@@ -36,6 +36,7 @@ export const course = {
   lessonLabel: 'Bài {number}',
   audioHint: 'Bấm vào bất kỳ từ vựng hoặc câu nào để nghe phát âm.',
   vocabulary: 'Từ vựng',
+  vocabularyCount: 'Từ vựng ({count})',
   vocabIndexHeading: 'Tổng hợp từ vựng',
   vocabIndexIntro: 'Toàn bộ từ vựng {code} của khóa.',
   vocabIndexAll: 'Tất cả',
