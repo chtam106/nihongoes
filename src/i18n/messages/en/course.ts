@@ -37,6 +37,7 @@ export const course = {
   lessonLabel: 'Lesson {number}',
   audioHint: 'Tap any vocabulary word or sentence to hear it pronounced.',
   vocabulary: 'Vocabulary',
+  vocabularyCount: 'Vocabulary ({count})',
   vocabIndexHeading: 'All vocabulary',
   vocabIndexIntro: 'Every {code} word from the course.',
   vocabIndexAll: 'All',

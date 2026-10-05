@@ -62,7 +62,9 @@ function VocabularySection({ lesson }: VocabularySectionProps) {
     <Box id="vocab" sx={SECTION_ANCHOR_SX}>
       <Stack direction="row" spacing={1} sx={{ alignItems: 'center', mb: 1.5 }}>
         <MenuBookOutlinedIcon color="primary" />
-        <Heading component="h2">{t('course.vocabulary')}</Heading>
+        <Heading component="h2">
+          {t('course.vocabularyCount', { count: lesson.vocab.length })}
+        </Heading>
       </Stack>
 
       <VocabCardGrid items={lesson.vocab} locale={locale} />
