@@ -1,8 +1,15 @@
-import { radicals, type Radical } from './radicals.ts';
+import {
+  getRadicalStrokeIndex,
+  groupRadicalsByStrokes,
+  radicals,
+  radicalsInStrokeOrder,
+  type Radical,
+  type RadicalStrokeGroup
+} from './radicals.ts';
 
 export * from './types.ts';
-export { radicals };
-export type { Radical };
+export { radicals, radicalsInStrokeOrder, groupRadicalsByStrokes, getRadicalStrokeIndex };
+export type { Radical, RadicalStrokeGroup };
 export { KANJI_TRACK_META, type KanjiTrackMeta, type KanjiTrackSlug } from './track-meta.ts';
 export type { KanjiTrack } from './tracks.ts';
 

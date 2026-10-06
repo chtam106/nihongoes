@@ -1,5 +1,5 @@
 import { STORAGE_PREFIX } from '@/constants/site.ts';
-import { radicals, type Radical } from '@/constants/kanji/index.ts';
+import { radicals, radicalsInStrokeOrder, type Radical } from '@/constants/kanji/index.ts';
 
 /** How far apart the selectable range endpoints are. The last radical is always a "to" option. */
 export const RADICAL_QUIZ_POOL_STEP = 10;
@@ -80,11 +80,12 @@ export function sanitizeRadicalQuizRange(value: unknown): RadicalQuizRange {
   return DEFAULT_RADICAL_QUIZ_RANGE;
 }
 
-/** Radicals whose Kangxi number falls inside the saved from-to range. */
+/**
+ * Radicals at 1-based positions `from`..`to` in the default stroke-grouped list
+ * (same order as the radicals page), not by Kangxi number.
+ */
 export function radicalsForQuizRange(range: RadicalQuizRange): Radical[] {
   const { from, to } = sanitizeRadicalQuizRange(range);
 
-  return radicals
-    .filter((radical) => radical.number >= from && radical.number <= to)
-    .sort((a, b) => a.number - b.number);
+  return radicalsInStrokeOrder().slice(from - 1, to);
 }

@@ -2,13 +2,11 @@
 
 import { Box, Paper, Typography } from '@mui/material';
 import { alpha, type Theme } from '@mui/material/styles';
-import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
   getRadicalByChar,
-  KANJI_RADICALS_PATH,
   KANJI_SHOW_ON_KUN_READINGS,
   type KanjiComponent,
   type KanjiEntry,
@@ -120,7 +118,7 @@ const ROLE_ORDER: Record<KanjiComponent['role'], number> = {
 /**
  * The "Components" row: each building block as a chip colored by its role
  * (radical / semantic / phonetic / other). Chips whose char is one of the 214
- * radicals show its meaning and link to the radicals page; others show the char only.
+ * radicals also show its meaning; others show the char only.
  */
 function ComponentsRow({ entry }: ComponentsRowProps) {
   const { locale, t } = useTranslation();
@@ -138,19 +136,23 @@ function ComponentsRow({ entry }: ComponentsRowProps) {
         {parts.map((part, partIndex) => {
           const radical = getRadicalByChar(part.char);
           const color = COMPONENT_ROLE_COLORS[part.role];
-          const key = `${part.char}-${partIndex}`;
-          const chipSx = {
-            display: 'inline-flex',
-            alignItems: 'baseline',
-            gap: 0.5,
-            px: 0.75,
-            py: 0.25,
-            borderRadius: 1,
-            bgcolor: (theme: Theme) => alpha(color, theme.palette.mode === 'light' ? 0.12 : 0.24),
-            boxShadow: PILL_SHADOW
-          };
-          const inner = (
-            <>
+
+          return (
+            <Box
+              component="span"
+              key={`${part.char}-${partIndex}`}
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'baseline',
+                gap: 0.5,
+                px: 0.75,
+                py: 0.25,
+                borderRadius: 1,
+                bgcolor: (theme: Theme) =>
+                  alpha(color, theme.palette.mode === 'light' ? 0.12 : 0.24),
+                boxShadow: PILL_SHADOW
+              }}
+            >
               <Box component="span" lang="ja" sx={{ fontWeight: 600, color }}>
                 {part.char}
               </Box>
@@ -159,33 +161,6 @@ function ComponentsRow({ entry }: ComponentsRowProps) {
                   {radicalPrimaryMeaning(radical.meaning.vi, radical.meaning.en, locale)}
                 </Box>
               )}
-            </>
-          );
-
-          if (!radical) {
-            return (
-              <Box component="span" key={key} sx={chipSx}>
-                {inner}
-              </Box>
-            );
-          }
-
-          return (
-            <Box
-              key={key}
-              component={RouterLink}
-              to={`${KANJI_RADICALS_PATH}#radical-${radical.number}`}
-              sx={[
-                chipSx,
-                {
-                  color: 'text.primary',
-                  textDecoration: 'none',
-                  transition: 'box-shadow 0.2s ease',
-                  '&:hover': { boxShadow: '0 4px 10px rgba(0, 0, 0, 0.12)' }
-                }
-              ]}
-            >
-              {inner}
             </Box>
           );
         })}
@@ -201,9 +176,8 @@ type KanjiCardProps = {
 };
 
 /**
- * A full study card for a single kanji: big glyph, meaning, component radicals
- * (linked to the radicals page), on/kun readings, optional mnemonic and usage
- * note, and speakable example words.
+ * A full study card for a single kanji: big glyph, meaning, component radicals,
+ * on/kun readings, optional mnemonic and usage note, and speakable example words.
  */
 export function KanjiCard({ entry, index }: KanjiCardProps) {
   const { locale, t } = useTranslation();

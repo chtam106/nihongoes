@@ -171,7 +171,11 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
           <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRetry}>
             {t('course.retry')}
           </Button>
-          <Button variant="outlined" component={RouterLink} to={KANJI_RADICALS_PATH}>
+          <Button
+            variant="outlined"
+            component={RouterLink}
+            to={`${KANJI_RADICALS_PATH}#radical-${range.to}`}
+          >
             {t('kanji.radicalsQuizReview')}
           </Button>
         </Stack>
