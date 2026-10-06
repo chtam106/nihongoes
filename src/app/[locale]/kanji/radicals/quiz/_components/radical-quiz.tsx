@@ -174,7 +174,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
           <Button
             variant="outlined"
             component={RouterLink}
-            to={`${KANJI_RADICALS_PATH}#radical-${range.from}`}
+            to={`${KANJI_RADICALS_PATH}#radical-${range.to}`}
           >
             {t('kanji.radicalsQuizReview')}
           </Button>
