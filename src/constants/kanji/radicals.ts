@@ -2,7 +2,7 @@ import type { Bilingual } from './types.ts';
 
 /** One of the 214 traditional Kangxi radicals (部首) used to build kanji. */
 export type Radical = {
-  /** Traditional Kangxi index number (1-214). */
+  /** Traditional Kangxi index (data identity / usage keys). Card tags use stroke-order index. */
   number: number;
   /** The radical character in its standalone form. */
   char: string;
@@ -1790,7 +1790,8 @@ export const radicals: Radical[] = [
 
 /**
  * Default radicals-page order (sort = Default): by stroke count, then Kangxi number
- * within the same stroke group. The quiz From/To range slices this same list.
+ * within the same stroke group. Card labels, `#radical-N` anchors, and quiz From/To
+ * use 1-based indexes into this list (not `Radical.number`).
  */
 export function radicalsInStrokeOrder(items: readonly Radical[] = radicals): Radical[] {
   return [...items].sort((a, b) => a.strokes - b.strokes || a.number - b.number);
@@ -1818,4 +1819,15 @@ export function groupRadicalsByStrokes(
   }
 
   return groups;
+}
+
+const strokeIndexByKangxiNumber = new Map(
+  radicalsInStrokeOrder().map((radical, index) => [radical.number, index + 1] as const)
+);
+
+/** 1-based display index in default stroke order (card tag, `#radical-N`, quiz range). */
+export function getRadicalStrokeIndex(radical: Pick<Radical, 'number'> | number): number {
+  const kangxiNumber = typeof radical === 'number' ? radical : radical.number;
+
+  return strokeIndexByKangxiNumber.get(kangxiNumber) ?? 0;
 }

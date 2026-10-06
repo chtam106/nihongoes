@@ -65,7 +65,7 @@ export const kanji = {
   radicalsUsageCount: 'trong {count} kanji',
   radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
   radicalsLegendNumber:
-    'Nhãn góc trên trái - số thứ tự của bộ thủ theo bảng Khang Hy (Kangxi) truyền thống (1-214). Thẻ gom theo số nét, nên vài số (vd 母, #80, có 5 nét) có thể không liền trong cùng một nhóm nét. Khoảng Từ/Đến ở trang trắc nghiệm lấy theo vị trí trong danh sách gom theo số nét đó.',
+    'Nhãn góc trên trái - số thứ tự trong danh sách mặc định (1-214), gom theo số nét. Khoảng Từ/Đến ở trang trắc nghiệm dùng cùng các số này.',
   radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
   radicalsLegendVariant:
     'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
@@ -75,8 +75,6 @@ export const kanji = {
   radicalsQuizPrompt: 'Bộ thủ này là gì?',
   radicalsQuizFrom: 'Từ',
   radicalsQuizTo: 'Đến',
-  radicalsQuizRangeHint:
-    'Từ/Đến là vị trí trong danh sách mặc định (gom theo số nét), không phải số Khang Hy trên thẻ.',
   radicalsQuizReview: 'Xem lại bộ thủ',
   notFoundTitle: 'Không tìm thấy bài học',
   notFoundBody: 'Bài kanji này không tồn tại. Hãy quay lại trang tổng quan Kanji.'

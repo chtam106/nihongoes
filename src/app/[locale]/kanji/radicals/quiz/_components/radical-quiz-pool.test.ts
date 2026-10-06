@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  getRadicalStrokeIndex,
   groupRadicalsByStrokes,
   radicals,
   radicalsInStrokeOrder
@@ -42,6 +43,16 @@ describe('sanitizeRadicalQuizRange', () => {
     expect(sanitizeRadicalQuizRange({ from: 20, to: 10 })).toEqual(DEFAULT_RADICAL_QUIZ_RANGE);
     expect(sanitizeRadicalQuizRange({ from: 15, to: 20 })).toEqual(DEFAULT_RADICAL_QUIZ_RANGE);
     expect(sanitizeRadicalQuizRange(10)).toEqual(DEFAULT_RADICAL_QUIZ_RANGE);
+  });
+});
+
+describe('getRadicalStrokeIndex', () => {
+  it('labels cards by stroke-order position, not Kangxi number', () => {
+    const ordered = radicalsInStrokeOrder();
+
+    expect(getRadicalStrokeIndex(ordered[79]!)).toBe(80);
+    expect(ordered[79]!.char).toBe('比');
+    expect(getRadicalStrokeIndex(80)).toBe(94);
   });
 });
 
