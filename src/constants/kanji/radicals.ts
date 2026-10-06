@@ -1803,9 +1803,7 @@ export type RadicalStrokeGroup = {
 };
 
 /** Stroke groups in the same order as `radicalsInStrokeOrder` (for the radicals page). */
-export function groupRadicalsByStrokes(
-  items: readonly Radical[] = radicals
-): RadicalStrokeGroup[] {
+export function groupRadicalsByStrokes(items: readonly Radical[] = radicals): RadicalStrokeGroup[] {
   const groups: RadicalStrokeGroup[] = [];
 
   for (const radical of radicalsInStrokeOrder(items)) {

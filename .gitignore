@@ -44,3 +44,6 @@ storybook-static
 
 # Local textbook scans used only as an authoring reference (copyrighted)
 pdf
+
+# Local scratch / one-off tooling output
+tmp
