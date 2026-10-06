@@ -19,7 +19,8 @@ import {
   kanjiTrackPath,
   kanjiWritingPath,
   KANJI_BASE_PATH,
-  KANJI_RADICALS_PATH
+  KANJI_RADICALS_PATH,
+  KANJI_RADICALS_QUIZ_PATH
 } from './index.ts';
 
 /**
@@ -89,6 +90,7 @@ export function computeRadicalUsage(): Record<number, number> {
 export const KANJI_SITEMAP_PATHS: string[] = [
   KANJI_BASE_PATH,
   KANJI_RADICALS_PATH,
+  KANJI_RADICALS_QUIZ_PATH,
   ...kanjiTracks.flatMap((track) => [
     kanjiTrackPath(track.slug),
     ...track.lessons.flatMap((lesson) => [
