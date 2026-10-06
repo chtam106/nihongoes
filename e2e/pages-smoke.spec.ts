@@ -99,6 +99,7 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   // Kanji
   { name: 'kanji hub', path: '/kanji' },
   { name: 'kanji radicals', path: '/kanji/radicals' },
+  { name: 'kanji radical quiz', path: '/kanji/radicals/quiz' },
   { name: 'kanji track overview', path: '/kanji/grade-1' },
   { name: 'kanji lesson detail', path: '/kanji/grade-1/lesson-1' },
   { name: 'kanji quiz', path: '/kanji/grade-1/lesson-1/quiz' },
