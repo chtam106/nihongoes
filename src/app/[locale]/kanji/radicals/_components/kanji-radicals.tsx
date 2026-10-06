@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
@@ -9,12 +10,16 @@ import {
   Button,
   ButtonBase,
   Collapse,
+  FormControl,
+  InputLabel,
+  Link,
+  MenuItem,
   Paper,
+  Select,
   Stack,
-  ToggleButton,
-  ToggleButtonGroup,
   Typography
 } from '@mui/material';
+import type { SelectChangeEvent } from '@mui/material/Select';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -23,23 +28,20 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
   KANJI_BASE_PATH,
+  KANJI_RADICALS_QUIZ_PATH,
   radicals,
   type Radical
 } from '@/constants/kanji/index.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 
-/** Minimum number of kanji a radical must head to count as "most common". */
-const COMMON_RADICAL_THRESHOLD = 10;
-
-type RadicalFilter = 'all' | 'common';
+type RadicalSort = 'default' | 'usage';
 
 // Colors that connect each part of the sample card to its explanation.
 const PART_COLORS = {
   number: '#c2185b',
   char: '#1565c0',
   variant: '#e65100',
-  meaning: '#2e7d32',
-  name: '#6a1b9a'
+  meaning: '#2e7d32'
 } as const;
 
 type RadicalGroup = {
@@ -75,8 +77,7 @@ function RadicalLegend() {
     { color: PART_COLORS.number, text: t('kanji.radicalsLegendNumber') },
     { color: PART_COLORS.char, text: t('kanji.radicalsLegendChar') },
     { color: PART_COLORS.variant, text: t('kanji.radicalsLegendVariant') },
-    { color: PART_COLORS.meaning, text: t('kanji.radicalsLegendMeaning') },
-    { color: PART_COLORS.name, text: t('kanji.radicalsLegendName') }
+    { color: PART_COLORS.meaning, text: t('kanji.radicalsLegendMeaning') }
   ];
 
   return (
@@ -154,9 +155,6 @@ function RadicalLegend() {
             <Box sx={{ minWidth: 0 }}>
               <Typography variant="body1" sx={{ fontWeight: 600, color: PART_COLORS.meaning }}>
                 {locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en}
-              </Typography>
-              <Typography lang="ja" variant="body2" sx={{ color: PART_COLORS.name }}>
-                {sample.kana}
               </Typography>
             </Box>
           </Paper>
@@ -245,9 +243,6 @@ function RadicalCard({ radical, highlighted, usageCount }: RadicalCardProps) {
       </Box>
       <Box sx={{ minWidth: 0 }}>
         <RadicalMeaning radical={radical} />
-        <Typography lang="ja" variant="body2" color="text.secondary">
-          {radical.kana}
-        </Typography>
         {typeof usageCount === 'number' && (
           <Typography
             variant="caption"
@@ -295,27 +290,59 @@ type KanjiRadicalsPageProps = {
   usage: Record<number, number>;
 };
 
+const radicalCardGridSx = {
+  display: 'grid',
+  gridTemplateColumns: {
+    xs: 'repeat(1, 1fr)',
+    sm: 'repeat(2, 1fr)',
+    md: 'repeat(3, 1fr)'
+  },
+  gap: 1.5
+} as const;
+
+type RadicalCardGridProps = {
+  items: Radical[];
+  activeNumber: number | null;
+  usage?: Record<number, number>;
+};
+
+function RadicalCardGrid({ items, activeNumber, usage }: RadicalCardGridProps) {
+  return (
+    <Box sx={radicalCardGridSx}>
+      {items.map((radical) => (
+        <RadicalCard
+          key={radical.number}
+          radical={radical}
+          highlighted={radical.number === activeNumber}
+          usageCount={usage ? (usage[radical.number] ?? 0) : undefined}
+        />
+      ))}
+    </Box>
+  );
+}
+
 function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
   const { t } = useTranslation();
   const hash = typeof window === 'undefined' ? '' : window.location.hash;
-  const [filter, setFilter] = useState<RadicalFilter>('all');
+  const [sort, setSort] = useState<RadicalSort>('default');
   const groups = useMemo(() => groupByStrokes(radicals), []);
-  const commonRadicals = useMemo(
+  const byUsage = useMemo(
     () =>
-      radicals
-        .filter((radical) => (usage[radical.number] ?? 0) >= COMMON_RADICAL_THRESHOLD)
-        .sort((a, b) => {
-          const diff = (usage[b.number] ?? 0) - (usage[a.number] ?? 0);
-          return diff !== 0 ? diff : a.number - b.number;
-        }),
+      [...radicals].sort((a, b) => {
+        const diff = (usage[b.number] ?? 0) - (usage[a.number] ?? 0);
+        return diff !== 0 ? diff : a.number - b.number;
+      }),
     [usage]
-  );
-  const commonKanjiCount = useMemo(
-    () => commonRadicals.reduce((sum, radical) => sum + (usage[radical.number] ?? 0), 0),
-    [commonRadicals, usage]
   );
 
   const activeNumber = hash.startsWith('#radical-') ? Number(hash.slice('#radical-'.length)) : null;
+
+  const handleSortChange = (event: SelectChangeEvent<RadicalSort>) => {
+    const next = event.target.value;
+    if (next === 'default' || next === 'usage') {
+      setSort(next);
+    }
+  };
 
   return (
     <PageContainer bottomGutter>
@@ -342,89 +369,53 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
 
         <RadicalLegend />
 
-        <ToggleButtonGroup
-          value={filter}
-          exclusive
-          color="primary"
-          onChange={(_event, next: RadicalFilter | null) => {
-            if (next) {
-              setFilter(next);
-            }
-          }}
-          aria-label={t('kanji.radicalsTitle')}
+        <Box
           sx={{
-            alignSelf: 'center',
-            width: '100%',
-            maxWidth: 420,
-            '& .MuiToggleButton-root': { flex: 1 }
+            display: 'flex',
+            alignItems: 'center',
+            gap: 2,
+            flexWrap: 'wrap'
           }}
         >
-          <ToggleButton value="all">{t('kanji.radicalsFilterAll')}</ToggleButton>
-          <ToggleButton value="common">{t('kanji.radicalsFilterCommon')}</ToggleButton>
-        </ToggleButtonGroup>
-
-        {filter === 'common' && (
-          <Box>
-            <Heading scale="subsection" component="h2" sx={{ mb: 0.5 }}>
-              {t('kanji.radicalsCommonHeading')}
-            </Heading>
-            <Typography variant="body1" color="primary.main" sx={{ fontWeight: 600, mb: 0.5 }}>
-              {t('kanji.radicalsCommonStats', {
-                radicals: commonRadicals.length,
-                kanji: commonKanjiCount
-              })}
-            </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
-              {t('kanji.radicalsCommonHint')}
-            </Typography>
-            <Box
-              sx={{
-                display: 'grid',
-                gridTemplateColumns: {
-                  xs: 'repeat(1, 1fr)',
-                  sm: 'repeat(2, 1fr)',
-                  md: 'repeat(3, 1fr)'
-                },
-                gap: 1.5
-              }}
+          <FormControl size="small" sx={{ minWidth: 220 }}>
+            <InputLabel id="radical-sort-label">{t('kanji.radicalsSortLabel')}</InputLabel>
+            <Select<RadicalSort>
+              labelId="radical-sort-label"
+              value={sort}
+              label={t('kanji.radicalsSortLabel')}
+              onChange={handleSortChange}
             >
-              {commonRadicals.map((radical) => (
-                <RadicalCard
-                  key={radical.number}
-                  radical={radical}
-                  highlighted={radical.number === activeNumber}
-                  usageCount={usage[radical.number] ?? 0}
-                />
-              ))}
-            </Box>
-          </Box>
+              <MenuItem value="default">{t('kanji.radicalsSortDefault')}</MenuItem>
+              <MenuItem value="usage">{t('kanji.radicalsSortUsage')}</MenuItem>
+            </Select>
+          </FormControl>
+          <Link
+            component={RouterLink}
+            to={KANJI_RADICALS_QUIZ_PATH}
+            underline="hover"
+            sx={{
+              marginLeft: 'auto',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 0.5
+            }}
+          >
+            {t('kanji.radicalsQuizLink')}
+            <ArrowForwardIcon sx={{ fontSize: '1rem' }} />
+          </Link>
+        </Box>
+
+        {sort === 'usage' && (
+          <RadicalCardGrid items={byUsage} activeNumber={activeNumber} usage={usage} />
         )}
 
-        {filter === 'all' &&
+        {sort === 'default' &&
           groups.map((group) => (
             <Box key={group.strokes}>
               <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
                 {t('kanji.radicalsStrokesGroup', { count: group.strokes })}
               </Heading>
-              <Box
-                sx={{
-                  display: 'grid',
-                  gridTemplateColumns: {
-                    xs: 'repeat(1, 1fr)',
-                    sm: 'repeat(2, 1fr)',
-                    md: 'repeat(3, 1fr)'
-                  },
-                  gap: 1.5
-                }}
-              >
-                {group.items.map((radical) => (
-                  <RadicalCard
-                    key={radical.number}
-                    radical={radical}
-                    highlighted={radical.number === activeNumber}
-                  />
-                ))}
-              </Box>
+              <RadicalCardGrid items={group.items} activeNumber={activeNumber} />
             </Box>
           ))}
       </Stack>

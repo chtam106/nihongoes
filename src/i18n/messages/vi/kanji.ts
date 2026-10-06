@@ -59,12 +59,9 @@ export const kanji = {
     'Bộ thủ (bushu) là các thành phần cấu tạo nên chữ kanji. Phần lớn gợi ý ý nghĩa - ví dụ 氵(nước) xuất hiện trong 海 (biển) và 泳 (bơi). Học bộ thủ giúp phân tích, ghi nhớ và tra cứu kanji dễ hơn.',
   radicalsStrokesGroup: '{count} nét',
   radicalsCount: '{count} bộ thủ',
-  radicalsFilterAll: 'Tất cả',
-  radicalsFilterCommon: 'Thông dụng nhất',
-  radicalsCommonHeading: 'Bộ thủ thông dụng nhất',
-  radicalsCommonHint:
-    'Những bộ thủ xuất hiện trong nhiều chữ kanji nhất qua các bài học, sắp xếp theo mức độ sử dụng.',
-  radicalsCommonStats: '{radicals} bộ - có trong {kanji} kanji',
+  radicalsSortLabel: 'Sắp xếp',
+  radicalsSortDefault: 'Mặc định',
+  radicalsSortUsage: 'Theo độ thông dụng',
   radicalsUsageCount: 'trong {count} kanji',
   radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
   radicalsLegendNumber:
@@ -73,7 +70,12 @@ export const kanji = {
   radicalsLegendVariant:
     'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
   radicalsLegendMeaning: 'Dòng in đậm - nghĩa của bộ thủ (Hán-Việt - nghĩa tiếng Việt).',
-  radicalsLegendName: 'Dòng xám - tên tiếng Nhật của bộ thủ (kana).',
+  radicalsQuizLink: 'Trắc nghiệm',
+  radicalsQuizTitle: 'Trắc nghiệm bộ thủ',
+  radicalsQuizPrompt: 'Bộ thủ này là gì?',
+  radicalsQuizFrom: 'Từ',
+  radicalsQuizTo: 'Đến',
+  radicalsQuizReview: 'Xem lại bộ thủ',
   notFoundTitle: 'Không tìm thấy bài học',
   notFoundBody: 'Bài kanji này không tồn tại. Hãy quay lại trang tổng quan Kanji.'
 };

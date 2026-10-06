@@ -13,6 +13,8 @@ export const KANJI_SHOW_ON_KUN_READINGS = false;
 
 export const KANJI_RADICALS_PATH = `${KANJI_BASE_PATH}/radicals`;
 
+export const KANJI_RADICALS_QUIZ_PATH = `${KANJI_RADICALS_PATH}/quiz`;
+
 /** Find a radical by its standalone character or any of its combining variants. */
 export function getRadicalByChar(char: string): Radical | undefined {
   return radicals.find((radical) => radical.char === char || radical.variants?.includes(char));
