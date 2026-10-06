@@ -27,6 +27,8 @@ import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
+  getRadicalStrokeIndex,
+  groupRadicalsByStrokes,
   KANJI_BASE_PATH,
   KANJI_RADICALS_QUIZ_PATH,
   radicals,
@@ -43,25 +45,6 @@ const PART_COLORS = {
   variant: '#e65100',
   meaning: '#2e7d32'
 } as const;
-
-type RadicalGroup = {
-  strokes: number;
-  items: Radical[];
-};
-
-function groupByStrokes(items: Radical[]): RadicalGroup[] {
-  const byStrokes = new Map<number, Radical[]>();
-
-  for (const radical of items) {
-    const bucket = byStrokes.get(radical.strokes) ?? [];
-    bucket.push(radical);
-    byStrokes.set(radical.strokes, bucket);
-  }
-
-  return [...byStrokes.entries()]
-    .sort(([a], [b]) => a - b)
-    .map(([strokes, groupItems]) => ({ strokes, items: groupItems }));
-}
 
 /** A color-coded sample card + matching legend explaining each field of a radical card. */
 function RadicalLegend() {
@@ -133,7 +116,7 @@ function RadicalLegend() {
                 color: PART_COLORS.number
               }}
             >
-              #{sample.number}
+              #{getRadicalStrokeIndex(sample)}
             </Typography>
             <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
               <Typography
@@ -186,17 +169,19 @@ function RadicalLegend() {
 
 type RadicalCardProps = {
   radical: Radical;
+  /** 1-based index in default stroke order (shown on the card). */
+  index: number;
   highlighted: boolean;
   usageCount?: number;
 };
 
-function RadicalCard({ radical, highlighted, usageCount }: RadicalCardProps) {
+function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardProps) {
   const { t } = useTranslation();
 
   return (
     <Paper
       elevation={0}
-      id={`radical-${radical.number}`}
+      id={`radical-${index}`}
       sx={[
         subtleSurfaceSx,
         {
@@ -229,7 +214,7 @@ function RadicalCard({ radical, highlighted, usageCount }: RadicalCardProps) {
           color: 'text.secondary'
         }}
       >
-        #{radical.number}
+        #{index}
       </Typography>
       <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
         <Typography lang="ja" sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1 }}>
@@ -302,21 +287,26 @@ const radicalCardGridSx = {
 
 type RadicalCardGridProps = {
   items: Radical[];
-  activeNumber: number | null;
+  activeIndex: number | null;
   usage?: Record<number, number>;
 };
 
-function RadicalCardGrid({ items, activeNumber, usage }: RadicalCardGridProps) {
+function RadicalCardGrid({ items, activeIndex, usage }: RadicalCardGridProps) {
   return (
     <Box sx={radicalCardGridSx}>
-      {items.map((radical) => (
-        <RadicalCard
-          key={radical.number}
-          radical={radical}
-          highlighted={radical.number === activeNumber}
-          usageCount={usage ? (usage[radical.number] ?? 0) : undefined}
-        />
-      ))}
+      {items.map((radical) => {
+        const index = getRadicalStrokeIndex(radical);
+
+        return (
+          <RadicalCard
+            key={radical.number}
+            radical={radical}
+            index={index}
+            highlighted={index === activeIndex}
+            usageCount={usage ? (usage[radical.number] ?? 0) : undefined}
+          />
+        );
+      })}
     </Box>
   );
 }
@@ -325,7 +315,7 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
   const { t } = useTranslation();
   const hash = typeof window === 'undefined' ? '' : window.location.hash;
   const [sort, setSort] = useState<RadicalSort>('default');
-  const groups = useMemo(() => groupByStrokes(radicals), []);
+  const groups = useMemo(() => groupRadicalsByStrokes(), []);
   const byUsage = useMemo(
     () =>
       [...radicals].sort((a, b) => {
@@ -335,7 +325,7 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
     [usage]
   );
 
-  const activeNumber = hash.startsWith('#radical-') ? Number(hash.slice('#radical-'.length)) : null;
+  const activeIndex = hash.startsWith('#radical-') ? Number(hash.slice('#radical-'.length)) : null;
 
   const handleSortChange = (event: SelectChangeEvent<RadicalSort>) => {
     const next = event.target.value;
@@ -406,7 +396,7 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
         </Box>
 
         {sort === 'usage' && (
-          <RadicalCardGrid items={byUsage} activeNumber={activeNumber} usage={usage} />
+          <RadicalCardGrid items={byUsage} activeIndex={activeIndex} usage={usage} />
         )}
 
         {sort === 'default' &&
@@ -415,7 +405,7 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
               <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
                 {t('kanji.radicalsStrokesGroup', { count: group.strokes })}
               </Heading>
-              <RadicalCardGrid items={group.items} activeNumber={activeNumber} />
+              <RadicalCardGrid items={group.items} activeIndex={activeIndex} />
             </Box>
           ))}
       </Stack>

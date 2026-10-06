@@ -65,7 +65,7 @@ export const kanji = {
   radicalsUsageCount: 'trong {count} kanji',
   radicalsLegendHeading: 'Cách đọc thẻ bộ thủ',
   radicalsLegendNumber:
-    'Nhãn góc trên trái - số thứ tự của bộ thủ theo bảng Khang Hy (Kangxi) truyền thống (1-214). Thứ tự bám theo bảng này, nên vài bộ (vd 母, #80, có 5 nét) có thể không liền số trong cùng một nhóm nét.',
+    'Nhãn góc trên trái - số thứ tự trong danh sách mặc định (1-214), gom theo số nét. Khoảng Từ/Đến ở trang trắc nghiệm dùng cùng các số này.',
   radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
   radicalsLegendVariant:
     'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',

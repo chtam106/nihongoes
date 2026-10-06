@@ -17,7 +17,8 @@ export default defineConfig([
     '.next-lighthouse',
     'node_modules',
     'storybook-static',
-    'next-env.d.ts'
+    'next-env.d.ts',
+    'tmp'
   ]),
   js.configs.recommended,
   ...tseslint.configs.recommended,
