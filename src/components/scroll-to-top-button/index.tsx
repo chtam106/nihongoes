@@ -7,9 +7,6 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import { useIsClient } from '@/utils/use-is-client.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 
-/** Show only once the page is scrolled past this fraction of its scrollable height. */
-const SHOW_AFTER_PROGRESS = 0.15;
-
 /** Treat scrolling as "stopped" once no scroll event fires for this long (ms). */
 const SCROLL_IDLE_DELAY = 90;
 
@@ -17,7 +14,8 @@ const SCROLL_IDLE_DELAY = 90;
  * Floating "back to top" button, fixed to the bottom-right of the viewport.
  * Stays hidden while the user is actively scrolling; once scrolling settles it
  * decides whether to show, appearing only when the last movement was downward
- * and the page is scrolled past a threshold (scrolling up keeps it hidden). On
+ * and the page is scrolled at least one viewport (100vh). Scrolling up keeps it
+ * hidden. On
  * desktop it rests 20px above the footer.
  */
 export function ScrollToTopButton() {
@@ -38,7 +36,6 @@ export function ScrollToTopButton() {
     // Runs only after scrolling has settled, deciding whether to reveal.
     const decideOnIdle = () => {
       const y = window.scrollY;
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
       // Rest 16px above the viewport bottom until the footer scrolls into view;
       // once it does, sit just above however much of the footer is showing.
       const footer = document.querySelector('footer');
@@ -46,8 +43,8 @@ export function ScrollToTopButton() {
         ? Math.max(0, window.innerHeight - footer.getBoundingClientRect().top)
         : 0;
       setBottom(footerOverlap + gap);
-      // Reveal only when the user settled after scrolling down past the threshold.
-      setVisible(maxScroll > 0 && lastDirection === 'down' && y / maxScroll >= SHOW_AFTER_PROGRESS);
+      // Reveal only when the user settled after scrolling down by one viewport.
+      setVisible(lastDirection === 'down' && y >= window.innerHeight);
     };
 
     const onScroll = () => {
