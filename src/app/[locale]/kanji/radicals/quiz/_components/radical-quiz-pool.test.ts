@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { radicals } from '@/constants/kanji/index.ts';
+import {
+  groupRadicalsByStrokes,
+  radicals,
+  radicalsInStrokeOrder
+} from '@/constants/kanji/index.ts';
 import {
   DEFAULT_RADICAL_QUIZ_RANGE,
   radicalQuizFromOptions,
@@ -42,10 +46,18 @@ describe('sanitizeRadicalQuizRange', () => {
 });
 
 describe('radicalsForQuizRange', () => {
-  it('includes only radicals inside the range, in Kangxi order', () => {
-    const pool = radicalsForQuizRange({ from: 11, to: 20 });
+  it('matches the default radicals-page order (flatten stroke groups)', () => {
+    const pageOrder = groupRadicalsByStrokes().flatMap((group) => group.items);
 
-    expect(pool.map((radical) => radical.number)).toEqual([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+    expect(pageOrder.map((radical) => radical.number)).toEqual(
+      radicalsInStrokeOrder().map((radical) => radical.number)
+    );
+
+    const pool = radicalsForQuizRange({ from: 71, to: 80 });
+
+    expect(pool).toEqual(pageOrder.slice(70, 80));
+    expect(pool.map((radical) => radical.char)).not.toContain('母');
+    expect(pool.at(-1)?.char).toBe('比');
   });
 
   it('uses every radical for the default range', () => {

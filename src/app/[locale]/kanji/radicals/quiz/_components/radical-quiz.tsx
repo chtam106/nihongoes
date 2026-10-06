@@ -15,6 +15,7 @@ import {
   Typography
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
+import { HintText } from '@/components/hint-text';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -302,6 +303,7 @@ function RadicalQuizPage() {
               </Select>
             </FormControl>
           </Stack>
+          <HintText sx={{ mt: 1.5 }}>{t('kanji.radicalsQuizRangeHint')}</HintText>
         </Box>
 
         <RadicalQuiz key={`${range.from}:${range.to}`} range={range} />

@@ -65,7 +65,7 @@ export const kanji = {
   radicalsUsageCount: 'in {count} kanji',
   radicalsLegendHeading: 'How to read a radical card',
   radicalsLegendNumber:
-    "Top-left tag - the radical's order number in the traditional Kangxi table (1-214). The order follows the table, so a few radicals (e.g. 母, #80, has 5 strokes) may not run consecutively within a stroke group.",
+    "Top-left tag - the radical's order number in the traditional Kangxi table (1-214). Cards are grouped by stroke count, so a few numbers (e.g. 母, #80, has 5 strokes) may not run consecutively within a stroke group. The quiz From/To picks positions in that stroke-grouped list.",
   radicalsLegendChar: 'Large character - the radical in its standalone form.',
   radicalsLegendVariant:
     'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',
@@ -75,6 +75,8 @@ export const kanji = {
   radicalsQuizPrompt: 'What is this radical?',
   radicalsQuizFrom: 'From',
   radicalsQuizTo: 'To',
+  radicalsQuizRangeHint:
+    'From/To are positions in the default list (grouped by stroke count), not Kangxi numbers.',
   radicalsQuizReview: 'Review radicals',
   notFoundTitle: 'Lesson not found',
   notFoundBody: 'This kanji lesson does not exist. Go back to the kanji overview.'

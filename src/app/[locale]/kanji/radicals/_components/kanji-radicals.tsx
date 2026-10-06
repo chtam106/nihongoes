@@ -27,6 +27,7 @@ import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
+  groupRadicalsByStrokes,
   KANJI_BASE_PATH,
   KANJI_RADICALS_QUIZ_PATH,
   radicals,
@@ -43,25 +44,6 @@ const PART_COLORS = {
   variant: '#e65100',
   meaning: '#2e7d32'
 } as const;
-
-type RadicalGroup = {
-  strokes: number;
-  items: Radical[];
-};
-
-function groupByStrokes(items: Radical[]): RadicalGroup[] {
-  const byStrokes = new Map<number, Radical[]>();
-
-  for (const radical of items) {
-    const bucket = byStrokes.get(radical.strokes) ?? [];
-    bucket.push(radical);
-    byStrokes.set(radical.strokes, bucket);
-  }
-
-  return [...byStrokes.entries()]
-    .sort(([a], [b]) => a - b)
-    .map(([strokes, groupItems]) => ({ strokes, items: groupItems }));
-}
 
 /** A color-coded sample card + matching legend explaining each field of a radical card. */
 function RadicalLegend() {
@@ -325,7 +307,7 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
   const { t } = useTranslation();
   const hash = typeof window === 'undefined' ? '' : window.location.hash;
   const [sort, setSort] = useState<RadicalSort>('default');
-  const groups = useMemo(() => groupByStrokes(radicals), []);
+  const groups = useMemo(() => groupRadicalsByStrokes(), []);
   const byUsage = useMemo(
     () =>
       [...radicals].sort((a, b) => {

@@ -1787,3 +1787,35 @@ export const radicals: Radical[] = [
     meaning: { en: 'flute', vi: 'dược - sáo' }
   }
 ];
+
+/**
+ * Default radicals-page order (sort = Default): by stroke count, then Kangxi number
+ * within the same stroke group. The quiz From/To range slices this same list.
+ */
+export function radicalsInStrokeOrder(items: readonly Radical[] = radicals): Radical[] {
+  return [...items].sort((a, b) => a.strokes - b.strokes || a.number - b.number);
+}
+
+export type RadicalStrokeGroup = {
+  strokes: number;
+  items: Radical[];
+};
+
+/** Stroke groups in the same order as `radicalsInStrokeOrder` (for the radicals page). */
+export function groupRadicalsByStrokes(
+  items: readonly Radical[] = radicals
+): RadicalStrokeGroup[] {
+  const groups: RadicalStrokeGroup[] = [];
+
+  for (const radical of radicalsInStrokeOrder(items)) {
+    const last = groups.at(-1);
+
+    if (last && last.strokes === radical.strokes) {
+      last.items.push(radical);
+    } else {
+      groups.push({ strokes: radical.strokes, items: [radical] });
+    }
+  }
+
+  return groups;
+}
