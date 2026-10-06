@@ -59,12 +59,9 @@ export const kanji = {
     'Radicals (bushu) are the component parts that make up kanji. Most hint at a meaning - e.g. 氵(water) appears in 海 (sea) and 泳 (swim). Learning them makes kanji easier to break down, remember, and look up.',
   radicalsStrokesGroup: '{count} strokes',
   radicalsCount: '{count} radicals',
-  radicalsFilterAll: 'All',
-  radicalsFilterCommon: 'Most common',
-  radicalsCommonHeading: 'Most common radicals',
-  radicalsCommonHint:
-    'The radicals that appear in the most kanji across the lessons, ordered by how often they are used.',
-  radicalsCommonStats: '{radicals} radicals - found in {kanji} kanji',
+  radicalsSortLabel: 'Sort',
+  radicalsSortDefault: 'Default',
+  radicalsSortUsage: 'By frequency',
   radicalsUsageCount: 'in {count} kanji',
   radicalsLegendHeading: 'How to read a radical card',
   radicalsLegendNumber:
@@ -73,7 +70,12 @@ export const kanji = {
   radicalsLegendVariant:
     'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',
   radicalsLegendMeaning: 'Bold line - the meaning of the radical.',
-  radicalsLegendName: 'Grey line - the Japanese name of the radical (in kana).',
+  radicalsQuizLink: 'Quiz',
+  radicalsQuizTitle: 'Radical quiz',
+  radicalsQuizPrompt: 'What is this radical?',
+  radicalsQuizFrom: 'From',
+  radicalsQuizTo: 'To',
+  radicalsQuizReview: 'Review radicals',
   notFoundTitle: 'Lesson not found',
   notFoundBody: 'This kanji lesson does not exist. Go back to the kanji overview.'
 };
