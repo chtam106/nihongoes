@@ -15,36 +15,43 @@ export const n5Lesson2: Lesson = {
   vocab: [
     {
       kana: 'これ',
+      audio: '/audio/course/n5/lesson-2/vocab-01-kore.mp3',
       romaji: 'kore',
       meaning: { en: 'this (near me)', vi: 'cái này (gần tôi)' }
     },
     {
       kana: 'それ',
+      audio: '/audio/course/n5/lesson-2/vocab-02-sore.mp3',
       romaji: 'sore',
       meaning: { en: 'that (near you)', vi: 'cái đó (gần bạn)' }
     },
     {
       kana: 'あれ',
+      audio: '/audio/course/n5/lesson-2/vocab-03-are.mp3',
       romaji: 'are',
       meaning: { en: 'that over there', vi: 'cái kia (xa cả hai)' }
     },
     {
       kana: 'この',
+      audio: '/audio/course/n5/lesson-2/vocab-04-kono.mp3',
       romaji: 'kono',
       meaning: { en: 'this ~ (+ noun)', vi: 'cái ~ này (+ danh từ)' }
     },
     {
       kana: 'その',
+      audio: '/audio/course/n5/lesson-2/vocab-05-sono.mp3',
       romaji: 'sono',
       meaning: { en: 'that ~ (+ noun)', vi: 'cái ~ đó (+ danh từ)' }
     },
     {
       kana: 'あの',
+      audio: '/audio/course/n5/lesson-2/vocab-06-ano.mp3',
       romaji: 'ano',
       meaning: { en: 'that ~ over there (+ noun)', vi: 'cái ~ kia (+ danh từ)' }
     },
     {
       kana: 'ほん',
+      audio: '/audio/course/n5/lesson-2/vocab-07-hon.mp3',
       kanji: '本',
       romaji: 'hon',
       ruby: [{ base: '本', reading: 'ほん' }],
@@ -52,6 +59,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'じしょ',
+      audio: '/audio/course/n5/lesson-2/vocab-08-jisho.mp3',
       kanji: '辞書',
       romaji: 'jisho',
       ruby: [
@@ -62,6 +70,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'ざっし',
+      audio: '/audio/course/n5/lesson-2/vocab-09-zasshi.mp3',
       kanji: '雑誌',
       romaji: 'zasshi',
       ruby: [
@@ -72,6 +81,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'しんぶん',
+      audio: '/audio/course/n5/lesson-2/vocab-10-shinbun.mp3',
       kanji: '新聞',
       romaji: 'shinbun',
       ruby: [
@@ -80,9 +90,10 @@ export const n5Lesson2: Lesson = {
       ],
       meaning: { en: 'newspaper', vi: 'báo' }
     },
-    { kana: 'ノート', romaji: 'nōto', meaning: { en: 'notebook', vi: 'vở, sổ tay' } },
+    { kana: 'ノート', audio: '/audio/course/n5/lesson-2/vocab-11-noto.mp3', romaji: 'nōto', meaning: { en: 'notebook', vi: 'vở, sổ tay' } },
     {
       kana: 'めいし',
+      audio: '/audio/course/n5/lesson-2/vocab-13-meishi.mp3',
       kanji: '名刺',
       romaji: 'meishi',
       ruby: [
@@ -93,6 +104,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'てちょう',
+      audio: '/audio/course/n5/lesson-2/vocab-12-techo.mp3',
       kanji: '手帳',
       romaji: 'techō',
       ruby: [
@@ -103,16 +115,19 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'カード',
+      audio: '/audio/course/n5/lesson-2/vocab-14-kado.mp3',
       romaji: 'kādo',
       meaning: { en: 'card (credit card, etc.)', vi: 'thẻ (tín dụng), các' }
     },
     {
       kana: 'テレホンカード',
+      audio: '/audio/course/n5/lesson-2/vocab-15-terehon-kado.mp3',
       romaji: 'terehon kādo',
       meaning: { en: 'telephone card', vi: 'thẻ điện thoại' }
     },
     {
       kana: 'えんぴつ',
+      audio: '/audio/course/n5/lesson-2/vocab-16-enpitsu.mp3',
       kanji: '鉛筆',
       romaji: 'enpitsu',
       ruby: [
@@ -123,16 +138,19 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'ボールペン',
+      audio: '/audio/course/n5/lesson-2/vocab-17-boru-pen.mp3',
       romaji: 'bōrupen',
       meaning: { en: 'ballpoint pen', vi: 'bút bi' }
     },
     {
       kana: 'シャープペンシル',
+      audio: '/audio/course/n5/lesson-2/vocab-18-sharp-pen.mp3',
       romaji: 'shāpupenshiru',
       meaning: { en: 'mechanical pencil', vi: 'bút chì bấm' }
     },
     {
       kana: 'かぎ',
+      audio: '/audio/course/n5/lesson-2/vocab-19-kagi.mp3',
       kanji: '鍵',
       romaji: 'kagi',
       ruby: [{ base: '鍵', reading: 'かぎ' }],
@@ -140,6 +158,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'とけい',
+      audio: '/audio/course/n5/lesson-2/vocab-20-tokei.mp3',
       kanji: '時計',
       romaji: 'tokei',
       ruby: [
@@ -150,28 +169,32 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'かさ',
+      audio: '/audio/course/n5/lesson-2/vocab-21-kasa.mp3',
       kanji: '傘',
       romaji: 'kasa',
       ruby: [{ base: '傘', reading: 'かさ' }],
       meaning: { en: 'umbrella', vi: 'ô, dù' }
     },
-    { kana: 'かばん', romaji: 'kaban', meaning: { en: 'bag', vi: 'cặp, túi xách' } },
+    { kana: 'かばん', audio: '/audio/course/n5/lesson-2/vocab-22-kaban.mp3', romaji: 'kaban', meaning: { en: 'bag', vi: 'cặp, túi xách' } },
     { kana: 'CD', romaji: 'shīdī', meaning: { en: 'CD', vi: 'đĩa CD' } },
-    { kana: 'テレビ', romaji: 'terebi', meaning: { en: 'TV', vi: 'tivi' } },
-    { kana: 'ラジオ', romaji: 'rajio', meaning: { en: 'radio', vi: 'radio' } },
-    { kana: 'カメラ', romaji: 'kamera', meaning: { en: 'camera', vi: 'máy ảnh' } },
+    { kana: 'テレビ', audio: '/audio/course/n5/lesson-2/vocab-25-terebi.mp3', romaji: 'terebi', meaning: { en: 'TV', vi: 'tivi' } },
+    { kana: 'ラジオ', audio: '/audio/course/n5/lesson-2/vocab-26-rajio.mp3', romaji: 'rajio', meaning: { en: 'radio', vi: 'radio' } },
+    { kana: 'カメラ', audio: '/audio/course/n5/lesson-2/vocab-27-kamera.mp3', romaji: 'kamera', meaning: { en: 'camera', vi: 'máy ảnh' } },
     {
       kana: 'テープ',
+      audio: '/audio/course/n5/lesson-2/vocab-23-tepu.mp3',
       romaji: 'tēpu',
       meaning: { en: 'tape (cassette)', vi: 'băng (cát-xét)' }
     },
     {
       kana: 'テープレコーダー',
+      audio: '/audio/course/n5/lesson-2/vocab-24-tepu-rekoda.mp3',
       romaji: 'tēpu rekōdā',
       meaning: { en: 'tape recorder', vi: 'máy ghi âm' }
     },
     {
       kana: 'コンピューター',
+      audio: '/audio/course/n5/lesson-2/vocab-28-konpyuta.mp3',
       romaji: 'konpyūtā',
       meaning: { en: 'computer', vi: 'máy tính' }
     },
@@ -184,6 +207,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'じどうしゃ',
+      audio: '/audio/course/n5/lesson-2/vocab-29-jidisha.mp3',
       kanji: '自動車',
       romaji: 'jidōsha',
       ruby: [
@@ -195,6 +219,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'つくえ',
+      audio: '/audio/course/n5/lesson-2/vocab-30-tsukue.mp3',
       kanji: '机',
       romaji: 'tsukue',
       ruby: [{ base: '机', reading: 'つくえ' }],
@@ -202,6 +227,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'いす',
+      audio: '/audio/course/n5/lesson-2/vocab-31-isu.mp3',
       kanji: '椅子',
       romaji: 'isu',
       ruby: [
@@ -212,12 +238,14 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'チョコレート',
+      audio: '/audio/course/n5/lesson-2/vocab-32-chokoreto.mp3',
       romaji: 'chokorēto',
       meaning: { en: 'chocolate', vi: 'sô-cô-la' }
     },
-    { kana: 'コーヒー', romaji: 'kōhī', meaning: { en: 'coffee', vi: 'cà phê' } },
+    { kana: 'コーヒー', audio: '/audio/course/n5/lesson-2/vocab-33-kohi.mp3', romaji: 'kōhī', meaning: { en: 'coffee', vi: 'cà phê' } },
     {
       kana: 'おみやげ',
+      audio: '/audio/course/n5/lesson-2/vocab-34-omiyage.mp3',
       kanji: 'お土産',
       romaji: 'omiyage',
       ruby: [
@@ -228,6 +256,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'にほんご',
+      audio: '/audio/course/n5/lesson-2/vocab-35-nihongo.mp3',
       kanji: '日本語',
       romaji: 'nihongo',
       ruby: [
@@ -239,6 +268,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'えいご',
+      audio: '/audio/course/n5/lesson-2/vocab-36-eigo.mp3',
       kanji: '英語',
       romaji: 'eigo',
       ruby: [
@@ -249,14 +279,16 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'なん',
+      audio: '/audio/course/n5/lesson-2/vocab-37-nan.mp3',
       kanji: '何',
       romaji: 'nan',
       ruby: [{ base: '何', reading: 'なん' }],
       meaning: { en: 'what', vi: 'cái gì' }
     },
-    { kana: 'そう', romaji: 'sō', meaning: { en: 'so, right', vi: 'đúng, vậy' } },
+    { kana: 'そう', audio: '/audio/course/n5/lesson-2/vocab-38-so.mp3', romaji: 'sō', meaning: { en: 'so, right', vi: 'đúng, vậy' } },
     {
       kana: 'ちがいます',
+      audio: '/audio/course/n5/lesson-2/vocab-39-chigaimasu.mp3',
       kanji: '違います',
       romaji: 'chigaimasu',
       ruby: [{ base: '違', reading: 'ちが' }],
@@ -274,11 +306,13 @@ export const n5Lesson2: Lesson = {
   phrases: [
     {
       kana: 'あのう、すみません。',
+      audio: '/audio/course/n5/lesson-2/phrase-ano-sumimasen.mp3',
       romaji: 'Anō, sumimasen.',
       meaning: { en: 'Um, excuse me.', vi: 'À, xin lỗi.' }
     },
     {
       kana: 'これは なんですか。',
+      audio: '/audio/course/n5/lesson-2/phrase-kore-wa-nan.mp3',
       kanji: 'これは何ですか。',
       romaji: 'Kore wa nan desu ka.',
       meaning: { en: 'What is this?', vi: 'Cái này là gì?' },
@@ -286,16 +320,19 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'そうですか。',
+      audio: '/audio/course/n5/lesson-2/phrase-so-desu-ka.mp3',
       romaji: 'Sō desu ka.',
       meaning: { en: 'I see.', vi: 'Vậy à. / Ra vậy.' }
     },
     {
       kana: 'どうも ありがとうございます。',
+      audio: '/audio/course/n5/lesson-2/phrase-arigato.mp3',
       romaji: 'Dōmo arigatō gozaimasu.',
       meaning: { en: 'Thank you very much.', vi: 'Cảm ơn rất nhiều.' }
     },
     {
       kana: 'どうぞ。',
+      audio: '/audio/course/n5/lesson-2/phrase-dozo.mp3',
       romaji: 'Dōzo.',
       meaning: { en: 'Here you are. / Please.', vi: 'Mời bạn. / Xin mời.' }
     },
@@ -311,6 +348,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'これから おせわに なります。',
+      audio: '/audio/course/n5/lesson-2/phrase-osewa.mp3',
       kanji: 'これから お世話に なります。',
       romaji: 'Korekara osewa ni narimasu.',
       meaning: {
@@ -324,6 +362,7 @@ export const n5Lesson2: Lesson = {
     },
     {
       kana: 'こちらこそ どうぞ よろしく おねがいします。',
+      audio: '/audio/course/n5/lesson-2/phrase-kochira-koso.mp3',
       romaji: 'Kochira koso dōzo yoroshiku onegaishimasu.',
       meaning: {
         en: 'The pleasure is mine. (reply to どうぞよろしく)',

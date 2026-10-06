@@ -24,6 +24,7 @@ export function VocabCardGrid({ items, locale }: VocabCardGridProps) {
         <SpeakableSurface
           key={`vocab-${index}-${item.kana}`}
           text={item.speech ?? item.kana}
+          audioSrc={item.audio}
           sx={{ p: 1.5 }}
         >
           <VocabHeadword item={item} />

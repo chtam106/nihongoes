@@ -17,6 +17,11 @@ export type VocabItem = {
   romaji: string;
   /** Override the spoken text when the glyph's reading differs (e.g. particle は -> わ). */
   speech?: string;
+  /**
+   * Optional pre-recorded clip (public URL, e.g. `/audio/course/n5/lesson-1/...mp3`).
+   * When set, vocab/phrase cards play this instead of browser TTS.
+   */
+  audio?: string;
   /** Per-kanji ruby for the kanji form, in surface order. */
   ruby?: RubySegment[];
   meaning: Bilingual;

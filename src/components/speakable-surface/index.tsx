@@ -11,6 +11,8 @@ import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 type SpeakableSurfaceProps = {
   /** Japanese text spoken when the whole surface is activated. */
   text: string;
+  /** Optional pre-recorded clip; preferred over browser TTS when set. */
+  audioSrc?: string;
   sx?: SxProps<Theme>;
   children: ReactNode;
 };
@@ -20,12 +22,16 @@ type SpeakableSurfaceProps = {
  * Enter/Space). Falls back to a plain elevated surface when speech is
  * unsupported. Pair with a `<SpeakButton>` inside for a visible affordance.
  */
-export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) {
+export function SpeakableSurface({ text, audioSrc, sx, children }: SpeakableSurfaceProps) {
   const { t } = useTranslation();
-  const canSpeak = useSpeechEnabled();
+  const ttsEnabled = useSpeechEnabled();
+  const canSpeak = Boolean(audioSrc) || ttsEnabled;
   const spokenText = formatJapaneseDisplay(text);
   const sxOverrides = Array.isArray(sx) ? sx : [sx];
-  const handleSpeak = useCallback(() => speakJapanese(spokenText), [spokenText]);
+  const handleSpeak = useCallback(
+    () => speakJapanese(spokenText, undefined, audioSrc),
+    [spokenText, audioSrc]
+  );
   const speechClick = useSpeechClickHandler(handleSpeak);
 
   return (
@@ -41,7 +47,7 @@ export function SpeakableSurface({ text, sx, children }: SpeakableSurfaceProps) 
           ? (event) => {
               if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
-                speakJapanese(spokenText);
+                speakJapanese(spokenText, undefined, audioSrc);
               }
             }
           : undefined

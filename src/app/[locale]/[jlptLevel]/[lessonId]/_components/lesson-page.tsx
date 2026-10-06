@@ -101,6 +101,7 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
           <SpeakableSurface
             key={`phrase-${index}-${phrase.kana}`}
             text={phrase.speech ?? phrase.kana}
+            audioSrc={phrase.audio}
             sx={{ p: 1.5 }}
           >
             <VocabHeadword item={phrase} />

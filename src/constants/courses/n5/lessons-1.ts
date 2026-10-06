@@ -17,6 +17,7 @@ export const n5Lesson1: Lesson = {
       kana: 'わたし',
       kanji: '私',
       romaji: 'watashi',
+      audio: '/audio/course/n5/lesson-1/vocab-01-watashi.mp3',
       ruby: [{ base: '私', reading: 'わたし' }],
       meaning: { en: 'I, me', vi: 'tôi' }
     },
@@ -24,14 +25,21 @@ export const n5Lesson1: Lesson = {
       kana: 'わたしたち',
       kanji: '私たち',
       romaji: 'watashitachi',
+      audio: '/audio/course/n5/lesson-1/vocab-02-watashitachi.mp3',
       ruby: [{ base: '私', reading: 'わたし' }],
       meaning: { en: 'we, us', vi: 'chúng tôi, chúng ta' }
     },
-    { kana: 'あなた', romaji: 'anata', meaning: { en: 'you', vi: 'bạn, anh/chị' } },
+    {
+      kana: 'あなた',
+      romaji: 'anata',
+      audio: '/audio/course/n5/lesson-1/vocab-03-anata.mp3',
+      meaning: { en: 'you', vi: 'bạn, anh/chị' }
+    },
     {
       kana: 'あのひと',
       kanji: 'あの人',
       romaji: 'ano hito',
+      audio: '/audio/course/n5/lesson-1/vocab-04-ano-hito.mp3',
       ruby: [{ base: '人', reading: 'ひと' }],
       meaning: { en: 'that person, he/she', vi: 'người kia, người đó' }
     },
@@ -39,6 +47,7 @@ export const n5Lesson1: Lesson = {
       kana: 'あのかた',
       kanji: 'あの方',
       romaji: 'ano kata',
+      audio: '/audio/course/n5/lesson-1/vocab-05-ano-kata.mp3',
       ruby: [{ base: '方', reading: 'かた' }],
       meaning: { en: 'that person (polite)', vi: 'vị kia (lịch sự)' }
     },
@@ -46,6 +55,7 @@ export const n5Lesson1: Lesson = {
       kana: 'みなさん',
       kanji: '皆さん',
       romaji: 'minasan',
+      audio: '/audio/course/n5/lesson-1/vocab-06-minasan.mp3',
       ruby: [{ base: '皆', reading: 'みな' }],
       meaning: { en: 'everyone, all of you', vi: 'mọi người, các bạn' }
     },
@@ -53,12 +63,14 @@ export const n5Lesson1: Lesson = {
       kana: '〜さん',
       romaji: 'san',
       speech: 'さん',
+      audio: '/audio/course/n5/lesson-1/vocab-07-san.mp3',
       meaning: { en: 'Mr./Ms. (polite suffix)', vi: 'anh/chị/ông/bà (hậu tố lịch sự)' }
     },
     {
       kana: '〜ちゃん',
       romaji: 'chan',
       speech: 'ちゃん',
+      audio: '/audio/course/n5/lesson-1/vocab-08-chan.mp3',
       meaning: {
         en: '~chan (affectionate suffix, especially for little girls)',
         vi: '~chan (hậu tố thân mật, nhất là với bé gái)'
@@ -69,6 +81,7 @@ export const n5Lesson1: Lesson = {
       kanji: '〜君',
       romaji: 'kun',
       speech: 'くん',
+      audio: '/audio/course/n5/lesson-1/vocab-09-kun.mp3',
       ruby: [{ base: '君', reading: 'くん' }],
       meaning: {
         en: '~kun (familiar suffix, especially for boys)',
@@ -80,6 +93,7 @@ export const n5Lesson1: Lesson = {
       kanji: '〜人',
       romaji: 'jin',
       speech: 'じん',
+      audio: '/audio/course/n5/lesson-1/vocab-10-jin.mp3',
       ruby: [{ base: '人', reading: 'じん' }],
       meaning: { en: '~ people (nationality suffix)', vi: 'người ~ (hậu tố quốc tịch)' }
     },
@@ -87,6 +101,7 @@ export const n5Lesson1: Lesson = {
       kana: 'せんせい',
       kanji: '先生',
       romaji: 'sensei',
+      audio: '/audio/course/n5/lesson-1/vocab-11-sensei.mp3',
       ruby: [
         { base: '先', reading: 'せん' },
         { base: '生', reading: 'せい' }
@@ -97,6 +112,7 @@ export const n5Lesson1: Lesson = {
       kana: 'きょうし',
       kanji: '教師',
       romaji: 'kyōshi',
+      audio: '/audio/course/n5/lesson-1/vocab-12-kyoshi.mp3',
       ruby: [
         { base: '教', reading: 'きょう' },
         { base: '師', reading: 'し' }
@@ -107,6 +123,7 @@ export const n5Lesson1: Lesson = {
       kana: 'がくせい',
       kanji: '学生',
       romaji: 'gakusei',
+      audio: '/audio/course/n5/lesson-1/vocab-13-gakusei.mp3',
       ruby: [
         { base: '学', reading: 'がく' },
         { base: '生', reading: 'せい' }
@@ -117,6 +134,7 @@ export const n5Lesson1: Lesson = {
       kana: 'かいしゃいん',
       kanji: '会社員',
       romaji: 'kaishain',
+      audio: '/audio/course/n5/lesson-1/vocab-14-kaishain.mp3',
       ruby: [
         { base: '会', reading: 'かい' },
         { base: '社', reading: 'しゃ' },
@@ -128,6 +146,7 @@ export const n5Lesson1: Lesson = {
       kana: 'しゃいん',
       kanji: '社員',
       romaji: 'shain',
+      audio: '/audio/course/n5/lesson-1/vocab-15-shain.mp3',
       ruby: [
         { base: '社', reading: 'しゃ' },
         { base: '員', reading: 'いん' }
@@ -138,6 +157,7 @@ export const n5Lesson1: Lesson = {
       kana: 'ぎんこういん',
       kanji: '銀行員',
       romaji: 'ginkōin',
+      audio: '/audio/course/n5/lesson-1/vocab-16-ginkoin.mp3',
       ruby: [
         { base: '銀', reading: 'ぎん' },
         { base: '行', reading: 'こう' },
@@ -149,6 +169,7 @@ export const n5Lesson1: Lesson = {
       kana: 'いしゃ',
       kanji: '医者',
       romaji: 'isha',
+      audio: '/audio/course/n5/lesson-1/vocab-17-isha.mp3',
       ruby: [
         { base: '医', reading: 'い' },
         { base: '者', reading: 'しゃ' }
@@ -159,6 +180,7 @@ export const n5Lesson1: Lesson = {
       kana: 'けんきゅうしゃ',
       kanji: '研究者',
       romaji: 'kenkyūsha',
+      audio: '/audio/course/n5/lesson-1/vocab-18-kenkyusha.mp3',
       ruby: [
         { base: '研', reading: 'けん' },
         { base: '究', reading: 'きゅう' },
@@ -166,11 +188,17 @@ export const n5Lesson1: Lesson = {
       ],
       meaning: { en: 'researcher', vi: 'nhà nghiên cứu' }
     },
-    { kana: 'エンジニア', romaji: 'enjinia', meaning: { en: 'engineer', vi: 'kỹ sư' } },
+    {
+      kana: 'エンジニア',
+      romaji: 'enjinia',
+      audio: '/audio/course/n5/lesson-1/vocab-19-enjinia.mp3',
+      meaning: { en: 'engineer', vi: 'kỹ sư' }
+    },
     {
       kana: 'だいがく',
       kanji: '大学',
       romaji: 'daigaku',
+      audio: '/audio/course/n5/lesson-1/vocab-20-daigaku.mp3',
       ruby: [
         { base: '大', reading: 'だい' },
         { base: '学', reading: 'がく' }
@@ -181,16 +209,34 @@ export const n5Lesson1: Lesson = {
       kana: 'びょういん',
       kanji: '病院',
       romaji: 'byōin',
+      audio: '/audio/course/n5/lesson-1/vocab-21-byoin.mp3',
       ruby: [
         { base: '病', reading: 'びょう' },
         { base: '院', reading: 'いん' }
       ],
       meaning: { en: 'hospital', vi: 'bệnh viện' }
     },
-    { kana: 'だれ', romaji: 'dare', meaning: { en: 'who', vi: 'ai' } },
+    {
+      kana: 'でんき',
+      kanji: '電気',
+      romaji: 'denki',
+      audio: '/audio/course/n5/lesson-1/vocab-22-denki.mp3',
+      ruby: [
+        { base: '電', reading: 'でん' },
+        { base: '気', reading: 'き' }
+      ],
+      meaning: { en: 'electricity; electric', vi: 'điện, điện lực' }
+    },
+    {
+      kana: 'だれ',
+      romaji: 'dare',
+      audio: '/audio/course/n5/lesson-1/vocab-23-dare.mp3',
+      meaning: { en: 'who', vi: 'ai' }
+    },
     {
       kana: 'どなた',
       romaji: 'donata',
+      audio: '/audio/course/n5/lesson-1/vocab-24-donata.mp3',
       meaning: { en: 'who (polite)', vi: 'vị nào (lịch sự)' }
     },
     {
@@ -198,6 +244,7 @@ export const n5Lesson1: Lesson = {
       kanji: '〜歳',
       romaji: 'sai',
       speech: 'さい',
+      audio: '/audio/course/n5/lesson-1/vocab-25-sai.mp3',
       ruby: [{ base: '歳', reading: 'さい' }],
       meaning: { en: '~ years old', vi: '~ tuổi' }
     },
@@ -205,6 +252,7 @@ export const n5Lesson1: Lesson = {
       kana: 'なんさい',
       kanji: '何歳',
       romaji: 'nansai',
+      audio: '/audio/course/n5/lesson-1/vocab-26-nansai.mp3',
       ruby: [
         { base: '何', reading: 'なん' },
         { base: '歳', reading: 'さい' }
@@ -214,20 +262,33 @@ export const n5Lesson1: Lesson = {
     {
       kana: 'おいくつ',
       romaji: 'oikutsu',
+      audio: '/audio/course/n5/lesson-1/vocab-27-oikutsu.mp3',
       meaning: { en: 'how old (polite)', vi: 'bao nhiêu tuổi (lịch sự)' }
     },
-    { kana: 'はい', romaji: 'hai', meaning: { en: 'yes', vi: 'vâng, đúng' } },
-    { kana: 'いいえ', romaji: 'iie', meaning: { en: 'no', vi: 'không' } }
+    {
+      kana: 'はい',
+      romaji: 'hai',
+      audio: '/audio/course/n5/lesson-1/vocab-28-hai.mp3',
+      meaning: { en: 'yes', vi: 'vâng, đúng' }
+    },
+    {
+      kana: 'いいえ',
+      romaji: 'iie',
+      audio: '/audio/course/n5/lesson-1/vocab-29-iie.mp3',
+      meaning: { en: 'no', vi: 'không' }
+    }
   ],
   phrases: [
     {
       kana: 'はじめまして。',
       romaji: 'Hajimemashite.',
+      audio: '/audio/course/n5/lesson-1/phrase-01-hajimemashite.mp3',
       meaning: { en: 'How do you do? (first meeting)', vi: 'Rất hân hạnh (lần đầu gặp).' }
     },
     {
       kana: 'どうぞ よろしく おねがいします。',
       romaji: 'Dōzo yoroshiku onegaishimasu.',
+      audio: '/audio/course/n5/lesson-1/phrase-02-yoroshiku.mp3',
       meaning: {
         en: 'Nice to meet you; I look forward to your kindness.',
         vi: 'Rất mong được giúp đỡ.'
@@ -237,6 +298,7 @@ export const n5Lesson1: Lesson = {
       kana: 'おなまえは なんですか。',
       kanji: 'お名前は何ですか。',
       romaji: 'Onamae wa nan desu ka.',
+      audio: '/audio/course/n5/lesson-1/phrase-03-onamae.mp3',
       meaning: { en: 'What is your name?', vi: 'Bạn tên là gì?' },
       ruby: [
         { base: '名', reading: 'な' },
@@ -248,6 +310,7 @@ export const n5Lesson1: Lesson = {
       kana: 'しつれいですが。',
       kanji: '失礼ですが。',
       romaji: 'Shitsurei desu ga.',
+      audio: '/audio/course/n5/lesson-1/phrase-04-shitsurei.mp3',
       meaning: {
         en: 'Excuse me, but... (polite lead-in)',
         vi: 'Xin lỗi, cho hỏi... (mở đầu lịch sự)'
@@ -260,11 +323,13 @@ export const n5Lesson1: Lesson = {
     {
       kana: 'アメリカから きました。',
       romaji: 'Amerika kara kimashita.',
+      audio: '/audio/course/n5/lesson-1/phrase-05-amerika-kara.mp3',
       meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
     },
     {
       kana: 'こちらは アレックスさんです。',
       romaji: 'Kochira wa Arekkusu-san desu.',
+      audio: '/audio/course/n5/lesson-1/phrase-06-kochira-wa.mp3',
       meaning: { en: 'This is Alex.', vi: 'Đây là anh Alex.' }
     }
   ],

@@ -106,11 +106,59 @@ function resolveVoice(): SpeechSynthesisVoice | undefined {
   );
 }
 
-export function speakJapanese(text: string, rate = getSpeechRate()): void {
+let recordedAudio: HTMLAudioElement | null = null;
+
+function getRecordedAudioElement(): HTMLAudioElement {
+  if (!recordedAudio) {
+    recordedAudio = new Audio();
+  }
+
+  return recordedAudio;
+}
+
+/** Stop any in-flight recorded clip (pairs with `cancelSpeech`). */
+export function stopRecordedAudio(): void {
+  if (!recordedAudio) {
+    return;
+  }
+
+  recordedAudio.pause();
+  recordedAudio.removeAttribute('src');
+  recordedAudio.load();
+}
+
+/** Play a pre-recorded Japanese clip from a public URL. */
+export function playRecordedAudio(src: string): void {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  if (isSpeechSupported()) {
+    window.speechSynthesis.cancel();
+  }
+
+  stopKanaAudio();
+
+  const audio = getRecordedAudioElement();
+  audio.pause();
+  audio.src = src;
+  audio.load();
+  void audio.play().catch(() => {
+    // Autoplay / decode errors - ignore (same as kana audio).
+  });
+}
+
+export function speakJapanese(text: string, rate = getSpeechRate(), audioSrc?: string): void {
+  if (audioSrc) {
+    playRecordedAudio(audioSrc);
+    return;
+  }
+
   if (!isSpeechSupported() || !readUserPreferences().allowTts) {
     return;
   }
 
+  stopRecordedAudio();
   window.speechSynthesis.cancel();
 
   const utterance = new SpeechSynthesisUtterance(spokenJapanese(text));
@@ -140,6 +188,7 @@ export function subscribeVoices(callback: () => void): () => void {
 
 export function cancelSpeech(): void {
   stopKanaAudio();
+  stopRecordedAudio();
 
   if (isSpeechSupported()) {
     window.speechSynthesis.cancel();
