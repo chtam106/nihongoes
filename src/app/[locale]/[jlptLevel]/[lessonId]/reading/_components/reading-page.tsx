@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import { Box, Button, Collapse, LinearProgress, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Collapse, Paper, Stack, Typography } from '@mui/material';
 import {
   getLesson,
   type CourseLevel,
@@ -12,6 +12,8 @@ import {
   type ReadingQuestion
 } from '@/constants/courses/index.ts';
 import { Heading } from '@/components/heading';
+import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
+import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
@@ -118,6 +120,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
+  const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [finished, setFinished] = useState(false);
   const passageAnchorRef = useRef<HTMLDivElement>(null);
   const previousPassageIdRef = useRef<string | undefined>(undefined);
@@ -156,7 +159,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
       setIndex((previous) => previous + 1);
       setWrongIds([]);
       setCorrectPicked(false);
-    }, 100);
+    }, QUIZ_ADVANCE_DELAY_MS);
 
     return () => window.clearTimeout(timer);
   }, [correctPicked, isLast]);
@@ -168,9 +171,11 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     }
 
     if (choiceId === question.correctId) {
+      const firstTry = wrongIds.length === 0;
       setCorrectPicked(true);
+      setResults((previous) => [...previous, firstTry ? 'correct' : 'incorrect']);
 
-      if (wrongIds.length === 0) {
+      if (firstTry) {
         setScore((previous) => previous + 1);
       }
     } else {
@@ -184,6 +189,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     setWrongIds([]);
     setCorrectPicked(false);
     setScore(0);
+    setResults([]);
     setFinished(false);
     previousPassageIdRef.current = undefined;
   };
@@ -211,22 +217,14 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
         {!finished && (
           <>
             <Box>
-              <Stack
-                direction="row"
-                sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
-              >
-                <Typography variant="body2" color="text.secondary">
-                  {t('course.questionProgress', { current: index + 1, total })}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {t('course.scoreProgress', { score, total })}
-                </Typography>
-              </Stack>
-              <LinearProgress
-                variant="determinate"
-                value={total === 0 ? 0 : (index / total) * 100}
-                aria-label={t('course.questionProgress', { current: index + 1, total })}
-                sx={{ borderRadius: 1, height: 8 }}
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
+                {t('course.questionProgress', { current: index + 1, total })}
+              </Typography>
+              <QuizProgressBar
+                total={total}
+                current={index}
+                results={results}
+                label={t('course.questionProgress', { current: index + 1, total })}
               />
             </Box>
 

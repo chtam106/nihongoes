@@ -38,8 +38,8 @@ test.describe('kana sentence romaji exercise', () => {
     await page.getByPlaceholder('Type romaji').fill(expected);
     await page.getByRole('button', { name: 'Check' }).click();
 
-    // The score confirms the answer was accepted...
-    await expect(page.getByText(/Correct:\s*1\s*\//)).toBeVisible();
+    // Advancing to the next sentence confirms the answer was accepted...
+    await expect(page.getByText(/Sentence\s+2\s*\//)).toBeVisible();
     // ...and the romaji answer is still NOT shown automatically.
     await expect(answerText(page)).toBeHidden();
   });

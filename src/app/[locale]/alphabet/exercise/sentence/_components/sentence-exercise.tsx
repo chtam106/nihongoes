@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState, type MouseEvent } from 'react';
 import {
   Box,
   Button,
-  LinearProgress,
   Link,
   Paper,
   Stack,
@@ -13,7 +12,10 @@ import {
   ToggleButtonGroup,
   Typography
 } from '@mui/material';
+import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
+import { quizInputFeedbackSx } from '@/features/alphabet/exercise/exercise-ui.ts';
 import { HintText } from '@/components/hint-text';
+import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { Heading } from '@/components/heading';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
@@ -56,6 +58,7 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
   const [status, setStatus] = useState<AnswerStatus>('idle');
   const [revealed, setRevealed] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
+  const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [completed, setCompleted] = useState(false);
 
   const total = order.length;
@@ -70,7 +73,10 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
     }
 
     if (isSentenceAnswerCorrect(value, accepted)) {
-      if (status === 'idle') {
+      const firstTry = status === 'idle';
+      setResults((previous) => [...previous, firstTry ? 'correct' : 'incorrect']);
+
+      if (firstTry) {
         setCorrectCount((previous) => previous + 1);
       }
       setStatus('correct');
@@ -99,7 +105,7 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
       setValue('');
       setStatus('idle');
       setRevealed(false);
-    }, 100);
+    }, QUIZ_ADVANCE_DELAY_MS);
 
     return () => window.clearTimeout(timer);
   }, [status, index, total]);
@@ -111,6 +117,7 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
     setStatus('idle');
     setRevealed(false);
     setCorrectCount(0);
+    setResults([]);
     setCompleted(false);
   };
 
@@ -153,23 +160,10 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 3 }]}>
       <Box sx={{ mb: 2 }}>
-        <Stack
-          direction="row"
-          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            {progressLabel}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {t('course.scoreProgress', { score: correctCount, total })}
-          </Typography>
-        </Stack>
-        <LinearProgress
-          variant="determinate"
-          value={total === 0 ? 0 : (index / total) * 100}
-          aria-label={progressLabel}
-          sx={{ borderRadius: 1, height: 8 }}
-        />
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+          {progressLabel}
+        </Typography>
+        <QuizProgressBar total={total} current={index} results={results} label={progressLabel} />
       </Box>
 
       <Box sx={{ mb: 4 }}>
@@ -252,9 +246,12 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
             spellCheck={false}
             autoFocus={SUPPORTS_FINE_POINTER}
             fullWidth
-            focused={status === 'correct' || undefined}
-            color={status === 'correct' ? 'success' : undefined}
             error={status === 'wrong'}
+            sx={
+              status === 'correct' || status === 'wrong'
+                ? quizInputFeedbackSx(status === 'correct' ? 'correct' : 'wrong')
+                : undefined
+            }
             slotProps={{
               input: { readOnly: status === 'correct' },
               htmlInput: {

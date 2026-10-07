@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
+import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import {
   createQuizSession,
   isQuizAnswerCorrect,
@@ -37,6 +39,7 @@ export function useExerciseQuiz({
   const [wrongAnswers, setWrongAnswers] = useState<string[]>([]);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
   const [score, setScore] = useState(0);
+  const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [finished, setFinished] = useState(false);
 
   const isLast = total > 0 && questionNumber >= total - 1;
@@ -47,9 +50,11 @@ export function useExerciseQuiz({
     }
 
     if (isQuizAnswerCorrect(question, answer)) {
+      const firstTry = wrongAnswers.length === 0;
       setAnsweredCorrectly(true);
+      setResults((previous) => [...previous, firstTry ? 'correct' : 'incorrect']);
 
-      if (wrongAnswers.length === 0) {
+      if (firstTry) {
         setScore((previous) => previous + 1);
       }
     } else {
@@ -65,6 +70,7 @@ export function useExerciseQuiz({
     setWrongAnswers([]);
     setAnsweredCorrectly(false);
     setScore(0);
+    setResults([]);
     setFinished(false);
   };
 
@@ -83,7 +89,7 @@ export function useExerciseQuiz({
       setQuestionNumber((previous) => previous + 1);
       setWrongAnswers([]);
       setAnsweredCorrectly(false);
-    }, 100);
+    }, QUIZ_ADVANCE_DELAY_MS);
 
     return () => {
       window.clearTimeout(timer);
@@ -95,6 +101,7 @@ export function useExerciseQuiz({
     questionNumber,
     total,
     score,
+    results,
     finished,
     wrongAnswers,
     answeredCorrectly,
