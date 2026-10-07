@@ -99,7 +99,7 @@ export function ScrollToTopButton() {
         bottom: `${bottom}px`,
         zIndex: (muiTheme) => muiTheme.zIndex.fab,
         bgcolor: 'background.paper',
-        color: 'text.primary',
+        color: 'primary.main',
         boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 6px 16px rgba(0, 0, 0, 0.14)',
         '&:hover': { bgcolor: 'background.paper' }
       }}

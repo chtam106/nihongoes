@@ -1,5 +1,6 @@
 import LanguageIcon from '@mui/icons-material/Language';
 import { Box, ButtonBase, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
@@ -22,10 +23,10 @@ export function LanguageSwitcher() {
         p: 0.625,
         px: 1,
         borderRadius: 999,
-        bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.100' : 'action.selected')
+        bgcolor: (theme) => alpha(theme.palette.primary.main, 0.08)
       }}
     >
-      <LanguageIcon sx={{ fontSize: 17, mr: 0.25, color: 'text.secondary' }} />
+      <LanguageIcon sx={{ fontSize: 17, mr: 0.25, color: 'primary.main' }} />
 
       {locales.map(({ code, shortLabel, labelKey }) => {
         const selected = locale === code;
@@ -47,7 +48,10 @@ export function LanguageSwitcher() {
                 : 'none',
               transition: 'background-color 0.15s, box-shadow 0.15s',
               '&:hover': {
-                bgcolor: selected ? 'background.paper' : 'action.hover'
+                bgcolor: (theme) =>
+                  selected
+                    ? theme.palette.background.paper
+                    : alpha(theme.palette.primary.main, 0.08)
               },
               '&.Mui-focusVisible': {
                 outline: '2px solid',
@@ -62,7 +66,7 @@ export function LanguageSwitcher() {
               sx={{
                 fontSize: '0.75rem',
                 fontWeight: selected ? 700 : 500,
-                color: selected ? 'text.primary' : 'text.secondary',
+                color: selected ? 'primary.main' : 'text.secondary',
                 letterSpacing: 0.4,
                 lineHeight: 1
               }}

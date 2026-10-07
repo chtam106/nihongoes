@@ -16,6 +16,7 @@ import { quizInputFeedbackSx, resultBorderSx } from '@/features/alphabet/exercis
 import { useExerciseQuiz } from '@/features/alphabet/exercise/use-exercise-quiz.ts';
 import { Heading } from '@/components/heading';
 import { QuizProgressBar } from '@/components/quiz-progress-bar';
+import { quizChoiceSx } from '@/theme/quiz-choice.ts';
 import { KanaDisplay } from '@/components/kana-display';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
@@ -266,6 +267,7 @@ export function ExerciseQuizPanel({
                 onClick={() => onAnswer(value)}
                 disabled={answeredCorrectly || isWrongAnswer}
                 sx={{
+                  ...quizChoiceSx,
                   py: 2,
                   fontSize: characterOptions ? '1.5rem' : '1rem',
                   borderWidth: 1,
