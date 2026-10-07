@@ -20,7 +20,11 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { formatKanjiMeaning, KANJI_RADICALS_PATH, type Radical } from '@/constants/kanji/index.ts';
+import {
+  formatRadicalMeaning,
+  KANJI_RADICALS_PATH,
+  type Radical
+} from '@/constants/kanji/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import {
@@ -45,7 +49,7 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 function radicalMeaning(radical: Radical, locale: Locale): string {
-  return locale === 'vi' ? formatKanjiMeaning(radical.meaning.vi) : radical.meaning.en;
+  return formatRadicalMeaning(radical, locale);
 }
 
 type QuizChoice = {

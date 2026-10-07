@@ -26,7 +26,8 @@ import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
-  formatKanjiMeaning,
+  formatRadicalComponentMeaning,
+  formatRadicalMeaning,
   getRadicalStrokeIndex,
   groupRadicalsByStrokes,
   KANJI_BASE_PATH,
@@ -62,8 +63,8 @@ function RadicalLegend() {
     return null;
   }
 
-  const meaningText = locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en;
-  const [meaningPrimary, ...meaningNotes] = meaningText.split('; ');
+  const meaningPrimary = formatRadicalMeaning(sample, locale);
+  const meaningNote = formatRadicalComponentMeaning(sample, locale);
 
   const items = [
     { color: PART_COLORS.number, text: t('kanji.radicalsLegendNumber') },
@@ -150,15 +151,14 @@ function RadicalLegend() {
               <Typography variant="body1" sx={{ fontWeight: 600, color: PART_COLORS.meaning }}>
                 {meaningPrimary}
               </Typography>
-              {meaningNotes.map((note) => (
+              {meaningNote && (
                 <Typography
-                  key={note}
                   variant="body2"
                   sx={{ color: PART_COLORS.meaningNote, display: 'block' }}
                 >
-                  {note}
+                  {meaningNote}
                 </Typography>
-              ))}
+              )}
               <Typography
                 variant="caption"
                 sx={{ display: 'block', fontWeight: 600, color: PART_COLORS.usage }}
@@ -273,25 +273,24 @@ type RadicalMeaningProps = {
 };
 
 /**
- * The radical's meaning. The primary sense is on the first line; any extra
- * senses (split on "; ", e.g. a "when used in other kanji" note) drop to their
- * own lighter line so they do not crowd the primary meaning.
+ * The radical's meaning. Bold primary from `formatRadicalMeaning`; optional
+ * lighter `componentMeaning` line from `formatRadicalComponentMeaning`.
  */
 function RadicalMeaning({ radical }: RadicalMeaningProps) {
   const { locale } = useTranslation();
-  const text = locale === 'vi' ? formatKanjiMeaning(radical.meaning.vi) : radical.meaning.en;
-  const [primary, ...notes] = text.split('; ');
+  const primary = formatRadicalMeaning(radical, locale);
+  const note = formatRadicalComponentMeaning(radical, locale);
 
   return (
     <>
       <Typography variant="body1" sx={{ fontWeight: 600 }}>
         {primary}
       </Typography>
-      {notes.map((note) => (
-        <Typography key={note} variant="body2" color="text.secondary">
+      {note && (
+        <Typography variant="body2" color="text.secondary">
           {note}
         </Typography>
-      ))}
+      )}
     </>
   );
 }

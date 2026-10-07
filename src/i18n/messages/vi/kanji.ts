@@ -70,7 +70,7 @@ export const kanji = {
   radicalsLegendVariant:
     'Chữ nhỏ dưới chữ lớn - dạng ghép khi bộ nằm trong chữ khác (nếu có), vd 犬 → 犭, 人 → 亻. Bài trắc nghiệm cũng hỏi các dạng này.',
   radicalsLegendMeaning:
-    'Dòng in đậm - nghĩa chính của bộ thủ (tiếng Việt hiện dạng [Hán-Việt] nghĩa).',
+    'Dòng in đậm - nghĩa chính của bộ thủ (tiếng Việt hiện nhãn [Hán-Việt] riêng, rồi nghĩa).',
   radicalsLegendMeaningNote:
     'Dòng nhạt dưới nghĩa - nghĩa thêm khi bộ dùng làm thành phần trong chữ khác (chỉ một số thẻ).',
   radicalsLegendUsage:

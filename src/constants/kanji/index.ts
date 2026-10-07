@@ -1,4 +1,6 @@
 import {
+  formatRadicalComponentMeaning,
+  formatRadicalMeaning,
   getRadicalStrokeIndex,
   groupRadicalsByStrokes,
   radicals,
@@ -8,7 +10,14 @@ import {
 } from './radicals.ts';
 
 export * from './types.ts';
-export { radicals, radicalsInStrokeOrder, groupRadicalsByStrokes, getRadicalStrokeIndex };
+export {
+  formatRadicalComponentMeaning,
+  formatRadicalMeaning,
+  radicals,
+  radicalsInStrokeOrder,
+  groupRadicalsByStrokes,
+  getRadicalStrokeIndex
+};
 export type { Radical, RadicalStrokeGroup };
 export { KANJI_TRACK_META, type KanjiTrackMeta, type KanjiTrackSlug } from './track-meta.ts';
 export type { KanjiTrack } from './tracks.ts';
