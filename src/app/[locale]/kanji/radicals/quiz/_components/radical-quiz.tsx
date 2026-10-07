@@ -211,17 +211,23 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
         />
       </Box>
 
-      <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
-        <Typography variant="overline" color="text.secondary">
+      <Box>
+        <Typography
+          variant="overline"
+          color="text.secondary"
+          sx={{ display: 'block', textAlign: 'center', lineHeight: 1.5, mb: 1 }}
+        >
           {t('kanji.radicalsQuizPrompt')}
         </Typography>
-        <Typography
-          lang="ja"
-          sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1, mt: 0.5 }}
-        >
-          {question.prompt}
-        </Typography>
-      </Paper>
+        <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
+          <Typography
+            lang="ja"
+            sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1 }}
+          >
+            {question.prompt}
+          </Typography>
+        </Paper>
+      </Box>
 
       <Box
         sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)' }, gap: 1.5 }}

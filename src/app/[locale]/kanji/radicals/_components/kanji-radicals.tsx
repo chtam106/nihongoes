@@ -209,7 +209,7 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
       elevation={0}
       id={`radical-${index}`}
       sx={[
-        subtleSurfaceSx,
+        elevatedSurfaceSx,
         {
           position: 'relative',
           p: 2,

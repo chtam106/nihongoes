@@ -225,24 +225,30 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
         />
       </Box>
 
-      <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
-        <Typography variant="overline" color="text.secondary">
+      <Box>
+        <Typography
+          variant="overline"
+          color="text.secondary"
+          sx={{ display: 'block', textAlign: 'center', lineHeight: 1.5, mb: 1 }}
+        >
           {promptLabel}
         </Typography>
-        {question.promptJapanese && (
-          <Typography
-            lang="ja"
-            sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1, mt: 0.5 }}
-          >
-            {question.promptText}
-          </Typography>
-        )}
-        {!question.promptJapanese && (
-          <Typography variant="h5" component="p" sx={{ fontWeight: 600, mt: 0.5 }}>
-            {question.promptText}
-          </Typography>
-        )}
-      </Paper>
+        <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
+          {question.promptJapanese && (
+            <Typography
+              lang="ja"
+              sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1 }}
+            >
+              {question.promptText}
+            </Typography>
+          )}
+          {!question.promptJapanese && (
+            <Typography variant="h5" component="p" sx={{ fontWeight: 600 }}>
+              {question.promptText}
+            </Typography>
+          )}
+        </Paper>
+      </Box>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 1.5 }}>
         {question.choices.map((choice) => {
