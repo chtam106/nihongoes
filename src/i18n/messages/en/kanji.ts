@@ -69,7 +69,8 @@ export const kanji = {
   radicalsLegendChar: 'Large character - the radical in its standalone form.',
   radicalsLegendVariant:
     'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',
-  radicalsLegendMeaning: 'Bold line - the meaning of the radical.',
+  radicalsLegendMeaning:
+    'Bold line - the meaning of the radical. A lighter line below is an extra sense when that radical is used inside other kanji.',
   radicalsQuizLink: 'Quiz',
   radicalsQuizTitle: 'Radical quiz',
   radicalsQuizPrompt: 'What is this radical?',

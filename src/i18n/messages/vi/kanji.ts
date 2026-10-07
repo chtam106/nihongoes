@@ -69,7 +69,8 @@ export const kanji = {
   radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
   radicalsLegendVariant:
     'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
-  radicalsLegendMeaning: 'Dòng in đậm - nghĩa của bộ thủ (Hán-Việt - nghĩa tiếng Việt).',
+  radicalsLegendMeaning:
+    'Dòng in đậm - nghĩa của bộ thủ (Hán-Việt - nghĩa tiếng Việt). Dòng nhạt bên dưới là nghĩa thêm khi bộ đó nằm trong chữ khác.',
   radicalsQuizLink: 'Trắc nghiệm',
   radicalsQuizTitle: 'Trắc nghiệm bộ thủ',
   radicalsQuizPrompt: 'Bộ thủ này là gì?',
