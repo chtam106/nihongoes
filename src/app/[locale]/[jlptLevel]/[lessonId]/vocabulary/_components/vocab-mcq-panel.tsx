@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Paper, Stack, Typography } from '@mui/material';
+import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
 import type { Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
@@ -19,20 +19,38 @@ type VocabMcqPanelProps = {
 
 function VocabMcqPanel({ lesson, locale, mode, script, includeReference }: VocabMcqPanelProps) {
   const { t } = useTranslation();
-  const { question, wrongIds, answeredCorrectly, handleSelect } = useVocabQuiz({
-    lesson,
-    locale,
-    mode,
-    script,
-    includeReference
-  });
+  const { question, questionNumber, total, wrongIds, answeredCorrectly, handleSelect } =
+    useVocabQuiz({
+      lesson,
+      locale,
+      mode,
+      script,
+      includeReference
+    });
 
   const promptLabel =
     mode === 'word-meaning' ? t('course.vocabPromptMeaning') : t('course.vocabPromptWord');
   const displayPrompt = question.promptText;
+  const cycleIndex = total > 0 ? questionNumber % total : 0;
+  const progressLabel = t('course.questionProgress', {
+    current: cycleIndex + 1,
+    total
+  });
 
   return (
     <Stack spacing={3}>
+      <Box>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+          {progressLabel}
+        </Typography>
+        <LinearProgress
+          variant="determinate"
+          value={total === 0 ? 0 : (cycleIndex / total) * 100}
+          aria-label={progressLabel}
+          sx={{ borderRadius: 1, height: 8 }}
+        />
+      </Box>
+
       <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
         <Typography variant="overline" color="text.secondary">
           {promptLabel}

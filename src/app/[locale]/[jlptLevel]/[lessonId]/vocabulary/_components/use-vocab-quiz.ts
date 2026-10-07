@@ -40,6 +40,7 @@ export function useVocabQuiz({
     return { session, question: session.next() };
   });
   const sessionRef = useRef<VocabSession>(initial.session);
+  const [total] = useState(initial.session.total);
   const [question, setQuestion] = useState<VocabQuestion>(initial.question);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
@@ -77,6 +78,7 @@ export function useVocabQuiz({
   return {
     question,
     questionNumber,
+    total,
     wrongIds,
     answeredCorrectly,
     handleSelect
