@@ -3,10 +3,11 @@
 import { memo, type ReactNode } from 'react';
 import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import type { Lesson } from '@/constants/courses/index.ts';
+import type { CourseLevel, Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { ResultScreen } from '@/features/course/shared';
 import { useVocabMatch } from './use-vocab-quiz.ts';
 import {
   VOCAB_MATCH_BATCH_FADE_MS,
@@ -18,6 +19,7 @@ import {
 
 type VocabMatchPanelProps = {
   lesson: Lesson;
+  level: CourseLevel;
   locale: Locale;
   script: VocabScript;
   includeReference: boolean;
@@ -153,7 +155,13 @@ const MatchMeaningCell = memo(function MatchMeaningCell({
   );
 });
 
-function VocabMatchPanel({ lesson, locale, script, includeReference }: VocabMatchPanelProps) {
+function VocabMatchPanel({
+  lesson,
+  level,
+  locale,
+  script,
+  includeReference
+}: VocabMatchPanelProps) {
   const { t } = useTranslation();
   const {
     activePairs,
@@ -162,12 +170,27 @@ function VocabMatchPanel({ lesson, locale, script, includeReference }: VocabMatc
     batchVisible,
     totalMatched,
     totalPairs,
+    score,
+    finished,
     matchedPairColors,
     selectedWordId,
     selectedMeaningId,
     selectWord,
-    selectMeaning
+    selectMeaning,
+    handleRetry
   } = useVocabMatch({ lesson, locale, script, includeReference });
+
+  if (finished) {
+    return (
+      <ResultScreen
+        score={score}
+        total={totalPairs}
+        level={level}
+        lessonId={lesson.id}
+        onRetry={handleRetry}
+      />
+    );
+  }
 
   const progressValue = totalPairs > 0 ? (totalMatched / totalPairs) * 100 : 0;
 
@@ -198,19 +221,21 @@ function VocabMatchPanel({ lesson, locale, script, includeReference }: VocabMatc
   return (
     <Stack spacing={2.5}>
       <Box>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+          {t('course.vocabMatchInstruction')}
+        </Typography>
         <Stack
           direction="row"
-          spacing={2}
-          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 1 }}
+          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
         >
           <Typography variant="body1" color="text.secondary">
-            {t('course.vocabMatchInstruction')}
-          </Typography>
-          <Typography variant="body1" color="text.secondary" sx={{ whiteSpace: 'nowrap' }}>
             {t('course.vocabMatchProgress', {
               matched: totalMatched,
               total: totalPairs
             })}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {t('course.scoreProgress', { score, total: totalPairs })}
           </Typography>
         </Stack>
         <LinearProgress
@@ -220,6 +245,7 @@ function VocabMatchPanel({ lesson, locale, script, includeReference }: VocabMatc
             matched: totalMatched,
             total: totalPairs
           })}
+          sx={{ borderRadius: 1, height: 8 }}
         />
       </Box>
 

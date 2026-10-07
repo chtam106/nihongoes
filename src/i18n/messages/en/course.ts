@@ -95,6 +95,7 @@ export const course = {
   showPhonetics: 'Show phonetics',
   hidePhonetics: 'Hide phonetics',
   questionProgress: 'Question {current} of {total}',
+  scoreProgress: 'Correct: {score} / {total}',
   chooseAnswer: 'Choose the correct answer',
   typeAnswer: 'Type the missing word',
   inputPlaceholder: 'Your answer (kana)',

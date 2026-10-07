@@ -203,7 +203,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
             {t('course.questionProgress', { current: index + 1, total })}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {score} / {total}
+            {t('course.scoreProgress', { score, total })}
           </Typography>
         </Stack>
         <LinearProgress

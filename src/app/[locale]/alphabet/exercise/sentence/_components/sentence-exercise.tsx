@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type MouseEvent } from 'react';
 import {
   Box,
   Button,
+  LinearProgress,
   Link,
   Paper,
   Stack,
@@ -13,8 +14,10 @@ import {
   Typography
 } from '@mui/material';
 import { HintText } from '@/components/hint-text';
+import { Heading } from '@/components/heading';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
+import ReplayIcon from '@mui/icons-material/Replay';
 import { ExercisePageLayout } from '@/features/alphabet/exercise/exercise-page-layout.tsx';
 import { useSentenceExercisePreferences } from '@/features/alphabet/exercise/use-exercise-preferences.ts';
 import { SENTENCES, type SentenceType } from '@/features/alphabet/exercise/sentence/sentences.ts';
@@ -67,8 +70,10 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
     }
 
     if (isSentenceAnswerCorrect(value, accepted)) {
+      if (status === 'idle') {
+        setCorrectCount((previous) => previous + 1);
+      }
       setStatus('correct');
-      setCorrectCount((previous) => previous + 1);
     } else {
       setStatus('wrong');
     }
@@ -110,34 +115,62 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
   };
 
   if (completed) {
+    const ratio = total === 0 ? 0 : correctCount / total;
+    const resultMessage =
+      ratio >= 0.8
+        ? t('course.resultGreat')
+        : ratio >= 0.5
+          ? t('course.resultGood')
+          : t('course.resultKeepGoing');
+
     return (
-      <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 4, textAlign: 'center' }]}>
-        <Typography variant="h5" component="p" sx={{ fontWeight: 600, mb: 1 }}>
-          {t('exercise.sentenceComplete')}
+      <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 3, md: 4 }, textAlign: 'center' }]}>
+        <Heading scale="page" component="h2" gutterBottom>
+          {t('course.resultTitle')}
+        </Heading>
+        <Typography
+          variant="h2"
+          component="p"
+          sx={{ fontWeight: 700, color: 'primary.main', my: 2 }}
+        >
+          {correctCount} / {total}
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-          {t('exercise.sentenceScore', { correct: String(correctCount), total: String(total) })}
+          {resultMessage}
         </Typography>
-        <Button variant="contained" onClick={handleRestart}>
-          {t('exercise.sentenceRestart')}
+        <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRestart}>
+          {t('course.retry')}
         </Button>
       </Paper>
     );
   }
 
+  const progressLabel = t('exercise.sentenceProgress', {
+    current: String(index + 1),
+    total: String(total)
+  });
+
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 3 }]}>
-      <Stack
-        direction="row"
-        sx={{ mb: 2, color: 'text.secondary', justifyContent: 'space-between' }}
-      >
-        <Typography variant="subtitle2">
-          {t('exercise.sentenceProgress', { current: String(index + 1), total: String(total) })}
-        </Typography>
-        <Typography variant="subtitle2">
-          {t('exercise.sentenceScore', { correct: String(correctCount), total: String(total) })}
-        </Typography>
-      </Stack>
+      <Box sx={{ mb: 2 }}>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
+        >
+          <Typography variant="body1" color="text.secondary">
+            {progressLabel}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {t('course.scoreProgress', { score: correctCount, total })}
+          </Typography>
+        </Stack>
+        <LinearProgress
+          variant="determinate"
+          value={total === 0 ? 0 : (index / total) * 100}
+          aria-label={progressLabel}
+          sx={{ borderRadius: 1, height: 8 }}
+        />
+      </Box>
 
       <Box sx={{ mb: 4 }}>
         <Typography

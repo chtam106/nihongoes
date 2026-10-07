@@ -20,9 +20,10 @@ import type { VocabExerciseFormat, VocabMode, VocabScript } from './vocab-quiz.t
 
 type VocabExerciseProps = {
   lesson: Lesson;
+  level: CourseLevel;
 };
 
-function VocabExercise({ lesson }: VocabExerciseProps) {
+function VocabExercise({ lesson, level }: VocabExerciseProps) {
   const { locale, t } = useTranslation();
   const { prefs, setExerciseFormat, setMode, setScript, setIncludeReference } =
     useVocabExercisePreferences();
@@ -120,6 +121,7 @@ function VocabExercise({ lesson }: VocabExerciseProps) {
           <VocabMatchPanel
             key={panelKey}
             lesson={lesson}
+            level={level}
             locale={locale}
             script={prefs.script}
             includeReference={prefs.includeReference}
@@ -130,6 +132,7 @@ function VocabExercise({ lesson }: VocabExerciseProps) {
           <VocabMcqPanel
             key={panelKey}
             lesson={lesson}
+            level={level}
             locale={locale}
             mode={prefs.mode}
             script={prefs.script}
@@ -154,7 +157,7 @@ function ExercisePage({ level }: ExercisePageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} lesson={lesson} />;
+  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} lesson={lesson} level={level} />;
 }
 
 export default ExercisePage;
