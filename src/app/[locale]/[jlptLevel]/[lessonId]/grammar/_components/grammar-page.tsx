@@ -171,12 +171,7 @@ function GrammarExercise({ lesson, level }: GrammarExerciseProps) {
       <Stack spacing={3}>
         <LessonQuizHeader lesson={lesson} section="grammar" />
 
-        <GrammarQuiz
-          key={`${lesson.id}:${locale}`}
-          lesson={lesson}
-          level={level}
-          locale={locale}
-        />
+        <GrammarQuiz key={`${lesson.id}:${locale}`} lesson={lesson} level={level} locale={locale} />
       </Stack>
     </PageContainer>
   );
