@@ -892,8 +892,8 @@ export const radicals: Radical[] = [
     name: 'inu / kemonohen',
     kana: 'いぬ / けものへん',
     meaning: {
-      en: 'dog, beast, animal (as a radical)',
-      vi: 'khuyển - chó, thú vật (khi làm bộ thủ)'
+      en: 'dog; beast, animal (when used in other kanji)',
+      vi: 'khuyển - chó; thú vật (khi ghép chữ)'
     }
   },
   {

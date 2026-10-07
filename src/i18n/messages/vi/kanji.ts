@@ -68,9 +68,13 @@ export const kanji = {
     'Nhãn góc trên trái - số thứ tự trong danh sách mặc định (1-214), gom theo số nét. Khoảng Từ/Đến ở trang trắc nghiệm dùng cùng các số này.',
   radicalsLegendChar: 'Chữ lớn - bộ thủ ở dạng đứng riêng.',
   radicalsLegendVariant:
-    'Chữ nhỏ bên dưới - biến thể (dạng ghép) dùng khi bộ nằm trong chữ khác, vd 人 → 亻, 水 → 氵.',
+    'Chữ nhỏ dưới chữ lớn - dạng ghép khi bộ nằm trong chữ khác (nếu có), vd 犬 → 犭, 人 → 亻. Bài trắc nghiệm cũng hỏi các dạng này.',
   radicalsLegendMeaning:
-    'Dòng in đậm - nghĩa của bộ thủ (Hán-Việt - nghĩa tiếng Việt). Dòng nhạt bên dưới là nghĩa thêm khi bộ đó nằm trong chữ khác.',
+    'Dòng in đậm - nghĩa chính của bộ thủ (tiếng Việt hiện dạng [Hán-Việt] nghĩa).',
+  radicalsLegendMeaningNote:
+    'Dòng nhạt dưới nghĩa - nghĩa thêm khi bộ dùng làm thành phần trong chữ khác (chỉ một số thẻ).',
+  radicalsLegendUsage:
+    'Dòng đếm dưới nghĩa - số kanji trong bài học lấy bộ này làm bộ thủ chính (hiện khi sắp xếp theo độ thông dụng).',
   radicalsQuizLink: 'Trắc nghiệm',
   radicalsQuizTitle: 'Trắc nghiệm bộ thủ',
   radicalsQuizPrompt: 'Bộ thủ này là gì?',

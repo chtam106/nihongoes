@@ -68,9 +68,13 @@ export const kanji = {
     "Top-left tag - the radical's index in the default list (1-214), grouped by stroke count. The quiz From/To uses the same indexes.",
   radicalsLegendChar: 'Large character - the radical in its standalone form.',
   radicalsLegendVariant:
-    'Smaller character(s) below - variant (combining) forms used inside other kanji, e.g. 人 -> 亻, 水 -> 氵.',
+    'Smaller character(s) below the large one - combining form(s) used inside other kanji when present (e.g. 犬 -> 犭, 人 -> 亻). The quiz also asks these forms.',
   radicalsLegendMeaning:
-    'Bold line - the meaning of the radical. A lighter line below is an extra sense when that radical is used inside other kanji.',
+    'Bold line - the main meaning of the radical (Vietnamese cards show [Han-Viet] meaning).',
+  radicalsLegendMeaningNote:
+    'Lighter line under the meaning - an extra sense when that radical is used as a building block in other kanji (only on some cards).',
+  radicalsLegendUsage:
+    'Count under the meaning - how many lesson kanji use this as their main radical (shown when sorting by frequency).',
   radicalsQuizLink: 'Quiz',
   radicalsQuizTitle: 'Radical quiz',
   radicalsQuizPrompt: 'What is this radical?',

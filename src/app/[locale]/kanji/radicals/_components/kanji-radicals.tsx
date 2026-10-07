@@ -43,24 +43,35 @@ const PART_COLORS = {
   number: '#c2185b',
   char: '#1565c0',
   variant: '#e65100',
-  meaning: '#2e7d32'
+  meaning: '#2e7d32',
+  meaningNote: '#6a1b9a',
+  usage: '#0277bd'
 } as const;
+
+/** Illustrative usage count on the legend sample card (not real frequency data). */
+const LEGEND_SAMPLE_USAGE_COUNT = 42;
 
 /** A color-coded sample card + matching legend explaining each field of a radical card. */
 function RadicalLegend() {
   const { locale, t } = useTranslation();
   const [open, setOpen] = useState(false);
-  const sample = radicals.find((radical) => radical.char === '人');
+  // 犬 has a combining variant (犭) and a component-sense note - every card field in one sample.
+  const sample = radicals.find((radical) => radical.char === '犬');
 
   if (!sample) {
     return null;
   }
 
+  const meaningText = locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en;
+  const [meaningPrimary, ...meaningNotes] = meaningText.split('; ');
+
   const items = [
     { color: PART_COLORS.number, text: t('kanji.radicalsLegendNumber') },
     { color: PART_COLORS.char, text: t('kanji.radicalsLegendChar') },
     { color: PART_COLORS.variant, text: t('kanji.radicalsLegendVariant') },
-    { color: PART_COLORS.meaning, text: t('kanji.radicalsLegendMeaning') }
+    { color: PART_COLORS.meaning, text: t('kanji.radicalsLegendMeaning') },
+    { color: PART_COLORS.meaningNote, text: t('kanji.radicalsLegendMeaningNote') },
+    { color: PART_COLORS.usage, text: t('kanji.radicalsLegendUsage') }
   ];
 
   return (
@@ -97,9 +108,9 @@ function RadicalLegend() {
                 p: 1.5,
                 display: 'flex',
                 gap: 1.5,
-                alignItems: 'center',
+                alignItems: 'flex-start',
                 alignSelf: 'flex-start',
-                minWidth: 200
+                minWidth: 220
               }
             ]}
           >
@@ -118,7 +129,7 @@ function RadicalLegend() {
             >
               #{getRadicalStrokeIndex(sample)}
             </Typography>
-            <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
+            <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44, pt: 0.5 }}>
               <Typography
                 lang="ja"
                 sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1, color: PART_COLORS.char }}
@@ -135,9 +146,24 @@ function RadicalLegend() {
                 </Typography>
               )}
             </Box>
-            <Box sx={{ minWidth: 0 }}>
+            <Box sx={{ minWidth: 0, pt: 0.5 }}>
               <Typography variant="body1" sx={{ fontWeight: 600, color: PART_COLORS.meaning }}>
-                {locale === 'vi' ? formatKanjiMeaning(sample.meaning.vi) : sample.meaning.en}
+                {meaningPrimary}
+              </Typography>
+              {meaningNotes.map((note) => (
+                <Typography
+                  key={note}
+                  variant="body2"
+                  sx={{ color: PART_COLORS.meaningNote, display: 'block' }}
+                >
+                  {note}
+                </Typography>
+              ))}
+              <Typography
+                variant="caption"
+                sx={{ display: 'block', fontWeight: 600, color: PART_COLORS.usage }}
+              >
+                {t('kanji.radicalsUsageCount', { count: LEGEND_SAMPLE_USAGE_COUNT })}
               </Typography>
             </Box>
           </Paper>
