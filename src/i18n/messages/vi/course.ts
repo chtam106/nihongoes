@@ -93,6 +93,7 @@ export const course = {
   showPhonetics: 'Hiện phiên âm',
   hidePhonetics: 'Ẩn phiên âm',
   questionProgress: 'Câu {current} / {total}',
+  scoreProgress: 'Đúng: {score} / {total}',
   chooseAnswer: 'Chọn đáp án đúng',
   typeAnswer: 'Điền từ còn thiếu',
   inputPlaceholder: 'Đáp án của bạn (kana)',

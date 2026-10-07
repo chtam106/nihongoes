@@ -235,7 +235,7 @@ function VocabMatchPanel({
             })}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {score} / {totalPairs}
+            {t('course.scoreProgress', { score, total: totalPairs })}
           </Typography>
         </Stack>
         <LinearProgress

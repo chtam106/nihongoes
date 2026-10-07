@@ -161,7 +161,7 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
             {progressLabel}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {correctCount} / {total}
+            {t('course.scoreProgress', { score: correctCount, total })}
           </Typography>
         </Stack>
         <LinearProgress

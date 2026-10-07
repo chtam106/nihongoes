@@ -72,7 +72,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
             {progressLabel}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {score} / {total}
+            {t('course.scoreProgress', { score, total })}
           </Typography>
         </Stack>
         <LinearProgress

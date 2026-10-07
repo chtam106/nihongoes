@@ -363,7 +363,7 @@ export function ExerciseQuiz({
             {progressLabel}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {quiz.score} / {quiz.total}
+            {t('course.scoreProgress', { score: quiz.score, total: quiz.total })}
           </Typography>
         </Stack>
         <LinearProgress
