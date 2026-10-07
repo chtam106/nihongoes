@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Lesson } from '@/constants/courses/index.ts';
+import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import type { Locale } from '@/i18n/translations.ts';
+import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
 import {
   createVocabMatchSession,
   createVocabSession,
@@ -12,7 +14,6 @@ import {
   type VocabMatchSession,
   type VocabMode,
   type VocabQuestion,
-  type VocabScript,
   type VocabSession
 } from './vocab-quiz.ts';
 
@@ -20,22 +21,15 @@ type UseVocabQuizOptions = {
   lesson: Lesson;
   locale: Locale;
   mode: VocabMode;
-  script: VocabScript;
   includeReference: boolean;
 };
 
 // No effect-driven reset for preference changes: the consumer remounts via a
-// `key` derived from lesson/locale/mode/script/includeReference. Retry rebuilds
+// `key` derived from lesson/locale/mode/includeReference. Retry rebuilds
 // the session in place (same as radical/kanji quizzes).
-export function useVocabQuiz({
-  lesson,
-  locale,
-  mode,
-  script,
-  includeReference
-}: UseVocabQuizOptions) {
+export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVocabQuizOptions) {
   const [initial] = useState(() => {
-    const session = createVocabSession(lesson, locale, mode, script, includeReference);
+    const session = createVocabSession(lesson, locale, mode, includeReference);
 
     return { session, question: session.next() };
   });
@@ -46,6 +40,7 @@ export function useVocabQuiz({
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
   const [score, setScore] = useState(0);
+  const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [finished, setFinished] = useState(false);
 
   const isLast = total > 0 && questionNumber >= total - 1;
@@ -56,9 +51,11 @@ export function useVocabQuiz({
     }
 
     if (optionId === question.correctId) {
+      const firstTry = wrongIds.length === 0;
       setAnsweredCorrectly(true);
+      setResults((previous) => [...previous, firstTry ? 'correct' : 'incorrect']);
 
-      if (wrongIds.length === 0) {
+      if (firstTry) {
         setScore((previous) => previous + 1);
       }
     } else {
@@ -67,13 +64,14 @@ export function useVocabQuiz({
   };
 
   const handleRetry = () => {
-    const session = createVocabSession(lesson, locale, mode, script, includeReference);
+    const session = createVocabSession(lesson, locale, mode, includeReference);
     sessionRef.current = session;
     setQuestion(session.next());
     setQuestionNumber(0);
     setWrongIds([]);
     setAnsweredCorrectly(false);
     setScore(0);
+    setResults([]);
     setFinished(false);
   };
 
@@ -92,7 +90,7 @@ export function useVocabQuiz({
       setQuestionNumber((previous) => previous + 1);
       setWrongIds([]);
       setAnsweredCorrectly(false);
-    }, 100);
+    }, QUIZ_ADVANCE_DELAY_MS);
 
     return () => {
       window.clearTimeout(timer);
@@ -104,6 +102,7 @@ export function useVocabQuiz({
     questionNumber,
     total,
     score,
+    results,
     finished,
     wrongIds,
     answeredCorrectly,
@@ -115,7 +114,6 @@ export function useVocabQuiz({
 type UseVocabMatchOptions = {
   lesson: Lesson;
   locale: Locale;
-  script: VocabScript;
   includeReference: boolean;
 };
 
@@ -131,11 +129,11 @@ function drawNextBatch(session: VocabMatchSession): {
   };
 }
 
-// Remount via `key` on script/includeReference changes for a fresh session.
+// Remount via `key` on includeReference changes for a fresh session.
 // One full pass through the pool, then a result screen (no endless reshuffle).
-export function useVocabMatch({ lesson, locale, script, includeReference }: UseVocabMatchOptions) {
+export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatchOptions) {
   const [initial] = useState(() => {
-    const session = createVocabMatchSession(lesson, locale, script, includeReference);
+    const session = createVocabMatchSession(lesson, locale, includeReference);
     const activePairs = session.fill(initialVocabMatchSlotCount(session.totalPairs));
 
     return {
@@ -156,6 +154,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
   const [batchKey, setBatchKey] = useState(0);
   const [totalMatched, setTotalMatched] = useState(0);
   const [score, setScore] = useState(0);
+  const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [finished, setFinished] = useState(false);
   const [matchedPairColors, setMatchedPairColors] = useState<Map<string, number>>(() => new Map());
   const [selectedWordId, setSelectedWordId] = useState<string | null>(null);
@@ -188,7 +187,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
 
   const handleRetry = () => {
     clearTransitionTimers();
-    const session = createVocabMatchSession(lesson, locale, script, includeReference);
+    const session = createVocabMatchSession(lesson, locale, includeReference);
     const nextPairs = session.fill(initialVocabMatchSlotCount(session.totalPairs));
     sessionRef.current = session;
     missedPairIdsRef.current = new Set();
@@ -198,6 +197,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
     setBatchKey((key) => key + 1);
     setTotalMatched(0);
     setScore(0);
+    setResults([]);
     setFinished(false);
     setSelectedWordId(null);
     setSelectedMeaningId(null);
@@ -247,7 +247,10 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
     nextMatched.set(wordId, colorIndex);
     const nextTotal = totalMatchedRef.current + 1;
 
-    if (!missedPairIdsRef.current.has(wordId)) {
+    const firstTry = !missedPairIdsRef.current.has(wordId);
+    setResults((previous) => [...previous, firstTry ? 'correct' : 'incorrect']);
+
+    if (firstTry) {
       setScore((previous) => previous + 1);
     }
 
@@ -316,6 +319,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
     totalMatched,
     totalPairs,
     score,
+    results,
     finished,
     matchedPairColors,
     selectedWordId,

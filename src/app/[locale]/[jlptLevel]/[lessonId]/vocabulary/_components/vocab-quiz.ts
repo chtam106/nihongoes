@@ -4,9 +4,6 @@ import type { Locale } from '@/i18n/translations.ts';
 
 export type VocabMode = 'word-meaning' | 'meaning-word';
 
-/** Which written form(s) of each word to quiz: kana only, kanji only, or both. */
-export type VocabScript = 'kana' | 'kanji' | 'all';
-
 /** Vocabulary exercise layout: tap-to-match pairs or four-option MCQ. */
 export type VocabExerciseFormat = 'match' | 'mcq';
 
@@ -14,6 +11,8 @@ export type VocabOption = {
   id: string;
   label: string;
   ja: boolean;
+  /** Per-kanji ruby when the option is a Japanese surface. */
+  ruby?: RubySegment[];
 };
 
 export type VocabQuestion = {
@@ -114,14 +113,12 @@ function collectItems(lesson: Lesson, includeReference: boolean): VocabItem[] {
 }
 
 /**
- * Expand the lesson vocabulary into per-surface quiz entries.
- * `script` picks the written form: `kana` uses every word's kana form, `kanji`
- * only the words that have a kanji form (in kanji), and `all` uses both.
+ * One quiz entry per word: the kanji form when it differs from kana (furigana
+ * carries the reading), otherwise the kana form.
  */
 export function buildVocabEntries(
   lesson: Lesson,
   locale: Locale,
-  script: VocabScript,
   includeReference = false
 ): VocabEntry[] {
   const entries: VocabEntry[] = [];
@@ -131,34 +128,50 @@ export function buildVocabEntries(
     const speech = item.speech ?? item.kana;
     const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
 
-    if (script === 'kana' || script === 'all') {
-      entries.push({ surface: item.kana, speech, meaning });
-    }
-
-    if ((script === 'kanji' || script === 'all') && hasKanji) {
+    if (hasKanji) {
       entries.push({
         surface: item.kanji!,
         speech,
         meaning,
         ruby: item.ruby
       });
+    } else {
+      entries.push({ surface: item.kana, speech, meaning });
     }
   }
 
   return entries;
 }
 
+function rubyBySurface(entries: VocabEntry[]): Map<string, RubySegment[] | undefined> {
+  const map = new Map<string, RubySegment[] | undefined>();
+
+  for (const entry of entries) {
+    if (!map.has(entry.surface)) {
+      map.set(entry.surface, entry.ruby);
+    }
+  }
+
+  return map;
+}
+
 function buildOptions(
   correctLabel: string,
   ja: boolean,
-  pool: string[]
+  pool: string[],
+  rubyForLabel?: Map<string, RubySegment[] | undefined>
 ): { options: VocabOption[]; correctId: string } {
   const distractors = shuffle(unique(pool.filter((label) => label !== correctLabel))).slice(
     0,
     OPTION_COUNT - 1
   );
   const labels = shuffle([correctLabel, ...distractors]);
-  const options = labels.map((label, index) => ({ id: `opt-${index}`, label, ja }));
+  const options = labels.map((label, index) => ({
+    id: `opt-${index}`,
+    label,
+    ja,
+    ruby: ja ? rubyForLabel?.get(label) : undefined
+  }));
   const correctId = options.find((option) => option.label === correctLabel)!.id;
 
   return { options, correctId };
@@ -190,7 +203,12 @@ function buildQuestion(
   const distractorSurfaces = entries
     .filter((candidate) => candidate.meaning !== entry.meaning)
     .map((candidate) => candidate.surface);
-  const { options, correctId } = buildOptions(entry.surface, true, distractorSurfaces);
+  const { options, correctId } = buildOptions(
+    entry.surface,
+    true,
+    distractorSurfaces,
+    rubyBySurface(entries)
+  );
 
   return {
     mode,
@@ -206,10 +224,9 @@ export function createVocabSession(
   lesson: Lesson,
   locale: Locale,
   mode: VocabMode,
-  script: VocabScript,
   includeReference = false
 ): VocabSession {
-  const entries = buildVocabEntries(lesson, locale, script, includeReference);
+  const entries = buildVocabEntries(lesson, locale, includeReference);
   const meaningPool = unique(entries.map((entry) => entry.meaning));
   let remaining = shuffle([...entries]);
 
@@ -242,10 +259,9 @@ function toMatchPair(entry: VocabEntry, serial: number): VocabMatchPair {
 export function createVocabMatchSession(
   lesson: Lesson,
   locale: Locale,
-  script: VocabScript,
   includeReference = false
 ): VocabMatchSession {
-  const allEntries = buildVocabEntries(lesson, locale, script, includeReference);
+  const allEntries = buildVocabEntries(lesson, locale, includeReference);
 
   if (allEntries.length === 0) {
     throw new Error(`No vocabulary for lesson: ${lesson.id}`);

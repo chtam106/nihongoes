@@ -1,38 +1,33 @@
 'use client';
 
-import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
+import { Box, Paper, Stack, Typography } from '@mui/material';
 import type { CourseLevel, Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { FuriganaText } from '@/components/furigana-text';
+import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { ResultScreen } from '@/features/course/shared';
 import { useVocabQuiz } from './use-vocab-quiz.ts';
-import type { VocabMode, VocabScript } from './vocab-quiz.ts';
+import type { VocabMode } from './vocab-quiz.ts';
 
 type VocabMcqPanelProps = {
   lesson: Lesson;
   level: CourseLevel;
   locale: Locale;
   mode: VocabMode;
-  script: VocabScript;
   includeReference: boolean;
 };
 
-function VocabMcqPanel({
-  lesson,
-  level,
-  locale,
-  mode,
-  script,
-  includeReference
-}: VocabMcqPanelProps) {
+function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabMcqPanelProps) {
   const { t } = useTranslation();
   const {
     question,
     questionNumber,
     total,
     score,
+    results,
     finished,
     wrongIds,
     answeredCorrectly,
@@ -42,7 +37,6 @@ function VocabMcqPanel({
     lesson,
     locale,
     mode,
-    script,
     includeReference
   });
 
@@ -69,38 +63,43 @@ function VocabMcqPanel({
   return (
     <Stack spacing={3}>
       <Box>
-        <Stack
-          direction="row"
-          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            {progressLabel}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {t('course.scoreProgress', { score, total })}
-          </Typography>
-        </Stack>
-        <LinearProgress
-          variant="determinate"
-          value={total === 0 ? 0 : (questionNumber / total) * 100}
-          aria-label={progressLabel}
-          sx={{ borderRadius: 1, height: 8 }}
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+          {progressLabel}
+        </Typography>
+        <QuizProgressBar
+          total={total}
+          current={questionNumber}
+          results={results}
+          label={progressLabel}
         />
       </Box>
 
-      <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
-        <Typography variant="overline" color="text.secondary">
+      <Box>
+        <Typography
+          variant="overline"
+          color="text.secondary"
+          sx={{ display: 'block', textAlign: 'center', lineHeight: 1.5, mb: 1 }}
+        >
           {promptLabel}
         </Typography>
-        <Typography
-          variant={question.promptJa ? 'h3' : 'h5'}
-          component="p"
-          sx={{ fontWeight: 600, mt: 0.5 }}
-          lang={question.promptJa ? 'ja' : undefined}
+        <Paper
+          elevation={0}
+          sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}
         >
-          {displayPrompt}
-        </Typography>
-      </Paper>
+          <Typography
+            variant={question.promptJa ? 'h3' : 'h5'}
+            component="p"
+            sx={{ fontWeight: 600 }}
+            lang={question.promptJa ? 'ja' : undefined}
+          >
+            {question.promptJa ? (
+              <FuriganaText text={displayPrompt} ruby={question.promptRuby} />
+            ) : (
+              displayPrompt
+            )}
+          </Typography>
+        </Paper>
+      </Box>
 
       <Box
         sx={{
@@ -123,7 +122,7 @@ function VocabMcqPanel({
               state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
               lang={option.ja ? 'ja' : undefined}
             >
-              {option.label}
+              {option.ja ? <FuriganaText text={option.label} ruby={option.ruby} /> : option.label}
             </ChoiceButton>
           );
         })}

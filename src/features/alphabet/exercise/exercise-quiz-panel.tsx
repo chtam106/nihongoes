@@ -1,15 +1,6 @@
 import { useState } from 'react';
 import ReplayIcon from '@mui/icons-material/Replay';
-import {
-  Box,
-  Button,
-  LinearProgress,
-  Link,
-  Paper,
-  Stack,
-  TextField,
-  Typography
-} from '@mui/material';
+import { Box, Button, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 import {
   getOptionValue,
   isQuizAnswerCorrect,
@@ -21,9 +12,10 @@ import {
   type QuizQuestion,
   type ScriptPairDirection
 } from '@/features/alphabet/exercise/exercise-quiz.ts';
-import { resultBorderSx } from '@/features/alphabet/exercise/exercise-ui.ts';
+import { quizInputFeedbackSx, resultBorderSx } from '@/features/alphabet/exercise/exercise-ui.ts';
 import { useExerciseQuiz } from '@/features/alphabet/exercise/use-exercise-quiz.ts';
 import { Heading } from '@/components/heading';
+import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { KanaDisplay } from '@/components/kana-display';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
@@ -141,8 +133,6 @@ function RomajiInputAnswer({
           autoComplete="off"
           spellCheck={false}
           autoFocus={autoFocus}
-          focused={answeredCorrectly || undefined}
-          color={answeredCorrectly ? 'success' : undefined}
           error={isWrong}
           slotProps={{
             input: { readOnly: answeredCorrectly },
@@ -162,7 +152,9 @@ function RomajiInputAnswer({
             },
             '& .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
               borderWidth: 1
-            }
+            },
+            ...(answeredCorrectly && quizInputFeedbackSx('correct')),
+            ...(isWrong && quizInputFeedbackSx('wrong'))
           }}
         />
         <Button
@@ -355,22 +347,14 @@ export function ExerciseQuiz({
   return (
     <Stack spacing={3}>
       <Box>
-        <Stack
-          direction="row"
-          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            {progressLabel}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {t('course.scoreProgress', { score: quiz.score, total: quiz.total })}
-          </Typography>
-        </Stack>
-        <LinearProgress
-          variant="determinate"
-          value={quiz.total === 0 ? 0 : (quiz.questionNumber / quiz.total) * 100}
-          aria-label={progressLabel}
-          sx={{ borderRadius: 1, height: 8 }}
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+          {progressLabel}
+        </Typography>
+        <QuizProgressBar
+          total={quiz.total}
+          current={quiz.questionNumber}
+          results={quiz.results}
+          label={progressLabel}
         />
       </Box>
 

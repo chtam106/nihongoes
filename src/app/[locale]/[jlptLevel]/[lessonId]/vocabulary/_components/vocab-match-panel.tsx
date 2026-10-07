@@ -1,11 +1,13 @@
 'use client';
 
 import { memo, type ReactNode } from 'react';
-import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
+import { Box, Paper, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import type { CourseLevel, Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
+import { FuriganaText } from '@/components/furigana-text';
+import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ResultScreen } from '@/features/course/shared';
 import { useVocabMatch } from './use-vocab-quiz.ts';
@@ -13,15 +15,13 @@ import {
   VOCAB_MATCH_BATCH_FADE_MS,
   VOCAB_MATCH_PAIR_PALETTE,
   VOCAB_MATCH_SELECTED_BORDER_COLOR,
-  type VocabMatchPair,
-  type VocabScript
+  type VocabMatchPair
 } from './vocab-quiz.ts';
 
 type VocabMatchPanelProps = {
   lesson: Lesson;
   level: CourseLevel;
   locale: Locale;
-  script: VocabScript;
   includeReference: boolean;
 };
 
@@ -125,7 +125,7 @@ const MatchWordCell = memo(function MatchWordCell({
         locked={locked}
         onClick={onSelect}
       >
-        {pair.surface}
+        <FuriganaText text={pair.surface} ruby={pair.ruby} />
       </MatchChip>
     </Box>
   );
@@ -155,13 +155,7 @@ const MatchMeaningCell = memo(function MatchMeaningCell({
   );
 });
 
-function VocabMatchPanel({
-  lesson,
-  level,
-  locale,
-  script,
-  includeReference
-}: VocabMatchPanelProps) {
+function VocabMatchPanel({ lesson, level, locale, includeReference }: VocabMatchPanelProps) {
   const { t } = useTranslation();
   const {
     activePairs,
@@ -171,6 +165,7 @@ function VocabMatchPanel({
     totalMatched,
     totalPairs,
     score,
+    results,
     finished,
     matchedPairColors,
     selectedWordId,
@@ -178,7 +173,7 @@ function VocabMatchPanel({
     selectWord,
     selectMeaning,
     handleRetry
-  } = useVocabMatch({ lesson, locale, script, includeReference });
+  } = useVocabMatch({ lesson, locale, includeReference });
 
   if (finished) {
     return (
@@ -191,8 +186,6 @@ function VocabMatchPanel({
       />
     );
   }
-
-  const progressValue = totalPairs > 0 ? (totalMatched / totalPairs) * 100 : 0;
 
   const resolveWordState = (pairId: string): MatchChipState => {
     if (matchedPairColors.has(pairId)) {
@@ -224,28 +217,20 @@ function VocabMatchPanel({
         <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
           {t('course.vocabMatchInstruction')}
         </Typography>
-        <Stack
-          direction="row"
-          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            {t('course.vocabMatchProgress', {
-              matched: totalMatched,
-              total: totalPairs
-            })}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {t('course.scoreProgress', { score, total: totalPairs })}
-          </Typography>
-        </Stack>
-        <LinearProgress
-          variant="determinate"
-          value={progressValue}
-          aria-label={t('course.vocabMatchProgress', {
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+          {t('course.vocabMatchProgress', {
             matched: totalMatched,
             total: totalPairs
           })}
-          sx={{ borderRadius: 1, height: 8 }}
+        </Typography>
+        <QuizProgressBar
+          total={totalPairs}
+          current={totalMatched}
+          results={results}
+          label={t('course.vocabMatchProgress', {
+            matched: totalMatched,
+            total: totalPairs
+          })}
         />
       </Box>
 
