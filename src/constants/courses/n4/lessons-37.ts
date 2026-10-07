@@ -370,7 +370,7 @@ export const n4Lesson37: Lesson = {
       meaning: { en: 'It is beautiful, is it not?', vi: 'Đẹp quá nhỉ.' }
     },
     {
-      kana: '中に 入れますか。',
+      kana: 'なかに はいれますか。',
       kanji: '中に 入れますか。',
       romaji: 'Naka ni hairemasu ka.',
       meaning: { en: 'Can we go inside?', vi: 'Có vào được bên trong không?' },

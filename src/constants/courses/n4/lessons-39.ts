@@ -304,7 +304,7 @@ export const n4Lesson39: Lesson = {
   ],
   phrases: [
     {
-      kana: '遅刻 して すみません。',
+      kana: 'ちこく して すみません。',
       kanji: '遅刻 して すみません。',
       romaji: 'Chikoku shite sumimasen.',
       meaning: { en: 'Sorry I am late.', vi: 'Xin lỗi tôi đến muộn.' },

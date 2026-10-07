@@ -215,7 +215,7 @@ export const n5Lesson13: Lesson = {
       meaning: { en: 'Let\u0027s do that.', vi: 'Nhất trí. / Hãy làm vậy đi.' }
     },
     {
-      kana: 'ご注文は？',
+      kana: 'ごちゅうもんは？',
       kanji: 'ご注文は？',
       romaji: 'Go-chūmon wa?',
       meaning: { en: 'Your order?', vi: 'Anh/Chị dùng món gì ạ?' },
@@ -248,6 +248,7 @@ export const n5Lesson13: Lesson = {
       meaning: { en: 'Please wait a moment.', vi: 'Xin vui lòng đợi một chút.' },
       ruby: [
         { base: '少', reading: 'しょう' },
+        { base: '々', reading: 'しょう' },
         { base: '待', reading: 'ま' }
       ]
     },
@@ -261,7 +262,10 @@ export const n5Lesson13: Lesson = {
       kanji: '別々に',
       romaji: 'betsubetsu ni',
       meaning: { en: 'separately', vi: 'riêng, riêng ra' },
-      ruby: [{ base: '別', reading: 'べつ' }]
+      ruby: [
+        { base: '別', reading: 'べつ' },
+        { base: '々', reading: 'べつ' }
+      ]
     }
   ],
   conversation: [
@@ -369,6 +373,7 @@ export const n5Lesson13: Lesson = {
             { base: '食', reading: 'しょく' },
             { base: '牛', reading: 'ぎゅう' },
             { base: '少', reading: 'しょう' },
+            { base: '々', reading: 'しょう' },
             { base: '待', reading: 'ま' }
           ]
         },
@@ -389,6 +394,7 @@ export const n5Lesson13: Lesson = {
           },
           ruby: [
             { base: '別', reading: 'べつ' },
+            { base: '々', reading: 'べつ' },
             { base: '願', reading: 'ねが' }
           ]
         },
@@ -836,6 +842,7 @@ export const n5Lesson13: Lesson = {
           meaning: { en: 'Please wait a moment.', vi: 'Xin vui lòng đợi một chút.' },
           ruby: [
             { base: '少', reading: 'しょう' },
+            { base: '々', reading: 'しょう' },
             { base: '待', reading: 'ま' }
           ]
         }

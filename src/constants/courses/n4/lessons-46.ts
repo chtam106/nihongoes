@@ -248,7 +248,7 @@ export const n4Lesson46: Lesson = {
   ],
   phrases: [
     {
-      kana: '申し訳ありません。',
+      kana: 'もうしわけありません。',
       kanji: '申し訳ありません。',
       romaji: 'Mōshiwake arimasen.',
       meaning: { en: 'I am sorry.', vi: 'Xin lỗi.' },
@@ -258,19 +258,21 @@ export const n4Lesson46: Lesson = {
       ]
     },
     {
-      kana: 'どちら様でしょうか。',
+      kana: 'どちらさまでしょうか。',
       kanji: 'どちら様でしょうか。',
       romaji: 'Dochira-sama deshō ka.',
       meaning: { en: 'May I ask who is calling?', vi: 'Ai đấy ạ?' },
       ruby: [{ base: '様', reading: 'さま' }]
     },
     {
-      kana: 'お待たせしました。',
+      kana: 'おまたせしました。',
+      kanji: 'お待たせしました。',
       romaji: 'Omatase shimashita.',
-      meaning: { en: 'Sorry to keep you waiting.', vi: 'Xin lỗi đã bắt anh/chị chờ lâu.' }
+      meaning: { en: 'Sorry to keep you waiting.', vi: 'Xin lỗi đã bắt anh/chị chờ lâu.' },
+      ruby: [{ base: '待', reading: 'ま' }]
     },
     {
-      kana: '今 いいですか。',
+      kana: 'いま いいですか。',
       kanji: '今 いいですか。',
       romaji: 'Ima ii desu ka.',
       meaning: { en: 'Is now a good time?', vi: 'Bây giờ có nói chuyện được không?' },

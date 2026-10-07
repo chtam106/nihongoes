@@ -414,7 +414,7 @@ export const n4Lesson33: Lesson = {
   ],
   phrases: [
     {
-      kana: 'もう だめです。走れません。',
+      kana: 'もう だめです。はしれません。',
       kanji: 'もう だめです。走れません。',
       romaji: 'Mō dame desu. Hashiremasen.',
       meaning: {

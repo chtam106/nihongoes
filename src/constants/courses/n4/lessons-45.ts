@@ -244,7 +244,7 @@ export const n4Lesson45: Lesson = {
   ],
   phrases: [
     {
-      kana: '以上です。',
+      kana: 'いじょうです。',
       kanji: '以上です。',
       romaji: 'Ijō desu.',
       meaning: { en: 'That is all.', vi: 'Xin hết.' },
@@ -254,7 +254,7 @@ export const n4Lesson45: Lesson = {
       ]
     },
     {
-      kana: '楽しみに しています。',
+      kana: 'たのしみに しています。',
       kanji: '楽しみに しています。',
       romaji: 'Tanoshimi ni shite imasu.',
       meaning: { en: 'I am looking forward to it.', vi: 'Tôi rất mong chờ.' },

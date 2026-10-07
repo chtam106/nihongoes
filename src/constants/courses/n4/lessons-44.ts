@@ -322,7 +322,7 @@ export const n4Lesson44: Lesson = {
       meaning: { en: 'Is this alright?', vi: 'Như thế này được chưa ạ?' }
     },
     {
-      kana: '［どうも］ お疲れさまでした。',
+      kana: '［どうも］ おつかれさまでした。',
       kanji: '［どうも］ お疲れさまでした。',
       romaji: '[Dōmo] otsukaresama deshita.',
       meaning: {

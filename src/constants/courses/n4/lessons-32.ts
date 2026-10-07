@@ -472,6 +472,7 @@ export const n4Lesson32: Lesson = {
             { base: '体', reading: 'たい' },
             { base: '調', reading: 'ちょう' },
             { base: '時', reading: 'とき' },
+            { base: '々', reading: 'どき' },
             { base: '頭', reading: 'あたま' },
             { base: '痛', reading: 'いた' },
             { base: '胃', reading: 'い' },

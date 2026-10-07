@@ -326,7 +326,7 @@ export const n5Lesson16: Lesson = {
       }
     },
     {
-      kana: 'お引き出し ですか。',
+      kana: 'おひきだし ですか。',
       kanji: 'お引き出し ですか。',
       romaji: 'O-hikidashi desu ka.',
       meaning: { en: 'Are you withdrawing money?', vi: 'Anh/Chị rút tiền phải không?' },

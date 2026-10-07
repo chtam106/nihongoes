@@ -1,6 +1,8 @@
 import fs from 'fs';
 
 const kanji = /[\u4e00-\u9fff]/;
+/** Iteration mark 々 needs its own ruby segment (same as a kanji) for display. */
+const needsRuby = /[\u4e00-\u9fff々]/;
 const kanaWord =
   /(?:がくせい|せんせい|かいしゃいん|なんですか|なんさい|おなまえ|しつれい|にほんご|にほんの|わたしの|あのひと|あのかた|ほん|じしょ|とけい|かさ|かぎ|えんぴつ|ざっし|きょうしつ|じむしょ|しょくどう|かいぎしつ|うけつけ|べんきょう|でんわ|なんじ)/;
 
@@ -18,31 +20,25 @@ function parseSegments(s) {
 }
 
 /**
- * Rebuild a word's reading by swapping each rubied kanji for its reading and
+ * Rebuild a word's reading by swapping each rubied kanji/々 for its reading and
  * keeping the kana in between. Catches a truncated reading (間 as あい instead
- * of あいだ) that a base-coverage check cannot see. 々 repeats the preceding
- * reading (少々 -> しょうしょう).
+ * of あいだ) that a base-coverage check cannot see. Author an explicit
+ * `{ base: '々', reading }` segment (rendaku e.g. 時々 -> とき/どき); do not
+ * rely on auto-repeat here.
  */
 function spellOut(surface, segments) {
   let out = '';
-  let last = '';
   let pos = 0;
   let si = 0;
   while (pos < surface.length) {
     const seg = segments[si];
     if (seg && surface.startsWith(seg.base, pos)) {
       out += seg.reading;
-      last = seg.reading;
       pos += seg.base.length;
       si += 1;
       continue;
     }
-    if (surface[pos] === '々') {
-      out += last;
-    } else {
-      out += surface[pos];
-      last = surface[pos];
-    }
+    out += surface[pos];
     pos += 1;
   }
   return out;
@@ -73,7 +69,7 @@ function auditJp(text, bases) {
       si += 1;
       continue;
     }
-    if (kanji.test(text[pos])) miss.push(text[pos]);
+    if (needsRuby.test(text[pos])) miss.push(text[pos]);
     pos += 1;
   }
   for (; si < bases.length; si += 1) stuck.push(bases[si]);
@@ -141,7 +137,11 @@ function scanChunk(chunk, label) {
     const obj = chunk.slice(objStart, objEnd);
     const kanaM = obj.match(/kana:\s*'((?:\\'|[^'])*)'/);
     const kana = kanaM ? kanaM[1].replace(/\\'/g, "'") : '';
-    if (kana && surface === kana) continue;
+    // VocabHeadword skips furigana when kanji === kana; kana must be pure kana.
+    if (kana && surface === kana) {
+      issues.push({ file: label, kind: 'kanji-eq-kana', kanji: surface, kana });
+      continue;
+    }
 
     const rm = obj.match(/ruby:\s*\[([\s\S]*?)\]/);
     const bases = parseBases(rm?.[1]);
