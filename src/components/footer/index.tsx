@@ -16,7 +16,8 @@ export function Footer() {
         mt: 'auto',
         py: 3,
         px: 2,
-        textAlign: 'center'
+        textAlign: 'center',
+        boxShadow: '0 -1px 2px rgba(0, 0, 0, 0.035), 0 -2px 8px rgba(0, 0, 0, 0.025)'
       }}
     >
       <Container maxWidth="md" disableGutters>

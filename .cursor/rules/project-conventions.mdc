@@ -124,7 +124,7 @@ alwaysApply: true
   - `elevatedSurfaceSx` / `interactiveSurfaceSx` — white + soft shadow (cards, lists, quiz panels; interactive adds hover lift). Keep cards white; do NOT tint card backgrounds and do NOT add a colored accent stripe.
   - `subtleSurfaceSx` — neutral grey tonal (secondary/low-emphasis boxes).
   - `tonalSurfaceSx` — primary-tinted tonal (call-to-action surfaces).
-- Chrome regions (header, drawer, footer) have NO background tint and NO divider lines. The header casts a soft shadow downward and the drawer to the right; the footer has NO shadow (it sits directly on the page).
+- Chrome regions (header, drawer, footer) have NO background tint and NO divider lines. The header casts a soft shadow downward, the drawer to the right, and the footer upward (on the white page it is the only thing separating the footer from content - keep it).
 - Buttons/Chips may keep `variant="outlined"` — those are controls, not content surfaces.
 
 ## Quiz feedback styling
