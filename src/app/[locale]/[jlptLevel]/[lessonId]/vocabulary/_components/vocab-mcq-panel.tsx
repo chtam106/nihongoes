@@ -1,51 +1,88 @@
 'use client';
 
 import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
-import type { Lesson } from '@/constants/courses/index.ts';
+import type { CourseLevel, Lesson } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
+import { ResultScreen } from '@/features/course/shared';
 import { useVocabQuiz } from './use-vocab-quiz.ts';
 import type { VocabMode, VocabScript } from './vocab-quiz.ts';
 
 type VocabMcqPanelProps = {
   lesson: Lesson;
+  level: CourseLevel;
   locale: Locale;
   mode: VocabMode;
   script: VocabScript;
   includeReference: boolean;
 };
 
-function VocabMcqPanel({ lesson, locale, mode, script, includeReference }: VocabMcqPanelProps) {
+function VocabMcqPanel({
+  lesson,
+  level,
+  locale,
+  mode,
+  script,
+  includeReference
+}: VocabMcqPanelProps) {
   const { t } = useTranslation();
-  const { question, questionNumber, total, wrongIds, answeredCorrectly, handleSelect } =
-    useVocabQuiz({
-      lesson,
-      locale,
-      mode,
-      script,
-      includeReference
-    });
+  const {
+    question,
+    questionNumber,
+    total,
+    score,
+    finished,
+    wrongIds,
+    answeredCorrectly,
+    handleSelect,
+    handleRetry
+  } = useVocabQuiz({
+    lesson,
+    locale,
+    mode,
+    script,
+    includeReference
+  });
+
+  if (finished) {
+    return (
+      <ResultScreen
+        score={score}
+        total={total}
+        level={level}
+        lessonId={lesson.id}
+        onRetry={handleRetry}
+      />
+    );
+  }
 
   const promptLabel =
     mode === 'word-meaning' ? t('course.vocabPromptMeaning') : t('course.vocabPromptWord');
   const displayPrompt = question.promptText;
-  const cycleIndex = total > 0 ? questionNumber % total : 0;
   const progressLabel = t('course.questionProgress', {
-    current: cycleIndex + 1,
+    current: questionNumber + 1,
     total
   });
 
   return (
     <Stack spacing={3}>
       <Box>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-          {progressLabel}
-        </Typography>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
+        >
+          <Typography variant="body1" color="text.secondary">
+            {progressLabel}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {score} / {total}
+          </Typography>
+        </Stack>
         <LinearProgress
           variant="determinate"
-          value={total === 0 ? 0 : (cycleIndex / total) * 100}
+          value={total === 0 ? 0 : (questionNumber / total) * 100}
           aria-label={progressLabel}
           sx={{ borderRadius: 1, height: 8 }}
         />

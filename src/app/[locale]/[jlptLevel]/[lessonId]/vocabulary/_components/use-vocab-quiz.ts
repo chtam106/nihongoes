@@ -24,9 +24,9 @@ type UseVocabQuizOptions = {
   includeReference: boolean;
 };
 
-// No effect-driven reset: the consumer remounts the quiz via a `key` derived
-// from lesson/locale/mode/script/includeReference, which reruns the `useState`
-// initializer with a fresh endless session.
+// No effect-driven reset for preference changes: the consumer remounts via a
+// `key` derived from lesson/locale/mode/script/includeReference. Retry rebuilds
+// the session in place (same as radical/kanji quizzes).
 export function useVocabQuiz({
   lesson,
   locale,
@@ -45,17 +45,36 @@ export function useVocabQuiz({
   const [questionNumber, setQuestionNumber] = useState(0);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  const isLast = total > 0 && questionNumber >= total - 1;
 
   const handleSelect = (optionId: string) => {
-    if (answeredCorrectly || wrongIds.includes(optionId)) {
+    if (finished || answeredCorrectly || wrongIds.includes(optionId)) {
       return;
     }
 
     if (optionId === question.correctId) {
       setAnsweredCorrectly(true);
+
+      if (wrongIds.length === 0) {
+        setScore((previous) => previous + 1);
+      }
     } else {
       setWrongIds((previous) => [...previous, optionId]);
     }
+  };
+
+  const handleRetry = () => {
+    const session = createVocabSession(lesson, locale, mode, script, includeReference);
+    sessionRef.current = session;
+    setQuestion(session.next());
+    setQuestionNumber(0);
+    setWrongIds([]);
+    setAnsweredCorrectly(false);
+    setScore(0);
+    setFinished(false);
   };
 
   useEffect(() => {
@@ -64,6 +83,11 @@ export function useVocabQuiz({
     }
 
     const timer = window.setTimeout(() => {
+      if (isLast) {
+        setFinished(true);
+        return;
+      }
+
       setQuestion(sessionRef.current.next());
       setQuestionNumber((previous) => previous + 1);
       setWrongIds([]);
@@ -73,15 +97,18 @@ export function useVocabQuiz({
     return () => {
       window.clearTimeout(timer);
     };
-  }, [answeredCorrectly]);
+  }, [answeredCorrectly, isLast]);
 
   return {
     question,
     questionNumber,
     total,
+    score,
+    finished,
     wrongIds,
     answeredCorrectly,
-    handleSelect
+    handleSelect,
+    handleRetry
   };
 }
 

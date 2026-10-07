@@ -30,8 +30,9 @@ export type VocabQuestion = {
 };
 
 /**
- * An endless quiz session: `next()` draws a fresh question without repeating any
- * word until the whole pool is used, then reshuffles and starts a new cycle.
+ * A vocab MCQ session: `next()` draws without repeating until the pool is used.
+ * The UI finishes after `total` questions; reshuffle is only a safety net if
+ * `next()` is called again (e.g. tests).
  */
 export type VocabSession = {
   next: () => VocabQuestion;
