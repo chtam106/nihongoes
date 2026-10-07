@@ -45,7 +45,7 @@ import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { VocabCardGrid } from '@/components/vocab-card-grid';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { hideOnPrintSx } from '@/theme/print.ts';
-import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
 // Offset anchored sections below the fixed app bar when scrolled to.
@@ -402,10 +402,10 @@ function LessonPage({ level }: LessonPageProps) {
         <Box>
           <Heading component="h1">{lesson.title[locale]}</Heading>
 
-          <Paper elevation={0} sx={[subtleSurfaceSx, { p: 2, mt: 2 }]}>
-            <Typography variant="body1">{lesson.focus[locale]}</Typography>
-            <HintText sx={[hideOnPrintSx, { mt: 1.5 }]}>{t('course.audioHint')}</HintText>
-          </Paper>
+          <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
+            {lesson.focus[locale]}
+          </Typography>
+          <HintText sx={[hideOnPrintSx, { mt: 1.5 }]}>{t('course.audioHint')}</HintText>
         </Box>
 
         <VocabularySection lesson={lesson} />

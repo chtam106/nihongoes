@@ -7,6 +7,11 @@ import { FONT_FAMILY_UI } from './fonts.ts';
 const MIN_FONT_SIZE = '1rem';
 
 export const appTheme = createTheme({
+  // Sakura pink + matcha green.
+  palette: {
+    primary: { main: '#D63A6F' },
+    secondary: { main: '#3B9A57' }
+  },
   typography: {
     fontFamily: FONT_FAMILY_UI,
     body2: { fontSize: MIN_FONT_SIZE },
@@ -52,14 +57,43 @@ export const appTheme = createTheme({
     },
     MuiCheckbox: {
       styleOverrides: {
-        root: {
+        root: ({ theme: muiTheme }) => ({
+          color: muiTheme.palette.primary.main,
           '&:hover': {
             backgroundColor: 'transparent'
           },
           '&:active': {
             backgroundColor: 'transparent'
           }
-        }
+        })
+      }
+    },
+    // Dropdowns show their focus color (primary) at rest too; text fields keep MUI's grey.
+    MuiFormControl: {
+      styleOverrides: {
+        root: ({ theme: muiTheme }) => ({
+          '&:has(.MuiSelect-select) .MuiInputLabel-root:not(.Mui-disabled)': {
+            color: muiTheme.palette.primary.main
+          }
+        })
+      }
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme: muiTheme }) => ({
+          '&:has(.MuiSelect-select):not(.Mui-disabled) .MuiOutlinedInput-notchedOutline': {
+            borderColor: muiTheme.palette.primary.main
+          }
+        })
+      }
+    },
+    MuiSelect: {
+      styleOverrides: {
+        icon: ({ theme: muiTheme }) => ({
+          '&:not(.Mui-disabled)': {
+            color: muiTheme.palette.primary.main
+          }
+        })
       }
     },
     MuiSwitch: {

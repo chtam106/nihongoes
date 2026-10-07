@@ -94,7 +94,6 @@ export function AppSettings() {
       <IconButton
         onClick={(event) => setAnchorEl(event.currentTarget)}
         aria-label={t('settings.title')}
-        color="inherit"
       >
         <SettingsOutlinedIcon />
       </IconButton>
