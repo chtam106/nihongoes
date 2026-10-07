@@ -312,7 +312,7 @@ export const n4Lesson31: Lesson = {
   ],
   phrases: [
     {
-      kana: 'ちょっと 休まない？',
+      kana: 'ちょっと やすまない？',
       kanji: 'ちょっと 休まない？',
       romaji: 'Chotto yasumanai?',
       meaning: { en: 'Shall we rest a bit?', vi: 'Nghỉ một chút nhé?' },

@@ -375,7 +375,7 @@ export const n5Lesson12: Lesson = {
       ruby: [{ base: '帰', reading: 'かえ' }]
     },
     {
-      kana: 'わあ、すごい 人ですね。',
+      kana: 'わあ、すごい ひとですね。',
       kanji: 'わあ、すごい 人ですね。',
       romaji: 'Wā, sugoi hito desu ne.',
       meaning: { en: 'Wow, what a crowd!', vi: 'Ôi, đông người quá nhỉ!' },

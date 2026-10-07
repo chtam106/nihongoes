@@ -315,7 +315,7 @@ export const n4Lesson36: Lesson = {
   ],
   phrases: [
     {
-      kana: 'お客様、今日は 特別な ことを していらっしゃいますか。',
+      kana: 'おきゃくさま、きょうは とくべつな ことを していらっしゃいますか。',
       kanji: 'お客様、今日は 特別な ことを していらっしゃいますか。',
       romaji: 'O-kyaku-sama, kyō wa tokubetsu na koto o shite irasshaimasu ka.',
       meaning: {
@@ -325,14 +325,14 @@ export const n4Lesson36: Lesson = {
       ruby: [
         { base: '客', reading: 'きゃく' },
         { base: '様', reading: 'さま' },
-        { base: '今', reading: 'きょう' },
-        { base: '日', reading: 'ひ' },
+        { base: '今', reading: 'きょ' },
+        { base: '日', reading: 'う' },
         { base: '特', reading: 'とく' },
         { base: '別', reading: 'べつ' }
       ]
     },
     {
-      kana: '毎日 運動 する ように しています。',
+      kana: 'まいにち うんどう する ように しています。',
       kanji: '毎日 運動 する ように しています。',
       romaji: 'Mainichi undō suru yō ni shite imasu.',
       meaning: {
@@ -365,8 +365,8 @@ export const n4Lesson36: Lesson = {
             vi: 'Khách mời hôm nay là bà Ogawa Yone, 80 tuổi.'
           },
           ruby: [
-            { base: '今', reading: 'いま' },
-            { base: '日', reading: 'にち' },
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
             { base: '客', reading: 'きゃく' },
             { base: '様', reading: 'さま' },
             { base: '小', reading: 'お' },

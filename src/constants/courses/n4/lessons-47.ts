@@ -322,7 +322,7 @@ export const n4Lesson47: Lesson = {
       meaning: { en: 'According to ~', vi: 'Theo ~' }
     },
     {
-      kana: 'どうも 恋人が できた ようです。',
+      kana: 'どうも こいびとが できた ようです。',
       kanji: 'どうも 恋人が できた ようです。',
       romaji: 'Dōmo koibito ga dekita yō desu.',
       meaning: {

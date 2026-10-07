@@ -344,7 +344,7 @@ export const n4Lesson35: Lesson = {
       ]
     },
     {
-      kana: 'それなら、草津か 志賀高原が いいですよ。',
+      kana: 'それなら、くさつか しがこうげんが いいですよ。',
       kanji: 'それなら、草津か 志賀高原が いいですよ。',
       romaji: 'Sorenara, Kusatsu ka Shiga-Kōgen ga ii desu yo.',
       meaning: {
