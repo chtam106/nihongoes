@@ -89,3 +89,20 @@ export function radicalsForQuizRange(range: RadicalQuizRange): Radical[] {
 
   return radicalsInStrokeOrder().slice(from - 1, to);
 }
+
+/** One quiz prompt glyph: the standalone form and each combining variant. */
+export type RadicalQuizPrompt = {
+  radical: Radical;
+  glyph: string;
+};
+
+/**
+ * Expand a radical pool into quiz prompts: each radical's `char`, plus every
+ * `variants` entry (e.g. 人 and 亻 are separate questions with the same meaning).
+ */
+export function radicalQuizPrompts(pool: Radical[]): RadicalQuizPrompt[] {
+  return pool.flatMap((radical) => [
+    { radical, glyph: radical.char },
+    ...(radical.variants ?? []).map((glyph) => ({ radical, glyph }))
+  ]);
+}

@@ -25,6 +25,7 @@ import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import {
   radicalQuizFromOptions,
+  radicalQuizPrompts,
   radicalQuizToAfterFrom,
   radicalQuizToOptions,
   radicalsForQuizRange,
@@ -60,13 +61,13 @@ type QuizQuestion = {
 };
 
 function buildQuestions(pool: Radical[], locale: Locale): QuizQuestion[] {
-  return shuffle(pool).map((radical) => {
+  return shuffle(radicalQuizPrompts(pool)).map(({ radical, glyph }) => {
     const distractors = shuffle(pool.filter((item) => item.number !== radical.number)).slice(0, 3);
     const options = shuffle([radical, ...distractors]);
 
     return {
-      id: String(radical.number),
-      prompt: radical.char,
+      id: `${radical.number}:${glyph}`,
+      prompt: glyph,
       choices: options.map((item) => ({
         id: String(item.number),
         label: radicalMeaning(item, locale)
