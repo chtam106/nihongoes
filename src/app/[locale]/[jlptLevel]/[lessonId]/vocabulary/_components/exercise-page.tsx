@@ -16,7 +16,7 @@ import { SEGMENT_BUTTON_STACK_SPACING } from '@/features/alphabet/exercise/contr
 import { useVocabExercisePreferences } from './use-vocab-exercise-preferences.ts';
 import VocabMatchPanel from './vocab-match-panel.tsx';
 import VocabMcqPanel from './vocab-mcq-panel.tsx';
-import type { VocabExerciseFormat, VocabMode, VocabScript } from './vocab-quiz.ts';
+import type { VocabExerciseFormat, VocabMode } from './vocab-quiz.ts';
 
 type VocabExerciseProps = {
   lesson: Lesson;
@@ -25,8 +25,7 @@ type VocabExerciseProps = {
 
 function VocabExercise({ lesson, level }: VocabExerciseProps) {
   const { locale, t } = useTranslation();
-  const { prefs, setExerciseFormat, setMode, setScript, setIncludeReference } =
-    useVocabExercisePreferences();
+  const { prefs, setExerciseFormat, setMode, setIncludeReference } = useVocabExercisePreferences();
   const showReferenceToggle = lessonHasReferenceQuizVocab(lesson);
 
   const handleFormatChange = (
@@ -44,17 +43,11 @@ function VocabExercise({ lesson, level }: VocabExerciseProps) {
     }
   };
 
-  const handleScriptChange = (_event: MouseEvent<HTMLElement>, value: VocabScript | null) => {
-    if (value) {
-      setScript(value);
-    }
-  };
-
   const handleReferenceChange = (_event: ChangeEvent<HTMLInputElement>, checked: boolean) => {
     setIncludeReference(checked);
   };
 
-  const panelKey = `${prefs.exerciseFormat}:${prefs.mode}:${prefs.script}:${prefs.includeReference}`;
+  const panelKey = `${prefs.exerciseFormat}:${prefs.mode}:${prefs.includeReference}`;
 
   return (
     <PageContainer>
@@ -88,19 +81,6 @@ function VocabExercise({ lesson, level }: VocabExerciseProps) {
             </ToggleButtonGroup>
           )}
 
-          <ToggleButtonGroup
-            exclusive
-            fullWidth
-            color="primary"
-            value={prefs.script}
-            onChange={handleScriptChange}
-            aria-label={t('course.vocabScript')}
-          >
-            <ToggleButton value="kana">{t('course.vocabScriptKana')}</ToggleButton>
-            <ToggleButton value="kanji">{t('course.vocabScriptKanji')}</ToggleButton>
-            <ToggleButton value="all">{t('course.vocabScriptAll')}</ToggleButton>
-          </ToggleButtonGroup>
-
           {showReferenceToggle && (
             <FormControlLabel
               sx={{ mx: 0, ml: 0, pl: 0, my: 0, alignItems: 'center' }}
@@ -123,7 +103,6 @@ function VocabExercise({ lesson, level }: VocabExerciseProps) {
             lesson={lesson}
             level={level}
             locale={locale}
-            script={prefs.script}
             includeReference={prefs.includeReference}
           />
         )}
@@ -135,7 +114,6 @@ function VocabExercise({ lesson, level }: VocabExerciseProps) {
             level={level}
             locale={locale}
             mode={prefs.mode}
-            script={prefs.script}
             includeReference={prefs.includeReference}
           />
         )}

@@ -5,7 +5,7 @@ import {
   sanitizeVocabExercisePreferences,
   VOCAB_EXERCISE_STORAGE_KEY
 } from './vocab-exercise-preferences.ts';
-import type { VocabExerciseFormat, VocabMode, VocabScript } from './vocab-quiz.ts';
+import type { VocabExerciseFormat, VocabMode } from './vocab-quiz.ts';
 
 export function useVocabExercisePreferences() {
   const [prefs, setPrefs] = usePersistentState(
@@ -25,11 +25,6 @@ export function useVocabExercisePreferences() {
     [setPrefs]
   );
 
-  const setScript = useCallback(
-    (script: VocabScript) => setPrefs((previous) => ({ ...previous, script })),
-    [setPrefs]
-  );
-
   const setIncludeReference = useCallback(
     (includeReference: boolean) => setPrefs((previous) => ({ ...previous, includeReference })),
     [setPrefs]
@@ -39,7 +34,6 @@ export function useVocabExercisePreferences() {
     prefs,
     setExerciseFormat,
     setMode,
-    setScript,
     setIncludeReference
   };
 }

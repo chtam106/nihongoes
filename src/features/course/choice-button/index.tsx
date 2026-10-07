@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { Box, Button } from '@mui/material';
 import { pink } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
+import { QUIZ_CORRECT_COLOR } from '@/constants/quiz.ts';
 
 type ChoiceState = 'default' | 'correct' | 'wrong';
 
@@ -31,9 +32,9 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
       color="primary"
       fullWidth
       size="large"
-      sx={(theme) => {
-        const feedbackMain = state === 'correct' ? theme.palette.info.main : pink[400];
-        const feedbackText = state === 'correct' ? theme.palette.info.dark : pink[700];
+      sx={() => {
+        const feedbackMain = state === 'correct' ? QUIZ_CORRECT_COLOR : pink[400];
+        const feedbackText = state === 'correct' ? '#067a28' : pink[700];
 
         return {
           justifyContent: 'space-between',
@@ -44,6 +45,7 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
           borderWidth: 1,
           '&.Mui-disabled': { opacity: 0.6 },
           ...(filled && {
+            transition: 'none',
             bgcolor: alpha(feedbackMain, 0.14),
             borderColor: alpha(feedbackMain, 0.45),
             color: feedbackText,

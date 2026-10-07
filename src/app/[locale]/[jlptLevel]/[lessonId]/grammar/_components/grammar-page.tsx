@@ -2,12 +2,13 @@
 
 import { useCallback } from 'react';
 import { useParams } from 'next/navigation';
-import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
+import { Box, Paper, Stack, Typography } from '@mui/material';
 import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
-import { renderJapaneseText } from '@/utils/japanese-text.tsx';
+import { FuriganaText } from '@/components/furigana-text';
+import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
@@ -29,6 +30,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
     questionNumber,
     total,
     score,
+    results,
     finished,
     wrongIds,
     answeredCorrectly,
@@ -64,69 +66,69 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
   return (
     <Stack spacing={3}>
       <Box>
-        <Stack
-          direction="row"
-          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
-        >
-          <Typography variant="body1" color="text.secondary">
-            {progressLabel}
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {t('course.scoreProgress', { score, total })}
-          </Typography>
-        </Stack>
-        <LinearProgress
-          variant="determinate"
-          value={total === 0 ? 0 : (questionNumber / total) * 100}
-          aria-label={progressLabel}
-          sx={{ borderRadius: 1, height: 8 }}
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+          {progressLabel}
+        </Typography>
+        <QuizProgressBar
+          total={total}
+          current={questionNumber}
+          results={results}
+          label={progressLabel}
         />
       </Box>
 
-      <Paper
-        elevation={0}
-        onPointerDown={canPlay ? speechClick.onPointerDown : undefined}
-        onClick={canPlay ? speechClick.onClick : undefined}
-        role={canPlay ? 'button' : undefined}
-        tabIndex={canPlay ? 0 : undefined}
-        aria-label={canPlay ? t('common.playAudio') : undefined}
-        onKeyDown={
-          canPlay
-            ? (event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                  event.preventDefault();
-                  speakJapanese(question.fullText);
-                }
-              }
-            : undefined
-        }
-        sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 }, cursor: canPlay ? 'pointer' : undefined }]}
-      >
-        <Typography variant="overline" color="text.secondary">
+      <Box>
+        <Typography
+          variant="overline"
+          color="text.secondary"
+          sx={{ display: 'block', lineHeight: 1.5, mb: 1 }}
+        >
           {t('course.grammarClozePrompt')}
         </Typography>
-        <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600, mt: 0.5 }}>
-          {renderJapaneseText(question.before)}
-          <Box
-            component="span"
-            sx={{
-              display: 'inline-block',
-              minWidth: '2.5em',
-              mx: 0.5,
-              textAlign: 'center',
-              borderBottom: '2px solid',
-              borderColor: answeredCorrectly ? 'primary.main' : 'text.secondary',
-              color: 'primary.main'
-            }}
-          >
-            {answeredCorrectly ? question.answer : '\u3000'}
-          </Box>
-          {renderJapaneseText(question.after)}
-        </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-          {question.meaning}
-        </Typography>
-      </Paper>
+        <Paper
+          elevation={0}
+          onPointerDown={canPlay ? speechClick.onPointerDown : undefined}
+          onClick={canPlay ? speechClick.onClick : undefined}
+          role={canPlay ? 'button' : undefined}
+          tabIndex={canPlay ? 0 : undefined}
+          aria-label={canPlay ? t('common.playAudio') : undefined}
+          onKeyDown={
+            canPlay
+              ? (event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    speakJapanese(question.fullText);
+                  }
+                }
+              : undefined
+          }
+          sx={[
+            elevatedSurfaceSx,
+            { p: { xs: 2.5, md: 3 }, cursor: canPlay ? 'pointer' : undefined }
+          ]}
+        >
+          <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>
+            <FuriganaText text={question.before} ruby={question.beforeRuby} />
+            <Box
+              component="span"
+              sx={{
+                display: 'inline-block',
+                minWidth: '2.5em',
+                mx: 0.5,
+                textAlign: 'center',
+                borderBottom: '2px solid',
+                borderColor: 'text.secondary'
+              }}
+            >
+              {'\u3000'}
+            </Box>
+            <FuriganaText text={question.after} ruby={question.afterRuby} />
+          </Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+            {question.meaning}
+          </Typography>
+        </Paper>
+      </Box>
 
       <Box
         sx={{

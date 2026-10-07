@@ -1,4 +1,4 @@
-import type { Lesson } from '@/constants/courses/index.ts';
+import type { Lesson, RubySegment } from '@/constants/courses/index.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import { splitHighlightedText, type HighlightTerm } from '@/utils/grammar-highlight.ts';
 
@@ -14,10 +14,13 @@ export type GrammarOption = {
 export type GrammarQuestion = {
   /** Sentence text before the blank. */
   before: string;
+  beforeRuby?: RubySegment[];
   /** Sentence text after the blank. */
   after: string;
+  afterRuby?: RubySegment[];
   /** The grammar piece that fills the blank (the correct answer). */
   answer: string;
+  answerRuby?: RubySegment[];
   /** The complete sentence, for text-to-speech once solved. */
   fullText: string;
   meaning: string;
@@ -37,8 +40,45 @@ type ClozeSeed = {
   after: string;
   answer: string;
   fullText: string;
+  ruby?: RubySegment[];
   meaning: string;
 };
+
+/** Ruby segments whose base sits entirely inside [start, end) of `surface`. */
+function rubyInRange(
+  surface: string,
+  ruby: RubySegment[] | undefined,
+  start: number,
+  end: number
+): RubySegment[] | undefined {
+  if (!ruby?.length) {
+    return undefined;
+  }
+
+  const picked: RubySegment[] = [];
+  let position = 0;
+  let index = 0;
+
+  while (position < surface.length && index < ruby.length) {
+    const segment = ruby[index];
+
+    if (surface.startsWith(segment.base, position)) {
+      const segmentEnd = position + segment.base.length;
+
+      if (position >= start && segmentEnd <= end) {
+        picked.push(segment);
+      }
+
+      position = segmentEnd;
+      index += 1;
+      continue;
+    }
+
+    position += 1;
+  }
+
+  return picked.length ? picked : undefined;
+}
 
 const OPTION_COUNT = 4;
 
@@ -107,6 +147,7 @@ export function buildGrammarClozes(lesson: Lesson, locale: Locale): ClozeSeed[] 
           after,
           answer: segment.text,
           fullText: example.jp,
+          ruby: example.ruby,
           meaning: example.meaning[locale]
         });
       });
@@ -130,10 +171,16 @@ function buildQuestion(seed: ClozeSeed, pool: string[]): GrammarQuestion {
   const options = labels.map((label, index) => ({ id: `opt-${index}`, label }));
   const correctId = options.find((option) => option.label === seed.answer)!.id;
 
+  const beforeEnd = seed.before.length;
+  const answerEnd = beforeEnd + seed.answer.length;
+
   return {
     before: seed.before,
+    beforeRuby: rubyInRange(seed.fullText, seed.ruby, 0, beforeEnd),
     after: seed.after,
+    afterRuby: rubyInRange(seed.fullText, seed.ruby, answerEnd, seed.fullText.length),
     answer: seed.answer,
+    answerRuby: rubyInRange(seed.fullText, seed.ruby, beforeEnd, answerEnd),
     fullText: seed.fullText,
     meaning: seed.meaning,
     options,
