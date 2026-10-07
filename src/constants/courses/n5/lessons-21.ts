@@ -395,7 +395,8 @@ export const n5Lesson21: Lesson = {
       meaning: { en: 'Long time no see.', vi: 'Lâu rồi không gặp nhỉ.' }
     },
     {
-      kana: '～でも 飲みませんか。',
+      kana: '～でも のみませんか。',
+      kanji: '～でも 飲みませんか。',
       romaji: '~demo nomimasen ka.',
       meaning: { en: 'How about drinking ~ or something?', vi: 'Uống ~ hay gì đó không?' },
       ruby: [{ base: '飲', reading: 'の' }]

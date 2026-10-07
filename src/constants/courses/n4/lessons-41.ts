@@ -363,7 +363,7 @@ export const n4Lesson41: Lesson = {
   ],
   phrases: [
     {
-      kana: '結婚 おめでとう ございます。',
+      kana: 'けっこん おめでとう ございます。',
       kanji: '結婚 おめでとう ございます。',
       romaji: 'Kekkon omedetō gozaimasu.',
       meaning: { en: 'Congratulations on your marriage.', vi: 'Chúc mừng đám cưới.' },
@@ -373,7 +373,7 @@ export const n4Lesson41: Lesson = {
       ]
     },
     {
-      kana: 'どうぞ お幸せに。',
+      kana: 'どうぞ おしあわせに。',
       kanji: 'どうぞ お幸せに。',
       romaji: 'Dōzo o-shiawase ni.',
       meaning: { en: 'Please be happy together.', vi: 'Chúc hai người hạnh phúc.' },

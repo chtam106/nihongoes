@@ -355,7 +355,7 @@ export const n4Lesson40: Lesson = {
   ],
   phrases: [
     {
-      kana: 'JL107便が 何時に 着くか、調べて ください。',
+      kana: 'JL107びんが なんじに つくか、しらべて ください。',
       kanji: 'JL107便が 何時に 着くか、調べて ください。',
       romaji: 'JL107-bin ga nan-ji ni tsuku ka, shirabete kudasai.',
       meaning: {
@@ -371,7 +371,7 @@ export const n4Lesson40: Lesson = {
       ]
     },
     {
-      kana: 'この ズボン、試しに 履いて みて も いいですか。',
+      kana: 'この ズボン、ためしに はいて みて も いいですか。',
       kanji: 'この ズボン、試しに 履いて みて も いいですか。',
       romaji: 'Kono zubon, tameshi ni haite mite mo ii desu ka.',
       meaning: {

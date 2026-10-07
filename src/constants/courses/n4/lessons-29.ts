@@ -516,6 +516,7 @@ export const n4Lesson29: Lesson = {
           ruby: [
             { base: '調', reading: 'しら' },
             { base: '少', reading: 'しょう' },
+            { base: '々', reading: 'しょう' },
             { base: '待', reading: 'ま' }
           ]
         },

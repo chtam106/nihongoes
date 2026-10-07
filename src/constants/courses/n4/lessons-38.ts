@@ -432,7 +432,7 @@ export const n4Lesson38: Lesson = {
   ],
   phrases: [
     {
-      kana: '整理 する のが 好き なんです。',
+      kana: 'せいり する のが すき なんです。',
       kanji: '整理 する のが 好き なんです。',
       romaji: 'Seiri suru no ga suki nan desu.',
       meaning: { en: 'I like tidying up.', vi: 'Tôi thích dọn dẹp.' },
@@ -443,7 +443,7 @@ export const n4Lesson38: Lesson = {
       ]
     },
     {
-      kana: 'お先に 失礼します。',
+      kana: 'おさきに しつれいします。',
       kanji: 'お先に 失礼します。',
       romaji: 'Osaki ni shitsurei shimasu.',
       meaning: { en: 'Excuse me for leaving before you.', vi: 'Tôi xin phép về trước.' },
