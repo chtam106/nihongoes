@@ -17,9 +17,8 @@ type UseExerciseQuizOptions = {
   pairDirection?: ScriptPairDirection;
 };
 
-// This hook keeps no effect-driven reset: when the script/mode/scope/direction
-// change, the consumer remounts <ExerciseQuiz /> via a `key`, which reruns the
-// `useState` initializer with a fresh session.
+// When script/mode/scope/direction change, the consumer remounts via `key`.
+// Retry rebuilds the session in place after a finished run.
 export function useExerciseQuiz({
   mode,
   script,
@@ -32,21 +31,41 @@ export function useExerciseQuiz({
     return { session, question: session.next() };
   });
   const sessionRef = useRef<QuizSession>(initialQuiz.session);
+  const [total] = useState(initialQuiz.session.total);
   const [question, setQuestion] = useState<QuizQuestion>(initialQuiz.question);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState<string[]>([]);
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
+
+  const isLast = total > 0 && questionNumber >= total - 1;
 
   const handleAnswer = (answer: string) => {
-    if (answeredCorrectly || wrongAnswers.includes(answer)) {
+    if (finished || answeredCorrectly || wrongAnswers.includes(answer)) {
       return;
     }
 
     if (isQuizAnswerCorrect(question, answer)) {
       setAnsweredCorrectly(true);
+
+      if (wrongAnswers.length === 0) {
+        setScore((previous) => previous + 1);
+      }
     } else {
       setWrongAnswers((previous) => [...previous, answer]);
     }
+  };
+
+  const handleRetry = () => {
+    const session = createQuizSession(script, mode, scope, pairDirection);
+    sessionRef.current = session;
+    setQuestion(session.next());
+    setQuestionNumber(0);
+    setWrongAnswers([]);
+    setAnsweredCorrectly(false);
+    setScore(0);
+    setFinished(false);
   };
 
   useEffect(() => {
@@ -55,6 +74,11 @@ export function useExerciseQuiz({
     }
 
     const timer = window.setTimeout(() => {
+      if (isLast) {
+        setFinished(true);
+        return;
+      }
+
       setQuestion(sessionRef.current.next());
       setQuestionNumber((previous) => previous + 1);
       setWrongAnswers([]);
@@ -64,13 +88,17 @@ export function useExerciseQuiz({
     return () => {
       window.clearTimeout(timer);
     };
-  }, [answeredCorrectly]);
+  }, [answeredCorrectly, isLast]);
 
   return {
     question,
     questionNumber,
+    total,
+    score,
+    finished,
     wrongAnswers,
     answeredCorrectly,
-    handleAnswer
+    handleAnswer,
+    handleRetry
   };
 }

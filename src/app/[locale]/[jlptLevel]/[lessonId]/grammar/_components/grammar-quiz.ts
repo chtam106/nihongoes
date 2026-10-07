@@ -141,6 +141,7 @@ function buildQuestion(seed: ClozeSeed, pool: string[]): GrammarQuestion {
   };
 }
 
+/** One pass through the cloze pool; the UI finishes after `total` questions. */
 export function createGrammarSession(lesson: Lesson, locale: Locale): GrammarSession {
   const seeds = buildGrammarClozes(lesson, locale);
   const pool = grammarTermPool(lesson);

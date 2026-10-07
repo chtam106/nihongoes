@@ -132,6 +132,7 @@ function drawNextBatch(session: VocabMatchSession): {
 }
 
 // Remount via `key` on script/includeReference changes for a fresh session.
+// One full pass through the pool, then a result screen (no endless reshuffle).
 export function useVocabMatch({ lesson, locale, script, includeReference }: UseVocabMatchOptions) {
   const [initial] = useState(() => {
     const session = createVocabMatchSession(lesson, locale, script, includeReference);
@@ -146,6 +147,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
   const sessionRef = useRef<VocabMatchSession>(initial.session);
   const activePairsRef = useRef(initial.activePairs);
   const matchedPairColorsRef = useRef<Map<string, number>>(new Map());
+  const missedPairIdsRef = useRef<Set<string>>(new Set());
   const totalMatchedRef = useRef(0);
   const transitionTimersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
   const [totalPairs] = useState(initial.session.totalPairs);
@@ -153,6 +155,8 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
   const [meaningOrder, setMeaningOrder] = useState(initial.meaningOrder);
   const [batchKey, setBatchKey] = useState(0);
   const [totalMatched, setTotalMatched] = useState(0);
+  const [score, setScore] = useState(0);
+  const [finished, setFinished] = useState(false);
   const [matchedPairColors, setMatchedPairColors] = useState<Map<string, number>>(() => new Map());
   const [selectedWordId, setSelectedWordId] = useState<string | null>(null);
   const [selectedMeaningId, setSelectedMeaningId] = useState<string | null>(null);
@@ -182,6 +186,24 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
     transitionTimersRef.current = [];
   };
 
+  const handleRetry = () => {
+    clearTransitionTimers();
+    const session = createVocabMatchSession(lesson, locale, script, includeReference);
+    const nextPairs = session.fill(initialVocabMatchSlotCount(session.totalPairs));
+    sessionRef.current = session;
+    missedPairIdsRef.current = new Set();
+    setActivePairs(nextPairs);
+    setMeaningOrder(shuffleMatchMeanings(nextPairs));
+    setMatchedPairColors(new Map());
+    setBatchKey((key) => key + 1);
+    setTotalMatched(0);
+    setScore(0);
+    setFinished(false);
+    setSelectedWordId(null);
+    setSelectedMeaningId(null);
+    setBatchVisible(true);
+  };
+
   const scheduleBatchAdvance = (nextTotal: number) => {
     clearTransitionTimers();
 
@@ -193,7 +215,9 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
         const lessonComplete = nextTotal >= session.totalPairs;
 
         if (lessonComplete) {
-          session.reshufflePool();
+          setTotalMatched(nextTotal);
+          setFinished(true);
+          return;
         }
 
         const { nextPairs, nextMeaningOrder } = drawNextBatch(session);
@@ -201,7 +225,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
         setMeaningOrder(nextMeaningOrder);
         setMatchedPairColors(new Map());
         setBatchKey((key) => key + 1);
-        setTotalMatched(lessonComplete ? 0 : nextTotal);
+        setTotalMatched(nextTotal);
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
@@ -223,6 +247,10 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
     nextMatched.set(wordId, colorIndex);
     const nextTotal = totalMatchedRef.current + 1;
 
+    if (!missedPairIdsRef.current.has(wordId)) {
+      setScore((previous) => previous + 1);
+    }
+
     setSelectedWordId(null);
     setSelectedMeaningId(null);
     setTotalMatched(nextTotal);
@@ -236,7 +264,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
   };
 
   const tryMatch = (wordId: string, meaningId: string) => {
-    if (!batchVisible) {
+    if (!batchVisible || finished) {
       return;
     }
 
@@ -249,12 +277,13 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
       return;
     }
 
+    missedPairIdsRef.current.add(wordId);
     setSelectedWordId(wordId);
     setSelectedMeaningId(meaningId);
   };
 
   const selectWord = (wordId: string) => {
-    if (!batchVisible || matchedPairColors.has(wordId)) {
+    if (!batchVisible || finished || matchedPairColors.has(wordId)) {
       return;
     }
 
@@ -267,7 +296,7 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
   };
 
   const selectMeaning = (meaningId: string) => {
-    if (!batchVisible || matchedPairColors.has(meaningId)) {
+    if (!batchVisible || finished || matchedPairColors.has(meaningId)) {
       return;
     }
 
@@ -286,10 +315,13 @@ export function useVocabMatch({ lesson, locale, script, includeReference }: UseV
     batchVisible,
     totalMatched,
     totalPairs,
+    score,
+    finished,
     matchedPairColors,
     selectedWordId,
     selectedMeaningId,
     selectWord,
-    selectMeaning
+    selectMeaning,
+    handleRetry
   };
 }

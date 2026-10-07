@@ -1,5 +1,15 @@
 import { useState } from 'react';
-import { Box, Button, Link, Paper, Stack, TextField, Typography } from '@mui/material';
+import ReplayIcon from '@mui/icons-material/Replay';
+import {
+  Box,
+  Button,
+  LinearProgress,
+  Link,
+  Paper,
+  Stack,
+  TextField,
+  Typography
+} from '@mui/material';
 import {
   getOptionValue,
   isQuizAnswerCorrect,
@@ -13,6 +23,7 @@ import {
 } from '@/features/alphabet/exercise/exercise-quiz.ts';
 import { resultBorderSx } from '@/features/alphabet/exercise/exercise-ui.ts';
 import { useExerciseQuiz } from '@/features/alphabet/exercise/use-exercise-quiz.ts';
+import { Heading } from '@/components/heading';
 import { KanaDisplay } from '@/components/kana-display';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
@@ -302,17 +313,76 @@ export function ExerciseQuiz({
   pairDirection,
   scriptLabel
 }: ExerciseQuizProps) {
+  const { t } = useTranslation();
   const quiz = useExerciseQuiz({ mode, script, scope, pairDirection });
 
+  if (quiz.finished) {
+    const ratio = quiz.total === 0 ? 0 : quiz.score / quiz.total;
+    const resultMessage =
+      ratio >= 0.8
+        ? t('course.resultGreat')
+        : ratio >= 0.5
+          ? t('course.resultGood')
+          : t('course.resultKeepGoing');
+
+    return (
+      <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 3, md: 4 }, textAlign: 'center' }]}>
+        <Heading scale="page" component="h2" gutterBottom>
+          {t('course.resultTitle')}
+        </Heading>
+        <Typography
+          variant="h2"
+          component="p"
+          sx={{ fontWeight: 700, color: 'primary.main', my: 2 }}
+        >
+          {quiz.score} / {quiz.total}
+        </Typography>
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+          {resultMessage}
+        </Typography>
+        <Button variant="contained" startIcon={<ReplayIcon />} onClick={quiz.handleRetry}>
+          {t('course.retry')}
+        </Button>
+      </Paper>
+    );
+  }
+
+  const progressLabel = t('course.questionProgress', {
+    current: quiz.questionNumber + 1,
+    total: quiz.total
+  });
+
   return (
-    <ExerciseQuizPanel
-      mode={mode}
-      scriptLabel={scriptLabel}
-      question={quiz.question}
-      questionNumber={quiz.questionNumber}
-      wrongAnswers={quiz.wrongAnswers}
-      answeredCorrectly={quiz.answeredCorrectly}
-      onAnswer={quiz.handleAnswer}
-    />
+    <Stack spacing={3}>
+      <Box>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
+        >
+          <Typography variant="body1" color="text.secondary">
+            {progressLabel}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {quiz.score} / {quiz.total}
+          </Typography>
+        </Stack>
+        <LinearProgress
+          variant="determinate"
+          value={quiz.total === 0 ? 0 : (quiz.questionNumber / quiz.total) * 100}
+          aria-label={progressLabel}
+          sx={{ borderRadius: 1, height: 8 }}
+        />
+      </Box>
+
+      <ExerciseQuizPanel
+        mode={mode}
+        scriptLabel={scriptLabel}
+        question={quiz.question}
+        questionNumber={quiz.questionNumber}
+        wrongAnswers={quiz.wrongAnswers}
+        answeredCorrectly={quiz.answeredCorrectly}
+        onAnswer={quiz.handleAnswer}
+      />
+    </Stack>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useCallback } from 'react';
 import { useParams } from 'next/navigation';
-import { Box, Paper, Stack, Typography } from '@mui/material';
+import { Box, LinearProgress, Paper, Stack, Typography } from '@mui/material';
 import { getLesson, type CourseLevel, type Lesson } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -11,19 +11,30 @@ import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { speakJapanese, useSpeechClickHandler, useSpeechEnabled } from '@/utils/speech.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
-import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
+import { LessonNotFound, LessonQuizHeader, ResultScreen } from '@/features/course/shared';
 import { useGrammarQuiz } from './use-grammar-quiz.ts';
 
 type GrammarQuizProps = {
   lesson: Lesson;
+  level: CourseLevel;
   locale: Locale;
 };
 
-/** The endless fill-in-the-blank panel: a sentence with one grammar gap + choices. */
-function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
+/** Fill-in-the-blank panel: a sentence with one grammar gap + choices. */
+function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
   const { t } = useTranslation();
   const canSpeak = useSpeechEnabled();
-  const { question, wrongIds, answeredCorrectly, handleSelect } = useGrammarQuiz({
+  const {
+    question,
+    questionNumber,
+    total,
+    score,
+    finished,
+    wrongIds,
+    answeredCorrectly,
+    handleSelect,
+    handleRetry
+  } = useGrammarQuiz({
     lesson,
     locale
   });
@@ -33,8 +44,45 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
   const handleSpeak = useCallback(() => speakJapanese(question.fullText), [question.fullText]);
   const speechClick = useSpeechClickHandler(handleSpeak);
 
+  if (finished) {
+    return (
+      <ResultScreen
+        score={score}
+        total={total}
+        level={level}
+        lessonId={lesson.id}
+        onRetry={handleRetry}
+      />
+    );
+  }
+
+  const progressLabel = t('course.questionProgress', {
+    current: questionNumber + 1,
+    total
+  });
+
   return (
     <Stack spacing={3}>
+      <Box>
+        <Stack
+          direction="row"
+          sx={{ justifyContent: 'space-between', alignItems: 'baseline', mb: 0.5 }}
+        >
+          <Typography variant="body1" color="text.secondary">
+            {progressLabel}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {score} / {total}
+          </Typography>
+        </Stack>
+        <LinearProgress
+          variant="determinate"
+          value={total === 0 ? 0 : (questionNumber / total) * 100}
+          aria-label={progressLabel}
+          sx={{ borderRadius: 1, height: 8 }}
+        />
+      </Box>
+
       <Paper
         elevation={0}
         onPointerDown={canPlay ? speechClick.onPointerDown : undefined}
@@ -112,9 +160,10 @@ function GrammarQuiz({ lesson, locale }: GrammarQuizProps) {
 
 type GrammarExerciseProps = {
   lesson: Lesson;
+  level: CourseLevel;
 };
 
-function GrammarExercise({ lesson }: GrammarExerciseProps) {
+function GrammarExercise({ lesson, level }: GrammarExerciseProps) {
   const { locale } = useTranslation();
 
   return (
@@ -122,7 +171,12 @@ function GrammarExercise({ lesson }: GrammarExerciseProps) {
       <Stack spacing={3}>
         <LessonQuizHeader lesson={lesson} section="grammar" />
 
-        <GrammarQuiz key={`${lesson.id}:${locale}`} lesson={lesson} locale={locale} />
+        <GrammarQuiz
+          key={`${lesson.id}:${locale}`}
+          lesson={lesson}
+          level={level}
+          locale={locale}
+        />
       </Stack>
     </PageContainer>
   );
@@ -140,7 +194,7 @@ function GrammarPage({ level }: GrammarPageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <GrammarExercise key={`${level}:${lesson.id}`} lesson={lesson} />;
+  return <GrammarExercise key={`${level}:${lesson.id}`} lesson={lesson} level={level} />;
 }
 
 export default GrammarPage;

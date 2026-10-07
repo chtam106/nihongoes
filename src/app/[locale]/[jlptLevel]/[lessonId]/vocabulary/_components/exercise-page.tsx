@@ -121,6 +121,7 @@ function VocabExercise({ lesson, level }: VocabExerciseProps) {
           <VocabMatchPanel
             key={panelKey}
             lesson={lesson}
+            level={level}
             locale={locale}
             script={prefs.script}
             includeReference={prefs.includeReference}
