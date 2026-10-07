@@ -6,6 +6,8 @@ import { SITE_NAME } from '@/constants/site.ts';
 
 // The brand slogan stays in English regardless of the selected locale.
 const SLOGAN = 'Learn Japanese';
+// Light sakura pink the wordmark gradient fades into from `primary.main`.
+const BRAND_GRADIENT_END = '#F08BAE';
 
 type BrandProps = {
   showTagline?: boolean;
@@ -59,7 +61,15 @@ export function Brand({ showTagline = false, showLogo = true }: BrandProps) {
             fontWeight: 700,
             fontSize: '1.2rem',
             lineHeight: 1.1,
-            letterSpacing: '-0.01em'
+            letterSpacing: '-0.01em',
+            backgroundImage: (theme) =>
+              `linear-gradient(90deg, ${theme.palette.primary.main}, ${BRAND_GRADIENT_END})`,
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            // The gradient only paints inside the box; pad it so descenders (g) aren't cut.
+            pb: '0.15em',
+            mb: '-0.15em'
           }}
         >
           {SITE_NAME}
