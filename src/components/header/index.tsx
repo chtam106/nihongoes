@@ -50,6 +50,7 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
           onClick={onToggleMobile}
           aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
           aria-expanded={mobileOpen}
+          color="primary"
           sx={{ display: { xs: 'inline-flex', md: 'none' } }}
         >
           {mobileOpen && <CloseIcon />}

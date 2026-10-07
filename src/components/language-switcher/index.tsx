@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
         bgcolor: (theme) => alpha(theme.palette.primary.main, 0.08)
       }}
     >
-      <LanguageIcon sx={{ fontSize: 17, mr: 0.25, color: 'action.active' }} />
+      <LanguageIcon sx={{ fontSize: 17, mr: 0.25, color: 'primary.main' }} />
 
       {locales.map(({ code, shortLabel, labelKey }) => {
         const selected = locale === code;

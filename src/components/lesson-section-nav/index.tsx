@@ -38,7 +38,7 @@ const TAB_RAIL_BUTTON_SX = {
   px: 0,
   border: 'none',
   bgcolor: 'transparent',
-  color: 'text.primary',
+  color: 'primary.main',
   cursor: 'pointer',
   display: 'flex',
   alignItems: 'center',
@@ -47,10 +47,10 @@ const TAB_RAIL_BUTTON_SX = {
   WebkitTapHighlightColor: 'transparent',
   outline: 'none',
   '&:focus': {
-    color: 'text.primary'
+    color: 'primary.main'
   },
   '&:active': {
-    color: 'text.primary'
+    color: 'primary.main'
   },
   '&:disabled': {
     color: 'text.disabled',

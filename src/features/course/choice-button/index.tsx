@@ -5,6 +5,7 @@ import { Box, Button } from '@mui/material';
 import { pink } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
 import { QUIZ_CORRECT_COLOR } from '@/constants/quiz.ts';
+import { quizChoiceSx } from '@/theme/quiz-choice.ts';
 
 type ChoiceState = 'default' | 'correct' | 'wrong';
 
@@ -43,6 +44,7 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
           textTransform: 'none',
           fontSize: '1.05rem',
           borderWidth: 1,
+          ...quizChoiceSx,
           '&.Mui-disabled': { opacity: 0.6 },
           ...(filled && {
             transition: 'none',
