@@ -6,6 +6,7 @@ import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
+  formatRadicalMeaning,
   getRadicalByChar,
   KANJI_SHOW_ON_KUN_READINGS,
   type KanjiComponent,
@@ -15,12 +16,6 @@ import {
 import { COMPONENT_ROLE_COLORS } from '@/theme/kanji-component-colors.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { renderKanjiExampleText } from '@/utils/japanese-text.tsx';
-
-/** The primary sense of a bilingual radical meaning (first "; "-separated clause). */
-function radicalPrimaryMeaning(vi: string, en: string, locale: 'en' | 'vi'): string {
-  const text = locale === 'vi' ? formatKanjiMeaning(vi) : en;
-  return text.split('; ')[0]!;
-}
 
 /** Full kana reading of an example (also spoken), joined from its parts. */
 function exampleReading(parts: KanjiReadingPart[]): string {
@@ -158,7 +153,7 @@ function ComponentsRow({ entry }: ComponentsRowProps) {
               </Box>
               {radical && (
                 <Box component="span" sx={{ color: 'text.secondary' }}>
-                  {radicalPrimaryMeaning(radical.meaning.vi, radical.meaning.en, locale)}
+                  {formatRadicalMeaning(radical, locale)}
                 </Box>
               )}
             </Box>

@@ -14,9 +14,35 @@ export type Radical = {
   name: string;
   /** Japanese name of the radical, in kana (shown on the cards). */
   kana: string;
-  /** Vietnamese (Han-Viet - meaning) and English meaning. */
+  /** Sino-Vietnamese reading (Hán-Việt), e.g. `khuyển`. */
+  hanViet: string;
+  /** Plain meanings only - NO `hán-việt - ` prefix in vi. */
   meaning: Bilingual;
+  /** Extra sense when used as a building block in other kanji (optional). */
+  componentMeaning?: Bilingual;
 };
+
+/**
+ * Display the radical's primary meaning. Vietnamese: `[HanViet] nghĩa`
+ * (capitalized Hán-Việt only). English: plain `meaning.en`.
+ */
+export function formatRadicalMeaning(radical: Radical, locale: 'en' | 'vi'): string {
+  if (locale === 'en') {
+    return radical.meaning.en;
+  }
+
+  const capitalized = radical.hanViet.charAt(0).toUpperCase() + radical.hanViet.slice(1);
+
+  return `[${capitalized}] ${radical.meaning.vi}`;
+}
+
+/** Component-sense gloss when the radical is used as a building block, if any. */
+export function formatRadicalComponentMeaning(
+  radical: Radical,
+  locale: 'en' | 'vi'
+): string | undefined {
+  return radical.componentMeaning?.[locale];
+}
 
 export const radicals: Radical[] = [
   {
@@ -25,7 +51,8 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'ichi',
     kana: 'いち',
-    meaning: { en: 'one', vi: 'nhất - một' }
+    hanViet: 'nhất',
+    meaning: { en: 'one, unity, the number one', vi: 'một, sự thống nhất, số một' }
   },
   {
     number: 2,
@@ -33,7 +60,8 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'bou',
     kana: 'ぼう',
-    meaning: { en: 'line', vi: 'cổn - nét sổ' }
+    hanViet: 'cổn',
+    meaning: { en: 'vertical line, rod stroke', vi: 'nét sổ thẳng đứng' }
   },
   {
     number: 3,
@@ -41,7 +69,8 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'ten',
     kana: 'てん',
-    meaning: { en: 'dot', vi: 'chủ - dấu chấm' }
+    hanViet: 'chủ',
+    meaning: { en: 'dot, point stroke', vi: 'dấu chấm, nét chấm' }
   },
   {
     number: 4,
@@ -49,7 +78,8 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'no',
     kana: 'の',
-    meaning: { en: 'slash', vi: 'phiệt - nét phẩy' }
+    hanViet: 'phiệt',
+    meaning: { en: 'slash, left-falling stroke', vi: 'nét phẩy, nét xiên trái' }
   },
   {
     number: 5,
@@ -58,9 +88,10 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'otsu',
     kana: 'おつ',
+    hanViet: 'ất',
     meaning: {
-      en: 'the 2nd of the ten heavenly stems',
-      vi: 'ất - can Ất (thiên can thứ hai)'
+      en: 'the second heavenly stem, fishhook-like stroke',
+      vi: 'can Ất (thiên can thứ hai), nét móc câu'
     }
   },
   {
@@ -69,7 +100,8 @@ export const radicals: Radical[] = [
     strokes: 1,
     name: 'hanebou',
     kana: 'はねぼう',
-    meaning: { en: 'hook', vi: 'quyết - nét móc' }
+    hanViet: 'quyết',
+    meaning: { en: 'hook, hooked vertical stroke', vi: 'nét móc, nét sổ có móc' }
   },
   {
     number: 7,
@@ -77,7 +109,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'ni',
     kana: 'に',
-    meaning: { en: 'two', vi: 'nhị - hai' }
+    hanViet: 'nhị',
+    meaning: { en: 'two, the number two', vi: 'hai, số hai' }
   },
   {
     number: 8,
@@ -85,7 +118,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'nabebuta',
     kana: 'なべぶた',
-    meaning: { en: 'lid', vi: 'đầu - nắp đậy' }
+    hanViet: 'đầu',
+    meaning: { en: 'lid, cover, pot lid', vi: 'nắp đậy, nắp vung' }
   },
   {
     number: 9,
@@ -94,7 +128,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'hito / ninben',
     kana: 'ひと / にんべん',
-    meaning: { en: 'person', vi: 'nhân - người' }
+    hanViet: 'nhân',
+    meaning: { en: 'person, human being', vi: 'người, con người' }
   },
   {
     number: 10,
@@ -102,7 +137,11 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'hitoashi',
     kana: 'ひとあし',
-    meaning: { en: 'legs', vi: 'nhân - chân người' }
+    hanViet: 'nhân',
+    meaning: {
+      en: 'legs, human legs (often under a character)',
+      vi: 'chân người (thường đặt dưới chữ)'
+    }
   },
   {
     number: 11,
@@ -110,7 +149,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'iru',
     kana: 'いる',
-    meaning: { en: 'enter', vi: 'nhập - vào' }
+    hanViet: 'nhập',
+    meaning: { en: 'enter, go in, put in', vi: 'vào, đi vào, đưa vào' }
   },
   {
     number: 12,
@@ -118,7 +158,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'hachi',
     kana: 'はち',
-    meaning: { en: 'eight', vi: 'bát - tám' }
+    hanViet: 'bát',
+    meaning: { en: 'eight, to divide, split apart', vi: 'tám, chia tách, tách ra' }
   },
   {
     number: 13,
@@ -126,7 +167,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'keigamae',
     kana: 'けいがまえ',
-    meaning: { en: 'down box, enclosure', vi: 'quynh - khung bao (mở xuống dưới)' }
+    hanViet: 'quynh',
+    meaning: { en: 'down box, open enclosure (open at bottom)', vi: 'khung bao mở xuống dưới' }
   },
   {
     number: 14,
@@ -134,7 +176,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'wakanmuri',
     kana: 'わかんむり',
-    meaning: { en: 'cover', vi: 'mịch - trùm khăn' }
+    hanViet: 'mịch',
+    meaning: { en: 'cover, cloth cover, crown', vi: 'trùm khăn, nắp che' }
   },
   {
     number: 15,
@@ -142,7 +185,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'nisui',
     kana: 'にすい',
-    meaning: { en: 'ice', vi: 'băng - nước đá' }
+    hanViet: 'băng',
+    meaning: { en: 'ice, ice-cold water, freeze', vi: 'nước đá, lạnh giá, đóng băng' }
   },
   {
     number: 16,
@@ -150,7 +194,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'tsukue',
     kana: 'つくえ',
-    meaning: { en: 'table', vi: 'kỷ - cái bàn' }
+    hanViet: 'kỷ',
+    meaning: { en: 'table, small stand, stool', vi: 'cái bàn, ghế thấp, giá kê' }
   },
   {
     number: 17,
@@ -158,7 +203,11 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'ukebako',
     kana: 'うけばこ',
-    meaning: { en: 'open box, container', vi: 'khảm - cái hộp mở miệng, đồ chứa' }
+    hanViet: 'khảm',
+    meaning: {
+      en: 'open box, receptacle, container (open at top)',
+      vi: 'cái hộp mở miệng, đồ chứa'
+    }
   },
   {
     number: 18,
@@ -167,7 +216,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'katana / rittou',
     kana: 'かたな / りっとう',
-    meaning: { en: 'knife', vi: 'đao - con dao' }
+    hanViet: 'đao',
+    meaning: { en: 'knife, blade, sword', vi: 'con dao, lưỡi dao, kiếm' }
   },
   {
     number: 19,
@@ -175,7 +225,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'chikara',
     kana: 'ちから',
-    meaning: { en: 'power', vi: 'lực - sức' }
+    hanViet: 'lực',
+    meaning: { en: 'power, strength, force', vi: 'sức lực, sức mạnh' }
   },
   {
     number: 20,
@@ -183,7 +234,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'tsutsumigamae',
     kana: 'つつみがまえ',
-    meaning: { en: 'wrap', vi: 'bao - bao bọc' }
+    hanViet: 'bao',
+    meaning: { en: 'wrap, envelop, enclose', vi: 'bao bọc, bọc lại' }
   },
   {
     number: 21,
@@ -191,7 +243,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'saji',
     kana: 'さじ',
-    meaning: { en: 'spoon', vi: 'chuỷ - cái thìa' }
+    hanViet: 'chuỷ',
+    meaning: { en: 'spoon, ladle, dagger-like tool', vi: 'cái thìa, muỗng, dao nhỏ dạng thìa' }
   },
   {
     number: 22,
@@ -199,7 +252,11 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'hakogamae',
     kana: 'はこがまえ',
-    meaning: { en: 'box', vi: 'phương - cái tủ' }
+    hanViet: 'phương',
+    meaning: {
+      en: 'box, chest, framing enclosure (open on right)',
+      vi: 'cái tủ, khung hộp (mở bên phải)'
+    }
   },
   {
     number: 23,
@@ -207,7 +264,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'kakushigamae',
     kana: 'かくしがまえ',
-    meaning: { en: 'hiding enclosure', vi: 'hệ - che giấu' }
+    hanViet: 'hệ',
+    meaning: { en: 'hiding enclosure, conceal', vi: 'che giấu, khung kín' }
   },
   {
     number: 24,
@@ -215,7 +273,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'juu',
     kana: 'じゅう',
-    meaning: { en: 'ten', vi: 'thập - mười' }
+    hanViet: 'thập',
+    meaning: { en: 'ten, complete set, all', vi: 'mười, đầy đủ, trọn vẹn' }
   },
   {
     number: 25,
@@ -223,7 +282,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'boku',
     kana: 'ぼく',
-    meaning: { en: 'divination', vi: 'bốc - bói toán' }
+    hanViet: 'bốc',
+    meaning: { en: 'divination, fortune-telling, oracle', vi: 'bói toán, xem quẻ' }
   },
   {
     number: 26,
@@ -231,7 +291,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'fushizukuri',
     kana: 'ふしづくり',
-    meaning: { en: 'seal', vi: 'tiết - con dấu' }
+    hanViet: 'tiết',
+    meaning: { en: 'seal, official stamp, joint, node', vi: 'con dấu, đốt, khớp' }
   },
   {
     number: 27,
@@ -239,7 +300,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'gandare',
     kana: 'がんだれ',
-    meaning: { en: 'cliff', vi: 'hán - sườn núi' }
+    hanViet: 'hán',
+    meaning: { en: 'cliff, overhanging rock face', vi: 'sườn núi, vách đá che' }
   },
   {
     number: 28,
@@ -247,7 +309,8 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'mu',
     kana: 'む',
-    meaning: { en: 'private', vi: 'khư - riêng tư' }
+    hanViet: 'khư',
+    meaning: { en: 'private, personal, selfish', vi: 'riêng tư, tư nhân, ích kỷ' }
   },
   {
     number: 29,
@@ -255,10 +318,9 @@ export const radicals: Radical[] = [
     strokes: 2,
     name: 'mata',
     kana: 'また',
-    meaning: {
-      en: 'again; hand (when used in other kanji)',
-      vi: 'hựu - lại nữa; bàn tay (khi ghép chữ)'
-    }
+    hanViet: 'hựu',
+    meaning: { en: 'again, moreover', vi: 'lại nữa, hơn nữa' },
+    componentMeaning: { en: 'hand', vi: 'bàn tay' }
   },
   {
     number: 30,
@@ -266,7 +328,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'kuchi',
     kana: 'くち',
-    meaning: { en: 'mouth', vi: 'khẩu - miệng' }
+    hanViet: 'khẩu',
+    meaning: { en: 'mouth, opening, speech, say', vi: 'miệng, lỗ mở, lời nói' }
   },
   {
     number: 31,
@@ -274,7 +337,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'kunigamae',
     kana: 'くにがまえ',
-    meaning: { en: 'enclosure', vi: 'vi - vây quanh' }
+    hanViet: 'vi',
+    meaning: { en: 'enclosure, surrounding border', vi: 'vây quanh, khung bao kín' }
   },
   {
     number: 32,
@@ -282,7 +346,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'tsuchi',
     kana: 'つち',
-    meaning: { en: 'earth', vi: 'thổ - đất' }
+    hanViet: 'thổ',
+    meaning: { en: 'earth, soil, ground', vi: 'đất, đất đai, mặt đất' }
   },
   {
     number: 33,
@@ -290,7 +355,11 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'samurai',
     kana: 'さむらい',
-    meaning: { en: 'scholar, gentleman, samurai', vi: 'sĩ - kẻ sĩ, quý ông (người văn/võ)' }
+    hanViet: 'sĩ',
+    meaning: {
+      en: 'scholar, gentleman, samurai, warrior class',
+      vi: 'kẻ sĩ, quý ông, tầng lớp văn võ'
+    }
   },
   {
     number: 34,
@@ -298,10 +367,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'chi',
     kana: 'ち',
-    meaning: {
-      en: 'to come after, to trail behind',
-      vi: 'truy - đến sau, theo sau'
-    }
+    hanViet: 'truy',
+    meaning: { en: 'to come after, trail behind, winter-like form', vi: 'đến sau, theo sau' }
   },
   {
     number: 35,
@@ -309,7 +376,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'suinyou',
     kana: 'すいにょう',
-    meaning: { en: 'go slowly', vi: 'tuy - đi chậm' }
+    hanViet: 'tuy',
+    meaning: { en: 'go slowly, drag the feet', vi: 'đi chậm, lê bước' }
   },
   {
     number: 36,
@@ -317,7 +385,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'yuube',
     kana: 'ゆうべ',
-    meaning: { en: 'evening', vi: 'tịch - buổi tối' }
+    hanViet: 'tịch',
+    meaning: { en: 'evening, dusk, nightfall', vi: 'buổi tối, chạng vạng' }
   },
   {
     number: 37,
@@ -325,7 +394,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'dai',
     kana: 'だい',
-    meaning: { en: 'big', vi: 'đại - to lớn' }
+    hanViet: 'đại',
+    meaning: { en: 'big, large, great', vi: 'to lớn, lớn lao' }
   },
   {
     number: 38,
@@ -333,7 +403,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'onna',
     kana: 'おんな',
-    meaning: { en: 'woman', vi: 'nữ - con gái' }
+    hanViet: 'nữ',
+    meaning: { en: 'woman, female, girl', vi: 'phụ nữ, con gái' }
   },
   {
     number: 39,
@@ -341,7 +412,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'ko',
     kana: 'こ',
-    meaning: { en: 'child', vi: 'tử - con' }
+    hanViet: 'tử',
+    meaning: { en: 'child, offspring, seed, small thing', vi: 'con, đứa trẻ, hạt, vật nhỏ' }
   },
   {
     number: 40,
@@ -349,7 +421,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'ukanmuri',
     kana: 'うかんむり',
-    meaning: { en: 'roof', vi: 'miên - mái nhà' }
+    hanViet: 'miên',
+    meaning: { en: 'roof, house cover, dwelling', vi: 'mái nhà, chỗ ở có mái' }
   },
   {
     number: 41,
@@ -357,10 +430,12 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'sun',
     kana: 'すん',
+    hanViet: 'thốn',
     meaning: {
-      en: 'a small unit of length (~3cm, like an inch); hand (when used in other kanji)',
-      vi: 'thốn - tấc (đơn vị đo chiều dài ngắn, ~3cm); bàn tay (khi ghép chữ)'
-    }
+      en: 'a small unit of length (~3cm, like an inch)',
+      vi: 'tấc (đơn vị đo chiều dài ngắn, ~3cm)'
+    },
+    componentMeaning: { en: 'hand', vi: 'bàn tay' }
   },
   {
     number: 42,
@@ -368,7 +443,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'shou',
     kana: 'しょう',
-    meaning: { en: 'small', vi: 'tiểu - nhỏ' }
+    hanViet: 'tiểu',
+    meaning: { en: 'small, little, minor', vi: 'nhỏ, bé, ít' }
   },
   {
     number: 43,
@@ -377,7 +453,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'dainomage',
     kana: 'だいのまげ',
-    meaning: { en: 'lame', vi: 'uông - què chân' }
+    hanViet: 'uông',
+    meaning: { en: 'lame, crooked legs, limp', vi: 'què chân, chân khập khiễng' }
   },
   {
     number: 44,
@@ -385,10 +462,9 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'shikabane',
     kana: 'しかばね',
-    meaning: {
-      en: 'corpse; roof/dwelling (when used in other kanji)',
-      vi: 'thi - xác chết; mái, nhà (khi ghép chữ)'
-    }
+    hanViet: 'thi',
+    meaning: { en: 'corpse', vi: 'xác chết' },
+    componentMeaning: { en: 'roof/dwelling', vi: 'mái, nhà' }
   },
   {
     number: 45,
@@ -396,7 +472,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'tetsu',
     kana: 'てつ',
-    meaning: { en: 'sprout', vi: 'triệt - mầm cây' }
+    hanViet: 'triệt',
+    meaning: { en: 'sprout, young plant shoot', vi: 'mầm cây, chồi non' }
   },
   {
     number: 46,
@@ -404,7 +481,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'yama',
     kana: 'やま',
-    meaning: { en: 'mountain', vi: 'sơn - núi' }
+    hanViet: 'sơn',
+    meaning: { en: 'mountain, hill, peak', vi: 'núi, đồi, đỉnh núi' }
   },
   {
     number: 47,
@@ -413,7 +491,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'kawa',
     kana: 'かわ',
-    meaning: { en: 'river', vi: 'xuyên - sông' }
+    hanViet: 'xuyên',
+    meaning: { en: 'river, stream, flowing water', vi: 'sông, dòng chảy' }
   },
   {
     number: 48,
@@ -421,7 +500,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'takumi',
     kana: 'たくみ',
-    meaning: { en: 'work', vi: 'công - thợ' }
+    hanViet: 'công',
+    meaning: { en: 'work, craft, artisan, labor', vi: 'thợ, nghề thủ công, lao động' }
   },
   {
     number: 49,
@@ -429,7 +509,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'onore',
     kana: 'おのれ',
-    meaning: { en: 'oneself', vi: 'kỷ - bản thân' }
+    hanViet: 'kỷ',
+    meaning: { en: 'oneself, self, snake-like form (original)', vi: 'bản thân, chính mình' }
   },
   {
     number: 50,
@@ -437,7 +518,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'haba',
     kana: 'はば',
-    meaning: { en: 'cloth', vi: 'cân - khăn' }
+    hanViet: 'cân',
+    meaning: { en: 'cloth, towel, fabric strip', vi: 'khăn, mảnh vải' }
   },
   {
     number: 51,
@@ -445,7 +527,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'kan',
     kana: 'かん',
-    meaning: { en: 'dry', vi: 'can - khô' }
+    hanViet: 'can',
+    meaning: { en: 'dry, drought, shield, oppose', vi: 'khô, hạn, cái khiên, chống lại' }
   },
   {
     number: 52,
@@ -453,7 +536,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'itogashira',
     kana: 'いとがしら',
-    meaning: { en: 'short thread', vi: 'yêu - nhỏ bé' }
+    hanViet: 'yêu',
+    meaning: { en: 'short thread, tiny, immature, young', vi: 'sợi ngắn, nhỏ bé, non trẻ' }
   },
   {
     number: 53,
@@ -461,7 +545,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'madare',
     kana: 'まだれ',
-    meaning: { en: 'shelter', vi: 'nghiễm - mái hiên' }
+    hanViet: 'nghiễm',
+    meaning: { en: 'shelter, sloping roof, house lean-to', vi: 'mái hiên, chỗ che nghiêng' }
   },
   {
     number: 54,
@@ -469,7 +554,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'ennyou',
     kana: 'えんにょう',
-    meaning: { en: 'long stride', vi: 'dẫn - bước dài' }
+    hanViet: 'dẫn',
+    meaning: { en: 'long stride, stretch out the legs', vi: 'bước dài, dang chân' }
   },
   {
     number: 55,
@@ -477,7 +563,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'nijuuashi',
     kana: 'にじゅうあし',
-    meaning: { en: 'two hands', vi: 'củng - chắp tay' }
+    hanViet: 'củng',
+    meaning: { en: 'two hands joined, clasp hands', vi: 'chắp tay, hai tay đưa lên' }
   },
   {
     number: 56,
@@ -485,7 +572,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'shikigamae',
     kana: 'しきがまえ',
-    meaning: { en: 'shoot', vi: 'dặc - bắn' }
+    hanViet: 'dặc',
+    meaning: { en: 'shoot with a bow, stake, peg', vi: 'bắn cung, cái cọc' }
   },
   {
     number: 57,
@@ -493,7 +581,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'yumi',
     kana: 'ゆみ',
-    meaning: { en: 'bow', vi: 'cung - cây cung' }
+    hanViet: 'cung',
+    meaning: { en: 'bow (weapon), arched shape', vi: 'cây cung, hình cong' }
   },
   {
     number: 58,
@@ -501,7 +590,8 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'keigashira',
     kana: 'けいがしら',
-    meaning: { en: 'snout', vi: 'kệ - mõm lợn' }
+    hanViet: 'kệ',
+    meaning: { en: 'snout, pig snout, hand-like form', vi: 'mõm lợn, dạng bàn tay' }
   },
   {
     number: 59,
@@ -509,7 +599,11 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'sanzukuri',
     kana: 'さんづくり',
-    meaning: { en: 'bristle', vi: 'sam - lông tóc' }
+    hanViet: 'sam',
+    meaning: {
+      en: 'bristle, hair ornament, streaks, pattern',
+      vi: 'lông tóc, chùm lông, nét vẽ trang trí'
+    }
   },
   {
     number: 60,
@@ -517,7 +611,11 @@ export const radicals: Radical[] = [
     strokes: 3,
     name: 'gyouninben',
     kana: 'ぎょうにんべん',
-    meaning: { en: 'step', vi: 'xích - bước ngắn' }
+    hanViet: 'xích',
+    meaning: {
+      en: 'step, walk slowly, left half of going',
+      vi: 'bước ngắn, đi chậm, nửa trái của bộ hành'
+    }
   },
   {
     number: 61,
@@ -526,7 +624,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'kokoro / risshinben',
     kana: 'こころ / りっしんべん',
-    meaning: { en: 'heart', vi: 'tâm - trái tim' }
+    hanViet: 'tâm',
+    meaning: { en: 'heart, mind, feeling', vi: 'trái tim, tâm trí, tình cảm' }
   },
   {
     number: 62,
@@ -534,7 +633,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'hoko',
     kana: 'ほこ',
-    meaning: { en: 'halberd', vi: 'qua - cây kích' }
+    hanViet: 'qua',
+    meaning: { en: 'halberd, spear with axe blade', vi: 'cây kích, giáo có lưỡi ngang' }
   },
   {
     number: 63,
@@ -542,7 +642,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'to',
     kana: 'と',
-    meaning: { en: 'door', vi: 'hộ - cửa' }
+    hanViet: 'hộ',
+    meaning: { en: 'door, household entrance', vi: 'cửa, cửa nhà' }
   },
   {
     number: 64,
@@ -551,7 +652,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'te / tehen',
     kana: 'て / てへん',
-    meaning: { en: 'hand', vi: 'thủ - tay' }
+    hanViet: 'thủ',
+    meaning: { en: 'hand, arm, do by hand', vi: 'tay, bàn tay, làm bằng tay' }
   },
   {
     number: 65,
@@ -559,7 +661,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'shi',
     kana: 'し',
-    meaning: { en: 'branch', vi: 'chi - cành' }
+    hanViet: 'chi',
+    meaning: { en: 'branch, support, hold up', vi: 'cành cây, chống đỡ, nâng' }
   },
   {
     number: 66,
@@ -568,7 +671,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'bokuzukuri',
     kana: 'ぼくづくり',
-    meaning: { en: 'tap', vi: 'phộc - đánh khẽ' }
+    hanViet: 'phộc',
+    meaning: { en: 'tap, strike lightly, action by hand', vi: 'đánh khẽ, gõ, hành động bằng tay' }
   },
   {
     number: 67,
@@ -576,7 +680,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'bun',
     kana: 'ぶん',
-    meaning: { en: 'writing', vi: 'văn - chữ viết' }
+    hanViet: 'văn',
+    meaning: { en: 'writing, literature, culture, pattern', vi: 'chữ viết, văn chương, hoa văn' }
   },
   {
     number: 68,
@@ -584,7 +689,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'to',
     kana: 'と',
-    meaning: { en: 'dipper', vi: 'đẩu - cái đấu' }
+    hanViet: 'đẩu',
+    meaning: { en: 'dipper, measuring ladle, Big Dipper', vi: 'cái đấu đong, chòm sao Bắc Đẩu' }
   },
   {
     number: 69,
@@ -592,7 +698,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'ono',
     kana: 'おの',
-    meaning: { en: 'axe', vi: 'cân - cái rìu' }
+    hanViet: 'cân',
+    meaning: { en: 'axe, hatchet, unit of weight (catty)', vi: 'cái rìu, cân (đơn vị trọng lượng)' }
   },
   {
     number: 70,
@@ -600,7 +707,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'hou',
     kana: 'ほう',
-    meaning: { en: 'square', vi: 'phương - vuông' }
+    hanViet: 'phương',
+    meaning: { en: 'square, direction, side, method', vi: 'hình vuông, phương hướng, cách thức' }
   },
   {
     number: 71,
@@ -608,7 +716,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'nashi',
     kana: 'なし',
-    meaning: { en: 'not', vi: 'vô - không' }
+    hanViet: 'vô',
+    meaning: { en: 'not, without, none', vi: 'không, chẳng có' }
   },
   {
     number: 72,
@@ -616,7 +725,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'hi',
     kana: 'ひ',
-    meaning: { en: 'sun, day', vi: 'nhật - mặt trời' }
+    hanViet: 'nhật',
+    meaning: { en: 'sun, day, daytime, Japan', vi: 'mặt trời, ngày, ban ngày' }
   },
   {
     number: 73,
@@ -624,7 +734,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'hirabi',
     kana: 'ひらび',
-    meaning: { en: 'say', vi: 'viết - nói rằng' }
+    hanViet: 'viết',
+    meaning: { en: 'say, speak, call, name', vi: 'nói rằng, bảo, gọi tên' }
   },
   {
     number: 74,
@@ -632,10 +743,9 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'tsuki',
     kana: 'つき',
-    meaning: {
-      en: 'moon; flesh/body (when used in other kanji)',
-      vi: 'nguyệt - mặt trăng; thịt, thân thể (khi ghép chữ)'
-    }
+    hanViet: 'nguyệt',
+    meaning: { en: 'moon, month', vi: 'mặt trăng, tháng' },
+    componentMeaning: { en: 'flesh/body', vi: 'thịt, thân thể' }
   },
   {
     number: 75,
@@ -643,7 +753,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'ki',
     kana: 'き',
-    meaning: { en: 'tree, wood', vi: 'mộc - cây' }
+    hanViet: 'mộc',
+    meaning: { en: 'tree, wood, timber', vi: 'cây, gỗ' }
   },
   {
     number: 76,
@@ -651,7 +762,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'akubi',
     kana: 'あくび',
-    meaning: { en: 'lack, yawn', vi: 'khiếm - thiếu; há miệng, ngáp' }
+    hanViet: 'khiếm',
+    meaning: { en: 'lack, deficiency, yawn, open mouth', vi: 'thiếu, khuyết, há miệng, ngáp' }
   },
   {
     number: 77,
@@ -659,7 +771,11 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'tomeru',
     kana: 'とめる',
-    meaning: { en: 'stop', vi: 'chỉ - dừng' }
+    hanViet: 'chỉ',
+    meaning: {
+      en: 'stop, halt, foot, toe (original sense)',
+      vi: 'dừng, ngừng, bàn chân (nghĩa gốc)'
+    }
   },
   {
     number: 78,
@@ -667,7 +783,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'gatsuhen',
     kana: 'がつへん',
-    meaning: { en: 'death', vi: 'đãi - xương tàn' }
+    hanViet: 'đãi',
+    meaning: { en: 'death, remains, bad, decayed bone', vi: 'xương tàn, cái chết, hư hoại' }
   },
   {
     number: 79,
@@ -675,7 +792,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'rumata',
     kana: 'るまた',
-    meaning: { en: 'weapon', vi: 'thù - binh khí' }
+    hanViet: 'thù',
+    meaning: { en: 'weapon, lance, striking pole', vi: 'binh khí, giáo dài để đập' }
   },
   {
     number: 80,
@@ -684,7 +802,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'haha / nakare',
     kana: 'はは',
-    meaning: { en: 'mother', vi: 'mẫu - mẹ' }
+    hanViet: 'mẫu',
+    meaning: { en: 'mother, do not, must not (variant 毋)', vi: 'mẹ, chớ, đừng (biến thể 毋)' }
   },
   {
     number: 81,
@@ -692,7 +811,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'kuraberu',
     kana: 'くらべる',
-    meaning: { en: 'compare', vi: 'tỷ - so sánh' }
+    hanViet: 'tỷ',
+    meaning: { en: 'compare, contrast, ratio', vi: 'so sánh, đối chiếu, tỷ lệ' }
   },
   {
     number: 82,
@@ -700,7 +820,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'ke',
     kana: 'け',
-    meaning: { en: 'fur', vi: 'mao - lông' }
+    hanViet: 'mao',
+    meaning: { en: 'fur, hair, feather-like down', vi: 'lông, lông thú' }
   },
   {
     number: 83,
@@ -708,7 +829,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'uji',
     kana: 'うじ',
-    meaning: { en: 'clan', vi: 'thị - họ' }
+    hanViet: 'thị',
+    meaning: { en: 'clan, family name, lineage', vi: 'họ, dòng họ' }
   },
   {
     number: 84,
@@ -716,7 +838,11 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'kigamae',
     kana: 'きがまえ',
-    meaning: { en: 'steam', vi: 'khí - hơi' }
+    hanViet: 'khí',
+    meaning: {
+      en: 'steam, vapor, breath, air, spirit',
+      vi: 'hơi nước, hơi thở, không khí, khí chất'
+    }
   },
   {
     number: 85,
@@ -725,7 +851,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'mizu / sanzui',
     kana: 'みず / さんずい',
-    meaning: { en: 'water', vi: 'thuỷ - nước' }
+    hanViet: 'thuỷ',
+    meaning: { en: 'water, liquid, fluid', vi: 'nước, chất lỏng' }
   },
   {
     number: 86,
@@ -734,7 +861,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'hi / renga',
     kana: 'ひ / れんが',
-    meaning: { en: 'fire', vi: 'hoả - lửa' }
+    hanViet: 'hoả',
+    meaning: { en: 'fire, flame, burn', vi: 'lửa, ngọn lửa, đốt cháy' }
   },
   {
     number: 87,
@@ -743,7 +871,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'tsume',
     kana: 'つめ',
-    meaning: { en: 'claw', vi: 'trảo - móng vuốt' }
+    hanViet: 'trảo',
+    meaning: { en: 'claw, nail, talon', vi: 'móng vuốt, móng tay' }
   },
   {
     number: 88,
@@ -751,7 +880,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'chichi',
     kana: 'ちち',
-    meaning: { en: 'father', vi: 'phụ - cha' }
+    hanViet: 'phụ',
+    meaning: { en: 'father, dad', vi: 'cha, bố' }
   },
   {
     number: 89,
@@ -759,7 +889,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'kou',
     kana: 'こう',
-    meaning: { en: 'mix', vi: 'hào - hào quẻ' }
+    hanViet: 'hào',
+    meaning: { en: 'mix, cross, I Ching hexagram lines', vi: 'giao lẫn, nét hào trong Kinh Dịch' }
   },
   {
     number: 90,
@@ -767,7 +898,11 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'shouhen',
     kana: 'しょうへん',
-    meaning: { en: 'split wood (left)', vi: 'tường - mảnh gỗ' }
+    hanViet: 'tường',
+    meaning: {
+      en: 'split wood (left half), bed frame piece',
+      vi: 'mảnh gỗ chẻ (nửa trái), khung giường'
+    }
   },
   {
     number: 91,
@@ -775,7 +910,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'kata',
     kana: 'かた',
-    meaning: { en: 'slice', vi: 'phiến - mảnh' }
+    hanViet: 'phiến',
+    meaning: { en: 'slice, fragment, one-sided piece', vi: 'mảnh, miếng, một phía' }
   },
   {
     number: 92,
@@ -783,7 +919,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'kiba',
     kana: 'きば',
-    meaning: { en: 'fang', vi: 'nha - răng nanh' }
+    hanViet: 'nha',
+    meaning: { en: 'fang, tusk, ivory tooth', vi: 'răng nanh, ngà' }
   },
   {
     number: 93,
@@ -792,7 +929,8 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'ushi',
     kana: 'うし',
-    meaning: { en: 'cow', vi: 'ngưu - trâu bò' }
+    hanViet: 'ngưu',
+    meaning: { en: 'cow, ox, cattle', vi: 'trâu bò, gia súc' }
   },
   {
     number: 94,
@@ -801,7 +939,9 @@ export const radicals: Radical[] = [
     strokes: 4,
     name: 'inu / kemonohen',
     kana: 'いぬ / けものへん',
-    meaning: { en: 'dog', vi: 'khuyển - chó' }
+    hanViet: 'khuyển',
+    meaning: { en: 'dog', vi: 'chó' },
+    componentMeaning: { en: 'beast, animal', vi: 'thú vật' }
   },
   {
     number: 95,
@@ -809,7 +949,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'gen',
     kana: 'げん',
-    meaning: { en: 'profound', vi: 'huyền - sâu kín' }
+    hanViet: 'huyền',
+    meaning: { en: 'profound, mysterious, dark', vi: 'sâu kín, huyền bí, tối màu' }
   },
   {
     number: 96,
@@ -818,7 +959,11 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'tama',
     kana: 'たま',
-    meaning: { en: 'jade', vi: 'ngọc - đá quý' }
+    hanViet: 'ngọc',
+    meaning: {
+      en: 'jade, jewel, precious stone, king (variant form)',
+      vi: 'ngọc bích, đá quý, vua (dạng biến thể)'
+    }
   },
   {
     number: 97,
@@ -826,7 +971,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'uri',
     kana: 'うり',
-    meaning: { en: 'melon', vi: 'qua - quả dưa' }
+    hanViet: 'qua',
+    meaning: { en: 'melon, gourd', vi: 'quả dưa, bầu bí' }
   },
   {
     number: 98,
@@ -834,7 +980,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'kawara',
     kana: 'かわら',
-    meaning: { en: 'tile', vi: 'ngoã - ngói' }
+    hanViet: 'ngoã',
+    meaning: { en: 'tile, earthenware roof tile', vi: 'ngói, mái đất nung' }
   },
   {
     number: 99,
@@ -842,7 +989,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'amai',
     kana: 'あまい',
-    meaning: { en: 'sweet', vi: 'cam - ngọt' }
+    hanViet: 'cam',
+    meaning: { en: 'sweet, pleasant taste', vi: 'ngọt, ngon miệng' }
   },
   {
     number: 100,
@@ -850,7 +998,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'umareru',
     kana: 'うまれる',
-    meaning: { en: 'life', vi: 'sinh - sống' }
+    hanViet: 'sinh',
+    meaning: { en: 'life, birth, live, raw, fresh', vi: 'sống, sinh ra, sống (chưa chín)' }
   },
   {
     number: 101,
@@ -858,7 +1007,11 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'mochiiru',
     kana: 'もちいる',
-    meaning: { en: 'use', vi: 'dụng - dùng' }
+    hanViet: 'dụng',
+    meaning: {
+      en: 'use, employ, business, task to do',
+      vi: 'dùng, sử dụng, việc, công việc cần làm'
+    }
   },
   {
     number: 102,
@@ -866,7 +1019,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'ta',
     kana: 'た',
-    meaning: { en: 'field', vi: 'điền - ruộng' }
+    hanViet: 'điền',
+    meaning: { en: 'rice field, cultivated field', vi: 'ruộng, đồng lúa' }
   },
   {
     number: 103,
@@ -874,7 +1028,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'hiki',
     kana: 'ひき',
-    meaning: { en: 'bolt of cloth', vi: 'thất - tấm vải' }
+    hanViet: 'thất',
+    meaning: { en: 'bolt of cloth, roll of fabric', vi: 'tấm vải, cuộn vải' }
   },
   {
     number: 104,
@@ -882,7 +1037,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'yamaidare',
     kana: 'やまいだれ',
-    meaning: { en: 'sickness', vi: 'nạch - bệnh tật' }
+    hanViet: 'nạch',
+    meaning: { en: 'sickness, illness, disease', vi: 'bệnh tật, ốm đau' }
   },
   {
     number: 105,
@@ -890,7 +1046,11 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'hatsugashira',
     kana: 'はつがしら',
-    meaning: { en: 'outspread legs, departure', vi: 'bát - hai chân dang ra (bộ chân bước)' }
+    hanViet: 'bát',
+    meaning: {
+      en: 'outspread legs, departure, footsteps leaving',
+      vi: 'hai chân dang ra, bước đi (rời đi)'
+    }
   },
   {
     number: 106,
@@ -898,7 +1058,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'shiro',
     kana: 'しろ',
-    meaning: { en: 'white', vi: 'bạch - trắng' }
+    hanViet: 'bạch',
+    meaning: { en: 'white, blank, clear, pure', vi: 'trắng, trống, rõ ràng, trong sạch' }
   },
   {
     number: 107,
@@ -906,7 +1067,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'kawa',
     kana: 'かわ',
-    meaning: { en: 'skin', vi: 'bì - da' }
+    hanViet: 'bì',
+    meaning: { en: 'skin, hide, leather surface', vi: 'da, lớp da ngoài' }
   },
   {
     number: 108,
@@ -914,7 +1076,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'sara',
     kana: 'さら',
-    meaning: { en: 'dish', vi: 'mãnh - bát đĩa' }
+    hanViet: 'mãnh',
+    meaning: { en: 'dish, plate, shallow bowl', vi: 'bát đĩa, đĩa nông' }
   },
   {
     number: 109,
@@ -922,7 +1085,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'me',
     kana: 'め',
-    meaning: { en: 'eye', vi: 'mục - mắt' }
+    hanViet: 'mục',
+    meaning: { en: 'eye, look, see', vi: 'mắt, nhìn, xem' }
   },
   {
     number: 110,
@@ -930,7 +1094,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'hoko',
     kana: 'ほこ',
-    meaning: { en: 'spear', vi: 'mâu - cái giáo' }
+    hanViet: 'mâu',
+    meaning: { en: 'spear, lance, pike', vi: 'cái giáo, thương' }
   },
   {
     number: 111,
@@ -938,7 +1103,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'ya',
     kana: 'や',
-    meaning: { en: 'arrow', vi: 'thỉ - mũi tên' }
+    hanViet: 'thỉ',
+    meaning: { en: 'arrow, dart', vi: 'mũi tên, tên bắn' }
   },
   {
     number: 112,
@@ -946,7 +1112,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'ishi',
     kana: 'いし',
-    meaning: { en: 'stone', vi: 'thạch - đá' }
+    hanViet: 'thạch',
+    meaning: { en: 'stone, rock', vi: 'đá, tảng đá' }
   },
   {
     number: 113,
@@ -955,7 +1122,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'shimesu',
     kana: 'しめす',
-    meaning: { en: 'altar, spirit, to show', vi: 'thị - bàn thờ; thần linh' }
+    hanViet: 'thị',
+    meaning: { en: 'altar, spirit, to show, indicate', vi: 'bàn thờ, thần linh, chỉ ra, bày tỏ' }
   },
   {
     number: 114,
@@ -963,7 +1131,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'juu',
     kana: 'じゅう',
-    meaning: { en: 'track', vi: 'nhựu - vết chân' }
+    hanViet: 'nhựu',
+    meaning: { en: 'animal track, footprint', vi: 'vết chân thú' }
   },
   {
     number: 115,
@@ -971,7 +1140,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'nogihen',
     kana: 'のぎへん',
-    meaning: { en: 'grain', vi: 'hoà - lúa' }
+    hanViet: 'hoà',
+    meaning: { en: 'grain, cereal plant (esp. rice on the stalk)', vi: 'lúa, ngũ cốc (cây lúa)' }
   },
   {
     number: 116,
@@ -979,7 +1149,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'ana',
     kana: 'あな',
-    meaning: { en: 'cave', vi: 'huyệt - hang' }
+    hanViet: 'huyệt',
+    meaning: { en: 'cave, hole, pit', vi: 'hang, lỗ, hố' }
   },
   {
     number: 117,
@@ -987,7 +1158,8 @@ export const radicals: Radical[] = [
     strokes: 5,
     name: 'tatsu',
     kana: 'たつ',
-    meaning: { en: 'stand', vi: 'lập - đứng' }
+    hanViet: 'lập',
+    meaning: { en: 'stand, stand up, establish', vi: 'đứng, đứng lên, dựng nên' }
   },
   {
     number: 118,
@@ -995,7 +1167,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'take',
     kana: 'たけ',
-    meaning: { en: 'bamboo', vi: 'trúc - tre' }
+    hanViet: 'trúc',
+    meaning: { en: 'bamboo', vi: 'tre, cây trúc' }
   },
   {
     number: 119,
@@ -1003,7 +1176,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'kome',
     kana: 'こめ',
-    meaning: { en: 'rice', vi: 'mễ - gạo' }
+    hanViet: 'mễ',
+    meaning: { en: 'rice (hulled), grain of rice', vi: 'gạo, hạt gạo' }
   },
   {
     number: 120,
@@ -1012,7 +1186,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'ito',
     kana: 'いと',
-    meaning: { en: 'thread, silk', vi: 'mịch - sợi tơ' }
+    hanViet: 'mịch',
+    meaning: { en: 'thread, silk, fine string', vi: 'sợi tơ, chỉ, dây tơ' }
   },
   {
     number: 121,
@@ -1020,7 +1195,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'hotogi',
     kana: 'ほとぎ',
-    meaning: { en: 'jar', vi: 'phẫu - vò sành' }
+    hanViet: 'phẫu',
+    meaning: { en: 'jar, earthenware vessel, pottery', vi: 'vò sành, bình đất nung' }
   },
   {
     number: 122,
@@ -1029,7 +1205,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'ami',
     kana: 'あみ',
-    meaning: { en: 'net', vi: 'võng - cái lưới' }
+    hanViet: 'võng',
+    meaning: { en: 'net, mesh, snare', vi: 'cái lưới, mắt lưới' }
   },
   {
     number: 123,
@@ -1037,7 +1214,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'hitsuji',
     kana: 'ひつじ',
-    meaning: { en: 'sheep', vi: 'dương - con cừu (dê)' }
+    hanViet: 'dương',
+    meaning: { en: 'sheep, ram, goat', vi: 'con cừu, dê' }
   },
   {
     number: 124,
@@ -1045,7 +1223,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'hane',
     kana: 'はね',
-    meaning: { en: 'feather', vi: 'vũ - lông vũ' }
+    hanViet: 'vũ',
+    meaning: { en: 'feather, wing, plume', vi: 'lông vũ, cánh' }
   },
   {
     number: 125,
@@ -1054,7 +1233,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'oiru',
     kana: 'おいる',
-    meaning: { en: 'old', vi: 'lão - già' }
+    hanViet: 'lão',
+    meaning: { en: 'old, aged, elderly', vi: 'già, người cao tuổi' }
   },
   {
     number: 126,
@@ -1062,7 +1242,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'shikaru',
     kana: 'しかる',
-    meaning: { en: 'and', vi: 'nhi - mà' }
+    hanViet: 'nhi',
+    meaning: { en: 'and, yet, moreover, whiskers (original)', vi: 'mà, và lại, râu (nghĩa gốc)' }
   },
   {
     number: 127,
@@ -1070,7 +1251,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'suki',
     kana: 'すき',
-    meaning: { en: 'plow', vi: 'lỗi - cái cày' }
+    hanViet: 'lỗi',
+    meaning: { en: 'plow, plough handle', vi: 'cái cày, cán cày' }
   },
   {
     number: 128,
@@ -1078,7 +1260,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'mimi',
     kana: 'みみ',
-    meaning: { en: 'ear', vi: 'nhĩ - tai' }
+    hanViet: 'nhĩ',
+    meaning: { en: 'ear, hearing', vi: 'tai, thính giác' }
   },
   {
     number: 129,
@@ -1086,7 +1269,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'fudezukuri',
     kana: 'ふでづくり',
-    meaning: { en: 'brush', vi: 'duật - cây bút' }
+    hanViet: 'duật',
+    meaning: { en: 'writing brush, pen', vi: 'cây bút lông, bút viết' }
   },
   {
     number: 130,
@@ -1095,7 +1279,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'niku / nikuzuki',
     kana: 'にく / にくづき',
-    meaning: { en: 'meat, flesh', vi: 'nhục - thịt' }
+    hanViet: 'nhục',
+    meaning: { en: 'meat, flesh, body tissue', vi: 'thịt, thân thịt' }
   },
   {
     number: 131,
@@ -1103,7 +1288,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'shin',
     kana: 'しん',
-    meaning: { en: 'minister', vi: 'thần - bề tôi' }
+    hanViet: 'thần',
+    meaning: { en: 'minister, retainer, subject (of a ruler)', vi: 'bề tôi, bề tôi trung' }
   },
   {
     number: 132,
@@ -1111,7 +1297,11 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'mizukara',
     kana: 'みずから',
-    meaning: { en: 'self; nose (original sense)', vi: 'tự - tự mình; cái mũi (nghĩa gốc)' }
+    hanViet: 'tự',
+    meaning: {
+      en: 'self, oneself, nose (original sense)',
+      vi: 'tự mình, bản thân, cái mũi (nghĩa gốc)'
+    }
   },
   {
     number: 133,
@@ -1119,7 +1309,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'itaru',
     kana: 'いたる',
-    meaning: { en: 'arrive', vi: 'chí - đến' }
+    hanViet: 'chí',
+    meaning: { en: 'arrive, reach, utmost, extreme', vi: 'đến, tới, cực điểm' }
   },
   {
     number: 134,
@@ -1127,7 +1318,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'usu',
     kana: 'うす',
-    meaning: { en: 'mortar', vi: 'cữu - cái cối' }
+    hanViet: 'cữu',
+    meaning: { en: 'mortar, grinding bowl', vi: 'cái cối giã' }
   },
   {
     number: 135,
@@ -1135,7 +1327,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'shita',
     kana: 'した',
-    meaning: { en: 'tongue', vi: 'thiệt - lưỡi' }
+    hanViet: 'thiệt',
+    meaning: { en: 'tongue', vi: 'lưỡi' }
   },
   {
     number: 136,
@@ -1143,7 +1336,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'maisuashi',
     kana: 'まいすあし',
-    meaning: { en: 'oppose', vi: 'suyễn - trái nhau' }
+    hanViet: 'suyễn',
+    meaning: { en: 'oppose, go against, dancing feet', vi: 'trái nhau, đối nghịch, chân nhảy múa' }
   },
   {
     number: 137,
@@ -1151,7 +1345,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'fune',
     kana: 'ふね',
-    meaning: { en: 'boat', vi: 'chu - thuyền' }
+    hanViet: 'chu',
+    meaning: { en: 'boat, ship, vessel', vi: 'thuyền, tàu' }
   },
   {
     number: 138,
@@ -1159,7 +1354,11 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'ushitora',
     kana: 'うしとら',
-    meaning: { en: 'stopping', vi: 'cấn - dừng lại' }
+    hanViet: 'cấn',
+    meaning: {
+      en: 'stopping, stubborn resistance, northeast trigram',
+      vi: 'dừng lại, cứng đầu, quẻ Cấn'
+    }
   },
   {
     number: 139,
@@ -1167,7 +1366,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'iro',
     kana: 'いろ',
-    meaning: { en: 'color', vi: 'sắc - màu' }
+    hanViet: 'sắc',
+    meaning: { en: 'color, hue, appearance, lust', vi: 'màu sắc, vẻ ngoài, dục vọng' }
   },
   {
     number: 140,
@@ -1176,7 +1376,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'kusakanmuri',
     kana: 'くさかんむり',
-    meaning: { en: 'grass', vi: 'thảo - cỏ' }
+    hanViet: 'thảo',
+    meaning: { en: 'grass, herb, plant', vi: 'cỏ, cây cỏ' }
   },
   {
     number: 141,
@@ -1184,7 +1385,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'toragashira',
     kana: 'とらがしら',
-    meaning: { en: 'tiger', vi: 'hô - đầu con hổ' }
+    hanViet: 'hô',
+    meaning: { en: 'tiger (esp. the head of a tiger)', vi: 'đầu con hổ, bộ hổ' }
   },
   {
     number: 142,
@@ -1192,7 +1394,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'mushi',
     kana: 'むし',
-    meaning: { en: 'insect', vi: 'trùng - sâu bọ' }
+    hanViet: 'trùng',
+    meaning: { en: 'insect, bug, worm, small creature', vi: 'sâu bọ, côn trùng' }
   },
   {
     number: 143,
@@ -1200,7 +1403,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'chi',
     kana: 'ち',
-    meaning: { en: 'blood', vi: 'huyết - máu' }
+    hanViet: 'huyết',
+    meaning: { en: 'blood', vi: 'máu' }
   },
   {
     number: 144,
@@ -1208,7 +1412,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'gyou',
     kana: 'ぎょう',
-    meaning: { en: 'go, walk', vi: 'hành - đi' }
+    hanViet: 'hành',
+    meaning: { en: 'go, walk, travel, carry out, conduct', vi: 'đi, bước đi, thực hiện' }
   },
   {
     number: 145,
@@ -1217,7 +1422,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'koromo',
     kana: 'ころも',
-    meaning: { en: 'clothes', vi: 'y - áo' }
+    hanViet: 'y',
+    meaning: { en: 'clothes, garment, robe', vi: 'áo, quần áo' }
   },
   {
     number: 146,
@@ -1226,7 +1432,8 @@ export const radicals: Radical[] = [
     strokes: 6,
     name: 'oou',
     kana: 'おおう',
-    meaning: { en: 'cover, west', vi: 'á - che đậy' }
+    hanViet: 'á',
+    meaning: { en: 'cover, west (homograph form)', vi: 'che đậy, phương tây (dạng đồng tự)' }
   },
   {
     number: 147,
@@ -1234,7 +1441,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'miru',
     kana: 'みる',
-    meaning: { en: 'see', vi: 'kiến - thấy' }
+    hanViet: 'kiến',
+    meaning: { en: 'see, look, meet', vi: 'thấy, nhìn, gặp' }
   },
   {
     number: 148,
@@ -1242,7 +1450,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'tsuno',
     kana: 'つの',
-    meaning: { en: 'horn', vi: 'giác - sừng' }
+    hanViet: 'giác',
+    meaning: { en: 'horn, antler, angle, corner', vi: 'sừng, góc' }
   },
   {
     number: 149,
@@ -1251,7 +1460,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'gonben',
     kana: 'ごんべん',
-    meaning: { en: 'speech', vi: 'ngôn - lời nói' }
+    hanViet: 'ngôn',
+    meaning: { en: 'speech, words, language', vi: 'lời nói, ngôn ngữ' }
   },
   {
     number: 150,
@@ -1259,7 +1469,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'tani',
     kana: 'たに',
-    meaning: { en: 'valley', vi: 'cốc - thung lũng' }
+    hanViet: 'cốc',
+    meaning: { en: 'valley, gorge', vi: 'thung lũng, khe núi' }
   },
   {
     number: 151,
@@ -1267,7 +1478,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'mame',
     kana: 'まめ',
-    meaning: { en: 'bean', vi: 'đậu - hạt đậu' }
+    hanViet: 'đậu',
+    meaning: { en: 'bean, pea, vessel shaped like a bean', vi: 'hạt đậu, đồ đựng dạng đậu' }
   },
   {
     number: 152,
@@ -1275,7 +1487,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'inoko',
     kana: 'いのこ',
-    meaning: { en: 'pig', vi: 'thỉ - con lợn' }
+    hanViet: 'thỉ',
+    meaning: { en: 'pig, swine', vi: 'con lợn, heo' }
   },
   {
     number: 153,
@@ -1283,7 +1496,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'mujinahen',
     kana: 'むじなへん',
-    meaning: { en: 'clawed animal', vi: 'trĩ - loài thú' }
+    hanViet: 'trĩ',
+    meaning: { en: 'clawed animal, beast of prey', vi: 'loài thú có vuốt, thú săn' }
   },
   {
     number: 154,
@@ -1291,7 +1505,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'kai',
     kana: 'かい',
-    meaning: { en: 'shell, money', vi: 'bối - vỏ sò, tiền' }
+    hanViet: 'bối',
+    meaning: { en: 'shellfish, shell, money, valuables', vi: 'vỏ sò, tiền bạc, của cải' }
   },
   {
     number: 155,
@@ -1299,7 +1514,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'aka',
     kana: 'あか',
-    meaning: { en: 'red', vi: 'xích - đỏ' }
+    hanViet: 'xích',
+    meaning: { en: 'red, scarlet', vi: 'đỏ, đỏ thắm' }
   },
   {
     number: 156,
@@ -1307,7 +1523,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'hashiru',
     kana: 'はしる',
-    meaning: { en: 'run', vi: 'tẩu - chạy' }
+    hanViet: 'tẩu',
+    meaning: { en: 'run, flee, dash', vi: 'chạy, chạy trốn' }
   },
   {
     number: 157,
@@ -1316,7 +1533,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'ashi',
     kana: 'あし',
-    meaning: { en: 'foot', vi: 'túc - chân' }
+    hanViet: 'túc',
+    meaning: { en: 'foot, leg, suffice, be enough', vi: 'chân, đủ' }
   },
   {
     number: 158,
@@ -1324,7 +1542,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'mi',
     kana: 'み',
-    meaning: { en: 'body', vi: 'thân - thân thể' }
+    hanViet: 'thân',
+    meaning: { en: 'body, oneself, person', vi: 'thân thể, bản thân' }
   },
   {
     number: 159,
@@ -1332,7 +1551,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'kuruma',
     kana: 'くるま',
-    meaning: { en: 'cart, car', vi: 'xa - xe' }
+    hanViet: 'xa',
+    meaning: { en: 'cart, vehicle, car', vi: 'xe, xe cộ' }
   },
   {
     number: 160,
@@ -1340,7 +1560,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'karai',
     kana: 'からい',
-    meaning: { en: 'bitter', vi: 'tân - cay' }
+    hanViet: 'tân',
+    meaning: { en: 'bitter, spicy, harsh, hardship', vi: 'cay, đắng, gian khổ' }
   },
   {
     number: 161,
@@ -1348,7 +1569,11 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'shinnotatsu',
     kana: 'しんのたつ',
-    meaning: { en: 'morning', vi: 'thần - buổi sớm' }
+    hanViet: 'thần',
+    meaning: {
+      en: 'morning, dragon (zodiac), celestial body',
+      vi: 'buổi sớm, rồng (địa chi), thiên thể'
+    }
   },
   {
     number: 162,
@@ -1357,7 +1582,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'shinnyou',
     kana: 'しんにょう',
-    meaning: { en: 'movement', vi: 'sước - bước đi' }
+    hanViet: 'sước',
+    meaning: { en: 'movement, walk, road radical', vi: 'bước đi, bộ hành (lộ trình)' }
   },
   {
     number: 163,
@@ -1366,7 +1592,11 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'oozato',
     kana: 'おおざと',
-    meaning: { en: 'village (right)', vi: 'ấp - làng (phải)' }
+    hanViet: 'ấp',
+    meaning: {
+      en: 'village, town, settlement (right-side form)',
+      vi: 'làng, ấp, thị trấn (dạng bên phải)'
+    }
   },
   {
     number: 164,
@@ -1374,7 +1604,11 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'sake',
     kana: 'さけ',
-    meaning: { en: 'wine, bird', vi: 'dậu - rượu' }
+    hanViet: 'dậu',
+    meaning: {
+      en: 'wine, alcohol, bird (zodiac rooster)',
+      vi: 'rượu, đồ uống có cồn, gà (địa chi)'
+    }
   },
   {
     number: 165,
@@ -1383,7 +1617,8 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'nogome',
     kana: 'のごめ',
-    meaning: { en: 'distinguish', vi: 'biện - phân biệt' }
+    hanViet: 'biện',
+    meaning: { en: 'distinguish, sort out, pluck', vi: 'phân biệt, chọn lọc, hái' }
   },
   {
     number: 166,
@@ -1391,7 +1626,11 @@ export const radicals: Radical[] = [
     strokes: 7,
     name: 'sato',
     kana: 'さと',
-    meaning: { en: 'village', vi: 'lý - làng, dặm' }
+    hanViet: 'lý',
+    meaning: {
+      en: 'village, hometown, Japanese ri (distance unit)',
+      vi: 'làng, quê hương, dặm (đơn vị đường)'
+    }
   },
   {
     number: 167,
@@ -1399,7 +1638,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'kane',
     kana: 'かね',
-    meaning: { en: 'metal, gold', vi: 'kim - kim loại' }
+    hanViet: 'kim',
+    meaning: { en: 'metal, gold, money', vi: 'kim loại, vàng, tiền bạc' }
   },
   {
     number: 168,
@@ -1407,7 +1647,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'nagai',
     kana: 'ながい',
-    meaning: { en: 'long', vi: 'trường - dài' }
+    hanViet: 'trường',
+    meaning: { en: 'long, lengthy, grow, elder', vi: 'dài, trưởng thành, người lớn tuổi' }
   },
   {
     number: 169,
@@ -1415,7 +1656,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'mon',
     kana: 'もん',
-    meaning: { en: 'gate', vi: 'môn - cửa lớn' }
+    hanViet: 'môn',
+    meaning: { en: 'gate, door, entrance', vi: 'cửa lớn, cổng' }
   },
   {
     number: 170,
@@ -1424,7 +1666,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'kozatohen',
     kana: 'こざとへん',
-    meaning: { en: 'mound (left)', vi: 'phụ - đống đất (trái)' }
+    hanViet: 'phụ',
+    meaning: { en: 'mound, hill, dam (left-side form)', vi: 'đống đất, gò, đê (dạng bên trái)' }
   },
   {
     number: 171,
@@ -1432,7 +1675,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'rei',
     kana: 'れい',
-    meaning: { en: 'capture', vi: 'đãi - bắt kịp' }
+    hanViet: 'đãi',
+    meaning: { en: 'capture, catch up with, slave', vi: 'bắt kịp, bắt giữ, nô lệ' }
   },
   {
     number: 172,
@@ -1440,7 +1684,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'furutori',
     kana: 'ふるとり',
-    meaning: { en: 'short-tailed bird', vi: 'chuy - chim đuôi ngắn' }
+    hanViet: 'chuy',
+    meaning: { en: 'short-tailed bird, old bird', vi: 'chim đuôi ngắn, chim cổ' }
   },
   {
     number: 173,
@@ -1448,7 +1693,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'ame',
     kana: 'あめ',
-    meaning: { en: 'rain', vi: 'vũ - mưa' }
+    hanViet: 'vũ',
+    meaning: { en: 'rain, rainfall, weather from the sky', vi: 'mưa, mưa rơi' }
   },
   {
     number: 174,
@@ -1456,7 +1702,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'ao',
     kana: 'あお',
-    meaning: { en: 'blue, green', vi: 'thanh - xanh' }
+    hanViet: 'thanh',
+    meaning: { en: 'blue, green, youth, fresh', vi: 'xanh (lam/lục), tuổi trẻ, tươi' }
   },
   {
     number: 175,
@@ -1464,7 +1711,8 @@ export const radicals: Radical[] = [
     strokes: 8,
     name: 'arazu',
     kana: 'あらず',
-    meaning: { en: 'wrong', vi: 'phi - sai, không' }
+    hanViet: 'phi',
+    meaning: { en: 'wrong, not so, fault, un-', vi: 'sai, không phải, phủ định' }
   },
   {
     number: 176,
@@ -1472,7 +1720,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'men',
     kana: 'めん',
-    meaning: { en: 'face', vi: 'diện - mặt' }
+    hanViet: 'diện',
+    meaning: { en: 'face, surface, aspect', vi: 'mặt, bề mặt, khía cạnh' }
   },
   {
     number: 177,
@@ -1480,7 +1729,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'kawa',
     kana: 'かわ',
-    meaning: { en: 'leather', vi: 'cách - da thuộc' }
+    hanViet: 'cách',
+    meaning: { en: 'leather, hide, reform, renew', vi: 'da thuộc, cải cách, đổi mới' }
   },
   {
     number: 178,
@@ -1488,7 +1738,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'namegawa',
     kana: 'なめがわ',
-    meaning: { en: 'tanned leather', vi: 'vi - da mềm' }
+    hanViet: 'vi',
+    meaning: { en: 'tanned soft leather', vi: 'da mềm đã thuộc' }
   },
   {
     number: 179,
@@ -1496,7 +1747,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'nira',
     kana: 'にら',
-    meaning: { en: 'leek', vi: 'phỉ - rau hẹ' }
+    hanViet: 'phỉ',
+    meaning: { en: 'leek, Chinese chives', vi: 'rau hẹ' }
   },
   {
     number: 180,
@@ -1504,7 +1756,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'oto',
     kana: 'おと',
-    meaning: { en: 'sound', vi: 'âm - âm thanh' }
+    hanViet: 'âm',
+    meaning: { en: 'sound, noise, tone', vi: 'âm thanh, tiếng' }
   },
   {
     number: 181,
@@ -1512,7 +1765,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'ougai',
     kana: 'おうがい',
-    meaning: { en: 'head, page', vi: 'hiệt - đầu, trang' }
+    hanViet: 'hiệt',
+    meaning: { en: 'head, leaf of a book, page', vi: 'đầu, trang sách, tờ' }
   },
   {
     number: 182,
@@ -1520,7 +1774,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'kaze',
     kana: 'かぜ',
-    meaning: { en: 'wind', vi: 'phong - gió' }
+    hanViet: 'phong',
+    meaning: { en: 'wind, breeze, style, manner', vi: 'gió, phong cách' }
   },
   {
     number: 183,
@@ -1528,7 +1783,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'tobu',
     kana: 'とぶ',
-    meaning: { en: 'fly', vi: 'phi - bay' }
+    hanViet: 'phi',
+    meaning: { en: 'fly, soar', vi: 'bay, bay lên' }
   },
   {
     number: 184,
@@ -1537,7 +1793,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'shoku',
     kana: 'しょく',
-    meaning: { en: 'eat, food', vi: 'thực - ăn' }
+    hanViet: 'thực',
+    meaning: { en: 'eat, food, meal', vi: 'ăn, thức ăn, bữa ăn' }
   },
   {
     number: 185,
@@ -1545,7 +1802,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'kubi',
     kana: 'くび',
-    meaning: { en: 'neck, head', vi: 'thủ - đầu, cổ' }
+    hanViet: 'thủ',
+    meaning: { en: 'neck, head, leader, chief', vi: 'đầu, cổ, thủ lĩnh' }
   },
   {
     number: 186,
@@ -1553,7 +1811,8 @@ export const radicals: Radical[] = [
     strokes: 9,
     name: 'kaori',
     kana: 'かおり',
-    meaning: { en: 'fragrance', vi: 'hương - mùi thơm' }
+    hanViet: 'hương',
+    meaning: { en: 'fragrance, scent, aroma', vi: 'mùi thơm, hương thơm' }
   },
   {
     number: 187,
@@ -1561,7 +1820,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'uma',
     kana: 'うま',
-    meaning: { en: 'horse', vi: 'mã - ngựa' }
+    hanViet: 'mã',
+    meaning: { en: 'horse', vi: 'ngựa' }
   },
   {
     number: 188,
@@ -1569,7 +1829,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'hone',
     kana: 'ほね',
-    meaning: { en: 'bone', vi: 'cốt - xương' }
+    hanViet: 'cốt',
+    meaning: { en: 'bone, skeleton', vi: 'xương, bộ xương' }
   },
   {
     number: 189,
@@ -1577,7 +1838,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'takai',
     kana: 'たかい',
-    meaning: { en: 'tall', vi: 'cao - cao' }
+    hanViet: 'cao',
+    meaning: { en: 'tall, high, expensive, lofty', vi: 'cao, đắt, cao quý' }
   },
   {
     number: 190,
@@ -1585,7 +1847,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'kamigashira',
     kana: 'かみがしら',
-    meaning: { en: 'long hair', vi: 'tiêu - tóc dài' }
+    hanViet: 'tiêu',
+    meaning: { en: 'long hair, hair on the head', vi: 'tóc dài, bộ tóc' }
   },
   {
     number: 191,
@@ -1593,7 +1856,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'tatakaigamae',
     kana: 'たたかいがまえ',
-    meaning: { en: 'fight', vi: 'đấu - đánh nhau' }
+    hanViet: 'đấu',
+    meaning: { en: 'fight, battle, struggle', vi: 'đánh nhau, chiến đấu' }
   },
   {
     number: 192,
@@ -1601,7 +1865,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'chou',
     kana: 'ちょう',
-    meaning: { en: 'sacrificial wine', vi: 'sưởng - rượu tế' }
+    hanViet: 'sưởng',
+    meaning: { en: 'sacrificial wine, fragrant ritual liquor', vi: 'rượu tế, rượu lễ' }
   },
   {
     number: 193,
@@ -1609,7 +1874,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'kanae',
     kana: 'かなえ',
-    meaning: { en: 'cauldron', vi: 'cách - cái vạc' }
+    hanViet: 'cách',
+    meaning: { en: 'cauldron, tripod cooking vessel', vi: 'cái vạc, nồi ba chân' }
   },
   {
     number: 194,
@@ -1617,7 +1883,8 @@ export const radicals: Radical[] = [
     strokes: 10,
     name: 'oni',
     kana: 'おに',
-    meaning: { en: 'ghost, demon', vi: 'quỷ - ma quỷ' }
+    hanViet: 'quỷ',
+    meaning: { en: 'ghost, demon, spirit', vi: 'ma quỷ, linh hồn dữ' }
   },
   {
     number: 195,
@@ -1625,7 +1892,8 @@ export const radicals: Radical[] = [
     strokes: 11,
     name: 'uo',
     kana: 'うお',
-    meaning: { en: 'fish', vi: 'ngư - cá' }
+    hanViet: 'ngư',
+    meaning: { en: 'fish', vi: 'cá' }
   },
   {
     number: 196,
@@ -1633,7 +1901,8 @@ export const radicals: Radical[] = [
     strokes: 11,
     name: 'tori',
     kana: 'とり',
-    meaning: { en: 'bird', vi: 'điểu - chim' }
+    hanViet: 'điểu',
+    meaning: { en: 'bird', vi: 'chim' }
   },
   {
     number: 197,
@@ -1641,7 +1910,8 @@ export const radicals: Radical[] = [
     strokes: 11,
     name: 'ro',
     kana: 'ろ',
-    meaning: { en: 'salt', vi: 'lỗ - đất mặn' }
+    hanViet: 'lỗ',
+    meaning: { en: 'salt, saline land, alkali', vi: 'đất mặn, muối, kiềm' }
   },
   {
     number: 198,
@@ -1649,7 +1919,8 @@ export const radicals: Radical[] = [
     strokes: 11,
     name: 'shika',
     kana: 'しか',
-    meaning: { en: 'deer', vi: 'lộc - con hươu' }
+    hanViet: 'lộc',
+    meaning: { en: 'deer', vi: 'con hươu, nai' }
   },
   {
     number: 199,
@@ -1658,7 +1929,8 @@ export const radicals: Radical[] = [
     strokes: 11,
     name: 'mugi',
     kana: 'むぎ',
-    meaning: { en: 'wheat', vi: 'mạch - lúa mì' }
+    hanViet: 'mạch',
+    meaning: { en: 'wheat, barley, grain crop', vi: 'lúa mì, lúa mạch' }
   },
   {
     number: 200,
@@ -1666,7 +1938,8 @@ export const radicals: Radical[] = [
     strokes: 11,
     name: 'asa',
     kana: 'あさ',
-    meaning: { en: 'hemp', vi: 'ma - cây gai' }
+    hanViet: 'ma',
+    meaning: { en: 'hemp, flax, numb', vi: 'cây gai, đay, tê bì' }
   },
   {
     number: 201,
@@ -1675,7 +1948,8 @@ export const radicals: Radical[] = [
     strokes: 12,
     name: 'ki',
     kana: 'き',
-    meaning: { en: 'yellow', vi: 'hoàng - vàng' }
+    hanViet: 'hoàng',
+    meaning: { en: 'yellow', vi: 'màu vàng' }
   },
   {
     number: 202,
@@ -1683,7 +1957,8 @@ export const radicals: Radical[] = [
     strokes: 12,
     name: 'kibi',
     kana: 'きび',
-    meaning: { en: 'millet', vi: 'thử - cây kê (lúa nếp)' }
+    hanViet: 'thử',
+    meaning: { en: 'millet, sticky millet', vi: 'cây kê, lúa nếp kê' }
   },
   {
     number: 203,
@@ -1692,7 +1967,8 @@ export const radicals: Radical[] = [
     strokes: 12,
     name: 'kuro',
     kana: 'くろ',
-    meaning: { en: 'black', vi: 'hắc - đen' }
+    hanViet: 'hắc',
+    meaning: { en: 'black, dark', vi: 'đen, tối màu' }
   },
   {
     number: 204,
@@ -1700,7 +1976,8 @@ export const radicals: Radical[] = [
     strokes: 12,
     name: 'nuu',
     kana: 'ぬう',
-    meaning: { en: 'embroidery', vi: 'chỉ - may vá' }
+    hanViet: 'chỉ',
+    meaning: { en: 'embroidery, sewing, needlework', vi: 'may vá, thêu' }
   },
   {
     number: 205,
@@ -1708,7 +1985,8 @@ export const radicals: Radical[] = [
     strokes: 13,
     name: 'kaeru',
     kana: 'かえる',
-    meaning: { en: 'frog', vi: 'mãnh - con ếch' }
+    hanViet: 'mãnh',
+    meaning: { en: 'frog, amphibian, strive (classical)', vi: 'con ếch, gắng sức (nghĩa cổ)' }
   },
   {
     number: 206,
@@ -1716,7 +1994,8 @@ export const radicals: Radical[] = [
     strokes: 13,
     name: 'kanae',
     kana: 'かなえ',
-    meaning: { en: 'tripod', vi: 'đỉnh - cái đỉnh' }
+    hanViet: 'đỉnh',
+    meaning: { en: 'tripod, ritual bronze vessel', vi: 'cái đỉnh, đồ đồng ba chân' }
   },
   {
     number: 207,
@@ -1724,7 +2003,8 @@ export const radicals: Radical[] = [
     strokes: 13,
     name: 'tsuzumi',
     kana: 'つづみ',
-    meaning: { en: 'drum', vi: 'cổ - cái trống' }
+    hanViet: 'cổ',
+    meaning: { en: 'drum, percussion instrument', vi: 'cái trống' }
   },
   {
     number: 208,
@@ -1732,7 +2012,8 @@ export const radicals: Radical[] = [
     strokes: 13,
     name: 'nezumi',
     kana: 'ねずみ',
-    meaning: { en: 'rat', vi: 'thử - con chuột' }
+    hanViet: 'thử',
+    meaning: { en: 'rat, mouse', vi: 'con chuột' }
   },
   {
     number: 209,
@@ -1740,7 +2021,8 @@ export const radicals: Radical[] = [
     strokes: 14,
     name: 'hana',
     kana: 'はな',
-    meaning: { en: 'nose', vi: 'tỵ - mũi' }
+    hanViet: 'tỵ',
+    meaning: { en: 'nose', vi: 'mũi' }
   },
   {
     number: 210,
@@ -1749,7 +2031,11 @@ export const radicals: Radical[] = [
     strokes: 14,
     name: 'sei',
     kana: 'せい',
-    meaning: { en: 'even', vi: 'tề - đều nhau' }
+    hanViet: 'tề',
+    meaning: {
+      en: 'even, uniform, alike, arrange neatly',
+      vi: 'đều nhau, ngang hàng, sắp xếp ngay ngắn'
+    }
   },
   {
     number: 211,
@@ -1758,7 +2044,8 @@ export const radicals: Radical[] = [
     strokes: 15,
     name: 'ha',
     kana: 'は',
-    meaning: { en: 'tooth', vi: 'xỉ - răng' }
+    hanViet: 'xỉ',
+    meaning: { en: 'tooth, teeth', vi: 'răng' }
   },
   {
     number: 212,
@@ -1767,7 +2054,8 @@ export const radicals: Radical[] = [
     strokes: 16,
     name: 'ryuu',
     kana: 'りゅう',
-    meaning: { en: 'dragon', vi: 'long - rồng' }
+    hanViet: 'long',
+    meaning: { en: 'dragon', vi: 'rồng' }
   },
   {
     number: 213,
@@ -1776,7 +2064,8 @@ export const radicals: Radical[] = [
     strokes: 16,
     name: 'kame',
     kana: 'かめ',
-    meaning: { en: 'turtle', vi: 'quy - con rùa' }
+    hanViet: 'quy',
+    meaning: { en: 'turtle, tortoise', vi: 'con rùa' }
   },
   {
     number: 214,
@@ -1784,7 +2073,8 @@ export const radicals: Radical[] = [
     strokes: 17,
     name: 'yaku',
     kana: 'やく',
-    meaning: { en: 'flute', vi: 'dược - sáo' }
+    hanViet: 'dược',
+    meaning: { en: 'flute, panpipes, reed pipe', vi: 'sáo, ống tiêu' }
   }
 ];
 
