@@ -8,6 +8,7 @@ import {
 import {
   DEFAULT_RADICAL_QUIZ_RANGE,
   radicalQuizFromOptions,
+  radicalQuizPrompts,
   radicalQuizToAfterFrom,
   radicalQuizToOptions,
   radicalsForQuizRange,
@@ -73,5 +74,26 @@ describe('radicalsForQuizRange', () => {
 
   it('uses every radical for the default range', () => {
     expect(radicalsForQuizRange(DEFAULT_RADICAL_QUIZ_RANGE)).toHaveLength(radicals.length);
+  });
+});
+
+describe('radicalQuizPrompts', () => {
+  it('adds each combining variant as its own prompt with the same radical', () => {
+    const person = radicals.find((radical) => radical.char === '人');
+    const water = radicals.find((radical) => radical.char === '水');
+
+    expect(person?.variants).toEqual(['亻']);
+    expect(water?.variants).toEqual(['氵']);
+
+    const prompts = radicalQuizPrompts([person!, water!]);
+
+    expect(prompts.map((prompt) => prompt.glyph)).toEqual(['人', '亻', '水', '氵']);
+    expect(prompts.filter((prompt) => prompt.radical.char === '人')).toHaveLength(2);
+    expect(
+      prompts.every(
+        (prompt) =>
+          prompt.radical.variants?.includes(prompt.glyph) || prompt.glyph === prompt.radical.char
+      )
+    ).toBe(true);
   });
 });
