@@ -729,6 +729,11 @@ export const n4Lesson30: Lesson = {
     {
       id: 'reading-lesson30-dream',
       title: { en: 'A round dream', vi: 'Giấc mơ tròn' },
+      titleJp: '丸い 夢',
+      titleRuby: [
+        { base: '丸', reading: 'まる' },
+        { base: '夢', reading: 'ゆめ' }
+      ],
       lines: [
         {
           jp: 'ある 日、丸い ボールの ような 夢を 見ました。',
@@ -770,11 +775,46 @@ export const n4Lesson30: Lesson = {
         {
           id: 'q1',
           question: { en: 'What shape was the dream like?', vi: 'Giấc mơ giống hình gì?' },
+          jp: '夢は どんな 形でしたか。',
+          ruby: [
+            { base: '夢', reading: 'ゆめ' },
+            { base: '形', reading: 'かたち' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A round ball', vi: 'Quả bóng tròn' } },
-            { id: 'b', label: { en: 'A square box', vi: 'Hộp vuông' } },
-            { id: 'c', label: { en: 'A long road', vi: 'Con đường dài' } },
-            { id: 'd', label: { en: 'A tall tree', vi: 'Cây cao' } }
+            {
+              id: 'a',
+              label: { en: 'A round ball', vi: 'Quả bóng tròn' },
+              jp: '丸い ボール',
+              ruby: [{ base: '丸', reading: 'まる' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'A square box', vi: 'Hộp vuông' },
+              jp: '四角い 箱',
+              ruby: [
+                { base: '四', reading: 'し' },
+                { base: '角', reading: 'かく' },
+                { base: '箱', reading: 'はこ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'A long road', vi: 'Con đường dài' },
+              jp: '長い 道',
+              ruby: [
+                { base: '長', reading: 'なが' },
+                { base: '道', reading: 'みち' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'A tall tree', vi: 'Cây cao' },
+              jp: '高い 木',
+              ruby: [
+                { base: '高', reading: 'たか' },
+                { base: '木', reading: 'き' }
+              ]
+            }
           ],
           correctId: 'a'
         }

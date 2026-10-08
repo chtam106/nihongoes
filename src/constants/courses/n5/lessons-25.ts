@@ -536,6 +536,11 @@ export const n5Lesson25: Lesson = {
     {
       id: 'reading-lesson25-dream',
       title: { en: 'Thinking about the future', vi: 'Nghĩ về tương lai' },
+      titleJp: '将来の こと',
+      titleRuby: [
+        { base: '将', reading: 'しょう' },
+        { base: '来', reading: 'らい' }
+      ],
       lines: [
         {
           jp: '私は よく 将来の ことを 考えます。',
@@ -592,25 +597,82 @@ export const n5Lesson25: Lesson = {
             en: 'What does the speaker often think about?',
             vi: 'Người nói hay nghĩ về gì?'
           },
+          jp: 'よく 何を 考えますか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '考', reading: 'かんが' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'The future', vi: 'Tương lai' } },
-            { id: 'b', label: { en: 'Traffic lights', vi: 'Đèn tín hiệu' } },
-            { id: 'c', label: { en: 'Coffee', vi: 'Cà phê' } },
-            { id: 'd', label: { en: 'Parking lots', vi: 'Bãi đỗ xe' } }
+            {
+              id: 'a',
+              label: { en: 'The future', vi: 'Tương lai' },
+              jp: '将来',
+              ruby: [
+                { base: '将', reading: 'しょう' },
+                { base: '来', reading: 'らい' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Traffic lights', vi: 'Đèn tín hiệu' },
+              jp: '信号',
+              ruby: [
+                { base: '信', reading: 'しん' },
+                { base: '号', reading: 'ごう' }
+              ]
+            },
+            { id: 'c', label: { en: 'Coffee', vi: 'Cà phê' }, jp: 'コーヒー' },
+            {
+              id: 'd',
+              label: { en: 'Parking lots', vi: 'Bãi đỗ xe' },
+              jp: '駐車場',
+              ruby: [
+                { base: '駐', reading: 'ちゅう' },
+                { base: '車', reading: 'しゃ' },
+                { base: '場', reading: 'じょう' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What is the problem now?', vi: 'Vấn đề hiện tại là gì?' },
+          jp: '今の 問題は 何ですか。',
+          ruby: [
+            { base: '今', reading: 'いま' },
+            { base: '問', reading: 'もん' },
+            { base: '題', reading: 'だい' },
+            { base: '何', reading: 'なん' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Not enough money for study abroad', vi: 'Không đủ tiền du học' }
+              label: { en: 'Not enough money for study abroad', vi: 'Không đủ tiền du học' },
+              jp: '留学の お金が 足りません',
+              ruby: [
+                { base: '留', reading: 'りゅう' },
+                { base: '学', reading: 'がく' },
+                { base: '金', reading: 'かね' },
+                { base: '足', reading: 'た' }
+              ]
             },
-            { id: 'b', label: { en: 'The machine is broken', vi: 'Máy hỏng' } },
-            { id: 'c', label: { en: 'Lost passport', vi: 'Mất hộ chiếu' } },
-            { id: 'd', label: { en: 'No group', vi: 'Không có nhóm' } }
+            {
+              id: 'b',
+              label: { en: 'The machine is broken', vi: 'Máy hỏng' },
+              jp: '機械が 壊れています',
+              ruby: [
+                { base: '機', reading: 'き' },
+                { base: '械', reading: 'かい' },
+                { base: '壊', reading: 'こわ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Lost passport', vi: 'Mất hộ chiếu' },
+              jp: 'パスポートを なくしました'
+            },
+            { id: 'd', label: { en: 'No group', vi: 'Không có nhóm' }, jp: 'グループが ありません' }
           ],
           correctId: 'a'
         }

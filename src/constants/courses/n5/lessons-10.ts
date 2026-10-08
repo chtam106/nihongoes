@@ -814,6 +814,11 @@ export const n5Lesson10: Lesson = {
     {
       id: 'reading-lesson10-park',
       title: { en: 'In the park', vi: 'Trong công viên' },
+      titleJp: '公園で',
+      titleRuby: [
+        { base: '公', reading: 'こう' },
+        { base: '園', reading: 'えん' }
+      ],
       lines: [
         {
           jp: '公園に 男の 子と 女の 子が います。',
@@ -863,22 +868,75 @@ export const n5Lesson10: Lesson = {
         {
           id: 'q1',
           question: { en: 'Who is in the park?', vi: 'Trong công viên có ai?' },
+          jp: '公園に だれが いますか。',
+          ruby: [
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A boy and a girl', vi: 'Một cậu bé và cô bé' } },
-            { id: 'b', label: { en: 'Only a dog', vi: 'Chỉ có chó' } },
-            { id: 'c', label: { en: 'A cat and a panda', vi: 'Mèo và gấu trúc' } },
-            { id: 'd', label: { en: 'Nobody', vi: 'Không ai' } }
+            {
+              id: 'a',
+              label: { en: 'A boy and a girl', vi: 'Một cậu bé và cô bé' },
+              jp: '男の 子と 女の 子',
+              ruby: [
+                { base: '男', reading: 'おとこ' },
+                { base: '子', reading: 'こ' },
+                { base: '女', reading: 'おんな' },
+                { base: '子', reading: 'こ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Only a dog', vi: 'Chỉ có chó' },
+              jp: '犬だけ',
+              ruby: [{ base: '犬', reading: 'いぬ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'A cat and a panda', vi: 'Mèo và gấu trúc' },
+              jp: '猫と パンダ',
+              ruby: [{ base: '猫', reading: 'ねこ' }]
+            },
+            { id: 'd', label: { en: 'Nobody', vi: 'Không ai' }, jp: 'だれも いません' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where is the dog?', vi: 'Con chó ở đâu?' },
+          jp: '犬は どこに いますか。',
+          ruby: [{ base: '犬', reading: 'いぬ' }],
           choices: [
-            { id: 'a', label: { en: 'Under a tree', vi: 'Dưới cây' } },
-            { id: 'b', label: { en: 'On the bench', vi: 'Trên ghế dài' } },
-            { id: 'c', label: { en: 'Inside a box', vi: 'Trong hộp' } },
-            { id: 'd', label: { en: 'Behind the building', vi: 'Sau tòa nhà' } }
+            {
+              id: 'a',
+              label: { en: 'Under a tree', vi: 'Dưới cây' },
+              jp: '木の 下',
+              ruby: [
+                { base: '木', reading: 'き' },
+                { base: '下', reading: 'した' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'On the bench', vi: 'Trên ghế dài' },
+              jp: 'ベンチの 上',
+              ruby: [{ base: '上', reading: 'うえ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Inside a box', vi: 'Trong hộp' },
+              jp: '箱の 中',
+              ruby: [
+                { base: '箱', reading: 'はこ' },
+                { base: '中', reading: 'なか' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Behind the building', vi: 'Sau tòa nhà' },
+              jp: 'ビルの 後ろ',
+              ruby: [{ base: '後', reading: 'うし' }]
+            }
           ],
           correctId: 'a'
         }
@@ -887,6 +945,12 @@ export const n5Lesson10: Lesson = {
     {
       id: 'reading-lesson10-room',
       title: { en: 'My room', vi: 'Phòng của tôi' },
+      titleJp: '私の 部屋',
+      titleRuby: [
+        { base: '私', reading: 'わたし' },
+        { base: '部', reading: 'へ' },
+        { base: '屋', reading: 'や' }
+      ],
       lines: [
         {
           jp: '私の 部屋に ベッドと 机が あります。',
@@ -929,22 +993,73 @@ export const n5Lesson10: Lesson = {
         {
           id: 'q1',
           question: { en: 'What furniture is in the room?', vi: 'Trong phòng có đồ nội thất gì?' },
+          jp: '部屋に 何が ありますか。',
+          ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A bed and a desk', vi: 'Giường và bàn' } },
-            { id: 'b', label: { en: 'A refrigerator', vi: 'Tủ lạnh' } },
-            { id: 'c', label: { en: 'Only a shelf', vi: 'Chỉ có kệ' } },
-            { id: 'd', label: { en: 'An ATM', vi: 'ATM' } }
+            {
+              id: 'a',
+              label: { en: 'A bed and a desk', vi: 'Giường và bàn' },
+              jp: 'ベッドと 机',
+              ruby: [{ base: '机', reading: 'つくえ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'A refrigerator', vi: 'Tủ lạnh' },
+              jp: '冷蔵庫',
+              ruby: [
+                { base: '冷', reading: 'れい' },
+                { base: '蔵', reading: 'ぞう' },
+                { base: '庫', reading: 'こ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Only a shelf', vi: 'Chỉ có kệ' },
+              jp: '棚だけ',
+              ruby: [{ base: '棚', reading: 'たな' }]
+            },
+            { id: 'd', label: { en: 'An ATM', vi: 'ATM' }, jp: 'ATM' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What is on the desk?', vi: 'Trên bàn có gì?' },
+          jp: '机の 上に 何が ありますか。',
+          ruby: [
+            { base: '机', reading: 'つくえ' },
+            { base: '上', reading: 'うえ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Books and notebooks', vi: 'Sách và vở' } },
-            { id: 'b', label: { en: 'A dog', vi: 'Con chó' } },
-            { id: 'c', label: { en: 'Fish sauce', vi: 'Nước mắm' } },
-            { id: 'd', label: { en: 'Nothing', vi: 'Không có gì' } }
+            {
+              id: 'a',
+              label: { en: 'Books and notebooks', vi: 'Sách và vở' },
+              jp: '本や ノート',
+              ruby: [{ base: '本', reading: 'ほん' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'A dog', vi: 'Con chó' },
+              jp: '犬',
+              ruby: [{ base: '犬', reading: 'いぬ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Fish sauce', vi: 'Nước mắm' },
+              jp: '魚の しょうゆ',
+              ruby: [{ base: '魚', reading: 'さかな' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Nothing', vi: 'Không có gì' },
+              jp: '何も ありません',
+              ruby: [{ base: '何', reading: 'なに' }]
+            }
           ],
           correctId: 'a'
         }
@@ -953,6 +1068,8 @@ export const n5Lesson10: Lesson = {
     {
       id: 'reading-lesson10-town',
       title: { en: 'Around the station', vi: 'Quanh ga' },
+      titleJp: '駅の まわり',
+      titleRuby: [{ base: '駅', reading: 'えき' }],
       lines: [
         {
           jp: '駅の 前に コンビニが あります。',
@@ -999,33 +1116,118 @@ export const n5Lesson10: Lesson = {
         {
           id: 'q1',
           question: { en: 'What is in front of the station?', vi: 'Trước ga có gì?' },
+          jp: '駅の 前に 何が ありますか。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '前', reading: 'まえ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A convenience store', vi: 'Cửa hàng tiện lợi' } },
-            { id: 'b', label: { en: 'A post office only', vi: 'Chỉ bưu điện' } },
-            { id: 'c', label: { en: 'Tokyo Disneyland', vi: 'Tokyo Disneyland' } },
-            { id: 'd', label: { en: 'An elephant', vi: 'Con voi' } }
+            {
+              id: 'a',
+              label: { en: 'A convenience store', vi: 'Cửa hàng tiện lợi' },
+              jp: 'コンビニ'
+            },
+            {
+              id: 'b',
+              label: { en: 'A post office only', vi: 'Chỉ bưu điện' },
+              jp: '郵便局だけ',
+              ruby: [
+                { base: '郵', reading: 'ゆう' },
+                { base: '便', reading: 'びん' },
+                { base: '局', reading: 'きょく' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Tokyo Disneyland', vi: 'Tokyo Disneyland' },
+              jp: '東京ディズニーランド',
+              ruby: [
+                { base: '東', reading: 'とう' },
+                { base: '京', reading: 'きょう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'An elephant', vi: 'Con voi' },
+              jp: '象',
+              ruby: [{ base: '象', reading: 'ぞう' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where is the bank?', vi: 'Ngân hàng ở đâu?' },
+          jp: '銀行は どこに ありますか。',
+          ruby: [
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Next to the post office', vi: 'Cạnh bưu điện' } },
-            { id: 'b', label: { en: 'Inside the park', vi: 'Trong công viên' } },
-            { id: 'c', label: { en: 'On the 3rd floor', vi: 'Tầng 3' } },
-            { id: 'd', label: { en: 'Behind the school', vi: 'Sau trường' } }
+            {
+              id: 'a',
+              label: { en: 'Next to the post office', vi: 'Cạnh bưu điện' },
+              jp: '郵便局の 隣',
+              ruby: [
+                { base: '郵', reading: 'ゆう' },
+                { base: '便', reading: 'びん' },
+                { base: '局', reading: 'きょく' },
+                { base: '隣', reading: 'となり' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Inside the park', vi: 'Trong công viên' },
+              jp: '公園の 中',
+              ruby: [
+                { base: '公', reading: 'こう' },
+                { base: '園', reading: 'えん' },
+                { base: '中', reading: 'なか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'On the 3rd floor', vi: 'Tầng 3' },
+              jp: '3階',
+              ruby: [{ base: '階', reading: 'かい' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Behind the school', vi: 'Sau trường' },
+              jp: '学校の 後ろ',
+              ruby: [
+                { base: '学', reading: 'がっ' },
+                { base: '校', reading: 'こう' },
+                { base: '後', reading: 'うし' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Who was at the park yesterday?', vi: 'Hôm qua ở công viên có ai?' },
+          jp: 'きのう 公園に だれが いましたか。',
+          ruby: [
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Many children', vi: 'Nhiều trẻ em' } },
-            { id: 'b', label: { en: 'Only cats', vi: 'Chỉ mèo' } },
-            { id: 'c', label: { en: 'Nobody', vi: 'Không ai' } },
-            { id: 'd', label: { en: 'Mr. Miller', vi: 'Anh Miller' } }
+            {
+              id: 'a',
+              label: { en: 'Many children', vi: 'Nhiều trẻ em' },
+              jp: '子どもが たくさん',
+              ruby: [{ base: '子', reading: 'こ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Only cats', vi: 'Chỉ mèo' },
+              jp: '猫だけ',
+              ruby: [{ base: '猫', reading: 'ねこ' }]
+            },
+            { id: 'c', label: { en: 'Nobody', vi: 'Không ai' }, jp: 'だれも いませんでした' },
+            { id: 'd', label: { en: 'Mr. Miller', vi: 'Anh Miller' }, jp: 'ミラーさん' }
           ],
           correctId: 'a'
         }

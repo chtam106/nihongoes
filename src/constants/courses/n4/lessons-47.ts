@@ -665,6 +665,15 @@ export const n4Lesson47: Lesson = {
     {
       id: 'reading-lesson47-longlife',
       title: { en: 'Why women live longer', vi: 'Vì sao phụ nữ sống thọ hơn' },
+      titleJp: '女性が 長生きする 理由',
+      titleRuby: [
+        { base: '女', reading: 'じょ' },
+        { base: '性', reading: 'せい' },
+        { base: '長', reading: 'なが' },
+        { base: '生', reading: 'い' },
+        { base: '理', reading: 'り' },
+        { base: '由', reading: 'ゆう' }
+      ],
       lines: [
         {
           jp: 'データによると、女性の 方が 男性より 長生き する そう です。',
@@ -749,17 +758,53 @@ export const n4Lesson47: Lesson = {
             en: 'What does the data say about lifespan?',
             vi: 'Dữ liệu nói gì về tuổi thọ?'
           },
+          jp: 'データは 寿命について 何と 言っていますか。',
+          ruby: [
+            { base: '寿', reading: 'じゅ' },
+            { base: '命', reading: 'みょう' },
+            { base: '何', reading: 'なん' },
+            { base: '言', reading: 'い' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Women live longer than men', vi: 'Phụ nữ sống thọ hơn nam giới' }
+              label: { en: 'Women live longer than men', vi: 'Phụ nữ sống thọ hơn nam giới' },
+              jp: '女性の 方が 男性より 長生きします',
+              ruby: [
+                { base: '女', reading: 'じょ' },
+                { base: '性', reading: 'せい' },
+                { base: '方', reading: 'ほう' },
+                { base: '男', reading: 'だん' },
+                { base: '性', reading: 'せい' },
+                { base: '長', reading: 'なが' },
+                { base: '生', reading: 'い' }
+              ]
             },
             {
               id: 'b',
-              label: { en: 'Men live longer than women', vi: 'Nam giới sống thọ hơn phụ nữ' }
+              label: { en: 'Men live longer than women', vi: 'Nam giới sống thọ hơn phụ nữ' },
+              jp: '男性の 方が 女性より 長生きします',
+              ruby: [
+                { base: '男', reading: 'だん' },
+                { base: '性', reading: 'せい' },
+                { base: '方', reading: 'ほう' },
+                { base: '女', reading: 'じょ' },
+                { base: '性', reading: 'せい' },
+                { base: '長', reading: 'なが' },
+                { base: '生', reading: 'い' }
+              ]
             },
-            { id: 'c', label: { en: 'Everyone lives the same', vi: 'Mọi người sống như nhau' } },
-            { id: 'd', label: { en: 'Data is unavailable', vi: 'Không có dữ liệu' } }
+            {
+              id: 'c',
+              label: { en: 'Everyone lives the same', vi: 'Mọi người sống như nhau' },
+              jp: 'みんな 同じです',
+              ruby: [{ base: '同', reading: 'おな' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Data is unavailable', vi: 'Không có dữ liệu' },
+              jp: 'データが ありません'
+            }
           ],
           correctId: 'a'
         },
@@ -769,14 +814,60 @@ export const n4Lesson47: Lesson = {
             en: 'What habit is mentioned as a possible reason?',
             vi: 'Thói quen nào được nêu là một lý do?'
           },
+          jp: '理由として どんな 習慣が 出ていますか。',
+          ruby: [
+            { base: '理', reading: 'り' },
+            { base: '由', reading: 'ゆう' },
+            { base: '習', reading: 'しゅう' },
+            { base: '慣', reading: 'かん' },
+            { base: '出', reading: 'で' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Makeup and caring for others', vi: 'Trang điểm và chăm sóc người khác' }
+              label: {
+                en: 'Makeup and caring for others',
+                vi: 'Trang điểm và chăm sóc người khác'
+              },
+              jp: '化粧や 世話',
+              ruby: [
+                { base: '化', reading: 'け' },
+                { base: '粧', reading: 'しょう' },
+                { base: '世', reading: 'せ' },
+                { base: '話', reading: 'わ' }
+              ]
             },
-            { id: 'b', label: { en: 'Driving patrol cars', vi: 'Lái xe tuần tra' } },
-            { id: 'c', label: { en: 'Writing literature only', vi: 'Chỉ viết văn học' } },
-            { id: 'd', label: { en: 'Opposing the president', vi: 'Phản đối tổng thống' } }
+            {
+              id: 'b',
+              label: { en: 'Driving patrol cars', vi: 'Lái xe tuần tra' },
+              jp: 'パトカーを 運転すること',
+              ruby: [
+                { base: '運', reading: 'うん' },
+                { base: '転', reading: 'てん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Writing literature only', vi: 'Chỉ viết văn học' },
+              jp: '文学だけ 書くこと',
+              ruby: [
+                { base: '文', reading: 'ぶん' },
+                { base: '学', reading: 'がく' },
+                { base: '書', reading: 'か' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Opposing the president', vi: 'Phản đối tổng thống' },
+              jp: '大統領に 反対すること',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '統', reading: 'とう' },
+                { base: '領', reading: 'りょう' },
+                { base: '反', reading: 'はん' },
+                { base: '対', reading: 'たい' }
+              ]
+            }
           ],
           correctId: 'a'
         }

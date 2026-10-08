@@ -523,6 +523,11 @@ export const n4Lesson48: Lesson = {
     {
       id: 'reading-lesson48-parents',
       title: { en: 'What parents let children do', vi: 'Cha mẹ cho con làm gì' },
+      titleJp: '親が 子どもに させる こと',
+      titleRuby: [
+        { base: '親', reading: 'おや' },
+        { base: '子', reading: 'こ' }
+      ],
       lines: [
         {
           jp: 'ある 調査では、親は 小学生に 何を させるか 答えました。',
@@ -618,11 +623,50 @@ export const n4Lesson48: Lesson = {
             en: 'What do 40 percent of families have children do on weekends?',
             vi: '40 phần trăm gia đình cho con làm gì vào cuối tuần?'
           },
+          jp: '40パーセントの 家庭は 週末、何を させますか。',
+          ruby: [
+            { base: '家', reading: 'か' },
+            { base: '庭', reading: 'てい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Calligraphy practice', vi: 'Luyện viết chữ' } },
-            { id: 'b', label: { en: 'Recording audio', vi: 'Ghi âm' } },
-            { id: 'c', label: { en: 'Sales meetings', vi: 'Họp kinh doanh' } },
-            { id: 'd', label: { en: 'Delivering files', vi: 'Chuyển tài liệu' } }
+            {
+              id: 'a',
+              label: { en: 'Calligraphy practice', vi: 'Luyện viết chữ' },
+              jp: '習字',
+              ruby: [
+                { base: '習', reading: 'しゅう' },
+                { base: '字', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Recording audio', vi: 'Ghi âm' },
+              jp: '録音',
+              ruby: [
+                { base: '録', reading: 'ろく' },
+                { base: '音', reading: 'おん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Sales meetings', vi: 'Họp kinh doanh' },
+              jp: '営業の 会議',
+              ruby: [
+                { base: '営', reading: 'えい' },
+                { base: '業', reading: 'ぎょう' },
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Delivering files', vi: 'Chuyển tài liệu' },
+              jp: 'ファイルを 届けること',
+              ruby: [{ base: '届', reading: 'とど' }]
+            }
           ],
           correctId: 'a'
         },
@@ -632,11 +676,50 @@ export const n4Lesson48: Lesson = {
             en: 'What comes next most often after calligraphy?',
             vi: 'Sau luyện viết chữ, việc phổ biến tiếp theo là gì?'
           },
+          jp: '習字の 次に 多いのは 何ですか。',
+          ruby: [
+            { base: '習', reading: 'しゅう' },
+            { base: '字', reading: 'じ' },
+            { base: '次', reading: 'つぎ' },
+            { base: '多', reading: 'おお' },
+            { base: '何', reading: 'なん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Cram school', vi: 'Học thêm' } },
-            { id: 'b', label: { en: 'Free play only', vi: 'Chỉ chơi tự do' } },
-            { id: 'c', label: { en: 'Business trips', vi: 'Công tác' } },
-            { id: 'd', label: { en: 'Taking care of parents', vi: 'Chăm sóc bố mẹ' } }
+            {
+              id: 'a',
+              label: { en: 'Cram school', vi: 'Học thêm' },
+              jp: '塾',
+              ruby: [{ base: '塾', reading: 'じゅく' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Free play only', vi: 'Chỉ chơi tự do' },
+              jp: '自由に 遊ぶことだけ',
+              ruby: [
+                { base: '自', reading: 'じ' },
+                { base: '由', reading: 'ゆう' },
+                { base: '遊', reading: 'あそ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Business trips', vi: 'Công tác' },
+              jp: '出張',
+              ruby: [
+                { base: '出', reading: 'しゅっ' },
+                { base: '張', reading: 'ちょう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Taking care of parents', vi: 'Chăm sóc bố mẹ' },
+              jp: '親の 世話',
+              ruby: [
+                { base: '親', reading: 'おや' },
+                { base: '世', reading: 'せ' },
+                { base: '話', reading: 'わ' }
+              ]
+            }
           ],
           correctId: 'a'
         }

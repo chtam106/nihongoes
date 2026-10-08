@@ -6,6 +6,7 @@ import { pink } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
 import { QUIZ_CORRECT_COLOR } from '@/constants/quiz.ts';
 import { quizChoiceSx } from '@/theme/quiz-choice.ts';
+import { hasTextSelection } from '@/utils/text-selection.ts';
 
 type ChoiceState = 'default' | 'correct' | 'wrong';
 
@@ -21,14 +22,28 @@ type ChoiceButtonProps = {
  * A quiz answer button. It always uses the `outlined` variant so the border width stays
  * constant across states (correct/wrong only fill the background) - this avoids the layout
  * shift caused by switching between outlined and contained variants.
+ * Rendered as a div: a native button does not let a text selection start inside it.
  */
 export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceButtonProps) {
   const filled = state === 'correct' || state === 'wrong';
 
   return (
     <Button
-      onClick={onClick}
-      disabled={dimmed}
+      component="div"
+      role="button"
+      tabIndex={dimmed ? -1 : 0}
+      onClick={(event) => {
+        // A drag that highlights the answer text should not also submit it.
+        if (hasTextSelection()) {
+          event.preventDefault();
+          return;
+        }
+
+        if (!dimmed) {
+          onClick();
+        }
+      }}
+      aria-disabled={dimmed || undefined}
       variant="outlined"
       color="primary"
       fullWidth
@@ -40,6 +55,8 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
         return {
           justifyContent: 'space-between',
           textAlign: 'left',
+          // MUI Button sets user-select: none, which blocks highlighting the answer.
+          userSelect: 'text',
           // MUI Button defaults to overflow:hidden (ripple); that clips furigana.
           overflow: 'visible',
           pt: 2,
@@ -48,7 +65,11 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
           fontSize: '1.05rem',
           borderWidth: 1,
           ...(!filled && quizChoiceSx),
-          '&.Mui-disabled': { opacity: 0.6 },
+          ...(dimmed &&
+            !filled && {
+              opacity: 0.6,
+              cursor: 'default'
+            }),
           ...(filled && {
             transition: 'none',
             bgcolor: alpha(feedbackMain, 0.14),
@@ -58,17 +79,22 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
               bgcolor: alpha(feedbackMain, 0.2),
               borderColor: alpha(feedbackMain, 0.62)
             },
-            '&.Mui-disabled': {
+            ...(dimmed && {
               opacity: 1,
+              cursor: 'default',
               color: feedbackText,
               borderColor: alpha(feedbackMain, 0.45),
-              bgcolor: alpha(feedbackMain, 0.14)
-            }
+              bgcolor: alpha(feedbackMain, 0.14),
+              '&:hover': {
+                bgcolor: alpha(feedbackMain, 0.14),
+                borderColor: alpha(feedbackMain, 0.45)
+              }
+            })
           })
         };
       }}
     >
-      <Box component="span" lang={lang} sx={{ overflow: 'visible' }}>
+      <Box component="span" lang={lang} sx={{ overflow: 'visible', userSelect: 'text' }}>
         {children}
       </Box>
     </Button>

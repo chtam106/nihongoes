@@ -1017,6 +1017,12 @@ export const n5Lesson6: Lesson = {
     {
       id: 'reading-lesson6-meals',
       title: { en: 'My meals', vi: 'Bữa ăn của tôi' },
+      titleJp: '私の 食事',
+      titleRuby: [
+        { base: '私', reading: 'わたし' },
+        { base: '食', reading: 'しょく' },
+        { base: '事', reading: 'じ' }
+      ],
       lines: [
         {
           jp: '私は 毎日 朝ごはんを 食べます。',
@@ -1078,22 +1084,75 @@ export const n5Lesson6: Lesson = {
             en: 'What does the speaker drink at breakfast?',
             vi: 'Bữa sáng người nói uống gì?'
           },
+          jp: '朝ごはんに 何を 飲みますか。',
+          ruby: [
+            { base: '朝', reading: 'あさ' },
+            { base: '何', reading: 'なに' },
+            { base: '飲', reading: 'の' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Milk', vi: 'Sữa' } },
-            { id: 'b', label: { en: 'Black tea', vi: 'Trà đen' } },
-            { id: 'c', label: { en: 'Juice', vi: 'Nước hoa quả' } },
-            { id: 'd', label: { en: 'Water', vi: 'Nước' } }
+            {
+              id: 'a',
+              label: { en: 'Milk', vi: 'Sữa' },
+              jp: '牛乳',
+              ruby: [
+                { base: '牛', reading: 'ぎゅう' },
+                { base: '乳', reading: 'にゅう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Black tea', vi: 'Trà đen' },
+              jp: '紅茶',
+              ruby: [
+                { base: '紅', reading: 'こう' },
+                { base: '茶', reading: 'ちゃ' }
+              ]
+            },
+            { id: 'c', label: { en: 'Juice', vi: 'Nước hoa quả' }, jp: 'ジュース' },
+            {
+              id: 'd',
+              label: { en: 'Water', vi: 'Nước' },
+              jp: '水',
+              ruby: [{ base: '水', reading: 'みず' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where does the speaker eat lunch?', vi: 'Người nói ăn trưa ở đâu?' },
+          jp: '昼ごはんは どこで 食べますか。',
+          ruby: [
+            { base: '昼', reading: 'ひる' },
+            { base: '食', reading: 'た' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'At home', vi: 'Ở nhà' } },
-            { id: 'b', label: { en: 'At the office', vi: 'Ở công ty' } },
-            { id: 'c', label: { en: 'At a shop', vi: 'Ở cửa hàng' } },
-            { id: 'd', label: { en: 'At school', vi: 'Ở trường' } }
+            { id: 'a', label: { en: 'At home', vi: 'Ở nhà' }, jp: 'うちで' },
+            {
+              id: 'b',
+              label: { en: 'At the office', vi: 'Ở công ty' },
+              jp: '会社で',
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'At a shop', vi: 'Ở cửa hàng' },
+              jp: '店で',
+              ruby: [{ base: '店', reading: 'みせ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'At school', vi: 'Ở trường' },
+              jp: '学校で',
+              ruby: [
+                { base: '学', reading: 'がっ' },
+                { base: '校', reading: 'こう' }
+              ]
+            }
           ],
           correctId: 'b'
         },
@@ -1103,11 +1162,35 @@ export const n5Lesson6: Lesson = {
             en: 'What does the speaker always eat for dinner?',
             vi: 'Bữa tối luôn ăn gì?'
           },
+          jp: '晩ごはんは いつも 何を 食べますか。',
+          ruby: [
+            { base: '晩', reading: 'ばん' },
+            { base: '何', reading: 'なに' },
+            { base: '食', reading: 'た' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Meat', vi: 'Thịt' } },
-            { id: 'b', label: { en: 'Bread', vi: 'Bánh mì' } },
-            { id: 'c', label: { en: 'Fish', vi: 'Cá' } },
-            { id: 'd', label: { en: 'Vegetables', vi: 'Rau' } }
+            {
+              id: 'a',
+              label: { en: 'Meat', vi: 'Thịt' },
+              jp: '肉',
+              ruby: [{ base: '肉', reading: 'にく' }]
+            },
+            { id: 'b', label: { en: 'Bread', vi: 'Bánh mì' }, jp: 'パン' },
+            {
+              id: 'c',
+              label: { en: 'Fish', vi: 'Cá' },
+              jp: '魚',
+              ruby: [{ base: '魚', reading: 'さかな' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Vegetables', vi: 'Rau' },
+              jp: '野菜',
+              ruby: [
+                { base: '野', reading: 'や' },
+                { base: '菜', reading: 'さい' }
+              ]
+            }
           ],
           correctId: 'c'
         }
@@ -1116,6 +1199,12 @@ export const n5Lesson6: Lesson = {
     {
       id: 'reading-lesson6-saturday',
       title: { en: 'Saturday', vi: 'Thứ bảy' },
+      titleJp: '土曜日',
+      titleRuby: [
+        { base: '土', reading: 'ど' },
+        { base: '曜', reading: 'よう' },
+        { base: '日', reading: 'び' }
+      ],
       lines: [
         {
           jp: '土曜日 友達と テニスを しました。',
@@ -1167,33 +1256,109 @@ export const n5Lesson6: Lesson = {
             en: 'Who did the speaker play tennis with?',
             vi: 'Người nói chơi quần vợt với ai?'
           },
+          jp: 'だれと テニスを しましたか。',
           choices: [
-            { id: 'a', label: { en: 'A friend', vi: 'Một người bạn' } },
-            { id: 'b', label: { en: 'Family', vi: 'Gia đình' } },
-            { id: 'c', label: { en: 'Alone', vi: 'Một mình' } },
-            { id: 'd', label: { en: 'A teacher', vi: 'Giáo viên' } }
+            {
+              id: 'a',
+              label: { en: 'A friend', vi: 'Một người bạn' },
+              jp: '友達と',
+              ruby: [
+                { base: '友', reading: 'とも' },
+                { base: '達', reading: 'だち' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Family', vi: 'Gia đình' },
+              jp: '家族と',
+              ruby: [
+                { base: '家', reading: 'か' },
+                { base: '族', reading: 'ぞく' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Alone', vi: 'Một mình' },
+              jp: '一人で',
+              ruby: [
+                { base: '一', reading: 'ひと' },
+                { base: '人', reading: 'り' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'A teacher', vi: 'Giáo viên' },
+              jp: '先生と',
+              ruby: [
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What did they buy at the shop?', vi: 'Họ mua gì ở cửa hàng?' },
+          jp: '店で 何を 買いましたか。',
+          ruby: [
+            { base: '店', reading: 'みせ' },
+            { base: '何', reading: 'なに' },
+            { base: '買', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Bread', vi: 'Bánh mì' } },
-            { id: 'b', label: { en: 'Juice', vi: 'Nước hoa quả' } },
-            { id: 'c', label: { en: 'A newspaper', vi: 'Báo' } },
-            { id: 'd', label: { en: 'Eggs', vi: 'Trứng' } }
+            { id: 'a', label: { en: 'Bread', vi: 'Bánh mì' }, jp: 'パン' },
+            { id: 'b', label: { en: 'Juice', vi: 'Nước hoa quả' }, jp: 'ジュース' },
+            {
+              id: 'c',
+              label: { en: 'A newspaper', vi: 'Báo' },
+              jp: '新聞',
+              ruby: [
+                { base: '新', reading: 'しん' },
+                { base: '聞', reading: 'ぶん' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Eggs', vi: 'Trứng' },
+              jp: '卵',
+              ruby: [{ base: '卵', reading: 'たまご' }]
+            }
           ],
           correctId: 'b'
         },
         {
           id: 'q3',
           question: { en: 'What did the speaker do yesterday?', vi: 'Hôm qua người nói làm gì?' },
+          jp: 'きのう 何を しましたか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
-            { id: 'a', label: { en: 'Played tennis', vi: 'Chơi quần vợt' } },
-            { id: 'b', label: { en: 'Watched a video', vi: 'Xem video' } },
-            { id: 'c', label: { en: 'Nothing', vi: 'Không làm gì cả' } },
-            { id: 'd', label: { en: 'Went shopping', vi: 'Đi mua sắm' } }
+            {
+              id: 'a',
+              label: { en: 'Played tennis', vi: 'Chơi quần vợt' },
+              jp: 'テニスを しました'
+            },
+            {
+              id: 'b',
+              label: { en: 'Watched a video', vi: 'Xem video' },
+              jp: 'ビデオを 見ました',
+              ruby: [{ base: '見', reading: 'み' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Nothing', vi: 'Không làm gì cả' },
+              jp: '何も しませんでした',
+              ruby: [{ base: '何', reading: 'なに' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Went shopping', vi: 'Đi mua sắm' },
+              jp: '買い物を しました',
+              ruby: [
+                { base: '買', reading: 'か' },
+                { base: '物', reading: 'もの' }
+              ]
+            }
           ],
           correctId: 'c'
         }
@@ -1202,6 +1367,7 @@ export const n5Lesson6: Lesson = {
     {
       id: 'reading-lesson6-invitation',
       title: { en: 'An invitation', vi: 'Một lời mời' },
+      titleJp: 'さそい',
       lines: [
         {
           jp: 'あした いっしょに お花見を しませんか。',
@@ -1260,33 +1426,106 @@ export const n5Lesson6: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where will they meet?', vi: 'Họ gặp nhau ở đâu?' },
+          jp: 'どこで 会いますか。',
+          ruby: [{ base: '会', reading: 'あ' }],
           choices: [
-            { id: 'a', label: { en: 'At the station', vi: 'Ở nhà ga' } },
-            { id: 'b', label: { en: 'In the garden', vi: 'Ở vườn' } },
-            { id: 'c', label: { en: 'At a shop', vi: 'Ở cửa hàng' } },
-            { id: 'd', label: { en: 'At home', vi: 'Ở nhà' } }
+            {
+              id: 'a',
+              label: { en: 'At the station', vi: 'Ở nhà ga' },
+              jp: '駅で',
+              ruby: [{ base: '駅', reading: 'えき' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'In the garden', vi: 'Ở vườn' },
+              jp: '庭で',
+              ruby: [{ base: '庭', reading: 'にわ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'At a shop', vi: 'Ở cửa hàng' },
+              jp: '店で',
+              ruby: [{ base: '店', reading: 'みせ' }]
+            },
+            { id: 'd', label: { en: 'At home', vi: 'Ở nhà' }, jp: 'うちで' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What time will they meet?', vi: 'Họ gặp nhau lúc mấy giờ?' },
+          jp: '何時に 会いますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '会', reading: 'あ' }
+          ],
           choices: [
-            { id: 'a', label: { en: "7 o'clock", vi: '7 giờ' } },
-            { id: 'b', label: { en: "9 o'clock", vi: '9 giờ' } },
-            { id: 'c', label: { en: "10 o'clock", vi: '10 giờ' } },
-            { id: 'd', label: { en: "12 o'clock", vi: '12 giờ' } }
+            {
+              id: 'a',
+              label: { en: "7 o'clock", vi: '7 giờ' },
+              jp: '7時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'b',
+              label: { en: "9 o'clock", vi: '9 giờ' },
+              jp: '9時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: "10 o'clock", vi: '10 giờ' },
+              jp: '10時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'd',
+              label: { en: "12 o'clock", vi: '12 giờ' },
+              jp: '12時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'b'
         },
         {
           id: 'q3',
           question: { en: 'What do they plan to do in the garden?', vi: 'Ở vườn họ định làm gì?' },
+          jp: '庭で 何を しますか。',
+          ruby: [
+            { base: '庭', reading: 'にわ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Eat lunch', vi: 'Ăn trưa' } },
-            { id: 'b', label: { en: 'Take photos', vi: 'Chụp ảnh' } },
-            { id: 'c', label: { en: 'Play tennis', vi: 'Chơi quần vợt' } },
-            { id: 'd', label: { en: 'Read a book', vi: 'Đọc sách' } }
+            {
+              id: 'a',
+              label: { en: 'Eat lunch', vi: 'Ăn trưa' },
+              jp: '昼ごはんを 食べます',
+              ruby: [
+                { base: '昼', reading: 'ひる' },
+                { base: '食', reading: 'た' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Take photos', vi: 'Chụp ảnh' },
+              jp: '写真を 撮ります',
+              ruby: [
+                { base: '写', reading: 'しゃ' },
+                { base: '真', reading: 'しん' },
+                { base: '撮', reading: 'と' }
+              ]
+            },
+            { id: 'c', label: { en: 'Play tennis', vi: 'Chơi quần vợt' }, jp: 'テニスを します' },
+            {
+              id: 'd',
+              label: { en: 'Read a book', vi: 'Đọc sách' },
+              jp: '本を 読みます',
+              ruby: [
+                { base: '本', reading: 'ほん' },
+                { base: '読', reading: 'よ' }
+              ]
+            }
           ],
           correctId: 'b'
         }

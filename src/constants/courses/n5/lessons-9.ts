@@ -927,6 +927,12 @@ export const n5Lesson9: Lesson = {
     {
       id: 'reading-lesson9-likes',
       title: { en: 'Weekend hobbies', vi: 'Sở thích cuối tuần' },
+      titleJp: '週末の 好きな こと',
+      titleRuby: [
+        { base: '週', reading: 'しゅう' },
+        { base: '末', reading: 'まつ' },
+        { base: '好', reading: 'す' }
+      ],
       lines: [
         {
           jp: 'わたしは 週末 旅行が 好きです。',
@@ -989,10 +995,41 @@ export const n5Lesson9: Lesson = {
             en: 'What does the speaker like on weekends?',
             vi: 'Người nói thích gì vào cuối tuần?'
           },
+          jp: '週末 何が 好きですか。',
+          ruby: [
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '何', reading: 'なに' },
+            { base: '好', reading: 'す' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Travel', vi: 'Du lịch' } },
-            { id: 'b', label: { en: 'Baseball', vi: 'Bóng chày' } },
-            { id: 'c', label: { en: 'Cooking', vi: 'Nấu ăn' } }
+            {
+              id: 'a',
+              label: { en: 'Travel', vi: 'Du lịch' },
+              jp: '旅行',
+              ruby: [
+                { base: '旅', reading: 'りょ' },
+                { base: '行', reading: 'こう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Baseball', vi: 'Bóng chày' },
+              jp: '野球',
+              ruby: [
+                { base: '野', reading: 'や' },
+                { base: '球', reading: 'きゅう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Cooking', vi: 'Nấu ăn' },
+              jp: '料理',
+              ruby: [
+                { base: '料', reading: 'りょう' },
+                { base: '理', reading: 'り' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -1002,10 +1039,24 @@ export const n5Lesson9: Lesson = {
             en: 'What sport does the friend often play?',
             vi: 'Bạn thường chơi môn thể thao nào?'
           },
+          jp: '友達は よく 何を しますか。',
+          ruby: [
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Tennis', vi: 'Quần vợt' } },
-            { id: 'b', label: { en: 'Baseball', vi: 'Bóng chày' } },
-            { id: 'c', label: { en: 'Soccer', vi: 'Bóng đá' } }
+            { id: 'a', label: { en: 'Tennis', vi: 'Quần vợt' }, jp: 'テニス' },
+            {
+              id: 'b',
+              label: { en: 'Baseball', vi: 'Bóng chày' },
+              jp: '野球',
+              ruby: [
+                { base: '野', reading: 'や' },
+                { base: '球', reading: 'きゅう' }
+              ]
+            },
+            { id: 'c', label: { en: 'Soccer', vi: 'Bóng đá' }, jp: 'サッカー' }
           ],
           correctId: 'b'
         },
@@ -1015,10 +1066,27 @@ export const n5Lesson9: Lesson = {
             en: 'What does the speaker do because they like music?',
             vi: 'Người nói làm gì vì thích âm nhạc?'
           },
+          jp: '音楽が 好きで、何を しますか。',
+          ruby: [
+            { base: '音', reading: 'おん' },
+            { base: '楽', reading: 'がく' },
+            { base: '好', reading: 'す' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Goes to concerts', vi: 'Đi nghe hòa nhạc' } },
-            { id: 'b', label: { en: 'Sings karaoke', vi: 'Hát karaoke' } },
-            { id: 'c', label: { en: 'Dances', vi: 'Nhảy' } }
+            {
+              id: 'a',
+              label: { en: 'Goes to concerts', vi: 'Đi nghe hòa nhạc' },
+              jp: 'コンサートに 行きます',
+              ruby: [{ base: '行', reading: 'い' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Sings karaoke', vi: 'Hát karaoke' },
+              jp: 'カラオケを 歌います',
+              ruby: [{ base: '歌', reading: 'うた' }]
+            },
+            { id: 'c', label: { en: 'Dances', vi: 'Nhảy' }, jp: 'ダンスを します' }
           ],
           correctId: 'a'
         }
@@ -1027,6 +1095,14 @@ export const n5Lesson9: Lesson = {
     {
       id: 'reading-lesson9-language',
       title: { en: 'Learning Japanese', vi: 'Học tiếng Nhật' },
+      titleJp: '日本語の 勉強',
+      titleRuby: [
+        { base: '日', reading: 'に' },
+        { base: '本', reading: 'ほん' },
+        { base: '語', reading: 'ご' },
+        { base: '勉', reading: 'べん' },
+        { base: '強', reading: 'きょう' }
+      ],
       lines: [
         {
           jp: 'トムさんは 日本語が 少し わかります。',
@@ -1087,10 +1163,29 @@ export const n5Lesson9: Lesson = {
             en: 'How well does Tom understand Japanese overall?',
             vi: 'Tom hiểu tiếng Nhật mức nào?'
           },
+          jp: 'トムさんは 日本語が どのくらい わかりますか。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A little', vi: 'Một chút' } },
-            { id: 'b', label: { en: 'Very well', vi: 'Rất tốt' } },
-            { id: 'c', label: { en: 'Not at all', vi: 'Hoàn toàn không' } }
+            {
+              id: 'a',
+              label: { en: 'A little', vi: 'Một chút' },
+              jp: '少し',
+              ruby: [{ base: '少', reading: 'すこ' }]
+            },
+            { id: 'b', label: { en: 'Very well', vi: 'Rất tốt' }, jp: 'とても よく' },
+            {
+              id: 'c',
+              label: { en: 'Not at all', vi: 'Hoàn toàn không' },
+              jp: '全然',
+              ruby: [
+                { base: '全', reading: 'ぜん' },
+                { base: '然', reading: 'ぜん' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -1100,10 +1195,32 @@ export const n5Lesson9: Lesson = {
             en: 'Which script does Tom understand well?',
             vi: 'Tom hiểu loại chữ nào tốt?'
           },
+          jp: 'どの 文字が よく わかりますか。',
+          ruby: [
+            { base: '文', reading: 'も' },
+            { base: '字', reading: 'じ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Kanji', vi: 'Chữ Hán' } },
-            { id: 'b', label: { en: 'Hiragana and katakana', vi: 'Hiragana và katakana' } },
-            { id: 'c', label: { en: 'Romaji only', vi: 'Chỉ romaji' } }
+            {
+              id: 'a',
+              label: { en: 'Kanji', vi: 'Chữ Hán' },
+              jp: '漢字',
+              ruby: [
+                { base: '漢', reading: 'かん' },
+                { base: '字', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Hiragana and katakana', vi: 'Hiragana và katakana' },
+              jp: 'ひらがなと カタカナ'
+            },
+            {
+              id: 'c',
+              label: { en: 'Romaji only', vi: 'Chỉ romaji' },
+              jp: 'ローマ字だけ',
+              ruby: [{ base: '字', reading: 'じ' }]
+            }
           ],
           correctId: 'b'
         }
@@ -1112,6 +1229,11 @@ export const n5Lesson9: Lesson = {
     {
       id: 'reading-lesson9-early',
       title: { en: 'Leaving early', vi: 'Về sớm' },
+      titleJp: '早く 帰る',
+      titleRuby: [
+        { base: '早', reading: 'はや' },
+        { base: '帰', reading: 'かえ' }
+      ],
       lines: [
         {
           jp: 'きょう マイさんは 4時に 帰ります。',
@@ -1163,10 +1285,42 @@ export const n5Lesson9: Lesson = {
             en: 'Why does Mai leave early?',
             vi: 'Mai về sớm vì sao?'
           },
+          jp: 'マイさんは どうして 早く 帰りますか。',
+          ruby: [
+            { base: '早', reading: 'はや' },
+            { base: '帰', reading: 'かえ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Her child\u0027s birthday', vi: 'Sinh nhật con' } },
-            { id: 'b', label: { en: 'She has no time', vi: 'Không có thời gian' } },
-            { id: 'c', label: { en: 'She dislikes work', vi: 'Ghét công việc' } }
+            {
+              id: 'a',
+              label: { en: 'Her child\u0027s birthday', vi: 'Sinh nhật con' },
+              jp: '子どもの 誕生日ですから',
+              ruby: [
+                { base: '子', reading: 'こ' },
+                { base: '誕', reading: 'たん' },
+                { base: '生', reading: 'じょう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'She has no time', vi: 'Không có thời gian' },
+              jp: '時間が ありませんから',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '間', reading: 'かん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'She dislikes work', vi: 'Ghét công việc' },
+              jp: '仕事が 好きじゃ ありませんから',
+              ruby: [
+                { base: '仕', reading: 'し' },
+                { base: '事', reading: 'ごと' },
+                { base: '好', reading: 'す' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -1176,10 +1330,32 @@ export const n5Lesson9: Lesson = {
             en: 'What does Mai buy on the way home?',
             vi: 'Mai mua gì trên đường về?'
           },
+          jp: '帰る とき 何を 買いますか。',
+          ruby: [
+            { base: '帰', reading: 'かえ' },
+            { base: '何', reading: 'なに' },
+            { base: '買', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A ticket', vi: 'Vé' } },
-            { id: 'b', label: { en: 'A cake', vi: 'Bánh' } },
-            { id: 'c', label: { en: 'A newspaper', vi: 'Báo' } }
+            {
+              id: 'a',
+              label: { en: 'A ticket', vi: 'Vé' },
+              jp: '切符',
+              ruby: [
+                { base: '切', reading: 'きっ' },
+                { base: '符', reading: 'ぷ' }
+              ]
+            },
+            { id: 'b', label: { en: 'A cake', vi: 'Bánh' }, jp: 'ケーキ' },
+            {
+              id: 'c',
+              label: { en: 'A newspaper', vi: 'Báo' },
+              jp: '新聞',
+              ruby: [
+                { base: '新', reading: 'しん' },
+                { base: '聞', reading: 'ぶん' }
+              ]
+            }
           ],
           correctId: 'b'
         },
@@ -1189,10 +1365,32 @@ export const n5Lesson9: Lesson = {
             en: 'What time does Mai go home today?',
             vi: 'Mai về lúc mấy giờ hôm nay?'
           },
+          jp: '今日は 何時に 帰りますか。',
+          ruby: [
+            { base: '今日', reading: 'きょう' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '帰', reading: 'かえ' }
+          ],
           choices: [
-            { id: 'a', label: { en: '4 o\u0027clock', vi: '4 giờ' } },
-            { id: 'b', label: { en: '6 o\u0027clock', vi: '6 giờ' } },
-            { id: 'c', label: { en: '8 o\u0027clock', vi: '8 giờ' } }
+            {
+              id: 'a',
+              label: { en: '4 o\u0027clock', vi: '4 giờ' },
+              jp: '4時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'b',
+              label: { en: '6 o\u0027clock', vi: '6 giờ' },
+              jp: '6時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: '8 o\u0027clock', vi: '8 giờ' },
+              jp: '8時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'a'
         }

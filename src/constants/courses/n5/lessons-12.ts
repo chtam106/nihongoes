@@ -924,6 +924,11 @@ export const n5Lesson12: Lesson = {
     {
       id: 'reading-lesson12-weather',
       title: { en: 'Yesterday\u0027s weather', vi: 'Thời tiết hôm qua' },
+      titleJp: 'きのうの 天気',
+      titleRuby: [
+        { base: '天', reading: 'てん' },
+        { base: '気', reading: 'き' }
+      ],
       lines: [
         {
           jp: 'きのう 京都に 行きました。',
@@ -965,11 +970,45 @@ export const n5Lesson12: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where did the speaker go yesterday?', vi: 'Hôm qua người nói đi đâu?' },
+          jp: 'きのう どこへ 行きましたか。',
+          ruby: [{ base: '行', reading: 'い' }],
           choices: [
-            { id: 'a', label: { en: 'Kyoto', vi: 'Kyoto' } },
-            { id: 'b', label: { en: 'Osaka', vi: 'Osaka' } },
-            { id: 'c', label: { en: 'Tokyo', vi: 'Tokyo' } },
-            { id: 'd', label: { en: 'Hong Kong', vi: 'Hồng Kông' } }
+            {
+              id: 'a',
+              label: { en: 'Kyoto', vi: 'Kyoto' },
+              jp: '京都',
+              ruby: [
+                { base: '京', reading: 'きょう' },
+                { base: '都', reading: 'と' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Osaka', vi: 'Osaka' },
+              jp: '大阪',
+              ruby: [
+                { base: '大', reading: 'おお' },
+                { base: '阪', reading: 'さか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Tokyo', vi: 'Tokyo' },
+              jp: '東京',
+              ruby: [
+                { base: '東', reading: 'とう' },
+                { base: '京', reading: 'きょう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Hong Kong', vi: 'Hồng Kông' },
+              jp: '香港',
+              ruby: [
+                { base: '香', reading: 'ホン' },
+                { base: '港', reading: 'コン' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -979,22 +1018,74 @@ export const n5Lesson12: Lesson = {
             en: 'What was the weather in the morning?',
             vi: 'Buổi sáng thời tiết thế nào?'
           },
+          jp: '午前は どんな 天気でしたか。',
+          ruby: [
+            { base: '午', reading: 'ご' },
+            { base: '前', reading: 'ぜん' },
+            { base: '天', reading: 'てん' },
+            { base: '気', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Rain', vi: 'Mưa' } },
-            { id: 'b', label: { en: 'Snow', vi: 'Tuyết' } },
-            { id: 'c', label: { en: 'Sunny', vi: 'Nắng' } },
-            { id: 'd', label: { en: 'Windy', vi: 'Gió' } }
+            {
+              id: 'a',
+              label: { en: 'Rain', vi: 'Mưa' },
+              jp: '雨',
+              ruby: [{ base: '雨', reading: 'あめ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Snow', vi: 'Tuyết' },
+              jp: '雪',
+              ruby: [{ base: '雪', reading: 'ゆき' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Sunny', vi: 'Nắng' },
+              jp: '晴れ',
+              ruby: [{ base: '晴', reading: 'は' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Windy', vi: 'Gió' },
+              jp: '風',
+              ruby: [{ base: '風', reading: 'かぜ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'How was the weather at night?', vi: 'Buổi tối thời tiết thế nào?' },
+          jp: '夜は どうでしたか。',
+          ruby: [{ base: '夜', reading: 'よる' }],
           choices: [
-            { id: 'a', label: { en: 'A little cold', vi: 'Hơi lạnh' } },
-            { id: 'b', label: { en: 'Very hot', vi: 'Rất nóng' } },
-            { id: 'c', label: { en: 'Rainy', vi: 'Mưa' } },
-            { id: 'd', label: { en: 'Warm', vi: 'Ấm' } }
+            {
+              id: 'a',
+              label: { en: 'A little cold', vi: 'Hơi lạnh' },
+              jp: '少し 寒かったです',
+              ruby: [
+                { base: '少', reading: 'すこ' },
+                { base: '寒', reading: 'さむ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Very hot', vi: 'Rất nóng' },
+              jp: 'とても 暑かったです',
+              ruby: [{ base: '暑', reading: 'あつ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Rainy', vi: 'Mưa' },
+              jp: '雨でした',
+              ruby: [{ base: '雨', reading: 'あめ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Warm', vi: 'Ấm' },
+              jp: '暖かかったです',
+              ruby: [{ base: '暖', reading: 'あたた' }]
+            }
           ],
           correctId: 'a'
         }
@@ -1003,6 +1094,7 @@ export const n5Lesson12: Lesson = {
     {
       id: 'reading-lesson12-party',
       title: { en: 'The party yesterday', vi: 'Bữa tiệc hôm qua' },
+      titleJp: 'きのうの パーティー',
       lines: [
         {
           jp: 'きのう 会社の パーティーに 行きました。',
@@ -1049,22 +1141,75 @@ export const n5Lesson12: Lesson = {
             en: 'What event did the speaker attend?',
             vi: 'Người nói tham dự sự kiện gì?'
           },
+          jp: '何の パーティーに 行きましたか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A company party', vi: 'Tiệc công ty' } },
-            { id: 'b', label: { en: 'A festival', vi: 'Lễ hội' } },
-            { id: 'c', label: { en: 'A wedding', vi: 'Đám cưới' } },
-            { id: 'd', label: { en: 'A class', vi: 'Lớp học' } }
+            {
+              id: 'a',
+              label: { en: 'A company party', vi: 'Tiệc công ty' },
+              jp: '会社の パーティー',
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A festival', vi: 'Lễ hội' },
+              jp: '祭り',
+              ruby: [{ base: '祭', reading: 'まつ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'A wedding', vi: 'Đám cưới' },
+              jp: '結婚式',
+              ruby: [
+                { base: '結', reading: 'けっ' },
+                { base: '婚', reading: 'こん' },
+                { base: '式', reading: 'しき' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'A class', vi: 'Lớp học' },
+              jp: '授業',
+              ruby: [
+                { base: '授', reading: 'じゅ' },
+                { base: '業', reading: 'ぎょう' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How was the party?', vi: 'Bữa tiệc thế nào?' },
+          jp: 'パーティーは どうでしたか。',
           choices: [
-            { id: 'a', label: { en: 'Very lively', vi: 'Rất náo nhiệt' } },
-            { id: 'b', label: { en: 'Very quiet', vi: 'Rất yên tĩnh' } },
-            { id: 'c', label: { en: 'Boring', vi: 'Chán' } },
-            { id: 'd', label: { en: 'Empty', vi: 'Vắng' } }
+            {
+              id: 'a',
+              label: { en: 'Very lively', vi: 'Rất náo nhiệt' },
+              jp: 'とても にぎやかでした'
+            },
+            {
+              id: 'b',
+              label: { en: 'Very quiet', vi: 'Rất yên tĩnh' },
+              jp: 'とても 静かでした',
+              ruby: [{ base: '静', reading: 'しず' }]
+            },
+            { id: 'c', label: { en: 'Boring', vi: 'Chán' }, jp: 'つまらなかったです' },
+            {
+              id: 'd',
+              label: { en: 'Empty', vi: 'Vắng' },
+              jp: '人が 少なかったです',
+              ruby: [
+                { base: '人', reading: 'ひと' },
+                { base: '少', reading: 'すく' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -1074,11 +1219,22 @@ export const n5Lesson12: Lesson = {
             en: 'What did the speaker try for the first time?',
             vi: 'Người nói thử lần đầu món gì?'
           },
+          jp: '初めて 何を 食べましたか。',
+          ruby: [
+            { base: '初', reading: 'はじ' },
+            { base: '何', reading: 'なに' },
+            { base: '食', reading: 'た' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Sukiyaki', vi: 'Sukiyaki' } },
-            { id: 'b', label: { en: 'Tempura', vi: 'Tempura' } },
-            { id: 'c', label: { en: 'Sushi', vi: 'Sushi' } },
-            { id: 'd', label: { en: 'Curry', vi: 'Cà ri' } }
+            {
+              id: 'a',
+              label: { en: 'Sukiyaki', vi: 'Sukiyaki' },
+              jp: 'すき焼き',
+              ruby: [{ base: '焼', reading: 'や' }]
+            },
+            { id: 'b', label: { en: 'Tempura', vi: 'Tempura' }, jp: 'てんぷら' },
+            { id: 'c', label: { en: 'Sushi', vi: 'Sushi' }, jp: 'すし' },
+            { id: 'd', label: { en: 'Curry', vi: 'Cà ri' }, jp: 'カレー' }
           ],
           correctId: 'a'
         }
@@ -1087,6 +1243,11 @@ export const n5Lesson12: Lesson = {
     {
       id: 'reading-lesson12-travel',
       title: { en: 'Comparing cities', vi: 'So sánh các thành phố' },
+      titleJp: '町を 比べる',
+      titleRuby: [
+        { base: '町', reading: 'まち' },
+        { base: '比', reading: 'くら' }
+      ],
       lines: [
         {
           jp: 'トムさんは 初めて 日本に 来ました。',
@@ -1144,33 +1305,110 @@ export const n5Lesson12: Lesson = {
             en: 'Is this Tom\u0027s first visit to Japan?',
             vi: 'Đây có phải lần đầu Tom đến Nhật?'
           },
+          jp: 'トムさんは 初めて 日本に 来ましたか。',
+          ruby: [
+            { base: '初', reading: 'はじ' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '来', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes', vi: 'Đúng' } },
-            { id: 'b', label: { en: 'No', vi: 'Không' } },
-            { id: 'c', label: { en: 'Not said', vi: 'Không nói' } },
-            { id: 'd', label: { en: 'He lives there', vi: 'Anh ấy sống ở đó' } }
+            { id: 'a', label: { en: 'Yes', vi: 'Đúng' }, jp: 'はい' },
+            { id: 'b', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            {
+              id: 'c',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'He lives there', vi: 'Anh ấy sống ở đó' },
+              jp: '日本に 住んでいます',
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '住', reading: 'す' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Which city is quieter?', vi: 'Thành phố nào yên tĩnh hơn?' },
+          jp: 'どちらの ほうが 静かですか。',
+          ruby: [{ base: '静', reading: 'しず' }],
           choices: [
-            { id: 'a', label: { en: 'Kyoto', vi: 'Kyoto' } },
-            { id: 'b', label: { en: 'Osaka', vi: 'Osaka' } },
-            { id: 'c', label: { en: 'Tokyo', vi: 'Tokyo' } },
-            { id: 'd', label: { en: 'Both', vi: 'Cả hai' } }
+            {
+              id: 'a',
+              label: { en: 'Kyoto', vi: 'Kyoto' },
+              jp: '京都',
+              ruby: [
+                { base: '京', reading: 'きょう' },
+                { base: '都', reading: 'と' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Osaka', vi: 'Osaka' },
+              jp: '大阪',
+              ruby: [
+                { base: '大', reading: 'おお' },
+                { base: '阪', reading: 'さか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Tokyo', vi: 'Tokyo' },
+              jp: '東京',
+              ruby: [
+                { base: '東', reading: 'とう' },
+                { base: '京', reading: 'きょう' }
+              ]
+            },
+            { id: 'd', label: { en: 'Both', vi: 'Cả hai' }, jp: 'どちらも' }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Which city has better food?', vi: 'Thành phố nào ngon hơn về đồ ăn?' },
+          jp: '食べ物は どちらの ほうが おいしいですか。',
+          ruby: [
+            { base: '食', reading: 'た' },
+            { base: '物', reading: 'もの' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Osaka', vi: 'Osaka' } },
-            { id: 'b', label: { en: 'Kyoto', vi: 'Kyoto' } },
-            { id: 'c', label: { en: 'Neither', vi: 'Không city nào' } },
-            { id: 'd', label: { en: 'Same', vi: 'Như nhau' } }
+            {
+              id: 'a',
+              label: { en: 'Osaka', vi: 'Osaka' },
+              jp: '大阪',
+              ruby: [
+                { base: '大', reading: 'おお' },
+                { base: '阪', reading: 'さか' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Kyoto', vi: 'Kyoto' },
+              jp: '京都',
+              ruby: [
+                { base: '京', reading: 'きょう' },
+                { base: '都', reading: 'と' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Neither', vi: 'Không city nào' },
+              jp: 'どちらも おいしくないです'
+            },
+            {
+              id: 'd',
+              label: { en: 'Same', vi: 'Như nhau' },
+              jp: '同じです',
+              ruby: [{ base: '同', reading: 'おな' }]
+            }
           ],
           correctId: 'a'
         }

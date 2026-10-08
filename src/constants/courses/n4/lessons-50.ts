@@ -594,6 +594,12 @@ export const n4Lesson50: Lesson = {
     {
       id: 'reading-lesson50-thanks',
       title: { en: 'A letter of thanks', vi: 'Thư cám ơn' },
+      titleJp: 'お礼の 手紙',
+      titleRuby: [
+        { base: '礼', reading: 'れい' },
+        { base: '手', reading: 'て' },
+        { base: '紙', reading: 'がみ' }
+      ],
       lines: [
         {
           jp: 'さ来週、わたくしは ミュンヘンへ 出張に 参ります。',
@@ -681,11 +687,42 @@ export const n4Lesson50: Lesson = {
             en: 'When will the writer go to Munich?',
             vi: 'Người viết sẽ đi München khi nào?'
           },
+          jp: 'いつ ミュンヘンへ 行きますか。',
+          ruby: [{ base: '行', reading: 'い' }],
           choices: [
-            { id: 'a', label: { en: 'The week after next', vi: 'Tuần sau nữa' } },
-            { id: 'b', label: { en: 'Next month', vi: 'Tháng sau' } },
-            { id: 'c', label: { en: 'Tomorrow', vi: 'Ngày mai' } },
-            { id: 'd', label: { en: 'The year after next', vi: 'Năm sau nữa' } }
+            {
+              id: 'a',
+              label: { en: 'The week after next', vi: 'Tuần sau nữa' },
+              jp: 'さ来週',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '週', reading: 'しゅう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Next month', vi: 'Tháng sau' },
+              jp: '来月',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '月', reading: 'げつ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Tomorrow', vi: 'Ngày mai' },
+              jp: '明日',
+              ruby: [{ base: '明日', reading: 'あした' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'The year after next', vi: 'Năm sau nữa' },
+              jp: 'さ来年',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '年', reading: 'ねん' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -695,11 +732,36 @@ export const n4Lesson50: Lesson = {
             en: 'What does the writer promise to avoid?',
             vi: 'Người viết hứa tránh điều gì?'
           },
+          jp: '何を しない ように しますか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
-            { id: 'a', label: { en: 'Causing trouble', vi: 'Làm phiền' } },
-            { id: 'b', label: { en: 'Drinking coffee', vi: 'Uống cà phê' } },
-            { id: 'c', label: { en: 'Winning prizes', vi: 'Nhận giải thưởng' } },
-            { id: 'd', label: { en: 'Meeting giraffes', vi: 'Gặp hươu cao cổ' } }
+            {
+              id: 'a',
+              label: { en: 'Causing trouble', vi: 'Làm phiền' },
+              jp: '迷惑を かけない こと',
+              ruby: [
+                { base: '迷', reading: 'めい' },
+                { base: '惑', reading: 'わく' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Drinking coffee', vi: 'Uống cà phê' },
+              jp: 'コーヒーを 飲む こと',
+              ruby: [{ base: '飲', reading: 'の' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Winning prizes', vi: 'Nhận giải thưởng' },
+              jp: '賞を もらう こと',
+              ruby: [{ base: '賞', reading: 'しょう' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Meeting giraffes', vi: 'Gặp hươu cao cổ' },
+              jp: 'キリンに 会う こと',
+              ruby: [{ base: '会', reading: 'あ' }]
+            }
           ],
           correctId: 'a'
         }

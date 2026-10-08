@@ -853,6 +853,14 @@ export const n5Lesson13: Lesson = {
     {
       id: 'reading-lesson13-japan',
       title: { en: 'Why I came to Japan', vi: 'Vì sao đến Nhật' },
+      titleJp: '日本へ 来た 理由',
+      titleRuby: [
+        { base: '日', reading: 'に' },
+        { base: '本', reading: 'ほん' },
+        { base: '来', reading: 'き' },
+        { base: '理', reading: 'り' },
+        { base: '由', reading: 'ゆう' }
+      ],
       lines: [
         {
           jp: 'トムさんは 日本へ 美術の 勉強に 来ました。',
@@ -906,11 +914,39 @@ export const n5Lesson13: Lesson = {
         {
           id: 'q1',
           question: { en: 'Why did Tom come to Japan?', vi: 'Tom đến Nhật để làm gì?' },
+          jp: 'トムさんは 何の 勉強に 来ましたか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' },
+            { base: '来', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'To study art', vi: 'Học mỹ thuật' } },
-            { id: 'b', label: { en: 'To ski', vi: 'Trượt tuyết' } },
-            { id: 'c', label: { en: 'To shop', vi: 'Mua sắm' } },
-            { id: 'd', label: { en: 'To swim', vi: 'Bơi' } }
+            {
+              id: 'a',
+              label: { en: 'To study art', vi: 'Học mỹ thuật' },
+              jp: '美術',
+              ruby: [
+                { base: '美', reading: 'び' },
+                { base: '術', reading: 'じゅつ' }
+              ]
+            },
+            { id: 'b', label: { en: 'To ski', vi: 'Trượt tuyết' }, jp: 'スキー' },
+            {
+              id: 'c',
+              label: { en: 'To shop', vi: 'Mua sắm' },
+              jp: '買い物',
+              ruby: [
+                { base: '買', reading: 'か' },
+                { base: '物', reading: 'もの' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'To swim', vi: 'Bơi' },
+              jp: '泳ぎ',
+              ruby: [{ base: '泳', reading: 'およ' }]
+            }
           ],
           correctId: 'a'
         },
@@ -920,22 +956,85 @@ export const n5Lesson13: Lesson = {
             en: 'Where does he want to go on weekends?',
             vi: 'Cuối tuần anh ấy muốn đi đâu?'
           },
+          jp: '週末は どこへ 行きたいですか。',
+          ruby: [
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Art museums', vi: 'Bảo tàng mỹ thuật' } },
-            { id: 'b', label: { en: 'The airport', vi: 'Sân bay' } },
-            { id: 'c', label: { en: 'A pool', vi: 'Bể bơi' } },
-            { id: 'd', label: { en: 'A river', vi: 'Sông' } }
+            {
+              id: 'a',
+              label: { en: 'Art museums', vi: 'Bảo tàng mỹ thuật' },
+              jp: '美術館',
+              ruby: [
+                { base: '美', reading: 'び' },
+                { base: '術', reading: 'じゅつ' },
+                { base: '館', reading: 'かん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'The airport', vi: 'Sân bay' },
+              jp: '空港',
+              ruby: [
+                { base: '空', reading: 'くう' },
+                { base: '港', reading: 'こう' }
+              ]
+            },
+            { id: 'c', label: { en: 'A pool', vi: 'Bể bơi' }, jp: 'プール' },
+            {
+              id: 'd',
+              label: { en: 'A river', vi: 'Sông' },
+              jp: '川',
+              ruby: [{ base: '川', reading: 'かわ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'What else does he want?', vi: 'Anh ấy còn muốn gì?' },
+          jp: 'ほかに 何が 欲しいですか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '欲', reading: 'ほ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A new art book', vi: 'Sách vẽ mới' } },
-            { id: 'b', label: { en: 'A car', vi: 'Xe ô tô' } },
-            { id: 'c', label: { en: 'Beef bowl', vi: 'Cơm thịt bò' } },
-            { id: 'd', label: { en: 'Ski equipment', vi: 'Đồ trượt tuyết' } }
+            {
+              id: 'a',
+              label: { en: 'A new art book', vi: 'Sách vẽ mới' },
+              jp: '新しい 絵の 本',
+              ruby: [
+                { base: '新', reading: 'あたら' },
+                { base: '絵', reading: 'え' },
+                { base: '本', reading: 'ほん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A car', vi: 'Xe ô tô' },
+              jp: '車',
+              ruby: [{ base: '車', reading: 'くるま' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Beef bowl', vi: 'Cơm thịt bò' },
+              jp: '牛丼',
+              ruby: [
+                { base: '牛', reading: 'ぎゅう' },
+                { base: '丼', reading: 'どん' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Ski equipment', vi: 'Đồ trượt tuyết' },
+              jp: 'スキーの 道具',
+              ruby: [
+                { base: '道', reading: 'どう' },
+                { base: '具', reading: 'ぐ' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -944,6 +1043,13 @@ export const n5Lesson13: Lesson = {
     {
       id: 'reading-lesson13-winter',
       title: { en: 'Winter break trip', vi: 'Chuyến đi nghỉ đông' },
+      titleJp: '冬休みの 旅行',
+      titleRuby: [
+        { base: '冬', reading: 'ふゆ' },
+        { base: '休', reading: 'やす' },
+        { base: '旅', reading: 'りょ' },
+        { base: '行', reading: 'こう' }
+      ],
       lines: [
         {
           jp: 'マイさんは 冬休みに どこか 行きましたか。',
@@ -994,33 +1100,99 @@ export const n5Lesson13: Lesson = {
             en: 'Did Mai travel during winter break?',
             vi: 'Mai có đi chơi nghỉ đông không?'
           },
+          jp: '冬休みに どこか 行きましたか。',
+          ruby: [
+            { base: '冬', reading: 'ふゆ' },
+            { base: '休', reading: 'やす' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'b', label: { en: 'No', vi: 'Không' } },
-            { id: 'c', label: { en: 'Not said', vi: 'Không nói' } },
-            { id: 'd', label: { en: 'She stayed home', vi: 'Ở nhà' } }
+            { id: 'a', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            { id: 'b', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            {
+              id: 'c',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
+            { id: 'd', label: { en: 'She stayed home', vi: 'Ở nhà' }, jp: 'うちに いました' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where did she go?', vi: 'Cô ấy đi đâu?' },
+          jp: 'どこへ 行きましたか。',
+          ruby: [{ base: '行', reading: 'い' }],
           choices: [
-            { id: 'a', label: { en: 'Hokkaido', vi: 'Hokkaido' } },
-            { id: 'b', label: { en: 'Okinawa', vi: 'Okinawa' } },
-            { id: 'c', label: { en: 'Kobe', vi: 'Kobe' } },
-            { id: 'd', label: { en: 'Kyoto', vi: 'Kyoto' } }
+            {
+              id: 'a',
+              label: { en: 'Hokkaido', vi: 'Hokkaido' },
+              jp: '北海道',
+              ruby: [
+                { base: '北', reading: 'ほっ' },
+                { base: '海', reading: 'かい' },
+                { base: '道', reading: 'どう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Okinawa', vi: 'Okinawa' },
+              jp: '沖縄',
+              ruby: [
+                { base: '沖', reading: 'おき' },
+                { base: '縄', reading: 'なわ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Kobe', vi: 'Kobe' },
+              jp: '神戸',
+              ruby: [
+                { base: '神', reading: 'こう' },
+                { base: '戸', reading: 'べ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Kyoto', vi: 'Kyoto' },
+              jp: '京都',
+              ruby: [
+                { base: '京', reading: 'きょう' },
+                { base: '都', reading: 'と' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'What did she do there?', vi: 'Cô ấy làm gì ở đó?' },
+          jp: 'そこで 何を しましたか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
-            { id: 'a', label: { en: 'Skiing', vi: 'Trượt tuyết' } },
-            { id: 'b', label: { en: 'Swimming', vi: 'Bơi' } },
-            { id: 'c', label: { en: 'Fishing', vi: 'Câu cá' } },
-            { id: 'd', label: { en: 'Shopping only', vi: 'Chỉ mua sắm' } }
+            { id: 'a', label: { en: 'Skiing', vi: 'Trượt tuyết' }, jp: 'スキー' },
+            {
+              id: 'b',
+              label: { en: 'Swimming', vi: 'Bơi' },
+              jp: '泳ぎ',
+              ruby: [{ base: '泳', reading: 'およ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Fishing', vi: 'Câu cá' },
+              jp: '釣り',
+              ruby: [{ base: '釣', reading: 'つ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Shopping only', vi: 'Chỉ mua sắm' },
+              jp: '買い物だけ',
+              ruby: [
+                { base: '買', reading: 'か' },
+                { base: '物', reading: 'もの' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -1029,6 +1201,12 @@ export const n5Lesson13: Lesson = {
     {
       id: 'reading-lesson13-park',
       title: { en: 'A walk in the park', vi: 'Dạo công viên' },
+      titleJp: '公園を 歩く',
+      titleRuby: [
+        { base: '公', reading: 'こう' },
+        { base: '園', reading: 'えん' },
+        { base: '歩', reading: 'ある' }
+      ],
       lines: [
         {
           jp: '日曜日、家族と 公園へ 散歩に 行きました。',
@@ -1081,33 +1259,136 @@ export const n5Lesson13: Lesson = {
         {
           id: 'q1',
           question: { en: 'When did they go to the park?', vi: 'Họ đi công viên khi nào?' },
+          jp: 'いつ 公園へ 行きましたか。',
+          ruby: [
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Sunday', vi: 'Chủ nhật' } },
-            { id: 'b', label: { en: 'Monday', vi: 'Thứ hai' } },
-            { id: 'c', label: { en: 'New Year', vi: 'Tết' } },
-            { id: 'd', label: { en: 'Weekend evening only', vi: 'Chỉ tối cuối tuần' } }
+            {
+              id: 'a',
+              label: { en: 'Sunday', vi: 'Chủ nhật' },
+              jp: '日曜日',
+              ruby: [
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Monday', vi: 'Thứ hai' },
+              jp: '月曜日',
+              ruby: [
+                { base: '月', reading: 'げつ' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'New Year', vi: 'Tết' },
+              jp: 'お正月',
+              ruby: [
+                { base: '正', reading: 'しょう' },
+                { base: '月', reading: 'がつ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Weekend evening only', vi: 'Chỉ tối cuối tuần' },
+              jp: '週末の 夜だけ',
+              ruby: [
+                { base: '週', reading: 'しゅう' },
+                { base: '末', reading: 'まつ' },
+                { base: '夜', reading: 'よる' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How was the park?', vi: 'Công viên thế nào?' },
+          jp: '公園は どうでしたか。',
+          ruby: [
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Spacious and beautiful', vi: 'Rộng và đẹp' } },
-            { id: 'b', label: { en: 'Narrow and dirty', vi: 'Chật và bẩn' } },
-            { id: 'c', label: { en: 'Empty', vi: 'Vắng' } },
-            { id: 'd', label: { en: 'Closed', vi: 'Đóng cửa' } }
+            {
+              id: 'a',
+              label: { en: 'Spacious and beautiful', vi: 'Rộng và đẹp' },
+              jp: '広くて、きれいでした',
+              ruby: [{ base: '広', reading: 'ひろ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Narrow and dirty', vi: 'Chật và bẩn' },
+              jp: '狭くて、きたなかったです',
+              ruby: [{ base: '狭', reading: 'せま' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Empty', vi: 'Vắng' },
+              jp: '人が いませんでした',
+              ruby: [{ base: '人', reading: 'ひと' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Closed', vi: 'Đóng cửa' },
+              jp: '閉まって いました',
+              ruby: [{ base: '閉', reading: 'し' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'What did the children want to do?', vi: 'Các con muốn làm gì?' },
+          jp: '子どもは 何を したがりましたか。',
+          ruby: [
+            { base: '子', reading: 'こ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Play near the pool', vi: 'Chơi gần bể bơi' } },
-            { id: 'b', label: { en: 'Go skiing', vi: 'Trượt tuyết' } },
-            { id: 'c', label: { en: 'Eat beef bowl', vi: 'Ăn cơm thịt bò' } },
-            { id: 'd', label: { en: 'Study art', vi: 'Học mỹ thuật' } }
+            {
+              id: 'a',
+              label: { en: 'Play near the pool', vi: 'Chơi gần bể bơi' },
+              jp: 'プールの 近くで 遊ぶ',
+              ruby: [
+                { base: '近', reading: 'ちか' },
+                { base: '遊', reading: 'あそ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Go skiing', vi: 'Trượt tuyết' },
+              jp: 'スキーに 行く',
+              ruby: [{ base: '行', reading: 'い' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Eat beef bowl', vi: 'Ăn cơm thịt bò' },
+              jp: '牛丼を 食べる',
+              ruby: [
+                { base: '牛', reading: 'ぎゅう' },
+                { base: '丼', reading: 'どん' },
+                { base: '食', reading: 'た' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Study art', vi: 'Học mỹ thuật' },
+              jp: '美術を 勉強する',
+              ruby: [
+                { base: '美', reading: 'び' },
+                { base: '術', reading: 'じゅつ' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            }
           ],
           correctId: 'a'
         }

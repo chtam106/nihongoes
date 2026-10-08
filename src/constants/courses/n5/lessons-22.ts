@@ -558,6 +558,12 @@ export const n5Lesson22: Lesson = {
     {
       id: 'reading-lesson22-clothes',
       title: { en: 'Getting dressed for work', vi: 'Mặc đồ đi làm' },
+      titleJp: '仕事の 服',
+      titleRuby: [
+        { base: '仕', reading: 'し' },
+        { base: '事', reading: 'ごと' },
+        { base: '服', reading: 'ふく' }
+      ],
       lines: [
         {
           jp: 'ミラーさんは 毎朝 6時に 起きます。',
@@ -607,22 +613,74 @@ export const n5Lesson22: Lesson = {
         {
           id: 'q1',
           question: { en: 'What time does Mr. Miller get up?', vi: 'Anh Miller dậy lúc mấy giờ?' },
+          jp: 'ミラーさんは 何時に 起きますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '起', reading: 'お' }
+          ],
           choices: [
-            { id: 'a', label: { en: '6:00', vi: '6 giờ' } },
-            { id: 'b', label: { en: '7:00', vi: '7 giờ' } },
-            { id: 'c', label: { en: '8:00', vi: '8 giờ' } },
-            { id: 'd', label: { en: '9:00', vi: '9 giờ' } }
+            {
+              id: 'a',
+              label: { en: '6:00', vi: '6 giờ' },
+              jp: '6時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'b',
+              label: { en: '7:00', vi: '7 giờ' },
+              jp: '7時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: '8:00', vi: '8 giờ' },
+              jp: '8時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'd',
+              label: { en: '9:00', vi: '9 giờ' },
+              jp: '9時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What does he often wear in winter?', vi: 'Mùa đông anh ấy hay mặc gì?' },
+          jp: '冬は よく 何を 着ますか。',
+          ruby: [
+            { base: '冬', reading: 'ふゆ' },
+            { base: '何', reading: 'なに' },
+            { base: '着', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Sweater and coat', vi: 'Áo len và áo khoác' } },
-            { id: 'b', label: { en: 'Hat only', vi: 'Chỉ mũ' } },
-            { id: 'c', label: { en: 'Suit only', vi: 'Chỉ com lê' } },
-            { id: 'd', label: { en: 'Kimono', vi: 'Kimono' } }
+            {
+              id: 'a',
+              label: { en: 'Sweater and coat', vi: 'Áo len và áo khoác' },
+              jp: 'セーターと コート'
+            },
+            {
+              id: 'b',
+              label: { en: 'Hat only', vi: 'Chỉ mũ' },
+              jp: '帽子だけ',
+              ruby: [
+                { base: '帽', reading: 'ぼう' },
+                { base: '子', reading: 'し' }
+              ]
+            },
+            { id: 'c', label: { en: 'Suit only', vi: 'Chỉ com lê' }, jp: 'スーツだけ' },
+            {
+              id: 'd',
+              label: { en: 'Kimono', vi: 'Kimono' },
+              jp: '着物',
+              ruby: [
+                { base: '着', reading: 'き' },
+                { base: '物', reading: 'もの' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -631,6 +689,8 @@ export const n5Lesson22: Lesson = {
     {
       id: 'reading-lesson22-housing',
       title: { en: 'Choosing a place to live', vi: 'Chọn chỗ ở' },
+      titleJp: '住む ところ',
+      titleRuby: [{ base: '住', reading: 'す' }],
       lines: [
         {
           jp: '私は 家賃が 安い アパートを 探しています。',
@@ -681,22 +741,67 @@ export const n5Lesson22: Lesson = {
             en: 'What kind of apartment is the speaker looking for?',
             vi: 'Người nói tìm căn hộ thế nào?'
           },
+          jp: 'どんな アパートを 探していますか。',
+          ruby: [{ base: '探', reading: 'さが' }],
           choices: [
-            { id: 'a', label: { en: 'Cheap rent', vi: 'Tiền thuê rẻ' } },
-            { id: 'b', label: { en: 'Near the station only', vi: 'Chỉ gần ga' } },
-            { id: 'c', label: { en: 'Very large', vi: 'Rất rộng' } },
-            { id: 'd', label: { en: 'In Paris', vi: 'Ở Paris' } }
+            {
+              id: 'a',
+              label: { en: 'Cheap rent', vi: 'Tiền thuê rẻ' },
+              jp: '家賃が 安い',
+              ruby: [
+                { base: '家', reading: 'や' },
+                { base: '賃', reading: 'ちん' },
+                { base: '安', reading: 'やす' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Near the station only', vi: 'Chỉ gần ga' },
+              jp: '駅の 近くだけ',
+              ruby: [
+                { base: '駅', reading: 'えき' },
+                { base: '近', reading: 'ちか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Very large', vi: 'Rất rộng' },
+              jp: 'とても 広い',
+              ruby: [{ base: '広', reading: 'ひろ' }]
+            },
+            { id: 'd', label: { en: 'In Paris', vi: 'Ở Paris' }, jp: 'パリ' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What feature does the speaker want?', vi: 'Người nói muốn điểm gì?' },
+          jp: 'どんな 部屋が いいですか。',
+          ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Japanese room and big closet', vi: 'Phòng Nhật và tủ lớn' } },
-            { id: 'b', label: { en: 'Swimming pool', vi: 'Hồ bơi' } },
-            { id: 'c', label: { en: 'Garden only', vi: 'Chỉ vườn' } },
-            { id: 'd', label: { en: 'No futon', vi: 'Không futon' } }
+            {
+              id: 'a',
+              label: { en: 'Japanese room and big closet', vi: 'Phòng Nhật và tủ lớn' },
+              jp: '和室と 大きい 押入れ',
+              ruby: [
+                { base: '和', reading: 'わ' },
+                { base: '室', reading: 'しつ' },
+                { base: '大', reading: 'おお' },
+                { base: '押', reading: 'お' },
+                { base: '入', reading: 'しい' }
+              ]
+            },
+            { id: 'b', label: { en: 'Swimming pool', vi: 'Hồ bơi' }, jp: 'プール' },
+            {
+              id: 'c',
+              label: { en: 'Garden only', vi: 'Chỉ vườn' },
+              jp: '庭だけ',
+              ruby: [{ base: '庭', reading: 'にわ' }]
+            },
+            { id: 'd', label: { en: 'No futon', vi: 'Không futon' }, jp: 'ふとんが ない' }
           ],
           correctId: 'a'
         }

@@ -603,6 +603,8 @@ export const n5Lesson3: Lesson = {
     {
       id: 'reading-1',
       title: { en: 'At the shop', vi: 'Ở cửa hàng' },
+      titleJp: '店で',
+      titleRuby: [{ base: '店', reading: 'みせ' }],
       lines: [
         {
           jp: 'すみません、その 靴は いくらですか。',
@@ -634,22 +636,65 @@ export const n5Lesson3: Lesson = {
         {
           id: 'q1',
           question: { en: 'How much are the shoes?', vi: 'Đôi giày bao nhiêu tiền?' },
+          jp: '靴は いくらですか。',
+          ruby: [{ base: '靴', reading: 'くつ' }],
           choices: [
-            { id: 'a', label: { en: '8000 yen', vi: '8000 yên' } },
-            { id: 'b', label: { en: '5000 yen', vi: '5000 yên' } },
-            { id: 'c', label: { en: '3000 yen', vi: '3000 yên' } },
-            { id: 'd', label: { en: '1000 yen', vi: '1000 yên' } }
+            {
+              id: 'a',
+              label: { en: '8000 yen', vi: '8000 yên' },
+              jp: '8000円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            {
+              id: 'b',
+              label: { en: '5000 yen', vi: '5000 yên' },
+              jp: '5000円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '3000 yen', vi: '3000 yên' },
+              jp: '3000円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            {
+              id: 'd',
+              label: { en: '1000 yen', vi: '1000 yên' },
+              jp: '1000円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What does the customer decide?', vi: 'Khách quyết định thế nào?' },
+          jp: 'お客さんは どう しますか。',
+          ruby: [{ base: '客', reading: 'きゃく' }],
           choices: [
-            { id: 'a', label: { en: 'To buy them', vi: 'Mua đôi giày' } },
-            { id: 'b', label: { en: 'Not to buy', vi: 'Không mua' } },
-            { id: 'c', label: { en: 'To come back later', vi: 'Quay lại sau' } },
-            { id: 'd', label: { en: 'To ask the price again', vi: 'Hỏi lại giá' } }
+            { id: 'a', label: { en: 'To buy them', vi: 'Mua đôi giày' }, jp: 'これを ください' },
+            {
+              id: 'b',
+              label: { en: 'Not to buy', vi: 'Không mua' },
+              jp: '買いません',
+              ruby: [{ base: '買', reading: 'か' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'To come back later', vi: 'Quay lại sau' },
+              jp: 'あとで 来ます',
+              ruby: [{ base: '来', reading: 'き' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'To ask the price again', vi: 'Hỏi lại giá' },
+              jp: 'もう 一度 聞きます',
+              ruby: [
+                { base: '一', reading: 'いち' },
+                { base: '度', reading: 'ど' },
+                { base: '聞', reading: 'き' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -658,6 +703,11 @@ export const n5Lesson3: Lesson = {
     {
       id: 'reading-2',
       title: { en: 'Asking for directions', vi: 'Hỏi đường' },
+      titleJp: '道を 聞きます',
+      titleRuby: [
+        { base: '道', reading: 'みち' },
+        { base: '聞', reading: 'き' }
+      ],
       lines: [
         {
           jp: 'すみません。トイレは どこですか。',
@@ -697,22 +747,60 @@ export const n5Lesson3: Lesson = {
             en: 'What place did the visitor ask about first?',
             vi: 'Người hỏi hỏi địa điểm nào trước?'
           },
+          jp: 'はじめに どこを 聞きましたか。',
+          ruby: [{ base: '聞', reading: 'き' }],
           choices: [
-            { id: 'a', label: { en: 'The toilet', vi: 'Nhà vệ sinh' } },
-            { id: 'b', label: { en: 'The meeting room', vi: 'Phòng họp' } },
-            { id: 'c', label: { en: 'The cafeteria', vi: 'Nhà ăn' } },
-            { id: 'd', label: { en: 'The elevator', vi: 'Thang máy' } }
+            { id: 'a', label: { en: 'The toilet', vi: 'Nhà vệ sinh' }, jp: 'トイレ' },
+            {
+              id: 'b',
+              label: { en: 'The meeting room', vi: 'Phòng họp' },
+              jp: '会議室',
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'The cafeteria', vi: 'Nhà ăn' },
+              jp: '食堂',
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '堂', reading: 'どう' }
+              ]
+            },
+            { id: 'd', label: { en: 'The elevator', vi: 'Thang máy' }, jp: 'エレベーター' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where is the meeting room?', vi: 'Phòng họp ở đâu?' },
+          jp: '会議室は どこですか。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '室', reading: 'しつ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Over there (そちら)', vi: 'Phía đó (そちら)' } },
-            { id: 'b', label: { en: 'Over there (あちら)', vi: 'Phía kia (あちら)' } },
-            { id: 'c', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' } },
-            { id: 'd', label: { en: 'On the 2nd floor', vi: 'Tầng 2' } }
+            {
+              id: 'a',
+              label: { en: 'Over there (そちら)', vi: 'Phía đó (そちら)' },
+              jp: 'そちらです'
+            },
+            {
+              id: 'b',
+              label: { en: 'Over there (あちら)', vi: 'Phía kia (あちら)' },
+              jp: 'あちらです'
+            },
+            { id: 'c', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' }, jp: 'ここです' },
+            {
+              id: 'd',
+              label: { en: 'On the 2nd floor', vi: 'Tầng 2' },
+              jp: '2階です',
+              ruby: [{ base: '階', reading: 'かい' }]
+            }
           ],
           correctId: 'a'
         }
@@ -721,6 +809,8 @@ export const n5Lesson3: Lesson = {
     {
       id: 'reading-3',
       title: { en: 'Inside the building', vi: 'Trong tòa nhà' },
+      titleJp: 'ビルの 中',
+      titleRuby: [{ base: '中', reading: 'なか' }],
       lines: [
         {
           jp: 'ここは 受付です。',
@@ -760,22 +850,70 @@ export const n5Lesson3: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where is the cafeteria?', vi: 'Nhà ăn ở đâu?' },
+          jp: '食堂は どこですか。',
+          ruby: [
+            { base: '食', reading: 'しょく' },
+            { base: '堂', reading: 'どう' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Over there (あそこ)', vi: 'Đằng kia (あそこ)' } },
-            { id: 'b', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' } },
-            { id: 'c', label: { en: 'This way (こちら)', vi: 'Phía này (こちら)' } },
-            { id: 'd', label: { en: 'On the 2nd floor', vi: 'Tầng 2' } }
+            {
+              id: 'a',
+              label: { en: 'Over there (あそこ)', vi: 'Đằng kia (あそこ)' },
+              jp: 'あそこです'
+            },
+            { id: 'b', label: { en: 'Here (ここ)', vi: 'Ở đây (ここ)' }, jp: 'ここです' },
+            {
+              id: 'c',
+              label: { en: 'This way (こちら)', vi: 'Phía này (こちら)' },
+              jp: 'こちらです'
+            },
+            {
+              id: 'd',
+              label: { en: 'On the 2nd floor', vi: 'Tầng 2' },
+              jp: '2階です',
+              ruby: [{ base: '階', reading: 'かい' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What floor is the classroom on?', vi: 'Phòng học ở tầng mấy?' },
+          jp: '教室は 何階ですか。',
+          ruby: [
+            { base: '教', reading: 'きょう' },
+            { base: '室', reading: 'しつ' },
+            { base: '何', reading: 'なん' },
+            { base: '階', reading: 'かい' }
+          ],
           choices: [
-            { id: 'a', label: { en: '2nd floor', vi: 'Tầng 2' } },
-            { id: 'b', label: { en: '1st floor', vi: 'Tầng 1' } },
-            { id: 'c', label: { en: 'Basement', vi: 'Tầng hầm' } },
-            { id: 'd', label: { en: '3rd floor', vi: 'Tầng 3' } }
+            {
+              id: 'a',
+              label: { en: '2nd floor', vi: 'Tầng 2' },
+              jp: '2階',
+              ruby: [{ base: '階', reading: 'かい' }]
+            },
+            {
+              id: 'b',
+              label: { en: '1st floor', vi: 'Tầng 1' },
+              jp: '1階',
+              ruby: [{ base: '階', reading: 'かい' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Basement', vi: 'Tầng hầm' },
+              jp: '地下',
+              ruby: [
+                { base: '地', reading: 'ち' },
+                { base: '下', reading: 'か' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: '3rd floor', vi: 'Tầng 3' },
+              jp: '3階',
+              ruby: [{ base: '階', reading: 'かい' }]
+            }
           ],
           correctId: 'a'
         }

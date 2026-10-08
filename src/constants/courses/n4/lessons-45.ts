@@ -585,6 +585,12 @@ export const n4Lesson45: Lesson = {
     {
       id: 'reading-lesson45-alarm',
       title: { en: 'The alarm that would not stop', vi: 'Báo thức không chịu tắt' },
+      titleJp: '止まらない 目覚まし',
+      titleRuby: [
+        { base: '止', reading: 'と' },
+        { base: '目', reading: 'め' },
+        { base: '覚', reading: 'ざ' }
+      ],
       lines: [
         {
           jp: '大学生の 田中さんは 目覚ましの 悩みが あります。',
@@ -668,25 +674,94 @@ export const n4Lesson45: Lesson = {
         {
           id: 'q1',
           question: { en: "What is Tanaka's problem?", vi: 'Vấn đề của Tanaka là gì?' },
+          jp: '田中さんの 悩みは 何ですか。',
+          ruby: [
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '悩', reading: 'なや' },
+            { base: '何', reading: 'なん' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'He cannot wake up on time', vi: 'Anh ấy không dậy đúng giờ' }
+              label: { en: 'He cannot wake up on time', vi: 'Anh ấy không dậy đúng giờ' },
+              jp: '時間どおりに 起きられません',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '間', reading: 'かん' },
+                { base: '起', reading: 'お' }
+              ]
             },
-            { id: 'b', label: { en: 'He lost his receipt', vi: 'Anh ấy mất hóa đơn' } },
-            { id: 'c', label: { en: 'He canceled a camp', vi: 'Anh ấy hủy cắm trại' } },
-            { id: 'd', label: { en: 'He won a marathon', vi: 'Anh ấy thắng ma-ra-tông' } }
+            {
+              id: 'b',
+              label: { en: 'He lost his receipt', vi: 'Anh ấy mất hóa đơn' },
+              jp: 'レシートを なくしました'
+            },
+            {
+              id: 'c',
+              label: { en: 'He canceled a camp', vi: 'Anh ấy hủy cắm trại' },
+              jp: 'キャンプを キャンセルしました'
+            },
+            {
+              id: 'd',
+              label: { en: 'He won a marathon', vi: 'Anh ấy thắng ma-ra-tông' },
+              jp: 'マラソンで 勝ちました',
+              ruby: [{ base: '勝', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What advice did his friend give?', vi: 'Bạn anh ấy khuyên gì?' },
+          jp: '友達は 何と 言いましたか。',
+          ruby: [
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '何', reading: 'なん' },
+            { base: '言', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Go to bed early', vi: 'Ngủ sớm' } },
-            { id: 'b', label: { en: 'Buy a new warranty', vi: 'Mua bảo hành mới' } },
-            { id: 'c', label: { en: 'Call 110', vi: 'Gọi 110' } },
-            { id: 'd', label: { en: 'Run every morning', vi: 'Chạy mỗi sáng' } }
+            {
+              id: 'a',
+              label: { en: 'Go to bed early', vi: 'Ngủ sớm' },
+              jp: '早く 寝なさい',
+              ruby: [
+                { base: '早', reading: 'はや' },
+                { base: '寝', reading: 'ね' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Buy a new warranty', vi: 'Mua bảo hành mới' },
+              jp: '新しい 保証を 買いなさい',
+              ruby: [
+                { base: '新', reading: 'あたら' },
+                { base: '保', reading: 'ほ' },
+                { base: '証', reading: 'しょう' },
+                { base: '買', reading: 'か' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Call 110', vi: 'Gọi 110' },
+              jp: '110番に 電話しなさい',
+              ruby: [
+                { base: '番', reading: 'ばん' },
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Run every morning', vi: 'Chạy mỗi sáng' },
+              jp: '毎朝 走りなさい',
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '朝', reading: 'あさ' },
+                { base: '走', reading: 'はし' }
+              ]
+            }
           ],
           correctId: 'a'
         }

@@ -47,6 +47,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - Each lesson may have **zero or more** `reading: ReadingPassage[]` entries - no fixed count per lesson or per passage.
 - Author as many passages (and as many comprehension questions per passage) as needed so reading practice covers **most of the lesson's vocab themes, grammar patterns, and conversation topics**. Split by theme when one passage would cram too much (e.g. shop hours vs daily schedule vs telling the time).
 - Passage text must be **original** (not copied from the textbook) and use only vocabulary/grammar from that lesson (or earlier levels when natural). Optional `ruby` on `ReadingLine` where kanji appear.
+- Reading quiz titles, questions, and answer choices have a Japanese surface (`titleJp` / `titleRuby`, and `jp` / `ruby` on each question and choice). The question section has a show/hide translation control that reveals the selected locale (en or vi) for the title, the question, and the choices. Kanji in those Japanese strings need ruby, same as passage lines.
 - `reading-page.tsx` renders **every** passage on the page and quizzes through **all** questions across all passages in one session.
 
 ## Data (`src/constants/courses/`)

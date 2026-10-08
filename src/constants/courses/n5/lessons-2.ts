@@ -732,6 +732,8 @@ export const n5Lesson2: Lesson = {
     {
       id: 'reading-1',
       title: { en: 'What is that?', vi: 'Cái đó là gì?' },
+      titleJp: 'それは 何ですか',
+      titleRuby: [{ base: '何', reading: 'なん' }],
       lines: [
         {
           jp: 'すみません。それは 何ですか。',
@@ -777,22 +779,69 @@ export const n5Lesson2: Lesson = {
         {
           id: 'q1',
           question: { en: 'What is the object?', vi: 'Đồ vật đó là gì?' },
+          jp: 'それは 何ですか。',
+          ruby: [{ base: '何', reading: 'なん' }],
           choices: [
-            { id: 'a', label: { en: 'A Japanese dictionary', vi: 'Từ điển tiếng Nhật' } },
-            { id: 'b', label: { en: 'A magazine', vi: 'Tạp chí' } },
-            { id: 'c', label: { en: 'A notebook', vi: 'Quyển vở' } },
-            { id: 'd', label: { en: 'A newspaper', vi: 'Tờ báo' } }
+            {
+              id: 'a',
+              label: { en: 'A Japanese dictionary', vi: 'Từ điển tiếng Nhật' },
+              jp: '日本語の 辞書',
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '語', reading: 'ご' },
+                { base: '辞', reading: 'じ' },
+                { base: '書', reading: 'しょ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A magazine', vi: 'Tạp chí' },
+              jp: '雑誌',
+              ruby: [
+                { base: '雑', reading: 'ざっ' },
+                { base: '誌', reading: 'し' }
+              ]
+            },
+            { id: 'c', label: { en: 'A notebook', vi: 'Quyển vở' }, jp: 'ノート' },
+            {
+              id: 'd',
+              label: { en: 'A newspaper', vi: 'Tờ báo' },
+              jp: '新聞',
+              ruby: [
+                { base: '新', reading: 'しん' },
+                { base: '聞', reading: 'ぶん' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Whose is it?', vi: 'Nó là của ai?' },
+          jp: '辞書は だれのですか。',
+          ruby: [
+            { base: '辞', reading: 'じ' },
+            { base: '書', reading: 'しょ' }
+          ],
           choices: [
-            { id: 'a', label: { en: "The listener's", vi: 'Của người nghe' } },
-            { id: 'b', label: { en: 'The speaker who owns it', vi: 'Của người trả lời' } },
-            { id: 'c', label: { en: 'Nobody knows', vi: 'Không ai biết' } },
-            { id: 'd', label: { en: "The teacher's", vi: 'Của giáo viên' } }
+            { id: 'a', label: { en: "The listener's", vi: 'Của người nghe' }, jp: 'あなたのです' },
+            {
+              id: 'b',
+              label: { en: 'The speaker who owns it', vi: 'Của người trả lời' },
+              jp: '私のです',
+              ruby: [{ base: '私', reading: 'わたし' }]
+            },
+            { id: 'c', label: { en: 'Nobody knows', vi: 'Không ai biết' }, jp: 'わかりません' },
+            {
+              id: 'd',
+              label: { en: "The teacher's", vi: 'Của giáo viên' },
+              jp: '先生のです',
+              ruby: [
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
+            }
           ],
           correctId: 'b'
         }
@@ -801,6 +850,7 @@ export const n5Lesson2: Lesson = {
     {
       id: 'reading-2',
       title: { en: 'Things on the desk', vi: 'Đồ trên bàn' },
+      titleJp: 'これと あれ',
       lines: [
         {
           jp: 'これは 本です。',
@@ -830,22 +880,53 @@ export const n5Lesson2: Lesson = {
         {
           id: 'q1',
           question: { en: 'What is that over there (あれ)?', vi: 'Cái kia (あれ) là gì?' },
+          jp: 'あれは 何ですか。',
+          ruby: [{ base: '何', reading: 'なん' }],
           choices: [
-            { id: 'a', label: { en: 'An umbrella', vi: 'Cái ô' } },
-            { id: 'b', label: { en: 'A book', vi: 'Quyển sách' } },
-            { id: 'c', label: { en: 'A bag', vi: 'Cái cặp' } },
-            { id: 'd', label: { en: 'A key', vi: 'Chìa khóa' } }
+            {
+              id: 'a',
+              label: { en: 'An umbrella', vi: 'Cái ô' },
+              jp: '傘',
+              ruby: [{ base: '傘', reading: 'かさ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'A book', vi: 'Quyển sách' },
+              jp: '本',
+              ruby: [{ base: '本', reading: 'ほん' }]
+            },
+            { id: 'c', label: { en: 'A bag', vi: 'Cái cặp' }, jp: 'かばん' },
+            {
+              id: 'd',
+              label: { en: 'A key', vi: 'Chìa khóa' },
+              jp: '鍵',
+              ruby: [{ base: '鍵', reading: 'かぎ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Whose bag is it?', vi: 'Cái cặp là của ai?' },
+          jp: 'かばんは だれのですか。',
           choices: [
-            { id: 'a', label: { en: 'The speaker', vi: 'Người nói' } },
-            { id: 'b', label: { en: 'Maria', vi: 'Maria' } },
-            { id: 'c', label: { en: 'The teacher', vi: 'Giáo viên' } },
-            { id: 'd', label: { en: 'Nobody knows', vi: 'Không ai biết' } }
+            {
+              id: 'a',
+              label: { en: 'The speaker', vi: 'Người nói' },
+              jp: '私のです',
+              ruby: [{ base: '私', reading: 'わたし' }]
+            },
+            { id: 'b', label: { en: 'Maria', vi: 'Maria' }, jp: 'マリアさんのです' },
+            {
+              id: 'c',
+              label: { en: 'The teacher', vi: 'Giáo viên' },
+              jp: '先生のです',
+              ruby: [
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
+            },
+            { id: 'd', label: { en: 'Nobody knows', vi: 'Không ai biết' }, jp: 'わかりません' }
           ],
           correctId: 'a'
         }
@@ -854,6 +935,7 @@ export const n5Lesson2: Lesson = {
     {
       id: 'reading-3',
       title: { en: 'Is that right?', vi: 'Có đúng không?' },
+      titleJp: 'はい、そうです',
       lines: [
         {
           jp: 'その 時計は 日本の ですか。',
@@ -898,22 +980,62 @@ export const n5Lesson2: Lesson = {
         {
           id: 'q1',
           question: { en: 'Is the watch Japanese?', vi: 'Đồng hồ có phải hàng Nhật không?' },
+          jp: '時計は 日本のですか。',
+          ruby: [
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'b', label: { en: 'No', vi: 'Không' } },
-            { id: 'c', label: { en: 'Not mentioned', vi: 'Không nói' } },
-            { id: 'd', label: { en: 'It is broken', vi: 'Bị hỏng' } }
+            { id: 'a', label: { en: 'Yes', vi: 'Có' }, jp: 'はい、そうです' },
+            {
+              id: 'b',
+              label: { en: 'No', vi: 'Không' },
+              jp: 'いいえ、違います',
+              ruby: [{ base: '違', reading: 'ちが' }]
+            },
+            { id: 'c', label: { en: 'Not mentioned', vi: 'Không nói' }, jp: '書いて ありません' },
+            { id: 'd', label: { en: 'It is broken', vi: 'Bị hỏng' }, jp: 'こわれています' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What is this object really?', vi: 'Vật này thực ra là gì?' },
+          jp: 'これは 何ですか。',
+          ruby: [{ base: '何', reading: 'なん' }],
           choices: [
-            { id: 'a', label: { en: 'A pencil', vi: 'Bút chì' } },
-            { id: 'b', label: { en: 'A key', vi: 'Chìa khóa' } },
-            { id: 'c', label: { en: 'A book', vi: 'Quyển sách' } },
-            { id: 'd', label: { en: 'A clock', vi: 'Đồng hồ' } }
+            {
+              id: 'a',
+              label: { en: 'A pencil', vi: 'Bút chì' },
+              jp: '鉛筆',
+              ruby: [
+                { base: '鉛', reading: 'えん' },
+                { base: '筆', reading: 'ぴつ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A key', vi: 'Chìa khóa' },
+              jp: '鍵',
+              ruby: [{ base: '鍵', reading: 'かぎ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'A book', vi: 'Quyển sách' },
+              jp: '本',
+              ruby: [{ base: '本', reading: 'ほん' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'A clock', vi: 'Đồng hồ' },
+              jp: '時計',
+              ruby: [
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' }
+              ]
+            }
           ],
           correctId: 'a'
         }

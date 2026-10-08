@@ -651,6 +651,15 @@ export const n4Lesson44: Lesson = {
     {
       id: 'reading-lesson44-taboo',
       title: { en: 'Words to avoid at weddings', vi: 'Từ nên tránh trong đám cưới' },
+      titleJp: '結婚式で 避ける 言葉',
+      titleRuby: [
+        { base: '結', reading: 'けっ' },
+        { base: '婚', reading: 'こん' },
+        { base: '式', reading: 'しき' },
+        { base: '避', reading: 'さ' },
+        { base: '言', reading: 'こと' },
+        { base: '葉', reading: 'ば' }
+      ],
       lines: [
         {
           jp: '日本では 結婚式で 使う 言葉に 順序が あります。',
@@ -733,11 +742,52 @@ export const n4Lesson44: Lesson = {
             en: 'Why do people avoid certain words at weddings?',
             vi: 'Tại sao người ta tránh một số từ trong đám cưới?'
           },
+          jp: 'どうして 結婚式で ある 言葉を 避けますか。',
+          ruby: [
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' },
+            { base: '式', reading: 'しき' },
+            { base: '言', reading: 'こと' },
+            { base: '葉', reading: 'ば' },
+            { base: '避', reading: 'さ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'They are unlucky', vi: 'Vì xui, không may' } },
-            { id: 'b', label: { en: 'They are too long', vi: 'Vì quá dài' } },
-            { id: 'c', label: { en: 'They are foreign words', vi: 'Vì là từ ngoại lai' } },
-            { id: 'd', label: { en: 'They are hard to pronounce', vi: 'Vì khó phát âm' } }
+            {
+              id: 'a',
+              label: { en: 'They are unlucky', vi: 'Vì xui, không may' },
+              jp: '縁起が 悪いからです',
+              ruby: [
+                { base: '縁', reading: 'えん' },
+                { base: '起', reading: 'ぎ' },
+                { base: '悪', reading: 'わる' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'They are too long', vi: 'Vì quá dài' },
+              jp: '長すぎるからです',
+              ruby: [{ base: '長', reading: 'なが' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'They are foreign words', vi: 'Vì là từ ngoại lai' },
+              jp: '外来語だからです',
+              ruby: [
+                { base: '外', reading: 'がい' },
+                { base: '来', reading: 'らい' },
+                { base: '語', reading: 'ご' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'They are hard to pronounce', vi: 'Vì khó phát âm' },
+              jp: '発音が 難しいからです',
+              ruby: [
+                { base: '発', reading: 'はつ' },
+                { base: '音', reading: 'おん' },
+                { base: '難', reading: 'むずか' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -747,17 +797,59 @@ export const n4Lesson44: Lesson = {
             en: 'What does the passage say about rephrasing?',
             vi: 'Bài đọc nói gì về việc nói khéo?'
           },
+          jp: '言い換える ことについて、何と 書いて ありますか。',
+          ruby: [
+            { base: '言', reading: 'い' },
+            { base: '換', reading: 'か' },
+            { base: '何', reading: 'なに' },
+            { base: '書', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'People rephrase skillfully', vi: 'Mọi người nói khéo léo' } },
+            {
+              id: 'a',
+              label: { en: 'People rephrase skillfully', vi: 'Mọi người nói khéo léo' },
+              jp: '人は うまく 言い換えます',
+              ruby: [
+                { base: '人', reading: 'ひと' },
+                { base: '言', reading: 'い' },
+                { base: '換', reading: 'か' }
+              ]
+            },
             {
               id: 'b',
-              label: { en: 'People never change words', vi: 'Mọi người không bao giờ đổi từ' }
+              label: { en: 'People never change words', vi: 'Mọi người không bao giờ đổi từ' },
+              jp: '言葉を 変えません',
+              ruby: [
+                { base: '言', reading: 'こと' },
+                { base: '葉', reading: 'ば' },
+                { base: '変', reading: 'か' }
+              ]
             },
             {
               id: 'c',
-              label: { en: 'Only foreigners rephrase', vi: 'Chỉ người nước ngoài nói khéo' }
+              label: { en: 'Only foreigners rephrase', vi: 'Chỉ người nước ngoài nói khéo' },
+              jp: '外国人だけが 言い換えます',
+              ruby: [
+                { base: '外', reading: 'がい' },
+                { base: '国', reading: 'こく' },
+                { base: '人', reading: 'じん' },
+                { base: '言', reading: 'い' },
+                { base: '換', reading: 'か' }
+              ]
             },
-            { id: 'd', label: { en: 'Rephrasing is illegal', vi: 'Nói khéo là trái phép' } }
+            {
+              id: 'd',
+              label: { en: 'Rephrasing is illegal', vi: 'Nói khéo là trái phép' },
+              jp: '言い換えるのは 法律違反です',
+              ruby: [
+                { base: '言', reading: 'い' },
+                { base: '換', reading: 'か' },
+                { base: '法', reading: 'ほう' },
+                { base: '律', reading: 'りつ' },
+                { base: '違', reading: 'い' },
+                { base: '反', reading: 'はん' }
+              ]
+            }
           ],
           correctId: 'a'
         }

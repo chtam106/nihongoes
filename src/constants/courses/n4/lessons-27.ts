@@ -841,6 +841,8 @@ export const n4Lesson27: Lesson = {
     {
       id: 'reading-lesson27-doraemon',
       title: { en: 'A pocket full of dreams', vi: 'Chiếc túi đầy ước mơ' },
+      titleJp: '夢の ポケット',
+      titleRuby: [{ base: '夢', reading: 'ゆめ' }],
       lines: [
         {
           jp: '子どもたちは ドラえもんが 大好きです。',
@@ -911,11 +913,26 @@ export const n4Lesson27: Lesson = {
         {
           id: 'q1',
           question: { en: 'What do children love?', vi: 'Trẻ em thích gì?' },
+          jp: '子どもは 何が 大好きですか。',
+          ruby: [
+            { base: '子', reading: 'こ' },
+            { base: '何', reading: 'なに' },
+            { base: '大', reading: 'だい' },
+            { base: '好', reading: 'す' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Doraemon', vi: 'Doraemon' } },
-            { id: 'b', label: { en: 'Fireworks', vi: 'Pháo hoa' } },
-            { id: 'c', label: { en: 'Dry cleaning', vi: 'Giặt là' } },
-            { id: 'd', label: { en: 'A party room', vi: 'Phòng tiệc' } }
+            { id: 'a', label: { en: 'Doraemon', vi: 'Doraemon' }, jp: 'ドラえもん' },
+            {
+              id: 'b',
+              label: { en: 'Fireworks', vi: 'Pháo hoa' },
+              jp: '花火',
+              ruby: [
+                { base: '花', reading: 'はな' },
+                { base: '火', reading: 'び' }
+              ]
+            },
+            { id: 'c', label: { en: 'Dry cleaning', vi: 'Giặt là' }, jp: 'クリーニング' },
+            { id: 'd', label: { en: 'A party room', vi: 'Phòng tiệc' }, jp: 'パーティールーム' }
           ],
           correctId: 'a'
         },
@@ -925,11 +942,47 @@ export const n4Lesson27: Lesson = {
             en: 'What can the main character do from his pocket?',
             vi: 'Nhân vật chính làm gì được từ túi?'
           },
+          jp: 'ポケットから 何が できますか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
-            { id: 'a', label: { en: 'Fly in the sky', vi: 'Bay trên trời' } },
-            { id: 'b', label: { en: 'Run on the road', vi: 'Chạy trên đường' } },
-            { id: 'c', label: { en: 'Hear waves', vi: 'Nghe sóng' } },
-            { id: 'd', label: { en: 'Open a classroom', vi: 'Mở lớp học' } }
+            {
+              id: 'a',
+              label: { en: 'Fly in the sky', vi: 'Bay trên trời' },
+              jp: '空を 飛べます',
+              ruby: [
+                { base: '空', reading: 'そら' },
+                { base: '飛', reading: 'と' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Run on the road', vi: 'Chạy trên đường' },
+              jp: '道を 走れます',
+              ruby: [
+                { base: '道', reading: 'みち' },
+                { base: '走', reading: 'はし' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Hear waves', vi: 'Nghe sóng' },
+              jp: '波の 音が 聞こえます',
+              ruby: [
+                { base: '波', reading: 'なみ' },
+                { base: '音', reading: 'おと' },
+                { base: '聞', reading: 'き' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Open a classroom', vi: 'Mở lớp học' },
+              jp: '教室を 開けます',
+              ruby: [
+                { base: '教', reading: 'きょう' },
+                { base: '室', reading: 'しつ' },
+                { base: '開', reading: 'あ' }
+              ]
+            }
           ],
           correctId: 'a'
         }

@@ -928,6 +928,12 @@ export const n5Lesson17: Lesson = {
     {
       id: 'reading-lesson17-sick',
       title: { en: 'Calling in sick', vi: 'Báo nghỉ vì ốm' },
+      titleJp: '病気で 休む',
+      titleRuby: [
+        { base: '病', reading: 'びょう' },
+        { base: '気', reading: 'き' },
+        { base: '休', reading: 'やす' }
+      ],
       lines: [
         {
           jp: 'ミラーさんは きのう 熱が ありました。',
@@ -977,22 +983,74 @@ export const n5Lesson17: Lesson = {
         {
           id: 'q1',
           question: { en: 'What was wrong with Mr. Miller?', vi: 'Anh Miller bị sao?' },
+          jp: 'ミラーさんは どう しましたか。',
           choices: [
-            { id: 'a', label: { en: 'Fever and sore throat', vi: 'Sốt và đau họng' } },
-            { id: 'b', label: { en: 'Broken leg', vi: 'Gãy chân' } },
-            { id: 'c', label: { en: 'Lost wallet', vi: 'Mất ví' } },
-            { id: 'd', label: { en: 'Business trip', vi: 'Đi công tác' } }
+            {
+              id: 'a',
+              label: { en: 'Fever and sore throat', vi: 'Sốt và đau họng' },
+              jp: '熱が あって、のどが 痛かったです',
+              ruby: [
+                { base: '熱', reading: 'ねつ' },
+                { base: '痛', reading: 'いた' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Broken leg', vi: 'Gãy chân' },
+              jp: '足を 折りました',
+              ruby: [
+                { base: '足', reading: 'あし' },
+                { base: '折', reading: 'お' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Lost wallet', vi: 'Mất ví' },
+              jp: '財布を なくしました',
+              ruby: [
+                { base: '財', reading: 'さい' },
+                { base: '布', reading: 'ふ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Business trip', vi: 'Đi công tác' },
+              jp: '出張しました',
+              ruby: [
+                { base: '出', reading: 'しゅっ' },
+                { base: '張', reading: 'ちょう' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Did he go to the office?', vi: 'Anh ấy có đi công ty không?' },
+          jp: '会社へ 行きましたか。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'No', vi: 'Không' } },
-            { id: 'b', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'c', label: { en: 'Only in the afternoon', vi: 'Chỉ buổi chiều' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            { id: 'a', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            { id: 'b', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            {
+              id: 'c',
+              label: { en: 'Only in the afternoon', vi: 'Chỉ buổi chiều' },
+              jp: '午後だけ',
+              ruby: [
+                { base: '午', reading: 'ご' },
+                { base: '後', reading: 'ご' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         },
@@ -1002,11 +1060,40 @@ export const n5Lesson17: Lesson = {
             en: 'When will he submit the report?',
             vi: 'Anh ấy nộp báo cáo khi nào?'
           },
+          jp: 'レポートは いつ 出しますか。',
+          ruby: [{ base: '出', reading: 'だ' }],
           choices: [
-            { id: 'a', label: { en: 'By Friday', vi: 'Trước thứ Sáu' } },
-            { id: 'b', label: { en: 'Today', vi: 'Hôm nay' } },
-            { id: 'c', label: { en: 'Next month', vi: 'Tháng sau' } },
-            { id: 'd', label: { en: 'He will not submit it', vi: 'Không nộp' } }
+            {
+              id: 'a',
+              label: { en: 'By Friday', vi: 'Trước thứ Sáu' },
+              jp: '金曜日までに',
+              ruby: [
+                { base: '金', reading: 'きん' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Today', vi: 'Hôm nay' },
+              jp: '今日',
+              ruby: [{ base: '今日', reading: 'きょう' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Next month', vi: 'Tháng sau' },
+              jp: '来月',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '月', reading: 'げつ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'He will not submit it', vi: 'Không nộp' },
+              jp: '出しません',
+              ruby: [{ base: '出', reading: 'だ' }]
+            }
           ],
           correctId: 'a'
         }
@@ -1015,6 +1102,11 @@ export const n5Lesson17: Lesson = {
     {
       id: 'reading-lesson17-clinic',
       title: { en: 'After the checkup', vi: 'Sau khi khám' },
+      titleJp: '診察の あと',
+      titleRuby: [
+        { base: '診', reading: 'しん' },
+        { base: '察', reading: 'さつ' }
+      ],
       lines: [
         {
           jp: '先生は 「風邪です。大事に してください」 と 言いました。',
@@ -1076,36 +1168,135 @@ export const n5Lesson17: Lesson = {
         {
           id: 'q1',
           question: { en: 'What illness did the doctor say it was?', vi: 'Bác sĩ nói bệnh gì?' },
+          jp: '先生は 何の 病気だ と言いましたか。',
+          ruby: [
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '何', reading: 'なん' },
+            { base: '病', reading: 'びょう' },
+            { base: '気', reading: 'き' },
+            { base: '言', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A cold', vi: 'Cảm' } },
-            { id: 'b', label: { en: 'The flu', vi: 'Cúm' } },
-            { id: 'c', label: { en: 'Food poisoning', vi: 'Ngộ độc thức ăn' } },
-            { id: 'd', label: { en: 'A broken bone', vi: 'Gãy xương' } }
+            {
+              id: 'a',
+              label: { en: 'A cold', vi: 'Cảm' },
+              jp: '風邪',
+              ruby: [
+                { base: '風', reading: 'か' },
+                { base: '邪', reading: 'ぜ' }
+              ]
+            },
+            { id: 'b', label: { en: 'The flu', vi: 'Cúm' }, jp: 'インフルエンザ' },
+            {
+              id: 'c',
+              label: { en: 'Food poisoning', vi: 'Ngộ độc thức ăn' },
+              jp: '食中毒',
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '中', reading: 'ちゅう' },
+                { base: '毒', reading: 'どく' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'A broken bone', vi: 'Gãy xương' },
+              jp: '骨を 折った',
+              ruby: [
+                { base: '骨', reading: 'ほね' },
+                { base: '折', reading: 'お' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'When should he take the medicine?', vi: 'Uống thuốc khi nào?' },
+          jp: '薬は いつ 飲みますか。',
+          ruby: [
+            { base: '薬', reading: 'くすり' },
+            { base: '飲', reading: 'の' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'After meals, three times a day', vi: 'Sau bữa ăn, ngày ba lần' }
+              label: { en: 'After meals, three times a day', vi: 'Sau bữa ăn, ngày ba lần' },
+              jp: '食後に、1日 3回',
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '後', reading: 'ご' },
+                { base: '日', reading: 'にち' },
+                { base: '回', reading: 'かい' }
+              ]
             },
-            { id: 'b', label: { en: 'Before breakfast only', vi: 'Chỉ trước sáng' } },
-            { id: 'c', label: { en: 'At bedtime only', vi: 'Chỉ trước khi ngủ' } },
-            { id: 'd', label: { en: 'He should not take it', vi: 'Không uống' } }
+            {
+              id: 'b',
+              label: { en: 'Before breakfast only', vi: 'Chỉ trước sáng' },
+              jp: '朝ごはんの 前だけ',
+              ruby: [
+                { base: '朝', reading: 'あさ' },
+                { base: '前', reading: 'まえ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'At bedtime only', vi: 'Chỉ trước khi ngủ' },
+              jp: '寝る 前だけ',
+              ruby: [
+                { base: '寝', reading: 'ね' },
+                { base: '前', reading: 'まえ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'He should not take it', vi: 'Không uống' },
+              jp: '飲みません',
+              ruby: [{ base: '飲', reading: 'の' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'When must he pay?', vi: 'Phải trả tiền khi nào?' },
+          jp: '代金は いつ 払いますか。',
+          ruby: [
+            { base: '代', reading: 'だい' },
+            { base: '金', reading: 'きん' },
+            { base: '払', reading: 'はら' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'By the end of today', vi: 'Trong hôm nay' } },
-            { id: 'b', label: { en: 'Next week', vi: 'Tuần sau' } },
-            { id: 'c', label: { en: 'In three days', vi: 'Sau ba ngày' } },
-            { id: 'd', label: { en: 'No payment needed', vi: 'Không cần trả' } }
+            {
+              id: 'a',
+              label: { en: 'By the end of today', vi: 'Trong hôm nay' },
+              jp: '今日中',
+              ruby: [
+                { base: '今日', reading: 'きょう' },
+                { base: '中', reading: 'じゅう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Next week', vi: 'Tuần sau' },
+              jp: '来週',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '週', reading: 'しゅう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'In three days', vi: 'Sau ba ngày' },
+              jp: '3日 あと',
+              ruby: [{ base: '日', reading: 'か' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'No payment needed', vi: 'Không cần trả' },
+              jp: '払わなくて いいです',
+              ruby: [{ base: '払', reading: 'はら' }]
+            }
           ],
           correctId: 'a'
         }
@@ -1114,6 +1305,13 @@ export const n5Lesson17: Lesson = {
     {
       id: 'reading-lesson17-rules',
       title: { en: 'Hospital rules', vi: 'Quy định bệnh viện' },
+      titleJp: '病院の 規則',
+      titleRuby: [
+        { base: '病', reading: 'びょう' },
+        { base: '院', reading: 'いん' },
+        { base: '規', reading: 'き' },
+        { base: '則', reading: 'そく' }
+      ],
       lines: [
         {
           jp: 'この 病院は 禁煙です。廊下で タバコを 吸わないで ください。',
@@ -1172,11 +1370,27 @@ export const n5Lesson17: Lesson = {
             en: 'Is smoking allowed in the hospital?',
             vi: 'Bệnh viện có cho hút thuốc không?'
           },
+          jp: '病院で タバコを 吸っても いいですか。',
+          ruby: [
+            { base: '病', reading: 'びょう' },
+            { base: '院', reading: 'いん' },
+            { base: '吸', reading: 'す' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'No', vi: 'Không' } },
-            { id: 'b', label: { en: 'Yes, anywhere', vi: 'Có, mọi nơi' } },
-            { id: 'c', label: { en: 'Only outside', vi: 'Chỉ ngoài trời' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            { id: 'a', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            { id: 'b', label: { en: 'Yes, anywhere', vi: 'Có, mọi nơi' }, jp: 'はい、どこでも' },
+            {
+              id: 'c',
+              label: { en: 'Only outside', vi: 'Chỉ ngoài trời' },
+              jp: '外だけ',
+              ruby: [{ base: '外', reading: 'そと' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         },
@@ -1186,22 +1400,76 @@ export const n5Lesson17: Lesson = {
             en: 'What happens if you forget your insurance card?',
             vi: 'Quên thẻ bảo hiểm thì sao?'
           },
+          jp: '保険証を 忘れたら どう なりますか。',
+          ruby: [
+            { base: '保', reading: 'ほ' },
+            { base: '険', reading: 'けん' },
+            { base: '証', reading: 'しょう' },
+            { base: '忘', reading: 'わす' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Pay the full amount', vi: 'Trả toàn bộ' } },
-            { id: 'b', label: { en: 'Free treatment', vi: 'Miễn phí' } },
-            { id: 'c', label: { en: 'Cannot enter', vi: 'Không vào được' } },
-            { id: 'd', label: { en: 'No problem', vi: 'Không sao' } }
+            {
+              id: 'a',
+              label: { en: 'Pay the full amount', vi: 'Trả toàn bộ' },
+              jp: '全額 払います',
+              ruby: [
+                { base: '全', reading: 'ぜん' },
+                { base: '額', reading: 'がく' },
+                { base: '払', reading: 'はら' }
+              ]
+            },
+            { id: 'b', label: { en: 'Free treatment', vi: 'Miễn phí' }, jp: 'ただです' },
+            {
+              id: 'c',
+              label: { en: 'Cannot enter', vi: 'Không vào được' },
+              jp: '入れません',
+              ruby: [{ base: '入', reading: 'はい' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'No problem', vi: 'Không sao' },
+              jp: '問題 ありません',
+              ruby: [
+                { base: '問', reading: 'もん' },
+                { base: '題', reading: 'だい' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Why should you not run?', vi: 'Vì sao không nên chạy?' },
+          jp: 'どうして 走っては いけませんか。',
+          ruby: [{ base: '走', reading: 'はし' }],
           choices: [
-            { id: 'a', label: { en: 'It is dangerous', vi: 'Nguy hiểm' } },
-            { id: 'b', label: { en: 'It is too cold', vi: 'Quá lạnh' } },
-            { id: 'c', label: { en: 'Doctors forbid exercise', vi: 'Bác sĩ cấm vận động' } },
-            { id: 'd', label: { en: 'The floor is wet only', vi: 'Chỉ vì sàn ướt' } }
+            {
+              id: 'a',
+              label: { en: 'It is dangerous', vi: 'Nguy hiểm' },
+              jp: '危ないですから',
+              ruby: [{ base: '危', reading: 'あぶ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'It is too cold', vi: 'Quá lạnh' },
+              jp: '寒いですから',
+              ruby: [{ base: '寒', reading: 'さむ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Doctors forbid exercise', vi: 'Bác sĩ cấm vận động' },
+              jp: '運動は だめですから',
+              ruby: [
+                { base: '運', reading: 'うん' },
+                { base: '動', reading: 'どう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'The floor is wet only', vi: 'Chỉ vì sàn ướt' },
+              jp: '床が ぬれているからです',
+              ruby: [{ base: '床', reading: 'ゆか' }]
+            }
           ],
           correctId: 'a'
         }

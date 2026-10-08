@@ -641,6 +641,11 @@ export const n4Lesson39: Lesson = {
     {
       id: 'reading-lesson39-feelings',
       title: { en: 'News that moves you', vi: 'Tin tức làm bạn bất ngờ' },
+      titleJp: '心が 動く ニュース',
+      titleRuby: [
+        { base: '心', reading: 'こころ' },
+        { base: '動', reading: 'うご' }
+      ],
       lines: [
         {
           jp: '首相の 演説を 聞いて、安心 しました。',
@@ -700,11 +705,49 @@ export const n4Lesson39: Lesson = {
             en: 'How did the speaker feel about the speech at first?',
             vi: 'Người nói ban đầu cảm thấy thế nào về bài phát biểu?'
           },
+          jp: '演説を 聞いて、初めに どう 感じましたか。',
+          ruby: [
+            { base: '演', reading: 'えん' },
+            { base: '説', reading: 'ぜつ' },
+            { base: '聞', reading: 'き' },
+            { base: '初', reading: 'はじ' },
+            { base: '感', reading: 'かん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Relieved', vi: 'Yên tâm' } },
-            { id: 'b', label: { en: 'Disappointed', vi: 'Thất vọng' } },
-            { id: 'c', label: { en: 'Angry', vi: 'Tức giận' } },
-            { id: 'd', label: { en: 'Embarrassed', vi: 'Xấu hổ' } }
+            {
+              id: 'a',
+              label: { en: 'Relieved', vi: 'Yên tâm' },
+              jp: '安心しました',
+              ruby: [
+                { base: '安', reading: 'あん' },
+                { base: '心', reading: 'しん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Disappointed', vi: 'Thất vọng' },
+              jp: '失望しました',
+              ruby: [
+                { base: '失', reading: 'しつ' },
+                { base: '望', reading: 'ぼう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Angry', vi: 'Tức giận' },
+              jp: '怒りました',
+              ruby: [{ base: '怒', reading: 'おこ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Embarrassed', vi: 'Xấu hổ' },
+              jp: '恥ずかしい 気持ちに なりました',
+              ruby: [
+                { base: '恥', reading: 'は' },
+                { base: '気', reading: 'き' },
+                { base: '持', reading: 'も' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -714,11 +757,44 @@ export const n4Lesson39: Lesson = {
             en: 'Why could the speaker not understand well?',
             vi: 'Vì sao người nói không hiểu rõ?'
           },
+          jp: 'どうして よく 理解できませんでしたか。',
+          ruby: [
+            { base: '理', reading: 'り' },
+            { base: '解', reading: 'かい' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'The content was complicated', vi: 'Nội dung phức tạp' } },
-            { id: 'b', label: { en: 'There was no news', vi: 'Không có tin tức' } },
-            { id: 'c', label: { en: 'The coast was closed', vi: 'Bờ biển đóng cửa' } },
-            { id: 'd', label: { en: 'They went hiking', vi: 'Họ đi dã ngoại' } }
+            {
+              id: 'a',
+              label: { en: 'The content was complicated', vi: 'Nội dung phức tạp' },
+              jp: '内容が 複雑でした',
+              ruby: [
+                { base: '内', reading: 'ない' },
+                { base: '容', reading: 'よう' },
+                { base: '複', reading: 'ふく' },
+                { base: '雑', reading: 'ざつ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'There was no news', vi: 'Không có tin tức' },
+              jp: 'ニュースが ありませんでした'
+            },
+            {
+              id: 'c',
+              label: { en: 'The coast was closed', vi: 'Bờ biển đóng cửa' },
+              jp: '海岸が 閉まって いました',
+              ruby: [
+                { base: '海', reading: 'かい' },
+                { base: '岸', reading: 'がん' },
+                { base: '閉', reading: 'し' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'They went hiking', vi: 'Họ đi dã ngoại' },
+              jp: 'ハイキングに 行きました',
+              ruby: [{ base: '行', reading: 'い' }]
+            }
           ],
           correctId: 'a'
         }

@@ -721,6 +721,11 @@ export const n4Lesson31: Lesson = {
     {
       id: 'reading-lesson31-village',
       title: { en: 'After graduation', vi: 'Sau khi tốt nghiệp' },
+      titleJp: '卒業の あと',
+      titleRuby: [
+        { base: '卒', reading: 'そつ' },
+        { base: '業', reading: 'ぎょう' }
+      ],
       lines: [
         {
           jp: 'ある 村の 青年は 大学を 卒業して、都会の 映画館で 働く つもりでした。',
@@ -769,14 +774,59 @@ export const n4Lesson31: Lesson = {
         {
           id: 'q1',
           question: { en: 'What did he first plan to do?', vi: 'Ban đầu anh ấy định làm gì?' },
+          jp: '初めに 何を する つもりでしたか。',
+          ruby: [
+            { base: '初', reading: 'はじ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Work at a city movie theater', vi: 'Làm ở rạp phim thành phố' }
+              label: { en: 'Work at a city movie theater', vi: 'Làm ở rạp phim thành phố' },
+              jp: '都会の 映画館で 働く',
+              ruby: [
+                { base: '都', reading: 'と' },
+                { base: '会', reading: 'かい' },
+                { base: '映', reading: 'えい' },
+                { base: '画', reading: 'が' },
+                { base: '館', reading: 'かん' },
+                { base: '働', reading: 'はたら' }
+              ]
             },
-            { id: 'b', label: { en: 'Return to the village farm', vi: 'Về làng nông nghiệp' } },
-            { id: 'c', label: { en: 'Study at graduate school', vi: 'Học cao học' } },
-            { id: 'd', label: { en: 'Travel abroad', vi: 'Du lịch nước ngoài' } }
+            {
+              id: 'b',
+              label: { en: 'Return to the village farm', vi: 'Về làng nông nghiệp' },
+              jp: '村の 農業に 戻る',
+              ruby: [
+                { base: '村', reading: 'むら' },
+                { base: '農', reading: 'のう' },
+                { base: '業', reading: 'ぎょう' },
+                { base: '戻', reading: 'もど' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Study at graduate school', vi: 'Học cao học' },
+              jp: '大学院で 勉強する',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' },
+                { base: '院', reading: 'いん' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Travel abroad', vi: 'Du lịch nước ngoài' },
+              jp: '外国へ 旅行する',
+              ruby: [
+                { base: '外', reading: 'がい' },
+                { base: '国', reading: 'こく' },
+                { base: '旅', reading: 'りょ' },
+                { base: '行', reading: 'こう' }
+              ]
+            }
           ],
           correctId: 'a'
         }
