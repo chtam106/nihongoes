@@ -638,6 +638,11 @@ export const n5Lesson19: Lesson = {
     {
       id: 'reading-lesson19-weekend',
       title: { en: 'Weekend activities', vi: 'Hoạt động cuối tuần' },
+      titleJp: '休みの 日',
+      titleRuby: [
+        { base: '休', reading: 'やす' },
+        { base: '日', reading: 'ひ' }
+      ],
       lines: [
         {
           jp: '佐藤さんは 休みの 日、掃除を したり、洗濯を したり します。',
@@ -677,22 +682,86 @@ export const n5Lesson19: Lesson = {
         {
           id: 'q1',
           question: { en: 'What does she do on days off?', vi: 'Ngày nghỉ chị ấy làm gì?' },
+          jp: '休みの 日、何を しますか。',
+          ruby: [
+            { base: '休', reading: 'やす' },
+            { base: '日', reading: 'ひ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Cleaning and laundry', vi: 'Dọn phòng và giặt' } },
-            { id: 'b', label: { en: 'Only golf', vi: 'Chỉ chơi gôn' } },
-            { id: 'c', label: { en: 'Only sumo', vi: 'Chỉ xem Sumo' } },
-            { id: 'd', label: { en: 'Nothing', vi: 'Không làm gì' } }
+            {
+              id: 'a',
+              label: { en: 'Cleaning and laundry', vi: 'Dọn phòng và giặt' },
+              jp: '掃除と 洗濯',
+              ruby: [
+                { base: '掃', reading: 'そう' },
+                { base: '除', reading: 'じ' },
+                { base: '洗', reading: 'せん' },
+                { base: '濯', reading: 'たく' }
+              ]
+            },
+            { id: 'b', label: { en: 'Only golf', vi: 'Chỉ chơi gôn' }, jp: 'ゴルフだけ' },
+            {
+              id: 'c',
+              label: { en: 'Only sumo', vi: 'Chỉ xem Sumo' },
+              jp: '相撲だけ',
+              ruby: [
+                { base: '相', reading: 'す' },
+                { base: '撲', reading: 'もう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Nothing', vi: 'Không làm gì' },
+              jp: '何も しません',
+              ruby: [{ base: '何', reading: 'なに' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Has she seen sumo?', vi: 'Chị ấy đã xem Sumo chưa?' },
+          jp: '相撲を 見た ことが ありますか。',
+          ruby: [
+            { base: '相', reading: 'す' },
+            { base: '撲', reading: 'もう' },
+            { base: '見', reading: 'み' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Never', vi: 'Chưa bao giờ' } },
-            { id: 'b', label: { en: 'Many times', vi: 'Nhiều lần' } },
-            { id: 'c', label: { en: 'Once', vi: 'Một lần' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            {
+              id: 'a',
+              label: { en: 'Never', vi: 'Chưa bao giờ' },
+              jp: '一度も ありません',
+              ruby: [
+                { base: '一', reading: 'いち' },
+                { base: '度', reading: 'ど' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Many times', vi: 'Nhiều lần' },
+              jp: '何回も あります',
+              ruby: [
+                { base: '何', reading: 'なん' },
+                { base: '回', reading: 'かい' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Once', vi: 'Một lần' },
+              jp: '一度 あります',
+              ruby: [
+                { base: '一', reading: 'いち' },
+                { base: '度', reading: 'ど' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         }
@@ -701,6 +770,8 @@ export const n5Lesson19: Lesson = {
     {
       id: 'reading-lesson19-change',
       title: { en: 'Getting warmer', vi: 'Trời ấm dần' },
+      titleJp: '暖かく なる',
+      titleRuby: [{ base: '暖', reading: 'あたた' }],
       lines: [
         {
           jp: 'もうすぐ 春です。だんだん 暖かく なります。',
@@ -748,22 +819,73 @@ export const n5Lesson19: Lesson = {
         {
           id: 'q1',
           question: { en: 'What season is coming?', vi: 'Mùa nào sắp đến?' },
+          jp: 'もうすぐ 何の 季節ですか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '季', reading: 'き' },
+            { base: '節', reading: 'せつ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Spring', vi: 'Mùa xuân' } },
-            { id: 'b', label: { en: 'Winter', vi: 'Mùa đông' } },
-            { id: 'c', label: { en: 'Summer', vi: 'Mùa hè' } },
-            { id: 'd', label: { en: 'Autumn', vi: 'Mùa thu' } }
+            {
+              id: 'a',
+              label: { en: 'Spring', vi: 'Mùa xuân' },
+              jp: '春',
+              ruby: [{ base: '春', reading: 'はる' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Winter', vi: 'Mùa đông' },
+              jp: '冬',
+              ruby: [{ base: '冬', reading: 'ふゆ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Summer', vi: 'Mùa hè' },
+              jp: '夏',
+              ruby: [{ base: '夏', reading: 'なつ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Autumn', vi: 'Mùa thu' },
+              jp: '秋',
+              ruby: [{ base: '秋', reading: 'あき' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What is happening to the weather?', vi: 'Thời tiết thay đổi thế nào?' },
+          jp: '天気は どう なりますか。',
+          ruby: [
+            { base: '天', reading: 'てん' },
+            { base: '気', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Getting warmer', vi: 'Ấm dần' } },
-            { id: 'b', label: { en: 'Getting colder', vi: 'Lạnh dần' } },
-            { id: 'c', label: { en: 'Staying the same', vi: 'Không đổi' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            {
+              id: 'a',
+              label: { en: 'Getting warmer', vi: 'Ấm dần' },
+              jp: 'だんだん 暖かく なります',
+              ruby: [{ base: '暖', reading: 'あたた' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Getting colder', vi: 'Lạnh dần' },
+              jp: 'だんだん 寒く なります',
+              ruby: [{ base: '寒', reading: 'さむ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Staying the same', vi: 'Không đổi' },
+              jp: '同じです',
+              ruby: [{ base: '同', reading: 'おな' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         }

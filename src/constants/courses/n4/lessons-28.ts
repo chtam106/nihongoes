@@ -1034,6 +1034,11 @@ export const n4Lesson28: Lesson = {
     {
       id: 'reading-lesson28-event',
       title: { en: 'Community event notice', vi: 'Thông báo sự kiện cộng đồng' },
+      titleJp: '地域の イベント',
+      titleRuby: [
+        { base: '地', reading: 'ち' },
+        { base: '域', reading: 'いき' }
+      ],
       lines: [
         {
           jp: '体育館の 入口に お知らせが ありました。',
@@ -1093,22 +1098,85 @@ export const n4Lesson28: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where was the notice posted?', vi: 'Thông báo dán ở đâu?' },
+          jp: 'お知らせは どこに ありましたか。',
+          ruby: [{ base: '知', reading: 'し' }],
           choices: [
-            { id: 'a', label: { en: 'At the gym entrance', vi: 'Cửa nhà thi đấu' } },
-            { id: 'b', label: { en: 'At the beauty salon', vi: 'Hiệu làm đẹp' } },
-            { id: 'c', label: { en: 'In the kitchen', vi: 'Nhà bếp' } },
-            { id: 'd', label: { en: 'At a real estate office', vi: 'Công ty bất động sản' } }
+            {
+              id: 'a',
+              label: { en: 'At the gym entrance', vi: 'Cửa nhà thi đấu' },
+              jp: '体育館の 入口',
+              ruby: [
+                { base: '体', reading: 'たい' },
+                { base: '育', reading: 'いく' },
+                { base: '館', reading: 'かん' },
+                { base: '入', reading: 'いり' },
+                { base: '口', reading: 'ぐち' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'At the beauty salon', vi: 'Hiệu làm đẹp' },
+              jp: '美容院',
+              ruby: [
+                { base: '美', reading: 'び' },
+                { base: '容', reading: 'よう' },
+                { base: '院', reading: 'いん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'In the kitchen', vi: 'Nhà bếp' },
+              jp: '台所',
+              ruby: [
+                { base: '台', reading: 'だい' },
+                { base: '所', reading: 'どころ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'At a real estate office', vi: 'Công ty bất động sản' },
+              jp: '不動産屋',
+              ruby: [
+                { base: '不', reading: 'ふ' },
+                { base: '動', reading: 'どう' },
+                { base: '産', reading: 'さん' },
+                { base: '屋', reading: 'や' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How much does the event cost?', vi: 'Sự kiện có mất phí không?' },
+          jp: 'イベントは いくらですか。',
           choices: [
-            { id: 'a', label: { en: 'Free', vi: 'Miễn phí' } },
-            { id: 'b', label: { en: '1,000 yen', vi: '1.000 yên' } },
-            { id: 'c', label: { en: 'Salary bonus', vi: 'Tiền thưởng' } },
-            { id: 'd', label: { en: "Two months' rent", vi: 'Tiền thuê hai tháng' } }
+            {
+              id: 'a',
+              label: { en: 'Free', vi: 'Miễn phí' },
+              jp: '無料です',
+              ruby: [
+                { base: '無', reading: 'む' },
+                { base: '料', reading: 'りょう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: '1,000 yen', vi: '1.000 yên' },
+              jp: '1000円です',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            { id: 'c', label: { en: 'Salary bonus', vi: 'Tiền thưởng' }, jp: 'ボーナスです' },
+            {
+              id: 'd',
+              label: { en: "Two months' rent", vi: 'Tiền thuê hai tháng' },
+              jp: '家賃の 2か月です',
+              ruby: [
+                { base: '家', reading: 'や' },
+                { base: '賃', reading: 'ちん' },
+                { base: '月', reading: 'げつ' }
+              ]
+            }
           ],
           correctId: 'a'
         }

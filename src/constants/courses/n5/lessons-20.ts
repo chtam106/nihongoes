@@ -431,6 +431,12 @@ export const n5Lesson20: Lesson = {
     {
       id: 'reading-lesson20-casual',
       title: { en: 'Talking with a friend', vi: 'Nói chuyện với bạn' },
+      titleJp: '友達と 話す',
+      titleRuby: [
+        { base: '友', reading: 'とも' },
+        { base: '達', reading: 'だち' },
+        { base: '話', reading: 'はな' }
+      ],
       lines: [
         {
           jp: '田中くんは ミラーくんに 「国 帰るの？」 と 聞きました。',
@@ -467,22 +473,63 @@ export const n5Lesson20: Lesson = {
         {
           id: 'q1',
           question: { en: 'When will Miller go home?', vi: 'Miller về khi nào?' },
+          jp: 'ミラーさんは いつ 国へ 帰りますか。',
+          ruby: [
+            { base: '国', reading: 'くに' },
+            { base: '帰', reading: 'かえ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Next month', vi: 'Tháng sau' } },
-            { id: 'b', label: { en: 'This week', vi: 'Tuần này' } },
-            { id: 'c', label: { en: 'Next year', vi: 'Năm sau' } },
-            { id: 'd', label: { en: 'He is not going', vi: 'Không về' } }
+            {
+              id: 'a',
+              label: { en: 'Next month', vi: 'Tháng sau' },
+              jp: '来月',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '月', reading: 'げつ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'This week', vi: 'Tuần này' },
+              jp: '今週',
+              ruby: [
+                { base: '今', reading: 'こん' },
+                { base: '週', reading: 'しゅう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Next year', vi: 'Năm sau' },
+              jp: '来年',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '年', reading: 'ねん' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'He is not going', vi: 'Không về' },
+              jp: '帰りません',
+              ruby: [{ base: '帰', reading: 'かえ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Does he need a visa?', vi: 'Anh ấy cần visa không?' },
+          jp: 'ビザは 要りますか。',
+          ruby: [{ base: '要', reading: 'い' }],
           choices: [
-            { id: 'a', label: { en: 'No', vi: 'Không' } },
-            { id: 'b', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'c', label: { en: 'Not said', vi: 'Không nói' } },
-            { id: 'd', label: { en: 'Maybe', vi: 'Có thể' } }
+            { id: 'a', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            { id: 'b', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            {
+              id: 'c',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
+            { id: 'd', label: { en: 'Maybe', vi: 'Có thể' }, jp: 'たぶん' }
           ],
           correctId: 'a'
         }

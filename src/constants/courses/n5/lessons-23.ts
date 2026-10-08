@@ -610,6 +610,11 @@ export const n5Lesson23: Lesson = {
     {
       id: 'reading-lesson23-moving',
       title: { en: 'Moving house', vi: 'Chuyển nhà' },
+      titleJp: '引っ越し',
+      titleRuby: [
+        { base: '引', reading: 'ひ' },
+        { base: '越', reading: 'こ' }
+      ],
       lines: [
         {
           jp: '来月 引っ越しを します。新しい アパートは 駅の 近くです。',
@@ -654,11 +659,40 @@ export const n5Lesson23: Lesson = {
         {
           id: 'q1',
           question: { en: 'When will the speaker move?', vi: 'Người nói chuyển nhà khi nào?' },
+          jp: 'いつ 引っ越しを しますか。',
+          ruby: [
+            { base: '引', reading: 'ひ' },
+            { base: '越', reading: 'こ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Next month', vi: 'Tháng sau' } },
-            { id: 'b', label: { en: 'This week', vi: 'Tuần này' } },
-            { id: 'c', label: { en: 'During New Year', vi: 'Dịp Tết' } },
-            { id: 'd', label: { en: 'Yesterday', vi: 'Hôm qua' } }
+            {
+              id: 'a',
+              label: { en: 'Next month', vi: 'Tháng sau' },
+              jp: '来月',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '月', reading: 'げつ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'This week', vi: 'Tuần này' },
+              jp: '今週',
+              ruby: [
+                { base: '今', reading: 'こん' },
+                { base: '週', reading: 'しゅう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'During New Year', vi: 'Dịp Tết' },
+              jp: 'お正月',
+              ruby: [
+                { base: '正', reading: 'しょう' },
+                { base: '月', reading: 'がつ' }
+              ]
+            },
+            { id: 'd', label: { en: 'Yesterday', vi: 'Hôm qua' }, jp: 'きのう' }
           ],
           correctId: 'a'
         },
@@ -668,14 +702,50 @@ export const n5Lesson23: Lesson = {
             en: 'What must be changed when moving?',
             vi: 'Phải đổi gì khi chuyển nhà?'
           },
+          jp: '引っ越しの とき、何を 変えなければ なりませんか。',
+          ruby: [
+            { base: '引', reading: 'ひ' },
+            { base: '越', reading: 'こ' },
+            { base: '何', reading: 'なに' },
+            { base: '変', reading: 'か' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Address on registration card', vi: 'Địa chỉ trên thẻ đăng ký' }
+              label: { en: 'Address on registration card', vi: 'Địa chỉ trên thẻ đăng ký' },
+              jp: '登録証の 住所',
+              ruby: [
+                { base: '登', reading: 'とう' },
+                { base: '録', reading: 'ろく' },
+                { base: '証', reading: 'しょう' },
+                { base: '住', reading: 'じゅう' },
+                { base: '所', reading: 'しょ' }
+              ]
             },
-            { id: 'b', label: { en: 'Shoe size', vi: 'Cỡ giày' } },
-            { id: 'c', label: { en: 'Traffic light', vi: 'Đèn tín hiệu' } },
-            { id: 'd', label: { en: 'Machine knob', vi: 'Núm máy' } }
+            {
+              id: 'b',
+              label: { en: 'Shoe size', vi: 'Cỡ giày' },
+              jp: '靴の サイズ',
+              ruby: [{ base: '靴', reading: 'くつ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Traffic light', vi: 'Đèn tín hiệu' },
+              jp: '信号',
+              ruby: [
+                { base: '信', reading: 'しん' },
+                { base: '号', reading: 'ごう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Machine knob', vi: 'Núm máy' },
+              jp: '機械の つまみ',
+              ruby: [
+                { base: '機', reading: 'き' },
+                { base: '械', reading: 'かい' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -684,6 +754,13 @@ export const n5Lesson23: Lesson = {
     {
       id: 'reading-lesson23-walk',
       title: { en: 'Walking to the city office', vi: 'Đi bộ đến ủy ban thành phố' },
+      titleJp: '市役所まで 歩く',
+      titleRuby: [
+        { base: '市', reading: 'し' },
+        { base: '役', reading: 'やく' },
+        { base: '所', reading: 'しょ' },
+        { base: '歩', reading: 'ある' }
+      ],
       lines: [
         {
           jp: '私は 毎日 道を 歩いて 会社へ 行きます。',
@@ -727,25 +804,96 @@ export const n5Lesson23: Lesson = {
         {
           id: 'q1',
           question: { en: 'How does the speaker go to work?', vi: 'Người nói đi làm thế nào?' },
+          jp: 'どう 会社へ 行きますか。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Walk along the road', vi: 'Đi bộ trên đường' } },
-            { id: 'b', label: { en: 'By train only', vi: 'Chỉ bằng tàu' } },
-            { id: 'c', label: { en: 'By car', vi: 'Bằng ô tô' } },
-            { id: 'd', label: { en: 'Not mentioned', vi: 'Không nói' } }
+            {
+              id: 'a',
+              label: { en: 'Walk along the road', vi: 'Đi bộ trên đường' },
+              jp: '道を 歩いて',
+              ruby: [
+                { base: '道', reading: 'みち' },
+                { base: '歩', reading: 'ある' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'By train only', vi: 'Chỉ bằng tàu' },
+              jp: '電車だけ',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '車', reading: 'しゃ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'By car', vi: 'Bằng ô tô' },
+              jp: '車で',
+              ruby: [{ base: '車', reading: 'くるま' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not mentioned', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What can you see after turning the corner?', vi: 'Rẽ góc thì thấy gì?' },
+          jp: '角を 曲がると 何が 見えますか。',
+          ruby: [
+            { base: '角', reading: 'かど' },
+            { base: '曲', reading: 'ま' },
+            { base: '何', reading: 'なに' },
+            { base: '見', reading: 'み' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'A large building (city hall)', vi: 'Tòa nhà lớn (ủy ban thành phố)' }
+              label: { en: 'A large building (city hall)', vi: 'Tòa nhà lớn (ủy ban thành phố)' },
+              jp: '大きい 建物。市役所です',
+              ruby: [
+                { base: '大', reading: 'おお' },
+                { base: '建', reading: 'たて' },
+                { base: '物', reading: 'もの' },
+                { base: '市', reading: 'し' },
+                { base: '役', reading: 'やく' },
+                { base: '所', reading: 'しょ' }
+              ]
             },
-            { id: 'b', label: { en: 'A bridge', vi: 'Cầu' } },
-            { id: 'c', label: { en: 'A parking lot', vi: 'Bãi đỗ xe' } },
-            { id: 'd', label: { en: 'An electronics store', vi: 'Cửa hàng điện máy' } }
+            {
+              id: 'b',
+              label: { en: 'A bridge', vi: 'Cầu' },
+              jp: '橋',
+              ruby: [{ base: '橋', reading: 'はし' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'A parking lot', vi: 'Bãi đỗ xe' },
+              jp: '駐車場',
+              ruby: [
+                { base: '駐', reading: 'ちゅう' },
+                { base: '車', reading: 'しゃ' },
+                { base: '場', reading: 'じょう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'An electronics store', vi: 'Cửa hàng điện máy' },
+              jp: '電気屋',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '気', reading: 'き' },
+                { base: '屋', reading: 'や' }
+              ]
+            }
           ],
           correctId: 'a'
         }

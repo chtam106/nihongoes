@@ -1057,6 +1057,12 @@ export const n5Lesson16: Lesson = {
     {
       id: 'reading-lesson16-morning',
       title: { en: 'Morning routine', vi: 'Buổi sáng' },
+      titleJp: '朝の 習慣',
+      titleRuby: [
+        { base: '朝', reading: 'あさ' },
+        { base: '習', reading: 'しゅう' },
+        { base: '慣', reading: 'かん' }
+      ],
       lines: [
         {
           jp: '私は 毎朝 6時に 起きます。',
@@ -1104,11 +1110,37 @@ export const n5Lesson16: Lesson = {
         {
           id: 'q1',
           question: { en: 'What time does the person wake up?', vi: 'Người đó dậy lúc mấy giờ?' },
+          jp: '何時に 起きますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '起', reading: 'お' }
+          ],
           choices: [
-            { id: 'a', label: { en: '6 o\u0027clock', vi: '6 giờ' } },
-            { id: 'b', label: { en: '8 o\u0027clock', vi: '8 giờ' } },
-            { id: 'c', label: { en: '7 o\u0027clock', vi: '7 giờ' } },
-            { id: 'd', label: { en: '9 o\u0027clock', vi: '9 giờ' } }
+            {
+              id: 'a',
+              label: { en: '6 o\u0027clock', vi: '6 giờ' },
+              jp: '6時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'b',
+              label: { en: '8 o\u0027clock', vi: '8 giờ' },
+              jp: '8時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: '7 o\u0027clock', vi: '7 giờ' },
+              jp: '7時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'd',
+              label: { en: '9 o\u0027clock', vi: '9 giờ' },
+              jp: '9時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'a'
         },
@@ -1118,22 +1150,76 @@ export const n5Lesson16: Lesson = {
             en: 'What does the person do after showering?',
             vi: 'Sau khi tắm, người đó làm gì trước?'
           },
+          jp: 'シャワーの あと、まず 何を しますか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
-            { id: 'a', label: { en: 'Drink coffee', vi: 'Uống cà phê' } },
-            { id: 'b', label: { en: 'Go to bed', vi: 'Đi ngủ' } },
-            { id: 'c', label: { en: 'Take a bus', vi: 'Lên xe buýt' } },
-            { id: 'd', label: { en: 'Visit a shrine', vi: 'Đi đền thờ' } }
+            {
+              id: 'a',
+              label: { en: 'Drink coffee', vi: 'Uống cà phê' },
+              jp: 'コーヒーを 飲みます',
+              ruby: [{ base: '飲', reading: 'の' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Go to bed', vi: 'Đi ngủ' },
+              jp: '寝ます',
+              ruby: [{ base: '寝', reading: 'ね' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Take a bus', vi: 'Lên xe buýt' },
+              jp: 'バスに 乗ります',
+              ruby: [{ base: '乗', reading: 'の' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Visit a shrine', vi: 'Đi đền thờ' },
+              jp: '神社へ 行きます',
+              ruby: [
+                { base: '神', reading: 'じん' },
+                { base: '社', reading: 'じゃ' },
+                { base: '行', reading: 'い' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'How does the person commute?', vi: 'Người đó đi làm bằng gì?' },
+          jp: '何で 通勤しますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '通', reading: 'つう' },
+            { base: '勤', reading: 'きん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Train', vi: 'Tàu điện' } },
-            { id: 'b', label: { en: 'Taxi only', vi: 'Chỉ taxi' } },
-            { id: 'c', label: { en: 'On foot all the way', vi: 'Đi bộ suốt' } },
-            { id: 'd', label: { en: 'Airplane', vi: 'Máy bay' } }
+            {
+              id: 'a',
+              label: { en: 'Train', vi: 'Tàu điện' },
+              jp: '電車',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '車', reading: 'しゃ' }
+              ]
+            },
+            { id: 'b', label: { en: 'Taxi only', vi: 'Chỉ taxi' }, jp: 'タクシーだけ' },
+            {
+              id: 'c',
+              label: { en: 'On foot all the way', vi: 'Đi bộ suốt' },
+              jp: 'ずっと 歩く',
+              ruby: [{ base: '歩', reading: 'ある' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Airplane', vi: 'Máy bay' },
+              jp: '飛行機',
+              ruby: [
+                { base: '飛', reading: 'ひ' },
+                { base: '行', reading: 'こう' },
+                { base: '機', reading: 'き' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -1142,6 +1228,12 @@ export const n5Lesson16: Lesson = {
     {
       id: 'reading-lesson16-trip',
       title: { en: 'Trip to the campus', vi: 'Đi đến khuôn viên' },
+      titleJp: '大学前まで',
+      titleRuby: [
+        { base: '大', reading: 'だい' },
+        { base: '学', reading: 'がく' },
+        { base: '前', reading: 'まえ' }
+      ],
       lines: [
         {
           jp: 'リンさんは 大学前へ 行きたい です。',
@@ -1196,33 +1288,110 @@ export const n5Lesson16: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where does Lin want to go?', vi: 'Lin muốn đi đâu?' },
+          jp: 'リンさんは どこへ 行きたいですか。',
+          ruby: [{ base: '行', reading: 'い' }],
           choices: [
-            { id: 'a', label: { en: 'Daigakumae', vi: 'Daigakumae' } },
-            { id: 'b', label: { en: 'Umeda only', vi: 'Chỉ Umeda' } },
-            { id: 'c', label: { en: 'A temple', vi: 'Chùa' } },
-            { id: 'd', label: { en: 'An ATM', vi: 'Máy ATM' } }
+            {
+              id: 'a',
+              label: { en: 'Daigakumae', vi: 'Daigakumae' },
+              jp: '大学前',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' },
+                { base: '前', reading: 'まえ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Umeda only', vi: 'Chỉ Umeda' },
+              jp: '梅田だけ',
+              ruby: [
+                { base: '梅', reading: 'うめ' },
+                { base: '田', reading: 'だ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'A temple', vi: 'Chùa' },
+              jp: '寺',
+              ruby: [{ base: '寺', reading: 'てら' }]
+            },
+            { id: 'd', label: { en: 'An ATM', vi: 'Máy ATM' }, jp: 'ATM' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where does she transfer?', vi: 'Cô ấy chuyển tàu ở đâu?' },
+          jp: 'どこで 乗り換えますか。',
+          ruby: [
+            { base: '乗', reading: 'の' },
+            { base: '換', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Umeda', vi: 'Umeda' } },
-            { id: 'b', label: { en: 'Daigakumae', vi: 'Daigakumae' } },
-            { id: 'c', label: { en: 'At home', vi: 'Ở nhà' } },
-            { id: 'd', label: { en: 'At the bus stop only', vi: 'Chỉ ở bến xe' } }
+            {
+              id: 'a',
+              label: { en: 'Umeda', vi: 'Umeda' },
+              jp: '梅田',
+              ruby: [
+                { base: '梅', reading: 'うめ' },
+                { base: '田', reading: 'だ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Daigakumae', vi: 'Daigakumae' },
+              jp: '大学前',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' },
+                { base: '前', reading: 'まえ' }
+              ]
+            },
+            { id: 'c', label: { en: 'At home', vi: 'Ở nhà' }, jp: 'うち' },
+            {
+              id: 'd',
+              label: { en: 'At the bus stop only', vi: 'Chỉ ở bến xe' },
+              jp: 'バス停だけ',
+              ruby: [{ base: '停', reading: 'てい' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Which bus does she take?', vi: 'Cô ấy lên xe buýt số mấy?' },
+          jp: '何番の バスに 乗りますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '番', reading: 'ばん' },
+            { base: '乗', reading: 'の' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Number 8', vi: 'Số 8' } },
-            { id: 'b', label: { en: 'Number 3', vi: 'Số 3' } },
-            { id: 'c', label: { en: 'Number 10', vi: 'Số 10' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            {
+              id: 'a',
+              label: { en: 'Number 8', vi: 'Số 8' },
+              jp: '8番',
+              ruby: [{ base: '番', reading: 'ばん' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Number 3', vi: 'Số 3' },
+              jp: '3番',
+              ruby: [{ base: '番', reading: 'ばん' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Number 10', vi: 'Số 10' },
+              jp: '10番',
+              ruby: [{ base: '番', reading: 'ばん' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         }
@@ -1231,6 +1400,7 @@ export const n5Lesson16: Lesson = {
     {
       id: 'reading-lesson16-health',
       title: { en: 'After jogging', vi: 'Sau khi chạy bộ' },
+      titleJp: 'ジョギングの あと',
       lines: [
         {
           jp: 'ケンさんは 体が 丈夫 ですが、今日は 足が 痛い です。',
@@ -1287,33 +1457,105 @@ export const n5Lesson16: Lesson = {
         {
           id: 'q1',
           question: { en: 'What hurts today?', vi: 'Hôm nay đau ở đâu?' },
+          jp: '今日は どこが 痛いですか。',
+          ruby: [
+            { base: '今日', reading: 'きょう' },
+            { base: '痛', reading: 'いた' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Legs', vi: 'Chân' } },
-            { id: 'b', label: { en: 'Teeth', vi: 'Răng' } },
-            { id: 'c', label: { en: 'Ears', vi: 'Tai' } },
-            { id: 'd', label: { en: 'Hair', vi: 'Tóc' } }
+            {
+              id: 'a',
+              label: { en: 'Legs', vi: 'Chân' },
+              jp: '足',
+              ruby: [{ base: '足', reading: 'あし' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Teeth', vi: 'Răng' },
+              jp: '歯',
+              ruby: [{ base: '歯', reading: 'は' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Ears', vi: 'Tai' },
+              jp: '耳',
+              ruby: [{ base: '耳', reading: 'みみ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Hair', vi: 'Tóc' },
+              jp: '髪',
+              ruby: [{ base: '髪', reading: 'かみ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What else does Ken feel?', vi: 'Ken còn cảm thấy gì nữa?' },
+          jp: 'ほかに どう 感じますか。',
+          ruby: [{ base: '感', reading: 'かん' }],
           choices: [
-            { id: 'a', label: { en: 'Hungry', vi: 'Đói' } },
-            { id: 'b', label: { en: 'Sleepy only', vi: 'Chỉ buồn ngủ' } },
-            { id: 'c', label: { en: 'Cold', vi: 'Lạnh' } },
-            { id: 'd', label: { en: 'Angry', vi: 'Tức giận' } }
+            { id: 'a', label: { en: 'Hungry', vi: 'Đói' }, jp: 'おなかが すいて います' },
+            {
+              id: 'b',
+              label: { en: 'Sleepy only', vi: 'Chỉ buồn ngủ' },
+              jp: '眠いだけです',
+              ruby: [{ base: '眠', reading: 'ねむ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Cold', vi: 'Lạnh' },
+              jp: '寒いです',
+              ruby: [{ base: '寒', reading: 'さむ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Angry', vi: 'Tức giận' },
+              jp: '怒っています',
+              ruby: [{ base: '怒', reading: 'おこ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Who does he call?', vi: 'Anh gọi cho ai?' },
+          jp: 'だれに 電話しますか。',
+          ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A friend', vi: 'Bạn' } },
-            { id: 'b', label: { en: 'A taxi driver', vi: 'Tài xế taxi' } },
-            { id: 'c', label: { en: 'A teacher', vi: 'Giáo viên' } },
-            { id: 'd', label: { en: 'Nobody', vi: 'Không ai' } }
+            {
+              id: 'a',
+              label: { en: 'A friend', vi: 'Bạn' },
+              jp: '友達',
+              ruby: [
+                { base: '友', reading: 'とも' },
+                { base: '達', reading: 'だち' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A taxi driver', vi: 'Tài xế taxi' },
+              jp: 'タクシーの 運転手',
+              ruby: [
+                { base: '運', reading: 'うん' },
+                { base: '転', reading: 'てん' },
+                { base: '手', reading: 'しゅ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'A teacher', vi: 'Giáo viên' },
+              jp: '先生',
+              ruby: [
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
+            },
+            { id: 'd', label: { en: 'Nobody', vi: 'Không ai' }, jp: 'だれにも しません' }
           ],
           correctId: 'a'
         }

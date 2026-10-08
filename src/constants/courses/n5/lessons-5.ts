@@ -1224,6 +1224,11 @@ export const n5Lesson5: Lesson = {
     {
       id: 'reading-lesson5-trip',
       title: { en: 'A trip to Kyoto', vi: 'Chuyến đi Kyoto' },
+      titleJp: '京都へ',
+      titleRuby: [
+        { base: '京', reading: 'きょう' },
+        { base: '都', reading: 'と' }
+      ],
       lines: [
         {
           jp: '来週 私は 京都へ 行きます。',
@@ -1280,33 +1285,124 @@ export const n5Lesson5: Lesson = {
             en: 'Where is the speaker going next week?',
             vi: 'Tuần sau người nói đi đâu?'
           },
+          jp: '来週 どこへ 行きますか。',
+          ruby: [
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Kyoto', vi: 'Kyoto' } },
-            { id: 'b', label: { en: 'Tokyo', vi: 'Tokyo' } },
-            { id: 'c', label: { en: 'Osaka', vi: 'Osaka' } },
-            { id: 'd', label: { en: 'Home only', vi: 'Chỉ ở nhà' } }
+            {
+              id: 'a',
+              label: { en: 'Kyoto', vi: 'Kyoto' },
+              jp: '京都',
+              ruby: [
+                { base: '京', reading: 'きょう' },
+                { base: '都', reading: 'と' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Tokyo', vi: 'Tokyo' },
+              jp: '東京',
+              ruby: [
+                { base: '東', reading: 'とう' },
+                { base: '京', reading: 'きょう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Osaka', vi: 'Osaka' },
+              jp: '大阪',
+              ruby: [
+                { base: '大', reading: 'おお' },
+                { base: '阪', reading: 'さか' }
+              ]
+            },
+            { id: 'd', label: { en: 'Home only', vi: 'Chỉ ở nhà' }, jp: 'うちだけ' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How will they go?', vi: 'Họ đi bằng gì?' },
+          jp: '何で 行きますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'By bus', vi: 'Xe buýt' } },
-            { id: 'b', label: { en: 'By Shinkansen', vi: 'Shinkansen' } },
-            { id: 'c', label: { en: 'By bicycle', vi: 'Xe đạp' } },
-            { id: 'd', label: { en: 'On foot', vi: 'Đi bộ' } }
+            { id: 'a', label: { en: 'By bus', vi: 'Xe buýt' }, jp: 'バスで' },
+            {
+              id: 'b',
+              label: { en: 'By Shinkansen', vi: 'Shinkansen' },
+              jp: '新幹線で',
+              ruby: [
+                { base: '新', reading: 'しん' },
+                { base: '幹', reading: 'かん' },
+                { base: '線', reading: 'せん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'By bicycle', vi: 'Xe đạp' },
+              jp: '自転車で',
+              ruby: [
+                { base: '自', reading: 'じ' },
+                { base: '転', reading: 'てん' },
+                { base: '車', reading: 'しゃ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'On foot', vi: 'Đi bộ' },
+              jp: '歩いて',
+              ruby: [{ base: '歩', reading: 'ある' }]
+            }
           ],
           correctId: 'b'
         },
         {
           id: 'q3',
           question: { en: 'What did the speaker do yesterday?', vi: 'Hôm qua người nói làm gì?' },
+          jp: 'きのう 何を しましたか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
-            { id: 'a', label: { en: 'Went to Kyoto', vi: 'Đi Kyoto' } },
-            { id: 'b', label: { en: 'Studied at home', vi: 'Học ở nhà' } },
-            { id: 'c', label: { en: 'Came by taxi', vi: 'Đến bằng tắc-xi' } },
-            { id: 'd', label: { en: 'Met family', vi: 'Gặp gia đình' } }
+            {
+              id: 'a',
+              label: { en: 'Went to Kyoto', vi: 'Đi Kyoto' },
+              jp: '京都へ 行きました',
+              ruby: [
+                { base: '京', reading: 'きょう' },
+                { base: '都', reading: 'と' },
+                { base: '行', reading: 'い' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Studied at home', vi: 'Học ở nhà' },
+              jp: 'うちで 勉強しました',
+              ruby: [
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Came by taxi', vi: 'Đến bằng tắc-xi' },
+              jp: 'タクシーで 来ました',
+              ruby: [{ base: '来', reading: 'き' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Met family', vi: 'Gặp gia đình' },
+              jp: '家族に 会いました',
+              ruby: [
+                { base: '家', reading: 'か' },
+                { base: '族', reading: 'ぞく' },
+                { base: '会', reading: 'あ' }
+              ]
+            }
           ],
           correctId: 'b'
         }
@@ -1315,6 +1411,12 @@ export const n5Lesson5: Lesson = {
     {
       id: 'reading-lesson5-birthday',
       title: { en: 'Birthdays', vi: 'Sinh nhật' },
+      titleJp: '誕生日',
+      titleRuby: [
+        { base: '誕', reading: 'たん' },
+        { base: '生', reading: 'じょう' },
+        { base: '日', reading: 'び' }
+      ],
       lines: [
         {
           jp: '私の 誕生日は 5月5日です。',
@@ -1376,11 +1478,50 @@ export const n5Lesson5: Lesson = {
             en: "When is the speaker's birthday?",
             vi: 'Sinh nhật người nói là khi nào?'
           },
+          jp: '私の 誕生日は いつですか。',
+          ruby: [
+            { base: '私', reading: 'わたし' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'May 5th', vi: '5 tháng 5' } },
-            { id: 'b', label: { en: 'November 3rd', vi: '3 tháng 11' } },
-            { id: 'c', label: { en: 'January 1st', vi: '1 tháng 1' } },
-            { id: 'd', label: { en: 'Next week', vi: 'Tuần sau' } }
+            {
+              id: 'a',
+              label: { en: 'May 5th', vi: '5 tháng 5' },
+              jp: '5月5日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'November 3rd', vi: '3 tháng 11' },
+              jp: '11月3日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'January 1st', vi: '1 tháng 1' },
+              jp: '1月1日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Next week', vi: 'Tuần sau' },
+              jp: '来週',
+              ruby: [
+                { base: '来', reading: 'らい' },
+                { base: '週', reading: 'しゅう' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -1390,11 +1531,51 @@ export const n5Lesson5: Lesson = {
             en: 'When is her birthday?',
             vi: 'Sinh nhật của cô ấy / bạn gái là khi nào?'
           },
+          jp: '彼女の 誕生日は いつですか。',
+          ruby: [
+            { base: '彼', reading: 'かの' },
+            { base: '女', reading: 'じょ' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'May 5th', vi: '5 tháng 5' } },
-            { id: 'b', label: { en: 'November 3rd', vi: '3 tháng 11' } },
-            { id: 'c', label: { en: 'December 23rd', vi: '23 tháng 12' } },
-            { id: 'd', label: { en: 'April 29th', vi: '29 tháng 4' } }
+            {
+              id: 'a',
+              label: { en: 'May 5th', vi: '5 tháng 5' },
+              jp: '5月5日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'November 3rd', vi: '3 tháng 11' },
+              jp: '11月3日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'December 23rd', vi: '23 tháng 12' },
+              jp: '12月23日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'April 29th', vi: '29 tháng 4' },
+              jp: '4月29日',
+              ruby: [
+                { base: '月', reading: 'がつ' },
+                { base: '日', reading: 'にち' }
+              ]
+            }
           ],
           correctId: 'b'
         }
@@ -1403,6 +1584,12 @@ export const n5Lesson5: Lesson = {
     {
       id: 'reading-lesson5-commute',
       title: { en: 'How I go to school', vi: 'Tôi đi học thế nào' },
+      titleJp: '学校へ 行く',
+      titleRuby: [
+        { base: '学', reading: 'がっ' },
+        { base: '校', reading: 'こう' },
+        { base: '行', reading: 'い' }
+      ],
       lines: [
         {
           jp: '私は 毎朝 学校へ 行きます。',
@@ -1463,22 +1650,77 @@ export const n5Lesson5: Lesson = {
             en: 'How does the speaker go from the station?',
             vi: 'Người nói đi từ ga bằng cách nào?'
           },
+          jp: '駅から どう 行きますか。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '行', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'By bus', vi: 'Xe buýt' } },
-            { id: 'b', label: { en: 'On foot', vi: 'Đi bộ' } },
-            { id: 'c', label: { en: 'By taxi', vi: 'Tắc-xi' } },
-            { id: 'd', label: { en: 'By subway', vi: 'Tàu điện ngầm' } }
+            { id: 'a', label: { en: 'By bus', vi: 'Xe buýt' }, jp: 'バスで' },
+            {
+              id: 'b',
+              label: { en: 'On foot', vi: 'Đi bộ' },
+              jp: '歩いて',
+              ruby: [{ base: '歩', reading: 'ある' }]
+            },
+            { id: 'c', label: { en: 'By taxi', vi: 'Tắc-xi' }, jp: 'タクシーで' },
+            {
+              id: 'd',
+              label: { en: 'By subway', vi: 'Tàu điện ngầm' },
+              jp: '地下鉄で',
+              ruby: [
+                { base: '地', reading: 'ち' },
+                { base: '下', reading: 'か' },
+                { base: '鉄', reading: 'てつ' }
+              ]
+            }
           ],
           correctId: 'b'
         },
         {
           id: 'q2',
           question: { en: 'How does he come?', vi: 'Anh ấy đến bằng gì?' },
+          jp: '彼は 何で 来ますか。',
+          ruby: [
+            { base: '彼', reading: 'かれ' },
+            { base: '何', reading: 'なん' },
+            { base: '来', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'By bicycle', vi: 'Xe đạp' } },
-            { id: 'b', label: { en: 'On foot', vi: 'Đi bộ' } },
-            { id: 'c', label: { en: 'By train', vi: 'Tàu điện' } },
-            { id: 'd', label: { en: 'Alone by taxi', vi: 'Một mình bằng tắc-xi' } }
+            {
+              id: 'a',
+              label: { en: 'By bicycle', vi: 'Xe đạp' },
+              jp: '自転車で',
+              ruby: [
+                { base: '自', reading: 'じ' },
+                { base: '転', reading: 'てん' },
+                { base: '車', reading: 'しゃ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'On foot', vi: 'Đi bộ' },
+              jp: '歩いて',
+              ruby: [{ base: '歩', reading: 'ある' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'By train', vi: 'Tàu điện' },
+              jp: '電車で',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '車', reading: 'しゃ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Alone by taxi', vi: 'Một mình bằng tắc-xi' },
+              jp: '一人で タクシーで',
+              ruby: [
+                { base: '一', reading: 'ひと' },
+                { base: '人', reading: 'り' }
+              ]
+            }
           ],
           correctId: 'a'
         }

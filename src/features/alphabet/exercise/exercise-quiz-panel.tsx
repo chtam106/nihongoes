@@ -20,6 +20,7 @@ import { quizChoiceSx } from '@/theme/quiz-choice.ts';
 import { KanaDisplay } from '@/components/kana-display';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
+import { hasTextSelection } from '@/utils/text-selection.ts';
 
 // On touch devices auto-focusing the answer field on the first question would
 // pop the on-screen keyboard whenever filters change (the quiz remounts). We
@@ -263,18 +264,38 @@ export function ExerciseQuizPanel({
             return (
               <Button
                 key={`${item.romaji}-${item.char}`}
+                component="div"
+                role="button"
                 variant="outlined"
-                onClick={() => onAnswer(value)}
                 disabled={answeredCorrectly || isWrongAnswer}
-                sx={{
-                  ...(!showCorrect && !showWrong && quizChoiceSx),
-                  py: 2,
-                  fontSize: characterOptions ? '1.5rem' : '1rem',
-                  borderWidth: 1,
-                  '&.Mui-disabled': { borderWidth: 1 },
-                  ...(showCorrect && resultBorderSx('correct')),
-                  ...(showWrong && resultBorderSx('wrong'))
+                onClick={() => {
+                  if (hasTextSelection()) {
+                    return;
+                  }
+
+                  onAnswer(value);
                 }}
+                sx={[
+                  { userSelect: 'text' },
+                  !showCorrect && !showWrong && quizChoiceSx,
+                  {
+                    py: 2,
+                    fontSize: characterOptions ? '1.5rem' : '1rem',
+                    borderWidth: 1
+                  },
+                  showCorrect && resultBorderSx('correct'),
+                  showWrong && resultBorderSx('wrong'),
+                  {
+                    // A native button cannot start a text selection inside itself, and
+                    // MUI's disabled state sets pointer-events: none. Keep the div
+                    // clickable for highlighting even after the choice locks.
+                    '&.Mui-disabled': {
+                      pointerEvents: 'auto',
+                      userSelect: 'text',
+                      borderWidth: 1
+                    }
+                  }
+                ]}
               >
                 {characterOptions && <KanaDisplay cell={item} variant="option" />}
                 {!characterOptions && item.romaji}

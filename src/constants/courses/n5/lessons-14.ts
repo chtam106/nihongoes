@@ -820,6 +820,12 @@ export const n5Lesson14: Lesson = {
     {
       id: 'reading-lesson14-rain',
       title: { en: 'Before the meeting', vi: 'Trước cuộc họp' },
+      titleJp: '会議の 前',
+      titleRuby: [
+        { base: '会', reading: 'かい' },
+        { base: '議', reading: 'ぎ' },
+        { base: '前', reading: 'まえ' }
+      ],
       lines: [
         {
           jp: '今朝 雨が 降っていました。',
@@ -861,22 +867,55 @@ export const n5Lesson14: Lesson = {
         {
           id: 'q1',
           question: { en: 'Was it raining this morning?', vi: 'Sáng nay có mưa không?' },
+          jp: '今朝 雨が 降っていましたか。',
+          ruby: [
+            { base: '今', reading: 'け' },
+            { base: '朝', reading: 'さ' },
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'b', label: { en: 'No', vi: 'Không' } },
-            { id: 'c', label: { en: 'Not said', vi: 'Không nói' } },
-            { id: 'd', label: { en: 'It will rain', vi: 'Sẽ mưa' } }
+            { id: 'a', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            { id: 'b', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            {
+              id: 'c',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'It will rain', vi: 'Sẽ mưa' },
+              jp: 'これから 降ります',
+              ruby: [{ base: '降', reading: 'ふ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Is it raining now?', vi: 'Bây giờ có mưa không?' },
+          jp: '今 雨が 降っていますか。',
+          ruby: [
+            { base: '今', reading: 'いま' },
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'No', vi: 'Không' } },
-            { id: 'b', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'c', label: { en: 'A little', vi: 'Một chút' } },
-            { id: 'd', label: { en: 'Snowing', vi: 'Có tuyết' } }
+            { id: 'a', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            { id: 'b', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            {
+              id: 'c',
+              label: { en: 'A little', vi: 'Một chút' },
+              jp: '少しです',
+              ruby: [{ base: '少', reading: 'すこ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Snowing', vi: 'Có tuyết' },
+              jp: '雪です',
+              ruby: [{ base: '雪', reading: 'ゆき' }]
+            }
           ],
           correctId: 'a'
         },
@@ -886,11 +925,36 @@ export const n5Lesson14: Lesson = {
             en: 'What are they doing in the meeting room?',
             vi: 'Ở phòng họp họ đang làm gì?'
           },
+          jp: '会議室で 何を していますか。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '室', reading: 'しつ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Photocopying', vi: 'Phô-tô' } },
-            { id: 'b', label: { en: 'Eating lunch', vi: 'Ăn trưa' } },
-            { id: 'c', label: { en: 'Swimming', vi: 'Bơi' } },
-            { id: 'd', label: { en: 'Sleeping', vi: 'Ngủ' } }
+            { id: 'a', label: { en: 'Photocopying', vi: 'Phô-tô' }, jp: 'コピーしています' },
+            {
+              id: 'b',
+              label: { en: 'Eating lunch', vi: 'Ăn trưa' },
+              jp: '昼ごはんを 食べています',
+              ruby: [
+                { base: '昼', reading: 'ひる' },
+                { base: '食', reading: 'た' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Swimming', vi: 'Bơi' },
+              jp: '泳いで います',
+              ruby: [{ base: '泳', reading: 'およ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Sleeping', vi: 'Ngủ' },
+              jp: '寝ています',
+              ruby: [{ base: '寝', reading: 'ね' }]
+            }
           ],
           correctId: 'a'
         }
@@ -899,6 +963,12 @@ export const n5Lesson14: Lesson = {
     {
       id: 'reading-lesson14-map',
       title: { en: 'Finding an address', vi: 'Tìm địa chỉ' },
+      titleJp: '住所を 探す',
+      titleRuby: [
+        { base: '住', reading: 'じゅう' },
+        { base: '所', reading: 'しょ' },
+        { base: '探', reading: 'さが' }
+      ],
       lines: [
         {
           jp: 'すみませんが、地図を 見せて ください。',
@@ -941,11 +1011,32 @@ export const n5Lesson14: Lesson = {
         {
           id: 'q1',
           question: { en: 'What does the person ask to see?', vi: 'Người đó nhờ xem gì?' },
+          jp: '何を 見せて ほしいですか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '見', reading: 'み' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A map', vi: 'Bản đồ' } },
-            { id: 'b', label: { en: 'A passport', vi: 'Hộ chiếu' } },
-            { id: 'c', label: { en: 'A menu', vi: 'Thực đơn' } },
-            { id: 'd', label: { en: 'A ticket', vi: 'Vé' } }
+            {
+              id: 'a',
+              label: { en: 'A map', vi: 'Bản đồ' },
+              jp: '地図',
+              ruby: [
+                { base: '地', reading: 'ち' },
+                { base: '図', reading: 'ず' }
+              ]
+            },
+            { id: 'b', label: { en: 'A passport', vi: 'Hộ chiếu' }, jp: 'パスポート' },
+            { id: 'c', label: { en: 'A menu', vi: 'Thực đơn' }, jp: 'メニュー' },
+            {
+              id: 'd',
+              label: { en: 'A ticket', vi: 'Vé' },
+              jp: '切符',
+              ruby: [
+                { base: '切', reading: 'きっ' },
+                { base: '符', reading: 'ぷ' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -955,11 +1046,37 @@ export const n5Lesson14: Lesson = {
             en: 'Which way to turn at the traffic light?',
             vi: 'Rẽ hướng nào ở đèn tín hiệu?'
           },
+          jp: '信号を どちらへ 曲がりますか。',
+          ruby: [
+            { base: '信', reading: 'しん' },
+            { base: '号', reading: 'ごう' },
+            { base: '曲', reading: 'ま' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Left', vi: 'Trái' } },
-            { id: 'b', label: { en: 'Right', vi: 'Phải' } },
-            { id: 'c', label: { en: 'Back', vi: 'Quay lại' } },
-            { id: 'd', label: { en: 'Stop', vi: 'Dừng' } }
+            {
+              id: 'a',
+              label: { en: 'Left', vi: 'Trái' },
+              jp: '左',
+              ruby: [{ base: '左', reading: 'ひだり' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Right', vi: 'Phải' },
+              jp: '右',
+              ruby: [{ base: '右', reading: 'みぎ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Back', vi: 'Quay lại' },
+              jp: '戻ります',
+              ruby: [{ base: '戻', reading: 'もど' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Stop', vi: 'Dừng' },
+              jp: '止まります',
+              ruby: [{ base: '止', reading: 'と' }]
+            }
           ],
           correctId: 'a'
         }

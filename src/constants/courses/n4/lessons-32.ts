@@ -794,6 +794,13 @@ export const n4Lesson32: Lesson = {
     {
       id: 'reading-lesson32-horoscope',
       title: { en: 'This week horoscope', vi: 'Bói sao tuần này' },
+      titleJp: '今週の 星占い',
+      titleRuby: [
+        { base: '今', reading: 'こん' },
+        { base: '週', reading: 'しゅう' },
+        { base: '星', reading: 'ほし' },
+        { base: '占', reading: 'うらな' }
+      ],
       lines: [
         {
           jp: '今週の 牡牛座は 働きすぎに 注意です。',
@@ -838,11 +845,49 @@ export const n4Lesson32: Lesson = {
         {
           id: 'q1',
           question: { en: 'What should Taurus watch out for?', vi: 'Kim Ngưu cần chú ý gì?' },
+          jp: '牡牛座は 何に 注意ですか。',
+          ruby: [
+            { base: '牡', reading: 'おう' },
+            { base: '牛', reading: 'し' },
+            { base: '座', reading: 'ざ' },
+            { base: '何', reading: 'なに' },
+            { base: '注', reading: 'ちゅう' },
+            { base: '意', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Overworking', vi: 'Làm việc quá sức' } },
-            { id: 'b', label: { en: 'Buying lottery tickets', vi: 'Mua vé số' } },
-            { id: 'c', label: { en: 'Traveling abroad', vi: 'Du lịch nước ngoài' } },
-            { id: 'd', label: { en: 'Skipping meals', vi: 'Bỏ bữa' } }
+            {
+              id: 'a',
+              label: { en: 'Overworking', vi: 'Làm việc quá sức' },
+              jp: '働きすぎ',
+              ruby: [{ base: '働', reading: 'はたら' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Buying lottery tickets', vi: 'Mua vé số' },
+              jp: '宝くじ',
+              ruby: [{ base: '宝', reading: 'たから' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Traveling abroad', vi: 'Du lịch nước ngoài' },
+              jp: '海外旅行',
+              ruby: [
+                { base: '海', reading: 'かい' },
+                { base: '外', reading: 'がい' },
+                { base: '旅', reading: 'りょ' },
+                { base: '行', reading: 'こう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Skipping meals', vi: 'Bỏ bữa' },
+              jp: '食事を 抜く',
+              ruby: [
+                { base: '食', reading: 'しょく' },
+                { base: '事', reading: 'じ' },
+                { base: '抜', reading: 'ぬ' }
+              ]
+            }
           ],
           correctId: 'a'
         }

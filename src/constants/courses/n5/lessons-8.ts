@@ -911,6 +911,8 @@ export const n5Lesson8: Lesson = {
     {
       id: 'reading-lesson8-sakura',
       title: { en: 'Cherry blossoms', vi: 'Hoa anh đào' },
+      titleJp: '桜',
+      titleRuby: [{ base: '桜', reading: 'さくら' }],
       lines: [
         {
           jp: '桜は きれいな 花です。',
@@ -965,33 +967,132 @@ export const n5Lesson8: Lesson = {
         {
           id: 'q1',
           question: { en: 'What are cherry blossoms like?', vi: 'Hoa anh đào như thế nào?' },
+          jp: '桜は どんな 花ですか。',
+          ruby: [
+            { base: '桜', reading: 'さくら' },
+            { base: '花', reading: 'はな' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Beautiful flowers', vi: 'Loài hoa đẹp' } },
-            { id: 'b', label: { en: 'High mountains', vi: 'Núi cao' } },
-            { id: 'c', label: { en: 'Quiet parks', vi: 'Công viên yên tĩnh' } },
-            { id: 'd', label: { en: 'Famous temples only', vi: 'Chỉ có chùa nổi tiếng' } }
+            {
+              id: 'a',
+              label: { en: 'Beautiful flowers', vi: 'Loài hoa đẹp' },
+              jp: 'きれいな 花',
+              ruby: [{ base: '花', reading: 'はな' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'High mountains', vi: 'Núi cao' },
+              jp: '高い 山',
+              ruby: [
+                { base: '高', reading: 'たか' },
+                { base: '山', reading: 'やま' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Quiet parks', vi: 'Công viên yên tĩnh' },
+              jp: '静かな 公園',
+              ruby: [
+                { base: '静', reading: 'しず' },
+                { base: '公', reading: 'こう' },
+                { base: '園', reading: 'えん' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Famous temples only', vi: 'Chỉ có chùa nổi tiếng' },
+              jp: '有名な 寺だけ',
+              ruby: [
+                { base: '有', reading: 'ゆう' },
+                { base: '名', reading: 'めい' },
+                { base: '寺', reading: 'てら' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Which place is very famous?', vi: 'Nơi nào rất nổi tiếng?' },
+          jp: 'とても 有名な ところは どこですか。',
+          ruby: [
+            { base: '有', reading: 'ゆう' },
+            { base: '名', reading: 'めい' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Nara Park', vi: 'Công viên Nara' } },
-            { id: 'b', label: { en: 'Kinkaku-ji', vi: 'Chùa Kinkaku' } },
-            { id: 'c', label: { en: 'The dormitory', vi: 'Kí túc xá' } },
-            { id: 'd', label: { en: 'Shanghai', vi: 'Thượng Hải' } }
+            {
+              id: 'a',
+              label: { en: 'Nara Park', vi: 'Công viên Nara' },
+              jp: '奈良公園',
+              ruby: [
+                { base: '奈', reading: 'な' },
+                { base: '良', reading: 'ら' },
+                { base: '公', reading: 'こう' },
+                { base: '園', reading: 'えん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Kinkaku-ji', vi: 'Chùa Kinkaku' },
+              jp: '金閣寺',
+              ruby: [
+                { base: '金', reading: 'きん' },
+                { base: '閣', reading: 'かく' },
+                { base: '寺', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'The dormitory', vi: 'Kí túc xá' },
+              jp: '寮',
+              ruby: [{ base: '寮', reading: 'りょう' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Shanghai', vi: 'Thượng Hải' },
+              jp: '上海',
+              ruby: [
+                { base: '上', reading: 'シャン' },
+                { base: '海', reading: 'ハイ' }
+              ]
+            }
           ],
           correctId: 'b'
         },
         {
           id: 'q3',
           question: { en: 'Is Nara Park lively?', vi: 'Công viên Nara có náo nhiệt không?' },
+          jp: '奈良公園は にぎやかですか。',
+          ruby: [
+            { base: '奈', reading: 'な' },
+            { base: '良', reading: 'ら' },
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes, very lively', vi: 'Có, rất náo nhiệt' } },
-            { id: 'b', label: { en: 'No, it is quiet', vi: 'Không, yên tĩnh' } },
-            { id: 'c', label: { en: 'It is expensive', vi: 'Đắt' } },
-            { id: 'd', label: { en: 'It is new', vi: 'Mới' } }
+            {
+              id: 'a',
+              label: { en: 'Yes, very lively', vi: 'Có, rất náo nhiệt' },
+              jp: 'はい、とても にぎやかです'
+            },
+            {
+              id: 'b',
+              label: { en: 'No, it is quiet', vi: 'Không, yên tĩnh' },
+              jp: 'いいえ、静かです',
+              ruby: [{ base: '静', reading: 'しず' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'It is expensive', vi: 'Đắt' },
+              jp: '高いです',
+              ruby: [{ base: '高', reading: 'たか' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'It is new', vi: 'Mới' },
+              jp: '新しいです',
+              ruby: [{ base: '新', reading: 'あたら' }]
+            }
           ],
           correctId: 'b'
         }
@@ -1000,6 +1101,8 @@ export const n5Lesson8: Lesson = {
     {
       id: 'reading-lesson8-dorm',
       title: { en: 'The dormitory', vi: 'Kí túc xá' },
+      titleJp: '寮',
+      titleRuby: [{ base: '寮', reading: 'りょう' }],
       lines: [
         {
           jp: '大学の 寮は 古いです。',
@@ -1049,22 +1152,86 @@ export const n5Lesson8: Lesson = {
         {
           id: 'q1',
           question: { en: 'How is the dorm?', vi: 'Kí túc xá thế nào?' },
+          jp: '寮は どうですか。',
+          ruby: [{ base: '寮', reading: 'りょう' }],
           choices: [
-            { id: 'a', label: { en: 'Old but convenient', vi: 'Cũ nhưng tiện lợi' } },
-            { id: 'b', label: { en: 'New and expensive', vi: 'Mới và đắt' } },
-            { id: 'c', label: { en: 'Big and lively', vi: 'Rộng và náo nhiệt' } },
-            { id: 'd', label: { en: 'Quiet but far', vi: 'Yên tĩnh nhưng xa' } }
+            {
+              id: 'a',
+              label: { en: 'Old but convenient', vi: 'Cũ nhưng tiện lợi' },
+              jp: '古いですが、便利です',
+              ruby: [
+                { base: '古', reading: 'ふる' },
+                { base: '便', reading: 'べん' },
+                { base: '利', reading: 'り' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'New and expensive', vi: 'Mới và đắt' },
+              jp: '新しくて、高いです',
+              ruby: [
+                { base: '新', reading: 'あたら' },
+                { base: '高', reading: 'たか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Big and lively', vi: 'Rộng và náo nhiệt' },
+              jp: '大きくて、にぎやかです',
+              ruby: [{ base: '大', reading: 'おお' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Quiet but far', vi: 'Yên tĩnh nhưng xa' },
+              jp: '静かですが、遠いです',
+              ruby: [
+                { base: '静', reading: 'しず' },
+                { base: '遠', reading: 'とお' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How is the room?', vi: 'Phòng thế nào?' },
+          jp: '部屋は どうですか。',
+          ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Big and noisy', vi: 'Rộng và ồn' } },
-            { id: 'b', label: { en: 'Small but quiet', vi: 'Nhỏ nhưng yên tĩnh' } },
-            { id: 'c', label: { en: 'New and clean', vi: 'Mới và sạch' } },
-            { id: 'd', label: { en: 'Old and inconvenient', vi: 'Cũ và bất tiện' } }
+            {
+              id: 'a',
+              label: { en: 'Big and noisy', vi: 'Rộng và ồn' },
+              jp: '大きくて、うるさいです',
+              ruby: [{ base: '大', reading: 'おお' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Small but quiet', vi: 'Nhỏ nhưng yên tĩnh' },
+              jp: '小さいですが、静かです',
+              ruby: [
+                { base: '小', reading: 'ちい' },
+                { base: '静', reading: 'しず' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'New and clean', vi: 'Mới và sạch' },
+              jp: '新しくて、きれいです',
+              ruby: [{ base: '新', reading: 'あたら' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Old and inconvenient', vi: 'Cũ và bất tiện' },
+              jp: '古くて、不便です',
+              ruby: [
+                { base: '古', reading: 'ふる' },
+                { base: '不', reading: 'ふ' },
+                { base: '便', reading: 'べん' }
+              ]
+            }
           ],
           correctId: 'b'
         }
@@ -1073,6 +1240,13 @@ export const n5Lesson8: Lesson = {
     {
       id: 'reading-lesson8-food',
       title: { en: 'Japanese food', vi: 'Món ăn Nhật' },
+      titleJp: '日本の 食べ物',
+      titleRuby: [
+        { base: '日', reading: 'に' },
+        { base: '本', reading: 'ほん' },
+        { base: '食', reading: 'た' },
+        { base: '物', reading: 'もの' }
+      ],
       lines: [
         {
           jp: '日本の 食べ物は おいしいです。',
@@ -1120,33 +1294,104 @@ export const n5Lesson8: Lesson = {
             en: 'What does the speaker say about Japanese food?',
             vi: 'Người nói nói gì về món ăn Nhật?'
           },
+          jp: '日本の 食べ物は どうですか。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '食', reading: 'た' },
+            { base: '物', reading: 'もの' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Delicious but expensive', vi: 'Ngon nhưng đắt' } },
-            { id: 'b', label: { en: 'Cheap but not tasty', vi: 'Rẻ nhưng không ngon' } },
-            { id: 'c', label: { en: 'Always cold', vi: 'Luôn lạnh' } },
-            { id: 'd', label: { en: 'Not famous', vi: 'Không nổi tiếng' } }
+            {
+              id: 'a',
+              label: { en: 'Delicious but expensive', vi: 'Ngon nhưng đắt' },
+              jp: 'おいしいですが、高いです',
+              ruby: [{ base: '高', reading: 'たか' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Cheap but not tasty', vi: 'Rẻ nhưng không ngon' },
+              jp: '安いですが、おいしくないです',
+              ruby: [{ base: '安', reading: 'やす' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Always cold', vi: 'Luôn lạnh' },
+              jp: 'いつも 冷たいです',
+              ruby: [{ base: '冷', reading: 'つめ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not famous', vi: 'Không nổi tiếng' },
+              jp: '有名じゃ ありません',
+              ruby: [
+                { base: '有', reading: 'ゆう' },
+                { base: '名', reading: 'めい' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How is the fish?', vi: 'Cá thế nào?' },
+          jp: '魚は どうですか。',
+          ruby: [{ base: '魚', reading: 'さかな' }],
           choices: [
-            { id: 'a', label: { en: 'Fresh (new)', vi: 'Tươi (mới)' } },
-            { id: 'b', label: { en: 'Old', vi: 'Cũ' } },
-            { id: 'c', label: { en: 'Expensive only', vi: 'Chỉ đắt' } },
-            { id: 'd', label: { en: 'Cold to the touch', vi: 'Lạnh buốt' } }
+            {
+              id: 'a',
+              label: { en: 'Fresh (new)', vi: 'Tươi (mới)' },
+              jp: '新しいです',
+              ruby: [{ base: '新', reading: 'あたら' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Old', vi: 'Cũ' },
+              jp: '古いです',
+              ruby: [{ base: '古', reading: 'ふる' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Expensive only', vi: 'Chỉ đắt' },
+              jp: '高いだけです',
+              ruby: [{ base: '高', reading: 'たか' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Cold to the touch', vi: 'Lạnh buốt' },
+              jp: '冷たいです',
+              ruby: [{ base: '冷', reading: 'つめ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Are the vegetables good too?', vi: 'Rau cũng ngon không?' },
+          jp: '野菜も おいしいですか。',
+          ruby: [
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'b', label: { en: 'No', vi: 'Không' } },
-            { id: 'c', label: { en: 'Not mentioned', vi: 'Không nhắc' } },
-            { id: 'd', label: { en: 'They are expensive', vi: 'Rau đắt' } }
+            { id: 'a', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            { id: 'b', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            {
+              id: 'c',
+              label: { en: 'Not mentioned', vi: 'Không nhắc' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'They are expensive', vi: 'Rau đắt' },
+              jp: '野菜は 高いです',
+              ruby: [
+                { base: '野', reading: 'や' },
+                { base: '菜', reading: 'さい' },
+                { base: '高', reading: 'たか' }
+              ]
+            }
           ],
           correctId: 'a'
         }

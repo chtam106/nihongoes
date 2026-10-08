@@ -921,6 +921,12 @@ export const n5Lesson4: Lesson = {
     {
       id: 'reading-1',
       title: { en: 'Shop hours', vi: 'Giờ mở cửa' },
+      titleJp: '店の 時間',
+      titleRuby: [
+        { base: '店', reading: 'みせ' },
+        { base: '時', reading: 'じ' },
+        { base: '間', reading: 'かん' }
+      ],
       lines: [
         {
           jp: '「あすか」は 9時から 10時までです。',
@@ -981,22 +987,92 @@ export const n5Lesson4: Lesson = {
             en: 'Until what time is the shop open on weekdays?',
             vi: 'Ngày thường cửa hàng mở đến mấy giờ?'
           },
+          jp: '平日は 何時までですか。',
+          ruby: [
+            { base: '平', reading: 'へい' },
+            { base: '日', reading: 'じつ' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' }
+          ],
           choices: [
-            { id: 'a', label: { en: "10 o'clock", vi: '10 giờ' } },
-            { id: 'b', label: { en: "9 o'clock", vi: '9 giờ' } },
-            { id: 'c', label: { en: "11 o'clock", vi: '11 giờ' } },
-            { id: 'd', label: { en: "8 o'clock", vi: '8 giờ' } }
+            {
+              id: 'a',
+              label: { en: "10 o'clock", vi: '10 giờ' },
+              jp: '10時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'b',
+              label: { en: "9 o'clock", vi: '9 giờ' },
+              jp: '9時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: "11 o'clock", vi: '11 giờ' },
+              jp: '11時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'd',
+              label: { en: "8 o'clock", vi: '8 giờ' },
+              jp: '8時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What day is the shop closed?', vi: 'Cửa hàng nghỉ ngày nào?' },
+          jp: '休みは 何曜日ですか。',
+          ruby: [
+            { base: '休', reading: 'やす' },
+            { base: '何', reading: 'なん' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Sunday', vi: 'Chủ nhật' } },
-            { id: 'b', label: { en: 'Saturday', vi: 'Thứ bảy' } },
-            { id: 'c', label: { en: 'Monday', vi: 'Thứ hai' } },
-            { id: 'd', label: { en: 'Wednesday', vi: 'Thứ tư' } }
+            {
+              id: 'a',
+              label: { en: 'Sunday', vi: 'Chủ nhật' },
+              jp: '日曜日',
+              ruby: [
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Saturday', vi: 'Thứ bảy' },
+              jp: '土曜日',
+              ruby: [
+                { base: '土', reading: 'ど' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Monday', vi: 'Thứ hai' },
+              jp: '月曜日',
+              ruby: [
+                { base: '月', reading: 'げつ' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Wednesday', vi: 'Thứ tư' },
+              jp: '水曜日',
+              ruby: [
+                { base: '水', reading: 'すい' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -1005,6 +1081,13 @@ export const n5Lesson4: Lesson = {
     {
       id: 'reading-2',
       title: { en: 'Daily schedule', vi: 'Sinh hoạt hàng ngày' },
+      titleJp: '毎日の 生活',
+      titleRuby: [
+        { base: '毎', reading: 'まい' },
+        { base: '日', reading: 'にち' },
+        { base: '生', reading: 'せい' },
+        { base: '活', reading: 'かつ' }
+      ],
       lines: [
         {
           jp: '私は 毎朝 6時半に 起きます。',
@@ -1079,11 +1162,40 @@ export const n5Lesson4: Lesson = {
             en: 'What time does the speaker get up?',
             vi: 'Người nói dậy lúc mấy giờ?'
           },
+          jp: '何時に 起きますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '起', reading: 'お' }
+          ],
           choices: [
-            { id: 'a', label: { en: '6:30', vi: '6 giờ rưỡi' } },
-            { id: 'b', label: { en: '7:00', vi: '7 giờ' } },
-            { id: 'c', label: { en: '6:00', vi: '6 giờ' } },
-            { id: 'd', label: { en: '8:00', vi: '8 giờ' } }
+            {
+              id: 'a',
+              label: { en: '6:30', vi: '6 giờ rưỡi' },
+              jp: '6時半',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '半', reading: 'はん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: '7:00', vi: '7 giờ' },
+              jp: '7時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: '6:00', vi: '6 giờ' },
+              jp: '6時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'd',
+              label: { en: '8:00', vi: '8 giờ' },
+              jp: '8時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'a'
         },
@@ -1093,11 +1205,49 @@ export const n5Lesson4: Lesson = {
             en: 'When does the speaker go to bed?',
             vi: 'Người nói đi ngủ lúc mấy giờ?'
           },
+          jp: '何時に 寝ますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '寝', reading: 'ね' }
+          ],
           choices: [
-            { id: 'a', label: { en: '10 p.m.', vi: '10 giờ tối' } },
-            { id: 'b', label: { en: '9 p.m.', vi: '9 giờ tối' } },
-            { id: 'c', label: { en: '11 p.m.', vi: '11 giờ tối' } },
-            { id: 'd', label: { en: '8 p.m.', vi: '8 giờ tối' } }
+            {
+              id: 'a',
+              label: { en: '10 p.m.', vi: '10 giờ tối' },
+              jp: '夜 10時',
+              ruby: [
+                { base: '夜', reading: 'よる' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: '9 p.m.', vi: '9 giờ tối' },
+              jp: '夜 9時',
+              ruby: [
+                { base: '夜', reading: 'よる' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: '11 p.m.', vi: '11 giờ tối' },
+              jp: '夜 11時',
+              ruby: [
+                { base: '夜', reading: 'よる' },
+                { base: '時', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: '8 p.m.', vi: '8 giờ tối' },
+              jp: '夜 8時',
+              ruby: [
+                { base: '夜', reading: 'よる' },
+                { base: '時', reading: 'じ' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -1106,6 +1256,12 @@ export const n5Lesson4: Lesson = {
     {
       id: 'reading-3',
       title: { en: 'At the library', vi: 'Ở thư viện' },
+      titleJp: '図書館で',
+      titleRuby: [
+        { base: '図', reading: 'と' },
+        { base: '書', reading: 'しょ' },
+        { base: '館', reading: 'かん' }
+      ],
       lines: [
         {
           jp: '今日 私は 図書館で 勉強します。',
@@ -1163,22 +1319,92 @@ export const n5Lesson4: Lesson = {
             en: 'Where does the speaker study today?',
             vi: 'Hôm nay người nói học ở đâu?'
           },
+          jp: '今日は どこで 勉強しますか。',
+          ruby: [
+            { base: '今日', reading: 'きょう' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'The library', vi: 'Thư viện' } },
-            { id: 'b', label: { en: 'The bank', vi: 'Ngân hàng' } },
-            { id: 'c', label: { en: 'The post office', vi: 'Bưu điện' } },
-            { id: 'd', label: { en: 'The art museum', vi: 'Bảo tàng mỹ thuật' } }
+            {
+              id: 'a',
+              label: { en: 'The library', vi: 'Thư viện' },
+              jp: '図書館',
+              ruby: [
+                { base: '図', reading: 'と' },
+                { base: '書', reading: 'しょ' },
+                { base: '館', reading: 'かん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'The bank', vi: 'Ngân hàng' },
+              jp: '銀行',
+              ruby: [
+                { base: '銀', reading: 'ぎん' },
+                { base: '行', reading: 'こう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'The post office', vi: 'Bưu điện' },
+              jp: '郵便局',
+              ruby: [
+                { base: '郵', reading: 'ゆう' },
+                { base: '便', reading: 'びん' },
+                { base: '局', reading: 'きょく' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'The art museum', vi: 'Bảo tàng mỹ thuật' },
+              jp: '美術館',
+              ruby: [
+                { base: '美', reading: 'び' },
+                { base: '術', reading: 'じゅつ' },
+                { base: '館', reading: 'かん' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What time is it now?', vi: 'Bây giờ mấy giờ?' },
+          jp: '今 何時ですか。',
+          ruby: [
+            { base: '今', reading: 'いま' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' }
+          ],
           choices: [
-            { id: 'a', label: { en: '3:10', vi: '3 giờ 10 phút' } },
-            { id: 'b', label: { en: '9:00', vi: '9 giờ' } },
-            { id: 'c', label: { en: '6:00', vi: '6 giờ' } },
-            { id: 'd', label: { en: '3:00', vi: '3 giờ' } }
+            {
+              id: 'a',
+              label: { en: '3:10', vi: '3 giờ 10 phút' },
+              jp: '3時10分',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '分', reading: 'ふん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: '9:00', vi: '9 giờ' },
+              jp: '9時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'c',
+              label: { en: '6:00', vi: '6 giờ' },
+              jp: '6時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            },
+            {
+              id: 'd',
+              label: { en: '3:00', vi: '3 giờ' },
+              jp: '3時',
+              ruby: [{ base: '時', reading: 'じ' }]
+            }
           ],
           correctId: 'a'
         }

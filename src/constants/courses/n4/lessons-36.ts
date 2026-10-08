@@ -689,6 +689,12 @@ export const n4Lesson36: Lesson = {
     {
       id: 'reading-lesson36-transport',
       title: { en: 'How people traveled long ago', vi: 'Ngày xưa người ta đi lại thế nào' },
+      titleJp: '昔の 乗り物',
+      titleRuby: [
+        { base: '昔', reading: 'むかし' },
+        { base: '乗', reading: 'の' },
+        { base: '物', reading: 'もの' }
+      ],
       lines: [
         {
           jp: '昔は 汽車や 汽船が 大勢の 人を 運びました。',
@@ -751,11 +757,52 @@ export const n4Lesson36: Lesson = {
             en: 'What carried many people long ago?',
             vi: 'Ngày xưa phương tiện nào chở nhiều người?'
           },
+          jp: '昔は 何が 大勢の 人を 運びましたか。',
+          ruby: [
+            { base: '昔', reading: 'むかし' },
+            { base: '何', reading: 'なに' },
+            { base: '大', reading: 'おお' },
+            { base: '勢', reading: 'ぜい' },
+            { base: '人', reading: 'ひと' },
+            { base: '運', reading: 'はこ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Steam trains and ships', vi: 'Tàu hỏa và tàu thủy' } },
-            { id: 'b', label: { en: 'Overnight buses only', vi: 'Chỉ xe buýt đêm' } },
-            { id: 'c', label: { en: 'Rice cookers', vi: 'Nồi cơm điện' } },
-            { id: 'd', label: { en: 'Ski resorts', vi: 'Khu trượt tuyết' } }
+            {
+              id: 'a',
+              label: { en: 'Steam trains and ships', vi: 'Tàu hỏa và tàu thủy' },
+              jp: '汽車や 汽船',
+              ruby: [
+                { base: '汽', reading: 'き' },
+                { base: '車', reading: 'しゃ' },
+                { base: '汽', reading: 'き' },
+                { base: '船', reading: 'せん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Overnight buses only', vi: 'Chỉ xe buýt đêm' },
+              jp: '夜行バスだけ',
+              ruby: [
+                { base: '夜', reading: 'や' },
+                { base: '行', reading: 'こう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Rice cookers', vi: 'Nồi cơm điện' },
+              jp: '炊飯器',
+              ruby: [
+                { base: '炊', reading: 'すい' },
+                { base: '飯', reading: 'はん' },
+                { base: '器', reading: 'き' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Ski resorts', vi: 'Khu trượt tuyết' },
+              jp: 'スキー場',
+              ruby: [{ base: '場', reading: 'じょう' }]
+            }
           ],
           correctId: 'a'
         },
@@ -765,14 +812,53 @@ export const n4Lesson36: Lesson = {
             en: 'What do people who want to go far try to do?',
             vi: 'Người muốn đi xa cố gắng làm gì?'
           },
+          jp: '遠くへ 行きたい 人は どう しますか。',
+          ruby: [
+            { base: '遠', reading: 'とお' },
+            { base: '行', reading: 'い' },
+            { base: '人', reading: 'ひと' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Leave as early as possible', vi: 'Xuất phát sớm nhất có thể' }
+              label: { en: 'Leave as early as possible', vi: 'Xuất phát sớm nhất có thể' },
+              jp: 'できるだけ 早く 出発します',
+              ruby: [
+                { base: '早', reading: 'はや' },
+                { base: '出', reading: 'しゅっ' },
+                { base: '発', reading: 'ぱつ' }
+              ]
             },
-            { id: 'b', label: { en: 'Save money every week', vi: 'Tiết kiệm tiền mỗi tuần' } },
-            { id: 'c', label: { en: 'Eat rotten food', vi: 'Ăn thức ăn hỏng' } },
-            { id: 'd', label: { en: 'Study French', vi: 'Học tiếng Pháp' } }
+            {
+              id: 'b',
+              label: { en: 'Save money every week', vi: 'Tiết kiệm tiền mỗi tuần' },
+              jp: '毎週 お金を ためます',
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '週', reading: 'しゅう' },
+                { base: '金', reading: 'かね' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Eat rotten food', vi: 'Ăn thức ăn hỏng' },
+              jp: '腐った 物を 食べます',
+              ruby: [
+                { base: '腐', reading: 'くさ' },
+                { base: '物', reading: 'もの' },
+                { base: '食', reading: 'た' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Study French', vi: 'Học tiếng Pháp' },
+              jp: 'フランス語を 勉強します',
+              ruby: [
+                { base: '語', reading: 'ご' },
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            }
           ],
           correctId: 'a'
         }

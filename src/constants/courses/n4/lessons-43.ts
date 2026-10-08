@@ -490,6 +490,8 @@ export const n4Lesson43: Lesson = {
     {
       id: 'reading-lesson43-rose',
       title: { en: 'A rose by the road', vi: 'Hoa hồng ven đường' },
+      titleJp: '道の わきの ばら',
+      titleRuby: [{ base: '道', reading: 'みち' }],
       lines: [
         {
           jp: 'ドライブの 途中で、道の わきに 赤い ばらが 咲いていました。',
@@ -567,22 +569,84 @@ export const n4Lesson43: Lesson = {
         {
           id: 'q1',
           question: { en: 'Why did the speaker stop the car?', vi: 'Tại sao người nói dừng xe?' },
+          jp: 'どうして 車を 止めましたか。',
+          ruby: [
+            { base: '車', reading: 'くるま' },
+            { base: '止', reading: 'と' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'To photograph a rose', vi: 'Để chụp hoa hồng' } },
-            { id: 'b', label: { en: 'To buy gas', vi: 'Để mua xăng' } },
-            { id: 'c', label: { en: 'To meet Schmidt', vi: 'Để gặp Schmidt' } },
-            { id: 'd', label: { en: 'To pick a pamphlet', vi: 'Để lấy tờ rơi' } }
+            {
+              id: 'a',
+              label: { en: 'To photograph a rose', vi: 'Để chụp hoa hồng' },
+              jp: 'ばらの 写真を 撮るため',
+              ruby: [
+                { base: '写', reading: 'しゃ' },
+                { base: '真', reading: 'しん' },
+                { base: '撮', reading: 'と' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'To buy gas', vi: 'Để mua xăng' },
+              jp: 'ガソリンを 買うため',
+              ruby: [{ base: '買', reading: 'か' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'To meet Schmidt', vi: 'Để gặp Schmidt' },
+              jp: 'シュミットさんに 会うため',
+              ruby: [{ base: '会', reading: 'あ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'To pick a pamphlet', vi: 'Để lấy tờ rơi' },
+              jp: 'パンフレットを 取るため',
+              ruby: [{ base: '取', reading: 'と' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What did the stranger say?', vi: 'Người lạ nói gì?' },
+          jp: '知らない 人は 何と 言いましたか。',
+          ruby: [
+            { base: '知', reading: 'し' },
+            { base: '人', reading: 'ひと' },
+            { base: '何', reading: 'なん' },
+            { base: '言', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'This is my garden', vi: 'Đây là vườn nhà tôi' } },
-            { id: 'b', label: { en: 'The price will fall', vi: 'Giá sẽ giảm' } },
-            { id: 'c', label: { en: 'Gas ran out', vi: 'Hết xăng' } },
-            { id: 'd', label: { en: 'The button came off', vi: 'Cúc áo tuột' } }
+            {
+              id: 'a',
+              label: { en: 'This is my garden', vi: 'Đây là vườn nhà tôi' },
+              jp: 'ここは 私の 庭です',
+              ruby: [
+                { base: '私', reading: 'わたし' },
+                { base: '庭', reading: 'にわ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'The price will fall', vi: 'Giá sẽ giảm' },
+              jp: '値段が 下がります',
+              ruby: [
+                { base: '値', reading: 'ね' },
+                { base: '段', reading: 'だん' },
+                { base: '下', reading: 'さ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Gas ran out', vi: 'Hết xăng' },
+              jp: 'ガソリンが なくなりました'
+            },
+            {
+              id: 'd',
+              label: { en: 'The button came off', vi: 'Cúc áo tuột' },
+              jp: 'ボタンが 取れました',
+              ruby: [{ base: '取', reading: 'と' }]
+            }
           ],
           correctId: 'a'
         }

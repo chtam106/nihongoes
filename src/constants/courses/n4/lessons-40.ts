@@ -704,6 +704,12 @@ export const n4Lesson40: Lesson = {
     {
       id: 'reading-lesson40-measure',
       title: { en: 'Measuring the world', vi: 'Đo lường thế giới' },
+      titleJp: '世界を 測る',
+      titleRuby: [
+        { base: '世', reading: 'せ' },
+        { base: '界', reading: 'かい' },
+        { base: '測', reading: 'はか' }
+      ],
       lines: [
         {
           jp: '子どもたちは 教室で 物の 長さや 重さを 測りました。',
@@ -757,11 +763,49 @@ export const n4Lesson40: Lesson = {
         {
           id: 'q1',
           question: { en: 'What did the children measure?', vi: 'Các em đo gì?' },
+          jp: '子どもたちは 何を 測りましたか。',
+          ruby: [
+            { base: '子', reading: 'こ' },
+            { base: '何', reading: 'なに' },
+            { base: '測', reading: 'はか' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Length and weight', vi: 'Chiều dài và trọng lượng' } },
-            { id: 'b', label: { en: 'Weather forecasts', vi: 'Dự báo thời tiết' } },
-            { id: 'c', label: { en: 'Flight times only', vi: 'Chỉ giờ bay' } },
-            { id: 'd', label: { en: 'Wine at a party', vi: 'Rượu ở tiệc' } }
+            {
+              id: 'a',
+              label: { en: 'Length and weight', vi: 'Chiều dài và trọng lượng' },
+              jp: '長さと 重さ',
+              ruby: [
+                { base: '長', reading: 'なが' },
+                { base: '重', reading: 'おも' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Weather forecasts', vi: 'Dự báo thời tiết' },
+              jp: '天気予報',
+              ruby: [
+                { base: '天', reading: 'てん' },
+                { base: '気', reading: 'き' },
+                { base: '予', reading: 'よ' },
+                { base: '報', reading: 'ほう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Flight times only', vi: 'Chỉ giờ bay' },
+              jp: '飛行時間だけ',
+              ruby: [
+                { base: '飛', reading: 'ひ' },
+                { base: '行', reading: 'こう' },
+                { base: '時', reading: 'じ' },
+                { base: '間', reading: 'かん' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Wine at a party', vi: 'Rượu ở tiệc' },
+              jp: 'パーティーの ワイン'
+            }
           ],
           correctId: 'a'
         },
@@ -771,11 +815,45 @@ export const n4Lesson40: Lesson = {
             en: 'What did they do before presenting?',
             vi: 'Trước khi phát biểu họ làm gì?'
           },
+          jp: '発表する 前に 何を しましたか。',
+          ruby: [
+            { base: '発', reading: 'はっ' },
+            { base: '表', reading: 'ぴょう' },
+            { base: '前', reading: 'まえ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Confirmed their answers', vi: 'Xác nhận đáp án' } },
-            { id: 'b', label: { en: 'Got drunk', vi: 'Say rượu' } },
-            { id: 'c', label: { en: 'Left the hospital', vi: 'Ra viện' } },
-            { id: 'd', label: { en: 'Ran a marathon', vi: 'Chạy ma-ra-tông' } }
+            {
+              id: 'a',
+              label: { en: 'Confirmed their answers', vi: 'Xác nhận đáp án' },
+              jp: '答えを 確かめました',
+              ruby: [
+                { base: '答', reading: 'こた' },
+                { base: '確', reading: 'たし' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Got drunk', vi: 'Say rượu' },
+              jp: '酔いました',
+              ruby: [{ base: '酔', reading: 'よ' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Left the hospital', vi: 'Ra viện' },
+              jp: '病院を 出ました',
+              ruby: [
+                { base: '病', reading: 'びょう' },
+                { base: '院', reading: 'いん' },
+                { base: '出', reading: 'で' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Ran a marathon', vi: 'Chạy ma-ra-tông' },
+              jp: 'マラソンを 走りました',
+              ruby: [{ base: '走', reading: 'はし' }]
+            }
           ],
           correctId: 'a'
         }

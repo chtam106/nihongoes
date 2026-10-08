@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import { Box, Button, Collapse, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Collapse, Link, Paper, Stack, Typography } from '@mui/material';
 import {
   getLesson,
   type CourseLevel,
@@ -17,9 +17,11 @@ import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
+import { FuriganaText } from '@/components/furigana-text';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
+import { translationToggleSx } from '@/theme/translation-toggle.ts';
 import { LessonNotFound, LessonQuizHeader, ResultScreen } from '@/features/course/shared';
 
 function shuffle<T>(items: T[]): T[] {
@@ -54,12 +56,14 @@ function shuffleQuestions(questions: FlatQuestion[]): FlatQuestion[] {
 
 type PassageCardProps = {
   passage: ReadingPassage;
+  showTitleTranslation: boolean;
 };
 
-function PassageCard({ passage }: PassageCardProps) {
+function PassageCard({ passage, showTitleTranslation }: PassageCardProps) {
   const { locale, t } = useTranslation();
   const [preferences] = useUserPreferences();
   const [showTranslation, setShowTranslation] = useState(preferences.showTranslationsByDefault);
+  const japaneseTitle = Boolean(passage.titleJp);
 
   return (
     <Paper
@@ -72,9 +76,17 @@ function PassageCard({ passage }: PassageCardProps) {
         spacing={1}
         sx={{ alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}
       >
-        <Heading scale="subsection" component="h2">
-          {passage.title[locale]}
-        </Heading>
+        <Box sx={{ minWidth: 0 }}>
+          <Heading scale="subsection" component="h2" lang={japaneseTitle ? 'ja' : undefined}>
+            {japaneseTitle && <FuriganaText text={passage.titleJp!} ruby={passage.titleRuby} />}
+            {!japaneseTitle && passage.title[locale]}
+          </Heading>
+          {showTitleTranslation && japaneseTitle && (
+            <Typography variant="body2" color="text.secondary">
+              {passage.title[locale]}
+            </Typography>
+          )}
+        </Box>
         {preferences.showTranslation && (
           <Button
             className="no-print"
@@ -122,6 +134,10 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [finished, setFinished] = useState(false);
+  const [preferences] = useUserPreferences();
+  const [showQuestionTranslation, setShowQuestionTranslation] = useState(
+    preferences.showTranslationsByDefault
+  );
   const passageAnchorRef = useRef<HTMLDivElement>(null);
   const previousPassageIdRef = useRef<string | undefined>(undefined);
 
@@ -201,7 +217,11 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
 
         {!finished && currentPassage && (
           <Box ref={passageAnchorRef} sx={{ scrollMarginTop: { xs: 72, md: 88 } }}>
-            <PassageCard key={currentPassage.id} passage={currentPassage} />
+            <PassageCard
+              key={currentPassage.id}
+              passage={currentPassage}
+              showTitleTranslation={showQuestionTranslation}
+            />
           </Box>
         )}
 
@@ -229,9 +249,36 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
             </Box>
 
             <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
-              <Typography variant="h6" component="p" sx={{ fontWeight: 600 }}>
-                {question.question[locale]}
-              </Typography>
+              {question.jp && (
+                <Typography variant="h6" component="p" lang="ja" sx={{ fontWeight: 600 }}>
+                  <FuriganaText text={question.jp} ruby={question.ruby} />
+                </Typography>
+              )}
+              {!question.jp && (
+                <Typography variant="h6" component="p" sx={{ fontWeight: 600 }}>
+                  {question.question[locale]}
+                </Typography>
+              )}
+              {question.jp && (
+                <Link
+                  className="no-print"
+                  component="button"
+                  type="button"
+                  variant="body2"
+                  underline="none"
+                  onClick={() => setShowQuestionTranslation((previous) => !previous)}
+                  sx={[translationToggleSx, { display: 'block', mt: 1, textAlign: 'left' }]}
+                >
+                  {showQuestionTranslation
+                    ? t('course.hideTranslation')
+                    : t('course.showTranslation')}
+                </Link>
+              )}
+              {showQuestionTranslation && question.jp && (
+                <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
+                  {question.question[locale]}
+                </Typography>
+              )}
             </Paper>
 
             <Box
@@ -253,8 +300,29 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
                     onClick={() => handleSelect(choice.id)}
                     dimmed={locked}
                     state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
+                    lang={choice.jp ? 'ja' : undefined}
                   >
-                    {choice.label[locale]}
+                    {choice.jp && (
+                      <Box
+                        component="span"
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'flex-start',
+                          gap: 0.25
+                        }}
+                      >
+                        <Box component="span">
+                          <FuriganaText text={choice.jp} ruby={choice.ruby} />
+                        </Box>
+                        {showQuestionTranslation && (
+                          <Typography component="span" variant="body1" color="text.secondary">
+                            {choice.label[locale]}
+                          </Typography>
+                        )}
+                      </Box>
+                    )}
+                    {!choice.jp && choice.label[locale]}
                   </ChoiceButton>
                 );
               })}

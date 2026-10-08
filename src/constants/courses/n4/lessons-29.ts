@@ -820,6 +820,11 @@ export const n4Lesson29: Lesson = {
     {
       id: 'reading-lesson29-earthquake',
       title: { en: 'After the earthquake', vi: 'Sau cơn động đất' },
+      titleJp: '地震の あと',
+      titleRuby: [
+        { base: '地', reading: 'じ' },
+        { base: '震', reading: 'しん' }
+      ],
       lines: [
         {
           jp: '大きな 地震が ありました。',
@@ -884,22 +889,83 @@ export const n4Lesson29: Lesson = {
         {
           id: 'q1',
           question: { en: 'What happened to the clock?', vi: 'Đồng hồ thế nào?' },
+          jp: '時計は どう なりましたか。',
+          ruby: [
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'It stopped', vi: 'Dừng lại' } },
-            { id: 'b', label: { en: 'It fell off the wall', vi: 'Rơi khỏi tường' } },
-            { id: 'c', label: { en: 'It was on fire', vi: 'Bị cháy' } },
-            { id: 'd', label: { en: 'It was broken into pieces', vi: 'Vỡ tan' } }
+            {
+              id: 'a',
+              label: { en: 'It stopped', vi: 'Dừng lại' },
+              jp: '止まりました',
+              ruby: [{ base: '止', reading: 'と' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'It fell off the wall', vi: 'Rơi khỏi tường' },
+              jp: '壁から 落ちました',
+              ruby: [
+                { base: '壁', reading: 'かべ' },
+                { base: '落', reading: 'お' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'It was on fire', vi: 'Bị cháy' },
+              jp: '燃えて いました',
+              ruby: [{ base: '燃', reading: 'も' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'It was broken into pieces', vi: 'Vỡ tan' },
+              jp: '壊れました',
+              ruby: [{ base: '壊', reading: 'こわ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What was rising from the west?', vi: 'Phía tây có gì bốc lên?' },
+          jp: '西の 方から 何が 上がっていましたか。',
+          ruby: [
+            { base: '西', reading: 'にし' },
+            { base: '方', reading: 'ほう' },
+            { base: '何', reading: 'なに' },
+            { base: '上', reading: 'あ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Black smoke', vi: 'Khói đen' } },
-            { id: 'b', label: { en: 'White clouds', vi: 'Mây trắng' } },
-            { id: 'c', label: { en: 'Rain', vi: 'Mưa' } },
-            { id: 'd', label: { en: 'Snow', vi: 'Tuyết' } }
+            {
+              id: 'a',
+              label: { en: 'Black smoke', vi: 'Khói đen' },
+              jp: '黒い 煙',
+              ruby: [
+                { base: '黒', reading: 'くろ' },
+                { base: '煙', reading: 'けむり' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'White clouds', vi: 'Mây trắng' },
+              jp: '白い 雲',
+              ruby: [
+                { base: '白', reading: 'しろ' },
+                { base: '雲', reading: 'くも' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Rain', vi: 'Mưa' },
+              jp: '雨',
+              ruby: [{ base: '雨', reading: 'あめ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Snow', vi: 'Tuyết' },
+              jp: '雪',
+              ruby: [{ base: '雪', reading: 'ゆき' }]
+            }
           ],
           correctId: 'a'
         }

@@ -772,6 +772,12 @@ export const n4Lesson26: Lesson = {
     {
       id: 'reading-lesson26-space',
       title: { en: 'A message from space', vi: 'Thư từ vũ trụ' },
+      titleJp: '宇宙からの 話',
+      titleRuby: [
+        { base: '宇', reading: 'う' },
+        { base: '宙', reading: 'ちゅう' },
+        { base: '話', reading: 'はなし' }
+      ],
       lines: [
         {
           jp: '私は 宇宙飛行士の 星出様の 話を 聞きました。',
@@ -838,11 +844,47 @@ export const n4Lesson26: Lesson = {
             en: 'Who did the speaker listen to?',
             vi: 'Người nói nghe ai?'
           },
+          jp: 'だれの 話を 聞きましたか。',
+          ruby: [
+            { base: '話', reading: 'はなし' },
+            { base: '聞', reading: 'き' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'An astronaut', vi: 'Nhà du hành vũ trụ' } },
-            { id: 'b', label: { en: 'A gas company worker', vi: 'Nhân viên công ty ga' } },
-            { id: 'c', label: { en: 'A building manager', vi: 'Người quản lý tòa nhà' } },
-            { id: 'd', label: { en: 'A volunteer', vi: 'Tình nguyện viên' } }
+            {
+              id: 'a',
+              label: { en: 'An astronaut', vi: 'Nhà du hành vũ trụ' },
+              jp: '宇宙飛行士',
+              ruby: [
+                { base: '宇', reading: 'う' },
+                { base: '宙', reading: 'ちゅう' },
+                { base: '飛', reading: 'ひ' },
+                { base: '行', reading: 'こう' },
+                { base: '士', reading: 'し' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A gas company worker', vi: 'Nhân viên công ty ga' },
+              jp: 'ガス会社の 人',
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '人', reading: 'ひと' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'A building manager', vi: 'Người quản lý tòa nhà' },
+              jp: '建物の 管理人',
+              ruby: [
+                { base: '建', reading: 'たて' },
+                { base: '物', reading: 'もの' },
+                { base: '管', reading: 'かん' },
+                { base: '理', reading: 'り' },
+                { base: '人', reading: 'にん' }
+              ]
+            },
+            { id: 'd', label: { en: 'A volunteer', vi: 'Tình nguyện viên' }, jp: 'ボランティア' }
           ],
           correctId: 'a'
         },
@@ -852,11 +894,46 @@ export const n4Lesson26: Lesson = {
             en: 'How did the speaker feel about riding a spaceship at first?',
             vi: 'Ban đầu người nói cảm thấy thế nào khi lên tàu vũ trụ?'
           },
+          jp: '初めに 宇宙船に 乗るのは どうでしたか。',
+          ruby: [
+            { base: '初', reading: 'はじ' },
+            { base: '宇', reading: 'う' },
+            { base: '宙', reading: 'ちゅう' },
+            { base: '船', reading: 'せん' },
+            { base: '乗', reading: 'の' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Scared', vi: 'Sợ' } },
-            { id: 'b', label: { en: 'Late', vi: 'Muộn' } },
-            { id: 'c', label: { en: 'In time', vi: 'Kịp giờ' } },
-            { id: 'd', label: { en: 'Unwell', vi: 'Mệt' } }
+            {
+              id: 'a',
+              label: { en: 'Scared', vi: 'Sợ' },
+              jp: '怖かったです',
+              ruby: [{ base: '怖', reading: 'こわ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Late', vi: 'Muộn' },
+              jp: '遅れました',
+              ruby: [{ base: '遅', reading: 'おく' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'In time', vi: 'Kịp giờ' },
+              jp: '間に 合いました',
+              ruby: [
+                { base: '間', reading: 'ま' },
+                { base: '合', reading: 'あ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Unwell', vi: 'Mệt' },
+              jp: '具合が 悪かったです',
+              ruby: [
+                { base: '具', reading: 'ぐ' },
+                { base: '合', reading: 'あい' },
+                { base: '悪', reading: 'わる' }
+              ]
+            }
           ],
           correctId: 'a'
         }

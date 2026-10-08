@@ -911,6 +911,8 @@ export const n5Lesson11: Lesson = {
     {
       id: 'reading-lesson11-shopping',
       title: { en: 'At the shop', vi: 'Ở cửa hàng' },
+      titleJp: '店で',
+      titleRuby: [{ base: '店', reading: 'みせ' }],
       lines: [
         {
           jp: 'マイさんは りんごを 3つ 買いました。',
@@ -939,22 +941,49 @@ export const n5Lesson11: Lesson = {
         {
           id: 'q1',
           question: { en: 'How many apples did Mai buy?', vi: 'Mai mua mấy quả táo?' },
+          jp: 'りんごを いくつ 買いましたか。',
+          ruby: [{ base: '買', reading: 'か' }],
           choices: [
-            { id: 'a', label: { en: '3', vi: '3 quả' } },
-            { id: 'b', label: { en: '4', vi: '4 quả' } },
-            { id: 'c', label: { en: '8', vi: '8 quả' } },
-            { id: 'd', label: { en: '1', vi: '1 quả' } }
+            { id: 'a', label: { en: '3', vi: '3 quả' }, jp: '3つ' },
+            { id: 'b', label: { en: '4', vi: '4 quả' }, jp: '4つ' },
+            { id: 'c', label: { en: '8', vi: '8 quả' }, jp: '8つ' },
+            { id: 'd', label: { en: '1', vi: '1 quả' }, jp: '1つ' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What was the total for the apples?', vi: 'Táo tổng cộng bao nhiêu?' },
+          jp: 'りんごは 全部で いくらでしたか。',
+          ruby: [
+            { base: '全', reading: 'ぜん' },
+            { base: '部', reading: 'ぶ' }
+          ],
           choices: [
-            { id: 'a', label: { en: '450 yen', vi: '450 yen' } },
-            { id: 'b', label: { en: '500 yen', vi: '500 yen' } },
-            { id: 'c', label: { en: '7600 yen', vi: '7600 yen' } },
-            { id: 'd', label: { en: '3450 yen', vi: '3450 yen' } }
+            {
+              id: 'a',
+              label: { en: '450 yen', vi: '450 yen' },
+              jp: '450円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            {
+              id: 'b',
+              label: { en: '500 yen', vi: '500 yen' },
+              jp: '500円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '7600 yen', vi: '7600 yen' },
+              jp: '7600円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            },
+            {
+              id: 'd',
+              label: { en: '3450 yen', vi: '3450 yen' },
+              jp: '3450円',
+              ruby: [{ base: '円', reading: 'えん' }]
+            }
           ],
           correctId: 'a'
         }
@@ -963,6 +992,13 @@ export const n5Lesson11: Lesson = {
     {
       id: 'reading-lesson11-study',
       title: { en: 'Studying in Japan', vi: 'Học ở Nhật' },
+      titleJp: '日本で 勉強する',
+      titleRuby: [
+        { base: '日', reading: 'に' },
+        { base: '本', reading: 'ほん' },
+        { base: '勉', reading: 'べん' },
+        { base: '強', reading: 'きょう' }
+      ],
       lines: [
         {
           jp: 'トムさんは 日本に 1年 います。',
@@ -1012,11 +1048,36 @@ export const n5Lesson11: Lesson = {
         {
           id: 'q1',
           question: { en: 'How long has Tom been in Japan?', vi: 'Tom ở Nhật bao lâu?' },
+          jp: 'トムさんは 日本に どのくらい いますか。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' }
+          ],
           choices: [
-            { id: 'a', label: { en: '1 year', vi: '1 năm' } },
-            { id: 'b', label: { en: '3 years', vi: '3 năm' } },
-            { id: 'c', label: { en: '2 months', vi: '2 tháng' } },
-            { id: 'd', label: { en: '7 days', vi: '7 ngày' } }
+            {
+              id: 'a',
+              label: { en: '1 year', vi: '1 năm' },
+              jp: '1年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'b',
+              label: { en: '3 years', vi: '3 năm' },
+              jp: '3年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '2 months', vi: '2 tháng' },
+              jp: '2か月',
+              ruby: [{ base: '月', reading: 'げつ' }]
+            },
+            {
+              id: 'd',
+              label: { en: '7 days', vi: '7 ngày' },
+              jp: '7日',
+              ruby: [{ base: '日', reading: 'にち' }]
+            }
           ],
           correctId: 'a'
         },
@@ -1026,11 +1087,53 @@ export const n5Lesson11: Lesson = {
             en: 'How many hours does he study Japanese daily?',
             vi: 'Mỗi ngày học mấy tiếng?'
           },
+          jp: '毎日 日本語を 何時間 勉強しますか。',
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '間', reading: 'かん' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' }
+          ],
           choices: [
-            { id: 'a', label: { en: '2 hours', vi: '2 tiếng' } },
-            { id: 'b', label: { en: '30 minutes', vi: '30 phút' } },
-            { id: 'c', label: { en: '5 hours', vi: '5 tiếng' } },
-            { id: 'd', label: { en: 'None', vi: 'Không học' } }
+            {
+              id: 'a',
+              label: { en: '2 hours', vi: '2 tiếng' },
+              jp: '2時間',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '間', reading: 'かん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: '30 minutes', vi: '30 phút' },
+              jp: '30分',
+              ruby: [{ base: '分', reading: 'ぷん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '5 hours', vi: '5 tiếng' },
+              jp: '5時間',
+              ruby: [
+                { base: '時', reading: 'じ' },
+                { base: '間', reading: 'かん' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'None', vi: 'Không học' },
+              jp: '勉強しません',
+              ruby: [
+                { base: '勉', reading: 'べん' },
+                { base: '強', reading: 'きょう' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -1039,6 +1142,12 @@ export const n5Lesson11: Lesson = {
     {
       id: 'reading-lesson11-post',
       title: { en: 'Sending a package', vi: 'Gửi bưu phẩm' },
+      titleJp: '荷物を 送る',
+      titleRuby: [
+        { base: '荷', reading: 'に' },
+        { base: '物', reading: 'もつ' },
+        { base: '送', reading: 'おく' }
+      ],
       lines: [
         {
           jp: 'リンさんは 封筒と 手紙を 箱に 入れました。',
@@ -1090,33 +1199,112 @@ export const n5Lesson11: Lesson = {
         {
           id: 'q1',
           question: { en: 'What did Lin put in the box?', vi: 'Lin bỏ gì vào hộp?' },
+          jp: '箱に 何を 入れましたか。',
+          ruby: [
+            { base: '箱', reading: 'はこ' },
+            { base: '何', reading: 'なに' },
+            { base: '入', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Letters and an envelope', vi: 'Thư và phong bì' } },
-            { id: 'b', label: { en: 'Apples', vi: 'Táo' } },
-            { id: 'c', label: { en: 'Stamps only', vi: 'Chỉ tem' } },
-            { id: 'd', label: { en: 'A curry', vi: 'Cà ri' } }
+            {
+              id: 'a',
+              label: { en: 'Letters and an envelope', vi: 'Thư và phong bì' },
+              jp: '手紙と 封筒',
+              ruby: [
+                { base: '手', reading: 'て' },
+                { base: '紙', reading: 'がみ' },
+                { base: '封', reading: 'ふう' },
+                { base: '筒', reading: 'とう' }
+              ]
+            },
+            { id: 'b', label: { en: 'Apples', vi: 'Táo' }, jp: 'りんご' },
+            {
+              id: 'c',
+              label: { en: 'Stamps only', vi: 'Chỉ tem' },
+              jp: '切手だけ',
+              ruby: [
+                { base: '切', reading: 'きっ' },
+                { base: '手', reading: 'て' }
+              ]
+            },
+            { id: 'd', label: { en: 'A curry', vi: 'Cà ri' }, jp: 'カレー' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How long does surface mail take?', vi: 'Đường biển mất bao lâu?' },
+          jp: '船便は どのくらい かかりますか。',
+          ruby: [
+            { base: '船', reading: 'ふな' },
+            { base: '便', reading: 'びん' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'About 2 months', vi: 'Khoảng 2 tháng' } },
-            { id: 'b', label: { en: '7 days', vi: '7 ngày' } },
-            { id: 'c', label: { en: '1 year', vi: '1 năm' } },
-            { id: 'd', label: { en: '15 minutes', vi: '15 phút' } }
+            {
+              id: 'a',
+              label: { en: 'About 2 months', vi: 'Khoảng 2 tháng' },
+              jp: '2か月ぐらい',
+              ruby: [{ base: '月', reading: 'げつ' }]
+            },
+            {
+              id: 'b',
+              label: { en: '7 days', vi: '7 ngày' },
+              jp: '7日',
+              ruby: [{ base: '日', reading: 'にち' }]
+            },
+            {
+              id: 'c',
+              label: { en: '1 year', vi: '1 năm' },
+              jp: '1年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'd',
+              label: { en: '15 minutes', vi: '15 phút' },
+              jp: '15分',
+              ruby: [{ base: '分', reading: 'ぷん' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'How long does airmail take?', vi: 'Đường hàng không mất bao lâu?' },
+          jp: '航空便は どのくらい かかりますか。',
+          ruby: [
+            { base: '航', reading: 'こう' },
+            { base: '空', reading: 'くう' },
+            { base: '便', reading: 'びん' }
+          ],
           choices: [
-            { id: 'a', label: { en: '7 days', vi: '7 ngày' } },
-            { id: 'b', label: { en: '2 months', vi: '2 tháng' } },
-            { id: 'c', label: { en: '3 years', vi: '3 năm' } },
-            { id: 'd', label: { en: 'Only Sunday', vi: 'Chỉ chủ nhật' } }
+            {
+              id: 'a',
+              label: { en: '7 days', vi: '7 ngày' },
+              jp: '7日',
+              ruby: [{ base: '日', reading: 'にち' }]
+            },
+            {
+              id: 'b',
+              label: { en: '2 months', vi: '2 tháng' },
+              jp: '2か月',
+              ruby: [{ base: '月', reading: 'げつ' }]
+            },
+            {
+              id: 'c',
+              label: { en: '3 years', vi: '3 năm' },
+              jp: '3年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Only Sunday', vi: 'Chỉ chủ nhật' },
+              jp: '日曜日だけ',
+              ruby: [
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            }
           ],
           correctId: 'a'
         }

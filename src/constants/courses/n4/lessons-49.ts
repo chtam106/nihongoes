@@ -646,6 +646,12 @@ export const n4Lesson49: Lesson = {
     {
       id: 'reading-lesson49-yamanaka',
       title: { en: 'A Nobel laureate', vi: 'Giải Nobel y học' },
+      titleJp: 'ノーベル賞を 受けた 人',
+      titleRuby: [
+        { base: '賞', reading: 'しょう' },
+        { base: '受', reading: 'う' },
+        { base: '人', reading: 'ひと' }
+      ],
       lines: [
         {
           jp: '山中 伸弥 さんは 医学部を 目指して 進み、iPS 細胞の 研究で 有名に なりました。',
@@ -746,11 +752,53 @@ export const n4Lesson49: Lesson = {
         {
           id: 'q1',
           question: { en: 'What is Yamanaka famous for?', vi: 'Yamanaka nổi tiếng vì gì?' },
+          jp: '山中さんは 何で 有名ですか。',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '中', reading: 'なか' },
+            { base: '何', reading: 'なん' },
+            { base: '有', reading: 'ゆう' },
+            { base: '名', reading: 'めい' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'iPS cell research', vi: 'Nghiên cứu tế bào iPS' } },
-            { id: 'b', label: { en: 'Running a ryokan', vi: 'Điều hành ryokan' } },
-            { id: 'c', label: { en: 'Teaching calligraphy', vi: 'Dạy viết chữ' } },
-            { id: 'd', label: { en: 'Bus stop design', vi: 'Thiết kế bến xe buýt' } }
+            {
+              id: 'a',
+              label: { en: 'iPS cell research', vi: 'Nghiên cứu tế bào iPS' },
+              jp: 'iPS細胞の 研究',
+              ruby: [
+                { base: '細', reading: 'さい' },
+                { base: '胞', reading: 'ぼう' },
+                { base: '研', reading: 'けん' },
+                { base: '究', reading: 'きゅう' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Running a ryokan', vi: 'Điều hành ryokan' },
+              jp: '旅館の 経営',
+              ruby: [
+                { base: '旅', reading: 'りょ' },
+                { base: '館', reading: 'かん' },
+                { base: '経', reading: 'けい' },
+                { base: '営', reading: 'えい' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Teaching calligraphy', vi: 'Dạy viết chữ' },
+              jp: '習字を 教えること',
+              ruby: [
+                { base: '習', reading: 'しゅう' },
+                { base: '字', reading: 'じ' },
+                { base: '教', reading: 'おし' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Bus stop design', vi: 'Thiết kế bến xe buýt' },
+              jp: 'バス停の デザイン',
+              ruby: [{ base: '停', reading: 'てい' }]
+            }
           ],
           correctId: 'a'
         },
@@ -760,11 +808,33 @@ export const n4Lesson49: Lesson = {
             en: 'When did he receive the Nobel Prize?',
             vi: 'Ông nhận giải Nobel năm nào?'
           },
+          jp: 'いつ ノーベル賞を もらいましたか。',
+          ruby: [{ base: '賞', reading: 'しょう' }],
           choices: [
-            { id: 'a', label: { en: '2012', vi: '2012' } },
-            { id: 'b', label: { en: '2002', vi: '2002' } },
-            { id: 'c', label: { en: '1992', vi: '1992' } },
-            { id: 'd', label: { en: '2022', vi: '2022' } }
+            {
+              id: 'a',
+              label: { en: '2012', vi: '2012' },
+              jp: '2012年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'b',
+              label: { en: '2002', vi: '2002' },
+              jp: '2002年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '1992', vi: '1992' },
+              jp: '1992年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'd',
+              label: { en: '2022', vi: '2022' },
+              jp: '2022年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            }
           ],
           correctId: 'a'
         }
