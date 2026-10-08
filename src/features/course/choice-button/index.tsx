@@ -44,7 +44,7 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
           textTransform: 'none',
           fontSize: '1.05rem',
           borderWidth: 1,
-          ...quizChoiceSx,
+          ...(!filled && quizChoiceSx),
           '&.Mui-disabled': { opacity: 0.6 },
           ...(filled && {
             transition: 'none',
