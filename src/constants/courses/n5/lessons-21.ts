@@ -635,6 +635,8 @@ export const n5Lesson21: Lesson = {
     {
       id: 'reading-lesson21-news',
       title: { en: 'Talking about the news', vi: 'Bàn về tin tức' },
+      titleJp: 'ニュースの 話',
+      titleRuby: [{ base: '話', reading: 'はなし' }],
       lines: [
         {
           jp: '最近 ニュースで 政治について 話しました。',
@@ -672,11 +674,32 @@ export const n5Lesson21: Lesson = {
         {
           id: 'q1',
           question: { en: 'What topic did they discuss?', vi: 'Họ bàn về gì?' },
+          jp: '何について 話しましたか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '話', reading: 'はな' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Politics', vi: 'Chính trị' } },
-            { id: 'b', label: { en: 'Sports only', vi: 'Chỉ thể thao' } },
-            { id: 'c', label: { en: 'Food', vi: 'Ẩm thực' } },
-            { id: 'd', label: { en: 'Fashion', vi: 'Thời trang' } }
+            {
+              id: 'a',
+              label: { en: 'Politics', vi: 'Chính trị' },
+              jp: '政治',
+              ruby: [
+                { base: '政', reading: 'せい' },
+                { base: '治', reading: 'じ' }
+              ]
+            },
+            { id: 'b', label: { en: 'Sports only', vi: 'Chỉ thể thao' }, jp: 'スポーツだけ' },
+            {
+              id: 'c',
+              label: { en: 'Food', vi: 'Ẩm thực' },
+              jp: '食べ物',
+              ruby: [
+                { base: '食', reading: 'た' },
+                { base: '物', reading: 'もの' }
+              ]
+            },
+            { id: 'd', label: { en: 'Fashion', vi: 'Thời trang' }, jp: 'ファッション' }
           ],
           correctId: 'a'
         },
@@ -686,11 +709,43 @@ export const n5Lesson21: Lesson = {
             en: 'What does the speaker think about traffic?',
             vi: 'Người nói nghĩ gì về giao thông?'
           },
+          jp: '交通について どう 思いますか。',
+          ruby: [
+            { base: '交', reading: 'こう' },
+            { base: '通', reading: 'つう' },
+            { base: '思', reading: 'おも' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Inconvenient', vi: 'Bất tiện' } },
-            { id: 'b', label: { en: 'Perfect', vi: 'Hoàn hảo' } },
-            { id: 'c', label: { en: 'Not mentioned', vi: 'Không nhắc' } },
-            { id: 'd', label: { en: 'Too cheap', vi: 'Quá rẻ' } }
+            {
+              id: 'a',
+              label: { en: 'Inconvenient', vi: 'Bất tiện' },
+              jp: '不便です',
+              ruby: [
+                { base: '不', reading: 'ふ' },
+                { base: '便', reading: 'べん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Perfect', vi: 'Hoàn hảo' },
+              jp: '完璧です',
+              ruby: [
+                { base: '完', reading: 'かん' },
+                { base: '璧', reading: 'ぺき' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Not mentioned', vi: 'Không nhắc' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Too cheap', vi: 'Quá rẻ' },
+              jp: '安すぎます',
+              ruby: [{ base: '安', reading: 'やす' }]
+            }
           ],
           correctId: 'a'
         }

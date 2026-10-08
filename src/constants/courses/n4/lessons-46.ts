@@ -597,6 +597,8 @@ export const n4Lesson46: Lesson = {
     {
       id: 'reading-lesson46-bell',
       title: { en: 'When the doorbell rang', vi: 'Khi chuông cửa reng' },
+      titleJp: 'ベルが 鳴った とき',
+      titleRuby: [{ base: '鳴', reading: 'な' }],
       lines: [
         {
           jp: '留守の とき、宅配便が 届く 出来事が よく あります。',
@@ -654,11 +656,36 @@ export const n4Lesson46: Lesson = {
         {
           id: 'q1',
           question: { en: 'Why did the speaker fall?', vi: 'Tại sao người nói bị ngã?' },
+          jp: 'どうして 転びましたか。',
+          ruby: [{ base: '転', reading: 'ころ' }],
           choices: [
-            { id: 'a', label: { en: 'The floor was slippery', vi: 'Sàn trơn' } },
-            { id: 'b', label: { en: 'The bus left early', vi: 'Xe buýt rời sớm' } },
-            { id: 'c', label: { en: 'The bread burned', vi: 'Bánh mì cháy' } },
-            { id: 'd', label: { en: 'The gas stove broke', vi: 'Bếp ga hỏng' } }
+            {
+              id: 'a',
+              label: { en: 'The floor was slippery', vi: 'Sàn trơn' },
+              jp: '床が つるつる していたから',
+              ruby: [{ base: '床', reading: 'ゆか' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'The bus left early', vi: 'Xe buýt rời sớm' },
+              jp: 'バスが 早く 出たから',
+              ruby: [
+                { base: '早', reading: 'はや' },
+                { base: '出', reading: 'で' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'The bread burned', vi: 'Bánh mì cháy' },
+              jp: 'パンが 焦げたから',
+              ruby: [{ base: '焦', reading: 'こ' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'The gas stove broke', vi: 'Bếp ga hỏng' },
+              jp: 'ガスコンロが 壊れたから',
+              ruby: [{ base: '壊', reading: 'こわ' }]
+            }
           ],
           correctId: 'a'
         },
@@ -668,11 +695,51 @@ export const n4Lesson46: Lesson = {
             en: 'What lesson did the speaker learn?',
             vi: 'Người nói rút ra bài học gì?'
           },
+          jp: 'どんな ことが 大切だと 思いましたか。',
+          ruby: [
+            { base: '大', reading: 'たい' },
+            { base: '切', reading: 'せつ' },
+            { base: '思', reading: 'おも' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Do things in order', vi: 'Làm việc theo thứ tự' } },
-            { id: 'b', label: { en: 'Never use delivery', vi: 'Không bao giờ giao hàng' } },
-            { id: 'c', label: { en: 'Always run faster', vi: 'Luôn chạy nhanh hơn' } },
-            { id: 'd', label: { en: 'Ignore the doorbell', vi: 'Bỏ qua chuông cửa' } }
+            {
+              id: 'a',
+              label: { en: 'Do things in order', vi: 'Làm việc theo thứ tự' },
+              jp: '順番に やること',
+              ruby: [
+                { base: '順', reading: 'じゅん' },
+                { base: '番', reading: 'ばん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Never use delivery', vi: 'Không bao giờ giao hàng' },
+              jp: '宅配便を 使わない こと',
+              ruby: [
+                { base: '宅', reading: 'たく' },
+                { base: '配', reading: 'はい' },
+                { base: '便', reading: 'びん' },
+                { base: '使', reading: 'つか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Always run faster', vi: 'Luôn chạy nhanh hơn' },
+              jp: 'もっと 速く 走ること',
+              ruby: [
+                { base: '速', reading: 'はや' },
+                { base: '走', reading: 'はし' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Ignore the doorbell', vi: 'Bỏ qua chuông cửa' },
+              jp: 'ベルを 無視する こと',
+              ruby: [
+                { base: '無', reading: 'む' },
+                { base: '視', reading: 'し' }
+              ]
+            }
           ],
           correctId: 'a'
         }

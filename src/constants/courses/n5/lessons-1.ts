@@ -846,6 +846,7 @@ export const n5Lesson1: Lesson = {
     {
       id: 'reading-1',
       title: { en: 'Nice to meet you', vi: 'Rất vui được gặp' },
+      titleJp: 'はじめまして',
       lines: [
         {
           jp: 'はじめまして。私は アレックス・リバラです。',
@@ -883,22 +884,79 @@ export const n5Lesson1: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where did Alex come from?', vi: 'Anh Alex đến từ đâu?' },
+          jp: 'アレックスさんは どこから 来ましたか。',
+          ruby: [{ base: '来', reading: 'き' }],
           choices: [
-            { id: 'a', label: { en: 'America', vi: 'Mỹ' } },
-            { id: 'b', label: { en: 'Japan', vi: 'Nhật Bản' } },
-            { id: 'c', label: { en: 'China', vi: 'Trung Quốc' } },
-            { id: 'd', label: { en: 'Vietnam', vi: 'Việt Nam' } }
+            { id: 'a', label: { en: 'America', vi: 'Mỹ' }, jp: 'アメリカ' },
+            {
+              id: 'b',
+              label: { en: 'Japan', vi: 'Nhật Bản' },
+              jp: '日本',
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'China', vi: 'Trung Quốc' },
+              jp: '中国',
+              ruby: [
+                { base: '中', reading: 'ちゅう' },
+                { base: '国', reading: 'ごく' }
+              ]
+            },
+            { id: 'd', label: { en: 'Vietnam', vi: 'Việt Nam' }, jp: 'ベトナム' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: "What is Alex's job?", vi: 'Anh Alex làm nghề gì?' },
+          jp: 'アレックスさんは 何の 仕事ですか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Student', vi: 'Học sinh' } },
-            { id: 'b', label: { en: 'Company employee', vi: 'Nhân viên công ty' } },
-            { id: 'c', label: { en: 'Teacher', vi: 'Giáo viên' } },
-            { id: 'd', label: { en: 'Doctor', vi: 'Bác sĩ' } }
+            {
+              id: 'a',
+              label: { en: 'Student', vi: 'Học sinh' },
+              jp: '学生',
+              ruby: [
+                { base: '学', reading: 'がく' },
+                { base: '生', reading: 'せい' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Company employee', vi: 'Nhân viên công ty' },
+              jp: '会社員',
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '員', reading: 'いん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Teacher', vi: 'Giáo viên' },
+              jp: '先生',
+              ruby: [
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Doctor', vi: 'Bác sĩ' },
+              jp: '医者',
+              ruby: [
+                { base: '医', reading: 'い' },
+                { base: '者', reading: 'しゃ' }
+              ]
+            }
           ],
           correctId: 'b'
         }
@@ -907,6 +965,12 @@ export const n5Lesson1: Lesson = {
     {
       id: 'reading-2',
       title: { en: 'Colleagues at Sakura', vi: 'Đồng nghiệp ở Sakura' },
+      titleJp: 'さくら商事の 人',
+      titleRuby: [
+        { base: '商', reading: 'しょう' },
+        { base: '事', reading: 'じ' },
+        { base: '人', reading: 'ひと' }
+      ],
       lines: [
         {
           jp: 'マリア・コスタさんは ブラジルから 来ました。',
@@ -948,11 +1012,21 @@ export const n5Lesson1: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where is Maria from?', vi: 'Chị Maria đến từ đâu?' },
+          jp: 'マリアさんは どこから 来ましたか。',
+          ruby: [{ base: '来', reading: 'き' }],
           choices: [
-            { id: 'a', label: { en: 'Brazil', vi: 'Brazil' } },
-            { id: 'b', label: { en: 'America', vi: 'Mỹ' } },
-            { id: 'c', label: { en: 'Japan', vi: 'Nhật Bản' } },
-            { id: 'd', label: { en: 'Vietnam', vi: 'Việt Nam' } }
+            { id: 'a', label: { en: 'Brazil', vi: 'Brazil' }, jp: 'ブラジル' },
+            { id: 'b', label: { en: 'America', vi: 'Mỹ' }, jp: 'アメリカ' },
+            {
+              id: 'c',
+              label: { en: 'Japan', vi: 'Nhật Bản' },
+              jp: '日本',
+              ruby: [
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' }
+              ]
+            },
+            { id: 'd', label: { en: 'Vietnam', vi: 'Việt Nam' }, jp: 'ベトナム' }
           ],
           correctId: 'a'
         },
@@ -962,11 +1036,50 @@ export const n5Lesson1: Lesson = {
             en: 'Where do Maria and the speaker work?',
             vi: 'Chị Maria và người nói làm ở đâu?'
           },
+          jp: 'マリアさんと 私は どこの 会社の 人ですか。',
+          ruby: [
+            { base: '私', reading: 'わたし' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '人', reading: 'ひと' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Sakura Trading', vi: 'Công ty Sakura' } },
-            { id: 'b', label: { en: 'A hospital', vi: 'Bệnh viện' } },
-            { id: 'c', label: { en: 'A university', vi: 'Trường đại học' } },
-            { id: 'd', label: { en: 'A bank', vi: 'Ngân hàng' } }
+            {
+              id: 'a',
+              label: { en: 'Sakura Trading', vi: 'Công ty Sakura' },
+              jp: 'さくら商事',
+              ruby: [
+                { base: '商', reading: 'しょう' },
+                { base: '事', reading: 'じ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A hospital', vi: 'Bệnh viện' },
+              jp: '病院',
+              ruby: [
+                { base: '病', reading: 'びょう' },
+                { base: '院', reading: 'いん' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'A university', vi: 'Trường đại học' },
+              jp: '大学',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'A bank', vi: 'Ngân hàng' },
+              jp: '銀行',
+              ruby: [
+                { base: '銀', reading: 'ぎん' },
+                { base: '行', reading: 'こう' }
+              ]
+            }
           ],
           correctId: 'a'
         }
@@ -975,6 +1088,7 @@ export const n5Lesson1: Lesson = {
     {
       id: 'reading-3',
       title: { en: 'Introducing Yuki', vi: 'Giới thiệu Yuki' },
+      titleJp: 'ゆきちゃん',
       lines: [
         {
           jp: 'こちらは ゆきちゃんです。',
@@ -1001,22 +1115,48 @@ export const n5Lesson1: Lesson = {
         {
           id: 'q1',
           question: { en: 'Who is being introduced?', vi: 'Người được giới thiệu là ai?' },
+          jp: 'こちらは だれですか。',
           choices: [
-            { id: 'a', label: { en: 'Yuki', vi: 'Yuki' } },
-            { id: 'b', label: { en: 'Maria', vi: 'Maria' } },
-            { id: 'c', label: { en: 'Alex', vi: 'Alex' } },
-            { id: 'd', label: { en: 'Yamada', vi: 'Yamada' } }
+            { id: 'a', label: { en: 'Yuki', vi: 'Yuki' }, jp: 'ゆき' },
+            { id: 'b', label: { en: 'Maria', vi: 'Maria' }, jp: 'マリア' },
+            { id: 'c', label: { en: 'Alex', vi: 'Alex' }, jp: 'アレックス' },
+            { id: 'd', label: { en: 'Yamada', vi: 'Yamada' }, jp: 'やまだ' }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'How old is Yuki?', vi: 'Bé Yuki bao nhiêu tuổi?' },
+          jp: 'ゆきちゃんは 何歳ですか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '歳', reading: 'さい' }
+          ],
           choices: [
-            { id: 'a', label: { en: '9 years old', vi: '9 tuổi' } },
-            { id: 'b', label: { en: '20 years old', vi: '20 tuổi' } },
-            { id: 'c', label: { en: '25 years old', vi: '25 tuổi' } },
-            { id: 'd', label: { en: '8 years old', vi: '8 tuổi' } }
+            {
+              id: 'a',
+              label: { en: '9 years old', vi: '9 tuổi' },
+              jp: '9歳',
+              ruby: [{ base: '歳', reading: 'さい' }]
+            },
+            {
+              id: 'b',
+              label: { en: '20 years old', vi: '20 tuổi' },
+              jp: '20歳',
+              ruby: [{ base: '歳', reading: 'さい' }]
+            },
+            {
+              id: 'c',
+              label: { en: '25 years old', vi: '25 tuổi' },
+              jp: '25歳',
+              ruby: [{ base: '歳', reading: 'さい' }]
+            },
+            {
+              id: 'd',
+              label: { en: '8 years old', vi: '8 tuổi' },
+              jp: '8歳',
+              ruby: [{ base: '歳', reading: 'さい' }]
+            }
           ],
           correctId: 'a'
         }

@@ -531,6 +531,11 @@ export const n5Lesson24: Lesson = {
     {
       id: 'reading-lesson24-picnic',
       title: { en: 'A picnic with friends', vi: 'Dã ngoại với bạn' },
+      titleJp: '友達と ピクニック',
+      titleRuby: [
+        { base: '友', reading: 'とも' },
+        { base: '達', reading: 'だち' }
+      ],
       lines: [
         {
           jp: '日曜日 友達と 公園へ 行きました。',
@@ -588,22 +593,93 @@ export const n5Lesson24: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where did they go?', vi: 'Họ đi đâu?' },
+          jp: 'どこへ 行きましたか。',
+          ruby: [{ base: '行', reading: 'い' }],
           choices: [
-            { id: 'a', label: { en: 'The park', vi: 'Công viên' } },
-            { id: 'b', label: { en: 'The station', vi: 'Ga' } },
-            { id: 'c', label: { en: 'City hall', vi: 'Ủy ban thành phố' } },
-            { id: 'd', label: { en: "Grandma's house", vi: 'Nhà bà' } }
+            {
+              id: 'a',
+              label: { en: 'The park', vi: 'Công viên' },
+              jp: '公園',
+              ruby: [
+                { base: '公', reading: 'こう' },
+                { base: '園', reading: 'えん' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'The station', vi: 'Ga' },
+              jp: '駅',
+              ruby: [{ base: '駅', reading: 'えき' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'City hall', vi: 'Ủy ban thành phố' },
+              jp: '市役所',
+              ruby: [
+                { base: '市', reading: 'し' },
+                { base: '役', reading: 'やく' },
+                { base: '所', reading: 'しょ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: "Grandma's house", vi: 'Nhà bà' },
+              jp: 'おばあさんの 家',
+              ruby: [{ base: '家', reading: 'いえ' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What did Mr. Sato do?', vi: 'Anh Sato làm gì?' },
+          jp: '佐藤さんは 何を して くれましたか。',
+          ruby: [
+            { base: '佐', reading: 'さ' },
+            { base: '藤', reading: 'とう' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Made boxed lunches', vi: 'Làm cơm hộp' } },
-            { id: 'b', label: { en: 'Fixed a machine', vi: 'Sửa máy' } },
-            { id: 'c', label: { en: 'Moved house', vi: 'Chuyển nhà' } },
-            { id: 'd', label: { en: 'Explained grammar', vi: 'Giải thích ngữ pháp' } }
+            {
+              id: 'a',
+              label: { en: 'Made boxed lunches', vi: 'Làm cơm hộp' },
+              jp: '弁当を 作って くれました',
+              ruby: [
+                { base: '弁', reading: 'べん' },
+                { base: '当', reading: 'とう' },
+                { base: '作', reading: 'つく' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Fixed a machine', vi: 'Sửa máy' },
+              jp: '機械を 直しました',
+              ruby: [
+                { base: '機', reading: 'き' },
+                { base: '械', reading: 'かい' },
+                { base: '直', reading: 'なお' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Moved house', vi: 'Chuyển nhà' },
+              jp: '引っ越しを しました',
+              ruby: [
+                { base: '引', reading: 'ひ' },
+                { base: '越', reading: 'こ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Explained grammar', vi: 'Giải thích ngữ pháp' },
+              jp: '文法を 説明しました',
+              ruby: [
+                { base: '文', reading: 'ぶん' },
+                { base: '法', reading: 'ぽう' },
+                { base: '説', reading: 'せつ' },
+                { base: '明', reading: 'めい' }
+              ]
+            }
           ],
           correctId: 'a'
         }

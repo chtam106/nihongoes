@@ -859,6 +859,13 @@ export const n4Lesson38: Lesson = {
     {
       id: 'reading-lesson38-twins',
       title: { en: 'Two sisters, two temperaments', vi: 'Hai chị em, hai tính cách' },
+      titleJp: '二人の 姉妹',
+      titleRuby: [
+        { base: '二', reading: 'ふた' },
+        { base: '人', reading: 'り' },
+        { base: '姉', reading: 'し' },
+        { base: '妹', reading: 'まい' }
+      ],
       lines: [
         {
           jp: '姉妹は 顔が 似ていますが、性格は 違います。',
@@ -917,17 +924,55 @@ export const n4Lesson38: Lesson = {
         {
           id: 'q1',
           question: { en: 'What is true about the sisters?', vi: 'Điều nào đúng về hai chị em?' },
+          jp: '姉妹について 正しい ことは 何ですか。',
+          ruby: [
+            { base: '姉', reading: 'し' },
+            { base: '妹', reading: 'まい' },
+            { base: '正', reading: 'ただ' },
+            { base: '何', reading: 'なん' }
+          ],
           choices: [
             {
               id: 'a',
               label: {
                 en: 'They look alike but differ in personality',
                 vi: 'Giống mặt nhưng khác tính cách'
-              }
+              },
+              jp: '顔は 似ていますが、性格は 違います',
+              ruby: [
+                { base: '顔', reading: 'かお' },
+                { base: '似', reading: 'に' },
+                { base: '性', reading: 'せい' },
+                { base: '格', reading: 'かく' },
+                { base: '違', reading: 'ちが' }
+              ]
             },
-            { id: 'b', label: { en: 'Both are strong-willed', vi: 'Cả hai đều mạnh mẽ' } },
-            { id: 'c', label: { en: 'They never quarrel', vi: 'Họ không bao giờ cãi nhau' } },
-            { id: 'd', label: { en: 'They work in a factory', vi: 'Họ làm ở nhà máy' } }
+            {
+              id: 'b',
+              label: { en: 'Both are strong-willed', vi: 'Cả hai đều mạnh mẽ' },
+              jp: '二人とも 気が 強いです',
+              ruby: [
+                { base: '二', reading: 'ふた' },
+                { base: '人', reading: 'り' },
+                { base: '気', reading: 'き' },
+                { base: '強', reading: 'つよ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'They never quarrel', vi: 'Họ không bao giờ cãi nhau' },
+              jp: 'けんかを しません'
+            },
+            {
+              id: 'd',
+              label: { en: 'They work in a factory', vi: 'Họ làm ở nhà máy' },
+              jp: '工場で 働きます',
+              ruby: [
+                { base: '工', reading: 'こう' },
+                { base: '場', reading: 'じょう' },
+                { base: '働', reading: 'はたら' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -937,11 +982,53 @@ export const n4Lesson38: Lesson = {
             en: 'What became natural as they grew older?',
             vi: 'Điều gì trở nên hiển nhiên khi lớn lên?'
           },
+          jp: '年齢が 経つと、何が 当たり前に なりましたか。',
+          ruby: [
+            { base: '年', reading: 'ねん' },
+            { base: '齢', reading: 'れい' },
+            { base: '経', reading: 'た' },
+            { base: '何', reading: 'なに' },
+            { base: '当', reading: 'あ' },
+            { base: '前', reading: 'まえ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Taking care of each other', vi: 'Chăm sóc nhau' } },
-            { id: 'b', label: { en: 'Locking the office', vi: 'Khóa phòng làm việc' } },
-            { id: 'c', label: { en: 'Turning off power', vi: 'Tắt điện nguồn' } },
-            { id: 'd', label: { en: 'Lying often', vi: 'Hay nói dối' } }
+            {
+              id: 'a',
+              label: { en: 'Taking care of each other', vi: 'Chăm sóc nhau' },
+              jp: 'お互いを 世話する こと',
+              ruby: [
+                { base: '互', reading: 'たが' },
+                { base: '世', reading: 'せ' },
+                { base: '話', reading: 'わ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Locking the office', vi: 'Khóa phòng làm việc' },
+              jp: '事務所の 鍵を 閉める こと',
+              ruby: [
+                { base: '事', reading: 'じ' },
+                { base: '務', reading: 'む' },
+                { base: '所', reading: 'しょ' },
+                { base: '鍵', reading: 'かぎ' },
+                { base: '閉', reading: 'し' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Turning off power', vi: 'Tắt điện nguồn' },
+              jp: '電源を 切る こと',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '源', reading: 'げん' },
+                { base: '切', reading: 'き' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Lying often', vi: 'Hay nói dối' },
+              jp: 'よく うそを つく こと'
+            }
           ],
           correctId: 'a'
         }

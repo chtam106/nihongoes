@@ -753,6 +753,11 @@ export const n4Lesson37: Lesson = {
     {
       id: 'reading-lesson37-history',
       title: { en: 'Built long ago', vi: 'Được xây từ lâu' },
+      titleJp: '昔 建てられた もの',
+      titleRuby: [
+        { base: '昔', reading: 'むかし' },
+        { base: '建', reading: 'た' }
+      ],
       lines: [
         {
           jp: '小さい ころ、よく 病気に なりました。',
@@ -800,11 +805,41 @@ export const n4Lesson37: Lesson = {
         {
           id: 'q1',
           question: { en: 'When was Hōryūji built?', vi: 'Chùa Hōryūji được xây khi nào?' },
+          jp: '法隆寺は いつ 建てられましたか。',
+          ruby: [
+            { base: '法', reading: 'ほう' },
+            { base: '隆', reading: 'りゅう' },
+            { base: '寺', reading: 'じ' },
+            { base: '建', reading: 'た' }
+          ],
           choices: [
-            { id: 'a', label: { en: '607', vi: '607' } },
-            { id: 'b', label: { en: '1950', vi: '1950' } },
-            { id: 'c', label: { en: '1994', vi: '1994' } },
-            { id: 'd', label: { en: '14th century', vi: 'Thế kỷ 14' } }
+            {
+              id: 'a',
+              label: { en: '607', vi: '607' },
+              jp: '607年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'b',
+              label: { en: '1950', vi: '1950' },
+              jp: '1950年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '1994', vi: '1994' },
+              jp: '1994年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'd',
+              label: { en: '14th century', vi: 'Thế kỷ 14' },
+              jp: '14世紀',
+              ruby: [
+                { base: '世', reading: 'せい' },
+                { base: '紀', reading: 'き' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -814,11 +849,47 @@ export const n4Lesson37: Lesson = {
             en: 'What happened when the speaker was small?',
             vi: 'Khi nhỏ người nói hay gặp chuyện gì?'
           },
+          jp: '小さい ころ、よく どう なりましたか。',
+          ruby: [{ base: '小', reading: 'ちい' }],
           choices: [
-            { id: 'a', label: { en: 'Often got sick', vi: 'Hay bị ốm' } },
-            { id: 'b', label: { en: 'Exported rice', vi: 'Xuất khẩu gạo' } },
-            { id: 'c', label: { en: 'Invented noodles', vi: 'Phát minh mì' } },
-            { id: 'd', label: { en: 'Met a thief', vi: 'Gặp kẻ trộm' } }
+            {
+              id: 'a',
+              label: { en: 'Often got sick', vi: 'Hay bị ốm' },
+              jp: '病気に なりました',
+              ruby: [
+                { base: '病', reading: 'びょう' },
+                { base: '気', reading: 'き' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Exported rice', vi: 'Xuất khẩu gạo' },
+              jp: '米を 輸出しました',
+              ruby: [
+                { base: '米', reading: 'こめ' },
+                { base: '輸', reading: 'ゆ' },
+                { base: '出', reading: 'しゅつ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Invented noodles', vi: 'Phát minh mì' },
+              jp: 'めんを 発明しました',
+              ruby: [
+                { base: '発', reading: 'はつ' },
+                { base: '明', reading: 'めい' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Met a thief', vi: 'Gặp kẻ trộm' },
+              jp: '泥棒に 会いました',
+              ruby: [
+                { base: '泥', reading: 'どろ' },
+                { base: '棒', reading: 'ぼう' },
+                { base: '会', reading: 'あ' }
+              ]
+            }
           ],
           correctId: 'a'
         }

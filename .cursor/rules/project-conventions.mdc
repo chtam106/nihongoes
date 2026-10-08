@@ -128,6 +128,7 @@ alwaysApply: true
 - Buttons/Chips may keep `variant="outlined"` — those are controls, not content surfaces.
 
 ## Quiz feedback styling
+- Quiz answer text must be selectable. Do not render an answer as a native `<button>` (a selection cannot start inside one). Multiple-choice answers go through `<ChoiceButton>` (`component="div"`, `userSelect: 'text'`); alphabet options and vocab match chips follow the same rule. A drag that highlights text must not also submit the answer (`hasTextSelection`). Locked answers stay selectable: do not use `pointer-events: none` on them.
 - Answer choices do NOT follow the theme primary: unanswered choice buttons are neutral black `QUIZ_CHOICE_COLOR` (`rgba(0, 0, 0, 0.87)` text, 0.23 border, `src/constants/quiz.ts`) via `quizChoiceSx` (`src/theme/quiz-choice.ts`), applied in `ChoiceButton` and the alphabet quiz options. Pink primary would read as a wrong answer.
 - Answer choices use a soft fill, not the solid progress-bar colors: correct is a light green tint of `QUIZ_CORRECT_COLOR`, wrong is a light pink (`pink[400]`). The progress bar stays a solid `QUIZ_CORRECT_COLOR` / `QUIZ_INCORRECT_COLOR` fill.
 - Do NOT show a "Correct"/"Incorrect" text label or success/error icons; rely on the choice color feedback only.

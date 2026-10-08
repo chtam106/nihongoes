@@ -734,6 +734,12 @@ export const n4Lesson41: Lesson = {
     {
       id: 'reading-lesson41-urashima',
       title: { en: 'The turtle and the fisherman', vi: 'Chàng trai và con rùa' },
+      titleJp: '亀と 男の子',
+      titleRuby: [
+        { base: '亀', reading: 'かめ' },
+        { base: '男', reading: 'おとこ' },
+        { base: '子', reading: 'こ' }
+      ],
       lines: [
         {
           jp: 'むかし、優しい 男の子が いました。子どもたちに いじめられた 亀を 助けて あげました。',
@@ -805,25 +811,98 @@ export const n4Lesson41: Lesson = {
             en: 'What did the boy do for the turtle?',
             vi: 'Chàng trai giúp con rùa thế nào?'
           },
+          jp: '男の子は 亀を どう しましたか。',
+          ruby: [
+            { base: '男', reading: 'おとこ' },
+            { base: '子', reading: 'こ' },
+            { base: '亀', reading: 'かめ' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Saved it from bullying', vi: 'Cứu khỏi bị bắt nạt' } },
-            { id: 'b', label: { en: 'Sold it at a shop', vi: 'Bán ở cửa hàng' } },
-            { id: 'c', label: { en: 'Measured its weight', vi: 'Cân trọng lượng' } },
-            { id: 'd', label: { en: 'Taught it grammar', vi: 'Dạy ngữ pháp' } }
+            {
+              id: 'a',
+              label: { en: 'Saved it from bullying', vi: 'Cứu khỏi bị bắt nạt' },
+              jp: 'いじめから 助けました',
+              ruby: [{ base: '助', reading: 'たす' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Sold it at a shop', vi: 'Bán ở cửa hàng' },
+              jp: '店で 売りました',
+              ruby: [
+                { base: '店', reading: 'みせ' },
+                { base: '売', reading: 'う' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Measured its weight', vi: 'Cân trọng lượng' },
+              jp: '重さを 測りました',
+              ruby: [
+                { base: '重', reading: 'おも' },
+                { base: '測', reading: 'はか' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Taught it grammar', vi: 'Dạy ngữ pháp' },
+              jp: '文法を 教えました',
+              ruby: [
+                { base: '文', reading: 'ぶん' },
+                { base: '法', reading: 'ぽう' },
+                { base: '教', reading: 'おし' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What did the turtle do in return?', vi: 'Con rùa đáp lại thế nào?' },
+          jp: '亀は お礼に 何を しましたか。',
+          ruby: [
+            { base: '亀', reading: 'かめ' },
+            { base: '礼', reading: 'れい' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Took him to a sea palace', vi: 'Đưa tới cung điện dưới biển' }
+              label: { en: 'Took him to a sea palace', vi: 'Đưa tới cung điện dưới biển' },
+              jp: '海の 宮殿へ 連れて 行きました',
+              ruby: [
+                { base: '海', reading: 'うみ' },
+                { base: '宮', reading: 'きゅう' },
+                { base: '殿', reading: 'でん' },
+                { base: '連', reading: 'つ' },
+                { base: '行', reading: 'い' }
+              ]
             },
-            { id: 'b', label: { en: 'Gave him a screwdriver', vi: 'Tặng tuốc-nơ-vít' } },
-            { id: 'c', label: { en: 'Fixed his car', vi: 'Sửa xe cho anh' } },
-            { id: 'd', label: { en: 'Sent a weather forecast', vi: 'Gửi dự báo thời tiết' } }
+            {
+              id: 'b',
+              label: { en: 'Gave him a screwdriver', vi: 'Tặng tuốc-nơ-vít' },
+              jp: 'ドライバーを くれました'
+            },
+            {
+              id: 'c',
+              label: { en: 'Fixed his car', vi: 'Sửa xe cho anh' },
+              jp: '車を 直しました',
+              ruby: [
+                { base: '車', reading: 'くるま' },
+                { base: '直', reading: 'なお' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Sent a weather forecast', vi: 'Gửi dự báo thời tiết' },
+              jp: '天気予報を 送りました',
+              ruby: [
+                { base: '天', reading: 'てん' },
+                { base: '気', reading: 'き' },
+                { base: '予', reading: 'よ' },
+                { base: '報', reading: 'ほう' },
+                { base: '送', reading: 'おく' }
+              ]
+            }
           ],
           correctId: 'a'
         }

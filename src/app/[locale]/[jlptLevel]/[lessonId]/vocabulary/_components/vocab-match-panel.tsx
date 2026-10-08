@@ -10,6 +10,7 @@ import { FuriganaText } from '@/components/furigana-text';
 import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ResultScreen } from '@/features/course/shared';
+import { hasTextSelection } from '@/utils/text-selection.ts';
 import { useVocabMatch } from './use-vocab-quiz.ts';
 import {
   VOCAB_MATCH_BATCH_FADE_MS,
@@ -67,6 +68,7 @@ function matchChipSx(state: MatchChipState, interactive: boolean, matchColorInde
       lineHeight: 1.35,
       textAlign: 'left' as const,
       cursor: interactive ? 'pointer' : 'default',
+      userSelect: 'text',
       WebkitTapHighlightColor: 'transparent',
       boxShadow: 'none'
     };
@@ -84,17 +86,32 @@ function MatchChip({
   return (
     <Paper
       elevation={0}
-      component="button"
-      type="button"
-      onClick={locked ? undefined : onClick}
+      component="div"
+      role="button"
+      tabIndex={locked ? -1 : 0}
       aria-disabled={locked || undefined}
       lang={ja ? 'ja' : undefined}
-      sx={[
-        matchChipSx(state, !locked, matchColorIndex),
-        locked && {
-          pointerEvents: 'none'
+      onClick={() => {
+        if (hasTextSelection() || locked) {
+          return;
         }
-      ]}
+
+        onClick?.();
+      }}
+      onKeyDown={(event) => {
+        if (event.key !== 'Enter' && event.key !== ' ') {
+          return;
+        }
+
+        event.preventDefault();
+
+        if (hasTextSelection() || locked) {
+          return;
+        }
+
+        onClick?.();
+      }}
+      sx={matchChipSx(state, !locked, matchColorIndex)}
     >
       {children}
     </Paper>

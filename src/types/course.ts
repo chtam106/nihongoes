@@ -77,11 +77,17 @@ export type ReadingLine = {
 export type ReadingChoice = {
   id: string;
   label: Bilingual;
+  /** Japanese surface for the reading-quiz language toggle. */
+  jp?: string;
+  ruby?: RubySegment[];
 };
 
 export type ReadingQuestion = {
   id: string;
   question: Bilingual;
+  /** Japanese surface for the reading-quiz language toggle. */
+  jp?: string;
+  ruby?: RubySegment[];
   choices: ReadingChoice[];
   correctId: string;
 };
@@ -89,6 +95,9 @@ export type ReadingQuestion = {
 export type ReadingPassage = {
   id: string;
   title: Bilingual;
+  /** Japanese title for the reading-quiz language toggle. */
+  titleJp?: string;
+  titleRuby?: RubySegment[];
   lines: ReadingLine[];
   questions: ReadingQuestion[];
 };

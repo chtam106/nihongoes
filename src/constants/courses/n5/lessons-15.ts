@@ -796,6 +796,12 @@ export const n5Lesson15: Lesson = {
     {
       id: 'reading-lesson15-researcher',
       title: { en: 'Where Ms. Lee lives and works', vi: 'Nơi ở và công việc của chị Lee' },
+      titleJp: 'イーさんの 仕事と 家',
+      titleRuby: [
+        { base: '仕', reading: 'し' },
+        { base: '事', reading: 'ごと' },
+        { base: '家', reading: 'いえ' }
+      ],
       lines: [
         {
           jp: 'イーさんは 今 横浜に 住んでいます。',
@@ -848,33 +854,134 @@ export const n5Lesson15: Lesson = {
         {
           id: 'q1',
           question: { en: 'Where does Ms. Lee live now?', vi: 'Chị Lee bây giờ sống ở đâu?' },
+          jp: 'イーさんは 今 どこに 住んでいますか。',
+          ruby: [
+            { base: '今', reading: 'いま' },
+            { base: '住', reading: 'す' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yokohama', vi: 'Yokohama' } },
-            { id: 'b', label: { en: 'Osaka', vi: 'Osaka' } },
-            { id: 'c', label: { en: 'China', vi: 'Trung Quốc' } },
-            { id: 'd', label: { en: 'Tokyo', vi: 'Tokyo' } }
+            {
+              id: 'a',
+              label: { en: 'Yokohama', vi: 'Yokohama' },
+              jp: '横浜',
+              ruby: [
+                { base: '横', reading: 'よこ' },
+                { base: '浜', reading: 'はま' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Osaka', vi: 'Osaka' },
+              jp: '大阪',
+              ruby: [
+                { base: '大', reading: 'おお' },
+                { base: '阪', reading: 'さか' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'China', vi: 'Trung Quốc' },
+              jp: '中国',
+              ruby: [
+                { base: '中', reading: 'ちゅう' },
+                { base: '国', reading: 'ごく' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Tokyo', vi: 'Tokyo' },
+              jp: '東京',
+              ruby: [
+                { base: '東', reading: 'とう' },
+                { base: '京', reading: 'きょう' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'What does she research?', vi: 'Cô ấy nghiên cứu gì?' },
+          jp: '何を 研究していますか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '研', reading: 'けん' },
+            { base: '究', reading: 'きゅう' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Economics', vi: 'Kinh tế' } },
-            { id: 'b', label: { en: 'Software', vi: 'Phần mềm' } },
-            { id: 'c', label: { en: 'Medicine', vi: 'Y khoa' } },
-            { id: 'd', label: { en: 'Art', vi: 'Mỹ thuật' } }
+            {
+              id: 'a',
+              label: { en: 'Economics', vi: 'Kinh tế' },
+              jp: '経済',
+              ruby: [
+                { base: '経', reading: 'けい' },
+                { base: '済', reading: 'ざい' }
+              ]
+            },
+            { id: 'b', label: { en: 'Software', vi: 'Phần mềm' }, jp: 'ソフト' },
+            {
+              id: 'c',
+              label: { en: 'Medicine', vi: 'Y khoa' },
+              jp: '医学',
+              ruby: [
+                { base: '医', reading: 'い' },
+                { base: '学', reading: 'がく' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Art', vi: 'Mỹ thuật' },
+              jp: '美術',
+              ruby: [
+                { base: '美', reading: 'び' },
+                { base: '術', reading: 'じゅつ' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Where is her family?', vi: 'Gia đình cô ấy ở đâu?' },
+          jp: '家族は どこに いますか。',
+          ruby: [
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'China', vi: 'Trung Quốc' } },
-            { id: 'b', label: { en: 'Yokohama', vi: 'Yokohama' } },
-            { id: 'c', label: { en: 'At the university', vi: 'Ở trường đại học' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            {
+              id: 'a',
+              label: { en: 'China', vi: 'Trung Quốc' },
+              jp: '中国',
+              ruby: [
+                { base: '中', reading: 'ちゅう' },
+                { base: '国', reading: 'ごく' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Yokohama', vi: 'Yokohama' },
+              jp: '横浜',
+              ruby: [
+                { base: '横', reading: 'よこ' },
+                { base: '浜', reading: 'はま' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'At the university', vi: 'Ở trường đại học' },
+              jp: '大学',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         }
@@ -883,6 +990,13 @@ export const n5Lesson15: Lesson = {
     {
       id: 'reading-lesson15-office-rules',
       title: { en: 'Office rules', vi: 'Quy định văn phòng' },
+      titleJp: '会社の 規則',
+      titleRuby: [
+        { base: '会', reading: 'かい' },
+        { base: '社', reading: 'しゃ' },
+        { base: '規', reading: 'き' },
+        { base: '則', reading: 'そく' }
+      ],
       lines: [
         {
           jp: '会議室で 食べては いけません。',
@@ -928,11 +1042,33 @@ export const n5Lesson15: Lesson = {
             en: 'What is not allowed in the meeting room?',
             vi: 'Trong phòng họp không được làm gì?'
           },
+          jp: '会議室で 何を しては いけませんか。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '室', reading: 'しつ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Eating', vi: 'Ăn' } },
-            { id: 'b', label: { en: 'Copying', vi: 'Phô-tô' } },
-            { id: 'c', label: { en: 'Talking', vi: 'Nói chuyện' } },
-            { id: 'd', label: { en: 'Sitting', vi: 'Ngồi' } }
+            {
+              id: 'a',
+              label: { en: 'Eating', vi: 'Ăn' },
+              jp: '食べること',
+              ruby: [{ base: '食', reading: 'た' }]
+            },
+            { id: 'b', label: { en: 'Copying', vi: 'Phô-tô' }, jp: 'コピーすること' },
+            {
+              id: 'c',
+              label: { en: 'Talking', vi: 'Nói chuyện' },
+              jp: '話すこと',
+              ruby: [{ base: '話', reading: 'はな' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Sitting', vi: 'Ngồi' },
+              jp: '座ること',
+              ruby: [{ base: '座', reading: 'すわ' }]
+            }
           ],
           correctId: 'a'
         },
@@ -942,11 +1078,26 @@ export const n5Lesson15: Lesson = {
             en: 'May the person copy the materials?',
             vi: 'Người đó có được phô-tô tài liệu không?'
           },
+          jp: '資料を コピーしても いいですか。',
+          ruby: [
+            { base: '資', reading: 'し' },
+            { base: '料', reading: 'りょう' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Yes', vi: 'Có' } },
-            { id: 'b', label: { en: 'No', vi: 'Không' } },
-            { id: 'c', label: { en: 'Only outside', vi: 'Chỉ ở ngoài' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            { id: 'a', label: { en: 'Yes', vi: 'Có' }, jp: 'はい' },
+            { id: 'b', label: { en: 'No', vi: 'Không' }, jp: 'いいえ' },
+            {
+              id: 'c',
+              label: { en: 'Only outside', vi: 'Chỉ ở ngoài' },
+              jp: '外だけ',
+              ruby: [{ base: '外', reading: 'そと' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         },
@@ -956,11 +1107,44 @@ export const n5Lesson15: Lesson = {
             en: 'Where should the materials be placed?',
             vi: 'Tài liệu nên đặt ở đâu?'
           },
+          jp: '資料は どこに 置きますか。',
+          ruby: [
+            { base: '資', reading: 'し' },
+            { base: '料', reading: 'りょう' },
+            { base: '置', reading: 'お' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'On the desk', vi: 'Lên bàn' } },
-            { id: 'b', label: { en: 'On the floor', vi: 'Xuống sàn' } },
-            { id: 'c', label: { en: 'In the meeting room', vi: 'Trong phòng họp' } },
-            { id: 'd', label: { en: 'Outside', vi: 'Bên ngoài' } }
+            {
+              id: 'a',
+              label: { en: 'On the desk', vi: 'Lên bàn' },
+              jp: '机の 上',
+              ruby: [
+                { base: '机', reading: 'つくえ' },
+                { base: '上', reading: 'うえ' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'On the floor', vi: 'Xuống sàn' },
+              jp: '床',
+              ruby: [{ base: '床', reading: 'ゆか' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'In the meeting room', vi: 'Trong phòng họp' },
+              jp: '会議室',
+              ruby: [
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Outside', vi: 'Bên ngoài' },
+              jp: '外',
+              ruby: [{ base: '外', reading: 'そと' }]
+            }
           ],
           correctId: 'a'
         }
@@ -969,6 +1153,11 @@ export const n5Lesson15: Lesson = {
     {
       id: 'reading-lesson15-factory',
       title: { en: 'At the factory', vi: 'Ở nhà máy' },
+      titleJp: '工場で',
+      titleRuby: [
+        { base: '工', reading: 'こう' },
+        { base: '場', reading: 'じょう' }
+      ],
       lines: [
         {
           jp: 'この 工場では 服と 製品を 作っています。',
@@ -1015,22 +1204,75 @@ export const n5Lesson15: Lesson = {
         {
           id: 'q1',
           question: { en: 'What does the factory make?', vi: 'Nhà máy làm gì?' },
+          jp: '工場では 何を 作っていますか。',
+          ruby: [
+            { base: '工', reading: 'こう' },
+            { base: '場', reading: 'じょう' },
+            { base: '何', reading: 'なに' },
+            { base: '作', reading: 'つく' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Clothes and products', vi: 'Quần áo và sản phẩm' } },
-            { id: 'b', label: { en: 'Software only', vi: 'Chỉ phần mềm' } },
-            { id: 'c', label: { en: 'Food', vi: 'Thức ăn' } },
-            { id: 'd', label: { en: 'Cars', vi: 'Xe ô tô' } }
+            {
+              id: 'a',
+              label: { en: 'Clothes and products', vi: 'Quần áo và sản phẩm' },
+              jp: '服と 製品',
+              ruby: [
+                { base: '服', reading: 'ふく' },
+                { base: '製', reading: 'せい' },
+                { base: '品', reading: 'ひん' }
+              ]
+            },
+            { id: 'b', label: { en: 'Software only', vi: 'Chỉ phần mềm' }, jp: 'ソフトだけ' },
+            {
+              id: 'c',
+              label: { en: 'Food', vi: 'Thức ăn' },
+              jp: '食べ物',
+              ruby: [
+                { base: '食', reading: 'た' },
+                { base: '物', reading: 'もの' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Cars', vi: 'Xe ô tô' },
+              jp: '車',
+              ruby: [{ base: '車', reading: 'くるま' }]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where are the catalogs?', vi: 'Ca-ta-lô ở đâu?' },
+          jp: 'カタログは どこに ありますか。',
           choices: [
-            { id: 'a', label: { en: 'Here (where indicated)', vi: 'Ở đây' } },
-            { id: 'b', label: { en: 'In the sales room', vi: 'Trong phòng bán' } },
-            { id: 'c', label: { en: 'At city hall', vi: 'Ở ủy ban thành phố' } },
-            { id: 'd', label: { en: 'Not said', vi: 'Không nói' } }
+            { id: 'a', label: { en: 'Here (where indicated)', vi: 'Ở đây' }, jp: 'ここです' },
+            {
+              id: 'b',
+              label: { en: 'In the sales room', vi: 'Trong phòng bán' },
+              jp: '売る 部屋',
+              ruby: [
+                { base: '売', reading: 'う' },
+                { base: '部', reading: 'へ' },
+                { base: '屋', reading: 'や' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'At city hall', vi: 'Ở ủy ban thành phố' },
+              jp: '市役所',
+              ruby: [
+                { base: '市', reading: 'し' },
+                { base: '役', reading: 'やく' },
+                { base: '所', reading: 'しょ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Not said', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         },
@@ -1040,11 +1282,51 @@ export const n5Lesson15: Lesson = {
             en: 'What must visitors not do?',
             vi: 'Khách không được làm gì?'
           },
+          jp: '見学者は 何を しては いけませんか。',
+          ruby: [
+            { base: '見', reading: 'けん' },
+            { base: '学', reading: 'がく' },
+            { base: '者', reading: 'しゃ' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Enter the sales room', vi: 'Vào phòng bán hàng' } },
-            { id: 'b', label: { en: 'Look at catalogs', vi: 'Xem ca-ta-lô' } },
-            { id: 'c', label: { en: 'Work at the factory', vi: 'Làm việc ở nhà máy' } },
-            { id: 'd', label: { en: 'Buy products', vi: 'Mua sản phẩm' } }
+            {
+              id: 'a',
+              label: { en: 'Enter the sales room', vi: 'Vào phòng bán hàng' },
+              jp: '売る 部屋に 入る',
+              ruby: [
+                { base: '売', reading: 'う' },
+                { base: '部', reading: 'へ' },
+                { base: '屋', reading: 'や' },
+                { base: '入', reading: 'はい' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Look at catalogs', vi: 'Xem ca-ta-lô' },
+              jp: 'カタログを 見る',
+              ruby: [{ base: '見', reading: 'み' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Work at the factory', vi: 'Làm việc ở nhà máy' },
+              jp: '工場で 働く',
+              ruby: [
+                { base: '工', reading: 'こう' },
+                { base: '場', reading: 'じょう' },
+                { base: '働', reading: 'はたら' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Buy products', vi: 'Mua sản phẩm' },
+              jp: '製品を 買う',
+              ruby: [
+                { base: '製', reading: 'せい' },
+                { base: '品', reading: 'ひん' },
+                { base: '買', reading: 'か' }
+              ]
+            }
           ],
           correctId: 'a'
         }

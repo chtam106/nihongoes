@@ -827,6 +827,11 @@ export const n4Lesson33: Lesson = {
     {
       id: 'reading-lesson33-earthquake',
       title: { en: 'After the earthquake', vi: 'Sau động đất' },
+      titleJp: '地震の あと',
+      titleRuby: [
+        { base: '地', reading: 'じ' },
+        { base: '震', reading: 'しん' }
+      ],
       lines: [
         {
           jp: '大きな 地震が 起きました。',
@@ -876,16 +881,53 @@ export const n4Lesson33: Lesson = {
             en: 'What changed after the earthquake?',
             vi: 'Sau động đất có gì thay đổi?'
           },
+          jp: '地震の あと、何が 変わりましたか。',
+          ruby: [
+            { base: '地', reading: 'じ' },
+            { base: '震', reading: 'しん' },
+            { base: '何', reading: 'なに' },
+            { base: '変', reading: 'か' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Neighbors helped each other more', vi: 'Hàng xóm giúp nhau hơn' }
+              label: { en: 'Neighbors helped each other more', vi: 'Hàng xóm giúp nhau hơn' },
+              jp: '近所の 人が もっと 助け合う',
+              ruby: [
+                { base: '近', reading: 'きん' },
+                { base: '所', reading: 'じょ' },
+                { base: '人', reading: 'ひと' },
+                { base: '助', reading: 'たす' },
+                { base: '合', reading: 'あ' }
+              ]
             },
-            { id: 'b', label: { en: 'Everyone moved away', vi: 'Mọi người chuyển đi hết' } },
-            { id: 'c', label: { en: 'The town became silent', vi: 'Thị trấn im lặng hơn' } },
+            {
+              id: 'b',
+              label: { en: 'Everyone moved away', vi: 'Mọi người chuyển đi hết' },
+              jp: 'みんな 引っ越した',
+              ruby: [
+                { base: '引', reading: 'ひ' },
+                { base: '越', reading: 'こ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'The town became silent', vi: 'Thị trấn im lặng hơn' },
+              jp: '町が もっと 静かになった',
+              ruby: [
+                { base: '町', reading: 'まち' },
+                { base: '静', reading: 'しず' }
+              ]
+            },
             {
               id: 'd',
-              label: { en: 'Schools closed forever', vi: 'Trường học đóng cửa vĩnh viễn' }
+              label: { en: 'Schools closed forever', vi: 'Trường học đóng cửa vĩnh viễn' },
+              jp: '学校が ずっと 閉まった',
+              ruby: [
+                { base: '学', reading: 'がっ' },
+                { base: '校', reading: 'こう' },
+                { base: '閉', reading: 'し' }
+              ]
             }
           ],
           correctId: 'a'

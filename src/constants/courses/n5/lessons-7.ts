@@ -819,6 +819,12 @@ export const n5Lesson7: Lesson = {
     {
       id: 'reading-lesson7-new-year-cards',
       title: { en: "New Year's cards", vi: 'Thiếp mừng năm mới' },
+      titleJp: '年賀状',
+      titleRuby: [
+        { base: '年', reading: 'ねん' },
+        { base: '賀', reading: 'が' },
+        { base: '状', reading: 'じょう' }
+      ],
       lines: [
         {
           jp: '12月に 年賀状を 書きます。',
@@ -882,33 +888,117 @@ export const n5Lesson7: Lesson = {
             en: "When does the speaker write New Year's cards?",
             vi: 'Người nói viết thiếp mừng năm mới vào lúc nào?'
           },
+          jp: 'いつ 年賀状を 書きますか。',
+          ruby: [
+            { base: '年', reading: 'ねん' },
+            { base: '賀', reading: 'が' },
+            { base: '状', reading: 'じょう' },
+            { base: '書', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'In December', vi: 'Tháng 12' } },
-            { id: 'b', label: { en: 'In January', vi: 'Tháng 1' } },
-            { id: 'c', label: { en: 'At Christmas', vi: 'Dịp Giáng sinh' } },
-            { id: 'd', label: { en: 'Every Sunday', vi: 'Mỗi chủ nhật' } }
+            {
+              id: 'a',
+              label: { en: 'In December', vi: 'Tháng 12' },
+              jp: '12月に',
+              ruby: [{ base: '月', reading: 'がつ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'In January', vi: 'Tháng 1' },
+              jp: '1月に',
+              ruby: [{ base: '月', reading: 'がつ' }]
+            },
+            { id: 'c', label: { en: 'At Christmas', vi: 'Dịp Giáng sinh' }, jp: 'クリスマスに' },
+            {
+              id: 'd',
+              label: { en: 'Every Sunday', vi: 'Mỗi chủ nhật' },
+              jp: '毎週 日曜日',
+              ruby: [
+                { base: '毎', reading: 'まい' },
+                { base: '週', reading: 'しゅう' },
+                { base: '日', reading: 'にち' },
+                { base: '曜', reading: 'よう' },
+                { base: '日', reading: 'び' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Who did the paper come from?', vi: 'Giấy là do ai cho?' },
+          jp: '紙は だれに もらいましたか。',
+          ruby: [{ base: '紙', reading: 'かみ' }],
           choices: [
-            { id: 'a', label: { en: 'The teacher', vi: 'Thầy/cô' } },
-            { id: 'b', label: { en: 'A friend', vi: 'Một người bạn' } },
-            { id: 'c', label: { en: 'The mother', vi: 'Mẹ' } },
-            { id: 'd', label: { en: 'The father', vi: 'Bố' } }
+            {
+              id: 'a',
+              label: { en: 'The teacher', vi: 'Thầy/cô' },
+              jp: '先生',
+              ruby: [
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'A friend', vi: 'Một người bạn' },
+              jp: '友達',
+              ruby: [
+                { base: '友', reading: 'とも' },
+                { base: '達', reading: 'だち' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'The mother', vi: 'Mẹ' },
+              jp: '母',
+              ruby: [{ base: '母', reading: 'はは' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'The father', vi: 'Bố' },
+              jp: '父',
+              ruby: [{ base: '父', reading: 'ちち' }]
+            }
           ],
           correctId: 'c'
         },
         {
           id: 'q3',
           question: { en: 'What does the speaker write with?', vi: 'Người nói viết bằng gì?' },
+          jp: '何で 書きますか。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '書', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A computer', vi: 'Máy vi tính' } },
-            { id: 'b', label: { en: 'A mobile phone', vi: 'Điện thoại di động' } },
-            { id: 'c', label: { en: 'A pencil', vi: 'Bút chì' } },
-            { id: 'd', label: { en: 'By hand', vi: 'Bằng tay' } }
+            { id: 'a', label: { en: 'A computer', vi: 'Máy vi tính' }, jp: 'パソコンで' },
+            {
+              id: 'b',
+              label: { en: 'A mobile phone', vi: 'Điện thoại di động' },
+              jp: '携帯電話で',
+              ruby: [
+                { base: '携', reading: 'けい' },
+                { base: '帯', reading: 'たい' },
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'A pencil', vi: 'Bút chì' },
+              jp: '鉛筆で',
+              ruby: [
+                { base: '鉛', reading: 'えん' },
+                { base: '筆', reading: 'ぴつ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'By hand', vi: 'Bằng tay' },
+              jp: '手で',
+              ruby: [{ base: '手', reading: 'て' }]
+            }
           ],
           correctId: 'a'
         }
@@ -917,6 +1007,11 @@ export const n5Lesson7: Lesson = {
     {
       id: 'reading-lesson7-lending',
       title: { en: 'Lending and borrowing', vi: 'Cho mượn và đi mượn' },
+      titleJp: '貸す・借りる',
+      titleRuby: [
+        { base: '貸', reading: 'か' },
+        { base: '借', reading: 'か' }
+      ],
       lines: [
         {
           jp: 'きのう リンさんに 本を 貸しました。',
@@ -969,22 +1064,72 @@ export const n5Lesson7: Lesson = {
         {
           id: 'q1',
           question: { en: 'What did the speaker lend Lin?', vi: 'Người nói cho Lin mượn gì?' },
+          jp: 'リンさんに 何を 貸しましたか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '貸', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A book', vi: 'Sách' } },
-            { id: 'b', label: { en: 'Money', vi: 'Tiền' } },
-            { id: 'c', label: { en: 'Scissors', vi: 'Kéo' } },
-            { id: 'd', label: { en: 'A ticket', vi: 'Vé' } }
+            {
+              id: 'a',
+              label: { en: 'A book', vi: 'Sách' },
+              jp: '本',
+              ruby: [{ base: '本', reading: 'ほん' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Money', vi: 'Tiền' },
+              jp: 'お金',
+              ruby: [{ base: '金', reading: 'かね' }]
+            },
+            { id: 'c', label: { en: 'Scissors', vi: 'Kéo' }, jp: 'はさみ' },
+            {
+              id: 'd',
+              label: { en: 'A ticket', vi: 'Vé' },
+              jp: '切符',
+              ruby: [
+                { base: '切', reading: 'きっ' },
+                { base: '符', reading: 'ぷ' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: { en: 'Where did the money come from?', vi: 'Tiền vay từ đâu?' },
+          jp: 'お金は どこから 借りましたか。',
+          ruby: [
+            { base: '金', reading: 'かね' },
+            { base: '借', reading: 'か' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'From Lin', vi: 'Từ Lin' } },
-            { id: 'b', label: { en: 'From the bank', vi: 'Từ ngân hàng' } },
-            { id: 'c', label: { en: 'From the mother', vi: 'Từ mẹ' } },
-            { id: 'd', label: { en: 'From the post office', vi: 'Từ bưu điện' } }
+            { id: 'a', label: { en: 'From Lin', vi: 'Từ Lin' }, jp: 'リンさんから' },
+            {
+              id: 'b',
+              label: { en: 'From the bank', vi: 'Từ ngân hàng' },
+              jp: '銀行から',
+              ruby: [
+                { base: '銀', reading: 'ぎん' },
+                { base: '行', reading: 'こう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'From the mother', vi: 'Từ mẹ' },
+              jp: '母から',
+              ruby: [{ base: '母', reading: 'はは' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'From the post office', vi: 'Từ bưu điện' },
+              jp: '郵便局から',
+              ruby: [
+                { base: '郵', reading: 'ゆう' },
+                { base: '便', reading: 'びん' },
+                { base: '局', reading: 'きょく' }
+              ]
+            }
           ],
           correctId: 'b'
         }
@@ -993,6 +1138,7 @@ export const n5Lesson7: Lesson = {
     {
       id: 'reading-lesson7-christmas',
       title: { en: 'A Christmas present', vi: 'Quà Giáng sinh' },
+      titleJp: 'クリスマスの プレゼント',
       lines: [
         {
           jp: 'クリスマスに 父に プレゼントを あげました。',
@@ -1031,11 +1177,31 @@ export const n5Lesson7: Lesson = {
         {
           id: 'q1',
           question: { en: 'What did the speaker give their father?', vi: 'Người nói tặng bố gì?' },
+          jp: '父に 何を あげましたか。',
+          ruby: [
+            { base: '父', reading: 'ちち' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Flowers', vi: 'Hoa' } },
-            { id: 'b', label: { en: 'A shirt', vi: 'Áo sơ mi' } },
-            { id: 'c', label: { en: 'A book', vi: 'Sách' } },
-            { id: 'd', label: { en: 'Money', vi: 'Tiền' } }
+            {
+              id: 'a',
+              label: { en: 'Flowers', vi: 'Hoa' },
+              jp: '花',
+              ruby: [{ base: '花', reading: 'はな' }]
+            },
+            { id: 'b', label: { en: 'A shirt', vi: 'Áo sơ mi' }, jp: 'シャツ' },
+            {
+              id: 'c',
+              label: { en: 'A book', vi: 'Sách' },
+              jp: '本',
+              ruby: [{ base: '本', reading: 'ほん' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'Money', vi: 'Tiền' },
+              jp: 'お金',
+              ruby: [{ base: '金', reading: 'かね' }]
+            }
           ],
           correctId: 'b'
         },
@@ -1045,22 +1211,54 @@ export const n5Lesson7: Lesson = {
             en: 'What did the speaker receive from their mother?',
             vi: 'Người nói nhận gì từ mẹ?'
           },
+          jp: '母から 何を もらいましたか。',
+          ruby: [
+            { base: '母', reading: 'はは' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Flowers', vi: 'Hoa' } },
-            { id: 'b', label: { en: 'A shirt', vi: 'Áo sơ mi' } },
-            { id: 'c', label: { en: 'Paper', vi: 'Giấy' } },
-            { id: 'd', label: { en: 'A present', vi: 'Quà' } }
+            {
+              id: 'a',
+              label: { en: 'Flowers', vi: 'Hoa' },
+              jp: '花',
+              ruby: [{ base: '花', reading: 'はな' }]
+            },
+            { id: 'b', label: { en: 'A shirt', vi: 'Áo sơ mi' }, jp: 'シャツ' },
+            {
+              id: 'c',
+              label: { en: 'Paper', vi: 'Giấy' },
+              jp: '紙',
+              ruby: [{ base: '紙', reading: 'かみ' }]
+            },
+            { id: 'd', label: { en: 'A present', vi: 'Quà' }, jp: 'プレゼント' }
           ],
           correctId: 'a'
         },
         {
           id: 'q3',
           question: { en: 'Has the email been sent?', vi: 'Email đã gửi chưa?' },
+          jp: 'メールは もう 送りましたか。',
+          ruby: [{ base: '送', reading: 'おく' }],
           choices: [
-            { id: 'a', label: { en: 'Yes, already', vi: 'Rồi, đã gửi' } },
-            { id: 'b', label: { en: 'Not yet', vi: 'Chưa' } },
-            { id: 'c', label: { en: 'It will be sent tomorrow', vi: 'Mai mới gửi' } },
-            { id: 'd', label: { en: 'The text does not say', vi: 'Bài không nói' } }
+            {
+              id: 'a',
+              label: { en: 'Yes, already', vi: 'Rồi, đã gửi' },
+              jp: 'はい、もう 送りました',
+              ruby: [{ base: '送', reading: 'おく' }]
+            },
+            { id: 'b', label: { en: 'Not yet', vi: 'Chưa' }, jp: 'まだです' },
+            {
+              id: 'c',
+              label: { en: 'It will be sent tomorrow', vi: 'Mai mới gửi' },
+              jp: 'あした 送ります',
+              ruby: [{ base: '送', reading: 'おく' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'The text does not say', vi: 'Bài không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            }
           ],
           correctId: 'a'
         }

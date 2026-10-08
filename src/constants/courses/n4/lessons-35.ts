@@ -749,6 +749,7 @@ export const n4Lesson35: Lesson = {
     {
       id: 'reading-lesson35-proverbs',
       title: { en: 'Words that travel with you', vi: 'Những câu đi cùng cuộc sống' },
+      titleJp: 'ことわざ',
       lines: [
         {
           jp: '日本には ことわざが たくさん あります。',
@@ -804,28 +805,59 @@ export const n4Lesson35: Lesson = {
             en: 'What does the proverb in the passage mean?',
             vi: 'Tục ngữ trong bài nghĩa là gì?'
           },
+          jp: '「住めば 都」は どんな 意味ですか。',
+          ruby: [
+            { base: '住', reading: 'す' },
+            { base: '都', reading: 'みやこ' },
+            { base: '意', reading: 'い' },
+            { base: '味', reading: 'み' }
+          ],
           choices: [
             {
               id: 'a',
               label: {
                 en: 'Once you get used to a place, it feels like the best',
                 vi: 'Quen nơi nào thì nơi đó trở nên tốt nhất'
-              }
+              },
+              jp: '慣れれば、その 所が 一番 よく なる',
+              ruby: [
+                { base: '慣', reading: 'な' },
+                { base: '所', reading: 'ところ' },
+                { base: '一', reading: 'いち' },
+                { base: '番', reading: 'ばん' }
+              ]
             },
             {
               id: 'b',
               label: {
                 en: 'You should always move to a new city',
                 vi: 'Nên luôn chuyển thành phố mới'
-              }
+              },
+              jp: 'いつも 新しい 町へ 引っ越す',
+              ruby: [
+                { base: '新', reading: 'あたら' },
+                { base: '町', reading: 'まち' },
+                { base: '引', reading: 'ひ' },
+                { base: '越', reading: 'こ' }
+              ]
             },
             {
               id: 'c',
-              label: { en: 'Capital cities are always better', vi: 'Thủ đô luôn tốt hơn' }
+              label: { en: 'Capital cities are always better', vi: 'Thủ đô luôn tốt hơn' },
+              jp: '都の ほうが いつも いい',
+              ruby: [{ base: '都', reading: 'みやこ' }]
             },
             {
               id: 'd',
-              label: { en: 'Neighbors are not important', vi: 'Hàng xóm không quan trọng' }
+              label: { en: 'Neighbors are not important', vi: 'Hàng xóm không quan trọng' },
+              jp: '近所の 人は 大切じゃ ない',
+              ruby: [
+                { base: '近', reading: 'きん' },
+                { base: '所', reading: 'じょ' },
+                { base: '人', reading: 'ひと' },
+                { base: '大', reading: 'たい' },
+                { base: '切', reading: 'せつ' }
+              ]
             }
           ],
           correctId: 'a'
@@ -836,14 +868,55 @@ export const n4Lesson35: Lesson = {
             en: 'According to the passage, what helps daily life?',
             vi: 'Theo bài, điều gì giúp cuộc sống dễ hơn?'
           },
+          jp: '生活が 楽に なるのは どんな ときですか。',
+          ruby: [
+            { base: '生', reading: 'せい' },
+            { base: '活', reading: 'かつ' },
+            { base: '楽', reading: 'らく' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Getting along with neighbors', vi: 'Chơi thân với hàng xóm' }
+              label: { en: 'Getting along with neighbors', vi: 'Chơi thân với hàng xóm' },
+              jp: '近所の 人と 仲よく する',
+              ruby: [
+                { base: '近', reading: 'きん' },
+                { base: '所', reading: 'じょ' },
+                { base: '人', reading: 'ひと' },
+                { base: '仲', reading: 'なか' }
+              ]
             },
-            { id: 'b', label: { en: 'Buying new equipment', vi: 'Mua thiết bị mới' } },
-            { id: 'c', label: { en: 'Clicking buttons quickly', vi: 'Bấm nút nhanh' } },
-            { id: 'd', label: { en: 'Climbing mountains alone', vi: 'Leo núi một mình' } }
+            {
+              id: 'b',
+              label: { en: 'Buying new equipment', vi: 'Mua thiết bị mới' },
+              jp: '新しい 道具を 買う',
+              ruby: [
+                { base: '新', reading: 'あたら' },
+                { base: '道', reading: 'どう' },
+                { base: '具', reading: 'ぐ' },
+                { base: '買', reading: 'か' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Clicking buttons quickly', vi: 'Bấm nút nhanh' },
+              jp: 'ボタンを 速く 押す',
+              ruby: [
+                { base: '速', reading: 'はや' },
+                { base: '押', reading: 'お' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Climbing mountains alone', vi: 'Leo núi một mình' },
+              jp: '一人で 山に 登る',
+              ruby: [
+                { base: '一', reading: 'ひと' },
+                { base: '人', reading: 'り' },
+                { base: '山', reading: 'やま' },
+                { base: '登', reading: 'のぼ' }
+              ]
+            }
           ],
           correctId: 'a'
         }

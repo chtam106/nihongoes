@@ -825,6 +825,13 @@ export const n4Lesson34: Lesson = {
     {
       id: 'reading-lesson34-oyakodon',
       title: { en: 'Making oyakodon', vi: 'Nấu oyakodon' },
+      titleJp: '親子どんぶりの 作り方',
+      titleRuby: [
+        { base: '親', reading: 'おや' },
+        { base: '子', reading: 'こ' },
+        { base: '作', reading: 'つく' },
+        { base: '方', reading: 'かた' }
+      ],
       lines: [
         {
           jp: '今日は 親子どんぶりを 作ります。材料は 鶏肉 200グラム、玉ねぎ 1個、卵 3個 です。',
@@ -908,11 +915,17 @@ export const n4Lesson34: Lesson = {
             en: 'How much chicken does the recipe use?',
             vi: 'Công thức dùng bao nhiêu gam thịt gà?'
           },
+          jp: '鶏肉は 何グラムですか。',
+          ruby: [
+            { base: '鶏', reading: 'とり' },
+            { base: '肉', reading: 'にく' },
+            { base: '何', reading: 'なん' }
+          ],
           choices: [
-            { id: 'a', label: { en: '200 grams', vi: '200 gam' } },
-            { id: 'b', label: { en: '100 grams', vi: '100 gam' } },
-            { id: 'c', label: { en: '300 grams', vi: '300 gam' } },
-            { id: 'd', label: { en: '400 grams', vi: '400 gam' } }
+            { id: 'a', label: { en: '200 grams', vi: '200 gam' }, jp: '200グラム' },
+            { id: 'b', label: { en: '100 grams', vi: '100 gam' }, jp: '100グラム' },
+            { id: 'c', label: { en: '300 grams', vi: '300 gam' }, jp: '300グラム' },
+            { id: 'd', label: { en: '400 grams', vi: '400 gam' }, jp: '400グラム' }
           ],
           correctId: 'a'
         },
@@ -922,11 +935,47 @@ export const n4Lesson34: Lesson = {
             en: 'When should you add the eggs?',
             vi: 'Khi nào cho trứng vào?'
           },
+          jp: '卵は いつ 入れますか。',
+          ruby: [
+            { base: '卵', reading: 'たまご' },
+            { base: '入', reading: 'い' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'After it boils', vi: 'Sau khi chín' } },
-            { id: 'b', label: { en: 'Before cooking', vi: 'Trước khi nấu' } },
-            { id: 'c', label: { en: 'Before adding seasonings', vi: 'Trước khi cho gia vị' } },
-            { id: 'd', label: { en: 'After serving on rice', vi: 'Sau khi để lên cơm' } }
+            {
+              id: 'a',
+              label: { en: 'After it boils', vi: 'Sau khi chín' },
+              jp: '煮えたら',
+              ruby: [{ base: '煮', reading: 'に' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'Before cooking', vi: 'Trước khi nấu' },
+              jp: '火に かける 前',
+              ruby: [
+                { base: '火', reading: 'ひ' },
+                { base: '前', reading: 'まえ' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Before adding seasonings', vi: 'Trước khi cho gia vị' },
+              jp: '調味料の 前',
+              ruby: [
+                { base: '調', reading: 'ちょう' },
+                { base: '味', reading: 'み' },
+                { base: '料', reading: 'りょう' },
+                { base: '前', reading: 'まえ' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'After serving on rice', vi: 'Sau khi để lên cơm' },
+              jp: 'ご飯に 載せた あと',
+              ruby: [
+                { base: '飯', reading: 'はん' },
+                { base: '載', reading: 'の' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -936,11 +985,28 @@ export const n4Lesson34: Lesson = {
             en: 'What bowl is used to eat the dish?',
             vi: 'Ăn bằng loại bát nào?'
           },
+          jp: '何で 食べますか。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '食', reading: 'た' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'A large donburi bowl', vi: 'Bát tô lớn (donburi)' } },
-            { id: 'b', label: { en: 'A tea bowl', vi: 'Chén trà' } },
-            { id: 'c', label: { en: 'A small cup', vi: 'Cốc nhỏ' } },
-            { id: 'd', label: { en: 'A frying pan', vi: 'Chảo rán' } }
+            {
+              id: 'a',
+              label: { en: 'A large donburi bowl', vi: 'Bát tô lớn (donburi)' },
+              jp: 'どんぶり'
+            },
+            {
+              id: 'b',
+              label: { en: 'A tea bowl', vi: 'Chén trà' },
+              jp: '茶碗',
+              ruby: [
+                { base: '茶', reading: 'ちゃ' },
+                { base: '碗', reading: 'わん' }
+              ]
+            },
+            { id: 'c', label: { en: 'A small cup', vi: 'Cốc nhỏ' }, jp: 'コップ' },
+            { id: 'd', label: { en: 'A frying pan', vi: 'Chảo rán' }, jp: 'フライパン' }
           ],
           correctId: 'a'
         }

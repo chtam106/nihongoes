@@ -881,6 +881,12 @@ export const n4Lesson42: Lesson = {
     {
       id: 'reading-lesson42-cup-noodles',
       title: { en: "The world's first cup noodles", vi: 'Mì ly đầu tiên trên thế giới' },
+      titleJp: '世界初の カップめん',
+      titleRuby: [
+        { base: '世', reading: 'せ' },
+        { base: '界', reading: 'かい' },
+        { base: '初', reading: 'はつ' }
+      ],
       lines: [
         {
           jp: '私は 市場調査の 資料で カップめんの 話を 読みました。',
@@ -948,11 +954,50 @@ export const n4Lesson42: Lesson = {
             en: "Who invented the world's first cup noodles?",
             vi: 'Ai phát minh mì ly đầu tiên trên thế giới?'
           },
+          jp: '世界初の カップめんを 発明した 人は だれですか。',
+          ruby: [
+            { base: '世', reading: 'せ' },
+            { base: '界', reading: 'かい' },
+            { base: '初', reading: 'はつ' },
+            { base: '発', reading: 'はつ' },
+            { base: '明', reading: 'めい' },
+            { base: '人', reading: 'ひと' }
+          ],
           choices: [
-            { id: 'a', label: { en: 'Momofuku Ando', vi: 'Ando Momofuku' } },
-            { id: 'b', label: { en: 'Beethoven', vi: 'Beethoven' } },
-            { id: 'c', label: { en: 'A lawyer', vi: 'Một luật sư' } },
-            { id: 'd', label: { en: 'An astronaut', vi: 'Nhà du hành vũ trụ' } }
+            {
+              id: 'a',
+              label: { en: 'Momofuku Ando', vi: 'Ando Momofuku' },
+              jp: '安藤百福さん',
+              ruby: [
+                { base: '安', reading: 'あん' },
+                { base: '藤', reading: 'どう' },
+                { base: '百', reading: 'もも' },
+                { base: '福', reading: 'ふく' }
+              ]
+            },
+            { id: 'b', label: { en: 'Beethoven', vi: 'Beethoven' }, jp: 'ベートーベン' },
+            {
+              id: 'c',
+              label: { en: 'A lawyer', vi: 'Một luật sư' },
+              jp: '弁護士',
+              ruby: [
+                { base: '弁', reading: 'べん' },
+                { base: '護', reading: 'ご' },
+                { base: '士', reading: 'し' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'An astronaut', vi: 'Nhà du hành vũ trụ' },
+              jp: '宇宙飛行士',
+              ruby: [
+                { base: '宇', reading: 'う' },
+                { base: '宙', reading: 'ちゅう' },
+                { base: '飛', reading: 'ひ' },
+                { base: '行', reading: 'こう' },
+                { base: '士', reading: 'し' }
+              ]
+            }
           ],
           correctId: 'a'
         },
@@ -962,11 +1007,36 @@ export const n4Lesson42: Lesson = {
             en: 'When were they invented?',
             vi: 'Phát minh năm nào?'
           },
+          jp: 'いつ 発明されましたか。',
+          ruby: [
+            { base: '発', reading: 'はつ' },
+            { base: '明', reading: 'めい' }
+          ],
           choices: [
-            { id: 'a', label: { en: '1958', vi: '1958' } },
-            { id: 'b', label: { en: '1770', vi: '1770' } },
-            { id: 'c', label: { en: '1910', vi: '1910' } },
-            { id: 'd', label: { en: '2007', vi: '2007' } }
+            {
+              id: 'a',
+              label: { en: '1958', vi: '1958' },
+              jp: '1958年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'b',
+              label: { en: '1770', vi: '1770' },
+              jp: '1770年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'c',
+              label: { en: '1910', vi: '1910' },
+              jp: '1910年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            },
+            {
+              id: 'd',
+              label: { en: '2007', vi: '2007' },
+              jp: '2007年',
+              ruby: [{ base: '年', reading: 'ねん' }]
+            }
           ],
           correctId: 'a'
         }
