@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Box, Link } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { hideOnPrintSx } from '@/theme/print.ts';
+import { translationToggleSx } from '@/theme/translation-toggle.ts';
 
 type SectionHeaderWithTranslationToggleProps = {
   title: ReactNode;
@@ -41,16 +41,7 @@ export function SectionHeaderWithTranslationToggle({
         variant="body2"
         underline="none"
         onClick={onToggle}
-        sx={{
-          ...hideOnPrintSx,
-          flex: '0 0 auto',
-          flexShrink: 0,
-          lineHeight: 1.66,
-          whiteSpace: 'nowrap',
-          textDecoration: 'none',
-          '&:hover': { textDecoration: 'none' },
-          '&:active': { textDecoration: 'none' }
-        }}
+        sx={[translationToggleSx, { flex: '0 0 auto', whiteSpace: 'nowrap' }]}
       >
         {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
       </Link>

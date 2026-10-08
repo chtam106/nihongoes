@@ -135,8 +135,11 @@ alwaysApply: true
 - Implement the auto-advance delay with a `setTimeout` inside a `useEffect` (set state in the timer callback, never directly in the effect body).
 - Do NOT show a running correct-count (`Đúng: N / total`) beside the question progress label. The segmented `QuizProgressBar` is the in-progress feedback; the end `ResultScreen` still shows the score.
 
+## Show/hide translation links
+- The "Show translation"/"Hiện bản dịch" text links (`TranslationLine`, `SectionHeaderWithTranslationToggle`) are matcha green (`secondary.main`) with NO underline at rest, underlined on hover only (`@media (hover: hover)`). Share the style via `translationToggleSx` (`src/theme/translation-toggle.ts`) - do NOT tint them primary.
+
 ## Hints / annotations
-- Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="error.main"` (red) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
+- Render annotation/hint text (tap-to-play hints, replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="secondary.main"` (matcha green) and medium weight to stand apart from grey body copy. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`.
 
 ## Kanji cards - components & examples (IMPORTANT)
 - Each `KanjiEntry` declares REQUIRED `parts: KanjiComponent[]` (`{ char, role }`, role = `radical` | `semantic` | `phonetic` | `other`) - the FULL component breakdown. `KanjiCard` renders these as color-coded chips: bộ thủ chính = blue (`radical`), gợi nghĩa = green (`semantic`), gợi âm = orange (`phonetic`), khác = grey (`other`). Colors live in `src/theme/kanji-component-colors.ts`; the legend is `<KanjiComponentLegend>` on the lesson page. Component chips are NOT links to `/kanji/radicals` - show meaning only when the char matches a known radical.
@@ -215,6 +218,6 @@ alwaysApply: true
 
 ## Drawer menu layout
 - Keep drawer menu visuals minimal: use subtle divider lines between sibling items/sub-items; avoid card-like shadows/background blocks for separation.
-- Do not apply hover background fills on menu items/sub-items. Keep hover visually neutral and use selected state only for active location.
+- Menu item hover = a very light pink row tint only (`alpha(primary.main, 0.06)`, `ROW_HOVER_SX` in `app-drawer-content`, under `@media (hover: hover)` so it never sticks after a tap). On group rows the tint goes on the wrapper `Box` so the expand arrow is included. Hover must NOT change text/icon color - only the selected state (active location) turns text/icon primary.
 - Keep child item rows at consistent height even when some labels wrap to two lines (uniform row height for scanability).
 - Maintain alignment consistency: course lesson sub-item text starts align with parent item text starts; for alphabet sub-items, align child icons to the same horizontal start as the parent text column.

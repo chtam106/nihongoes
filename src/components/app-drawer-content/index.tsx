@@ -14,7 +14,7 @@ import {
   Toolbar,
   Typography
 } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { alpha, type Theme } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import {
@@ -23,6 +23,15 @@ import {
   navGroups,
   type NavItem
 } from '@/constants/nav-items.ts';
+
+// Very light pink row tint on hover. Mouse devices only, so it doesn't stick after a tap.
+const ROW_HOVER_SX = {
+  '@media (hover: hover)': {
+    '&:hover, &.Mui-selected:hover': {
+      bgcolor: (muiTheme: Theme) => alpha(muiTheme.palette.primary.main, 0.06)
+    }
+  }
+};
 
 type NavItemIconProps = {
   item: Pick<NavItem, 'icon' | 'symbol'>;
@@ -151,7 +160,8 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                     alignItems: 'center',
                     borderRadius: 1,
                     bgcolor: 'transparent',
-                    '&:hover': { bgcolor: 'transparent' }
+                    '&:hover': { bgcolor: 'transparent' },
+                    ...ROW_HOVER_SX
                   }}
                 >
                   <ListItemButton
@@ -163,11 +173,7 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                       flex: 1,
                       borderRadius: 1,
                       bgcolor: 'transparent',
-                      '&:hover': {
-                        bgcolor: 'transparent',
-                        '& .MuiListItemText-primary': { color: 'primary.main' },
-                        '& .MuiListItemIcon-root': { color: 'primary.main' }
-                      },
+                      '&:hover': { bgcolor: 'transparent' },
                       '&.Mui-selected': {
                         bgcolor: 'transparent',
                         '& .MuiListItemText-primary': { color: 'primary.main' },
@@ -210,17 +216,14 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                   onClick={onNavigate}
                   sx={{
                     borderRadius: 1,
-                    '&:hover': {
-                      bgcolor: 'transparent',
-                      '& .MuiListItemText-primary': { color: 'primary.main' },
-                      '& .MuiListItemIcon-root': { color: 'primary.main' }
-                    },
+                    '&:hover': { bgcolor: 'transparent' },
                     '&.Mui-selected': {
                       bgcolor: 'transparent',
                       '& .MuiListItemText-primary': { color: 'primary.main' },
                       '& .MuiListItemIcon-root': { color: 'primary.main' }
                     },
-                    '&.Mui-selected:hover': { bgcolor: 'transparent' }
+                    '&.Mui-selected:hover': { bgcolor: 'transparent' },
+                    ...ROW_HOVER_SX
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
@@ -279,17 +282,14 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                             py: 0.5,
                             borderRadius: 1,
                             minHeight: 56,
-                            '&:hover': {
-                              bgcolor: 'transparent',
-                              '& .MuiListItemText-primary': { color: 'primary.main' },
-                              '& .MuiListItemIcon-root': { color: 'primary.main' }
-                            },
+                            '&:hover': { bgcolor: 'transparent' },
                             '&.Mui-selected': {
                               bgcolor: 'transparent',
                               '& .MuiListItemText-primary': { color: 'primary.main' },
                               '& .MuiListItemIcon-root': { color: 'primary.main' }
                             },
-                            '&.Mui-selected:hover': { bgcolor: 'transparent' }
+                            '&.Mui-selected:hover': { bgcolor: 'transparent' },
+                            ...ROW_HOVER_SX
                           }}
                         >
                           <ListItemIcon sx={{ minWidth: isAlphabetGroup ? 32 : 40 }}>
