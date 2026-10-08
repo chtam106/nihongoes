@@ -267,7 +267,7 @@ export function ExerciseQuizPanel({
                 onClick={() => onAnswer(value)}
                 disabled={answeredCorrectly || isWrongAnswer}
                 sx={{
-                  ...quizChoiceSx,
+                  ...(!showCorrect && !showWrong && quizChoiceSx),
                   py: 2,
                   fontSize: characterOptions ? '1.5rem' : '1rem',
                   borderWidth: 1,
