@@ -215,6 +215,6 @@ alwaysApply: true
 
 ## Drawer menu layout
 - Keep drawer menu visuals minimal: use subtle divider lines between sibling items/sub-items; avoid card-like shadows/background blocks for separation.
-- Do not apply hover background fills on menu items/sub-items. Keep hover visually neutral and use selected state only for active location.
+- Menu item hover = a very light pink row tint only (`alpha(primary.main, 0.06)`, `ROW_HOVER_SX` in `app-drawer-content`, under `@media (hover: hover)` so it never sticks after a tap). On group rows the tint goes on the wrapper `Box` so the expand arrow is included. Hover must NOT change text/icon color - only the selected state (active location) turns text/icon primary.
 - Keep child item rows at consistent height even when some labels wrap to two lines (uniform row height for scanability).
 - Maintain alignment consistency: course lesson sub-item text starts align with parent item text starts; for alphabet sub-items, align child icons to the same horizontal start as the parent text column.
