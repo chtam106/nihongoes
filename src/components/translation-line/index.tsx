@@ -3,7 +3,7 @@
 import { useState, type KeyboardEvent } from 'react';
 import { Box, Link, Typography } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { hideOnPrintSx } from '@/theme/print.ts';
+import { translationToggleSx } from '@/theme/translation-toggle.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 
 type TranslationLineProps = {
@@ -43,13 +43,7 @@ export function TranslationLine({ translation }: TranslationLineProps) {
             setShown((previous) => !previous);
           }}
           onKeyDown={stopKeyPropagation}
-          sx={{
-            ...hideOnPrintSx,
-            lineHeight: 1.66,
-            textDecoration: 'none',
-            '&:hover': { textDecoration: 'none' },
-            '&:active': { textDecoration: 'none' }
-          }}
+          sx={translationToggleSx}
         >
           {shown ? t('course.hideTranslation') : t('course.showTranslation')}
         </Link>
