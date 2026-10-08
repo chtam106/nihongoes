@@ -40,7 +40,10 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
         return {
           justifyContent: 'space-between',
           textAlign: 'left',
-          py: 1.5,
+          // MUI Button defaults to overflow:hidden (ripple); that clips furigana.
+          overflow: 'visible',
+          pt: 2,
+          pb: 1.5,
           textTransform: 'none',
           fontSize: '1.05rem',
           borderWidth: 1,
@@ -65,7 +68,7 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
         };
       }}
     >
-      <Box component="span" lang={lang}>
+      <Box component="span" lang={lang} sx={{ overflow: 'visible' }}>
         {children}
       </Box>
     </Button>

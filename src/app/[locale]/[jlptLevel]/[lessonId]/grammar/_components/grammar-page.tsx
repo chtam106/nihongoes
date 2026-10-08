@@ -38,6 +38,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
     handleRetry
   } = useGrammarQuiz({
     lesson,
+    level,
     locale
   });
 
@@ -151,7 +152,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
               state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
               lang="ja"
             >
-              {option.label}
+              <FuriganaText text={option.label} ruby={option.ruby} />
             </ChoiceButton>
           );
         })}
