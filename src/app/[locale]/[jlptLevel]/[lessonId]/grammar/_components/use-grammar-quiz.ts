@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { Lesson } from '@/constants/courses/index.ts';
+import type { CourseLevel, Lesson } from '@/constants/courses/index.ts';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
@@ -7,13 +7,14 @@ import { createGrammarSession, type GrammarQuestion, type GrammarSession } from 
 
 type UseGrammarQuizOptions = {
   lesson: Lesson;
+  level: CourseLevel;
   locale: Locale;
 };
 
 // Preference/locale changes remount via `key`. Retry rebuilds the session in place.
-export function useGrammarQuiz({ lesson, locale }: UseGrammarQuizOptions) {
+export function useGrammarQuiz({ lesson, level, locale }: UseGrammarQuizOptions) {
   const [initial] = useState(() => {
-    const session = createGrammarSession(lesson, locale);
+    const session = createGrammarSession(lesson, locale, level);
 
     return { session, question: session.next() };
   });
@@ -48,7 +49,7 @@ export function useGrammarQuiz({ lesson, locale }: UseGrammarQuizOptions) {
   };
 
   const handleRetry = () => {
-    const session = createGrammarSession(lesson, locale);
+    const session = createGrammarSession(lesson, locale, level);
     sessionRef.current = session;
     setQuestion(session.next());
     setQuestionNumber(0);
