@@ -4,12 +4,10 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
-import { HintText } from '@/components/hint-text';
 import { KanjiCard } from '@/components/kanji-card';
 import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
-import { hideOnPrintSx } from '@/theme/print.ts';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { KANJI_BASE_PATH, kanjiLessonPath } from '@/constants/kanji/index.ts';
 import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
@@ -60,8 +58,6 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
         <Box>
           <Heading component="h1">{lesson.title[locale]}</Heading>
         </Box>
-
-        <HintText sx={hideOnPrintSx}>{t('kanji.detailHint')}</HintText>
 
         <KanjiReadingsNote collapsible />
 

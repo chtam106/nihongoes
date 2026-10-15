@@ -7,7 +7,6 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { n5Intro } from '@/constants/courses/n5/intro.ts';
 import { coursePath, lessonPath } from '@/constants/courses/levels.ts';
 import { Heading } from '@/components/heading';
-import { HintText } from '@/components/hint-text';
 import { PageContainer } from '@/components/page-container';
 import { ReferenceArticleView } from '@/features/course/reference/reference-article';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -36,7 +35,6 @@ export function N5IntroPage() {
           <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
             {content.intro[locale]}
           </Typography>
-          <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
         </Box>
 
         <Stack spacing={4}>

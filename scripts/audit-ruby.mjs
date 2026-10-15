@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 
 const kanji = /[\u4e00-\u9fff]/;
 /** Iteration mark 々 needs its own ruby segment (same as a kanji) for display. */
@@ -319,7 +320,25 @@ const all = [
   ...scanChunk(l47, 'L47'),
   ...scanChunk(l48, 'L48'),
   ...scanChunk(l49, 'L49'),
-  ...scanChunk(l50, 'L50')
+  ...scanChunk(l50, 'L50'),
+  ...fs
+    .readdirSync('src/constants/courses/n5/sentence-writing')
+    .filter((file) => file.startsWith('lesson-') && file.endsWith('.ts'))
+    .flatMap((file) =>
+      scanChunk(
+        fs.readFileSync(path.join('src/constants/courses/n5/sentence-writing', file), 'utf8'),
+        `n5/sw/${file}`
+      )
+    ),
+  ...fs
+    .readdirSync('src/constants/courses/n4/sentence-writing')
+    .filter((file) => file.startsWith('lesson-') && file.endsWith('.ts'))
+    .flatMap((file) =>
+      scanChunk(
+        fs.readFileSync(path.join('src/constants/courses/n4/sentence-writing', file), 'utf8'),
+        `n4/sw/${file}`
+      )
+    )
 ];
 console.log(JSON.stringify(all, null, 2));
 console.error('count', all.length);

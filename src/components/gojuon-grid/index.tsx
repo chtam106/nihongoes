@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { Box, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import type { GridRow } from '@/constants/gojuon.ts';
+import { focusVisibleSx } from '@/theme/focus.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 import { useSpeechEnabled } from '@/utils/speech.ts';
 
@@ -36,7 +37,7 @@ export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButt
       }
       sx={[
         interactiveSurfaceSx,
-        {
+        (theme) => ({
           minHeight: { xs: 52, md: 68 },
           py: { xs: 0.75, md: 1 },
           px: 0.25,
@@ -47,12 +48,8 @@ export function CellButton({ ariaLabel, onActivate, romaji, children }: CellButt
           gap: 0.25,
           bgcolor: 'background.paper',
           cursor: canSpeak ? 'pointer' : undefined,
-          '&:focus-visible': {
-            outline: '2px solid',
-            outlineColor: 'primary.main',
-            outlineOffset: 2
-          }
-        }
+          '&:focus-visible': focusVisibleSx(theme)
+        })
       ]}
     >
       {children}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { isCourseLevel } from '@/constants/courses/levels.ts';
 import { getCourseSeo } from '@/constants/courses/seo.ts';
+import { KANJI_TRACK_META } from '@/constants/kanji/track-meta.ts';
 import { getSeoRouteKey, type SeoRouteKey } from '@/constants/routes.ts';
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/constants/site.ts';
 import type { Locale } from '@/i18n/translations.ts';
@@ -13,7 +14,236 @@ type SeoText = {
   description: string;
 };
 
-async function getSeoText(routeKey: SeoRouteKey, locale: Locale): Promise<SeoText> {
+const COURSE_LESSON_PATH =
+  /^\/(n5|n4|n3|n2|n1|frontend)\/(lesson-\d+)(?:\/(vocabulary|grammar|reading|writing))?$/;
+const COURSE_EXTRA_PATH = /^\/(n5|n4|n3|n2|n1|frontend)\/(intro|reference)$/;
+const KANJI_PAGE_PATH = /^\/kanji\/([^/]+)(?:\/([^/]+)(?:\/(quiz|writing))?)?$/;
+
+type AlphabetPageSeo = {
+  titleKey: string;
+  descriptionKey: string;
+  exercise?: boolean;
+};
+
+const ALPHABET_PAGES: Record<string, AlphabetPageSeo> = {
+  '/alphabet/hiragana': {
+    titleKey: 'nav.hiragana',
+    descriptionKey: 'alphabet.hiraganaPageDescription'
+  },
+  '/alphabet/katakana': {
+    titleKey: 'nav.katakana',
+    descriptionKey: 'alphabet.katakanaPageDescription'
+  },
+  '/alphabet/combined': {
+    titleKey: 'nav.combined',
+    descriptionKey: 'alphabet.combinedPageDescription'
+  },
+  '/alphabet/exercise': {
+    titleKey: 'exercise.title',
+    descriptionKey: 'exercise.hubSubtitle'
+  },
+  '/alphabet/exercise/romaji': {
+    titleKey: 'exercise.guessRomaji',
+    descriptionKey: 'exercise.romajiDescription',
+    exercise: true
+  },
+  '/alphabet/exercise/character': {
+    titleKey: 'exercise.chooseCharacter',
+    descriptionKey: 'exercise.characterDescription',
+    exercise: true
+  },
+  '/alphabet/exercise/script-pair': {
+    titleKey: 'exercise.scriptPair',
+    descriptionKey: 'exercise.scriptPairDescription',
+    exercise: true
+  },
+  '/alphabet/exercise/writing': {
+    titleKey: 'exercise.writing',
+    descriptionKey: 'exercise.writingDescription',
+    exercise: true
+  },
+  '/alphabet/exercise/sentence': {
+    titleKey: 'exercise.sentenceTitle',
+    descriptionKey: 'exercise.sentenceDescription',
+    exercise: true
+  }
+};
+
+async function getCourseExtraSeo(
+  logicalPath: string,
+  locale: Locale
+): Promise<SeoText | undefined> {
+  const match = COURSE_EXTRA_PATH.exec(logicalPath);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const [, level, page] = match;
+
+  if (!isCourseLevel(level)) {
+    return undefined;
+  }
+
+  const { getCourse } = await import('@/constants/courses/index.ts');
+  const prefix = `JLPT ${getCourse(level).code}`;
+  const content =
+    page === 'intro' && level === 'n5'
+      ? (await import('@/constants/courses/n5/intro.ts')).n5Intro
+      : page === 'reference' && level === 'n5'
+        ? (await import('@/constants/courses/n5/reference/index.ts')).n5Reference
+        : undefined;
+
+  if (!content) {
+    return undefined;
+  }
+
+  return {
+    title: `${SITE_NAME} | ${prefix} | ${content.title[locale]}`,
+    description: content.intro[locale]
+  };
+}
+
+async function getCourseLessonSeo(
+  logicalPath: string,
+  locale: Locale
+): Promise<SeoText | undefined> {
+  const match = COURSE_LESSON_PATH.exec(logicalPath);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const [, level, lessonId, section] = match;
+
+  if (!isCourseLevel(level)) {
+    return undefined;
+  }
+
+  const { getCourse, getLesson } = await import('@/constants/courses/index.ts');
+  const lesson = getLesson(level, lessonId);
+
+  if (!lesson) {
+    return undefined;
+  }
+
+  const t = await getTranslations({ locale, namespace: 'course' });
+  const lessonHeading = `${t('lessonLabel', { number: lesson.number })}: ${lesson.title[locale]}`;
+  const heading = section ? `${t(section)} | ${lessonHeading}` : lessonHeading;
+
+  return {
+    title: `${SITE_NAME} | JLPT ${getCourse(level).code} | ${heading}`,
+    description: lesson.focus[locale]
+  };
+}
+
+async function getKanjiPageSeo(logicalPath: string, locale: Locale): Promise<SeoText | undefined> {
+  if (!logicalPath.startsWith('/kanji/')) {
+    return undefined;
+  }
+
+  const t = await getTranslations({ locale, namespace: 'kanji' });
+
+  if (logicalPath === '/kanji/radicals') {
+    return {
+      title: `${SITE_NAME} | ${t('overviewTitle')} | ${t('radicalsTitle')}`,
+      description: t('radicalsIntro')
+    };
+  }
+
+  if (logicalPath === '/kanji/radicals/quiz') {
+    return {
+      title: `${SITE_NAME} | ${t('overviewTitle')} | ${t('radicalsQuizTitle')}`,
+      description: t('radicalsIntro')
+    };
+  }
+
+  const match = KANJI_PAGE_PATH.exec(logicalPath);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const [, trackSlug, lessonId, section] = match;
+  const track = KANJI_TRACK_META.find((item) => item.slug === trackSlug);
+
+  if (!track) {
+    return undefined;
+  }
+
+  if (!lessonId) {
+    return {
+      title: `${SITE_NAME} | ${t('overviewTitle')} | ${track.name[locale]}`,
+      description: track.intro[locale]
+    };
+  }
+
+  const { getKanjiLesson } = await import('@/constants/kanji/tracks.ts');
+  const lesson = getKanjiLesson(track.slug, lessonId);
+
+  if (!lesson) {
+    return undefined;
+  }
+
+  const lessonHeading = `${t('lessonLabel', { number: lesson.number })}: ${lesson.title[locale]}`;
+  const sectionTitle =
+    section === 'quiz' ? t('quizTitle') : section === 'writing' ? t('writing') : undefined;
+  const heading = sectionTitle ? `${sectionTitle} | ${lessonHeading}` : lessonHeading;
+
+  return {
+    title: `${SITE_NAME} | ${track.name[locale]} | ${heading}`,
+    description: track.intro[locale]
+  };
+}
+
+async function getAlphabetPageSeo(
+  logicalPath: string,
+  locale: Locale
+): Promise<SeoText | undefined> {
+  const page = ALPHABET_PAGES[logicalPath];
+
+  if (!page) {
+    return undefined;
+  }
+
+  const t = await getTranslations({ locale });
+  const exercise = page.exercise ? ` | ${t('exercise.title')}` : '';
+
+  return {
+    title: `${SITE_NAME} | ${t('alphabet.title')}${exercise} | ${t(page.titleKey)}`,
+    description: t(page.descriptionKey)
+  };
+}
+
+async function getSeoText(
+  routeKey: SeoRouteKey,
+  locale: Locale,
+  logicalPath: string
+): Promise<SeoText> {
+  const courseExtraSeo = await getCourseExtraSeo(logicalPath, locale);
+
+  if (courseExtraSeo) {
+    return courseExtraSeo;
+  }
+
+  const courseLessonSeo = await getCourseLessonSeo(logicalPath, locale);
+
+  if (courseLessonSeo) {
+    return courseLessonSeo;
+  }
+
+  const kanjiPageSeo = await getKanjiPageSeo(logicalPath, locale);
+
+  if (kanjiPageSeo) {
+    return kanjiPageSeo;
+  }
+
+  const alphabetPageSeo = await getAlphabetPageSeo(logicalPath, locale);
+
+  if (alphabetPageSeo) {
+    return alphabetPageSeo;
+  }
+
   if (isCourseLevel(routeKey)) {
     const courseSeo = getCourseSeo(routeKey);
 
@@ -67,7 +297,7 @@ export function createMetadata(path: string | ((params: MetadataParams) => strin
 /** Compute Next.js `Metadata` for a locale-agnostic ("logical") path + locale. */
 export async function getSeoMetadata(logicalPath: string, locale: Locale): Promise<Metadata> {
   const routeKey = getSeoRouteKey(logicalPath);
-  const text = await getSeoText(routeKey, locale);
+  const text = await getSeoText(routeKey, locale, logicalPath);
   const canonicalUrl = buildUrl(logicalPath, locale);
   const viUrl = buildUrl(logicalPath, 'vi');
   const enUrl = buildUrl(logicalPath, 'en');

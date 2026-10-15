@@ -1,6 +1,6 @@
-import LanguageIcon from '@mui/icons-material/Language';
-import { Box, ButtonBase, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { Fragment } from 'react';
+import { Box, ButtonBase } from '@mui/material';
+import { focusVisibleSx } from '@/theme/focus.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
@@ -19,61 +19,58 @@ export function LanguageSwitcher() {
       sx={{
         display: 'inline-flex',
         alignItems: 'center',
-        gap: 0.5,
-        p: 0.625,
-        px: 1,
-        borderRadius: 999,
-        bgcolor: (theme) => alpha(theme.palette.primary.main, 0.08)
+        height: 40,
+        gap: 1
       }}
     >
-      <LanguageIcon sx={{ fontSize: 17, mr: 0.25, color: 'primary.main' }} />
-
-      {locales.map(({ code, shortLabel, labelKey }) => {
+      {locales.map(({ code, shortLabel, labelKey }, index) => {
         const selected = locale === code;
 
         return (
-          <ButtonBase
-            key={code}
-            onClick={() => setLocale(code)}
-            aria-pressed={selected}
-            aria-label={t(labelKey)}
-            sx={{
-              px: 1.25,
-              py: 0.5,
-              borderRadius: 999,
-              minWidth: 40,
-              bgcolor: selected ? 'background.paper' : 'transparent',
-              boxShadow: selected
-                ? '0 1px 2px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06)'
-                : 'none',
-              transition: 'background-color 0.15s, box-shadow 0.15s',
-              '&:hover': {
-                bgcolor: (theme) =>
-                  selected
-                    ? theme.palette.background.paper
-                    : alpha(theme.palette.primary.main, 0.08)
-              },
-              '&.Mui-focusVisible': {
-                outline: '2px solid',
-                outlineColor: 'primary.main',
-                outlineOffset: 2
-              }
-            }}
-          >
-            <Typography
-              variant="caption"
-              component="span"
-              sx={{
+          <Fragment key={code}>
+            {index > 0 && (
+              <Box
+                component="span"
+                aria-hidden
+                sx={{
+                  width: '1px',
+                  height: 'calc(1cap + 2px)',
+                  fontSize: '0.75rem',
+                  bgcolor: 'text.secondary',
+                  flexShrink: 0
+                }}
+              />
+            )}
+            <ButtonBase
+              onClick={() => setLocale(code)}
+              aria-pressed={selected}
+              aria-label={t(labelKey)}
+              sx={(theme) => ({
+                display: 'inline-flex',
+                alignItems: 'center',
+                p: 0,
+                m: 0,
+                minWidth: 0,
+                minHeight: 0,
+                bgcolor: 'transparent',
+                color: selected ? 'primary.main' : 'text.secondary',
                 fontSize: '0.75rem',
                 fontWeight: selected ? 700 : 500,
-                color: selected ? 'primary.main' : 'text.secondary',
                 letterSpacing: 0.4,
-                lineHeight: 1
-              }}
+                lineHeight: 1,
+                height: '1cap',
+                textBoxTrim: 'trim-both',
+                textBoxEdge: 'cap alphabetic',
+                '&:hover': {
+                  bgcolor: 'transparent',
+                  color: 'primary.main'
+                },
+                '&.Mui-focusVisible': focusVisibleSx(theme)
+              })}
             >
               {shortLabel}
-            </Typography>
-          </ButtonBase>
+            </ButtonBase>
+          </Fragment>
         );
       })}
     </Box>

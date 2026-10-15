@@ -4,6 +4,8 @@ import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
+import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
+import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
 import {
@@ -11,7 +13,6 @@ import {
   courseIntroPath,
   coursePath,
   courseReferencePath,
-  courseVocabularyPath,
   lessonPath
 } from '@/constants/courses/levels.ts';
 import { n5Intro } from '@/constants/courses/n5/intro.ts';
@@ -120,7 +121,19 @@ export const navGroups: NavGroup[] = [
     ]
   },
   kanjiGroup,
-  ...courseGroups
+  ...courseGroups,
+  {
+    label: { en: 'All vocabulary and phrases', vi: 'Tổng hợp từ vựng và mẫu câu' },
+    path: routes.vocabulary,
+    icon: MenuBookOutlinedIcon,
+    children: []
+  },
+  {
+    label: { en: 'Sentence writing', vi: 'Viết câu' },
+    path: routes.sentences,
+    icon: CreateOutlinedIcon,
+    children: []
+  }
 ];
 
 export function isNavGroupActive(group: NavGroup, pathname: string) {
@@ -144,11 +157,6 @@ export async function loadCourseLessonNavItems(level: CourseLevel): Promise<NavI
     label: formatLessonNavLabel(lesson.number, lesson.title),
     path: lessonPath(level, lesson.id)
   }));
-
-  items.push({
-    label: { en: 'All vocabulary', vi: 'Tổng hợp từ vựng' },
-    path: courseVocabularyPath(level)
-  });
 
   if (level === 'n5') {
     items.unshift({

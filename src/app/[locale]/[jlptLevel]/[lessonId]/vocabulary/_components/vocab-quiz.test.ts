@@ -17,7 +17,7 @@ describe('buildVocabEntries', () => {
   it('uses the kanji form when the word has one, otherwise kana', () => {
     const entries = buildVocabEntries(lesson1, 'en');
 
-    expect(entries).toHaveLength(lesson1.vocab.length);
+    expect(entries).toHaveLength(lesson1.vocab.length + (lesson1.phrases?.length ?? 0));
     expect(entries.some((entry) => entry.surface === '私')).toBe(true);
     expect(entries.some((entry) => entry.surface === 'わたし')).toBe(false);
     expect(entries.some((entry) => entry.surface === 'はい')).toBe(true);
@@ -42,12 +42,12 @@ describe('buildVocabEntries', () => {
     expect(entries.some((entry) => entry.surface === '消しゴム')).toBe(true);
   });
 
-  it('excludes useful phrases from the quiz pool', () => {
+  it('includes useful phrases in the quiz pool', () => {
     const entries = buildVocabEntries(lesson1, 'en');
 
     expect(lesson1.phrases?.length).toBeGreaterThan(0);
-    expect(entries.some((entry) => entry.surface === 'はじめまして。')).toBe(false);
-    expect(entries.some((entry) => entry.surface === 'お名前は何ですか。')).toBe(false);
+    expect(entries.some((entry) => entry.surface === 'はじめまして。')).toBe(true);
+    expect(entries.some((entry) => entry.surface === 'お名前は何ですか。')).toBe(true);
   });
 });
 

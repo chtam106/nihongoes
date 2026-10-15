@@ -17,6 +17,5 @@ export const alphabet = {
   katakanaPageDescription:
     'Katakana có đúng các âm như hiragana nhưng nét vuông và sắc hơn. Nó dùng cho từ ngoại lai, tên nước ngoài, từ tượng thanh, thuật ngữ khoa học và những từ cần nhấn mạnh. Học cùng hiragana giúp bạn đọc được biển hiệu, thực đơn và tên sản phẩm.',
   combinedPageDescription:
-    'Hai bảng kana dùng chung các âm, nên bảng này ghép chúng trong từng ô: hiragana bên trái, katakana bên phải. Dùng để so sánh hình dạng cạnh nhau và củng cố cả hai bảng cùng lúc.',
-  tapHint: 'Nhấn vào chữ để nghe phát âm.'
+    'Hai bảng kana dùng chung các âm, nên bảng này ghép chúng trong từng ô: hiragana bên trái, katakana bên phải. Dùng để so sánh hình dạng cạnh nhau và củng cố cả hai bảng cùng lúc.'
 };

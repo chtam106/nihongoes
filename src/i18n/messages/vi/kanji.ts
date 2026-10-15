@@ -21,7 +21,6 @@ export const kanji = {
   lessonLabel: 'Bài {number}',
   lessonCount: '{count} bài',
   kanjiCount: '{count} chữ kanji',
-  detailHint: 'Bấm vào từ ví dụ để nghe phát âm.',
   meaningLabel: 'Nghĩa',
   onReading: 'Âm ON',
   kunReading: 'Âm KUN',

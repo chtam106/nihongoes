@@ -21,7 +21,6 @@ import {
   type GridRow
 } from '@/constants/gojuon.ts';
 import { Heading } from '@/components/heading';
-import { HintText } from '@/components/hint-text';
 import { KanaDisplay } from '@/components/kana-display';
 import { PageContainer } from '@/components/page-container';
 import { playKanaAudio } from '@/utils/kana-audio.ts';
@@ -120,10 +119,9 @@ export function CombinedChart() {
       <Heading component="h1" gutterBottom>
         {t('nav.combined')}
       </Heading>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+      <Typography variant="body1" color="text.secondary" sx={{ mb: { xs: 3, md: 4 } }}>
         {t('alphabet.combinedPageDescription')}
       </Typography>
-      <HintText sx={{ mt: 1.5, mb: { xs: 3, md: 4 } }}>{t('alphabet.tapHint')}</HintText>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 5 } }}>
         <ChartBlock heading={sectionLabels.seion}>
