@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Box, ButtonBase, Typography } from '@mui/material';
+import { Box, ButtonBase } from '@mui/material';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/i18n/translations.ts';
@@ -20,7 +20,7 @@ export function LanguageSwitcher() {
         display: 'inline-flex',
         alignItems: 'center',
         height: 40,
-        gap: 0.75
+        gap: 1
       }}
     >
       {locales.map(({ code, shortLabel, labelKey }, index) => {
@@ -29,14 +29,17 @@ export function LanguageSwitcher() {
         return (
           <Fragment key={code}>
             {index > 0 && (
-              <Typography
-                variant="caption"
+              <Box
                 component="span"
                 aria-hidden
-                sx={{ fontSize: '0.75rem', color: 'text.secondary', userSelect: 'none' }}
-              >
-                |
-              </Typography>
+                sx={{
+                  width: '1px',
+                  height: 'calc(1cap + 2px)',
+                  fontSize: '0.75rem',
+                  bgcolor: 'text.secondary',
+                  flexShrink: 0
+                }}
+              />
             )}
             <ButtonBase
               onClick={() => setLocale(code)}
@@ -55,6 +58,9 @@ export function LanguageSwitcher() {
                 fontWeight: selected ? 700 : 500,
                 letterSpacing: 0.4,
                 lineHeight: 1,
+                height: '1cap',
+                textBoxTrim: 'trim-both',
+                textBoxEdge: 'cap alphabetic',
                 '&:hover': {
                   bgcolor: 'transparent',
                   color: 'primary.main'
