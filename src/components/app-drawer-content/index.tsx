@@ -24,14 +24,46 @@ import {
   type NavItem
 } from '@/constants/nav-items.ts';
 
-// Very light pink row tint on hover. Mouse devices only, so it doesn't stick after a tap.
-const ROW_HOVER_SX = {
-  '@media (hover: hover)': {
-    '&:hover, &.Mui-selected:hover': {
-      bgcolor: (muiTheme: Theme) => alpha(muiTheme.palette.primary.main, 0.06)
-    }
+const NAV_ROW_PY = 1.5;
+
+function navDividerBorder(theme: Theme) {
+  return `1px solid ${alpha(
+    theme.palette.text.primary,
+    theme.palette.mode === 'light' ? 0.08 : 0.16
+  )}`;
+}
+
+const HOVER_TRANSPARENT_SX = {
+  '&:hover': {
+    bgcolor: 'transparent',
+    '@media (hover: none)': { bgcolor: 'transparent' }
+  },
+  '&.Mui-selected:hover': {
+    bgcolor: 'transparent',
+    '@media (hover: none)': { bgcolor: 'transparent' }
   }
-};
+} as const;
+
+const NAV_ITEM_HOVER_SX = {
+  bgcolor: 'transparent',
+  '&:hover': {
+    bgcolor: 'transparent',
+    '@media (hover: none)': { bgcolor: 'transparent' },
+    '& .MuiListItemIcon-root': { color: 'primary.main' },
+    '& .MuiListItemText-primary': { color: 'primary.main' }
+  },
+  '&.Mui-selected': {
+    bgcolor: 'transparent',
+    '& .MuiListItemIcon-root': { color: 'primary.main' },
+    '& .MuiListItemText-primary': { color: 'primary.main' }
+  },
+  '&.Mui-selected:hover': {
+    bgcolor: 'transparent',
+    '@media (hover: none)': { bgcolor: 'transparent' },
+    '& .MuiListItemIcon-root': { color: 'primary.main' },
+    '& .MuiListItemText-primary': { color: 'primary.main' }
+  }
+} as const;
 
 type NavItemIconProps = {
   item: Pick<NavItem, 'icon' | 'symbol'>;
@@ -116,22 +148,37 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
       <Toolbar />
 
       <List
-        className="thin-scrollbar"
-        sx={(muiTheme) => ({
-          px: 1,
-          flex: 1,
-          overflowY: 'auto',
-          overflowX: 'hidden',
-          minHeight: 0,
-          '& > .nav-group-item + .nav-group-item': {
-            borderTop: `1px solid ${alpha(
-              muiTheme.palette.text.primary,
-              muiTheme.palette.mode === 'light' ? 0.08 : 0.16
-            )}`,
-            mt: 0.5,
-            pt: 0.5
-          }
-        })}
+        className="hide-scrollbar"
+        disablePadding
+        sx={(muiTheme) => {
+          const dividerInset = muiTheme.spacing(2);
+
+          return {
+            flex: 1,
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            minHeight: 0,
+            '& > .nav-group-item': {
+              position: 'relative'
+            },
+            '& > .nav-group-item + .nav-group-item::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: dividerInset,
+              right: dividerInset,
+              borderTop: navDividerBorder(muiTheme)
+            },
+            '& > .nav-group-item:last-child::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: 0,
+              left: dividerInset,
+              right: dividerInset,
+              borderBottom: navDividerBorder(muiTheme)
+            }
+          };
+        }}
       >
         {navGroups.map((group) => {
           const groupLabel = group.label ? group.label[locale] : t(group.labelKey ?? '');
@@ -158,10 +205,13 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    borderRadius: 1,
+                    borderRadius: 0,
                     bgcolor: 'transparent',
-                    '&:hover': { bgcolor: 'transparent' },
-                    ...ROW_HOVER_SX
+                    pr: 2,
+                    '&:hover .MuiListItemText-primary, &:hover .MuiListItemIcon-root, &:hover .MuiIconButton-root':
+                      {
+                        color: 'primary.main'
+                      }
                   }}
                 >
                   <ListItemButton
@@ -171,15 +221,9 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                     onClick={onNavigate}
                     sx={{
                       flex: 1,
-                      borderRadius: 1,
-                      bgcolor: 'transparent',
-                      '&:hover': { bgcolor: 'transparent' },
-                      '&.Mui-selected': {
-                        bgcolor: 'transparent',
-                        '& .MuiListItemText-primary': { color: 'primary.main' },
-                        '& .MuiListItemIcon-root': { color: 'primary.main' },
-                        '&:hover': { bgcolor: 'transparent' }
-                      }
+                      py: NAV_ROW_PY,
+                      borderRadius: 0,
+                      ...NAV_ITEM_HOVER_SX
                     }}
                   >
                     <ListItemIcon sx={{ minWidth: 40 }}>
@@ -190,6 +234,7 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
 
                   <IconButton
                     size="small"
+                    color={isGroupHighlighted ? 'primary' : 'default'}
                     aria-label={
                       isExpanded
                         ? t('nav.collapse', { label: groupLabel })
@@ -198,9 +243,8 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                     aria-expanded={isExpanded}
                     onClick={() => toggleGroup(group.path, group.courseLevel)}
                     sx={{
-                      mr: 0.5,
                       bgcolor: 'transparent',
-                      '&:hover': { bgcolor: 'transparent' }
+                      ...HOVER_TRANSPARENT_SX
                     }}
                   >
                     {isExpanded && <ExpandLessIcon fontSize="small" />}
@@ -215,15 +259,9 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                   selected={isGroupHighlighted}
                   onClick={onNavigate}
                   sx={{
-                    borderRadius: 1,
-                    '&:hover': { bgcolor: 'transparent' },
-                    '&.Mui-selected': {
-                      bgcolor: 'transparent',
-                      '& .MuiListItemText-primary': { color: 'primary.main' },
-                      '& .MuiListItemIcon-root': { color: 'primary.main' }
-                    },
-                    '&.Mui-selected:hover': { bgcolor: 'transparent' },
-                    ...ROW_HOVER_SX
+                    py: NAV_ROW_PY,
+                    borderRadius: 0,
+                    ...NAV_ITEM_HOVER_SX
                   }}
                 >
                   <ListItemIcon sx={{ minWidth: 40 }}>
@@ -238,26 +276,28 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                   <List
                     component="div"
                     disablePadding
-                    sx={(muiTheme) => ({
-                      mt: 0.5,
-                      pl: 0,
-                      '& .MuiListItemButton-root': {
-                        position: 'relative'
-                      },
-                      '& .MuiListItemButton-root + .MuiListItemButton-root::before': {
-                        content: '""',
-                        position: 'absolute',
-                        top: 0,
-                        left: isAlphabetGroup
-                          ? `calc(${muiTheme.spacing(7)} + 32px)`
-                          : `calc(${muiTheme.spacing(2)} + 40px)`,
-                        right: muiTheme.spacing(1),
-                        borderTop: `1px solid ${alpha(
-                          muiTheme.palette.text.primary,
-                          muiTheme.palette.mode === 'light' ? 0.08 : 0.16
-                        )}`
-                      }
-                    })}
+                    sx={(muiTheme) => {
+                      const insetLeft = isAlphabetGroup
+                        ? `calc(${muiTheme.spacing(7)} + 32px)`
+                        : `calc(${muiTheme.spacing(2)} + 40px)`;
+                      const insetRight = muiTheme.spacing(1);
+
+                      return {
+                        mt: 0.5,
+                        pl: 0,
+                        '& .MuiListItemButton-root': {
+                          position: 'relative'
+                        },
+                        '& .MuiListItemButton-root + .MuiListItemButton-root::before': {
+                          content: '""',
+                          position: 'absolute',
+                          top: 0,
+                          left: insetLeft,
+                          right: insetRight,
+                          borderTop: navDividerBorder(muiTheme)
+                        }
+                      };
+                    }}
                   >
                     {isLoadingChildren && (
                       <Box sx={{ px: 2, py: 1 }}>
@@ -279,20 +319,17 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                           onClick={onNavigate}
                           sx={{
                             pl: isAlphabetGroup ? 7 : 2,
-                            py: 0.5,
-                            borderRadius: 1,
+                            py: NAV_ROW_PY,
+                            borderRadius: 0,
                             minHeight: 56,
-                            '&:hover': { bgcolor: 'transparent' },
-                            '&.Mui-selected': {
-                              bgcolor: 'transparent',
-                              '& .MuiListItemText-primary': { color: 'primary.main' },
-                              '& .MuiListItemIcon-root': { color: 'primary.main' }
-                            },
-                            '&.Mui-selected:hover': { bgcolor: 'transparent' },
-                            ...ROW_HOVER_SX
+                            ...NAV_ITEM_HOVER_SX
                           }}
                         >
-                          <ListItemIcon sx={{ minWidth: isAlphabetGroup ? 32 : 40 }}>
+                          <ListItemIcon
+                            sx={{
+                              minWidth: isAlphabetGroup ? 32 : 40
+                            }}
+                          >
                             <NavItemIcon item={child} />
                           </ListItemIcon>
                           <ListItemText

@@ -6,7 +6,6 @@ import {
   courseIntroPath,
   coursePath,
   courseReferencePath,
-  courseVocabularyPath,
   lessonGrammarPath,
   lessonPath,
   lessonReadingPath,
@@ -32,6 +31,18 @@ export function getCourse(level: CourseLevel): Course {
 
 export function getLesson(level: CourseLevel, id: string): Lesson | undefined {
   return courses[level].lessons.find((lesson) => lesson.id === id);
+}
+
+export type CourseLessonRef = {
+  level: CourseLevel;
+  lesson: Lesson;
+};
+
+/** Every lesson across JLPT courses, in course then lesson order (N5 1-25, N4 26-50, ...). */
+export function getAllCourseLessons(): CourseLessonRef[] {
+  return COURSE_LEVELS.flatMap((level) =>
+    getCourse(level).lessons.map((lesson) => ({ level, lesson }))
+  );
 }
 
 /** Vocabulary items from reference blocks (vocab groups only). */
@@ -96,7 +107,6 @@ export const COURSE_SITEMAP_PATHS: string[] = COURSE_LEVELS.flatMap((level) => {
 
   return [
     coursePath(level),
-    courseVocabularyPath(level),
     ...(level === 'n5' ? [courseIntroPath(level), courseReferencePath(level)] : []),
     ...lessons.map((lesson) => lessonPath(level, lesson.id)),
     ...lessons.map((lesson) => lessonVocabularyPath(level, lesson.id)),

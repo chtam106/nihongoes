@@ -8,7 +8,6 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { n5Reference } from '@/constants/courses/n5/reference/index.ts';
 import { coursePath } from '@/constants/courses/levels.ts';
 import { Heading } from '@/components/heading';
-import { HintText } from '@/components/hint-text';
 import { PageContainer } from '@/components/page-container';
 import { ReferenceArticleView } from '@/features/course/reference/reference-article';
 import { ReferenceTableSectionView } from '@/features/course/reference/reference-table';
@@ -39,7 +38,6 @@ export function N5ReferencePage() {
           <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
             {content.intro[locale]}
           </Typography>
-          <HintText sx={{ mt: 1.5 }}>{t('course.audioHint')}</HintText>
         </Box>
 
         <Box id="columns">

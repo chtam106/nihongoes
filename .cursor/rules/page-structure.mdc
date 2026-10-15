@@ -94,7 +94,8 @@ screen"; a future improvement is to make the boundary rely on
 | `/alphabet/exercise/<kind>` | `.../alphabet/exercise/<kind>/_components/<kind>-exercise.tsx` |
 | `/:level` | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx` |
 | `/:level/intro` | `.../[jlptLevel]/intro/page.tsx` |
-| `/:level/vocabulary` | `.../[jlptLevel]/vocabulary/_components/vocab-index-page.tsx` |
+| `/vocabulary` | `src/app/[locale]/vocabulary/_components/vocab-index-page.tsx` |
+| `/sentences` | `src/app/[locale]/sentences/_components/sentence-writing-page.tsx` |
 | `/:level/reference` | `.../[jlptLevel]/reference/page.tsx` |
 | `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
 | `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |

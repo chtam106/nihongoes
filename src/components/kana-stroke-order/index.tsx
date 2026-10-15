@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import { keyframes } from '@emotion/react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { focusVisibleSx } from '@/theme/focus.ts';
 import { KANA_STROKE_VIEWBOX, kanaStrokes } from '@/constants/kana-strokes.ts';
 
 const STROKE_DURATION = 0.7; // seconds to draw one stroke
@@ -90,18 +91,14 @@ export function KanaStrokeOrder({ char, size = 48, ariaLabel }: KanaStrokeOrderP
           replay();
         }
       }}
-      sx={{
+      sx={(theme) => ({
         width: size,
         height: size,
         display: 'block',
         cursor: 'pointer',
         borderRadius: 1,
-        '&:focus-visible': {
-          outline: '2px solid',
-          outlineColor: 'primary.main',
-          outlineOffset: 2
-        }
-      }}
+        '&:focus-visible': focusVisibleSx(theme)
+      })}
     >
       {strokes.map((d, index) => (
         <path

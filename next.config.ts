@@ -13,6 +13,30 @@ const nextConfig: NextConfig = {
   // inference; pin the root to this project so `app/` resolves correctly.
   turbopack: {
     root: import.meta.dirname
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:level(n5|n4)/vocabulary',
+        destination: '/vocabulary',
+        permanent: true
+      },
+      {
+        source: '/vi/:level(n5|n4)/vocabulary',
+        destination: '/vi/vocabulary',
+        permanent: true
+      },
+      {
+        source: '/:level(n5|n4)/sentences',
+        destination: '/sentences',
+        permanent: true
+      },
+      {
+        source: '/vi/:level(n5|n4)/sentences',
+        destination: '/vi/sentences',
+        permanent: true
+      }
+    ];
   }
   // Runs on a server (Vercel): routes are still statically pre-rendered
   // (`generateStaticParams`), and `proxy.ts` keeps English at the root while

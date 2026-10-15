@@ -21,7 +21,6 @@ export const kanji = {
   lessonLabel: 'Lesson {number}',
   lessonCount: '{count} lessons',
   kanjiCount: '{count} kanji',
-  detailHint: 'Tap an example word to hear it pronounced.',
   meaningLabel: 'Meaning',
   onReading: "On'yomi",
   kunReading: "Kun'yomi",

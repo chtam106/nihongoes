@@ -4,7 +4,7 @@ import { Heading } from '@/components/heading';
 import { NavCardGrid, type NavCardItem } from '@/components/nav-card';
 import { PageContainer } from '@/components/page-container';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
-import { coursePath } from '@/constants/courses/levels.ts';
+import { coursePath, SENTENCES_PATH, VOCABULARY_PATH } from '@/constants/courses/levels.ts';
 import { KANJI_BASE_PATH, KANJI_RADICALS_PATH } from '@/constants/kanji/index.ts';
 import { routes } from '@/constants/routes.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -70,12 +70,28 @@ export default async function Page({ params }: PageProps) {
     }
   ];
 
-  const courseCards: NavCardItem[] = COURSE_SUMMARIES.map((course) => ({
-    to: coursePath(course.level),
-    title: course.name[locale],
-    iconKey: 'course',
-    description: course.subtitle[locale]
-  }));
+  const courseCards: NavCardItem[] = [
+    ...COURSE_SUMMARIES.map(
+      (course): NavCardItem => ({
+        to: coursePath(course.level),
+        title: course.name[locale],
+        iconKey: 'course',
+        description: course.subtitle[locale]
+      })
+    ),
+    {
+      to: VOCABULARY_PATH,
+      title: t('course.vocabIndexHeading'),
+      iconKey: 'book',
+      description: t('home.vocabDescription')
+    },
+    {
+      to: SENTENCES_PATH,
+      title: t('course.sentenceWritingHeading'),
+      iconKey: 'create',
+      description: t('home.sentencesDescription')
+    }
+  ];
 
   return (
     <PageContainer>

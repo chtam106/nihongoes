@@ -103,7 +103,7 @@ function unique(values: string[]): string[] {
 }
 
 function collectItems(lesson: Lesson, includeReference: boolean): VocabItem[] {
-  const core = [...lesson.vocab];
+  const core = [...lesson.vocab, ...(lesson.phrases ?? [])];
 
   if (!includeReference) {
     return core;

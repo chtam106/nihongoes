@@ -3,7 +3,6 @@
 import { Box, Typography } from '@mui/material';
 import type { ChouonExample } from '@/constants/alphabet-charts.ts';
 import { Heading } from '@/components/heading';
-import { HintText } from '@/components/hint-text';
 import { playKanaAudio } from '@/utils/kana-audio.ts';
 import { KanaDisplay } from '@/components/kana-display';
 import { PageContainer } from '@/components/page-container';
@@ -92,10 +91,9 @@ export function AlphabetChartPage({
       <Heading component="h1" gutterBottom>
         {title}
       </Heading>
-      <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
+      <Typography variant="body1" color="text.secondary" sx={{ mb: { xs: 3, md: 4 } }}>
         {description}
       </Typography>
-      <HintText sx={{ mt: 1.5, mb: { xs: 3, md: 4 } }}>{t('alphabet.tapHint')}</HintText>
 
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 4, md: 5 } }}>
         <ChartBlock heading={sectionLabels.seion}>

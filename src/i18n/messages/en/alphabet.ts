@@ -18,6 +18,5 @@ export const alphabet = {
   katakanaPageDescription:
     'Katakana shares the exact same sounds as hiragana but uses sharper, more angular strokes. It is reserved for loanwords, foreign names, onomatopoeia, scientific terms, and words written for emphasis. Learning it alongside hiragana lets you read signs, menus, and product names.',
   combinedPageDescription:
-    'Both kana sets share the same sounds, so this chart pairs them in every cell: hiragana on the left, katakana on the right. Use it to compare shapes side by side and reinforce both syllabaries at once.',
-  tapHint: 'Tap a character to hear its pronunciation.'
+    'Both kana sets share the same sounds, so this chart pairs them in every cell: hiragana on the left, katakana on the right. Use it to compare shapes side by side and reinforce both syllabaries at once.'
 };
