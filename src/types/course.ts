@@ -224,6 +224,31 @@ export type ReferenceBlock =
 /** @deprecated Use `ReferenceVocabGroup` - kept as alias for older mentions. */
 export type ReferenceGroup = ReferenceVocabGroup;
 
+/** One L1 (en/vi) prompt the learner writes out in Japanese. */
+export type SentenceWritingItem = {
+  prompt: Bilingual;
+  jp: string;
+  ruby?: RubySegment[];
+};
+
+/**
+ * Prompts for one grammar pattern. No upper limit; author at least five, and
+ * enough extra items across the lesson to cover every vocab word.
+ */
+export type SentenceWritingGroup = {
+  /** Must match `GrammarPoint.pattern` on that lesson. */
+  pattern: string;
+  patternRuby?: RubySegment[];
+  items: SentenceWritingItem[];
+};
+
+/** Hand-authored writing prompts for one lesson (grammar groups + useful phrases). */
+export type LessonSentenceWriting = {
+  grammar: SentenceWritingGroup[];
+  /** One prompt per useful phrase (the EN/VI meaning, Japanese as the answer). */
+  phrases: SentenceWritingItem[];
+};
+
 export type Lesson = {
   id: string;
   number: number;

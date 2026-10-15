@@ -24,6 +24,7 @@ import {
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { alpha } from '@mui/material/styles';
+import { focusVisibleSx } from '@/theme/focus.ts';
 import CleaningServicesOutlinedIcon from '@mui/icons-material/CleaningServicesOutlined';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -314,7 +315,7 @@ function KanaSample({ cell, onSelect }: KanaSampleProps) {
             onSelect(cell);
           }
         }}
-        sx={{
+        sx={(theme) => ({
           width: { xs: 40, sm: 48 },
           height: { xs: 40, sm: 48 },
           display: 'flex',
@@ -322,12 +323,8 @@ function KanaSample({ cell, onSelect }: KanaSampleProps) {
           justifyContent: 'center',
           cursor: 'pointer',
           borderRadius: 1,
-          '&:focus-visible': {
-            outline: '2px solid',
-            outlineColor: 'primary.main',
-            outlineOffset: 2
-          }
-        }}
+          '&:focus-visible': focusVisibleSx(theme)
+        })}
       >
         <KanaDisplay cell={cell} variant="chart" />
       </Box>
@@ -419,18 +416,14 @@ function RomajiPromptPractice({ script, rowIndex }: RomajiPromptPracticeProps) {
                 setStrokeOpen(true);
               }
             }}
-            sx={{
+            sx={(theme) => ({
               fontSize: { xs: 48, sm: 56 },
               lineHeight: 1,
               fontWeight: 600,
               cursor: 'pointer',
               borderRadius: 1,
-              '&:focus-visible': {
-                outline: '2px solid',
-                outlineColor: 'primary.main',
-                outlineOffset: 2
-              }
-            }}
+              '&:focus-visible': focusVisibleSx(theme)
+            })}
           >
             {cell.romaji}
           </Typography>

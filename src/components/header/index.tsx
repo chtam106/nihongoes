@@ -72,12 +72,14 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', px: { md: 6 } }}>
             <Brand showTagline={false} showLogo={false} />
             <Box sx={{ flexGrow: 1 }} />
-            <Stack direction="row" spacing={0.5}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
               <Suspense fallback={<Box sx={{ width: 80, height: 40 }} aria-hidden />}>
-                <AppSettings />
-                <LanguageSwitcher />
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                  <AppSettings />
+                  <LanguageSwitcher />
+                </Box>
               </Suspense>
-            </Stack>
+            </Box>
           </Stack>
         </Box>
       </Toolbar>

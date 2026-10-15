@@ -1,6 +1,7 @@
 'use client';
 
 import type { ComponentType } from 'react';
+import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import DrawOutlinedIcon from '@mui/icons-material/DrawOutlined';
 import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
 import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
@@ -33,6 +34,7 @@ const NAV_CARD_ICONS = {
   draw: DrawOutlinedIcon,
   notes: NotesOutlinedIcon,
   book: MenuBookOutlinedIcon,
+  create: CreateOutlinedIcon,
   school: SchoolOutlinedIcon
 } satisfies Record<string, ComponentType<SvgIconProps>>;
 

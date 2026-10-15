@@ -1,5 +1,17 @@
-import { createTheme } from '@mui/material/styles';
+import { createElement } from 'react';
+import { alpha, createTheme } from '@mui/material/styles';
+import {
+  CheckboxCheckedIcon,
+  CheckboxIndeterminateIcon,
+  CheckboxUncheckedIcon
+} from './checkbox-icons.tsx';
+import {
+  FOCUS_OUTLINE_ALPHA,
+  FOCUS_OUTLINE_WIDTH_PX,
+  focusVisibleSx
+} from './focus.ts';
 import { FONT_FAMILY_UI } from './fonts.ts';
+import { hoverFillSx } from './hover.ts';
 
 // The smallest text in the app must never render below body1 (16px), on mobile
 // and desktop alike. MUI's default small variants are smaller than 1rem, so we
@@ -9,7 +21,7 @@ const MIN_FONT_SIZE = '1rem';
 export const appTheme = createTheme({
   // Sakura pink + matcha green.
   palette: {
-    primary: { main: '#D63A6F' },
+    primary: { main: '#D63A6F', light: '#F08BAE' },
     secondary: { main: '#3B9A57' }
   },
   typography: {
@@ -27,6 +39,19 @@ export const appTheme = createTheme({
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true
+      },
+      styleOverrides: {
+        root: ({ theme: muiTheme }) => ({
+          '&.Mui-focusVisible': focusVisibleSx(muiTheme)
+        })
+      }
+    },
+    // MUI only attaches IconButton hover when ripple is on, and even then the
+    // default fill is action.hoverOpacity (0.04) - nearly invisible. Restore a
+    // readable circular hover independently of ripple.
+    MuiIconButton: {
+      styleOverrides: {
+        root: ({ theme: muiTheme }) => hoverFillSx(muiTheme)
       }
     },
     MuiChip: {
@@ -56,11 +81,22 @@ export const appTheme = createTheme({
       }
     },
     MuiCheckbox: {
+      defaultProps: {
+        icon: createElement(CheckboxUncheckedIcon),
+        checkedIcon: createElement(CheckboxCheckedIcon),
+        indeterminateIcon: createElement(CheckboxIndeterminateIcon)
+      },
       styleOverrides: {
         root: ({ theme: muiTheme }) => ({
           color: muiTheme.palette.primary.main,
-          '&:hover': {
-            backgroundColor: 'transparent'
+          '&.Mui-checked, &.MuiCheckbox-indeterminate': {
+            color: muiTheme.palette.primary.main
+          },
+          '&:hover, &.Mui-checked:hover, &.MuiCheckbox-indeterminate:hover': {
+            backgroundColor: 'transparent',
+            '@media (hover: none)': {
+              backgroundColor: 'transparent'
+            }
           },
           '&:active': {
             backgroundColor: 'transparent'
@@ -68,29 +104,23 @@ export const appTheme = createTheme({
         })
       }
     },
-    // Dropdowns show their focus color (primary) at rest too; text fields keep MUI's grey.
-    MuiFormControl: {
-      styleOverrides: {
-        root: ({ theme: muiTheme }) => ({
-          '&:has(.MuiSelect-select) .MuiInputLabel-root:not(.Mui-disabled)': {
-            color: muiTheme.palette.primary.main
-          }
-        })
-      }
-    },
+    // Select uses MUI's default grey outline at rest. Focused outlines
+    // (inputs including Select, and ButtonBase) are 1px light sakura.
     MuiOutlinedInput: {
       styleOverrides: {
         root: ({ theme: muiTheme }) => ({
-          '&:has(.MuiSelect-select):not(.Mui-disabled) .MuiOutlinedInput-notchedOutline': {
-            borderColor: muiTheme.palette.primary.main
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderWidth: FOCUS_OUTLINE_WIDTH_PX,
+            borderColor: alpha(muiTheme.palette.primary.main, FOCUS_OUTLINE_ALPHA)
           }
         })
       }
     },
-    MuiSelect: {
+    MuiMenuItem: {
       styleOverrides: {
-        icon: ({ theme: muiTheme }) => ({
-          '&:not(.Mui-disabled)': {
+        root: ({ theme: muiTheme }) => ({
+          ...hoverFillSx(muiTheme),
+          '&.Mui-selected, &.Mui-selected:hover, &.Mui-selected.Mui-focusVisible': {
             color: muiTheme.palette.primary.main
           }
         })

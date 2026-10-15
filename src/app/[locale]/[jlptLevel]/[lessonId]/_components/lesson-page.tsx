@@ -16,7 +16,7 @@ import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import {
-  courseVocabularyPath,
+  VOCABULARY_PATH,
   getCourse,
   getLesson,
   lessonGrammarPath,
@@ -36,7 +36,6 @@ import { ConversationTurnGroup, groupConversationTurns } from '@/components/conv
 import { SectionHeaderWithTranslationToggle } from '@/components/section-header-with-translation';
 import { GrammarPointCard } from '@/components/grammar-point-card';
 import { Heading } from '@/components/heading';
-import { HintText } from '@/components/hint-text';
 import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
 import { SpeakableSurface } from '@/components/speakable-surface';
@@ -44,7 +43,6 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { VocabCardGrid } from '@/components/vocab-card-grid';
 import { VocabHeadword } from '@/components/vocab-headword';
-import { hideOnPrintSx } from '@/theme/print.ts';
 import { elevatedSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
 
@@ -405,7 +403,6 @@ function LessonPage({ level }: LessonPageProps) {
           <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
             {lesson.focus[locale]}
           </Typography>
-          <HintText sx={[hideOnPrintSx, { mt: 1.5 }]}>{t('course.audioHint')}</HintText>
         </Box>
 
         <VocabularySection lesson={lesson} />
@@ -451,7 +448,7 @@ function LessonPage({ level }: LessonPageProps) {
             {!next && (
               <Button
                 component={RouterLink}
-                to={courseVocabularyPath(level)}
+                to={VOCABULARY_PATH}
                 endIcon={<ArrowForwardIcon />}
                 variant="text"
                 sx={{ px: 0 }}

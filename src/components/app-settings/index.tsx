@@ -15,6 +15,7 @@ import {
   Stack,
   Typography
 } from '@mui/material';
+import { hoverFillNoneSx } from '@/theme/hover.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 import {
@@ -95,6 +96,7 @@ export function AppSettings() {
         onClick={(event) => setAnchorEl(event.currentTarget)}
         aria-label={t('settings.title')}
         color="primary"
+        sx={hoverFillNoneSx}
       >
         <SettingsOutlinedIcon />
       </IconButton>
