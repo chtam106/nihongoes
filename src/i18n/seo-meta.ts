@@ -18,7 +18,6 @@ const COURSE_LESSON_PATH =
   /^\/(n5|n4|n3|n2|n1|frontend)\/(lesson-\d+)(?:\/(vocabulary|grammar|reading|writing))?$/;
 const COURSE_EXTRA_PATH = /^\/(n5|n4|n3|n2|n1|frontend)\/(intro|reference)$/;
 const KANJI_PAGE_PATH = /^\/kanji\/([^/]+)(?:\/([^/]+)(?:\/(quiz|writing))?)?$/;
-const KANJI_TRACK_SLUGS = new Set(KANJI_TRACK_META.map((track) => track.slug));
 
 type AlphabetPageSeo = {
   titleKey: string;
@@ -168,7 +167,7 @@ async function getKanjiPageSeo(logicalPath: string, locale: Locale): Promise<Seo
   const [, trackSlug, lessonId, section] = match;
   const track = KANJI_TRACK_META.find((item) => item.slug === trackSlug);
 
-  if (!track || !KANJI_TRACK_SLUGS.has(trackSlug)) {
+  if (!track) {
     return undefined;
   }
 

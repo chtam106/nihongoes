@@ -5,11 +5,7 @@ import {
   CheckboxIndeterminateIcon,
   CheckboxUncheckedIcon
 } from './checkbox-icons.tsx';
-import {
-  FOCUS_OUTLINE_ALPHA,
-  FOCUS_OUTLINE_WIDTH_PX,
-  focusVisibleSx
-} from './focus.ts';
+import { FOCUS_OUTLINE_ALPHA, FOCUS_OUTLINE_WIDTH_PX, focusVisibleSx } from './focus.ts';
 import { FONT_FAMILY_UI } from './fonts.ts';
 import { hoverFillSx } from './hover.ts';
 
