@@ -74,7 +74,7 @@ export function VocabIndexPage() {
 
   return (
     <PageContainer bottomGutter>
-      <Stack className="no-print" spacing={4}>
+      <Stack className="no-print" spacing={prefs.view === 'flashcards' ? 2 : 4}>
         <Box>
           <Heading component="h1">{t('course.vocabIndexHeading')}</Heading>
           <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
@@ -83,8 +83,21 @@ export function VocabIndexPage() {
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
             {t('course.vocabIndexCount', { count: visibleCount })}
           </Typography>
-          <Stack spacing={1.5} sx={{ mt: 2 }}>
-            <Stack direction="row" spacing={1.5} sx={{ flexWrap: 'wrap', rowGap: 1.5 }}>
+          <Box
+            sx={{
+              mt: 2,
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              columnGap: 1.5,
+              rowGap: 1.5
+            }}
+          >
+            <Stack
+              direction="row"
+              spacing={1.5}
+              sx={{ order: { xs: 3, md: 0 }, flexBasis: '100%' }}
+            >
               <FormControl size="small" sx={{ minWidth: 120 }}>
                 <InputLabel id="vocab-index-from-label">{t('course.vocabIndexFrom')}</InputLabel>
                 <Select<number>
@@ -118,47 +131,41 @@ export function VocabIndexPage() {
                 </Select>
               </FormControl>
             </Stack>
-            <Stack
-              direction="row"
-              spacing={1.5}
-              sx={{ flexWrap: 'wrap', alignItems: 'center', rowGap: 1.5 }}
+            <ToggleButtonGroup
+              exclusive
+              color="primary"
+              size="small"
+              value={prefs.view}
+              onChange={handleViewChange}
+              aria-label={t('course.vocabIndexView')}
+              sx={{ order: 1 }}
             >
+              <ToggleButton value="list">
+                <ViewListOutlined sx={{ mr: 1 }} />
+                {t('course.vocabIndexViewList')}
+              </ToggleButton>
+              <ToggleButton value="flashcards">
+                <StyleOutlined sx={{ mr: 1 }} />
+                {t('course.vocabIndexViewFlashcards')}
+              </ToggleButton>
+            </ToggleButtonGroup>
+            {prefs.view === 'flashcards' && (
               <ToggleButtonGroup
                 exclusive
                 color="primary"
                 size="small"
-                value={prefs.view}
-                onChange={handleViewChange}
-                aria-label={t('course.vocabIndexView')}
+                value={prefs.front}
+                onChange={handleFrontChange}
+                aria-label={t('course.vocabIndexFlashcardsFront')}
+                sx={{ order: 2, flexBasis: { xs: '100%', md: 'auto' } }}
               >
-                <ToggleButton value="list">
-                  <ViewListOutlined sx={{ mr: 1 }} />
-                  {t('course.vocabIndexViewList')}
-                </ToggleButton>
-                <ToggleButton value="flashcards">
-                  <StyleOutlined sx={{ mr: 1 }} />
-                  {t('course.vocabIndexViewFlashcards')}
+                <ToggleButton value="ja">{t('course.vocabIndexFlashcardsFrontWord')}</ToggleButton>
+                <ToggleButton value="meaning">
+                  {t('course.vocabIndexFlashcardsFrontMeaning')}
                 </ToggleButton>
               </ToggleButtonGroup>
-              {prefs.view === 'flashcards' && (
-                <ToggleButtonGroup
-                  exclusive
-                  color="primary"
-                  size="small"
-                  value={prefs.front}
-                  onChange={handleFrontChange}
-                  aria-label={t('course.vocabIndexFlashcardsFront')}
-                >
-                  <ToggleButton value="ja">
-                    {t('course.vocabIndexFlashcardsFrontWord')}
-                  </ToggleButton>
-                  <ToggleButton value="meaning">
-                    {t('course.vocabIndexFlashcardsFrontMeaning')}
-                  </ToggleButton>
-                </ToggleButtonGroup>
-              )}
-            </Stack>
-          </Stack>
+            )}
+          </Box>
         </Box>
 
         {prefs.view === 'list' && <VocabCardGrid items={visibleItems} locale={locale} />}
