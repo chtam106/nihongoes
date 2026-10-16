@@ -214,6 +214,7 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
         sx={[
           elevatedSurfaceSx,
           {
+            height: '100%',
             position: 'relative',
             p: 2,
             display: 'flex',
@@ -369,7 +370,7 @@ function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
       <PageContainer bottomGutter>
         <Stack spacing={4}>
           <Box>
-            <Box sx={{ mb: 1 }}>
+            <Box sx={{ mb: 1}}>
               <Button
                 component={RouterLink}
                 to={KANJI_BASE_PATH}
