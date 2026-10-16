@@ -19,7 +19,7 @@ export const seo = {
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
     description:
-      'Learn the Jōyō kanji in bite-sized lessons, with meanings, on and kun readings, example words, and native audio.'
+      'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'
   },
   n5: {
     intro: {

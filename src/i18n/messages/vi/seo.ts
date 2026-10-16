@@ -18,7 +18,7 @@ export const seo = {
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
     description:
-      'Học kanji thông dụng (Jōyō) theo từng bài nhỏ, kèm nghĩa, âm ON và KUN, từ ví dụ và phát âm chuẩn.'
+      'Kanji thông dụng (Jōyō) theo lớp tiểu học và cấp Kanken.'
   },
   n5: {
     intro: {
