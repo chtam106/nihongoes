@@ -206,14 +206,17 @@ export function VocabFlashcards({ items, locale, front }: VocabFlashcardsProps) 
           <IconButton
             onClick={handleNext}
             aria-label={t('course.next')}
-            sx={{
+            sx={(theme) => ({
               alignSelf: 'center',
               width: 48,
               height: 48,
+              '--button-rest-bg': theme.palette.primary.main,
               bgcolor: 'primary.main',
               color: 'primary.contrastText',
-              '&:hover': { bgcolor: 'primary.dark' }
-            }}
+              '@media (hover: hover) and (pointer: fine)': {
+                '&:hover': { bgcolor: 'primary.dark' }
+              }
+            })}
           >
             <ArrowForwardIcon />
           </IconButton>

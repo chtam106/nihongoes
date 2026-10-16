@@ -7,7 +7,7 @@ import {
 } from './checkbox-icons.tsx';
 import { FOCUS_OUTLINE_ALPHA, FOCUS_OUTLINE_WIDTH_PX, focusVisibleSx } from './focus.ts';
 import { FONT_FAMILY_UI } from './fonts.ts';
-import { hoverFillSx } from './hover.ts';
+import { coarsePressResetSx, hoverFillSx } from './hover.ts';
 
 // The smallest text in the app must never render below body1 (16px), on mobile
 // and desktop alike. MUI's default small variants are smaller than 1rem, so we
@@ -47,7 +47,29 @@ export const appTheme = createTheme({
     // readable circular hover independently of ripple.
     MuiIconButton: {
       styleOverrides: {
-        root: ({ theme: muiTheme }) => hoverFillSx(muiTheme)
+        root: ({ theme: muiTheme }) => ({
+          ...hoverFillSx(muiTheme),
+          ...coarsePressResetSx
+        })
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: ({ theme: muiTheme }) => ({
+          '@media (pointer: coarse)': {
+            '&&.MuiButton-containedPrimary:hover, &&.MuiButton-containedPrimary:active': {
+              backgroundColor: muiTheme.palette.primary.main,
+              boxShadow: muiTheme.shadows[2]
+            },
+            '&&.MuiButton-containedSecondary:hover, &&.MuiButton-containedSecondary:active': {
+              backgroundColor: muiTheme.palette.secondary.main,
+              boxShadow: muiTheme.shadows[2]
+            },
+            '&&.MuiButton-contained:active': {
+              boxShadow: muiTheme.shadows[2]
+            }
+          }
+        })
       }
     },
     MuiChip: {
@@ -64,7 +86,12 @@ export const appTheme = createTheme({
           fontSize: MIN_FONT_SIZE,
           lineHeight: 1.25,
           padding: '10px 12px',
-          textTransform: 'none'
+          textTransform: 'none',
+          '@media (pointer: coarse)': {
+            '&&:hover:not(.Mui-selected), &&:active:not(.Mui-selected)': {
+              backgroundColor: 'transparent'
+            }
+          }
         },
         sizeSmall: {
           fontSize: MIN_FONT_SIZE,
