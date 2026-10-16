@@ -4,7 +4,12 @@ import { Heading } from '@/components/heading';
 import { NavCardGrid, type NavCardItem } from '@/components/nav-card';
 import { PageContainer } from '@/components/page-container';
 import { COURSE_SUMMARIES } from '@/constants/courses/summaries.ts';
-import { coursePath, SENTENCES_PATH, VOCABULARY_PATH } from '@/constants/courses/levels.ts';
+import {
+  coursePath,
+  FLASHCARDS_PATH,
+  SENTENCES_PATH,
+  VOCABULARY_PATH
+} from '@/constants/courses/levels.ts';
 import { KANJI_BASE_PATH, KANJI_RADICALS_PATH } from '@/constants/kanji/index.ts';
 import { routes } from '@/constants/routes.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -90,6 +95,12 @@ export default async function Page({ params }: PageProps) {
       title: t('course.sentenceWritingHeading'),
       iconKey: 'create',
       description: t('home.sentencesDescription')
+    },
+    {
+      to: FLASHCARDS_PATH,
+      title: t('flashcards.title'),
+      iconKey: 'style',
+      description: t('home.flashcardsDescription')
     }
   ];
 

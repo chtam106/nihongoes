@@ -1,11 +1,11 @@
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 
 export type SentenceWritingPreferences = {
   lesson: number;
   showInput: boolean;
 };
 
-export const SENTENCE_WRITING_STORAGE_KEY = `${STORAGE_PREFIX}-sentence-writing`;
+export const SENTENCE_WRITING_STORAGE_KEY = storageKey('SENTENCE_WRITING');
 
 function sanitizeLesson(value: unknown, lessonNumbers: number[]): number {
   const fallback = lessonNumbers[0] ?? 1;

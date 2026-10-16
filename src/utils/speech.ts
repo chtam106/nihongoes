@@ -5,13 +5,18 @@ import {
   type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent
 } from 'react';
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import { spokenJapanese } from '@/utils/japanese-display.ts';
 import { stopKanaAudio } from '@/utils/kana-audio.ts';
+import {
+  readStorageItem,
+  removeStorageItem,
+  writeStorageItem
+} from '@/utils/use-persistent-state.ts';
 import { readUserPreferences, useUserPreferences } from '@/utils/user-preferences.ts';
 
-const VOICE_STORAGE_KEY = `${STORAGE_PREFIX}-voice`;
-const RATE_STORAGE_KEY = `${STORAGE_PREFIX}-rate`;
+const VOICE_STORAGE_KEY = storageKey('VOICE');
+const RATE_STORAGE_KEY = storageKey('RATE');
 const DEFAULT_RATE = 0.9;
 
 export function isSpeechSupported(): boolean {
@@ -54,7 +59,7 @@ export function getPreferredVoiceURI(): string | null {
     return null;
   }
 
-  return window.localStorage.getItem(VOICE_STORAGE_KEY);
+  return readStorageItem(VOICE_STORAGE_KEY);
 }
 
 export function setPreferredVoiceURI(voiceURI: string | null): void {
@@ -63,9 +68,9 @@ export function setPreferredVoiceURI(voiceURI: string | null): void {
   }
 
   if (voiceURI) {
-    window.localStorage.setItem(VOICE_STORAGE_KEY, voiceURI);
+    writeStorageItem(VOICE_STORAGE_KEY, voiceURI);
   } else {
-    window.localStorage.removeItem(VOICE_STORAGE_KEY);
+    removeStorageItem(VOICE_STORAGE_KEY);
   }
 }
 
@@ -74,7 +79,7 @@ export function getSpeechRate(): number {
     return DEFAULT_RATE;
   }
 
-  const stored = Number(window.localStorage.getItem(RATE_STORAGE_KEY));
+  const stored = Number(readStorageItem(RATE_STORAGE_KEY));
 
   return Number.isFinite(stored) && stored > 0 ? stored : DEFAULT_RATE;
 }
@@ -84,7 +89,7 @@ export function setSpeechRate(rate: number): void {
     return;
   }
 
-  window.localStorage.setItem(RATE_STORAGE_KEY, String(rate));
+  writeStorageItem(RATE_STORAGE_KEY, String(rate));
 }
 
 export function getDefaultJapaneseVoice(

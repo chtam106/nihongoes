@@ -11,6 +11,7 @@ import NotesOutlinedIcon from '@mui/icons-material/NotesOutlined';
 import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import SpellcheckOutlinedIcon from '@mui/icons-material/SpellcheckOutlined';
+import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import SwapHorizOutlinedIcon from '@mui/icons-material/SwapHorizOutlined';
 import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import type { SvgIconProps } from '@mui/material';
@@ -35,6 +36,7 @@ const NAV_CARD_ICONS = {
   notes: NotesOutlinedIcon,
   book: MenuBookOutlinedIcon,
   create: CreateOutlinedIcon,
+  style: StyleOutlinedIcon,
   school: SchoolOutlinedIcon
 } satisfies Record<string, ComponentType<SvgIconProps>>;
 

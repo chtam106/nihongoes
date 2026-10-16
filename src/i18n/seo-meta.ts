@@ -215,6 +215,39 @@ async function getAlphabetPageSeo(
   };
 }
 
+const FLASHCARD_COLLECTION_PATH = /^\/flashcards\/([^/]+)$/;
+
+async function getFlashcardCollectionSeo(
+  logicalPath: string,
+  locale: Locale
+): Promise<SeoText | undefined> {
+  const match = FLASHCARD_COLLECTION_PATH.exec(logicalPath);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const id = decodeURIComponent(match[1]);
+  const { getLightFlashcardDefaults } = await import('@/constants/flashcards/light-defaults.ts');
+  const { getKanjiGradeFlashcards } = await import('@/constants/flashcards/kanji-defaults.ts');
+  const collection = [
+    ...getLightFlashcardDefaults().collections,
+    ...getKanjiGradeFlashcards().collections
+  ].find((item) => item.id === id);
+  const t = await getTranslations({ locale, namespace: 'seo' });
+  const description = t('flashcards.description');
+  const parent = t('flashcards.title');
+
+  if (!collection) {
+    return { title: `${SITE_NAME} | ${parent}`, description };
+  }
+
+  return {
+    title: `${SITE_NAME} | ${parent} | ${collection.name[locale]}`,
+    description
+  };
+}
+
 async function getSeoText(
   routeKey: SeoRouteKey,
   locale: Locale,
@@ -242,6 +275,12 @@ async function getSeoText(
 
   if (alphabetPageSeo) {
     return alphabetPageSeo;
+  }
+
+  const flashcardCollectionSeo = await getFlashcardCollectionSeo(logicalPath, locale);
+
+  if (flashcardCollectionSeo) {
+    return flashcardCollectionSeo;
   }
 
   if (isCourseLevel(routeKey)) {

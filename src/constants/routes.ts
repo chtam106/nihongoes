@@ -2,7 +2,8 @@ import {
   COURSE_LEVELS,
   coursePath,
   SENTENCES_PATH,
-  VOCABULARY_PATH
+  VOCABULARY_PATH,
+  FLASHCARDS_PATH
 } from '@/constants/courses/levels.ts';
 
 type RouteNode = string | { readonly [key: string]: RouteNode };
@@ -11,6 +12,7 @@ export const routes = {
   home: '/',
   vocabulary: VOCABULARY_PATH,
   sentences: SENTENCES_PATH,
+  flashcards: FLASHCARDS_PATH,
   n5: {
     index: '/n5',
     intro: '/n5/intro',
@@ -84,6 +86,10 @@ export function getSeoRouteKey(pathname: string): SeoRouteKey {
 
   if (pathname === routes.kanji.index || pathname.startsWith(`${routes.kanji.index}/`)) {
     return 'kanji' as SeoRouteKey;
+  }
+
+  if (pathname === routes.flashcards || pathname.startsWith(`${routes.flashcards}/`)) {
+    return 'flashcards' as SeoRouteKey;
   }
 
   return (pathToSeoKey[pathname] as SeoRouteKey | undefined) ?? 'notFound';

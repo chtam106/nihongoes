@@ -13,5 +13,6 @@ export const home = {
   kanjiSection: 'Kanji & bộ thủ',
   coursesSection: 'Khóa học',
   vocabDescription: 'Toàn bộ từ vựng và mẫu câu của các khóa JLPT.',
-  sentencesDescription: 'Viết tiếng Nhật từ câu tiếng Anh hoặc tiếng Việt.'
+  sentencesDescription: 'Viết tiếng Nhật từ câu tiếng Anh hoặc tiếng Việt.',
+  flashcardsDescription: 'Lưu từ vựng vào bộ sưu tập rồi ôn lại.'
 };
