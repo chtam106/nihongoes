@@ -1,5 +1,6 @@
 import { ClientOnly } from '@/components/client-only';
 import ExercisePage from './_components/exercise-page.tsx';
+import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
 import { lessonVocabularyPath } from '@/constants/courses/levels.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -20,7 +21,10 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
 
   return (
     <ClientOnly>
-      <ExercisePage level={jlptLevel as CourseLevel} />
+      <ExercisePage
+        level={jlptLevel as CourseLevel}
+        defaults={getLightFlashcardDefaults().collections}
+      />
     </ClientOnly>
   );
 }

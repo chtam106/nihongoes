@@ -10,6 +10,7 @@ import { FuriganaText } from '@/components/furigana-text';
 import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { ResultScreen } from '@/features/course/shared';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { hasTextSelection } from '@/utils/text-selection.ts';
 import { useVocabMatch } from './use-vocab-quiz.ts';
 import {
@@ -133,17 +134,26 @@ const MatchWordCell = memo(function MatchWordCell({
   locked,
   onSelect
 }: MatchWordCellProps) {
+  const chip = (
+    <MatchChip
+      state={state}
+      matchColorIndex={matchColorIndex}
+      ja
+      locked={locked}
+      onClick={onSelect}
+    >
+      <FuriganaText text={pair.surface} ruby={pair.ruby} />
+    </MatchChip>
+  );
+
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
-      <MatchChip
-        state={state}
-        matchColorIndex={matchColorIndex}
-        ja
-        locked={locked}
-        onClick={onSelect}
-      >
-        <FuriganaText text={pair.surface} ruby={pair.ruby} />
-      </MatchChip>
+      {pair.cardId && pair.cardType && (
+        <SaveableCard cardId={pair.cardId} cardType={pair.cardType} sx={{ width: '100%' }}>
+          {chip}
+        </SaveableCard>
+      )}
+      {!(pair.cardId && pair.cardType) && chip}
     </Box>
   );
 });
@@ -163,11 +173,20 @@ const MatchMeaningCell = memo(function MatchMeaningCell({
   locked,
   onSelect
 }: MatchMeaningCellProps) {
+  const chip = (
+    <MatchChip state={state} matchColorIndex={matchColorIndex} locked={locked} onClick={onSelect}>
+      <Typography component="span">{pair.meaning}</Typography>
+    </MatchChip>
+  );
+
   return (
     <Box sx={{ display: 'flex', width: '100%' }}>
-      <MatchChip state={state} matchColorIndex={matchColorIndex} locked={locked} onClick={onSelect}>
-        <Typography component="span">{pair.meaning}</Typography>
-      </MatchChip>
+      {pair.cardId && pair.cardType && (
+        <SaveableCard cardId={pair.cardId} cardType={pair.cardType} sx={{ width: '100%' }}>
+          {chip}
+        </SaveableCard>
+      )}
+      {!(pair.cardId && pair.cardType) && chip}
     </Box>
   );
 });

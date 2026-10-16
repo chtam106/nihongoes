@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import { ClientOnly } from '@/components/client-only';
 import KanjiQuizPage from './_components/kanji-quiz.tsx';
+import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
+import { SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { kanjiQuizPath } from '@/constants/kanji/index.ts';
 import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -27,7 +29,9 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
 
   return (
     <ClientOnly>
-      <KanjiQuizPage trackSlug={track.slug} trackName={track.name} lesson={lesson} />
+      <SaveCardScope defaults={getLightFlashcardDefaults().collections}>
+        <KanjiQuizPage trackSlug={track.slug} trackName={track.name} lesson={lesson} />
+      </SaveCardScope>
     </ClientOnly>
   );
 }

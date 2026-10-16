@@ -28,6 +28,7 @@ import {
 import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 
 type KanjiQuizDirection = 'meaning' | 'character';
 
@@ -233,21 +234,26 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
         >
           {promptLabel}
         </Typography>
-        <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
-          {question.promptJapanese && (
-            <Typography
-              lang="ja"
-              sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1 }}
-            >
-              {question.promptText}
-            </Typography>
-          )}
-          {!question.promptJapanese && (
-            <Typography variant="h5" component="p" sx={{ fontWeight: 600 }}>
-              {question.promptText}
-            </Typography>
-          )}
-        </Paper>
+        <SaveableCard cardId={`kanji:${trackSlug}:${question.id}`} cardType="kanji">
+          <Paper
+            elevation={0}
+            sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}
+          >
+            {question.promptJapanese && (
+              <Typography
+                lang="ja"
+                sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1 }}
+              >
+                {question.promptText}
+              </Typography>
+            )}
+            {!question.promptJapanese && (
+              <Typography variant="h5" component="p" sx={{ fontWeight: 600 }}>
+                {question.promptText}
+              </Typography>
+            )}
+          </Paper>
+        </SaveableCard>
       </Box>
 
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 1.5 }}>

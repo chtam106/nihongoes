@@ -1,4 +1,6 @@
 import RadicalQuizPage from './_components/radical-quiz.tsx';
+import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
+import { SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { ClientOnly } from '@/components/client-only';
 import { KANJI_RADICALS_QUIZ_PATH } from '@/constants/kanji/index.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -18,7 +20,9 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <ClientOnly>
-      <RadicalQuizPage />
+      <SaveCardScope defaults={getLightFlashcardDefaults().collections}>
+        <RadicalQuizPage />
+      </SaveCardScope>
     </ClientOnly>
   );
 }

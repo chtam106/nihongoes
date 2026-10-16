@@ -1,4 +1,5 @@
 import LessonPage from './_components/lesson-page.tsx';
+import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
 import { lessonPath } from '@/constants/courses/levels.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -17,5 +18,10 @@ export const generateMetadata = createMetadata((p) =>
 export default async function Page({ params }: PageProps<{ jlptLevel: string }>) {
   const { jlptLevel } = await params;
 
-  return <LessonPage level={jlptLevel as CourseLevel} />;
+  return (
+    <LessonPage
+      level={jlptLevel as CourseLevel}
+      defaults={getLightFlashcardDefaults().collections}
+    />
+  );
 }
