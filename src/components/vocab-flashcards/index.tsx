@@ -2,14 +2,18 @@
 
 import { useState, type KeyboardEvent } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import BookmarkAddOutlined from '@mui/icons-material/BookmarkAddOutlined';
+import BookmarkAddedOutlined from '@mui/icons-material/BookmarkAddedOutlined';
 import { Box, Button, IconButton, Paper, Stack, Typography } from '@mui/material';
+import { SaveToCollectionDialog } from '@/features/flashcards/save-to-collection-dialog.tsx';
+import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import type { VocabItem } from '@/types/course.ts';
 import type { Locale } from '@/types/i18n.ts';
-import type { FlashcardFront } from './vocab-index-preferences.ts';
+import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab-index-preferences.ts';
 
 const FLIP_MS = 480;
 
@@ -26,8 +30,13 @@ const faceSx = {
   transition: `transform ${FLIP_MS}ms cubic-bezier(0.22, 1, 0.36, 1)`
 } as const;
 
+export type VocabFlashcard = {
+  id: string;
+  item: VocabItem;
+};
+
 type VocabFlashcardsProps = {
-  items: VocabItem[];
+  cards: VocabFlashcard[];
   locale: Locale;
   front: FlashcardFront;
 };
@@ -66,12 +75,12 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 type FlashcardSession = {
-  deck: VocabItem[];
+  deck: VocabFlashcard[];
   index: number;
 };
 
-function startSession(items: VocabItem[]): FlashcardSession {
-  return { deck: shuffle(items), index: 0 };
+function startSession(cards: VocabFlashcard[]): FlashcardSession {
+  return { deck: shuffle(cards), index: 0 };
 }
 
 type FlipCardProps = {
@@ -146,14 +155,28 @@ function FlipCard({ item, locale, front }: FlipCardProps) {
   );
 }
 
-export function VocabFlashcards({ items, locale, front }: VocabFlashcardsProps) {
+export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) {
   const { t } = useTranslation();
-  const [session, setSession] = useState(() => startSession(items));
+  const { collections, defaults } = useFlashcardCollections();
+  const [session, setSession] = useState(() => startSession(cards));
+  const [saveCardId, setSaveCardId] = useState<string | null>(null);
   const { deck, index } = session;
   const finished = index >= deck.length;
-  const item = deck[index];
+  const card = deck[index];
+  const saved = card
+    ? collections.some((collection) => {
+        if (!collection.cardIds.includes(card.id)) {
+          return false;
+        }
+
+        const builtin = defaults.find((item) => item.id === collection.id);
+
+        return !builtin || !builtin.cardIds.includes(card.id);
+      })
+    : false;
 
   const handleNext = () => {
+    setSaveCardId(null);
     setSession((previous) => ({
       ...previous,
       index: previous.index + 1
@@ -161,7 +184,8 @@ export function VocabFlashcards({ items, locale, front }: VocabFlashcardsProps) 
   };
 
   const handleRestart = () => {
-    setSession(startSession(items));
+    setSaveCardId(null);
+    setSession(startSession(cards));
   };
 
   return (
@@ -191,17 +215,34 @@ export function VocabFlashcards({ items, locale, front }: VocabFlashcardsProps) 
         </Button>
       )}
 
-      {!finished && item && (
+      {!finished && card && (
         <>
           <Box
             sx={{
+              position: 'relative',
               width: '100%',
               maxWidth: 420,
-              mx: 'auto',
-              perspective: 1000
+              mx: 'auto'
             }}
           >
-            <FlipCard key={`${index}:${front}`} item={item} locale={locale} front={front} />
+            <Box sx={{ perspective: 1000 }}>
+              <FlipCard key={`${index}:${front}`} item={card.item} locale={locale} front={front} />
+            </Box>
+            <IconButton
+              aria-label={t('flashcards.addToCollection')}
+              onClick={() => setSaveCardId(card.id)}
+              sx={{
+                position: 'absolute',
+                top: 8,
+                right: 8,
+                zIndex: 2,
+                color: saved ? 'primary.main' : 'text.secondary',
+                WebkitTapHighlightColor: 'transparent'
+              }}
+            >
+              {saved && <BookmarkAddedOutlined />}
+              {!saved && <BookmarkAddOutlined />}
+            </IconButton>
           </Box>
           <IconButton
             onClick={handleNext}
@@ -222,6 +263,12 @@ export function VocabFlashcards({ items, locale, front }: VocabFlashcardsProps) 
           </IconButton>
         </>
       )}
+
+      <SaveToCollectionDialog
+        open={saveCardId !== null}
+        cardId={saveCardId}
+        onClose={() => setSaveCardId(null)}
+      />
     </Stack>
   );
 }

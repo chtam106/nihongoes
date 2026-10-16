@@ -12,6 +12,7 @@ export function coursePath(level: CourseLevel): string {
 
 export const VOCABULARY_PATH = '/vocabulary';
 export const SENTENCES_PATH = '/sentences';
+export const FLASHCARDS_PATH = '/flashcards';
 
 export function lessonPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}`;

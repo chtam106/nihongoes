@@ -16,6 +16,10 @@ export const seo = {
     description:
       'Translate English or Vietnamese prompts into Japanese - grammar and useful phrases.'
   },
+  flashcards: {
+    title: 'Flashcards',
+    description: 'Collections of vocabulary flashcards saved in your browser.'
+  },
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
     description: 'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'

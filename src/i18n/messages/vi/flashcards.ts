@@ -1,0 +1,21 @@
+export const flashcards = {
+  title: 'Flashcards',
+  intro: 'Lưu từ từ flashcard từ vựng vào bộ sưu tập, rồi ôn tại đây.',
+  empty: 'Chưa có bộ sưu tập.',
+  count: '{count} thẻ',
+  newCollection: 'Bộ sưu tập mới',
+  collectionName: 'Tên bộ sưu tập',
+  create: 'Tạo',
+  renameTitle: 'Đổi tên bộ sưu tập',
+  renameName: 'Đổi tên {name}',
+  save: 'Lưu',
+  delete: 'Xóa',
+  deleteTitle: 'Xóa bộ sưu tập',
+  deleteName: 'Xóa {name}',
+  deleteBody: 'Xóa "{name}"? Từ vẫn còn trong khóa học.',
+  cancel: 'Hủy',
+  saveTo: 'Lưu vào...',
+  close: 'Đóng',
+  addToCollection: 'Thêm vào bộ sưu tập',
+  studyEmpty: 'Bộ sưu tập này chưa có thẻ. Hãy lưu từ từ flashcard từ vựng.'
+};
