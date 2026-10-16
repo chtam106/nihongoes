@@ -27,9 +27,22 @@ export function hoverFillSx(theme: Theme, fillAlpha = HOVER_FILL_ALPHA) {
   return {
     '&:hover, &.Mui-selected:hover': {
       backgroundColor: fill,
-      '@media (hover: none)': {
+      '@media (hover: none) and (pointer: fine)': {
         backgroundColor: fill
       }
     }
   };
 }
+
+/**
+ * Touch keeps `:hover` after a tap, which leaves buttons in a darker "active"
+ * color. On a coarse pointer, hover and active use the resting fill instead.
+ * A filled icon button sets `--button-rest-bg`; otherwise the rest is transparent.
+ */
+export const coarsePressResetSx = {
+  '@media (pointer: coarse)': {
+    '&&:hover, &&:active': {
+      backgroundColor: 'var(--button-rest-bg, transparent)'
+    }
+  }
+} as const;
