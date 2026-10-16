@@ -1,10 +1,10 @@
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import { radicals, radicalsInStrokeOrder, type Radical } from '@/constants/kanji/index.ts';
 
 /** How far apart the selectable range endpoints are. The last radical is always a "to" option. */
 export const RADICAL_QUIZ_POOL_STEP = 10;
 
-export const RADICAL_QUIZ_POOL_STORAGE_KEY = `${STORAGE_PREFIX}-radical-quiz-pool`;
+export const RADICAL_QUIZ_POOL_STORAGE_KEY = storageKey('RADICAL_QUIZ_POOL');
 
 export type RadicalQuizRange = {
   from: number;

@@ -15,10 +15,17 @@ export const SITE_URL =
     : 'https://nihongoes.com';
 
 /**
- * Prefix for all localStorage keys. Kept as its own constant (not derived from
+ * Brand token for persisted names. Kept as its own constant (not derived from
  * SITE_NAME) so renaming the display brand never silently wipes saved data.
+ * localStorage keys go through `storageKey` (UPPER_SNAKE_CASE). This value
+ * stays lowercase so the locale cookie name does not change.
  */
 export const STORAGE_PREFIX = 'nihongoes';
+
+/** localStorage key: `NIHONGOES_` plus an UPPER_SNAKE_CASE name. */
+export function storageKey(name: string): string {
+  return `${STORAGE_PREFIX.toUpperCase()}_${name}`;
+}
 
 /**
  * Cookie that remembers the visitor's chosen locale so the SERVER (proxy)

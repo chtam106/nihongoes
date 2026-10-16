@@ -15,6 +15,10 @@ export const seo = {
     title: 'Viết câu',
     description: 'Dịch câu tiếng Anh hoặc tiếng Việt sang tiếng Nhật - ngữ pháp và mẫu câu.'
   },
+  flashcards: {
+    title: 'Flashcards',
+    description: 'Bộ sưu tập flashcard từ vựng lưu trên trình duyệt.'
+  },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
     description: 'Kanji thông dụng (Jōyō) theo lớp tiểu học và cấp Kanken.'

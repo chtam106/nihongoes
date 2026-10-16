@@ -1,6 +1,102 @@
 import { useCallback, useSyncExternalStore } from 'react';
 
 /**
+ * Kebab-case keys written before localStorage names moved to UPPER_SNAKE_CASE.
+ * A read copies the old value once, then drops the old key.
+ */
+const LEGACY_STORAGE_KEYS: Record<string, string> = {
+  NIHONGOES_FLASHCARD_COLLECTIONS: 'nihongoes-flashcard-collections',
+  NIHONGOES_FLASHCARD_COLLECTIONS_FRONT: 'nihongoes-flashcard-collections-front',
+  NIHONGOES_VOCAB_FLASHCARD_FRONT: 'nihongoes-vocab-flashcard-front',
+  NIHONGOES_VOCAB_FLASHCARD_GUIDE_SEEN: 'nihongoes-vocab-flashcard-guide-seen',
+  NIHONGOES_VOCAB_INDEX: 'nihongoes-vocab-index',
+  NIHONGOES_SENTENCE_WRITING: 'nihongoes-sentence-writing',
+  NIHONGOES_RADICAL_QUIZ_POOL: 'nihongoes-radical-quiz-pool',
+  NIHONGOES_VOICE: 'nihongoes-voice',
+  NIHONGOES_RATE: 'nihongoes-rate',
+  NIHONGOES_USER_PREFERENCES: 'nihongoes-user-preferences'
+};
+
+function migrateLegacyStorageKey(key: string) {
+  const legacy = LEGACY_STORAGE_KEYS[key];
+
+  if (!legacy || typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    if (window.localStorage.getItem(key) != null) {
+      return;
+    }
+
+    const previous = window.localStorage.getItem(legacy);
+
+    if (previous == null) {
+      return;
+    }
+
+    window.localStorage.setItem(key, previous);
+    window.localStorage.removeItem(legacy);
+  } catch {
+    // Ignore quota/availability errors - persistence is best-effort.
+  }
+}
+
+function dropLegacyStorageKey(key: string) {
+  const legacy = LEGACY_STORAGE_KEYS[key];
+
+  if (!legacy || typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.removeItem(legacy);
+  } catch {
+    // Ignore quota/availability errors - persistence is best-effort.
+  }
+}
+
+export function readStorageItem(key: string): string | null {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+  migrateLegacyStorageKey(key);
+
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+export function writeStorageItem(key: string, value: string) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.setItem(key, value);
+    dropLegacyStorageKey(key);
+  } catch {
+    // Ignore quota/availability errors - persistence is best-effort.
+  }
+}
+
+export function removeStorageItem(key: string) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  try {
+    window.localStorage.removeItem(key);
+    dropLegacyStorageKey(key);
+  } catch {
+    // Ignore quota/availability errors - persistence is best-effort.
+  }
+}
+
+/**
  * Read and validate a JSON value from localStorage, falling back to `fallback`
  * when storage is unavailable, empty, malformed, or fails the `sanitize` guard.
  * `sanitize` receives the parsed value and must coerce it into a safe `T`.
@@ -15,7 +111,7 @@ export function readPersistedValue<T>(
   }
 
   try {
-    const raw = window.localStorage.getItem(key);
+    const raw = readStorageItem(key);
     if (!raw) {
       return fallback;
     }
@@ -27,15 +123,7 @@ export function readPersistedValue<T>(
 }
 
 function writePersistedValue<T>(key: string, value: T) {
-  if (typeof window === 'undefined') {
-    return;
-  }
-
-  try {
-    window.localStorage.setItem(key, JSON.stringify(value));
-  } catch {
-    // Ignore quota/availability errors - persistence is best-effort.
-  }
+  writeStorageItem(key, JSON.stringify(value));
 }
 
 // A cached snapshot per key so `useSyncExternalStore` returns a stable reference
@@ -45,11 +133,7 @@ const snapshots = new Map<string, Snapshot>();
 const listeners = new Map<string, Set<() => void>>();
 
 function currentRaw(key: string): string | null {
-  try {
-    return window.localStorage.getItem(key);
-  } catch {
-    return null;
-  }
+  return readStorageItem(key);
 }
 
 function computeValue<T>(raw: string | null, fallback: T, sanitize: (value: unknown) => T): T {

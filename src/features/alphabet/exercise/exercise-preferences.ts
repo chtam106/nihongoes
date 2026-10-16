@@ -1,5 +1,5 @@
 import type { ExerciseOverviewScope, ExerciseRowScope } from '@/constants/alphabet-charts.ts';
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import type {
   ExerciseScript,
   Script,
@@ -9,17 +9,14 @@ import type { SentenceType } from '@/features/alphabet/exercise/sentence/sentenc
 
 /**
  * Every alphabet exercise persists its own selections under its own key so the
- * choices made in one exercise never bleed into another. Keys are UPPERCASE
- * with underscores, derived from the shared storage prefix.
+ * choices made in one exercise never bleed into another.
  */
-const EXERCISE_KEY_PREFIX = `${STORAGE_PREFIX.toUpperCase()}_EXERCISE`;
-
 export const EXERCISE_STORAGE_KEYS = {
-  romaji: `${EXERCISE_KEY_PREFIX}_ROMAJI`,
-  character: `${EXERCISE_KEY_PREFIX}_CHARACTER`,
-  scriptPair: `${EXERCISE_KEY_PREFIX}_SCRIPT_PAIR`,
-  writing: `${EXERCISE_KEY_PREFIX}_WRITING`,
-  sentence: `${EXERCISE_KEY_PREFIX}_SENTENCE`
+  romaji: storageKey('EXERCISE_ROMAJI'),
+  character: storageKey('EXERCISE_CHARACTER'),
+  scriptPair: storageKey('EXERCISE_SCRIPT_PAIR'),
+  writing: storageKey('EXERCISE_WRITING'),
+  sentence: storageKey('EXERCISE_SENTENCE')
 } as const;
 
 export type CharacterDirection = 'character' | 'kana-romaji';

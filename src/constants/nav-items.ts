@@ -6,6 +6,7 @@ import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
+import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
 import {
@@ -132,6 +133,12 @@ export const navGroups: NavGroup[] = [
     label: { en: 'Sentence writing', vi: 'Viết câu' },
     path: routes.sentences,
     icon: CreateOutlinedIcon,
+    children: []
+  },
+  {
+    label: { en: 'Flashcards', vi: 'Flashcards' },
+    path: routes.flashcards,
+    icon: StyleOutlinedIcon,
     children: []
   }
 ];

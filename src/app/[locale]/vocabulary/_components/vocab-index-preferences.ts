@@ -1,4 +1,4 @@
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import { readPersistedValue } from '@/utils/use-persistent-state.ts';
 
 export type FlashcardFront = 'ja' | 'meaning';
@@ -12,15 +12,15 @@ export type VocabIndexPreferences = {
   to: number;
 };
 
-export const FLASHCARD_FRONT_STORAGE_KEY = `${STORAGE_PREFIX}-vocab-flashcard-front`;
+export const FLASHCARD_FRONT_STORAGE_KEY = storageKey('VOCAB_FLASHCARD_FRONT');
 
-export const FLASHCARD_GUIDE_SEEN_KEY = `${STORAGE_PREFIX}-vocab-flashcard-guide-seen`;
+export const FLASHCARD_GUIDE_SEEN_KEY = storageKey('VOCAB_FLASHCARD_GUIDE_SEEN');
 
 export function sanitizeFlashcardGuideSeen(value: unknown): boolean {
   return value === true;
 }
 
-export const VOCAB_INDEX_STORAGE_KEY = `${STORAGE_PREFIX}-vocab-index`;
+export const VOCAB_INDEX_STORAGE_KEY = storageKey('VOCAB_INDEX');
 
 export function sanitizeFlashcardFront(value: unknown): FlashcardFront {
   if (value === 'meaning' || value === 'en' || value === 'vi') {

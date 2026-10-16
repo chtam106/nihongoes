@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import { alpha, type Theme } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { routes } from '@/constants/routes.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import {
   isNavGroupActive,
@@ -188,7 +189,10 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
           const isLoadingChildren = group.courseLevel ? loadingLevels[group.courseLevel] : false;
           const GroupIcon = group.icon;
           const isAlphabetGroup = group.labelKey === 'nav.alphabet';
-          const isGroupHighlighted = logicalPathname === group.path;
+          const isGroupHighlighted =
+            logicalPathname === group.path ||
+            (group.path === routes.flashcards &&
+              logicalPathname.startsWith(`${routes.flashcards}/`));
 
           return (
             <Box

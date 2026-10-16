@@ -1,0 +1,23 @@
+export const flashcards = {
+  title: 'Flashcards',
+  empty: 'No collections yet.',
+  myCollections: 'My collections',
+  defaultCollections: 'Default collections',
+  count: '{count} cards',
+  newCollection: 'New collection',
+  collectionName: 'Collection name',
+  create: 'Create',
+  renameTitle: 'Rename collection',
+  renameName: 'Rename {name}',
+  save: 'Save',
+  delete: 'Delete',
+  deleteTitle: 'Delete collection',
+  deleteName: 'Delete {name}',
+  deleteBody: 'Delete "{name}"? The words stay in the courses.',
+  cancel: 'Cancel',
+  saveTo: 'Save to...',
+  close: 'Close',
+  addToCollection: 'Add to collection',
+  studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
+  missing: 'This collection is not on this device.'
+};
