@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Box, Drawer, Toolbar, type SxProps, type Theme } from '@mui/material';
+import { Box, Drawer, type SxProps, type Theme } from '@mui/material';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 const AppDrawerContent = lazy(() => import('@/components/app-drawer-content'));
@@ -27,13 +27,7 @@ export function Menu({ drawerWidth, mobileOpen, onClose }: MenuProps) {
   };
 
   const drawerContent = (
-    <Suspense
-      fallback={
-        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-          <Toolbar />
-        </Box>
-      }
-    >
+    <Suspense fallback={<Box sx={{ height: '100%' }} />}>
       <AppDrawerContent onNavigate={onClose} />
     </Suspense>
   );
