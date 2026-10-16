@@ -17,8 +17,7 @@ export const seo = {
   },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
-    description:
-      'Kanji thông dụng (Jōyō) theo lớp tiểu học và cấp Kanken.'
+    description: 'Kanji thông dụng (Jōyō) theo lớp tiểu học và cấp Kanken.'
   },
   n5: {
     intro: {

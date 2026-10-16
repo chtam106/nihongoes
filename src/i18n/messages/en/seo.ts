@@ -18,8 +18,7 @@ export const seo = {
   },
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
-    description:
-      'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'
+    description: 'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'
   },
   n5: {
     intro: {

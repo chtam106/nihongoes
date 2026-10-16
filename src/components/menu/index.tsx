@@ -27,9 +27,7 @@ export function Menu({ drawerWidth, mobileOpen, onClose }: MenuProps) {
   };
 
   const drawerContent = (
-    <Suspense
-      fallback={<Box sx={{ height: '100%' }} />}
-    >
+    <Suspense fallback={<Box sx={{ height: '100%' }} />}>
       <AppDrawerContent onNavigate={onClose} />
     </Suspense>
   );
