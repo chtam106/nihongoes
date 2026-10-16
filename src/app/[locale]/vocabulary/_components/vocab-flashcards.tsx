@@ -5,6 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, IconButton, Paper, Stack, Typography } from '@mui/material';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { focusVisibleSx } from '@/theme/focus.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import type { VocabItem } from '@/types/course.ts';
 import type { Locale } from '@/types/i18n.ts';
@@ -103,12 +104,15 @@ function FlipCard({ item, locale, front }: FlipCardProps) {
       aria-label={t('course.vocabIndexFlashcardsHint')}
       onClick={handleFlip}
       onKeyDown={handleCardKeyDown}
-      sx={{
+      sx={(theme) => ({
         position: 'relative',
         minHeight: 220,
         transformStyle: 'preserve-3d',
-        cursor: 'pointer'
-      }}
+        cursor: 'pointer',
+        WebkitTapHighlightColor: 'transparent',
+        '&:focus': { outline: 'none' },
+        '&:focus-visible': focusVisibleSx(theme)
+      })}
     >
       <Paper
         elevation={0}
