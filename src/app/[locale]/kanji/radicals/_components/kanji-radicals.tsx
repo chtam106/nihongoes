@@ -214,6 +214,7 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
         sx={[
           elevatedSurfaceSx,
           {
+            height: '100%',
             position: 'relative',
             p: 2,
             display: 'flex',
