@@ -8,9 +8,41 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import { FuriganaText } from '@/components/furigana-text';
 import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { ChoiceButton } from '@/features/course/choice-button';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { ResultScreen } from '@/features/course/shared';
 import { useVocabQuiz } from './use-vocab-quiz.ts';
-import type { VocabMode } from './vocab-quiz.ts';
+import type { VocabMode, VocabQuestion } from './vocab-quiz.ts';
+
+type QuizPromptProps = {
+  question: VocabQuestion;
+  displayPrompt: string;
+};
+
+function QuizPrompt({ question, displayPrompt }: QuizPromptProps) {
+  const paper = (
+    <Paper elevation={0} sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
+      <Typography
+        variant={question.promptJa ? 'h3' : 'h5'}
+        component="p"
+        sx={{ fontWeight: 600 }}
+        lang={question.promptJa ? 'ja' : undefined}
+      >
+        {question.promptJa && <FuriganaText text={displayPrompt} ruby={question.promptRuby} />}
+        {!question.promptJa && displayPrompt}
+      </Typography>
+    </Paper>
+  );
+
+  if (!question.cardId || !question.cardType) {
+    return paper;
+  }
+
+  return (
+    <SaveableCard cardId={question.cardId} cardType={question.cardType}>
+      {paper}
+    </SaveableCard>
+  );
+}
 
 type VocabMcqPanelProps = {
   lesson: Lesson;
@@ -82,23 +114,7 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
         >
           {promptLabel}
         </Typography>
-        <Paper
-          elevation={0}
-          sx={[elevatedSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}
-        >
-          <Typography
-            variant={question.promptJa ? 'h3' : 'h5'}
-            component="p"
-            sx={{ fontWeight: 600 }}
-            lang={question.promptJa ? 'ja' : undefined}
-          >
-            {question.promptJa ? (
-              <FuriganaText text={displayPrompt} ruby={question.promptRuby} />
-            ) : (
-              displayPrompt
-            )}
-          </Typography>
-        </Paper>
+        <QuizPrompt question={question} displayPrompt={displayPrompt} />
       </Box>
 
       <Box

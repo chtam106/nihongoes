@@ -10,6 +10,8 @@ import {
   type Lesson
 } from '@/constants/courses/index.ts';
 import { PageContainer } from '@/components/page-container';
+import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
+import { SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
 import { SEGMENT_BUTTON_STACK_SPACING } from '@/features/alphabet/exercise/control-styles.ts';
@@ -21,9 +23,10 @@ import type { VocabExerciseFormat, VocabMode } from './vocab-quiz.ts';
 type VocabExerciseProps = {
   lesson: Lesson;
   level: CourseLevel;
+  defaults: readonly DefaultCollection[];
 };
 
-function VocabExercise({ lesson, level }: VocabExerciseProps) {
+function VocabExercise({ lesson, level, defaults }: VocabExerciseProps) {
   const { locale, t } = useTranslation();
   const { prefs, setExerciseFormat, setMode, setIncludeReference } = useVocabExercisePreferences();
   const showReferenceToggle = lessonHasReferenceQuizVocab(lesson);
@@ -50,83 +53,86 @@ function VocabExercise({ lesson, level }: VocabExerciseProps) {
   const panelKey = `${prefs.exerciseFormat}:${prefs.mode}:${prefs.includeReference}`;
 
   return (
-    <PageContainer>
-      <Stack spacing={3}>
-        <LessonQuizHeader lesson={lesson} section="vocabulary" />
+    <SaveCardScope defaults={defaults}>
+      <PageContainer>
+        <Stack spacing={3}>
+          <LessonQuizHeader lesson={lesson} section="vocabulary" />
 
-        <Stack spacing={SEGMENT_BUTTON_STACK_SPACING}>
-          <ToggleButtonGroup
-            exclusive
-            fullWidth
-            color="primary"
-            value={prefs.exerciseFormat}
-            onChange={handleFormatChange}
-            aria-label={t('course.vocabExerciseFormat')}
-          >
-            <ToggleButton value="match">{t('course.vocabExerciseMatch')}</ToggleButton>
-            <ToggleButton value="mcq">{t('course.vocabExerciseMcq')}</ToggleButton>
-          </ToggleButtonGroup>
-
-          {prefs.exerciseFormat === 'mcq' && (
+          <Stack spacing={SEGMENT_BUTTON_STACK_SPACING}>
             <ToggleButtonGroup
               exclusive
               fullWidth
               color="primary"
-              value={prefs.mode}
-              onChange={handleModeChange}
-              aria-label={t('course.vocabulary')}
+              value={prefs.exerciseFormat}
+              onChange={handleFormatChange}
+              aria-label={t('course.vocabExerciseFormat')}
             >
-              <ToggleButton value="word-meaning">{t('course.vocabWordToMeaning')}</ToggleButton>
-              <ToggleButton value="meaning-word">{t('course.vocabMeaningToWord')}</ToggleButton>
+              <ToggleButton value="match">{t('course.vocabExerciseMatch')}</ToggleButton>
+              <ToggleButton value="mcq">{t('course.vocabExerciseMcq')}</ToggleButton>
             </ToggleButtonGroup>
+
+            {prefs.exerciseFormat === 'mcq' && (
+              <ToggleButtonGroup
+                exclusive
+                fullWidth
+                color="primary"
+                value={prefs.mode}
+                onChange={handleModeChange}
+                aria-label={t('course.vocabulary')}
+              >
+                <ToggleButton value="word-meaning">{t('course.vocabWordToMeaning')}</ToggleButton>
+                <ToggleButton value="meaning-word">{t('course.vocabMeaningToWord')}</ToggleButton>
+              </ToggleButtonGroup>
+            )}
+
+            {showReferenceToggle && (
+              <FormControlLabel
+                sx={{ mx: 0, ml: 0, pl: 0, my: 0, alignItems: 'center' }}
+                control={
+                  <Checkbox
+                    size="small"
+                    checked={prefs.includeReference}
+                    onChange={handleReferenceChange}
+                    aria-label={t('course.vocabIncludeReference')}
+                  />
+                }
+                label={t('course.vocabIncludeReference')}
+              />
+            )}
+          </Stack>
+
+          {prefs.exerciseFormat === 'match' && (
+            <VocabMatchPanel
+              key={panelKey}
+              lesson={lesson}
+              level={level}
+              locale={locale}
+              includeReference={prefs.includeReference}
+            />
           )}
 
-          {showReferenceToggle && (
-            <FormControlLabel
-              sx={{ mx: 0, ml: 0, pl: 0, my: 0, alignItems: 'center' }}
-              control={
-                <Checkbox
-                  size="small"
-                  checked={prefs.includeReference}
-                  onChange={handleReferenceChange}
-                  aria-label={t('course.vocabIncludeReference')}
-                />
-              }
-              label={t('course.vocabIncludeReference')}
+          {prefs.exerciseFormat === 'mcq' && (
+            <VocabMcqPanel
+              key={panelKey}
+              lesson={lesson}
+              level={level}
+              locale={locale}
+              mode={prefs.mode}
+              includeReference={prefs.includeReference}
             />
           )}
         </Stack>
-
-        {prefs.exerciseFormat === 'match' && (
-          <VocabMatchPanel
-            key={panelKey}
-            lesson={lesson}
-            level={level}
-            locale={locale}
-            includeReference={prefs.includeReference}
-          />
-        )}
-
-        {prefs.exerciseFormat === 'mcq' && (
-          <VocabMcqPanel
-            key={panelKey}
-            lesson={lesson}
-            level={level}
-            locale={locale}
-            mode={prefs.mode}
-            includeReference={prefs.includeReference}
-          />
-        )}
-      </Stack>
-    </PageContainer>
+      </PageContainer>
+    </SaveCardScope>
   );
 }
 
 type ExercisePageProps = {
   level: CourseLevel;
+  defaults: readonly DefaultCollection[];
 };
 
-function ExercisePage({ level }: ExercisePageProps) {
+function ExercisePage({ level, defaults }: ExercisePageProps) {
   const { lessonId } = useParams<{ lessonId: string }>();
   const { locale } = useTranslation();
   const lesson = lessonId ? getLesson(level, lessonId) : undefined;
@@ -135,7 +141,14 @@ function ExercisePage({ level }: ExercisePageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <VocabExercise key={`${level}:${lesson.id}:${locale}`} lesson={lesson} level={level} />;
+  return (
+    <VocabExercise
+      key={`${level}:${lesson.id}:${locale}`}
+      lesson={lesson}
+      level={level}
+      defaults={defaults}
+    />
+  );
 }
 
 export default ExercisePage;

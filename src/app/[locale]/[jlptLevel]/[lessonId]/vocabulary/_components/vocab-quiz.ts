@@ -1,5 +1,6 @@
 import { referenceVocabItems } from '@/constants/courses/index.ts';
 import type { Lesson, RubySegment, VocabItem } from '@/constants/courses/index.ts';
+import { flashcardCardId, type FlashcardCardType } from '@/constants/flashcards/collections.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
 export type VocabMode = 'word-meaning' | 'meaning-word';
@@ -26,6 +27,9 @@ export type VocabQuestion = {
   speech: string;
   options: VocabOption[];
   correctId: string;
+  /** Collection id when the prompt is a lesson vocab word or phrase. */
+  cardId?: string;
+  cardType?: FlashcardCardType;
 };
 
 /**
@@ -65,6 +69,8 @@ export type VocabMatchPair = {
   speech: string;
   meaning: string;
   ruby?: RubySegment[];
+  cardId?: string;
+  cardType?: FlashcardCardType;
 };
 
 type VocabEntry = {
@@ -72,6 +78,14 @@ type VocabEntry = {
   speech: string;
   meaning: string;
   ruby?: RubySegment[];
+  cardId?: string;
+  cardType?: FlashcardCardType;
+};
+
+type TaggedVocabItem = {
+  item: VocabItem;
+  cardId?: string;
+  cardType?: FlashcardCardType;
 };
 
 /**
@@ -102,14 +116,28 @@ function unique(values: string[]): string[] {
   return Array.from(new Set(values));
 }
 
-function collectItems(lesson: Lesson, includeReference: boolean): VocabItem[] {
-  const core = [...lesson.vocab, ...(lesson.phrases ?? [])];
+function collectItems(lesson: Lesson, includeReference: boolean): TaggedVocabItem[] {
+  const core: TaggedVocabItem[] = [
+    ...lesson.vocab.map((item, index) => ({
+      item,
+      cardId: flashcardCardId(lesson.number, index),
+      cardType: 'vocab' as const
+    })),
+    ...(lesson.phrases ?? []).map((item, index) => ({
+      item,
+      cardId: flashcardCardId(lesson.number, lesson.vocab.length + index),
+      cardType: 'phrase' as const
+    }))
+  ];
 
   if (!includeReference) {
     return core;
   }
 
-  return [...core, ...referenceVocabItems(lesson.reference, { quizOnly: true })];
+  return [
+    ...core,
+    ...referenceVocabItems(lesson.reference, { quizOnly: true }).map((item) => ({ item }))
+  ];
 }
 
 /**
@@ -123,20 +151,23 @@ export function buildVocabEntries(
 ): VocabEntry[] {
   const entries: VocabEntry[] = [];
 
-  for (const item of collectItems(lesson, includeReference)) {
+  for (const tagged of collectItems(lesson, includeReference)) {
+    const { item } = tagged;
     const meaning = item.meaning[locale];
     const speech = item.speech ?? item.kana;
     const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
+    const save = { cardId: tagged.cardId, cardType: tagged.cardType };
 
     if (hasKanji) {
       entries.push({
         surface: item.kanji!,
         speech,
         meaning,
-        ruby: item.ruby
+        ruby: item.ruby,
+        ...save
       });
     } else {
-      entries.push({ surface: item.kana, speech, meaning });
+      entries.push({ surface: item.kana, speech, meaning, ...save });
     }
   }
 
@@ -193,7 +224,9 @@ function buildQuestion(
       promptRuby: entry.ruby,
       speech: entry.speech,
       options,
-      correctId
+      correctId,
+      cardId: entry.cardId,
+      cardType: entry.cardType
     };
   }
 
@@ -216,7 +249,9 @@ function buildQuestion(
     promptJa: false,
     speech: entry.speech,
     options,
-    correctId
+    correctId,
+    cardId: entry.cardId,
+    cardType: entry.cardType
   };
 }
 
@@ -252,7 +287,9 @@ function toMatchPair(entry: VocabEntry, serial: number): VocabMatchPair {
     surface: entry.surface,
     speech: entry.speech,
     meaning: entry.meaning,
-    ruby: entry.ruby
+    ruby: entry.ruby,
+    cardId: entry.cardId,
+    cardType: entry.cardType
   };
 }
 

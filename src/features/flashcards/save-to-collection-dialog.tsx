@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import {
@@ -43,6 +43,18 @@ export function SaveToCollectionDialog({
   const [creating, setCreating] = useState(false);
   const [name, setName] = useState('');
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const clear = () => window.getSelection()?.removeAllRanges();
+    clear();
+    const frame = window.requestAnimationFrame(clear);
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [open]);
+
   const handleClose = () => {
     setCreating(false);
     setName('');
@@ -84,7 +96,7 @@ export function SaveToCollectionDialog({
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent sx={{ px: 0, py: 0 }}>
+      <DialogContent sx={{ px: 0, py: 0, userSelect: 'none' }}>
         {customCollections.length === 0 && (
           <Typography variant="body1" color="text.secondary" sx={{ px: 3, py: 1 }}>
             {t('flashcards.empty')}

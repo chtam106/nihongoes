@@ -1,4 +1,5 @@
 import KanjiRadicalsPage from './_components/kanji-radicals.tsx';
+import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
 import { KANJI_RADICALS_PATH } from '@/constants/kanji/index.ts';
 import { computeRadicalUsage } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -17,5 +18,5 @@ export default async function Page({ params }: PageProps) {
   await primePageLocale(params);
   const usage = computeRadicalUsage();
 
-  return <KanjiRadicalsPage usage={usage} />;
+  return <KanjiRadicalsPage usage={usage} defaults={getLightFlashcardDefaults().collections} />;
 }

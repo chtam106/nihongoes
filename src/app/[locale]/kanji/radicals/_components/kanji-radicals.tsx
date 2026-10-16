@@ -23,6 +23,8 @@ import type { SelectChangeEvent } from '@mui/material/Select';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
+import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
+import { SaveableCard, SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
@@ -205,66 +207,68 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
   const { t } = useTranslation();
 
   return (
-    <Paper
-      elevation={0}
-      id={`radical-${index}`}
-      sx={[
-        elevatedSurfaceSx,
-        {
-          position: 'relative',
-          p: 2,
-          display: 'flex',
-          gap: 1.5,
-          alignItems: 'center',
-          scrollMarginTop: { xs: 72, md: 88 },
-          transition: 'outline-color 0.2s, background-color 0.2s'
-        },
-        highlighted && {
-          outline: '2px solid',
-          outlineColor: 'primary.main',
-          outlineOffset: 2,
-          bgcolor: 'action.selected'
-        }
-      ]}
-    >
-      <Typography
-        component="span"
-        sx={{
-          position: 'absolute',
-          top: 6,
-          left: 8,
-          zIndex: 1,
-          fontSize: 12,
-          lineHeight: 1,
-          fontWeight: 600,
-          color: 'text.secondary'
-        }}
+    <SaveableCard cardId={`radical:${radical.number}`} cardType="radical">
+      <Paper
+        elevation={0}
+        id={`radical-${index}`}
+        sx={[
+          elevatedSurfaceSx,
+          {
+            position: 'relative',
+            p: 2,
+            display: 'flex',
+            gap: 1.5,
+            alignItems: 'center',
+            scrollMarginTop: { xs: 72, md: 88 },
+            transition: 'outline-color 0.2s, background-color 0.2s'
+          },
+          highlighted && {
+            outline: '2px solid',
+            outlineColor: 'primary.main',
+            outlineOffset: 2,
+            bgcolor: 'action.selected'
+          }
+        ]}
       >
-        #{index}
-      </Typography>
-      <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
-        <Typography lang="ja" sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1 }}>
-          {radical.char}
+        <Typography
+          component="span"
+          sx={{
+            position: 'absolute',
+            top: 6,
+            left: 8,
+            zIndex: 1,
+            fontSize: 12,
+            lineHeight: 1,
+            fontWeight: 600,
+            color: 'text.secondary'
+          }}
+        >
+          #{index}
         </Typography>
-        {radical.variants && (
-          <Typography lang="ja" variant="body2" color="text.secondary" sx={{ lineHeight: 1.2 }}>
-            {radical.variants.join(' ')}
+        <Box sx={{ flexShrink: 0, textAlign: 'center', minWidth: 44 }}>
+          <Typography lang="ja" sx={{ fontWeight: 600, fontSize: 36, lineHeight: 1.1 }}>
+            {radical.char}
           </Typography>
-        )}
-      </Box>
-      <Box sx={{ minWidth: 0 }}>
-        <RadicalMeaning radical={radical} />
-        {typeof usageCount === 'number' && (
-          <Typography
-            variant="caption"
-            color="primary.main"
-            sx={{ display: 'block', fontWeight: 600 }}
-          >
-            {t('kanji.radicalsUsageCount', { count: usageCount })}
-          </Typography>
-        )}
-      </Box>
-    </Paper>
+          {radical.variants && (
+            <Typography lang="ja" variant="body2" color="text.secondary" sx={{ lineHeight: 1.2 }}>
+              {radical.variants.join(' ')}
+            </Typography>
+          )}
+        </Box>
+        <Box sx={{ minWidth: 0 }}>
+          <RadicalMeaning radical={radical} />
+          {typeof usageCount === 'number' && (
+            <Typography
+              variant="caption"
+              color="primary.main"
+              sx={{ display: 'block', fontWeight: 600 }}
+            >
+              {t('kanji.radicalsUsageCount', { count: usageCount })}
+            </Typography>
+          )}
+        </Box>
+      </Paper>
+    </SaveableCard>
   );
 }
 
@@ -298,6 +302,7 @@ function RadicalMeaning({ radical }: RadicalMeaningProps) {
 type KanjiRadicalsPageProps = {
   /** How many kanji are headed by each radical, keyed by radical number (computed server-side). */
   usage: Record<number, number>;
+  defaults: readonly DefaultCollection[];
 };
 
 const radicalCardGridSx = {
@@ -336,7 +341,7 @@ function RadicalCardGrid({ items, activeIndex, usage }: RadicalCardGridProps) {
   );
 }
 
-function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
+function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
   const { t } = useTranslation();
   const hash = typeof window === 'undefined' ? '' : window.location.hash;
   const [sort, setSort] = useState<RadicalSort>('default');
@@ -360,83 +365,85 @@ function KanjiRadicalsPage({ usage }: KanjiRadicalsPageProps) {
   };
 
   return (
-    <PageContainer bottomGutter>
-      <Stack spacing={4}>
-        <Box>
-          <Box sx={{ mb: 1 }}>
-            <Button
-              component={RouterLink}
-              to={KANJI_BASE_PATH}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {t('kanji.overviewTitle')}
-            </Button>
+    <SaveCardScope defaults={defaults}>
+      <PageContainer bottomGutter>
+        <Stack spacing={4}>
+          <Box>
+            <Box sx={{ mb: 1 }}>
+              <Button
+                component={RouterLink}
+                to={KANJI_BASE_PATH}
+                startIcon={<ArrowBackIcon />}
+                variant="text"
+                sx={{ px: 0 }}
+              >
+                {t('kanji.overviewTitle')}
+              </Button>
+            </Box>
+            <Heading component="h1" gutterBottom>
+              {t('kanji.radicalsTitle')}
+            </Heading>
+            <Typography variant="body1" color="text.secondary">
+              {t('kanji.radicalsIntro')}
+            </Typography>
           </Box>
-          <Heading component="h1" gutterBottom>
-            {t('kanji.radicalsTitle')}
-          </Heading>
-          <Typography variant="body1" color="text.secondary">
-            {t('kanji.radicalsIntro')}
-          </Typography>
-        </Box>
 
-        <RadicalLegend />
+          <RadicalLegend />
 
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 2,
-            flexWrap: 'wrap'
-          }}
-        >
-          <FormControl size="small" sx={{ minWidth: 220 }}>
-            <InputLabel id="radical-sort-label">{t('kanji.radicalsSortLabel')}</InputLabel>
-            <Select<RadicalSort>
-              labelId="radical-sort-label"
-              value={sort}
-              label={t('kanji.radicalsSortLabel')}
-              onChange={handleSortChange}
-            >
-              <MenuItem value="default">{t('kanji.radicalsSortDefault')}</MenuItem>
-              <MenuItem value="usage">{t('kanji.radicalsSortUsage')}</MenuItem>
-            </Select>
-          </FormControl>
-          <Link
-            component={RouterLink}
-            to={KANJI_RADICALS_QUIZ_PATH}
-            underline="hover"
+          <Box
             sx={{
-              marginLeft: 'auto',
-              display: 'inline-flex',
+              display: 'flex',
               alignItems: 'center',
-              gap: 0.5
+              gap: 2,
+              flexWrap: 'wrap'
             }}
           >
-            {t('kanji.radicalsQuizLink')}
-            <ArrowForwardIcon sx={{ fontSize: '1rem' }} />
-          </Link>
-        </Box>
+            <FormControl size="small" sx={{ minWidth: 220 }}>
+              <InputLabel id="radical-sort-label">{t('kanji.radicalsSortLabel')}</InputLabel>
+              <Select<RadicalSort>
+                labelId="radical-sort-label"
+                value={sort}
+                label={t('kanji.radicalsSortLabel')}
+                onChange={handleSortChange}
+              >
+                <MenuItem value="default">{t('kanji.radicalsSortDefault')}</MenuItem>
+                <MenuItem value="usage">{t('kanji.radicalsSortUsage')}</MenuItem>
+              </Select>
+            </FormControl>
+            <Link
+              component={RouterLink}
+              to={KANJI_RADICALS_QUIZ_PATH}
+              underline="hover"
+              sx={{
+                marginLeft: 'auto',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 0.5
+              }}
+            >
+              {t('kanji.radicalsQuizLink')}
+              <ArrowForwardIcon sx={{ fontSize: '1rem' }} />
+            </Link>
+          </Box>
 
-        {sort === 'usage' && (
-          <RadicalCardGrid items={byUsage} activeIndex={activeIndex} usage={usage} />
-        )}
+          {sort === 'usage' && (
+            <RadicalCardGrid items={byUsage} activeIndex={activeIndex} usage={usage} />
+          )}
 
-        {sort === 'default' &&
-          groups.map((group) => (
-            <Box key={group.strokes}>
-              <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
-                {t('kanji.radicalsStrokesGroup', { count: group.strokes })}
-              </Heading>
-              <RadicalCardGrid items={group.items} activeIndex={activeIndex} />
-            </Box>
-          ))}
-      </Stack>
+          {sort === 'default' &&
+            groups.map((group) => (
+              <Box key={group.strokes}>
+                <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>
+                  {t('kanji.radicalsStrokesGroup', { count: group.strokes })}
+                </Heading>
+                <RadicalCardGrid items={group.items} activeIndex={activeIndex} />
+              </Box>
+            ))}
+        </Stack>
 
-      <ScrollToTopButton />
-    </PageContainer>
+        <ScrollToTopButton />
+      </PageContainer>
+    </SaveCardScope>
   );
 }
 

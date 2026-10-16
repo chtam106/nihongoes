@@ -2,12 +2,9 @@
 
 import { useState, type KeyboardEvent } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import BookmarkAddOutlined from '@mui/icons-material/BookmarkAddOutlined';
-import BookmarkAddedOutlined from '@mui/icons-material/BookmarkAddedOutlined';
 import { Box, Button, IconButton, Paper, Stack, Typography } from '@mui/material';
 import type { FlashcardCardType } from '@/constants/flashcards/collections.ts';
-import { SaveToCollectionDialog } from '@/features/flashcards/save-to-collection-dialog.tsx';
-import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
@@ -193,26 +190,12 @@ function FlipCard({ item, locale, front, type }: FlipCardProps) {
 
 export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) {
   const { t } = useTranslation();
-  const { collections, defaults } = useFlashcardCollections();
   const [session, setSession] = useState(() => startSession(cards));
-  const [saveCardId, setSaveCardId] = useState<string | null>(null);
   const { deck, index } = session;
   const finished = index >= deck.length;
   const card = deck[index];
-  const saved = card
-    ? collections.some((collection) => {
-        if (!collection.cards.some((item) => item.id === card.id)) {
-          return false;
-        }
-
-        const builtin = defaults.find((item) => item.id === collection.id);
-
-        return !builtin || !builtin.cards.some((item) => item.id === card.id);
-      })
-    : false;
 
   const handleNext = () => {
-    setSaveCardId(null);
     setSession((previous) => ({
       ...previous,
       index: previous.index + 1
@@ -220,7 +203,6 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
   };
 
   const handleRestart = () => {
-    setSaveCardId(null);
     setSession(startSession(cards));
   };
 
@@ -253,7 +235,9 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
 
       {!finished && card && (
         <>
-          <Box
+          <SaveableCard
+            cardId={card.id}
+            cardType={card.type}
             sx={{
               position: 'relative',
               width: '100%',
@@ -270,22 +254,7 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
                 type={card.type}
               />
             </Box>
-            <IconButton
-              aria-label={t('flashcards.addToCollection')}
-              onClick={() => setSaveCardId(card.id)}
-              sx={{
-                position: 'absolute',
-                top: 8,
-                right: 8,
-                zIndex: 2,
-                color: saved ? 'primary.main' : 'text.secondary',
-                WebkitTapHighlightColor: 'transparent'
-              }}
-            >
-              {saved && <BookmarkAddedOutlined />}
-              {!saved && <BookmarkAddOutlined />}
-            </IconButton>
-          </Box>
+          </SaveableCard>
           <IconButton
             onClick={handleNext}
             aria-label={t('course.next')}
@@ -306,13 +275,6 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
           </IconButton>
         </>
       )}
-
-      <SaveToCollectionDialog
-        open={saveCardId !== null}
-        cardId={saveCardId}
-        cardType={card && saveCardId === card.id ? card.type : null}
-        onClose={() => setSaveCardId(null)}
-      />
     </Stack>
   );
 }

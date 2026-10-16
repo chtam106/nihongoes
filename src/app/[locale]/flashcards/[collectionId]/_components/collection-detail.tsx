@@ -19,6 +19,7 @@ import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
+import { SaveCardProvider } from '@/features/flashcards/save-card-gesture.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
@@ -45,7 +46,9 @@ function useClientReady() {
 export function CollectionDetail({ collectionId, defaults, extraCards }: CollectionDetailProps) {
   return (
     <FlashcardDefaultsProvider defaults={defaults} extraCards={extraCards}>
-      <CollectionStudy collectionId={collectionId} />
+      <SaveCardProvider>
+        <CollectionStudy collectionId={collectionId} />
+      </SaveCardProvider>
     </FlashcardDefaultsProvider>
   );
 }
