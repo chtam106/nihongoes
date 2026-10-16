@@ -166,7 +166,7 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
                   value={prefs.front}
                   onChange={handleFrontChange}
                   aria-label={t('course.vocabIndexFlashcardsFront')}
-                  sx={{ order: 2, flexBasis: { xs: '100%', md: 'auto' } }}
+                  sx={{ order: 2, width: '100%', justifyContent: 'center' }}
                 >
                   <ToggleButton value="ja">
                     {t('course.vocabIndexFlashcardsFrontWord')}

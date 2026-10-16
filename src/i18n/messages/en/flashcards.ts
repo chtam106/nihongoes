@@ -1,7 +1,8 @@
 export const flashcards = {
   title: 'Flashcards',
-  intro: 'Save words from vocabulary flashcards into collections, then review them here.',
   empty: 'No collections yet.',
+  myCollections: 'My collections',
+  defaultCollections: 'Default collections',
   count: '{count} cards',
   newCollection: 'New collection',
   collectionName: 'Collection name',
@@ -17,5 +18,6 @@ export const flashcards = {
   saveTo: 'Save to...',
   close: 'Close',
   addToCollection: 'Add to collection',
-  studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.'
+  studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
+  missing: 'This collection is not on this device.'
 };

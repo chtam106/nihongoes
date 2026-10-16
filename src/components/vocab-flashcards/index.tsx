@@ -5,6 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BookmarkAddOutlined from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedOutlined from '@mui/icons-material/BookmarkAddedOutlined';
 import { Box, Button, IconButton, Paper, Stack, Typography } from '@mui/material';
+import type { FlashcardCardType } from '@/constants/flashcards/collections.ts';
 import { SaveToCollectionDialog } from '@/features/flashcards/save-to-collection-dialog.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { VocabHeadword } from '@/components/vocab-headword';
@@ -24,6 +25,7 @@ const faceSx = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  textAlign: 'center',
   bgcolor: 'background.paper',
   backfaceVisibility: 'hidden',
   WebkitBackfaceVisibility: 'hidden',
@@ -32,8 +34,31 @@ const faceSx = {
 
 export type VocabFlashcard = {
   id: string;
+  type: FlashcardCardType;
   item: VocabItem;
 };
+
+function isLargeCard(type: FlashcardCardType) {
+  return type !== 'phrase';
+}
+
+function japaneseFaceSx(type: FlashcardCardType) {
+  const centered = {
+    width: '100%',
+    minWidth: 0,
+    textAlign: 'center' as const
+  };
+
+  if (type === 'vocab') {
+    return { ...centered, fontSize: '3.5rem', lineHeight: 1.35 };
+  }
+
+  if (type === 'phrase') {
+    return { ...centered, fontSize: '2.5rem', lineHeight: 1.35 };
+  }
+
+  return { ...centered, fontSize: '6rem', lineHeight: 1 };
+}
 
 type VocabFlashcardsProps = {
   cards: VocabFlashcard[];
@@ -45,18 +70,28 @@ type FlashcardFaceProps = {
   item: VocabItem;
   locale: Locale;
   side: FlashcardFront;
+  type: FlashcardCardType;
 };
 
-function FlashcardFace({ item, locale, side }: FlashcardFaceProps) {
+function FlashcardFace({ item, locale, side, type }: FlashcardFaceProps) {
+  const large = isLargeCard(type);
+
   if (side === 'ja') {
-    return <VocabHeadword item={item} variant="h5" />;
+    return <VocabHeadword item={item} variant="h5" sx={japaneseFaceSx(type)} />;
   }
 
   return (
     <Typography
       variant="h5"
       component="p"
-      sx={{ fontWeight: 600, textAlign: 'center', userSelect: 'text' }}
+      sx={(theme) => ({
+        width: '100%',
+        minWidth: 0,
+        fontWeight: 600,
+        textAlign: 'center',
+        userSelect: 'text',
+        ...(large ? { fontSize: `calc(${theme.typography.h5.fontSize} * 1.2)` } : {})
+      })}
     >
       {item.meaning[locale]}
     </Typography>
@@ -87,9 +122,10 @@ type FlipCardProps = {
   item: VocabItem;
   locale: Locale;
   front: FlashcardFront;
+  type: FlashcardCardType;
 };
 
-function FlipCard({ item, locale, front }: FlipCardProps) {
+function FlipCard({ item, locale, front, type }: FlipCardProps) {
   const { t } = useTranslation();
   const [flipped, setFlipped] = useState(false);
   const back: FlashcardFront = front === 'ja' ? 'meaning' : 'ja';
@@ -135,7 +171,7 @@ function FlipCard({ item, locale, front }: FlipCardProps) {
           }
         ]}
       >
-        <FlashcardFace item={item} locale={locale} side={front} />
+        <FlashcardFace item={item} locale={locale} side={front} type={type} />
       </Paper>
       <Paper
         elevation={0}
@@ -149,7 +185,7 @@ function FlipCard({ item, locale, front }: FlipCardProps) {
           }
         ]}
       >
-        <FlashcardFace item={item} locale={locale} side={back} />
+        <FlashcardFace item={item} locale={locale} side={back} type={type} />
       </Paper>
     </Box>
   );
@@ -165,13 +201,13 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
   const card = deck[index];
   const saved = card
     ? collections.some((collection) => {
-        if (!collection.cardIds.includes(card.id)) {
+        if (!collection.cards.some((item) => item.id === card.id)) {
           return false;
         }
 
         const builtin = defaults.find((item) => item.id === collection.id);
 
-        return !builtin || !builtin.cardIds.includes(card.id);
+        return !builtin || !builtin.cards.some((item) => item.id === card.id);
       })
     : false;
 
@@ -226,7 +262,13 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
             }}
           >
             <Box sx={{ perspective: 1000 }}>
-              <FlipCard key={`${index}:${front}`} item={card.item} locale={locale} front={front} />
+              <FlipCard
+                key={`${index}:${front}`}
+                item={card.item}
+                locale={locale}
+                front={front}
+                type={card.type}
+              />
             </Box>
             <IconButton
               aria-label={t('flashcards.addToCollection')}
@@ -248,6 +290,7 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
             onClick={handleNext}
             aria-label={t('course.next')}
             sx={(theme) => ({
+              '&&': { mt: 4 },
               alignSelf: 'center',
               width: 48,
               height: 48,
@@ -267,6 +310,7 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
       <SaveToCollectionDialog
         open={saveCardId !== null}
         cardId={saveCardId}
+        cardType={card && saveCardId === card.id ? card.type : null}
         onClose={() => setSaveCardId(null)}
       />
     </Stack>

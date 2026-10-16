@@ -88,5 +88,9 @@ export function getSeoRouteKey(pathname: string): SeoRouteKey {
     return 'kanji' as SeoRouteKey;
   }
 
+  if (pathname === routes.flashcards || pathname.startsWith(`${routes.flashcards}/`)) {
+    return 'flashcards' as SeoRouteKey;
+  }
+
   return (pathToSeoKey[pathname] as SeoRouteKey | undefined) ?? 'notFound';
 }

@@ -1,18 +1,28 @@
 import { getAllCourseLessons } from '@/constants/courses/index.ts';
-import { flashcardCardId } from '@/constants/flashcards/collections.ts';
+import {
+  flashcardCardId,
+  flashcardCardType,
+  type FlashcardCard,
+  type FlashcardCardType
+} from '@/constants/flashcards/collections.ts';
 import type { CourseLevel, Lesson, VocabItem } from '@/types/course.ts';
 
 export type FlashcardEntry = {
   id: string;
+  type: FlashcardCardType;
   lessonNumber: number;
   item: VocabItem;
 };
 
 function lessonFlashcards(lesson: Lesson): FlashcardEntry[] {
-  const items = [...lesson.vocab, ...(lesson.phrases ?? [])];
+  const items = [
+    ...lesson.vocab.map((item) => ({ item, type: 'vocab' as const })),
+    ...(lesson.phrases ?? []).map((item) => ({ item, type: 'phrase' as const }))
+  ];
 
-  return items.map((item, index) => ({
+  return items.map(({ item, type }, index) => ({
     id: flashcardCardId(lesson.number, index),
+    type,
     lessonNumber: lesson.number,
     item
   }));
@@ -40,13 +50,20 @@ function cardMap() {
 }
 
 export function flashcardIdsForLevel(level: CourseLevel): string[] {
+  return flashcardRefsForLevel(level).map((card) => card.id);
+}
+
+export function flashcardRefsForLevel(level: CourseLevel): FlashcardCard[] {
   return getAllCourseLessons()
     .filter((entry) => entry.level === level)
-    .flatMap(({ lesson }) => lessonFlashcards(lesson).map((card) => card.id));
+    .flatMap(({ lesson }) =>
+      lessonFlashcards(lesson).map((card) => ({ id: card.id, type: card.type }))
+    );
 }
 
 export type ResolvableFlashcard = {
   id: string;
+  type: FlashcardCardType;
   item: VocabItem;
 };
 
@@ -69,12 +86,12 @@ export function createFlashcardResolver(extra: readonly ResolvableFlashcard[]) {
 
       const card = vocab.get(id) ?? extras.get(id);
 
-      if (!card) {
+      if (!card || !flashcardCardType(id)) {
         continue;
       }
 
       seen.add(id);
-      resolved.push({ id: card.id, item: card.item });
+      resolved.push({ id: card.id, type: card.type, item: card.item });
     }
 
     return resolved;

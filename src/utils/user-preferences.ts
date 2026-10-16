@@ -1,4 +1,4 @@
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import { readPersistedValue, usePersistentState } from '@/utils/use-persistent-state.ts';
 
 export type UserPreferences = {
@@ -19,7 +19,7 @@ export const DEFAULT_USER_PREFERENCES: UserPreferences = {
   showTranslationsByDefault: false
 };
 
-const USER_PREFERENCES_KEY = `${STORAGE_PREFIX}-user-preferences`;
+const USER_PREFERENCES_KEY = storageKey('USER_PREFERENCES');
 
 function sanitizeUserPreferences(value: unknown): UserPreferences {
   if (!value || typeof value !== 'object') {

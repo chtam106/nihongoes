@@ -1,7 +1,7 @@
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import type { VocabExerciseFormat, VocabMode } from './vocab-quiz.ts';
 
-export const VOCAB_EXERCISE_STORAGE_KEY = `${STORAGE_PREFIX.toUpperCase()}_EXERCISE_VOCAB`;
+export const VOCAB_EXERCISE_STORAGE_KEY = storageKey('EXERCISE_VOCAB');
 
 export type VocabExercisePreferences = {
   exerciseFormat: VocabExerciseFormat;

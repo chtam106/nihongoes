@@ -1,5 +1,5 @@
 import { getAlphabetItems } from '@/constants/alphabet-charts.ts';
-import { flashcardIdsForLevel, type ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
+import { flashcardRefsForLevel, type ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
 import { formatRadicalMeaning, radicalsInStrokeOrder } from '@/constants/kanji/index.ts';
 
@@ -20,6 +20,7 @@ function kanaCards(script: 'hiragana' | 'katakana', mark: 'h' | 'k'): Resolvable
     seen.add(cell.char);
     cards.push({
       id: `kana:${mark}:${cell.char}`,
+      type: 'kana',
       item: {
         kana: cell.char,
         romaji: cell.romaji,
@@ -34,6 +35,7 @@ function kanaCards(script: 'hiragana' | 'katakana', mark: 'h' | 'k'): Resolvable
 function radicalCards(): ResolvableFlashcard[] {
   return radicalsInStrokeOrder().map((radical) => ({
     id: `radical:${radical.number}`,
+    type: 'radical',
     item: {
       kana: radical.char,
       romaji: radical.hanViet,
@@ -63,12 +65,12 @@ export function getLightFlashcardDefaults(): LightFlashcardDefaults {
         {
           id: 'default-hiragana',
           name: { en: 'Hiragana alphabet', vi: 'Bảng chữ cái Hiragana' },
-          cardIds: hiragana.map((card) => card.id)
+          cards: hiragana.map((card) => ({ id: card.id, type: card.type }))
         },
         {
           id: 'default-katakana',
           name: { en: 'Katakana alphabet', vi: 'Bảng chữ cái Katakana' },
-          cardIds: katakana.map((card) => card.id)
+          cards: katakana.map((card) => ({ id: card.id, type: card.type }))
         },
         {
           id: 'default-n5',
@@ -76,7 +78,7 @@ export function getLightFlashcardDefaults(): LightFlashcardDefaults {
             en: 'JLPT N5 vocabulary and phrases',
             vi: 'Từ vựng và mẫu câu JLPT N5'
           },
-          cardIds: flashcardIdsForLevel('n5')
+          cards: flashcardRefsForLevel('n5')
         },
         {
           id: 'default-n4',
@@ -84,12 +86,12 @@ export function getLightFlashcardDefaults(): LightFlashcardDefaults {
             en: 'JLPT N4 vocabulary and phrases',
             vi: 'Từ vựng và mẫu câu JLPT N4'
           },
-          cardIds: flashcardIdsForLevel('n4')
+          cards: flashcardRefsForLevel('n4')
         },
         {
           id: 'default-radicals',
           name: { en: 'Kanji radicals', vi: 'Bộ thủ kanji' },
-          cardIds: radicals.map((card) => card.id)
+          cards: radicals.map((card) => ({ id: card.id, type: card.type }))
         }
       ]
     };

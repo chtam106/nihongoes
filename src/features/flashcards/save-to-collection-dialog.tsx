@@ -15,18 +15,31 @@ import {
   TextField,
   Typography
 } from '@mui/material';
+import {
+  isDefaultCollectionId,
+  type FlashcardCardType
+} from '@/constants/flashcards/collections.ts';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 type SaveToCollectionDialogProps = {
   open: boolean;
   cardId: string | null;
+  cardType: FlashcardCardType | null;
   onClose: () => void;
 };
 
-export function SaveToCollectionDialog({ open, cardId, onClose }: SaveToCollectionDialogProps) {
+export function SaveToCollectionDialog({
+  open,
+  cardId,
+  cardType,
+  onClose
+}: SaveToCollectionDialogProps) {
   const { t } = useTranslation();
   const { collections, toggleCard, create } = useFlashcardCollections();
+  const customCollections = collections.filter(
+    (collection) => !isDefaultCollectionId(collection.id)
+  );
   const [creating, setCreating] = useState(false);
   const [name, setName] = useState('');
 
@@ -41,7 +54,7 @@ export function SaveToCollectionDialog({ open, cardId, onClose }: SaveToCollecti
       return;
     }
 
-    toggleCard(collectionId, cardId);
+    toggleCard(collectionId, cardId, cardType ?? undefined);
   };
 
   const handleCreate = () => {
@@ -49,7 +62,7 @@ export function SaveToCollectionDialog({ open, cardId, onClose }: SaveToCollecti
       return;
     }
 
-    create(name, cardId);
+    create(name, cardId, cardType ?? undefined);
     setName('');
     setCreating(false);
   };
@@ -72,13 +85,13 @@ export function SaveToCollectionDialog({ open, cardId, onClose }: SaveToCollecti
         </IconButton>
       </DialogTitle>
       <DialogContent sx={{ px: 0, py: 0 }}>
-        {collections.length === 0 && (
+        {customCollections.length === 0 && (
           <Typography variant="body1" color="text.secondary" sx={{ px: 3, py: 1 }}>
             {t('flashcards.empty')}
           </Typography>
         )}
-        {collections.map((collection) => {
-          const checked = cardId !== null && collection.cardIds.includes(cardId);
+        {customCollections.map((collection) => {
+          const checked = cardId !== null && collection.cards.some((card) => card.id === cardId);
 
           return (
             <Box
@@ -90,27 +103,22 @@ export function SaveToCollectionDialog({ open, cardId, onClose }: SaveToCollecti
                 gap: 1,
                 px: 2,
                 py: 1,
+                minWidth: 0,
                 cursor: 'pointer',
                 '&:hover': { bgcolor: 'action.hover' }
               }}
             >
-              <Checkbox checked={checked} onChange={() => handleToggle(collection.id)} />
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'baseline',
-                  gap: 1,
-                  minWidth: 0,
-                  flex: 1
-                }}
+              <Checkbox
+                checked={checked}
+                onChange={() => handleToggle(collection.id)}
+                sx={{ flexShrink: 0 }}
+              />
+              <Typography
+                component="span"
+                sx={{ fontWeight: 600, minWidth: 0, overflowWrap: 'break-word' }}
               >
-                <Typography component="span" sx={{ fontWeight: 600 }} noWrap>
-                  {collection.name}
-                </Typography>
-                <Typography component="span" color="text.secondary" sx={{ flexShrink: 0 }}>
-                  {t('flashcards.count', { count: collection.cardIds.length })}
-                </Typography>
-              </Box>
+                {collection.name}
+              </Typography>
             </Box>
           );
         })}

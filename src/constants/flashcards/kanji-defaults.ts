@@ -1,5 +1,9 @@
 import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
-import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
+import {
+  flashcardCard,
+  type DefaultCollection,
+  type FlashcardCard
+} from '@/constants/flashcards/collections.ts';
 import { formatKanjiMeaning } from '@/constants/kanji/index.ts';
 import { kanjiTracks } from '@/constants/kanji/tracks.ts';
 
@@ -32,22 +36,24 @@ export function getKanjiGradeFlashcards(): KanjiGradeFlashcards {
         continue;
       }
 
-      const cardIds: string[] = [];
+      const collectionCards: FlashcardCard[] = [];
       const seen = new Set<string>();
 
       for (const lesson of track.lessons) {
         for (const entry of lesson.kanji) {
           const id = `kanji:${track.slug}:${entry.char}`;
+          const card = flashcardCard(id);
 
-          if (seen.has(id)) {
+          if (!card || seen.has(id)) {
             continue;
           }
 
           seen.add(id);
-          cardIds.push(id);
+          collectionCards.push(card);
           const reading = readingOf(entry.kunyomi, entry.onyomi, entry.char);
           cards.push({
             id,
+            type: card.type,
             item: {
               kanji: entry.char,
               kana: reading,
@@ -64,7 +70,7 @@ export function getKanjiGradeFlashcards(): KanjiGradeFlashcards {
       collections.push({
         id: `default-${track.slug}`,
         name: track.name,
-        cardIds
+        cards: collectionCards
       });
     }
 

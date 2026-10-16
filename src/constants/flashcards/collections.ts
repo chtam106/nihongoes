@@ -1,10 +1,29 @@
-import { STORAGE_PREFIX } from '@/constants/site.ts';
+import { storageKey } from '@/constants/site.ts';
 import type { Bilingual } from '@/types/course.ts';
 import type { Locale } from '@/types/i18n.ts';
 
-export const FLASHCARD_COLLECTIONS_KEY = `${STORAGE_PREFIX}-flashcard-collections`;
+export const FLASHCARD_COLLECTIONS_KEY = storageKey('FLASHCARD_COLLECTIONS');
 
-export const FLASHCARD_COLLECTIONS_FRONT_KEY = `${STORAGE_PREFIX}-flashcard-collections-front`;
+export const FLASHCARD_COLLECTIONS_FRONT_KEY = storageKey('FLASHCARD_COLLECTIONS_FRONT');
+
+export const EMPTY_COLLECTION_FRONTS: Record<string, 'ja' | 'meaning'> = {};
+
+/** Per-collection Word first / Meaning first choice. A legacy single string is ignored. */
+export function sanitizeCollectionFronts(value: unknown): Record<string, 'ja' | 'meaning'> {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return EMPTY_COLLECTION_FRONTS;
+  }
+
+  const fronts: Record<string, 'ja' | 'meaning'> = {};
+
+  for (const [id, front] of Object.entries(value)) {
+    if (front === 'ja' || front === 'meaning') {
+      fronts[id] = front;
+    }
+  }
+
+  return fronts;
+}
 
 const MAX_NAME_LENGTH = 80;
 
@@ -13,17 +32,24 @@ const KANA_CARD_ID = /^kana:[hk]:.+$/u;
 const RADICAL_CARD_ID = /^radical:\d+$/;
 const KANJI_CARD_ID = /^kanji:(?:grade-[1-6]|kanken-(?:4|3|pre-2|2)):.+$/u;
 
+export type FlashcardCardType = 'vocab' | 'phrase' | 'kana' | 'radical' | 'kanji';
+
+export type FlashcardCard = {
+  id: string;
+  type: FlashcardCardType;
+};
+
 export type FlashcardCollection = {
   id: string;
   /** Empty when a built-in collection was edited but not renamed. */
   name: string;
-  cardIds: string[];
+  cards: FlashcardCard[];
 };
 
 export type DefaultCollection = {
   id: string;
   name: Bilingual;
-  cardIds: string[];
+  cards: FlashcardCard[];
 };
 
 export type FlashcardStore = {
@@ -39,14 +65,112 @@ export function isDefaultCollectionId(id: string) {
   return id.startsWith('default-');
 }
 
-export function isFlashcardCardId(value: string) {
-  return (
-    value.length <= 48 &&
-    (VOCAB_CARD_ID.test(value) ||
-      KANA_CARD_ID.test(value) ||
-      RADICAL_CARD_ID.test(value) ||
-      KANJI_CARD_ID.test(value))
-  );
+export function flashcardCardType(id: string): FlashcardCardType | null {
+  if (id.length > 48) {
+    return null;
+  }
+
+  if (VOCAB_CARD_ID.test(id)) {
+    return 'vocab';
+  }
+
+  if (KANA_CARD_ID.test(id)) {
+    return 'kana';
+  }
+
+  if (RADICAL_CARD_ID.test(id)) {
+    return 'radical';
+  }
+
+  if (KANJI_CARD_ID.test(id)) {
+    return 'kanji';
+  }
+
+  return null;
+}
+
+export function flashcardCard(id: string, type?: FlashcardCardType): FlashcardCard | null {
+  const derived = flashcardCardType(id);
+
+  if (!derived) {
+    return null;
+  }
+
+  if (derived === 'vocab' && type === 'phrase') {
+    return { id, type: 'phrase' };
+  }
+
+  return { id, type: derived };
+}
+
+export function flashcardCards(ids: readonly string[]): FlashcardCard[] {
+  const seen = new Set<string>();
+  const cards: FlashcardCard[] = [];
+
+  for (const id of ids) {
+    const card = flashcardCard(id);
+
+    if (!card || seen.has(card.id)) {
+      continue;
+    }
+
+    seen.add(card.id);
+    cards.push(card);
+  }
+
+  return cards;
+}
+
+function sanitizeCards(value: unknown): FlashcardCard[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  const seen = new Set<string>();
+  const cards: FlashcardCard[] = [];
+
+  for (const entry of value) {
+    const id = typeof entry === 'string' ? entry : readCardId(entry);
+    const hinted = readCardType(entry);
+    const card = id ? flashcardCard(id, hinted) : null;
+
+    if (!card || seen.has(card.id)) {
+      continue;
+    }
+
+    seen.add(card.id);
+    cards.push(card);
+  }
+
+  return cards;
+}
+
+function readCardId(entry: unknown) {
+  if (!entry || typeof entry !== 'object' || typeof (entry as { id?: unknown }).id !== 'string') {
+    return null;
+  }
+
+  return (entry as { id: string }).id;
+}
+
+function readCardType(entry: unknown): FlashcardCardType | undefined {
+  if (!entry || typeof entry !== 'object') {
+    return undefined;
+  }
+
+  const type = (entry as { type?: unknown }).type;
+
+  if (
+    type === 'vocab' ||
+    type === 'phrase' ||
+    type === 'kana' ||
+    type === 'radical' ||
+    type === 'kanji'
+  ) {
+    return type;
+  }
+
+  return undefined;
 }
 
 export function flashcardCardId(lessonNumber: number, index: number) {
@@ -75,18 +199,10 @@ export function sanitizeFlashcardCollections(value: unknown): FlashcardCollectio
       continue;
     }
 
-    const cardIds = Array.isArray(record.cardIds)
-      ? [
-          ...new Set(
-            record.cardIds.filter(
-              (cardId): cardId is string => typeof cardId === 'string' && isFlashcardCardId(cardId)
-            )
-          )
-        ]
-      : [];
+    const cards = sanitizeCards(record.cards ?? record.cardIds);
 
     seenIds.add(id);
-    collections.push({ id, name, cardIds });
+    collections.push({ id, name, cards });
   }
 
   return collections;
@@ -95,9 +211,12 @@ export function sanitizeFlashcardCollections(value: unknown): FlashcardCollectio
 export function toggleCardInCollection(
   collections: FlashcardCollection[],
   collectionId: string,
-  cardId: string
+  cardId: string,
+  type?: FlashcardCardType
 ): FlashcardCollection[] {
-  if (!isFlashcardCardId(cardId)) {
+  const card = flashcardCard(cardId, type);
+
+  if (!card) {
     return collections;
   }
 
@@ -106,13 +225,13 @@ export function toggleCardInCollection(
       return collection;
     }
 
-    const hasCard = collection.cardIds.includes(cardId);
+    const hasCard = collection.cards.some((item) => item.id === card.id);
 
     return {
       ...collection,
-      cardIds: hasCard
-        ? collection.cardIds.filter((id) => id !== cardId)
-        : [...collection.cardIds, cardId]
+      cards: hasCard
+        ? collection.cards.filter((item) => item.id !== card.id)
+        : [...collection.cards, card]
     };
   });
 }
@@ -120,7 +239,7 @@ export function toggleCardInCollection(
 export function createCollection(
   collections: FlashcardCollection[],
   name: string,
-  options: { id: string; cardId?: string }
+  options: { id: string; cardId?: string; cardType?: FlashcardCardType }
 ): FlashcardCollection[] {
   const trimmed = name.trim().slice(0, MAX_NAME_LENGTH);
   const id = options.id.trim();
@@ -129,9 +248,10 @@ export function createCollection(
     return collections;
   }
 
-  const cardIds = options.cardId && isFlashcardCardId(options.cardId) ? [options.cardId] : [];
+  const card = options.cardId ? flashcardCard(options.cardId, options.cardType) : null;
+  const cards = card ? [card] : [];
 
-  return [{ id, name: trimmed, cardIds }, ...collections];
+  return [{ id, name: trimmed, cards }, ...collections];
 }
 
 export function renameCollection(
@@ -141,7 +261,7 @@ export function renameCollection(
 ): FlashcardCollection[] {
   const trimmed = name.trim().slice(0, MAX_NAME_LENGTH);
 
-  if (!trimmed) {
+  if (!trimmed || isDefaultCollectionId(collectionId)) {
     return collections;
   }
 
@@ -183,21 +303,21 @@ export function sanitizeFlashcardStore(value: unknown): FlashcardStore {
   };
 }
 
-function sameCardSet(left: readonly string[], right: readonly string[]) {
+function sameCardSet(left: readonly FlashcardCard[], right: readonly FlashcardCard[]) {
   if (left.length !== right.length) {
     return false;
   }
 
-  const ids = new Set(left);
+  const ids = new Set(left.map((card) => card.id));
 
-  return right.every((id) => ids.has(id));
+  return right.every((card) => ids.has(card.id));
 }
 
 function isBuiltinName(name: string, builtin: DefaultCollection) {
   return name === builtin.name.en || name === builtin.name.vi;
 }
 
-/** Built-in collections, with the user's renames, edits, and deletions applied. */
+/** Built-in collections, with the user's card edits and deletions applied. */
 export function resolveCollections(
   store: FlashcardStore,
   defaults: readonly DefaultCollection[],
@@ -213,13 +333,13 @@ export function resolveCollections(
       const override = overrides.get(collection.id);
 
       if (!override) {
-        return { id: collection.id, name: collection.name[locale], cardIds: collection.cardIds };
+        return { id: collection.id, name: collection.name[locale], cards: collection.cards };
       }
 
       return {
         id: collection.id,
-        name: override.name || collection.name[locale],
-        cardIds: override.cardIds
+        name: collection.name[locale],
+        cards: override.cards
       };
     });
 
@@ -254,17 +374,14 @@ export function storeFromResolved(
       continue;
     }
 
-    if (
-      isBuiltinName(collection.name, builtin) &&
-      sameCardSet(collection.cardIds, builtin.cardIds)
-    ) {
+    if (isBuiltinName(collection.name, builtin) && sameCardSet(collection.cards, builtin.cards)) {
       continue;
     }
 
     overrides.push({
       id: collection.id,
       name: isBuiltinName(collection.name, builtin) ? '' : collection.name,
-      cardIds: collection.cardIds
+      cards: collection.cards
     });
   }
 

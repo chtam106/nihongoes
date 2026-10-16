@@ -1,7 +1,8 @@
 export const flashcards = {
   title: 'Flashcards',
-  intro: 'Lưu từ từ flashcard từ vựng vào bộ sưu tập, rồi ôn tại đây.',
   empty: 'Chưa có bộ sưu tập.',
+  myCollections: 'Bộ sưu tập của tôi',
+  defaultCollections: 'Bộ sưu tập mặc định',
   count: '{count} thẻ',
   newCollection: 'Bộ sưu tập mới',
   collectionName: 'Tên bộ sưu tập',
@@ -17,5 +18,6 @@ export const flashcards = {
   saveTo: 'Lưu vào...',
   close: 'Đóng',
   addToCollection: 'Thêm vào bộ sưu tập',
-  studyEmpty: 'Bộ sưu tập này chưa có thẻ. Hãy lưu từ từ flashcard từ vựng.'
+  studyEmpty: 'Bộ sưu tập này chưa có thẻ. Hãy lưu từ từ flashcard từ vựng.',
+  missing: 'Bộ sưu tập này không có trên thiết bị này.'
 };
