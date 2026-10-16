@@ -370,7 +370,7 @@ function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
       <PageContainer bottomGutter>
         <Stack spacing={4}>
           <Box>
-            <Box sx={{ mb: 1}}>
+            <Box sx={{ mb: 1 }}>
               <Button
                 component={RouterLink}
                 to={KANJI_BASE_PATH}
