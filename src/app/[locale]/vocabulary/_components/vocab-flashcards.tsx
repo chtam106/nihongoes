@@ -165,8 +165,6 @@ export function VocabFlashcards({ items, locale, front }: VocabFlashcardsProps) 
       spacing={2}
       sx={{
         width: '100%',
-        minHeight: { xs: 'calc(100dvh - 22rem)', md: 440 },
-        justifyContent: 'center',
         alignItems: 'center'
       }}
     >

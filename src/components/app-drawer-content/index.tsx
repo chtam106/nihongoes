@@ -11,7 +11,6 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Toolbar,
   Typography
 } from '@mui/material';
 import { alpha, type Theme } from '@mui/material/styles';
@@ -145,8 +144,6 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-      <Toolbar />
-
       <List
         className="hide-scrollbar"
         disablePadding

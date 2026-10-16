@@ -30,7 +30,6 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
       position="fixed"
       elevation={0}
       sx={{
-        zIndex: (muiTheme) => muiTheme.zIndex.drawer + 1,
         color: 'text.primary',
         bgcolor: (muiTheme) => alpha(muiTheme.palette.background.paper, 0.85),
         backdropFilter: 'blur(8px)',
