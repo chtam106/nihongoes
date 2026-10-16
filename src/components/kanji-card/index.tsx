@@ -3,6 +3,7 @@
 import { Box, Paper, Typography } from '@mui/material';
 import { alpha, type Theme } from '@mui/material/styles';
 import { SpeakableSurface } from '@/components/speakable-surface';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatKanjiMeaning,
@@ -11,7 +12,8 @@ import {
   KANJI_SHOW_ON_KUN_READINGS,
   type KanjiComponent,
   type KanjiEntry,
-  type KanjiReadingPart
+  type KanjiReadingPart,
+  type KanjiTrackSlug
 } from '@/constants/kanji/index.ts';
 import { COMPONENT_ROLE_COLORS } from '@/theme/kanji-component-colors.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
@@ -168,146 +170,149 @@ type KanjiCardProps = {
   entry: KanjiEntry;
   /** 1-based position of this kanji within the lesson. */
   index: number;
+  trackSlug: KanjiTrackSlug;
 };
 
 /**
  * A full study card for a single kanji: big glyph, meaning, component radicals,
  * on/kun readings, optional mnemonic and usage note, and speakable example words.
  */
-export function KanjiCard({ entry, index }: KanjiCardProps) {
+export function KanjiCard({ entry, index, trackSlug }: KanjiCardProps) {
   const { locale, t } = useTranslation();
 
   return (
-    <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
-      <Paper
-        elevation={0}
-        sx={[
-          elevatedSurfaceSx,
-          {
-            position: 'relative',
-            p: 2,
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            gap: 2,
-            alignItems: 'center'
-          }
-        ]}
-      >
-        <Typography
-          component="span"
-          aria-label={t('kanji.kanjiHeading', { number: index })}
-          sx={{
-            position: 'absolute',
-            top: 6,
-            left: 8,
-            zIndex: 1,
-            fontSize: 14,
-            lineHeight: 1,
-            fontWeight: 600,
-            color: 'text.secondary'
-          }}
+    <SaveableCard cardId={`kanji:${trackSlug}:${entry.char}`} cardType="kanji">
+      <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
+        <Paper
+          elevation={0}
+          sx={[
+            elevatedSurfaceSx,
+            {
+              position: 'relative',
+              p: 2,
+              display: 'flex',
+              flexDirection: { xs: 'column', sm: 'row' },
+              gap: 2,
+              alignItems: 'center'
+            }
+          ]}
         >
-          #{index}
-        </Typography>
-        <Typography
-          component="span"
-          lang="ja"
-          sx={{
-            flexShrink: 0,
-            width: { xs: 64, md: 72 },
-            textAlign: 'center',
-            fontWeight: 600,
-            fontSize: { xs: 56, md: 64 },
-            lineHeight: 1
-          }}
-        >
-          {entry.char}
-        </Typography>
-        <Box sx={{ width: { xs: '100%', sm: 'auto' }, flex: { sm: 1 }, minWidth: 0 }}>
-          <Box
+          <Typography
+            component="span"
+            aria-label={t('kanji.kanjiHeading', { number: index })}
             sx={{
-              display: 'grid',
-              gridTemplateColumns: 'auto 1fr',
-              columnGap: 1,
-              rowGap: 0.5,
-              alignItems: 'baseline'
+              position: 'absolute',
+              top: 6,
+              left: 8,
+              zIndex: 1,
+              fontSize: 14,
+              lineHeight: 1,
+              fontWeight: 600,
+              color: 'text.secondary'
             }}
           >
-            <InfoRow
-              label={t('kanji.meaningLabel')}
-              value={locale === 'vi' ? formatKanjiMeaning(entry.meaning.vi) : entry.meaning.en}
-              emphasize
-            />
-            <ComponentsRow entry={entry} />
-            {KANJI_SHOW_ON_KUN_READINGS && entry.onyomi.length > 0 && (
-              <ReadingRow label={t('kanji.onReading')} readings={entry.onyomi} />
-            )}
-            {KANJI_SHOW_ON_KUN_READINGS && entry.kunyomi.length > 0 && (
-              <ReadingRow
-                label={t('kanji.kunReading')}
-                readings={entry.kunyomi.map(formatReading)}
-              />
-            )}
-          </Box>
-        </Box>
-      </Paper>
-
-      {entry.mnemonic && (
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
-            {t('kanji.mnemonic')}
+            #{index}
           </Typography>
-          <Typography variant="body2">{entry.mnemonic[locale]}</Typography>
-        </Box>
-      )}
-
-      {entry.note && (
-        <Box sx={{ mt: 2 }}>
-          <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
-            {t('kanji.note')}
+          <Typography
+            component="span"
+            lang="ja"
+            sx={{
+              flexShrink: 0,
+              width: { xs: 64, md: 72 },
+              textAlign: 'center',
+              fontWeight: 600,
+              fontSize: { xs: 56, md: 64 },
+              lineHeight: 1
+            }}
+          >
+            {entry.char}
           </Typography>
-          <Typography variant="body2">{entry.note[locale]}</Typography>
-        </Box>
-      )}
-
-      <Typography
-        variant="overline"
-        color="text.secondary"
-        sx={{ display: 'block', mt: 2, mb: 0.5 }}
-      >
-        {t('kanji.examples')}
-      </Typography>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
-          gap: 1
-        }}
-      >
-        {entry.examples.map((example, exampleIndex) => {
-          const isLoneLastOnMobile =
-            entry.examples.length % 2 === 1 && exampleIndex === entry.examples.length - 1;
-
-          return (
-            <SpeakableSurface
-              key={exampleWord(example.parts)}
-              text={exampleReading(example.parts)}
+          <Box sx={{ width: { xs: '100%', sm: 'auto' }, flex: { sm: 1 }, minWidth: 0 }}>
+            <Box
               sx={{
-                p: 1.5,
-                height: '100%',
-                gridColumn: isLoneLastOnMobile ? { xs: '1 / -1', md: 'auto' } : undefined
+                display: 'grid',
+                gridTemplateColumns: 'auto 1fr',
+                columnGap: 1,
+                rowGap: 0.5,
+                alignItems: 'baseline'
               }}
             >
-              <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
-                {renderKanjiExampleText(example.parts)}
-              </Typography>
-              <Typography variant="body2" sx={{ mt: 0.25 }}>
-                {example.meaning[locale]}
-              </Typography>
-            </SpeakableSurface>
-          );
-        })}
-      </Box>
-    </Paper>
+              <InfoRow
+                label={t('kanji.meaningLabel')}
+                value={locale === 'vi' ? formatKanjiMeaning(entry.meaning.vi) : entry.meaning.en}
+                emphasize
+              />
+              <ComponentsRow entry={entry} />
+              {KANJI_SHOW_ON_KUN_READINGS && entry.onyomi.length > 0 && (
+                <ReadingRow label={t('kanji.onReading')} readings={entry.onyomi} />
+              )}
+              {KANJI_SHOW_ON_KUN_READINGS && entry.kunyomi.length > 0 && (
+                <ReadingRow
+                  label={t('kanji.kunReading')}
+                  readings={entry.kunyomi.map(formatReading)}
+                />
+              )}
+            </Box>
+          </Box>
+        </Paper>
+
+        {entry.mnemonic && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
+              {t('kanji.mnemonic')}
+            </Typography>
+            <Typography variant="body2">{entry.mnemonic[locale]}</Typography>
+          </Box>
+        )}
+
+        {entry.note && (
+          <Box sx={{ mt: 2 }}>
+            <Typography variant="overline" color="text.secondary" sx={{ display: 'block' }}>
+              {t('kanji.note')}
+            </Typography>
+            <Typography variant="body2">{entry.note[locale]}</Typography>
+          </Box>
+        )}
+
+        <Typography
+          variant="overline"
+          color="text.secondary"
+          sx={{ display: 'block', mt: 2, mb: 0.5 }}
+        >
+          {t('kanji.examples')}
+        </Typography>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)' },
+            gap: 1
+          }}
+        >
+          {entry.examples.map((example, exampleIndex) => {
+            const isLoneLastOnMobile =
+              entry.examples.length % 2 === 1 && exampleIndex === entry.examples.length - 1;
+
+            return (
+              <SpeakableSurface
+                key={exampleWord(example.parts)}
+                text={exampleReading(example.parts)}
+                sx={{
+                  p: 1.5,
+                  height: '100%',
+                  gridColumn: isLoneLastOnMobile ? { xs: '1 / -1', md: 'auto' } : undefined
+                }}
+              >
+                <Typography variant="body1" component="span" lang="ja" sx={{ fontWeight: 600 }}>
+                  {renderKanjiExampleText(example.parts)}
+                </Typography>
+                <Typography variant="body2" sx={{ mt: 0.25 }}>
+                  {example.meaning[locale]}
+                </Typography>
+              </SpeakableSurface>
+            );
+          })}
+        </Box>
+      </Paper>
+    </SaveableCard>
   );
 }

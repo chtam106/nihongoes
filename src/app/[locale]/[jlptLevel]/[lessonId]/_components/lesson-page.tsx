@@ -42,6 +42,8 @@ import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { VocabCardGrid } from '@/components/vocab-card-grid';
+import { flashcardCardId, type DefaultCollection } from '@/constants/flashcards/collections.ts';
+import { SaveableCard, SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { elevatedSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 import { LessonNotFound } from '@/features/course/shared';
@@ -65,7 +67,14 @@ function VocabularySection({ lesson }: VocabularySectionProps) {
         </Heading>
       </Stack>
 
-      <VocabCardGrid items={lesson.vocab} locale={locale} />
+      <VocabCardGrid
+        cards={lesson.vocab.map((item, index) => ({
+          id: flashcardCardId(lesson.number, index),
+          type: 'vocab',
+          item
+        }))}
+        locale={locale}
+      />
     </Box>
   );
 }
@@ -96,16 +105,18 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
         }}
       >
         {lesson.phrases.map((phrase, index) => (
-          <SpeakableSurface
+          <SaveableCard
             key={`phrase-${index}-${phrase.kana}`}
-            text={phrase.speech ?? phrase.kana}
-            sx={{ p: 1.5 }}
+            cardId={flashcardCardId(lesson.number, lesson.vocab.length + index)}
+            cardType="phrase"
           >
-            <VocabHeadword item={phrase} />
-            <Typography variant="body2" sx={{ mt: 0.5 }}>
-              {phrase.meaning[locale]}
-            </Typography>
-          </SpeakableSurface>
+            <SpeakableSurface text={phrase.speech ?? phrase.kana} sx={{ p: 1.5, height: '100%' }}>
+              <VocabHeadword item={phrase} />
+              <Typography variant="body2" sx={{ mt: 0.5 }}>
+                {phrase.meaning[locale]}
+              </Typography>
+            </SpeakableSurface>
+          </SaveableCard>
         ))}
       </Box>
     </Box>
@@ -376,9 +387,10 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
 
 type LessonPageProps = {
   level: CourseLevel;
+  defaults: readonly DefaultCollection[];
 };
 
-function LessonPage({ level }: LessonPageProps) {
+function LessonPage({ level, defaults }: LessonPageProps) {
   const { lessonId } = useParams<{ lessonId: string }>();
   const { locale, t } = useTranslation();
 
@@ -395,73 +407,75 @@ function LessonPage({ level }: LessonPageProps) {
   const next = index < lessons.length - 1 ? lessons[index + 1] : undefined;
 
   return (
-    <PageContainer>
-      <Stack spacing={4}>
-        <Box>
-          <Heading component="h1">{lesson.title[locale]}</Heading>
+    <SaveCardScope defaults={defaults}>
+      <PageContainer>
+        <Stack spacing={4}>
+          <Box>
+            <Heading component="h1">{lesson.title[locale]}</Heading>
 
-          <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
-            {lesson.focus[locale]}
-          </Typography>
-        </Box>
-
-        <VocabularySection lesson={lesson} />
-        <PhrasesSection lesson={lesson} />
-        <GrammarSection lesson={lesson} />
-        <ConversationSection lesson={lesson} />
-
-        <PracticePanel level={level} lesson={lesson} />
-
-        <ReferenceSection lesson={lesson} />
-
-        <Stack
-          className="no-print"
-          direction="row"
-          spacing={1.5}
-          sx={{ justifyContent: 'space-between' }}
-        >
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
-            {previous && (
-              <Button
-                component={RouterLink}
-                to={lessonPath(level, previous.id)}
-                startIcon={<ArrowBackIcon />}
-                variant="text"
-                sx={{ px: 0 }}
-              >
-                {t('course.previousLesson')}
-              </Button>
-            )}
+            <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
+              {lesson.focus[locale]}
+            </Typography>
           </Box>
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {next && (
-              <Button
-                component={RouterLink}
-                to={lessonPath(level, next.id)}
-                endIcon={<ArrowForwardIcon />}
-                variant="text"
-                sx={{ px: 0 }}
-              >
-                {t('course.nextLesson')}
-              </Button>
-            )}
-            {!next && (
-              <Button
-                component={RouterLink}
-                to={VOCABULARY_PATH}
-                endIcon={<ArrowForwardIcon />}
-                variant="text"
-                sx={{ px: 0 }}
-              >
-                {t('course.vocabIndexHeading')}
-              </Button>
-            )}
-          </Box>
+
+          <VocabularySection lesson={lesson} />
+          <PhrasesSection lesson={lesson} />
+          <GrammarSection lesson={lesson} />
+          <ConversationSection lesson={lesson} />
+
+          <PracticePanel level={level} lesson={lesson} />
+
+          <ReferenceSection lesson={lesson} />
+
+          <Stack
+            className="no-print"
+            direction="row"
+            spacing={1.5}
+            sx={{ justifyContent: 'space-between' }}
+          >
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+              {previous && (
+                <Button
+                  component={RouterLink}
+                  to={lessonPath(level, previous.id)}
+                  startIcon={<ArrowBackIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('course.previousLesson')}
+                </Button>
+              )}
+            </Box>
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+              {next && (
+                <Button
+                  component={RouterLink}
+                  to={lessonPath(level, next.id)}
+                  endIcon={<ArrowForwardIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('course.nextLesson')}
+                </Button>
+              )}
+              {!next && (
+                <Button
+                  component={RouterLink}
+                  to={VOCABULARY_PATH}
+                  endIcon={<ArrowForwardIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('course.vocabIndexHeading')}
+                </Button>
+              )}
+            </Box>
+          </Stack>
         </Stack>
-      </Stack>
 
-      <LessonSectionNav lesson={lesson} />
-    </PageContainer>
+        <LessonSectionNav lesson={lesson} />
+      </PageContainer>
+    </SaveCardScope>
   );
 }
 

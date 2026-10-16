@@ -5,6 +5,8 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { KanjiCard } from '@/components/kanji-card';
+import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
+import { SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
@@ -53,60 +55,67 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
   const next = index < lessons.length - 1 ? lessons[index + 1] : undefined;
 
   return (
-    <PageContainer bottomGutter>
-      <Stack spacing={3}>
-        <Box>
-          <Heading component="h1">{lesson.title[locale]}</Heading>
-        </Box>
+    <SaveCardScope defaults={getLightFlashcardDefaults().collections}>
+      <PageContainer bottomGutter>
+        <Stack spacing={3}>
+          <Box>
+            <Heading component="h1">{lesson.title[locale]}</Heading>
+          </Box>
 
-        <KanjiReadingsNote collapsible />
+          <KanjiReadingsNote collapsible />
 
-        <KanjiComponentLegend collapsible />
+          <KanjiComponentLegend collapsible />
 
-        <Stack spacing={5}>
-          {lesson.kanji.map((entry, cardIndex) => (
-            <KanjiCard key={entry.char} entry={entry} index={cardIndex + 1} />
-          ))}
+          <Stack spacing={5}>
+            {lesson.kanji.map((entry, cardIndex) => (
+              <KanjiCard
+                key={entry.char}
+                entry={entry}
+                index={cardIndex + 1}
+                trackSlug={track.slug}
+              />
+            ))}
+          </Stack>
+
+          <KanjiPracticePanel trackSlug={track.slug} lesson={lesson} />
+
+          <Stack
+            className="no-print"
+            direction="row"
+            spacing={1.5}
+            sx={{ justifyContent: 'space-between' }}
+          >
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+              {previous && (
+                <Button
+                  component={RouterLink}
+                  to={kanjiLessonPath(track.slug, previous.id)}
+                  startIcon={<ArrowBackIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('course.previousLesson')}
+                </Button>
+              )}
+            </Box>
+            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+              {next && (
+                <Button
+                  component={RouterLink}
+                  to={kanjiLessonPath(track.slug, next.id)}
+                  endIcon={<ArrowForwardIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('course.nextLesson')}
+                </Button>
+              )}
+            </Box>
+          </Stack>
         </Stack>
 
-        <KanjiPracticePanel trackSlug={track.slug} lesson={lesson} />
-
-        <Stack
-          className="no-print"
-          direction="row"
-          spacing={1.5}
-          sx={{ justifyContent: 'space-between' }}
-        >
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
-            {previous && (
-              <Button
-                component={RouterLink}
-                to={kanjiLessonPath(track.slug, previous.id)}
-                startIcon={<ArrowBackIcon />}
-                variant="text"
-                sx={{ px: 0 }}
-              >
-                {t('course.previousLesson')}
-              </Button>
-            )}
-          </Box>
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {next && (
-              <Button
-                component={RouterLink}
-                to={kanjiLessonPath(track.slug, next.id)}
-                endIcon={<ArrowForwardIcon />}
-                variant="text"
-                sx={{ px: 0 }}
-              >
-                {t('course.nextLesson')}
-              </Button>
-            )}
-          </Box>
-        </Stack>
-      </Stack>
-
-      <ScrollToTopButton />
-    </PageContainer>
+        <ScrollToTopButton />
+      </PageContainer>
+    </SaveCardScope>
   );
 }

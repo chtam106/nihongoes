@@ -3,15 +3,23 @@
 import { Box, Typography } from '@mui/material';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { VocabHeadword } from '@/components/vocab-headword';
+import type { FlashcardCardType } from '@/constants/flashcards/collections.ts';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import type { Locale } from '@/types/i18n.ts';
 import type { VocabItem } from '@/types/course.ts';
 
+type VocabGridCard = {
+  id: string;
+  type: FlashcardCardType;
+  item: VocabItem;
+};
+
 type VocabCardGridProps = {
-  items: VocabItem[];
+  cards: VocabGridCard[];
   locale: Locale;
 };
 
-export function VocabCardGrid({ items, locale }: VocabCardGridProps) {
+export function VocabCardGrid({ cards, locale }: VocabCardGridProps) {
   return (
     <Box
       sx={{
@@ -20,17 +28,22 @@ export function VocabCardGrid({ items, locale }: VocabCardGridProps) {
         gap: 1.5
       }}
     >
-      {items.map((item, index) => (
-        <SpeakableSurface
-          key={`vocab-${index}-${item.kana}`}
-          text={item.speech ?? item.kana}
-          sx={{ p: 1.5 }}
+      {cards.map((card, index) => (
+        <SaveableCard
+          key={`vocab-${index}-${card.item.kana}`}
+          cardId={card.id}
+          cardType={card.type}
         >
-          <VocabHeadword item={item} />
-          <Typography variant="body2" sx={{ mt: 0.5 }}>
-            {item.meaning[locale]}
-          </Typography>
-        </SpeakableSurface>
+          <SpeakableSurface
+            text={card.item.speech ?? card.item.kana}
+            sx={{ p: 1.5, height: '100%' }}
+          >
+            <VocabHeadword item={card.item} />
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
+              {card.item.meaning[locale]}
+            </Typography>
+          </SpeakableSurface>
+        </SaveableCard>
       ))}
     </Box>
   );

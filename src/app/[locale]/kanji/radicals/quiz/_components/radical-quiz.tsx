@@ -20,6 +20,7 @@ import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progr
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
 import { ChoiceButton } from '@/features/course/choice-button';
+import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatRadicalMeaning,
@@ -219,14 +220,19 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
         >
           {t('kanji.radicalsQuizPrompt')}
         </Typography>
-        <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}>
-          <Typography
-            lang="ja"
-            sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1 }}
+        <SaveableCard cardId={`radical:${question.correctId}`} cardType="radical">
+          <Paper
+            elevation={0}
+            sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}
           >
-            {question.prompt}
-          </Typography>
-        </Paper>
+            <Typography
+              lang="ja"
+              sx={{ fontWeight: 600, fontSize: { xs: 72, md: 88 }, lineHeight: 1.1 }}
+            >
+              {question.prompt}
+            </Typography>
+          </Paper>
+        </SaveableCard>
       </Box>
 
       <Box

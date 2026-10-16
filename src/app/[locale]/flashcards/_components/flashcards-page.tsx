@@ -22,6 +22,7 @@ import {
   Typography
 } from '@mui/material';
 import { Heading } from '@/components/heading';
+import { HintText } from '@/components/hint-text';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
 import { flashcardCollectionPath } from '@/constants/courses/levels.ts';
@@ -259,6 +260,10 @@ function FlashcardsView() {
       <Stack spacing={3}>
         <Box>
           <Heading component="h1">{t('flashcards.title')}</Heading>
+          <Stack spacing={0.5} sx={{ mt: 1.5 }}>
+            <HintText>{t('flashcards.flipHint')}</HintText>
+            <HintText>{t('flashcards.saveHint')}</HintText>
+          </Stack>
         </Box>
 
         <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>

@@ -17,7 +17,9 @@ export const flashcards = {
   cancel: 'Cancel',
   saveTo: 'Save to...',
   close: 'Close',
-  addToCollection: 'Add to collection',
+  flipHint: 'Tap a card to flip it.',
+  saveHint:
+    'Right-click or long-press a card, a lesson word or phrase, or a vocab, kanji, or radical quiz prompt to save it.',
   studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
   missing: 'This collection is not on this device.'
 };
