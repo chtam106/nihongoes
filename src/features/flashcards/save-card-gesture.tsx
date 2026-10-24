@@ -82,6 +82,12 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
   const pressOriginRef = useRef<{ x: number; y: number } | null>(null);
   const suppressClickUntilRef = useRef(0);
   const selectBlockerRef = useRef<((event: Event) => void) | null>(null);
+  const transientDocCleanupRef = useRef<(() => void) | null>(null);
+
+  const stopTransientDocListeners = useCallback(() => {
+    transientDocCleanupRef.current?.();
+    transientDocCleanupRef.current = null;
+  }, []);
 
   const stopBlockingSelect = useCallback(() => {
     if (!selectBlockerRef.current) {
@@ -102,7 +108,12 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
     stopBlockingSelect();
   }, [stopBlockingSelect]);
 
-  useEffect(() => clearLongPress, [clearLongPress]);
+  useEffect(() => {
+    return () => {
+      clearLongPress();
+      stopTransientDocListeners();
+    };
+  }, [clearLongPress, stopTransientDocListeners]);
 
   const openSave = useCallback(() => {
     if (!context) {
@@ -120,24 +131,30 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
       clearTextSelection();
     };
 
-    document.addEventListener('click', swallowClick, true);
-    window.setTimeout(
-      () => document.removeEventListener('click', swallowClick, true),
-      LONG_PRESS_MS
-    );
-
     const blockContextMenu = (event: Event) => {
       event.preventDefault();
     };
 
+    document.addEventListener('click', swallowClick, true);
     document.addEventListener('contextmenu', blockContextMenu, true);
-    window.setTimeout(
-      () => document.removeEventListener('contextmenu', blockContextMenu, true),
-      LONG_PRESS_MS
-    );
+
+    const removeTransient = () => {
+      document.removeEventListener('click', swallowClick, true);
+      document.removeEventListener('contextmenu', blockContextMenu, true);
+    };
+
+    stopTransientDocListeners();
+    transientDocCleanupRef.current = removeTransient;
+    window.setTimeout(() => {
+      removeTransient();
+
+      if (transientDocCleanupRef.current === removeTransient) {
+        transientDocCleanupRef.current = null;
+      }
+    }, LONG_PRESS_MS);
 
     context.openSave({ id: cardId, type: cardType });
-  }, [cardId, cardType, context, stopBlockingSelect]);
+  }, [cardId, cardType, context, stopBlockingSelect, stopTransientDocListeners]);
 
   const onContextMenuCapture = useCallback(
     (event: MouseEvent<HTMLElement>) => {
