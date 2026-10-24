@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { FLASHCARDS_PATH } from '@/constants/courses/levels.ts';
 import { getKanjiGradeFlashcards } from '@/constants/flashcards/kanji-defaults.ts';
 import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
@@ -18,9 +19,11 @@ export default function Page() {
   const kanji = getKanjiGradeFlashcards();
 
   return (
-    <FlashcardsPage
-      defaults={[...light.collections, ...kanji.collections]}
-      extraCards={[...light.cards, ...kanji.cards]}
-    />
+    <Suspense fallback={null}>
+      <FlashcardsPage
+        defaults={[...light.collections, ...kanji.collections]}
+        extraCards={[...light.cards, ...kanji.cards]}
+      />
+    </Suspense>
   );
 }

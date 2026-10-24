@@ -61,6 +61,22 @@ export type FlashcardStore = {
 
 export const EMPTY_FLASHCARD_STORE: FlashcardStore = { overrides: [], hidden: [] };
 
+/** Stable id for the initial empty custom collection on `/flashcards?tab=mine`. */
+export const UNTITLED_FLASHCARD_COLLECTION_ID = 'untitled';
+
+export const UNTITLED_FLASHCARD_COLLECTION_NAME: Bilingual = {
+  en: 'Untitled collection',
+  vi: 'Bộ sưu tập chưa đặt tên'
+};
+
+export function untitledFlashcardCollection(locale: Locale): FlashcardCollection {
+  return {
+    id: UNTITLED_FLASHCARD_COLLECTION_ID,
+    name: UNTITLED_FLASHCARD_COLLECTION_NAME[locale],
+    cards: []
+  };
+}
+
 export function isDefaultCollectionId(id: string) {
   return id.startsWith('default-');
 }
@@ -274,6 +290,10 @@ export function deleteCollection(
   collections: FlashcardCollection[],
   collectionId: string
 ): FlashcardCollection[] {
+  if (isDefaultCollectionId(collectionId)) {
+    return collections;
+  }
+
   return collections.filter((collection) => collection.id !== collectionId);
 }
 
@@ -317,52 +337,49 @@ function isBuiltinName(name: string, builtin: DefaultCollection) {
   return name === builtin.name.en || name === builtin.name.vi;
 }
 
+function isEphemeralUntitled(collection: FlashcardCollection) {
+  return (
+    collection.id === UNTITLED_FLASHCARD_COLLECTION_ID &&
+    collection.cards.length === 0 &&
+    (collection.name === UNTITLED_FLASHCARD_COLLECTION_NAME.en ||
+      collection.name === UNTITLED_FLASHCARD_COLLECTION_NAME.vi)
+  );
+}
+
 /** Built-in collections, with the user's card edits and deletions applied. */
 export function resolveCollections(
   store: FlashcardStore,
   defaults: readonly DefaultCollection[],
   locale: Locale
 ): FlashcardCollection[] {
-  const hidden = new Set(store.hidden);
   const overrides = new Map(store.overrides.map((collection) => [collection.id, collection]));
   const defaultIds = new Set(defaults.map((collection) => collection.id));
-  const custom = store.overrides.filter((collection) => !defaultIds.has(collection.id));
-  const builtin = defaults
-    .filter((collection) => !hidden.has(collection.id))
-    .map((collection) => {
-      const override = overrides.get(collection.id);
+  const customOnly = store.overrides.filter((collection) => !defaultIds.has(collection.id));
+  const custom = customOnly.length > 0 ? customOnly : [untitledFlashcardCollection(locale)];
+  const builtin = defaults.map((collection) => {
+    const override = overrides.get(collection.id);
 
-      if (!override) {
-        return { id: collection.id, name: collection.name[locale], cards: collection.cards };
-      }
+    if (!override) {
+      return { id: collection.id, name: collection.name[locale], cards: collection.cards };
+    }
 
-      return {
-        id: collection.id,
-        name: collection.name[locale],
-        cards: override.cards
-      };
-    });
+    return {
+      id: collection.id,
+      name: collection.name[locale],
+      cards: override.cards
+    };
+  });
 
   return [...custom, ...builtin];
 }
 
 /** Persist only what differs from the built-in collections. */
 export function storeFromResolved(
-  previous: FlashcardStore,
+  _previous: FlashcardStore,
   resolved: readonly FlashcardCollection[],
   defaults: readonly DefaultCollection[]
 ): FlashcardStore {
   const defaultsById = new Map(defaults.map((collection) => [collection.id, collection]));
-  const resolvedIds = new Set(resolved.map((collection) => collection.id));
-  const hidden = new Set(previous.hidden);
-
-  for (const id of defaultsById.keys()) {
-    if (resolvedIds.has(id)) {
-      hidden.delete(id);
-    } else {
-      hidden.add(id);
-    }
-  }
 
   const overrides: FlashcardCollection[] = [];
 
@@ -370,7 +387,10 @@ export function storeFromResolved(
     const builtin = defaultsById.get(collection.id);
 
     if (!builtin) {
-      overrides.push(collection);
+      if (!isEphemeralUntitled(collection)) {
+        overrides.push(collection);
+      }
+
       continue;
     }
 
@@ -385,5 +405,5 @@ export function storeFromResolved(
     });
   }
 
-  return { overrides, hidden: [...hidden] };
+  return { overrides, hidden: [] };
 }

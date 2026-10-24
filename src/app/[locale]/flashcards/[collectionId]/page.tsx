@@ -1,4 +1,5 @@
 import { flashcardCollectionPath } from '@/constants/courses/levels.ts';
+import { UNTITLED_FLASHCARD_COLLECTION_ID } from '@/constants/flashcards/collections.ts';
 import { getKanjiGradeFlashcards } from '@/constants/flashcards/kanji-defaults.ts';
 import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -9,9 +10,10 @@ export const dynamicParams = true;
 
 export function generateStaticParams() {
   const ids = [
-    ...getLightFlashcardDefaults().collections,
-    ...getKanjiGradeFlashcards().collections
-  ].map((collection) => collection.id);
+    UNTITLED_FLASHCARD_COLLECTION_ID,
+    ...getLightFlashcardDefaults().collections.map((collection) => collection.id),
+    ...getKanjiGradeFlashcards().collections.map((collection) => collection.id)
+  ];
 
   return localeParams.flatMap(({ locale }) =>
     ids.map((collectionId) => ({ locale, collectionId }))

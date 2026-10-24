@@ -13,8 +13,12 @@ import {
   toggleCardInCollection,
   type DefaultCollection
 } from '@/constants/flashcards/collections.ts';
+import { getCourse } from '@/constants/courses/index.ts';
 import { getKanjiGradeFlashcards } from '@/constants/flashcards/kanji-defaults.ts';
-import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
+import {
+  getLightFlashcardDefaults,
+  RADICALS_PER_FLASHCARD_COLLECTION
+} from '@/constants/flashcards/light-defaults.ts';
 
 describe('sanitizeFlashcardCollections', () => {
   it('drops malformed entries and duplicate ids', () => {
@@ -129,19 +133,38 @@ const hiraganaDefault: DefaultCollection = {
 };
 
 describe('built-in collections', () => {
-  it('shows defaults for the active locale and keeps a deletion hidden', () => {
-    expect(resolveCollections(EMPTY_FLASHCARD_STORE, [hiraganaDefault], 'vi')[0]?.name).toBe(
+  it('seeds an empty untitled custom collection when the store has none', () => {
+    expect(resolveCollections(EMPTY_FLASHCARD_STORE, [], 'en')).toEqual([
+      { id: 'untitled', name: 'Untitled collection', cards: [] }
+    ]);
+    expect(resolveCollections(EMPTY_FLASHCARD_STORE, [], 'vi')[0]?.name).toBe(
+      'Bộ sưu tập chưa đặt tên'
+    );
+    expect(
+      storeFromResolved(
+        EMPTY_FLASHCARD_STORE,
+        resolveCollections(EMPTY_FLASHCARD_STORE, [], 'en'),
+        []
+      ).overrides
+    ).toEqual([]);
+  });
+
+  it('shows defaults for the active locale and ignores legacy hidden ids', () => {
+    const resolvedVi = resolveCollections(EMPTY_FLASHCARD_STORE, [hiraganaDefault], 'vi');
+
+    expect(resolvedVi[0]?.id).toBe('untitled');
+    expect(resolvedVi.find((collection) => collection.id === 'default-hiragana')?.name).toBe(
       'Bảng chữ cái Hiragana'
     );
 
-    const removed = deleteCollection(
-      resolveCollections(EMPTY_FLASHCARD_STORE, [hiraganaDefault], 'en'),
-      'default-hiragana'
-    );
-    const stored = storeFromResolved(EMPTY_FLASHCARD_STORE, removed, [hiraganaDefault]);
+    expect(
+      resolveCollections({ overrides: [], hidden: ['default-hiragana'] }, [hiraganaDefault], 'en')
+    ).toHaveLength(2);
 
-    expect(stored.hidden).toEqual(['default-hiragana']);
-    expect(resolveCollections(stored, [hiraganaDefault], 'en')).toEqual([]);
+    const resolved = resolveCollections(EMPTY_FLASHCARD_STORE, [hiraganaDefault], 'en');
+    const afterDelete = deleteCollection(resolved, 'default-hiragana');
+
+    expect(afterDelete).toEqual(resolved);
   });
 
   it('remembers a removed card and still translates an unedited name', () => {
@@ -154,7 +177,11 @@ describe('built-in collections', () => {
       name: '',
       cards: [{ id: 'kana:h:い', type: 'kana' }]
     });
-    expect(resolveCollections(stored, [hiraganaDefault], 'en')[0]?.name).toBe('Hiragana alphabet');
+    expect(
+      resolveCollections(stored, [hiraganaDefault], 'en').find(
+        (collection) => collection.id === 'default-hiragana'
+      )?.name
+    ).toBe('Hiragana alphabet');
   });
 
   it('reads an older collection list as custom collections', () => {
@@ -164,58 +191,58 @@ describe('built-in collections', () => {
     });
   });
 
-  it('seeds kana, JLPT vocab, radicals, elementary grades, and Kanken levels', () => {
+  it('seeds kana, per-lesson JLPT vocab, radicals, and per-lesson kanji tracks', () => {
     const light = getLightFlashcardDefaults();
     const kanji = getKanjiGradeFlashcards();
-    const ids = [...light.collections, ...kanji.collections].map((collection) => collection.id);
+    const n5Lessons = getCourse('n5').lessons.length;
+    const n4Lessons = getCourse('n4').lessons.length;
 
-    expect(ids).toEqual([
-      'default-hiragana',
-      'default-katakana',
-      'default-n5',
-      'default-n4',
-      'default-radicals',
-      'default-grade-1',
-      'default-grade-2',
-      'default-grade-3',
-      'default-grade-4',
-      'default-grade-5',
-      'default-grade-6',
-      'default-kanken-4',
-      'default-kanken-3',
-      'default-kanken-pre-2',
-      'default-kanken-2'
-    ]);
-    expect(light.collections[0]?.cards.map((card) => card.id)).toContain('kana:h:あ');
-    expect(light.collections[0]?.cards.every((card) => card.type === 'kana')).toBe(true);
-    expect(light.collections[1]?.cards.map((card) => card.id)).toContain('kana:k:ア');
-    expect(light.collections[2]?.cards.some((card) => card.type === 'vocab')).toBe(true);
-    expect(light.collections[2]?.cards.some((card) => card.type === 'phrase')).toBe(true);
-    expect(light.collections[3]?.cards.some((card) => card.type === 'phrase')).toBe(true);
-    expect(light.collections[4]?.cards).toHaveLength(214);
-    expect(light.collections[4]?.cards.every((card) => card.type === 'radical')).toBe(true);
-    expect(kanji.collections[0]?.cards).toHaveLength(80);
-    expect(kanji.collections[0]?.cards.every((card) => card.type === 'kanji')).toBe(true);
-    expect(kanji.collections[0]?.name).toEqual({ en: 'Grade 1 kanji', vi: 'Kanji lớp 1' });
+    const hiragana = light.collections.find((collection) => collection.id === 'default-hiragana');
+    const katakana = light.collections.find((collection) => collection.id === 'default-katakana');
+    const radicalCollections = light.collections.filter((collection) =>
+      collection.id.startsWith('default-radicals-')
+    );
+    const n5Lesson1 = light.collections.find(
+      (collection) => collection.id === 'default-n5-lesson-1'
+    );
+
+    expect(hiragana?.cards.map((card) => card.id)).toContain('kana:h:あ');
+    expect(hiragana?.cards.every((card) => card.type === 'kana')).toBe(true);
+    expect(katakana?.cards.map((card) => card.id)).toContain('kana:k:ア');
+    expect(
+      light.collections.filter((collection) => collection.id.startsWith('default-n5-'))
+    ).toHaveLength(n5Lessons);
+    expect(
+      light.collections.filter((collection) => collection.id.startsWith('default-n4-'))
+    ).toHaveLength(n4Lessons);
+    expect(n5Lesson1?.cards.some((card) => card.type === 'vocab')).toBe(true);
+    expect(radicalCollections[0]?.id).toBe('default-radicals-1-20');
+    expect(radicalCollections.at(-1)?.id).toBe('default-radicals-201-214');
+    expect(radicalCollections).toHaveLength(Math.ceil(214 / RADICALS_PER_FLASHCARD_COLLECTION));
+    expect(radicalCollections.flatMap((collection) => collection.cards)).toHaveLength(214);
+    expect(
+      radicalCollections.every((collection) =>
+        collection.cards.every((card) => card.type === 'radical')
+      )
+    ).toBe(true);
+
+    const grade1Lesson1 = kanji.collections.find(
+      (collection) => collection.id === 'default-grade-1-lesson-1'
+    );
+
+    expect(grade1Lesson1?.cards.every((card) => card.type === 'kanji')).toBe(true);
+    expect(grade1Lesson1?.name.en).toContain('Grade 1 kanji');
+    expect(grade1Lesson1?.name.en).toContain('Lesson 1');
     expect(kanji.cards[0]?.item.kanji).toBe('一');
-    expect(
-      kanji.collections.find((collection) => collection.id === 'default-kanken-4')?.cards
-    ).toHaveLength(313);
-    expect(
-      kanji.collections.find((collection) => collection.id === 'default-kanken-3')?.cards
-    ).toHaveLength(284);
-    expect(
-      kanji.collections.find((collection) => collection.id === 'default-kanken-pre-2')?.cards
-    ).toHaveLength(328);
-    expect(
-      kanji.collections.find((collection) => collection.id === 'default-kanken-2')?.cards
-    ).toHaveLength(185);
-    expect(
-      kanji.collections.find((collection) => collection.id === 'default-kanken-4')?.name
-    ).toEqual({
-      en: 'Kanken level 4 kanji',
-      vi: 'Kanji Kanken 4級'
-    });
+
+    const kanken4Lessons = kanji.collections.filter((collection) =>
+      collection.id.startsWith('default-kanken-4-')
+    );
+    const kanken4Cards = kanken4Lessons.flatMap((collection) => collection.cards);
+
+    expect(kanken4Lessons.length).toBeGreaterThan(1);
+    expect(kanken4Cards).toHaveLength(313);
+    expect(kanken4Lessons[0]?.name.en).toContain('Kanken level 4 kanji');
   });
 });
 

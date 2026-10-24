@@ -39,22 +39,16 @@ function isLargeCard(type: FlashcardCardType) {
   return type !== 'phrase';
 }
 
-function japaneseFaceSx(type: FlashcardCardType) {
-  const centered = {
+const FLASHCARD_JA_FONT_SIZE = '2.5rem';
+
+function japaneseFaceSx() {
+  return {
     width: '100%',
     minWidth: 0,
-    textAlign: 'center' as const
+    textAlign: 'center' as const,
+    fontSize: FLASHCARD_JA_FONT_SIZE,
+    lineHeight: 1.35
   };
-
-  if (type === 'vocab') {
-    return { ...centered, fontSize: '3.5rem', lineHeight: 1.35 };
-  }
-
-  if (type === 'phrase') {
-    return { ...centered, fontSize: '2.5rem', lineHeight: 1.35 };
-  }
-
-  return { ...centered, fontSize: '6rem', lineHeight: 1 };
 }
 
 type VocabFlashcardsProps = {
@@ -74,7 +68,7 @@ function FlashcardFace({ item, locale, side, type }: FlashcardFaceProps) {
   const large = isLargeCard(type);
 
   if (side === 'ja') {
-    return <VocabHeadword item={item} variant="h5" sx={japaneseFaceSx(type)} />;
+    return <VocabHeadword item={item} variant="h5" sx={japaneseFaceSx()} />;
   }
 
   return (

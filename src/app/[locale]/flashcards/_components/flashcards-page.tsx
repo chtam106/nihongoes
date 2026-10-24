@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from 'react';
+import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
@@ -18,6 +19,8 @@ import {
   IconButton,
   Paper,
   Stack,
+  Tab,
+  Tabs,
   TextField,
   Typography
 } from '@mui/material';
@@ -32,133 +35,153 @@ import {
   type DefaultCollection,
   type FlashcardCollection
 } from '@/constants/flashcards/collections.ts';
+import { groupDefaultCollections } from '@/constants/flashcards/default-collection-groups.ts';
 import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
+import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import {
+  flashcardsListPath,
+  parseFlashcardsListTabParam,
+  FLASHCARDS_LIST_TAB_QUERY,
+  type FlashcardsListTab
+} from './flashcards-list-tab.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { coarsePressResetSx } from '@/theme/hover.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
-type CollectionGroupProps = {
-  title: string;
+type CollectionsGridProps = {
   collections: FlashcardCollection[];
   allowRename: boolean;
-  defaultOpen?: boolean;
+  allowDelete: boolean;
   onRename?: (collection: FlashcardCollection) => void;
-  onDelete: (collection: FlashcardCollection) => void;
+  onDelete?: (collection: FlashcardCollection) => void;
 };
 
-function CollectionGroup({
-  title,
+function CollectionsGrid({
   collections,
   allowRename,
-  defaultOpen = false,
+  allowDelete,
   onRename,
   onDelete
-}: CollectionGroupProps) {
+}: CollectionsGridProps) {
   const { t } = useTranslation();
   const { resolveCards } = useFlashcardDefaults();
-  const [open, setOpen] = useState(defaultOpen);
-  const cards = (
-    <>
-      {collections.length === 0 && (
-        <Typography variant="body1" color="text.secondary">
-          {t('flashcards.empty')}
-        </Typography>
-      )}
-      {collections.length > 0 && (
-        <Box
-          sx={{
-            display: 'grid',
-            width: '100%',
-            minWidth: 0,
-            gridTemplateColumns: {
-              xs: 'minmax(0, 1fr)',
-              md: 'repeat(2, minmax(0, 1fr))',
-              lg: 'repeat(3, minmax(0, 1fr))'
-            },
-            gap: 1.5
-          }}
-        >
-          {collections.map((collection) => {
-            const count = resolveCards(collection.cards.map((card) => card.id)).length;
 
-            return (
-              <Paper
-                key={collection.id}
-                elevation={0}
-                sx={[elevatedSurfaceSx, { display: 'flex', flexDirection: 'column', minWidth: 0 }]}
+  if (collections.length === 0) {
+    return (
+      <Typography variant="body1" color="text.secondary">
+        {t('flashcards.empty')}
+      </Typography>
+    );
+  }
+
+  return (
+    <Box
+      sx={{
+        display: 'grid',
+        width: '100%',
+        minWidth: 0,
+        gridTemplateColumns: {
+          xs: 'minmax(0, 1fr)',
+          md: 'repeat(2, minmax(0, 1fr))',
+          lg: 'repeat(3, minmax(0, 1fr))'
+        },
+        gap: 1.5
+      }}
+    >
+      {collections.map((collection) => {
+        const count = resolveCards(collection.cards.map((card) => card.id)).length;
+
+        return (
+          <Paper
+            key={collection.id}
+            elevation={0}
+            sx={[elevatedSurfaceSx, { display: 'flex', flexDirection: 'column', minWidth: 0 }]}
+          >
+            <Box
+              component={RouterLink}
+              to={flashcardCollectionPath(collection.id)}
+              sx={(theme) => ({
+                width: '100%',
+                minWidth: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                gap: 0.25,
+                pt: 1.5,
+                pb: allowRename || allowDelete ? 0.5 : 1.5,
+                px: 2,
+                border: 0,
+                bgcolor: 'transparent',
+                color: 'inherit',
+                font: 'inherit',
+                textAlign: 'left',
+                cursor: 'pointer',
+                textDecoration: 'none',
+                WebkitTapHighlightColor: 'transparent',
+                '&:focus': { outline: 'none' },
+                '&:focus-visible': focusVisibleSx(theme)
+              })}
+            >
+              <Typography component="span" sx={{ fontWeight: 600, overflowWrap: 'break-word' }}>
+                {collection.name}
+              </Typography>
+              <Typography component="span" color="text.secondary">
+                {t('flashcards.count', { count })}
+              </Typography>
+            </Box>
+            {(allowRename || allowDelete) && (
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  alignItems: 'center',
+                  px: 1,
+                  pb: 0.5
+                }}
               >
-                <Box
-                  component={RouterLink}
-                  to={flashcardCollectionPath(collection.id)}
-                  sx={(theme) => ({
-                    width: '100%',
-                    minWidth: 0,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                    gap: 0.25,
-                    pt: 1.5,
-                    pb: 0.5,
-                    px: 2,
-                    border: 0,
-                    bgcolor: 'transparent',
-                    color: 'inherit',
-                    font: 'inherit',
-                    textAlign: 'left',
-                    cursor: 'pointer',
-                    textDecoration: 'none',
-                    WebkitTapHighlightColor: 'transparent',
-                    '&:focus': { outline: 'none' },
-                    '&:focus-visible': focusVisibleSx(theme)
-                  })}
-                >
-                  <Typography component="span" sx={{ fontWeight: 600, overflowWrap: 'break-word' }}>
-                    {collection.name}
-                  </Typography>
-                  <Typography component="span" color="text.secondary">
-                    {t('flashcards.count', { count })}
-                  </Typography>
-                </Box>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                    alignItems: 'center',
-                    px: 1,
-                    pb: 0.5
-                  }}
-                >
-                  {allowRename && onRename && (
-                    <IconButton
-                      aria-label={t('flashcards.renameName', { name: collection.name })}
-                      onClick={() => onRename(collection)}
-                    >
-                      <EditOutlined />
-                    </IconButton>
-                  )}
+                {allowRename && onRename && (
+                  <IconButton
+                    aria-label={t('flashcards.renameName', { name: collection.name })}
+                    onClick={() => onRename(collection)}
+                  >
+                    <EditOutlined />
+                  </IconButton>
+                )}
+                {allowDelete && onDelete && (
                   <IconButton
                     aria-label={t('flashcards.deleteName', { name: collection.name })}
                     onClick={() => onDelete(collection)}
                   >
                     <DeleteOutlined />
                   </IconButton>
-                </Box>
-              </Paper>
-            );
-          })}
-        </Box>
-      )}
-    </>
+                )}
+              </Box>
+            )}
+          </Paper>
+        );
+      })}
+    </Box>
   );
+}
+
+type CollectionGroupProps = {
+  title: string;
+  collections: FlashcardCollection[];
+  defaultOpen?: boolean;
+};
+
+function CollectionGroup({ title, collections, defaultOpen = false }: CollectionGroupProps) {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <Stack spacing={1.5}>
-      <Heading component="h2">
+      <Heading component="h2" scale="subsection">
         <ButtonBase
           onClick={() => setOpen((previous) => !previous)}
           aria-expanded={open}
@@ -196,7 +219,7 @@ function CollectionGroup({
         </ButtonBase>
       </Heading>
       <Collapse in={open} unmountOnExit>
-        {cards}
+        <CollectionsGrid collections={collections} allowRename={false} allowDelete={false} />
       </Collapse>
     </Stack>
   );
@@ -216,10 +239,33 @@ export function FlashcardsPage({ defaults, extraCards }: FlashcardsPageProps) {
 }
 
 function FlashcardsView() {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const urlSyncedRef = useRef(false);
   const { collections, create, rename, remove } = useFlashcardCollections();
   const mine = collections.filter((collection) => !isDefaultCollectionId(collection.id));
   const builtin = collections.filter((collection) => isDefaultCollectionId(collection.id));
+  const defaultGroups = useMemo(() => groupDefaultCollections(builtin, locale), [builtin, locale]);
+  const tabParam = searchParams.get(FLASHCARDS_LIST_TAB_QUERY);
+  const tabFromUrl = parseFlashcardsListTabParam(tabParam);
+  const listTab = tabFromUrl ?? 'mine';
+
+  useEffect(() => {
+    if (urlSyncedRef.current) {
+      return;
+    }
+
+    urlSyncedRef.current = true;
+
+    if (tabParam === null || tabFromUrl === null) {
+      router.replace(flashcardsListPath(listTab), { scroll: false });
+    }
+  }, [listTab, router, tabFromUrl, tabParam]);
+
+  const handleListTabChange = (_event: SyntheticEvent, value: FlashcardsListTab) => {
+    router.replace(flashcardsListPath(value), { scroll: false });
+  };
   const [draft, setDraft] = useState('');
   const [createOpen, setCreateOpen] = useState(false);
   const [renameTarget, setRenameTarget] = useState<FlashcardCollection | null>(null);
@@ -255,6 +301,17 @@ function FlashcardsView() {
     setDeleteOpen(false);
   };
 
+  const openRename = (collection: FlashcardCollection) => {
+    setRenameTarget(collection);
+    setRenameValue(collection.name);
+    setRenameOpen(true);
+  };
+
+  const openDelete = (collection: FlashcardCollection) => {
+    setPendingDelete(collection);
+    setDeleteOpen(true);
+  };
+
   return (
     <PageContainer bottomGutter>
       <Stack spacing={3}>
@@ -266,43 +323,54 @@ function FlashcardsView() {
           </Stack>
         </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-          <Button
-            variant="contained"
-            startIcon={<AddOutlined />}
-            onClick={() => setCreateOpen(true)}
-            sx={{ textTransform: 'none' }}
-          >
-            {t('flashcards.newCollection')}
-          </Button>
-        </Box>
-
-        <CollectionGroup
-          title={t('flashcards.myCollections')}
-          collections={mine}
-          allowRename
-          defaultOpen
-          onRename={(collection) => {
-            setRenameTarget(collection);
-            setRenameValue(collection.name);
-            setRenameOpen(true);
-          }}
-          onDelete={(collection) => {
-            setPendingDelete(collection);
-            setDeleteOpen(true);
-          }}
-        />
-        {builtin.length > 0 && (
-          <CollectionGroup
-            title={t('flashcards.defaultCollections')}
-            collections={builtin}
-            allowRename={false}
-            onDelete={(collection) => {
-              setPendingDelete(collection);
-              setDeleteOpen(true);
+        <Box>
+          <Tabs
+            value={listTab}
+            onChange={handleListTabChange}
+            variant="fullWidth"
+            sx={{
+              mb: 2,
+              '& .MuiTab-root': { textTransform: 'none', fontSize: '1rem', fontWeight: 600 }
             }}
-          />
-        )}
+          >
+            <Tab value="mine" label={t('flashcards.myCollections')} />
+            <Tab value="default" label={t('flashcards.defaultCollections')} />
+          </Tabs>
+
+          {listTab === 'mine' && (
+            <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <Button
+                  variant="contained"
+                  startIcon={<AddOutlined />}
+                  onClick={() => setCreateOpen(true)}
+                  sx={{ textTransform: 'none' }}
+                >
+                  {t('flashcards.newCollection')}
+                </Button>
+              </Box>
+              <CollectionsGrid
+                collections={mine}
+                allowRename
+                allowDelete
+                onRename={openRename}
+                onDelete={openDelete}
+              />
+            </Stack>
+          )}
+
+          {listTab === 'default' && (
+            <Stack spacing={2.5} role="tabpanel" aria-label={t('flashcards.defaultCollections')}>
+              {defaultGroups.map((group) => (
+                <CollectionGroup
+                  key={group.key}
+                  title={group.title}
+                  collections={group.collections}
+                />
+              ))}
+            </Stack>
+          )}
+        </Box>
       </Stack>
 
       <Dialog
