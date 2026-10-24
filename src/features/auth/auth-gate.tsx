@@ -1,12 +1,16 @@
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useSyncExternalStore, type ReactNode } from 'react';
 import { Stack, Typography } from '@mui/material';
 import { PageContainer } from '@/components/page-container';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
 import { loginPath, safeReturnTo } from '@/features/auth/login-path.ts';
 import { useAuth } from '@/features/auth/session.ts';
-import { getCollectionSnapshot } from '@/features/flashcards/collection-store.ts';
+import {
+  getCollectionSnapshot,
+  getServerCollectionSnapshot,
+  subscribeCollections
+} from '@/features/flashcards/collection-store.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
@@ -18,6 +22,11 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
   const { t } = useTranslation();
   const auth = useAuth();
   const router = useRouter();
+  const collections = useSyncExternalStore(
+    subscribeCollections,
+    getCollectionSnapshot,
+    getServerCollectionSnapshot
+  );
 
   useEffect(() => {
     if (!isFlashcardAuthEnabled()) {
@@ -64,8 +73,6 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
   if (auth.status !== 'authenticated') {
     return null;
   }
-
-  const collections = getCollectionSnapshot();
 
   if (collections.status === 'loading' || collections.userId !== auth.user?.id) {
     return (

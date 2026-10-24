@@ -106,6 +106,9 @@ export async function loadCollectionStore(userId: string) {
     }
 
     if (error instanceof ApiError && error.status === 401) {
+      snapshot = IDLE;
+      emit();
+
       return;
     }
 
