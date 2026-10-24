@@ -1,6 +1,7 @@
 'use client';
 
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Box,
   Checkbox,
@@ -17,18 +18,30 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { ScrollToTopButton } from '@/components/scroll-to-top-button';
 import { getAllCourseLessons } from '@/constants/courses/index.ts';
+import { SENTENCES_PATH } from '@/constants/courses/levels.ts';
 import { getSentenceWriting } from '@/constants/courses/sentence-writing.ts';
+import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
+import { SentenceWritingLessonLink } from './sentence-writing-lesson-link.tsx';
 import { SentenceWritingPrompt } from './sentence-writing-prompt.tsx';
 import {
   defaultSentenceWritingPreferences,
+  parseSentenceWritingLessonParam,
   sanitizeSentenceWritingPreferences,
+  SENTENCE_WRITING_LESSON_QUERY,
   SENTENCE_WRITING_STORAGE_KEY
 } from './sentence-writing-preferences.ts';
 
+function sentenceWritingHref(lessonNumber: number) {
+  return `${SENTENCES_PATH}?${SENTENCE_WRITING_LESSON_QUERY}=${lessonNumber}`;
+}
+
 export function SentenceWritingPage() {
   const { locale, t } = useTranslation();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const urlSyncedRef = useRef(false);
   const entries = useMemo(
     () =>
       getAllCourseLessons().filter(({ level, lesson }) =>
@@ -36,28 +49,44 @@ export function SentenceWritingPage() {
       ),
     []
   );
-  const lessonNumbers = entries.map(({ lesson }) => lesson.number);
-  const numbersKey = lessonNumbers.join(',');
+  const lessonNumbers = useMemo(() => entries.map(({ lesson }) => lesson.number), [entries]);
   const fallbackLesson = lessonNumbers[0] ?? 1;
-  const fallback = useMemo(
-    () =>
-      defaultSentenceWritingPreferences(
-        numbersKey ? numbersKey.split(',').map(Number) : [fallbackLesson]
-      ),
-    [fallbackLesson, numbersKey]
-  );
+  const fallback = useMemo(() => defaultSentenceWritingPreferences(lessonNumbers), [lessonNumbers]);
   const sanitize = useCallback(
-    (value: unknown) =>
-      sanitizeSentenceWritingPreferences(
-        value,
-        numbersKey ? numbersKey.split(',').map(Number) : [fallbackLesson]
-      ),
-    [fallbackLesson, numbersKey]
+    (value: unknown) => sanitizeSentenceWritingPreferences(value, lessonNumbers),
+    [lessonNumbers]
   );
   const [prefs, setPrefs] = usePersistentState(SENTENCE_WRITING_STORAGE_KEY, fallback, sanitize);
+
+  const lessonParam = searchParams.get(SENTENCE_WRITING_LESSON_QUERY);
+  const lessonFromUrl = parseSentenceWritingLessonParam(lessonParam, lessonNumbers);
+  const activeLessonNumber = lessonFromUrl ?? prefs.lesson;
+
+  useEffect(() => {
+    if (urlSyncedRef.current || lessonNumbers.length === 0) {
+      return;
+    }
+
+    urlSyncedRef.current = true;
+    const target =
+      lessonFromUrl ??
+      parseSentenceWritingLessonParam(String(prefs.lesson), lessonNumbers) ??
+      fallbackLesson;
+
+    if (lessonParam === null || lessonFromUrl === null) {
+      router.replace(sentenceWritingHref(target), { scroll: false });
+    }
+  }, [fallbackLesson, lessonFromUrl, lessonNumbers, lessonParam, prefs.lesson, router]);
+
+  useEffect(() => {
+    if (lessonFromUrl !== null && lessonFromUrl !== prefs.lesson) {
+      setPrefs((previous) => ({ ...previous, lesson: lessonFromUrl }));
+    }
+  }, [lessonFromUrl, prefs.lesson, setPrefs]);
+
   const selected = useMemo(
-    () => entries.find(({ lesson }) => lesson.number === prefs.lesson) ?? entries[0],
-    [entries, prefs.lesson]
+    () => entries.find(({ lesson }) => lesson.number === activeLessonNumber) ?? entries[0],
+    [activeLessonNumber, entries]
   );
   const writing = selected ? getSentenceWriting(selected.level, selected.lesson.id) : undefined;
   const items = useMemo(() => {
@@ -74,7 +103,9 @@ export function SentenceWritingPage() {
   }, [selected, writing]);
 
   const handleLessonChange = (event: SelectChangeEvent<number>) => {
-    setPrefs((previous) => ({ ...previous, lesson: Number(event.target.value) }));
+    const lesson = Number(event.target.value);
+    setPrefs((previous) => ({ ...previous, lesson }));
+    router.replace(sentenceWritingHref(lesson), { scroll: false });
   };
 
   const handleShowInputChange = (_event: unknown, checked: boolean) => {
@@ -141,6 +172,14 @@ export function SentenceWritingPage() {
           </Stack>
         )}
       </Stack>
+
+      {selected && (
+        <SentenceWritingLessonLink
+          level={selected.level}
+          lessonId={selected.lesson.id}
+          lessonNumber={selected.lesson.number}
+        />
+      )}
 
       <ScrollToTopButton />
     </PageContainer>

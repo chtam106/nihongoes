@@ -58,6 +58,7 @@ export const course = {
   sentenceWritingLesson: 'Bài',
   sentenceWritingPlaceholder: 'Viết bằng tiếng Nhật',
   sentenceWritingShowInput: 'Hiện ô viết',
+  sentenceWritingOpenLesson: 'Bài {number}',
   vocabularyPractice: 'Luyện từ vựng',
   grammar: 'Ngữ pháp',
   grammarPractice: 'Luyện ngữ pháp',
