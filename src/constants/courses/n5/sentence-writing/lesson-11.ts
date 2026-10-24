@@ -436,7 +436,7 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
       ruby: [{ base: '出', reading: 'で' }]
     },
     {
-      prompt: { en: 'Just to the station for a bit.', vi: 'Tôi đi ga một chút.' },
+      prompt: { en: 'Just to the station for a bit.', vi: 'Tôi đi đến ga một chút.' },
       jp: 'ちょっと 駅まで。',
       ruby: [{ base: '駅', reading: 'えき' }]
     },

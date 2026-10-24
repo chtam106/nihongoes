@@ -269,7 +269,7 @@ export const n5Lesson24SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I go to the library, but my wife brings the children.',
-            vi: 'Tôi đi thư viện, còn vợ dẫn con đến.'
+            vi: 'Tôi đi đến thư viện, còn vợ dẫn con đến.'
           },
           jp: '私は 図書館へ 行きますが、妻が 子供を 連れて 来ます。',
           ruby: [

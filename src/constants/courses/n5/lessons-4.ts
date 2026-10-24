@@ -865,7 +865,7 @@ export const n5Lesson4: Lesson = {
       title: { en: "Sentence-ending ね (isn't it?)", vi: 'ね (nhỉ / đúng không ạ)' },
       explanation: {
         en: 'ね at the end seeks agreement, sympathy, or confirms what was just said.',
-        vi: 'Thêm ね cuối câu để xin đồng ý, thể hiện đồng cảm, hoặc xác nhận lại — giống "nhỉ", "đúng không" trong tiếng Việt.'
+        vi: 'Thêm ね cuối câu để xin đồng ý, thể hiện đồng cảm, hoặc xác nhận lại - giống "nhỉ", "đúng không" trong tiếng Việt.'
       },
       examples: [
         {

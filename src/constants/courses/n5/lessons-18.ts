@@ -848,7 +848,10 @@ export const n5Lesson18: Lesson = {
         {
           jp: 'ぜひ 北海道へ 行きたいです。',
           romaji: 'Zehi Hokkaidō e ikitai desu.',
-          meaning: { en: 'I definitely want to go to Hokkaido.', vi: 'Tôi rất muốn đi Hokkaido.' },
+          meaning: {
+            en: 'I definitely want to go to Hokkaido.',
+            vi: 'Tôi rất muốn đi đến Hokkaido.'
+          },
           ruby: [
             { base: '北', reading: 'ほっ' },
             { base: '海', reading: 'かい' },
@@ -925,7 +928,7 @@ export const n5Lesson18: Lesson = {
           romaji: 'Natsuyasumi ni zehi Hokkaidō e ikitai to omotte imasu.',
           meaning: {
             en: 'He definitely wants to go to Hokkaido during summer vacation.',
-            vi: 'Anh ấy nhất định muốn đi Hokkaido vào kỳ nghỉ hè.'
+            vi: 'Anh ấy nhất định muốn đi đến Hokkaido vào kỳ nghỉ hè.'
           },
           ruby: [
             { base: '夏', reading: 'なつ' },

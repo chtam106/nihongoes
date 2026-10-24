@@ -590,7 +590,7 @@ export const n5Lesson5: Lesson = {
           romaji: 'Kyōto e ikimasu. Tomodachi to ikimasu.',
           meaning: {
             en: "I'm going to Kyoto. I'm going with a friend.",
-            vi: 'Tôi đi Kyoto. Đi với bạn.'
+            vi: 'Tôi đi đến Kyoto. Đi với bạn.'
           },
           ruby: [
             { base: '京', reading: 'きょう' },
@@ -719,7 +719,7 @@ export const n5Lesson5: Lesson = {
           romaji: 'Kono densha wa Ōsakajō e ikimasu ka.',
           meaning: {
             en: 'Does this train go to Osaka Castle?',
-            vi: 'Tàu này có đi Osaka Castle không?'
+            vi: 'Tàu này có chạy đến Osaka Castle không?'
           },
           ruby: [
             { base: '電', reading: 'でん' },
@@ -783,7 +783,7 @@ export const n5Lesson5: Lesson = {
         {
           jp: '京都へ 行きます。',
           romaji: 'Kyōto e ikimasu.',
-          meaning: { en: 'I go to Kyoto.', vi: 'Tôi đi Kyoto.' },
+          meaning: { en: 'I go to Kyoto.', vi: 'Tôi đi đến Kyoto.' },
           ruby: [
             { base: '京', reading: 'きょう' },
             { base: '都', reading: 'と' },
@@ -824,7 +824,7 @@ export const n5Lesson5: Lesson = {
           {
             jp: '奈良へ 行きます。',
             romaji: 'Nara e ikimasu.',
-            meaning: { en: 'I am going to Nara.', vi: 'Tôi đi Nara.' },
+            meaning: { en: 'I am going to Nara.', vi: 'Tôi đi đến Nara.' },
             dialogueGroup: 'where-go',
             ruby: [
               { base: '奈', reading: 'な' },
@@ -946,7 +946,7 @@ export const n5Lesson5: Lesson = {
           {
             jp: '何で 東京へ 行きますか。',
             romaji: 'Nan de Tōkyō e ikimasu ka.',
-            meaning: { en: 'How are you going to Tokyo?', vi: 'Bạn đi Tokyo bằng gì?' },
+            meaning: { en: 'How are you going to Tokyo?', vi: 'Bạn đi đến Tokyo bằng gì?' },
             dialogueGroup: 'how-go',
             ruby: [
               { base: '何', reading: 'なん' },
@@ -1001,7 +1001,7 @@ export const n5Lesson5: Lesson = {
         {
           jp: '一人で 東京へ 行きます。',
           romaji: 'Hitori de Tōkyō e ikimasu.',
-          meaning: { en: 'I am going to Tokyo alone.', vi: 'Tôi đi Tokyo một mình.' },
+          meaning: { en: 'I am going to Tokyo alone.', vi: 'Tôi đi đến Tokyo một mình.' },
           ruby: [
             { base: '一', reading: 'ひと' },
             { base: '人', reading: 'り' },
@@ -1023,7 +1023,7 @@ export const n5Lesson5: Lesson = {
             romaji: 'Dare to Tōkyō e ikimasu ka.',
             meaning: {
               en: 'Who are you going to Tokyo with?',
-              vi: 'Bạn đi Tokyo với ai?'
+              vi: 'Bạn đi đến Tokyo với ai?'
             },
             dialogueGroup: 'who-with',
             ruby: [
@@ -1093,7 +1093,7 @@ export const n5Lesson5: Lesson = {
         {
           jp: 'いつ 広島へ 行きますか。',
           romaji: 'Itsu Hiroshima e ikimasu ka.',
-          meaning: { en: 'When will you go to Hiroshima?', vi: 'Khi nào bạn đi Hiroshima?' },
+          meaning: { en: 'When will you go to Hiroshima?', vi: 'Khi nào bạn đi đến Hiroshima?' },
           dialogueGroup: 'when-hiroshima',
           ruby: [
             { base: '広', reading: 'ひろ' },
@@ -1162,7 +1162,7 @@ export const n5Lesson5: Lesson = {
           romaji: 'Kono densha wa Kōshien e ikimasu ka.',
           meaning: {
             en: 'Does this train go to Koshien?',
-            vi: 'Tàu điện này có đi Koshien không?'
+            vi: 'Tàu điện này có chạy đến Koshien không?'
           },
           dialogueGroup: 'train-yo',
           ruby: [
@@ -1233,7 +1233,7 @@ export const n5Lesson5: Lesson = {
         {
           jp: '来週 私は 京都へ 行きます。',
           romaji: 'Raishū watashi wa Kyōto e ikimasu.',
-          meaning: { en: 'Next week I am going to Kyoto.', vi: 'Tuần sau tôi đi Kyoto.' },
+          meaning: { en: 'Next week I am going to Kyoto.', vi: 'Tuần sau tôi đi đến Kyoto.' },
           ruby: [
             { base: '来', reading: 'らい' },
             { base: '週', reading: 'しゅう' },
@@ -1370,7 +1370,7 @@ export const n5Lesson5: Lesson = {
           choices: [
             {
               id: 'a',
-              label: { en: 'Went to Kyoto', vi: 'Đi Kyoto' },
+              label: { en: 'Went to Kyoto', vi: 'Đi đến Kyoto' },
               jp: '京都へ 行きました',
               ruby: [
                 { base: '京', reading: 'きょう' },

@@ -599,7 +599,7 @@ export const n4Lesson40: Lesson = {
           romaji: 'Nagasaki e itta koto ga arimasen ga, ichido itte mitai desu.',
           meaning: {
             en: 'I have never been to Nagasaki, but I want to try going once.',
-            vi: 'Tôi chưa đi Nagasaki, nhưng nhất định muốn đi thử một lần.'
+            vi: 'Tôi chưa đi đến Nagasaki, nhưng nhất định muốn đi thử một lần.'
           },
           ruby: [
             { base: '長', reading: 'なが' },

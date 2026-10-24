@@ -434,7 +434,7 @@ export const n5Lesson7: Lesson = {
           romaji: 'Iie, mada desu. Korekara yūbinkyoku e ikimasu.',
           meaning: {
             en: 'No, not yet. I am going to the post office now.',
-            vi: 'Chưa. Bây giờ tôi đi bưu điện.'
+            vi: 'Chưa. Bây giờ tôi đi đến bưu điện.'
           },
           ruby: [
             { base: '郵', reading: 'ゆう' },
