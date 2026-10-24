@@ -86,7 +86,11 @@ export async function refreshSession() {
     const data = await api<{ user: AuthUser | null }>('/api/me');
 
     if (!data.user) {
-      snapshot = { ...ANONYMOUS, notice: snapshot.notice };
+      snapshot = {
+        ...ANONYMOUS,
+        notice: snapshot.notice,
+        authFailureReason: snapshot.authFailureReason
+      };
       emit();
 
       return;
@@ -104,7 +108,11 @@ export async function refreshSession() {
     const notice = snapshot.notice;
 
     if (error instanceof ApiError && error.status === 401) {
-      snapshot = { ...ANONYMOUS, notice };
+      snapshot = {
+        ...ANONYMOUS,
+        notice,
+        authFailureReason: snapshot.authFailureReason
+      };
       emit();
 
       return;
@@ -166,6 +174,7 @@ if (typeof window !== 'undefined' && isFlashcardAuthEnabled()) {
       notice: 'failed',
       authFailureReason: authError.reason
     };
+    emit();
   }
 
   void refreshSession();
