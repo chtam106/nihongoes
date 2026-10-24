@@ -21,8 +21,8 @@ function readingOf(kunyomi: string[], onyomi: string[], fallback: string) {
 let cached: KanjiGradeFlashcards | null = null;
 
 /**
- * SERVER ONLY. One built-in collection per elementary grade (Kanji lớp 1-6)
- * and per Kanken level (4級, 3級, 準2級, 2級).
+ * SERVER ONLY. One built-in collection per kanji lesson (elementary grades 1-6
+ * and Kanken levels 4, 3, pre-2, 2).
  * Import this from server `page.tsx` files and pass the result as props.
  * Do not import it from a client component: it pulls in `lessons.ts`.
  */
@@ -36,10 +36,10 @@ export function getKanjiGradeFlashcards(): KanjiGradeFlashcards {
         continue;
       }
 
-      const collectionCards: FlashcardCard[] = [];
-      const seen = new Set<string>();
-
       for (const lesson of track.lessons) {
+        const collectionCards: FlashcardCard[] = [];
+        const seen = new Set<string>();
+
         for (const entry of lesson.kanji) {
           const id = `kanji:${track.slug}:${entry.char}`;
           const card = flashcardCard(id);
@@ -65,13 +65,20 @@ export function getKanjiGradeFlashcards(): KanjiGradeFlashcards {
             }
           });
         }
-      }
 
-      collections.push({
-        id: `default-${track.slug}`,
-        name: track.name,
-        cards: collectionCards
-      });
+        if (collectionCards.length === 0) {
+          continue;
+        }
+
+        collections.push({
+          id: `default-${track.slug}-${lesson.id}`,
+          name: {
+            en: `${track.name.en} | Lesson ${lesson.number}: ${lesson.title.en}`,
+            vi: `${track.name.vi} | Bài ${lesson.number}: ${lesson.title.vi}`
+          },
+          cards: collectionCards
+        });
+      }
     }
 
     cached = { collections, cards };

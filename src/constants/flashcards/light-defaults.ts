@@ -1,6 +1,11 @@
 import { getAlphabetItems } from '@/constants/alphabet-charts.ts';
-import { flashcardRefsForLevel, type ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
+import { getAllCourseLessons } from '@/constants/courses/index.ts';
+import {
+  flashcardRefsForLesson,
+  type ResolvableFlashcard
+} from '@/constants/flashcards/catalog.ts';
 import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
+import type { CourseLevel } from '@/types/course.ts';
 import { formatRadicalMeaning, radicalsInStrokeOrder } from '@/constants/kanji/index.ts';
 
 export type LightFlashcardDefaults = {
@@ -32,6 +37,8 @@ function kanaCards(script: 'hiragana' | 'katakana', mark: 'h' | 'k'): Resolvable
   return cards;
 }
 
+export const RADICALS_PER_FLASHCARD_COLLECTION = 20;
+
 function radicalCards(): ResolvableFlashcard[] {
   return radicalsInStrokeOrder().map((radical) => ({
     id: `radical:${radical.number}`,
@@ -47,11 +54,47 @@ function radicalCards(): ResolvableFlashcard[] {
   }));
 }
 
+function radicalCollections(cards: ResolvableFlashcard[]): DefaultCollection[] {
+  const collections: DefaultCollection[] = [];
+
+  for (let start = 0; start < cards.length; start += RADICALS_PER_FLASHCARD_COLLECTION) {
+    const chunk = cards.slice(start, start + RADICALS_PER_FLASHCARD_COLLECTION);
+    const from = start + 1;
+    const to = start + chunk.length;
+
+    collections.push({
+      id: `default-radicals-${from}-${to}`,
+      name: {
+        en: `Kanji radicals | ${from}-${to}`,
+        vi: `Bộ thủ kanji | ${from}-${to}`
+      },
+      cards: chunk.map((card) => ({ id: card.id, type: card.type }))
+    });
+  }
+
+  return collections;
+}
+
+function jlptLessonCollections(level: CourseLevel): DefaultCollection[] {
+  const label = level.toUpperCase();
+
+  return getAllCourseLessons()
+    .filter((entry) => entry.level === level)
+    .map(({ lesson }) => ({
+      id: `default-${level}-${lesson.id}`,
+      name: {
+        en: `${label} | Lesson ${lesson.number}: ${lesson.title.en}`,
+        vi: `${label} | Bài ${lesson.number}: ${lesson.title.vi}`
+      },
+      cards: flashcardRefsForLesson(lesson)
+    }));
+}
+
 let cached: LightFlashcardDefaults | null = null;
 
 /**
  * Built-in collections that do not need the kanji lesson dataset: the kana
- * charts, JLPT N5/N4 vocabulary and phrases, and the 214 radicals.
+ * charts, one JLPT collection per lesson (N5, N4), and radicals in blocks of 20.
  */
 export function getLightFlashcardDefaults(): LightFlashcardDefaults {
   if (!cached) {
@@ -72,27 +115,9 @@ export function getLightFlashcardDefaults(): LightFlashcardDefaults {
           name: { en: 'Katakana alphabet', vi: 'Bảng chữ cái Katakana' },
           cards: katakana.map((card) => ({ id: card.id, type: card.type }))
         },
-        {
-          id: 'default-n5',
-          name: {
-            en: 'JLPT N5 vocabulary and phrases',
-            vi: 'Từ vựng và mẫu câu JLPT N5'
-          },
-          cards: flashcardRefsForLevel('n5')
-        },
-        {
-          id: 'default-n4',
-          name: {
-            en: 'JLPT N4 vocabulary and phrases',
-            vi: 'Từ vựng và mẫu câu JLPT N4'
-          },
-          cards: flashcardRefsForLevel('n4')
-        },
-        {
-          id: 'default-radicals',
-          name: { en: 'Kanji radicals', vi: 'Bộ thủ kanji' },
-          cards: radicals.map((card) => ({ id: card.id, type: card.type }))
-        }
+        ...jlptLessonCollections('n5'),
+        ...jlptLessonCollections('n4'),
+        ...radicalCollections(radicals)
       ]
     };
   }
