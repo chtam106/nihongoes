@@ -44,6 +44,7 @@ const ANONYMOUS: AuthSnapshot = {
 
 let snapshot: AuthSnapshot = isFlashcardAuthEnabled() ? LOADING : ANONYMOUS;
 let signOutInProgress = false;
+let refreshInFlight: Promise<void> | null = null;
 const listeners = new Set<() => void>();
 
 function emit() {
@@ -75,7 +76,7 @@ function consumeAuthError(): { failed: boolean; reason: string | null } {
   return { failed: true, reason };
 }
 
-export async function refreshSession() {
+async function refreshSessionOnce() {
   if (signOutInProgress) {
     return;
   }
@@ -85,6 +86,15 @@ export async function refreshSession() {
     emit();
 
     return;
+  }
+
+  if (snapshot.status !== 'authenticated') {
+    snapshot = {
+      ...LOADING,
+      notice: snapshot.notice,
+      authFailureReason: snapshot.authFailureReason
+    };
+    emit();
   }
 
   try {
@@ -133,6 +143,18 @@ export async function refreshSession() {
     };
     emit();
   }
+}
+
+export function refreshSession() {
+  if (refreshInFlight) {
+    return refreshInFlight;
+  }
+
+  refreshInFlight = refreshSessionOnce().finally(() => {
+    refreshInFlight = null;
+  });
+
+  return refreshInFlight;
 }
 
 export function startGoogleSignIn(returnTo?: string) {
