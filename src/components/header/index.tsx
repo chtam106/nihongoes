@@ -14,6 +14,9 @@ const LanguageSwitcher = lazy(() =>
     default: module.LanguageSwitcher
   }))
 );
+const HeaderAuth = lazy(() =>
+  import('@/components/header-auth').then((module) => ({ default: module.HeaderAuth }))
+);
 
 type HeaderProps = {
   drawerWidth: number;
@@ -72,10 +75,11 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
             <Brand showTagline={false} showLogo={false} />
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Suspense fallback={<Box sx={{ width: 80, height: 40 }} aria-hidden />}>
+              <Suspense fallback={<Box sx={{ width: 120, height: 40 }} aria-hidden />}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                   <AppSettings />
                   <LanguageSwitcher />
+                  <HeaderAuth />
                 </Box>
               </Suspense>
             </Box>
