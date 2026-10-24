@@ -129,9 +129,9 @@ for source map upload. The custom domain is configured in the Vercel dashboard.
 ### CI/CD
 
 Pull requests run GitHub Actions (`.github/workflows/ci.yml`). A job runs only
-when matching files changed: typecheck, ESLint, Stylelint (CSS), unit tests,
-and Playwright e2e against a production build. The full `pnpm build` runs only
-on pull requests into `release-production`, because it pre-renders every page.
+when matching files changed: typecheck, ESLint, Stylelint (CSS), and unit tests.
+The full `pnpm build` runs only on pull requests into `release-production`,
+because it pre-renders every page. Playwright e2e stays local/optional (`pnpm test:e2e`).
 `Tests pass` is the branch-protection check; a skipped job still counts as
 success.
 
@@ -154,6 +154,18 @@ Production is driven by the `release-production` branch:
 4. Vercel builds and deploys to production automatically. Watch the deploy in
    the Vercel dashboard (Deployments tab).
 
+### Staging
+
+Preview/staging uses Git branch **`release-staging`** (domain **`stg.nihongoes.com`** in Vercel). Same Vercel project; scope Preview env vars to that branch when possible.
+
+### Flashcard Google auth (optional)
+
+Signed-in flashcard collections sync through the **`nihongoes-backend`** repo on Fly.io (SQLite per environment). The site can rewrite `/auth/*` and `/api/*` to the backend on the same public URL.
+
+Step-by-step (Google OAuth, Fly secrets, Vercel `NEXT_PUBLIC_AUTH_SAME_ORIGIN` + `AUTH_BACKEND_INTERNAL_URL`, stg vs prod): **`docs/DEPLOY-FLASHCARD-AUTH.md`**.
+
+Without those env vars, flashcards stay **localStorage-only** (auth UI hidden).
+
 ## Error Monitoring (Sentry)
 
 Sentry runs in production builds only (guarded by `process.env.NODE_ENV`). It is
@@ -171,6 +183,7 @@ Required token permissions: **Project - Admin**, **Release - Admin**,
 
 ## Further Docs
 
+- Flashcard auth deploy: `docs/DEPLOY-FLASHCARD-AUTH.md`
 - Performance auditing: `docs/LIGHTHOUSE.md`
 - Optimization log: `docs/OPTIMIZATION.md`
 - Testing guide: `docs/TESTING.md`

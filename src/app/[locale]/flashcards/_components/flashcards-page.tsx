@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from 'react';
+import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
@@ -28,7 +28,6 @@ import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
-import { flashcardCollectionPath } from '@/constants/courses/levels.ts';
 import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import {
   isDefaultCollectionId,
@@ -44,6 +43,7 @@ import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-col
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
+  flashcardCollectionHref,
   flashcardsListPath,
   parseFlashcardsListTabParam,
   FLASHCARDS_LIST_TAB_QUERY,
@@ -55,6 +55,7 @@ import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 type CollectionsGridProps = {
   collections: FlashcardCollection[];
+  listTab: FlashcardsListTab;
   allowRename: boolean;
   allowDelete: boolean;
   onRename?: (collection: FlashcardCollection) => void;
@@ -63,6 +64,7 @@ type CollectionsGridProps = {
 
 function CollectionsGrid({
   collections,
+  listTab,
   allowRename,
   allowDelete,
   onRename,
@@ -104,7 +106,7 @@ function CollectionsGrid({
           >
             <Box
               component={RouterLink}
-              to={flashcardCollectionPath(collection.id)}
+              to={flashcardCollectionHref(collection.id, listTab)}
               sx={(theme) => ({
                 width: '100%',
                 minWidth: 0,
@@ -219,7 +221,12 @@ function CollectionGroup({ title, collections, defaultOpen = false }: Collection
         </ButtonBase>
       </Heading>
       <Collapse in={open} unmountOnExit>
-        <CollectionsGrid collections={collections} allowRename={false} allowDelete={false} />
+        <CollectionsGrid
+          collections={collections}
+          listTab="default"
+          allowRename={false}
+          allowDelete={false}
+        />
       </Collapse>
     </Stack>
   );
@@ -242,7 +249,6 @@ function FlashcardsView() {
   const { t, locale } = useTranslation();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const urlSyncedRef = useRef(false);
   const { collections, create, rename, remove } = useFlashcardCollections();
   const mine = collections.filter((collection) => !isDefaultCollectionId(collection.id));
   const builtin = collections.filter((collection) => isDefaultCollectionId(collection.id));
@@ -252,16 +258,12 @@ function FlashcardsView() {
   const listTab = tabFromUrl ?? 'mine';
 
   useEffect(() => {
-    if (urlSyncedRef.current) {
+    if (tabFromUrl !== null) {
       return;
     }
 
-    urlSyncedRef.current = true;
-
-    if (tabParam === null || tabFromUrl === null) {
-      router.replace(flashcardsListPath(listTab), { scroll: false });
-    }
-  }, [listTab, router, tabFromUrl, tabParam]);
+    router.replace(flashcardsListPath('mine'), { scroll: false });
+  }, [router, tabFromUrl]);
 
   const handleListTabChange = (_event: SyntheticEvent, value: FlashcardsListTab) => {
     router.replace(flashcardsListPath(value), { scroll: false });
@@ -324,6 +326,36 @@ function FlashcardsView() {
         </Box>
 
         <Box>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-start', mb: 2 }}>
+            <Button
+              variant="text"
+              color="primary"
+              startIcon={<AddOutlined />}
+              onClick={() => setCreateOpen(true)}
+              sx={(theme) => ({
+                minWidth: 0,
+                px: 0,
+                py: 0.5,
+                border: 0,
+                boxShadow: 'none',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                '&.Mui-focusVisible': focusVisibleSx(theme),
+                '@media (hover: hover)': {
+                  '&:hover': {
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                    bgcolor: 'transparent'
+                  }
+                }
+              })}
+            >
+              {t('flashcards.newCollection')}
+            </Button>
+          </Box>
+
           <Tabs
             value={listTab}
             onChange={handleListTabChange}
@@ -339,18 +371,9 @@ function FlashcardsView() {
 
           {listTab === 'mine' && (
             <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button
-                  variant="contained"
-                  startIcon={<AddOutlined />}
-                  onClick={() => setCreateOpen(true)}
-                  sx={{ textTransform: 'none' }}
-                >
-                  {t('flashcards.newCollection')}
-                </Button>
-              </Box>
               <CollectionsGrid
                 collections={mine}
+                listTab="mine"
                 allowRename
                 allowDelete
                 onRename={openRename}
