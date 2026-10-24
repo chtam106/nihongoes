@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { flashcardCollectionPath } from '@/constants/courses/levels.ts';
 import { UNTITLED_FLASHCARD_COLLECTION_ID } from '@/constants/flashcards/collections.ts';
 import { getKanjiGradeFlashcards } from '@/constants/flashcards/kanji-defaults.ts';
@@ -32,11 +33,13 @@ export default async function Page({ params }: PageProps<{ collectionId: string 
 
   return (
     <FlashcardAuthGate>
-      <CollectionDetail
-        collectionId={collectionId}
-        defaults={[...light.collections, ...kanji.collections]}
-        extraCards={[...light.cards, ...kanji.cards]}
-      />
+      <Suspense fallback={null}>
+        <CollectionDetail
+          collectionId={collectionId}
+          defaults={[...light.collections, ...kanji.collections]}
+          extraCards={[...light.cards, ...kanji.cards]}
+        />
+      </Suspense>
     </FlashcardAuthGate>
   );
 }
