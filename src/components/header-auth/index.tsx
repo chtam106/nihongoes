@@ -43,9 +43,7 @@ export function HeaderAuth() {
   const pending = auth.status === 'loading';
 
   if (pending) {
-    return (
-      <Box aria-hidden sx={{ height: 40, minWidth: '4.5rem', flexShrink: 0 }} />
-    );
+    return <Box aria-hidden sx={{ height: 40, minWidth: '4.5rem', flexShrink: 0 }} />;
   }
 
   if (signedIn) {
