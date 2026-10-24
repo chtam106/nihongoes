@@ -43,7 +43,7 @@ export const n5ReferenceColumns: ReferenceArticle[] = [
             romaji: 'Watashi wa senshū Disunīrando e ikimashita.',
             meaning: {
               en: 'Last week I went to Disneyland.',
-              vi: 'Tuần trước tôi đã đi Disneyland.'
+              vi: 'Tuần trước tôi đã đi đến Disneyland.'
             },
             ruby: [
               { base: '先週', reading: 'せんしゅう' },

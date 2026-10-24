@@ -193,7 +193,7 @@ export const n5Lesson13SentenceWriting: LessonSentenceWriting = {
       patternRuby: [{ base: '行', reading: 'い' }],
       items: [
         {
-          prompt: { en: 'I go to the pool to swim.', vi: 'Tôi đi bể bơi để bơi.' },
+          prompt: { en: 'I go to the pool to swim.', vi: 'Tôi đi đến bể bơi để bơi.' },
           jp: 'プールへ 泳ぎに 行きます。',
           ruby: [
             { base: '泳', reading: 'およ' },
@@ -201,7 +201,7 @@ export const n5Lesson13SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I go to the river to fish.', vi: 'Tôi đi sông để câu.' },
+          prompt: { en: 'I go to the river to fish.', vi: 'Tôi đi đến sông để câu.' },
           jp: '川へ 釣りに 行きます。',
           ruby: [
             { base: '川', reading: 'かわ' },
@@ -232,7 +232,7 @@ export const n5Lesson13SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: "I go to the park for a walk around 3 o'clock.",
-            vi: 'Khoảng 3 giờ tôi đi công viên dạo.'
+            vi: 'Khoảng 3 giờ tôi đi đến công viên dạo.'
           },
           jp: '3時ごろ 公園へ 散歩に 行きます。',
           ruby: [

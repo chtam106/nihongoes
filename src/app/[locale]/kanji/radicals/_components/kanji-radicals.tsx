@@ -207,7 +207,11 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
   const { t } = useTranslation();
 
   return (
-    <SaveableCard cardId={`radical:${radical.number}`} cardType="radical">
+    <SaveableCard
+      cardId={`radical:${radical.number}`}
+      cardType="radical"
+      sx={{ height: '100%', minWidth: 0, alignSelf: 'stretch' }}
+    >
       <Paper
         elevation={0}
         id={`radical-${index}`}

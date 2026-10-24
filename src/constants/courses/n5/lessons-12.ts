@@ -933,7 +933,7 @@ export const n5Lesson12: Lesson = {
         {
           jp: 'きのう 京都に 行きました。',
           romaji: 'Kinō Kyōto ni ikimashita.',
-          meaning: { en: 'I went to Kyoto yesterday.', vi: 'Hôm qua tôi đi Kyoto.' },
+          meaning: { en: 'I went to Kyoto yesterday.', vi: 'Hôm qua tôi đi đến Kyoto.' },
           ruby: [
             { base: '京', reading: 'きょう' },
             { base: '都', reading: 'と' },

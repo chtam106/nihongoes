@@ -445,7 +445,7 @@ export const n4Lesson43: Lesson = {
           romaji: 'Yūbinkyoku e itte kimasu.',
           meaning: {
             en: 'I am going to the post office (and coming back).',
-            vi: 'Tôi đi bưu điện (rồi về).'
+            vi: 'Tôi đi đến bưu điện (rồi về).'
           },
           ruby: [
             { base: '郵', reading: 'ゆう' },

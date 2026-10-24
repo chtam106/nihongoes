@@ -125,16 +125,28 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
       () => document.removeEventListener('click', swallowClick, true),
       LONG_PRESS_MS
     );
+
+    const blockContextMenu = (event: Event) => {
+      event.preventDefault();
+    };
+
+    document.addEventListener('contextmenu', blockContextMenu, true);
+    window.setTimeout(
+      () => document.removeEventListener('contextmenu', blockContextMenu, true),
+      LONG_PRESS_MS
+    );
+
     context.openSave({ id: cardId, type: cardType });
   }, [cardId, cardType, context, stopBlockingSelect]);
 
-  const onContextMenu = useCallback(
+  const onContextMenuCapture = useCallback(
     (event: MouseEvent<HTMLElement>) => {
       if (!context) {
         return;
       }
 
       event.preventDefault();
+      event.stopPropagation();
       clearLongPress();
       openSave();
     },
@@ -197,7 +209,7 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
   );
 
   return {
-    onContextMenu,
+    onContextMenuCapture,
     onPointerDown,
     onPointerMove,
     onPointerUp: clearLongPress,
@@ -218,7 +230,10 @@ export function SaveableCard({ cardId, cardType, children, sx }: SaveableCardPro
   const sxOverrides = sx == null ? [] : Array.isArray(sx) ? sx : [sx];
 
   return (
-    <Box {...gesture} sx={[{ WebkitTouchCallout: 'none' }, ...sxOverrides]}>
+    <Box
+      {...gesture}
+      sx={[{ WebkitTouchCallout: 'none', touchAction: 'manipulation' }, ...sxOverrides]}
+    >
       {children}
     </Box>
   );

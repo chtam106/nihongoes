@@ -511,7 +511,7 @@ export const n4Lesson32: Lesson = {
             'Sutoresu ga genin kamoshiremasen ne. Ichido byōin de sensei ni mite moratta hō ga ii desu yo.',
           meaning: {
             en: 'Stress might be the cause. You should see a doctor at the hospital once.',
-            vi: 'Có lẽ do căng thẳng. Anh nên đi bệnh viện khám một lần.'
+            vi: 'Có lẽ do căng thẳng. Anh nên đi đến bệnh viện khám một lần.'
           },
           ruby: [
             { base: '原', reading: 'げん' },

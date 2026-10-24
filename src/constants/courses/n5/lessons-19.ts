@@ -463,7 +463,7 @@ export const n5Lesson19: Lesson = {
           romaji: 'Hokkaidō e itta koto ga arimasu ka.',
           meaning: {
             en: 'Have you ever been to Hokkaido?',
-            vi: 'Anh/Chị đã từng đi Hokkaido bao giờ chưa?'
+            vi: 'Anh/Chị đã từng đi đến Hokkaido bao giờ chưa?'
           },
           dialogueGroup: 'hokkaido',
           ruby: [

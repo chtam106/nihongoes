@@ -442,7 +442,7 @@ export const n5Lesson13: Lesson = {
           romaji: 'Kodomo to Kōbe e fune o mi ni ikimasu.',
           meaning: {
             en: 'I am going to Kobe with my child to look at boats.',
-            vi: 'Tôi đi Kobe với con để ngắm thuyền.'
+            vi: 'Tôi đi đến Kobe với con để ngắm thuyền.'
           },
           ruby: [
             { base: '子', reading: 'こ' },
@@ -625,7 +625,7 @@ export const n5Lesson13: Lesson = {
         {
           jp: '沖縄へ 行きたいです。',
           romaji: 'Okinawa e ikitai desu.',
-          meaning: { en: 'I want to go to Okinawa.', vi: 'Tôi muốn đi Okinawa.' },
+          meaning: { en: 'I want to go to Okinawa.', vi: 'Tôi muốn đi đến Okinawa.' },
           ruby: [
             { base: '沖', reading: 'おき' },
             { base: '縄', reading: 'なわ' },
@@ -702,7 +702,7 @@ export const n5Lesson13: Lesson = {
         {
           jp: '神戸へ 買い物に 行きます。',
           romaji: 'Kōbe e kaimono ni ikimasu.',
-          meaning: { en: 'I go to Kobe to shop.', vi: 'Tôi đi Kobe để mua sắm.' },
+          meaning: { en: 'I go to Kobe to shop.', vi: 'Tôi đi đến Kobe để mua sắm.' },
           ruby: [
             { base: '神', reading: 'こう' },
             { base: '戸', reading: 'べ' },
@@ -733,7 +733,7 @@ export const n5Lesson13: Lesson = {
           romaji: 'Ashita Kyōto no omatsuri ni ikimasu.',
           meaning: {
             en: 'Tomorrow I am going to Kyoto for the festival.',
-            vi: 'Ngày mai tôi đi Kyoto xem lễ hội.'
+            vi: 'Ngày mai tôi đi đến Kyoto xem lễ hội.'
           },
           ruby: [
             { base: '京', reading: 'きょう' },
@@ -747,7 +747,7 @@ export const n5Lesson13: Lesson = {
           romaji: 'Fuyuyasumi ni Hokkaidō e sukī ni ikimashita.',
           meaning: {
             en: 'During winter break I went to Hokkaido to ski.',
-            vi: 'Nghỉ đông tôi đi Hokkaido trượt tuyết.'
+            vi: 'Nghỉ đông tôi đi đến Hokkaido trượt tuyết.'
           },
           ruby: [
             { base: '冬', reading: 'ふゆ' },
@@ -789,7 +789,7 @@ export const n5Lesson13: Lesson = {
           romaji: 'Hai. Hokkaidō e sukī ni ikimashita.',
           meaning: {
             en: 'Yes. I went skiing in Hokkaido.',
-            vi: 'Có. Tôi đi Hokkaido trượt tuyết.'
+            vi: 'Có. Tôi đi đến Hokkaido trượt tuyết.'
           },
           ruby: [
             { base: '北', reading: 'ほっ' },
@@ -1069,7 +1069,7 @@ export const n5Lesson13: Lesson = {
           romaji: 'Hai. Hokkaidō e sukī ni ikimashita.',
           meaning: {
             en: 'Yes. She went to Hokkaido to ski.',
-            vi: 'Có. Cô ấy đi Hokkaido trượt tuyết.'
+            vi: 'Có. Cô ấy đi đến Hokkaido trượt tuyết.'
           },
           ruby: [
             { base: '北', reading: 'ほっ' },
@@ -1213,7 +1213,7 @@ export const n5Lesson13: Lesson = {
           romaji: 'Nichiyōbi, kazoku to kōen e sanpo ni ikimashita.',
           meaning: {
             en: 'On Sunday I went to the park with my family for a walk.',
-            vi: 'Chủ nhật tôi đi công viên với gia đình để dạo.'
+            vi: 'Chủ nhật tôi đi đến công viên với gia đình để dạo.'
           },
           ruby: [
             { base: '日', reading: 'にち' },
@@ -1258,7 +1258,7 @@ export const n5Lesson13: Lesson = {
       questions: [
         {
           id: 'q1',
-          question: { en: 'When did they go to the park?', vi: 'Họ đi công viên khi nào?' },
+          question: { en: 'When did they go to the park?', vi: 'Họ đi đến công viên khi nào?' },
           jp: 'いつ 公園へ 行きましたか。',
           ruby: [
             { base: '公', reading: 'こう' },

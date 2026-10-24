@@ -753,7 +753,7 @@ export const n5Lesson6: Lesson = {
         {
           jp: '何で 東京へ 行きますか。',
           romaji: 'Nan de Tōkyō e ikimasu ka.',
-          meaning: { en: 'How do you go to Tokyo?', vi: 'Bạn đi Tokyo bằng gì?' },
+          meaning: { en: 'How do you go to Tokyo?', vi: 'Bạn đi đến Tokyo bằng gì?' },
           ruby: [
             { base: '何', reading: 'なん' },
             { base: '東', reading: 'とう' },
@@ -878,7 +878,7 @@ export const n5Lesson6: Lesson = {
           romaji: 'Issho ni Kyōto e ikimasen ka.',
           meaning: {
             en: 'Would you like to go to Kyoto with me?',
-            vi: 'Bạn đi Kyoto cùng tôi không?'
+            vi: 'Bạn đi đến Kyoto cùng tôi không?'
           },
           ruby: [
             { base: '京', reading: 'きょう' },
@@ -989,7 +989,7 @@ export const n5Lesson6: Lesson = {
         {
           jp: '日曜日 京都へ 行きました。',
           romaji: 'Nichiyōbi Kyōto e ikimashita.',
-          meaning: { en: 'I went to Kyoto on Sunday.', vi: 'Chủ nhật tôi đã đi Kyoto.' },
+          meaning: { en: 'I went to Kyoto on Sunday.', vi: 'Chủ nhật tôi đã đi đến Kyoto.' },
           dialogueGroup: 'echo-kyoto',
           ruby: [
             { base: '日', reading: 'にち' },

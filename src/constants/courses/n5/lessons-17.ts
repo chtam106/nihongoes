@@ -578,7 +578,7 @@ export const n5Lesson17: Lesson = {
           romaji: 'Watashi wa kyō kaisha e ikimasen.',
           meaning: {
             en: 'I am not going to the office today.',
-            vi: 'Hôm nay tôi không đi công ty.'
+            vi: 'Hôm nay tôi không đi làm.'
           },
           ruby: [
             { base: '私', reading: 'わたし' },
@@ -949,7 +949,7 @@ export const n5Lesson17: Lesson = {
           romaji: 'Nodo mo itakatta desu kara, kaisha e ikimasen deshita.',
           meaning: {
             en: 'His throat hurt too, so he did not go to the office.',
-            vi: 'Họng cũng đau nên anh ấy không đi công ty.'
+            vi: 'Họng cũng đau nên anh ấy không đi làm.'
           },
           ruby: [
             { base: '痛', reading: 'いた' },
@@ -1026,7 +1026,7 @@ export const n5Lesson17: Lesson = {
         },
         {
           id: 'q2',
-          question: { en: 'Did he go to the office?', vi: 'Anh ấy có đi công ty không?' },
+          question: { en: 'Did he go to the office?', vi: 'Anh ấy có đi làm không?' },
           jp: '会社へ 行きましたか。',
           ruby: [
             { base: '会', reading: 'かい' },

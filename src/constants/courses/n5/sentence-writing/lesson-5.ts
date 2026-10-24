@@ -11,7 +11,7 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
       ],
       items: [
         {
-          prompt: { en: 'I go to school.', vi: 'Tôi đi trường.' },
+          prompt: { en: 'I go to school.', vi: 'Tôi đi học.' },
           jp: '学校へ 行きます。',
           ruby: [
             { base: '学', reading: 'がっ' },
@@ -20,12 +20,12 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I go to the supermarket.', vi: 'Tôi đi siêu thị.' },
+          prompt: { en: 'I go to the supermarket.', vi: 'Tôi đi đến siêu thị.' },
           jp: 'スーパーへ 行きます。',
           ruby: [{ base: '行', reading: 'い' }]
         },
         {
-          prompt: { en: 'I go to the station.', vi: 'Tôi đi nhà ga.' },
+          prompt: { en: 'I go to the station.', vi: 'Tôi đi đến nhà ga.' },
           jp: '駅へ 行きます。',
           ruby: [
             { base: '駅', reading: 'えき' },
@@ -519,7 +519,7 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I am going to Kyoto tomorrow (I tell you).',
-            vi: 'Ngày mai tôi đi Kyoto đấy.'
+            vi: 'Ngày mai tôi đi đến Kyoto đấy.'
           },
           jp: 'あした 京都へ 行きますよ。',
           ruby: [

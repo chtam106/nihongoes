@@ -223,7 +223,7 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'How do you go to Tokyo?', vi: 'Bạn đi Tokyo bằng gì?' },
+          prompt: { en: 'How do you go to Tokyo?', vi: 'Bạn đi đến Tokyo bằng gì?' },
           jp: '何で 東京へ 行きますか。',
           ruby: [
             { base: '何', reading: 'なん' },
@@ -313,7 +313,7 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'Would you like to go to Kyoto with me?',
-            vi: 'Bạn đi Kyoto cùng tôi không?'
+            vi: 'Bạn đi đến Kyoto cùng tôi không?'
           },
           jp: 'いっしょに 京都へ 行きませんか。',
           ruby: [
@@ -388,7 +388,7 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
       pattern: 'N ですか',
       items: [
         {
-          prompt: { en: 'You went to Kyoto on Sunday? (echo)', vi: 'Chủ nhật bạn đi Kyoto à?' },
+          prompt: { en: 'You went to Kyoto on Sunday? (echo)', vi: 'Chủ nhật bạn đi đến Kyoto à?' },
           jp: '日曜日 京都へ 行きましたか。',
           ruby: [
             { base: '日', reading: 'にち' },

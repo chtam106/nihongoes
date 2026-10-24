@@ -685,7 +685,7 @@ export const n4Lesson50: Lesson = {
           id: 'q1',
           question: {
             en: 'When will the writer go to Munich?',
-            vi: 'Người viết sẽ đi München khi nào?'
+            vi: 'Người viết sẽ đi đến München khi nào?'
           },
           jp: 'いつ ミュンヘンへ 行きますか。',
           ruby: [{ base: '行', reading: 'い' }],
