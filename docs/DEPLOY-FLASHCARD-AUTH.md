@@ -15,7 +15,7 @@ Flashcard collections sync uses a small Express backend (`nihongoes-backend`) an
 
 ## Backend on Fly.io
 
-Repo: [github.com/chtam106/nihongoes-backend](https://github.com/chtam106/nihongoes-backend) (`fly.toml`, region `sin`, volume `nihongoes_data` → `/app/data`).
+Repo: [github.com/chtam106/nihongoes-backend](https://github.com/chtam106/nihongoes-backend) (`fly.toml` = staging `nihongoes-backend-stg`, `fly.production.toml` = prod `nihongoes-backend`, region `sin`, volume `nihongoes_data` → `/app/data`).
 
 1. Install [flyctl](https://fly.io/docs/flyctl/install/) and run `fly auth login`.
 2. Clone repo, then `fly launch --no-deploy` (confirm app name / region **Singapore (`sin`)**).
@@ -48,7 +48,18 @@ Redeploy after setting variables (rewrites are applied at build).
 
 Do **not** set `NEXT_PUBLIC_API_URL` in same-origin mode.
 
-**Production** (`release-production`): leave auth env unset until you are ready; the site keeps using localStorage-only flashcards.
+**Production** (`release-production` on Vercel):
+
+| Variable                       | Value                                      |
+| ------------------------------ | ------------------------------------------ |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                        |
+| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev`        |
+
+Add Google redirect URI `https://nihongoes.com/auth/google/callback`. Redeploy production after env + merge.
+
+Backend: `fly deploy --config fly.production.toml` in `nihongoes-backend` (app `nihongoes-backend`, secrets use `BACKEND_ORIGIN` / `FRONTEND_ORIGIN` = `https://nihongoes.com`).
+
+Without those Vercel variables, the site keeps localStorage-only flashcards (auth code ships but stays off).
 
 ## Staging branch (Vercel Git)
 
@@ -86,7 +97,7 @@ Backend `BACKEND_ORIGIN=http://localhost:3000`, `FRONTEND_ORIGIN=http://localhos
 
 ## Backend trên Fly.io
 
-Repo GitHub `nihongoes-backend`, file `fly.toml` (region `sin`, volume SQLite).
+Repo GitHub `nihongoes-backend`: `fly.toml` (stg), `fly.production.toml` (prod), region `sin`, volume SQLite.
 
 1. Cài flyctl → `fly auth login`.
 2. `fly launch --no-deploy` (region Singapore).
@@ -105,7 +116,18 @@ Repo GitHub `nihongoes-backend`, file `fly.toml` (region `sin`, volume SQLite).
 
 Deploy lại sau khi thêm biến.
 
-Production: chưa set biến auth → flashcards vẫn chỉ localStorage.
+**Production** (Vercel, branch `release-production`):
+
+| Biến                           | Giá trị                               |
+| ------------------------------ | ------------------------------------- |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                   |
+| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev`   |
+
+Thêm redirect Google `https://nihongoes.com/auth/google/callback`, rồi redeploy production.
+
+Backend: `fly deploy --config fly.production.toml` (app `nihongoes-backend`; secrets `BACKEND_ORIGIN` / `FRONTEND_ORIGIN` = `https://nihongoes.com`).
+
+Chưa set biến trên Vercel → flashcards vẫn chỉ localStorage.
 
 ## Nhánh staging (Vercel Git)
 
