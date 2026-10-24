@@ -1,5 +1,6 @@
 'use client';
 
+import '@/features/auth/session.ts';
 import { useEffect, useState, type ReactNode } from 'react';
 import { Box, Toolbar } from '@mui/material';
 import { Footer } from '@/components/footer';

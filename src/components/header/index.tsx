@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Box, IconButton, Stack, Toolbar } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand';
+import { HeaderAuth } from '@/components/header-auth';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 const AppSettings = lazy(() =>
@@ -13,9 +14,6 @@ const LanguageSwitcher = lazy(() =>
   import('@/components/language-switcher').then((module) => ({
     default: module.LanguageSwitcher
   }))
-);
-const HeaderAuth = lazy(() =>
-  import('@/components/header-auth').then((module) => ({ default: module.HeaderAuth }))
 );
 
 type HeaderProps = {
