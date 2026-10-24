@@ -1,7 +1,6 @@
 'use client';
 
 import LoginOutlined from '@mui/icons-material/LoginOutlined';
-import LogoutOutlined from '@mui/icons-material/LogoutOutlined';
 import { Box, IconButton } from '@mui/material';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
 import { isFlashcardAuthRoute } from '@/features/auth/flashcard-auth-routes.ts';
@@ -12,6 +11,10 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import { hoverFillNoneSx } from '@/theme/hover.ts';
 
 const ICON_SLOT_SX = { width: 40, height: 40, flexShrink: 0 };
+
+/** Same glyph: sign-in arrow points right, sign-out mirrored to point left. */
+const ARROW_IN_SX = { transform: 'scaleX(1)' };
+const ARROW_OUT_SX = { transform: 'scaleX(-1)' };
 
 export function HeaderAuth() {
   const { t } = useTranslation();
@@ -44,7 +47,7 @@ export function HeaderAuth() {
         color="primary"
         sx={hoverFillNoneSx}
       >
-        <LogoutOutlined />
+        <LoginOutlined sx={ARROW_OUT_SX} />
       </IconButton>
     );
   }
@@ -64,7 +67,7 @@ export function HeaderAuth() {
       color="primary"
       sx={hoverFillNoneSx}
     >
-      <LoginOutlined />
+      <LoginOutlined sx={ARROW_IN_SX} />
     </IconButton>
   );
 }
