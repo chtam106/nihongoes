@@ -18,7 +18,7 @@ export function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const returnTo = safeReturnTo(searchParams.get(RETURN_TO_QUERY), FLASHCARDS_PATH);
-  const authReason = searchParams.get(AUTH_REASON_QUERY);
+  const authReason = searchParams.get(AUTH_REASON_QUERY) ?? auth.authFailureReason;
 
   useEffect(() => {
     if (auth.status === 'authenticated') {

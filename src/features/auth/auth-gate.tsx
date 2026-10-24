@@ -34,18 +34,18 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
 
     const href = typeof window !== 'undefined' ? window.location.href : null;
     const returnTo = safeReturnTo(href, '/flashcards');
-    let authReason: string | null = null;
+    let authReason: string | null = auth.authFailureReason;
 
     if (href) {
       try {
-        authReason = new URL(href).searchParams.get('auth_reason');
+        authReason = new URL(href).searchParams.get('auth_reason') ?? authReason;
       } catch {
-        authReason = null;
+        authReason = auth.authFailureReason;
       }
     }
 
     router.replace(loginPath(returnTo, authReason));
-  }, [auth.status, router]);
+  }, [auth.authFailureReason, auth.status, router]);
 
   if (!isFlashcardAuthEnabled()) {
     return children;
