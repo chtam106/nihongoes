@@ -71,7 +71,9 @@ export async function loadCollectionStore(userId: string) {
   emit();
 
   try {
-    let store = sanitizeFlashcardStore(await api<unknown>('/api/collections'));
+    let store = sanitizeFlashcardStore(
+      await api<unknown>('/api/collections', { sessionNotify: false })
+    );
 
     if (id !== generation) {
       return;
@@ -88,7 +90,8 @@ export async function loadCollectionStore(userId: string) {
         store = sanitizeFlashcardStore(
           await api<unknown>('/api/collections', {
             method: 'PUT',
-            body: JSON.stringify(local)
+            body: JSON.stringify(local),
+            sessionNotify: false
           })
         );
       }
@@ -106,6 +109,9 @@ export async function loadCollectionStore(userId: string) {
     }
 
     if (error instanceof ApiError && error.status === 401) {
+      snapshot = IDLE;
+      emit();
+
       return;
     }
 
@@ -137,7 +143,8 @@ export function writeCollectionStore(store: FlashcardStore) {
     void api('/api/collections', {
       method: 'PUT',
       body: JSON.stringify(store),
-      signal
+      signal,
+      sessionNotify: false
     }).catch((error: unknown) => {
       if (id !== generation || signal.aborted) {
         return;
@@ -170,7 +177,8 @@ export async function flushCollectionStore() {
     await api('/api/collections', {
       method: 'PUT',
       body: JSON.stringify(snapshot.store),
-      signal: persistAbort.signal
+      signal: persistAbort.signal,
+      sessionNotify: false
     });
   } catch {
     // Signing out still clears the local session.

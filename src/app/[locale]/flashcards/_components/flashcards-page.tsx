@@ -40,8 +40,6 @@ import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
-import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
-import { signOut, useAuth } from '@/features/auth/session.ts';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -242,7 +240,6 @@ export function FlashcardsPage({ defaults, extraCards }: FlashcardsPageProps) {
 
 function FlashcardsView() {
   const { t, locale } = useTranslation();
-  const auth = useAuth();
   const router = useRouter();
   const searchParams = useSearchParams();
   const urlSyncedRef = useRef(false);
@@ -319,22 +316,7 @@ function FlashcardsView() {
     <PageContainer bottomGutter>
       <Stack spacing={3}>
         <Box>
-          <Stack
-            direction="row"
-            spacing={2}
-            sx={{ alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap' }}
-          >
-            <Heading component="h1">{t('flashcards.title')}</Heading>
-            {isFlashcardAuthEnabled() && auth.status === 'authenticated' && (
-              <Button
-                variant="outlined"
-                onClick={() => void signOut()}
-                sx={{ textTransform: 'none', flexShrink: 0 }}
-              >
-                {t('auth.signOut')}
-              </Button>
-            )}
-          </Stack>
+          <Heading component="h1">{t('flashcards.title')}</Heading>
           <Stack spacing={0.5} sx={{ mt: 1.5 }}>
             <HintText>{t('flashcards.flipHint')}</HintText>
             <HintText>{t('flashcards.saveHint')}</HintText>

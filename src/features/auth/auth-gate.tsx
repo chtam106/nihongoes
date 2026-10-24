@@ -1,13 +1,18 @@
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
+import { useEffect, useSyncExternalStore, type ReactNode } from 'react';
 import { Stack, Typography } from '@mui/material';
 import { PageContainer } from '@/components/page-container';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
+import { isFlashcardAuthRoute } from '@/features/auth/flashcard-auth-routes.ts';
 import { loginPath, safeReturnTo } from '@/features/auth/login-path.ts';
 import { useAuth } from '@/features/auth/session.ts';
-import { getCollectionSnapshot } from '@/features/flashcards/collection-store.ts';
-import { useRouter } from '@/i18n/navigation.tsx';
+import {
+  getCollectionSnapshot,
+  getServerCollectionSnapshot,
+  subscribeCollections
+} from '@/features/flashcards/collection-store.ts';
+import { usePathname, useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 type AuthGateProps = {
@@ -17,7 +22,13 @@ type AuthGateProps = {
 export function FlashcardAuthGate({ children }: AuthGateProps) {
   const { t } = useTranslation();
   const auth = useAuth();
+  const pathname = usePathname();
   const router = useRouter();
+  const collections = useSyncExternalStore(
+    subscribeCollections,
+    getCollectionSnapshot,
+    getServerCollectionSnapshot
+  );
 
   useEffect(() => {
     if (!isFlashcardAuthEnabled()) {
@@ -29,6 +40,10 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
     }
 
     if (auth.status === 'authenticated') {
+      return;
+    }
+
+    if (!isFlashcardAuthRoute(pathname)) {
       return;
     }
 
@@ -45,7 +60,7 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
     }
 
     router.replace(loginPath(returnTo, authReason));
-  }, [auth.authFailureReason, auth.status, router]);
+  }, [auth.authFailureReason, auth.status, pathname, router]);
 
   if (!isFlashcardAuthEnabled()) {
     return children;
@@ -64,8 +79,6 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
   if (auth.status !== 'authenticated') {
     return null;
   }
-
-  const collections = getCollectionSnapshot();
 
   if (collections.status === 'loading' || collections.userId !== auth.user?.id) {
     return (
