@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { SENTENCES_PATH } from '@/constants/courses/levels.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { localeParams } from '@/i18n/route-helpers.ts';
@@ -12,5 +13,9 @@ export function generateStaticParams() {
 export const generateMetadata = createMetadata(SENTENCES_PATH);
 
 export default function Page() {
-  return <SentenceWritingPage />;
+  return (
+    <Suspense fallback={null}>
+      <SentenceWritingPage />
+    </Suspense>
+  );
 }

@@ -60,6 +60,7 @@ export const course = {
   sentenceWritingLesson: 'Lesson',
   sentenceWritingPlaceholder: 'Write in Japanese',
   sentenceWritingShowInput: 'Show writing box',
+  sentenceWritingOpenLesson: 'Lesson {number}',
   vocabularyPractice: 'Vocabulary practice',
   grammar: 'Grammar',
   grammarPractice: 'Grammar practice',
