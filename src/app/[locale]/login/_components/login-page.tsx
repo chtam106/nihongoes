@@ -8,7 +8,7 @@ import { PageContainer } from '@/components/page-container';
 import { FLASHCARDS_PATH } from '@/constants/courses/levels.ts';
 import { GoogleSignInButton } from '@/features/auth/sign-in.tsx';
 import { AUTH_REASON_QUERY, RETURN_TO_QUERY, safeReturnTo } from '@/features/auth/login-path.ts';
-import { useAuth } from '@/features/auth/session.ts';
+import { refreshSession, useAuth } from '@/features/auth/session.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
@@ -19,6 +19,10 @@ export function LoginPage() {
   const searchParams = useSearchParams();
   const returnTo = safeReturnTo(searchParams.get(RETURN_TO_QUERY), FLASHCARDS_PATH);
   const authReason = searchParams.get(AUTH_REASON_QUERY) ?? auth.authFailureReason;
+
+  useEffect(() => {
+    void refreshSession();
+  }, []);
 
   useEffect(() => {
     if (auth.status === 'authenticated') {
