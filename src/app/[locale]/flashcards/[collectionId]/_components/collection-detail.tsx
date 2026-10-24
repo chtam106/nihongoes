@@ -1,13 +1,18 @@
 'use client';
 
 import { useSyncExternalStore, type MouseEvent } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ArrowBackOutlined from '@mui/icons-material/ArrowBackOutlined';
 import { Box, Button, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { VocabFlashcards } from '@/components/vocab-flashcards';
-import { FLASHCARDS_PATH } from '@/constants/courses/levels.ts';
+import {
+  flashcardsListPath,
+  parseFlashcardsListTabParam,
+  FLASHCARDS_RETURN_TAB_QUERY
+} from '@/app/[locale]/flashcards/_components/flashcards-list-tab.ts';
 import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import {
   EMPTY_COLLECTION_FRONTS,
@@ -59,6 +64,9 @@ type CollectionStudyProps = {
 
 function CollectionStudy({ collectionId }: CollectionStudyProps) {
   const { locale, t } = useTranslation();
+  const searchParams = useSearchParams();
+  const listTab =
+    parseFlashcardsListTabParam(searchParams.get(FLASHCARDS_RETURN_TAB_QUERY)) ?? 'mine';
   const ready = useClientReady();
   const { collections } = useFlashcardCollections();
   const { resolveCards } = useFlashcardDefaults();
@@ -85,7 +93,7 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
         <Box>
           <Button
             component={RouterLink}
-            to={FLASHCARDS_PATH}
+            to={flashcardsListPath(listTab)}
             startIcon={<ArrowBackOutlined />}
             sx={{ textTransform: 'none' }}
           >
