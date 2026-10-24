@@ -81,6 +81,7 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   { name: 'course vocabulary', path: '/vocabulary' },
   { name: 'course sentences', path: '/sentences' },
   { name: 'flashcards', path: '/flashcards' },
+  { name: 'login', path: '/login' },
   { name: 'course reference', path: '/n5/reference' },
   { name: 'lesson detail', path: '/n5/lesson-1' },
   { name: 'lesson vocabulary', path: '/n5/lesson-1/vocabulary' },
