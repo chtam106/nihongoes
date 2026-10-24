@@ -55,6 +55,7 @@ function consumeAuthError() {
   }
 
   url.searchParams.delete('auth');
+  url.searchParams.delete('auth_reason');
   window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
 
   return true;
