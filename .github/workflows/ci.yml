@@ -215,7 +215,8 @@ jobs:
   e2e:
     name: E2E tests
     needs: changes
-    if: needs.changes.outputs.test_target_changed == 'true'
+    # Playwright builds + starts prod output; gate release-production PRs only (like Build).
+    if: needs.changes.outputs.test_target_changed == 'true' && github.base_ref == 'release-production'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
