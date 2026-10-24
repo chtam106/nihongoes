@@ -25,10 +25,22 @@ export type AuthSnapshot = {
   status: 'loading' | 'anonymous' | 'authenticated' | 'error';
   user: AuthUser | null;
   notice: 'none' | 'failed';
+  /** Set when the backend redirects with ?auth=error&auth_reason=… (stripped from the URL). */
+  authFailureReason: string | null;
 };
 
-const LOADING: AuthSnapshot = { status: 'loading', user: null, notice: 'none' };
-const ANONYMOUS: AuthSnapshot = { status: 'anonymous', user: null, notice: 'none' };
+const LOADING: AuthSnapshot = {
+  status: 'loading',
+  user: null,
+  notice: 'none',
+  authFailureReason: null
+};
+const ANONYMOUS: AuthSnapshot = {
+  status: 'anonymous',
+  user: null,
+  notice: 'none',
+  authFailureReason: null
+};
 
 let snapshot: AuthSnapshot = isFlashcardAuthEnabled() ? LOADING : ANONYMOUS;
 const listeners = new Set<() => void>();
@@ -47,17 +59,19 @@ function subscribe(listener: () => void) {
   };
 }
 
-function consumeAuthError() {
+function consumeAuthError(): { failed: boolean; reason: string | null } {
   const url = new URL(window.location.href);
 
   if (url.searchParams.get('auth') !== 'error') {
-    return false;
+    return { failed: false, reason: null };
   }
 
+  const reason = url.searchParams.get('auth_reason');
   url.searchParams.delete('auth');
+  url.searchParams.delete('auth_reason');
   window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
 
-  return true;
+  return { failed: true, reason };
 }
 
 export async function refreshSession() {
@@ -78,7 +92,12 @@ export async function refreshSession() {
       return;
     }
 
-    snapshot = { status: 'authenticated', user: data.user, notice: snapshot.notice };
+    snapshot = {
+      status: 'authenticated',
+      user: data.user,
+      notice: snapshot.notice,
+      authFailureReason: null
+    };
     emit();
     void loadCollectionStore(data.user.id);
   } catch (error) {
@@ -91,7 +110,12 @@ export async function refreshSession() {
       return;
     }
 
-    snapshot = { status: 'error', user: null, notice };
+    snapshot = {
+      status: 'error',
+      user: null,
+      notice,
+      authFailureReason: snapshot.authFailureReason
+    };
     emit();
   }
 }
@@ -134,8 +158,14 @@ setUnauthorizedHandler(() => {
 });
 
 if (typeof window !== 'undefined' && isFlashcardAuthEnabled()) {
-  if (consumeAuthError()) {
-    snapshot = { ...snapshot, notice: 'failed' };
+  const authError = consumeAuthError();
+
+  if (authError.failed) {
+    snapshot = {
+      ...snapshot,
+      notice: 'failed',
+      authFailureReason: authError.reason
+    };
   }
 
   void refreshSession();

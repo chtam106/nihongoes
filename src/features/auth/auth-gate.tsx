@@ -32,12 +32,20 @@ export function FlashcardAuthGate({ children }: AuthGateProps) {
       return;
     }
 
-    const returnTo = safeReturnTo(
-      typeof window !== 'undefined' ? window.location.href : null,
-      '/flashcards'
-    );
-    router.replace(loginPath(returnTo));
-  }, [auth.status, router]);
+    const href = typeof window !== 'undefined' ? window.location.href : null;
+    const returnTo = safeReturnTo(href, '/flashcards');
+    let authReason: string | null = auth.authFailureReason;
+
+    if (href) {
+      try {
+        authReason = new URL(href).searchParams.get('auth_reason') ?? authReason;
+      } catch {
+        authReason = auth.authFailureReason;
+      }
+    }
+
+    router.replace(loginPath(returnTo, authReason));
+  }, [auth.authFailureReason, auth.status, router]);
 
   if (!isFlashcardAuthEnabled()) {
     return children;

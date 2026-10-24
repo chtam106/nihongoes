@@ -7,7 +7,7 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { FLASHCARDS_PATH } from '@/constants/courses/levels.ts';
 import { GoogleSignInButton } from '@/features/auth/sign-in.tsx';
-import { RETURN_TO_QUERY, safeReturnTo } from '@/features/auth/login-path.ts';
+import { AUTH_REASON_QUERY, RETURN_TO_QUERY, safeReturnTo } from '@/features/auth/login-path.ts';
 import { useAuth } from '@/features/auth/session.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -18,6 +18,7 @@ export function LoginPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const returnTo = safeReturnTo(searchParams.get(RETURN_TO_QUERY), FLASHCARDS_PATH);
+  const authReason = searchParams.get(AUTH_REASON_QUERY) ?? auth.authFailureReason;
 
   useEffect(() => {
     if (auth.status === 'authenticated') {
@@ -32,7 +33,32 @@ export function LoginPage() {
         <Typography variant="body1" color="text.secondary">
           {t('auth.signInBody')}
         </Typography>
-        {auth.notice === 'failed' && (
+        {authReason === 'denied' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('auth.signInDenied')}
+          </Typography>
+        )}
+        {authReason === 'state' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('auth.signInState')}
+          </Typography>
+        )}
+        {authReason === 'token' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('auth.signInToken')}
+          </Typography>
+        )}
+        {authReason === 'code' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('auth.signInFailed')}
+          </Typography>
+        )}
+        {authReason === 'profile' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('auth.signInProfile')}
+          </Typography>
+        )}
+        {auth.notice === 'failed' && !authReason && (
           <Typography variant="body1" color="text.secondary">
             {t('auth.signInFailed')}
           </Typography>
