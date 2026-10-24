@@ -92,7 +92,12 @@ export async function refreshSession() {
       return;
     }
 
-    snapshot = { status: 'authenticated', user: data.user, notice: snapshot.notice };
+    snapshot = {
+      status: 'authenticated',
+      user: data.user,
+      notice: snapshot.notice,
+      authFailureReason: null
+    };
     emit();
     void loadCollectionStore(data.user.id);
   } catch (error) {
@@ -105,7 +110,12 @@ export async function refreshSession() {
       return;
     }
 
-    snapshot = { status: 'error', user: null, notice };
+    snapshot = {
+      status: 'error',
+      user: null,
+      notice,
+      authFailureReason: snapshot.authFailureReason
+    };
     emit();
   }
 }
