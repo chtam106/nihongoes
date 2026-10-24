@@ -326,6 +326,36 @@ function FlashcardsView() {
         </Box>
 
         <Box>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-start', mb: 2 }}>
+            <Button
+              variant="text"
+              color="primary"
+              startIcon={<AddOutlined />}
+              onClick={() => setCreateOpen(true)}
+              sx={(theme) => ({
+                minWidth: 0,
+                px: 0,
+                py: 0.5,
+                border: 0,
+                boxShadow: 'none',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                '&.Mui-focusVisible': focusVisibleSx(theme),
+                '@media (hover: hover)': {
+                  '&:hover': {
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                    bgcolor: 'transparent'
+                  }
+                }
+              })}
+            >
+              {t('flashcards.newCollection')}
+            </Button>
+          </Box>
+
           <Tabs
             value={listTab}
             onChange={handleListTabChange}
@@ -341,16 +371,6 @@ function FlashcardsView() {
 
           {listTab === 'mine' && (
             <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
-              <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                <Button
-                  variant="contained"
-                  startIcon={<AddOutlined />}
-                  onClick={() => setCreateOpen(true)}
-                  sx={{ textTransform: 'none' }}
-                >
-                  {t('flashcards.newCollection')}
-                </Button>
-              </Box>
               <CollectionsGrid
                 collections={mine}
                 listTab="mine"
