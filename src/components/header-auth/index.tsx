@@ -18,9 +18,10 @@ const headerAuthTextSx = {
   minHeight: 0,
   bgcolor: 'transparent',
   color: 'text.secondary',
-  fontSize: '1rem',
+  fontSize: '0.75rem',
   fontWeight: 500,
-  lineHeight: 1.25,
+  lineHeight: 1,
+  letterSpacing: 0.4,
   textTransform: 'none' as const,
   '&:hover': {
     bgcolor: 'transparent',
