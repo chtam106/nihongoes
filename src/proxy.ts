@@ -8,7 +8,7 @@ import { routing } from '@/i18n/routing.ts';
 export default createMiddleware(routing);
 
 export const config = {
-  // Skip Next internals and any file with an extension (assets, sitemap.xml,
-  // robots.txt, etc.); run on all page routes.
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
+  // Skip auth API (rewritten to the flashcard backend), Next internals, and
+  // static files. `/auth/*` is not a Next page route.
+  matcher: ['/((?!api|auth|_next|_vercel|.*\\..*).*)']
 };

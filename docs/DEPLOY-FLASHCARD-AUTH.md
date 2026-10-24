@@ -1,47 +1,48 @@
 # Deploy flashcard auth (EN)
 
-Flashcard collections sync uses a small Express backend (`nihongoes-backend`) and Google sign-in. The recommended setup is **one public URL** for the site: Vercel serves Next.js and **rewrites** `/auth/*` and `/api/me`, `/api/collections` to Railway.
+Flashcard collections sync uses a small Express backend (`nihongoes-backend`) and Google sign-in. The recommended setup is **one public URL** for the site: Vercel serves Next.js and **rewrites** `/auth/*` and `/api/me`, `/api/collections` to Fly.io (or another host).
 
 ## What you need from Google Cloud
 
 1. Create a project (or reuse one).
 2. **APIs & Services → OAuth consent screen** (External, add your email as test user while in Testing).
 3. **Credentials → Create OAuth client → Web application**.
-4. Copy **Client ID** and **Client secret** (you will paste these into Railway).
+4. Copy **Client ID** and **Client secret** (you will paste these into Fly secrets).
 5. **Authorized redirect URIs** (add every environment):
    - Local split ports: `http://localhost:4000/auth/google/callback`
    - Same-origin stg (via Vercel): `https://<your-stg-host>/auth/google/callback`
    - Production when ready: `https://nihongoes.com/auth/google/callback`
 
-## Backend on Railway
+## Backend on Fly.io
 
-1. Push `nihongoes-backend` to GitHub (new repo is fine).
-2. [Railway](https://railway.com) → **New project** → **Deploy from GitHub** → select the repo.
-3. **Volume**: mount at `/app/data` (keeps SQLite across deploys).
-4. **Variables** (Railway service):
+Repo: [github.com/chtam106/nihongoes-backend](https://github.com/chtam106/nihongoes-backend) (`fly.toml`, region `sin`, volume `nihongoes_data` → `/app/data`).
 
-| Variable               | Example (staging)                                                                             |
-| ---------------------- | --------------------------------------------------------------------------------------------- |
-| `PORT`                 | `4000` (Railway sets this; optional)                                                          |
-| `BACKEND_ORIGIN`       | `https://stg.nihongoes.com` (public URL users and Google see, **not** the `.railway.app` URL) |
-| `FRONTEND_ORIGIN`      | `https://stg.nihongoes.com`                                                                   |
-| `GOOGLE_CLIENT_ID`     | from Google                                                                                   |
-| `GOOGLE_CLIENT_SECRET` | from Google                                                                                   |
-| `SESSION_SECRET`       | long random string (e.g. `openssl rand -hex 32`)                                              |
-| `DATABASE_PATH`        | `data/nihongoes.sqlite`                                                                       |
+1. Install [flyctl](https://fly.io/docs/flyctl/install/) and run `fly auth login`.
+2. Clone repo, then `fly launch --no-deploy` (confirm app name / region **Singapore (`sin`)**).
+3. `fly volumes create nihongoes_data --region sin --size 1`
+4. Secrets (staging example):
 
-5. Deploy → copy the **public Railway URL** (e.g. `https://nihongoes-backend-production.up.railway.app`). This is **only** for Vercel rewrites, not for Google redirect.
+```bash
+fly secrets set \
+  BACKEND_ORIGIN=https://stg.nihongoes.com \
+  FRONTEND_ORIGIN=https://stg.nihongoes.com \
+  GOOGLE_CLIENT_ID=your-id \
+  GOOGLE_CLIENT_SECRET=your-secret \
+  SESSION_SECRET=your-long-random-string
+```
 
-6. Check: open `https://<railway-url>/health` → `{ "ok": true, "google": true }`.
+5. `fly deploy` → copy **`https://<app-name>.fly.dev`** for Vercel only (not for Google redirect).
+
+6. Check: `https://<app-name>.fly.dev/health` → `{ "ok": true, "google": true }`.
 
 ## Frontend on Vercel (staging)
 
 On the Vercel project (Preview or a dedicated **staging** environment / branch):
 
-| Variable                       | Value                          |
-| ------------------------------ | ------------------------------ |
-| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                            |
-| `AUTH_BACKEND_INTERNAL_URL`    | Railway URL, no trailing slash |
+| Variable                       | Value                                 |
+| ------------------------------ | ------------------------------------- |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                   |
+| `AUTH_BACKEND_INTERNAL_URL`    | Fly `.fly.dev` URL, no trailing slash |
 
 Redeploy after setting variables (rewrites are applied at build).
 
@@ -70,45 +71,37 @@ Backend `BACKEND_ORIGIN=http://localhost:3000`, `FRONTEND_ORIGIN=http://localhos
 
 # Triển khai auth flashcard (VI)
 
-Đồng bộ bộ sưu tập dùng backend Express (`nihongoes-backend`) và đăng nhập Google. Nên dùng **một URL công khai** cho web: Vercel chạy Next.js và **rewrite** `/auth/*`, `/api/me`, `/api/collections` sang Railway.
+Đồng bộ bộ sưu tập dùng backend Express (`nihongoes-backend`) và đăng nhập Google. Nên dùng **một URL công khai** cho web: Vercel chạy Next.js và **rewrite** `/auth/*`, `/api/me`, `/api/collections` sang Fly.io.
 
 ## Cần lấy trên Google Cloud
 
 1. Tạo project (hoặc dùng project có sẵn).
 2. **OAuth consent screen** (External, thêm email bạn làm test user khi còn Testing).
 3. **Credentials → OAuth client → Web application**.
-4. Copy **Client ID** và **Client secret** (dán vào Railway).
+4. Copy **Client ID** và **Client secret** (dán vào Fly secrets).
 5. **Authorized redirect URIs** (mỗi môi trường một dòng):
    - Local hai cổng: `http://localhost:4000/auth/google/callback`
    - Stg same-origin: `https://<host-stg>/auth/google/callback`
    - Prod (khi sẵn sàng): `https://nihongoes.com/auth/google/callback`
 
-## Backend trên Railway
+## Backend trên Fly.io
 
-1. Push `nihongoes-backend` lên GitHub.
-2. Railway → **New project** → **Deploy from GitHub**.
-3. **Volume** gắn `/app/data` (giữ SQLite khi deploy lại).
-4. **Biến môi trường**:
+Repo GitHub `nihongoes-backend`, file `fly.toml` (region `sin`, volume SQLite).
 
-| Biến                   | Ví dụ stg                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------- |
-| `BACKEND_ORIGIN`       | `https://stg.nihongoes.com` (URL công khai, **không** dùng `.railway.app` cho Google) |
-| `FRONTEND_ORIGIN`      | `https://stg.nihongoes.com`                                                           |
-| `GOOGLE_CLIENT_ID`     | từ Google                                                                             |
-| `GOOGLE_CLIENT_SECRET` | từ Google                                                                             |
-| `SESSION_SECRET`       | chuỗi ngẫu nhiên dài                                                                  |
-| `DATABASE_PATH`        | `data/nihongoes.sqlite`                                                               |
+1. Cài flyctl → `fly auth login`.
+2. `fly launch --no-deploy` (region Singapore).
+3. `fly volumes create nihongoes_data --region sin --size 1`
+4. `fly secrets set` với `BACKEND_ORIGIN`, `FRONTEND_ORIGIN` = `https://stg.nihongoes.com`, Google ID/secret, `SESSION_SECRET`.
+5. `fly deploy` → URL `https://<app>.fly.dev` cho Vercel.
 
-5. Copy URL public Railway → chỉ dùng cho Vercel (`AUTH_BACKEND_INTERNAL_URL`).
-
-6. Kiểm tra: `https://<railway-url>/health`.
+6. Kiểm tra: `https://<app>.fly.dev/health`.
 
 ## Frontend Vercel (staging)
 
-| Biến                           | Giá trị     |
-| ------------------------------ | ----------- |
-| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`         |
-| `AUTH_BACKEND_INTERNAL_URL`    | URL Railway |
+| Biến                           | Giá trị            |
+| ------------------------------ | ------------------ |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                |
+| `AUTH_BACKEND_INTERNAL_URL`    | URL Fly `.fly.dev` |
 
 Deploy lại sau khi thêm biến.
 
