@@ -43,6 +43,7 @@ const ANONYMOUS: AuthSnapshot = {
 };
 
 let snapshot: AuthSnapshot = isFlashcardAuthEnabled() ? LOADING : ANONYMOUS;
+let signOutInProgress = false;
 const listeners = new Set<() => void>();
 
 function emit() {
@@ -75,6 +76,10 @@ function consumeAuthError(): { failed: boolean; reason: string | null } {
 }
 
 export async function refreshSession() {
+  if (signOutInProgress) {
+    return;
+  }
+
   if (!isFlashcardAuthEnabled()) {
     snapshot = ANONYMOUS;
     emit();
@@ -140,17 +145,23 @@ export function startGoogleSignIn(returnTo?: string) {
 }
 
 export async function signOut() {
-  await flushCollectionStore();
+  signOutInProgress = true;
 
   try {
-    await api('/auth/logout', { method: 'POST', sessionNotify: false });
-  } catch {
-    // Drop the local session even when the request fails.
-  }
+    await flushCollectionStore();
 
-  snapshot = ANONYMOUS;
-  emit();
-  resetCollectionStore();
+    try {
+      await api('/auth/logout', { method: 'POST', sessionNotify: false });
+    } catch {
+      // Drop the local session even when the request fails.
+    }
+
+    snapshot = ANONYMOUS;
+    resetCollectionStore();
+    emit();
+  } finally {
+    signOutInProgress = false;
+  }
 }
 
 export function useAuth() {
