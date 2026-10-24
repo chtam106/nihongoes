@@ -6,7 +6,7 @@ import { Box, IconButton } from '@mui/material';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
 import { isFlashcardAuthRoute } from '@/features/auth/flashcard-auth-routes.ts';
 import { loginPath } from '@/features/auth/login-path.ts';
-import { signOut, useAuth } from '@/features/auth/session.ts';
+import { readAuthSnapshot, refreshSession, signOut, useAuth } from '@/features/auth/session.ts';
 import { usePathname, useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { hoverFillNoneSx } from '@/theme/hover.ts';
@@ -52,7 +52,13 @@ export function HeaderAuth() {
   return (
     <IconButton
       onClick={() => {
-        router.push(loginPath(pathname));
+        void refreshSession().then(() => {
+          if (readAuthSnapshot().status === 'authenticated') {
+            return;
+          }
+
+          router.push(loginPath(pathname));
+        });
       }}
       aria-label={t('auth.signInTitle')}
       color="primary"

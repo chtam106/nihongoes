@@ -1,6 +1,6 @@
 'use client';
 
-import { useSyncExternalStore } from 'react';
+import { useEffect, useState } from 'react';
 import {
   isFlashcardAuthEnabled,
   setUnauthorizedHandler,
@@ -59,6 +59,17 @@ function subscribe(listener: () => void) {
   return () => {
     listeners.delete(listener);
   };
+}
+
+function copySnapshot(): AuthSnapshot {
+  return {
+    ...snapshot,
+    user: snapshot.user ? { ...snapshot.user } : null
+  };
+}
+
+export function readAuthSnapshot() {
+  return copySnapshot();
 }
 
 function consumeAuthError(): { failed: boolean; reason: string | null } {
@@ -187,18 +198,24 @@ export async function signOut() {
 }
 
 export function useAuth() {
-  return useSyncExternalStore(
-    subscribe,
-    () => snapshot,
-    () => LOADING
-  );
+  const [auth, setAuth] = useState<AuthSnapshot>(LOADING);
+
+  useEffect(() => {
+    const sync = () => setAuth(copySnapshot());
+    sync();
+
+    return subscribe(sync);
+  }, []);
+
+  return auth;
 }
 
-setUnauthorizedHandler(() => {
-  void refreshSession();
-});
+/** Run once after the app shell mounts (post-OAuth redirect, cookie is readable). */
+export function bootAuthSession() {
+  if (!isFlashcardAuthEnabled()) {
+    return refreshSession();
+  }
 
-if (typeof window !== 'undefined' && isFlashcardAuthEnabled()) {
   const authError = consumeAuthError();
 
   if (authError.failed) {
@@ -210,5 +227,18 @@ if (typeof window !== 'undefined' && isFlashcardAuthEnabled()) {
     emit();
   }
 
-  void refreshSession();
+  return refreshSession().then(async () => {
+    if (snapshot.status === 'authenticated') {
+      return;
+    }
+
+    await new Promise<void>((resolve) => {
+      window.setTimeout(resolve, 150);
+    });
+    await refreshSession();
+  });
 }
+
+setUnauthorizedHandler(() => {
+  void refreshSession();
+});

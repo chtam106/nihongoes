@@ -1,7 +1,7 @@
 'use client';
 
-import '@/features/auth/session.ts';
 import { useEffect, useState, type ReactNode } from 'react';
+import { bootAuthSession } from '@/features/auth/session.ts';
 import { Box, Toolbar } from '@mui/material';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
@@ -31,6 +31,10 @@ function AppLayout({ children }: AppLayoutProps) {
   }, [pathname]);
 
   useEffect(() => installRubyAwareCopyHandler(), []);
+
+  useEffect(() => {
+    void bootAuthSession();
+  }, []);
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100svh', '@media print': { minHeight: 'auto' } }}>
