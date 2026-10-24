@@ -16,8 +16,12 @@ import { Box } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material/styles';
 import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import type { DefaultCollection, FlashcardCardType } from '@/constants/flashcards/collections.ts';
+import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
+import { loginPath, safeReturnTo } from '@/features/auth/login-path.ts';
+import { useAuth } from '@/features/auth/session.ts';
 import { FlashcardDefaultsProvider } from '@/features/flashcards/flashcard-defaults.tsx';
 import { SaveToCollectionDialog } from '@/features/flashcards/save-to-collection-dialog.tsx';
+import { useRouter } from '@/i18n/navigation.tsx';
 
 const LONG_PRESS_MS = 500;
 const LONG_PRESS_MOVE_PX = 10;
@@ -39,9 +43,24 @@ type SaveCardProviderProps = {
 
 export function SaveCardProvider({ children }: SaveCardProviderProps) {
   const [target, setTarget] = useState<SaveTarget | null>(null);
-  const openSave = useCallback((next: SaveTarget) => {
-    setTarget(next);
-  }, []);
+  const auth = useAuth();
+  const router = useRouter();
+  const openSave = useCallback(
+    (next: SaveTarget) => {
+      if (isFlashcardAuthEnabled() && auth.status !== 'authenticated') {
+        const returnTo = safeReturnTo(
+          typeof window !== 'undefined' ? window.location.href : null,
+          '/'
+        );
+        router.push(loginPath(returnTo));
+
+        return;
+      }
+
+      setTarget(next);
+    },
+    [auth.status, router]
+  );
   const value = useMemo(() => ({ openSave }), [openSave]);
 
   return (

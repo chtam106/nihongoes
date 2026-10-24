@@ -14,6 +14,19 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: import.meta.dirname
   },
+  async rewrites() {
+    const backend = process.env.AUTH_BACKEND_INTERNAL_URL?.replace(/\/$/, '');
+
+    if (!backend) {
+      return [];
+    }
+
+    return [
+      { source: '/auth/:path*', destination: `${backend}/auth/:path*` },
+      { source: '/api/me', destination: `${backend}/api/me` },
+      { source: '/api/collections', destination: `${backend}/api/collections` }
+    ];
+  },
   async redirects() {
     return [
       {

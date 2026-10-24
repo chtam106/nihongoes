@@ -14,6 +14,7 @@ import { kanji } from './kanji.ts';
 import { settings } from './settings.ts';
 import { course } from './course.ts';
 import { flashcards } from './flashcards.ts';
+import { auth } from './auth.ts';
 
 /** Vietnamese messages, composed from one file per namespace (page/feature). */
 export const viMessages = {
@@ -31,5 +32,6 @@ export const viMessages = {
   exercise,
   kanji,
   course,
-  flashcards
+  flashcards,
+  auth
 } satisfies TranslationTree;
