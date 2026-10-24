@@ -1,20 +1,25 @@
 'use client';
 
+import { useRef } from 'react';
 import AccountCircleOutlined from '@mui/icons-material/AccountCircleOutlined';
 import LoginOutlined from '@mui/icons-material/LoginOutlined';
 import { IconButton } from '@mui/material';
-import { LocaleLink } from '@/components/locale-link';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
+import { isFlashcardAuthRoute } from '@/features/auth/flashcard-auth-routes.ts';
 import { loginPath } from '@/features/auth/login-path.ts';
 import { signOut, useAuth } from '@/features/auth/session.ts';
-import { usePathname } from '@/i18n/navigation.tsx';
+import { usePathname, useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { hoverFillNoneSx } from '@/theme/hover.ts';
+
+const SIGN_OUT_GUARD_MS = 400;
 
 export function HeaderAuth() {
   const { t } = useTranslation();
   const auth = useAuth();
   const pathname = usePathname();
+  const router = useRouter();
+  const signOutGuardUntil = useRef(0);
 
   if (!isFlashcardAuthEnabled()) {
     return null;
@@ -26,8 +31,11 @@ export function HeaderAuth() {
   if (signedIn) {
     return (
       <IconButton
-        key="signed-in"
-        onClick={() => void signOut()}
+        onPointerDown={(event) => {
+          event.preventDefault();
+          signOutGuardUntil.current = Date.now() + SIGN_OUT_GUARD_MS;
+          void signOut();
+        }}
         aria-label={t('auth.signOut')}
         color="primary"
         sx={hoverFillNoneSx}
@@ -37,11 +45,19 @@ export function HeaderAuth() {
     );
   }
 
+  if (!isFlashcardAuthRoute(pathname)) {
+    return null;
+  }
+
   return (
     <IconButton
-      key="signed-out"
-      component={LocaleLink}
-      to={loginPath(pathname)}
+      onClick={() => {
+        if (Date.now() < signOutGuardUntil.current) {
+          return;
+        }
+
+        router.push(loginPath(pathname));
+      }}
       aria-label={t('auth.signInTitle')}
       color="primary"
       disabled={pending}
