@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import AccountCircleOutlined from '@mui/icons-material/AccountCircleOutlined';
 import LoginOutlined from '@mui/icons-material/LoginOutlined';
+import LogoutOutlined from '@mui/icons-material/LogoutOutlined';
 import { IconButton } from '@mui/material';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
 import { isFlashcardAuthRoute } from '@/features/auth/flashcard-auth-routes.ts';
@@ -42,7 +42,7 @@ export function HeaderAuth() {
         color="primary"
         sx={hoverFillNoneSx}
       >
-        <AccountCircleOutlined />
+        <LogoutOutlined />
       </IconButton>
     );
   }
