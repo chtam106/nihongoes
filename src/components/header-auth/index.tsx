@@ -21,7 +21,7 @@ export function HeaderAuth() {
   const router = useRouter();
   const signOutGuardUntil = useRef(0);
 
-  if (!isFlashcardAuthEnabled() || !isFlashcardAuthRoute(pathname)) {
+  if (!isFlashcardAuthEnabled()) {
     return null;
   }
 
@@ -35,7 +35,9 @@ export function HeaderAuth() {
           event.preventDefault();
           signOutGuardUntil.current = Date.now() + SIGN_OUT_GUARD_MS;
           void signOut().then(() => {
-            router.replace('/');
+            if (isFlashcardAuthRoute(pathname)) {
+              router.replace('/');
+            }
           });
         }}
         aria-label={t('auth.signOut')}
