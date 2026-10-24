@@ -682,7 +682,7 @@ export const n5Lesson16: Lesson = {
           romaji: 'Shawā o abite, asagohan o tabete, kaisha e ikimasu.',
           meaning: {
             en: 'I take a shower, eat breakfast, and go to the office.',
-            vi: 'Tôi tắm vòi sen, ăn sáng, rồi đi công ty.'
+            vi: 'Tôi tắm vòi sen, ăn sáng, rồi đi làm.'
           },
           ruby: [
             { base: '浴', reading: 'あ' },
@@ -1269,7 +1269,7 @@ export const n5Lesson16: Lesson = {
           romaji: 'Umeda de norikaete, hachi-ban no basu de Daigakumae ni ikimasu.',
           meaning: {
             en: 'She transfers at Umeda and goes to Daigakumae on bus number 8.',
-            vi: 'Cô chuyển tàu ở Umeda và đi Daigakumae bằng xe buýt số 8.'
+            vi: 'Cô chuyển tàu ở Umeda và đi đến Daigakumae bằng xe buýt số 8.'
           },
           ruby: [
             { base: '梅', reading: 'うめ' },

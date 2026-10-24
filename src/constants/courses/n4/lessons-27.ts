@@ -529,7 +529,7 @@ export const n4Lesson27: Lesson = {
           romaji: 'Hitori de byōin e ikemasu ka.',
           meaning: {
             en: 'Can you go to the hospital alone?',
-            vi: 'Một mình đi bệnh viện được không?'
+            vi: 'Một mình đi đến bệnh viện được không?'
           },
           ruby: [
             { base: '一', reading: 'ひと' },

@@ -452,7 +452,7 @@ export const n4Lesson36: Lesson = {
           romaji: 'Hontō ni sugoi desu ne. Rainen Furansu e iku n desu ka.',
           meaning: {
             en: 'That is truly amazing. Are you going to France next year?',
-            vi: 'Thật đáng khâm phục. Sang năm bà định đi Pháp à?'
+            vi: 'Thật đáng khâm phục. Sang năm bà định đi đến Pháp à?'
           },
           ruby: [
             { base: '本', reading: 'ほん' },

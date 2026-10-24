@@ -510,7 +510,7 @@ export const n5Lesson24: Lesson = {
           romaji: 'Watashi wa kaisha e ikimasu ga, tsuma ga kodomo o tsurete kimasu.',
           meaning: {
             en: 'I go to the office, but my wife brings the children.',
-            vi: 'Tôi đi công ty, còn vợ dẫn con đến.'
+            vi: 'Tôi đi làm, còn vợ dẫn con đến.'
           },
           ruby: [
             { base: '私', reading: 'わたし' },
@@ -542,7 +542,7 @@ export const n5Lesson24: Lesson = {
           romaji: 'Nichiyōbi tomodachi to kōen e ikimashita.',
           meaning: {
             en: 'On Sunday I went to the park with friends.',
-            vi: 'Chủ nhật tôi đi công viên với bạn.'
+            vi: 'Chủ nhật tôi đi đến công viên với bạn.'
           },
           ruby: [
             { base: '日', reading: 'にち' },

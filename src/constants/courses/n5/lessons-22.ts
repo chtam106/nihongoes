@@ -522,7 +522,7 @@ export const n5Lesson22: Lesson = {
           romaji: 'Kaisha e iku toki sūtsu o kimasu. Kutsu mo hakimasu.',
           meaning: {
             en: 'When I go to the office I wear a suit. I wear shoes too.',
-            vi: 'Khi đi công ty tôi mặc com lê. Cũng đi giày.'
+            vi: 'Khi đi làm tôi mặc com lê. Cũng đi giày.'
           },
           ruby: [
             { base: '会', reading: 'かい' },

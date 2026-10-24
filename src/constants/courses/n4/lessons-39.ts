@@ -476,7 +476,7 @@ export const n4Lesson39: Lesson = {
           romaji: 'Taichō ga yokunai kara, byōin e ikimasu.',
           meaning: {
             en: 'Because I do not feel well, I am going to the hospital.',
-            vi: 'Vì trong người không khỏe nên tôi đi bệnh viện.'
+            vi: 'Vì trong người không khỏe nên tôi đi đến bệnh viện.'
           },
           ruby: [
             { base: '体', reading: 'たい' },

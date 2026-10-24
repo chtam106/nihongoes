@@ -8,7 +8,7 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I take a shower, eat breakfast, and go to the office.',
-            vi: 'Tôi tắm vòi sen, ăn sáng, rồi đi công ty.'
+            vi: 'Tôi tắm vòi sen, ăn sáng, rồi đi làm.'
           },
           jp: 'シャワーを 浴びて、朝ごはんを 食べて、会社へ 行きます。',
           ruby: [
