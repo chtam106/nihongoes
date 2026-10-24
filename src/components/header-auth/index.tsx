@@ -1,20 +1,32 @@
 'use client';
 
-import LoginOutlined from '@mui/icons-material/LoginOutlined';
-import { Box, IconButton } from '@mui/material';
+import { Box, ButtonBase } from '@mui/material';
 import { isFlashcardAuthEnabled } from '@/features/auth/api.ts';
 import { isFlashcardAuthRoute } from '@/features/auth/flashcard-auth-routes.ts';
 import { loginPath } from '@/features/auth/login-path.ts';
 import { readAuthSnapshot, refreshSession, signOut, useAuth } from '@/features/auth/session.ts';
 import { usePathname, useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { hoverFillNoneSx } from '@/theme/hover.ts';
+import { focusVisibleSx } from '@/theme/focus.ts';
 
-const ICON_SLOT_SX = { width: 40, height: 40, flexShrink: 0 };
-
-/** Same glyph: sign-in arrow points right, sign-out mirrored to point left. */
-const ARROW_IN_SX = { transform: 'scaleX(1)' };
-const ARROW_OUT_SX = { transform: 'scaleX(-1)' };
+const headerAuthTextSx = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  p: 0,
+  m: 0,
+  minWidth: 0,
+  minHeight: 0,
+  bgcolor: 'transparent',
+  color: 'text.secondary',
+  fontSize: '1rem',
+  fontWeight: 500,
+  lineHeight: 1.25,
+  textTransform: 'none' as const,
+  '&:hover': {
+    bgcolor: 'transparent',
+    color: 'primary.main'
+  }
+};
 
 export function HeaderAuth() {
   const { t } = useTranslation();
@@ -30,12 +42,14 @@ export function HeaderAuth() {
   const pending = auth.status === 'loading';
 
   if (pending) {
-    return <Box aria-hidden sx={ICON_SLOT_SX} />;
+    return (
+      <Box aria-hidden sx={{ height: 40, minWidth: '4.5rem', flexShrink: 0 }} />
+    );
   }
 
   if (signedIn) {
     return (
-      <IconButton
+      <ButtonBase
         onClick={() => {
           void signOut().then(() => {
             if (isFlashcardAuthRoute(pathname)) {
@@ -44,16 +58,18 @@ export function HeaderAuth() {
           });
         }}
         aria-label={t('auth.signOut')}
-        color="primary"
-        sx={hoverFillNoneSx}
+        sx={(theme) => ({
+          ...headerAuthTextSx,
+          '&.Mui-focusVisible': focusVisibleSx(theme)
+        })}
       >
-        <LoginOutlined sx={ARROW_OUT_SX} />
-      </IconButton>
+        {t('auth.signOut')}
+      </ButtonBase>
     );
   }
 
   return (
-    <IconButton
+    <ButtonBase
       onClick={() => {
         void refreshSession().then(() => {
           if (readAuthSnapshot().status === 'authenticated') {
@@ -64,10 +80,12 @@ export function HeaderAuth() {
         });
       }}
       aria-label={t('auth.signInTitle')}
-      color="primary"
-      sx={hoverFillNoneSx}
+      sx={(theme) => ({
+        ...headerAuthTextSx,
+        '&.Mui-focusVisible': focusVisibleSx(theme)
+      })}
     >
-      <LoginOutlined sx={ARROW_IN_SX} />
-    </IconButton>
+      {t('auth.signInTitle')}
+    </ButtonBase>
   );
 }
