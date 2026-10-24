@@ -215,7 +215,8 @@ jobs:
   e2e:
     name: E2E tests
     needs: changes
-    if: needs.changes.outputs.test_target_changed == 'true'
+    # Staging merges deploy via Vercel Git; skip the slow Playwright job on PRs to release-staging.
+    if: needs.changes.outputs.test_target_changed == 'true' && github.base_ref != 'release-staging'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
