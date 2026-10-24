@@ -70,12 +70,12 @@ pnpm test:e2e:report  # open the last HTML report / mở báo cáo HTML gần nh
 ```
 
 - Test files live in `e2e/` as `*.spec.ts`.
-- Config lives in `playwright.config.ts`. Locally it auto-starts `next dev`; in CI (or with `E2E_PROD=1`) it builds and serves a real production build (`pnpm build && pnpm start`) so tests see prod output and avoid dev's on-demand-compile flakiness.
+- Config lives in `playwright.config.ts`. Locally it auto-starts `next dev`; with `E2E_PROD=1` it builds and serves a real production build (`pnpm build && pnpm start`) so tests see prod output and avoid dev's on-demand-compile flakiness. E2E is not run in GitHub Actions.
 - Point the tests at an already-running server with `E2E_PORT` (e.g. `E2E_PORT=3000 pnpm test:e2e` reuses a local `next dev`). To run a prod build next to a dev server, use a separate output dir: `NEXT_DIST_DIR=.next-prod pnpm build && NEXT_DIST_DIR=.next-prod pnpm start --port 5174`.
 - Only Chromium is configured; add more projects in `playwright.config.ts` if needed.
 
 - File test nằm trong `e2e/` dưới dạng `*.spec.ts`.
-- Cấu hình ở `playwright.config.ts`. Ở máy local nó tự khởi động `next dev`; trên CI (hoặc khi đặt `E2E_PROD=1`) nó build và chạy bản production thật (`pnpm build && pnpm start`) để test thấy output prod và tránh lỗi chập chờn do dev biên dịch on-demand.
+- Cấu hình ở `playwright.config.ts`. Ở máy local nó tự khởi động `next dev`; khi đặt `E2E_PROD=1` nó build và chạy bản production thật (`pnpm build && pnpm start`) để test thấy output prod và tránh lỗi chập chờn do dev biên dịch on-demand. E2E không chạy trên GitHub Actions.
 - Trỏ test vào server đang chạy bằng `E2E_PORT` (vd `E2E_PORT=3000 pnpm test:e2e` dùng lại `next dev` local). Muốn chạy bản prod song song với dev thì build ra thư mục riêng: `NEXT_DIST_DIR=.next-prod pnpm build && NEXT_DIST_DIR=.next-prod pnpm start --port 5174`.
 - Chỉ cấu hình Chromium; thêm project khác trong `playwright.config.ts` nếu cần.
 
