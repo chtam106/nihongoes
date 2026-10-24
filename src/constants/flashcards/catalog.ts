@@ -56,9 +56,11 @@ export function flashcardIdsForLevel(level: CourseLevel): string[] {
 export function flashcardRefsForLevel(level: CourseLevel): FlashcardCard[] {
   return getAllCourseLessons()
     .filter((entry) => entry.level === level)
-    .flatMap(({ lesson }) =>
-      lessonFlashcards(lesson).map((card) => ({ id: card.id, type: card.type }))
-    );
+    .flatMap(({ lesson }) => flashcardRefsForLesson(lesson));
+}
+
+export function flashcardRefsForLesson(lesson: Lesson): FlashcardCard[] {
+  return lessonFlashcards(lesson).map((card) => ({ id: card.id, type: card.type }));
 }
 
 export type ResolvableFlashcard = {
