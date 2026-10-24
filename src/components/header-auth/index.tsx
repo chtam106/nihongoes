@@ -21,7 +21,7 @@ export function HeaderAuth() {
   const router = useRouter();
   const signOutGuardUntil = useRef(0);
 
-  if (!isFlashcardAuthEnabled()) {
+  if (!isFlashcardAuthEnabled() || !isFlashcardAuthRoute(pathname)) {
     return null;
   }
 
@@ -34,7 +34,9 @@ export function HeaderAuth() {
         onPointerDown={(event) => {
           event.preventDefault();
           signOutGuardUntil.current = Date.now() + SIGN_OUT_GUARD_MS;
-          void signOut();
+          void signOut().then(() => {
+            router.replace('/');
+          });
         }}
         aria-label={t('auth.signOut')}
         color="primary"
@@ -43,10 +45,6 @@ export function HeaderAuth() {
         <AccountCircleOutlined />
       </IconButton>
     );
-  }
-
-  if (!isFlashcardAuthRoute(pathname)) {
-    return null;
   }
 
   return (

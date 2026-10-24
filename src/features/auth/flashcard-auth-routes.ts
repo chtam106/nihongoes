@@ -1,6 +1,11 @@
 import { FLASHCARDS_PATH } from '@/constants/courses/levels.ts';
 
-/** Routes where flashcard sync requires sign-in (gate + header sign-in affordance). */
+/**
+ * Routes that require Google sign-in for cloud flashcard sync. Only these paths
+ * auto-redirect to `/login` (via `FlashcardAuthGate`) and show header auth icons.
+ */
 export function isFlashcardAuthRoute(pathname: string) {
-  return pathname === FLASHCARDS_PATH || pathname.startsWith(`${FLASHCARDS_PATH}/`);
+  const path = pathname.replace(/\/$/, '') || '/';
+
+  return path === FLASHCARDS_PATH || path.startsWith(`${FLASHCARDS_PATH}/`);
 }
