@@ -91,6 +91,7 @@ export async function refreshSession() {
         notice: snapshot.notice,
         authFailureReason: snapshot.authFailureReason
       };
+      resetCollectionStore();
       emit();
 
       return;
@@ -113,6 +114,7 @@ export async function refreshSession() {
         notice,
         authFailureReason: snapshot.authFailureReason
       };
+      resetCollectionStore();
       emit();
 
       return;
@@ -141,7 +143,7 @@ export async function signOut() {
   await flushCollectionStore();
 
   try {
-    await api('/auth/logout', { method: 'POST' });
+    await api('/auth/logout', { method: 'POST', sessionNotify: false });
   } catch {
     // Drop the local session even when the request fails.
   }
@@ -160,9 +162,7 @@ export function useAuth() {
 }
 
 setUnauthorizedHandler(() => {
-  snapshot = { ...ANONYMOUS, notice: snapshot.notice };
-  emit();
-  resetCollectionStore();
+  void refreshSession();
 });
 
 if (typeof window !== 'undefined' && isFlashcardAuthEnabled()) {

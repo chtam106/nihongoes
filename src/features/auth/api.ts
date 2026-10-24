@@ -51,14 +51,20 @@ export function setUnauthorizedHandler(handler: () => void) {
   onUnauthorized = handler;
 }
 
-export async function api<T>(path: string, init?: RequestInit): Promise<T> {
+export type ApiInit = RequestInit & {
+  /** When false, 401 does not run the global session handler (default true). */
+  sessionNotify?: boolean;
+};
+
+export async function api<T>(path: string, init?: ApiInit): Promise<T> {
   if (!isFlashcardAuthEnabled()) {
     throw new ApiError(0);
   }
 
-  const headers = new Headers(init?.headers);
+  const { sessionNotify = true, ...fetchInit } = init ?? {};
+  const headers = new Headers(fetchInit.headers);
 
-  if (init?.body && !headers.has('Content-Type')) {
+  if (fetchInit.body && !headers.has('Content-Type')) {
     headers.set('Content-Type', 'application/json');
   }
 
@@ -66,7 +72,7 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
 
   try {
     response = await fetch(`${apiUrlBase()}${path}`, {
-      ...init,
+      ...fetchInit,
       headers,
       credentials: 'include'
     });
@@ -79,7 +85,10 @@ export async function api<T>(path: string, init?: RequestInit): Promise<T> {
   }
 
   if (response.status === 401) {
-    onUnauthorized?.();
+    if (sessionNotify) {
+      onUnauthorized?.();
+    }
+
     throw new ApiError(401);
   }
 
