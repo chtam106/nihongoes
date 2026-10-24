@@ -130,8 +130,8 @@ for source map upload. The custom domain is configured in the Vercel dashboard.
 
 Pull requests run GitHub Actions (`.github/workflows/ci.yml`). A job runs only
 when matching files changed: typecheck, ESLint, Stylelint (CSS), and unit tests.
-The full `pnpm build` and Playwright e2e (prod build + smoke) run only on pull
-requests into `release-production`, because they pre-render and hit every page.
+The full `pnpm build` runs only on pull requests into `release-production`,
+because it pre-renders every page. Playwright e2e stays local/optional (`pnpm test:e2e`).
 `Tests pass` is the branch-protection check; a skipped job still counts as
 success.
 
