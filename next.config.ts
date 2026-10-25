@@ -14,28 +14,6 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: import.meta.dirname
   },
-  // When Vercel sets AUTH_BACKEND_INTERNAL_URL at build time, enable same-origin
-  // auth in the client bundle without a separate NEXT_PUBLIC_AUTH_SAME_ORIGIN.
-  env: {
-    NEXT_PUBLIC_AUTH_SAME_ORIGIN:
-      process.env.NEXT_PUBLIC_AUTH_SAME_ORIGIN === '1' ||
-      Boolean(process.env.AUTH_BACKEND_INTERNAL_URL?.trim())
-        ? '1'
-        : ''
-  },
-  async rewrites() {
-    const backend = process.env.AUTH_BACKEND_INTERNAL_URL?.replace(/\/$/, '');
-
-    if (!backend) {
-      return [];
-    }
-
-    return [
-      { source: '/auth/:path*', destination: `${backend}/auth/:path*` },
-      { source: '/api/me', destination: `${backend}/api/me` },
-      { source: '/api/collections', destination: `${backend}/api/collections` }
-    ];
-  },
   async redirects() {
     return [
       {

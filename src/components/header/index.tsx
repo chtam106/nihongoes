@@ -4,7 +4,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Box, IconButton, Stack, Toolbar } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand';
-import { HeaderAuth } from '@/components/header-auth';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 const AppSettings = lazy(() =>
@@ -77,7 +76,6 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                   <AppSettings />
                   <LanguageSwitcher />
-                  <HeaderAuth />
                 </Box>
               </Suspense>
             </Box>

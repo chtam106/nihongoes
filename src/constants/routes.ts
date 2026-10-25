@@ -5,8 +5,6 @@ import {
   VOCABULARY_PATH,
   FLASHCARDS_PATH
 } from '@/constants/courses/levels.ts';
-import { LOGIN_PATH } from '@/features/auth/login-path.ts';
-
 type RouteNode = string | { readonly [key: string]: RouteNode };
 
 export const routes = {
@@ -14,7 +12,6 @@ export const routes = {
   vocabulary: VOCABULARY_PATH,
   sentences: SENTENCES_PATH,
   flashcards: FLASHCARDS_PATH,
-  login: LOGIN_PATH,
   n5: {
     index: '/n5',
     intro: '/n5/intro',
