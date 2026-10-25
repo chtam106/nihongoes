@@ -5,7 +5,6 @@ import { getKanjiGradeFlashcards } from '@/constants/flashcards/kanji-defaults.t
 import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { localeParams, type PageProps } from '@/i18n/route-helpers.ts';
-import { FlashcardAuthGate } from '@/features/auth/auth-gate.tsx';
 import CollectionDetail from './_components/collection-detail.tsx';
 
 export const dynamicParams = true;
@@ -32,14 +31,12 @@ export default async function Page({ params }: PageProps<{ collectionId: string 
   const kanji = getKanjiGradeFlashcards();
 
   return (
-    <FlashcardAuthGate>
-      <Suspense fallback={null}>
-        <CollectionDetail
-          collectionId={collectionId}
-          defaults={[...light.collections, ...kanji.collections]}
-          extraCards={[...light.cards, ...kanji.cards]}
-        />
-      </Suspense>
-    </FlashcardAuthGate>
+    <Suspense fallback={null}>
+      <CollectionDetail
+        collectionId={collectionId}
+        defaults={[...light.collections, ...kanji.collections]}
+        extraCards={[...light.cards, ...kanji.cards]}
+      />
+    </Suspense>
   );
 }

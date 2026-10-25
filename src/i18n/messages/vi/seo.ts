@@ -19,10 +19,6 @@ export const seo = {
     title: 'Flashcards',
     description: 'Bộ sưu tập flashcard từ vựng lưu trên trình duyệt.'
   },
-  login: {
-    title: 'Đăng nhập',
-    description: 'Đăng nhập bằng Google để đồng bộ bộ sưu tập flashcard.'
-  },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
     description: 'Kanji thông dụng (Jōyō) theo lớp tiểu học và cấp Kanken.'

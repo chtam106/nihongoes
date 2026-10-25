@@ -4,7 +4,6 @@ import { getKanjiGradeFlashcards } from '@/constants/flashcards/kanji-defaults.t
 import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { localeParams } from '@/i18n/route-helpers.ts';
-import { FlashcardAuthGate } from '@/features/auth/auth-gate.tsx';
 import FlashcardsPage from './_components/flashcards-page.tsx';
 
 export const dynamicParams = false;
@@ -21,12 +20,10 @@ export default function Page() {
 
   return (
     <Suspense fallback={null}>
-      <FlashcardAuthGate>
-        <FlashcardsPage
-          defaults={[...light.collections, ...kanji.collections]}
-          extraCards={[...light.cards, ...kanji.cards]}
-        />
-      </FlashcardAuthGate>
+      <FlashcardsPage
+        defaults={[...light.collections, ...kanji.collections]}
+        extraCards={[...light.cards, ...kanji.cards]}
+      />
     </Suspense>
   );
 }
