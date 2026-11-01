@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
+import SyncOutlined from '@mui/icons-material/SyncOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -17,6 +18,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  Link,
   Paper,
   Stack,
   Tab,
@@ -35,11 +37,11 @@ import {
   type FlashcardCollection
 } from '@/constants/flashcards/collections.ts';
 import { groupDefaultCollections } from '@/constants/flashcards/default-collection-groups.ts';
+import { routes } from '@/constants/routes.ts';
 import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
-import { FlashcardDriveGate } from '@/features/flashcards/flashcard-drive.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -250,7 +252,7 @@ function FlashcardsView() {
   const { t, locale } = useTranslation();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { collections, status, create, rename, remove } = useFlashcardCollections();
+  const { collections, create, rename, remove } = useFlashcardCollections();
   const mine = collections.filter((collection) => !isDefaultCollectionId(collection.id));
   const builtin = collections.filter((collection) => isDefaultCollectionId(collection.id));
   const defaultGroups = useMemo(() => groupDefaultCollections(builtin, locale), [builtin, locale]);
@@ -326,78 +328,105 @@ function FlashcardsView() {
           </Stack>
         </Box>
 
-        {status !== 'ready' && <FlashcardDriveGate />}
-        {status === 'ready' && (
-          <Box>
-            <Box sx={{ display: 'flex', justifyContent: 'flex-start', mb: 2 }}>
-              <Button
-                variant="text"
-                color="primary"
-                startIcon={<AddOutlined />}
-                onClick={() => setCreateOpen(true)}
-                sx={(theme) => ({
-                  minWidth: 0,
-                  px: 0,
-                  py: 0.5,
-                  border: 0,
-                  boxShadow: 'none',
-                  textTransform: 'none',
-                  fontSize: '1rem',
-                  fontWeight: 600,
-                  textDecoration: 'none',
-                  '&.Mui-focusVisible': focusVisibleSx(theme),
-                  '@media (hover: hover)': {
-                    '&:hover': {
-                      textDecoration: 'underline',
-                      textUnderlineOffset: '3px',
-                      bgcolor: 'transparent'
-                    }
-                  }
-                })}
-              >
-                {t('flashcards.newCollection')}
-              </Button>
-            </Box>
-
-            <Tabs
-              value={listTab}
-              onChange={handleListTabChange}
-              variant="fullWidth"
-              sx={{
-                mb: 2,
-                '& .MuiTab-root': { textTransform: 'none', fontSize: '1rem', fontWeight: 600 }
-              }}
+        <Box>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: 1,
+              mb: 2
+            }}
+          >
+            <Link
+              component={RouterLink}
+              to={routes.flashcardDrive}
+              underline="none"
+              color="primary"
+              sx={(theme) => ({
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 0.5,
+                flexShrink: 0,
+                fontWeight: 600,
+                textDecoration: 'none',
+                textUnderlineOffset: '3px',
+                '&:focus-visible': focusVisibleSx(theme),
+                '@media (hover: hover)': {
+                  '&:hover': { textDecoration: 'underline' }
+                }
+              })}
             >
-              <Tab value="mine" label={t('flashcards.myCollections')} />
-              <Tab value="default" label={t('flashcards.defaultCollections')} />
-            </Tabs>
-
-            {listTab === 'mine' && (
-              <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
-                <CollectionsGrid
-                  collections={mine}
-                  listTab="mine"
-                  allowRename
-                  allowDelete
-                  onRename={openRename}
-                  onDelete={openDelete}
-                />
-              </Stack>
-            )}
-
-            {listTab === 'default' && (
-              <Stack spacing={2.5} role="tabpanel" aria-label={t('flashcards.defaultCollections')}>
-                {defaultGroups.map((group) => (
-                  <CollectionGroup
-                    key={group.key}
-                    title={group.title}
-                    collections={group.collections}
-                  />
-                ))}
-              </Stack>
-            )}
+              <SyncOutlined fontSize="small" />
+              {t('flashcards.driveSync')}
+            </Link>
+            <Button
+              variant="text"
+              color="primary"
+              startIcon={<AddOutlined />}
+              onClick={() => setCreateOpen(true)}
+              sx={(theme) => ({
+                minWidth: 0,
+                px: 0,
+                py: 0.5,
+                border: 0,
+                boxShadow: 'none',
+                textTransform: 'none',
+                fontSize: '1rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                '&.Mui-focusVisible': focusVisibleSx(theme),
+                '@media (hover: hover)': {
+                  '&:hover': {
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                    bgcolor: 'transparent'
+                  }
+                }
+              })}
+            >
+              {t('flashcards.newCollection')}
+            </Button>
           </Box>
-        )}
+
+          <Tabs
+            value={listTab}
+            onChange={handleListTabChange}
+            variant="fullWidth"
+            sx={{
+              mb: 2,
+              '& .MuiTab-root': { textTransform: 'none', fontSize: '1rem', fontWeight: 600 }
+            }}
+          >
+            <Tab value="mine" label={t('flashcards.myCollections')} />
+            <Tab value="default" label={t('flashcards.defaultCollections')} />
+          </Tabs>
+
+          {listTab === 'mine' && (
+            <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
+              <CollectionsGrid
+                collections={mine}
+                listTab="mine"
+                allowRename
+                allowDelete
+                onRename={openRename}
+                onDelete={openDelete}
+              />
+            </Stack>
+          )}
+
+          {listTab === 'default' && (
+            <Stack spacing={2.5} role="tabpanel" aria-label={t('flashcards.defaultCollections')}>
+              {defaultGroups.map((group) => (
+                <CollectionGroup
+                  key={group.key}
+                  title={group.title}
+                  collections={group.collections}
+                />
+              ))}
+            </Stack>
+          )}
+        </Box>
       </Stack>
 
       <Dialog

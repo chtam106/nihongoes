@@ -160,7 +160,7 @@ Preview/staging uses Git branch **`release-staging`** (domain **`stg.nihongoes.c
 
 ### Flashcard Google Drive
 
-Custom collections are a JSON file in the signed-in user's Google Drive app data. The browser talks to Drive directly. There is no app backend and no localStorage copy.
+Collections are saved in the browser. `/drive` connects Google Drive and a Sync button copies the collection file both ways. The browser talks to Drive directly. There is no app backend.
 
 Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to a Google OAuth web client, enable the Drive API, and add each site origin (`http://localhost:3000`, `https://stg.nihongoes.com`, and `https://nihongoes.com`) as an authorized JavaScript origin.
 
