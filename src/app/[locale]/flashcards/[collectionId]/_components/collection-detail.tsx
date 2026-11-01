@@ -2,22 +2,25 @@
 
 import { useSyncExternalStore, type MouseEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowBackOutlined from '@mui/icons-material/ArrowBackOutlined';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { VocabFlashcards } from '@/components/vocab-flashcards';
 import {
+  flashcardCollectionHref,
   flashcardsListPath,
   parseFlashcardsListTabParam,
   FLASHCARDS_RETURN_TAB_QUERY
 } from '@/app/[locale]/flashcards/_components/flashcards-list-tab.ts';
+import { adjacentDefaultCollections } from '@/constants/flashcards/default-collection-groups.ts';
 import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import {
-  EMPTY_COLLECTION_FRONTS,
   FLASHCARD_COLLECTIONS_FRONT_KEY,
-  sanitizeCollectionFronts,
+  sanitizeCollectionFront,
   type DefaultCollection
 } from '@/constants/flashcards/collections.ts';
 import {
@@ -70,21 +73,21 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
   const ready = useClientReady();
   const { collections } = useFlashcardCollections();
   const { resolveCards } = useFlashcardDefaults();
-  const [fronts, setFronts] = usePersistentState(
+  const [front, setFront] = usePersistentState<FlashcardFront>(
     FLASHCARD_COLLECTIONS_FRONT_KEY,
-    EMPTY_COLLECTION_FRONTS,
-    sanitizeCollectionFronts
+    'ja',
+    sanitizeCollectionFront
   );
   const collection = collections.find((item) => item.id === collectionId) ?? null;
-  const front: FlashcardFront = fronts[collectionId] ?? 'ja';
   const cards = collection ? resolveCards(collection.cards.map((card) => card.id)) : [];
+  const { previous, next } = adjacentDefaultCollections(collections, collectionId, locale);
 
   const handleFrontChange = (_event: MouseEvent<HTMLElement>, value: FlashcardFront | null) => {
     if (!value) {
       return;
     }
 
-    setFronts((previous) => ({ ...previous, [collectionId]: value }));
+    setFront(value);
   };
 
   return (
@@ -129,6 +132,54 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
           <Typography variant="body1" color="text.secondary">
             {t('flashcards.missing')}
           </Typography>
+        )}
+        {collection && (previous || next) && (
+          <Stack
+            direction={{ xs: 'column', md: 'row' }}
+            spacing={1.5}
+            sx={{ '&&': { mt: 4 }, justifyContent: { md: 'space-between' } }}
+          >
+            <Box
+              sx={{
+                flex: { md: 1 },
+                display: 'flex',
+                justifyContent: { xs: 'center', md: 'flex-start' },
+                order: { xs: 2, md: 1 }
+              }}
+            >
+              {previous && (
+                <Button
+                  component={RouterLink}
+                  to={flashcardCollectionHref(previous.id, listTab)}
+                  startIcon={<ArrowBackIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('flashcards.previousCollection')}
+                </Button>
+              )}
+            </Box>
+            <Box
+              sx={{
+                flex: { md: 1 },
+                display: 'flex',
+                justifyContent: { xs: 'center', md: 'flex-end' },
+                order: { xs: 1, md: 2 }
+              }}
+            >
+              {next && (
+                <Button
+                  component={RouterLink}
+                  to={flashcardCollectionHref(next.id, listTab)}
+                  endIcon={<ArrowForwardIcon />}
+                  variant="text"
+                  sx={{ px: 0 }}
+                >
+                  {t('flashcards.nextCollection')}
+                </Button>
+              )}
+            </Box>
+          </Stack>
         )}
       </Stack>
     </PageContainer>

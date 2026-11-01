@@ -20,6 +20,8 @@ export const flashcards = {
   flipHint: 'Bấm vào thẻ để lật mặt.',
   saveHint:
     'Chuột phải hoặc nhấn giữ thẻ, từ hoặc mẫu câu trong bài, hoặc câu hỏi quiz từ vựng, kanji, bộ thủ để lưu vào bộ sưu tập.',
+  previousCollection: 'Previous collection',
+  nextCollection: 'Next collection',
   studyEmpty: 'Bộ sưu tập này chưa có thẻ. Hãy lưu từ từ flashcard từ vựng.',
   missing: 'Bộ sưu tập này không có trên thiết bị này.'
 };
