@@ -158,6 +158,10 @@ Production is driven by the `release-production` branch:
 
 Preview/staging uses Git branch **`release-staging`** (domain **`stg.nihongoes.com`** in Vercel). Same Vercel project; scope Preview env vars to that branch when possible.
 
+### Privacy
+
+The public privacy policy is `https://nihongoes.com/privacy`.
+
 ## Error Monitoring (Sentry)
 
 Sentry runs in production builds only (guarded by `process.env.NODE_ENV`). It is
