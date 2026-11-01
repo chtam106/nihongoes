@@ -6,23 +6,30 @@ export const FLASHCARD_COLLECTIONS_KEY = storageKey('FLASHCARD_COLLECTIONS');
 
 export const FLASHCARD_COLLECTIONS_FRONT_KEY = storageKey('FLASHCARD_COLLECTIONS_FRONT');
 
-export const EMPTY_COLLECTION_FRONTS: Record<string, 'ja' | 'meaning'> = {};
+export type CollectionFront = 'ja' | 'meaning';
 
-/** Per-collection Word first / Meaning first choice. A legacy single string is ignored. */
-export function sanitizeCollectionFronts(value: unknown): Record<string, 'ja' | 'meaning'> {
-  if (!value || typeof value !== 'object' || Array.isArray(value)) {
-    return EMPTY_COLLECTION_FRONTS;
+/**
+ * One Word first / Meaning first choice for every collection.
+ * Older builds stored a map of collection id to front; the last saved choice wins.
+ */
+export function sanitizeCollectionFront(value: unknown): CollectionFront {
+  if (value === 'ja' || value === 'meaning') {
+    return value;
   }
 
-  const fronts: Record<string, 'ja' | 'meaning'> = {};
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return 'ja';
+  }
 
-  for (const [id, front] of Object.entries(value)) {
-    if (front === 'ja' || front === 'meaning') {
-      fronts[id] = front;
+  let front: CollectionFront = 'ja';
+
+  for (const entry of Object.values(value)) {
+    if (entry === 'ja' || entry === 'meaning') {
+      front = entry;
     }
   }
 
-  return fronts;
+  return front;
 }
 
 const MAX_NAME_LENGTH = 80;

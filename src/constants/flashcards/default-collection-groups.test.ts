@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  adjacentDefaultCollections,
   defaultCollectionGroupKey,
   groupDefaultCollections
 } from '@/constants/flashcards/default-collection-groups.ts';
@@ -18,6 +19,37 @@ describe('defaultCollectionGroupKey', () => {
     expect(defaultCollectionGroupKey('default-n5-lesson-1')).toBe('n5');
     expect(defaultCollectionGroupKey('default-grade-2-lesson-3')).toBe('grade-2');
     expect(defaultCollectionGroupKey('default-kanken-pre-2-lesson-1')).toBe('kanken-pre-2');
+  });
+});
+
+describe('adjacentDefaultCollections', () => {
+  const collections = [
+    stub('default-n5-lesson-2'),
+    stub('default-n4-lesson-1'),
+    stub('default-n5-lesson-1'),
+    stub('default-hiragana'),
+    stub('default-katakana'),
+    stub('custom-1')
+  ];
+
+  it('stays inside the same group and hides the missing end', () => {
+    expect(
+      adjacentDefaultCollections(collections, 'default-n5-lesson-1', 'en').previous
+    ).toBeNull();
+    expect(adjacentDefaultCollections(collections, 'default-n5-lesson-1', 'en').next?.id).toBe(
+      'default-n5-lesson-2'
+    );
+    expect(adjacentDefaultCollections(collections, 'default-n5-lesson-2', 'en').next).toBeNull();
+    expect(adjacentDefaultCollections(collections, 'default-hiragana', 'en').next?.id).toBe(
+      'default-katakana'
+    );
+    expect(adjacentDefaultCollections(collections, 'default-katakana', 'en').previous?.id).toBe(
+      'default-hiragana'
+    );
+    expect(adjacentDefaultCollections(collections, 'custom-1', 'en')).toEqual({
+      previous: null,
+      next: null
+    });
   });
 });
 
