@@ -1,6 +1,6 @@
 export const settings = {
   title: 'Cài đặt',
-  showScrollToTop: 'Nút lên đầu trang',
+  showScrollToTop: 'Nút cuộn trang',
   showSectionNav: 'Menu chuyển phần bài học',
   showFurigana: 'Furigana',
   allowTts: 'Đọc văn bản',

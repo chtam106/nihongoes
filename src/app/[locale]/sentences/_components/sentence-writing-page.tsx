@@ -20,7 +20,7 @@ import type { SelectChangeEvent } from '@mui/material/Select';
 import { Heading } from '@/components/heading';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import { getAllCourseLessons } from '@/constants/courses/index.ts';
 import { SENTENCES_PATH } from '@/constants/courses/levels.ts';
 import { getSentenceWriting } from '@/constants/courses/sentence-writing.ts';
@@ -252,7 +252,7 @@ export function SentenceWritingPage() {
         />
       )}
 
-      <ScrollToTopButton />
+      <ScrollButton />
     </PageContainer>
   );
 }

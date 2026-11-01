@@ -3,7 +3,7 @@ import { Box, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import {
   getCourse,
   coursePath,
@@ -134,7 +134,7 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
         </Box>
       </Stack>
 
-      <ScrollToTopButton />
+      <ScrollButton />
     </PageContainer>
   );
 }

@@ -25,7 +25,7 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
 import { SaveableCard, SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatRadicalComponentMeaning,
@@ -446,7 +446,7 @@ function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
             ))}
         </Stack>
 
-        <ScrollToTopButton />
+        <ScrollButton />
       </PageContainer>
     </SaveCardScope>
   );
