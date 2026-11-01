@@ -12,6 +12,7 @@ export const routes = {
   vocabulary: VOCABULARY_PATH,
   sentences: SENTENCES_PATH,
   flashcards: FLASHCARDS_PATH,
+  flashcardDrive: '/drive',
   n5: {
     index: '/n5',
     intro: '/n5/intro',
@@ -85,6 +86,10 @@ export function getSeoRouteKey(pathname: string): SeoRouteKey {
 
   if (pathname === routes.kanji.index || pathname.startsWith(`${routes.kanji.index}/`)) {
     return 'kanji' as SeoRouteKey;
+  }
+
+  if (pathname === routes.flashcardDrive) {
+    return 'flashcardDrive' as SeoRouteKey;
   }
 
   if (pathname === routes.flashcards || pathname.startsWith(`${routes.flashcards}/`)) {

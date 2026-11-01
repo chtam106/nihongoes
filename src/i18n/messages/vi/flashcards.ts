@@ -23,10 +23,16 @@ export const flashcards = {
   previousCollection: 'Previous collection',
   nextCollection: 'Next collection',
   studyEmpty: 'Collection này chưa có card. Hãy lưu từ từ flashcard từ vựng.',
-  missing: 'Collection này không có trong Google Drive này.',
+  missing: 'Collection này không có trên thiết bị này.',
+  driveLink: 'Google Drive',
+  driveTesting: 'Tính năng Sync đang testing và chưa dùng được.',
+  drivePageBody:
+    'Bấm Sign in with Google để kết nối. Rồi bấm Sync with Google Drive để gộp collection trên trình duyệt với bản trên Google Drive.',
   driveSignIn: 'Sign in with Google',
-  driveSignInBody: 'Collection được lưu trên Google Drive.',
-  driveLoading: 'Đang tải collection...',
+  driveSync: 'Sync with Google Drive',
+  driveSyncing: 'Syncing with Google Drive...',
+  driveSynced: 'Synced with Google Drive',
+  driveLoading: 'Đang kết nối...',
   driveError: 'Không kết nối được Google Drive.',
   driveUnconfigured: 'Chưa cấu hình Google Drive.'
 };

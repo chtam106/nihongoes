@@ -14,7 +14,7 @@ export function HintText({ children, sx }: HintTextProps) {
       variant="body2"
       sx={[
         {
-          color: 'secondary.main',
+          color: 'text.secondary',
           fontWeight: 500,
           display: 'flex',
           alignItems: 'flex-start',
