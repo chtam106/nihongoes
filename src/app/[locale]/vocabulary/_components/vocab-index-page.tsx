@@ -17,7 +17,7 @@ import {
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import { VocabCardGrid } from '@/components/vocab-card-grid';
 import { VocabFlashcards } from '@/components/vocab-flashcards';
 import { allFlashcards } from '@/constants/flashcards/catalog.ts';
@@ -201,7 +201,7 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
 
           <VocabPrintSheets items={visibleItems} locale={locale} />
 
-          <ScrollToTopButton />
+          <ScrollButton />
         </PageContainer>
       </SaveCardProvider>
     </FlashcardDefaultsProvider>

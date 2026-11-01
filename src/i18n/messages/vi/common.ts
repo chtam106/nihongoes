@@ -1,5 +1,6 @@
 export const common = {
   playAudio: 'Nghe phát âm',
   back: 'Quay lại',
-  scrollTop: 'Lên đầu trang'
+  scrollTop: 'Lên đầu trang',
+  scrollBottom: 'Xuống cuối trang'
 };
