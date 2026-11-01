@@ -1,4 +1,7 @@
-import type { FlashcardCollection } from '@/constants/flashcards/collections.ts';
+import {
+  isDefaultCollectionId,
+  type FlashcardCollection
+} from '@/constants/flashcards/collections.ts';
 import { KANJI_TRACK_META } from '@/constants/kanji/track-meta.ts';
 import type { Locale } from '@/types/i18n.ts';
 
@@ -88,6 +91,37 @@ function defaultCollectionGroupLabel(key: string, locale: Locale): string {
       return meta?.name[locale] ?? key;
     }
   }
+}
+
+/** Previous and next built-in collection in the same group. Custom ids have neither. */
+export function adjacentDefaultCollections(
+  collections: readonly FlashcardCollection[],
+  collectionId: string,
+  locale: Locale
+): { previous: FlashcardCollection | null; next: FlashcardCollection | null } {
+  const none = { previous: null, next: null };
+
+  if (!isDefaultCollectionId(collectionId)) {
+    return none;
+  }
+
+  const group = groupDefaultCollections(
+    collections.filter((collection) => isDefaultCollectionId(collection.id)),
+    locale
+  ).find((item) => item.collections.some((collection) => collection.id === collectionId));
+
+  if (!group) {
+    return none;
+  }
+
+  const index = group.collections.findIndex((collection) => collection.id === collectionId);
+  const previous = index > 0 ? (group.collections[index - 1] ?? null) : null;
+  const next =
+    index >= 0 && index < group.collections.length - 1
+      ? (group.collections[index + 1] ?? null)
+      : null;
+
+  return { previous, next };
 }
 
 export function groupDefaultCollections(
