@@ -10,7 +10,7 @@ import { SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import { KANJI_BASE_PATH, kanjiLessonPath } from '@/constants/kanji/index.ts';
 import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
@@ -92,7 +92,7 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
                   to={kanjiLessonPath(track.slug, previous.id)}
                   startIcon={<ArrowBackIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.previousLesson')}
                 </Button>
@@ -105,7 +105,7 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
                   to={kanjiLessonPath(track.slug, next.id)}
                   endIcon={<ArrowForwardIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.nextLesson')}
                 </Button>
@@ -114,7 +114,7 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
           </Stack>
         </Stack>
 
-        <ScrollToTopButton />
+        <ScrollButton />
       </PageContainer>
     </SaveCardScope>
   );

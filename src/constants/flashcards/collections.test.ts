@@ -6,7 +6,7 @@ import {
   EMPTY_FLASHCARD_STORE,
   renameCollection,
   resolveCollections,
-  sanitizeCollectionFronts,
+  sanitizeCollectionFront,
   sanitizeFlashcardCollections,
   sanitizeFlashcardStore,
   storeFromResolved,
@@ -138,7 +138,7 @@ describe('built-in collections', () => {
       { id: 'untitled', name: 'Untitled collection', cards: [] }
     ]);
     expect(resolveCollections(EMPTY_FLASHCARD_STORE, [], 'vi')[0]?.name).toBe(
-      'Bộ sưu tập chưa đặt tên'
+      'Untitled collection'
     );
     expect(
       storeFromResolved(
@@ -246,19 +246,19 @@ describe('built-in collections', () => {
   });
 });
 
-describe('sanitizeCollectionFronts', () => {
-  it('keeps a per-collection choice and drops a legacy single value', () => {
+describe('sanitizeCollectionFront', () => {
+  it('keeps one shared choice and reads the last per-collection value', () => {
+    expect(sanitizeCollectionFront('meaning')).toBe('meaning');
+    expect(sanitizeCollectionFront('ja')).toBe('ja');
     expect(
-      sanitizeCollectionFronts({
-        'default-n5': 'meaning',
+      sanitizeCollectionFront({
+        'default-n5-lesson-5': 'meaning',
         'default-hiragana': 'ja',
         nope: 'en'
       })
-    ).toEqual({
-      'default-n5': 'meaning',
-      'default-hiragana': 'ja'
-    });
-    expect(sanitizeCollectionFronts('meaning')).toEqual({});
+    ).toBe('ja');
+    expect(sanitizeCollectionFront({ 'default-n5-lesson-5': 'meaning' })).toBe('meaning');
+    expect(sanitizeCollectionFront(null)).toBe('ja');
   });
 });
 

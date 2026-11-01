@@ -440,20 +440,28 @@ function LessonPage({ level, defaults }: LessonPageProps) {
                   to={lessonPath(level, previous.id)}
                   startIcon={<ArrowBackIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.previousLesson')}
                 </Button>
               )}
             </Box>
-            <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
+            <Box
+              sx={{
+                flex: 1,
+                display: 'flex',
+                justifyContent: 'flex-end',
+                // The section nav rail is 44px on the viewport edge and covers this link.
+                pr: { xs: '48px', xl: 0 }
+              }}
+            >
               {next && (
                 <Button
                   component={RouterLink}
                   to={lessonPath(level, next.id)}
                   endIcon={<ArrowForwardIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.nextLesson')}
                 </Button>
@@ -464,7 +472,7 @@ function LessonPage({ level, defaults }: LessonPageProps) {
                   to={VOCABULARY_PATH}
                   endIcon={<ArrowForwardIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.vocabIndexHeading')}
                 </Button>
