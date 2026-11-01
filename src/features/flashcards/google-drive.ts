@@ -5,6 +5,11 @@ export const FLASHCARD_DRIVE_FILE = 'nihongoes-flashcards.json';
 /** Hidden app-data folder. The app only sees files it created. */
 export const DRIVE_APPDATA_SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
 
+/** Primary Google account email. Non-sensitive. */
+export const GOOGLE_EMAIL_SCOPE = 'https://www.googleapis.com/auth/userinfo.email';
+
+const USERINFO_URL = 'https://www.googleapis.com/oauth2/v3/userinfo';
+
 const DRIVE_FILES = 'https://www.googleapis.com/drive/v3/files';
 const DRIVE_UPLOAD = 'https://www.googleapis.com/upload/drive/v3/files';
 
@@ -114,4 +119,18 @@ export async function updateFlashcardFile(
   if (!response.ok) {
     throw new DriveApiError(response.status);
   }
+}
+
+export async function readGoogleEmail(token: string): Promise<string | null> {
+  const response = await fetch(USERINFO_URL, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+
+  if (!response.ok) {
+    return null;
+  }
+
+  const body = (await response.json()) as { email?: unknown };
+
+  return typeof body.email === 'string' && body.email ? body.email : null;
 }
