@@ -31,7 +31,9 @@ import {
   DRIVE_APPDATA_SCOPE,
   DriveApiError,
   findFlashcardFile,
+  GOOGLE_EMAIL_SCOPE,
   readFlashcardFile,
+  readGoogleEmail,
   updateFlashcardFile
 } from '@/features/flashcards/google-drive.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -60,6 +62,7 @@ type DriveSession = {
   token: string;
   expiresAt: number;
   fileId: string | null;
+  email: string | null;
 };
 
 let driveSession: DriveSession | null = null;
@@ -82,12 +85,22 @@ function rememberDriveSession(token: string, expiresIn: number | undefined, file
   driveSession = {
     token,
     expiresAt: Date.now() + seconds * 1000,
-    fileId
+    fileId,
+    email: driveSession?.token === token ? driveSession.email : null
   };
+}
+
+function rememberDriveEmail(token: string, email: string) {
+  if (!driveSession || driveSession.token !== token) {
+    return;
+  }
+
+  driveSession = { ...driveSession, email };
 }
 
 type FlashcardDriveContextValue = {
   status: FlashcardDriveStatus;
+  email: string | null;
   signIn: () => void;
   signOut: () => void;
   sync: (mode: FlashcardSyncMode) => Promise<SyncResult>;
@@ -130,6 +143,7 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
   );
   const tokenRef = useRef(restoredSession?.token ?? '');
   const fileIdRef = useRef<string | null>(restoredSession?.fileId ?? null);
+  const [email, setEmail] = useState<string | null>(restoredSession?.email ?? null);
   const clientRef = useRef<GoogleTokenClient | null>(null);
   const onTokenRef = useRef<(token: string, expiresIn?: number) => void>(() => {});
   const onFailRef = useRef<() => void>(() => {});
@@ -138,13 +152,23 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
     tokenRef.current = '';
     fileIdRef.current = null;
     driveSession = null;
+    setEmail(null);
     setStatus(next);
   }, []);
 
   const acceptToken = useCallback((token: string, expiresIn?: number) => {
     tokenRef.current = token;
     rememberDriveSession(token, expiresIn, fileIdRef.current);
+    setEmail(null);
     setStatus('connected');
+    void readGoogleEmail(token).then((nextEmail) => {
+      if (!nextEmail || readDriveSession()?.token !== token) {
+        return;
+      }
+
+      rememberDriveEmail(token, nextEmail);
+      setEmail(nextEmail);
+    });
   }, []);
 
   useEffect(() => {
@@ -168,7 +192,7 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
 
     clientRef.current = googleIdentity.initTokenClient({
       client_id: GOOGLE_CLIENT_ID,
-      scope: DRIVE_APPDATA_SCOPE,
+      scope: `${DRIVE_APPDATA_SCOPE} ${GOOGLE_EMAIL_SCOPE}`,
       callback: (response) => {
         if (response.access_token) {
           onTokenRef.current(response.access_token, response.expires_in);
@@ -188,6 +212,7 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
     tokenRef.current = '';
     fileIdRef.current = null;
     driveSession = null;
+    setEmail(null);
     setStatus('signed-out');
 
     if (token) {
@@ -291,7 +316,10 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
     [fail]
   );
 
-  const value = useMemo(() => ({ status, signIn, signOut, sync }), [signIn, signOut, status, sync]);
+  const value = useMemo(
+    () => ({ status, email, signIn, signOut, sync }),
+    [email, signIn, signOut, status, sync]
+  );
 
   return <FlashcardDriveContext.Provider value={value}>{children}</FlashcardDriveContext.Provider>;
 }
@@ -328,7 +356,7 @@ const SYNC_CHOICES: { mode: FlashcardSyncMode; title: string; body: string }[] =
 
 export function FlashcardDriveConnect() {
   const { t } = useTranslation();
-  const { status, signIn, signOut, sync } = useFlashcardDrive();
+  const { status, email, signIn, signOut, sync } = useFlashcardDrive();
   const [phase, setPhase] = useState<SyncDialogPhase>('closed');
   const connected = status === 'connected' || status === 'syncing';
 
@@ -391,9 +419,20 @@ export function FlashcardDriveConnect() {
             variant="contained"
             onClick={() => setPhase('choose')}
             disabled={status === 'syncing'}
-            sx={{ textTransform: 'none' }}
+            sx={{
+              textTransform: 'none',
+              ...(email && { flexDirection: 'column', whiteSpace: 'normal', lineHeight: 1.4 })
+            }}
           >
             {t('flashcards.driveSync')}
+            {email && (
+              <Box
+                component="span"
+                sx={{ display: 'block', overflowWrap: 'anywhere', fontSize: '14px' }}
+              >
+                ({email})
+              </Box>
+            )}
           </Button>
           <Button variant="outlined" onClick={signOut} sx={{ textTransform: 'none' }}>
             {t('flashcards.driveSignOut')}
