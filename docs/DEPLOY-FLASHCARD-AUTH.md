@@ -50,10 +50,10 @@ Do **not** set `NEXT_PUBLIC_API_URL` in same-origin mode.
 
 **Production** (`release-production` on Vercel):
 
-| Variable                       | Value                                      |
-| ------------------------------ | ------------------------------------------ |
-| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                        |
-| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev`        |
+| Variable                       | Value                               |
+| ------------------------------ | ----------------------------------- |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                 |
+| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev` |
 
 Add Google redirect URI `https://nihongoes.com/auth/google/callback`. Redeploy production after env + merge.
 
@@ -118,10 +118,10 @@ Deploy lại sau khi thêm biến.
 
 **Production** (Vercel, branch `release-production`):
 
-| Biến                           | Giá trị                               |
-| ------------------------------ | ------------------------------------- |
-| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                   |
-| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev`   |
+| Biến                           | Giá trị                             |
+| ------------------------------ | ----------------------------------- |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                 |
+| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev` |
 
 Thêm redirect Google `https://nihongoes.com/auth/google/callback`, rồi redeploy production.
 
