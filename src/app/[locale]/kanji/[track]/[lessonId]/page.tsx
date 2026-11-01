@@ -92,7 +92,7 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
                   to={kanjiLessonPath(track.slug, previous.id)}
                   startIcon={<ArrowBackIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.previousLesson')}
                 </Button>
@@ -105,7 +105,7 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
                   to={kanjiLessonPath(track.slug, next.id)}
                   endIcon={<ArrowForwardIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('course.nextLesson')}
                 </Button>

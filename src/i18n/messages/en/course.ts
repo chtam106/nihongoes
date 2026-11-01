@@ -48,6 +48,7 @@ export const course = {
   vocabIndexFlashcardsProgress: '{current} / {total}',
   vocabIndexFlashcardsDone: 'You finished all {count} words.',
   vocabIndexFlashcardsHint: 'Tap the card to flip it.',
+  vocabIndexFlashcardsNext: 'Next card',
   vocabIndexFlashcardsGuideTitle: 'Flashcards',
   vocabIndexFlashcardsGuideBody: 'Tap the card to flip between the word and its meaning.',
   vocabIndexFlashcardsGuideGotIt: 'Got it',

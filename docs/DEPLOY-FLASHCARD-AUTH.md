@@ -50,10 +50,10 @@ Do **not** set `NEXT_PUBLIC_API_URL` in same-origin mode.
 
 **Production** (`release-production` on Vercel):
 
-| Variable                       | Value                                      |
-| ------------------------------ | ------------------------------------------ |
-| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                        |
-| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev`        |
+| Variable                       | Value                               |
+| ------------------------------ | ----------------------------------- |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                 |
+| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev` |
 
 Add Google redirect URI `https://nihongoes.com/auth/google/callback`. Redeploy production after env + merge.
 
@@ -82,7 +82,7 @@ Backend `BACKEND_ORIGIN=http://localhost:3000`, `FRONTEND_ORIGIN=http://localhos
 
 # Triển khai auth flashcard (VI)
 
-Đồng bộ bộ sưu tập dùng backend Express (`nihongoes-backend`) và đăng nhập Google. Nên dùng **một URL công khai** cho web: Vercel chạy Next.js và **rewrite** `/auth/*`, `/api/me`, `/api/collections` sang Fly.io.
+Đồng bộ collection dùng backend Express (`nihongoes-backend`) và đăng nhập Google. Nên dùng **một URL công khai** cho web: Vercel chạy Next.js và **rewrite** `/auth/*`, `/api/me`, `/api/collections` sang Fly.io.
 
 ## Cần lấy trên Google Cloud
 
@@ -118,10 +118,10 @@ Deploy lại sau khi thêm biến.
 
 **Production** (Vercel, branch `release-production`):
 
-| Biến                           | Giá trị                               |
-| ------------------------------ | ------------------------------------- |
-| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                   |
-| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev`   |
+| Biến                           | Giá trị                             |
+| ------------------------------ | ----------------------------------- |
+| `NEXT_PUBLIC_AUTH_SAME_ORIGIN` | `1`                                 |
+| `AUTH_BACKEND_INTERNAL_URL`    | `https://nihongoes-backend.fly.dev` |
 
 Thêm redirect Google `https://nihongoes.com/auth/google/callback`, rồi redeploy production.
 
