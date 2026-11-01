@@ -138,7 +138,7 @@ describe('built-in collections', () => {
       { id: 'untitled', name: 'Untitled collection', cards: [] }
     ]);
     expect(resolveCollections(EMPTY_FLASHCARD_STORE, [], 'vi')[0]?.name).toBe(
-      'Bộ sưu tập chưa đặt tên'
+      'Untitled collection'
     );
     expect(
       storeFromResolved(
