@@ -15,8 +15,12 @@ import {
   Button,
   CircularProgress,
   Dialog,
+  DialogActions,
   DialogContent,
   DialogTitle,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
   Stack,
   Typography
 } from '@mui/material';
@@ -358,6 +362,7 @@ export function FlashcardDriveConnect() {
   const { t } = useTranslation();
   const { status, email, signIn, signOut, sync } = useFlashcardDrive();
   const [phase, setPhase] = useState<SyncDialogPhase>('closed');
+  const [syncMode, setSyncMode] = useState<FlashcardSyncMode>('merge');
   const connected = status === 'connected' || status === 'syncing';
 
   useEffect(() => {
@@ -417,7 +422,10 @@ export function FlashcardDriveConnect() {
         >
           <Button
             variant="contained"
-            onClick={() => setPhase('choose')}
+            onClick={() => {
+              setSyncMode('merge');
+              setPhase('choose');
+            }}
             disabled={status === 'syncing'}
             sx={{
               textTransform: 'none',
@@ -455,35 +463,50 @@ export function FlashcardDriveConnect() {
           <>
             <DialogTitle sx={{ fontWeight: 600 }}>{t('flashcards.driveSync')}</DialogTitle>
             <DialogContent>
-              <Stack spacing={1.5}>
+              <RadioGroup
+                value={syncMode}
+                onChange={(event) => setSyncMode(event.target.value as FlashcardSyncMode)}
+              >
                 {SYNC_CHOICES.map((choice) => (
-                  <Button
+                  <FormControlLabel
                     key={choice.mode}
-                    variant="outlined"
-                    onClick={() => chooseSync(choice.mode)}
-                    sx={{
-                      justifyContent: 'flex-start',
-                      px: 2,
-                      py: 1.5,
-                      textAlign: 'left',
-                      textTransform: 'none'
-                    }}
-                  >
-                    <Box>
-                      <Typography component="span" sx={{ display: 'block', fontWeight: 600 }}>
-                        {t(choice.title)}
-                      </Typography>
-                      <Typography
-                        component="span"
-                        sx={{ display: 'block', color: 'text.secondary' }}
-                      >
-                        {t(choice.body)}
-                      </Typography>
-                    </Box>
-                  </Button>
+                    value={choice.mode}
+                    control={
+                      <Radio
+                        color="primary"
+                        sx={{
+                          color: 'primary.main',
+                          '&:hover': { backgroundColor: 'transparent' }
+                        }}
+                      />
+                    }
+                    label={
+                      <Box>
+                        <Typography component="span" sx={{ display: 'block', fontWeight: 600 }}>
+                          {t(choice.title)}
+                        </Typography>
+                        <Typography
+                          component="span"
+                          sx={{ display: 'block', color: 'text.secondary' }}
+                        >
+                          {t(choice.body)}
+                        </Typography>
+                      </Box>
+                    }
+                    sx={{ alignItems: 'flex-start', mx: 0 }}
+                  />
                 ))}
-              </Stack>
+              </RadioGroup>
             </DialogContent>
+            <DialogActions sx={{ px: 3, pb: 2 }}>
+              <Button
+                variant="contained"
+                onClick={() => chooseSync(syncMode)}
+                sx={{ textTransform: 'none' }}
+              >
+                {t('flashcards.driveSync')}
+              </Button>
+            </DialogActions>
           </>
         )}
         {phase === 'loading' && (
