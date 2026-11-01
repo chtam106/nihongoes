@@ -21,6 +21,7 @@ declare global {
       accounts: {
         oauth2: {
           initTokenClient: (config: GoogleTokenClientConfig) => GoogleTokenClient;
+          revoke: (token: string, done: () => void) => void;
         };
       };
     };
