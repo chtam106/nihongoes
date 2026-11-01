@@ -24,6 +24,10 @@ export const seo = {
     title: 'Privacy',
     description: 'How Nihongoes uses Google Drive to store your flashcard collections.'
   },
+  flashcardDrive: {
+    title: 'Google Drive',
+    description: 'Connect Google Drive and sync flashcard collections saved on this device.'
+  },
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
     description: 'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'

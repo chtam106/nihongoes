@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
+import SyncOutlined from '@mui/icons-material/SyncOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -17,6 +18,7 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
+  Link,
   Paper,
   Stack,
   Tab,
@@ -35,6 +37,7 @@ import {
   type FlashcardCollection
 } from '@/constants/flashcards/collections.ts';
 import { groupDefaultCollections } from '@/constants/flashcards/default-collection-groups.ts';
+import { routes } from '@/constants/routes.ts';
 import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
@@ -326,7 +329,37 @@ function FlashcardsView() {
         </Box>
 
         <Box>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-start', mb: 2 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: 1,
+              mb: 2
+            }}
+          >
+            <Link
+              component={RouterLink}
+              to={routes.flashcardDrive}
+              underline="none"
+              color="primary"
+              sx={(theme) => ({
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 0.5,
+                flexShrink: 0,
+                fontWeight: 600,
+                textDecoration: 'none',
+                textUnderlineOffset: '3px',
+                '&:focus-visible': focusVisibleSx(theme),
+                '@media (hover: hover)': {
+                  '&:hover': { textDecoration: 'underline' }
+                }
+              })}
+            >
+              <SyncOutlined fontSize="small" />
+              {t('flashcards.driveSync')}
+            </Link>
             <Button
               variant="text"
               color="primary"
