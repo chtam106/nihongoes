@@ -153,7 +153,7 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
                   to={flashcardCollectionHref(previous.id, listTab)}
                   startIcon={<ArrowBackIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('flashcards.previousCollection')}
                 </Button>
@@ -173,7 +173,7 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
                   to={flashcardCollectionHref(next.id, listTab)}
                   endIcon={<ArrowForwardIcon />}
                   variant="text"
-                  sx={{ px: 0 }}
+                  sx={{ px: 0, textTransform: 'none' }}
                 >
                   {t('flashcards.nextCollection')}
                 </Button>

@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, type KeyboardEvent } from 'react';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, IconButton, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import type { FlashcardCardType } from '@/constants/flashcards/collections.ts';
 import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { VocabHeadword } from '@/components/vocab-headword';
@@ -249,24 +248,20 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
               />
             </Box>
           </SaveableCard>
-          <IconButton
+          <Button
+            variant="contained"
             onClick={handleNext}
-            aria-label={t('course.next')}
-            sx={(theme) => ({
+            sx={{
               '&&': { mt: 4 },
               alignSelf: 'center',
-              width: 48,
-              height: 48,
-              '--button-rest-bg': theme.palette.primary.main,
-              bgcolor: 'primary.main',
-              color: 'primary.contrastText',
-              '@media (hover: hover) and (pointer: fine)': {
-                '&:hover': { bgcolor: 'primary.dark' }
-              }
-            })}
+              px: 2.5,
+              minHeight: 48,
+              textTransform: 'uppercase',
+              fontWeight: 600
+            }}
           >
-            <ArrowForwardIcon />
-          </IconButton>
+            {t('course.vocabIndexFlashcardsNext')}
+          </Button>
         </>
       )}
     </Stack>
