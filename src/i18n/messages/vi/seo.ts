@@ -19,6 +19,10 @@ export const seo = {
     title: 'Flashcards',
     description: 'Collection flashcard từ vựng lưu trên trình duyệt.'
   },
+  privacy: {
+    title: 'Quyền riêng tư',
+    description: 'Nihongoes dùng Google Drive để lưu collection flashcard như thế nào.'
+  },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
     description: 'Kanji thông dụng (Jōyō) theo lớp tiểu học và cấp Kanken.'

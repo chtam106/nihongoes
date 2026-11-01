@@ -20,6 +20,10 @@ export const seo = {
     title: 'Flashcards',
     description: 'Collections of vocabulary flashcards saved in your browser.'
   },
+  privacy: {
+    title: 'Privacy',
+    description: 'How Nihongoes uses Google Drive to store your flashcard collections.'
+  },
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
     description: 'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'

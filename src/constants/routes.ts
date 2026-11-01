@@ -9,6 +9,7 @@ type RouteNode = string | { readonly [key: string]: RouteNode };
 
 export const routes = {
   home: '/',
+  privacy: '/privacy',
   vocabulary: VOCABULARY_PATH,
   sentences: SENTENCES_PATH,
   flashcards: FLASHCARDS_PATH,
