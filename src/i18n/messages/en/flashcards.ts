@@ -23,5 +23,10 @@ export const flashcards = {
   previousCollection: 'Previous collection',
   nextCollection: 'Next collection',
   studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
-  missing: 'This collection is not on this device.'
+  missing: 'This collection is not in this Google Drive.',
+  driveSignIn: 'Sign in with Google',
+  driveSignInBody: 'Collections are stored in your Google Drive.',
+  driveLoading: 'Loading collections...',
+  driveError: 'Could not reach Google Drive.',
+  driveUnconfigured: 'Google Drive is not configured.'
 };
