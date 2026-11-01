@@ -5,7 +5,7 @@ import { Container } from '@mui/material';
 
 type PageContainerProps = {
   children: ReactNode;
-  /** Reserve extra space at the bottom for a floating element (e.g. the scroll-to-top button). */
+  /** Reserve extra space at the bottom for a floating element (e.g. the scroll button). */
   bottomGutter?: boolean;
 };
 
