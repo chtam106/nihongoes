@@ -82,7 +82,7 @@ Backend `BACKEND_ORIGIN=http://localhost:3000`, `FRONTEND_ORIGIN=http://localhos
 
 # Triển khai auth flashcard (VI)
 
-Đồng bộ bộ sưu tập dùng backend Express (`nihongoes-backend`) và đăng nhập Google. Nên dùng **một URL công khai** cho web: Vercel chạy Next.js và **rewrite** `/auth/*`, `/api/me`, `/api/collections` sang Fly.io.
+Đồng bộ collection dùng backend Express (`nihongoes-backend`) và đăng nhập Google. Nên dùng **một URL công khai** cho web: Vercel chạy Next.js và **rewrite** `/auth/*`, `/api/me`, `/api/collections` sang Fly.io.
 
 ## Cần lấy trên Google Cloud
 

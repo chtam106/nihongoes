@@ -73,7 +73,7 @@ export const UNTITLED_FLASHCARD_COLLECTION_ID = 'untitled';
 
 export const UNTITLED_FLASHCARD_COLLECTION_NAME: Bilingual = {
   en: 'Untitled collection',
-  vi: 'Bộ sưu tập chưa đặt tên'
+  vi: 'Untitled collection'
 };
 
 export function untitledFlashcardCollection(locale: Locale): FlashcardCollection {

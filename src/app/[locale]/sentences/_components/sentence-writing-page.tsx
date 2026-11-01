@@ -213,7 +213,7 @@ export function SentenceWritingPage() {
                 onClick={scrollToTopOnPlainClick}
                 startIcon={<ArrowBackIcon />}
                 variant="text"
-                sx={{ px: 0 }}
+                sx={{ px: 0, textTransform: 'none' }}
               >
                 {t('course.previousLesson')}
               </Button>
@@ -235,7 +235,7 @@ export function SentenceWritingPage() {
                 onClick={scrollToTopOnPlainClick}
                 endIcon={<ArrowForwardIcon />}
                 variant="text"
-                sx={{ px: 0 }}
+                sx={{ px: 0, textTransform: 'none' }}
               >
                 {t('course.nextLesson')}
               </Button>

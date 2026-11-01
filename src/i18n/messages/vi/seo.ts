@@ -17,7 +17,7 @@ export const seo = {
   },
   flashcards: {
     title: 'Flashcards',
-    description: 'Bộ sưu tập flashcard từ vựng lưu trên trình duyệt.'
+    description: 'Collection flashcard từ vựng lưu trên trình duyệt.'
   },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',
