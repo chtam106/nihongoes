@@ -20,6 +20,10 @@ export const seo = {
     title: 'Flashcards',
     description: 'Collections of vocabulary flashcards saved in your browser.'
   },
+  flashcardDrive: {
+    title: 'Google Drive',
+    description: 'Connect Google Drive and sync flashcard collections saved on this device.'
+  },
   kanji: {
     title: 'Learn Jōyō Kanji Step by Step',
     description: 'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'

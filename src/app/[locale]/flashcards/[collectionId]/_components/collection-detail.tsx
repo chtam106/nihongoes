@@ -28,7 +28,6 @@ import {
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
 import { SaveCardProvider } from '@/features/flashcards/save-card-gesture.tsx';
-import { FlashcardDriveGate } from '@/features/flashcards/flashcard-drive.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
@@ -72,7 +71,7 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
   const listTab =
     parseFlashcardsListTabParam(searchParams.get(FLASHCARDS_RETURN_TAB_QUERY)) ?? 'mine';
   const ready = useClientReady();
-  const { collections, status } = useFlashcardCollections();
+  const { collections } = useFlashcardCollections();
   const { resolveCards } = useFlashcardDefaults();
   const [front, setFront] = usePersistentState<FlashcardFront>(
     FLASHCARD_COLLECTIONS_FRONT_KEY,
@@ -104,9 +103,8 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
             {t('common.back')}
           </Button>
         </Box>
-        {status !== 'ready' && <FlashcardDriveGate />}
-        {status === 'ready' && collection && <Heading component="h1">{collection.name}</Heading>}
-        {status === 'ready' && collection && (
+        {collection && <Heading component="h1">{collection.name}</Heading>}
+        {collection && (
           <ToggleButtonGroup
             exclusive
             color="primary"
@@ -122,20 +120,20 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
             </ToggleButton>
           </ToggleButtonGroup>
         )}
-        {status === 'ready' && collection && cards.length === 0 && (
+        {collection && cards.length === 0 && (
           <Typography variant="body1" color="text.secondary">
             {t('flashcards.studyEmpty')}
           </Typography>
         )}
-        {status === 'ready' && collection && cards.length > 0 && (
+        {collection && cards.length > 0 && (
           <VocabFlashcards key={collection.id} cards={cards} locale={locale} front={front} />
         )}
-        {status === 'ready' && !collection && ready && (
+        {!collection && ready && (
           <Typography variant="body1" color="text.secondary">
             {t('flashcards.missing')}
           </Typography>
         )}
-        {status === 'ready' && collection && (previous || next) && (
+        {collection && (previous || next) && (
           <Stack
             direction={{ xs: 'column', md: 'row' }}
             spacing={1.5}

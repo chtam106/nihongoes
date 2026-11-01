@@ -5,6 +5,7 @@ import {
   deleteCollection,
   EMPTY_FLASHCARD_STORE,
   renameCollection,
+  mergeFlashcardStores,
   resolveCollections,
   sanitizeCollectionFront,
   sanitizeFlashcardCollections,
@@ -243,6 +244,84 @@ describe('built-in collections', () => {
     expect(kanken4Lessons.length).toBeGreaterThan(1);
     expect(kanken4Cards).toHaveLength(313);
     expect(kanken4Lessons[0]?.name.en).toContain('Kanken level 4 kanji');
+  });
+});
+
+describe('mergeFlashcardStores', () => {
+  it('keeps the local name and unions cards from both copies', () => {
+    expect(
+      mergeFlashcardStores(
+        {
+          overrides: [
+            {
+              id: 'mine',
+              name: 'Local',
+              cards: [{ id: '1:0', type: 'vocab' }]
+            }
+          ],
+          hidden: ['default-a']
+        },
+        {
+          overrides: [
+            {
+              id: 'mine',
+              name: 'Drive',
+              cards: [
+                { id: '1:1', type: 'vocab' },
+                { id: '1:0', type: 'phrase' }
+              ]
+            },
+            {
+              id: 'other',
+              name: 'Only drive',
+              cards: [{ id: '2:0', type: 'vocab' }]
+            }
+          ],
+          hidden: ['default-b', 'default-a']
+        }
+      )
+    ).toEqual({
+      overrides: [
+        {
+          id: 'mine',
+          name: 'Local',
+          cards: [
+            { id: '1:1', type: 'vocab' },
+            { id: '1:0', type: 'vocab' }
+          ]
+        },
+        {
+          id: 'other',
+          name: 'Only drive',
+          cards: [{ id: '2:0', type: 'vocab' }]
+        }
+      ],
+      hidden: ['default-a', 'default-b']
+    });
+  });
+
+  it('uses the drive name when the local name is empty', () => {
+    expect(
+      mergeFlashcardStores(
+        {
+          overrides: [{ id: 'default-n5-lesson-1', name: '   ', cards: [] }],
+          hidden: []
+        },
+        {
+          overrides: [
+            {
+              id: 'default-n5-lesson-1',
+              name: 'Renamed',
+              cards: [{ id: '1:0', type: 'vocab' }]
+            }
+          ],
+          hidden: []
+        }
+      ).overrides[0]
+    ).toMatchObject({
+      name: 'Renamed',
+      cards: [{ id: '1:0', type: 'vocab' }]
+    });
   });
 });
 
