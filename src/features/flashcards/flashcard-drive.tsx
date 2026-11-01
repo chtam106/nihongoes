@@ -10,9 +10,8 @@ import {
   useState,
   type ReactNode
 } from 'react';
-import { Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { HintText } from '@/components/hint-text';
 import { QUIZ_CORRECT_COLOR } from '@/constants/quiz.ts';
 import {
   EMPTY_FLASHCARD_STORE,
@@ -80,6 +79,7 @@ type FlashcardDriveContextValue = {
   status: FlashcardDriveStatus;
   syncDone: boolean;
   signIn: () => void;
+  signOut: () => void;
   sync: () => void;
 };
 
@@ -201,6 +201,19 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
     return clientRef.current;
   }, []);
 
+  const signOut = useCallback(() => {
+    const token = tokenRef.current || readDriveSession()?.token || '';
+    tokenRef.current = '';
+    fileIdRef.current = null;
+    driveSession = null;
+    clearSyncDone();
+    setStatus('signed-out');
+
+    if (token) {
+      window.google?.accounts.oauth2.revoke(token, () => {});
+    }
+  }, [clearSyncDone]);
+
   const signIn = useCallback(() => {
     if (!GOOGLE_CLIENT_ID) {
       setStatus('unconfigured');
@@ -237,20 +250,32 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
         );
         const fileId = fileIdRef.current ?? (await findFlashcardFile(token));
         const remote = fileId ? await readFlashcardFile(token, fileId) : EMPTY_FLASHCARD_STORE;
+        if (readDriveSession()?.token !== token) {
+          return;
+        }
+
         const merged = mergeFlashcardStores(local, remote);
 
         writeStorageItem(FLASHCARD_COLLECTIONS_KEY, JSON.stringify(merged));
 
+        if (readDriveSession()?.token !== token) {
+          return;
+        }
+
         const nextFileId = fileId ?? (await createFlashcardFile(token, merged));
-        fileIdRef.current = nextFileId;
 
         if (fileId) {
           await updateFlashcardFile(token, fileId, merged);
         }
 
-        if (driveSession?.token === token) {
-          driveSession = { ...driveSession, fileId: nextFileId };
+        const session = readDriveSession();
+
+        if (!session || session.token !== token) {
+          return;
         }
+
+        fileIdRef.current = nextFileId;
+        driveSession = { ...session, fileId: nextFileId };
 
         setStatus('connected');
         setSyncDone(true);
@@ -259,14 +284,18 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
           setSyncDone(false);
         }, SYNC_DONE_MS);
       } catch (error: unknown) {
+        if (readDriveSession()?.token !== token) {
+          return;
+        }
+
         fail(error instanceof DriveApiError && error.status === 401 ? 'signed-out' : 'error');
       }
     })();
   }, [clearSyncDone, fail]);
 
   const value = useMemo(
-    () => ({ status, syncDone, signIn, sync }),
-    [signIn, status, sync, syncDone]
+    () => ({ status, syncDone, signIn, signOut, sync }),
+    [signIn, signOut, status, sync, syncDone]
   );
 
   return <FlashcardDriveContext.Provider value={value}>{children}</FlashcardDriveContext.Provider>;
@@ -284,7 +313,7 @@ export function useFlashcardDrive() {
 
 export function FlashcardDriveConnect() {
   const { t } = useTranslation();
-  const { status, syncDone, signIn, sync } = useFlashcardDrive();
+  const { status, syncDone, signIn, signOut, sync } = useFlashcardDrive();
   const waiting = status === 'signing-in' || status === 'syncing';
   const connected = status === 'connected' || status === 'syncing';
   const syncLabel =
@@ -295,8 +324,7 @@ export function FlashcardDriveConnect() {
         : t('flashcards.driveSync');
 
   return (
-    <Stack spacing={1.5} sx={{ alignItems: 'flex-start' }}>
-      <HintText>{t('flashcards.driveTesting')}</HintText>
+    <Stack spacing={1.5} sx={{ alignItems: 'flex-start', alignSelf: 'stretch', width: '100%' }}>
       <Typography variant="body1" color="text.secondary">
         {t('flashcards.drivePageBody')}
       </Typography>
@@ -316,28 +344,44 @@ export function FlashcardDriveConnect() {
         </Typography>
       )}
       {(status === 'signed-out' || status === 'error') && (
-        <Button variant="contained" onClick={signIn} sx={{ textTransform: 'none' }}>
+        <Button
+          variant="contained"
+          onClick={signIn}
+          sx={{ alignSelf: 'center', textTransform: 'none' }}
+        >
           {t('flashcards.driveSignIn')}
         </Button>
       )}
       {connected && (
-        <Button
-          variant="contained"
-          onClick={sync}
-          disabled={status === 'syncing'}
+        <Box
           sx={{
-            textTransform: 'none',
-            ...(syncDone && {
-              '&.MuiButton-contained, &:hover': {
-                bgcolor: alpha(QUIZ_CORRECT_COLOR, 0.16),
-                color: '#067a28',
-                boxShadow: 'none'
-              }
-            })
+            display: 'inline-grid',
+            gap: 1.5,
+            justifyItems: 'stretch',
+            alignSelf: 'center'
           }}
         >
-          {syncLabel}
-        </Button>
+          <Button
+            variant="contained"
+            onClick={sync}
+            disabled={status === 'syncing'}
+            sx={{
+              textTransform: 'none',
+              ...(syncDone && {
+                '&.MuiButton-contained, &:hover': {
+                  bgcolor: alpha(QUIZ_CORRECT_COLOR, 0.16),
+                  color: '#067a28',
+                  boxShadow: 'none'
+                }
+              })
+            }}
+          >
+            {syncLabel}
+          </Button>
+          <Button variant="outlined" onClick={signOut} sx={{ textTransform: 'none' }}>
+            {t('flashcards.driveSignOut')}
+          </Button>
+        </Box>
       )}
     </Stack>
   );
