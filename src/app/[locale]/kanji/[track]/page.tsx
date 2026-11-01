@@ -4,7 +4,7 @@ import { Box, Button, Card, CardActionArea, CardContent, Stack, Typography } fro
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import {
   KANJI_BASE_PATH,
   kanjiLessonPath,
@@ -105,7 +105,7 @@ export default async function Page({ params }: PageProps<{ track: string }>) {
         </Box>
       </Stack>
 
-      <ScrollToTopButton />
+      <ScrollButton />
     </PageContainer>
   );
 }

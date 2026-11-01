@@ -20,6 +20,13 @@ export const flashcards = {
   flipHint: 'Tap a card to flip it.',
   saveHint:
     'Right-click or long-press a card, a lesson word or phrase, or a vocab, kanji, or radical quiz prompt to save it.',
+  previousCollection: 'Previous collection',
+  nextCollection: 'Next collection',
   studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
-  missing: 'This collection is not on this device.'
+  missing: 'This collection is not in this Google Drive.',
+  driveSignIn: 'Sign in with Google',
+  driveSignInBody: 'Collections are stored in your Google Drive.',
+  driveLoading: 'Loading collections...',
+  driveError: 'Could not reach Google Drive.',
+  driveUnconfigured: 'Google Drive is not configured.'
 };

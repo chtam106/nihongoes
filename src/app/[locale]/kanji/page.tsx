@@ -4,7 +4,7 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import {
   KANJI_BASE_PATH,
   KANJI_RADICALS_PATH,
@@ -147,7 +147,7 @@ export default async function Page({ params }: PageProps) {
         </Box>
       </Stack>
 
-      <ScrollToTopButton />
+      <ScrollButton />
     </PageContainer>
   );
 }

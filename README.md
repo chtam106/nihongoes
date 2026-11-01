@@ -158,6 +158,12 @@ Production is driven by the `release-production` branch:
 
 Preview/staging uses Git branch **`release-staging`** (domain **`stg.nihongoes.com`** in Vercel). Same Vercel project; scope Preview env vars to that branch when possible.
 
+### Flashcard Google Drive
+
+Custom collections are a JSON file in the signed-in user's Google Drive app data. The browser talks to Drive directly. There is no app backend and no localStorage copy.
+
+Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to a Google OAuth web client, enable the Drive API, and add each site origin (`http://localhost:3000`, `https://stg.nihongoes.com`, and `https://nihongoes.com`) as an authorized JavaScript origin.
+
 ## Error Monitoring (Sentry)
 
 Sentry runs in production builds only (guarded by `process.env.NODE_ENV`). It is

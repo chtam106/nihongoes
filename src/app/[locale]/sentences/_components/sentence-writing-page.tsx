@@ -1,9 +1,12 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, type MouseEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {
   Box,
+  Button,
   Checkbox,
   FormControl,
   FormControlLabel,
@@ -15,8 +18,9 @@ import {
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { Heading } from '@/components/heading';
+import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
-import { ScrollToTopButton } from '@/components/scroll-to-top-button';
+import { ScrollButton } from '@/components/scroll-button';
 import { getAllCourseLessons } from '@/constants/courses/index.ts';
 import { SENTENCES_PATH } from '@/constants/courses/levels.ts';
 import { getSentenceWriting } from '@/constants/courses/sentence-writing.ts';
@@ -35,6 +39,21 @@ import {
 
 function sentenceWritingHref(lessonNumber: number) {
   return `${SENTENCES_PATH}?${SENTENCE_WRITING_LESSON_QUERY}=${lessonNumber}`;
+}
+
+function scrollToTopOnPlainClick(event: MouseEvent<HTMLAnchorElement>) {
+  if (
+    event.defaultPrevented ||
+    event.button !== 0 ||
+    event.metaKey ||
+    event.ctrlKey ||
+    event.shiftKey ||
+    event.altKey
+  ) {
+    return;
+  }
+
+  window.scrollTo(0, 0);
 }
 
 export function SentenceWritingPage() {
@@ -88,6 +107,14 @@ export function SentenceWritingPage() {
     () => entries.find(({ lesson }) => lesson.number === activeLessonNumber) ?? entries[0],
     [activeLessonNumber, entries]
   );
+  const selectedIndex = selected
+    ? entries.findIndex(({ lesson }) => lesson.number === selected.lesson.number)
+    : -1;
+  const previousEntry = selectedIndex > 0 ? entries[selectedIndex - 1] : undefined;
+  const nextEntry =
+    selectedIndex >= 0 && selectedIndex < entries.length - 1
+      ? entries[selectedIndex + 1]
+      : undefined;
   const writing = selected ? getSentenceWriting(selected.level, selected.lesson.id) : undefined;
   const items = useMemo(() => {
     if (!selected || !writing) {
@@ -171,6 +198,50 @@ export function SentenceWritingPage() {
             ))}
           </Stack>
         )}
+
+        <Stack
+          className="no-print"
+          direction="row"
+          spacing={1.5}
+          sx={{ justifyContent: 'space-between' }}
+        >
+          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
+            {previousEntry && (
+              <Button
+                component={RouterLink}
+                to={sentenceWritingHref(previousEntry.lesson.number)}
+                onClick={scrollToTopOnPlainClick}
+                startIcon={<ArrowBackIcon />}
+                variant="text"
+                sx={{ px: 0, textTransform: 'none' }}
+              >
+                {t('course.previousLesson')}
+              </Button>
+            )}
+          </Box>
+          <Box
+            sx={{
+              flex: 1,
+              display: 'flex',
+              justifyContent: 'flex-end',
+              // The fixed lesson tab is 44px on the viewport edge; container padding does not clear it.
+              pr: { xs: '36px', sm: '20px', xl: 0 }
+            }}
+          >
+            {nextEntry && (
+              <Button
+                component={RouterLink}
+                to={sentenceWritingHref(nextEntry.lesson.number)}
+                onClick={scrollToTopOnPlainClick}
+                endIcon={<ArrowForwardIcon />}
+                variant="text"
+                sx={{ px: 0, textTransform: 'none' }}
+              >
+                {t('course.nextLesson')}
+              </Button>
+            )}
+          </Box>
+        </Stack>
       </Stack>
 
       {selected && (
@@ -181,7 +252,7 @@ export function SentenceWritingPage() {
         />
       )}
 
-      <ScrollToTopButton />
+      <ScrollButton />
     </PageContainer>
   );
 }

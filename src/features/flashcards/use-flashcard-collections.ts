@@ -4,36 +4,30 @@ import { useCallback, useMemo } from 'react';
 import {
   createCollection,
   deleteCollection,
-  EMPTY_FLASHCARD_STORE,
-  FLASHCARD_COLLECTIONS_KEY,
   renameCollection,
   resolveCollections,
-  sanitizeFlashcardStore,
   storeFromResolved,
   toggleCardInCollection,
   type FlashcardCardType,
   type FlashcardCollection
 } from '@/constants/flashcards/collections.ts';
+import { useFlashcardDrive } from '@/features/flashcards/flashcard-drive.tsx';
 import { useFlashcardDefaults } from '@/features/flashcards/flashcard-defaults.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import { usePersistentState } from '@/utils/use-persistent-state.ts';
 
 export function useFlashcardCollections() {
   const { locale } = useTranslation();
   const { defaults } = useFlashcardDefaults();
-  const [store, setStore] = usePersistentState(
-    FLASHCARD_COLLECTIONS_KEY,
-    EMPTY_FLASHCARD_STORE,
-    sanitizeFlashcardStore
-  );
+  const { status, store, signIn, updateStore } = useFlashcardDrive();
+  const ready = status === 'ready';
   const collections = useMemo(
-    () => resolveCollections(store, defaults, locale),
-    [store, defaults, locale]
+    () => (ready ? resolveCollections(store, defaults, locale) : []),
+    [ready, store, defaults, locale]
   );
 
   const update = useCallback(
     (reducer: (current: FlashcardCollection[]) => FlashcardCollection[]) => {
-      setStore((previous) => {
+      updateStore((previous) => {
         const current = resolveCollections(previous, defaults, locale);
         const next = reducer(current);
 
@@ -44,7 +38,7 @@ export function useFlashcardCollections() {
         return storeFromResolved(previous, next, defaults);
       });
     },
-    [setStore, defaults, locale]
+    [updateStore, defaults, locale]
   );
 
   const toggleCard = useCallback(
@@ -84,5 +78,5 @@ export function useFlashcardCollections() {
     [update]
   );
 
-  return { collections, defaults, toggleCard, create, rename, remove };
+  return { collections, defaults, status, signIn, toggleCard, create, rename, remove };
 }
