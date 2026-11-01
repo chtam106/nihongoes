@@ -10,9 +10,16 @@ import {
   useState,
   type ReactNode
 } from 'react';
-import { Box, Button, Stack, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
-import { QUIZ_CORRECT_COLOR } from '@/constants/quiz.ts';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  Stack,
+  Typography
+} from '@mui/material';
 import {
   EMPTY_FLASHCARD_STORE,
   FLASHCARD_COLLECTIONS_KEY,
@@ -41,9 +48,13 @@ export type FlashcardDriveStatus =
 
 const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ?? '';
 const GIS_SCRIPT = 'https://accounts.google.com/gsi/client';
-const SYNC_DONE_MS = 1600;
+const SYNC_RESULT_MS = 2000;
 const TOKEN_SKEW_SECONDS = 60;
 const DEFAULT_TOKEN_SECONDS = 3600;
+
+export type FlashcardSyncMode = 'drive' | 'local' | 'merge';
+
+type SyncResult = 'ok' | 'aborted' | 'error';
 
 type DriveSession = {
   token: string;
@@ -77,10 +88,9 @@ function rememberDriveSession(token: string, expiresIn: number | undefined, file
 
 type FlashcardDriveContextValue = {
   status: FlashcardDriveStatus;
-  syncDone: boolean;
   signIn: () => void;
   signOut: () => void;
-  sync: () => void;
+  sync: (mode: FlashcardSyncMode) => Promise<SyncResult>;
 };
 
 const FlashcardDriveContext = createContext<FlashcardDriveContextValue | null>(null);
@@ -118,52 +128,24 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
   const [status, setStatus] = useState<FlashcardDriveStatus>(
     !GOOGLE_CLIENT_ID ? 'unconfigured' : restoredSession ? 'connected' : 'signed-out'
   );
-  const [syncDone, setSyncDone] = useState(false);
   const tokenRef = useRef(restoredSession?.token ?? '');
   const fileIdRef = useRef<string | null>(restoredSession?.fileId ?? null);
   const clientRef = useRef<GoogleTokenClient | null>(null);
-  const syncDoneTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const onTokenRef = useRef<(token: string, expiresIn?: number) => void>(() => {});
   const onFailRef = useRef<() => void>(() => {});
 
-  const clearSyncDone = useCallback(() => {
-    if (syncDoneTimer.current) {
-      clearTimeout(syncDoneTimer.current);
-      syncDoneTimer.current = null;
-    }
-
-    setSyncDone(false);
+  const fail = useCallback((next: FlashcardDriveStatus) => {
+    tokenRef.current = '';
+    fileIdRef.current = null;
+    driveSession = null;
+    setStatus(next);
   }, []);
 
-  useEffect(
-    () => () => {
-      if (syncDoneTimer.current) {
-        clearTimeout(syncDoneTimer.current);
-      }
-    },
-    []
-  );
-
-  const fail = useCallback(
-    (next: FlashcardDriveStatus) => {
-      tokenRef.current = '';
-      fileIdRef.current = null;
-      driveSession = null;
-      clearSyncDone();
-      setStatus(next);
-    },
-    [clearSyncDone]
-  );
-
-  const acceptToken = useCallback(
-    (token: string, expiresIn?: number) => {
-      tokenRef.current = token;
-      rememberDriveSession(token, expiresIn, fileIdRef.current);
-      clearSyncDone();
-      setStatus('connected');
-    },
-    [clearSyncDone]
-  );
+  const acceptToken = useCallback((token: string, expiresIn?: number) => {
+    tokenRef.current = token;
+    rememberDriveSession(token, expiresIn, fileIdRef.current);
+    setStatus('connected');
+  }, []);
 
   useEffect(() => {
     onTokenRef.current = acceptToken;
@@ -206,13 +188,12 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
     tokenRef.current = '';
     fileIdRef.current = null;
     driveSession = null;
-    clearSyncDone();
     setStatus('signed-out');
 
     if (token) {
       window.google?.accounts.oauth2.revoke(token, () => {});
     }
-  }, [clearSyncDone]);
+  }, []);
 
   const signIn = useCallback(() => {
     if (!GOOGLE_CLIENT_ID) {
@@ -221,82 +202,96 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
     }
 
     setStatus('signing-in');
-    clearSyncDone();
     void loadGis().then(
       () => tokenClient().requestAccessToken(),
       () => fail('error')
     );
-  }, [clearSyncDone, fail, tokenClient]);
+  }, [fail, tokenClient]);
 
-  const sync = useCallback(() => {
-    const token = readDriveSession()?.token ?? '';
-    tokenRef.current = token;
+  const sync = useCallback(
+    (mode: FlashcardSyncMode) => {
+      const token = readDriveSession()?.token ?? '';
+      tokenRef.current = token;
 
-    if (!token) {
-      fileIdRef.current = null;
-      setStatus('signed-out');
-      return;
-    }
-
-    setStatus('syncing');
-    clearSyncDone();
-
-    void (async () => {
-      try {
-        const local = readPersistedValue(
-          FLASHCARD_COLLECTIONS_KEY,
-          EMPTY_FLASHCARD_STORE,
-          sanitizeFlashcardStore
-        );
-        const fileId = fileIdRef.current ?? (await findFlashcardFile(token));
-        const remote = fileId ? await readFlashcardFile(token, fileId) : EMPTY_FLASHCARD_STORE;
-        if (readDriveSession()?.token !== token) {
-          return;
-        }
-
-        const merged = mergeFlashcardStores(local, remote);
-
-        writeStorageItem(FLASHCARD_COLLECTIONS_KEY, JSON.stringify(merged));
-
-        if (readDriveSession()?.token !== token) {
-          return;
-        }
-
-        const nextFileId = fileId ?? (await createFlashcardFile(token, merged));
-
-        if (fileId) {
-          await updateFlashcardFile(token, fileId, merged);
-        }
-
-        const session = readDriveSession();
-
-        if (!session || session.token !== token) {
-          return;
-        }
-
-        fileIdRef.current = nextFileId;
-        driveSession = { ...session, fileId: nextFileId };
-
-        setStatus('connected');
-        setSyncDone(true);
-        syncDoneTimer.current = setTimeout(() => {
-          syncDoneTimer.current = null;
-          setSyncDone(false);
-        }, SYNC_DONE_MS);
-      } catch (error: unknown) {
-        if (readDriveSession()?.token !== token) {
-          return;
-        }
-
-        fail(error instanceof DriveApiError && error.status === 401 ? 'signed-out' : 'error');
+      if (!token) {
+        fileIdRef.current = null;
+        setStatus('signed-out');
+        return Promise.resolve<SyncResult>('aborted');
       }
-    })();
-  }, [clearSyncDone, fail]);
 
-  const value = useMemo(
-    () => ({ status, syncDone, signIn, signOut, sync }),
-    [signIn, signOut, status, sync, syncDone]
+      setStatus('syncing');
+
+      return (async (): Promise<SyncResult> => {
+        try {
+          const local = readPersistedValue(
+            FLASHCARD_COLLECTIONS_KEY,
+            EMPTY_FLASHCARD_STORE,
+            sanitizeFlashcardStore
+          );
+          const fileId = fileIdRef.current ?? (await findFlashcardFile(token));
+          const remote = fileId ? await readFlashcardFile(token, fileId) : EMPTY_FLASHCARD_STORE;
+
+          if (readDriveSession()?.token !== token) {
+            return 'aborted';
+          }
+
+          const next =
+            mode === 'drive'
+              ? remote
+              : mode === 'local'
+                ? local
+                : mergeFlashcardStores(local, remote);
+
+          if (mode !== 'local') {
+            writeStorageItem(FLASHCARD_COLLECTIONS_KEY, JSON.stringify(next));
+          }
+
+          if (readDriveSession()?.token !== token) {
+            return 'aborted';
+          }
+
+          if (mode !== 'drive') {
+            const nextFileId = fileId ?? (await createFlashcardFile(token, next));
+
+            if (fileId) {
+              await updateFlashcardFile(token, fileId, next);
+            }
+
+            const session = readDriveSession();
+
+            if (!session || session.token !== token) {
+              return 'aborted';
+            }
+
+            fileIdRef.current = nextFileId;
+            driveSession = { ...session, fileId: nextFileId };
+          } else if (fileId) {
+            const session = readDriveSession();
+
+            if (!session || session.token !== token) {
+              return 'aborted';
+            }
+
+            fileIdRef.current = fileId;
+            driveSession = { ...session, fileId };
+          }
+
+          setStatus('connected');
+          return 'ok';
+        } catch (error: unknown) {
+          if (readDriveSession()?.token !== token) {
+            return 'aborted';
+          }
+
+          fail(error instanceof DriveApiError && error.status === 401 ? 'signed-out' : 'error');
+          return 'error';
+        }
+      })();
+    },
+    [fail]
   );
+
+  const value = useMemo(() => ({ status, signIn, signOut, sync }), [signIn, signOut, status, sync]);
 
   return <FlashcardDriveContext.Provider value={value}>{children}</FlashcardDriveContext.Provider>;
 }
@@ -311,24 +306,55 @@ export function useFlashcardDrive() {
   return drive;
 }
 
+type SyncDialogPhase = 'closed' | 'choose' | 'loading' | 'done';
+
+const SYNC_CHOICES: { mode: FlashcardSyncMode; title: string; body: string }[] = [
+  {
+    mode: 'drive',
+    title: 'flashcards.driveSyncFromDrive',
+    body: 'flashcards.driveSyncFromDriveBody'
+  },
+  {
+    mode: 'local',
+    title: 'flashcards.driveSyncFromBrowser',
+    body: 'flashcards.driveSyncFromBrowserBody'
+  },
+  {
+    mode: 'merge',
+    title: 'flashcards.driveSyncMerge',
+    body: 'flashcards.driveSyncMergeBody'
+  }
+];
+
 export function FlashcardDriveConnect() {
   const { t } = useTranslation();
-  const { status, syncDone, signIn, signOut, sync } = useFlashcardDrive();
-  const waiting = status === 'signing-in' || status === 'syncing';
+  const { status, signIn, signOut, sync } = useFlashcardDrive();
+  const [phase, setPhase] = useState<SyncDialogPhase>('closed');
   const connected = status === 'connected' || status === 'syncing';
-  const syncLabel =
-    status === 'syncing'
-      ? t('flashcards.driveSyncing')
-      : syncDone
-        ? t('flashcards.driveSynced')
-        : t('flashcards.driveSync');
+
+  useEffect(() => {
+    if (phase !== 'done') {
+      return;
+    }
+
+    const timer = setTimeout(() => setPhase('closed'), SYNC_RESULT_MS);
+
+    return () => clearTimeout(timer);
+  }, [phase]);
+
+  const chooseSync = (mode: FlashcardSyncMode) => {
+    setPhase('loading');
+    void sync(mode).then((result) => {
+      setPhase(result === 'ok' ? 'done' : 'closed');
+    });
+  };
 
   return (
     <Stack spacing={1.5} sx={{ alignItems: 'flex-start', alignSelf: 'stretch', width: '100%' }}>
       <Typography variant="body1" color="text.secondary">
         {t('flashcards.drivePageBody')}
       </Typography>
-      {waiting && status === 'signing-in' && (
+      {status === 'signing-in' && (
         <Typography variant="body1" color="text.secondary">
           {t('flashcards.driveLoading')}
         </Typography>
@@ -363,26 +389,80 @@ export function FlashcardDriveConnect() {
         >
           <Button
             variant="contained"
-            onClick={sync}
+            onClick={() => setPhase('choose')}
             disabled={status === 'syncing'}
-            sx={{
-              textTransform: 'none',
-              ...(syncDone && {
-                '&.MuiButton-contained, &:hover': {
-                  bgcolor: alpha(QUIZ_CORRECT_COLOR, 0.16),
-                  color: '#067a28',
-                  boxShadow: 'none'
-                }
-              })
-            }}
+            sx={{ textTransform: 'none' }}
           >
-            {syncLabel}
+            {t('flashcards.driveSync')}
           </Button>
           <Button variant="outlined" onClick={signOut} sx={{ textTransform: 'none' }}>
             {t('flashcards.driveSignOut')}
           </Button>
         </Box>
       )}
+      <Dialog
+        open={phase !== 'closed'}
+        onClose={() => {
+          if (phase === 'loading') {
+            return;
+          }
+
+          setPhase('closed');
+        }}
+        fullWidth
+        maxWidth="sm"
+      >
+        {phase === 'choose' && (
+          <>
+            <DialogTitle sx={{ fontWeight: 600 }}>{t('flashcards.driveSync')}</DialogTitle>
+            <DialogContent>
+              <Stack spacing={1.5}>
+                {SYNC_CHOICES.map((choice) => (
+                  <Button
+                    key={choice.mode}
+                    variant="outlined"
+                    onClick={() => chooseSync(choice.mode)}
+                    sx={{
+                      justifyContent: 'flex-start',
+                      px: 2,
+                      py: 1.5,
+                      textAlign: 'left',
+                      textTransform: 'none'
+                    }}
+                  >
+                    <Box>
+                      <Typography component="span" sx={{ display: 'block', fontWeight: 600 }}>
+                        {t(choice.title)}
+                      </Typography>
+                      <Typography
+                        component="span"
+                        sx={{ display: 'block', color: 'text.secondary' }}
+                      >
+                        {t(choice.body)}
+                      </Typography>
+                    </Box>
+                  </Button>
+                ))}
+              </Stack>
+            </DialogContent>
+          </>
+        )}
+        {phase === 'loading' && (
+          <DialogContent>
+            <Stack spacing={2} sx={{ alignItems: 'center', py: 3 }}>
+              <CircularProgress />
+              <Typography variant="body1">{t('flashcards.driveSyncing')}</Typography>
+            </Stack>
+          </DialogContent>
+        )}
+        {phase === 'done' && (
+          <DialogContent>
+            <Typography variant="body1" sx={{ py: 3, textAlign: 'center' }}>
+              {t('flashcards.driveSyncDone')}
+            </Typography>
+          </DialogContent>
+        )}
+      </Dialog>
     </Stack>
   );
 }
