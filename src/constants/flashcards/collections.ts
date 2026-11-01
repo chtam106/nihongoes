@@ -414,3 +414,53 @@ export function storeFromResolved(
 
   return { overrides, hidden: [] };
 }
+
+function unionCards(primary: readonly FlashcardCard[], extra: readonly FlashcardCard[]) {
+  const byId = new Map<string, FlashcardCard>();
+
+  for (const card of extra) {
+    byId.set(card.id, card);
+  }
+
+  for (const card of primary) {
+    byId.set(card.id, card);
+  }
+
+  return [...byId.values()];
+}
+
+/** Combine a device store with a Drive store. The device copy wins on name and card type. */
+export function mergeFlashcardStores(local: FlashcardStore, drive: FlashcardStore): FlashcardStore {
+  const driveById = new Map(drive.overrides.map((collection) => [collection.id, collection]));
+  const seen = new Set<string>();
+  const overrides: FlashcardCollection[] = [];
+
+  for (const collection of local.overrides) {
+    seen.add(collection.id);
+    const remote = driveById.get(collection.id);
+
+    if (!remote) {
+      overrides.push(collection);
+      continue;
+    }
+
+    overrides.push({
+      id: collection.id,
+      name: collection.name.trim() ? collection.name : remote.name,
+      cards: unionCards(collection.cards, remote.cards)
+    });
+  }
+
+  for (const collection of drive.overrides) {
+    if (seen.has(collection.id)) {
+      continue;
+    }
+
+    overrides.push(collection);
+  }
+
+  return sanitizeFlashcardStore({
+    overrides,
+    hidden: [...local.hidden, ...drive.hidden]
+  });
+}

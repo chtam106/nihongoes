@@ -23,5 +23,16 @@ export const flashcards = {
   previousCollection: 'Previous collection',
   nextCollection: 'Next collection',
   studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
-  missing: 'This collection is not on this device.'
+  missing: 'This collection is not on this device.',
+  driveLink: 'Google Drive',
+  driveTesting: 'Sync is in testing and is not ready to use yet.',
+  drivePageBody:
+    'Click Sign in with Google to connect. Then click Sync with Google Drive to merge the collections in this browser with the copy in Google Drive.',
+  driveSignIn: 'Sign in with Google',
+  driveSync: 'Sync with Google Drive',
+  driveSyncing: 'Syncing with Google Drive...',
+  driveSynced: 'Synced with Google Drive',
+  driveLoading: 'Connecting...',
+  driveError: 'Could not reach Google Drive.',
+  driveUnconfigured: 'Google Drive is not configured.'
 };

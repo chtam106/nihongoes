@@ -6,6 +6,7 @@ import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
+import CloudSyncOutlinedIcon from '@mui/icons-material/CloudSyncOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
@@ -139,6 +140,12 @@ export const navGroups: NavGroup[] = [
     label: { en: 'Flashcards', vi: 'Flashcards' },
     path: routes.flashcards,
     icon: StyleOutlinedIcon,
+    children: []
+  },
+  {
+    label: { en: 'Google Drive', vi: 'Google Drive' },
+    path: routes.flashcardDrive,
+    icon: CloudSyncOutlinedIcon,
     children: []
   }
 ];
