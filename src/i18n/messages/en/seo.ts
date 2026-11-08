@@ -21,7 +21,7 @@ export const seo = {
     description: 'Collections of vocabulary flashcards saved in your browser.'
   },
   flashcardDrive: {
-    title: 'Google Drive',
+    title: 'Sync',
     description: 'Connect Google Drive and sync flashcard collections saved on this device.'
   },
   kanji: {

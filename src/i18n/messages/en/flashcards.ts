@@ -24,9 +24,8 @@ export const flashcards = {
   nextCollection: 'Next collection',
   studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
   missing: 'This collection is not on this device.',
-  driveLink: 'Google Drive',
-  drivePageBody:
-    'Click Sign in with Google to connect. Then click Sync with Google Drive to choose what happens to the collections in this browser and in Google Drive.',
+  driveLink: 'Sync',
+  drivePageBody: 'Use a Google account to sync flashcards across devices.',
   driveSignIn: 'Sign in with Google',
   driveSignOut: 'Sign out',
   driveSync: 'Sync with Google Drive',
