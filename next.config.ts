@@ -35,6 +35,16 @@ const nextConfig: NextConfig = {
         source: '/vi/:level(n5|n4)/sentences',
         destination: '/vi/sentences',
         permanent: true
+      },
+      {
+        source: '/drive',
+        destination: '/sync',
+        permanent: true
+      },
+      {
+        source: '/vi/drive',
+        destination: '/vi/sync',
+        permanent: true
       }
     ];
   }

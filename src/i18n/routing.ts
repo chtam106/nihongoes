@@ -1,4 +1,5 @@
 import { defineRouting } from 'next-intl/routing';
+import { LOCALE_COOKIE, LOCALE_COOKIE_MAX_AGE } from '@/constants/site.ts';
 
 /**
  * Single source of truth for locale routing. Mirrors the app's URL scheme:
@@ -10,5 +11,11 @@ import { defineRouting } from 'next-intl/routing';
 export const routing = defineRouting({
   locales: ['en', 'vi'],
   defaultLocale: 'en',
-  localePrefix: 'as-needed'
+  localePrefix: 'as-needed',
+  // A session cookie disappears when the window closes, so a chosen locale
+  // would fall back to English on the next visit.
+  localeCookie: {
+    name: LOCALE_COOKIE,
+    maxAge: LOCALE_COOKIE_MAX_AGE
+  }
 });
