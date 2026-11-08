@@ -25,7 +25,7 @@ export const seo = {
     description: 'How Nihongoes uses Google Drive to store your flashcard collections.'
   },
   flashcardDrive: {
-    title: 'Google Drive',
+    title: 'Sync',
     description: 'Connect Google Drive and sync flashcard collections saved on this device.'
   },
   kanji: {

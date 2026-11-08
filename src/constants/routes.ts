@@ -13,7 +13,7 @@ export const routes = {
   vocabulary: VOCABULARY_PATH,
   sentences: SENTENCES_PATH,
   flashcards: FLASHCARDS_PATH,
-  flashcardDrive: '/drive',
+  flashcardDrive: '/sync',
   n5: {
     index: '/n5',
     intro: '/n5/intro',

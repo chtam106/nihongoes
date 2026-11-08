@@ -1,8 +1,8 @@
 import { expect, test, type BrowserContext } from '@playwright/test';
 
 // next-intl's proxy (formerly middleware) remembers a returning visitor's language via the
-// `NEXT_LOCALE` cookie and sends them to it on the next visit.
-const LOCALE_COOKIE = 'NEXT_LOCALE';
+// `nihongoes-locale` cookie and sends them to it on the next visit.
+const LOCALE_COOKIE = 'nihongoes-locale';
 
 async function setLocaleCookie(context: BrowserContext, value: string) {
   await context.addCookies([

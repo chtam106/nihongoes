@@ -8,6 +8,7 @@ export const nav = {
   openMenu: 'Open menu',
   closeMenu: 'Close menu',
   mainNavigation: 'Main navigation',
+  lastPage: 'Reopen the last page',
   collapse: 'Collapse {label}',
   expand: 'Expand {label}'
 };

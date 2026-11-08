@@ -24,9 +24,8 @@ export const flashcards = {
   nextCollection: 'Next collection',
   studyEmpty: 'Collection này chưa có card. Hãy lưu từ từ flashcard từ vựng.',
   missing: 'Collection này không có trên thiết bị này.',
-  driveLink: 'Google Drive',
-  drivePageBody:
-    'Bấm Sign in with Google để kết nối. Rồi bấm Sync with Google Drive để chọn cách xử lý collection trên trình duyệt và bản trên Google Drive.',
+  driveLink: 'Đồng bộ',
+  drivePageBody: 'Dùng tài khoản Google để đồng bộ flashcards trên mọi thiết bị.',
   driveSignIn: 'Sign in with Google',
   driveSignOut: 'Sign out',
   driveSync: 'Sync with Google Drive',
@@ -36,8 +35,8 @@ export const flashcards = {
   driveSyncFromBrowserBody: 'Thay bản trên Google Drive bằng collection trên trình duyệt.',
   driveSyncMerge: 'Gộp cả hai bản',
   driveSyncMergeBody: 'Giữ collection của cả hai bên. Card trong cùng một collection được gộp lại.',
-  driveSyncing: 'Đang sync...',
-  driveSyncDone: 'Sync thành công.',
+  driveSyncing: 'Đang đồng bộ...',
+  driveSyncDone: 'Đồng bộ thành công.',
   driveLoading: 'Đang kết nối...',
   driveError: 'Không kết nối được Google Drive.',
   driveUnconfigured: 'Chưa cấu hình Google Drive.'

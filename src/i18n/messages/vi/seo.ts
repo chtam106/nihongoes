@@ -24,8 +24,8 @@ export const seo = {
     description: 'Nihongoes dùng Google Drive để lưu collection flashcard như thế nào.'
   },
   flashcardDrive: {
-    title: 'Google Drive',
-    description: 'Kết nối Google Drive và sync collection flashcard đang lưu trên thiết bị.'
+    title: 'Đồng bộ',
+    description: 'Kết nối Google Drive và đồng bộ collection flashcard đang lưu trên thiết bị.'
   },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',

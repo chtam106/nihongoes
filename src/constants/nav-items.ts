@@ -143,7 +143,7 @@ export const navGroups: NavGroup[] = [
     children: []
   },
   {
-    label: { en: 'Google Drive', vi: 'Google Drive' },
+    label: { en: 'Sync', vi: 'Đồng bộ' },
     path: routes.flashcardDrive,
     icon: CloudSyncOutlinedIcon,
     children: []
