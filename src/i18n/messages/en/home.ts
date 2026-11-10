@@ -4,7 +4,7 @@ export const home = {
     'Free and bilingual (English + Vietnamese), from your first kana through the JLPT courses.',
   hiraganaDescription: 'Learn the basic syllabary used for native Japanese words.',
   katakanaDescription: 'Learn the script used for loanwords and emphasis.',
-  combinedDescription: 'Compare hiragana and katakana side by side in one chart.',
+  combinedDescription: 'Compare hiragana and katakana that share a sound.',
   exerciseDescription: 'Practice recognizing kana and their readings until they stick.',
   kanjiTitle: 'Kanji',
   kanjiDescription: 'Study Jōyō kanji grade by grade.',
@@ -15,5 +15,5 @@ export const home = {
   coursesSection: 'Courses',
   vocabDescription: 'Every word and set phrase from the JLPT courses.',
   sentencesDescription: 'Write Japanese from English or Vietnamese prompts.',
-  flashcardsDescription: 'Save vocabulary into collections and review it.'
+  flashcardsDescription: 'Review vocabulary saved in your collections.'
 };
