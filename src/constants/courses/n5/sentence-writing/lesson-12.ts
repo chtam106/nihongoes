@@ -258,8 +258,8 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Which do you prefer, coffee or tea?',
-            vi: 'Cà phê và trà, cái nào bạn chọn?'
+            en: 'Which is better, coffee or tea?',
+            vi: 'Cà phê và trà, cái nào hơn?'
           },
           jp: 'コーヒーと お茶と どちらが いいですか。',
           ruby: [{ base: '茶', reading: 'ちゃ' }]
@@ -285,7 +285,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Which season is the best in the year?',
+            en: 'Which season do you like the best in the year?',
             vi: 'Trong năm, bạn thích mùa nào nhất?'
           },
           jp: '一年の 中で どの 季節が いちばん 好きですか。',

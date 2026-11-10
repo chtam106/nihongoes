@@ -125,8 +125,8 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I will put the flashlight away in the trash-can area? No - in the bag.',
-            vi: 'Tôi sẽ cất đèn pin vào túi.'
+            en: 'I will put the flashlight away ahead of time.',
+            vi: 'Tôi sẽ cất đèn pin trước.'
           },
           jp: '懐中電灯を しまって おきます。懐中電灯を しまいます。',
           ruby: [

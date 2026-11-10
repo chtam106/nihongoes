@@ -289,7 +289,7 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'The group is small, but everyone is kind.',
-            vi: 'Nhóm nhỏ, nhưng mọi người đều tốt.'
+            vi: 'Nhóm nhỏ, nhưng mọi người đều tốt bụng.'
           },
           jp: 'グループは 小さいですが、皆が 親切です。',
           ruby: [

@@ -495,7 +495,7 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
   ],
   phrases: [
     {
-      prompt: { en: 'That is amazing!', vi: 'Giỏi quá!/Hay quá!' },
+      prompt: { en: 'That is amazing!', vi: 'Tuyệt quá!' },
       jp: 'すごい ですね。'
     },
     {

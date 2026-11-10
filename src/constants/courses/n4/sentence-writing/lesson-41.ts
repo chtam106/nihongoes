@@ -8,7 +8,7 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'The section chief gives me a handkerchief.',
-            vi: 'Trưởng phòng tặng tôi khăn tay.'
+            vi: 'Tổ trưởng tặng tôi khăn tay.'
           },
           jp: '課長が 私に ハンカチを くださいます。',
           ruby: [
