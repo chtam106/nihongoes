@@ -56,7 +56,7 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '食', reading: 'た' }]
         },
         {
-          prompt: { en: 'I write with a personal computer.', vi: 'Tôi viết bằng máy vi tính.' },
+          prompt: { en: 'I write email on a computer.', vi: 'Tôi viết email bằng máy tính.' },
           jp: 'パソコンで メールを 書きます。',
           ruby: [{ base: '書', reading: 'か' }]
         },
@@ -353,8 +353,8 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Would you like this Christmas present?',
-            vi: 'Bạn dùng món quà Giáng sinh này nhé?'
+            en: 'How about this Christmas present?',
+            vi: 'Món quà Giáng sinh này thì sao?'
           },
           jp: 'この クリスマスの プレゼント、いかがですか。'
         },

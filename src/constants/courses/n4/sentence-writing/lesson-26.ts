@@ -147,8 +147,8 @@ export const n4Lesson26SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Next time I want to go to the flea market - (lead-in).',
-            vi: 'Lần tới tôi muốn đi chợ đồ cũ - (mở đầu).'
+            en: 'Next time I am going to the flea market - (lead-in).',
+            vi: 'Lần tới tôi đi chợ đồ cũ - (mở đầu).'
           },
           jp: '今度 フリーマーケットへ 行くんですが。',
           ruby: [
@@ -369,7 +369,7 @@ export const n4Lesson26SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'As for karaoke, I am not good at it.',
-            vi: 'Karaoke thì tôi hát không giỏi.'
+            vi: 'Tôi kém karaoke.'
           },
           jp: 'カラオケは 下手です。',
           ruby: [
