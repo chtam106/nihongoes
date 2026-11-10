@@ -60,7 +60,7 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'The chair is broken. A pocket is attached to the bag.',
-            vi: 'Ghế bị hỏng. Túi xách có túi gắn.'
+            vi: 'Ghế bị hỏng. Túi xách có ngăn.'
           },
           jp: 'いすが 壊れています。いすが 壊れます。かばんに ポケットが 付きます。',
           ruby: [
@@ -191,8 +191,8 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The house is burning, unfortunately. It burns.',
-            vi: 'Nhà đang cháy mất rồi. Nó cháy.'
+            en: 'The house has burned down, unfortunately. It burns.',
+            vi: 'Nhà cháy mất rồi. Nó cháy.'
           },
           jp: '家が 燃えて しまいました。家が 燃えます。',
           ruby: [
@@ -381,8 +381,8 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The glass cup was under the table.',
-            vi: 'Cốc thủy tinh ở dưới bàn.'
+            en: 'There was a glass cup.',
+            vi: 'Có cái cốc thủy tinh.'
           },
           jp: 'ガラスの コップが ありました。'
         }
@@ -432,8 +432,8 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Please wipe it somewhere clean.',
-            vi: 'Hãy lau nó ở chỗ sạch nào đó.'
+            en: 'Please wipe it somewhere.',
+            vi: 'Hãy lau ở đâu đó.'
           },
           jp: 'どこかで ふいて ください。'
         }

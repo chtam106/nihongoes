@@ -220,8 +220,8 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Yuki is a student and her Japanese is skillful.',
-            vi: 'Yuki là học sinh và tiếng Nhật khéo.'
+            en: 'Yuki is a student and is good at Japanese.',
+            vi: 'Yuki là học sinh và giỏi tiếng Nhật.'
           },
           jp: 'ゆきさんは 学生で、日本語が 上手です。',
           ruby: [
@@ -487,7 +487,7 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Which coffee is yours?', vi: 'Cà phê nào là của anh/chị?' },
+          prompt: { en: 'Which one is the coffee?', vi: 'Cà phê là cái nào?' },
           jp: 'コーヒーは どれですか。'
         }
       ]

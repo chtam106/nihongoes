@@ -406,8 +406,8 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Because it is hot, the food goes bad.',
-            vi: 'Vì nóng nên thức ăn bị thiu.'
+            en: 'Because it is inconvenient, the food goes bad.',
+            vi: 'Vì bất tiện nên thức ăn bị thiu.'
           },
           jp: '不便な から、食べ物が 腐ります。',
           ruby: [

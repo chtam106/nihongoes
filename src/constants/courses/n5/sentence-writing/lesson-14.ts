@@ -350,7 +350,7 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The train is coming.', vi: 'Tàu đang đến.' },
+          prompt: { en: 'The train comes.', vi: 'Tàu đến.' },
           jp: '電車が 来ます。',
           ruby: [
             { base: '電', reading: 'でん' },

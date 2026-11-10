@@ -11,11 +11,11 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '休', reading: 'やす' }]
         },
         {
-          prompt: { en: 'The party was fun.', vi: 'Bữa tiệc vui.' },
+          prompt: { en: 'The party was lively.', vi: 'Bữa tiệc thì náo nhiệt.' },
           jp: 'パーティーは にぎやかでした。'
         },
         {
-          prompt: { en: 'The hotel was simple.', vi: 'Khách sạn đơn giản.' },
+          prompt: { en: 'The hotel was simple.', vi: 'Khách sạn thì đơn giản.' },
           jp: 'ホテルは 簡単でした。',
           ruby: [
             { base: '簡', reading: 'かん' },
@@ -37,12 +37,12 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'It was cloudy.', vi: 'Trời u ám.' },
+          prompt: { en: 'It was cloudy.', vi: 'Trời thì u ám.' },
           jp: '曇りでした。',
           ruby: [{ base: '曇', reading: 'くも' }]
         },
         {
-          prompt: { en: 'It was snow.', vi: 'Là tuyết.' },
+          prompt: { en: 'It was snow.', vi: 'Trời có tuyết.' },
           jp: '雪でした。',
           ruby: [{ base: '雪', reading: 'ゆき' }]
         }
@@ -52,7 +52,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
       pattern: 'i-adj かったです / くなかったです',
       items: [
         {
-          prompt: { en: 'The station was near.', vi: 'Ga gần.' },
+          prompt: { en: 'The station was near.', vi: 'Nhà ga thì gần.' },
           jp: '駅は 近かったです。',
           ruby: [
             { base: '駅', reading: 'えき' },
@@ -60,7 +60,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The airport was far.', vi: 'Sân bay xa.' },
+          prompt: { en: 'The airport was far.', vi: 'Sân bay thì xa.' },
           jp: '空港は 遠かったです。',
           ruby: [
             { base: '空', reading: 'くう' },
@@ -69,7 +69,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The train was fast.', vi: 'Tàu nhanh.' },
+          prompt: { en: 'The train was fast.', vi: 'Tàu thì nhanh.' },
           jp: '電車は 速かったです。',
           ruby: [
             { base: '電', reading: 'でん' },
@@ -78,12 +78,12 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The bus was slow.', vi: 'Xe buýt chậm.' },
+          prompt: { en: 'The bus was slow.', vi: 'Xe buýt thì chậm.' },
           jp: 'バスは 遅かったです。',
           ruby: [{ base: '遅', reading: 'おそ' }]
         },
         {
-          prompt: { en: 'Spring was warm.', vi: 'Mùa xuân ấm.' },
+          prompt: { en: 'Spring was warm.', vi: 'Mùa xuân thì ấm.' },
           jp: '春は 暖かかったです。',
           ruby: [
             { base: '春', reading: 'はる' },
@@ -91,7 +91,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Autumn was cool.', vi: 'Mùa thu mát.' },
+          prompt: { en: 'Autumn was cool.', vi: 'Mùa thu thì mát.' },
           jp: '秋は 涼しかったです。',
           ruby: [
             { base: '秋', reading: 'あき' },
@@ -99,7 +99,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The tea was not hot. It was warm.', vi: 'Trà không nóng. Trà ấm.' },
+          prompt: { en: 'The tea was warm.', vi: 'Trà thì ấm.' },
           jp: 'お茶は 温かかったです。',
           ruby: [
             { base: '茶', reading: 'ちゃ' },
@@ -107,7 +107,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Sukiyaki was sweet.', vi: 'Sukiyaki ngọt.' },
+          prompt: { en: 'Sukiyaki was sweet.', vi: 'Sukiyaki thì ngọt.' },
           jp: 'すき焼きは 甘かったです。',
           ruby: [
             { base: '焼', reading: 'や' },
@@ -115,17 +115,17 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The ramen was spicy.', vi: 'Ramen cay.' },
+          prompt: { en: 'The ramen was spicy.', vi: 'Ramen thì cay.' },
           jp: 'ラーメンは 辛かったです。',
           ruby: [{ base: '辛', reading: 'から' }]
         },
         {
-          prompt: { en: 'The bag was heavy.', vi: 'Cái túi nặng.' },
+          prompt: { en: 'The bag was heavy.', vi: 'Cái túi thì nặng.' },
           jp: 'かばんは 重かったです。',
           ruby: [{ base: '重', reading: 'おも' }]
         },
         {
-          prompt: { en: 'The bag was not heavy. It was light.', vi: 'Cái túi không nặng. Nó nhẹ.' },
+          prompt: { en: 'The bag was light.', vi: 'Cái túi thì nhẹ.' },
           jp: 'かばんは 軽かったです。',
           ruby: [{ base: '軽', reading: 'かる' }]
         },
@@ -138,7 +138,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The station is near.', vi: 'Ga gần.' },
+          prompt: { en: 'The station is near.', vi: 'Nhà ga thì gần.' },
           jp: '駅は 近いです。',
           ruby: [
             { base: '駅', reading: 'えき' },
@@ -146,7 +146,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The airport is far.', vi: 'Sân bay xa.' },
+          prompt: { en: 'The airport is far.', vi: 'Sân bay thì xa.' },
           jp: '空港は 遠いです。',
           ruby: [
             { base: '空', reading: 'くう' },
@@ -169,12 +169,12 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '遅', reading: 'おそ' }]
         },
         {
-          prompt: { en: 'Today is warm.', vi: 'Hôm nay ấm.' },
+          prompt: { en: 'Today is warm.', vi: 'Hôm nay thì ấm.' },
           jp: 'きょうは 暖かいです。',
           ruby: [{ base: '暖', reading: 'あたた' }]
         },
         {
-          prompt: { en: 'The wind is cool.', vi: 'Gió mát.' },
+          prompt: { en: 'The wind is cool.', vi: 'Gió thì mát.' },
           jp: '風は 涼しいです。',
           ruby: [
             { base: '風', reading: 'かぜ' },
@@ -265,7 +265,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '茶', reading: 'ちゃ' }]
         },
         {
-          prompt: { en: 'Coffee is fine (I will have coffee).', vi: 'Tôi dùng cà phê.' },
+          prompt: { en: 'Coffee is better.', vi: 'Cà phê thì hơn.' },
           jp: 'コーヒーの ほうが いいです。'
         },
         {

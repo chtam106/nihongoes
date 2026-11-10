@@ -34,8 +34,8 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'You can fly freely in the sky in that story.',
-            vi: 'Trong câu chuyện đó, bay tự do trên trời được.'
+            en: 'You can fly freely in the sky. Birds fly too.',
+            vi: 'Bay tự do trên trời được. Chim cũng bay.'
           },
           jp: '空を 自由に 飛べます。鳥も 飛びます。',
           ruby: [
@@ -50,7 +50,7 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I can attach a pocket to this bag.',
-            vi: 'Tôi có thể gắn túi vào túi xách này.'
+            vi: 'Tôi gắn được một ngăn vào túi xách này.'
           },
           jp: 'この かばんに ポケットが 付けられます。ポケットを 付けます。',
           ruby: [

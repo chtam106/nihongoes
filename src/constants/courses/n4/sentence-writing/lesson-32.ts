@@ -192,8 +192,8 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The engine might be strange.',
-            vi: 'Động cơ có thể bị lạ.'
+            en: 'The engine sound might be strange.',
+            vi: 'Tiếng động cơ có thể lạ.'
           },
           jp: 'エンジンの 音が おかしいかも しれません。',
           ruby: [{ base: '音', reading: 'おと' }]
@@ -207,8 +207,8 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'There might be influenza from the west wind.',
-            vi: 'Gió tây có thể mang cúm.'
+            en: 'You might catch the flu because of the west wind.',
+            vi: 'Gió tây có thể làm tôi bị cúm.'
           },
           jp: '西の 風で インフルエンザに なるかも しれません。',
           ruby: [
@@ -318,8 +318,8 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Can we reach the east port in 20 minutes?',
-            vi: '20 phút có tới cảng phía đông không?'
+            en: 'Can we get to the east in 20 minutes?',
+            vi: '20 phút có tới phía đông không?'
           },
           jp: '東まで 20分で 行けますか。',
           ruby: [

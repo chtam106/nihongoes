@@ -414,7 +414,7 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'The smoke is pure white.',
-            vi: 'Khói trắng toát.'
+            vi: 'Khói thì trắng toát.'
           },
           jp: '煙は 真っ白です。',
           ruby: [

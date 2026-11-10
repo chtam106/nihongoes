@@ -274,7 +274,7 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I am thinking about a job transfer, but I like the countryside.',
-            vi: 'Tôi đang nghĩ đến chuyển công tác, nhưng tôi thích quê.'
+            vi: 'Tôi đang nghĩ đến việc chuyển công tác, nhưng tôi thích vùng quê.'
           },
           jp: '転勤する ことを 考えていますが、田舎が 好きです。',
           ruby: [

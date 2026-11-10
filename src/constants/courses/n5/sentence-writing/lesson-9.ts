@@ -401,8 +401,8 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I am busy, so I cannot go.',
-            vi: 'Tôi bận nên không đi được.'
+            en: 'I am busy, so I will not go.',
+            vi: 'Tôi bận nên không đi.'
           },
           jp: '忙しいですから、行きません。',
           ruby: [

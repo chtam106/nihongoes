@@ -101,8 +101,8 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'In the future I want to become a novelist, so I write novels.',
-            vi: 'Tương lai tôi muốn làm nhà văn, nên tôi viết tiểu thuyết.'
+            en: 'In the future I want to become a novelist. I can also become a photographer. I am writing a novel now.',
+            vi: 'Sau này tôi muốn làm nhà văn. Tôi cũng có thể làm nhiếp ảnh. Bây giờ tôi đang viết tiểu thuyết.'
           },
           jp: '将来 小説家に なりたいです。写真～家にも なれます。今 小説を 書いています。',
           ruby: [

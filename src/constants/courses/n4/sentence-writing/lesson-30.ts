@@ -219,8 +219,8 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I still live with this emergency kit.',
-            vi: 'Tôi vẫn sống với túi khẩn cấp này.'
+            en: 'I still live even in an emergency.',
+            vi: 'Lúc khẩn cấp tôi vẫn sống.'
           },
           jp: '非常時も まだ 生活します。',
           ruby: [
