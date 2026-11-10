@@ -56,8 +56,7 @@ export const course = {
   vocabIndexFlashcardsFrontWord: 'Word first',
   vocabIndexFlashcardsFrontMeaning: 'Meaning first',
   sentenceWritingHeading: 'Sentence writing',
-  sentenceWritingIntro:
-    'Pick a lesson, then write each prompt in Japanese - grammar and useful phrases.',
+  sentenceWritingIntro: 'Practice writing Japanese with the grammar and phrases from the lesson.',
   sentenceWritingLesson: 'Lesson',
   sentenceWritingPlaceholder: 'Write in Japanese',
   sentenceWritingShowInput: 'Show writing box',
@@ -76,8 +75,7 @@ export const course = {
   notFoundTitle: 'Lesson not found',
   notFoundBody: 'This lesson does not exist. Go back to the course overview.',
   practiceHeading: 'Practice',
-  exerciseSubtitle:
-    "Test yourself on this lesson's vocabulary, grammar, reading, and kanji writing.",
+  exerciseSubtitle: 'Check what you remember from this lesson.',
   startExercise: 'Vocabulary',
   startGrammar: 'Grammar',
   grammarClozePrompt: 'Fill in the blank',
