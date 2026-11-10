@@ -269,7 +269,10 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The child likes Vietnamese songs.', vi: 'Đứa trẻ thích bài hát Việt Nam.' },
+          prompt: {
+            en: 'The child likes Vietnamese songs.',
+            vi: 'Đứa trẻ thích bài hát Việt Nam.'
+          },
           jp: '子どもは ベトナムの 歌が 好きです。',
           ruby: [
             { base: '子', reading: 'こ' },
