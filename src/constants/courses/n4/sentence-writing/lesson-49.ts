@@ -356,7 +356,7 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
   ],
   phrases: [
     {
-      prompt: { en: 'Class 1, Year 1', vi: 'Tổ 1 năm thứ 1' },
+      prompt: { en: 'Class 1, Year 1', vi: 'Lớp 1 năm thứ nhất' },
       jp: '一年一組',
       ruby: [
         { base: '一', reading: 'いち' },

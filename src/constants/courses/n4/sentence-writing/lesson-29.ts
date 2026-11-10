@@ -222,7 +222,7 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'The station staff came to the platform.',
-            vi: 'Nhân viên nhà ga đến sân ga.'
+            vi: 'Nhân viên nhà ga đã đến sân ga.'
           },
           jp: '駅員が ホームに 来ました。',
           ruby: [
@@ -234,7 +234,7 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I will go back in front of the station.',
-            vi: 'Tôi sẽ về trước ga.'
+            vi: 'Tôi sẽ về khu trước nhà ga.'
           },
           jp: '駅前に 帰ります。',
           ruby: [
@@ -258,7 +258,7 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'Please go ahead. I will go to that area.',
-            vi: 'Mời anh/chị cứ về trước. Tôi sẽ đến khu đó.'
+            vi: 'Mời anh/chị đi trước. Tôi sẽ đi đến khu đó.'
           },
           jp: 'お先に どうぞ。あの～辺に 行きます。',
           ruby: [
@@ -442,7 +442,7 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
   ],
   phrases: [
     {
-      prompt: { en: 'Please go ahead.', vi: 'Mời anh/chị cứ về trước.' },
+      prompt: { en: 'Please go ahead.', vi: 'Mời anh/chị đi trước.' },
       jp: 'お先に どうぞ。',
       ruby: [{ base: '先', reading: 'さき' }]
     },
