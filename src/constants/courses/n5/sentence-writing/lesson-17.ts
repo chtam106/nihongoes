@@ -303,8 +303,8 @@ export const n5Lesson17SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Please come to the clinic in two or three days.',
-            vi: 'Hãy đến phòng khám trong hai, ba ngày.'
+            en: 'Please come to the hospital by two or three days from now.',
+            vi: 'Hãy đến bệnh viện trước hai, ba ngày nữa.'
           },
           jp: '2、3日までに 病院へ 来て ください。',
           ruby: [

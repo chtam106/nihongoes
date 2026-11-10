@@ -173,7 +173,10 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'My older brother is still single.', vi: 'Anh trai tôi vẫn độc thân.' },
+          prompt: {
+            en: 'My older brother is still single. He lives in Tokyo.',
+            vi: 'Anh trai tôi vẫn độc thân. Anh ấy sống ở Tokyo.'
+          },
           jp: '兄は まだ 独身です。東京に 住んでいます。',
           ruby: [
             { base: '兄', reading: 'あに' },

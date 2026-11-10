@@ -57,7 +57,7 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '七', reading: 'なな' }]
         },
         {
-          prompt: { en: 'I want eight ice creams.', vi: 'Tôi muốn tám cây kem.' },
+          prompt: { en: 'Please give me eight ice creams.', vi: 'Cho tôi tám cây kem.' },
           jp: 'アイスクリームを 八つ ください。',
           ruby: [{ base: '八', reading: 'やっ' }]
         },

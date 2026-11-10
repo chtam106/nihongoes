@@ -241,7 +241,7 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'Wow, I will go see it and come back.',
-            vi: 'Ôi, tôi đi xem rồi về.'
+            vi: 'Ôi, tôi đi xem một chút rồi về.'
           },
           jp: 'わあ、ちょっと 見て 来ます。',
           ruby: [
