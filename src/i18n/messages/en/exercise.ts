@@ -1,14 +1,13 @@
 export const exercise = {
   title: 'Exercise',
   hubSubtitle: 'Different ways to drill the kana until reading them is automatic.',
-  romajiDescription: 'See the kana and type its romaji.',
-  characterDescription: 'Choose the matching kana from romaji, or the romaji from kana.',
+  romajiDescription: 'Practice reading kana as romaji.',
+  characterDescription: 'Practice matching kana and romaji.',
   characterTabChooseKana: 'Choose kana',
   characterTabChooseRomaji: 'Choose romaji',
-  scriptPairDescription: 'Match hiragana and katakana pairs.',
+  scriptPairDescription: 'Practice the same sound in hiragana and katakana.',
   writing: 'Writing practice',
-  writingDescription:
-    'Practice writing kana by hand - browse by row, or write a random character from its romaji.',
+  writingDescription: 'Practice writing kana by hand.',
   writingRow: 'Row',
   writingCanvasAria: 'Writing canvas',
   writingClear: 'Clear writing',
@@ -31,7 +30,7 @@ export const exercise = {
     'Tap a character to play its stroke order. Strokes use a handwriting style, so they may not match the printed font shown on screen.',
   sentence: 'Sentence transcription',
   sentenceTitle: 'Read the sentence, type the romaji',
-  sentenceDescription: 'Read a kana sentence and type its romaji.',
+  sentenceDescription: 'Practice reading kana sentences as romaji.',
   sentenceHint1: 'Write long vowels as two vowels in a row (no macron needed).',
   sentenceHint2:
     'Particles are read by their sound (は=wa, へ=e, を=o); typing the literal spelling works too.',
