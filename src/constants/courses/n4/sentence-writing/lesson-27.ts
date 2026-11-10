@@ -260,8 +260,8 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I love only the main character.',
-            vi: 'Tôi chỉ rất thích nhân vật chính.'
+            en: 'I really like the main character. I do not like the other people.',
+            vi: 'Tôi rất thích nhân vật chính. Người khác thì tôi không thích.'
           },
           jp: '主人公が 大好きです。ほかの 人は 好きじゃ ありません。',
           ruby: [

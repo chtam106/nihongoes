@@ -58,7 +58,7 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
       pattern: 'V-て なさい',
       items: [
         {
-          prompt: { en: 'Pay attention to cars.', vi: 'Chú ý xe đi.' },
+          prompt: { en: 'Pay attention to cars.', vi: 'Hãy chú ý xe.' },
           jp: '車に 注意しなさい。注意します。',
           ruby: [
             { base: '車', reading: 'くるま' },

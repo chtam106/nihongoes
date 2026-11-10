@@ -286,7 +286,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'Which season is the best in the year?',
-            vi: 'Trong năm, mùa nào thích nhất?'
+            vi: 'Trong năm, bạn thích mùa nào nhất?'
           },
           jp: '一年の 中で どの 季節が いちばん 好きですか。',
           ruby: [
@@ -299,7 +299,7 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Spring is the best.', vi: 'Mùa xuân thích nhất.' },
+          prompt: { en: 'I like spring the best.', vi: 'Tôi thích mùa xuân nhất.' },
           jp: '春が いちばん 好きです。',
           ruby: [
             { base: '春', reading: 'はる' },

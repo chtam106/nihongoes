@@ -8,7 +8,7 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I take notes while listening to the lecture.',
-            vi: 'Tôi vừa nghe bài vừa ghi memo.'
+            vi: 'Tôi vừa nghe chuyện vừa ghi memo.'
           },
           jp: '話を 聞きながら メモします。',
           ruby: [
