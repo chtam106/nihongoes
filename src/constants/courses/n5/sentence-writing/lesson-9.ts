@@ -100,10 +100,12 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I like songs.', vi: 'Tôi thích bài hát.' },
-          jp: '私は 歌が 好きです。',
+          prompt: { en: 'I like Japanese songs.', vi: 'Tôi thích bài hát Nhật Bản.' },
+          jp: '私は 日本の 歌が 好きです。',
           ruby: [
             { base: '私', reading: 'わたし' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
             { base: '歌', reading: 'うた' },
             { base: '好', reading: 'す' }
           ]
@@ -267,8 +269,11 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The child likes songs.', vi: 'Đứa trẻ thích bài hát.' },
-          jp: '子どもは 歌が 好きです。',
+          prompt: {
+            en: 'The child likes Vietnamese songs.',
+            vi: 'Đứa trẻ thích bài hát Việt Nam.'
+          },
+          jp: '子どもは ベトナムの 歌が 好きです。',
           ruby: [
             { base: '子', reading: 'こ' },
             { base: '歌', reading: 'うた' },
@@ -282,7 +287,7 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
       patternRuby: [{ base: '好', reading: 'す' }],
       items: [
         {
-          prompt: { en: 'What kind of music do you like?', vi: 'Bạn thích nhạc loại nào?' },
+          prompt: { en: 'What kind of music do you like?', vi: 'Bạn thích loại nhạc nào?' },
           jp: 'どんな 音楽が 好きですか。',
           ruby: [
             { base: '音', reading: 'おん' },
@@ -291,12 +296,12 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'What kind of sports do you like?', vi: 'Bạn thích thể thao loại nào?' },
+          prompt: { en: 'What kind of sports do you like?', vi: 'Bạn thích môn thể thao nào?' },
           jp: 'どんな スポーツが 好きですか。',
           ruby: [{ base: '好', reading: 'す' }]
         },
         {
-          prompt: { en: 'What kind of food do you like?', vi: 'Bạn thích món ăn loại nào?' },
+          prompt: { en: 'What kind of food do you like?', vi: 'Bạn thích loại món nào?' },
           jp: 'どんな 料理が 好きですか。',
           ruby: [
             { base: '料', reading: 'りょう' },
@@ -305,7 +310,7 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'What kind of pictures do you like?', vi: 'Bạn thích tranh loại nào?' },
+          prompt: { en: 'What kind of pictures do you like?', vi: 'Bạn thích loại tranh nào?' },
           jp: 'どんな 絵が 好きですか。',
           ruby: [
             { base: '絵', reading: 'え' },
@@ -328,7 +333,7 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
       ],
       items: [
         {
-          prompt: { en: 'I understand Japanese well.', vi: 'Tôi hiểu tiếng Nhật rõ.' },
+          prompt: { en: 'I understand Japanese well.', vi: 'Tôi hiểu rõ tiếng Nhật.' },
           jp: '日本語が よく わかります。',
           ruby: [
             { base: '日', reading: 'に' },
@@ -399,8 +404,8 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I am busy, so I cannot go.',
-            vi: 'Tôi bận nên không đi được.'
+            en: 'I am busy, so I will not go.',
+            vi: 'Tôi bận nên không đi.'
           },
           jp: '忙しいですから、行きません。',
           ruby: [
@@ -424,7 +429,7 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I like music, so I go to concerts.',
-            vi: 'Tôi thích nhạc nên đi hòa nhạc.'
+            vi: 'Tôi thích âm nhạc nên đi buổi hòa nhạc.'
           },
           jp: '音楽が 好きですから、コンサートへ 行きます。',
           ruby: [
@@ -437,7 +442,7 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I have an errand, so I will not drink.',
-            vi: 'Tôi có việc nên không uống.'
+            vi: 'Tôi có việc bận nên không uống.'
           },
           jp: '用事が ありますから、飲みません。',
           ruby: [
@@ -460,7 +465,7 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
       pattern: 'どうして',
       items: [
         {
-          prompt: { en: 'Why do you like Japan?', vi: 'Tại sao bạn thích Nhật?' },
+          prompt: { en: 'Why do you like Japan?', vi: 'Tại sao bạn thích Nhật Bản?' },
           jp: 'どうして 日本が 好きですか。',
           ruby: [
             { base: '日', reading: 'に' },

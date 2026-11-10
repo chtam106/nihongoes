@@ -10,7 +10,7 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           jp: 'アレックスさんは ハンサムです。'
         },
         {
-          prompt: { en: 'The dorm is quiet.', vi: 'Kí túc xá yên tĩnh.' },
+          prompt: { en: 'The dorm is quiet.', vi: 'Kí túc xá thì yên tĩnh.' },
           jp: '寮は 静かです。',
           ruby: [
             { base: '寮', reading: 'りょう' },
@@ -104,7 +104,7 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'The dorm is new. And it is quiet.',
-            vi: 'Kí túc xá mới. Và yên tĩnh.'
+            vi: 'Kí túc xá thì mới. Và yên tĩnh.'
           },
           jp: '寮は 新しいです。そして、静かです。',
           ruby: [

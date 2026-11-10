@@ -44,7 +44,7 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'If it rains, we cancel the camp. The event is cancelled.',
-            vi: 'Trường hợp mưa thì hủy trại. Sự kiện bị hoãn.'
+            vi: 'Trường hợp mưa thì hủy trại. Sự kiện bị hủy.'
           },
           jp: '雨の 場合は キャンプを キャンセルします。イベントは 中止です。',
           ruby: [
