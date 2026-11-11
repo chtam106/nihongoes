@@ -5,7 +5,6 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
   Button,
-  Chip,
   Paper,
   Stack,
   ToggleButton,
@@ -14,6 +13,7 @@ import {
 } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
+import { KanjiPracticeHeader } from '@/app/[locale]/kanji/[track]/[lessonId]/_components/kanji-practice-header';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
@@ -21,7 +21,6 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   kanjiLessonPath,
-  kanjiTrackPath,
   type Bilingual,
   type KanjiEntry,
   type KanjiLesson
@@ -326,34 +325,12 @@ function KanjiQuizPage({ trackSlug, trackName, lesson }: KanjiQuizPageProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <Box>
-          <Stack
-            direction="row"
-            spacing={1}
-            useFlexGap
-            sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
-          >
-            <Chip
-              label={trackName[locale]}
-              color="secondary"
-              variant="outlined"
-              size="small"
-              component={RouterLink}
-              to={kanjiTrackPath(trackSlug)}
-              clickable
-            />
-            <Chip
-              label={t('kanji.lessonLabel', { number: lesson.number })}
-              color="primary"
-              variant="outlined"
-              size="small"
-              component={RouterLink}
-              to={kanjiLessonPath(trackSlug, lesson.id)}
-              clickable
-            />
-          </Stack>
-          <Heading component="h1">{t('kanji.quizTitle')}</Heading>
-        </Box>
+        <KanjiPracticeHeader
+          trackSlug={trackSlug}
+          trackName={trackName}
+          lesson={lesson}
+          practice={t('kanji.quizTitle')}
+        />
 
         <ToggleButtonGroup
           exclusive
