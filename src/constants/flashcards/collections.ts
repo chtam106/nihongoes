@@ -112,6 +112,24 @@ export function flashcardCardType(id: string): FlashcardCardType | null {
   return null;
 }
 
+function resolvedCards(cards: readonly FlashcardCard[]): FlashcardCard[] {
+  const seen = new Set<string>();
+  const next: FlashcardCard[] = [];
+
+  for (const card of cards) {
+    const resolved = flashcardCard(card.id, card.type);
+
+    if (!resolved || seen.has(resolved.id)) {
+      continue;
+    }
+
+    seen.add(resolved.id);
+    next.push(resolved);
+  }
+
+  return next;
+}
+
 export function flashcardCard(id: string, type?: FlashcardCardType): FlashcardCard | null {
   const derived = flashcardCardType(id);
 
@@ -259,10 +277,62 @@ export function toggleCardInCollection(
   });
 }
 
+/** Add every card, or remove every card, in one collection. Unknown ids are skipped. */
+export function setCardsInCollection(
+  collections: FlashcardCollection[],
+  collectionId: string,
+  cards: readonly FlashcardCard[],
+  included: boolean
+): FlashcardCollection[] {
+  const nextCards = resolvedCards(cards);
+
+  if (nextCards.length === 0) {
+    return collections;
+  }
+
+  const ids = new Set(nextCards.map((card) => card.id));
+  let changed = false;
+  const next = collections.map((collection) => {
+    if (collection.id !== collectionId) {
+      return collection;
+    }
+
+    if (!included) {
+      const remaining = collection.cards.filter((item) => !ids.has(item.id));
+
+      if (remaining.length === collection.cards.length) {
+        return collection;
+      }
+
+      changed = true;
+
+      return { ...collection, cards: remaining };
+    }
+
+    const present = new Set(collection.cards.map((item) => item.id));
+    const missing = nextCards.filter((card) => !present.has(card.id));
+
+    if (missing.length === 0) {
+      return collection;
+    }
+
+    changed = true;
+
+    return { ...collection, cards: [...collection.cards, ...missing] };
+  });
+
+  return changed ? next : collections;
+}
+
 export function createCollection(
   collections: FlashcardCollection[],
   name: string,
-  options: { id: string; cardId?: string; cardType?: FlashcardCardType }
+  options: {
+    id: string;
+    cardId?: string;
+    cardType?: FlashcardCardType;
+    cards?: readonly FlashcardCard[];
+  }
 ): FlashcardCollection[] {
   const trimmed = name.trim().slice(0, MAX_NAME_LENGTH);
   const id = options.id.trim();
@@ -271,8 +341,8 @@ export function createCollection(
     return collections;
   }
 
-  const card = options.cardId ? flashcardCard(options.cardId, options.cardType) : null;
-  const cards = card ? [card] : [];
+  const single = options.cardId ? flashcardCard(options.cardId, options.cardType) : null;
+  const cards = resolvedCards([...(single ? [single] : []), ...(options.cards ?? [])]);
 
   return [{ id, name: trimmed, cards }, ...collections];
 }

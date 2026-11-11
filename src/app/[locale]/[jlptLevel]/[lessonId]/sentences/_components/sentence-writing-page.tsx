@@ -64,7 +64,7 @@ function SentenceWritingExercise({ level, lesson, writing }: SentenceWritingExer
   return (
     <PageContainer bottomGutter>
       <Stack spacing={3}>
-        <LessonQuizHeader lesson={lesson} section="sentences" />
+        <LessonQuizHeader level={level} lesson={lesson} section="sentences" />
         <FormControlLabel
           sx={{ mx: 0, alignSelf: 'flex-start' }}
           control={

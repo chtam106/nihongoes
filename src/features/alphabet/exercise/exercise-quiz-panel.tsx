@@ -15,6 +15,7 @@ import {
 import { quizInputFeedbackSx, resultBorderSx } from '@/features/alphabet/exercise/exercise-ui.ts';
 import { useExerciseQuiz } from '@/features/alphabet/exercise/use-exercise-quiz.ts';
 import { Heading } from '@/components/heading';
+import { QuizMissList } from '@/components/quiz-miss-list';
 import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { quizChoiceSx } from '@/theme/quiz-choice.ts';
 import { KanaDisplay } from '@/components/kana-display';
@@ -355,9 +356,15 @@ export function ExerciseQuiz({
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
           {resultMessage}
         </Typography>
-        <Button variant="contained" startIcon={<ReplayIcon />} onClick={quiz.handleRetry}>
+        <Button
+          variant="contained"
+          startIcon={<ReplayIcon />}
+          onClick={quiz.handleRetry}
+          sx={{ mb: quiz.misses.length > 0 ? 3 : 0 }}
+        >
           {t('course.retry')}
         </Button>
+        <QuizMissList misses={quiz.misses} />
       </Paper>
     );
   }
