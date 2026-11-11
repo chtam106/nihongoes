@@ -33,6 +33,11 @@ type SaveCardContextValue = {
 
 const SaveCardContext = createContext<SaveCardContextValue | null>(null);
 
+/** True when a save dialog can open on this page. */
+export function useSaveCardReady() {
+  return useContext(SaveCardContext) !== null;
+}
+
 type SaveCardProviderProps = {
   children: ReactNode;
 };
@@ -49,8 +54,7 @@ export function SaveCardProvider({ children }: SaveCardProviderProps) {
       {children}
       <SaveToCollectionDialog
         open={target !== null}
-        cardId={target?.id ?? null}
-        cardType={target?.type ?? null}
+        cards={target ? [{ id: target.id, type: target.type }] : []}
         onClose={() => setTarget(null)}
       />
     </SaveCardContext.Provider>

@@ -294,7 +294,7 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The trip is May 5th.', vi: 'Chuyến đi là ngày mồng 5 tháng 5.' },
+          prompt: { en: 'I go on May 5th.', vi: 'Tôi đi ngày mồng 5 tháng 5.' },
           jp: '5月五日に 行きます。',
           ruby: [
             { base: '月', reading: 'がつ' },
@@ -423,7 +423,7 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I came in 2020.', vi: 'Tôi đến năm 2020.' },
+          prompt: { en: 'I came in 2020.', vi: 'Tôi đã đến năm 2020.' },
           jp: '2020年に 来ました。',
           ruby: [
             { base: '年', reading: 'ねん' },

@@ -34,7 +34,7 @@ export function Footer() {
           color="text.secondary"
           sx={{ display: 'block', mt: 0.5, fontSize: '0.75rem' }}
         >
-          © {year} Nihongoes · All rights not reserved.
+          © {year} Nihongoes · Not a single right is reserved.
         </Typography>
       </Container>
     </Box>

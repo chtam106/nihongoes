@@ -11,17 +11,12 @@ export const seo = {
     title: 'All vocabulary and phrases',
     description: 'Every vocabulary word and set phrase from the JLPT courses.'
   },
-  sentences: {
-    title: 'Sentence writing',
-    description:
-      'Translate English or Vietnamese prompts into Japanese - grammar and useful phrases.'
-  },
   flashcards: {
     title: 'Flashcards',
     description: 'Collections of vocabulary flashcards saved in your browser.'
   },
   flashcardDrive: {
-    title: 'Google Drive',
+    title: 'Sync',
     description: 'Connect Google Drive and sync flashcard collections saved on this device.'
   },
   kanji: {

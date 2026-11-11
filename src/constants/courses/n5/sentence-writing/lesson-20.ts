@@ -23,8 +23,8 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I am free today. (male, casual)',
-            vi: 'Hôm nay tôi rảnh. (nam, thân mật)'
+            en: 'I am free. (male, casual)',
+            vi: 'Tôi rảnh. (nam, thân mật)'
           },
           jp: '僕は 暇だ。',
           ruby: [
@@ -50,7 +50,7 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Prices are high.', vi: 'Giá cả cao.' },
+          prompt: { en: 'Prices are high.', vi: 'Giá cả thì cao.' },
           jp: '物価は 高い。',
           ruby: [
             { base: '物', reading: 'ぶっ' },
@@ -92,7 +92,7 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The end is short.', vi: 'Phần cuối ngắn.' },
+          prompt: { en: 'The end is short.', vi: 'Phần cuối thì ngắn.' },
           jp: '終わりは 短い。',
           ruby: [
             { base: '終', reading: 'お' },

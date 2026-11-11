@@ -118,8 +118,8 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Please do not tell a lie.',
-            vi: 'Xin đừng nói dối.'
+            en: 'Someone tells a lie. That is not good.',
+            vi: 'Nói dối. Việc đó không tốt.'
           },
           jp: 'うそを つきます。それは よく ない です。'
         },

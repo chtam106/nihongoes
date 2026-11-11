@@ -5,7 +5,6 @@ import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import CloudSyncOutlinedIcon from '@mui/icons-material/CloudSyncOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import type { ComponentType } from 'react';
@@ -131,19 +130,13 @@ export const navGroups: NavGroup[] = [
     children: []
   },
   {
-    label: { en: 'Sentence writing', vi: 'Viết câu' },
-    path: routes.sentences,
-    icon: CreateOutlinedIcon,
-    children: []
-  },
-  {
     label: { en: 'Flashcards', vi: 'Flashcards' },
     path: routes.flashcards,
     icon: StyleOutlinedIcon,
     children: []
   },
   {
-    label: { en: 'Google Drive', vi: 'Google Drive' },
+    label: { en: 'Sync', vi: 'Đồng bộ' },
     path: routes.flashcardDrive,
     icon: CloudSyncOutlinedIcon,
     children: []

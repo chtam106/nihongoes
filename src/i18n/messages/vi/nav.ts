@@ -8,6 +8,7 @@ export const nav = {
   openMenu: 'Mở menu',
   closeMenu: 'Đóng menu',
   mainNavigation: 'Điều hướng chính',
+  lastPage: 'Restore previous session',
   collapse: 'Thu gọn {label}',
   expand: 'Mở rộng {label}'
 };
