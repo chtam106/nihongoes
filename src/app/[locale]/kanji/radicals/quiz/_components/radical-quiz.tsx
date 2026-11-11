@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
@@ -16,6 +17,7 @@ import {
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
+import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
@@ -66,6 +68,21 @@ type QuizQuestion = {
   correctId: string;
 };
 
+function radicalChoice(question: QuizQuestion, choiceId: string) {
+  const choice = question.choices.find((item) => item.id === choiceId);
+
+  return { text: choice?.label ?? '' };
+}
+
+function radicalMiss(question: QuizQuestion, index: number): QuizMiss {
+  return {
+    id: `${index}:${question.id}`,
+    prompt: [{ text: question.prompt, japanese: true }],
+    answer: radicalChoice(question, question.correctId),
+    card: { id: `radical:${question.correctId}`, type: 'radical' }
+  };
+}
+
 function buildQuestions(pool: Radical[], locale: Locale): QuizQuestion[] {
   return shuffle(radicalQuizPrompts(pool)).map(({ radical, glyph }) => {
     const distractors = shuffle(pool.filter((item) => item.number !== radical.number)).slice(0, 3);
@@ -96,6 +113,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
   const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
+  const [misses, setMisses] = useState<QuizMiss[]>([]);
   const [finished, setFinished] = useState(false);
 
   const total = questions.length;
@@ -133,6 +151,8 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
 
       if (firstTry) {
         setScore((previous) => previous + 1);
+      } else {
+        setMisses((previous) => [...previous, radicalMiss(question, index)]);
       }
     } else {
       setWrongIds((previous) => [...previous, choiceId]);
@@ -146,6 +166,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
     setCorrectPicked(false);
     setScore(0);
     setResults([]);
+    setMisses([]);
     setFinished(false);
   };
 
@@ -176,7 +197,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={1.5}
-          sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
+          sx={{ justifyContent: 'center', flexWrap: 'wrap', mb: misses.length > 0 ? 3 : 0 }}
           useFlexGap
         >
           <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRetry}>
@@ -190,6 +211,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
             {t('kanji.radicalsQuizReview')}
           </Button>
         </Stack>
+        <QuizMissList misses={misses} />
       </Paper>
     );
   }
@@ -285,6 +307,17 @@ function RadicalQuizPage() {
     <PageContainer>
       <Stack spacing={3}>
         <Box>
+          <Box sx={{ mb: 1 }}>
+            <Button
+              component={RouterLink}
+              to={`${KANJI_RADICALS_PATH}#radical-${range.to}`}
+              startIcon={<ArrowBackIcon />}
+              variant="text"
+              sx={{ px: 0 }}
+            >
+              {t('kanji.radicalsBack')}
+            </Button>
+          </Box>
           <Heading component="h1">{t('kanji.radicalsQuizTitle')}</Heading>
           <Stack direction="row" spacing={1.5} sx={{ mt: 2 }}>
             <FormControl size="small" sx={{ minWidth: 120 }}>

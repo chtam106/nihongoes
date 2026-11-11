@@ -10,8 +10,8 @@ import {
   resolveCollections,
   sanitizeFlashcardStore,
   storeFromResolved,
-  toggleCardInCollection,
-  type FlashcardCardType,
+  setCardsInCollection,
+  type FlashcardCard,
   type FlashcardCollection
 } from '@/constants/flashcards/collections.ts';
 import { useFlashcardDefaults } from '@/features/flashcards/flashcard-defaults.tsx';
@@ -47,15 +47,15 @@ export function useFlashcardCollections() {
     [setStore, defaults, locale]
   );
 
-  const toggleCard = useCallback(
-    (collectionId: string, cardId: string, type?: FlashcardCardType) => {
-      update((current) => toggleCardInCollection(current, collectionId, cardId, type));
+  const includeCards = useCallback(
+    (collectionId: string, cards: readonly FlashcardCard[], included: boolean) => {
+      update((current) => setCardsInCollection(current, collectionId, cards, included));
     },
     [update]
   );
 
   const create = useCallback(
-    (name: string, cardId?: string, cardType?: FlashcardCardType) => {
+    (name: string, cards: readonly FlashcardCard[] = []) => {
       const trimmed = name.trim();
 
       if (!trimmed) {
@@ -63,7 +63,7 @@ export function useFlashcardCollections() {
       }
 
       const id = crypto.randomUUID();
-      update((current) => createCollection(current, trimmed, { id, cardId, cardType }));
+      update((current) => createCollection(current, trimmed, { id, cards }));
 
       return id;
     },
@@ -84,5 +84,5 @@ export function useFlashcardCollections() {
     [update]
   );
 
-  return { collections, defaults, toggleCard, create, rename, remove };
+  return { collections, defaults, includeCards, create, rename, remove };
 }

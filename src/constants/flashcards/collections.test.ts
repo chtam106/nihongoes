@@ -10,6 +10,7 @@ import {
   sanitizeCollectionFront,
   sanitizeFlashcardCollections,
   sanitizeFlashcardStore,
+  setCardsInCollection,
   storeFromResolved,
   toggleCardInCollection,
   type DefaultCollection
@@ -100,6 +101,41 @@ describe('collection edits', () => {
 
   it('ignores a card id that is not lesson:index', () => {
     expect(toggleCardInCollection(start, 'a', 'watashi')).toBe(start);
+  });
+
+  it('adds or removes a set of cards', () => {
+    const cards = [
+      { id: '1:1', type: 'vocab' as const },
+      { id: '1:2', type: 'phrase' as const },
+      { id: 'nope', type: 'vocab' as const }
+    ];
+    const added = setCardsInCollection(start, 'a', cards, true);
+
+    expect(added[0]?.cards).toEqual([
+      { id: '1:0', type: 'vocab' },
+      { id: '1:1', type: 'vocab' },
+      { id: '1:2', type: 'phrase' }
+    ]);
+    expect(setCardsInCollection(added, 'a', cards, true)).toBe(added);
+    expect(setCardsInCollection(added, 'a', cards, false)[0]?.cards).toEqual([
+      { id: '1:0', type: 'vocab' }
+    ]);
+    expect(setCardsInCollection(start, 'a', [{ id: 'nope', type: 'vocab' }], true)).toBe(start);
+  });
+
+  it('creates a collection with several cards', () => {
+    const next = createCollection(start, 'Review', {
+      id: 'b',
+      cards: [
+        { id: '2:0', type: 'vocab' },
+        { id: '2:1', type: 'phrase' }
+      ]
+    });
+
+    expect(next[0]?.cards).toEqual([
+      { id: '2:0', type: 'vocab' },
+      { id: '2:1', type: 'phrase' }
+    ]);
   });
 
   it('creates a collection with the current card', () => {
