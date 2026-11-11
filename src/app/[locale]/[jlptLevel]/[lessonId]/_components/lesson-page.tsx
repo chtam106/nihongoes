@@ -7,6 +7,7 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import FitnessCenterOutlinedIcon from '@mui/icons-material/FitnessCenterOutlined';
 import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
@@ -24,6 +25,7 @@ import {
   lessonHasReading,
   lessonPath,
   lessonReadingPath,
+  lessonSentencesPath,
   lessonVocabularyPath,
   lessonWritingPath,
   type CourseLevel,
@@ -331,6 +333,12 @@ function PracticePanel({ level, lesson }: PracticePanelProps) {
           }
         ]
       : []),
+    {
+      key: 'sentences',
+      to: lessonSentencesPath(level, lesson.id),
+      icon: <CreateOutlinedIcon />,
+      label: t('course.startSentences')
+    },
     ...(hasReading
       ? [
           {

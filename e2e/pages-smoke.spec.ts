@@ -79,7 +79,6 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   { name: 'course overview', path: '/n5' },
   { name: 'course intro', path: '/n5/intro' },
   { name: 'course vocabulary', path: '/vocabulary' },
-  { name: 'course sentences', path: '/sentences' },
   { name: 'flashcards', path: '/flashcards' },
   { name: 'course reference', path: '/n5/reference' },
   { name: 'lesson detail', path: '/n5/lesson-1' },
@@ -87,6 +86,7 @@ const REPRESENTATIVE_PAGES: { name: string; path: string }[] = [
   { name: 'lesson grammar', path: '/n5/lesson-1/grammar' },
   { name: 'lesson reading', path: '/n5/lesson-1/reading' },
   { name: 'lesson writing', path: '/n5/lesson-1/writing' },
+  { name: 'lesson sentences', path: '/n5/lesson-1/sentences' },
   // Alphabet
   { name: 'alphabet hub', path: '/alphabet' },
   { name: 'hiragana chart', path: '/alphabet/hiragana' },
