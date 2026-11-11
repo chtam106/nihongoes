@@ -147,7 +147,7 @@ async function getCourseLessonSeo(
   const t = await getTranslations({ locale, namespace: 'course' });
   const lessonHeading = `${t('lessonLabel', { number: lesson.number })}: ${lesson.title[locale]}`;
   const heading = section
-    ? `${t(practiceSeoKey(section))} | ${t('lessonLabel', { number: lesson.number })}`
+    ? `${t('lessonLabel', { number: lesson.number })} | ${t(practiceSeoKey(section))}`
     : lessonHeading;
 
   return {
@@ -207,7 +207,9 @@ async function getKanjiPageSeo(logicalPath: string, locale: Locale): Promise<Seo
   const lessonHeading = `${t('lessonLabel', { number: lesson.number })}: ${lesson.title[locale]}`;
   const sectionTitle =
     section === 'quiz' ? t('quizTitle') : section === 'writing' ? t('writing') : undefined;
-  const heading = sectionTitle ? `${sectionTitle} | ${lessonHeading}` : lessonHeading;
+  const heading = sectionTitle
+    ? `${t('lessonLabel', { number: lesson.number })} | ${sectionTitle}`
+    : lessonHeading;
 
   return {
     title: `${SITE_NAME} | ${track.name[locale]} | ${heading}`,
