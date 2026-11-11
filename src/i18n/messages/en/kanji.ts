@@ -74,7 +74,6 @@ export const kanji = {
     'Lighter line under the meaning - an extra sense when that radical is used as a building block in other kanji (only on some cards).',
   radicalsLegendUsage:
     'Count under the meaning - how many lesson kanji use this as their main radical (shown when sorting by frequency).',
-  radicalsQuizLink: 'Quiz',
   radicalsQuizBody: 'Test yourself on radical meanings.',
   radicalsQuizTitle: 'Radical quiz',
   radicalsBack: 'Radicals',

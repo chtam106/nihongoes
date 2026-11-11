@@ -74,7 +74,6 @@ export const kanji = {
     'Dòng nhạt dưới nghĩa - nghĩa thêm khi bộ dùng làm thành phần trong chữ khác (chỉ một số thẻ).',
   radicalsLegendUsage:
     'Dòng đếm dưới nghĩa - số kanji trong bài học lấy bộ này làm bộ thủ chính (hiện khi sắp xếp theo độ thông dụng).',
-  radicalsQuizLink: 'Trắc nghiệm',
   radicalsQuizBody: 'Tự kiểm tra nghĩa bộ thủ.',
   radicalsQuizTitle: 'Trắc nghiệm bộ thủ',
   radicalsBack: 'Bộ thủ',

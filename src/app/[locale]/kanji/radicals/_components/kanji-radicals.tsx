@@ -2,13 +2,16 @@
 
 import { useMemo, useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box,
   Button,
   ButtonBase,
+  Card,
+  CardActionArea,
+  CardContent,
   Collapse,
   FormControl,
   InputLabel,
@@ -392,36 +395,34 @@ function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
             </Typography>
           </Box>
 
-          <Paper elevation={0} sx={[tonalSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
-            <Stack
-              direction={{ xs: 'column', sm: 'row' }}
-              spacing={2}
-              sx={{
-                alignItems: { xs: 'flex-start', sm: 'center' },
-                justifyContent: 'space-between'
-              }}
-            >
-              <Box>
-                <Heading scale="subsection" component="h2">
-                  {t('kanji.radicalsQuizTitle')}
-                </Heading>
-                <Typography variant="body1" color="text.secondary">
-                  {t('kanji.radicalsQuizBody')}
-                </Typography>
-              </Box>
-              <Button
-                component={RouterLink}
-                to={KANJI_RADICALS_QUIZ_PATH}
-                variant="outlined"
-                startIcon={<QuizOutlinedIcon />}
-                sx={{ flexShrink: 0 }}
-              >
-                {t('kanji.radicalsQuizLink')}
-              </Button>
-            </Stack>
-          </Paper>
-
           <RadicalLegend />
+
+          <Card elevation={0} sx={tonalSurfaceSx}>
+            <CardActionArea
+              component={RouterLink}
+              to={KANJI_RADICALS_QUIZ_PATH}
+              sx={{ userSelect: 'text', width: '100%' }}
+            >
+              <CardContent
+                sx={{
+                  p: { xs: 2.5, md: 3 },
+                  '&:last-child': { pb: { xs: 2.5, md: 3 } }
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
+                  <Box sx={{ flex: '1 1 auto', minWidth: 0 }}>
+                    <Heading scale="subsection" component="h2">
+                      {t('kanji.radicalsQuizTitle')}
+                    </Heading>
+                    <Typography variant="body1" color="text.secondary">
+                      {t('kanji.radicalsQuizBody')}
+                    </Typography>
+                  </Box>
+                  <ArrowForwardIcon color="primary" aria-hidden sx={{ flex: '0 0 auto' }} />
+                </Box>
+              </CardContent>
+            </CardActionArea>
+          </Card>
 
           <FormControl size="small" sx={{ minWidth: 220, alignSelf: 'flex-start' }}>
             <InputLabel id="radical-sort-label">{t('kanji.radicalsSortLabel')}</InputLabel>
