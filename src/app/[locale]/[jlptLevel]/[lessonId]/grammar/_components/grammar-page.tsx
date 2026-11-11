@@ -31,6 +31,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
     total,
     score,
     results,
+    misses,
     finished,
     wrongIds,
     answeredCorrectly,
@@ -54,6 +55,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
         total={total}
         level={level}
         lessonId={lesson.id}
+        misses={misses}
         onRetry={handleRetry}
       />
     );
@@ -172,7 +174,7 @@ function GrammarExercise({ lesson, level }: GrammarExerciseProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader lesson={lesson} section="grammar" />
+        <LessonQuizHeader level={level} lesson={lesson} section="grammar" />
 
         <GrammarQuiz key={`${lesson.id}:${locale}`} lesson={lesson} level={level} locale={locale} />
       </Stack>

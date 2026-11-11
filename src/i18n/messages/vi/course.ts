@@ -118,6 +118,8 @@ export const course = {
   resultGreat: 'Xuất sắc! Bạn nắm rất chắc bài này.',
   resultGood: 'Khá tốt - xem lại câu sai rồi thử lại nhé.',
   resultKeepGoing: 'Cố lên - hãy ôn lại bài rồi làm lại.',
+  resultMisses: 'Câu chọn sai',
+  resultAnswer: 'Đáp án đúng',
   retry: 'Làm lại',
   reviewLesson: 'Xem lại bài học'
 };

@@ -119,6 +119,8 @@ export const course = {
   resultGreat: 'Excellent work! You know this lesson well.',
   resultGood: 'Nice progress - review the misses and try again.',
   resultKeepGoing: 'Keep practicing - revisit the lesson and try again.',
+  resultMisses: 'Missed questions',
+  resultAnswer: 'Correct answer',
   retry: 'Try again',
   reviewLesson: 'Review lesson'
 };

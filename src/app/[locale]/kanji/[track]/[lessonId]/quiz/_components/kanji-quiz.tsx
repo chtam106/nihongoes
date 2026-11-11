@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
+import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
@@ -56,6 +57,24 @@ type QuizQuestion = {
   choices: QuizChoice[];
   correctId: string;
 };
+
+function kanjiChoice(question: QuizQuestion, choiceId: string) {
+  const choice = question.choices.find((item) => item.id === choiceId);
+
+  return {
+    text: choice?.label ?? '',
+    japanese: Boolean(choice?.japanese)
+  };
+}
+
+function kanjiMiss(question: QuizQuestion, index: number, trackSlug: string): QuizMiss {
+  return {
+    id: `${index}:${question.id}`,
+    prompt: [{ text: question.promptText, japanese: question.promptJapanese }],
+    answer: kanjiChoice(question, question.correctId),
+    card: { id: `kanji:${trackSlug}:${question.id}`, type: 'kanji' }
+  };
+}
 
 function buildQuestions(
   lesson: KanjiLesson,
@@ -110,6 +129,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
   const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
+  const [misses, setMisses] = useState<QuizMiss[]>([]);
   const [finished, setFinished] = useState(false);
 
   const total = questions.length;
@@ -147,6 +167,8 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
 
       if (firstTry) {
         setScore((previous) => previous + 1);
+      } else {
+        setMisses((previous) => [...previous, kanjiMiss(question, index, trackSlug)]);
       }
     } else {
       setWrongIds((previous) => [...previous, choiceId]);
@@ -160,6 +182,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
     setCorrectPicked(false);
     setScore(0);
     setResults([]);
+    setMisses([]);
     setFinished(false);
   };
 
@@ -190,7 +213,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
           spacing={1.5}
-          sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
+          sx={{ justifyContent: 'center', flexWrap: 'wrap', mb: misses.length > 0 ? 3 : 0 }}
           useFlexGap
         >
           <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRetry}>
@@ -204,6 +227,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
             {t('kanji.reviewLesson')}
           </Button>
         </Stack>
+        <QuizMissList misses={misses} />
       </Paper>
     );
   }
