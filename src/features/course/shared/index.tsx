@@ -2,8 +2,9 @@
 
 import ReplayIcon from '@mui/icons-material/Replay';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
+import { Button, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import {
   coursePath,
@@ -40,41 +41,23 @@ function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
 }
 
 /**
- * Shared header for the lesson practice pages. Same shape as the kanji quiz
- * header: course and lesson chips, then the section name alone.
+ * Shared header for the lesson practice pages. A normal-size breadcrumb
+ * (JLPT N5 / Bài N) sits above the practice-name heading.
  */
 export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderProps) {
   const { t } = useTranslation();
 
   return (
-    <Box>
-      <Stack
-        direction="row"
-        spacing={1}
-        useFlexGap
-        sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
-      >
-        <Chip
-          label={`JLPT ${getCourse(level).code}`}
-          color="secondary"
-          variant="outlined"
-          size="small"
-          component={RouterLink}
-          to={coursePath(level)}
-          clickable
-        />
-        <Chip
-          label={t('course.lessonLabel', { number: lesson.number })}
-          color="primary"
-          variant="outlined"
-          size="small"
-          component={RouterLink}
-          to={lessonPath(level, lesson.id)}
-          clickable
-        />
-      </Stack>
-      <Heading component="h1">{t(practiceTitleKey(section))}</Heading>
-    </Box>
+    <PageBreadcrumb
+      title={t(practiceTitleKey(section))}
+      items={[
+        { label: `JLPT ${getCourse(level).code}`, to: coursePath(level) },
+        {
+          label: t('course.lessonLabel', { number: lesson.number }),
+          to: lessonPath(level, lesson.id)
+        }
+      ]}
+    />
   );
 }
 
