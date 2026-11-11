@@ -15,7 +15,7 @@ type SeoText = {
 };
 
 const COURSE_LESSON_PATH =
-  /^\/(n5|n4|n3|n2|n1|frontend)\/(lesson-\d+)(?:\/(vocabulary|grammar|reading|writing))?$/;
+  /^\/(n5|n4|n3|n2|n1|frontend)\/(lesson-\d+)(?:\/(vocabulary|grammar|reading|writing|sentences))?$/;
 const COURSE_EXTRA_PATH = /^\/(n5|n4|n3|n2|n1|frontend)\/(intro|reference)$/;
 const KANJI_PAGE_PATH = /^\/kanji\/([^/]+)(?:\/([^/]+)(?:\/(quiz|writing))?)?$/;
 
@@ -104,6 +104,23 @@ async function getCourseExtraSeo(
   };
 }
 
+function practiceSeoKey(
+  section: string
+): 'vocabularyPractice' | 'grammarPractice' | 'readingPractice' | 'writingPractice' | 'sentences' {
+  switch (section) {
+    case 'vocabulary':
+      return 'vocabularyPractice';
+    case 'grammar':
+      return 'grammarPractice';
+    case 'reading':
+      return 'readingPractice';
+    case 'writing':
+      return 'writingPractice';
+    default:
+      return 'sentences';
+  }
+}
+
 async function getCourseLessonSeo(
   logicalPath: string,
   locale: Locale
@@ -129,7 +146,9 @@ async function getCourseLessonSeo(
 
   const t = await getTranslations({ locale, namespace: 'course' });
   const lessonHeading = `${t('lessonLabel', { number: lesson.number })}: ${lesson.title[locale]}`;
-  const heading = section ? `${t(section)} | ${lessonHeading}` : lessonHeading;
+  const heading = section
+    ? `${t(practiceSeoKey(section))} | ${t('lessonLabel', { number: lesson.number })}`
+    : lessonHeading;
 
   return {
     title: `${SITE_NAME} | JLPT ${getCourse(level).code} | ${heading}`,

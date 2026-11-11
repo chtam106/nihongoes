@@ -160,9 +160,9 @@ Preview/staging uses Git branch **`release-staging`** (domain **`stg.nihongoes.c
 
 ### Flashcard Google Drive
 
-Collections are saved in the browser. `/drive` connects Google Drive and a Sync button copies the collection file both ways. The browser talks to Drive directly. There is no app backend.
+Collections are saved in the browser. `/sync` connects Google Drive. Sync opens a dialog with three radio choices. Merge is selected by default. The other choices replace this browser with the Drive copy, or replace the Drive copy with this browser. The signed-in account email is shown inside the Sync button. The browser talks to Drive directly. There is no app backend.
 
-Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to a Google OAuth web client, enable the Drive API, and add each site origin (`http://localhost:3000`, `https://stg.nihongoes.com`, and `https://nihongoes.com`) as an authorized JavaScript origin.
+Set `NEXT_PUBLIC_GOOGLE_CLIENT_ID` to a Google OAuth web client, enable the Drive API, and add each site origin (`http://localhost:3000`, `https://stg.nihongoes.com`, and `https://nihongoes.com`) as an authorized JavaScript origin. Sign-in requests Drive app data (`drive.appdata`) and the account email (`userinfo.email`).
 
 ## Error Monitoring (Sentry)
 

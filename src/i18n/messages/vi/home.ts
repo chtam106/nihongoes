@@ -3,7 +3,7 @@ export const home = {
   intro: 'Miễn phí và song ngữ Anh - Việt, từ chữ kana đầu tiên đến các khóa JLPT.',
   hiraganaDescription: 'Học bảng âm cơ bản dùng cho từ tiếng Nhật thuần.',
   katakanaDescription: 'Học bảng chữ dùng cho từ mượn và nhấn mạnh.',
-  combinedDescription: 'So sánh hiragana và katakana cạnh nhau trong cùng một bảng.',
+  combinedDescription: 'So sánh hiragana và katakana của cùng một âm.',
   exerciseDescription: 'Luyện nhận mặt kana và âm đọc cho tới khi nhớ chắc.',
   kanjiTitle: 'Kanji',
   kanjiDescription: 'Học kanji Jōyō theo từng lớp.',
@@ -13,6 +13,5 @@ export const home = {
   kanjiSection: 'Kanji & bộ thủ',
   coursesSection: 'Khóa học',
   vocabDescription: 'Toàn bộ từ vựng và mẫu câu của các khóa JLPT.',
-  sentencesDescription: 'Viết tiếng Nhật từ câu tiếng Anh hoặc tiếng Việt.',
-  flashcardsDescription: 'Lưu từ vựng vào collection rồi ôn lại.'
+  flashcardsDescription: 'Ôn từ vựng đã lưu trong collection.'
 };

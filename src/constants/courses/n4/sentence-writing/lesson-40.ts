@@ -247,8 +247,8 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The size is 3 bottles of juice.',
-            vi: 'Kích thước bằng 3 chai nước.'
+            en: 'The size is the same as this box. There are two bottles.',
+            vi: 'Kích thước bằng cái hộp này. Có hai chai.'
           },
           jp: '大きさは この 箱と 同じ です。2～ほん あります。',
           ruby: [
@@ -295,7 +295,7 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I wonder if there is an after-party.',
-            vi: 'Không biết có hiệp hai không.'
+            vi: 'Không biết có tiệc sau không.'
           },
           jp: '二次会が あるかな。',
           ruby: [

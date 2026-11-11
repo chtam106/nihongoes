@@ -2,10 +2,12 @@
 
 import ReplayIcon from '@mui/icons-material/Replay';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Box, Button, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Chip, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
+import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import {
   coursePath,
+  getCourse,
   lessonPath,
   type CourseLevel,
   type Lesson
@@ -14,9 +16,10 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
-type LessonQuizSection = 'vocabulary' | 'grammar' | 'reading' | 'writing';
+type LessonQuizSection = 'vocabulary' | 'grammar' | 'reading' | 'writing' | 'sentences';
 
 type LessonQuizHeaderProps = {
+  level: CourseLevel;
   lesson: Lesson;
   section: LessonQuizSection;
 };
@@ -31,20 +34,46 @@ function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
       return 'course.readingPractice';
     case 'writing':
       return 'course.writingPractice';
+    case 'sentences':
+      return 'course.sentenceWritingHeading';
   }
 }
 
 /**
- * Shared header for the lesson practice / reading pages.
+ * Shared header for the lesson practice pages. Same shape as the kanji quiz
+ * header: course and lesson chips, then the section name alone.
  */
-export function LessonQuizHeader({ lesson, section }: LessonQuizHeaderProps) {
-  const { locale, t } = useTranslation();
+export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderProps) {
+  const { t } = useTranslation();
 
   return (
     <Box>
-      <Heading component="h1">
-        {lesson.title[locale]} | {t(practiceTitleKey(section))}
-      </Heading>
+      <Stack
+        direction="row"
+        spacing={1}
+        useFlexGap
+        sx={{ mb: 1, flexWrap: 'wrap', alignItems: 'center' }}
+      >
+        <Chip
+          label={`JLPT ${getCourse(level).code}`}
+          color="secondary"
+          variant="outlined"
+          size="small"
+          component={RouterLink}
+          to={coursePath(level)}
+          clickable
+        />
+        <Chip
+          label={t('course.lessonLabel', { number: lesson.number })}
+          color="primary"
+          variant="outlined"
+          size="small"
+          component={RouterLink}
+          to={lessonPath(level, lesson.id)}
+          clickable
+        />
+      </Stack>
+      <Heading component="h1">{t(practiceTitleKey(section))}</Heading>
     </Box>
   );
 }
@@ -76,10 +105,18 @@ type ResultScreenProps = {
   total: number;
   level: CourseLevel;
   lessonId: string;
+  misses?: QuizMiss[];
   onRetry: () => void;
 };
 
-export function ResultScreen({ score, total, level, lessonId, onRetry }: ResultScreenProps) {
+export function ResultScreen({
+  score,
+  total,
+  level,
+  lessonId,
+  misses = [],
+  onRetry
+}: ResultScreenProps) {
   const { t } = useTranslation();
   const ratio = total === 0 ? 0 : score / total;
   const message =
@@ -103,7 +140,7 @@ export function ResultScreen({ score, total, level, lessonId, onRetry }: ResultS
       <Stack
         direction={{ xs: 'column', sm: 'row' }}
         spacing={1.5}
-        sx={{ justifyContent: 'center', flexWrap: 'wrap' }}
+        sx={{ justifyContent: 'center', flexWrap: 'wrap', mb: misses.length > 0 ? 3 : 0 }}
         useFlexGap
       >
         <Button variant="contained" startIcon={<ReplayIcon />} onClick={onRetry}>
@@ -113,6 +150,7 @@ export function ResultScreen({ score, total, level, lessonId, onRetry }: ResultS
           {t('course.reviewLesson')}
         </Button>
       </Stack>
+      <QuizMissList misses={misses} />
     </Paper>
   );
 }

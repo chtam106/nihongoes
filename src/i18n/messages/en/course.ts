@@ -55,13 +55,11 @@ export const course = {
   vocabIndexFlashcardsFront: 'Front of card',
   vocabIndexFlashcardsFrontWord: 'Word first',
   vocabIndexFlashcardsFrontMeaning: 'Meaning first',
+  sentences: 'Sentence writing',
   sentenceWritingHeading: 'Sentence writing',
-  sentenceWritingIntro:
-    'Pick a lesson, then write each prompt in Japanese - grammar and useful phrases.',
-  sentenceWritingLesson: 'Lesson',
   sentenceWritingPlaceholder: 'Write in Japanese',
   sentenceWritingShowInput: 'Show writing box',
-  sentenceWritingOpenLesson: 'Lesson {number}',
+  startSentences: 'Sentence writing',
   vocabularyPractice: 'Vocabulary practice',
   grammar: 'Grammar',
   grammarPractice: 'Grammar practice',
@@ -76,8 +74,7 @@ export const course = {
   notFoundTitle: 'Lesson not found',
   notFoundBody: 'This lesson does not exist. Go back to the course overview.',
   practiceHeading: 'Practice',
-  exerciseSubtitle:
-    "Test yourself on this lesson's vocabulary, grammar, reading, and kanji writing.",
+  exerciseSubtitle: 'Check what you remember from this lesson.',
   startExercise: 'Vocabulary',
   startGrammar: 'Grammar',
   grammarClozePrompt: 'Fill in the blank',
@@ -122,6 +119,8 @@ export const course = {
   resultGreat: 'Excellent work! You know this lesson well.',
   resultGood: 'Nice progress - review the misses and try again.',
   resultKeepGoing: 'Keep practicing - revisit the lesson and try again.',
+  resultMisses: 'Missed questions',
+  resultAnswer: 'Correct answer',
   retry: 'Try again',
   reviewLesson: 'Review lesson'
 };

@@ -60,6 +60,7 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
     total,
     score,
     results,
+    misses,
     finished,
     wrongIds,
     answeredCorrectly,
@@ -79,6 +80,7 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
         total={total}
         level={level}
         lessonId={lesson.id}
+        misses={misses}
         onRetry={handleRetry}
       />
     );

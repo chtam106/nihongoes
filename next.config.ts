@@ -27,13 +27,33 @@ const nextConfig: NextConfig = {
         permanent: true
       },
       {
-        source: '/:level(n5|n4)/sentences',
-        destination: '/sentences',
+        source: '/n5/sentences',
+        destination: '/n5/lesson-1/sentences',
         permanent: true
       },
       {
-        source: '/vi/:level(n5|n4)/sentences',
-        destination: '/vi/sentences',
+        source: '/n4/sentences',
+        destination: '/n4/lesson-26/sentences',
+        permanent: true
+      },
+      {
+        source: '/vi/n5/sentences',
+        destination: '/vi/n5/lesson-1/sentences',
+        permanent: true
+      },
+      {
+        source: '/vi/n4/sentences',
+        destination: '/vi/n4/lesson-26/sentences',
+        permanent: true
+      },
+      {
+        source: '/drive',
+        destination: '/sync',
+        permanent: true
+      },
+      {
+        source: '/vi/drive',
+        destination: '/vi/sync',
         permanent: true
       }
     ];

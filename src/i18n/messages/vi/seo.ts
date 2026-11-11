@@ -11,17 +11,13 @@ export const seo = {
     title: 'Tổng hợp từ vựng và mẫu câu',
     description: 'Toàn bộ từ vựng và mẫu câu của các khóa JLPT.'
   },
-  sentences: {
-    title: 'Viết câu',
-    description: 'Dịch câu tiếng Anh hoặc tiếng Việt sang tiếng Nhật - ngữ pháp và mẫu câu.'
-  },
   flashcards: {
     title: 'Flashcards',
     description: 'Collection flashcard từ vựng lưu trên trình duyệt.'
   },
   flashcardDrive: {
-    title: 'Google Drive',
-    description: 'Kết nối Google Drive và sync collection flashcard đang lưu trên thiết bị.'
+    title: 'Đồng bộ',
+    description: 'Kết nối Google Drive và đồng bộ collection flashcard đang lưu trên thiết bị.'
   },
   kanji: {
     title: 'Học Kanji thông dụng (Jōyō) từng bước',

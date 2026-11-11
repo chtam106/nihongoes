@@ -11,7 +11,9 @@ import {
   type ReadingPassage,
   type ReadingQuestion
 } from '@/constants/courses/index.ts';
+import type { Locale } from '@/i18n/translations.ts';
 import { Heading } from '@/components/heading';
+import type { QuizMiss } from '@/components/quiz-miss-list';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
@@ -45,6 +47,34 @@ function flattenQuestions(passages: ReadingPassage[]): FlatQuestion[] {
       passageId: passage.id
     }))
   );
+}
+
+function readingChoice(question: FlatQuestion, choiceId: string, locale: Locale) {
+  const choice = question.choices.find((item) => item.id === choiceId);
+
+  if (choice?.jp) {
+    return {
+      text: choice.jp,
+      ruby: choice.ruby,
+      japanese: true,
+      note: choice.label[locale]
+    };
+  }
+
+  return { text: choice?.label[locale] ?? '' };
+}
+
+function readingMiss(question: FlatQuestion, index: number, locale: Locale): QuizMiss {
+  const promptJp = question.jp;
+
+  return {
+    id: `${index}:${question.flatId}`,
+    prompt: promptJp
+      ? [{ text: promptJp, ruby: question.ruby, japanese: true }]
+      : [{ text: question.question[locale] }],
+    note: promptJp ? question.question[locale] : undefined,
+    answer: readingChoice(question, question.correctId, locale)
+  };
 }
 
 function shuffleQuestions(questions: FlatQuestion[]): FlatQuestion[] {
@@ -133,6 +163,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const [correctPicked, setCorrectPicked] = useState(false);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
+  const [misses, setMisses] = useState<QuizMiss[]>([]);
   const [finished, setFinished] = useState(false);
   const [preferences] = useUserPreferences();
   const [showQuestionTranslation, setShowQuestionTranslation] = useState(
@@ -193,6 +224,8 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
 
       if (firstTry) {
         setScore((previous) => previous + 1);
+      } else {
+        setMisses((previous) => [...previous, readingMiss(question, index, locale)]);
       }
     } else {
       setWrongIds((previous) => [...previous, choiceId]);
@@ -206,6 +239,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     setCorrectPicked(false);
     setScore(0);
     setResults([]);
+    setMisses([]);
     setFinished(false);
     previousPassageIdRef.current = undefined;
   };
@@ -213,7 +247,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <LessonQuizHeader lesson={lesson} section="reading" />
+        <LessonQuizHeader level={level} lesson={lesson} section="reading" />
 
         {!finished && currentPassage && (
           <Box ref={passageAnchorRef} sx={{ scrollMarginTop: { xs: 72, md: 88 } }}>
@@ -231,6 +265,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
             total={total}
             level={level}
             lessonId={lesson.id}
+            misses={misses}
             onRetry={handleRetry}
           />
         )}

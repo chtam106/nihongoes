@@ -7,7 +7,7 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The professor comes to the lecture at seven.',
+            en: 'The professor comes to the talk at seven.',
             vi: 'Giáo sư đến buổi nói chuyện lúc 7 giờ.'
           },
           jp: '先生は 7時に 講演会へ 来られます。',
@@ -320,7 +320,7 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'He received a prize at the lecture.',
+            en: 'He received a prize at the talk.',
             vi: 'Ông ấy nhận giải ở buổi nói chuyện.'
           },
           jp: '講演会で 賞を 受賞します。受賞されました。',
@@ -356,7 +356,7 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
   ],
   phrases: [
     {
-      prompt: { en: 'Class 1, Year 1', vi: 'Tổ 1 năm thứ 1' },
+      prompt: { en: 'Class 1, Year 1', vi: 'Lớp 1 năm thứ nhất' },
       jp: '一年一組',
       ruby: [
         { base: '一', reading: 'いち' },

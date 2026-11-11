@@ -56,7 +56,7 @@ function VocabExercise({ lesson, level, defaults }: VocabExerciseProps) {
     <SaveCardScope defaults={defaults}>
       <PageContainer>
         <Stack spacing={3}>
-          <LessonQuizHeader lesson={lesson} section="vocabulary" />
+          <LessonQuizHeader level={level} lesson={lesson} section="vocabulary" />
 
           <Stack spacing={SEGMENT_BUTTON_STACK_SPACING}>
             <ToggleButtonGroup

@@ -95,7 +95,7 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'Have you ever done tea ceremony?',
-            vi: 'Anh/chị đã từng học trà đạo chưa?'
+            vi: 'Anh/chị đã từng làm trà đạo chưa?'
           },
           jp: 'お茶を した ことが ありますか。',
           ruby: [{ base: '茶', reading: 'ちゃ' }]
@@ -131,7 +131,7 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'On the weekend I do things like play golf and do tea ceremony.',
-            vi: 'Cuối tuần tôi chơi gôn, học trà đạo, v.v.'
+            vi: 'Cuối tuần tôi chơi gôn, làm trà đạo, v.v.'
           },
           jp: '週末は ゴルフを したり、お茶を したり します。',
           ruby: [
