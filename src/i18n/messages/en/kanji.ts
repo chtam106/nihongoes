@@ -37,7 +37,7 @@ export const kanji = {
   kanjiHeading: 'Kanji {number}',
   practiceHeading: 'Practice',
   practiceSubtitle: "Test yourself on this lesson's kanji.",
-  quizTitle: 'Meaning quiz',
+  quizTitle: 'Quiz',
   quizMeaning: 'Kanji -> meaning',
   quizCharacter: 'Meaning -> kanji',
   quizMeaningPrompt: 'What does this kanji mean?',
@@ -75,7 +75,9 @@ export const kanji = {
   radicalsLegendUsage:
     'Count under the meaning - how many lesson kanji use this as their main radical (shown when sorting by frequency).',
   radicalsQuizLink: 'Quiz',
+  radicalsQuizBody: 'Test yourself on radical meanings.',
   radicalsQuizTitle: 'Radical quiz',
+  radicalsBack: 'Radicals',
   radicalsQuizPrompt: 'What is this radical?',
   radicalsQuizFrom: 'From',
   radicalsQuizTo: 'To',

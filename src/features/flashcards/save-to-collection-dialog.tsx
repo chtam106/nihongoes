@@ -15,28 +15,19 @@ import {
   TextField,
   Typography
 } from '@mui/material';
-import {
-  isDefaultCollectionId,
-  type FlashcardCardType
-} from '@/constants/flashcards/collections.ts';
+import { isDefaultCollectionId, type FlashcardCard } from '@/constants/flashcards/collections.ts';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 
 type SaveToCollectionDialogProps = {
   open: boolean;
-  cardId: string | null;
-  cardType: FlashcardCardType | null;
+  cards: readonly FlashcardCard[];
   onClose: () => void;
 };
 
-export function SaveToCollectionDialog({
-  open,
-  cardId,
-  cardType,
-  onClose
-}: SaveToCollectionDialogProps) {
+export function SaveToCollectionDialog({ open, cards, onClose }: SaveToCollectionDialogProps) {
   const { t } = useTranslation();
-  const { collections, toggleCard, create } = useFlashcardCollections();
+  const { collections, includeCards, create } = useFlashcardCollections();
   const customCollections = collections.filter(
     (collection) => !isDefaultCollectionId(collection.id)
   );
@@ -61,20 +52,20 @@ export function SaveToCollectionDialog({
     onClose();
   };
 
-  const handleToggle = (collectionId: string) => {
-    if (!cardId) {
+  const handleToggle = (collectionId: string, included: boolean) => {
+    if (cards.length === 0) {
       return;
     }
 
-    toggleCard(collectionId, cardId, cardType ?? undefined);
+    includeCards(collectionId, cards, included);
   };
 
   const handleCreate = () => {
-    if (!cardId || !name.trim()) {
+    if (cards.length === 0 || !name.trim()) {
       return;
     }
 
-    create(name, cardId, cardType ?? undefined);
+    create(name, cards);
     setName('');
     setCreating(false);
   };
@@ -103,7 +94,10 @@ export function SaveToCollectionDialog({
           </Typography>
         )}
         {customCollections.map((collection) => {
-          const checked = cardId !== null && collection.cards.some((card) => card.id === cardId);
+          const present = cards.filter((card) =>
+            collection.cards.some((item) => item.id === card.id)
+          ).length;
+          const checked = cards.length > 0 && present === cards.length;
 
           return (
             <Box
@@ -122,7 +116,8 @@ export function SaveToCollectionDialog({
             >
               <Checkbox
                 checked={checked}
-                onChange={() => handleToggle(collection.id)}
+                indeterminate={present > 0 && !checked}
+                onChange={() => handleToggle(collection.id, !checked)}
                 sx={{ flexShrink: 0 }}
               />
               <Typography

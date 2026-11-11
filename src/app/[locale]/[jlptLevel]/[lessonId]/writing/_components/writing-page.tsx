@@ -37,10 +37,11 @@ function kanjiOnly(text: string): string {
 }
 
 type KanjiWritingProps = {
+  level: CourseLevel;
   lesson: Lesson;
 };
 
-function KanjiWriting({ lesson }: KanjiWritingProps) {
+function KanjiWriting({ level, lesson }: KanjiWritingProps) {
   const { locale, t } = useTranslation();
   const words = useMemo(() => lessonKanjiWords(lesson), [lesson]);
   const [index, setIndex] = useState(0);
@@ -55,7 +56,7 @@ function KanjiWriting({ lesson }: KanjiWritingProps) {
   if (!current) {
     return (
       <PageContainer>
-        <LessonQuizHeader lesson={lesson} section="writing" />
+        <LessonQuizHeader level={level} lesson={lesson} section="writing" />
       </PageContainer>
     );
   }
@@ -65,7 +66,7 @@ function KanjiWriting({ lesson }: KanjiWritingProps) {
 
   return (
     <PageContainer>
-      <LessonQuizHeader lesson={lesson} section="writing" />
+      <LessonQuizHeader level={level} lesson={lesson} section="writing" />
 
       <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: 380, md: 420 }, mx: 'auto', mt: 3 }}>
         <Stack spacing={2}>
@@ -157,7 +158,7 @@ function WritingPage({ level }: WritingPageProps) {
     return <LessonNotFound level={level} />;
   }
 
-  return <KanjiWriting key={`${level}:${lesson.id}`} lesson={lesson} />;
+  return <KanjiWriting key={`${level}:${lesson.id}`} level={level} lesson={lesson} />;
 }
 
 export default WritingPage;

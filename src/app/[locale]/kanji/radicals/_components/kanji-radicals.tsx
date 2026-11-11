@@ -2,8 +2,8 @@
 
 import { useMemo, useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box,
@@ -12,7 +12,6 @@ import {
   Collapse,
   FormControl,
   InputLabel,
-  Link,
   MenuItem,
   Paper,
   Select,
@@ -37,7 +36,7 @@ import {
   radicals,
   type Radical
 } from '@/constants/kanji/index.ts';
-import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx, subtleSurfaceSx, tonalSurfaceSx } from '@/theme/surfaces.ts';
 
 type RadicalSort = 'default' | 'usage';
 
@@ -393,43 +392,49 @@ function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
             </Typography>
           </Box>
 
-          <RadicalLegend />
-
-          <Box
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 2,
-              flexWrap: 'wrap'
-            }}
-          >
-            <FormControl size="small" sx={{ minWidth: 220 }}>
-              <InputLabel id="radical-sort-label">{t('kanji.radicalsSortLabel')}</InputLabel>
-              <Select<RadicalSort>
-                labelId="radical-sort-label"
-                value={sort}
-                label={t('kanji.radicalsSortLabel')}
-                onChange={handleSortChange}
-              >
-                <MenuItem value="default">{t('kanji.radicalsSortDefault')}</MenuItem>
-                <MenuItem value="usage">{t('kanji.radicalsSortUsage')}</MenuItem>
-              </Select>
-            </FormControl>
-            <Link
-              component={RouterLink}
-              to={KANJI_RADICALS_QUIZ_PATH}
-              underline="hover"
+          <Paper elevation={0} sx={[tonalSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={2}
               sx={{
-                marginLeft: 'auto',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 0.5
+                alignItems: { xs: 'flex-start', sm: 'center' },
+                justifyContent: 'space-between'
               }}
             >
-              {t('kanji.radicalsQuizLink')}
-              <ArrowForwardIcon sx={{ fontSize: '1rem' }} />
-            </Link>
-          </Box>
+              <Box>
+                <Heading scale="subsection" component="h2">
+                  {t('kanji.radicalsQuizTitle')}
+                </Heading>
+                <Typography variant="body1" color="text.secondary">
+                  {t('kanji.radicalsQuizBody')}
+                </Typography>
+              </Box>
+              <Button
+                component={RouterLink}
+                to={KANJI_RADICALS_QUIZ_PATH}
+                variant="outlined"
+                startIcon={<QuizOutlinedIcon />}
+                sx={{ flexShrink: 0 }}
+              >
+                {t('kanji.radicalsQuizLink')}
+              </Button>
+            </Stack>
+          </Paper>
+
+          <RadicalLegend />
+
+          <FormControl size="small" sx={{ minWidth: 220, alignSelf: 'flex-start' }}>
+            <InputLabel id="radical-sort-label">{t('kanji.radicalsSortLabel')}</InputLabel>
+            <Select<RadicalSort>
+              labelId="radical-sort-label"
+              value={sort}
+              label={t('kanji.radicalsSortLabel')}
+              onChange={handleSortChange}
+            >
+              <MenuItem value="default">{t('kanji.radicalsSortDefault')}</MenuItem>
+              <MenuItem value="usage">{t('kanji.radicalsSortUsage')}</MenuItem>
+            </Select>
+          </FormControl>
 
           {sort === 'usage' && (
             <RadicalCardGrid items={byUsage} activeIndex={activeIndex} usage={usage} />

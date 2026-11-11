@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
+import type { QuizMiss } from '@/components/quiz-miss-list';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import {
   createQuizSession,
@@ -11,6 +12,54 @@ import {
   type QuizSession,
   type ScriptPairDirection
 } from '@/features/alphabet/exercise/exercise-quiz.ts';
+
+function kanaCard(char: string): QuizMiss['card'] {
+  const code = char.codePointAt(0) ?? 0;
+  const hiragana = code >= 0x3040 && code <= 0x309f;
+  const katakana = code >= 0x30a0 && code <= 0x30ff;
+
+  if (!hiragana && !katakana) {
+    return undefined;
+  }
+
+  return { id: `kana:${katakana ? 'k' : 'h'}:${char}`, type: 'kana' };
+}
+
+function choiceMiss(question: QuizQuestion, questionNumber: number): QuizMiss | undefined {
+  if (question.mode === 'romaji') {
+    return undefined;
+  }
+
+  const card =
+    question.mode === 'script-pair'
+      ? kanaCard(question.promptItem?.char ?? question.correctItem.char)
+      : kanaCard(question.correctItem.char);
+
+  if (question.mode === 'character') {
+    return {
+      id: String(questionNumber),
+      prompt: [{ text: question.correctItem.romaji }],
+      answer: { text: question.correctItem.char, japanese: true },
+      card
+    };
+  }
+
+  if (question.mode === 'script-pair') {
+    return {
+      id: String(questionNumber),
+      prompt: [{ text: question.promptItem?.char ?? '', japanese: true }],
+      answer: { text: question.correctItem.char, japanese: true },
+      card
+    };
+  }
+
+  return {
+    id: String(questionNumber),
+    prompt: [{ text: question.correctItem.char, japanese: true }],
+    answer: { text: question.correctAnswers[0] ?? question.correctItem.romaji },
+    card
+  };
+}
 
 type UseExerciseQuizOptions = {
   mode: ExerciseMode;
@@ -40,6 +89,7 @@ export function useExerciseQuiz({
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
+  const [misses, setMisses] = useState<QuizMiss[]>([]);
   const [finished, setFinished] = useState(false);
 
   const isLast = total > 0 && questionNumber >= total - 1;
@@ -56,6 +106,12 @@ export function useExerciseQuiz({
 
       if (firstTry) {
         setScore((previous) => previous + 1);
+      } else {
+        const miss = choiceMiss(question, questionNumber);
+
+        if (miss) {
+          setMisses((previous) => [...previous, miss]);
+        }
       }
     } else {
       setWrongAnswers((previous) => [...previous, answer]);
@@ -71,6 +127,7 @@ export function useExerciseQuiz({
     setAnsweredCorrectly(false);
     setScore(0);
     setResults([]);
+    setMisses([]);
     setFinished(false);
   };
 
@@ -102,6 +159,7 @@ export function useExerciseQuiz({
     total,
     score,
     results,
+    misses,
     finished,
     wrongAnswers,
     answeredCorrectly,

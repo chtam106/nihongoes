@@ -3,6 +3,7 @@ import type { Lesson } from '@/constants/courses/index.ts';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
+import type { QuizMiss } from '@/components/quiz-miss-list';
 import {
   createVocabMatchSession,
   createVocabSession,
@@ -16,6 +17,34 @@ import {
   type VocabQuestion,
   type VocabSession
 } from './vocab-quiz.ts';
+
+function vocabChoice(question: VocabQuestion, optionId: string) {
+  const option = question.options.find((item) => item.id === optionId);
+
+  return {
+    text: option?.label ?? '',
+    ruby: option?.ruby,
+    japanese: Boolean(option?.ja)
+  };
+}
+
+function vocabMiss(question: VocabQuestion, questionNumber: number): QuizMiss {
+  return {
+    id: `${questionNumber}:${question.correctId}`,
+    prompt: [
+      {
+        text: question.promptText,
+        ruby: question.promptRuby,
+        japanese: question.promptJa
+      }
+    ],
+    answer: vocabChoice(question, question.correctId),
+    card:
+      question.cardId && question.cardType
+        ? { id: question.cardId, type: question.cardType }
+        : undefined
+  };
+}
 
 type UseVocabQuizOptions = {
   lesson: Lesson;
@@ -41,6 +70,7 @@ export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVoca
   const [answeredCorrectly, setAnsweredCorrectly] = useState(false);
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
+  const [misses, setMisses] = useState<QuizMiss[]>([]);
   const [finished, setFinished] = useState(false);
 
   const isLast = total > 0 && questionNumber >= total - 1;
@@ -57,6 +87,8 @@ export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVoca
 
       if (firstTry) {
         setScore((previous) => previous + 1);
+      } else {
+        setMisses((previous) => [...previous, vocabMiss(question, questionNumber)]);
       }
     } else {
       setWrongIds((previous) => [...previous, optionId]);
@@ -72,6 +104,7 @@ export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVoca
     setAnsweredCorrectly(false);
     setScore(0);
     setResults([]);
+    setMisses([]);
     setFinished(false);
   };
 
@@ -103,6 +136,7 @@ export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVoca
     total,
     score,
     results,
+    misses,
     finished,
     wrongIds,
     answeredCorrectly,

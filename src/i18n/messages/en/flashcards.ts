@@ -16,6 +16,8 @@ export const flashcards = {
   deleteBody: 'Delete "{name}"?',
   cancel: 'Cancel',
   saveTo: 'Save to...',
+  addToFlashcards: 'Add to flashcards',
+  addAll: 'Add all to flashcards',
   close: 'Close',
   flipHint: 'Tap a card to flip it.',
   saveHint:

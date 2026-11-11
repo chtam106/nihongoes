@@ -16,6 +16,8 @@ export const flashcards = {
   deleteBody: 'Xóa "{name}"?',
   cancel: 'Hủy',
   saveTo: 'Lưu vào...',
+  addToFlashcards: 'Thêm vào Flashcards',
+  addAll: 'Thêm tất cả vào Flashcards',
   close: 'Đóng',
   flipHint: 'Bấm vào card để lật mặt.',
   saveHint:
