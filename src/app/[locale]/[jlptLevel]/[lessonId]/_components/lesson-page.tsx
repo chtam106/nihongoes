@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined';
 import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
@@ -18,6 +19,7 @@ import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
 import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import {
   VOCABULARY_PATH,
+  coursePath,
   getCourse,
   getLesson,
   lessonGrammarPath,
@@ -419,7 +421,13 @@ function LessonPage({ level, defaults }: LessonPageProps) {
       <PageContainer>
         <Stack spacing={4}>
           <Box>
-            <Heading component="h1">{lesson.title[locale]}</Heading>
+            <PageBreadcrumb
+              title={lesson.title[locale]}
+              items={[
+                { label: `JLPT ${course.code}`, to: coursePath(level) },
+                { label: t('course.lessonLabel', { number: lesson.number }) }
+              ]}
+            />
 
             <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
               {lesson.focus[locale]}

@@ -3,8 +3,7 @@
 import { useMemo, type MouseEvent } from 'react';
 import { useParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { Box, Button, Checkbox, FormControlLabel, Stack } from '@mui/material';
+import { Button, Checkbox, FormControlLabel, Stack } from '@mui/material';
 import { ScrollButton } from '@/components/scroll-button';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
@@ -59,7 +58,6 @@ function SentenceWritingExercise({ level, lesson, writing }: SentenceWritingExer
   const lessons = getCourse(level).lessons;
   const index = lessons.findIndex((item) => item.id === lesson.id);
   const previous = index > 0 ? lessons[index - 1] : undefined;
-  const next = index >= 0 && index < lessons.length - 1 ? lessons[index + 1] : undefined;
 
   return (
     <PageContainer bottomGutter>
@@ -92,41 +90,19 @@ function SentenceWritingExercise({ level, lesson, writing }: SentenceWritingExer
             ))}
           </Stack>
         )}
-        <Stack
-          className="no-print"
-          direction="row"
-          spacing={1.5}
-          sx={{ justifyContent: 'space-between' }}
-        >
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
-            {previous && (
-              <Button
-                component={RouterLink}
-                to={lessonSentencesPath(level, previous.id)}
-                onClick={scrollToTopOnPlainClick}
-                startIcon={<ArrowBackIcon />}
-                variant="text"
-                sx={{ px: 0, textTransform: 'none' }}
-              >
-                {t('course.previousLesson')}
-              </Button>
-            )}
-          </Box>
-          <Box sx={{ flex: 1, display: 'flex', justifyContent: 'flex-end' }}>
-            {next && (
-              <Button
-                component={RouterLink}
-                to={lessonSentencesPath(level, next.id)}
-                onClick={scrollToTopOnPlainClick}
-                endIcon={<ArrowForwardIcon />}
-                variant="text"
-                sx={{ px: 0, textTransform: 'none' }}
-              >
-                {t('course.nextLesson')}
-              </Button>
-            )}
-          </Box>
-        </Stack>
+        {previous && (
+          <Button
+            className="no-print"
+            component={RouterLink}
+            to={lessonSentencesPath(level, previous.id)}
+            onClick={scrollToTopOnPlainClick}
+            startIcon={<ArrowBackIcon />}
+            variant="text"
+            sx={{ px: 0, textTransform: 'none', alignSelf: 'flex-start' }}
+          >
+            {t('course.previousLesson')}
+          </Button>
+        )}
       </Stack>
       <ScrollButton />
     </PageContainer>

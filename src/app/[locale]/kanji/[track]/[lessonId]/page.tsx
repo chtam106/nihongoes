@@ -9,9 +9,10 @@ import { getLightFlashcardDefaults } from '@/constants/flashcards/light-defaults
 import { SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
 import { KanjiComponentLegend } from '@/components/kanji-component-legend';
 import { KanjiReadingsNote } from '@/components/kanji-readings-note';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { PageContainer } from '@/components/page-container';
 import { ScrollButton } from '@/components/scroll-button';
-import { KANJI_BASE_PATH, kanjiLessonPath } from '@/constants/kanji/index.ts';
+import { KANJI_BASE_PATH, kanjiLessonPath, kanjiTrackPath } from '@/constants/kanji/index.ts';
 import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
@@ -58,9 +59,13 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
     <SaveCardScope defaults={getLightFlashcardDefaults().collections}>
       <PageContainer bottomGutter>
         <Stack spacing={3}>
-          <Box>
-            <Heading component="h1">{lesson.title[locale]}</Heading>
-          </Box>
+          <PageBreadcrumb
+            title={lesson.title[locale]}
+            items={[
+              { label: track.name[locale], to: kanjiTrackPath(track.slug) },
+              { label: t('kanji.lessonLabel', { number: lesson.number }) }
+            ]}
+          />
 
           <KanjiReadingsNote collapsible />
 

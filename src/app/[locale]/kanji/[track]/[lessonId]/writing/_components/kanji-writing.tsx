@@ -6,7 +6,6 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import {
   Box,
   Button,
-  Chip,
   FormControl,
   InputLabel,
   MenuItem,
@@ -15,18 +14,12 @@ import {
   Typography
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
-import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Heading } from '@/components/heading';
+import { KanjiPracticeHeader } from '@/app/[locale]/kanji/[track]/[lessonId]/_components/kanji-practice-header';
 import { PageContainer } from '@/components/page-container';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { TracingCanvas } from '@/components/tracing-canvas';
 import { useTranslation } from '@/i18n/use-translation.ts';
-import {
-  kanjiLessonPath,
-  kanjiTrackPath,
-  type Bilingual,
-  type KanjiLesson
-} from '@/constants/kanji/index.ts';
+import type { Bilingual, KanjiLesson } from '@/constants/kanji/index.ts';
 
 type KanjiWritingProps = {
   trackSlug: string;
@@ -49,30 +42,12 @@ function KanjiWriting({ trackSlug, trackName, lesson }: KanjiWritingProps) {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <Box>
-          <Stack direction="row" spacing={1} useFlexGap sx={{ mb: 1, flexWrap: 'wrap' }}>
-            <Chip
-              label={trackName[locale]}
-              color="secondary"
-              variant="outlined"
-              size="small"
-              component={RouterLink}
-              to={kanjiTrackPath(trackSlug)}
-              clickable
-            />
-            <Chip
-              label={t('kanji.lessonLabel', { number: lesson.number })}
-              color="primary"
-              variant="outlined"
-              size="small"
-              component={RouterLink}
-              to={kanjiLessonPath(trackSlug, lesson.id)}
-              clickable
-            />
-            <Chip label={t('kanji.writing')} variant="outlined" size="small" />
-          </Stack>
-          <Heading component="h1">{t('kanji.writing')}</Heading>
-        </Box>
+        <KanjiPracticeHeader
+          trackSlug={trackSlug}
+          trackName={trackName}
+          lesson={lesson}
+          practice={t('kanji.writing')}
+        />
 
         <Box sx={{ width: '100%', maxWidth: { xs: '100%', sm: 380, md: 420 }, mx: 'auto' }}>
           <Stack spacing={2}>
