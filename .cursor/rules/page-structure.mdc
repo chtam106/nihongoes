@@ -95,11 +95,11 @@ screen"; a future improvement is to make the boundary rely on
 | `/:level` | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx` |
 | `/:level/intro` | `.../[jlptLevel]/intro/page.tsx` |
 | `/vocabulary` | `src/app/[locale]/vocabulary/_components/vocab-index-page.tsx` |
-| `/sentences` | `src/app/[locale]/sentences/_components/sentence-writing-page.tsx` |
 | `/:level/reference` | `.../[jlptLevel]/reference/page.tsx` |
 | `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
 | `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |
 | `/:level/:lessonId/{grammar,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |
+| `/:level/:lessonId/sentences` | `.../[lessonId]/sentences/_components/sentence-writing-page.tsx` |
 | `/kanji/:track` | `src/app/[locale]/kanji/[track]/_components/kanji-track.tsx` |
 | `/kanji/:track/:lessonId(/quiz/writing)` | `.../[lessonId](/quiz/writing)/_components/kanji-*.tsx` |
 | `/kanji/radicals` | `.../kanji/radicals/_components/kanji-radicals.tsx` |

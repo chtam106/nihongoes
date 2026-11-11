@@ -38,6 +38,10 @@ export function lessonWritingPath(level: CourseLevel, id: string): string {
   return `/${level}/${id}/writing`;
 }
 
+export function lessonSentencesPath(level: CourseLevel, id: string): string {
+  return `/${level}/${id}/sentences`;
+}
+
 export function courseIntroPath(level: CourseLevel): string {
   return `/${level}/intro`;
 }

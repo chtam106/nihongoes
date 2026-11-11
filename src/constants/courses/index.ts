@@ -9,6 +9,7 @@ import {
   lessonGrammarPath,
   lessonPath,
   lessonReadingPath,
+  lessonSentencesPath,
   lessonVocabularyPath,
   lessonWritingPath
 } from './levels.ts';
@@ -112,6 +113,7 @@ export const COURSE_SITEMAP_PATHS: string[] = COURSE_LEVELS.flatMap((level) => {
     ...lessons.map((lesson) => lessonVocabularyPath(level, lesson.id)),
     ...lessons.filter(lessonHasGrammar).map((lesson) => lessonGrammarPath(level, lesson.id)),
     ...lessons.filter(lessonHasReading).map((lesson) => lessonReadingPath(level, lesson.id)),
-    ...lessons.filter(lessonHasKanji).map((lesson) => lessonWritingPath(level, lesson.id))
+    ...lessons.filter(lessonHasKanji).map((lesson) => lessonWritingPath(level, lesson.id)),
+    ...lessons.map((lesson) => lessonSentencesPath(level, lesson.id))
   ];
 });

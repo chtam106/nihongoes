@@ -14,6 +14,5 @@ export const home = {
   kanjiSection: 'Kanji & radicals',
   coursesSection: 'Courses',
   vocabDescription: 'Every word and set phrase from the JLPT courses.',
-  sentencesDescription: 'Write Japanese from English or Vietnamese prompts.',
   flashcardsDescription: 'Review vocabulary saved in your collections.'
 };
