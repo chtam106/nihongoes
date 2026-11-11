@@ -11,10 +11,6 @@ export const seo = {
     title: 'Tổng hợp từ vựng và mẫu câu',
     description: 'Toàn bộ từ vựng và mẫu câu của các khóa JLPT.'
   },
-  sentences: {
-    title: 'Viết câu',
-    description: 'Dịch câu tiếng Anh hoặc tiếng Việt sang tiếng Nhật - ngữ pháp và mẫu câu.'
-  },
   flashcards: {
     title: 'Flashcards',
     description: 'Collection flashcard từ vựng lưu trên trình duyệt.'

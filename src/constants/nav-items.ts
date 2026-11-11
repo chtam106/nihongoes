@@ -5,7 +5,6 @@ import QuizOutlinedIcon from '@mui/icons-material/QuizOutlined';
 import HistoryEduOutlinedIcon from '@mui/icons-material/HistoryEduOutlined';
 import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import CreateOutlinedIcon from '@mui/icons-material/CreateOutlined';
 import CloudSyncOutlinedIcon from '@mui/icons-material/CloudSyncOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import type { ComponentType } from 'react';
@@ -128,12 +127,6 @@ export const navGroups: NavGroup[] = [
     label: { en: 'All vocabulary and phrases', vi: 'Tổng hợp từ vựng và mẫu câu' },
     path: routes.vocabulary,
     icon: MenuBookOutlinedIcon,
-    children: []
-  },
-  {
-    label: { en: 'Sentence writing', vi: 'Viết câu' },
-    path: routes.sentences,
-    icon: CreateOutlinedIcon,
     children: []
   },
   {

@@ -1,7 +1,6 @@
 import {
   COURSE_LEVELS,
   coursePath,
-  SENTENCES_PATH,
   VOCABULARY_PATH,
   FLASHCARDS_PATH
 } from '@/constants/courses/levels.ts';
@@ -11,7 +10,6 @@ export const routes = {
   home: '/',
   privacy: '/privacy',
   vocabulary: VOCABULARY_PATH,
-  sentences: SENTENCES_PATH,
   flashcards: FLASHCARDS_PATH,
   flashcardDrive: '/sync',
   n5: {
