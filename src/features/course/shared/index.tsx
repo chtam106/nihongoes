@@ -14,7 +14,7 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
-type LessonQuizSection = 'vocabulary' | 'grammar' | 'reading' | 'writing';
+type LessonQuizSection = 'vocabulary' | 'grammar' | 'reading' | 'writing' | 'sentences';
 
 type LessonQuizHeaderProps = {
   lesson: Lesson;
@@ -31,6 +31,8 @@ function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
       return 'course.readingPractice';
     case 'writing':
       return 'course.writingPractice';
+    case 'sentences':
+      return 'course.sentenceWritingHeading';
   }
 }
 

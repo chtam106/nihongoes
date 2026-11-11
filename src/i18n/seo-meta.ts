@@ -15,7 +15,7 @@ type SeoText = {
 };
 
 const COURSE_LESSON_PATH =
-  /^\/(n5|n4|n3|n2|n1|frontend)\/(lesson-\d+)(?:\/(vocabulary|grammar|reading|writing))?$/;
+  /^\/(n5|n4|n3|n2|n1|frontend)\/(lesson-\d+)(?:\/(vocabulary|grammar|reading|writing|sentences))?$/;
 const COURSE_EXTRA_PATH = /^\/(n5|n4|n3|n2|n1|frontend)\/(intro|reference)$/;
 const KANJI_PAGE_PATH = /^\/kanji\/([^/]+)(?:\/([^/]+)(?:\/(quiz|writing))?)?$/;
 
