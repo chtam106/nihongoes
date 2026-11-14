@@ -113,6 +113,7 @@ function PhrasesSection({ lesson }: PhrasesSectionProps) {
             key={`phrase-${index}-${phrase.kana}`}
             cardId={flashcardCardId(lesson.number, lesson.vocab.length + index)}
             cardType="phrase"
+            askText={phrase.kanji ?? phrase.kana}
           >
             <SpeakableSurface text={phrase.speech ?? phrase.kana} sx={{ p: 1.5, height: '100%' }}>
               <VocabHeadword item={phrase} />

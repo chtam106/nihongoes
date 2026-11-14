@@ -19,9 +19,12 @@ export const flashcards = {
   addToFlashcards: 'Thêm vào Flashcards',
   addAll: 'Thêm tất cả vào Flashcards',
   close: 'Đóng',
+  meaning: 'Nghĩa',
+  contextSave: 'Lưu flashcard',
+  contextChatGpt: 'Nghĩa và cách dùng trên ChatGPT',
   flipHint: 'Bấm vào card để lật mặt.',
   saveHint:
-    'Chuột phải hoặc nhấn giữ card, từ hoặc mẫu câu trong bài, hoặc câu hỏi quiz từ vựng, kanji, bộ thủ để lưu vào collection.',
+    'Chuột phải hoặc nhấn giữ card hoặc chữ đang bôi đen, rồi chọn Lưu flashcard hoặc xem nghĩa và cách dùng trên ChatGPT. Bôi đen chữ rồi bấm S để lưu cụm đó.',
   previousCollection: 'Previous collection',
   nextCollection: 'Next collection',
   studyEmpty: 'Collection này chưa có card. Hãy lưu từ từ flashcard từ vựng.',

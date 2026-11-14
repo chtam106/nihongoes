@@ -181,7 +181,7 @@ export function KanjiCard({ entry, index, trackSlug }: KanjiCardProps) {
   const { locale, t } = useTranslation();
 
   return (
-    <SaveableCard cardId={`kanji:${trackSlug}:${entry.char}`} cardType="kanji">
+    <SaveableCard cardId={`kanji:${trackSlug}:${entry.char}`} cardType="kanji" askText={entry.char}>
       <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2, md: 2.5 } }]}>
         <Paper
           elevation={0}

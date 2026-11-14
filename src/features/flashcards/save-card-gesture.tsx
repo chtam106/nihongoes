@@ -18,6 +18,7 @@ import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import type { DefaultCollection, FlashcardCardType } from '@/constants/flashcards/collections.ts';
 import { FlashcardDefaultsProvider } from '@/features/flashcards/flashcard-defaults.tsx';
 import { SaveToCollectionDialog } from '@/features/flashcards/save-to-collection-dialog.tsx';
+import { cardAskText, openStudyMenu } from '@/features/flashcards/study-menu.ts';
 
 const LONG_PRESS_MS = 500;
 const LONG_PRESS_MOVE_PX = 10;
@@ -80,7 +81,7 @@ function clearTextSelection() {
   window.getSelection()?.removeAllRanges();
 }
 
-function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
+function useSaveCardGesture(cardId: string, cardType: FlashcardCardType, askText?: string) {
   const context = useContext(SaveCardContext);
   const longPressRef = useRef<number | null>(null);
   const pressOriginRef = useRef<{ x: number; y: number } | null>(null);
@@ -119,59 +120,54 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
     };
   }, [clearLongPress, stopTransientDocListeners]);
 
-  const openSave = useCallback(() => {
-    if (!context) {
-      return;
-    }
-
-    suppressClickUntilRef.current = Date.now() + LONG_PRESS_MS;
-    stopBlockingSelect();
-    clearTextSelection();
-
-    const swallowClick = (event: Event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      document.removeEventListener('click', swallowClick, true);
-      clearTextSelection();
-    };
-
-    const blockContextMenu = (event: Event) => {
-      event.preventDefault();
-    };
-
-    document.addEventListener('click', swallowClick, true);
-    document.addEventListener('contextmenu', blockContextMenu, true);
-
-    const removeTransient = () => {
-      document.removeEventListener('click', swallowClick, true);
-      document.removeEventListener('contextmenu', blockContextMenu, true);
-    };
-
-    stopTransientDocListeners();
-    transientDocCleanupRef.current = removeTransient;
-    window.setTimeout(() => {
-      removeTransient();
-
-      if (transientDocCleanupRef.current === removeTransient) {
-        transientDocCleanupRef.current = null;
-      }
-    }, LONG_PRESS_MS);
-
-    context.openSave({ id: cardId, type: cardType });
-  }, [cardId, cardType, context, stopBlockingSelect, stopTransientDocListeners]);
-
-  const onContextMenuCapture = useCallback(
-    (event: MouseEvent<HTMLElement>) => {
+  const openMenu = useCallback(
+    (x: number, y: number, host: HTMLElement) => {
       if (!context) {
         return;
       }
 
-      event.preventDefault();
-      event.stopPropagation();
-      clearLongPress();
-      openSave();
+      suppressClickUntilRef.current = Date.now() + LONG_PRESS_MS;
+      stopBlockingSelect();
+      clearTextSelection();
+
+      const swallowClick = (event: Event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        document.removeEventListener('click', swallowClick, true);
+        clearTextSelection();
+      };
+
+      const blockContextMenu = (event: Event) => {
+        event.preventDefault();
+        event.stopPropagation();
+      };
+
+      document.addEventListener('click', swallowClick, true);
+      document.addEventListener('contextmenu', blockContextMenu, true);
+
+      const removeTransient = () => {
+        document.removeEventListener('click', swallowClick, true);
+        document.removeEventListener('contextmenu', blockContextMenu, true);
+      };
+
+      stopTransientDocListeners();
+      transientDocCleanupRef.current = removeTransient;
+      window.setTimeout(() => {
+        removeTransient();
+
+        if (transientDocCleanupRef.current === removeTransient) {
+          transientDocCleanupRef.current = null;
+        }
+      }, LONG_PRESS_MS);
+
+      openStudyMenu({
+        x,
+        y,
+        askText: askText?.trim() ? askText : cardAskText(host),
+        card: { id: cardId, type: cardType }
+      });
     },
-    [clearLongPress, context, openSave]
+    [askText, cardId, cardType, context, stopBlockingSelect, stopTransientDocListeners]
   );
 
   const onPointerDown = useCallback(
@@ -185,7 +181,10 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
       }
 
       clearLongPress();
-      pressOriginRef.current = { x: event.clientX, y: event.clientY };
+      const host = event.currentTarget;
+      const x = event.clientX;
+      const y = event.clientY;
+      pressOriginRef.current = { x, y };
       const blockSelect = (selectEvent: Event) => {
         selectEvent.preventDefault();
       };
@@ -194,10 +193,10 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
       longPressRef.current = window.setTimeout(() => {
         longPressRef.current = null;
         pressOriginRef.current = null;
-        openSave();
+        openMenu(x, y, host);
       }, LONG_PRESS_MS);
     },
-    [clearLongPress, context, openSave]
+    [clearLongPress, context, openMenu]
   );
 
   const onPointerMove = useCallback(
@@ -230,7 +229,6 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
   );
 
   return {
-    onContextMenuCapture,
     onPointerDown,
     onPointerMove,
     onPointerUp: clearLongPress,
@@ -242,17 +240,22 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType) {
 type SaveableCardProps = {
   cardId: string;
   cardType: FlashcardCardType;
+  /** Japanese word or sentence sent to ChatGPT. */
+  askText?: string;
   children: ReactNode;
   sx?: SxProps<Theme>;
 };
 
-export function SaveableCard({ cardId, cardType, children, sx }: SaveableCardProps) {
-  const gesture = useSaveCardGesture(cardId, cardType);
+export function SaveableCard({ cardId, cardType, askText, children, sx }: SaveableCardProps) {
+  const gesture = useSaveCardGesture(cardId, cardType, askText);
   const sxOverrides = sx == null ? [] : Array.isArray(sx) ? sx : [sx];
 
   return (
     <Box
       {...gesture}
+      data-save-card-id={cardId}
+      data-save-card-type={cardType}
+      data-ask-text={askText}
       sx={[{ WebkitTouchCallout: 'none', touchAction: 'manipulation' }, ...sxOverrides]}
     >
       {children}

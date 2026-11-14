@@ -212,6 +212,7 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
     <SaveableCard
       cardId={`radical:${radical.number}`}
       cardType="radical"
+      askText={radical.char}
       sx={{ height: '100%', minWidth: 0, alignSelf: 'stretch' }}
     >
       <Paper

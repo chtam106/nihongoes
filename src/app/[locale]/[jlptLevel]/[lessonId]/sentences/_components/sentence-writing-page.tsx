@@ -1,13 +1,11 @@
 'use client';
 
-import { useMemo, type MouseEvent } from 'react';
+import { useMemo } from 'react';
 import { useParams } from 'next/navigation';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Button, Checkbox, FormControlLabel, Stack } from '@mui/material';
+import { Checkbox, FormControlLabel, Stack } from '@mui/material';
 import { ScrollButton } from '@/components/scroll-button';
-import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
-import { getCourse, getLesson, lessonSentencesPath } from '@/constants/courses/index.ts';
+import { getLesson } from '@/constants/courses/index.ts';
 import type { CourseLevel, Lesson, LessonSentenceWriting } from '@/types/course.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
@@ -18,21 +16,6 @@ import {
   sanitizeSentenceWritingPreferences,
   SENTENCE_WRITING_STORAGE_KEY
 } from './sentence-writing-preferences.ts';
-
-function scrollToTopOnPlainClick(event: MouseEvent<HTMLAnchorElement>) {
-  if (
-    event.defaultPrevented ||
-    event.button !== 0 ||
-    event.metaKey ||
-    event.ctrlKey ||
-    event.shiftKey ||
-    event.altKey
-  ) {
-    return;
-  }
-
-  window.scrollTo(0, 0);
-}
 
 type SentenceWritingExerciseProps = {
   level: CourseLevel;
@@ -55,9 +38,6 @@ function SentenceWritingExercise({ level, lesson, writing }: SentenceWritingExer
 
     return [...grammarItems, ...writing.phrases];
   }, [lesson, writing]);
-  const lessons = getCourse(level).lessons;
-  const index = lessons.findIndex((item) => item.id === lesson.id);
-  const previous = index > 0 ? lessons[index - 1] : undefined;
 
   return (
     <PageContainer bottomGutter>
@@ -89,19 +69,6 @@ function SentenceWritingExercise({ level, lesson, writing }: SentenceWritingExer
               />
             ))}
           </Stack>
-        )}
-        {previous && (
-          <Button
-            className="no-print"
-            component={RouterLink}
-            to={lessonSentencesPath(level, previous.id)}
-            onClick={scrollToTopOnPlainClick}
-            startIcon={<ArrowBackIcon />}
-            variant="text"
-            sx={{ px: 0, textTransform: 'none', alignSelf: 'flex-start' }}
-          >
-            {t('course.previousLesson')}
-          </Button>
         )}
       </Stack>
       <ScrollButton />

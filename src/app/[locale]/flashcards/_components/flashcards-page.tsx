@@ -30,7 +30,7 @@ import { Heading } from '@/components/heading';
 import { HintText } from '@/components/hint-text';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
-import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
+import { studyFlashcards, type ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import {
   isDefaultCollectionId,
   type DefaultCollection,
@@ -99,7 +99,7 @@ function CollectionsGrid({
       }}
     >
       {collections.map((collection) => {
-        const count = resolveCards(collection.cards.map((card) => card.id)).length;
+        const count = studyFlashcards(collection.cards, resolveCards).length;
 
         return (
           <Paper

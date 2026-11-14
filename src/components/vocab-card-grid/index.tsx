@@ -33,6 +33,7 @@ export function VocabCardGrid({ cards, locale }: VocabCardGridProps) {
           key={`vocab-${index}-${card.item.kana}`}
           cardId={card.id}
           cardType={card.type}
+          askText={card.item.kanji ?? card.item.kana}
         >
           <SpeakableSurface
             text={card.item.speech ?? card.item.kana}
