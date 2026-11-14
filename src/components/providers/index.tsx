@@ -6,6 +6,7 @@ import * as Sentry from '@sentry/nextjs';
 import AppLayout from '@/components/app-layout';
 import { ErrorFallbackContent } from '@/components/error-fallback';
 import { UserPreferencesDocument } from '@/components/user-preferences-document';
+import { SelectionSave } from '@/features/flashcards/selection-save.tsx';
 import { appTheme } from '@/theme/app-theme.ts';
 
 type ProvidersProps = {
@@ -30,6 +31,7 @@ export function Providers({ children }: ProvidersProps) {
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
       <UserPreferencesDocument />
+      <SelectionSave />
       <AppLayout>
         <Sentry.ErrorBoundary fallback={<ErrorFallbackContent />}>{children}</Sentry.ErrorBoundary>
       </AppLayout>

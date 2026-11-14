@@ -38,12 +38,18 @@ const VOCAB_CARD_ID = /^\d+:\d+$/;
 const KANA_CARD_ID = /^kana:[hk]:.+$/u;
 const RADICAL_CARD_ID = /^radical:\d+$/;
 const KANJI_CARD_ID = /^kanji:(?:grade-[1-6]|kanken-(?:4|3|pre-2|2)):.+$/u;
+const CLIP_CARD_ID = /^clip:[0-9a-f]{16}$/;
+const MAX_CLIP_LENGTH = 300;
 
 export type FlashcardCardType = 'vocab' | 'phrase' | 'kana' | 'radical' | 'kanji';
 
 export type FlashcardCard = {
   id: string;
   type: FlashcardCardType;
+  /** Selected phrase for a card saved from highlighted text. */
+  text?: string;
+  /** Meaning typed for a highlighted phrase. Defaults to the phrase itself. */
+  meaning?: string;
 };
 
 export type FlashcardCollection = {
@@ -112,12 +118,76 @@ export function flashcardCardType(id: string): FlashcardCardType | null {
   return null;
 }
 
+function clipHash(text: string, seed: number) {
+  let hash = seed;
+
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+
+  return (hash >>> 0).toString(16).padStart(8, '0');
+}
+
+export function clipPhrase(text: string) {
+  return text.replace(/\s+/g, ' ').trim().slice(0, MAX_CLIP_LENGTH);
+}
+
+/** Stable id for a highlighted phrase. The same phrase is the same card. */
+export function clipCardId(text: string) {
+  const phrase = clipPhrase(text);
+
+  return `clip:${clipHash(phrase, 2166136261)}${clipHash(phrase, 2166136261 ^ phrase.length)}`;
+}
+
+export function isClipCard(card: FlashcardCard) {
+  return CLIP_CARD_ID.test(card.id) && typeof card.text === 'string' && card.text.length > 0;
+}
+
+/** A phrase saved from a text selection. An empty meaning falls back to the phrase. */
+export function clipCard(text: string, meaning: string): FlashcardCard | null {
+  const phrase = clipPhrase(text);
+
+  if (!phrase) {
+    return null;
+  }
+
+  const gloss = clipPhrase(meaning) || phrase;
+
+  return { id: clipCardId(phrase), type: 'phrase', text: phrase, meaning: gloss };
+}
+
+function clipCardFromEntry(entry: unknown): FlashcardCard | null {
+  if (!entry || typeof entry !== 'object') {
+    return null;
+  }
+
+  const record = entry as { id?: unknown; text?: unknown; meaning?: unknown };
+  const id = typeof record.id === 'string' ? record.id : '';
+
+  if (!CLIP_CARD_ID.test(id) || typeof record.text !== 'string') {
+    return null;
+  }
+
+  const phrase = clipPhrase(record.text);
+
+  if (!phrase || clipCardId(phrase) !== id) {
+    return null;
+  }
+
+  const gloss = typeof record.meaning === 'string' ? clipPhrase(record.meaning) || phrase : phrase;
+
+  return { id, type: 'phrase', text: phrase, meaning: gloss };
+}
+
 function resolvedCards(cards: readonly FlashcardCard[]): FlashcardCard[] {
   const seen = new Set<string>();
   const next: FlashcardCard[] = [];
 
   for (const card of cards) {
-    const resolved = flashcardCard(card.id, card.type);
+    const resolved = isClipCard(card)
+      ? clipCard(card.text ?? '', card.meaning ?? '')
+      : flashcardCard(card.id, card.type);
 
     if (!resolved || seen.has(resolved.id)) {
       continue;
@@ -171,6 +241,18 @@ function sanitizeCards(value: unknown): FlashcardCard[] {
   const cards: FlashcardCard[] = [];
 
   for (const entry of value) {
+    const clip = clipCardFromEntry(entry);
+
+    if (clip) {
+      if (seen.has(clip.id)) {
+        continue;
+      }
+
+      seen.add(clip.id);
+      cards.push(clip);
+      continue;
+    }
+
     const id = typeof entry === 'string' ? entry : readCardId(entry);
     const hinted = readCardType(entry);
     const card = id ? flashcardCard(id, hinted) : null;
@@ -310,15 +392,28 @@ export function setCardsInCollection(
     }
 
     const present = new Set(collection.cards.map((item) => item.id));
+    const incoming = new Map(nextCards.map((card) => [card.id, card]));
+    let cardsChanged = false;
+    const merged = collection.cards.map((item) => {
+      const nextCard = incoming.get(item.id);
+
+      if (!nextCard || (nextCard.text === item.text && nextCard.meaning === item.meaning)) {
+        return item;
+      }
+
+      cardsChanged = true;
+
+      return nextCard;
+    });
     const missing = nextCards.filter((card) => !present.has(card.id));
 
-    if (missing.length === 0) {
+    if (!cardsChanged && missing.length === 0) {
       return collection;
     }
 
     changed = true;
 
-    return { ...collection, cards: [...collection.cards, ...missing] };
+    return { ...collection, cards: [...merged, ...missing] };
   });
 
   return changed ? next : collections;
@@ -421,6 +516,27 @@ function isEphemeralUntitled(collection: FlashcardCollection) {
     (collection.name === UNTITLED_FLASHCARD_COLLECTION_NAME.en ||
       collection.name === UNTITLED_FLASHCARD_COLLECTION_NAME.vi)
   );
+}
+
+/** Custom collections for the save dialog, including the unsaved untitled one. */
+export function customCollectionsForSave(
+  store: FlashcardStore,
+  locale: Locale
+): FlashcardCollection[] {
+  const custom = store.overrides.filter((collection) => !isDefaultCollectionId(collection.id));
+
+  return custom.length > 0 ? custom : [untitledFlashcardCollection(locale)];
+}
+
+/** Write custom collections back without touching built-in overrides. */
+export function replaceCustomCollections(
+  store: FlashcardStore,
+  custom: readonly FlashcardCollection[]
+): FlashcardStore {
+  const builtins = store.overrides.filter((collection) => isDefaultCollectionId(collection.id));
+  const persisted = custom.filter((collection) => !isEphemeralUntitled(collection));
+
+  return { overrides: [...persisted, ...builtins], hidden: store.hidden };
 }
 
 /** Built-in collections, with the user's card edits and deletions applied. */

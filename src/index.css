@@ -58,6 +58,16 @@ body {
   margin: 0;
 }
 
+/* The selection bubble uses the maximum z-index and is inserted after dialogs. */
+/* stylelint-disable selector-class-pattern -- MUI generated class names */
+body:has(.MuiModal-root:not(.MuiModal-hidden)) #gtx-host,
+body:has(.MuiModal-root:not(.MuiModal-hidden)) #gtx-trans,
+body:has(.MuiModal-root:not(.MuiModal-hidden)) #goog-gt-tt,
+body:has(.MuiModal-root:not(.MuiModal-hidden)) .goog-te-balloon-frame {
+  display: none !important;
+}
+/* stylelint-enable selector-class-pattern */
+
 html {
   scroll-behavior: auto;
 }

@@ -17,7 +17,7 @@ import {
   FLASHCARDS_RETURN_TAB_QUERY
 } from '@/app/[locale]/flashcards/_components/flashcards-list-tab.ts';
 import { adjacentDefaultCollections } from '@/constants/flashcards/default-collection-groups.ts';
-import type { ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
+import { studyFlashcards, type ResolvableFlashcard } from '@/constants/flashcards/catalog.ts';
 import {
   FLASHCARD_COLLECTIONS_FRONT_KEY,
   sanitizeCollectionFront,
@@ -79,7 +79,7 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
     sanitizeCollectionFront
   );
   const collection = collections.find((item) => item.id === collectionId) ?? null;
-  const cards = collection ? resolveCards(collection.cards.map((card) => card.id)) : [];
+  const cards = collection ? studyFlashcards(collection.cards, resolveCards) : [];
   const { previous, next } = adjacentDefaultCollections(collections, collectionId, locale);
 
   const handleFrontChange = (_event: MouseEvent<HTMLElement>, value: FlashcardFront | null) => {
