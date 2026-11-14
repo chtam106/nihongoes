@@ -231,6 +231,7 @@ export function VocabFlashcards({ cards, locale, front }: VocabFlashcardsProps) 
           <SaveableCard
             cardId={card.id}
             cardType={card.type}
+            askText={card.item.kanji ?? card.item.kana}
             sx={{
               position: 'relative',
               width: '100%',

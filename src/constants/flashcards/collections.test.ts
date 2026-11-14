@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { allFlashcards, flashcardsByIds } from '@/constants/flashcards/catalog.ts';
+import {
+  allFlashcards,
+  flashcardsByIds,
+  lookupFlashcardMeaning
+} from '@/constants/flashcards/catalog.ts';
 import {
   createCollection,
   deleteCollection,
@@ -13,6 +17,8 @@ import {
   setCardsInCollection,
   storeFromResolved,
   toggleCardInCollection,
+  clipCard,
+  replaceCustomCollections,
   type DefaultCollection
 } from '@/constants/flashcards/collections.ts';
 import { getCourse } from '@/constants/courses/index.ts';
@@ -121,6 +127,63 @@ describe('collection edits', () => {
       { id: '1:0', type: 'vocab' }
     ]);
     expect(setCardsInCollection(start, 'a', [{ id: 'nope', type: 'vocab' }], true)).toBe(start);
+  });
+
+  it('saves a highlighted phrase as one card and updates its meaning', () => {
+    const card = clipCard('  猫  ', 'cat');
+    const same = clipCard('猫', 'con mèo');
+
+    expect(card?.id).toMatch(/^clip:[0-9a-f]{16}$/);
+    expect(same?.id).toBe(card?.id);
+    expect(card).toEqual({ id: card?.id, type: 'phrase', text: '猫', meaning: 'cat' });
+    expect(clipCard('猫', '   ')).toEqual({
+      id: card?.id,
+      type: 'phrase',
+      text: '猫',
+      meaning: '猫'
+    });
+
+    const stored = sanitizeFlashcardStore({
+      overrides: [
+        {
+          id: 'mine',
+          name: 'Mine',
+          cards: [card, { id: 'clip:0123456789abcdef', type: 'phrase', text: '違う' }]
+        }
+      ],
+      hidden: []
+    });
+
+    expect(stored.overrides[0]?.cards).toEqual([card]);
+
+    const added = setCardsInCollection(start, 'a', [card!], true);
+
+    expect(added[0]?.cards).toEqual([{ id: '1:0', type: 'vocab' }, card]);
+    expect(setCardsInCollection(added, 'a', [card!], true)).toBe(added);
+
+    const changed = setCardsInCollection(added, 'a', [same!], true);
+
+    expect(changed[0]?.cards[1]).toEqual(same);
+    expect(setCardsInCollection(changed, 'a', [same!], true)).toBe(changed);
+
+    const withBuiltin = {
+      overrides: [
+        {
+          id: 'default-hiragana',
+          name: 'Hiragana',
+          cards: [{ id: 'kana:h:あ', type: 'kana' as const }]
+        },
+        { id: 'mine', name: 'Mine', cards: [] }
+      ],
+      hidden: ['default-hiragana']
+    };
+    const replaced = replaceCustomCollections(withBuiltin, [
+      { id: 'mine', name: 'Mine', cards: [card!] }
+    ]);
+
+    expect(replaced.hidden).toEqual(['default-hiragana']);
+    expect(replaced.overrides[1]).toEqual(withBuiltin.overrides[0]);
+    expect(replaced.overrides[0]?.cards).toEqual([card]);
   });
 
   it('creates a collection with several cards', () => {
@@ -389,5 +452,17 @@ describe('flashcard catalog', () => {
     expect(first!.type).toBe('vocab');
     expect(cards.some((card) => card.type === 'phrase')).toBe(true);
     expect(flashcardsByIds([first!.id, first!.id, '999:0'])).toEqual([first]);
+  });
+
+  it('fills a meaning from a vocab word or phrase', () => {
+    expect(lookupFlashcardMeaning('わたし', 'vi')).toBe('tôi');
+    expect(lookupFlashcardMeaning('私', 'en')).toBe('I, me');
+    expect(lookupFlashcardMeaning('私わたし', 'vi')).toBe('tôi');
+    expect(lookupFlashcardMeaning('はじめまして。', 'vi')).toBe('Rất hân hạnh (lần đầu gặp).');
+    expect(lookupFlashcardMeaning('はじめまして', 'vi')).toBe('Rất hân hạnh (lần đầu gặp).');
+    expect(lookupFlashcardMeaning('どうぞ よろしく おねがいします', 'vi')).toBe(
+      'Rất mong được giúp đỡ.'
+    );
+    expect(lookupFlashcardMeaning('この文はリストにない', 'vi')).toBeNull();
   });
 });

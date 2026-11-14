@@ -19,9 +19,12 @@ export const flashcards = {
   addToFlashcards: 'Add to flashcards',
   addAll: 'Add all to flashcards',
   close: 'Close',
+  meaning: 'Meaning',
+  contextSave: 'Save flashcard',
+  contextChatGpt: 'Meaning and usage in ChatGPT',
   flipHint: 'Tap a card to flip it.',
   saveHint:
-    'Right-click or long-press a card, a lesson word or phrase, or a vocab, kanji, or radical quiz prompt to save it.',
+    'Right-click or long-press a card or selected text, then choose Save flashcard or look up meaning and usage in ChatGPT. Press S after selecting text to save that phrase.',
   previousCollection: 'Previous collection',
   nextCollection: 'Next collection',
   studyEmpty: 'This collection has no cards yet. Save words from the vocabulary flashcards.',
