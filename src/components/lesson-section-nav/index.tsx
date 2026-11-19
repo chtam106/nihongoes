@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
+import FormatListBulletedOutlinedIcon from '@mui/icons-material/FormatListBulletedOutlined';
 import { Box, Backdrop, Stack, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import type { Lesson } from '@/constants/courses/index.ts';
@@ -338,7 +338,7 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
                 }
               ]}
             >
-              <SubjectOutlinedIcon sx={{ fontSize: TAB_ICON_SIZE }} />
+              <FormatListBulletedOutlinedIcon sx={{ fontSize: TAB_ICON_SIZE }} />
             </Box>
 
             <Box
