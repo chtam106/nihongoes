@@ -5,6 +5,7 @@ import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Button, Paper, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
+import { LessonPracticeNav, type LessonPracticeSection } from '@/components/lesson-practice-nav';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import {
   coursePath,
@@ -17,15 +18,13 @@ import { PageContainer } from '@/components/page-container';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
-type LessonQuizSection = 'vocabulary' | 'grammar' | 'reading' | 'writing' | 'sentences';
-
 type LessonQuizHeaderProps = {
   level: CourseLevel;
   lesson: Lesson;
-  section: LessonQuizSection;
+  section: LessonPracticeSection;
 };
 
-function practiceTitleKey(section: LessonQuizSection): `course.${string}` {
+function practiceTitleKey(section: LessonPracticeSection): `course.${string}` {
   switch (section) {
     case 'vocabulary':
       return 'course.vocabularyPractice';
@@ -48,16 +47,19 @@ export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderPro
   const { t } = useTranslation();
 
   return (
-    <PageBreadcrumb
-      title={t(practiceTitleKey(section))}
-      items={[
-        { label: `JLPT ${getCourse(level).code}`, to: coursePath(level) },
-        {
-          label: t('course.lessonLabel', { number: lesson.number }),
-          to: lessonPath(level, lesson.id)
-        }
-      ]}
-    />
+    <>
+      <PageBreadcrumb
+        title={t(practiceTitleKey(section))}
+        items={[
+          { label: `JLPT ${getCourse(level).code}`, to: coursePath(level) },
+          {
+            label: t('course.lessonLabel', { number: lesson.number }),
+            to: lessonPath(level, lesson.id)
+          }
+        ]}
+      />
+      <LessonPracticeNav level={level} lesson={lesson} section={section} />
+    </>
   );
 }
 
