@@ -13,7 +13,7 @@ export const quizChoiceSx = {
     borderColor: alpha(QUIZ_CHOICE_COLOR, 0.23),
     bgcolor: 'transparent'
   },
-  '@media (hover: hover)': {
+  '@media (hover: hover) and (pointer: fine)': {
     '&:hover': {
       borderColor: QUIZ_CHOICE_COLOR,
       bgcolor: alpha(QUIZ_CHOICE_COLOR, 0.04)
