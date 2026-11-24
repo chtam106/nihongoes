@@ -15,6 +15,7 @@ export const n5Lesson12: Lesson = {
   vocab: [
     {
       kana: 'かんたん [な]',
+      partOfSpeech: 'adjective',
       kanji: '簡単 [な]',
       romaji: 'kantan [na]',
       meaning: { en: 'simple, easy', vi: 'đơn giản, dễ' },
@@ -25,6 +26,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'ちかい',
+      partOfSpeech: 'adjective',
       kanji: '近い',
       romaji: 'chikai',
       meaning: { en: 'near, close', vi: 'gần' },
@@ -32,6 +34,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'とおい',
+      partOfSpeech: 'adjective',
       kanji: '遠い',
       romaji: 'tōi',
       meaning: { en: 'far, distant', vi: 'xa' },
@@ -39,6 +42,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'はやい',
+      partOfSpeech: 'adjective',
       kanji: '速い、早い',
       romaji: 'hayai',
       meaning: { en: 'fast; early', vi: 'nhanh; sớm' },
@@ -49,6 +53,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'おそい',
+      partOfSpeech: 'adjective',
       kanji: '遅い',
       romaji: 'osoi',
       meaning: { en: 'slow; late', vi: 'chậm; muộn' },
@@ -56,6 +61,8 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'おおい [ひとが～]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { en: 'determiner', vi: 'determiner' },
       kanji: '多い [人が～]',
       romaji: 'ōi [hito ga ~]',
       meaning: { en: 'many (people)', vi: 'nhiều (người)' },
@@ -66,6 +73,8 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'すくない [ひとが～]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { en: 'determiner', vi: 'determiner' },
       kanji: '少ない [人が～]',
       romaji: 'sukunai [hito ga ~]',
       meaning: { en: 'few (people)', vi: 'ít (người)' },
@@ -76,6 +85,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'あたたかい',
+      partOfSpeech: 'adjective',
       kanji: '暖かい、温かい',
       romaji: 'atatakai',
       meaning: { en: 'warm', vi: 'ấm' },
@@ -86,6 +96,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'すずしい',
+      partOfSpeech: 'adjective',
       kanji: '涼しい',
       romaji: 'suzushii',
       meaning: { en: 'cool (weather)', vi: 'mát (thời tiết)' },
@@ -93,6 +104,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'あまい',
+      partOfSpeech: 'adjective',
       kanji: '甘い',
       romaji: 'amai',
       meaning: { en: 'sweet', vi: 'ngọt' },
@@ -100,6 +112,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'からい',
+      partOfSpeech: 'adjective',
       kanji: '辛い',
       romaji: 'karai',
       meaning: { en: 'spicy, hot (food)', vi: 'cay' },
@@ -107,6 +120,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'おもい',
+      partOfSpeech: 'adjective',
       kanji: '重い',
       romaji: 'omoi',
       meaning: { en: 'heavy', vi: 'nặng' },
@@ -114,6 +128,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'かるい',
+      partOfSpeech: 'adjective',
       kanji: '軽い',
       romaji: 'karui',
       meaning: { en: 'light (weight)', vi: 'nhẹ' },
@@ -121,6 +136,8 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'いい [コーヒーが～]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'ii [kōhī ga ~]',
       meaning: {
         en: 'preferred (choose or use, e.g. coffee)',
@@ -129,6 +146,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'きせつ',
+      partOfSpeech: 'noun',
       kanji: '季節',
       romaji: 'kisetsu',
       meaning: { en: 'season', vi: 'mùa' },
@@ -139,6 +157,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'はる',
+      partOfSpeech: 'noun',
       kanji: '春',
       romaji: 'haru',
       meaning: { en: 'spring', vi: 'mùa xuân' },
@@ -146,6 +165,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'なつ',
+      partOfSpeech: 'noun',
       kanji: '夏',
       romaji: 'natsu',
       meaning: { en: 'summer', vi: 'mùa hè' },
@@ -153,6 +173,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'あき',
+      partOfSpeech: 'noun',
       kanji: '秋',
       romaji: 'aki',
       meaning: { en: 'autumn', vi: 'mùa thu' },
@@ -160,6 +181,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'ふゆ',
+      partOfSpeech: 'noun',
       kanji: '冬',
       romaji: 'fuyu',
       meaning: { en: 'winter', vi: 'mùa đông' },
@@ -167,6 +189,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'てんき',
+      partOfSpeech: 'noun',
       kanji: '天気',
       romaji: 'tenki',
       meaning: { en: 'weather', vi: 'thời tiết' },
@@ -177,6 +200,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'あめ',
+      partOfSpeech: 'noun',
       kanji: '雨',
       romaji: 'ame',
       meaning: { en: 'rain', vi: 'mưa' },
@@ -184,6 +208,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'ゆき',
+      partOfSpeech: 'noun',
       kanji: '雪',
       romaji: 'yuki',
       meaning: { en: 'snow', vi: 'tuyết' },
@@ -191,6 +216,8 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'くもり',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'verb' },
       kanji: '曇り',
       romaji: 'kumori',
       meaning: { en: 'cloudy', vi: 'có mây, u ám' },
@@ -198,11 +225,13 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'ホテル',
+      partOfSpeech: 'noun',
       romaji: 'hoteru',
       meaning: { en: 'hotel', vi: 'khách sạn' }
     },
     {
       kana: 'くうこう',
+      partOfSpeech: 'noun',
       kanji: '空港',
       romaji: 'kūkō',
       meaning: { en: 'airport', vi: 'sân bay' },
@@ -213,6 +242,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'うみ',
+      partOfSpeech: 'noun',
       kanji: '海',
       romaji: 'umi',
       meaning: { en: 'sea, ocean', vi: 'biển, đại dương' },
@@ -220,6 +250,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'せかい',
+      partOfSpeech: 'noun',
       kanji: '世界',
       romaji: 'sekai',
       meaning: { en: 'world', vi: 'thế giới' },
@@ -230,11 +261,13 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'パーティー',
+      partOfSpeech: 'noun',
       romaji: 'pātī',
       meaning: { en: 'party (～を します: hold a party)', vi: 'tiệc (～を します: tổ chức tiệc)' }
     },
     {
       kana: 'おまつり',
+      partOfSpeech: 'noun',
       kanji: 'お祭り',
       romaji: 'omatsuri',
       meaning: { en: 'festival', vi: 'lễ hội' },
@@ -242,6 +275,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'すきやき',
+      partOfSpeech: 'noun',
       kanji: 'すき焼き',
       romaji: 'sukiyaki',
       meaning: { en: 'sukiyaki (beef hot pot)', vi: 'lẩu thịt bò sukiyaki' },
@@ -249,6 +283,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'さしみ',
+      partOfSpeech: 'noun',
       kanji: '刺身',
       romaji: 'sashimi',
       meaning: { en: 'sashimi (raw fish)', vi: 'sashimi, gỏi cá sống' },
@@ -259,16 +294,19 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'おすし',
+      partOfSpeech: 'noun',
       romaji: 'osushi',
       meaning: { en: 'sushi', vi: 'sushi' }
     },
     {
       kana: 'てんぷら',
+      partOfSpeech: 'noun',
       romaji: 'tenpura',
       meaning: { en: 'tempura', vi: 'tempura, tôm rau chiên' }
     },
     {
       kana: 'ぶたにく',
+      partOfSpeech: 'noun',
       kanji: '豚肉',
       romaji: 'butaniku',
       meaning: { en: 'pork', vi: 'thịt heo, thịt lợn' },
@@ -279,6 +317,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'とりにく',
+      partOfSpeech: 'noun',
       kanji: 'とり肉',
       romaji: 'toriniku',
       meaning: { en: 'chicken (meat)', vi: 'thịt gà' },
@@ -286,6 +325,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'ぎゅうにく',
+      partOfSpeech: 'noun',
       kanji: '牛肉',
       romaji: 'gyūniku',
       meaning: { en: 'beef', vi: 'thịt bò' },
@@ -296,11 +336,14 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'レモン',
+      partOfSpeech: 'noun',
       romaji: 'remon',
       meaning: { en: 'lemon', vi: 'chanh' }
     },
     {
       kana: 'いけばな',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '生け花',
       romaji: 'ikebana',
       meaning: {
@@ -314,6 +357,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'もみじ',
+      partOfSpeech: 'noun',
       kanji: '紅葉',
       romaji: 'momiji',
       meaning: { en: 'red maple leaves', vi: 'lá đỏ, lá phong' },
@@ -324,16 +368,19 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'どちら',
+      partOfSpeech: 'pronoun',
       romaji: 'dochira',
       meaning: { en: 'which (of two)', vi: 'cái nào (trong hai)' }
     },
     {
       kana: 'どちらも',
+      partOfSpeech: 'pronoun',
       romaji: 'dochira mo',
       meaning: { en: 'both (of two)', vi: 'cả hai' }
     },
     {
       kana: 'いちばん',
+      partOfSpeech: 'adverb',
       kanji: '一番',
       romaji: 'ichiban',
       meaning: { en: 'most, best, number one', vi: 'nhất, đầu tiên' },
@@ -344,11 +391,13 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'ずっと',
+      partOfSpeech: 'adverb',
       romaji: 'zutto',
       meaning: { en: 'much more, by far', vi: 'hơn hẳn, suốt' }
     },
     {
       kana: 'はじめて',
+      partOfSpeech: 'adverb',
       kanji: '初めて',
       romaji: 'hajimete',
       meaning: { en: 'for the first time', vi: 'lần đầu tiên' },
@@ -358,6 +407,8 @@ export const n5Lesson12: Lesson = {
   phrases: [
     {
       kana: 'ただいま。',
+      partOfSpeech: 'interjection',
+      meaningPartOfSpeech: { en: 'expression', vi: 'expression' },
       romaji: 'Tadaima.',
       meaning: {
         en: 'I am home. (said when arriving home)',
@@ -366,6 +417,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'おかえりなさい。',
+      partOfSpeech: 'expression',
       kanji: 'お帰りなさい。',
       romaji: 'Okaerinasai.',
       meaning: {
@@ -376,6 +428,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'わあ、すごい ひとですね。',
+      partOfSpeech: 'expression',
       kanji: 'わあ、すごい 人ですね。',
       romaji: 'Wā, sugoi hito desu ne.',
       meaning: { en: 'Wow, what a crowd!', vi: 'Ôi, đông người quá nhỉ!' },
@@ -383,6 +436,7 @@ export const n5Lesson12: Lesson = {
     },
     {
       kana: 'つかれました。',
+      partOfSpeech: 'expression',
       kanji: '疲れました。',
       romaji: 'Tsukaremashita.',
       meaning: { en: 'I am tired.', vi: 'Tôi mệt rồi.' },
@@ -1427,6 +1481,7 @@ export const n5Lesson12: Lesson = {
       items: [
         {
           kana: 'ぎおんまつり',
+          partOfSpeech: 'noun',
           kanji: '祇園祭',
           romaji: 'Gion Matsuri',
           meaning: { en: 'Gion Festival (Kyoto)', vi: 'Lễ hội Gion (Kyoto)' },
@@ -1438,6 +1493,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'かんだまつり',
+          partOfSpeech: 'noun',
           kanji: '神田祭',
           romaji: 'Kanda Matsuri',
           meaning: { en: 'Kanda Festival (Tokyo)', vi: 'Lễ hội Kanda (Tokyo)' },
@@ -1449,6 +1505,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'てんじんまつり',
+          partOfSpeech: 'noun',
           kanji: '天神祭',
           romaji: 'Tenjin Matsuri',
           meaning: { en: 'Tenjin Festival (Osaka)', vi: 'Lễ hội Tenjin (Osaka)' },
@@ -1460,6 +1517,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'ろくおんじ',
+          partOfSpeech: 'noun',
           kanji: '鹿苑寺',
           romaji: 'Rokuon-ji',
           meaning: { en: 'Rokuon-ji (Golden Pavilion, Kyoto)', vi: 'Chùa Rokuon (Kinkaku, Kyoto)' },
@@ -1471,6 +1529,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'ふじさん',
+          partOfSpeech: 'noun',
           kanji: '富士山',
           romaji: 'Fuji-san',
           meaning: { en: 'Mount Fuji', vi: 'Núi Phú Sĩ' },
@@ -1482,6 +1541,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'とうしょうぐう',
+          partOfSpeech: 'noun',
           kanji: '東照宮',
           romaji: 'Tōshō-gū',
           meaning: { en: 'Tōshō-gū Shrine (Nikko)', vi: 'Đền Tōshō-gū (Nikko)' },
@@ -1493,6 +1553,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'こうきょ',
+          partOfSpeech: 'noun',
           kanji: '皇居',
           romaji: 'Kōkyo',
           meaning: { en: 'Imperial Palace (Tokyo)', vi: 'Hoàng cung (Tokyo)' },
@@ -1503,6 +1564,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'とうだいじ',
+          partOfSpeech: 'noun',
           kanji: '東大寺',
           romaji: 'Tōdai-ji',
           meaning: { en: 'Tōdai-ji Temple (Nara)', vi: 'Chùa Tōdai-ji (Nara)' },
@@ -1514,6 +1576,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'げんばくドーム',
+          partOfSpeech: 'noun',
           kanji: '原爆ドーム',
           romaji: 'Genbaku Dōmu',
           meaning: { en: 'Atomic Bomb Dome (Hiroshima)', vi: 'Nhà dom Genbaku (Hiroshima)' },
@@ -1524,6 +1587,7 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'ひめじじょう',
+          partOfSpeech: 'noun',
           kanji: '姫路城',
           romaji: 'Himeji-jō',
           meaning: { en: 'Himeji Castle', vi: 'Lâu đài Himeji' },
@@ -1542,6 +1606,7 @@ export const n5Lesson12: Lesson = {
       items: [
         {
           kana: 'ホンコン',
+          partOfSpeech: 'noun',
           kanji: '香港',
           romaji: 'Honkon',
           meaning: { en: 'Hong Kong', vi: 'Hồng Kông' },
@@ -1552,16 +1617,19 @@ export const n5Lesson12: Lesson = {
         },
         {
           kana: 'シンガポール',
+          partOfSpeech: 'noun',
           romaji: 'Shingapōru',
           meaning: { en: 'Singapore', vi: 'Singapore' }
         },
         {
           kana: 'エービーシーストア',
+          partOfSpeech: 'noun',
           romaji: 'Ēbī Shī Sutoa',
           meaning: { en: 'ABC Store (fictional supermarket)', vi: 'Siêu thị ABC (giả định)' }
         },
         {
           kana: 'ジャパン',
+          partOfSpeech: 'noun',
           romaji: 'Japan',
           meaning: { en: 'Japan Store (fictional supermarket)', vi: 'Siêu thị Japan (giả định)' }
         }

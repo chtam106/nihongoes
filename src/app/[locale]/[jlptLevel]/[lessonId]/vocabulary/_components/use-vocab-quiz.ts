@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { Lesson } from '@/constants/courses/index.ts';
+import type { CourseLevel, Lesson } from '@/constants/courses/index.ts';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
@@ -48,17 +48,24 @@ function vocabMiss(question: VocabQuestion, questionNumber: number): QuizMiss {
 
 type UseVocabQuizOptions = {
   lesson: Lesson;
+  level: CourseLevel;
   locale: Locale;
   mode: VocabMode;
   includeReference: boolean;
 };
 
 // No effect-driven reset for preference changes: the consumer remounts via a
-// `key` derived from lesson/locale/mode/includeReference. Retry rebuilds
+// `key` derived from level/lesson/locale/mode/includeReference. Retry rebuilds
 // the session in place (same as radical/kanji quizzes).
-export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVocabQuizOptions) {
+export function useVocabQuiz({
+  lesson,
+  level,
+  locale,
+  mode,
+  includeReference
+}: UseVocabQuizOptions) {
   const [initial] = useState(() => {
-    const session = createVocabSession(lesson, locale, mode, includeReference);
+    const session = createVocabSession(lesson, locale, mode, level, includeReference);
 
     return { session, question: session.next() };
   });
@@ -96,7 +103,7 @@ export function useVocabQuiz({ lesson, locale, mode, includeReference }: UseVoca
   };
 
   const handleRetry = () => {
-    const session = createVocabSession(lesson, locale, mode, includeReference);
+    const session = createVocabSession(lesson, locale, mode, level, includeReference);
     sessionRef.current = session;
     setQuestion(session.next());
     setQuestionNumber(0);

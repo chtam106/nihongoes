@@ -1,5 +1,11 @@
-import { referenceVocabItems } from '@/constants/courses/index.ts';
-import type { Lesson, RubySegment, VocabItem } from '@/constants/courses/index.ts';
+import { getAllCourseLessons, referenceVocabItems } from '@/constants/courses/index.ts';
+import type {
+  Lesson,
+  CourseLevel,
+  RubySegment,
+  VocabItem,
+  VocabPartOfSpeech
+} from '@/constants/courses/index.ts';
 import { flashcardCardId, type FlashcardCardType } from '@/constants/flashcards/collections.ts';
 import type { Locale } from '@/i18n/translations.ts';
 
@@ -77,6 +83,8 @@ type VocabEntry = {
   surface: string;
   speech: string;
   meaning: string;
+  partOfSpeech: VocabPartOfSpeech;
+  meaningPartOfSpeech: VocabPartOfSpeech;
   ruby?: RubySegment[];
   cardId?: string;
   cardType?: FlashcardCardType;
@@ -156,7 +164,12 @@ export function buildVocabEntries(
     const meaning = item.meaning[locale];
     const speech = item.speech ?? item.kana;
     const hasKanji = Boolean(item.kanji && item.kanji !== item.kana);
-    const save = { cardId: tagged.cardId, cardType: tagged.cardType };
+    const save = {
+      cardId: tagged.cardId,
+      cardType: tagged.cardType,
+      partOfSpeech: item.partOfSpeech,
+      meaningPartOfSpeech: item.meaningPartOfSpeech?.[locale] ?? item.partOfSpeech
+    };
 
     if (hasKanji) {
       entries.push({
@@ -189,13 +202,27 @@ function rubyBySurface(entries: VocabEntry[]): Map<string, RubySegment[] | undef
 function buildOptions(
   correctLabel: string,
   ja: boolean,
-  pool: string[],
+  pools: string[][],
   rubyForLabel?: Map<string, RubySegment[] | undefined>
 ): { options: VocabOption[]; correctId: string } {
-  const distractors = shuffle(unique(pool.filter((label) => label !== correctLabel))).slice(
-    0,
-    OPTION_COUNT - 1
-  );
+  const seen = new Set([correctLabel]);
+  const distractors: string[] = [];
+  for (const pool of pools) {
+    const labels = shuffle(unique(pool.filter((label) => !seen.has(label))));
+    for (const label of labels) {
+      seen.add(label);
+      distractors.push(label);
+      if (distractors.length === OPTION_COUNT - 1) {
+        break;
+      }
+    }
+    if (distractors.length === OPTION_COUNT - 1) {
+      break;
+    }
+  }
+  if (distractors.length !== OPTION_COUNT - 1) {
+    throw new Error(`Not enough vocabulary distractors for: ${correctLabel}`);
+  }
   const labels = shuffle([correctLabel, ...distractors]);
   const options = labels.map((label, index) => ({
     id: `opt-${index}`,
@@ -212,10 +239,31 @@ function buildQuestion(
   entry: VocabEntry,
   mode: VocabMode,
   entries: VocabEntry[],
-  meaningPool: string[]
+  nearbyEntries: VocabEntry[][],
+  meaningsBySurface: Map<string, Set<string>>,
+  surfacesByMeaning: Map<string, Set<string>>
 ): VocabQuestion {
+  const equivalentMeanings = meaningsBySurface.get(entry.surface)!;
+  const equivalentSurfaces = surfacesByMeaning.get(entry.meaning)!;
+  const candidates = (pool: VocabEntry[]) =>
+    pool.filter(
+      (candidate) =>
+        (mode === 'word-meaning'
+          ? candidate.meaningPartOfSpeech === entry.meaningPartOfSpeech
+          : candidate.partOfSpeech === entry.partOfSpeech) &&
+        !equivalentSurfaces.has(candidate.surface) &&
+        !equivalentMeanings.has(candidate.meaning)
+    );
+  const localCandidates = candidates(entries);
+  const nearbyCandidates = nearbyEntries.map(candidates);
+  const candidateGroups = [localCandidates, ...nearbyCandidates];
+
   if (mode === 'word-meaning') {
-    const { options, correctId } = buildOptions(entry.meaning, false, meaningPool);
+    const { options, correctId } = buildOptions(
+      entry.meaning,
+      false,
+      candidateGroups.map((group) => group.map((candidate) => candidate.meaning))
+    );
 
     return {
       mode,
@@ -230,17 +278,11 @@ function buildQuestion(
     };
   }
 
-  // Exclude every surface that shares the prompt's meaning (e.g. a word's kanji
-  // and kana forms) so the kana/kanji twin can never appear as a second correct
-  // option.
-  const distractorSurfaces = entries
-    .filter((candidate) => candidate.meaning !== entry.meaning)
-    .map((candidate) => candidate.surface);
   const { options, correctId } = buildOptions(
     entry.surface,
     true,
-    distractorSurfaces,
-    rubyBySurface(entries)
+    candidateGroups.map((group) => group.map((candidate) => candidate.surface)),
+    rubyBySurface([entry, ...candidateGroups.flat()])
   );
 
   return {
@@ -259,10 +301,37 @@ export function createVocabSession(
   lesson: Lesson,
   locale: Locale,
   mode: VocabMode,
+  level: CourseLevel,
   includeReference = false
 ): VocabSession {
   const entries = buildVocabEntries(lesson, locale, includeReference);
-  const meaningPool = unique(entries.map((entry) => entry.meaning));
+  const lessons = getAllCourseLessons();
+  const currentIndex = lessons.findIndex(
+    (candidate) => candidate.level === level && candidate.lesson.id === lesson.id
+  );
+  if (currentIndex === -1) {
+    throw new Error(`Unknown vocabulary lesson: ${level}/${lesson.id}`);
+  }
+  const nearbyEntries: VocabEntry[][] = [];
+  for (let distance = 1; distance < lessons.length; distance += 1) {
+    const nearby = [lessons[currentIndex - distance], lessons[currentIndex + distance]];
+    nearbyEntries.push(
+      nearby.flatMap((candidate) =>
+        candidate ? buildVocabEntries(candidate.lesson, locale, includeReference) : []
+      )
+    );
+  }
+  const otherEntries = nearbyEntries.flat();
+  const meaningsBySurface = new Map<string, Set<string>>();
+  const surfacesByMeaning = new Map<string, Set<string>>();
+  for (const entry of [...entries, ...otherEntries]) {
+    const meanings = meaningsBySurface.get(entry.surface) ?? new Set<string>();
+    meanings.add(entry.meaning);
+    meaningsBySurface.set(entry.surface, meanings);
+    const surfaces = surfacesByMeaning.get(entry.meaning) ?? new Set<string>();
+    surfaces.add(entry.surface);
+    surfacesByMeaning.set(entry.meaning, surfaces);
+  }
   let remaining = shuffle([...entries]);
 
   return {
@@ -276,7 +345,14 @@ export function createVocabSession(
         remaining = shuffle([...entries]);
       }
 
-      return buildQuestion(remaining.pop()!, mode, entries, meaningPool);
+      return buildQuestion(
+        remaining.pop()!,
+        mode,
+        entries,
+        nearbyEntries,
+        meaningsBySurface,
+        surfacesByMeaning
+      );
     }
   };
 }

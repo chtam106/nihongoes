@@ -15,6 +15,7 @@ export const n5Lesson23: Lesson = {
   vocab: [
     {
       kana: 'ききます',
+      partOfSpeech: 'verb',
       kanji: '聞きます',
       romaji: 'kikimasu',
       meaning: {
@@ -25,6 +26,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'まわします',
+      partOfSpeech: 'verb',
       kanji: '回します',
       romaji: 'mawashimasu',
       meaning: { en: 'to turn (a knob, dial)', vi: 'vặn, quay (núm, nút)' },
@@ -32,6 +34,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'ひきます',
+      partOfSpeech: 'verb',
       kanji: '引きます',
       romaji: 'hikimasu',
       meaning: { en: 'to pull', vi: 'kéo' },
@@ -39,6 +42,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'かえます',
+      partOfSpeech: 'verb',
       kanji: '変えます',
       romaji: 'kaemasu',
       meaning: { en: 'to change, to alter', vi: 'thay đổi, đổi' },
@@ -46,6 +50,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'さわります',
+      partOfSpeech: 'verb',
       kanji: '触ります',
       romaji: 'sawarimasu',
       meaning: { en: 'to touch', vi: 'chạm, sờ' },
@@ -53,6 +58,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'でます',
+      partOfSpeech: 'verb',
       kanji: '出ます',
       romaji: 'demasu',
       meaning: {
@@ -63,6 +69,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'うごきます',
+      partOfSpeech: 'verb',
       kanji: '動きます',
       romaji: 'ugokimasu',
       meaning: { en: 'to move, to work (machine)', vi: 'chuyển động, chạy (máy)' },
@@ -70,6 +77,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'あるきます',
+      partOfSpeech: 'verb',
       kanji: '歩きます',
       romaji: 'arukimasu',
       meaning: {
@@ -80,6 +88,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'わたります',
+      partOfSpeech: 'verb',
       kanji: '渡ります',
       romaji: 'watarimasu',
       meaning: {
@@ -90,6 +99,8 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'きをつけます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '気をつけます',
       romaji: 'ki o tsukemasu',
       meaning: { en: 'to be careful', vi: 'cẩn thận, chú ý' },
@@ -97,6 +108,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'ひっこしします',
+      partOfSpeech: 'verb',
       kanji: '引っ越しします',
       romaji: 'hikkoshi shimasu',
       meaning: { en: 'to move (house)', vi: 'chuyển nhà' },
@@ -107,6 +119,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'でんきや',
+      partOfSpeech: 'noun',
       kanji: '電気屋',
       romaji: 'denkiya',
       meaning: { en: 'electrical appliance store', vi: 'cửa hàng điện máy' },
@@ -118,6 +131,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: '～や',
+      partOfSpeech: 'suffix',
       kanji: '～屋',
       romaji: '~ya',
       meaning: { en: 'shop, store (suffix)', vi: 'cửa hàng (hậu tố)' },
@@ -125,11 +139,13 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'サイズ',
+      partOfSpeech: 'noun',
       romaji: 'saizu',
       meaning: { en: 'size', vi: 'cỡ, kích cỡ' }
     },
     {
       kana: 'おと',
+      partOfSpeech: 'noun',
       kanji: '音',
       romaji: 'oto',
       meaning: { en: 'sound', vi: 'âm thanh, tiếng' },
@@ -137,6 +153,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'きかい',
+      partOfSpeech: 'noun',
       kanji: '機械',
       romaji: 'kikai',
       meaning: { en: 'machine', vi: 'máy móc' },
@@ -147,11 +164,14 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'つまみ',
+      partOfSpeech: 'noun',
       romaji: 'tsumami',
       meaning: { en: 'knob, dial', vi: 'núm vặn, nút quay' }
     },
     {
       kana: 'こしょう',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '故障',
       romaji: 'koshō',
       meaning: { en: 'breakdown, malfunction', vi: 'hỏng, sự cố' },
@@ -162,6 +182,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'こしょうします',
+      partOfSpeech: 'verb',
       kanji: '故障します',
       romaji: 'koshō shimasu',
       meaning: { en: 'to break down, to malfunction', vi: 'bị hỏng, trục trặc' },
@@ -172,6 +193,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'みち',
+      partOfSpeech: 'noun',
       kanji: '道',
       romaji: 'michi',
       meaning: { en: 'road, way', vi: 'đường, lối đi' },
@@ -179,6 +201,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'こうさてん',
+      partOfSpeech: 'noun',
       kanji: '交差点',
       romaji: 'kōsaten',
       meaning: { en: 'intersection, crossroads', vi: 'ngã tư, giao lộ' },
@@ -190,6 +213,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'しんごう',
+      partOfSpeech: 'noun',
       kanji: '信号',
       romaji: 'shingō',
       meaning: { en: 'traffic light, signal', vi: 'đèn tín hiệu, đèn giao thông' },
@@ -200,6 +224,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'かど',
+      partOfSpeech: 'noun',
       kanji: '角',
       romaji: 'kado',
       meaning: { en: 'corner', vi: 'góc (đường)' },
@@ -207,6 +232,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'はし',
+      partOfSpeech: 'noun',
       kanji: '橋',
       romaji: 'hashi',
       meaning: { en: 'bridge', vi: 'cầu' },
@@ -214,6 +240,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'ちゅうしゃじょう',
+      partOfSpeech: 'noun',
       kanji: '駐車場',
       romaji: 'chūshajō',
       meaning: { en: 'parking lot', vi: 'bãi đỗ xe' },
@@ -225,6 +252,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: '～め',
+      partOfSpeech: 'suffix',
       kanji: '～目',
       romaji: '~me',
       meaning: { en: 'ordinal suffix (1st, 2nd...)', vi: 'hậu tố thứ tự (thứ nhất, thứ hai...)' },
@@ -232,6 +260,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'しょうがつ',
+      partOfSpeech: 'noun',
       kanji: '正月',
       romaji: 'shōgatsu',
       meaning: { en: 'New Year (January)', vi: 'Tết, năm mới (tháng Giêng)' },
@@ -242,6 +271,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'たてもの',
+      partOfSpeech: 'noun',
       kanji: '建物',
       romaji: 'tatemono',
       meaning: { en: 'building', vi: 'tòa nhà, công trình' },
@@ -252,6 +282,7 @@ export const n5Lesson23: Lesson = {
     },
     {
       kana: 'がいこくじんとうろくしょう',
+      partOfSpeech: 'noun',
       kanji: '外国人登録証',
       romaji: 'gaikokujin tōroku shō',
       meaning: { en: 'alien registration card', vi: 'thẻ đăng ký người nước ngoài' },
@@ -912,6 +943,7 @@ export const n5Lesson23: Lesson = {
       items: [
         {
           kana: 'とおり',
+          partOfSpeech: 'noun',
           kanji: '通り',
           romaji: 'tōri',
           meaning: { en: 'street, avenue', vi: 'đại lộ, phố' },
@@ -919,6 +951,8 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'こうさ',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '交差',
           romaji: 'kōsa',
           meaning: { en: 'crossing, intersection', vi: 'giao nhau' },
@@ -929,6 +963,7 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'いち',
+          partOfSpeech: 'noun',
           kanji: '位置',
           romaji: 'ichi',
           meaning: { en: 'location, position', vi: 'vị trí' },
@@ -939,6 +974,7 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'とまれ',
+          partOfSpeech: 'verb',
           kanji: '止まれ',
           romaji: 'tomare',
           meaning: { en: 'Stop (traffic sign)', vi: 'Dừng lại (biển báo)' },
@@ -946,6 +982,8 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'しんにゅうきんし',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '進入禁止',
           romaji: 'shinnyū kinshi',
           meaning: { en: 'No entry', vi: 'Cấm vào' },
@@ -958,6 +996,7 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'いっぽうつうこう',
+          partOfSpeech: 'noun',
           kanji: '一方通行',
           romaji: 'ippō tsūkō',
           meaning: { en: 'One-way traffic', vi: 'Đường một chiều' },
@@ -970,6 +1009,8 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'ちゅうしゃきんし',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '駐車禁止',
           romaji: 'chūsha kinshi',
           meaning: { en: 'No parking', vi: 'Cấm đỗ xe' },
@@ -982,6 +1023,7 @@ export const n5Lesson23: Lesson = {
         },
         {
           kana: 'スピード',
+          partOfSpeech: 'noun',
           romaji: 'supīdo',
           meaning: { en: 'speed', vi: 'tốc độ' }
         }

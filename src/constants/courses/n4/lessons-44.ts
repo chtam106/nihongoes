@@ -15,6 +15,7 @@ export const n4Lesson44: Lesson = {
   vocab: [
     {
       kana: 'なきます',
+      partOfSpeech: 'verb',
       kanji: '泣きます',
       romaji: 'nakimasu',
       meaning: { en: 'to cry', vi: 'khóc' },
@@ -22,6 +23,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'わらいます',
+      partOfSpeech: 'verb',
       kanji: '笑います',
       romaji: 'waraimasu',
       meaning: { en: 'to laugh', vi: 'cười' },
@@ -29,6 +31,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ねむります',
+      partOfSpeech: 'verb',
       kanji: '眠ります',
       romaji: 'nemurimasu',
       meaning: { en: 'to sleep', vi: 'ngủ' },
@@ -36,6 +39,8 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'かわきます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '乾きます',
       romaji: 'kawakimasu',
       meaning: { en: 'to dry [シャツが～: a shirt]', vi: 'khô [áo sơ-mi ~]' },
@@ -43,11 +48,14 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ぬれます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       romaji: 'nuremasu',
       meaning: { en: 'to get wet [シャツが～: a shirt]', vi: 'ướt [áo sơ-mi ~]' }
     },
     {
       kana: 'すべります',
+      partOfSpeech: 'verb',
       kanji: '滑ります',
       romaji: 'suberimasu',
       meaning: { en: 'to slip', vi: 'trượt' },
@@ -55,6 +63,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'おきます',
+      partOfSpeech: 'verb',
       kanji: '起きます',
       romaji: 'okimasu',
       meaning: { en: 'to happen [事故が～: an accident]', vi: 'xảy ra [tai nạn ~]' },
@@ -62,6 +71,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ちょうせつします',
+      partOfSpeech: 'verb',
       kanji: '調節します',
       romaji: 'chōsetsu shimasu',
       meaning: { en: 'to adjust', vi: 'điều chỉnh' },
@@ -72,6 +82,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'あんぜん [な]',
+      partOfSpeech: 'adjective',
       kanji: '安全 [な]',
       romaji: 'anzen [na]',
       meaning: { en: 'safe', vi: 'an toàn' },
@@ -82,6 +93,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'きけん [な]',
+      partOfSpeech: 'adjective',
       kanji: '危険 [な]',
       romaji: 'kiken [na]',
       meaning: { en: 'dangerous', vi: 'nguy hiểm' },
@@ -92,6 +104,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'こい',
+      partOfSpeech: 'adjective',
       kanji: '濃い',
       romaji: 'koi',
       meaning: { en: 'strong, thick, dark', vi: 'đặc, đậm' },
@@ -99,6 +112,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'うすい',
+      partOfSpeech: 'adjective',
       kanji: '薄い',
       romaji: 'usui',
       meaning: { en: 'thin, weak, pale', vi: 'loãng, nhạt, mỏng' },
@@ -106,6 +120,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'あつい',
+      partOfSpeech: 'adjective',
       kanji: '厚い',
       romaji: 'atsui',
       meaning: { en: 'thick', vi: 'dày' },
@@ -113,6 +128,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ふとい',
+      partOfSpeech: 'adjective',
       kanji: '太い',
       romaji: 'futoi',
       meaning: { en: 'thick (lines, objects)', vi: 'to, dày (nét, vật)' },
@@ -120,6 +136,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ほそい',
+      partOfSpeech: 'adjective',
       kanji: '細い',
       romaji: 'hosoi',
       meaning: { en: 'thin (lines, objects)', vi: 'mảnh, mỏng (nét, vật)' },
@@ -127,6 +144,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'くうき',
+      partOfSpeech: 'noun',
       kanji: '空気',
       romaji: 'kūki',
       meaning: { en: 'air, atmosphere', vi: 'không khí' },
@@ -137,6 +155,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'なみだ',
+      partOfSpeech: 'noun',
       kanji: '涙',
       romaji: 'namida',
       meaning: { en: 'tear', vi: 'nước mắt' },
@@ -144,6 +163,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'わしょく',
+      partOfSpeech: 'noun',
       kanji: '和食',
       romaji: 'washoku',
       meaning: { en: 'Japanese food', vi: 'món ăn kiểu Nhật' },
@@ -154,6 +174,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ようしょく',
+      partOfSpeech: 'noun',
       kanji: '洋食',
       romaji: 'yōshoku',
       meaning: { en: 'Western food', vi: 'món ăn kiểu Tây' },
@@ -164,11 +185,13 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'おかず',
+      partOfSpeech: 'noun',
       romaji: 'okazu',
       meaning: { en: 'side dish', vi: 'thức ăn phụ, món ăn kèm cơm' }
     },
     {
       kana: 'りょう',
+      partOfSpeech: 'noun',
       kanji: '量',
       romaji: 'ryō',
       meaning: { en: 'amount, quantity', vi: 'lượng' },
@@ -176,6 +199,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: '～ばい',
+      partOfSpeech: 'suffix',
       kanji: '～倍',
       romaji: '~bai',
       meaning: { en: '～ times (as much)', vi: 'gấp ~ lần' },
@@ -183,16 +207,19 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'シングル',
+      partOfSpeech: 'noun',
       romaji: 'shinguru',
       meaning: { en: 'single (hotel room)', vi: 'phòng đơn' }
     },
     {
       kana: 'ツイン',
+      partOfSpeech: 'noun',
       romaji: 'tsuin',
       meaning: { en: 'twin (hotel room)', vi: 'phòng đôi' }
     },
     {
       kana: 'せんたくもの',
+      partOfSpeech: 'noun',
       kanji: '洗濯物',
       romaji: 'sentakumono',
       meaning: { en: 'laundry', vi: 'áo quần giặt' },
@@ -204,11 +231,13 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ＤＶＤ',
+      partOfSpeech: 'noun',
       romaji: 'dībīdī',
       meaning: { en: 'DVD', vi: 'DVD' }
     },
     {
       kana: 'いやがります',
+      partOfSpeech: 'verb',
       kanji: '嫌がります',
       romaji: 'iyagrimasu',
       meaning: { en: 'to dislike, to show dislike', vi: 'ghét, không thích' },
@@ -216,16 +245,20 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'また',
+      partOfSpeech: 'adverb',
       romaji: 'mata',
       meaning: { en: 'also, again, moreover', vi: 'hơn nữa, lại' }
     },
     {
       kana: 'うまく',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       romaji: 'umaku',
       meaning: { en: 'well, skillfully', vi: 'tốt, giỏi' }
     },
     {
       kana: 'じゅんじょ',
+      partOfSpeech: 'noun',
       kanji: '順序',
       romaji: 'junjo',
       meaning: { en: 'order, sequence', vi: 'trình tự' },
@@ -236,6 +269,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'あんしん [な]',
+      partOfSpeech: 'adjective',
       kanji: '安心 [な]',
       romaji: 'anshin [na]',
       meaning: { en: 'relieved, at ease', vi: 'yên tâm' },
@@ -246,6 +280,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'ひょうげん',
+      partOfSpeech: 'noun',
       kanji: '表現',
       romaji: 'hyōgen',
       meaning: { en: 'expression, way of saying', vi: 'biểu hiện, cách nói' },
@@ -256,6 +291,8 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'たとえば',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { vi: 'noun' },
       kanji: '例えば',
       romaji: 'tatoeba',
       meaning: { en: 'for example', vi: 'ví dụ' },
@@ -263,6 +300,7 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'わかれます',
+      partOfSpeech: 'verb',
       kanji: '別れます',
       romaji: 'wakaremasu',
       meaning: { en: 'to part, to separate', vi: 'chia tay' },
@@ -270,11 +308,15 @@ export const n4Lesson44: Lesson = {
     },
     {
       kana: 'これら',
+      partOfSpeech: 'pronoun',
+      meaningPartOfSpeech: { vi: 'noun' },
       romaji: 'korera',
       meaning: { en: 'these (words/things)', vi: 'những từ/cái này' }
     },
     {
       kana: 'えんぎが わるい',
+      partOfSpeech: 'expression',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'adjective' },
       kanji: '縁起が 悪い',
       romaji: 'engi ga warui',
       meaning: { en: 'unlucky, bad omen', vi: 'xui, không may' },
@@ -288,41 +330,51 @@ export const n4Lesson44: Lesson = {
   phrases: [
     {
       kana: 'どう なさいます か。',
+      partOfSpeech: 'expression',
       romaji: 'Dō nasaimasu ka.',
       meaning: { en: 'What would you like to have done?', vi: 'Chị muốn làm gì?' }
     },
     {
       kana: 'カット',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'katto',
       meaning: { en: 'cut (haircut)', vi: 'cắt tóc' }
     },
     {
       kana: 'シャンプー',
+      partOfSpeech: 'noun',
       romaji: 'shanpū',
       meaning: { en: 'shampoo (～を します: to wash hair)', vi: 'dầu gội (～を します: gội đầu)' }
     },
     {
       kana: 'どういう ふう に なさいます か。',
+      partOfSpeech: 'expression',
       romaji: 'Dō iu fū ni nasaimasu ka.',
       meaning: { en: 'How would you like it done?', vi: 'Chị muốn cắt như thế nào?' }
     },
     {
       kana: 'ショート',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'shōto',
       meaning: { en: 'short (hair)', vi: 'cắt ngắn' }
     },
     {
       kana: '～ みたい に して ください。',
+      partOfSpeech: 'expression',
       romaji: '~ mitai ni shite kudasai.',
       meaning: { en: 'Please make it like ~.', vi: 'Anh hãy cắt như ~.' }
     },
     {
       kana: 'これ で よろしい でしょう か。',
+      partOfSpeech: 'expression',
       romaji: 'Kore de yoroshii deshō ka.',
       meaning: { en: 'Is this alright?', vi: 'Như thế này được chưa ạ?' }
     },
     {
       kana: '［どうも］ おつかれさまでした。',
+      partOfSpeech: 'expression',
       kanji: '［どうも］ お疲れさまでした。',
       romaji: '[Dōmo] otsukaresama deshita.',
       meaning: {

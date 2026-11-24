@@ -15,6 +15,7 @@ export const n4Lesson50: Lesson = {
   vocab: [
     {
       kana: 'まいります',
+      partOfSpeech: 'verb',
       kanji: '参ります',
       romaji: 'mairimasu',
       meaning: {
@@ -25,11 +26,13 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'おります',
+      partOfSpeech: 'verb',
       romaji: 'orimasu',
       meaning: { en: 'to be, to stay (humble of います)', vi: 'ở (khiêm nhường ngữ của います)' }
     },
     {
       kana: 'いただきます',
+      partOfSpeech: 'verb',
       romaji: 'itadakimasu',
       meaning: {
         en: 'to eat, to drink, to receive (humble of たべます/のみます/もらいます)',
@@ -38,6 +41,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'もうします',
+      partOfSpeech: 'verb',
       kanji: '申します',
       romaji: 'mōshimasu',
       meaning: {
@@ -48,11 +52,13 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'いたします',
+      partOfSpeech: 'verb',
       romaji: 'itashimasu',
       meaning: { en: 'to do (humble of します)', vi: 'làm (khiêm nhường ngữ của します)' }
     },
     {
       kana: 'はいけんします',
+      partOfSpeech: 'verb',
       kanji: '拝見します',
       romaji: 'haiken shimasu',
       meaning: {
@@ -66,6 +72,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'ぞんじます',
+      partOfSpeech: 'verb',
       kanji: '存じます',
       romaji: 'zonjimasu',
       meaning: { en: 'to know (humble of しります)', vi: 'biết (khiêm nhường ngữ của しります)' },
@@ -73,6 +80,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'うかがいます',
+      partOfSpeech: 'verb',
       kanji: '伺います',
       romaji: 'ukagaimasu',
       meaning: {
@@ -83,6 +91,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'おめに かかります',
+      partOfSpeech: 'verb',
       kanji: 'お目に かかります',
       romaji: 'o-me ni kakarimasu',
       meaning: { en: 'to meet (humble of あいます)', vi: 'gặp (khiêm nhường ngữ của あいます)' },
@@ -90,11 +99,13 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'いれます',
+      partOfSpeech: 'verb',
       romaji: 'iremasu',
       meaning: { en: 'to pour [coffee]', vi: 'pha [cà phê]' }
     },
     {
       kana: 'よういします',
+      partOfSpeech: 'verb',
       kanji: '用意します',
       romaji: 'yōi shimasu',
       meaning: { en: 'to prepare', vi: 'chuẩn bị sẵn' },
@@ -105,6 +116,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'わたくし',
+      partOfSpeech: 'pronoun',
       kanji: '私',
       romaji: 'watakushi',
       meaning: { en: 'I, me (humble of わたし)', vi: 'tôi (khiêm nhường ngữ của わたし)' },
@@ -112,21 +124,25 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'ガイド',
+      partOfSpeech: 'noun',
       romaji: 'gaido',
       meaning: { en: 'guide, tour guide', vi: 'hướng dẫn viên du lịch' }
     },
     {
       kana: 'メールアドレス',
+      partOfSpeech: 'noun',
       romaji: 'mēru adoresu',
       meaning: { en: 'email address', vi: 'địa chỉ email' }
     },
     {
       kana: 'スケジュール',
+      partOfSpeech: 'noun',
       romaji: 'sukejūru',
       meaning: { en: 'schedule', vi: 'lịch làm việc' }
     },
     {
       kana: 'さらいしゅう',
+      partOfSpeech: 'noun',
       kanji: 'さ来週',
       romaji: 'saraishū',
       meaning: { en: 'the week after next', vi: 'tuần sau nữa' },
@@ -137,6 +153,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'さらいげつ',
+      partOfSpeech: 'noun',
       kanji: 'さ来月',
       romaji: 'saraigetsu',
       meaning: { en: 'the month after next', vi: 'tháng sau nữa' },
@@ -147,6 +164,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'さらいねん',
+      partOfSpeech: 'noun',
       kanji: 'さ来年',
       romaji: 'sarainen',
       meaning: { en: 'the year after next', vi: 'năm sau nữa' },
@@ -157,6 +175,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'はじめに',
+      partOfSpeech: 'adverb',
       kanji: '初めに',
       romaji: 'hajime ni',
       meaning: { en: 'first, to begin with', vi: 'trước hết, đầu tiên' },
@@ -164,6 +183,8 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'きんちょうします',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '緊張します',
       romaji: 'kinchō shimasu',
       meaning: { en: 'to be nervous', vi: 'hồi hộp' },
@@ -174,6 +195,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'しょうきん',
+      partOfSpeech: 'noun',
       kanji: '賞金',
       romaji: 'shōkin',
       meaning: { en: 'prize money', vi: 'tiền thưởng' },
@@ -184,17 +206,20 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'きりん',
+      partOfSpeech: 'noun',
       kanji: 'きりん',
       romaji: 'kirinn',
       meaning: { en: 'giraffe', vi: 'hươu cao cổ' }
     },
     {
       kana: 'ころ',
+      partOfSpeech: 'noun',
       romaji: 'koro',
       meaning: { en: 'time, when (childhood ~)', vi: 'lúc, thời (nhỏ ~)' }
     },
     {
       kana: 'かないます',
+      partOfSpeech: 'verb',
       kanji: '叶います',
       romaji: 'kanaimasu',
       meaning: { en: 'to come true [dream ~]', vi: 'thành hiện thực [mơ ước ~]' },
@@ -202,6 +227,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'おうえんします',
+      partOfSpeech: 'verb',
       kanji: '応援します',
       romaji: 'ōen shimasu',
       meaning: { en: 'to support, to cheer on', vi: 'động viên' },
@@ -212,6 +238,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'こころから',
+      partOfSpeech: 'adverb',
       kanji: '心から',
       romaji: 'kokoro kara',
       meaning: { en: 'from the heart, sincerely', vi: 'từ đáy lòng' },
@@ -219,6 +246,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'かんしゃします',
+      partOfSpeech: 'verb',
       kanji: '感謝します',
       romaji: 'kansha shimasu',
       meaning: { en: 'to thank, to express gratitude', vi: 'cám ơn' },
@@ -229,6 +257,8 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'おれい',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: 'お礼',
       romaji: 'o-rei',
       meaning: { en: 'thanks, gratitude', vi: 'cám ơn, lời cảm ơn' },
@@ -236,6 +266,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'めいわくを かけます',
+      partOfSpeech: 'verb',
       kanji: '迷惑を かけます',
       romaji: 'meiwaku o kakemasu',
       meaning: { en: 'to cause trouble', vi: 'làm phiền' },
@@ -246,6 +277,7 @@ export const n4Lesson50: Lesson = {
     },
     {
       kana: 'いかします',
+      partOfSpeech: 'verb',
       kanji: '生かします',
       romaji: 'ikashimasu',
       meaning: { en: 'to make good use of', vi: 'phát huy' },
@@ -255,6 +287,7 @@ export const n4Lesson50: Lesson = {
   phrases: [
     {
       kana: 'おげんきで いらっしゃいますか。',
+      partOfSpeech: 'expression',
       kanji: 'お元気で いらっしゃいますか。',
       romaji: 'O-genki de irasshaimasu ka.',
       meaning: {
@@ -878,6 +911,7 @@ export const n4Lesson50: Lesson = {
       items: [
         {
           kana: 'えどとうきょう はくぶつかん',
+          partOfSpeech: 'noun',
           kanji: '江戸東京 博物館',
           romaji: 'Edo-Tōkyō Hakubutsukan',
           meaning: { en: 'Edo-Tokyo Museum', vi: 'Bảo tàng Edo Tokyo' },
@@ -893,6 +927,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           kana: 'ミュンヘン',
+          partOfSpeech: 'noun',
           romaji: 'Myunhen',
           meaning: { en: 'Munich, Germany', vi: 'München (Đức)' }
         }

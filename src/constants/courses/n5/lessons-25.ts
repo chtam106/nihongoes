@@ -15,6 +15,7 @@ export const n5Lesson25: Lesson = {
   vocab: [
     {
       kana: 'かんがえます',
+      partOfSpeech: 'verb',
       kanji: '考えます',
       romaji: 'kangaemasu',
       meaning: { en: 'to think, to consider', vi: 'nghĩ, suy nghĩ' },
@@ -22,6 +23,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'つきます',
+      partOfSpeech: 'verb',
       kanji: '着きます',
       romaji: 'tsukimasu',
       meaning: {
@@ -32,6 +34,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'りゅうがくします',
+      partOfSpeech: 'verb',
       kanji: '留学します',
       romaji: 'ryūgaku shimasu',
       meaning: { en: 'to study abroad', vi: 'du học' },
@@ -42,6 +45,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'としをとります',
+      partOfSpeech: 'verb',
       kanji: '年を取ります',
       romaji: 'toshi o torimasu',
       meaning: { en: 'to grow older (年を～: gain years)', vi: 'có thêm tuổi, già đi (年を～)' },
@@ -52,6 +56,8 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'たります',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '足ります',
       romaji: 'tarimasu',
       meaning: { en: 'to be enough, to be sufficient', vi: 'đủ' },
@@ -59,6 +65,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'いなか',
+      partOfSpeech: 'noun',
       kanji: '田舎',
       romaji: 'inaka',
       meaning: { en: "countryside, one's hometown", vi: 'quê, nông thôn' },
@@ -69,6 +76,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'たいしかん',
+      partOfSpeech: 'noun',
       kanji: '大使館',
       romaji: 'taishikan',
       meaning: { en: 'embassy', vi: 'đại sứ quán' },
@@ -80,16 +88,19 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'グループ',
+      partOfSpeech: 'noun',
       romaji: 'gurūpu',
       meaning: { en: 'group', vi: 'nhóm' }
     },
     {
       kana: 'チャンス',
+      partOfSpeech: 'noun',
       romaji: 'chansu',
       meaning: { en: 'chance, opportunity', vi: 'cơ hội' }
     },
     {
       kana: 'いみ',
+      partOfSpeech: 'noun',
       kanji: '意味',
       romaji: 'imi',
       meaning: { en: 'meaning', vi: 'nghĩa, ý nghĩa' },
@@ -100,6 +111,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'おく',
+      partOfSpeech: 'noun',
       kanji: '億',
       romaji: 'oku',
       meaning: { en: '100 million', vi: 'một trăm triệu (một ức)' },
@@ -107,16 +119,21 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'もし～たら',
+      partOfSpeech: 'expression',
+      meaningPartOfSpeech: { en: 'conjunction', vi: 'conjunction' },
       romaji: 'moshi ~tara',
       meaning: { en: 'if (emphasizing a hypothetical)', vi: 'nếu (nhấn mạnh giả định)' }
     },
     {
       kana: 'いくら～でも',
+      partOfSpeech: 'expression',
       romaji: 'ikura ~demo',
       meaning: { en: 'however much, no matter how', vi: 'dù bao nhiêu, dù thế nào' }
     },
     {
       kana: 'てんきん',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '転勤',
       romaji: 'tenkin',
       meaning: { en: 'job transfer (to another office)', vi: 'chuyển công tác' },
@@ -127,6 +144,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'てんきんします',
+      partOfSpeech: 'verb',
       kanji: '転勤します',
       romaji: 'tenkin shimasu',
       meaning: { en: 'to be transferred (to another office)', vi: 'bị chuyển công tác' },
@@ -137,6 +155,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'こと',
+      partOfSpeech: 'noun',
       kanji: '事',
       romaji: 'koto',
       meaning: {
@@ -149,6 +168,7 @@ export const n5Lesson25: Lesson = {
   phrases: [
     {
       kana: 'いっぱい のみましょう。',
+      partOfSpeech: 'expression',
       kanji: '一杯 飲みましょう。',
       romaji: 'Ippai nomimashō.',
       meaning: { en: 'Let us have a drink.', vi: 'Uống một ly nhé.' },
@@ -160,6 +180,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'いろいろ おせわに なりました。',
+      partOfSpeech: 'expression',
       kanji: 'いろいろ お世話になりました。',
       romaji: 'Iroiro osewa ni narimashita.',
       meaning: {
@@ -173,6 +194,8 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'がんばります。',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { en: 'expression', vi: 'expression' },
       kanji: '頑張ります。',
       romaji: 'Ganbarimasu.',
       meaning: { en: 'I will do my best.', vi: 'Tôi sẽ cố gắng.' },
@@ -183,6 +206,7 @@ export const n5Lesson25: Lesson = {
     },
     {
       kana: 'どうぞ おげんきで。',
+      partOfSpeech: 'expression',
       kanji: 'どうぞ お元気で。',
       romaji: 'Dōzo o-genki de.',
       meaning: { en: 'Please take care. (farewell)', vi: 'Chúc anh/chị mạnh khỏe. (tạm biệt)' },
@@ -691,11 +715,13 @@ export const n5Lesson25: Lesson = {
       items: [
         {
           kana: 'さようなら',
+          partOfSpeech: 'interjection',
           romaji: 'sayōnara',
           meaning: { en: 'goodbye', vi: 'tạm biệt' }
         },
         {
           kana: 'また あいましょう',
+          partOfSpeech: 'expression',
           kanji: 'また 会いましょう',
           romaji: 'Mata aimashō',
           meaning: { en: 'Let us meet again.', vi: 'Hẹn gặp lại.' },
@@ -703,6 +729,7 @@ export const n5Lesson25: Lesson = {
         },
         {
           kana: 'おだいじに',
+          partOfSpeech: 'expression',
           kanji: 'お大事に',
           romaji: 'Odaiji ni',
           meaning: { en: 'Take care (when someone is ill)', vi: 'Giữ gìn sức khỏe (khi ai ốm)' },
@@ -713,6 +740,7 @@ export const n5Lesson25: Lesson = {
         },
         {
           kana: 'おつかれさまでした',
+          partOfSpeech: 'expression',
           kanji: 'お疲れ様でした',
           romaji: 'Otsukaresama deshita',
           meaning: { en: 'Thank you for your hard work.', vi: 'Cảm ơn vì đã vất vả.' },
@@ -723,6 +751,7 @@ export const n5Lesson25: Lesson = {
         },
         {
           kana: 'いってらっしゃい',
+          partOfSpeech: 'expression',
           romaji: 'Itterasshai',
           meaning: {
             en: 'Have a good trip. (said to someone leaving)',
@@ -731,16 +760,19 @@ export const n5Lesson25: Lesson = {
         },
         {
           kana: 'いってきます',
+          partOfSpeech: 'expression',
           romaji: 'Itte kimasu',
           meaning: { en: 'I am off. (said when leaving home)', vi: 'Tôi đi đây. (khi rời nhà)' }
         },
         {
           kana: 'ただいま',
+          partOfSpeech: 'expression',
           romaji: 'Tadaima',
           meaning: { en: 'I am home.', vi: 'Tôi về rồi.' }
         },
         {
           kana: 'おかえりなさい',
+          partOfSpeech: 'expression',
           romaji: 'Okaerinasai',
           meaning: { en: 'Welcome home.', vi: 'Chào mừng về nhà.' }
         }

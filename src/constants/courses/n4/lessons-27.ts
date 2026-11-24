@@ -15,6 +15,7 @@ export const n4Lesson27: Lesson = {
   vocab: [
     {
       kana: 'かいます',
+      partOfSpeech: 'verb',
       kanji: '飼います',
       romaji: 'kaimasu',
       meaning: { en: 'to keep, to raise (a pet)', vi: 'nuôi (thú cưng)' },
@@ -22,6 +23,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'はしります',
+      partOfSpeech: 'verb',
       kanji: '走ります',
       romaji: 'hashirimasu',
       meaning: { en: 'to run [道を～: on the road]', vi: 'chạy [道を～: trên đường]' },
@@ -29,6 +31,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'みえます',
+      partOfSpeech: 'verb',
       kanji: '見えます',
       romaji: 'miemasu',
       meaning: { en: 'to be visible [山が～: mountains]', vi: 'nhìn thấy [山が～: núi]' },
@@ -36,6 +39,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'きこえます',
+      partOfSpeech: 'verb',
       kanji: '聞こえます',
       romaji: 'kikoemasu',
       meaning: { en: 'to be heard [音が～: a sound]', vi: 'nghe thấy [音が～: âm thanh]' },
@@ -43,6 +47,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'できます',
+      partOfSpeech: 'verb',
       romaji: 'dekimasu',
       meaning: {
         en: 'to be completed, to be built [道が～: a road]',
@@ -51,6 +56,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'ひらきます',
+      partOfSpeech: 'verb',
       kanji: '開きます',
       romaji: 'hirakimasu',
       meaning: {
@@ -61,6 +67,8 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'しんぱい [な]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '心配 [な]',
       romaji: 'shinpai [na]',
       meaning: { en: 'worried', vi: 'lo lắng' },
@@ -71,11 +79,13 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'ペット',
+      partOfSpeech: 'noun',
       romaji: 'petto',
       meaning: { en: 'pet', vi: 'thú cưng' }
     },
     {
       kana: 'とり',
+      partOfSpeech: 'noun',
       kanji: '鳥',
       romaji: 'tori',
       meaning: { en: 'bird', vi: 'chim' },
@@ -83,6 +93,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'こえ',
+      partOfSpeech: 'noun',
       kanji: '声',
       romaji: 'koe',
       meaning: { en: 'voice', vi: 'tiếng, giọng nói' },
@@ -90,6 +101,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'なみ',
+      partOfSpeech: 'noun',
       kanji: '波',
       romaji: 'nami',
       meaning: { en: 'wave', vi: 'sóng' },
@@ -97,6 +109,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'はなび',
+      partOfSpeech: 'noun',
       kanji: '花火',
       romaji: 'hanabi',
       meaning: { en: 'fireworks', vi: 'pháo hoa' },
@@ -107,6 +120,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'どうぐ',
+      partOfSpeech: 'noun',
       kanji: '道具',
       romaji: 'dōgu',
       meaning: { en: 'tool', vi: 'dụng cụ' },
@@ -117,11 +131,14 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'クリーニング',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'kurīningu',
       meaning: { en: 'dry cleaning', vi: 'giặt là' }
     },
     {
       kana: 'いえ',
+      partOfSpeech: 'noun',
       kanji: '家',
       romaji: 'ie',
       meaning: { en: 'house, home', vi: 'nhà' },
@@ -129,16 +146,19 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'マンション',
+      partOfSpeech: 'noun',
       romaji: 'manshon',
       meaning: { en: 'apartment building', vi: 'chung cư' }
     },
     {
       kana: 'キッチン',
+      partOfSpeech: 'noun',
       romaji: 'kicchin',
       meaning: { en: 'kitchen', vi: 'bếp' }
     },
     {
       kana: '～きょうしつ',
+      partOfSpeech: 'suffix',
       kanji: '～教室',
       romaji: '~kyōshitsu',
       meaning: { en: '~ classroom', vi: 'lớp ~' },
@@ -149,11 +169,13 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'パーティールーム',
+      partOfSpeech: 'noun',
       romaji: 'pātī rūmu',
       meaning: { en: 'party room', vi: 'phòng tiệc' }
     },
     {
       kana: 'かた',
+      partOfSpeech: 'noun',
       kanji: '方',
       romaji: 'kata',
       meaning: { en: 'person (honorific of ひと)', vi: 'vị, ngài (kính ngữ của ひと)' },
@@ -161,6 +183,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: '～ご',
+      partOfSpeech: 'suffix',
       kanji: '～後',
       romaji: '~go',
       meaning: { en: 'after ~ (time)', vi: '~ sau (thời gian)' },
@@ -168,21 +191,26 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: '～しか',
+      partOfSpeech: 'particle',
       romaji: '~shika',
       meaning: { en: 'only ~ (with negative)', vi: 'chỉ ~ (đi với phủ định)' }
     },
     {
       kana: 'ほかの',
+      partOfSpeech: 'determiner',
+      meaningPartOfSpeech: { vi: 'adjective' },
       romaji: 'hoka no',
       meaning: { en: 'other', vi: 'khác' }
     },
     {
       kana: 'はっきり',
+      partOfSpeech: 'adverb',
       romaji: 'hakkiri',
       meaning: { en: 'clearly', vi: 'rõ ràng' }
     },
     {
       kana: 'かぐ',
+      partOfSpeech: 'noun',
       kanji: '家具',
       romaji: 'kagu',
       meaning: { en: 'furniture', vi: 'đồ nội thất' },
@@ -193,6 +221,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'ほんだな',
+      partOfSpeech: 'noun',
       kanji: '本棚',
       romaji: 'hondana',
       meaning: { en: 'bookshelf', vi: 'giá sách' },
@@ -203,11 +232,13 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'いつか',
+      partOfSpeech: 'adverb',
       romaji: 'itsuka',
       meaning: { en: 'sometime, someday', vi: 'lúc nào đó, một ngày nào đó' }
     },
     {
       kana: 'たてます',
+      partOfSpeech: 'verb',
       kanji: '建てます',
       romaji: 'tatemasu',
       meaning: { en: 'to build', vi: 'xây' },
@@ -215,11 +246,13 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'すばらしい',
+      partOfSpeech: 'adjective',
       romaji: 'subarashii',
       meaning: { en: 'wonderful, splendid', vi: 'tuyệt vời' }
     },
     {
       kana: 'こどもたち',
+      partOfSpeech: 'noun',
       kanji: '子どもたち',
       romaji: 'kodomotachi',
       meaning: { en: 'children', vi: 'bọn trẻ, các em' },
@@ -227,6 +260,8 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'だいすき [な]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { en: 'verb', vi: 'verb' },
       kanji: '大好き [な]',
       romaji: 'daisuki [na]',
       meaning: { en: 'love, like very much', vi: 'rất thích' },
@@ -237,6 +272,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'しゅじんこう',
+      partOfSpeech: 'noun',
       kanji: '主人公',
       romaji: 'shujinkō',
       meaning: { en: 'main character', vi: 'nhân vật chính' },
@@ -248,6 +284,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'かたち',
+      partOfSpeech: 'noun',
       kanji: '形',
       romaji: 'katachi',
       meaning: { en: 'shape, form', vi: 'hình dạng' },
@@ -255,6 +292,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'ふしぎ [な]',
+      partOfSpeech: 'adjective',
       kanji: '不思議 [な]',
       romaji: 'fushigi [na]',
       meaning: { en: 'strange, mysterious', vi: 'kỳ lạ' },
@@ -266,11 +304,14 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'ポケット',
+      partOfSpeech: 'noun',
       romaji: 'poketto',
       meaning: { en: 'pocket', vi: 'túi áo' }
     },
     {
       kana: 'たとえば',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { vi: 'noun' },
       kanji: '例えば',
       romaji: 'tatoeba',
       meaning: { en: 'for example', vi: 'ví dụ' },
@@ -278,6 +319,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'つけます',
+      partOfSpeech: 'verb',
       kanji: '付けます',
       romaji: 'tsukemasu',
       meaning: { en: 'to attach, to put on', vi: 'gắn, đính' },
@@ -285,6 +327,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'じゆうに',
+      partOfSpeech: 'adverb',
       kanji: '自由に',
       romaji: 'jiyū ni',
       meaning: { en: 'freely', vi: 'tự do, thoải mái' },
@@ -295,6 +338,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'そら',
+      partOfSpeech: 'noun',
       kanji: '空',
       romaji: 'sora',
       meaning: { en: 'sky', vi: 'bầu trời' },
@@ -302,6 +346,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'とびます',
+      partOfSpeech: 'verb',
       kanji: '飛びます',
       romaji: 'tobimasu',
       meaning: { en: 'to fly', vi: 'bay' },
@@ -309,6 +354,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'むかし',
+      partOfSpeech: 'noun',
       kanji: '昔',
       romaji: 'mukashi',
       meaning: { en: 'old days, long ago', vi: 'ngày xưa' },
@@ -316,6 +362,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'じぶん',
+      partOfSpeech: 'pronoun',
       kanji: '自分',
       romaji: 'jibun',
       meaning: { en: 'oneself', vi: 'bản thân' },
@@ -326,6 +373,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'しょうらい',
+      partOfSpeech: 'noun',
       kanji: '将来',
       romaji: 'shōrai',
       meaning: { en: 'future', vi: 'tương lai' },
@@ -338,6 +386,7 @@ export const n4Lesson27: Lesson = {
   phrases: [
     {
       kana: 'なんでも できますね。',
+      partOfSpeech: 'expression',
       kanji: '何でも できますね。',
       romaji: 'Nandemo dekimasu ne.',
       meaning: { en: 'You can do anything.', vi: 'Anh/chị cái gì cũng làm được nhỉ.' },
@@ -345,6 +394,7 @@ export const n4Lesson27: Lesson = {
     },
     {
       kana: 'すばらしい ゆめですね。',
+      partOfSpeech: 'expression',
       kanji: 'すばらしい 夢ですね。',
       romaji: 'Subarashii yume desu ne.',
       meaning: { en: 'What a wonderful dream.', vi: 'Một ước mơ tuyệt vời nhỉ.' },
@@ -1198,6 +1248,7 @@ export const n4Lesson27: Lesson = {
       items: [
         {
           kana: 'ほうりゅうじ',
+          partOfSpeech: 'noun',
           kanji: '法隆寺',
           romaji: 'Hōryūji',
           meaning: { en: 'Hōryūji Temple (Nara)', vi: 'Chùa Hōryūji (Nara)' },
@@ -1209,6 +1260,7 @@ export const n4Lesson27: Lesson = {
         },
         {
           kana: 'ドラえもん',
+          partOfSpeech: 'noun',
           romaji: 'Doraemon',
           meaning: {
             en: 'Doraemon (manga character name)',

@@ -15,6 +15,7 @@ export const n4Lesson45: Lesson = {
   vocab: [
     {
       kana: 'しんじます',
+      partOfSpeech: 'verb',
       kanji: '信じます',
       romaji: 'shinjimasu',
       meaning: { en: 'to believe', vi: 'tin' },
@@ -22,11 +23,13 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'キャンセルします',
+      partOfSpeech: 'verb',
       romaji: 'kyanseru shimasu',
       meaning: { en: 'to cancel', vi: 'hủy' }
     },
     {
       kana: 'しらせます',
+      partOfSpeech: 'verb',
       kanji: '知らせます',
       romaji: 'shirasemasu',
       meaning: { en: 'to notify, to inform', vi: 'thông báo' },
@@ -34,6 +37,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'ほしょうしょ',
+      partOfSpeech: 'noun',
       kanji: '保証書',
       romaji: 'hoshōsho',
       meaning: { en: 'warranty card', vi: 'phiếu bảo hành' },
@@ -45,6 +49,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'りょうしゅうしょ',
+      partOfSpeech: 'noun',
       kanji: '領収書',
       romaji: 'ryōshūsho',
       meaning: { en: 'receipt', vi: 'hóa đơn, biên lai' },
@@ -56,11 +61,15 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'キャンプ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'kyanpu',
       meaning: { en: 'camp, camping', vi: 'cắm trại' }
     },
     {
       kana: 'ちゅうし',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '中止',
       romaji: 'chūshi',
       meaning: { en: 'cancellation', vi: 'hủy bỏ' },
@@ -71,6 +80,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'てん',
+      partOfSpeech: 'noun',
       kanji: '点',
       romaji: 'ten',
       meaning: { en: 'point, score', vi: 'điểm, điểm số' },
@@ -78,6 +88,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'うめ',
+      partOfSpeech: 'noun',
       kanji: '梅',
       romaji: 'ume',
       meaning: { en: 'plum, plum blossom', vi: 'hoa mơ, mơ' },
@@ -85,6 +96,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: '110ばん',
+      partOfSpeech: 'noun',
       kanji: '110番',
       romaji: '110-ban',
       meaning: { en: '110 (police emergency number)', vi: '110 (số báo cảnh sát khẩn cấp)' },
@@ -92,6 +104,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: '119ばん',
+      partOfSpeech: 'noun',
       kanji: '119番',
       romaji: '119-ban',
       meaning: {
@@ -102,6 +115,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'きゅうに',
+      partOfSpeech: 'adverb',
       kanji: '急に',
       romaji: 'kyū ni',
       meaning: { en: 'suddenly', vi: 'đột nhiên' },
@@ -109,6 +123,8 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'むりに',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '無理に',
       romaji: 'muri ni',
       meaning: { en: 'unreasonably, by force', vi: 'cố, gắng (làm không hợp lý)' },
@@ -119,6 +135,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'たのしみに しています',
+      partOfSpeech: 'expression',
       kanji: '楽しみに しています',
       romaji: 'tanoshimi ni shite imasu',
       meaning: { en: 'I am looking forward to it', vi: 'tôi rất mong chờ' },
@@ -126,6 +143,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'いじょうです。',
+      partOfSpeech: 'expression',
       kanji: '以上です。',
       romaji: 'ijō desu.',
       meaning: { en: 'That is all.', vi: 'Xin hết.' },
@@ -136,6 +154,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'かかりいん',
+      partOfSpeech: 'noun',
       kanji: '係員',
       romaji: 'kakariin',
       meaning: { en: 'staff member, person in charge', vi: 'người phụ trách' },
@@ -146,16 +165,21 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'コース',
+      partOfSpeech: 'noun',
       romaji: 'kōsu',
       meaning: { en: 'course (marathon route)', vi: 'đường chạy ma-ra-tông' }
     },
     {
       kana: 'スタート',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'sutāto',
       meaning: { en: 'start', vi: 'xuất phát' }
     },
     {
       kana: 'いちい',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '一位',
       romaji: 'ichii',
       meaning: { en: 'first place', vi: 'thứ nhất' },
@@ -166,6 +190,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'ゆうしょうします',
+      partOfSpeech: 'verb',
       kanji: '優勝します',
       romaji: 'yūshō shimasu',
       meaning: { en: 'to win (a championship)', vi: 'chiến thắng, vô địch' },
@@ -176,6 +201,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'なやみ',
+      partOfSpeech: 'noun',
       kanji: '悩み',
       romaji: 'nayami',
       meaning: { en: 'worry, trouble', vi: 'điều bận tâm, điều khổ tâm' },
@@ -183,6 +209,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'めざまし[どけい]',
+      partOfSpeech: 'noun',
       kanji: '目覚まし[時計]',
       romaji: 'mezamashi [dokei]',
       meaning: { en: 'alarm clock', vi: 'đồng hồ báo thức' },
@@ -195,6 +222,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'めが さめます',
+      partOfSpeech: 'verb',
       kanji: '目が 覚めます',
       romaji: 'me ga samemasu',
       meaning: { en: 'to wake up', vi: 'tỉnh giấc, thức giấc' },
@@ -205,6 +233,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'だいがくせい',
+      partOfSpeech: 'noun',
       kanji: '大学生',
       romaji: 'daigakusei',
       meaning: { en: 'university student', vi: 'sinh viên đại học' },
@@ -216,6 +245,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'かいとう',
+      partOfSpeech: 'noun',
       kanji: '回答',
       romaji: 'kaitō',
       meaning: { en: 'answer, reply (～します: to answer)', vi: 'câu trả lời (～します: trả lời)' },
@@ -226,6 +256,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'なります',
+      partOfSpeech: 'verb',
       kanji: '鳴ります',
       romaji: 'narimasu',
       meaning: { en: 'to ring, to sound [目覚ましが～: an alarm]', vi: 'reng, kêu [báo thức ~]' },
@@ -233,11 +264,13 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'セットします',
+      partOfSpeech: 'verb',
       romaji: 'setto shimasu',
       meaning: { en: 'to set (an alarm, timer)', vi: 'đặt (giờ báo thức)' }
     },
     {
       kana: 'それでも',
+      partOfSpeech: 'conjunction',
       romaji: 'soredemo',
       meaning: { en: 'nevertheless, even so', vi: 'kể cả như thế, mặc dù vậy' }
     }
@@ -245,6 +278,7 @@ export const n4Lesson45: Lesson = {
   phrases: [
     {
       kana: 'いじょうです。',
+      partOfSpeech: 'expression',
       kanji: '以上です。',
       romaji: 'Ijō desu.',
       meaning: { en: 'That is all.', vi: 'Xin hết.' },
@@ -255,6 +289,7 @@ export const n4Lesson45: Lesson = {
     },
     {
       kana: 'たのしみに しています。',
+      partOfSpeech: 'expression',
       kanji: '楽しみに しています。',
       romaji: 'Tanoshimi ni shite imasu.',
       meaning: { en: 'I am looking forward to it.', vi: 'Tôi rất mong chờ.' },

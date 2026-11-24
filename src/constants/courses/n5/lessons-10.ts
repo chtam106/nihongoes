@@ -15,11 +15,13 @@ export const n5Lesson10: Lesson = {
   vocab: [
     {
       kana: 'あります',
+      partOfSpeech: 'verb',
       romaji: 'arimasu',
       meaning: { en: 'to exist, to be (things)', vi: 'ở (tồn tại, dùng cho đồ vật)' }
     },
     {
       kana: 'います',
+      partOfSpeech: 'verb',
       romaji: 'imasu',
       meaning: {
         en: 'to exist, to be (people, animals)',
@@ -28,11 +30,14 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'いろいろ [な]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { vi: 'noun' },
       romaji: 'iroiro [na]',
       meaning: { en: 'various', vi: 'nhiều loại, đa dạng' }
     },
     {
       kana: 'おとこの ひと',
+      partOfSpeech: 'noun',
       kanji: '男の 人',
       romaji: 'otoko no hito',
       meaning: { en: 'man', vi: 'người đàn ông' },
@@ -43,6 +48,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'おんなの ひと',
+      partOfSpeech: 'noun',
       kanji: '女の 人',
       romaji: 'onna no hito',
       meaning: { en: 'woman', vi: 'người đàn bà' },
@@ -53,6 +59,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'おとこの こ',
+      partOfSpeech: 'noun',
       kanji: '男の 子',
       romaji: 'otoko no ko',
       meaning: { en: 'boy', vi: 'cậu con trai' },
@@ -63,6 +70,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'おんなの こ',
+      partOfSpeech: 'noun',
       kanji: '女の 子',
       romaji: 'onna no ko',
       meaning: { en: 'girl', vi: 'cô con gái' },
@@ -73,6 +81,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'いぬ',
+      partOfSpeech: 'noun',
       kanji: '犬',
       romaji: 'inu',
       meaning: { en: 'dog', vi: 'chó' },
@@ -80,6 +89,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'ねこ',
+      partOfSpeech: 'noun',
       kanji: '猫',
       romaji: 'neko',
       meaning: { en: 'cat', vi: 'mèo' },
@@ -87,11 +97,13 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'パンダ',
+      partOfSpeech: 'noun',
       romaji: 'panda',
       meaning: { en: 'panda', vi: 'gấu trúc' }
     },
     {
       kana: 'ぞう',
+      partOfSpeech: 'noun',
       kanji: '象',
       romaji: 'zō',
       meaning: { en: 'elephant', vi: 'voi' },
@@ -99,6 +111,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'き',
+      partOfSpeech: 'noun',
       kanji: '木',
       romaji: 'ki',
       meaning: { en: 'tree, wood', vi: 'cây, gỗ' },
@@ -106,6 +119,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'もの',
+      partOfSpeech: 'noun',
       kanji: '物',
       romaji: 'mono',
       meaning: { en: 'thing', vi: 'vật, đồ vật' },
@@ -113,6 +127,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'でんち',
+      partOfSpeech: 'noun',
       kanji: '電池',
       romaji: 'denchi',
       meaning: { en: 'battery', vi: 'pin' },
@@ -123,6 +138,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'はこ',
+      partOfSpeech: 'noun',
       kanji: '箱',
       romaji: 'hako',
       meaning: { en: 'box', vi: 'hộp' },
@@ -130,11 +146,13 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'スイッチ',
+      partOfSpeech: 'noun',
       romaji: 'suitchi',
       meaning: { en: 'switch', vi: 'công tắc' }
     },
     {
       kana: 'れいぞうこ',
+      partOfSpeech: 'noun',
       kanji: '冷蔵庫',
       romaji: 'reizōko',
       meaning: { en: 'refrigerator', vi: 'tủ lạnh' },
@@ -146,16 +164,19 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'テーブル',
+      partOfSpeech: 'noun',
       romaji: 'tēburu',
       meaning: { en: 'table', vi: 'bàn' }
     },
     {
       kana: 'ベッド',
+      partOfSpeech: 'noun',
       romaji: 'beddo',
       meaning: { en: 'bed', vi: 'giường' }
     },
     {
       kana: 'たな',
+      partOfSpeech: 'noun',
       kanji: '棚',
       romaji: 'tana',
       meaning: { en: 'shelf', vi: 'giá sách, kệ sách' },
@@ -163,11 +184,13 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'ドア',
+      partOfSpeech: 'noun',
       romaji: 'doa',
       meaning: { en: 'door', vi: 'cửa' }
     },
     {
       kana: 'まど',
+      partOfSpeech: 'noun',
       kanji: '窓',
       romaji: 'mado',
       meaning: { en: 'window', vi: 'cửa sổ' },
@@ -175,26 +198,31 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'ポスト',
+      partOfSpeech: 'noun',
       romaji: 'posuto',
       meaning: { en: 'mailbox', vi: 'hộp thư, hòm thư' }
     },
     {
       kana: 'ビル',
+      partOfSpeech: 'noun',
       romaji: 'biru',
       meaning: { en: 'building', vi: 'tòa nhà' }
     },
     {
       kana: 'ATM',
+      partOfSpeech: 'noun',
       romaji: 'ATM',
       meaning: { en: 'ATM', vi: 'máy rút tiền tự động' }
     },
     {
       kana: 'コンビニ',
+      partOfSpeech: 'noun',
       romaji: 'konbini',
       meaning: { en: 'convenience store', vi: 'cửa hàng tiện lợi' }
     },
     {
       kana: 'こうえん',
+      partOfSpeech: 'noun',
       kanji: '公園',
       romaji: 'kōen',
       meaning: { en: 'park', vi: 'công viên' },
@@ -205,6 +233,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'きっさてん',
+      partOfSpeech: 'noun',
       kanji: '喫茶店',
       romaji: 'kissaten',
       meaning: { en: 'coffee shop, cafe', vi: 'quán giải khát, quán cà phê' },
@@ -216,6 +245,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: '～や',
+      partOfSpeech: 'suffix',
       kanji: '～屋',
       romaji: '~ya',
       meaning: { en: '~ shop (suffix)', vi: 'hiệu ~, cửa hàng ~' },
@@ -223,6 +253,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'のりば',
+      partOfSpeech: 'noun',
       kanji: '乗り場',
       romaji: 'noriba',
       meaning: { en: 'boarding place, stop', vi: 'điểm đón (tắc-xi, tàu...)' },
@@ -233,6 +264,7 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'けん',
+      partOfSpeech: 'noun',
       kanji: '県',
       romaji: 'ken',
       meaning: { en: 'prefecture', vi: 'tỉnh' },
@@ -240,6 +272,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'うえ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       kanji: '上',
       romaji: 'ue',
       meaning: { en: 'on, above', vi: 'trên' },
@@ -247,6 +281,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'した',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       kanji: '下',
       romaji: 'shita',
       meaning: { en: 'under, below', vi: 'dưới' },
@@ -254,6 +290,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'まえ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'adverb' },
       kanji: '前',
       romaji: 'mae',
       meaning: { en: 'front, before', vi: 'trước' },
@@ -261,11 +299,15 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'うしろ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       romaji: 'ushiro',
       meaning: { en: 'behind', vi: 'sau' }
     },
     {
       kana: 'みぎ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb' },
       kanji: '右',
       romaji: 'migi',
       meaning: { en: 'right', vi: 'bên phải' },
@@ -273,6 +315,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'ひだり',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb' },
       kanji: '左',
       romaji: 'hidari',
       meaning: { en: 'left', vi: 'bên trái' },
@@ -280,6 +324,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'なか',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       kanji: '中',
       romaji: 'naka',
       meaning: { en: 'inside', vi: 'trong, giữa' },
@@ -287,6 +333,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'そと',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       kanji: '外',
       romaji: 'soto',
       meaning: { en: 'outside', vi: 'ngoài' },
@@ -294,6 +342,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'となり',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'expression', vi: 'adverb' },
       kanji: '隣',
       romaji: 'tonari',
       meaning: { en: 'next to', vi: 'bên cạnh' },
@@ -301,6 +351,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'ちかく',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adjective' },
       kanji: '近く',
       romaji: 'chikaku',
       meaning: { en: 'near', vi: 'gần' },
@@ -308,6 +360,8 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: 'あいだ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       kanji: '間',
       romaji: 'aida',
       meaning: { en: 'between', vi: 'ở giữa' },
@@ -315,16 +369,20 @@ export const n5Lesson10: Lesson = {
     },
     {
       kana: '～や ～[など]',
+      partOfSpeech: 'particle',
+      meaningPartOfSpeech: { en: 'conjunction', vi: 'conjunction' },
       romaji: '~ya ~[nado]',
       meaning: { en: '~ and ~, [and so on]', vi: '~ và ~, [v.v.]' }
     },
     {
       kana: 'ナンプラー',
+      partOfSpeech: 'noun',
       romaji: 'nanpurā',
       meaning: { en: 'fish sauce (nampla)', vi: 'nước mắm' }
     },
     {
       kana: 'コーナー',
+      partOfSpeech: 'noun',
       romaji: 'kōnā',
       meaning: { en: 'corner section (in a store)', vi: 'góc, khu vực (trong siêu thị)' }
     }
@@ -332,11 +390,14 @@ export const n5Lesson10: Lesson = {
   phrases: [
     {
       kana: '[どうも] すみません。',
+      partOfSpeech: 'expression',
       romaji: '[Dōmo] sumimasen.',
       meaning: { en: 'Thank you. / Excuse me.', vi: 'Cám ơn. / Xin lỗi.' }
     },
     {
       kana: 'いちばん した',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'adverb' },
       kanji: '一番 下',
       romaji: 'Ichiban shita',
       meaning: { en: 'bottommost, on the lowest shelf', vi: 'ở dưới cùng' },
@@ -1242,6 +1303,7 @@ export const n5Lesson10: Lesson = {
       items: [
         {
           kana: 'げんかん',
+          partOfSpeech: 'noun',
           kanji: '玄関',
           romaji: 'genkan',
           meaning: { en: 'entrance', vi: 'cửa ra vào' },
@@ -1252,11 +1314,13 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'トイレ',
+          partOfSpeech: 'noun',
           romaji: 'toire',
           meaning: { en: 'toilet', vi: 'toilet' }
         },
         {
           kana: 'ふろば',
+          partOfSpeech: 'noun',
           kanji: '風呂場',
           romaji: 'furoba',
           meaning: { en: 'bathroom (tub area)', vi: 'phòng tắm' },
@@ -1268,6 +1332,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'せんめんじょ',
+          partOfSpeech: 'noun',
           kanji: '洗面所',
           romaji: 'senmenjo',
           meaning: { en: 'washroom, sink area', vi: 'bồn rửa' },
@@ -1279,6 +1344,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'だいどころ',
+          partOfSpeech: 'noun',
           kanji: '台所',
           romaji: 'daidokoro',
           meaning: { en: 'kitchen', vi: 'bếp' },
@@ -1289,6 +1355,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'しょくどう',
+          partOfSpeech: 'noun',
           kanji: '食堂',
           romaji: 'shokudō',
           meaning: { en: 'dining room', vi: 'phòng ăn' },
@@ -1299,6 +1366,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'いま',
+          partOfSpeech: 'noun',
           kanji: '居間',
           romaji: 'ima',
           meaning: { en: 'living room', vi: 'phòng khách' },
@@ -1309,6 +1377,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'しんしつ',
+          partOfSpeech: 'noun',
           kanji: '寝室',
           romaji: 'shinshitsu',
           meaning: { en: 'bedroom', vi: 'phòng ngủ' },
@@ -1319,6 +1388,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'ろうか',
+          partOfSpeech: 'noun',
           kanji: '廊下',
           romaji: 'rōka',
           meaning: { en: 'hallway', vi: 'hành lang' },
@@ -1329,6 +1399,7 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'ベランダ',
+          partOfSpeech: 'noun',
           romaji: 'beranda',
           meaning: { en: 'balcony', vi: 'ban công' }
         }
@@ -1369,6 +1440,7 @@ export const n5Lesson10: Lesson = {
       items: [
         {
           kana: 'とうきょうディズニーランド',
+          partOfSpeech: 'noun',
           kanji: '東京ディズニーランド',
           romaji: 'Tōkyō Dizunīrando',
           meaning: { en: 'Tokyo Disneyland', vi: 'Tokyo Disneyland' },
@@ -1379,11 +1451,13 @@ export const n5Lesson10: Lesson = {
         },
         {
           kana: 'アジアストア',
+          partOfSpeech: 'noun',
           romaji: 'Ajia Sutoa',
           meaning: { en: 'Asia Store (fictional supermarket)', vi: 'Siêu thị Asia (giả định)' }
         },
         {
           kana: 'ちばけん',
+          partOfSpeech: 'noun',
           kanji: '千葉県',
           romaji: 'Chiba-ken',
           meaning: { en: 'Chiba Prefecture', vi: 'Tỉnh Chiba' },

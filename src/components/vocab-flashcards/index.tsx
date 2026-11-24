@@ -3,12 +3,12 @@
 import { useState, type KeyboardEvent } from 'react';
 import { Box, Button, Paper, Stack, Typography } from '@mui/material';
 import type { FlashcardCardType } from '@/constants/flashcards/collections.ts';
+import type { FlashcardItem } from '@/constants/flashcards/catalog.ts';
 import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { VocabHeadword } from '@/components/vocab-headword';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
-import type { VocabItem } from '@/types/course.ts';
 import type { Locale } from '@/types/i18n.ts';
 import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab-index-preferences.ts';
 
@@ -31,7 +31,7 @@ const faceSx = {
 export type VocabFlashcard = {
   id: string;
   type: FlashcardCardType;
-  item: VocabItem;
+  item: FlashcardItem;
 };
 
 function isLargeCard(type: FlashcardCardType) {
@@ -57,7 +57,7 @@ type VocabFlashcardsProps = {
 };
 
 type FlashcardFaceProps = {
-  item: VocabItem;
+  item: FlashcardItem;
   locale: Locale;
   side: FlashcardFront;
   type: FlashcardCardType;
@@ -109,7 +109,7 @@ function startSession(cards: VocabFlashcard[]): FlashcardSession {
 }
 
 type FlipCardProps = {
-  item: VocabItem;
+  item: FlashcardItem;
   locale: Locale;
   front: FlashcardFront;
   type: FlashcardCardType;

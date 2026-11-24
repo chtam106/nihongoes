@@ -15,6 +15,7 @@ export const n4Lesson48: Lesson = {
   vocab: [
     {
       kana: 'おろします',
+      partOfSpeech: 'verb',
       kanji: '降ろします、下ろします',
       romaji: 'oroshimasu',
       meaning: { en: 'to take down, to unload', vi: 'hạ xuống, dỡ xuống' },
@@ -25,6 +26,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'とどけます',
+      partOfSpeech: 'verb',
       kanji: '届けます',
       romaji: 'todokemasu',
       meaning: { en: 'to deliver', vi: 'đưa đến, chuyển đến' },
@@ -32,6 +34,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'せわを します',
+      partOfSpeech: 'verb',
       kanji: '世話を します',
       romaji: 'sewa o shimasu',
       meaning: { en: 'to take care (of someone)', vi: 'chăm sóc' },
@@ -42,6 +45,8 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'ろくおん',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '録音',
       romaji: 'rokuon',
       meaning: { en: 'recording', vi: 'ghi âm' },
@@ -52,6 +57,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'ろくおんします',
+      partOfSpeech: 'verb',
       kanji: '録音します',
       romaji: 'rokuon shimasu',
       meaning: { en: 'to record (audio)', vi: 'ghi âm' },
@@ -62,6 +68,8 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'いや [な]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { en: 'verb' },
       kanji: '嫌 [な]',
       romaji: 'iya [na]',
       meaning: { en: 'dislike, unpleasant', vi: 'chán, không thích' },
@@ -69,6 +77,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'じゅく',
+      partOfSpeech: 'noun',
       kanji: '塾',
       romaji: 'juku',
       meaning: { en: 'cram school, tutoring school', vi: 'lò luyện thi, nơi học thêm' },
@@ -76,6 +85,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'せいと',
+      partOfSpeech: 'noun',
       kanji: '生徒',
       romaji: 'seito',
       meaning: { en: 'student (school pupil)', vi: 'học sinh' },
@@ -86,11 +96,13 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'ファイル',
+      partOfSpeech: 'noun',
       romaji: 'fairu',
       meaning: { en: 'file (folder)', vi: 'fai tài liệu, kẹp tài liệu' }
     },
     {
       kana: 'じゆうに',
+      partOfSpeech: 'adverb',
       kanji: '自由に',
       romaji: 'jiyū ni',
       meaning: { en: 'freely', vi: 'một cách tự do, thoải mái' },
@@ -101,6 +113,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: '〜かん',
+      partOfSpeech: 'suffix',
       kanji: '〜間',
       romaji: '~kan',
       meaning: { en: 'during ~, for ~ (time span)', vi: 'trong khoảng ~' },
@@ -108,6 +121,8 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'えいぎょう',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '営業',
       romaji: 'eigyō',
       meaning: { en: 'sales, business operations', vi: 'kinh doanh' },
@@ -118,11 +133,13 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'それまでに',
+      partOfSpeech: 'adverb',
       romaji: 'sore made ni',
       meaning: { en: 'by then, before that time', vi: 'cho đến lúc đấy, trước thời điểm đó' }
     },
     {
       kana: 'たのしみます',
+      partOfSpeech: 'verb',
       kanji: '楽しみます',
       romaji: 'tanoshimasu',
       meaning: { en: 'to enjoy', vi: 'tận hưởng, vui vẻ' },
@@ -130,6 +147,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'おや',
+      partOfSpeech: 'noun',
       kanji: '親',
       romaji: 'oya',
       meaning: { en: 'parent', vi: 'bố mẹ' },
@@ -137,6 +155,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'しょうがくせい',
+      partOfSpeech: 'noun',
       kanji: '小学生',
       romaji: 'shōgakusei',
       meaning: { en: 'elementary school student', vi: 'học sinh tiểu học' },
@@ -148,11 +167,13 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'パーセント',
+      partOfSpeech: 'suffix',
       romaji: 'pāsento',
       meaning: { en: 'percent', vi: 'phần trăm' }
     },
     {
       kana: 'そのつぎ',
+      partOfSpeech: 'adverb',
       kanji: 'その次',
       romaji: 'sono tsugi',
       meaning: { en: 'next, after that', vi: 'tiếp theo đó' },
@@ -160,6 +181,8 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'しゅうじ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '習字',
       romaji: 'shūji',
       meaning: { en: 'calligraphy practice', vi: 'học viết chữ bằng bút lông' },
@@ -170,6 +193,7 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'ふつうの',
+      partOfSpeech: 'adjective',
       kanji: '普通の',
       romaji: 'futsū no',
       meaning: { en: 'ordinary, usual', vi: 'thông thường, bình thường' },
@@ -182,6 +206,7 @@ export const n4Lesson48: Lesson = {
   phrases: [
     {
       kana: 'おいそがしい ですか。',
+      partOfSpeech: 'expression',
       kanji: 'お忙しい ですか。',
       romaji: 'O-isogashii desu ka.',
       meaning: {
@@ -192,11 +217,13 @@ export const n4Lesson48: Lesson = {
     },
     {
       kana: 'かまいません。',
+      partOfSpeech: 'expression',
       romaji: 'Kamaimasen.',
       meaning: { en: 'That is fine. / I do not mind.', vi: 'Không sao.' }
     },
     {
       kana: 'いい ことですね。',
+      partOfSpeech: 'expression',
       kanji: 'いい ことですね。',
       romaji: 'Ii koto desu ne.',
       meaning: { en: 'That is nice, is it not?', vi: 'Điều đó hay quá nhỉ!' }
