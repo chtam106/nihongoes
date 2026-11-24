@@ -11,6 +11,7 @@ function word(kana: string): VocabItem {
   return {
     kana,
     romaji: kana,
+    partOfSpeech: 'noun',
     meaning: { en: `${kana}-en`, vi: `${kana}-vi` }
   };
 }

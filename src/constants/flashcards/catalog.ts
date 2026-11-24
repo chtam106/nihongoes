@@ -139,10 +139,15 @@ export function flashcardRefsForLesson(lesson: Lesson): FlashcardCard[] {
   return lessonFlashcards(lesson).map((card) => ({ id: card.id, type: card.type }));
 }
 
+export type FlashcardItem = Pick<
+  VocabItem,
+  'kana' | 'kanji' | 'romaji' | 'speech' | 'ruby' | 'meaning'
+>;
+
 export type ResolvableFlashcard = {
   id: string;
   type: FlashcardCardType;
-  item: VocabItem;
+  item: FlashcardItem;
 };
 
 /**

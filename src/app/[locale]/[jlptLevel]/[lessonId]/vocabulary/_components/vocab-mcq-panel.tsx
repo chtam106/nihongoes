@@ -68,6 +68,7 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
     handleRetry
   } = useVocabQuiz({
     lesson,
+    level,
     locale,
     mode,
     includeReference

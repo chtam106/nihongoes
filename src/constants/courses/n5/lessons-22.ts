@@ -15,6 +15,7 @@ export const n5Lesson22: Lesson = {
   vocab: [
     {
       kana: 'きます',
+      partOfSpeech: 'verb',
       kanji: '着ます',
       romaji: 'kimasu',
       meaning: {
@@ -25,6 +26,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'はきます',
+      partOfSpeech: 'verb',
       romaji: 'hakimasu',
       meaning: {
         en: 'to put on, to wear (lower body: 靴を～)',
@@ -33,6 +35,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'かぶります',
+      partOfSpeech: 'verb',
       romaji: 'kaburimasu',
       meaning: {
         en: 'to put on, to wear (on the head: 帽子を～)',
@@ -41,6 +44,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'かけます',
+      partOfSpeech: 'verb',
       romaji: 'kakemasu',
       meaning: {
         en: 'to put on, to wear (on the face: 眼鏡を～)',
@@ -49,6 +53,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'うまれます',
+      partOfSpeech: 'verb',
       kanji: '生まれます',
       romaji: 'umaremasu',
       meaning: { en: 'to be born', vi: 'sinh ra, được sinh ra' },
@@ -56,21 +61,25 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'コート',
+      partOfSpeech: 'noun',
       romaji: 'kōto',
       meaning: { en: 'coat', vi: 'áo khoác' }
     },
     {
       kana: 'スーツ',
+      partOfSpeech: 'noun',
       romaji: 'sūtsu',
       meaning: { en: 'suit', vi: 'com lê, bộ vest' }
     },
     {
       kana: 'セーター',
+      partOfSpeech: 'noun',
       romaji: 'sētā',
       meaning: { en: 'sweater', vi: 'áo len' }
     },
     {
       kana: 'ぼうし',
+      partOfSpeech: 'noun',
       kanji: '帽子',
       romaji: 'bōshi',
       meaning: { en: 'hat, cap', vi: 'mũ, nón' },
@@ -81,6 +90,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'めがね',
+      partOfSpeech: 'noun',
       kanji: '眼鏡',
       romaji: 'megane',
       meaning: { en: 'glasses, spectacles', vi: 'kính, mắt kính' },
@@ -91,16 +101,19 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'よく',
+      partOfSpeech: 'adverb',
       romaji: 'yoku',
       meaning: { en: 'often', vi: 'thường, hay' }
     },
     {
       kana: 'おめでとうございます',
+      partOfSpeech: 'expression',
       romaji: 'Omedetō gozaimasu.',
       meaning: { en: 'Congratulations.', vi: 'Chúc mừng.' }
     },
     {
       kana: 'こちら',
+      partOfSpeech: 'pronoun',
       romaji: 'kochira',
       meaning: {
         en: 'this way; this person (polite, for introductions)',
@@ -109,6 +122,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'やちん',
+      partOfSpeech: 'noun',
       kanji: '家賃',
       romaji: 'yachin',
       meaning: { en: 'rent (for housing)', vi: 'tiền thuê nhà' },
@@ -119,16 +133,19 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'うーん',
+      partOfSpeech: 'interjection',
       romaji: 'ūn',
       meaning: { en: 'hmm, let me see (thinking aloud)', vi: 'ừm, để xem (suy nghĩ)' }
     },
     {
       kana: 'ダイニングキッチン',
+      partOfSpeech: 'noun',
       romaji: 'dainingu kitchin',
       meaning: { en: 'dining kitchen (combined living and kitchen)', vi: 'bếp kết hợp phòng ăn' }
     },
     {
       kana: 'わしつ',
+      partOfSpeech: 'noun',
       kanji: '和室',
       romaji: 'washitsu',
       meaning: { en: 'Japanese-style room', vi: 'phòng kiểu Nhật' },
@@ -139,6 +156,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'おしいれ',
+      partOfSpeech: 'noun',
       kanji: '押入れ',
       romaji: 'oshiire',
       meaning: { en: 'closet (in a Japanese room)', vi: 'tủ đựng đồ (trong phòng Nhật)' },
@@ -149,6 +167,7 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'ふとん',
+      partOfSpeech: 'noun',
       kanji: '布団',
       romaji: 'futon',
       meaning: { en: 'futon, Japanese bedding', vi: 'futon, nệm gấp kiểu Nhật' },
@@ -159,11 +178,13 @@ export const n5Lesson22: Lesson = {
     },
     {
       kana: 'アパート',
+      partOfSpeech: 'noun',
       romaji: 'apāto',
       meaning: { en: 'apartment (wooden or prefab building)', vi: 'căn hộ (nhà gỗ, nhà lắp ghép)' }
     },
     {
       kana: 'パリ',
+      partOfSpeech: 'noun',
       romaji: 'Pari',
       meaning: { en: 'Paris', vi: 'Paris' }
     }
@@ -171,11 +192,13 @@ export const n5Lesson22: Lesson = {
   phrases: [
     {
       kana: 'おめでとうございます。',
+      partOfSpeech: 'expression',
       romaji: 'Omedetō gozaimasu.',
       meaning: { en: 'Congratulations.', vi: 'Chúc mừng.' }
     },
     {
       kana: 'うーん、どうしよう。',
+      partOfSpeech: 'expression',
       romaji: 'Ūn, dō shiyō.',
       meaning: { en: 'Hmm, what should I do?', vi: 'Ừm, làm sao đây?' }
     }
@@ -820,11 +843,13 @@ export const n5Lesson22: Lesson = {
       items: [
         {
           kana: 'リビング',
+          partOfSpeech: 'noun',
           romaji: 'ribingu',
           meaning: { en: 'living room', vi: 'phòng khách' }
         },
         {
           kana: 'しんしつ',
+          partOfSpeech: 'noun',
           kanji: '寝室',
           romaji: 'shinshitsu',
           meaning: { en: 'bedroom', vi: 'phòng ngủ' },
@@ -835,6 +860,7 @@ export const n5Lesson22: Lesson = {
         },
         {
           kana: 'だいどころ',
+          partOfSpeech: 'noun',
           kanji: '台所',
           romaji: 'daidokoro',
           meaning: { en: 'kitchen', vi: 'bếp, nhà bếp' },
@@ -845,6 +871,7 @@ export const n5Lesson22: Lesson = {
         },
         {
           kana: 'ふろ',
+          partOfSpeech: 'noun',
           kanji: '風呂',
           romaji: 'furo',
           meaning: { en: 'bath, bathtub', vi: 'bồn tắm, phòng tắm' },
@@ -855,11 +882,13 @@ export const n5Lesson22: Lesson = {
         },
         {
           kana: 'トイレ',
+          partOfSpeech: 'noun',
           romaji: 'toire',
           meaning: { en: 'toilet, restroom', vi: 'nhà vệ sinh' }
         },
         {
           kana: 'げんかん',
+          partOfSpeech: 'noun',
           kanji: '玄関',
           romaji: 'genkan',
           meaning: { en: 'entryway, genkan', vi: 'lối vào, sảnh cửa' },
@@ -870,11 +899,13 @@ export const n5Lesson22: Lesson = {
         },
         {
           kana: 'ベランダ',
+          partOfSpeech: 'noun',
           romaji: 'beranda',
           meaning: { en: 'balcony, veranda', vi: 'ban công' }
         },
         {
           kana: 'エアコン',
+          partOfSpeech: 'noun',
           romaji: 'eakon',
           meaning: { en: 'air conditioner', vi: 'máy lạnh, điều hòa' }
         }

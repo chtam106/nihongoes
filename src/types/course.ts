@@ -11,10 +11,41 @@ export type RubySegment = {
   reading: string;
 };
 
-export type VocabItem = {
+export type VocabPartOfSpeech =
+  | 'noun'
+  | 'verb'
+  | 'adjective'
+  | 'adverb'
+  | 'pronoun'
+  | 'determiner'
+  | 'particle'
+  | 'conjunction'
+  | 'interjection'
+  | 'suffix'
+  | 'expression';
+
+
+export const VOCAB_PART_OF_SPEECH_SHORTEN: { [key in VocabPartOfSpeech]: string } = {
+  noun: 'n',
+  verb: 'v',
+  adjective: 'adj',
+  adverb: 'adv',
+  pronoun: 'pron',
+  determiner: 'det',
+  particle: 'part',
+  conjunction: 'conj',
+  interjection: 'interj',
+  suffix: 'suf',
+  expression: 'exp'
+};
+  export type VocabItem = {
   kana: string;
   kanji?: string;
   romaji: string;
+  /** Japanese word class for the intended meaning; fixed phrases use 'expression'. */
+  partOfSpeech: VocabPartOfSpeech;
+  /** Override when a translated meaning has a different word class. */
+  meaningPartOfSpeech?: Partial<Record<Locale, VocabPartOfSpeech>>;
   /** Override the spoken text when the glyph's reading differs (e.g. particle は -> わ). */
   speech?: string;
   /** Per-kanji ruby for the kanji form, in surface order. */

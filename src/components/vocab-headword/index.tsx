@@ -1,6 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import { appendPartOfSpeech } from '@/utils/vocab.tsx';
 import { Typography, type TypographyProps } from '@mui/material';
 import type { SxProps, Theme } from '@mui/material/styles';
 import type { VocabItem } from '@/types/course.ts';
@@ -8,7 +9,7 @@ import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { renderJapaneseText } from '@/utils/japanese-text.tsx';
 
 type VocabHeadwordProps = {
-  item: Pick<VocabItem, 'kana' | 'kanji' | 'ruby'>;
+  item: Pick<VocabItem, 'kana' | 'kanji' | 'ruby' | 'partOfSpeech'>;
   variant?: TypographyProps['variant'];
   sx?: TypographyProps['sx'];
 };
@@ -35,7 +36,7 @@ export function VocabHeadword({ item, variant = 'subtitle1', sx }: VocabHeadword
       lang="ja"
       sx={[{ fontWeight: 600, lineHeight: 1.3 }, ...(sx == null ? [] : [sx])] as SxProps<Theme>}
     >
-      {display}
+      {appendPartOfSpeech(display, item.partOfSpeech)}
     </Typography>
   );
 }

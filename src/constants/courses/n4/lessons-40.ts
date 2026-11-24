@@ -15,6 +15,7 @@ export const n4Lesson40: Lesson = {
   vocab: [
     {
       kana: 'かぞえます',
+      partOfSpeech: 'verb',
       kanji: '数えます',
       romaji: 'kazoemasu',
       meaning: { en: 'to count', vi: 'đếm' },
@@ -22,6 +23,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'はかります',
+      partOfSpeech: 'verb',
       kanji: '測ります、量ります',
       romaji: 'hakarimasu',
       meaning: { en: 'to measure, to weigh', vi: 'đo, cân' },
@@ -32,6 +34,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'たしかめます',
+      partOfSpeech: 'verb',
       kanji: '確かめます',
       romaji: 'tashikamemasu',
       meaning: { en: 'to confirm, to verify', vi: 'xác nhận' },
@@ -39,6 +42,8 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'あいます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '合います',
       romaji: 'aimasu',
       meaning: { en: 'to fit [サイズが～: size]', vi: 'vừa [cỡ ~]' },
@@ -46,6 +51,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'しゅっぱつします',
+      partOfSpeech: 'verb',
       kanji: '出発します',
       romaji: 'shuppatsu shimasu',
       meaning: { en: 'to depart', vi: 'xuất phát' },
@@ -56,6 +62,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'とうちゃくします',
+      partOfSpeech: 'verb',
       kanji: '到着します',
       romaji: 'tōchaku shimasu',
       meaning: { en: 'to arrive', vi: 'đến' },
@@ -66,6 +73,8 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'よいます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '酔います',
       romaji: 'yoimasu',
       meaning: { en: 'to get drunk', vi: 'say rượu' },
@@ -73,11 +82,14 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'うまくいきます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       romaji: 'umaku ikimasu',
       meaning: { en: 'to go well, to succeed', vi: 'thuận lợi, suôn sẻ' }
     },
     {
       kana: 'でます',
+      partOfSpeech: 'verb',
       kanji: '出ます',
       romaji: 'demasu',
       meaning: { en: 'to appear [問題が～: a problem on a test]', vi: 'có [nội dung câu hỏi thi]' },
@@ -85,6 +97,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'そうだんします',
+      partOfSpeech: 'verb',
       kanji: '相談します',
       romaji: 'sōdan shimasu',
       meaning: { en: 'to consult, to discuss', vi: 'nói chuyện, thảo luận' },
@@ -95,6 +108,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'ひつよう [な]',
+      partOfSpeech: 'adjective',
       kanji: '必要 [な]',
       romaji: 'hitsuyō [na]',
       meaning: { en: 'necessary', vi: 'cần thiết' },
@@ -105,6 +119,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'てんきよほう',
+      partOfSpeech: 'noun',
       kanji: '天気予報',
       romaji: 'tenki yohō',
       meaning: { en: 'weather forecast', vi: 'dự báo thời tiết' },
@@ -117,6 +132,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'ぼうねんかい',
+      partOfSpeech: 'noun',
       kanji: '忘年会',
       romaji: 'bōnenkai',
       meaning: { en: 'year-end party', vi: 'tiệc cuối năm, tiệc tất niên' },
@@ -128,6 +144,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'しんねんかい',
+      partOfSpeech: 'noun',
       kanji: '新年会',
       romaji: 'shinnenkai',
       meaning: { en: 'New Year party', vi: 'tiệc đầu năm' },
@@ -139,6 +156,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'にじかい',
+      partOfSpeech: 'noun',
       kanji: '二次会',
       romaji: 'nijikai',
       meaning: { en: 'after-party (second round)', vi: 'tăng hai, hiệp hai' },
@@ -150,6 +168,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'はっぴょうかい',
+      partOfSpeech: 'noun',
       kanji: '発表会',
       romaji: 'happyōkai',
       meaning: { en: 'presentation event, recital', vi: 'buổi phát biểu' },
@@ -161,6 +180,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'たいかい',
+      partOfSpeech: 'noun',
       kanji: '大会',
       romaji: 'taikai',
       meaning: { en: 'tournament, convention', vi: 'hội thi, cuộc thi' },
@@ -171,16 +191,19 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'マラソン',
+      partOfSpeech: 'noun',
       romaji: 'marason',
       meaning: { en: 'marathon', vi: 'ma-ra-tông' }
     },
     {
       kana: 'コンテスト',
+      partOfSpeech: 'noun',
       romaji: 'kontesuto',
       meaning: { en: 'contest', vi: 'cuộc thi' }
     },
     {
       kana: 'おもて',
+      partOfSpeech: 'noun',
       kanji: '表',
       romaji: 'omote',
       meaning: { en: 'front, right side', vi: 'mặt phải, mặt trước' },
@@ -188,6 +211,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'うら',
+      partOfSpeech: 'noun',
       kanji: '裏',
       romaji: 'ura',
       meaning: { en: 'back, reverse side', vi: 'mặt trái, mặt sau' },
@@ -195,11 +219,13 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'まちがい',
+      partOfSpeech: 'noun',
       romaji: 'machigai',
       meaning: { en: 'mistake, error', vi: 'sai sót' }
     },
     {
       kana: 'きず',
+      partOfSpeech: 'noun',
       kanji: '傷',
       romaji: 'kizu',
       meaning: { en: 'injury, scratch', vi: 'vết thương, vết trầy, vết xước' },
@@ -207,11 +233,13 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'ズボン',
+      partOfSpeech: 'noun',
       romaji: 'zubon',
       meaning: { en: 'trousers, pants', vi: 'quần' }
     },
     {
       kana: 'おとしより',
+      partOfSpeech: 'noun',
       kanji: 'お年寄り',
       romaji: 'o-toshiyori',
       meaning: { en: 'elderly person (polite)', vi: 'người già, người cao tuổi' },
@@ -222,6 +250,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'ながさ',
+      partOfSpeech: 'noun',
       kanji: '長さ',
       romaji: 'nagasa',
       meaning: { en: 'length', vi: 'chiều dài' },
@@ -229,6 +258,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'おもさ',
+      partOfSpeech: 'noun',
       kanji: '重さ',
       romaji: 'omosa',
       meaning: { en: 'weight', vi: 'trọng lượng' },
@@ -236,6 +266,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'たかさ',
+      partOfSpeech: 'noun',
       kanji: '高さ',
       romaji: 'takasa',
       meaning: { en: 'height', vi: 'chiều cao' },
@@ -246,6 +277,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'おおきさ',
+      partOfSpeech: 'noun',
       kanji: '大きさ',
       romaji: 'ōkisa',
       meaning: { en: 'size', vi: 'kích thước, độ lớn' },
@@ -253,6 +285,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: '～びん',
+      partOfSpeech: 'suffix',
       kanji: '～便',
       romaji: '~bin',
       meaning: { en: 'flight (counter for services)', vi: 'chuyến ~' },
@@ -260,6 +293,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: '～こ',
+      partOfSpeech: 'suffix',
       kanji: '～個',
       romaji: '~ko',
       meaning: { en: 'counter for small items', vi: 'cái, chiếc (đếm vật nhỏ)' },
@@ -267,6 +301,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: '～ほん',
+      partOfSpeech: 'suffix',
       kanji: '～本',
       romaji: '~hon',
       meaning: {
@@ -277,6 +312,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: '～はい',
+      partOfSpeech: 'suffix',
       kanji: '～杯',
       romaji: '~hai',
       meaning: { en: 'counter for cupfuls', vi: 'cốc, ly (đồ uống)' },
@@ -284,21 +320,25 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: '～センチ',
+      partOfSpeech: 'suffix',
       romaji: '~senchi',
       meaning: { en: 'centimeter', vi: 'xăng-ti-mét' }
     },
     {
       kana: '～ミリ',
+      partOfSpeech: 'suffix',
       romaji: '~miri',
       meaning: { en: 'millimeter', vi: 'mi-li-mét' }
     },
     {
       kana: '～グラム',
+      partOfSpeech: 'suffix',
       romaji: '~guramu',
       meaning: { en: 'gram', vi: 'gam' }
     },
     {
       kana: '～いじょう',
+      partOfSpeech: 'suffix',
       kanji: '～以上',
       romaji: '~ijō',
       meaning: { en: 'more than ~, above ~', vi: 'trên ~' },
@@ -309,6 +349,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: '～いか',
+      partOfSpeech: 'suffix',
       kanji: '～以下',
       romaji: '~ika',
       meaning: { en: 'less than ~, below ~', vi: 'dưới ~' },
@@ -319,16 +360,19 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'どうでしょうか',
+      partOfSpeech: 'expression',
       romaji: 'Dō deshō ka',
       meaning: { en: 'How is it? (polite)', vi: 'Như thế nào ạ?' }
     },
     {
       kana: 'テスト',
+      partOfSpeech: 'noun',
       romaji: 'tesuto',
       meaning: { en: 'test, exam', vi: 'bài kiểm tra' }
     },
     {
       kana: 'せいせき',
+      partOfSpeech: 'noun',
       kanji: '成績',
       romaji: 'seiseki',
       meaning: { en: 'grades, results', vi: 'thành tích' },
@@ -339,11 +383,13 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'ところで',
+      partOfSpeech: 'conjunction',
       romaji: 'tokorode',
       meaning: { en: 'by the way', vi: 'nhân tiện' }
     },
     {
       kana: 'ようす',
+      partOfSpeech: 'noun',
       kanji: '様子',
       romaji: 'yōsu',
       meaning: { en: 'appearance, situation', vi: 'bộ dạng, tình hình' },
@@ -356,6 +402,7 @@ export const n4Lesson40: Lesson = {
   phrases: [
     {
       kana: 'JL107びんが なんじに つくか、しらべて ください。',
+      partOfSpeech: 'expression',
       kanji: 'JL107便が 何時に 着くか、調べて ください。',
       romaji: 'JL107-bin ga nan-ji ni tsuku ka, shirabete kudasai.',
       meaning: {
@@ -372,6 +419,7 @@ export const n4Lesson40: Lesson = {
     },
     {
       kana: 'この ズボン、ためしに はいて みて も いいですか。',
+      partOfSpeech: 'expression',
       kanji: 'この ズボン、試しに 履いて みて も いいですか。',
       romaji: 'Kono zubon, tameshi ni haite mite mo ii desu ka.',
       meaning: {

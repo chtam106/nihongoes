@@ -15,6 +15,7 @@ export const n5Lesson1: Lesson = {
   vocab: [
     {
       kana: 'わたし',
+      partOfSpeech: 'pronoun',
       kanji: '私',
       romaji: 'watashi',
       ruby: [{ base: '私', reading: 'わたし' }],
@@ -22,14 +23,21 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'わたしたち',
+      partOfSpeech: 'pronoun',
       kanji: '私たち',
       romaji: 'watashitachi',
       ruby: [{ base: '私', reading: 'わたし' }],
       meaning: { en: 'we, us', vi: 'chúng tôi, chúng ta' }
     },
-    { kana: 'あなた', romaji: 'anata', meaning: { en: 'you', vi: 'bạn, anh/chị' } },
+    {
+      kana: 'あなた',
+      partOfSpeech: 'pronoun',
+      romaji: 'anata',
+      meaning: { en: 'you', vi: 'bạn, anh/chị' }
+    },
     {
       kana: 'あのひと',
+      partOfSpeech: 'noun',
       kanji: 'あの人',
       romaji: 'ano hito',
       ruby: [{ base: '人', reading: 'ひと' }],
@@ -37,6 +45,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'あのかた',
+      partOfSpeech: 'noun',
       kanji: 'あの方',
       romaji: 'ano kata',
       ruby: [{ base: '方', reading: 'かた' }],
@@ -44,6 +53,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'みなさん',
+      partOfSpeech: 'pronoun',
       kanji: '皆さん',
       romaji: 'minasan',
       ruby: [{ base: '皆', reading: 'みな' }],
@@ -51,12 +61,14 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: '〜さん',
+      partOfSpeech: 'suffix',
       romaji: 'san',
       speech: 'さん',
       meaning: { en: 'Mr./Ms. (polite suffix)', vi: 'anh/chị/ông/bà (hậu tố lịch sự)' }
     },
     {
       kana: '〜ちゃん',
+      partOfSpeech: 'suffix',
       romaji: 'chan',
       speech: 'ちゃん',
       meaning: {
@@ -66,6 +78,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: '〜くん',
+      partOfSpeech: 'suffix',
       kanji: '〜君',
       romaji: 'kun',
       speech: 'くん',
@@ -77,6 +90,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: '〜じん',
+      partOfSpeech: 'suffix',
       kanji: '〜人',
       romaji: 'jin',
       speech: 'じん',
@@ -85,6 +99,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'せんせい',
+      partOfSpeech: 'noun',
       kanji: '先生',
       romaji: 'sensei',
       ruby: [
@@ -95,6 +110,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'きょうし',
+      partOfSpeech: 'noun',
       kanji: '教師',
       romaji: 'kyōshi',
       ruby: [
@@ -105,6 +121,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'がくせい',
+      partOfSpeech: 'noun',
       kanji: '学生',
       romaji: 'gakusei',
       ruby: [
@@ -115,6 +132,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'かいしゃいん',
+      partOfSpeech: 'noun',
       kanji: '会社員',
       romaji: 'kaishain',
       ruby: [
@@ -126,6 +144,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'しゃいん',
+      partOfSpeech: 'noun',
       kanji: '社員',
       romaji: 'shain',
       ruby: [
@@ -136,6 +155,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'ぎんこういん',
+      partOfSpeech: 'noun',
       kanji: '銀行員',
       romaji: 'ginkōin',
       ruby: [
@@ -147,6 +167,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'いしゃ',
+      partOfSpeech: 'noun',
       kanji: '医者',
       romaji: 'isha',
       ruby: [
@@ -157,6 +178,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'けんきゅうしゃ',
+      partOfSpeech: 'noun',
       kanji: '研究者',
       romaji: 'kenkyūsha',
       ruby: [
@@ -166,9 +188,15 @@ export const n5Lesson1: Lesson = {
       ],
       meaning: { en: 'researcher', vi: 'nhà nghiên cứu' }
     },
-    { kana: 'エンジニア', romaji: 'enjinia', meaning: { en: 'engineer', vi: 'kỹ sư' } },
+    {
+      kana: 'エンジニア',
+      partOfSpeech: 'noun',
+      romaji: 'enjinia',
+      meaning: { en: 'engineer', vi: 'kỹ sư' }
+    },
     {
       kana: 'だいがく',
+      partOfSpeech: 'noun',
       kanji: '大学',
       romaji: 'daigaku',
       ruby: [
@@ -179,6 +207,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'びょういん',
+      partOfSpeech: 'noun',
       kanji: '病院',
       romaji: 'byōin',
       ruby: [
@@ -187,14 +216,16 @@ export const n5Lesson1: Lesson = {
       ],
       meaning: { en: 'hospital', vi: 'bệnh viện' }
     },
-    { kana: 'だれ', romaji: 'dare', meaning: { en: 'who', vi: 'ai' } },
+    { kana: 'だれ', partOfSpeech: 'pronoun', romaji: 'dare', meaning: { en: 'who', vi: 'ai' } },
     {
       kana: 'どなた',
+      partOfSpeech: 'pronoun',
       romaji: 'donata',
       meaning: { en: 'who (polite)', vi: 'vị nào (lịch sự)' }
     },
     {
       kana: '〜さい',
+      partOfSpeech: 'suffix',
       kanji: '〜歳',
       romaji: 'sai',
       speech: 'さい',
@@ -203,6 +234,8 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'なんさい',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adjective' },
       kanji: '何歳',
       romaji: 'nansai',
       ruby: [
@@ -213,20 +246,34 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'おいくつ',
+      partOfSpeech: 'pronoun',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'noun' },
       romaji: 'oikutsu',
       meaning: { en: 'how old (polite)', vi: 'bao nhiêu tuổi (lịch sự)' }
     },
-    { kana: 'はい', romaji: 'hai', meaning: { en: 'yes', vi: 'vâng, đúng' } },
-    { kana: 'いいえ', romaji: 'iie', meaning: { en: 'no', vi: 'không' } }
+    {
+      kana: 'はい',
+      partOfSpeech: 'interjection',
+      romaji: 'hai',
+      meaning: { en: 'yes', vi: 'vâng, đúng' }
+    },
+    {
+      kana: 'いいえ',
+      partOfSpeech: 'interjection',
+      romaji: 'iie',
+      meaning: { en: 'no', vi: 'không' }
+    }
   ],
   phrases: [
     {
       kana: 'はじめまして。',
+      partOfSpeech: 'expression',
       romaji: 'Hajimemashite.',
       meaning: { en: 'How do you do? (first meeting)', vi: 'Rất hân hạnh (lần đầu gặp).' }
     },
     {
       kana: 'どうぞ よろしく おねがいします。',
+      partOfSpeech: 'expression',
       romaji: 'Dōzo yoroshiku onegaishimasu.',
       meaning: {
         en: 'Nice to meet you; I look forward to your kindness.',
@@ -235,6 +282,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'おなまえは なんですか。',
+      partOfSpeech: 'expression',
       kanji: 'お名前は何ですか。',
       romaji: 'Onamae wa nan desu ka.',
       meaning: { en: 'What is your name?', vi: 'Bạn tên là gì?' },
@@ -246,6 +294,7 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'しつれいですが。',
+      partOfSpeech: 'expression',
       kanji: '失礼ですが。',
       romaji: 'Shitsurei desu ga.',
       meaning: {
@@ -259,11 +308,13 @@ export const n5Lesson1: Lesson = {
     },
     {
       kana: 'アメリカから きました。',
+      partOfSpeech: 'expression',
       romaji: 'Amerika kara kimashita.',
       meaning: { en: 'I came from America.', vi: 'Tôi đến từ Mỹ.' }
     },
     {
       kana: 'こちらは アレックスさんです。',
+      partOfSpeech: 'expression',
       romaji: 'Kochira wa Arekkusu-san desu.',
       meaning: { en: 'This is Alex.', vi: 'Đây là anh Alex.' }
     }
@@ -1635,6 +1686,7 @@ export const n5Lesson1: Lesson = {
       items: [
         {
           kana: 'こうむいん',
+          partOfSpeech: 'noun',
           kanji: '公務員',
           romaji: 'kōmuin',
           ruby: [
@@ -1646,6 +1698,7 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'べんごし',
+          partOfSpeech: 'noun',
           kanji: '弁護士',
           romaji: 'bengoshi',
           ruby: [
@@ -1657,6 +1710,7 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'かんごし',
+          partOfSpeech: 'noun',
           kanji: '看護師',
           romaji: 'kangoshi',
           ruby: [
@@ -1668,6 +1722,7 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'しゅふ',
+          partOfSpeech: 'noun',
           kanji: '主婦',
           romaji: 'shufu',
           ruby: [
@@ -1678,6 +1733,7 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'けいさつかん',
+          partOfSpeech: 'noun',
           kanji: '警察官',
           romaji: 'keisatsukan',
           ruby: [
@@ -1700,11 +1756,13 @@ export const n5Lesson1: Lesson = {
       items: [
         {
           kana: 'IMC',
+          partOfSpeech: 'noun',
           romaji: 'Ai-emu-shī',
           meaning: { en: 'IMC (fictional company)', vi: 'IMC (công ty giả định)' }
         },
         {
           kana: 'パワーでんき',
+          partOfSpeech: 'noun',
           kanji: 'パワー電気',
           romaji: 'Pawā denki',
           ruby: [
@@ -1715,16 +1773,19 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'ブラジルエアー',
+          partOfSpeech: 'noun',
           romaji: 'Burajiru eā',
           meaning: { en: 'Brazil Air (fictional airline)', vi: 'Brazil Air (hãng bay giả định)' }
         },
         {
           kana: 'AKC',
+          partOfSpeech: 'noun',
           romaji: 'Ē-kē-shī',
           meaning: { en: 'AKC (fictional organization)', vi: 'AKC (tổ chức giả định)' }
         },
         {
           kana: 'こうべびょういん',
+          partOfSpeech: 'noun',
           kanji: '神戸病院',
           romaji: 'Kōbe byōin',
           ruby: [
@@ -1737,6 +1798,7 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'さくらだいがく',
+          partOfSpeech: 'noun',
           kanji: 'さくら大学',
           romaji: 'Sakura daigaku',
           ruby: [
@@ -1747,6 +1809,7 @@ export const n5Lesson1: Lesson = {
         },
         {
           kana: 'ふじだいがく',
+          partOfSpeech: 'noun',
           kanji: '富士大学',
           romaji: 'Fuji daigaku',
           ruby: [

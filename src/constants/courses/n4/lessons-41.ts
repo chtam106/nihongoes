@@ -15,6 +15,7 @@ export const n4Lesson41: Lesson = {
   vocab: [
     {
       kana: 'いただきます',
+      partOfSpeech: 'verb',
       romaji: 'itadakimasu',
       meaning: {
         en: 'to receive (humble of もらいます)',
@@ -23,6 +24,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'くださいます',
+      partOfSpeech: 'verb',
       romaji: 'kudasaimasu',
       meaning: {
         en: 'to give (honorific of くれます)',
@@ -31,6 +33,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'やります',
+      partOfSpeech: 'verb',
       romaji: 'yarimasu',
       meaning: {
         en: 'to give (to younger, animals, plants)',
@@ -39,6 +42,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'あげます',
+      partOfSpeech: 'verb',
       kanji: '上げます',
       romaji: 'agemasu',
       meaning: { en: 'to raise, to give (outward)', vi: 'tăng; cho (chiều ra)' },
@@ -46,6 +50,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'さげます',
+      partOfSpeech: 'verb',
       kanji: '下げます',
       romaji: 'sagemasu',
       meaning: { en: 'to lower, to reduce', vi: 'giảm' },
@@ -53,6 +58,8 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'しんせつにします',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '親切にします',
       romaji: 'shinsetsu ni shimasu',
       meaning: { en: 'to be kind (to someone)', vi: 'thân thiện, thân thiết' },
@@ -63,11 +70,13 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'かわいい',
+      partOfSpeech: 'adjective',
       romaji: 'kawaii',
       meaning: { en: 'cute', vi: 'dễ thương' }
     },
     {
       kana: 'めずらしい',
+      partOfSpeech: 'adjective',
       kanji: '珍しい',
       romaji: 'mezurashii',
       meaning: { en: 'rare, unusual', vi: 'hiếm' },
@@ -75,6 +84,8 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'おいわい',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: 'お祝い',
       romaji: 'o-iwai',
       meaning: { en: 'celebration, congratulatory gift', vi: 'chúc mừng, quà mừng' },
@@ -82,6 +93,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'おとしだま',
+      partOfSpeech: 'noun',
       kanji: 'お年玉',
       romaji: 'o-toshidama',
       meaning: { en: 'New Year gift money', vi: 'tiền mừng tuổi' },
@@ -92,6 +104,8 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'おみまい',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: 'お見舞い',
       romaji: 'o-mimai',
       meaning: { en: 'get-well visit/gift', vi: 'thăm hỏi, quà thăm hỏi' },
@@ -102,6 +116,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'きょうみ',
+      partOfSpeech: 'noun',
       kanji: '興味',
       romaji: 'kyōmi',
       meaning: {
@@ -115,6 +130,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'じょうほう',
+      partOfSpeech: 'noun',
       kanji: '情報',
       romaji: 'jōhō',
       meaning: { en: 'information', vi: 'thông tin' },
@@ -125,6 +141,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'ぶんぽう',
+      partOfSpeech: 'noun',
       kanji: '文法',
       romaji: 'bunpō',
       meaning: { en: 'grammar', vi: 'ngữ pháp' },
@@ -135,6 +152,8 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'はつおん',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '発音',
       romaji: 'hatsuon',
       meaning: { en: 'pronunciation', vi: 'phát âm' },
@@ -145,6 +164,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'さる',
+      partOfSpeech: 'noun',
       kanji: '猿',
       romaji: 'saru',
       meaning: { en: 'monkey', vi: 'con khỉ' },
@@ -152,16 +172,19 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'えさ',
+      partOfSpeech: 'noun',
       romaji: 'esa',
       meaning: { en: 'feed, pet food', vi: 'thức ăn (cho vật)' }
     },
     {
       kana: 'おもちゃ',
+      partOfSpeech: 'noun',
       romaji: 'omocha',
       meaning: { en: 'toy', vi: 'đồ chơi' }
     },
     {
       kana: 'えほん',
+      partOfSpeech: 'noun',
       kanji: '絵本',
       romaji: 'ehon',
       meaning: { en: 'picture book', vi: 'sách tranh' },
@@ -172,6 +195,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'えはがき',
+      partOfSpeech: 'noun',
       kanji: '絵はがき',
       romaji: 'e-hagaki',
       meaning: { en: 'picture postcard', vi: 'bưu thiếp tranh, bưu thiếp ảnh' },
@@ -179,16 +203,19 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'ドライバー',
+      partOfSpeech: 'noun',
       romaji: 'doraibā',
       meaning: { en: 'screwdriver', vi: 'tuốc-nơ-vít' }
     },
     {
       kana: 'ハンカチ',
+      partOfSpeech: 'noun',
       romaji: 'hankachi',
       meaning: { en: 'handkerchief', vi: 'khăn tay' }
     },
     {
       kana: 'くつした',
+      partOfSpeech: 'noun',
       kanji: '靴下',
       romaji: 'kutsushita',
       meaning: { en: 'socks', vi: 'tất, vớ' },
@@ -199,6 +226,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'てぶくろ',
+      partOfSpeech: 'noun',
       kanji: '手袋',
       romaji: 'tebukuro',
       meaning: { en: 'gloves', vi: 'găng tay' },
@@ -209,6 +237,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'ようちえん',
+      partOfSpeech: 'noun',
       kanji: '幼稚園',
       romaji: 'yōchien',
       meaning: { en: 'kindergarten', vi: 'trường mầm non' },
@@ -220,6 +249,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'だんぼう',
+      partOfSpeech: 'noun',
       kanji: '暖房',
       romaji: 'danbō',
       meaning: { en: 'heating', vi: 'máy sưởi, điều hòa chiều nóng' },
@@ -230,6 +260,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'れいぼう',
+      partOfSpeech: 'noun',
       kanji: '冷房',
       romaji: 'reibō',
       meaning: { en: 'air conditioning (cooling)', vi: 'máy lạnh, điều hòa chiều lạnh' },
@@ -240,6 +271,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'おんど',
+      partOfSpeech: 'noun',
       kanji: '温度',
       romaji: 'ondo',
       meaning: { en: 'temperature', vi: 'nhiệt độ' },
@@ -250,6 +282,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'ひとこと',
+      partOfSpeech: 'noun',
       kanji: '一言',
       romaji: 'hitokoto',
       meaning: { en: 'a few words, a word', vi: 'đôi lời' },
@@ -260,11 +293,13 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: '～ずつ',
+      partOfSpeech: 'suffix',
       romaji: '~zutsu',
       meaning: { en: 'each ~, ~ at a time', vi: 'từng ~' }
     },
     {
       kana: 'ふたり',
+      partOfSpeech: 'noun',
       kanji: '二人',
       romaji: 'futari',
       meaning: { en: 'two people, a couple', vi: 'cặp đôi, hai người' },
@@ -275,6 +310,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'おたく',
+      partOfSpeech: 'noun',
       kanji: 'お宅',
       romaji: 'o-taku',
       meaning: { en: 'your home (honorific)', vi: 'nhà (kính ngữ của うち/いえ)' },
@@ -282,6 +318,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'むかしばなし',
+      partOfSpeech: 'noun',
       kanji: '昔話',
       romaji: 'mukashibanashi',
       meaning: { en: 'folk tale', vi: 'truyện cổ tích' },
@@ -292,6 +329,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'たすけます',
+      partOfSpeech: 'verb',
       kanji: '助けます',
       romaji: 'tasukemasu',
       meaning: { en: 'to help, to save', vi: 'giúp, giúp đỡ' },
@@ -299,11 +337,13 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'いじめます',
+      partOfSpeech: 'verb',
       romaji: 'ijimemasu',
       meaning: { en: 'to bully', vi: 'bắt nạt' }
     },
     {
       kana: 'かめ',
+      partOfSpeech: 'noun',
       kanji: '亀',
       romaji: 'kame',
       meaning: { en: 'turtle', vi: 'con rùa' },
@@ -311,6 +351,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'おひめさま',
+      partOfSpeech: 'noun',
       kanji: 'お姫様',
       romaji: 'o-hime-sama',
       meaning: { en: 'princess', vi: 'nàng công chúa' },
@@ -321,6 +362,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'くらします',
+      partOfSpeech: 'verb',
       kanji: '暮らします',
       romaji: 'kurashimasu',
       meaning: { en: 'to live, to spend life', vi: 'sinh sống' },
@@ -328,6 +370,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'りく',
+      partOfSpeech: 'noun',
       kanji: '陸',
       romaji: 'riku',
       meaning: { en: 'land, shore', vi: 'đất liền' },
@@ -335,6 +378,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'けむり',
+      partOfSpeech: 'noun',
       kanji: '煙',
       romaji: 'kemuri',
       meaning: { en: 'smoke', vi: 'khói' },
@@ -342,6 +386,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'まっしろ [な]',
+      partOfSpeech: 'adjective',
       kanji: '真っ白 [な]',
       romaji: 'masshiro [na]',
       meaning: { en: 'pure white', vi: 'trắng toát' },
@@ -352,6 +397,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'なかみ',
+      partOfSpeech: 'noun',
       kanji: '中身',
       romaji: 'nakami',
       meaning: { en: 'contents, inside', vi: 'nội dung bên trong' },
@@ -364,6 +410,7 @@ export const n4Lesson41: Lesson = {
   phrases: [
     {
       kana: 'けっこん おめでとう ございます。',
+      partOfSpeech: 'expression',
       kanji: '結婚 おめでとう ございます。',
       romaji: 'Kekkon omedetō gozaimasu.',
       meaning: { en: 'Congratulations on your marriage.', vi: 'Chúc mừng đám cưới.' },
@@ -374,6 +421,7 @@ export const n4Lesson41: Lesson = {
     },
     {
       kana: 'どうぞ おしあわせに。',
+      partOfSpeech: 'expression',
       kanji: 'どうぞ お幸せに。',
       romaji: 'Dōzo o-shiawase ni.',
       meaning: { en: 'Please be happy together.', vi: 'Chúc hai người hạnh phúc.' },
@@ -963,6 +1011,7 @@ export const n4Lesson41: Lesson = {
       items: [
         {
           kana: 'うらしまたろう',
+          partOfSpeech: 'noun',
           kanji: '浦島太郎',
           romaji: 'Urashima Tarō',
           meaning: {

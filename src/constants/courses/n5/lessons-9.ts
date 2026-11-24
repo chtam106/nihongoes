@@ -15,16 +15,20 @@ export const n5Lesson9: Lesson = {
   vocab: [
     {
       kana: 'わかります',
+      partOfSpeech: 'verb',
       romaji: 'wakarimasu',
       meaning: { en: 'to understand', vi: 'hiểu, nắm được' }
     },
     {
       kana: 'あります',
+      partOfSpeech: 'verb',
       romaji: 'arimasu',
       meaning: { en: 'to have (possession)', vi: 'có (sở hữu)' }
     },
     {
       kana: 'すき [な]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { en: 'verb', vi: 'verb' },
       kanji: '好き [な]',
       romaji: 'suki [na]',
       meaning: { en: 'to like, fond of', vi: 'thích' },
@@ -32,6 +36,8 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'きらい [な]',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { en: 'verb', vi: 'verb' },
       kanji: '嫌い [な]',
       romaji: 'kirai [na]',
       meaning: { en: 'to dislike', vi: 'ghét, không thích' },
@@ -39,6 +45,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'じょうず [な]',
+      partOfSpeech: 'adjective',
       kanji: '上手 [な]',
       romaji: 'jōzu [na]',
       meaning: { en: 'skillful, good at', vi: 'giỏi, khéo' },
@@ -49,6 +56,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'へた [な]',
+      partOfSpeech: 'adjective',
       kanji: '下手 [な]',
       romaji: 'heta [na]',
       meaning: { en: 'unskillful, poor at', vi: 'kém, dở' },
@@ -59,6 +67,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'のみもの',
+      partOfSpeech: 'noun',
       kanji: '飲み物',
       romaji: 'nomimono',
       meaning: { en: 'drink, beverage', vi: 'đồ uống' },
@@ -69,6 +78,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'りょうり',
+      partOfSpeech: 'noun',
       kanji: '料理',
       romaji: 'ryōri',
       meaning: {
@@ -82,6 +92,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'スポーツ',
+      partOfSpeech: 'noun',
       romaji: 'supōtsu',
       meaning: {
         en: 'sport (~を します: to play sports)',
@@ -90,6 +101,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'やきゅう',
+      partOfSpeech: 'noun',
       kanji: '野球',
       romaji: 'yakyū',
       meaning: {
@@ -103,6 +115,8 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'ダンス',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'dansu',
       meaning: {
         en: 'dance (~を します: to dance)',
@@ -111,6 +125,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'りょこう',
+      partOfSpeech: 'noun',
       kanji: '旅行',
       romaji: 'ryokō',
       meaning: {
@@ -124,6 +139,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'おんがく',
+      partOfSpeech: 'noun',
       kanji: '音楽',
       romaji: 'ongaku',
       meaning: { en: 'music', vi: 'âm nhạc' },
@@ -134,6 +150,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'うた',
+      partOfSpeech: 'noun',
       kanji: '歌',
       romaji: 'uta',
       meaning: { en: 'song', vi: 'bài hát' },
@@ -141,26 +158,31 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'クラシック',
+      partOfSpeech: 'noun',
       romaji: 'kurashikku',
       meaning: { en: 'classical music', vi: 'nhạc cổ điển' }
     },
     {
       kana: 'ジャズ',
+      partOfSpeech: 'noun',
       romaji: 'jazu',
       meaning: { en: 'jazz', vi: 'nhạc jazz' }
     },
     {
       kana: 'コンサート',
+      partOfSpeech: 'noun',
       romaji: 'konsāto',
       meaning: { en: 'concert', vi: 'buổi hòa nhạc' }
     },
     {
       kana: 'カラオケ',
+      partOfSpeech: 'noun',
       romaji: 'karaoke',
       meaning: { en: 'karaoke', vi: 'karaoke' }
     },
     {
       kana: 'かぶき',
+      partOfSpeech: 'noun',
       kanji: '歌舞伎',
       romaji: 'kabuki',
       meaning: { en: 'kabuki (traditional theater)', vi: 'kabuki (kịch truyền thống Nhật)' },
@@ -172,6 +194,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'え',
+      partOfSpeech: 'noun',
       kanji: '絵',
       romaji: 'e',
       meaning: { en: 'picture, painting', vi: 'tranh, hội họa' },
@@ -179,6 +202,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'じ',
+      partOfSpeech: 'noun',
       kanji: '字',
       romaji: 'ji',
       meaning: { en: 'character (writing)', vi: 'chữ' },
@@ -186,6 +210,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'かんじ',
+      partOfSpeech: 'noun',
       kanji: '漢字',
       romaji: 'kanji',
       meaning: { en: 'kanji', vi: 'chữ Hán' },
@@ -196,16 +221,19 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'ひらがな',
+      partOfSpeech: 'noun',
       romaji: 'hiragana',
       meaning: { en: 'hiragana', vi: 'chữ Hiragana' }
     },
     {
       kana: 'カタカナ',
+      partOfSpeech: 'noun',
       romaji: 'katakana',
       meaning: { en: 'katakana', vi: 'chữ Katakana' }
     },
     {
       kana: 'ローマじ',
+      partOfSpeech: 'noun',
       kanji: 'ローマ字',
       romaji: 'rōmaji',
       meaning: { en: 'romaji', vi: 'chữ La Mã' },
@@ -213,6 +241,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'こまかい おかね',
+      partOfSpeech: 'noun',
       kanji: '細かい お金',
       romaji: 'komakai okane',
       meaning: { en: 'small change, coins', vi: 'tiền lẻ' },
@@ -223,11 +252,13 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'チケット',
+      partOfSpeech: 'noun',
       romaji: 'chiketto',
       meaning: { en: 'ticket', vi: 'vé' }
     },
     {
       kana: 'じかん',
+      partOfSpeech: 'noun',
       kanji: '時間',
       romaji: 'jikan',
       meaning: { en: 'time', vi: 'thời gian' },
@@ -238,6 +269,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'ようじ',
+      partOfSpeech: 'noun',
       kanji: '用事',
       romaji: 'yōji',
       meaning: { en: 'errand, business to attend to', vi: 'việc bận, công chuyện' },
@@ -248,6 +280,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'やくそく',
+      partOfSpeech: 'noun',
       kanji: '約束',
       romaji: 'yakusoku',
       meaning: {
@@ -261,6 +294,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'アルバイト',
+      partOfSpeech: 'noun',
       romaji: 'arubaito',
       meaning: {
         en: 'part-time job (~を します: to work part-time)',
@@ -269,6 +303,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'ごしゅじん',
+      partOfSpeech: 'noun',
       kanji: 'ご主人',
       romaji: 'goshujin',
       meaning: { en: "someone else's husband", vi: 'chồng (nói về chồng người khác)' },
@@ -279,6 +314,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'おっと',
+      partOfSpeech: 'noun',
       kanji: '夫',
       romaji: 'otto',
       meaning: { en: 'my husband (also 主人)', vi: 'chồng của tôi (cũng 主人)' },
@@ -286,6 +322,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'おくさん',
+      partOfSpeech: 'noun',
       kanji: '奥さん',
       romaji: 'okusan',
       meaning: { en: "someone else's wife", vi: 'vợ (nói về vợ người khác)' },
@@ -293,6 +330,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'つま',
+      partOfSpeech: 'noun',
       kanji: '妻',
       romaji: 'tsuma',
       meaning: { en: 'my wife (also 家内)', vi: 'vợ của tôi (cũng 家内)' },
@@ -300,6 +338,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'こども',
+      partOfSpeech: 'noun',
       kanji: '子ども',
       romaji: 'kodomo',
       meaning: { en: 'child', vi: 'con cái' },
@@ -307,21 +346,26 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'よく',
+      partOfSpeech: 'adverb',
       romaji: 'yoku',
       meaning: { en: 'well; often (degree)', vi: 'tốt, rõ; thường (mức độ)' }
     },
     {
       kana: 'だいたい',
+      partOfSpeech: 'adverb',
       romaji: 'daitai',
       meaning: { en: 'mostly, roughly', vi: 'đại khái, đại thể' }
     },
     {
       kana: 'たくさん',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { en: 'determiner', vi: 'determiner' },
       romaji: 'takusan',
       meaning: { en: 'many, much', vi: 'nhiều' }
     },
     {
       kana: 'すこし',
+      partOfSpeech: 'adverb',
       kanji: '少し',
       romaji: 'sukoshi',
       meaning: { en: 'a little', vi: 'một chút, ít' },
@@ -329,6 +373,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'ぜんぜん',
+      partOfSpeech: 'adverb',
       kanji: '全然',
       romaji: 'zenzen',
       meaning: { en: 'not at all (with negative)', vi: 'hoàn toàn không (với phủ định)' },
@@ -339,6 +384,7 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'はやく',
+      partOfSpeech: 'adverb',
       kanji: '早く',
       romaji: 'hayaku',
       meaning: { en: 'early; quickly', vi: 'sớm; nhanh' },
@@ -346,11 +392,14 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: '～から',
+      partOfSpeech: 'particle',
+      meaningPartOfSpeech: { en: 'conjunction', vi: 'conjunction' },
       romaji: '~kara',
       meaning: { en: 'because ~', vi: 'vì ~' }
     },
     {
       kana: 'どうして',
+      partOfSpeech: 'adverb',
       romaji: 'dōshite',
       meaning: { en: 'why', vi: 'tại sao' }
     }
@@ -358,6 +407,7 @@ export const n5Lesson9: Lesson = {
   phrases: [
     {
       kana: 'かしてください。',
+      partOfSpeech: 'expression',
       kanji: '貸してください。',
       romaji: 'Kashite kudasai.',
       meaning: { en: 'Please lend it to me.', vi: 'Hãy cho tôi mượn.' },
@@ -365,11 +415,13 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'いいですよ。',
+      partOfSpeech: 'expression',
       romaji: 'Ii desu yo.',
       meaning: { en: 'Sure. / That is fine.', vi: 'Được chứ. / Được ạ.' }
     },
     {
       kana: 'ざんねんですが。',
+      partOfSpeech: 'expression',
       kanji: '残念ですが。',
       romaji: 'Zannen desu ga.',
       meaning: {
@@ -383,16 +435,20 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'ああ。',
+      partOfSpeech: 'interjection',
       romaji: 'Ā.',
       meaning: { en: 'Oh. / Ah.', vi: 'À. / Ôi.' }
     },
     {
       kana: 'いっしょに いかがですか。',
+      partOfSpeech: 'expression',
       romaji: 'Issho ni ikaga desu ka.',
       meaning: { en: 'Would you like to join me?', vi: 'Anh/Chị cùng với tôi không?' }
     },
     {
       kana: 'ちょっと……',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { en: 'interjection', vi: 'interjection' },
       romaji: 'Chotto...',
       meaning: {
         en: 'Well... (soft way to decline an invitation)',
@@ -401,11 +457,13 @@ export const n5Lesson9: Lesson = {
     },
     {
       kana: 'だめですか。',
+      partOfSpeech: 'expression',
       romaji: 'Dame desu ka.',
       meaning: { en: 'Is it no good? / You cannot?', vi: 'Không được à?' }
     },
     {
       kana: 'また こんど おねがいします。',
+      partOfSpeech: 'expression',
       kanji: 'また 今度 お願いします。',
       romaji: 'Mata kondo onegaishimasu.',
       meaning: {
@@ -1403,17 +1461,40 @@ export const n5Lesson9: Lesson = {
       title: { en: 'Music genres', vi: 'Thể loại âm nhạc' },
       includeInQuiz: false,
       items: [
-        { kana: 'ポップス', romaji: 'poppusu', meaning: { en: 'pop music', vi: 'nhạc pop' } },
-        { kana: 'ロック', romaji: 'rokku', meaning: { en: 'rock', vi: 'nhạc rock' } },
-        { kana: 'ジャズ', romaji: 'jazu', meaning: { en: 'jazz', vi: 'nhạc jazz' } },
-        { kana: 'ラテン', romaji: 'raten', meaning: { en: 'Latin music', vi: 'nhạc Latin' } },
+        {
+          kana: 'ポップス',
+          partOfSpeech: 'noun',
+          romaji: 'poppusu',
+          meaning: { en: 'pop music', vi: 'nhạc pop' }
+        },
+        {
+          kana: 'ロック',
+          partOfSpeech: 'noun',
+          romaji: 'rokku',
+          meaning: { en: 'rock', vi: 'nhạc rock' }
+        },
+        {
+          kana: 'ジャズ',
+          partOfSpeech: 'noun',
+          romaji: 'jazu',
+          meaning: { en: 'jazz', vi: 'nhạc jazz' }
+        },
+        {
+          kana: 'ラテン',
+          partOfSpeech: 'noun',
+          romaji: 'raten',
+          meaning: { en: 'Latin music', vi: 'nhạc Latin' }
+        },
         {
           kana: 'クラシック',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { en: 'adjective' },
           romaji: 'kurashikku',
           meaning: { en: 'classical', vi: 'nhạc cổ điển' }
         },
         {
           kana: 'みんよう',
+          partOfSpeech: 'noun',
           kanji: '民謡',
           romaji: 'minyō',
           meaning: { en: 'folk song', vi: 'dân ca' },
@@ -1424,6 +1505,7 @@ export const n5Lesson9: Lesson = {
         },
         {
           kana: 'えんか',
+          partOfSpeech: 'noun',
           kanji: '演歌',
           romaji: 'enka',
           meaning: { en: 'enka (ballad)', vi: 'enka (dòng nhạc Nhật)' },
@@ -1432,8 +1514,18 @@ export const n5Lesson9: Lesson = {
             { base: '歌', reading: 'か' }
           ]
         },
-        { kana: 'ミュージカル', romaji: 'myūjikaru', meaning: { en: 'musical', vi: 'nhạc kịch' } },
-        { kana: 'オペラ', romaji: 'opera', meaning: { en: 'opera', vi: 'opera' } }
+        {
+          kana: 'ミュージカル',
+          partOfSpeech: 'noun',
+          romaji: 'myūjikaru',
+          meaning: { en: 'musical', vi: 'nhạc kịch' }
+        },
+        {
+          kana: 'オペラ',
+          partOfSpeech: 'noun',
+          romaji: 'opera',
+          meaning: { en: 'opera', vi: 'opera' }
+        }
       ]
     },
     {
@@ -1441,16 +1533,34 @@ export const n5Lesson9: Lesson = {
       title: { en: 'Film genres', vi: 'Thể loại phim' },
       includeInQuiz: false,
       items: [
-        { kana: 'SF', romaji: 'SF', meaning: { en: 'science fiction', vi: 'khoa học viễn tưởng' } },
-        { kana: 'ホラー', romaji: 'horā', meaning: { en: 'horror', vi: 'kinh dị' } },
-        { kana: 'アニメ', romaji: 'anime', meaning: { en: 'animation', vi: 'hoạt hình' } },
+        {
+          kana: 'SF',
+          partOfSpeech: 'noun',
+          romaji: 'SF',
+          meaning: { en: 'science fiction', vi: 'khoa học viễn tưởng' }
+        },
+        {
+          kana: 'ホラー',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'adjective' },
+          romaji: 'horā',
+          meaning: { en: 'horror', vi: 'kinh dị' }
+        },
+        {
+          kana: 'アニメ',
+          partOfSpeech: 'noun',
+          romaji: 'anime',
+          meaning: { en: 'animation', vi: 'hoạt hình' }
+        },
         {
           kana: 'ドキュメンタリー',
+          partOfSpeech: 'noun',
           romaji: 'dokyumentarī',
           meaning: { en: 'documentary', vi: 'tài liệu' }
         },
         {
           kana: 'れんあい',
+          partOfSpeech: 'noun',
           kanji: '恋愛',
           romaji: 'renai',
           meaning: { en: 'romance', vi: 'tình cảm' },
@@ -1459,9 +1569,16 @@ export const n5Lesson9: Lesson = {
             { base: '愛', reading: 'あい' }
           ]
         },
-        { kana: 'ミステリー', romaji: 'misuterī', meaning: { en: 'mystery', vi: 'bí ẩn' } },
+        {
+          kana: 'ミステリー',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'adjective' },
+          romaji: 'misuterī',
+          meaning: { en: 'mystery', vi: 'bí ẩn' }
+        },
         {
           kana: 'ぶんげい',
+          partOfSpeech: 'noun',
           kanji: '文芸',
           romaji: 'bungē',
           meaning: { en: 'literary drama', vi: 'văn nghệ' },
@@ -1472,6 +1589,7 @@ export const n5Lesson9: Lesson = {
         },
         {
           kana: 'せんそう',
+          partOfSpeech: 'noun',
           kanji: '戦争',
           romaji: 'sensō',
           meaning: { en: 'war', vi: 'chiến tranh' },
@@ -1480,9 +1598,15 @@ export const n5Lesson9: Lesson = {
             { base: '争', reading: 'そう' }
           ]
         },
-        { kana: 'アクション', romaji: 'akushon', meaning: { en: 'action', vi: 'hành động' } },
+        {
+          kana: 'アクション',
+          partOfSpeech: 'noun',
+          romaji: 'akushon',
+          meaning: { en: 'action', vi: 'hành động' }
+        },
         {
           kana: 'きげき',
+          partOfSpeech: 'noun',
           kanji: '喜劇',
           romaji: 'kigeki',
           meaning: { en: 'comedy', vi: 'hài kịch' },
@@ -1500,27 +1624,63 @@ export const n5Lesson9: Lesson = {
       items: [
         {
           kana: 'ソフトボール',
+          partOfSpeech: 'noun',
           romaji: 'sotobōru',
           meaning: { en: 'softball', vi: 'softball' }
         },
-        { kana: 'サッカー', romaji: 'sakkā', meaning: { en: 'soccer', vi: 'bóng đá' } },
-        { kana: 'ラグビー', romaji: 'ragubī', meaning: { en: 'rugby', vi: 'bóng bầu dục' } },
+        {
+          kana: 'サッカー',
+          partOfSpeech: 'noun',
+          romaji: 'sakkā',
+          meaning: { en: 'soccer', vi: 'bóng đá' }
+        },
+        {
+          kana: 'ラグビー',
+          partOfSpeech: 'noun',
+          romaji: 'ragubī',
+          meaning: { en: 'rugby', vi: 'bóng bầu dục' }
+        },
         {
           kana: 'バレーボール',
+          partOfSpeech: 'noun',
           romaji: 'barēbōru',
           meaning: { en: 'volleyball', vi: 'bóng chuyền' }
         },
         {
           kana: 'バスケットボール',
+          partOfSpeech: 'noun',
           romaji: 'basukettobōru',
           meaning: { en: 'basketball', vi: 'bóng rổ' }
         },
-        { kana: 'テニス', romaji: 'tenisu', meaning: { en: 'tennis', vi: 'quần vợt' } },
-        { kana: 'ボウリング', romaji: 'bōringu', meaning: { en: 'bowling', vi: 'bowling' } },
-        { kana: 'スキー', romaji: 'sukī', meaning: { en: 'skiing', vi: 'trượt tuyết' } },
-        { kana: 'スケート', romaji: 'sukēto', meaning: { en: 'skating', vi: 'trượt băng' } },
+        {
+          kana: 'テニス',
+          partOfSpeech: 'noun',
+          romaji: 'tenisu',
+          meaning: { en: 'tennis', vi: 'quần vợt' }
+        },
+        {
+          kana: 'ボウリング',
+          partOfSpeech: 'noun',
+          romaji: 'bōringu',
+          meaning: { en: 'bowling', vi: 'bowling' }
+        },
+        {
+          kana: 'スキー',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
+          romaji: 'sukī',
+          meaning: { en: 'skiing', vi: 'trượt tuyết' }
+        },
+        {
+          kana: 'スケート',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
+          romaji: 'sukēto',
+          meaning: { en: 'skating', vi: 'trượt băng' }
+        },
         {
           kana: 'やきゅう',
+          partOfSpeech: 'noun',
           kanji: '野球',
           romaji: 'yakyū',
           meaning: { en: 'baseball', vi: 'bóng chày' },
@@ -1531,6 +1691,7 @@ export const n5Lesson9: Lesson = {
         },
         {
           kana: 'たっきゅう',
+          partOfSpeech: 'noun',
           kanji: '卓球',
           romaji: 'takkyū',
           meaning: { en: 'table tennis', vi: 'bóng bàn' },
@@ -1539,9 +1700,15 @@ export const n5Lesson9: Lesson = {
             { base: '球', reading: 'きゅう' }
           ]
         },
-        { kana: 'ピンポン', romaji: 'pinpon', meaning: { en: 'ping-pong', vi: 'bóng bàn' } },
+        {
+          kana: 'ピンポン',
+          partOfSpeech: 'noun',
+          romaji: 'pinpon',
+          meaning: { en: 'ping-pong', vi: 'bóng bàn' }
+        },
         {
           kana: 'すもう',
+          partOfSpeech: 'noun',
           kanji: '相撲',
           romaji: 'sumō',
           meaning: { en: 'sumo', vi: 'sumo' },
@@ -1552,6 +1719,7 @@ export const n5Lesson9: Lesson = {
         },
         {
           kana: 'じゅうどう',
+          partOfSpeech: 'noun',
           kanji: '柔道',
           romaji: 'jūdō',
           meaning: { en: 'judo', vi: 'judo' },
@@ -1562,6 +1730,7 @@ export const n5Lesson9: Lesson = {
         },
         {
           kana: 'けんどう',
+          partOfSpeech: 'noun',
           kanji: '剣道',
           romaji: 'kendō',
           meaning: { en: 'kendo', vi: 'kendo' },
@@ -1572,6 +1741,8 @@ export const n5Lesson9: Lesson = {
         },
         {
           kana: 'すいえい',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '水泳',
           romaji: 'suiei',
           meaning: { en: 'swimming', vi: 'bơi lội' },

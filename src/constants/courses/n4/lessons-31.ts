@@ -15,6 +15,7 @@ export const n4Lesson31: Lesson = {
   vocab: [
     {
       kana: 'つづけます',
+      partOfSpeech: 'verb',
       kanji: '続けます',
       romaji: 'tsuzukemasu',
       meaning: { en: 'to continue', vi: 'tiếp tục' },
@@ -22,6 +23,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'みつけます',
+      partOfSpeech: 'verb',
       kanji: '見つけます',
       romaji: 'mitsukemasu',
       meaning: { en: 'to find', vi: 'tìm thấy' },
@@ -29,6 +31,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'とります',
+      partOfSpeech: 'verb',
       kanji: '取ります',
       romaji: 'torimasu',
       meaning: { en: 'to take [休みを～: time off]', vi: 'xin [休みを～: nghỉ]' },
@@ -36,6 +39,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'うけます',
+      partOfSpeech: 'verb',
       kanji: '受けます',
       romaji: 'ukemasu',
       meaning: { en: 'to take [試験を～: an exam]', vi: 'dự [試験を～: thi]' },
@@ -43,6 +47,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'もうしこみます',
+      partOfSpeech: 'verb',
       kanji: '申し込みます',
       romaji: 'mōshikomimasu',
       meaning: { en: 'to apply, to sign up', vi: 'đăng ký' },
@@ -53,6 +58,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'きゅうけいします',
+      partOfSpeech: 'verb',
       kanji: '休憩します',
       romaji: 'kyūkei shimasu',
       meaning: { en: 'to take a break', vi: 'nghỉ giải lao' },
@@ -63,6 +69,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'れんきゅう',
+      partOfSpeech: 'noun',
       kanji: '連休',
       romaji: 'renkyū',
       meaning: { en: 'consecutive holidays', vi: 'ngày nghỉ liên tục' },
@@ -73,6 +80,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'さくぶん',
+      partOfSpeech: 'noun',
       kanji: '作文',
       romaji: 'sakubun',
       meaning: { en: 'composition, essay', vi: 'bài tập làm văn' },
@@ -83,6 +91,8 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'はっぴょう',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '発表',
       romaji: 'happyō',
       meaning: {
@@ -96,6 +106,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'てんらんかい',
+      partOfSpeech: 'noun',
       kanji: '展覧会',
       romaji: 'tenrankai',
       meaning: { en: 'exhibition', vi: 'triển lãm' },
@@ -107,6 +118,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'けっこんしき',
+      partOfSpeech: 'noun',
       kanji: '結婚式',
       romaji: 'kekkonshiki',
       meaning: { en: 'wedding ceremony', vi: 'lễ cưới' },
@@ -118,6 +130,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'おそうしき',
+      partOfSpeech: 'noun',
       kanji: 'お葬式',
       romaji: 'osōshiki',
       meaning: { en: 'funeral', vi: 'đám tang' },
@@ -128,6 +141,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'しき',
+      partOfSpeech: 'noun',
       kanji: '式',
       romaji: 'shiki',
       meaning: { en: 'ceremony', vi: 'lễ' },
@@ -135,6 +149,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'ほんしゃ',
+      partOfSpeech: 'noun',
       kanji: '本社',
       romaji: 'honsha',
       meaning: { en: 'head office, headquarters', vi: 'trụ sở chính, tổng công ty' },
@@ -145,6 +160,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'してん',
+      partOfSpeech: 'noun',
       kanji: '支店',
       romaji: 'shiten',
       meaning: { en: 'branch office', vi: 'chi nhánh' },
@@ -155,6 +171,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'きょうかい',
+      partOfSpeech: 'noun',
       kanji: '教会',
       romaji: 'kyōkai',
       meaning: { en: 'church', vi: 'nhà thờ' },
@@ -165,6 +182,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'だいがくいん',
+      partOfSpeech: 'noun',
       kanji: '大学院',
       romaji: 'daigakuin',
       meaning: { en: 'graduate school', vi: 'cao học' },
@@ -176,6 +194,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'どうぶつえん',
+      partOfSpeech: 'noun',
       kanji: '動物園',
       romaji: 'dōbutsuen',
       meaning: { en: 'zoo', vi: 'sở thú' },
@@ -187,6 +206,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'おんせん',
+      partOfSpeech: 'noun',
       kanji: '温泉',
       romaji: 'onsen',
       meaning: { en: 'hot spring', vi: 'suối nước nóng' },
@@ -197,6 +217,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'かえり',
+      partOfSpeech: 'noun',
       kanji: '帰り',
       romaji: 'kaeri',
       meaning: { en: 'return trip, way home', vi: 'chiều về' },
@@ -204,6 +225,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'おこさん',
+      partOfSpeech: 'noun',
       kanji: 'お子さん',
       romaji: 'okosan',
       meaning: { en: 'child (someone else)', vi: 'con (của người khác)' },
@@ -211,6 +233,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: '～ごう',
+      partOfSpeech: 'suffix',
       kanji: '～号',
       romaji: '~gō',
       meaning: { en: 'No. ~ (train/service number)', vi: 'số (hiệu) ~' },
@@ -218,6 +241,8 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: '～の ほう',
+      partOfSpeech: 'expression',
+      meaningPartOfSpeech: { en: 'noun', vi: 'noun' },
       kanji: '～の方',
       romaji: '~no hō',
       meaning: { en: 'the ~ side, direction', vi: 'phía ~' },
@@ -225,11 +250,13 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'ずっと',
+      partOfSpeech: 'adverb',
       romaji: 'zutto',
       meaning: { en: 'the whole time, continuously', vi: 'suốt, liên tục' }
     },
     {
       kana: 'のこります',
+      partOfSpeech: 'verb',
       kanji: '残ります',
       romaji: 'nokorimasu',
       meaning: { en: 'to remain, to stay behind', vi: 'ở lại, còn lại' },
@@ -237,6 +264,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'にゅうがくしけん',
+      partOfSpeech: 'noun',
       kanji: '入学試験',
       romaji: 'nyūgaku shiken',
       meaning: { en: 'entrance examination', vi: 'kỳ thi đầu vào' },
@@ -249,6 +277,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'つきに',
+      partOfSpeech: 'adverb',
       kanji: '月に',
       romaji: 'tsuki ni',
       meaning: { en: 'per month, in a month', vi: '(trong) một tháng' },
@@ -256,6 +285,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'むら',
+      partOfSpeech: 'noun',
       kanji: '村',
       romaji: 'mura',
       meaning: { en: 'village', vi: 'làng' },
@@ -263,6 +293,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'そつぎょうします',
+      partOfSpeech: 'verb',
       kanji: '卒業します',
       romaji: 'sotsugyō shimasu',
       meaning: { en: 'to graduate', vi: 'tốt nghiệp' },
@@ -273,6 +304,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'えいがかん',
+      partOfSpeech: 'noun',
       kanji: '映画館',
       romaji: 'eigakan',
       meaning: { en: 'movie theater', vi: 'rạp chiếu phim' },
@@ -284,6 +316,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'とじます',
+      partOfSpeech: 'verb',
       kanji: '閉じます',
       romaji: 'tojimasu',
       meaning: { en: 'to close (eyes)', vi: 'nhắm (mắt)' },
@@ -291,6 +324,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'とかい',
+      partOfSpeech: 'noun',
       kanji: '都会',
       romaji: 'tokai',
       meaning: { en: 'city, urban area', vi: 'thành phố' },
@@ -301,6 +335,7 @@ export const n4Lesson31: Lesson = {
     },
     {
       kana: 'じゆうに',
+      partOfSpeech: 'adverb',
       kanji: '自由に',
       romaji: 'jiyū ni',
       meaning: { en: 'freely', vi: 'thoải mái, tự do' },
@@ -313,6 +348,7 @@ export const n4Lesson31: Lesson = {
   phrases: [
     {
       kana: 'ちょっと やすまない？',
+      partOfSpeech: 'expression',
       kanji: 'ちょっと 休まない？',
       romaji: 'Chotto yasumanai?',
       meaning: { en: 'Shall we rest a bit?', vi: 'Nghỉ một chút nhé?' },
@@ -897,22 +933,26 @@ export const n4Lesson31: Lesson = {
       items: [
         {
           kana: 'バリ',
+          partOfSpeech: 'noun',
           romaji: 'Bari',
           meaning: { en: 'Bali (Indonesia)', vi: 'Bali (Indonesia)' }
         },
         {
           kana: 'ピカソ',
+          partOfSpeech: 'noun',
           romaji: 'Pikaso',
           meaning: { en: 'Pablo Picasso (1881-1973)', vi: 'Pablo Picasso (1881-1973)' }
         },
         {
           kana: 'のぞみ',
+          partOfSpeech: 'noun',
           kanji: 'のぞみ',
           romaji: 'Nozomi',
           meaning: { en: 'Nozomi Shinkansen service', vi: 'Tàu Shinkansen Nozomi' }
         },
         {
           kana: 'しんこうべ',
+          partOfSpeech: 'noun',
           kanji: '新神戸',
           romaji: 'Shin-Kōbe',
           meaning: { en: 'Shin-Kōbe Station (Hyogo)', vi: 'Ga Shin-Kōbe (Hyogo)' },
