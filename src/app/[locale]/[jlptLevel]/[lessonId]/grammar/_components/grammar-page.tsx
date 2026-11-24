@@ -148,7 +148,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
 
           return (
             <ChoiceButton
-              key={option.id}
+              key={`${questionNumber}-${option.id}`}
               onClick={() => handleSelect(option.id)}
               dimmed={locked}
               state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}
