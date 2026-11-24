@@ -15,6 +15,7 @@ export const n5Lesson17: Lesson = {
   vocab: [
     {
       kana: 'おぼえます',
+      partOfSpeech: 'verb',
       kanji: '覚えます',
       romaji: 'oboemasu',
       meaning: { en: 'to remember', vi: 'nhớ' },
@@ -22,6 +23,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'わすれます',
+      partOfSpeech: 'verb',
       kanji: '忘れます',
       romaji: 'wasuremasu',
       meaning: { en: 'to forget', vi: 'quên' },
@@ -29,6 +31,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'なくします',
+      partOfSpeech: 'verb',
       kanji: '無くします',
       romaji: 'nakushimasu',
       meaning: { en: 'to lose (something)', vi: 'làm mất' },
@@ -36,6 +39,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'だします',
+      partOfSpeech: 'verb',
       kanji: '出します',
       romaji: 'dashimasu',
       meaning: {
@@ -46,6 +50,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'はらいます',
+      partOfSpeech: 'verb',
       kanji: '払います',
       romaji: 'haraimasu',
       meaning: { en: 'to pay', vi: 'trả tiền, thanh toán' },
@@ -53,6 +58,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'かえします',
+      partOfSpeech: 'verb',
       kanji: '返します',
       romaji: 'kaeshimasu',
       meaning: { en: 'to return (something)', vi: 'trả lại' },
@@ -60,6 +66,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'でかけます',
+      partOfSpeech: 'verb',
       kanji: '出かけます',
       romaji: 'dekakemasu',
       meaning: { en: 'to go out', vi: 'ra ngoài, đi ra' },
@@ -67,6 +74,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'ぬぎます',
+      partOfSpeech: 'verb',
       kanji: '脱ぎます',
       romaji: 'nugimasu',
       meaning: { en: 'to take off (clothes)', vi: 'cởi (quần áo)' },
@@ -74,6 +82,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'もっていきます',
+      partOfSpeech: 'verb',
       kanji: '持っていきます',
       romaji: 'motte ikimasu',
       meaning: { en: 'to take (something along)', vi: 'mang theo, mang đi' },
@@ -81,6 +90,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'もってきます',
+      partOfSpeech: 'verb',
       kanji: '持って来ます',
       romaji: 'motte kimasu',
       meaning: { en: 'to bring (something)', vi: 'mang đến, mang theo đến' },
@@ -91,6 +101,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'しんぱいします',
+      partOfSpeech: 'verb',
       kanji: '心配します',
       romaji: 'shinpai shimasu',
       meaning: { en: 'to worry', vi: 'lo lắng' },
@@ -101,6 +112,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'ざんぎょうします',
+      partOfSpeech: 'verb',
       kanji: '残業します',
       romaji: 'zangyō shimasu',
       meaning: { en: 'to work overtime', vi: 'làm thêm giờ' },
@@ -111,6 +123,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'しゅっちょうします',
+      partOfSpeech: 'verb',
       kanji: '出張します',
       romaji: 'shutchō shimasu',
       meaning: { en: 'to go on a business trip', vi: 'đi công tác' },
@@ -121,6 +134,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'のみます',
+      partOfSpeech: 'verb',
       kanji: '飲みます',
       romaji: 'nomimasu',
       meaning: {
@@ -131,6 +145,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'はいります',
+      partOfSpeech: 'verb',
       kanji: '入ります',
       romaji: 'hairimasu',
       meaning: {
@@ -141,6 +156,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'たいせつ [な]',
+      partOfSpeech: 'adjective',
       kanji: '大切 [な]',
       romaji: 'taisetsu [na]',
       meaning: { en: 'important, precious', vi: 'quan trọng' },
@@ -151,6 +167,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'だいじょうぶ [な]',
+      partOfSpeech: 'adjective',
       kanji: '大丈夫 [な]',
       romaji: 'daijōbu [na]',
       meaning: { en: 'all right, fine', vi: 'ổn, không sao' },
@@ -162,6 +179,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'あぶない',
+      partOfSpeech: 'adjective',
       kanji: '危ない',
       romaji: 'abunai',
       meaning: { en: 'dangerous', vi: 'nguy hiểm' },
@@ -169,6 +187,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'もんだい',
+      partOfSpeech: 'noun',
       kanji: '問題',
       romaji: 'mondai',
       meaning: { en: 'problem, question', vi: 'vấn đề, câu hỏi' },
@@ -179,6 +198,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'こたえ',
+      partOfSpeech: 'noun',
       kanji: '答え',
       romaji: 'kotae',
       meaning: { en: 'answer', vi: 'câu trả lời' },
@@ -186,6 +206,8 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'きんえん',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '禁煙',
       romaji: "kin'en",
       meaning: { en: 'no smoking', vi: 'cấm hút thuốc' },
@@ -196,6 +218,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'けんこうほけんしょう',
+      partOfSpeech: 'noun',
       kanji: '健康保険証',
       romaji: 'kenkō hoken shō',
       meaning: { en: 'health insurance card', vi: 'thẻ bảo hiểm y tế' },
@@ -209,6 +232,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'かぜ',
+      partOfSpeech: 'noun',
       kanji: '風邪',
       romaji: 'kaze',
       meaning: { en: 'cold (illness)', vi: 'cảm, cảm cúm' },
@@ -219,6 +243,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'ねつ',
+      partOfSpeech: 'noun',
       kanji: '熱',
       romaji: 'netsu',
       meaning: { en: 'fever, heat', vi: 'sốt, nhiệt' },
@@ -226,6 +251,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'びょうき',
+      partOfSpeech: 'noun',
       kanji: '病気',
       romaji: 'byōki',
       meaning: { en: 'illness, sickness', vi: 'bệnh, ốm' },
@@ -236,6 +262,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'くすり',
+      partOfSpeech: 'noun',
       kanji: '薬',
       romaji: 'kusuri',
       meaning: { en: 'medicine', vi: 'thuốc' },
@@ -243,6 +270,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'おふろ',
+      partOfSpeech: 'noun',
       kanji: 'お風呂',
       romaji: 'ofuro',
       meaning: { en: 'bath', vi: 'bồn tắm, tắm' },
@@ -253,6 +281,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'うわぎ',
+      partOfSpeech: 'noun',
       kanji: '上着',
       romaji: 'uwagi',
       meaning: { en: 'jacket, outerwear', vi: 'áo khoác, áo ngoài' },
@@ -263,6 +292,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'したぎ',
+      partOfSpeech: 'noun',
       kanji: '下着',
       romaji: 'shitagi',
       meaning: { en: 'underwear', vi: 'đồ lót' },
@@ -273,6 +303,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'せんせい',
+      partOfSpeech: 'noun',
       kanji: '先生',
       romaji: 'sensei',
       meaning: { en: 'doctor (at a clinic)', vi: 'bác sĩ' },
@@ -283,6 +314,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: '2、3にち',
+      partOfSpeech: 'noun',
       kanji: '2、3日',
       romaji: 'ni, san-nichi',
       meaning: { en: 'two or three days', vi: 'hai, ba ngày' },
@@ -290,16 +322,19 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: '2、3～',
+      partOfSpeech: 'determiner',
       romaji: 'ni, san ~',
       meaning: { en: 'two or three ~', vi: 'hai, ba ~' }
     },
     {
       kana: '～までに',
+      partOfSpeech: 'particle',
       romaji: '~made ni',
       meaning: { en: 'by (deadline)', vi: 'trước, trước khi (hạn)' }
     },
     {
       kana: 'ですから',
+      partOfSpeech: 'conjunction',
       romaji: 'desu kara',
       meaning: { en: 'so, therefore', vi: 'vì vậy, cho nên' }
     }
@@ -307,16 +342,19 @@ export const n5Lesson17: Lesson = {
   phrases: [
     {
       kana: 'どうしましたか。',
+      partOfSpeech: 'expression',
       romaji: 'Dō shimashita ka.',
       meaning: { en: 'What is the matter?', vi: 'Anh/Chị bị sao ạ?' }
     },
     {
       kana: 'のど',
+      partOfSpeech: 'noun',
       romaji: 'nodo',
       meaning: { en: 'throat', vi: 'họng' }
     },
     {
       kana: '～が いたいです。',
+      partOfSpeech: 'expression',
       kanji: '～が 痛いです。',
       romaji: '~ ga itai desu.',
       meaning: { en: '~ hurts.', vi: 'Đau ~.' },
@@ -324,6 +362,7 @@ export const n5Lesson17: Lesson = {
     },
     {
       kana: 'おだいじに。',
+      partOfSpeech: 'expression',
       kanji: 'お大事に。',
       romaji: 'O-daiji ni.',
       meaning: { en: 'Take care of yourself.', vi: 'Giữ gìn sức khỏe nhé.' },
@@ -1488,6 +1527,8 @@ export const n5Lesson17: Lesson = {
       items: [
         {
           kana: 'あたまが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: '頭が 痛い',
           romaji: 'atama ga itai',
           meaning: { en: 'headache', vi: 'đau đầu' },
@@ -1498,6 +1539,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'おなかが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: 'おなかが 痛い',
           romaji: 'onaka ga itai',
           meaning: { en: 'stomachache', vi: 'đau bụng' },
@@ -1505,6 +1548,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'はが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: '歯が 痛い',
           romaji: 'ha ga itai',
           meaning: { en: 'toothache', vi: 'đau răng' },
@@ -1515,6 +1560,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'のどが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: 'のどが 痛い',
           romaji: 'nodo ga itai',
           meaning: { en: 'sore throat', vi: 'đau họng' },
@@ -1522,6 +1569,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'ねつが ある',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'verb', vi: 'verb' },
           kanji: '熱が ある',
           romaji: 'netsu ga aru',
           meaning: { en: 'to have a fever', vi: 'bị sốt' },
@@ -1529,6 +1578,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'せき',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '咳',
           romaji: 'seki',
           meaning: { en: 'cough', vi: 'ho' },
@@ -1536,6 +1587,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'はなみず',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '鼻水',
           romaji: 'hanamizu',
           meaning: { en: 'runny nose', vi: 'sổ mũi' },
@@ -1546,6 +1599,7 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'かぜ',
+          partOfSpeech: 'noun',
           kanji: '風邪',
           romaji: 'kaze',
           meaning: { en: 'cold (illness)', vi: 'cảm' },
@@ -1556,11 +1610,14 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'インフルエンザ',
+          partOfSpeech: 'noun',
           romaji: 'infuruenza',
           meaning: { en: 'influenza, flu', vi: 'cúm' }
         },
         {
           kana: 'かふんしょう',
+          partOfSpeech: 'noun',
+          meaningPartOfSpeech: { vi: 'verb' },
           kanji: '花粉症',
           romaji: 'kafun-shō',
           meaning: { en: 'hay fever, pollen allergy', vi: 'dị ứng phấn hoa' },
@@ -1572,6 +1629,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'せなかが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: '背中が 痛い',
           romaji: 'senaka ga itai',
           meaning: { en: 'backache', vi: 'đau lưng' },
@@ -1583,6 +1642,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'めが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: '目が 痛い',
           romaji: 'me ga itai',
           meaning: { en: 'eye pain', vi: 'đau mắt' },
@@ -1593,6 +1654,8 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'みみが いたい',
+          partOfSpeech: 'expression',
+          meaningPartOfSpeech: { en: 'noun', vi: 'adjective' },
           kanji: '耳が 痛い',
           romaji: 'mimi ga itai',
           meaning: { en: 'earache', vi: 'đau tai' },
@@ -1603,6 +1666,7 @@ export const n5Lesson17: Lesson = {
         },
         {
           kana: 'くすり',
+          partOfSpeech: 'noun',
           kanji: '薬',
           romaji: 'kusuri',
           meaning: { en: 'medicine', vi: 'thuốc' },

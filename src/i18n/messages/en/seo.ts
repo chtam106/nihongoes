@@ -15,6 +15,10 @@ export const seo = {
     title: 'Flashcards',
     description: 'Collections of vocabulary flashcards saved in your browser.'
   },
+  privacy: {
+    title: 'Privacy',
+    description: 'How Nihongoes uses Google Drive to store your flashcard collections.'
+  },
   flashcardDrive: {
     title: 'Sync',
     description: 'Connect Google Drive and sync flashcard collections saved on this device.'

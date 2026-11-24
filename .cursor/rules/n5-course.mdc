@@ -59,6 +59,9 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 
 ## Quizzes: NO romaji (IMPORTANT)
 - Do NOT show romaji/phonetic transcription in the quiz surfaces (vocabulary / grammar / reading). Quiz prompts and reading passages display Japanese (and meanings) only — no romaji helper line. Romaji stays on the lesson detail page only.
+- For every course and level, including future N3, N2, and N1 courses, multiple-choice distractors must match the word class of the displayed answer. Prefer the current lesson, then nearby lessons in course order when needed, rather than mixing word classes.
+- Every `VocabItem`, including phrases and reference vocabulary in all current and future courses, must declare its Japanese `partOfSpeech`. When an EN or VI gloss has a different class, record that locale in `meaningPartOfSpeech`.
+- Show Japanese word-class labels in English only on vocabulary, phrase, and reference vocabulary cards, regardless of the interface language.
 
 ## Pages (`src/features/course/`) — generic, take a `level: CourseLevel` prop
 - `course-page.tsx` – course overview (lesson list, from course data).

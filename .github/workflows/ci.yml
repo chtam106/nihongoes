@@ -213,7 +213,7 @@ jobs:
         run: pnpm build
 
   # Stable gate for branch protection: always reports, so requiring it never
-  # deadlocks when unit/build are skipped on non-code PRs. Fails if either failed.
+  # deadlocks when unit/build are skipped on non-code PRs. E2E runs locally only.
   tests-pass:
     name: Tests pass
     needs: [build, unit]

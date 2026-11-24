@@ -4,11 +4,11 @@ import {
   VOCABULARY_PATH,
   FLASHCARDS_PATH
 } from '@/constants/courses/levels.ts';
-
 type RouteNode = string | { readonly [key: string]: RouteNode };
 
 export const routes = {
   home: '/',
+  privacy: '/privacy',
   vocabulary: VOCABULARY_PATH,
   flashcards: FLASHCARDS_PATH,
   flashcardDrive: '/sync',

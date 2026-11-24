@@ -15,6 +15,10 @@ export const seo = {
     title: 'Flashcards',
     description: 'Collection flashcard từ vựng lưu trên trình duyệt.'
   },
+  privacy: {
+    title: 'Quyền riêng tư',
+    description: 'Nihongoes dùng Google Drive để lưu collection flashcard như thế nào.'
+  },
   flashcardDrive: {
     title: 'Đồng bộ',
     description: 'Kết nối Google Drive và đồng bộ collection flashcard đang lưu trên thiết bị.'

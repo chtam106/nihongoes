@@ -15,6 +15,7 @@ export const n4Lesson32: Lesson = {
   vocab: [
     {
       kana: 'うんどうします',
+      partOfSpeech: 'verb',
       kanji: '運動します',
       romaji: 'undō shimasu',
       meaning: { en: 'to exercise', vi: 'vận động, tập thể dục' },
@@ -25,6 +26,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'せいこうします',
+      partOfSpeech: 'verb',
       kanji: '成功します',
       romaji: 'seikō shimasu',
       meaning: { en: 'to succeed', vi: 'thành công' },
@@ -35,6 +37,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'しっぱいします',
+      partOfSpeech: 'verb',
       kanji: '失敗します',
       romaji: 'shippai shimasu',
       meaning: { en: 'to fail [試験に～: an exam]', vi: 'thất bại, trượt [試験に～: kỳ thi]' },
@@ -45,6 +48,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ごうかくします',
+      partOfSpeech: 'verb',
       kanji: '合格します',
       romaji: 'gōkaku shimasu',
       meaning: { en: 'to pass [試験に～: an exam]', vi: 'đỗ [試験に～: kỳ thi]' },
@@ -55,11 +59,14 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'やみます',
+      partOfSpeech: 'verb',
       romaji: 'yamimasu',
       meaning: { en: 'to stop [雨が～: rain]', vi: 'tạnh [雨が～: mưa]' }
     },
     {
       kana: 'はれます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '晴れます',
       romaji: 'haremasu',
       meaning: { en: 'to clear up (weather)', vi: 'quang đãng, nắng' },
@@ -67,6 +74,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'くもります',
+      partOfSpeech: 'verb',
       kanji: '曇ります',
       romaji: 'kumorimasu',
       meaning: { en: 'to become cloudy', vi: 'có mây' },
@@ -74,6 +82,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'つづきます',
+      partOfSpeech: 'verb',
       kanji: '続きます',
       romaji: 'tsuzukimasu',
       meaning: { en: 'to continue [熱が～: a fever]', vi: 'kéo dài [熱が～: sốt]' },
@@ -81,11 +90,13 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ひきます',
+      partOfSpeech: 'verb',
       romaji: 'hikimasu',
       meaning: { en: 'to catch [風邪を～: a cold]', vi: 'bị cảm [風邪を～: cảm]' }
     },
     {
       kana: 'ひやします',
+      partOfSpeech: 'verb',
       kanji: '冷やします',
       romaji: 'hiyashimasu',
       meaning: { en: 'to chill, to cool', vi: 'làm mát, làm lạnh' },
@@ -93,6 +104,8 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'こみます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '込みます',
       romaji: 'komimasu',
       meaning: { en: 'to be crowded [道が～: a road]', vi: 'đông [道が～: đường]' },
@@ -100,11 +113,14 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'すきます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       romaji: 'sukimasu',
       meaning: { en: 'to be empty [道が～: a road]', vi: 'vắng [道が～: đường]' }
     },
     {
       kana: 'でます',
+      partOfSpeech: 'verb',
       kanji: '出ます',
       romaji: 'demasu',
       meaning: {
@@ -115,6 +131,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'むりをします',
+      partOfSpeech: 'verb',
       kanji: '無理をします',
       romaji: 'muri o shimasu',
       meaning: {
@@ -128,6 +145,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'じゅうぶん [な]',
+      partOfSpeech: 'adjective',
       kanji: '十分 [な]',
       romaji: 'jūbun [na]',
       meaning: { en: 'enough', vi: 'đủ' },
@@ -138,16 +156,19 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'おかしい',
+      partOfSpeech: 'adjective',
       romaji: 'okashii',
       meaning: { en: 'strange, odd', vi: '(kỳ) lạ, thú vị' }
     },
     {
       kana: 'うるさい',
+      partOfSpeech: 'adjective',
       romaji: 'urusai',
       meaning: { en: 'noisy', vi: 'ồn ào' }
     },
     {
       kana: 'せんせい',
+      partOfSpeech: 'noun',
       kanji: '先生',
       romaji: 'sensei',
       meaning: { en: 'doctor (medical)', vi: 'bác sĩ' },
@@ -158,26 +179,33 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'やけど',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'yakedo',
       meaning: { en: 'burn (~を します: to get burned)', vi: 'bỏng (~を します: bị ~)' }
     },
     {
       kana: 'けが',
+      partOfSpeech: 'noun',
       romaji: 'kega',
       meaning: { en: 'injury (~を します: to get injured)', vi: 'thương tích (~を します: bị ~)' }
     },
     {
       kana: 'せき',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       romaji: 'seki',
       meaning: { en: 'cough (~を します: to cough)', vi: 'ho (~を します: ho)' }
     },
     {
       kana: 'インフルエンザ',
+      partOfSpeech: 'noun',
       romaji: 'infuruenza',
       meaning: { en: 'influenza, flu', vi: 'cúm' }
     },
     {
       kana: 'そら',
+      partOfSpeech: 'noun',
       kanji: '空',
       romaji: 'sora',
       meaning: { en: 'sky', vi: 'bầu trời' },
@@ -185,6 +213,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'たいよう',
+      partOfSpeech: 'noun',
       kanji: '太陽',
       romaji: 'taiyō',
       meaning: { en: 'sun', vi: 'mặt trời' },
@@ -195,6 +224,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ほし',
+      partOfSpeech: 'noun',
       kanji: '星',
       romaji: 'hoshi',
       meaning: { en: 'star', vi: 'sao' },
@@ -202,6 +232,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'かぜ',
+      partOfSpeech: 'noun',
       kanji: '風',
       romaji: 'kaze',
       meaning: { en: 'wind; cold (illness)', vi: 'gió; cảm (bệnh)' },
@@ -209,6 +240,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ひがし',
+      partOfSpeech: 'noun',
       kanji: '東',
       romaji: 'higashi',
       meaning: { en: 'east', vi: 'đông' },
@@ -216,6 +248,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'にし',
+      partOfSpeech: 'noun',
       kanji: '西',
       romaji: 'nishi',
       meaning: { en: 'west', vi: 'tây' },
@@ -223,6 +256,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'みなみ',
+      partOfSpeech: 'noun',
       kanji: '南',
       romaji: 'minami',
       meaning: { en: 'south', vi: 'nam' },
@@ -230,6 +264,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'きた',
+      partOfSpeech: 'noun',
       kanji: '北',
       romaji: 'kita',
       meaning: { en: 'north', vi: 'bắc' },
@@ -237,6 +272,8 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'こくさい～',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'adjective' },
       kanji: '国際～',
       romaji: 'kokusai~',
       meaning: { en: 'international ~', vi: '~ quốc tế' },
@@ -247,6 +284,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'すいどう',
+      partOfSpeech: 'noun',
       kanji: '水道',
       romaji: 'suidō',
       meaning: { en: 'water supply, tap water', vi: 'nước máy' },
@@ -257,16 +295,19 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'エンジン',
+      partOfSpeech: 'noun',
       romaji: 'enjin',
       meaning: { en: 'engine', vi: 'động cơ' }
     },
     {
       kana: 'チーム',
+      partOfSpeech: 'noun',
       romaji: 'chīmu',
       meaning: { en: 'team', vi: 'đội' }
     },
     {
       kana: 'こんや',
+      partOfSpeech: 'noun',
       kanji: '今夜',
       romaji: 'konnya',
       meaning: { en: 'tonight', vi: 'tối nay' },
@@ -277,6 +318,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ゆうがた',
+      partOfSpeech: 'noun',
       kanji: '夕方',
       romaji: 'yūgata',
       meaning: { en: 'evening', vi: 'chiều tối' },
@@ -287,11 +329,14 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'まえ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       romaji: 'mae',
       meaning: { en: 'before, ago', vi: 'trước' }
     },
     {
       kana: 'おそく',
+      partOfSpeech: 'adverb',
       kanji: '遅く',
       romaji: 'osoku',
       meaning: { en: 'late', vi: 'muộn' },
@@ -299,21 +344,25 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'こんなに',
+      partOfSpeech: 'adverb',
       romaji: 'konna ni',
       meaning: { en: 'this much, like this', vi: 'như thế này' }
     },
     {
       kana: 'そんなに',
+      partOfSpeech: 'adverb',
       romaji: 'sonna ni',
       meaning: { en: 'that much (near listener)', vi: 'như thế đó' }
     },
     {
       kana: 'あんなに',
+      partOfSpeech: 'adverb',
       romaji: 'anna ni',
       meaning: { en: 'that much (remote)', vi: 'như thế kia' }
     },
     {
       kana: 'げんき',
+      partOfSpeech: 'adjective',
       kanji: '元気',
       romaji: 'genki',
       meaning: { en: 'healthy, well', vi: 'khỏe' },
@@ -324,6 +373,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'い',
+      partOfSpeech: 'noun',
       kanji: '胃',
       romaji: 'i',
       meaning: { en: 'stomach', vi: 'dạ dày' },
@@ -331,11 +381,15 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ストレス',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'adjective' },
       romaji: 'sutoresu',
       meaning: { en: 'stress', vi: 'căng thẳng' }
     },
     {
       kana: 'ほしうらない',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '星占い',
       romaji: 'hoshiuranai',
       meaning: { en: 'horoscope, fortune-telling by stars', vi: 'bói sao' },
@@ -346,6 +400,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'おうしざ',
+      partOfSpeech: 'noun',
       kanji: '牡牛座',
       romaji: 'Oushiza',
       meaning: { en: 'Taurus (zodiac)', vi: 'cung Kim Ngưu' },
@@ -357,6 +412,8 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'はたらきすぎ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '働きすぎ',
       romaji: 'hatarakisugi',
       meaning: { en: 'overworking', vi: 'làm việc quá sức' },
@@ -364,6 +421,8 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'こまります',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '困ります',
       romaji: 'komarimasu',
       meaning: { en: 'to be troubled, to have difficulty', vi: 'khó khăn, lúng túng' },
@@ -371,6 +430,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'たからくじ',
+      partOfSpeech: 'noun',
       kanji: '宝くじ',
       romaji: 'takarakuji',
       meaning: { en: 'lottery', vi: 'vé số, xổ số' },
@@ -382,6 +442,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'あたります',
+      partOfSpeech: 'verb',
       kanji: '当たります',
       romaji: 'atarimasu',
       meaning: { en: 'to win [宝くじが～: the lottery]', vi: 'trúng [宝くじが～: xổ số]' },
@@ -389,6 +450,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'けんこう',
+      partOfSpeech: 'noun',
       kanji: '健康',
       romaji: 'kenkō',
       meaning: { en: 'health', vi: 'sức khỏe' },
@@ -399,6 +461,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'れんあい',
+      partOfSpeech: 'noun',
       kanji: '恋愛',
       romaji: 'renai',
       meaning: { en: 'love, romance', vi: 'tình yêu' },
@@ -409,6 +472,7 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'こいびと',
+      partOfSpeech: 'noun',
       kanji: '恋人',
       romaji: 'koibito',
       meaning: { en: 'boyfriend/girlfriend, lover', vi: 'người yêu' },
@@ -419,11 +483,13 @@ export const n4Lesson32: Lesson = {
     },
     {
       kana: 'ラッキーアイテム',
+      partOfSpeech: 'noun',
       romaji: 'rakkī aitemu',
       meaning: { en: 'lucky charm item', vi: 'vật may mắn (theo bói toán)' }
     },
     {
       kana: 'いし',
+      partOfSpeech: 'noun',
       kanji: '石',
       romaji: 'ishi',
       meaning: { en: 'stone', vi: 'hòn đá, viên đá' },
@@ -433,6 +499,7 @@ export const n4Lesson32: Lesson = {
   phrases: [
     {
       kana: 'それは いけませんね。',
+      partOfSpeech: 'expression',
       romaji: 'Sore wa ikemasen ne.',
       meaning: { en: 'That is not good.', vi: 'Thế thì thật không tốt.' }
     }
@@ -946,6 +1013,7 @@ export const n4Lesson32: Lesson = {
       items: [
         {
           kana: 'ヨーロッパ',
+          partOfSpeech: 'noun',
           romaji: 'Yōroppa',
           meaning: { en: 'Europe', vi: 'châu Âu' }
         }

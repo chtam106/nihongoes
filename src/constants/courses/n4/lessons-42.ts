@@ -15,6 +15,7 @@ export const n4Lesson42: Lesson = {
   vocab: [
     {
       kana: 'つつみます',
+      partOfSpeech: 'verb',
       kanji: '包みます',
       romaji: 'tsutsumimasu',
       meaning: { en: 'to wrap', vi: 'gói' },
@@ -22,6 +23,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'わかします',
+      partOfSpeech: 'verb',
       kanji: '沸かします',
       romaji: 'wakashimasu',
       meaning: { en: 'to boil (water)', vi: 'đun sôi' },
@@ -29,6 +31,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'まぜます',
+      partOfSpeech: 'verb',
       kanji: '混ぜます',
       romaji: 'mazemasu',
       meaning: { en: 'to mix', vi: 'trộn' },
@@ -36,6 +39,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'けいさんします',
+      partOfSpeech: 'verb',
       kanji: '計算します',
       romaji: 'keisan shimasu',
       meaning: { en: 'to calculate', vi: 'tính, tính toán' },
@@ -46,6 +50,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ならびます',
+      partOfSpeech: 'verb',
       kanji: '並びます',
       romaji: 'narabimasu',
       meaning: { en: 'to line up, to queue', vi: 'xếp hàng' },
@@ -53,6 +58,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'じょうぶ [な]',
+      partOfSpeech: 'adjective',
       kanji: '丈夫 [な]',
       romaji: 'jōbu [na]',
       meaning: { en: 'sturdy, durable', vi: 'chắc chắn' },
@@ -63,11 +69,13 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'アパート',
+      partOfSpeech: 'noun',
       romaji: 'apāto',
       meaning: { en: 'apartment (room)', vi: 'phòng trọ' }
     },
     {
       kana: 'べんごし',
+      partOfSpeech: 'noun',
       kanji: '弁護士',
       romaji: 'bengoshi',
       meaning: { en: 'lawyer', vi: 'luật sư' },
@@ -79,6 +87,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'おんがくか',
+      partOfSpeech: 'noun',
       kanji: '音楽家',
       romaji: 'ongakuka',
       meaning: { en: 'musician', vi: 'nhạc sĩ, người hoạt động trong lĩnh vực âm nhạc' },
@@ -90,6 +99,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'こどもたち',
+      partOfSpeech: 'noun',
       kanji: '子どもたち',
       romaji: 'kodomotachi',
       meaning: { en: 'children', vi: 'những đứa trẻ, bọn trẻ' },
@@ -97,6 +107,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'しぜん',
+      partOfSpeech: 'noun',
       kanji: '自然',
       romaji: 'shizen',
       meaning: { en: 'nature', vi: 'tự nhiên' },
@@ -107,6 +118,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'きょういく',
+      partOfSpeech: 'noun',
       kanji: '教育',
       romaji: 'kyōiku',
       meaning: { en: 'education', vi: 'giáo dục' },
@@ -117,6 +129,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ぶんか',
+      partOfSpeech: 'noun',
       kanji: '文化',
       romaji: 'bunka',
       meaning: { en: 'culture', vi: 'văn hóa' },
@@ -127,6 +140,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'しゃかい',
+      partOfSpeech: 'noun',
       kanji: '社会',
       romaji: 'shakai',
       meaning: { en: 'society', vi: 'xã hội' },
@@ -137,6 +151,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'せいじ',
+      partOfSpeech: 'noun',
       kanji: '政治',
       romaji: 'seiji',
       meaning: { en: 'politics', vi: 'chính trị' },
@@ -147,6 +162,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ほうりつ',
+      partOfSpeech: 'noun',
       kanji: '法律',
       romaji: 'hōritsu',
       meaning: { en: 'law', vi: 'pháp luật' },
@@ -157,6 +173,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'せんそう',
+      partOfSpeech: 'noun',
       kanji: '戦争',
       romaji: 'sensō',
       meaning: { en: 'war', vi: 'chiến tranh' },
@@ -167,6 +184,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'へいわ',
+      partOfSpeech: 'noun',
       kanji: '平和',
       romaji: 'heiwa',
       meaning: { en: 'peace', vi: 'hòa bình' },
@@ -177,6 +195,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'もくてき',
+      partOfSpeech: 'noun',
       kanji: '目的',
       romaji: 'mokuteki',
       meaning: { en: 'purpose, goal', vi: 'mục đích' },
@@ -187,6 +206,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ろんぶん',
+      partOfSpeech: 'noun',
       kanji: '論文',
       romaji: 'ronbun',
       meaning: { en: 'thesis, dissertation', vi: 'luận văn' },
@@ -197,6 +217,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'たのしみ',
+      partOfSpeech: 'noun',
       kanji: '楽しみ',
       romaji: 'tanoshimi',
       meaning: { en: 'pleasure, something to look forward to', vi: 'niềm vui' },
@@ -204,21 +225,25 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ミキサー',
+      partOfSpeech: 'noun',
       romaji: 'mikisā',
       meaning: { en: 'mixer, blender', vi: 'máy xay' }
     },
     {
       kana: 'やかん',
+      partOfSpeech: 'noun',
       romaji: 'yakan',
       meaning: { en: 'kettle', vi: 'ấm đun nước' }
     },
     {
       kana: 'ふた',
+      partOfSpeech: 'noun',
       romaji: 'futa',
       meaning: { en: 'lid', vi: 'nắp' }
     },
     {
       kana: 'せんぬき',
+      partOfSpeech: 'noun',
       kanji: '栓抜き',
       romaji: 'sennuki',
       meaning: { en: 'bottle opener', vi: 'cái bật nắp chai' },
@@ -229,6 +254,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'かんきり',
+      partOfSpeech: 'noun',
       kanji: '缶切り',
       romaji: 'kankiri',
       meaning: { en: 'can opener', vi: 'cái mở nắp hộp' },
@@ -239,6 +265,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'かんづめ',
+      partOfSpeech: 'noun',
       kanji: '缶詰',
       romaji: 'kandzume',
       meaning: { en: 'canned food', vi: 'đồ hộp, thực phẩm đóng hộp' },
@@ -249,6 +276,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'のしぶくろ',
+      partOfSpeech: 'noun',
       kanji: 'のし袋',
       romaji: 'noshibukuro',
       meaning: { en: 'gift-money envelope', vi: 'phong bì dùng để bỏ tiền mừng' },
@@ -256,16 +284,19 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ふろしき',
+      partOfSpeech: 'noun',
       romaji: 'furoshiki',
       meaning: { en: 'furoshiki (wrapping cloth)', vi: 'khăn vuông để gói đồ kiểu Nhật' }
     },
     {
       kana: 'そろばん',
+      partOfSpeech: 'noun',
       romaji: 'soroban',
       meaning: { en: 'abacus', vi: 'bàn tính' }
     },
     {
       kana: 'たいおんけい',
+      partOfSpeech: 'noun',
       kanji: '体温計',
       romaji: 'taionkei',
       meaning: { en: 'thermometer', vi: 'nhiệt kế' },
@@ -277,6 +308,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ざいりょう',
+      partOfSpeech: 'noun',
       kanji: '材料',
       romaji: 'zairyō',
       meaning: { en: 'ingredients, materials', vi: 'nguyên liệu' },
@@ -287,11 +319,14 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ある～',
+      partOfSpeech: 'determiner',
       romaji: 'aru ~',
       meaning: { en: 'a certain ~', vi: 'một ~ nọ' }
     },
     {
       kana: 'いっしょうけんめい',
+      partOfSpeech: 'adverb',
+      meaningPartOfSpeech: { vi: 'adjective' },
       kanji: '一生懸命',
       romaji: 'isshōkenmei',
       meaning: { en: "diligently, with all one's effort", vi: 'chăm chỉ, gắng hết sức' },
@@ -304,16 +339,19 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'なぜ',
+      partOfSpeech: 'adverb',
       romaji: 'naze',
       meaning: { en: 'why', vi: 'tại sao' }
     },
     {
       kana: 'どのくらい',
+      partOfSpeech: 'adverb',
       romaji: 'dono kurai',
       meaning: { en: 'how much, how long', vi: 'bao nhiêu' }
     },
     {
       kana: 'でます',
+      partOfSpeech: 'verb',
       kanji: '出ます',
       romaji: 'demasu',
       meaning: { en: 'to be paid out [ボーナスが～: bonus]', vi: 'có [thưởng]' },
@@ -321,6 +359,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'はんぶん',
+      partOfSpeech: 'noun',
       kanji: '半分',
       romaji: 'hanbun',
       meaning: { en: 'half', vi: 'một nửa' },
@@ -331,16 +370,20 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'ローン',
+      partOfSpeech: 'noun',
       romaji: 'rōn',
       meaning: { en: 'loan', vi: 'khoản vay ngân hàng' }
     },
     {
       kana: 'カップめん',
+      partOfSpeech: 'noun',
       romaji: 'kappumen',
       meaning: { en: 'cup noodles', vi: 'mì ly (mì ăn liền để ở trong ly dùng một lần)' }
     },
     {
       kana: 'せかいはつ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'adjective' },
       kanji: '世界初',
       romaji: 'sekai hatsu',
       meaning: { en: "world's first", vi: 'đầu tiên trên thế giới' },
@@ -352,21 +395,25 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: '～によって',
+      partOfSpeech: 'particle',
       romaji: '~ni yotte',
       meaning: { en: 'by ~ (passive agent for creation/invention)', vi: 'bởi ~' }
     },
     {
       kana: 'どんぶり',
+      partOfSpeech: 'noun',
       romaji: 'donburi',
       meaning: { en: 'large bowl', vi: 'bát tô lớn' }
     },
     {
       kana: 'めん',
+      partOfSpeech: 'noun',
       romaji: 'men',
       meaning: { en: 'noodles', vi: 'mì sợi' }
     },
     {
       kana: 'ひろめます',
+      partOfSpeech: 'verb',
       kanji: '広めます',
       romaji: 'hiromemasu',
       meaning: { en: 'to spread, to promote', vi: 'phổ cập, nhân rộng, mở rộng' },
@@ -374,6 +421,8 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'しじょうちょうさ',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '市場調査',
       romaji: 'shijō chōsa',
       meaning: { en: 'market research', vi: 'điều tra thị trường' },
@@ -386,6 +435,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'わります',
+      partOfSpeech: 'verb',
       kanji: '割ります',
       romaji: 'warimasu',
       meaning: { en: 'to break, to divide', vi: 'bẻ ra, chia nhỏ ra' },
@@ -393,6 +443,7 @@ export const n4Lesson42: Lesson = {
     },
     {
       kana: 'そそぎます',
+      partOfSpeech: 'verb',
       kanji: '注ぎます',
       romaji: 'sosogimasu',
       meaning: { en: 'to pour', vi: 'đổ vào' },
@@ -1051,16 +1102,19 @@ export const n4Lesson42: Lesson = {
       items: [
         {
           kana: 'ホッチキス',
+          partOfSpeech: 'noun',
           romaji: 'hotchikisu',
           meaning: { en: 'stapler', vi: 'cái bấm ghim' }
         },
         {
           kana: 'クリップ',
+          partOfSpeech: 'noun',
           romaji: 'kurippu',
           meaning: { en: 'clip (paper/binder clip)', vi: 'cái kẹp' }
         },
         {
           kana: 'がびょう',
+          partOfSpeech: 'noun',
           kanji: '画鋲',
           romaji: 'gabyō',
           meaning: { en: 'thumbtack', vi: 'cái đinh bấm, đinh mũ' },
@@ -1071,26 +1125,31 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'カッター',
+          partOfSpeech: 'noun',
           romaji: 'kattā',
           meaning: { en: 'box cutter', vi: 'cái dao rọc' }
         },
         {
           kana: 'はさみ',
+          partOfSpeech: 'noun',
           romaji: 'hasami',
           meaning: { en: 'scissors', vi: 'cái kéo' }
         },
         {
           kana: 'セロテープ',
+          partOfSpeech: 'noun',
           romaji: 'serotēpu',
           meaning: { en: 'scotch tape', vi: 'băng dính trong suốt' }
         },
         {
           kana: 'のり',
+          partOfSpeech: 'noun',
           romaji: 'nori',
           meaning: { en: 'glue', vi: 'hồ dán' }
         },
         {
           kana: 'えんぴつけずり',
+          partOfSpeech: 'noun',
           kanji: '鉛筆削り',
           romaji: 'enpitsu kezuri',
           meaning: { en: 'pencil sharpener', vi: 'cái gọt bút chì' },
@@ -1102,11 +1161,13 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'ファイル',
+          partOfSpeech: 'noun',
           romaji: 'fairu',
           meaning: { en: 'file folder', vi: 'cái kẹp tài liệu (file)' }
         },
         {
           kana: 'けしゴム',
+          partOfSpeech: 'noun',
           kanji: '消しゴム',
           romaji: 'keshigomu',
           meaning: { en: 'eraser', vi: 'cái tẩy (bằng cao su)' },
@@ -1114,11 +1175,13 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'パンチ',
+          partOfSpeech: 'noun',
           romaji: 'panchi',
           meaning: { en: 'hole punch', vi: 'cái bấm lỗ' }
         },
         {
           kana: 'でんたく',
+          partOfSpeech: 'noun',
           kanji: '電卓',
           romaji: 'dentaku',
           meaning: { en: 'calculator', vi: 'máy tính' },
@@ -1129,6 +1192,7 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'じょうぎ',
+          partOfSpeech: 'noun',
           kanji: '定規',
           romaji: 'jōgi',
           meaning: { en: 'ruler', vi: 'cái thước' },
@@ -1139,11 +1203,13 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'のこぎり',
+          partOfSpeech: 'noun',
           romaji: 'nokogiri',
           meaning: { en: 'saw', vi: 'cái cưa' }
         },
         {
           kana: 'かなづち',
+          partOfSpeech: 'noun',
           kanji: '金づち',
           romaji: 'kanazuchi',
           meaning: { en: 'hammer', vi: 'cái búa (bằng kim loại)' },
@@ -1151,11 +1217,13 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'ペンチ',
+          partOfSpeech: 'noun',
           romaji: 'penchi',
           meaning: { en: 'pliers', vi: 'cái kìm' }
         },
         {
           kana: 'ドライバー',
+          partOfSpeech: 'noun',
           romaji: 'doraibā',
           meaning: { en: 'screwdriver', vi: 'cái tua-vít, tuốc-nơ-vít' }
         }
@@ -1168,6 +1236,7 @@ export const n4Lesson42: Lesson = {
       items: [
         {
           kana: 'こくれん',
+          partOfSpeech: 'noun',
           kanji: '国連',
           romaji: 'Kokuren',
           meaning: { en: 'United Nations', vi: 'Liên Hợp Quốc' },
@@ -1178,6 +1247,7 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'ベートーベン',
+          partOfSpeech: 'noun',
           romaji: 'Bētōven',
           meaning: {
             en: 'Beethoven (German composer, 1770-1827)',
@@ -1186,6 +1256,7 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'あんどう ももふく',
+          partOfSpeech: 'noun',
           kanji: '安藤 百福',
           romaji: 'Andō Momofuku',
           meaning: {
@@ -1201,6 +1272,7 @@ export const n4Lesson42: Lesson = {
         },
         {
           kana: 'こどもニュース',
+          partOfSpeech: 'noun',
           romaji: 'Kodomo Nyūsu',
           meaning: {
             en: "Children's News (fictional news program)",

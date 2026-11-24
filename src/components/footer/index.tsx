@@ -1,4 +1,6 @@
 import { Box, Container, Link, Typography } from '@mui/material';
+import { routes } from '@/constants/routes.ts';
+import { Link as LocaleHref } from '@/i18n/navigation.tsx';
 
 // The footer copy stays in English regardless of the selected locale.
 const FOOTER_VIBE = 'Designed by CHT, coded with AI.';
@@ -27,6 +29,10 @@ export function Footer() {
         <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5, fontSize: '0.875rem' }}>
           <Link href={CONTACT_HREF} color="primary" underline="hover">
             Contact us
+          </Link>
+          {' · '}
+          <Link component={LocaleHref} href={routes.privacy} color="primary" underline="hover">
+            Privacy
           </Link>
         </Typography>
         <Typography

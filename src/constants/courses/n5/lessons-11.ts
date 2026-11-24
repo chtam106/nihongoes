@@ -15,6 +15,7 @@ export const n5Lesson11: Lesson = {
   vocab: [
     {
       kana: 'います',
+      partOfSpeech: 'verb',
       romaji: 'imasu',
       meaning: {
         en: 'to be (people); to live (e.g. 日本に います)',
@@ -23,11 +24,13 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'かかります',
+      partOfSpeech: 'verb',
       romaji: 'kakarimasu',
       meaning: { en: 'to take (time or money)', vi: 'mất, tốn (thời gian, tiền)' }
     },
     {
       kana: 'やすみます',
+      partOfSpeech: 'verb',
       kanji: '休みます',
       romaji: 'yasumimasu',
       meaning: {
@@ -38,6 +41,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'ひとつ',
+      partOfSpeech: 'suffix',
       kanji: '一つ',
       romaji: 'hitotsu',
       meaning: { en: 'one (general counter)', vi: 'một cái' },
@@ -45,6 +49,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'ふたつ',
+      partOfSpeech: 'suffix',
       kanji: '二つ',
       romaji: 'futatsu',
       meaning: { en: 'two (general counter)', vi: 'hai cái' },
@@ -52,6 +57,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'みっつ',
+      partOfSpeech: 'suffix',
       kanji: '三つ',
       romaji: 'mittsu',
       meaning: { en: 'three (general counter)', vi: 'ba cái' },
@@ -59,6 +65,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'よっつ',
+      partOfSpeech: 'suffix',
       kanji: '四つ',
       romaji: 'yottsu',
       meaning: { en: 'four (general counter)', vi: 'bốn cái' },
@@ -66,6 +73,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'いつつ',
+      partOfSpeech: 'suffix',
       kanji: '五つ',
       romaji: 'itsutsu',
       meaning: { en: 'five (general counter)', vi: 'năm cái' },
@@ -73,6 +81,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'むっつ',
+      partOfSpeech: 'suffix',
       kanji: '六つ',
       romaji: 'muttsu',
       meaning: { en: 'six (general counter)', vi: 'sáu cái' },
@@ -80,6 +89,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'ななつ',
+      partOfSpeech: 'suffix',
       kanji: '七つ',
       romaji: 'nanatsu',
       meaning: { en: 'seven (general counter)', vi: 'bảy cái' },
@@ -87,6 +97,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'やっつ',
+      partOfSpeech: 'suffix',
       kanji: '八つ',
       romaji: 'yattsu',
       meaning: { en: 'eight (general counter)', vi: 'tám cái' },
@@ -94,6 +105,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'ここのつ',
+      partOfSpeech: 'suffix',
       kanji: '九つ',
       romaji: 'kokonotsu',
       meaning: { en: 'nine (general counter)', vi: 'chín cái' },
@@ -101,6 +113,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'とお',
+      partOfSpeech: 'suffix',
       kanji: '十',
       romaji: 'tō',
       meaning: { en: 'ten (general counter)', vi: 'mười cái' },
@@ -108,11 +121,13 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'いくつ',
+      partOfSpeech: 'suffix',
       romaji: 'ikutsu',
       meaning: { en: 'how many (general counter)', vi: 'mấy cái, bao nhiêu cái' }
     },
     {
       kana: 'ひとり',
+      partOfSpeech: 'suffix',
       kanji: '一人',
       romaji: 'hitori',
       meaning: { en: 'one person', vi: 'một người' },
@@ -123,6 +138,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'ふたり',
+      partOfSpeech: 'suffix',
       kanji: '二人',
       romaji: 'futari',
       meaning: { en: 'two people', vi: 'hai người' },
@@ -133,6 +149,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～にん',
+      partOfSpeech: 'suffix',
       kanji: '～人',
       romaji: '~nin',
       meaning: { en: 'counter for people', vi: 'counters người' },
@@ -140,6 +157,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～だい',
+      partOfSpeech: 'suffix',
       kanji: '～台',
       romaji: '~dai',
       meaning: { en: 'counter for machines, vehicles', vi: 'counter máy móc, xe cộ' },
@@ -147,6 +165,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～まい',
+      partOfSpeech: 'suffix',
       kanji: '～枚',
       romaji: '~mai',
       meaning: { en: 'counter for flat objects', vi: 'counter vật mỏng (giấy, tem...)' },
@@ -154,6 +173,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～かい',
+      partOfSpeech: 'suffix',
       kanji: '～回',
       romaji: '~kai',
       meaning: { en: 'counter for times, occurrences', vi: 'counter lần' },
@@ -161,31 +181,37 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'りんご',
+      partOfSpeech: 'noun',
       romaji: 'ringo',
       meaning: { en: 'apple', vi: 'táo' }
     },
     {
       kana: 'みかん',
+      partOfSpeech: 'noun',
       romaji: 'mikan',
       meaning: { en: 'mandarin orange', vi: 'quýt' }
     },
     {
       kana: 'サンドイッチ',
+      partOfSpeech: 'noun',
       romaji: 'sandoitchi',
       meaning: { en: 'sandwich', vi: 'bánh sandwich' }
     },
     {
       kana: 'カレー[ライス]',
+      partOfSpeech: 'noun',
       romaji: 'karē [raisu]',
       meaning: { en: 'curry [rice]', vi: 'cà ri [cơm]' }
     },
     {
       kana: 'アイスクリーム',
+      partOfSpeech: 'noun',
       romaji: 'aisukurīmu',
       meaning: { en: 'ice cream', vi: 'kem' }
     },
     {
       kana: 'きって',
+      partOfSpeech: 'noun',
       kanji: '切手',
       romaji: 'kitte',
       meaning: { en: 'postage stamp', vi: 'tem' },
@@ -196,11 +222,13 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'はがき',
+      partOfSpeech: 'noun',
       romaji: 'hagaki',
       meaning: { en: 'postcard', vi: 'bưu thiếp' }
     },
     {
       kana: 'ふうとう',
+      partOfSpeech: 'noun',
       kanji: '封筒',
       romaji: 'fūtō',
       meaning: { en: 'envelope', vi: 'phong bì' },
@@ -211,6 +239,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'りょうしん',
+      partOfSpeech: 'noun',
       kanji: '両親',
       romaji: 'ryōshin',
       meaning: { en: 'parents', vi: 'bố mẹ' },
@@ -221,6 +250,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'きょうだい',
+      partOfSpeech: 'noun',
       kanji: '兄弟',
       romaji: 'kyōdai',
       meaning: { en: 'siblings', vi: 'anh chị em' },
@@ -231,6 +261,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'あに',
+      partOfSpeech: 'noun',
       kanji: '兄',
       romaji: 'ani',
       meaning: { en: 'my older brother', vi: 'anh trai (của tôi)' },
@@ -238,6 +269,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'おにいさん',
+      partOfSpeech: 'noun',
       kanji: 'お兄さん',
       romaji: 'onīsan',
       meaning: { en: "someone else's older brother", vi: 'anh trai (của người khác)' },
@@ -245,6 +277,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'あね',
+      partOfSpeech: 'noun',
       kanji: '姉',
       romaji: 'ane',
       meaning: { en: 'my older sister', vi: 'chị gái (của tôi)' },
@@ -252,6 +285,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'おねえさん',
+      partOfSpeech: 'noun',
       kanji: 'お姉さん',
       romaji: 'onēsan',
       meaning: { en: "someone else's older sister", vi: 'chị gái (của người khác)' },
@@ -259,6 +293,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'おとうと',
+      partOfSpeech: 'noun',
       kanji: '弟',
       romaji: 'otōto',
       meaning: { en: 'my younger brother', vi: 'em trai (của tôi)' },
@@ -266,6 +301,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'おとうとさん',
+      partOfSpeech: 'noun',
       kanji: '弟さん',
       romaji: 'otōtosan',
       meaning: { en: "someone else's younger brother", vi: 'em trai (của người khác)' },
@@ -273,6 +309,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'いもうと',
+      partOfSpeech: 'noun',
       kanji: '妹',
       romaji: 'imōto',
       meaning: { en: 'my younger sister', vi: 'em gái (của tôi)' },
@@ -280,6 +317,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'いもうとさん',
+      partOfSpeech: 'noun',
       kanji: '妹さん',
       romaji: 'imōtosan',
       meaning: { en: "someone else's younger sister", vi: 'em gái (của người khác)' },
@@ -287,6 +325,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'がいこく',
+      partOfSpeech: 'noun',
       kanji: '外国',
       romaji: 'gaikoku',
       meaning: { en: 'foreign country', vi: 'nước ngoài' },
@@ -297,6 +336,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'りゅうがくせい',
+      partOfSpeech: 'noun',
       kanji: '留学生',
       romaji: 'ryūgakusei',
       meaning: { en: 'international student', vi: 'du học sinh' },
@@ -308,11 +348,13 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'クラス',
+      partOfSpeech: 'noun',
       romaji: 'kurasu',
       meaning: { en: 'class', vi: 'lớp học' }
     },
     {
       kana: '～じかん',
+      partOfSpeech: 'suffix',
       kanji: '～時間',
       romaji: '~jikan',
       meaning: { en: 'counter for hours (duration)', vi: 'counter tiếng' },
@@ -323,6 +365,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～しゅうかん',
+      partOfSpeech: 'suffix',
       kanji: '～週間',
       romaji: '~shūkan',
       meaning: { en: 'counter for weeks', vi: 'counter tuần' },
@@ -333,6 +376,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～かげつ',
+      partOfSpeech: 'suffix',
       kanji: '～か月',
       romaji: '~kagetsu',
       meaning: { en: 'counter for months', vi: 'counter tháng' },
@@ -340,6 +384,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～ねん',
+      partOfSpeech: 'suffix',
       kanji: '～年',
       romaji: '~nen',
       meaning: { en: 'counter for years', vi: 'counter năm' },
@@ -347,16 +392,20 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: '～ぐらい',
+      partOfSpeech: 'particle',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       romaji: '~gurai',
       meaning: { en: 'about ~, approximately', vi: 'khoảng ~' }
     },
     {
       kana: 'どのくらい',
+      partOfSpeech: 'adverb',
       romaji: 'dono kurai',
       meaning: { en: 'how long; how much', vi: 'bao lâu; bao nhiêu' }
     },
     {
       kana: 'ぜんぶで',
+      partOfSpeech: 'adverb',
       kanji: '全部で',
       romaji: 'zenbu de',
       meaning: { en: 'in total', vi: 'tổng cộng' },
@@ -367,16 +416,20 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'みんな',
+      partOfSpeech: 'pronoun',
       romaji: 'minna',
       meaning: { en: 'everyone; all', vi: 'tất cả, mọi người' }
     },
     {
       kana: '～だけ',
+      partOfSpeech: 'particle',
+      meaningPartOfSpeech: { en: 'adverb', vi: 'adverb' },
       romaji: '~dake',
       meaning: { en: 'only ~', vi: 'chỉ ~' }
     },
     {
       kana: 'ふなびん',
+      partOfSpeech: 'noun',
       kanji: '船便',
       romaji: 'funabin',
       meaning: { en: 'surface mail (by sea)', vi: 'thư đường biển' },
@@ -387,6 +440,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'こうくうびん',
+      partOfSpeech: 'noun',
       kanji: '航空便',
       romaji: 'kōkūbin',
       meaning: { en: 'airmail', vi: 'thư đường hàng không' },
@@ -400,11 +454,13 @@ export const n5Lesson11: Lesson = {
   phrases: [
     {
       kana: 'かしこまりました。',
+      partOfSpeech: 'expression',
       romaji: 'Kashikomarimashita.',
       meaning: { en: 'Certainly. / Understood (polite).', vi: 'Vâng, tôi đã rõ ạ.' }
     },
     {
       kana: 'いい おてんきですね。',
+      partOfSpeech: 'expression',
       kanji: 'いい お天気ですね。',
       romaji: 'Ii o-tenki desu ne.',
       meaning: { en: 'Nice weather, is it not?', vi: 'Trời đẹp nhỉ.' },
@@ -415,6 +471,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'おでかけですか。',
+      partOfSpeech: 'expression',
       kanji: 'お出かけですか。',
       romaji: 'O-dekake desu ka.',
       meaning: { en: 'Are you going out?', vi: 'Anh/Chị đi ra ngoài đấy à?' },
@@ -422,11 +479,13 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'ちょっと ～まで。',
+      partOfSpeech: 'expression',
       romaji: 'Chotto ~ made.',
       meaning: { en: 'Just to ~ for a bit.', vi: 'Tôi đi ~ một chút.' }
     },
     {
       kana: 'いってらっしゃい。',
+      partOfSpeech: 'expression',
       kanji: '行ってらっしゃい。',
       romaji: 'Itterasshai.',
       meaning: { en: 'See you. / Take care (to someone leaving).', vi: 'Anh/Chị đi nhé.' },
@@ -434,6 +493,7 @@ export const n5Lesson11: Lesson = {
     },
     {
       kana: 'いってきます。',
+      partOfSpeech: 'expression',
       kanji: '行ってきます。',
       romaji: 'Itte kimasu.',
       meaning: { en: 'I am off. / I will be back.', vi: 'Tôi đi đây.' },
@@ -1323,6 +1383,7 @@ export const n5Lesson11: Lesson = {
       items: [
         {
           kana: 'ていしょく',
+          partOfSpeech: 'noun',
           kanji: '定食',
           romaji: 'teishoku',
           meaning: { en: 'set meal', vi: 'cơm suất' },
@@ -1333,6 +1394,7 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'てんどん',
+          partOfSpeech: 'noun',
           kanji: '天どん',
           romaji: 'tendon',
           meaning: { en: 'tempura rice bowl', vi: 'cơm tôm chiên' },
@@ -1340,6 +1402,7 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'おやこどん',
+          partOfSpeech: 'noun',
           kanji: '親子どん',
           romaji: 'oyakodon',
           meaning: { en: 'chicken and egg rice bowl', vi: 'cơm gà trứng' },
@@ -1350,6 +1413,7 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'ぎゅうどん',
+          partOfSpeech: 'noun',
           kanji: '牛どん',
           romaji: 'gyūdon',
           meaning: { en: 'beef rice bowl', vi: 'cơm thịt bò' },
@@ -1357,6 +1421,7 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'やきにく',
+          partOfSpeech: 'noun',
           kanji: '焼き肉',
           romaji: 'yakiniku',
           meaning: { en: 'grilled meat', vi: 'thịt nướng' },
@@ -1367,6 +1432,7 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'みそしる',
+          partOfSpeech: 'noun',
           kanji: 'みそ汁',
           romaji: 'misoshiru',
           meaning: { en: 'miso soup', vi: 'súp miso' },
@@ -1374,11 +1440,13 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'おにぎり',
+          partOfSpeech: 'noun',
           romaji: 'onigiri',
           meaning: { en: 'rice ball', vi: 'cơm nắm' }
         },
         {
           kana: 'すし',
+          partOfSpeech: 'noun',
           kanji: '寿司',
           romaji: 'sushi',
           meaning: { en: 'sushi', vi: 'sushi' },
@@ -1389,31 +1457,37 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'うどん',
+          partOfSpeech: 'noun',
           romaji: 'udon',
           meaning: { en: 'udon noodles', vi: 'mì udon' }
         },
         {
           kana: 'そば',
+          partOfSpeech: 'noun',
           romaji: 'soba',
           meaning: { en: 'soba noodles', vi: 'mì soba' }
         },
         {
           kana: 'ラーメン',
+          partOfSpeech: 'noun',
           romaji: 'rāmen',
           meaning: { en: 'ramen', vi: 'mì ramen' }
         },
         {
           kana: 'カレーライス',
+          partOfSpeech: 'noun',
           romaji: 'karēraisu',
           meaning: { en: 'curry rice', vi: 'cơm cà ri' }
         },
         {
           kana: 'コーヒー',
+          partOfSpeech: 'noun',
           romaji: 'kōhī',
           meaning: { en: 'coffee', vi: 'cà phê' }
         },
         {
           kana: 'こうちゃ',
+          partOfSpeech: 'noun',
           kanji: '紅茶',
           romaji: 'kōcha',
           meaning: { en: 'black tea', vi: 'trà đen' },
@@ -1424,6 +1498,7 @@ export const n5Lesson11: Lesson = {
         },
         {
           kana: 'ジュース',
+          partOfSpeech: 'noun',
           romaji: 'jūsu',
           meaning: { en: 'juice', vi: 'nước ép' }
         }
@@ -1436,6 +1511,7 @@ export const n5Lesson11: Lesson = {
       items: [
         {
           kana: 'オーストラリア',
+          partOfSpeech: 'noun',
           romaji: 'Ōsutoraria',
           meaning: { en: 'Australia', vi: 'Úc' }
         }

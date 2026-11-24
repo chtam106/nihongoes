@@ -158,6 +158,10 @@ Production is driven by the `release-production` branch:
 
 Preview/staging uses Git branch **`release-staging`** (domain **`stg.nihongoes.com`** in Vercel). Same Vercel project; scope Preview env vars to that branch when possible.
 
+### Privacy
+
+The public privacy policy is `https://nihongoes.com/privacy`.
+
 ### Flashcard Google Drive
 
 Collections are saved in the browser. `/sync` connects Google Drive. Sync opens a dialog with three radio choices. Merge is selected by default. The other choices replace this browser with the Drive copy, or replace the Drive copy with this browser. The signed-in account email is shown inside the Sync button. The browser talks to Drive directly. There is no app backend.

@@ -15,6 +15,7 @@ export const n5Lesson15: Lesson = {
   vocab: [
     {
       kana: 'おきます',
+      partOfSpeech: 'verb',
       kanji: '置きます',
       romaji: 'okimasu',
       meaning: { en: 'to put, to place', vi: 'đặt, để' },
@@ -22,6 +23,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'つくります',
+      partOfSpeech: 'verb',
       kanji: '作ります',
       romaji: 'tsukurimasu',
       meaning: { en: 'to make, to produce', vi: 'làm, chế tạo, sản xuất' },
@@ -29,6 +31,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'うります',
+      partOfSpeech: 'verb',
       kanji: '売ります',
       romaji: 'urimasu',
       meaning: { en: 'to sell', vi: 'bán' },
@@ -36,6 +39,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'しります',
+      partOfSpeech: 'verb',
       kanji: '知ります',
       romaji: 'shirimasu',
       meaning: {
@@ -46,6 +50,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'すみます',
+      partOfSpeech: 'verb',
       kanji: '住みます',
       romaji: 'sumimasu',
       meaning: { en: 'to live, to reside', vi: 'sống, ở' },
@@ -53,6 +58,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'けんきゅうします',
+      partOfSpeech: 'verb',
       kanji: '研究します',
       romaji: 'kenkyū shimasu',
       meaning: { en: 'to research', vi: 'nghiên cứu' },
@@ -63,6 +69,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'おもいだします',
+      partOfSpeech: 'verb',
       kanji: '思い出します',
       romaji: 'omoidashimasu',
       meaning: { en: 'to remember, to recall', vi: 'nhớ ra' },
@@ -73,6 +80,8 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'いらっしゃいます',
+      partOfSpeech: 'verb',
+      meaningPartOfSpeech: { en: 'noun', vi: 'noun' },
       romaji: 'irasshaimasu',
       meaning: {
         en: 'honorific for います / 行きます / 来ます (to be, to go, to come)',
@@ -81,6 +90,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'しりょう',
+      partOfSpeech: 'noun',
       kanji: '資料',
       romaji: 'shiryō',
       meaning: { en: 'materials, documents', vi: 'tài liệu' },
@@ -91,11 +101,13 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'カタログ',
+      partOfSpeech: 'noun',
       romaji: 'katarogu',
       meaning: { en: 'catalog', vi: 'ca-ta-lô' }
     },
     {
       kana: 'じこくひょう',
+      partOfSpeech: 'noun',
       kanji: '時刻表',
       romaji: 'jikokuhyō',
       meaning: { en: 'timetable', vi: 'bảng giờ chạy tàu' },
@@ -107,6 +119,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'ふく',
+      partOfSpeech: 'noun',
       kanji: '服',
       romaji: 'fuku',
       meaning: { en: 'clothes', vi: 'quần áo' },
@@ -114,6 +127,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'せいひん',
+      partOfSpeech: 'noun',
       kanji: '製品',
       romaji: 'seihin',
       meaning: { en: 'product, manufactured goods', vi: 'sản phẩm' },
@@ -124,11 +138,13 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'ソフト',
+      partOfSpeech: 'noun',
       romaji: 'sofuto',
       meaning: { en: 'software', vi: 'phần mềm' }
     },
     {
       kana: 'でんしじしょ',
+      partOfSpeech: 'noun',
       kanji: '電子辞書',
       romaji: 'denshi jisho',
       meaning: { en: 'electronic dictionary', vi: 'kim từ điển' },
@@ -141,6 +157,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'けいざい',
+      partOfSpeech: 'noun',
       kanji: '経済',
       romaji: 'keizai',
       meaning: { en: 'economy', vi: 'kinh tế' },
@@ -151,6 +168,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'しやくしょ',
+      partOfSpeech: 'noun',
       kanji: '市役所',
       romaji: 'shiyakusho',
       meaning: { en: 'city hall', vi: 'tòa thị chính' },
@@ -162,6 +180,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'こうこう',
+      partOfSpeech: 'noun',
       kanji: '高校',
       romaji: 'kōkō',
       meaning: { en: 'high school', vi: 'trường trung học phổ thông' },
@@ -172,6 +191,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'はいしゃ',
+      partOfSpeech: 'noun',
       kanji: '歯医者',
       romaji: 'haisha',
       meaning: { en: 'dentist', vi: 'nha sĩ' },
@@ -183,6 +203,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'とこや',
+      partOfSpeech: 'noun',
       kanji: '床屋',
       romaji: 'tokoya',
       meaning: { en: 'barber', vi: 'thợ cắt tóc nam' },
@@ -193,6 +214,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'プレイガイド',
+      partOfSpeech: 'noun',
       romaji: 'pureigaido',
       meaning: {
         en: 'ticket agency (concerts, sports)',
@@ -201,6 +223,8 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'どくしん',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { en: 'adjective', vi: 'adjective' },
       kanji: '独身',
       romaji: 'dokushin',
       meaning: { en: 'single, unmarried', vi: 'độc thân' },
@@ -211,6 +235,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'せんもん',
+      partOfSpeech: 'noun',
       kanji: '専門',
       romaji: 'senmon',
       meaning: { en: 'specialty, field of expertise', vi: 'chuyên môn, chuyên ngành' },
@@ -223,6 +248,7 @@ export const n5Lesson15: Lesson = {
   phrases: [
     {
       kana: 'ごかぞくは おげんきですか。',
+      partOfSpeech: 'expression',
       kanji: 'ご家族は お元気ですか。',
       romaji: 'Go-kazoku wa o-genki desu ka.',
       meaning: { en: 'How is your family?', vi: 'Gia đình anh/chị thế nào?' },
@@ -235,6 +261,7 @@ export const n5Lesson15: Lesson = {
     },
     {
       kana: 'みなさん',
+      partOfSpeech: 'pronoun',
       kanji: '皆さん',
       romaji: 'minasan',
       meaning: { en: 'everyone, all of you', vi: 'mọi người, các anh/chị' },
@@ -1345,6 +1372,7 @@ export const n5Lesson15: Lesson = {
       items: [
         {
           kana: 'かいしゃいん',
+          partOfSpeech: 'noun',
           kanji: '会社員',
           romaji: 'kaishain',
           meaning: { en: 'company employee', vi: 'nhân viên công ty' },
@@ -1356,6 +1384,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'こうむいん',
+          partOfSpeech: 'noun',
           kanji: '公務員',
           romaji: 'kōmuin',
           meaning: { en: 'public servant, government worker', vi: 'công chức' },
@@ -1367,6 +1396,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'えきいん',
+          partOfSpeech: 'noun',
           kanji: '駅員',
           romaji: 'ekiin',
           meaning: { en: 'station staff', vi: 'nhân viên nhà ga' },
@@ -1377,6 +1407,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'ぎんこういん',
+          partOfSpeech: 'noun',
           kanji: '銀行員',
           romaji: 'ginkōin',
           meaning: { en: 'bank clerk', vi: 'nhân viên ngân hàng' },
@@ -1388,6 +1419,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'ゆうびんきょくいん',
+          partOfSpeech: 'noun',
           kanji: '郵便局員',
           romaji: 'yūbinkyokuin',
           meaning: { en: 'post office worker', vi: 'nhân viên bưu điện' },
@@ -1400,6 +1432,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'てんいん',
+          partOfSpeech: 'noun',
           kanji: '店員',
           romaji: 'tenin',
           meaning: { en: 'shop clerk', vi: 'nhân viên cửa hàng' },
@@ -1410,6 +1443,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'ちょうりし',
+          partOfSpeech: 'noun',
           kanji: '調理師',
           romaji: 'chōrishi',
           meaning: { en: 'chef, cook (licensed)', vi: 'đầu bếp (có chứng chỉ)' },
@@ -1421,6 +1455,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'りようし',
+          partOfSpeech: 'noun',
           kanji: '理容師',
           romaji: 'riyōshi',
           meaning: { en: 'barber (licensed)', vi: 'thợ cắt tóc nam (có chứng chỉ)' },
@@ -1432,6 +1467,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'びようし',
+          partOfSpeech: 'noun',
           kanji: '美容師',
           romaji: 'biyōshi',
           meaning: {
@@ -1446,6 +1482,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'きょうし',
+          partOfSpeech: 'noun',
           kanji: '教師',
           romaji: 'kyōshi',
           meaning: { en: 'teacher (school)', vi: 'giáo viên (trường học)' },
@@ -1456,6 +1493,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'べんごし',
+          partOfSpeech: 'noun',
           kanji: '弁護士',
           romaji: 'bengoshi',
           meaning: { en: 'lawyer', vi: 'luật sư' },
@@ -1467,6 +1505,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'けんきゅうしゃ',
+          partOfSpeech: 'noun',
           kanji: '研究者',
           romaji: 'kenkyūsha',
           meaning: { en: 'researcher', vi: 'nhà nghiên cứu' },
@@ -1478,6 +1517,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'いしゃ',
+          partOfSpeech: 'noun',
           kanji: '医者',
           romaji: 'isha',
           meaning: { en: 'doctor, physician', vi: 'bác sĩ' },
@@ -1488,6 +1528,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'かんごし',
+          partOfSpeech: 'noun',
           kanji: '看護師',
           romaji: 'kangoshi',
           meaning: { en: 'nurse (licensed)', vi: 'y tá (có chứng chỉ)' },
@@ -1499,6 +1540,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'うんてんしゅ',
+          partOfSpeech: 'noun',
           kanji: '運転手',
           romaji: 'untenshu',
           meaning: { en: 'driver', vi: 'tài xế' },
@@ -1510,6 +1552,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'けいさつかん',
+          partOfSpeech: 'noun',
           kanji: '警察官',
           romaji: 'keisatsukan',
           meaning: { en: 'police officer', vi: 'cảnh sát' },
@@ -1521,6 +1564,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'がいこうかん',
+          partOfSpeech: 'noun',
           kanji: '外交官',
           romaji: 'gaikōkan',
           meaning: { en: 'diplomat', vi: 'nhà ngoại giao' },
@@ -1532,6 +1576,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'せいじか',
+          partOfSpeech: 'noun',
           kanji: '政治家',
           romaji: 'seijika',
           meaning: { en: 'politician', vi: 'chính trị gia' },
@@ -1543,6 +1588,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'がか',
+          partOfSpeech: 'noun',
           kanji: '画家',
           romaji: 'gaka',
           meaning: { en: 'painter, artist', vi: 'họa sĩ' },
@@ -1553,6 +1599,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'さっか',
+          partOfSpeech: 'noun',
           kanji: '作家',
           romaji: 'sakka',
           meaning: { en: 'writer, author', vi: 'nhà văn' },
@@ -1563,6 +1610,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'おんがくか',
+          partOfSpeech: 'noun',
           kanji: '音楽家',
           romaji: 'ongakuka',
           meaning: { en: 'musician', vi: 'nhạc sĩ' },
@@ -1574,6 +1622,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'けんちくか',
+          partOfSpeech: 'noun',
           kanji: '建築家',
           romaji: 'kenchikuka',
           meaning: { en: 'architect', vi: 'kiến trúc sư' },
@@ -1585,21 +1634,25 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'エンジニア',
+          partOfSpeech: 'noun',
           romaji: 'enjinia',
           meaning: { en: 'engineer', vi: 'kỹ sư' }
         },
         {
           kana: 'デザイナー',
+          partOfSpeech: 'noun',
           romaji: 'dezainā',
           meaning: { en: 'designer', vi: 'nhà thiết kế' }
         },
         {
           kana: 'ジャーナリスト',
+          partOfSpeech: 'noun',
           romaji: 'jānarisuto',
           meaning: { en: 'journalist', vi: 'nhà báo' }
         },
         {
           kana: 'かしゅ',
+          partOfSpeech: 'noun',
           kanji: '歌手',
           romaji: 'kashu',
           meaning: { en: 'singer', vi: 'ca sĩ' },
@@ -1610,6 +1663,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'はいゆう',
+          partOfSpeech: 'noun',
           kanji: '俳優',
           romaji: 'haiyū',
           meaning: { en: 'actor', vi: 'diễn viên' },
@@ -1620,6 +1674,7 @@ export const n5Lesson15: Lesson = {
         },
         {
           kana: 'スポーツせんしゅ',
+          partOfSpeech: 'noun',
           kanji: 'スポーツ選手',
           romaji: 'supōtsu senshu',
           meaning: { en: 'athlete', vi: 'vận động viên' },

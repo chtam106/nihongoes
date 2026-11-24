@@ -15,6 +15,7 @@ export const n5Lesson20: Lesson = {
   vocab: [
     {
       kana: 'いります',
+      partOfSpeech: 'verb',
       kanji: '要ります',
       romaji: 'irimasu',
       meaning: {
@@ -25,6 +26,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'しらべます',
+      partOfSpeech: 'verb',
       kanji: '調べます',
       romaji: 'shirabemasu',
       meaning: { en: 'to look into, to check, to investigate', vi: 'tìm hiểu, kiểm tra, điều tra' },
@@ -32,6 +34,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'なおします',
+      partOfSpeech: 'verb',
       kanji: '直します',
       romaji: 'naoshimasu',
       meaning: { en: 'to repair, to fix', vi: 'sửa chữa, tu sửa' },
@@ -39,6 +42,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'しゅうりします',
+      partOfSpeech: 'verb',
       kanji: '修理します',
       romaji: 'shūri shimasu',
       meaning: { en: 'to repair', vi: 'sửa chữa' },
@@ -49,6 +53,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'でんわします',
+      partOfSpeech: 'verb',
       kanji: '電話します',
       romaji: 'denwa shimasu',
       meaning: { en: 'to telephone, to call', vi: 'gọi điện' },
@@ -59,6 +64,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'ぼく',
+      partOfSpeech: 'pronoun',
       kanji: '僕',
       romaji: 'boku',
       meaning: { en: 'I (informal, used by men)', vi: 'tôi (thân mật, nam giới)' },
@@ -66,6 +72,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'きみ',
+      partOfSpeech: 'pronoun',
       kanji: '君',
       romaji: 'kimi',
       meaning: { en: 'you (informal, often used by men)', vi: 'cậu/bạn (thân mật)' },
@@ -73,6 +80,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: '～くん',
+      partOfSpeech: 'suffix',
       kanji: '～君',
       romaji: '~kun',
       meaning: { en: 'Mr. (informal suffix for boys/men)', vi: 'anh (hậu tố thân mật cho nam)' },
@@ -80,21 +88,25 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'うん',
+      partOfSpeech: 'interjection',
       romaji: 'un',
       meaning: { en: 'yes (informal)', vi: 'ừ, vâng (thân mật)' }
     },
     {
       kana: 'ううん',
+      partOfSpeech: 'interjection',
       romaji: 'ūn',
       meaning: { en: 'no (informal)', vi: 'không (thân mật)' }
     },
     {
       kana: 'サラリーマン',
+      partOfSpeech: 'noun',
       romaji: 'sararīman',
       meaning: { en: 'office worker, salaried employee', vi: 'nhân viên văn phòng' }
     },
     {
       kana: 'ことば',
+      partOfSpeech: 'noun',
       kanji: '言葉',
       romaji: 'kotoba',
       meaning: { en: 'word, language', vi: 'từ, tiếng' },
@@ -105,6 +117,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'ぶっか',
+      partOfSpeech: 'noun',
       kanji: '物価',
       romaji: 'bukka',
       meaning: { en: 'prices, cost of living', vi: 'giá cả, mức giá' },
@@ -115,6 +128,7 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'きもの',
+      partOfSpeech: 'noun',
       kanji: '着物',
       romaji: 'kimono',
       meaning: { en: 'kimono', vi: 'kimono' },
@@ -125,11 +139,13 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'ビザ',
+      partOfSpeech: 'noun',
       romaji: 'biza',
       meaning: { en: 'visa', vi: 'visa' }
     },
     {
       kana: 'はじめ',
+      partOfSpeech: 'noun',
       kanji: '初め',
       romaji: 'hajime',
       meaning: { en: 'the beginning', vi: 'phần đầu, lúc đầu' },
@@ -137,6 +153,8 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'おわり',
+      partOfSpeech: 'noun',
+      meaningPartOfSpeech: { vi: 'verb' },
       kanji: '終わり',
       romaji: 'owari',
       meaning: { en: 'the end', vi: 'kết thúc, phần cuối' },
@@ -144,26 +162,31 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'こっち',
+      partOfSpeech: 'pronoun',
       romaji: 'kocchi',
       meaning: { en: 'this way, here (informal)', vi: 'phía này, đằng này (thân mật)' }
     },
     {
       kana: 'そっち',
+      partOfSpeech: 'pronoun',
       romaji: 'socchi',
       meaning: { en: 'that way, there (informal)', vi: 'phía đó, đằng đó (thân mật)' }
     },
     {
       kana: 'あっち',
+      partOfSpeech: 'pronoun',
       romaji: 'acchi',
       meaning: { en: 'that way over there (informal)', vi: 'phía kia, đằng kia (thân mật)' }
     },
     {
       kana: 'どっち',
+      partOfSpeech: 'pronoun',
       romaji: 'docchi',
       meaning: { en: 'which way, which one (informal)', vi: 'phía nào, cái nào (thân mật)' }
     },
     {
       kana: 'あのあいだ',
+      partOfSpeech: 'noun',
       kanji: 'あの間',
       romaji: 'ano aida',
       meaning: { en: 'the other day', vi: 'hôm kia, hôm nọ' },
@@ -171,11 +194,14 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'みんなで',
+      partOfSpeech: 'adverb',
       romaji: 'minna de',
       meaning: { en: 'all together', vi: 'cùng nhau, tất cả cùng' }
     },
     {
       kana: '～けど',
+      partOfSpeech: 'particle',
+      meaningPartOfSpeech: { en: 'conjunction', vi: 'conjunction' },
       romaji: '~kedo',
       meaning: { en: 'but (informal, = が)', vi: 'nhưng (thân mật, = が)' }
     }
@@ -183,6 +209,7 @@ export const n5Lesson20: Lesson = {
   phrases: [
     {
       kana: 'くにへ かえるの？',
+      partOfSpeech: 'expression',
       kanji: '国へ 帰るの？',
       romaji: 'Kuni e kaeru no?',
       meaning: { en: 'Are you going back to your country?', vi: 'Về nước à?' },
@@ -193,26 +220,32 @@ export const n5Lesson20: Lesson = {
     },
     {
       kana: 'どうするの？',
+      partOfSpeech: 'expression',
       romaji: 'Dō suru no?',
       meaning: { en: 'What will you do?', vi: 'Làm sao đây? / Sao?' }
     },
     {
       kana: 'どうしようかな。',
+      partOfSpeech: 'expression',
       romaji: 'Dō shiyō kana.',
       meaning: { en: 'What shall I do?', vi: 'Làm gì bây giờ nhỉ?' }
     },
     {
       kana: 'よかったら',
+      partOfSpeech: 'expression',
       romaji: 'yokattara',
       meaning: { en: 'if you like', vi: 'nếu anh/chị thích thì' }
     },
     {
       kana: 'いろいろ',
+      partOfSpeech: 'adjective',
+      meaningPartOfSpeech: { vi: 'noun' },
       romaji: 'iroiro',
       meaning: { en: 'various, various things', vi: 'nhiều thứ, đủ thứ' }
     },
     {
       kana: 'おなかが いっぱい です。',
+      partOfSpeech: 'expression',
       kanji: 'お腹が いっぱい です。',
       romaji: 'Onaka ga ippai desu.',
       meaning: { en: 'I am full.', vi: 'No bụng rồi.' },
@@ -544,6 +577,7 @@ export const n5Lesson20: Lesson = {
       items: [
         {
           kana: 'ぼく',
+          partOfSpeech: 'pronoun',
           kanji: '僕',
           romaji: 'boku',
           meaning: { en: 'I (informal, men)', vi: 'tôi (nam, thân mật)' },
@@ -551,6 +585,7 @@ export const n5Lesson20: Lesson = {
         },
         {
           kana: 'きみ',
+          partOfSpeech: 'pronoun',
           kanji: '君',
           romaji: 'kimi',
           meaning: { en: 'you (informal)', vi: 'cậu/bạn (thân mật)' },
@@ -558,21 +593,25 @@ export const n5Lesson20: Lesson = {
         },
         {
           kana: 'こっち',
+          partOfSpeech: 'pronoun',
           romaji: 'kocchi',
           meaning: { en: 'this way (informal)', vi: 'đằng này' }
         },
         {
           kana: 'そっち',
+          partOfSpeech: 'pronoun',
           romaji: 'socchi',
           meaning: { en: 'that way (informal)', vi: 'đằng đó' }
         },
         {
           kana: 'あっち',
+          partOfSpeech: 'pronoun',
           romaji: 'acchi',
           meaning: { en: 'that way over there (informal)', vi: 'đằng kia' }
         },
         {
           kana: 'どっち',
+          partOfSpeech: 'pronoun',
           romaji: 'docchi',
           meaning: { en: 'which way (informal)', vi: 'đằng nào' }
         }
