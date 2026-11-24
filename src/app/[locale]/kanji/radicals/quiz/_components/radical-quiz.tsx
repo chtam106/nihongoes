@@ -268,7 +268,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
 
           return (
             <ChoiceButton
-              key={choice.id}
+              key={`${index}-${choice.id}`}
               onClick={() => handleSelect(choice.id)}
               dimmed={locked}
               state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}

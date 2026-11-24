@@ -135,7 +135,7 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
 
           return (
             <ChoiceButton
-              key={option.id}
+              key={`${questionNumber}-${option.id}`}
               onClick={() => handleSelect(option.id)}
               dimmed={locked}
               state={showCorrect ? 'correct' : showWrong ? 'wrong' : 'default'}

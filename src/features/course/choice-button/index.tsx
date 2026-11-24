@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { Box, Button } from '@mui/material';
 import { pink } from '@mui/material/colors';
 import { alpha } from '@mui/material/styles';
@@ -26,12 +26,28 @@ type ChoiceButtonProps = {
  */
 export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceButtonProps) {
   const filled = state === 'correct' || state === 'wrong';
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const wasDimmed = useRef(dimmed);
+
+  useEffect(() => {
+    if (wasDimmed.current && !dimmed && buttonRef.current === document.activeElement) {
+      buttonRef.current.blur();
+    }
+
+    wasDimmed.current = dimmed;
+  }, [dimmed]);
 
   return (
     <Button
       component="div"
+      ref={buttonRef}
       role="button"
       tabIndex={dimmed ? -1 : 0}
+      onPointerUp={(event) => {
+        if (event.pointerType === 'touch') {
+          event.currentTarget.blur();
+        }
+      }}
       onClick={(event) => {
         // A drag that highlights the answer text should not also submit it.
         if (hasTextSelection()) {
@@ -41,6 +57,12 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
 
         if (!dimmed) {
           onClick();
+
+          // Touch browsers may leave a custom, tabindex-enabled div focused after a tap.
+          // Keep keyboard focus intact, but clear focus after pointer or touch activation.
+          if (event.detail > 0) {
+            event.currentTarget.blur();
+          }
         }
       }}
       aria-disabled={dimmed || undefined}
