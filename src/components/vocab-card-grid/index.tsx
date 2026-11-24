@@ -39,7 +39,7 @@ export function VocabCardGrid({ cards, locale }: VocabCardGridProps) {
             text={card.item.speech ?? card.item.kana}
             sx={{ p: 1.5, height: '100%' }}
           >
-            <VocabHeadword item={card.item  } />
+            <VocabHeadword item={card.item} />
             <Typography variant="body2" sx={{ mt: 0.5 }}>
               {card.item.meaning[locale]}
             </Typography>

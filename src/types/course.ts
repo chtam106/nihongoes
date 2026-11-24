@@ -24,7 +24,6 @@ export type VocabPartOfSpeech =
   | 'suffix'
   | 'expression';
 
-
 export const VOCAB_PART_OF_SPEECH_SHORTEN: { [key in VocabPartOfSpeech]: string } = {
   noun: 'n',
   verb: 'v',
@@ -38,7 +37,7 @@ export const VOCAB_PART_OF_SPEECH_SHORTEN: { [key in VocabPartOfSpeech]: string 
   suffix: 'suf',
   expression: 'exp'
 };
-  export type VocabItem = {
+export type VocabItem = {
   kana: string;
   kanji?: string;
   romaji: string;
