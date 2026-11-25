@@ -88,8 +88,8 @@ export function LessonNotFound({ level }: LessonNotFoundProps) {
 type ResultScreenProps = {
   score: number;
   total: number;
-  level: CourseLevel;
-  lessonId: string;
+  level?: CourseLevel;
+  lessonId?: string;
   misses?: QuizMiss[];
   onRetry: () => void;
 };
@@ -131,9 +131,11 @@ export function ResultScreen({
         <Button variant="contained" startIcon={<ReplayIcon />} onClick={onRetry}>
           {t('course.retry')}
         </Button>
-        <Button variant="outlined" component={RouterLink} to={lessonPath(level, lessonId)}>
-          {t('course.reviewLesson')}
-        </Button>
+        {level && lessonId && (
+          <Button variant="outlined" component={RouterLink} to={lessonPath(level, lessonId)}>
+            {t('course.reviewLesson')}
+          </Button>
+        )}
       </Stack>
       <QuizMissList misses={misses} />
     </Paper>

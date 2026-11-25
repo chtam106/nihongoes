@@ -27,6 +27,22 @@ export const seo = {
     title: 'Learn Jōyō Kanji Step by Step',
     description: 'The standard-use (Jōyō) kanji, by elementary grade and Kanken level.'
   },
+  practice: {
+    title: 'Japanese Practice',
+    description: 'Practice Japanese verb conjugation and reinforce JLPT grammar.',
+    verbs: {
+      title: 'Japanese Verb Conjugation Practice',
+      description: 'Practice converting verbs between ます, て, and ない forms.',
+      te: {
+        title: 'て Form Quiz',
+        description: 'Multiple-choice practice for Japanese verb て forms.'
+      },
+      nai: {
+        title: 'ない Form Quiz',
+        description: 'Multiple-choice practice for Japanese verb ない forms.'
+      }
+    }
+  },
   n5: {
     intro: {
       title: 'N5 Getting Started - Japanese Basics & Classroom Phrases',
