@@ -7,6 +7,7 @@ import BrushOutlinedIcon from '@mui/icons-material/BrushOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import CloudSyncOutlinedIcon from '@mui/icons-material/CloudSyncOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
+import ReplayOutlinedIcon from '@mui/icons-material/ReplayOutlined';
 import type { ComponentType } from 'react';
 import type { SvgIconProps } from '@mui/material';
 import {
@@ -128,6 +129,21 @@ export const navGroups: NavGroup[] = [
     path: routes.vocabulary,
     icon: MenuBookOutlinedIcon,
     children: []
+  },
+  {
+    label: { en: 'Practice', vi: 'Luyện tập' },
+    path: routes.practice.verbs.te,
+    icon: ReplayOutlinedIcon,
+    children: [
+      {
+        label: { en: 'て form verbs', vi: 'Chia thể て' },
+        path: routes.practice.verbs.te
+      },
+      {
+        label: { en: 'ない form verbs', vi: 'Chia thể ない' },
+        path: routes.practice.verbs.nai
+      }
+    ]
   },
   {
     label: { en: 'Flashcards', vi: 'Flashcards' },

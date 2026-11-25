@@ -15,6 +15,7 @@ import { settings } from './settings.ts';
 import { course } from './course.ts';
 import { flashcards } from './flashcards.ts';
 import { privacy } from './privacy.ts';
+import { verbPractice } from './verb-practice.ts';
 
 /** Vietnamese messages, composed from one file per namespace (page/feature). */
 export const viMessages = {
@@ -33,5 +34,6 @@ export const viMessages = {
   kanji,
   course,
   flashcards,
-  privacy
+  privacy,
+  verbPractice
 } satisfies TranslationTree;
