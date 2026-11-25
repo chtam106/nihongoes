@@ -11,6 +11,12 @@ export const routes = {
   privacy: '/privacy',
   vocabulary: VOCABULARY_PATH,
   flashcards: FLASHCARDS_PATH,
+  practice: {
+    verbs: {
+      te: '/practice/verbs/te',
+      nai: '/practice/verbs/nai'
+    }
+  },
   flashcardDrive: '/sync',
   n5: {
     index: '/n5',
