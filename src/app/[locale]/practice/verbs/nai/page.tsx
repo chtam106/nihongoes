@@ -6,5 +6,7 @@ export const generateMetadata = createMetadata('/practice/verbs/nai');
 
 export default function Page() {
   const groups = createVerbPracticeGroups();
-  return <VerbPracticePage mode="nai" groups={groups} initialDeck={createVerbQuizDeck(groups, 'nai')} />;
+  return (
+    <VerbPracticePage mode="nai" groups={groups} initialDeck={createVerbQuizDeck(groups, 'nai')} />
+  );
 }

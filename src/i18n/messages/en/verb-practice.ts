@@ -1,6 +1,7 @@
 export const verbPractice = {
   title: 'Verb conjugation',
-  description: 'Practice verbs by subgroup. Each subgroup has five words and distractors drawn from other patterns.',
+  description:
+    'Practice verbs by subgroup. Each subgroup has five words and distractors drawn from other patterns.',
   teTitle: 'Practice the て form',
   naiTitle: 'Practice the ない form',
   questionProgress: 'Question {current} / {total}',

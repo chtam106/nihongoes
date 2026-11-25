@@ -33,8 +33,14 @@ export const seo = {
     verbs: {
       title: 'Japanese Verb Conjugation Practice',
       description: 'Practice converting verbs between ます, て, and ない forms.',
-      te: { title: 'て Form Quiz', description: 'Multiple-choice practice for Japanese verb て forms.' },
-      nai: { title: 'ない Form Quiz', description: 'Multiple-choice practice for Japanese verb ない forms.' }
+      te: {
+        title: 'て Form Quiz',
+        description: 'Multiple-choice practice for Japanese verb て forms.'
+      },
+      nai: {
+        title: 'ない Form Quiz',
+        description: 'Multiple-choice practice for Japanese verb ない forms.'
+      }
     }
   },
   n5: {

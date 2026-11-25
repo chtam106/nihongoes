@@ -33,8 +33,14 @@ export const seo = {
     verbs: {
       title: 'Luyện chia động từ tiếng Nhật',
       description: 'Luyện chuyển đổi động từ giữa thể ます, thể て và thể ない.',
-      te: { title: 'Bài tập chia thể て', description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể て.' },
-      nai: { title: 'Bài tập chia thể ない', description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể ない.' }
+      te: {
+        title: 'Bài tập chia thể て',
+        description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể て.'
+      },
+      nai: {
+        title: 'Bài tập chia thể ない',
+        description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể ない.'
+      }
     }
   },
   n5: {

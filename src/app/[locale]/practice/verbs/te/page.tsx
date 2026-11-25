@@ -6,5 +6,7 @@ export const generateMetadata = createMetadata('/practice/verbs/te');
 
 export default function Page() {
   const groups = createVerbPracticeGroups();
-  return <VerbPracticePage mode="te" groups={groups} initialDeck={createVerbQuizDeck(groups, 'te')} />;
+  return (
+    <VerbPracticePage mode="te" groups={groups} initialDeck={createVerbQuizDeck(groups, 'te')} />
+  );
 }
