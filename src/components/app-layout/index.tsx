@@ -8,7 +8,6 @@ import { Menu } from '@/components/menu';
 import { ScrollManager } from '@/components/scroll-manager';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
 import { installRubyAwareCopyHandler } from '@/utils/ruby-selection.ts';
-import { usePathname } from '@/i18n/navigation.tsx';
 
 const drawerWidth = 320;
 
@@ -17,17 +16,17 @@ type AppLayoutProps = {
 };
 
 function AppLayout({ children }: AppLayoutProps) {
-  const pathname = usePathname();
   // Mobile vs desktop is handled purely with CSS breakpoints (below) so the
   // server-rendered markup is correct at first paint - no `useMediaQuery` flash
   // where the desktop drawer briefly appears on mobile.
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Load on every page, the home page included: its nav cards show kana/kanji
+  // symbols (あ, ア, 漢, 部). Loading after hydration keeps it off the critical
+  // path, and unicode-range means only the subsets actually used are fetched.
   useEffect(() => {
-    if (pathname !== '/') {
-      void loadJapaneseUiFont();
-    }
-  }, [pathname]);
+    void loadJapaneseUiFont();
+  }, []);
 
   useEffect(() => installRubyAwareCopyHandler(), []);
 
