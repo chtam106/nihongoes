@@ -142,6 +142,10 @@ export const navGroups: NavGroup[] = [
       {
         label: { en: 'ない form verbs', vi: 'Chia thể ない' },
         path: routes.practice.verbs.nai
+      },
+      {
+        label: { en: 'Particles', vi: 'Trợ từ' },
+        path: routes.practice.particles
       }
     ]
   },

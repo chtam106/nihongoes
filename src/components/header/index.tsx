@@ -1,11 +1,12 @@
 import { Suspense, lazy } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Box, IconButton, Stack, Toolbar } from '@mui/material';
+import { AppBar, Badge, Box, IconButton, Stack, Toolbar } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand';
 import { HistoryButton } from '@/components/history-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useDueReviewCount } from '@/features/flashcards/use-due-review-count.ts';
 
 const AppSettings = lazy(() =>
   import('@/components/app-settings').then((module) => ({ default: module.AppSettings }))
@@ -24,6 +25,12 @@ type HeaderProps = {
 
 export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps) {
   const { t } = useTranslation();
+  // On mobile the menu (and its due-count badge) is hidden: flag due cards on the button.
+  const due = useDueReviewCount();
+  const openMenuLabel =
+    due > 0
+      ? `${t('nav.openMenu')} (${t('flashcards.reviewDueBadge', { count: due })})`
+      : t('nav.openMenu');
 
   return (
     <AppBar
@@ -48,13 +55,17 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
         <IconButton
           edge="start"
           onClick={onToggleMobile}
-          aria-label={mobileOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+          aria-label={mobileOpen ? t('nav.closeMenu') : openMenuLabel}
           aria-expanded={mobileOpen}
           color="primary"
           sx={{ display: { xs: 'inline-flex', md: 'none' } }}
         >
           {mobileOpen && <CloseIcon />}
-          {!mobileOpen && <MenuIcon />}
+          {!mobileOpen && (
+            <Badge color="error" variant="dot" invisible={due === 0} overlap="circular">
+              <MenuIcon />
+            </Badge>
+          )}
         </IconButton>
         <Box
           aria-hidden

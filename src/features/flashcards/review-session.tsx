@@ -16,10 +16,12 @@ const GRADE_LABEL_KEYS: Record<ReviewGrade, string> = {
   known: 'flashcards.reviewKnown'
 };
 
-const GRADE_COLORS: Record<ReviewGrade, 'error' | 'success' | 'primary'> = {
+// Red, green, blue: three hues apart, so no grade looks like another (the
+// pink primary color sits too close to the red of "again").
+const GRADE_COLORS: Record<ReviewGrade, 'error' | 'success' | 'info'> = {
   again: 'error',
   good: 'success',
-  known: 'primary'
+  known: 'info'
 };
 
 type ReviewSessionProps = {
