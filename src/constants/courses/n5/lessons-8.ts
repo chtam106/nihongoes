@@ -1331,12 +1331,9 @@ export const n5Lesson8: Lesson = {
           ]
         },
         {
-          jp: '野菜も おいしくないですか。',
-          romaji: 'Yasai mo oishikunai desu ka.',
-          meaning: {
-            en: 'The vegetables are delicious too, are they not?',
-            vi: 'Rau cũng ngon phải không?'
-          },
+          jp: '野菜も おいしいです。',
+          romaji: 'Yasai mo oishii desu.',
+          meaning: { en: 'The vegetables are good too.', vi: 'Rau cũng ngon.' },
           ruby: [
             { base: '野', reading: 'や' },
             { base: '菜', reading: 'さい' }

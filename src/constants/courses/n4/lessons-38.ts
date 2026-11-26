@@ -557,7 +557,7 @@ export const n4Lesson38: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '研究室は いつも きれいですね。整理 する のが お上手ですね。',
+          jp: '研究室は いつも きれいですね。整理する のが お上手ですね。',
           romaji: 'Kenkyūshitsu wa itsumo kirei desu ne. Seiri suru no ga o-jōzu desu ne.',
           meaning: {
             en: 'Your office is always neat. You are good at organizing.',
@@ -575,7 +575,7 @@ export const n4Lesson38: Lesson = {
         },
         {
           speakerId: 'watt',
-          jp: '整理 する のが 好き なんです。本も きちんと 並べて います。',
+          jp: '整理する のが 好き なんです。本も きちんと 並べて います。',
           romaji: 'Seiri suru no ga suki nan desu. Hon mo kichinto narabete imasu.',
           meaning: {
             en: 'I like tidying up. I line up the books neatly too.',
@@ -913,25 +913,33 @@ export const n4Lesson38: Lesson = {
   reading: [
     {
       id: 'reading-lesson38-twins',
-      title: { en: 'Two sisters, two temperaments', vi: 'Hai chị em, hai tính cách' },
-      titleJp: '二人の 姉妹',
+      title: { en: 'My twin sister', vi: 'Chị gái sinh đôi của tôi' },
+      titleJp: '双子の 姉',
       titleRuby: [
-        { base: '二', reading: 'ふた' },
-        { base: '人', reading: 'り' },
-        { base: '姉', reading: 'し' },
-        { base: '妹', reading: 'まい' }
+        { base: '双', reading: 'ふた' },
+        { base: '子', reading: 'ご' },
+        { base: '姉', reading: 'あね' }
       ],
       lines: [
         {
-          jp: '姉妹は 顔が 似ていますが、性格は 違います。',
-          romaji: 'Shimai wa kao ga nite imasu ga, seikaku wa chigaimasu.',
+          jp: '私には 双子の 姉が います。',
+          romaji: 'Watashi ni wa futago no ane ga imasu.',
+          meaning: { en: 'I have a twin older sister.', vi: 'Tôi có một người chị sinh đôi.' },
+          ruby: [
+            { base: '私', reading: 'わたし' },
+            { base: '双', reading: 'ふた' },
+            { base: '子', reading: 'ご' },
+            { base: '姉', reading: 'あね' }
+          ]
+        },
+        {
+          jp: '顔は よく 似ている のに、性格は ぜんぜん 違います。',
+          romaji: 'Kao wa yoku nite iru noni, seikaku wa zenzen chigaimasu.',
           meaning: {
-            en: 'The sisters look alike, but their personalities differ.',
-            vi: 'Hai chị em giống mặt nhưng tính cách khác nhau.'
+            en: 'Our faces look very alike, yet our personalities are completely different.',
+            vi: 'Mặt mũi rất giống nhau vậy mà tính cách lại khác hẳn.'
           },
           ruby: [
-            { base: '姉', reading: 'しま' },
-            { base: '妹', reading: 'い' },
             { base: '顔', reading: 'かお' },
             { base: '似', reading: 'に' },
             { base: '性', reading: 'せい' },
@@ -940,92 +948,97 @@ export const n4Lesson38: Lesson = {
           ]
         },
         {
-          jp: '姉は おとなしくて 優しい 人です。妹は 気が 強くて、よく けんか します。',
-          romaji:
-            'Ane wa otonashikute yasashii hito desu. Imōto wa ki ga tsuyokute, yoku kenka shimasu.',
+          jp: '姉は 本を 読む のが 好きで、私は 外で 遊ぶ のが 好きです。',
+          romaji: 'Ane wa hon o yomu no ga suki de, watashi wa soto de asobu no ga suki desu.',
           meaning: {
-            en: 'The older sister is quiet and kind. The younger sister is strong-willed and often quarrels.',
-            vi: 'Chị thì ngoan và hiền. Em thì mạnh mẽ và hay cãi nhau.'
+            en: 'My sister likes reading, and I like playing outside.',
+            vi: 'Chị tôi thích đọc sách, còn tôi thích chơi ngoài trời.'
           },
           ruby: [
             { base: '姉', reading: 'あね' },
-            { base: '優', reading: 'やさ' },
-            { base: '人', reading: 'ひと' },
-            { base: '妹', reading: 'いもうと' },
-            { base: '気', reading: 'き' },
-            { base: '強', reading: 'つよ' }
+            { base: '本', reading: 'ほん' },
+            { base: '読', reading: 'よ' },
+            { base: '好', reading: 'す' },
+            { base: '私', reading: 'わたし' },
+            { base: '外', reading: 'そと' },
+            { base: '遊', reading: 'あそ' },
+            { base: '好', reading: 'す' }
           ]
         },
         {
-          jp: 'でも 年齢が 経つ と、お互いを 世話 する のが 当たり前に なりました。',
-          romaji: 'Demo nenrei ga tatsu to, o-tagai o sewa suru no ga atarimae ni narimashita.',
+          jp: '子どもの 時は よく けんかしました。',
+          romaji: 'Kodomo no toki wa yoku kenka shimashita.',
           meaning: {
-            en: 'But as they grew older, taking care of each other became natural.',
-            vi: 'Nhưng theo tuổi tác, chăm sóc nhau đã trở thành điều hiển nhiên.'
+            en: 'When we were children, we often fought.',
+            vi: 'Hồi nhỏ chúng tôi hay cãi nhau.'
           },
           ruby: [
-            { base: '年', reading: 'ねん' },
-            { base: '齢', reading: 'れい' },
-            { base: '経', reading: 'た' },
-            { base: '互', reading: 'たが' },
-            { base: '世', reading: 'せ' },
-            { base: '話', reading: 'わ' },
-            { base: '当', reading: 'あた' },
-            { base: '前', reading: 'まえ' }
+            { base: '子', reading: 'こ' },
+            { base: '時', reading: 'とき' }
+          ]
+        },
+        {
+          jp: 'でも 大人に なってから、困った 時は いつも 助け合っています。',
+          romaji: 'Demo otona ni natte kara, komatta toki wa itsumo tasukeatte imasu.',
+          meaning: {
+            en: 'But since growing up, we always help each other when we are in trouble.',
+            vi: 'Nhưng từ khi lớn lên, lúc khó khăn chúng tôi luôn giúp đỡ nhau.'
+          },
+          ruby: [
+            { base: '大人', reading: 'おとな' },
+            { base: '困', reading: 'こま' },
+            { base: '時', reading: 'とき' },
+            { base: '助', reading: 'たす' },
+            { base: '合', reading: 'あ' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'What is true about the sisters?', vi: 'Điều nào đúng về hai chị em?' },
-          jp: '姉妹について 正しい ことは 何ですか。',
+          question: { en: 'What does the older sister like to do?', vi: 'Người chị thích làm gì?' },
+          jp: '姉は 何を する のが 好きですか。',
           ruby: [
-            { base: '姉', reading: 'し' },
-            { base: '妹', reading: 'まい' },
-            { base: '正', reading: 'ただ' },
-            { base: '何', reading: 'なん' }
+            { base: '姉', reading: 'あね' },
+            { base: '何', reading: 'なに' },
+            { base: '好', reading: 'す' }
           ],
           choices: [
             {
               id: 'a',
-              label: {
-                en: 'They look alike but differ in personality',
-                vi: 'Giống mặt nhưng khác tính cách'
-              },
-              jp: '顔は 似ていますが、性格は 違います',
+              label: { en: 'Reading books', vi: 'Đọc sách' },
+              jp: '本を 読む こと',
               ruby: [
-                { base: '顔', reading: 'かお' },
-                { base: '似', reading: 'に' },
-                { base: '性', reading: 'せい' },
-                { base: '格', reading: 'かく' },
-                { base: '違', reading: 'ちが' }
+                { base: '本', reading: 'ほん' },
+                { base: '読', reading: 'よ' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Both are strong-willed', vi: 'Cả hai đều mạnh mẽ' },
-              jp: '二人とも 気が 強いです',
+              label: { en: 'Playing outside', vi: 'Chơi ngoài trời' },
+              jp: '外で 遊ぶ こと',
               ruby: [
-                { base: '二', reading: 'ふた' },
-                { base: '人', reading: 'り' },
-                { base: '気', reading: 'き' },
-                { base: '強', reading: 'つよ' }
+                { base: '外', reading: 'そと' },
+                { base: '遊', reading: 'あそ' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'They never quarrel', vi: 'Họ không bao giờ cãi nhau' },
-              jp: 'けんかを しません'
+              label: { en: 'Cooking', vi: 'Nấu ăn' },
+              jp: '料理を 作る こと',
+              ruby: [
+                { base: '料', reading: 'りょう' },
+                { base: '理', reading: 'り' },
+                { base: '作', reading: 'つく' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'They work in a factory', vi: 'Họ làm ở nhà máy' },
-              jp: '工場で 働きます',
+              label: { en: 'Singing', vi: 'Hát' },
+              jp: '歌を 歌う こと',
               ruby: [
-                { base: '工', reading: 'こう' },
-                { base: '場', reading: 'じょう' },
-                { base: '働', reading: 'はたら' }
+                { base: '歌', reading: 'うた' },
+                { base: '歌', reading: 'うた' }
               ]
             }
           ],
@@ -1034,55 +1047,49 @@ export const n4Lesson38: Lesson = {
         {
           id: 'q2',
           question: {
-            en: 'What became natural as they grew older?',
-            vi: 'Điều gì trở nên hiển nhiên khi lớn lên?'
+            en: 'What is different between the two of them?',
+            vi: 'Hai người khác nhau ở điểm nào?'
           },
-          jp: '年齢が 経つと、何が 当たり前に なりましたか。',
+          jp: '二人は 何が 違いますか。',
           ruby: [
-            { base: '年', reading: 'ねん' },
-            { base: '齢', reading: 'れい' },
-            { base: '経', reading: 'た' },
+            { base: '二', reading: 'ふた' },
+            { base: '人', reading: 'り' },
             { base: '何', reading: 'なに' },
-            { base: '当', reading: 'あ' },
-            { base: '前', reading: 'まえ' }
+            { base: '違', reading: 'ちが' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Taking care of each other', vi: 'Chăm sóc nhau' },
-              jp: 'お互いを 世話する こと',
+              label: { en: 'Their personalities', vi: 'Tính cách' },
+              jp: '性格',
               ruby: [
-                { base: '互', reading: 'たが' },
-                { base: '世', reading: 'せ' },
-                { base: '話', reading: 'わ' }
+                { base: '性', reading: 'せい' },
+                { base: '格', reading: 'かく' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Locking the office', vi: 'Khóa phòng làm việc' },
-              jp: '事務所の 鍵を 閉める こと',
-              ruby: [
-                { base: '事', reading: 'じ' },
-                { base: '務', reading: 'む' },
-                { base: '所', reading: 'しょ' },
-                { base: '鍵', reading: 'かぎ' },
-                { base: '閉', reading: 'し' }
-              ]
+              label: { en: 'Their faces', vi: 'Khuôn mặt' },
+              jp: '顔',
+              ruby: [{ base: '顔', reading: 'かお' }]
             },
             {
               id: 'c',
-              label: { en: 'Turning off power', vi: 'Tắt điện nguồn' },
-              jp: '電源を 切る こと',
+              label: { en: 'Their ages', vi: 'Tuổi' },
+              jp: '年齢',
               ruby: [
-                { base: '電', reading: 'でん' },
-                { base: '源', reading: 'げん' },
-                { base: '切', reading: 'き' }
+                { base: '年', reading: 'ねん' },
+                { base: '齢', reading: 'れい' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'Lying often', vi: 'Hay nói dối' },
-              jp: 'よく うそを つく こと'
+              label: { en: 'Their families', vi: 'Gia đình' },
+              jp: '家族',
+              ruby: [
+                { base: '家', reading: 'か' },
+                { base: '族', reading: 'ぞく' }
+              ]
             }
           ],
           correctId: 'a'

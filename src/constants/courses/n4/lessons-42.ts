@@ -931,45 +931,22 @@ export const n4Lesson42: Lesson = {
   reading: [
     {
       id: 'reading-lesson42-cup-noodles',
-      title: { en: "The world's first cup noodles", vi: 'Mì ly đầu tiên trên thế giới' },
-      titleJp: '世界初の カップめん',
+      title: { en: 'The invention of cup noodles', vi: 'Sự ra đời của mì cốc' },
+      titleJp: 'カップめんの 発明',
       titleRuby: [
-        { base: '世', reading: 'せ' },
-        { base: '界', reading: 'かい' },
-        { base: '初', reading: 'はつ' }
+        { base: '発', reading: 'はつ' },
+        { base: '明', reading: 'めい' }
       ],
       lines: [
         {
-          jp: '私は 市場調査の 資料で カップめんの 話を 読みました。',
-          romaji: 'Watashi wa shijō chōsa no shiryō de kappumen no hanashi o yomimashita.',
-          meaning: {
-            en: 'I read about cup noodles in market-research materials.',
-            vi: 'Tôi đọc câu chuyện về mì ly trong tài liệu điều tra thị trường.'
-          },
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '市', reading: 'し' },
-            { base: '場', reading: 'じょう' },
-            { base: '調', reading: 'ちょう' },
-            { base: '査', reading: 'さ' },
-            { base: '資', reading: 'し' },
-            { base: '料', reading: 'りょう' },
-            { base: '話', reading: 'はな' },
-            { base: '読', reading: 'よ' }
-          ]
-        },
-        {
-          jp: '世界初の カップめんは 1958年に 安藤百福によって 発明されました。',
+          jp: 'カップめんは 1971年に 安藤百福によって 発明されました。',
           romaji:
-            'Sekai hatsu no kappumen wa 1958-nen ni Andō Momofuku ni yotte hatsumei saremashita.',
+            'Kappumen wa sen kyūhyaku nanajūichi-nen ni Andō Momofuku ni yotte hatsumei saremashita.',
           meaning: {
-            en: "The world's first cup noodles were invented by Momofuku Ando in 1958.",
-            vi: 'Mì ly đầu tiên trên thế giới được Ando Momofuku phát minh năm 1958.'
+            en: 'Cup noodles were invented by Momofuku Ando in 1971.',
+            vi: 'Mì cốc được Ando Momofuku phát minh vào năm 1971.'
           },
           ruby: [
-            { base: '世', reading: 'せ' },
-            { base: '界', reading: 'かい' },
-            { base: '初', reading: 'はつ' },
             { base: '年', reading: 'ねん' },
             { base: '安', reading: 'あん' },
             { base: '藤', reading: 'どう' },
@@ -980,85 +957,76 @@ export const n4Lesson42: Lesson = {
           ]
         },
         {
-          jp: '彼は 材料を 混ぜて、どんぶりに 注ぎ、世界に 広めました。',
-          romaji: 'Kare wa zairyō o mazete, donburi ni sosogi, sekai ni hiromemashita.',
+          jp: '安藤さんは 忙しい 人でも 簡単に 食べられる ラーメンを 作る ために、研究を 続けました。',
+          romaji:
+            'Andō-san wa isogashii hito demo kantan ni taberareru rāmen o tsukuru tame ni, kenkyū o tsuzukemashita.',
           meaning: {
-            en: 'He mixed the ingredients, poured them into a bowl, and spread the product worldwide.',
-            vi: 'Ông trộn nguyên liệu, đổ vào bát tô lớn, rồi phổ biến ra thế giới.'
+            en: 'Mr. Ando kept up his research in order to make ramen that even busy people could eat easily.',
+            vi: 'Ông Ando đã miệt mài nghiên cứu để làm ra loại mì mà ngay cả người bận rộn cũng ăn được dễ dàng.'
           },
           ruby: [
-            { base: '彼', reading: 'かれ' },
-            { base: '材', reading: 'ざい' },
-            { base: '料', reading: 'りょう' },
-            { base: '混', reading: 'ま' },
-            { base: '注', reading: 'そそ' },
+            { base: '安', reading: 'あん' },
+            { base: '藤', reading: 'どう' },
+            { base: '忙', reading: 'いそが' },
+            { base: '人', reading: 'ひと' },
+            { base: '簡', reading: 'かん' },
+            { base: '単', reading: 'たん' },
+            { base: '食', reading: 'た' },
+            { base: '作', reading: 'つく' },
+            { base: '研', reading: 'けん' },
+            { base: '究', reading: 'きゅう' },
+            { base: '続', reading: 'つづ' }
+          ]
+        },
+        {
+          jp: 'カップめんを 作るのに、なべも 皿も 要りません。',
+          romaji: 'Kappumen o tsukuru no ni, nabe mo sara mo irimasen.',
+          meaning: {
+            en: 'You need neither a pot nor a plate to make cup noodles.',
+            vi: 'Để làm mì cốc thì không cần nồi cũng không cần đĩa.'
+          },
+          ruby: [
+            { base: '作', reading: 'つく' },
+            { base: '皿', reading: 'さら' },
+            { base: '要', reading: 'い' }
+          ]
+        },
+        {
+          jp: 'お湯を 入れて、3分 待つ だけです。',
+          romaji: 'O-yu o irete, sanpun matsu dake desu.',
+          meaning: {
+            en: 'You just add hot water and wait three minutes.',
+            vi: 'Chỉ cần đổ nước sôi vào và đợi 3 phút.'
+          },
+          ruby: [
+            { base: '湯', reading: 'ゆ' },
+            { base: '入', reading: 'い' },
+            { base: '分', reading: 'ぷん' },
+            { base: '待', reading: 'ま' }
+          ]
+        },
+        {
+          jp: '今では 世界中の 人が 食べています。',
+          romaji: 'Ima de wa sekaijū no hito ga tabete imasu.',
+          meaning: {
+            en: 'Today people all over the world eat them.',
+            vi: 'Ngày nay người khắp thế giới đều ăn mì cốc.'
+          },
+          ruby: [
+            { base: '今', reading: 'いま' },
             { base: '世', reading: 'せ' },
             { base: '界', reading: 'かい' },
-            { base: '広', reading: 'ひろ' }
+            { base: '中', reading: 'じゅう' },
+            { base: '人', reading: 'ひと' },
+            { base: '食', reading: 'た' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: {
-            en: "Who invented the world's first cup noodles?",
-            vi: 'Ai phát minh mì ly đầu tiên trên thế giới?'
-          },
-          jp: '世界初の カップめんを 発明した 人は だれですか。',
-          ruby: [
-            { base: '世', reading: 'せ' },
-            { base: '界', reading: 'かい' },
-            { base: '初', reading: 'はつ' },
-            { base: '発', reading: 'はつ' },
-            { base: '明', reading: 'めい' },
-            { base: '人', reading: 'ひと' }
-          ],
-          choices: [
-            {
-              id: 'a',
-              label: { en: 'Momofuku Ando', vi: 'Ando Momofuku' },
-              jp: '安藤百福さん',
-              ruby: [
-                { base: '安', reading: 'あん' },
-                { base: '藤', reading: 'どう' },
-                { base: '百', reading: 'もも' },
-                { base: '福', reading: 'ふく' }
-              ]
-            },
-            { id: 'b', label: { en: 'Beethoven', vi: 'Beethoven' }, jp: 'ベートーベン' },
-            {
-              id: 'c',
-              label: { en: 'A lawyer', vi: 'Một luật sư' },
-              jp: '弁護士',
-              ruby: [
-                { base: '弁', reading: 'べん' },
-                { base: '護', reading: 'ご' },
-                { base: '士', reading: 'し' }
-              ]
-            },
-            {
-              id: 'd',
-              label: { en: 'An astronaut', vi: 'Nhà du hành vũ trụ' },
-              jp: '宇宙飛行士',
-              ruby: [
-                { base: '宇', reading: 'う' },
-                { base: '宙', reading: 'ちゅう' },
-                { base: '飛', reading: 'ひ' },
-                { base: '行', reading: 'こう' },
-                { base: '士', reading: 'し' }
-              ]
-            }
-          ],
-          correctId: 'a'
-        },
-        {
-          id: 'q2',
-          question: {
-            en: 'When were they invented?',
-            vi: 'Phát minh năm nào?'
-          },
-          jp: 'いつ 発明されましたか。',
+          question: { en: 'Who invented cup noodles?', vi: 'Mì cốc được ai phát minh?' },
+          jp: 'カップめんは だれによって 発明されましたか。',
           ruby: [
             { base: '発', reading: 'はつ' },
             { base: '明', reading: 'めい' }
@@ -1066,27 +1034,84 @@ export const n4Lesson42: Lesson = {
           choices: [
             {
               id: 'a',
-              label: { en: '1958', vi: '1958' },
-              jp: '1958年',
-              ruby: [{ base: '年', reading: 'ねん' }]
+              label: { en: 'Momofuku Ando', vi: 'Ando Momofuku' },
+              jp: '安藤百福',
+              ruby: [
+                { base: '安', reading: 'あん' },
+                { base: '藤', reading: 'どう' },
+                { base: '百', reading: 'もも' },
+                { base: '福', reading: 'ふく' }
+              ]
             },
             {
               id: 'b',
-              label: { en: '1770', vi: '1770' },
-              jp: '1770年',
-              ruby: [{ base: '年', reading: 'ねん' }]
+              label: { en: 'Shinya Yamanaka', vi: 'Yamanaka Shinya' },
+              jp: '山中伸弥',
+              ruby: [
+                { base: '山', reading: 'やま' },
+                { base: '中', reading: 'なか' },
+                { base: '伸', reading: 'しん' },
+                { base: '弥', reading: 'や' }
+              ]
             },
             {
               id: 'c',
-              label: { en: '1910', vi: '1910' },
-              jp: '1910年',
-              ruby: [{ base: '年', reading: 'ねん' }]
+              label: { en: 'A cooking teacher', vi: 'Một thầy dạy nấu ăn' },
+              jp: '料理の 先生',
+              ruby: [
+                { base: '料', reading: 'りょう' },
+                { base: '理', reading: 'り' },
+                { base: '先', reading: 'せん' },
+                { base: '生', reading: 'せい' }
+              ]
             },
             {
               id: 'd',
-              label: { en: '2007', vi: '2007' },
-              jp: '2007年',
-              ruby: [{ base: '年', reading: 'ねん' }]
+              label: { en: 'A restaurant manager', vi: 'Một quản lý nhà hàng' },
+              jp: 'レストランの 店長',
+              ruby: [
+                { base: '店', reading: 'てん' },
+                { base: '長', reading: 'ちょう' }
+              ]
+            }
+          ],
+          correctId: 'a'
+        },
+        {
+          id: 'q2',
+          question: { en: 'What do you need to make cup noodles?', vi: 'Để làm mì cốc cần gì?' },
+          jp: 'カップめんを 作るのに 何が 要りますか。',
+          ruby: [
+            { base: '作', reading: 'つく' },
+            { base: '何', reading: 'なに' },
+            { base: '要', reading: 'い' }
+          ],
+          choices: [
+            {
+              id: 'a',
+              label: { en: 'Hot water', vi: 'Nước sôi' },
+              jp: 'お湯',
+              ruby: [{ base: '湯', reading: 'ゆ' }]
+            },
+            {
+              id: 'b',
+              label: { en: 'A pot', vi: 'Nồi' },
+              jp: 'なべ'
+            },
+            {
+              id: 'c',
+              label: { en: 'A plate', vi: 'Đĩa' },
+              jp: '皿',
+              ruby: [{ base: '皿', reading: 'さら' }]
+            },
+            {
+              id: 'd',
+              label: { en: 'A microwave', vi: 'Lò vi sóng' },
+              jp: '電子レンジ',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '子', reading: 'し' }
+              ]
             }
           ],
           correctId: 'a'

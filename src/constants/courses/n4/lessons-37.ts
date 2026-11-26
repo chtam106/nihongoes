@@ -456,7 +456,7 @@ export const n4Lesson37: Lesson = {
         },
         {
           speakerId: 'guide',
-          jp: '金閣寺は 14世紀に 建てられました。1950年に 一度 焼けて、再建 され、1994年に 世界遺産に なりました。',
+          jp: '金閣寺は 14世紀に 建てられました。1950年に 一度 焼けて、再建され、1994年に 世界遺産に なりました。',
           romaji:
             'Kinkaku-ji wa jū-yon seiki ni tateraremashita. Sen-kyū-hyaku go-jū-nen ni ichido yakete, saiken sare, sen-kyū-hyaku kyū-jū-yo-nen ni sekai isan ni narimashita.',
           meaning: {
@@ -524,7 +524,7 @@ export const n4Lesson37: Lesson = {
         },
         {
           speakerId: 'guide',
-          jp: '中は 見学 できません。池の 周りを 歩いて ご覧 ください。',
+          jp: '中は 見学できません。池の 周りを 歩いて ご覧 ください。',
           romaji: 'Naka wa kengaku dekimasen. Ike no mawari o aruite goran kudasai.',
           meaning: {
             en: 'You cannot tour inside. Please walk around the pond and look.',
@@ -800,59 +800,101 @@ export const n4Lesson37: Lesson = {
   reading: [
     {
       id: 'reading-lesson37-history',
-      title: { en: 'Built long ago', vi: 'Được xây từ lâu' },
-      titleJp: '昔 建てられた もの',
+      title: { en: 'Horyuji Temple', vi: 'Chùa Horyuji' },
+      titleJp: '法隆寺',
       titleRuby: [
-        { base: '昔', reading: 'むかし' },
-        { base: '建', reading: 'た' }
+        { base: '法', reading: 'ほう' },
+        { base: '隆', reading: 'りゅう' },
+        { base: '寺', reading: 'じ' }
       ],
       lines: [
         {
-          jp: '小さい ころ、よく 病気に なりました。',
-          romaji: 'Chīsai koro, yoku byōki ni narimashita.',
-          meaning: { en: 'When I was small, I often got sick.', vi: 'Thời nhỏ, tôi hay bị ốm.' },
-          ruby: [
-            { base: '小', reading: 'ちい' },
-            { base: '病', reading: 'びょう' },
-            { base: '気', reading: 'き' }
-          ]
-        },
-        {
-          jp: '法隆寺は 607年に 建てられました。',
-          romaji: 'Hōryūji wa roku-hyaku nana-nen ni tateraremashita.',
+          jp: '法隆寺は 奈良に ある 古い お寺です。',
+          romaji: 'Hōryūji wa Nara ni aru furui o-tera desu.',
           meaning: {
-            en: 'Hōryūji Temple was built in the year 607.',
-            vi: 'Chùa Hōryūji được xây vào năm 607.'
+            en: 'Horyuji is an old temple in Nara.',
+            vi: 'Horyuji là một ngôi chùa cổ ở Nara.'
           },
           ruby: [
             { base: '法', reading: 'ほう' },
             { base: '隆', reading: 'りゅう' },
             { base: '寺', reading: 'じ' },
+            { base: '奈', reading: 'な' },
+            { base: '良', reading: 'ら' },
+            { base: '古', reading: 'ふる' },
+            { base: '寺', reading: 'てら' }
+          ]
+        },
+        {
+          jp: 'この お寺は 607年に 建てられました。',
+          romaji: 'Kono o-tera wa roppyaku nana-nen ni tateraremashita.',
+          meaning: {
+            en: 'This temple was built in 607.',
+            vi: 'Ngôi chùa này được xây vào năm 607.'
+          },
+          ruby: [
+            { base: '寺', reading: 'てら' },
             { base: '年', reading: 'ねん' },
             { base: '建', reading: 'た' }
           ]
         },
         {
-          jp: '世界中の 人に 読まれている 本も あります。',
-          romaji: 'Sekaijū no hito ni yomarete iru hon mo arimasu.',
+          jp: '世界で いちばん 古い 木の 建物だと 言われています。',
+          romaji: 'Sekai de ichiban furui ki no tatemono da to iwarete imasu.',
           meaning: {
-            en: 'There are also books read by people all over the world.',
-            vi: 'Cũng có sách được đọc trên toàn thế giới.'
+            en: 'It is said to be the oldest wooden building in the world.',
+            vi: 'Người ta nói đây là công trình bằng gỗ cổ nhất thế giới.'
           },
           ruby: [
             { base: '世', reading: 'せ' },
             { base: '界', reading: 'かい' },
+            { base: '古', reading: 'ふる' },
+            { base: '木', reading: 'き' },
+            { base: '建', reading: 'たて' },
+            { base: '物', reading: 'もの' },
+            { base: '言', reading: 'い' }
+          ]
+        },
+        {
+          jp: '1993年に 世界遺産に 選ばれました。',
+          romaji: 'Sen kyūhyaku kyūjūsan-nen ni sekai isan ni erabaremashita.',
+          meaning: {
+            en: 'In 1993 it was chosen as a World Heritage site.',
+            vi: 'Năm 1993 chùa được chọn là Di sản Thế giới.'
+          },
+          ruby: [
+            { base: '年', reading: 'ねん' },
+            { base: '世', reading: 'せ' },
+            { base: '界', reading: 'かい' },
+            { base: '遺', reading: 'い' },
+            { base: '産', reading: 'さん' },
+            { base: '選', reading: 'えら' }
+          ]
+        },
+        {
+          jp: '今も 世界中から 大勢の 人が 見に 来ます。',
+          romaji: 'Ima mo sekaijū kara ōzei no hito ga mi ni kimasu.',
+          meaning: {
+            en: 'Even today, crowds of people come from all over the world to see it.',
+            vi: 'Ngày nay vẫn có rất nhiều người từ khắp thế giới đến tham quan.'
+          },
+          ruby: [
+            { base: '今', reading: 'いま' },
+            { base: '世', reading: 'せ' },
+            { base: '界', reading: 'かい' },
             { base: '中', reading: 'じゅう' },
+            { base: '大', reading: 'おお' },
+            { base: '勢', reading: 'ぜい' },
             { base: '人', reading: 'ひと' },
-            { base: '読', reading: 'よ' },
-            { base: '本', reading: 'ほん' }
+            { base: '見', reading: 'み' },
+            { base: '来', reading: 'き' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'When was Hōryūji built?', vi: 'Chùa Hōryūji được xây khi nào?' },
+          question: { en: 'When was Horyuji built?', vi: 'Chùa Horyuji được xây khi nào?' },
           jp: '法隆寺は いつ 建てられましたか。',
           ruby: [
             { base: '法', reading: 'ほう' },
@@ -863,79 +905,86 @@ export const n4Lesson37: Lesson = {
           choices: [
             {
               id: 'a',
-              label: { en: '607', vi: '607' },
+              label: { en: 'In 607', vi: 'Năm 607' },
               jp: '607年',
               ruby: [{ base: '年', reading: 'ねん' }]
             },
             {
               id: 'b',
-              label: { en: '1950', vi: '1950' },
-              jp: '1950年',
+              label: { en: 'In 1993', vi: 'Năm 1993' },
+              jp: '1993年',
               ruby: [{ base: '年', reading: 'ねん' }]
             },
             {
               id: 'c',
-              label: { en: '1994', vi: '1994' },
-              jp: '1994年',
+              label: { en: 'In 1607', vi: 'Năm 1607' },
+              jp: '1607年',
               ruby: [{ base: '年', reading: 'ねん' }]
             },
             {
               id: 'd',
-              label: { en: '14th century', vi: 'Thế kỷ 14' },
-              jp: '14世紀',
-              ruby: [
-                { base: '世', reading: 'せい' },
-                { base: '紀', reading: 'き' }
-              ]
+              label: { en: 'In 701', vi: 'Năm 701' },
+              jp: '701年',
+              ruby: [{ base: '年', reading: 'ねん' }]
             }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
-          question: {
-            en: 'What happened when the speaker was small?',
-            vi: 'Khi nhỏ người nói hay gặp chuyện gì?'
-          },
-          jp: '小さい ころ、よく どう なりましたか。',
-          ruby: [{ base: '小', reading: 'ちい' }],
+          question: { en: 'What was Horyuji chosen as?', vi: 'Chùa Horyuji được chọn làm gì?' },
+          jp: '法隆寺は 何に 選ばれましたか。',
+          ruby: [
+            { base: '法', reading: 'ほう' },
+            { base: '隆', reading: 'りゅう' },
+            { base: '寺', reading: 'じ' },
+            { base: '何', reading: 'なに' },
+            { base: '選', reading: 'えら' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Often got sick', vi: 'Hay bị ốm' },
-              jp: '病気に なりました',
+              label: { en: 'A World Heritage site', vi: 'Di sản Thế giới' },
+              jp: '世界遺産',
               ruby: [
-                { base: '病', reading: 'びょう' },
-                { base: '気', reading: 'き' }
+                { base: '世', reading: 'せ' },
+                { base: '界', reading: 'かい' },
+                { base: '遺', reading: 'い' },
+                { base: '産', reading: 'さん' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Exported rice', vi: 'Xuất khẩu gạo' },
-              jp: '米を 輸出しました',
+              label: { en: 'The best park in Japan', vi: 'Công viên đẹp nhất Nhật Bản' },
+              jp: '日本一の 公園',
               ruby: [
-                { base: '米', reading: 'こめ' },
-                { base: '輸', reading: 'ゆ' },
-                { base: '出', reading: 'しゅつ' }
+                { base: '日', reading: 'に' },
+                { base: '本', reading: 'ほん' },
+                { base: '一', reading: 'いち' },
+                { base: '公', reading: 'こう' },
+                { base: '園', reading: 'えん' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Invented noodles', vi: 'Phát minh mì' },
-              jp: 'めんを 発明しました',
+              label: { en: 'A new museum', vi: 'Một bảo tàng mới' },
+              jp: '新しい 博物館',
               ruby: [
-                { base: '発', reading: 'はつ' },
-                { base: '明', reading: 'めい' }
+                { base: '新', reading: 'あたら' },
+                { base: '博', reading: 'はく' },
+                { base: '物', reading: 'ぶつ' },
+                { base: '館', reading: 'かん' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'Met a thief', vi: 'Gặp kẻ trộm' },
-              jp: '泥棒に 会いました',
+              label: { en: 'A national university', vi: 'Một trường đại học quốc lập' },
+              jp: '国立大学',
               ruby: [
-                { base: '泥', reading: 'どろ' },
-                { base: '棒', reading: 'ぼう' },
-                { base: '会', reading: 'あ' }
+                { base: '国', reading: 'こく' },
+                { base: '立', reading: 'りつ' },
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' }
               ]
             }
           ],

@@ -756,111 +756,197 @@ export const n4Lesson31: Lesson = {
   reading: [
     {
       id: 'reading-lesson31-village',
-      title: { en: 'After graduation', vi: 'Sau khi tốt nghiệp' },
-      titleJp: '卒業の あと',
+      title: { en: 'A young man from the village', vi: 'Chàng trai ở làng quê' },
+      titleJp: '村の 青年',
       titleRuby: [
-        { base: '卒', reading: 'そつ' },
-        { base: '業', reading: 'ぎょう' }
+        { base: '村', reading: 'むら' },
+        { base: '青', reading: 'せい' },
+        { base: '年', reading: 'ねん' }
       ],
       lines: [
         {
-          jp: 'ある 村の 青年は 大学を 卒業して、都会の 映画館で 働く つもりでした。',
-          romaji:
-            'Aru mura no seinen wa daigaku o sotsugyō shite, tokai no eigakan de hataraku tsumori deshita.',
+          jp: 'ケンさんは 今年の 春、大学を 卒業しました。',
+          romaji: 'Ken-san wa kotoshi no haru, daigaku o sotsugyō shimashita.',
           meaning: {
-            en: 'A young man from a village planned to work at a city movie theater after graduating from university.',
-            vi: 'Một thanh niên ở làng định làm ở rạp phim thành phố sau khi tốt nghiệp đại học.'
+            en: 'Ken graduated from university this spring.',
+            vi: 'Mùa xuân năm nay anh Ken đã tốt nghiệp đại học.'
           },
           ruby: [
-            { base: '村', reading: 'むら' },
-            { base: '青', reading: 'せい' },
-            { base: '年', reading: 'ねん' },
+            { base: '今', reading: 'こ' },
+            { base: '年', reading: 'とし' },
+            { base: '春', reading: 'はる' },
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
             { base: '卒', reading: 'そつ' },
-            { base: '業', reading: 'ぎょう' },
+            { base: '業', reading: 'ぎょう' }
+          ]
+        },
+        {
+          jp: '初めは 都会の 会社で 働く つもりでした。',
+          romaji: 'Hajime wa tokai no kaisha de hataraku tsumori deshita.',
+          meaning: {
+            en: 'At first he intended to work for a company in the city.',
+            vi: 'Lúc đầu anh định làm việc cho một công ty ở thành phố.'
+          },
+          ruby: [
+            { base: '初', reading: 'はじ' },
             { base: '都', reading: 'と' },
             { base: '会', reading: 'かい' },
-            { base: '映', reading: 'えい' },
-            { base: '画', reading: 'が' },
-            { base: '館', reading: 'かん' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
             { base: '働', reading: 'はたら' }
           ]
         },
         {
-          jp: 'でも 子どもたちと 自由に 遊べる 仕事を 見つけようと 思っています。',
-          romaji: 'Demo kodomotachi to jiyū ni asoberu shigoto o mitsukeyō to omotte imasu.',
+          jp: 'でも、今は ふるさとの 村へ 帰ろうと 思っています。',
+          romaji: 'Demo, ima wa furusato no mura e kaerō to omotte imasu.',
           meaning: {
-            en: 'But now I am thinking of finding work where I can play freely with children.',
-            vi: 'Nhưng bây giờ tôi định tìm việc có thể chơi thoải mái với trẻ em.'
+            en: 'But now he is thinking of going back to his home village.',
+            vi: 'Nhưng giờ anh đang định về làng quê.'
           },
           ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '自', reading: 'じ' },
-            { base: '由', reading: 'ゆう' },
-            { base: '遊', reading: 'あそ' },
-            { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' },
-            { base: '見', reading: 'み' },
+            { base: '今', reading: 'いま' },
+            { base: '村', reading: 'むら' },
+            { base: '帰', reading: 'かえ' },
             { base: '思', reading: 'おも' }
+          ]
+        },
+        {
+          jp: '村の 子どもたちに 英語を 教える 予定です。',
+          romaji: 'Mura no kodomotachi ni eigo o oshieru yotei desu.',
+          meaning: {
+            en: 'He plans to teach English to the village children.',
+            vi: 'Anh dự định dạy tiếng Anh cho trẻ em trong làng.'
+          },
+          ruby: [
+            { base: '村', reading: 'むら' },
+            { base: '子', reading: 'こ' },
+            { base: '英', reading: 'えい' },
+            { base: '語', reading: 'ご' },
+            { base: '教', reading: 'おし' },
+            { base: '予', reading: 'よ' },
+            { base: '定', reading: 'てい' }
+          ]
+        },
+        {
+          jp: 'でも、両親には まだ 話して いません。',
+          romaji: 'Demo, ryōshin ni wa mada hanashite imasen.',
+          meaning: {
+            en: 'But he has not told his parents yet.',
+            vi: 'Nhưng anh vẫn chưa nói với bố mẹ.'
+          },
+          ruby: [
+            { base: '両', reading: 'りょう' },
+            { base: '親', reading: 'しん' },
+            { base: '話', reading: 'はな' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'What did he first plan to do?', vi: 'Ban đầu anh ấy định làm gì?' },
-          jp: '初めに 何を する つもりでしたか。',
+          question: {
+            en: 'What is Ken thinking of doing now?',
+            vi: 'Bây giờ anh Ken đang định làm gì?'
+          },
+          jp: 'ケンさんは 今 何を しようと 思っていますか。',
           ruby: [
-            { base: '初', reading: 'はじ' },
-            { base: '何', reading: 'なに' }
+            { base: '今', reading: 'いま' },
+            { base: '何', reading: 'なに' },
+            { base: '思', reading: 'おも' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Work at a city movie theater', vi: 'Làm ở rạp phim thành phố' },
-              jp: '都会の 映画館で 働く',
+              label: { en: 'Go back to his village', vi: 'Về làng' },
+              jp: '村へ 帰る',
               ruby: [
-                { base: '都', reading: 'と' },
-                { base: '会', reading: 'かい' },
-                { base: '映', reading: 'えい' },
-                { base: '画', reading: 'が' },
-                { base: '館', reading: 'かん' },
-                { base: '働', reading: 'はたら' }
+                { base: '村', reading: 'むら' },
+                { base: '帰', reading: 'かえ' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Return to the village farm', vi: 'Về làng nông nghiệp' },
-              jp: '村の 農業に 戻る',
+              label: { en: 'Work for a city company', vi: 'Làm việc ở công ty thành phố' },
+              jp: '都会の 会社で 働く',
               ruby: [
-                { base: '村', reading: 'むら' },
-                { base: '農', reading: 'のう' },
-                { base: '業', reading: 'ぎょう' },
-                { base: '戻', reading: 'もど' }
+                { base: '都', reading: 'と' },
+                { base: '会', reading: 'かい' },
+                { base: '会', reading: 'かい' },
+                { base: '社', reading: 'しゃ' },
+                { base: '働', reading: 'はたら' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Study at graduate school', vi: 'Học cao học' },
-              jp: '大学院で 勉強する',
+              label: { en: 'Go to graduate school', vi: 'Học lên cao học' },
+              jp: '大学院に 入る',
               ruby: [
                 { base: '大', reading: 'だい' },
                 { base: '学', reading: 'がく' },
                 { base: '院', reading: 'いん' },
+                { base: '入', reading: 'はい' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Go abroad', vi: 'Ra nước ngoài' },
+              jp: '外国へ 行く',
+              ruby: [
+                { base: '外', reading: 'がい' },
+                { base: '国', reading: 'こく' },
+                { base: '行', reading: 'い' }
+              ]
+            }
+          ],
+          correctId: 'a'
+        },
+        {
+          id: 'q2',
+          question: { en: 'What has Ken not done yet?', vi: 'Anh Ken vẫn chưa làm việc gì?' },
+          jp: 'ケンさんが まだ して いない ことは 何ですか。',
+          ruby: [{ base: '何', reading: 'なん' }],
+          choices: [
+            {
+              id: 'a',
+              label: { en: 'Tell his parents', vi: 'Nói với bố mẹ' },
+              jp: '両親に 話す こと',
+              ruby: [
+                { base: '両', reading: 'りょう' },
+                { base: '親', reading: 'しん' },
+                { base: '話', reading: 'はな' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Graduate from university', vi: 'Tốt nghiệp đại học' },
+              jp: '大学を 卒業する こと',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' },
+                { base: '卒', reading: 'そつ' },
+                { base: '業', reading: 'ぎょう' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Study English', vi: 'Học tiếng Anh' },
+              jp: '英語を 勉強する こと',
+              ruby: [
+                { base: '英', reading: 'えい' },
+                { base: '語', reading: 'ご' },
                 { base: '勉', reading: 'べん' },
                 { base: '強', reading: 'きょう' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'Travel abroad', vi: 'Du lịch nước ngoài' },
-              jp: '外国へ 旅行する',
+              label: { en: 'Look for a job', vi: 'Tìm việc' },
+              jp: '仕事を 探す こと',
               ruby: [
-                { base: '外', reading: 'がい' },
-                { base: '国', reading: 'こく' },
-                { base: '旅', reading: 'りょ' },
-                { base: '行', reading: 'こう' }
+                { base: '仕', reading: 'し' },
+                { base: '事', reading: 'ごと' },
+                { base: '探', reading: 'さが' }
               ]
             }
           ],

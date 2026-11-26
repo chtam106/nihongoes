@@ -340,16 +340,10 @@ export const n5Lesson23: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'あ、動きました。サイズを 変えたいです。',
-          romaji: 'A, ugokimashita. Saizu o kaetai desu.',
-          meaning: {
-            en: 'Oh, it works. I want to change the size.',
-            vi: 'À, chạy rồi. Tôi muốn đổi cỡ.'
-          },
-          ruby: [
-            { base: '動', reading: 'うご' },
-            { base: '変', reading: 'か' }
-          ]
+          jp: 'あ、動きました。ありがとう ございます。',
+          romaji: 'A, ugokimashita. Arigatō gozaimasu.',
+          meaning: { en: 'Oh, it works now. Thank you.', vi: 'À, chạy rồi. Cảm ơn anh.' },
+          ruby: [{ base: '動', reading: 'うご' }]
         }
       ]
     },
@@ -809,11 +803,11 @@ export const n5Lesson23: Lesson = {
           ]
         },
         {
-          jp: '角を 曲がる と 大きな 建物が 見えます。そこが 市役所です。',
-          romaji: 'Kado o magaru to ōkina tatemono ga miemasu. Soko ga shiyakusho desu.',
+          jp: '角を 曲がると、大きな 建物が あります。そこが 市役所です。',
+          romaji: 'Kado o magaru to, ōkina tatemono ga arimasu. Soko ga shiyakusho desu.',
           meaning: {
-            en: 'When you turn the corner, you can see a large building. That is city hall.',
-            vi: 'Rẽ góc thì thấy tòa nhà lớn. Đó là ủy ban thành phố.'
+            en: 'When you turn the corner, there is a big building. That is city hall.',
+            vi: 'Rẽ ở góc phố là có một tòa nhà lớn. Đó là tòa thị chính.'
           },
           ruby: [
             { base: '角', reading: 'かど' },
@@ -821,7 +815,6 @@ export const n5Lesson23: Lesson = {
             { base: '大', reading: 'おお' },
             { base: '建', reading: 'たて' },
             { base: '物', reading: 'もの' },
-            { base: '見', reading: 'み' },
             { base: '市', reading: 'し' },
             { base: '役', reading: 'やく' },
             { base: '所', reading: 'しょ' }
@@ -874,13 +867,15 @@ export const n5Lesson23: Lesson = {
         },
         {
           id: 'q2',
-          question: { en: 'What can you see after turning the corner?', vi: 'Rẽ góc thì thấy gì?' },
-          jp: '角を 曲がると 何が 見えますか。',
+          question: {
+            en: 'What is there after turning the corner?',
+            vi: 'Rẽ ở góc phố thì có gì?'
+          },
+          jp: '角を 曲がると 何が ありますか。',
           ruby: [
             { base: '角', reading: 'かど' },
             { base: '曲', reading: 'ま' },
-            { base: '何', reading: 'なに' },
-            { base: '見', reading: 'み' }
+            { base: '何', reading: 'なに' }
           ],
           choices: [
             {

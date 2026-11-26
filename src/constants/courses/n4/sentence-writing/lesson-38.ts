@@ -479,7 +479,7 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
         en: 'I like tidying up.',
         vi: 'Tôi thích dọn dẹp.'
       },
-      jp: '整理 する のが 好き なんです。',
+      jp: '整理する のが 好き なんです。',
       ruby: [
         { base: '整', reading: 'せい' },
         { base: '理', reading: 'り' },

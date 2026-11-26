@@ -244,11 +244,11 @@ export const n5Lesson25: Lesson = {
         },
         {
           speakerId: 'yamada',
-          jp: 'そうですか。もし 時間が あれば、送別会を しましょう。',
-          romaji: 'Sō desu ka. Moshi jikan ga areba, sōbetsukai o shimashō.',
+          jp: 'そうですか。もし 時間が あったら、送別会を しましょう。',
+          romaji: 'Sō desu ka. Moshi jikan ga attara, sōbetsukai o shimashō.',
           meaning: {
-            en: 'I see. If there is time, let us have a farewell party.',
-            vi: 'Vậy à. Nếu có thời gian, tổ chức tiệc chia tay nhé.'
+            en: 'I see. If you have time, let us have a farewell party.',
+            vi: 'Thế à. Nếu có thời gian thì mình tổ chức tiệc chia tay nhé.'
           },
           ruby: [
             { base: '時', reading: 'じ' },
@@ -299,20 +299,20 @@ export const n5Lesson25: Lesson = {
         },
         {
           speakerId: 'kim',
-          jp: 'こちらこそ。日本へ 帰っても 日本語を 忘れないで ください。',
-          romaji: 'Kochira koso. Nihon e kaette mo Nihongo o wasurenaide kudasai.',
+          jp: 'こちらこそ。大阪へ 行っても、時々 連絡して ください。',
+          romaji: 'Kochira koso. Ōsaka e itte mo, tokidoki renraku shite kudasai.',
           meaning: {
-            en: 'Likewise. Even after returning to your country, please do not forget Japanese.',
-            vi: 'Tôi cũng vậy. Dù về nước cũng đừng quên tiếng Nhật nhé.'
+            en: 'Same here. Even after you go to Osaka, please keep in touch now and then.',
+            vi: 'Tôi cũng vậy. Dù chuyển đến Osaka thì thỉnh thoảng cũng liên lạc nhé.'
           },
           ruby: [
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '帰', reading: 'かえ' },
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '語', reading: 'ご' },
-            { base: '忘', reading: 'わす' }
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '行', reading: 'い' },
+            { base: '時', reading: 'とき' },
+            { base: '々', reading: 'どき' },
+            { base: '連', reading: 'れん' },
+            { base: '絡', reading: 'らく' }
           ]
         },
         {

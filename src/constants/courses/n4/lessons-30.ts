@@ -790,92 +790,190 @@ export const n4Lesson30: Lesson = {
   reading: [
     {
       id: 'reading-lesson30-dream',
-      title: { en: 'A round dream', vi: 'Giấc mơ tròn' },
-      titleJp: '丸い 夢',
+      title: { en: 'My emergency kit', vi: 'Túi đồ khẩn cấp của tôi' },
+      titleJp: '非常袋',
       titleRuby: [
-        { base: '丸', reading: 'まる' },
-        { base: '夢', reading: 'ゆめ' }
+        { base: '非', reading: 'ひ' },
+        { base: '常', reading: 'じょう' },
+        { base: '袋', reading: 'ぶくろ' }
       ],
       lines: [
         {
-          jp: 'ある 日、丸い ボールの ような 夢を 見ました。',
-          romaji: 'Aru hi, marui bōru no yō na yume o mimashita.',
-          meaning: {
-            en: 'One day I dreamed of something like a round ball.',
-            vi: 'Một ngày nào đó tôi mơ thấy thứ giống quả bóng tròn.'
-          },
+          jp: '日本は 地震が 多いです。',
+          romaji: 'Nihon wa jishin ga ōi desu.',
+          meaning: { en: 'Japan has a lot of earthquakes.', vi: 'Nhật Bản có nhiều động đất.' },
           ruby: [
-            { base: '日', reading: 'ひ' },
-            { base: '丸', reading: 'まる' },
-            { base: '夢', reading: 'ゆめ' },
-            { base: '見', reading: 'み' }
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '地', reading: 'じ' },
+            { base: '震', reading: 'しん' },
+            { base: '多', reading: 'おお' }
           ]
         },
         {
-          jp: 'とても うれしい 夢でした。',
-          romaji: 'Totemo ureshii yume deshita.',
-          meaning: { en: 'It was a very happy dream.', vi: 'Một giấc mơ rất vui.' },
-          ruby: [{ base: '夢', reading: 'ゆめ' }]
-        },
-        {
-          jp: 'すると、目が 覚めて、ちょっと 嫌な 気持ちに なりました。',
-          romaji: 'Suruto, me ga samete, chotto iya na kimochi ni narimashita.',
+          jp: 'それで、私は 非常袋を 準備して おきました。',
+          romaji: 'Sorede, watashi wa hijōbukuro o junbi shite okimashita.',
           meaning: {
-            en: 'Then I woke up and felt a little unpleasant.',
-            vi: 'Thế là tôi tỉnh dậy và hơi khó chịu.'
+            en: 'So I have prepared an emergency kit.',
+            vi: 'Vì vậy tôi đã chuẩn bị sẵn túi đồ khẩn cấp.'
           },
           ruby: [
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'さ' },
-            { base: '嫌', reading: 'いや' },
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' }
+            { base: '私', reading: 'わたし' },
+            { base: '非', reading: 'ひ' },
+            { base: '常', reading: 'じょう' },
+            { base: '袋', reading: 'ぶくろ' },
+            { base: '準', reading: 'じゅん' },
+            { base: '備', reading: 'び' }
+          ]
+        },
+        {
+          jp: '中には 水とか 懐中電灯とか 薬とかが 入れて あります。',
+          romaji: 'Naka ni wa mizu toka kaichūdentō toka kusuri toka ga irete arimasu.',
+          meaning: {
+            en: 'Inside I have put things like water, a flashlight and medicine.',
+            vi: 'Bên trong có để sẵn những thứ như nước, đèn pin, thuốc.'
+          },
+          ruby: [
+            { base: '中', reading: 'なか' },
+            { base: '水', reading: 'みず' },
+            { base: '懐', reading: 'かい' },
+            { base: '中', reading: 'ちゅう' },
+            { base: '電', reading: 'でん' },
+            { base: '灯', reading: 'とう' },
+            { base: '薬', reading: 'くすり' },
+            { base: '入', reading: 'い' }
+          ]
+        },
+        {
+          jp: '袋は 玄関の 隅に 置いて あります。',
+          romaji: 'Fukuro wa genkan no sumi ni oite arimasu.',
+          meaning: {
+            en: 'The bag is kept in a corner of the entrance.',
+            vi: 'Túi được để ở góc lối vào.'
+          },
+          ruby: [
+            { base: '袋', reading: 'ふくろ' },
+            { base: '玄', reading: 'げん' },
+            { base: '関', reading: 'かん' },
+            { base: '隅', reading: 'すみ' },
+            { base: '置', reading: 'お' }
+          ]
+        },
+        {
+          jp: 'でも、食べ物は まだ 入れて いません。あした 買いに 行きます。',
+          romaji: 'Demo, tabemono wa mada irete imasen. Ashita kai ni ikimasu.',
+          meaning: {
+            en: 'But I have not put any food in yet. I will go buy some tomorrow.',
+            vi: 'Nhưng đồ ăn thì tôi chưa cho vào. Ngày mai tôi sẽ đi mua.'
+          },
+          ruby: [
+            { base: '食', reading: 'た' },
+            { base: '物', reading: 'もの' },
+            { base: '入', reading: 'い' },
+            { base: '買', reading: 'か' },
+            { base: '行', reading: 'い' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'What shape was the dream like?', vi: 'Giấc mơ giống hình gì?' },
-          jp: '夢は どんな 形でしたか。',
+          question: {
+            en: 'Where is the emergency kit kept?',
+            vi: 'Túi đồ khẩn cấp được để ở đâu?'
+          },
+          jp: '非常袋は どこに 置いて ありますか。',
           ruby: [
-            { base: '夢', reading: 'ゆめ' },
-            { base: '形', reading: 'かたち' }
+            { base: '非', reading: 'ひ' },
+            { base: '常', reading: 'じょう' },
+            { base: '袋', reading: 'ぶくろ' },
+            { base: '置', reading: 'お' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'A round ball', vi: 'Quả bóng tròn' },
-              jp: '丸い ボール',
-              ruby: [{ base: '丸', reading: 'まる' }]
+              label: { en: 'In a corner of the entrance', vi: 'Ở góc lối vào' },
+              jp: '玄関の 隅',
+              ruby: [
+                { base: '玄', reading: 'げん' },
+                { base: '関', reading: 'かん' },
+                { base: '隅', reading: 'すみ' }
+              ]
             },
             {
               id: 'b',
-              label: { en: 'A square box', vi: 'Hộp vuông' },
-              jp: '四角い 箱',
+              label: { en: 'In the kitchen', vi: 'Trong bếp' },
+              jp: '台所',
               ruby: [
-                { base: '四', reading: 'し' },
-                { base: '角', reading: 'かく' },
-                { base: '箱', reading: 'はこ' }
+                { base: '台', reading: 'だい' },
+                { base: '所', reading: 'どころ' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'A long road', vi: 'Con đường dài' },
-              jp: '長い 道',
+              label: { en: 'On the desk', vi: 'Trên bàn' },
+              jp: '机の 上',
               ruby: [
-                { base: '長', reading: 'なが' },
-                { base: '道', reading: 'みち' }
+                { base: '机', reading: 'つくえ' },
+                { base: '上', reading: 'うえ' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'A tall tree', vi: 'Cây cao' },
-              jp: '高い 木',
+              label: { en: 'In the car', vi: 'Trong xe ô tô' },
+              jp: '車の 中',
               ruby: [
-                { base: '高', reading: 'たか' },
-                { base: '木', reading: 'き' }
+                { base: '車', reading: 'くるま' },
+                { base: '中', reading: 'なか' }
               ]
+            }
+          ],
+          correctId: 'a'
+        },
+        {
+          id: 'q2',
+          question: {
+            en: 'What has the writer not put in yet?',
+            vi: 'Thứ gì người viết vẫn chưa cho vào?'
+          },
+          jp: 'まだ 入れて いない 物は 何ですか。',
+          ruby: [
+            { base: '入', reading: 'い' },
+            { base: '物', reading: 'もの' },
+            { base: '何', reading: 'なん' }
+          ],
+          choices: [
+            {
+              id: 'a',
+              label: { en: 'Food', vi: 'Đồ ăn' },
+              jp: '食べ物',
+              ruby: [
+                { base: '食', reading: 'た' },
+                { base: '物', reading: 'もの' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Water', vi: 'Nước' },
+              jp: '水',
+              ruby: [{ base: '水', reading: 'みず' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'A flashlight', vi: 'Đèn pin' },
+              jp: '懐中電灯',
+              ruby: [
+                { base: '懐', reading: 'かい' },
+                { base: '中', reading: 'ちゅう' },
+                { base: '電', reading: 'でん' },
+                { base: '灯', reading: 'とう' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Medicine', vi: 'Thuốc' },
+              jp: '薬',
+              ruby: [{ base: '薬', reading: 'くすり' }]
             }
           ],
           correctId: 'a'

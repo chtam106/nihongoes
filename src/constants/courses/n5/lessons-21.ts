@@ -694,15 +694,17 @@ export const n5Lesson21: Lesson = {
       titleRuby: [{ base: '話', reading: 'はなし' }],
       lines: [
         {
-          jp: '最近 ニュースで 政治について 話しました。',
-          romaji: 'Saikin nyūsu de seiji ni tsuite hanashimashita.',
+          jp: '最近 友達と 政治について 話しました。',
+          romaji: 'Saikin tomodachi to seiji ni tsuite hanashimashita.',
           meaning: {
-            en: 'Recently we talked about politics on the news.',
-            vi: 'Gần đây trên tin tức chúng tôi nói về chính trị.'
+            en: 'Recently I talked about politics with a friend.',
+            vi: 'Gần đây tôi nói chuyện chính trị với bạn.'
           },
           ruby: [
             { base: '最', reading: 'さい' },
             { base: '近', reading: 'きん' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
             { base: '政', reading: 'せい' },
             { base: '治', reading: 'じ' },
             { base: '話', reading: 'はな' }

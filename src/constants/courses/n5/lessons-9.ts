@@ -1177,11 +1177,11 @@ export const n5Lesson9: Lesson = {
           ]
         },
         {
-          jp: '漢字は だいたい わかりません。',
-          romaji: 'Kanji wa daitai wakarimasen.',
+          jp: '漢字は あまり わかりません。',
+          romaji: 'Kanji wa amari wakarimasen.',
           meaning: {
-            en: 'He mostly does not understand kanji.',
-            vi: 'Chữ Hán thì đại khái không hiểu.'
+            en: 'He does not understand kanji very well.',
+            vi: 'Chữ Hán thì anh ấy không hiểu lắm.'
           },
           ruby: [
             { base: '漢', reading: 'かん' },
@@ -1303,13 +1303,9 @@ export const n5Lesson9: Lesson = {
           ]
         },
         {
-          jp: 'どうして 早く 帰るんですか。',
-          romaji: 'Dōshite hayaku kaerun desu ka.',
-          meaning: { en: 'Why are you going home early?', vi: 'Sao về sớm vậy?' },
-          ruby: [
-            { base: '早', reading: 'はや' },
-            { base: '帰', reading: 'かえ' }
-          ]
+          jp: 'どうしてですか。',
+          romaji: 'Dōshite desu ka.',
+          meaning: { en: 'Why?', vi: 'Sao vậy?' }
         },
         {
           jp: '子どもの 誕生日ですから、ケーキを 買います。',
@@ -1327,13 +1323,9 @@ export const n5Lesson9: Lesson = {
           ]
         },
         {
-          jp: 'あ、そうですか。お子さん、おめでとう ございます。',
-          romaji: 'A, sō desu ka. Okosan, omedetō gozaimasu.',
-          meaning: {
-            en: 'Oh, I see. Congratulations to your child.',
-            vi: 'À, thế à. Chúc mừng con chị.'
-          },
-          ruby: [{ base: '子', reading: 'こ' }]
+          jp: 'あ、そうですか。おめでとう ございます。',
+          romaji: 'A, sō desu ka. Omedetō gozaimasu.',
+          meaning: { en: 'Oh, I see. Congratulations.', vi: 'À, thế à. Chúc mừng nhé.' }
         }
       ],
       questions: [

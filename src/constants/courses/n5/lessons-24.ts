@@ -594,11 +594,12 @@ export const n5Lesson24: Lesson = {
           ]
         },
         {
-          jp: '私は 全部 食べられませんでしたが、みんな 手伝って くれました。',
-          romaji: 'Watashi wa zenbu taberaremasen deshita ga, minna tetsudatte kuremashita.',
+          jp: '私は 全部 食べる ことが できませんでしたが、みんなが 手伝って くれました。',
+          romaji:
+            'Watashi wa zenbu taberu koto ga dekimasen deshita ga, minna ga tetsudatte kuremashita.',
           meaning: {
-            en: 'I could not eat everything, but everyone helped me.',
-            vi: 'Tôi không ăn hết, nhưng mọi người giúp tôi.'
+            en: 'I could not eat it all, but everyone helped me.',
+            vi: 'Tôi không ăn hết được, nhưng mọi người đã ăn giúp.'
           },
           ruby: [
             { base: '私', reading: 'わたし' },

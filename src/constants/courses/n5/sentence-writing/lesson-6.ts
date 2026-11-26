@@ -326,7 +326,7 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
             en: 'Would you like to go for a drink tonight? ...Sorry, tonight is a bit...',
             vi: 'Tối nay đi uống với tôi không? ...Xin lỗi, tối nay thì hơi...'
           },
-          jp: '今晩 いっしょに 飲みませんか。……すみません、今晩は ちょっと...',
+          jp: '今晩 いっしょに 飲みませんか。……すみません、今晩は ちょっと……',
           ruby: [
             { base: '今', reading: 'こん' },
             { base: '晩', reading: 'ばん' },

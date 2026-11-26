@@ -1132,19 +1132,18 @@ export const n5Lesson18: Lesson = {
           ]
         },
         {
-          jp: '今日 何を したか、明日 何を するかを 書きます。',
-          romaji: 'Kyō nani o shita ka, ashita nani o suru ka o kakimasu.',
+          jp: 'その 日の ことと、次の 日の 予定を 書きます。',
+          romaji: 'Sono hi no koto to, tsugi no hi no yotei o kakimasu.',
           meaning: {
-            en: 'She writes what she did today and what she will do tomorrow.',
-            vi: 'Chị ấy viết hôm nay đã làm gì và ngày mai sẽ làm gì.'
+            en: 'She writes about that day and her plans for the next day.',
+            vi: 'Cô ấy viết về chuyện trong ngày và kế hoạch ngày hôm sau.'
           },
           ruby: [
-            { base: '今', reading: 'きょ' },
-            { base: '日', reading: 'う' },
-            { base: '何', reading: 'なに' },
-            { base: '明', reading: 'あ' },
-            { base: '日', reading: 'し' },
-            { base: '何', reading: 'なに' },
+            { base: '日', reading: 'ひ' },
+            { base: '次', reading: 'つぎ' },
+            { base: '日', reading: 'ひ' },
+            { base: '予', reading: 'よ' },
+            { base: '定', reading: 'てい' },
             { base: '書', reading: 'か' }
           ]
         },
@@ -1333,16 +1332,16 @@ export const n5Lesson18: Lesson = {
           ]
         },
         {
-          jp: 'でも 現金で 払う しか ありません。カードでは 払えません。',
-          romaji: 'Demo genkin de harau shika arimasen. Kādo de wa haraemasen.',
+          jp: 'でも、カードで 払う ことが できません。現金で 払わなければ なりません。',
+          romaji: 'Demo, kādo de harau koto ga dekimasen. Genkin de harawanakereba narimasen.',
           meaning: {
-            en: 'But he can only pay in cash. He cannot pay by card.',
-            vi: 'Nhưng anh ấy chỉ trả được bằng tiền mặt. Không trả bằng thẻ được.'
+            en: 'But he cannot pay by card. He has to pay in cash.',
+            vi: 'Nhưng không trả bằng thẻ được. Phải trả bằng tiền mặt.'
           },
           ruby: [
+            { base: '払', reading: 'はら' },
             { base: '現', reading: 'げん' },
             { base: '金', reading: 'きん' },
-            { base: '払', reading: 'はら' },
             { base: '払', reading: 'はら' }
           ]
         },

@@ -443,7 +443,7 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'yone',
-          jp: '毎日 運動 する ように しています。水泳や 剣道などです。',
+          jp: '毎日 運動する ように しています。水泳や 剣道などです。',
           romaji: 'Mainichi undō suru yō ni shite imasu. Suiei ya kendō nado desu.',
           meaning: {
             en: 'I make an effort to exercise every day - swimming, kendo, and so on.',
@@ -476,13 +476,18 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'yone',
-          jp: 'はい。何でも 食べます。特に 魚が 好きです。',
-          romaji: 'Hai. Nan demo tabemasu. Tokuni sakana ga suki desu.',
+          jp: '食事も 大切に しています。何でも 食べますが、特に 魚が 好きです。',
+          romaji:
+            'Shokuji mo taisetsu ni shite imasu. Nan demo tabemasu ga, toku ni sakana ga suki desu.',
           meaning: {
-            en: 'Yes. I eat everything, especially fish.',
-            vi: 'Vâng. Tôi ăn mọi thứ, đặc biệt thích cá.'
+            en: 'I also take care with my meals. I eat everything, but I especially like fish.',
+            vi: 'Tôi cũng chú ý chuyện ăn uống. Món gì tôi cũng ăn, nhưng đặc biệt thích cá.'
           },
           ruby: [
+            { base: '食', reading: 'しょく' },
+            { base: '事', reading: 'じ' },
+            { base: '大', reading: 'たい' },
+            { base: '切', reading: 'せつ' },
             { base: '何', reading: 'なん' },
             { base: '食', reading: 'た' },
             { base: '特', reading: 'とく' },
@@ -492,7 +497,7 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'host',
-          jp: '本当に すごいですね。来年 フランスへ 行く んですか。',
+          jp: '本当に すごいですね。来年 フランスへ 行くんですか。',
           romaji: 'Hontō ni sugoi desu ne. Rainen Furansu e iku n desu ka.',
           meaning: {
             en: 'That is truly amazing. Are you going to France next year?',
@@ -508,7 +513,7 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'yone',
-          jp: 'はい。フランス語が 話せる ように 勉強しています。「チャレンジ する 気持ち」が 大切です。',
+          jp: 'はい。フランス語が 話せる ように 勉強しています。「チャレンジする 気持ち」が 大切です。',
           romaji:
             'Hai. Furansugo ga hanaseru yō ni benkyō shite imasu. 「Charenji suru kimochi」 ga taisetsu desu.',
           meaning: {
@@ -759,7 +764,7 @@ export const n4Lesson36: Lesson = {
           ]
         },
         {
-          jp: '今は 新しい 乗り物を 自由に 利用 できます。',
+          jp: '今は 新しい 乗り物を 自由に 利用できます。',
           romaji: 'Ima wa atarashii norimono o jiyū ni riyō dekimasu.',
           meaning: {
             en: 'Now we can use new vehicles freely.',
@@ -777,7 +782,7 @@ export const n4Lesson36: Lesson = {
           ]
         },
         {
-          jp: '遠くへ 行きたい 人は できるだけ 早く 出発 する ように しています。',
+          jp: '遠くへ 行きたい 人は できるだけ 早く 出発する ように しています。',
           romaji: 'Tōku e ikitai hito wa dekiru dake hayaku shuppatsu suru yō ni shite imasu.',
           meaning: {
             en: 'People who want to go far try to leave as early as they can.',

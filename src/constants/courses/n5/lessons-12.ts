@@ -1333,12 +1333,12 @@ export const n5Lesson12: Lesson = {
           ]
         },
         {
-          jp: '京都の ほうが 静かで、好きです。でも 大阪の ほうが 食べ物が おいしいです。',
+          jp: '京都の ほうが 静かですから、好きです。でも 大阪の ほうが 食べ物が おいしいです。',
           romaji:
-            'Kyōto no hō ga shizuka de, suki desu. Demo Ōsaka no hō ga tabemono ga oishii desu.',
+            'Kyōto no hō ga shizuka desu kara, suki desu. Demo Ōsaka no hō ga tabemono ga oishii desu.',
           meaning: {
-            en: 'Kyoto is quieter and I like it. But Osaka has better food.',
-            vi: 'Kyoto yên tĩnh hơn, tôi thích. Nhưng Osaka ngon hơn về đồ ăn.'
+            en: 'Kyoto is quieter, so I like it. But the food is better in Osaka.',
+            vi: 'Kyoto yên tĩnh hơn nên tôi thích. Nhưng đồ ăn ở Osaka ngon hơn.'
           },
           ruby: [
             { base: '京', reading: 'きょう' },
@@ -1348,7 +1348,7 @@ export const n5Lesson12: Lesson = {
             { base: '大', reading: 'おお' },
             { base: '阪', reading: 'さか' },
             { base: '食', reading: 'た' },
-            { base: '物', reading: 'べ' }
+            { base: '物', reading: 'もの' }
           ]
         }
       ],

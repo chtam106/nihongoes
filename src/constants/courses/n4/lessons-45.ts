@@ -619,20 +619,23 @@ export const n4Lesson45: Lesson = {
   reading: [
     {
       id: 'reading-lesson45-alarm',
-      title: { en: 'The alarm that would not stop', vi: 'Báo thức không chịu tắt' },
-      titleJp: '止まらない 目覚まし',
+      title: { en: 'Tanaka and the alarm clock', vi: 'Anh Tanaka và chiếc đồng hồ báo thức' },
+      titleJp: '田中さんの 目覚まし時計',
       titleRuby: [
-        { base: '止', reading: 'と' },
+        { base: '田', reading: 'た' },
+        { base: '中', reading: 'なか' },
         { base: '目', reading: 'め' },
-        { base: '覚', reading: 'ざ' }
+        { base: '覚', reading: 'ざ' },
+        { base: '時', reading: 'ど' },
+        { base: '計', reading: 'けい' }
       ],
       lines: [
         {
-          jp: '大学生の 田中さんは 目覚ましの 悩みが あります。',
-          romaji: 'Daigakusei no Tanaka-san wa mezamashi no nayami ga arimasu.',
+          jp: '大学生の 田中さんは 朝 起きるのが 苦手です。',
+          romaji: 'Daigakusei no Tanaka-san wa asa okiru no ga nigate desu.',
           meaning: {
-            en: 'University student Tanaka has a problem with his alarm clock.',
-            vi: 'Sinh viên Tanaka có một nỗi lo về đồng hồ báo thức.'
+            en: 'Tanaka, a university student, is bad at getting up in the morning.',
+            vi: 'Anh Tanaka, sinh viên đại học, rất khó dậy vào buổi sáng.'
           },
           ruby: [
             { base: '大', reading: 'だい' },
@@ -640,161 +643,191 @@ export const n4Lesson45: Lesson = {
             { base: '生', reading: 'せい' },
             { base: '田', reading: 'た' },
             { base: '中', reading: 'なか' },
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'さ' },
-            { base: '悩', reading: 'なや' }
+            { base: '朝', reading: 'あさ' },
+            { base: '起', reading: 'お' },
+            { base: '苦', reading: 'にが' },
+            { base: '手', reading: 'て' }
           ]
         },
         {
-          jp: '6時に セットした のに、目が 覚めません。',
-          romaji: 'Roku-ji ni setto shita noni, me ga samemasen.',
+          jp: '目覚まし時計を 6時に セットした のに、気が つかないで 寝て しまいます。',
+          romaji:
+            'Mezamashi-dokei o roku-ji ni setto shita noni, ki ga tsukanaide nete shimaimasu.',
           meaning: {
-            en: 'He set it for six, yet he does not wake up.',
-            vi: 'Anh ấy đặt 6 giờ, thế mà không thức dậy.'
+            en: 'Even though he sets the alarm for six, he sleeps right through it.',
+            vi: 'Dù đã cài báo thức lúc 6 giờ, anh vẫn ngủ quên mà không hay biết.'
           },
           ruby: [
+            { base: '目', reading: 'め' },
+            { base: '覚', reading: 'ざ' },
+            { base: '時', reading: 'ど' },
+            { base: '計', reading: 'けい' },
             { base: '時', reading: 'じ' },
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'さ' }
-          ]
-        },
-        {
-          jp: 'ベルは 鳴っている のに、また 5分 寝て しまいます。',
-          romaji: 'Beru wa natte iru noni, mata go-fun nete shimaimasu.',
-          meaning: {
-            en: 'The alarm is ringing, yet he sleeps another five minutes.',
-            vi: 'Chuông reng mãi, thế mà anh ấy lại ngủ thêm 5 phút.'
-          },
-          ruby: [
-            { base: '鳴', reading: 'な' },
-            { base: '分', reading: 'ふん' },
+            { base: '気', reading: 'き' },
             { base: '寝', reading: 'ね' }
           ]
         },
         {
-          jp: 'それでも 急に 起きると 授業に 遅れます。',
-          romaji: 'Soredemo kyū ni okiru to jugyō ni okuremasu.',
+          jp: 'きのうも 授業に 遅れて しまいました。',
+          romaji: 'Kinō mo jugyō ni okurete shimaimashita.',
           meaning: {
-            en: 'Even so, when he gets up suddenly he is late for class.',
-            vi: 'Mặc dù vậy, cứ dậy vội là lại trễ tiết học.'
+            en: 'Yesterday he was late for class again.',
+            vi: 'Hôm qua anh lại đến lớp muộn.'
           },
           ruby: [
-            { base: '急', reading: 'きゅう' },
-            { base: '起', reading: 'お' },
             { base: '授', reading: 'じゅ' },
             { base: '業', reading: 'ぎょう' },
             { base: '遅', reading: 'おく' }
           ]
         },
         {
-          jp: '友達の 回答は 簡単でした。「早く 寝なさい。」',
-          romaji: 'Tomodachi no kaitō wa kantan deshita. 「Hayaku nenasai.」',
+          jp: '友達に 相談すると、「起きられない 場合は、時計を ベッドから 遠い 所に 置いたら？」と 言われました。',
+          romaji:
+            'Tomodachi ni sōdan suru to, "okirarenai baai wa, tokei o beddo kara tōi tokoro ni oitara?" to iwaremashita.',
           meaning: {
-            en: 'His friend\'s answer was simple: "Go to bed early."',
-            vi: 'Câu trả lời của bạn rất đơn giản: "Ngủ sớm đi."'
+            en: 'When he asked a friend for advice, the friend said, "If you cannot get up, why not put the clock far from your bed?"',
+            vi: 'Khi anh hỏi ý kiến bạn, người bạn nói: "Nếu không dậy được thì sao không để đồng hồ xa giường?"'
           },
           ruby: [
             { base: '友', reading: 'とも' },
             { base: '達', reading: 'だち' },
-            { base: '回', reading: 'かい' },
-            { base: '答', reading: 'とう' },
-            { base: '簡', reading: 'かん' },
-            { base: '単', reading: 'たん' },
-            { base: '早', reading: 'はや' },
-            { base: '寝', reading: 'ね' }
+            { base: '相', reading: 'そう' },
+            { base: '談', reading: 'だん' },
+            { base: '起', reading: 'お' },
+            { base: '場', reading: 'ば' },
+            { base: '合', reading: 'あい' },
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' },
+            { base: '遠', reading: 'とお' },
+            { base: '所', reading: 'ところ' },
+            { base: '置', reading: 'お' },
+            { base: '言', reading: 'い' }
+          ]
+        },
+        {
+          jp: 'それから、田中さんは 毎朝 遅れないで 学校へ 行けるように なりました。',
+          romaji: 'Sore kara, Tanaka-san wa maiasa okurenaide gakkō e ikeru yō ni narimashita.',
+          meaning: {
+            en: 'After that, Tanaka was able to get to school on time every morning.',
+            vi: 'Từ đó anh Tanaka sáng nào cũng đến trường đúng giờ.'
+          },
+          ruby: [
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '遅', reading: 'おく' },
+            { base: '学', reading: 'がっ' },
+            { base: '校', reading: 'こう' },
+            { base: '行', reading: 'い' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: "What is Tanaka's problem?", vi: 'Vấn đề của Tanaka là gì?' },
-          jp: '田中さんの 悩みは 何ですか。',
+          question: { en: 'What is Tanaka bad at?', vi: 'Anh Tanaka kém việc gì?' },
+          jp: '田中さんは 何が 苦手ですか。',
           ruby: [
             { base: '田', reading: 'た' },
             { base: '中', reading: 'なか' },
-            { base: '悩', reading: 'なや' },
-            { base: '何', reading: 'なん' }
+            { base: '何', reading: 'なに' },
+            { base: '苦', reading: 'にが' },
+            { base: '手', reading: 'て' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'He cannot wake up on time', vi: 'Anh ấy không dậy đúng giờ' },
-              jp: '時間どおりに 起きられません',
+              label: { en: 'Getting up in the morning', vi: 'Dậy buổi sáng' },
+              jp: '朝 起きる こと',
               ruby: [
-                { base: '時', reading: 'じ' },
-                { base: '間', reading: 'かん' },
+                { base: '朝', reading: 'あさ' },
                 { base: '起', reading: 'お' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'He lost his receipt', vi: 'Anh ấy mất hóa đơn' },
-              jp: 'レシートを なくしました'
+              label: { en: 'Cooking', vi: 'Nấu ăn' },
+              jp: '料理を 作る こと',
+              ruby: [
+                { base: '料', reading: 'りょう' },
+                { base: '理', reading: 'り' },
+                { base: '作', reading: 'つく' }
+              ]
             },
             {
               id: 'c',
-              label: { en: 'He canceled a camp', vi: 'Anh ấy hủy cắm trại' },
-              jp: 'キャンプを キャンセルしました'
+              label: { en: 'Memorizing kanji', vi: 'Nhớ chữ Hán' },
+              jp: '漢字を 覚える こと',
+              ruby: [
+                { base: '漢', reading: 'かん' },
+                { base: '字', reading: 'じ' },
+                { base: '覚', reading: 'おぼ' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'He won a marathon', vi: 'Anh ấy thắng ma-ra-tông' },
-              jp: 'マラソンで 勝ちました',
-              ruby: [{ base: '勝', reading: 'か' }]
+              label: { en: 'Exercising', vi: 'Tập thể dục' },
+              jp: '運動する こと',
+              ruby: [
+                { base: '運', reading: 'うん' },
+                { base: '動', reading: 'どう' }
+              ]
             }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
-          question: { en: 'What advice did his friend give?', vi: 'Bạn anh ấy khuyên gì?' },
+          question: { en: 'What did the friend suggest?', vi: 'Người bạn đã gợi ý gì?' },
           jp: '友達は 何と 言いましたか。',
           ruby: [
             { base: '友', reading: 'とも' },
             { base: '達', reading: 'だち' },
-            { base: '何', reading: 'なん' },
+            { base: '何', reading: 'なに' },
             { base: '言', reading: 'い' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Go to bed early', vi: 'Ngủ sớm' },
-              jp: '早く 寝なさい',
+              label: { en: 'Put the clock far from the bed', vi: 'Để đồng hồ xa giường' },
+              jp: '時計を ベッドから 遠い 所に 置く',
+              ruby: [
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' },
+                { base: '遠', reading: 'とお' },
+                { base: '所', reading: 'ところ' },
+                { base: '置', reading: 'お' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'Go to bed earlier', vi: 'Đi ngủ sớm hơn' },
+              jp: 'もっと 早く 寝る',
               ruby: [
                 { base: '早', reading: 'はや' },
                 { base: '寝', reading: 'ね' }
               ]
             },
             {
-              id: 'b',
-              label: { en: 'Buy a new warranty', vi: 'Mua bảo hành mới' },
-              jp: '新しい 保証を 買いなさい',
+              id: 'c',
+              label: { en: 'Buy a new clock', vi: 'Mua đồng hồ mới' },
+              jp: '新しい 時計を 買う',
               ruby: [
                 { base: '新', reading: 'あたら' },
-                { base: '保', reading: 'ほ' },
-                { base: '証', reading: 'しょう' },
+                { base: '時', reading: 'と' },
+                { base: '計', reading: 'けい' },
                 { base: '買', reading: 'か' }
               ]
             },
             {
-              id: 'c',
-              label: { en: 'Call 110', vi: 'Gọi 110' },
-              jp: '110番に 電話しなさい',
-              ruby: [
-                { base: '番', reading: 'ばん' },
-                { base: '電', reading: 'でん' },
-                { base: '話', reading: 'わ' }
-              ]
-            },
-            {
               id: 'd',
-              label: { en: 'Run every morning', vi: 'Chạy mỗi sáng' },
-              jp: '毎朝 走りなさい',
+              label: { en: 'Skip class', vi: 'Nghỉ học' },
+              jp: '授業を 休む',
               ruby: [
-                { base: '毎', reading: 'まい' },
-                { base: '朝', reading: 'あさ' },
-                { base: '走', reading: 'はし' }
+                { base: '授', reading: 'じゅ' },
+                { base: '業', reading: 'ぎょう' },
+                { base: '休', reading: 'やす' }
               ]
             }
           ],

@@ -125,7 +125,7 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
             en: 'Tanaka, will you call? (casual, particles dropped)',
             vi: 'Tanaka, cậu gọi điện chứ? (thân mật, bỏ trợ từ)'
           },
-          jp: '田中くん、電話 する？',
+          jp: '田中くん、電話する？',
           ruby: [
             { base: '田', reading: 'た' },
             { base: '中', reading: 'なか' },

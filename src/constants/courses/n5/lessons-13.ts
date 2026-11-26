@@ -1280,12 +1280,9 @@ export const n5Lesson13: Lesson = {
           ]
         },
         {
-          jp: '子どもは プールの 近くで 遊びたがりました。',
-          romaji: 'Kodomo wa pūru no chikaku de asobitagarimashita.',
-          meaning: {
-            en: 'The children wanted to play near the pool.',
-            vi: 'Các con muốn chơi gần bể bơi.'
-          },
+          jp: '子どもは プールの 近くで 遊びました。',
+          romaji: 'Kodomo wa pūru no chikaku de asobimashita.',
+          meaning: { en: 'The children played near the pool.', vi: 'Bọn trẻ chơi gần hồ bơi.' },
           ruby: [
             { base: '子', reading: 'こ' },
             { base: '近', reading: 'ちか' },
@@ -1384,8 +1381,8 @@ export const n5Lesson13: Lesson = {
         },
         {
           id: 'q3',
-          question: { en: 'What did the children want to do?', vi: 'Các con muốn làm gì?' },
-          jp: '子どもは 何を したがりましたか。',
+          question: { en: 'What did the children do?', vi: 'Bọn trẻ đã làm gì?' },
+          jp: '子どもは 何を しましたか。',
           ruby: [
             { base: '子', reading: 'こ' },
             { base: '何', reading: 'なに' }

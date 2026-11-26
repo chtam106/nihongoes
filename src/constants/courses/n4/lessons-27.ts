@@ -894,9 +894,8 @@ export const n4Lesson27: Lesson = {
   reading: [
     {
       id: 'reading-lesson27-doraemon',
-      title: { en: 'A pocket full of dreams', vi: 'Chiếc túi đầy ước mơ' },
-      titleJp: '夢の ポケット',
-      titleRuby: [{ base: '夢', reading: 'ゆめ' }],
+      title: { en: 'Doraemon', vi: 'Doraemon' },
+      titleJp: 'ドラえもん',
       lines: [
         {
           jp: '子どもたちは ドラえもんが 大好きです。',
@@ -909,132 +908,164 @@ export const n4Lesson27: Lesson = {
           ]
         },
         {
-          jp: '主人公は 不思議な 形を した ロボットです。',
-          romaji: 'Shujinkō wa fushigi na katachi o shita robotto desu.',
+          jp: 'ドラえもんは 未来から 来た ネコ型の ロボットです。',
+          romaji: 'Doraemon wa mirai kara kita nekogata no robotto desu.',
           meaning: {
-            en: 'The main character is a robot with a strange shape.',
-            vi: 'Nhân vật chính là robot có hình dạng kỳ lạ.'
+            en: 'Doraemon is a cat-shaped robot who came from the future.',
+            vi: 'Doraemon là chú mèo máy đến từ tương lai.'
           },
           ruby: [
-            { base: '主', reading: 'しゅ' },
-            { base: '人', reading: 'じん' },
-            { base: '公', reading: 'こう' },
-            { base: '不', reading: 'ふ' },
-            { base: '思', reading: 'し' },
-            { base: '議', reading: 'ぎ' },
-            { base: '形', reading: 'かたち' }
+            { base: '未', reading: 'み' },
+            { base: '来', reading: 'らい' },
+            { base: '来', reading: 'き' },
+            { base: '型', reading: 'がた' }
           ]
         },
         {
-          jp: '例えば、ポケットから 自由に 空を 飛べます。',
-          romaji: 'Tatoeba, poketto kara jiyū ni sora o tobemasu.',
+          jp: 'ポケットから 不思議な 道具が いろいろ 出せます。',
+          romaji: 'Poketto kara fushigi na dōgu ga iroiro dasemasu.',
           meaning: {
-            en: 'For example, from his pocket he can fly freely in the sky.',
-            vi: 'Ví dụ, từ túi có thể bay tự do trên trời.'
+            en: 'He can take all kinds of amazing gadgets out of his pocket.',
+            vi: 'Cậu ấy có thể lấy ra đủ loại bảo bối kỳ diệu từ túi.'
+          },
+          ruby: [
+            { base: '不', reading: 'ふ' },
+            { base: '思', reading: 'し' },
+            { base: '議', reading: 'ぎ' },
+            { base: '道', reading: 'どう' },
+            { base: '具', reading: 'ぐ' },
+            { base: '出', reading: 'だ' }
+          ]
+        },
+        {
+          jp: '例えば「タケコプター」を 使うと、空を 自由に 飛べます。',
+          romaji: 'Tatoeba "takekoputā" o tsukau to, sora o jiyū ni tobemasu.',
+          meaning: {
+            en: 'For example, with the "Take-copter" you can fly freely in the sky.',
+            vi: 'Ví dụ dùng "chong chóng tre" thì có thể bay tự do trên trời.'
           },
           ruby: [
             { base: '例', reading: 'たと' },
+            { base: '使', reading: 'つか' },
+            { base: '空', reading: 'そら' },
             { base: '自', reading: 'じ' },
             { base: '由', reading: 'ゆう' },
-            { base: '空', reading: 'そら' },
             { base: '飛', reading: 'と' }
           ]
         },
         {
-          jp: '昔の 子どもは 将来 自分で 道具を 作れる 人に なりたいと 思います。',
-          romaji:
-            'Mukashi no kodomo wa shōrai jibun de dōgu o tsukureru hito ni naritai to omoimasu.',
+          jp: 'でも、そんな 道具は 漫画の 中にしか ありません。',
+          romaji: 'Demo, sonna dōgu wa manga no naka ni shika arimasen.',
           meaning: {
-            en: 'Children long ago wanted to become people who could make tools themselves in the future.',
-            vi: 'Ngày xưa trẻ em muốn trở thành người tự làm dụng cụ trong tương lai.'
+            en: 'But gadgets like that exist only in the manga.',
+            vi: 'Nhưng những bảo bối như thế chỉ có trong truyện tranh.'
           },
           ruby: [
-            { base: '昔', reading: 'むかし' },
-            { base: '子', reading: 'こ' },
-            { base: '将', reading: 'しょう' },
-            { base: '来', reading: 'らい' },
-            { base: '自', reading: 'じ' },
-            { base: '分', reading: 'ぶん' },
             { base: '道', reading: 'どう' },
             { base: '具', reading: 'ぐ' },
-            { base: '作', reading: 'つく' },
-            { base: '人', reading: 'ひと' },
-            { base: '思', reading: 'おも' }
+            { base: '漫', reading: 'まん' },
+            { base: '画', reading: 'が' },
+            { base: '中', reading: 'なか' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'What do children love?', vi: 'Trẻ em thích gì?' },
-          jp: '子どもは 何が 大好きですか。',
+          question: {
+            en: 'What can Doraemon take out of his pocket?',
+            vi: 'Doraemon có thể lấy gì ra từ túi?'
+          },
+          jp: 'ドラえもんは ポケットから 何が 出せますか。',
           ruby: [
-            { base: '子', reading: 'こ' },
             { base: '何', reading: 'なに' },
-            { base: '大', reading: 'だい' },
-            { base: '好', reading: 'す' }
+            { base: '出', reading: 'だ' }
           ],
           choices: [
-            { id: 'a', label: { en: 'Doraemon', vi: 'Doraemon' }, jp: 'ドラえもん' },
             {
-              id: 'b',
-              label: { en: 'Fireworks', vi: 'Pháo hoa' },
-              jp: '花火',
+              id: 'a',
+              label: { en: 'Amazing gadgets', vi: 'Bảo bối kỳ diệu' },
+              jp: '不思議な 道具',
               ruby: [
-                { base: '花', reading: 'はな' },
-                { base: '火', reading: 'び' }
+                { base: '不', reading: 'ふ' },
+                { base: '思', reading: 'し' },
+                { base: '議', reading: 'ぎ' },
+                { base: '道', reading: 'どう' },
+                { base: '具', reading: 'ぐ' }
               ]
             },
-            { id: 'c', label: { en: 'Dry cleaning', vi: 'Giặt là' }, jp: 'クリーニング' },
-            { id: 'd', label: { en: 'A party room', vi: 'Phòng tiệc' }, jp: 'パーティールーム' }
+            {
+              id: 'b',
+              label: { en: 'Money', vi: 'Tiền' },
+              jp: 'お金',
+              ruby: [{ base: '金', reading: 'かね' }]
+            },
+            {
+              id: 'c',
+              label: { en: 'Real birds', vi: 'Chim thật' },
+              jp: '本物の 鳥',
+              ruby: [
+                { base: '本', reading: 'ほん' },
+                { base: '物', reading: 'もの' },
+                { base: '鳥', reading: 'とり' }
+              ]
+            },
+            {
+              id: 'd',
+              label: { en: 'Food', vi: 'Đồ ăn' },
+              jp: '食べ物',
+              ruby: [
+                { base: '食', reading: 'た' },
+                { base: '物', reading: 'もの' }
+              ]
+            }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
           question: {
-            en: 'What can the main character do from his pocket?',
-            vi: 'Nhân vật chính làm gì được từ túi?'
+            en: 'Where do gadgets like that exist?',
+            vi: 'Những bảo bối như thế có ở đâu?'
           },
-          jp: 'ポケットから 何が できますか。',
-          ruby: [{ base: '何', reading: 'なに' }],
+          jp: 'そんな 道具は どこに ありますか。',
+          ruby: [
+            { base: '道', reading: 'どう' },
+            { base: '具', reading: 'ぐ' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Fly in the sky', vi: 'Bay trên trời' },
-              jp: '空を 飛べます',
+              label: { en: 'Only in the manga', vi: 'Chỉ trong truyện tranh' },
+              jp: '漫画の 中',
               ruby: [
-                { base: '空', reading: 'そら' },
-                { base: '飛', reading: 'と' }
+                { base: '漫', reading: 'まん' },
+                { base: '画', reading: 'が' },
+                { base: '中', reading: 'なか' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Run on the road', vi: 'Chạy trên đường' },
-              jp: '道を 走れます',
-              ruby: [
-                { base: '道', reading: 'みち' },
-                { base: '走', reading: 'はし' }
-              ]
+              label: { en: 'At a department store', vi: 'Ở trung tâm thương mại' },
+              jp: 'デパート'
             },
             {
               id: 'c',
-              label: { en: 'Hear waves', vi: 'Nghe sóng' },
-              jp: '波の 音が 聞こえます',
+              label: { en: 'At school', vi: 'Ở trường học' },
+              jp: '学校',
               ruby: [
-                { base: '波', reading: 'なみ' },
-                { base: '音', reading: 'おと' },
-                { base: '聞', reading: 'き' }
+                { base: '学', reading: 'がっ' },
+                { base: '校', reading: 'こう' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'Open a classroom', vi: 'Mở lớp học' },
-              jp: '教室を 開けます',
+              label: { en: 'At a shop by the station', vi: 'Ở cửa hàng trước ga' },
+              jp: '駅前の 店',
               ruby: [
-                { base: '教', reading: 'きょう' },
-                { base: '室', reading: 'しつ' },
-                { base: '開', reading: 'あ' }
+                { base: '駅', reading: 'えき' },
+                { base: '前', reading: 'まえ' },
+                { base: '店', reading: 'みせ' }
               ]
             }
           ],

@@ -405,7 +405,7 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
         en: 'I make an effort to exercise every day.',
         vi: 'Tôi cố gắng vận động mỗi ngày.'
       },
-      jp: '毎日 運動 する ように しています。',
+      jp: '毎日 運動する ように しています。',
       ruby: [
         { base: '毎', reading: 'まい' },
         { base: '日', reading: 'にち' },
