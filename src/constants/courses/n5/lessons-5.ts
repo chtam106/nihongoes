@@ -1857,6 +1857,22 @@ export const n5Lesson5: Lesson = {
           }
         },
         {
+          number: '2月23日',
+          numberRuby: [
+            { base: '月', reading: 'がつ' },
+            { base: '日', reading: 'にち' }
+          ],
+          jp: '天皇誕生日',
+          ruby: [
+            { base: '天', reading: 'てん' },
+            { base: '皇', reading: 'のう' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' }
+          ],
+          meaning: { en: "Emperor's Birthday", vi: 'Sinh nhật Thiên hoàng' }
+        },
+        {
           number: '3月20日 *',
           numberRuby: [
             { base: '月', reading: 'がつ' },
@@ -1940,6 +1956,19 @@ export const n5Lesson5: Lesson = {
           meaning: { en: 'Marine Day', vi: 'Ngày Biển' }
         },
         {
+          number: '8月11日',
+          numberRuby: [
+            { base: '月', reading: 'がつ' },
+            { base: '日', reading: 'にち' }
+          ],
+          jp: '山の日',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '日', reading: 'ひ' }
+          ],
+          meaning: { en: 'Mountain Day', vi: 'Ngày Núi' }
+        },
+        {
           number: '9月第3月曜日 ***',
           numberRuby: [
             { base: '月', reading: 'がつ' },
@@ -1979,13 +2008,9 @@ export const n5Lesson5: Lesson = {
             { base: '曜', reading: 'よう' },
             { base: '日', reading: 'び' }
           ],
-          jp: '体育の日',
-          ruby: [
-            { base: '体', reading: 'たい' },
-            { base: '育', reading: 'いく' },
-            { base: '日', reading: 'ひ' }
-          ],
-          meaning: { en: 'Health and Sports Day', vi: 'Ngày Thể thao' }
+          jp: 'スポーツの日',
+          ruby: [{ base: '日', reading: 'ひ' }],
+          meaning: { en: 'Sports Day', vi: 'Ngày Thể thao' }
         },
         {
           number: '11月3日',
@@ -2016,25 +2041,6 @@ export const n5Lesson5: Lesson = {
             { base: '日', reading: 'ひ' }
           ],
           meaning: { en: 'Labor Thanksgiving Day', vi: 'Ngày Cảm tạ lao động' }
-        },
-        {
-          number: '12月23日',
-          numberRuby: [
-            { base: '月', reading: 'がつ' },
-            { base: '日', reading: 'にち' }
-          ],
-          jp: '天皇誕生日',
-          ruby: [
-            { base: '天', reading: 'てん' },
-            { base: '皇', reading: 'のう' },
-            { base: '誕', reading: 'たん' },
-            { base: '生', reading: 'じょう' },
-            { base: '日', reading: 'び' }
-          ],
-          meaning: {
-            en: "Emperor's Birthday (as in the textbook era)",
-            vi: 'Sinh nhật Thiên hoàng (theo thời điểm sách)'
-          }
         }
       ],
       notes: [

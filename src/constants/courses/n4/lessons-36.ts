@@ -543,20 +543,17 @@ export const n4Lesson36: Lesson = {
         vi: 'Mục đích với ように (V-nguyên dạng)'
       },
       explanation: {
-        en: 'V-dictionary + ように shows purpose or goal: 毎日 練習して 泳げる ように しています. Use dictionary form (or ない) before ように; potential and intransitive verbs fit naturally.',
-        vi: 'V-nguyên dạng + ように chỉ mục đích: 毎日 練習して 泳げる ように しています. Dùng nguyên dạng (hoặc ない) trước ように; động từ khả năng và tự động rất phù hợp.'
+        en: 'Dictionary form (or ない form) + ように expresses a purpose, usually with potential or non-volitional verbs: 速く 泳げる ように、毎日 練習しています, 忘れない ように、メモします.',
+        vi: 'Thể từ điển (hoặc thể ない) + ように chỉ mục đích, thường đi với động từ khả năng hoặc động từ không ý chí: 速く 泳げる ように、毎日 練習しています, 忘れない ように、メモします.'
       },
       explanationRuby: [
-        { base: '毎', reading: 'まい' },
-        { base: '日', reading: 'にち' },
-        { base: '練', reading: 'れん' },
-        { base: '習', reading: 'しゅう' },
+        { base: '速', reading: 'はや' },
         { base: '泳', reading: 'およ' },
         { base: '毎', reading: 'まい' },
         { base: '日', reading: 'にち' },
         { base: '練', reading: 'れん' },
         { base: '習', reading: 'しゅう' },
-        { base: '泳', reading: 'およ' }
+        { base: '忘', reading: 'わす' }
       ],
       examples: [
         {
@@ -590,18 +587,17 @@ export const n4Lesson36: Lesson = {
         vi: 'Thay đổi khả năng/thói quen (ようになりました)'
       },
       explanation: {
-        en: 'ようになりました marks a change into a new state: やっと 自転車に 乗れる ようになりました. With ない it means something you could not do before is now possible, or a new habit started.',
-        vi: 'ようになりました đánh dấu chuyển sang trạng thái mới: やっと 自転車に 乗れる ようになりました. Với ない: từ không làm được sang làm được, hoặc có thói quen mới.'
+        en: 'ように なりました marks a change into a new ability or habit: やっと 自転車に 乗れる ように なりました. For "no longer", use ～なく なりました: 最近 あまり テレビを 見なく なりました.',
+        vi: 'ように なりました đánh dấu sự thay đổi sang khả năng hoặc thói quen mới: やっと 自転車に 乗れる ように なりました. Muốn nói "không còn ~ nữa" thì dùng ～なく なりました: 最近 あまり テレビを 見なく なりました.'
       },
       explanationRuby: [
         { base: '自', reading: 'じ' },
         { base: '転', reading: 'てん' },
         { base: '車', reading: 'しゃ' },
         { base: '乗', reading: 'の' },
-        { base: '自', reading: 'じ' },
-        { base: '転', reading: 'てん' },
-        { base: '車', reading: 'しゃ' },
-        { base: '乗', reading: 'の' }
+        { base: '最', reading: 'さい' },
+        { base: '近', reading: 'きん' },
+        { base: '見', reading: 'み' }
       ],
       examples: [
         {

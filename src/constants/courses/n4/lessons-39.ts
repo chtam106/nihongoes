@@ -493,16 +493,16 @@ export const n4Lesson39: Lesson = {
       highlights: ['から'],
       title: { en: 'Reason with から (plain form)', vi: 'Lý do với から (thể thường)' },
       explanation: {
-        en: 'Attach から to a reason clause; the result follows: 道が 込んで いる から、バスが 遅れます. Use plain form before から (i-adj drop い, na-adj + な, nouns + な/の).',
-        vi: 'Gắn から vào mệnh đề lý do; kết quả đứng sau: 道が 込んで いる から、バスが 遅れます. Trước から dùng thể thường (tính từ い bỏ い, な + な, danh từ + な/の).'
+        en: 'Attach から to the reason clause; the result follows: 道が 込んで いる から、バスが 遅れます. Before から, い-adjectives stay as they are (高いから), and な-adjectives and nouns take だ (静かだから, 雨だから).',
+        vi: 'Gắn から vào mệnh đề lý do, kết quả đứng sau: 道が 込んで いる から、バスが 遅れます. Trước から, tính từ い giữ nguyên (高いから), tính từ な và danh từ thêm だ (静かだから, 雨だから).'
       },
       explanationRuby: [
         { base: '道', reading: 'みち' },
         { base: '込', reading: 'こ' },
         { base: '遅', reading: 'おく' },
-        { base: '道', reading: 'みち' },
-        { base: '込', reading: 'こ' },
-        { base: '遅', reading: 'おく' }
+        { base: '高', reading: 'たか' },
+        { base: '静', reading: 'しず' },
+        { base: '雨', reading: 'あめ' }
       ],
       examples: [
         {
@@ -549,18 +549,15 @@ export const n4Lesson39: Lesson = {
       highlights: ['ので'],
       title: { en: 'Reason with ので (softer)', vi: 'Lý do với ので (nhẹ nhàng hơn)' },
       explanation: {
-        en: 'ので states a reason more softly than から - good for excuses and polite explanations: 用事が ある ので、先に 帰ります.',
-        vi: 'ので nêu lý do nhẹ nhàng hơn から - phù hợp xin phép, giải thích lịch sự: 用事が ある ので、先に 帰ります.'
+        en: 'ので gives a reason more softly than から, so it suits requests and polite explanations: 用事が ある ので、先に 帰ります. な-adjectives and nouns take な before ので: 雨なので.',
+        vi: 'ので nêu lý do nhẹ nhàng hơn から, hợp khi xin phép hay giải thích lịch sự: 用事が ある ので、先に 帰ります. Tính từ な và danh từ thêm な trước ので: 雨なので.'
       },
       explanationRuby: [
         { base: '用', reading: 'よう' },
         { base: '事', reading: 'じ' },
         { base: '先', reading: 'さき' },
         { base: '帰', reading: 'かえ' },
-        { base: '用', reading: 'よう' },
-        { base: '事', reading: 'じ' },
-        { base: '先', reading: 'さき' },
-        { base: '帰', reading: 'かえ' }
+        { base: '雨', reading: 'あめ' }
       ],
       examples: [
         {

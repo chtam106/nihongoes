@@ -700,17 +700,14 @@ export const n4Lesson37: Lesson = {
       highlights: ['から', 'で', '作'],
       title: { en: 'Materials: から and で', vi: 'Nguyên liệu: から và で' },
       explanation: {
-        en: 'から marks raw material taken from something: ビールは 麦から 作ります. で marks the material something is made of: この ビールは 麦で 作りました (here is the ingredient).',
-        vi: 'から chỉ nguyên liệu lấy từ đâu: ビールは 麦から 作ります. で chỉ chất liệu tạo thành: この ビールは 麦で 作りました (đây là nguyên liệu).'
+        en: 'から marks a raw material that changes form in the making: ビールは 麦から 作ります. で marks a material you can still see in the product: この 机は 木で 作りました.',
+        vi: 'から chỉ nguyên liệu bị biến đổi khi làm ra sản phẩm: ビールは 麦から 作ります. で chỉ vật liệu vẫn nhìn thấy được trong sản phẩm: この 机は 木で 作りました.'
       },
       explanationRuby: [
         { base: '麦', reading: 'むぎ' },
         { base: '作', reading: 'つく' },
-        { base: '麦', reading: 'むぎ' },
-        { base: '作', reading: 'つく' },
-        { base: '麦', reading: 'むぎ' },
-        { base: '作', reading: 'つく' },
-        { base: '麦', reading: 'むぎ' },
+        { base: '机', reading: 'つくえ' },
+        { base: '木', reading: 'き' },
         { base: '作', reading: 'つく' }
       ],
       examples: [

@@ -731,13 +731,14 @@ export const n5Lesson14: Lesson = {
       highlights: ['ましょうか'],
       title: { en: 'Shall I...? (〜ましょうか)', vi: 'Tôi ~ nhé? (〜ましょうか)' },
       explanation: {
-        en: 'Use verb stem + ましょうか to offer to do something for the listener. Accept with お願いします; decline with けっこうです or 結構です.',
-        vi: 'Dùng gốc động từ + ましょうか để đề nghị làm gì cho người nghe. Đồng ý: お願いします; từ chối: けっこうです hoặc 結構です.'
+        en: 'Use the ます-stem + ましょうか to offer to do something for the listener: 荷物を 持ちましょうか. To accept, say お願いします; to decline politely, say いいえ、けっこうです.',
+        vi: 'Dùng gốc ます + ましょうか để đề nghị làm gì đó giúp người nghe: 荷物を 持ちましょうか. Nhận lời: お願いします; từ chối lịch sự: いいえ、けっこうです.'
       },
       explanationRuby: [
-        { base: '願', reading: 'ねが' },
-        { base: '結', reading: 'けっ' },
-        { base: '構', reading: 'こう' }
+        { base: '荷', reading: 'に' },
+        { base: '物', reading: 'もつ' },
+        { base: '持', reading: 'も' },
+        { base: '願', reading: 'ねが' }
       ],
       examples: [
         {
