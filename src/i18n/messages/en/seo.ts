@@ -45,6 +45,11 @@ export const seo = {
         title: 'ない Form Quiz',
         description: 'Multiple-choice practice for Japanese verb ない forms.'
       }
+    },
+    particles: {
+      title: 'Japanese Particle Quiz',
+      description:
+        'Fill in は, が, を, に, で, へ and other N5 particles, with a short note on each answer.'
     }
   },
   n5: {

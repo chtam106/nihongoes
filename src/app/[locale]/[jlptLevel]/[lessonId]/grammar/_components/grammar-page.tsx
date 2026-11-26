@@ -84,7 +84,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
         <Typography
           variant="overline"
           color="text.secondary"
-          sx={{ display: 'block', lineHeight: 1.5, mb: 1 }}
+          sx={{ display: 'block', textAlign: 'center', lineHeight: 1.5, mb: 1 }}
         >
           {t('course.grammarClozePrompt')}
         </Typography>
@@ -107,7 +107,7 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
           }
           sx={[
             elevatedSurfaceSx,
-            { p: { xs: 2.5, md: 3 }, cursor: canPlay ? 'pointer' : undefined }
+            { p: { xs: 2.5, md: 3 }, textAlign: 'center', cursor: canPlay ? 'pointer' : undefined }
           ]}
         >
           <Typography variant="h5" component="p" lang="ja" sx={{ fontWeight: 600 }}>

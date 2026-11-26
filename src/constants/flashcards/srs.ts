@@ -4,7 +4,8 @@ import { storageKey } from '@/constants/site.ts';
  * Spaced repetition (SRS) for flashcards: a small SM-2 variant with three
  * grades. "again" (not remembered) brings the card back tomorrow; "good"
  * (remembered) multiplies the gap by the card's ease: 3, 8, 20, 50... days;
- * "known" (remembered well) waits at least 6 months, then grows the same way.
+ * "known" (remembered well) waits at least 6 months and grows faster than
+ * "good": 1.3 times the gap, and the card's ease goes up.
  *
  * Dates are whole local days (`dayNumber`), not timestamps, so a card due
  * "tomorrow" turns due at local midnight whatever time it was reviewed.
@@ -54,6 +55,10 @@ const FIRST_INTERVAL = 3;
 const AGAIN_INTERVAL = 1;
 /** Shortest gap after "known": about 6 months. */
 export const KNOWN_INTERVAL = 180;
+/** "known" stretches the "good" gap by this much. */
+const KNOWN_BONUS = 1.3;
+/** "known" also makes later gaps grow faster. */
+const KNOWN_EASE_STEP = 0.15;
 const MIN_EASE = 1.3;
 const MAX_EASE = 3.5;
 const MAX_INTERVAL = 3650;
@@ -83,7 +88,7 @@ export function nextInterval(card: ReviewCard | undefined, grade: ReviewGrade): 
       ? FIRST_INTERVAL
       : clampInterval(Math.max(card.interval + 1, card.interval * card.ease));
 
-  return grade === 'known' ? Math.max(KNOWN_INTERVAL, good) : good;
+  return grade === 'known' ? Math.max(KNOWN_INTERVAL, clampInterval(good * KNOWN_BONUS)) : good;
 }
 
 export function gradeCard(
@@ -111,7 +116,7 @@ export function gradeCard(
   return {
     due: today + interval,
     interval,
-    ease,
+    ease: grade === 'known' ? clampEase(ease + KNOWN_EASE_STEP) : ease,
     reps: (card?.reps ?? 0) + 1,
     lapses: card?.lapses ?? 0,
     last: today

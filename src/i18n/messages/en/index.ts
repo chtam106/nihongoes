@@ -16,6 +16,7 @@ import { course } from './course.ts';
 import { flashcards } from './flashcards.ts';
 import { privacy } from './privacy.ts';
 import { verbPractice } from './verb-practice.ts';
+import { particlePractice } from './particle-practice.ts';
 
 /** English messages, composed from one file per namespace (page/feature). */
 export const enMessages = {
@@ -35,5 +36,6 @@ export const enMessages = {
   course,
   flashcards,
   privacy,
-  verbPractice
+  verbPractice,
+  particlePractice
 } satisfies TranslationTree;
