@@ -665,26 +665,18 @@ export const n4Lesson40: Lesson = {
       highlights: ['さ'],
       title: { en: 'Nominalizing with ～さ', vi: 'Danh từ hóa với ～さ' },
       explanation: {
-        en: 'Replace い on i-adjectives (or add さ to na-adj stem) to make a noun of degree: 高い→高さ, 大きい→大きさ, 必要→必要さ.',
-        vi: 'Bỏ い của tính từ い (hoặc thêm さ với な) để thành danh từ mức độ: 高い→高さ, 大きい→大きさ, 必要→必要さ.'
+        en: 'Drop the final い of an い-adjective (or take the stem of a な-adjective) and add さ to make a noun of degree: 高い→高さ, 大きい→大きさ, 便利→便利さ. いい becomes よさ.',
+        vi: 'Bỏ い của tính từ い (hoặc lấy thân tính từ な) rồi thêm さ để tạo danh từ chỉ mức độ: 高い→高さ, 大きい→大きさ, 便利→便利さ. いい thành よさ.'
       },
       explanationRuby: [
         { base: '高', reading: 'たか' },
         { base: '高', reading: 'たか' },
         { base: '大', reading: 'おお' },
         { base: '大', reading: 'おお' },
-        { base: '必', reading: 'ひつ' },
-        { base: '要', reading: 'よう' },
-        { base: '必', reading: 'ひつ' },
-        { base: '要', reading: 'よう' },
-        { base: '高', reading: 'たか' },
-        { base: '高', reading: 'たか' },
-        { base: '大', reading: 'おお' },
-        { base: '大', reading: 'おお' },
-        { base: '必', reading: 'ひつ' },
-        { base: '要', reading: 'よう' },
-        { base: '必', reading: 'ひつ' },
-        { base: '要', reading: 'よう' }
+        { base: '便', reading: 'べん' },
+        { base: '利', reading: 'り' },
+        { base: '便', reading: 'べん' },
+        { base: '利', reading: 'り' }
       ],
       examples: [
         {

@@ -683,21 +683,14 @@ export const n4Lesson41: Lesson = {
       highlights: ['て', 'ください'],
       title: { en: 'Honorific favors (てください)', vi: 'Nhờ vả kính ngữ (てください)' },
       explanation: {
-        en: 'てください is honorific "do for me": 新しい コピー機の 使い方を 教えて ください. Softer request: 教えていただけませんか (Lesson 26).',
-        vi: 'てください kính ngữ "làm giúp tôi": 新しい コピー機の 使い方を 教えて ください. Nhẹ hơn: 教えていただけませんか (bài 26).'
+        en: '～て ください is an ordinary request or instruction. When asking someone above you, the more polite ～て いただけませんか is better: 新しい コピー機の 使い方を 教えて いただけませんか.',
+        vi: '～て ください là lời nhờ hoặc chỉ dẫn thông thường. Khi nhờ người trên, nên dùng ～て いただけませんか cho lịch sự hơn: 新しい コピー機の 使い方を 教えて いただけませんか.'
       },
       explanationRuby: [
         { base: '新', reading: 'あたら' },
         { base: '機', reading: 'き' },
         { base: '使', reading: 'つか' },
         { base: '方', reading: 'かた' },
-        { base: '教', reading: 'おし' },
-        { base: '教', reading: 'おし' },
-        { base: '新', reading: 'あたら' },
-        { base: '機', reading: 'き' },
-        { base: '使', reading: 'つか' },
-        { base: '方', reading: 'かた' },
-        { base: '教', reading: 'おし' },
         { base: '教', reading: 'おし' }
       ],
       examples: [

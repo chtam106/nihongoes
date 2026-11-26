@@ -1339,17 +1339,17 @@ export const grade1Lessons: KanjiLesson[] = withSequentialNumbers([
           },
           {
             parts: [
-              { text: '漢', reading: 'かん' },
-              { text: '字', reading: 'じ' }
+              { text: '文', reading: 'ぶん' },
+              { text: '化', reading: 'か' }
             ],
-            meaning: { en: 'kanji', vi: 'chữ Hán (kanji)' }
+            meaning: { en: 'culture', vi: 'văn hóa' }
           },
           {
             parts: [
-              { text: '文', reading: 'も' },
-              { text: '字', reading: 'じ' }
+              { text: '文', reading: 'ぶん' },
+              { text: '学', reading: 'がく' }
             ],
-            meaning: { en: 'character, letter', vi: 'ký tự, chữ' }
+            meaning: { en: 'literature', vi: 'văn học' }
           }
         ]
       },
@@ -3752,13 +3752,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '声', reading: 'ごえ' }
             ],
             meaning: { en: 'loud voice', vi: 'giọng to' }
-          },
-          {
-            parts: [
-              { text: '大', reading: 'おお' },
-              { text: '声', reading: 'ごえ' }
-            ],
-            meaning: { en: 'loud voice', vi: 'giọng lớn' }
           },
           {
             parts: [
@@ -6978,13 +6971,6 @@ export const grade2Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '刀', reading: 'とう' }
             ],
             meaning: { en: 'Japanese sword', vi: 'kiếm Nhật' }
-          },
-          {
-            parts: [
-              { text: '小', reading: 'こ' },
-              { text: '刀', reading: 'がたな' }
-            ],
-            meaning: { en: 'small knife', vi: 'con dao nhỏ' }
           }
         ]
       },
@@ -7987,13 +7973,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
           },
           {
             parts: [
-              { text: '毛', reading: 'け' },
-              { text: '皮', reading: 'がわ' }
-            ],
-            meaning: { en: 'fur, pelt', vi: 'da lông thú' }
-          },
-          {
-            parts: [
               { text: '皮', reading: 'ひ' },
               { text: '肉', reading: 'にく' }
             ],
@@ -8805,13 +8784,6 @@ export const grade3Lessons: KanjiLesson[] = withSequentialNumbers([
           { char: '胡', role: 'phonetic' }
         ],
         examples: [
-          {
-            parts: [
-              { text: '湖', reading: 'こ' },
-              { text: '水', reading: 'すい' }
-            ],
-            meaning: { en: 'lake water', vi: 'nước hồ' }
-          },
           {
             parts: [
               { text: '湖', reading: 'こ' },
@@ -16651,13 +16623,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '器', reading: 'き' }
             ],
             meaning: { en: 'musical instrument', vi: 'nhạc cụ' }
-          },
-          {
-            parts: [
-              { text: '食', reading: 'しょっ' },
-              { text: '器', reading: 'き' }
-            ],
-            meaning: { en: 'tableware', vi: 'bát đĩa, đồ ăn' }
           }
         ]
       }
@@ -16763,13 +16728,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
         kunyomi: ['おっと'],
         parts: [{ char: '大', role: 'radical' }],
         examples: [
-          {
-            parts: [
-              { text: '夫', reading: 'ふう' },
-              { text: '婦', reading: 'ふ' }
-            ],
-            meaning: { en: 'married couple', vi: 'vợ chồng' }
-          },
           {
             parts: [
               { text: '夫', reading: 'ふう' },
@@ -17256,13 +17214,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
           { char: '官', role: 'phonetic' }
         ],
         examples: [
-          {
-            parts: [
-              { text: '血', reading: 'けっ' },
-              { text: '管', reading: 'かん' }
-            ],
-            meaning: { en: 'blood vessel', vi: 'mạch máu' }
-          },
           {
             parts: [
               { text: '血', reading: 'けっ' },
@@ -18879,17 +18830,17 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
           },
           {
             parts: [
-              { text: '法', reading: 'ほう' },
-              { text: '律', reading: 'りつ' }
+              { text: '節', reading: 'せつ' },
+              { text: '約', reading: 'やく' }
             ],
-            meaning: { en: 'law', vi: 'pháp luật' }
+            meaning: { en: 'saving, economizing', vi: 'tiết kiệm' }
           },
           {
             parts: [
-              { text: '文', reading: 'ぶん' },
-              { text: '法', reading: 'ぽう' }
+              { text: '要', reading: 'よう' },
+              { text: '約', reading: 'やく' }
             ],
-            meaning: { en: 'grammar', vi: 'ngữ pháp' }
+            meaning: { en: 'summary', vi: 'tóm tắt' }
           }
         ]
       },
@@ -19634,13 +19585,6 @@ export const grade4Lessons: KanjiLesson[] = withSequentialNumbers([
               { text: '庫', reading: 'こ' }
             ],
             meaning: { en: 'warehouse', vi: 'nhà kho' }
-          },
-          {
-            parts: [
-              { text: '米', reading: 'こめ' },
-              { text: '倉', reading: 'ぐら' }
-            ],
-            meaning: { en: 'rice granary', vi: 'kho thóc' }
           }
         ]
       },

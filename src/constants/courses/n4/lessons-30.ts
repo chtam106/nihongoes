@@ -602,8 +602,8 @@ export const n4Lesson30: Lesson = {
       highlights: ['に', 'が', 'て', 'あり'],
       title: { en: 'Intentional placement (V-てあります)', vi: 'Đặt có chủ ý (V-てあります)' },
       explanation: {
-        en: 'V-てあります with transitive verbs shows something was placed on purpose and remains there: 机の 上に メモが 置いて あります. Contrast 窓が 閉まっています (state) vs 窓が 閉めて あります (someone closed it).',
-        vi: 'V-てあります với động từ tự động cho thấy ai đó đặt có chủ ý: 机の 上に メモが 置いて あります. So sánh 窓が 閉まっています (trạng thái) với 窓が 閉めて あります (ai đó đóng).'
+        en: 'V-て あります with a transitive verb shows a state that someone left on purpose: 机の 上に メモが 置いて あります. Compare 窓が 閉まって います (just a state, intransitive verb) with 窓が 閉めて あります (someone closed it).',
+        vi: 'V-て あります dùng với ngoại động từ, cho biết ai đó đã cố ý làm và để nguyên trạng thái đó: 机の 上に メモが 置いて あります. So sánh 窓が 閉まって います (chỉ trạng thái, nội động từ) với 窓が 閉めて あります (có người đã đóng).'
       },
       explanationRuby: [
         { base: '机', reading: 'つくえ' },

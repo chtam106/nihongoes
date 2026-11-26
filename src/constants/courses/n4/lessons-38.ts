@@ -90,7 +90,7 @@ export const n4Lesson38: Lesson = {
       kana: 'つきます',
       partOfSpeech: 'verb',
       romaji: 'tsukimasu',
-      meaning: { en: 'to lie [うそを～: a lie]', vi: 'nói dối' }
+      meaning: { en: 'to lie [うそを～: a lie]', vi: 'nói [うそを～: dối]' }
     },
     {
       kana: 'きもちがいい',
@@ -742,22 +742,16 @@ export const n4Lesson38: Lesson = {
         vi: 'Thói quen với の (なれます, 忘れます)'
       },
       explanation: {
-        en: 'For habitual actions, の appears before なれます or 忘れました: 牛乳を 買う のに なりました, 車の 窓を 閉める のを 忘れました.',
-        vi: 'Với thói quen, の đứng trước なれます hoặc 忘れました: 牛乳を 買う のに なりました, 車の 窓を 閉める のを 忘れました.'
+        en: 'の turns a verb into a noun before 慣れます (get used to, with に) and 忘れます (forget, with を): 朝 早く 起きる のに 慣れました, 車の 窓を 閉める のを 忘れました.',
+        vi: 'の biến động từ thành danh từ trước 慣れます (quen với, dùng に) và 忘れます (quên, dùng を): 朝 早く 起きる のに 慣れました, 車の 窓を 閉める のを 忘れました.'
       },
       explanationRuby: [
+        { base: '慣', reading: 'な' },
         { base: '忘', reading: 'わす' },
-        { base: '牛', reading: 'ぎゅう' },
-        { base: '乳', reading: 'にゅう' },
-        { base: '買', reading: 'か' },
-        { base: '車', reading: 'くるま' },
-        { base: '窓', reading: 'まど' },
-        { base: '閉', reading: 'し' },
-        { base: '忘', reading: 'わす' },
-        { base: '忘', reading: 'わす' },
-        { base: '牛', reading: 'ぎゅう' },
-        { base: '乳', reading: 'にゅう' },
-        { base: '買', reading: 'か' },
+        { base: '朝', reading: 'あさ' },
+        { base: '早', reading: 'はや' },
+        { base: '起', reading: 'お' },
+        { base: '慣', reading: 'な' },
         { base: '車', reading: 'くるま' },
         { base: '窓', reading: 'まど' },
         { base: '閉', reading: 'し' },
@@ -783,15 +777,15 @@ export const n4Lesson38: Lesson = {
       highlights: ['知', 'て', 'い', 'ます', 'か'],
       title: { en: 'Do you know...? (知っていますか)', vi: 'Anh/chị có biết...? (知っていますか)' },
       explanation: {
-        en: '知っていますか asks if the listener already knows a fact. 知っていませんか invites new information the listener may not know yet. Answers: 知っています / 知りません.',
-        vi: '知っていますか hỏi người nghe đã biết sự thật chưa. 知っていませんか mời thông tin mới. Trả lời: 知っています / 知りません.'
+        en: 'Plain form + の を 知っていますか asks whether the listener knows a fact: 田中さんが 結婚した のを 知っていますか. Answer with はい、知っています or いいえ、知りませんでした.',
+        vi: 'Thể thường + の を 知っていますか hỏi người nghe có biết một sự việc không: 田中さんが 結婚した のを 知っていますか. Trả lời: はい、知っています hoặc いいえ、知りませんでした.'
       },
       explanationRuby: [
         { base: '知', reading: 'し' },
-        { base: '知', reading: 'し' },
-        { base: '知', reading: 'し' },
-        { base: '知', reading: 'し' },
-        { base: '知', reading: 'し' },
+        { base: '田', reading: 'た' },
+        { base: '中', reading: 'なか' },
+        { base: '結', reading: 'けっ' },
+        { base: '婚', reading: 'こん' },
         { base: '知', reading: 'し' },
         { base: '知', reading: 'し' },
         { base: '知', reading: 'し' }
@@ -829,30 +823,19 @@ export const n4Lesson38: Lesson = {
       highlights: ['時'],
       title: { en: 'When (時)', vi: 'Khi (時)' },
       explanation: {
-        en: '時 marks when something happens: 日本に 来た 時, 小学校の 時. It can clarify or correct what was said: 生まれた のは チェンマイ です (not where you assumed).',
-        vi: '時 chỉ thời điểm: 日本に 来た 時, 小学校の 時. Có thể làm rõ hoặc sửa thông tin: 生まれた のは チェンマイ です.'
+        en: '時 follows the plain form or N の to mark a point in time: 日本に 来た 時, 小学校の 時.',
+        vi: '時 đứng sau thể thường hoặc N の để chỉ thời điểm: 日本に 来た 時, 小学校の 時.'
       },
       explanationRuby: [
-        { base: '時', reading: 'じ' },
-        { base: '日', reading: 'か' },
+        { base: '時', reading: 'とき' },
+        { base: '日', reading: 'に' },
         { base: '本', reading: 'ほん' },
         { base: '来', reading: 'き' },
-        { base: '時', reading: 'じ' },
+        { base: '時', reading: 'とき' },
         { base: '小', reading: 'しょう' },
         { base: '学', reading: 'がっ' },
         { base: '校', reading: 'こう' },
-        { base: '時', reading: 'じ' },
-        { base: '生', reading: 'う' },
-        { base: '時', reading: 'じ' },
-        { base: '日', reading: 'か' },
-        { base: '本', reading: 'ほん' },
-        { base: '来', reading: 'き' },
-        { base: '時', reading: 'じ' },
-        { base: '小', reading: 'しょう' },
-        { base: '学', reading: 'がっ' },
-        { base: '校', reading: 'こう' },
-        { base: '時', reading: 'じ' },
-        { base: '生', reading: 'う' }
+        { base: '時', reading: 'とき' }
       ],
       examples: [
         {
@@ -878,18 +861,13 @@ export const n4Lesson38: Lesson = {
       highlights: ['の', 'に'],
       title: { en: 'Contrast with のに', vi: 'Đối lập với のに' },
       explanation: {
-        en: 'のに shows unexpected result: 3日しか 書かなかった のに、続ける のは 難しい. Often used when effort and outcome do not match.',
-        vi: 'のに thể hiện kết quả trái mong đợi: 3日しか 書かなかった のに、続ける のは 難しい. Thường dùng khi nỗ lực và kết quả không khớp.'
+        en: 'のに joins two clauses when the outcome goes against expectations, often with regret or frustration: 約束した のに、来ませんでした.',
+        vi: 'のに nối hai vế khi kết quả trái với mong đợi, thường kèm cảm giác tiếc nuối hay bất mãn: 約束した のに、来ませんでした.'
       },
       explanationRuby: [
-        { base: '日', reading: 'か' },
-        { base: '書', reading: 'か' },
-        { base: '続', reading: 'つづ' },
-        { base: '難', reading: 'むずか' },
-        { base: '日', reading: 'か' },
-        { base: '書', reading: 'か' },
-        { base: '続', reading: 'つづ' },
-        { base: '難', reading: 'むずか' }
+        { base: '約', reading: 'やく' },
+        { base: '束', reading: 'そく' },
+        { base: '来', reading: 'き' }
       ],
       examples: [
         {

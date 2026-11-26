@@ -170,14 +170,6 @@ export const n4Lesson46: Lesson = {
       ruby: [{ base: '今', reading: 'いま' }]
     },
     {
-      kana: 'いま いいですか。',
-      partOfSpeech: 'expression',
-      kanji: '今 いいですか。',
-      romaji: 'Ima ii desu ka.',
-      meaning: { en: 'Is now a good time?', vi: 'Bây giờ có nói chuyện được không?' },
-      ruby: [{ base: '今', reading: 'いま' }]
-    },
-    {
       kana: 'ガスサービスセンター',
       partOfSpeech: 'noun',
       romaji: 'gasu sābisu sentā',
