@@ -6,8 +6,8 @@ import {
   dayNumber,
   EMPTY_REVIEW_STORE,
   FLASHCARD_REVIEWS_KEY,
+  recordMiss,
   sanitizeReviewStore,
-  suspendCard,
   type ReviewGrade
 } from '@/constants/flashcards/srs.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
@@ -27,12 +27,20 @@ export function useFlashcardReviews() {
     [setStore]
   );
 
-  const skip = useCallback(
-    (cardId: string) => {
-      setStore((previous) => suspendCard(previous, cardId, dayNumber()));
+  const recordMisses = useCallback(
+    (cardIds: readonly string[]) => {
+      if (cardIds.length === 0) {
+        return;
+      }
+
+      setStore((previous) => {
+        const today = dayNumber();
+
+        return cardIds.reduce((next, cardId) => recordMiss(next, cardId, today), previous);
+      });
     },
     [setStore]
   );
 
-  return { store, grade, skip };
+  return { store, grade, recordMisses };
 }

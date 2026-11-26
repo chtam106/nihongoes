@@ -52,7 +52,8 @@ export const flashcards = {
   reviewIntro:
     'Mỗi card được đưa ra đúng lúc bạn sắp quên: card đã nhớ sẽ quay lại muộn dần, card chưa nhớ sẽ quay lại sớm.',
   reviewHowTo:
-    'Nhìn mặt trước và tự nhớ đáp án. Bấm vào card để lật xem đáp án. Nếu nghĩ ra đúng thì chọn Đã nhớ, card sẽ quay lại sau 3, 8, 20, 50... ngày. Nếu không thì chọn Chưa nhớ, card sẽ quay lại vào ngày mai. Card không cần học nữa thì bấm Không cần ôn lại. Phím 1, 2, 3 để chọn nhanh.',
+    'Nhìn mặt trước và tự nhớ đáp án. Bấm vào card để lật xem đáp án. Nếu nghĩ ra đúng thì chọn Đã nhớ, card sẽ quay lại sau 3, 8, 20, 50... ngày. Nếu không thì chọn Chưa nhớ, card sẽ quay lại vào ngày mai. Card đã thuộc lòng thì chọn Đã nhớ kĩ, card sẽ quay lại sau 6 tháng. Phím 1, 2, 3 để chọn nhanh.',
+  missesQueued: 'Các card trả lời sai sẽ được ôn lại vào ngày mai trong',
   reviewDueToday:
     '{count, plural, =0 {Hôm nay không có card nào cần ôn.} other {Hôm nay có # card cần ôn.}}',
   reviewStart: 'Ôn ngay',
@@ -60,7 +61,7 @@ export const flashcards = {
   reviewGradeLabel: 'Bạn có nhớ ra đáp án không?',
   reviewAgain: 'Chưa nhớ',
   reviewGood: 'Đã nhớ',
-  reviewSkip: 'Không cần ôn lại',
+  reviewKnown: 'Đã nhớ kĩ',
   reviewIntervalTomorrow: 'ôn lại ngày mai',
   reviewIntervalDays: 'ôn lại sau {count} ngày',
   reviewIntervalMonths: 'ôn lại sau {count} tháng',

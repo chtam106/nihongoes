@@ -4,6 +4,8 @@ import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import type { Locale } from '@/i18n/translations.ts';
 import type { QuizSegmentResult } from '@/components/quiz-progress-bar';
 import type { QuizMiss } from '@/components/quiz-miss-list';
+import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
+import { useReviewMissedCards } from '@/features/flashcards/use-review-missed-cards.ts';
 import {
   createVocabMatchSession,
   createVocabSession,
@@ -79,6 +81,7 @@ export function useVocabQuiz({
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
   const [finished, setFinished] = useState(false);
+  useReviewMissedCards(misses);
 
   const isLast = total > 0 && questionNumber >= total - 1;
 
@@ -201,6 +204,7 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
   const [selectedWordId, setSelectedWordId] = useState<string | null>(null);
   const [selectedMeaningId, setSelectedMeaningId] = useState<string | null>(null);
   const [batchVisible, setBatchVisible] = useState(true);
+  const { recordMisses } = useFlashcardReviews();
 
   useEffect(() => {
     activePairsRef.current = activePairs;
@@ -319,6 +323,11 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
     if (wordId === meaningId) {
       applyCorrectMatch(wordId);
       return;
+    }
+
+    if (!missedPairIdsRef.current.has(wordId)) {
+      const cardId = activePairsRef.current.find((pair) => pair.id === wordId)?.cardId;
+      recordMisses(cardId ? [cardId] : []);
     }
 
     missedPairIdsRef.current.add(wordId);
