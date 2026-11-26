@@ -1,3 +1,4 @@
+import { routes } from '@/constants/routes.ts';
 import type { Lesson } from '@/constants/courses/types.ts';
 
 /** Minna no Nihongo Shokyu I - Lesson 17 (ない形, obligations, health). */
@@ -596,31 +597,33 @@ export const n5Lesson17: Lesson = {
       highlights: ['ない'],
       title: { en: 'Negative form (V-ない形)', vi: 'Thể phủ định (V-ない形)' },
       explanation: {
-        en: 'Drop ます and add ない to make the plain negative. Group I: 書き→書かない, 読み→読まない, 待ち→待たない; Group II: 食べ→食べない; Group III: する→しない, 来る→来ない. Add です for polite speech.',
-        vi: 'Bỏ ます, thêm ない để phủ định thân mật. Nhóm I: 書き→書かない, 読み→読まない, 待ち→待たない; nhóm II: 食べ→食べない; nhóm III: する→しない, 来る→来ない. Thêm です để nói lịch sự.'
+        en: 'The ない form is the plain (casual) negative, used with friends and family: 書きます→書かない, 食べます→食べない, 来ます→来ない. Polite speech still uses ～ません; this lesson builds ないでください, なければなりません and なくてもいいです on the ない form.',
+        vi: 'Thể ない là cách nói phủ định thân mật, dùng với bạn bè, người nhà: 書きます→書かない, 食べます→食べない, 来ます→来ない. Khi nói lịch sự vẫn dùng ～ません; thể ない còn là nền để ghép các mẫu ないでください, なければなりません, なくてもいいです trong bài này.'
       },
       explanationRuby: [
         { base: '書', reading: 'か' },
         { base: '書', reading: 'か' },
-        { base: '読', reading: 'よ' },
-        { base: '読', reading: 'よ' },
-        { base: '待', reading: 'ま' },
-        { base: '待', reading: 'た' },
         { base: '食', reading: 'た' },
         { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
-        { base: '来', reading: 'き' }
+        { base: '来', reading: 'こ' }
       ],
+      link: {
+        href: `${routes.practice.verbs.nai}#guide`,
+        label: {
+          en: 'How to change the ます form to the ない form',
+          vi: 'Xem cách đổi từ thể ます sang thể ない'
+        }
+      },
       examples: [
         {
-          jp: '私は 今日 会社へ 行きません。',
-          romaji: 'Watashi wa kyō kaisha e ikimasen.',
+          jp: '今日は 会社へ 行かない。',
+          romaji: 'Kyō wa kaisha e ikanai.',
           meaning: {
             en: 'I am not going to the office today.',
             vi: 'Hôm nay tôi không đi làm.'
           },
           ruby: [
-            { base: '私', reading: 'わたし' },
             { base: '今', reading: 'きょ' },
             { base: '日', reading: 'う' },
             { base: '会', reading: 'かい' },
@@ -629,34 +632,26 @@ export const n5Lesson17: Lesson = {
           ]
         },
         {
-          jp: '風邪を ひきましたから、出かけません。',
-          romaji: 'Kaze o hikimashita kara, dekakemasen.',
+          jp: '朝ごはんを 食べない。',
+          romaji: 'Asagohan o tabenai.',
+          meaning: { en: 'I do not eat breakfast.', vi: 'Tôi không ăn sáng.' },
+          ruby: [
+            { base: '朝', reading: 'あさ' },
+            { base: '食', reading: 'た' }
+          ]
+        },
+        {
+          jp: '田中さんは パーティーに 来ない。',
+          romaji: 'Tanaka-san wa pātī ni konai.',
           meaning: {
-            en: 'I caught a cold, so I am not going out.',
-            vi: 'Tôi bị cảm nên không ra ngoài.'
+            en: 'Mr. Tanaka is not coming to the party.',
+            vi: 'Anh Tanaka không đến bữa tiệc.'
           },
           ruby: [
-            { base: '風', reading: 'か' },
-            { base: '邪', reading: 'ぜ' },
-            { base: '出', reading: 'で' }
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '来', reading: 'こ' }
           ]
-        },
-        {
-          jp: '薬は 飲みませんか。',
-          romaji: 'Kusuri wa nomimasen ka.',
-          meaning: { en: 'Do you not take medicine?', vi: 'Anh/chị không uống thuốc à?' },
-          dialogueGroup: 'medicine',
-          ruby: [
-            { base: '薬', reading: 'くす' },
-            { base: '飲', reading: 'の' }
-          ]
-        },
-        {
-          jp: 'いいえ、飲みます。',
-          romaji: 'Iie, nomimasu.',
-          meaning: { en: 'No, I do take it.', vi: 'Không, tôi uống.' },
-          dialogueGroup: 'medicine',
-          ruby: [{ base: '飲', reading: 'の' }]
         }
       ]
     },

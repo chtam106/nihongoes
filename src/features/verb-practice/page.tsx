@@ -14,6 +14,7 @@ import type { QuizMiss } from '@/components/quiz-miss-list';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { VerbMode, VerbPracticeGroup, VerbQuestion } from './verbs.ts';
 import { createVerbQuizDeck, displayVerbForm } from './verbs.ts';
+import { VerbGuide } from './verb-guide.tsx';
 
 type VerbPracticePageProps = {
   mode: VerbMode;
@@ -93,6 +94,7 @@ export function VerbPracticePage({ mode, groups, initialDeck }: VerbPracticePage
         {pageTitle}
       </Heading>
       <Stack spacing={3} sx={{ maxWidth: 760 }}>
+        <VerbGuide mode={mode} />
         {!finished && (
           <>
             <Box>

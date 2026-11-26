@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import { Box, Card, CardContent, Link, Stack, Typography } from '@mui/material';
+import { Link as LocaleHref } from '@/i18n/navigation.tsx';
 import type { GrammarExample, GrammarPoint } from '@/constants/courses/types.ts';
 import { DIALOGUE_SPEAKER_COLORS } from '@/constants/dialogue-speaker-colors.ts';
 import {
@@ -247,8 +248,15 @@ export function GrammarPointCard({ point, index }: GrammarPointCardProps) {
           ruby={point.explanationRuby}
           variant="body2"
           color="text.secondary"
-          sx={{ mb: point.examples.length > 0 ? 1.5 : 0 }}
+          sx={{ mb: point.examples.length > 0 || point.link ? 1.5 : 0 }}
         />
+        {point.link && (
+          <Typography variant="body2" sx={{ mb: point.examples.length > 0 ? 1.5 : 0 }}>
+            <Link component={LocaleHref} href={point.link.href} color="primary" underline="hover">
+              {point.link.label[locale]} →
+            </Link>
+          </Typography>
+        )}
 
         <ExampleList examples={point.examples} />
 
