@@ -6,50 +6,54 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
       pattern: 'Imperative / Prohibitive',
       items: [
         {
-          prompt: { en: 'Run away!', vi: 'Chạy đi!' },
-          jp: '逃げろ！危ないから 逃げます。',
+          prompt: { en: 'Fire! Get out, quick!', vi: 'Cháy rồi! Chạy mau!' },
+          jp: '火事だ！早く 逃げろ！',
           ruby: [
-            { base: '逃', reading: 'に' },
-            { base: '危', reading: 'あぶ' },
+            { base: '火', reading: 'か' },
+            { base: '事', reading: 'じ' },
+            { base: '早', reading: 'はや' },
             { base: '逃', reading: 'に' }
           ]
         },
         {
-          prompt: { en: 'Do not make noise!', vi: 'Đừng làm ồn!' },
-          jp: '騒ぐな！教室で 騒ぎます。',
+          prompt: {
+            en: 'Do not make noise inside the hospital.',
+            vi: 'Không được làm ồn trong bệnh viện.'
+          },
+          jp: '病院の 中で 騒ぐな。',
           ruby: [
-            { base: '騒', reading: 'さわ' },
-            { base: '教', reading: 'きょう' },
-            { base: '室', reading: 'しつ' },
+            { base: '病', reading: 'びょう' },
+            { base: '院', reading: 'いん' },
+            { base: '中', reading: 'なか' },
             { base: '騒', reading: 'さわ' }
           ]
         },
         {
-          prompt: { en: 'Throw the ball!', vi: 'Ném bóng đi!' },
-          jp: 'ボールを 投げろ！ボールを 投げます。',
+          prompt: { en: 'Come on! Run faster!', vi: 'Cố lên! Chạy nhanh nữa lên!' },
+          jp: 'がんばれ！もっと 速く 走れ！',
           ruby: [
-            { base: '投', reading: 'な' },
-            { base: '投', reading: 'な' }
+            { base: '速', reading: 'はや' },
+            { base: '走', reading: 'はし' }
           ]
         },
         {
-          prompt: { en: 'Keep the rules!', vi: 'Giữ quy tắc!' },
-          jp: '規則を 守れ！規則を 守ります。',
+          prompt: { en: 'Look out! Stop!', vi: 'Nguy hiểm! Dừng lại!' },
+          jp: '危ない！止まれ！',
           ruby: [
-            { base: '規', reading: 'き' },
-            { base: '則', reading: 'そく' },
-            { base: '守', reading: 'まも' },
-            { base: '規', reading: 'き' },
-            { base: '則', reading: 'そく' },
-            { base: '守', reading: 'まも' }
+            { base: '危', reading: 'あぶ' },
+            { base: '止', reading: 'と' }
           ]
         },
         {
-          prompt: { en: 'Do not give up!', vi: 'Đừng bỏ cuộc!' },
-          jp: 'あきらめるな！試合を あきらめます。',
+          prompt: {
+            en: 'The game is not over yet. Do not give up!',
+            vi: 'Trận đấu vẫn chưa kết thúc. Đừng bỏ cuộc!'
+          },
+          jp: '試合は まだ 終わって いない。あきらめるな！',
           ruby: [
             { base: '試', reading: 'し' },
-            { base: '合', reading: 'あい' }
+            { base: '合', reading: 'あい' },
+            { base: '終', reading: 'お' }
           ]
         }
       ]
@@ -58,52 +62,66 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
       pattern: 'V-て なさい',
       items: [
         {
-          prompt: { en: 'Pay attention to cars.', vi: 'Hãy chú ý xe.' },
-          jp: '車に 注意しなさい。注意します。',
+          prompt: {
+            en: 'Watch out for cars when you cross the road.',
+            vi: 'Khi qua đường phải chú ý xe cộ.'
+          },
+          jp: '道を 渡る ときは、車に 注意しなさい。',
           ruby: [
+            { base: '道', reading: 'みち' },
+            { base: '渡', reading: 'わた' },
             { base: '車', reading: 'くるま' },
-            { base: '注', reading: 'ちゅう' },
-            { base: '意', reading: 'い' },
             { base: '注', reading: 'ちゅう' },
             { base: '意', reading: 'い' }
           ]
         },
         {
-          prompt: { en: 'Come back to your seat.', vi: 'Quay lại chỗ ngồi đi.' },
-          jp: '席に 戻りなさい。席を 外します。すぐ 戻ります。',
+          prompt: {
+            en: 'Class is starting. Go back to your seat quickly.',
+            vi: 'Sắp vào học rồi. Mau về chỗ ngồi đi.'
+          },
+          jp: '授業が 始まりますよ。早く 席に 戻りなさい。',
           ruby: [
+            { base: '授', reading: 'じゅ' },
+            { base: '業', reading: 'ぎょう' },
+            { base: '始', reading: 'はじ' },
+            { base: '早', reading: 'はや' },
             { base: '席', reading: 'せき' },
-            { base: '戻', reading: 'もど' },
-            { base: '席', reading: 'せき' },
-            { base: '外', reading: 'はず' },
             { base: '戻', reading: 'もど' }
           ]
         },
         {
-          prompt: { en: 'Attend the meeting.', vi: 'Hãy dự họp.' },
-          jp: '会議に 出席しなさい。出席します。',
+          prompt: {
+            en: "It is already ten o'clock. Go to bed now.",
+            vi: '10 giờ rồi đấy. Mau đi ngủ đi.'
+          },
+          jp: 'もう 10時ですよ。早く 寝なさい。',
           ruby: [
-            { base: '会', reading: 'かい' },
-            { base: '議', reading: 'ぎ' },
-            { base: '出', reading: 'しゅっ' },
-            { base: '席', reading: 'せき' },
-            { base: '出', reading: 'しゅっ' },
-            { base: '席', reading: 'せき' }
+            { base: '時', reading: 'じ' },
+            { base: '早', reading: 'はや' },
+            { base: '寝', reading: 'ね' }
           ]
         },
         {
-          prompt: { en: 'Recycle the bottles.', vi: 'Hãy tái chế chai.' },
-          jp: 'ビンを リサイクルしなさい。リサイクルします。'
+          prompt: {
+            en: 'Do your homework before you play.',
+            vi: 'Làm bài tập trước rồi hãy đi chơi.'
+          },
+          jp: '遊ぶ 前に 宿題を しなさい。',
+          ruby: [
+            { base: '遊', reading: 'あそ' },
+            { base: '前', reading: 'まえ' },
+            { base: '宿', reading: 'しゅく' },
+            { base: '題', reading: 'だい' }
+          ]
         },
         {
-          prompt: { en: 'Help each other more.', vi: 'Hãy giúp nhau nhiều hơn.' },
-          jp: 'もっと 助け合いなさい。助け合います。',
-          ruby: [
-            { base: '助', reading: 'たす' },
-            { base: '合', reading: 'あ' },
-            { base: '助', reading: 'たす' },
-            { base: '合', reading: 'あ' }
-          ]
+          prompt: {
+            en: 'Do not fight. Get along with each other.',
+            vi: 'Đừng cãi nhau, hãy chơi hòa thuận với nhau.'
+          },
+          jp: 'けんかしないで、仲よく しなさい。',
+          ruby: [{ base: '仲', reading: 'なか' }]
         }
       ]
     },
@@ -131,11 +149,8 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'The exit sign is read as "deguchi".',
-            vi: 'Biển lối ra đọc là "deguchi".'
-          },
-          jp: '出口は「でぐち」と 読みます。',
+          prompt: { en: '出口 is read "deguchi".', vi: 'Chữ 出口 đọc là "deguchi".' },
+          jp: '「出口」は「でぐち」と 読みます。',
           ruby: [
             { base: '出', reading: 'で' },
             { base: '口', reading: 'ぐち' },
@@ -172,16 +187,13 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'The emergency exit is written as "hijoguchi".',
-            vi: 'Cửa thoát hiểm viết là "hijoguchi".'
-          },
-          jp: '非常口は「ひじょうぐち」と 書いて あります。',
+          prompt: { en: '非常口 is read "hijōguchi".', vi: 'Chữ 非常口 đọc là "hijōguchi".' },
+          jp: '「非常口」は「ひじょうぐち」と 読みます。',
           ruby: [
             { base: '非', reading: 'ひ' },
             { base: '常', reading: 'じょう' },
             { base: '口', reading: 'ぐち' },
-            { base: '書', reading: 'か' }
+            { base: '読', reading: 'よ' }
           ]
         }
       ]
@@ -209,10 +221,10 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'What kind of meaning does this mark have?',
-            vi: 'Ký hiệu này nghĩa thế nào?'
+            en: 'What does this mark mean? ...It means "discount".',
+            vi: 'Ký hiệu này nghĩa là gì? ...Nghĩa là "giảm giá".'
           },
-          jp: 'この マークは どういう ～意味ですか。割引 という 意味です。',
+          jp: 'この マークは どういう 意味ですか。……「割引」という 意味です。',
           ruby: [
             { base: '意', reading: 'い' },
             { base: '味', reading: 'み' },
@@ -224,21 +236,18 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: '"In use" means someone is using it now.',
-            vi: '"Dang su dung" nghĩa là đang dùng.'
+            en: '使用中 means someone is using it right now.',
+            vi: '"使用中" nghĩa là đang có người sử dụng.'
           },
-          jp: '「使用中」は いま 使っている という 意味です。会議～中も 同じです。',
+          jp: '「使用中」は 今 だれかが 使っている という 意味です。',
           ruby: [
             { base: '使', reading: 'し' },
             { base: '用', reading: 'よう' },
             { base: '中', reading: 'ちゅう' },
+            { base: '今', reading: 'いま' },
             { base: '使', reading: 'つか' },
             { base: '意', reading: 'い' },
-            { base: '味', reading: 'み' },
-            { base: '会', reading: 'かい' },
-            { base: '議', reading: 'ぎ' },
-            { base: '中', reading: 'ちゅう' },
-            { base: '同', reading: 'おな' }
+            { base: '味', reading: 'み' }
           ]
         },
         {
@@ -279,46 +288,50 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The police said a parking violation occurred.',
-            vi: 'Cảnh sát nói đã xảy ra đỗ xe sai.'
+            en: 'The police officer said parking is not allowed here.',
+            vi: 'Cảnh sát nói ở đây cấm đỗ xe.'
           },
-          jp: '警察は 駐車違反が 起きたと 言っていました。罰金が あります。',
+          jp: '警察の 人が、ここは 駐車禁止だと 言っていました。',
           ruby: [
             { base: '警', reading: 'けい' },
             { base: '察', reading: 'さつ' },
+            { base: '人', reading: 'ひと' },
             { base: '駐', reading: 'ちゅう' },
             { base: '車', reading: 'しゃ' },
-            { base: '違', reading: 'い' },
-            { base: '反', reading: 'はん' },
-            { base: '起', reading: 'お' },
-            { base: '言', reading: 'い' },
-            { base: '罰', reading: 'ばっ' },
-            { base: '金', reading: 'きん' }
+            { base: '禁', reading: 'きん' },
+            { base: '止', reading: 'し' },
+            { base: '言', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'He said the ceremony would begin in about 10 minutes.',
-            vi: 'Anh ấy nói lễ bắt đầu khoảng 10 phút nữa.'
+            en: 'The staff member said the ceremony would start in about ten minutes.',
+            vi: 'Người phụ trách nói buổi lễ khoảng 10 phút nữa sẽ bắt đầu.'
           },
-          jp: '式が 10分～ほどで 始まると 言っていました。始まります。',
+          jp: '係の 人が、式は 10分ほどで 始まると 言っていました。',
           ruby: [
+            { base: '係', reading: 'かかり' },
+            { base: '人', reading: 'ひと' },
             { base: '式', reading: 'しき' },
             { base: '分', reading: 'ぷん' },
             { base: '始', reading: 'はじ' },
-            { base: '言', reading: 'い' },
-            { base: '始', reading: 'はじ' }
+            { base: '言', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'She said the deadline is no good any more.',
-            vi: 'Cô ấy nói hạn chót không còn được nữa.'
+            en: 'The teacher said the report is due Friday.',
+            vi: 'Thầy giáo nói hạn nộp báo cáo là thứ Sáu.'
           },
-          jp: '締め切りは もう だめだと 言っていました。',
+          jp: '先生が、レポートの 締め切りは 金曜日だと 言っていました。',
           ruby: [
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
             { base: '締', reading: 'し' },
             { base: '切', reading: 'き' },
+            { base: '金', reading: 'きん' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
             { base: '言', reading: 'い' }
           ]
         },
@@ -337,16 +350,19 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'She said there are about 20 minutes left.',
-            vi: 'Cô ấy nói còn khoảng 20 phút.'
+            en: 'The train has stopped because of an accident, but they said it would move in 20 minutes.',
+            vi: 'Tàu đang dừng vì tai nạn, nhưng họ nói 20 phút nữa sẽ chạy.'
           },
-          jp: 'あと～20分だと 言っていました。事故が 起きます。',
+          jp: '事故で 電車が 止まっていますが、あと 20分で 動くと 言っていました。',
           ruby: [
-            { base: '分', reading: 'ぷん' },
-            { base: '言', reading: 'い' },
             { base: '事', reading: 'じ' },
             { base: '故', reading: 'こ' },
-            { base: '起', reading: 'お' }
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '止', reading: 'と' },
+            { base: '分', reading: 'ぷん' },
+            { base: '動', reading: 'うご' },
+            { base: '言', reading: 'い' }
           ]
         }
       ]
@@ -357,65 +373,79 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Could you tell Tanaka that I will pass on the greeting?',
-            vi: 'Nhờ nói với Tanaka là tôi sẽ chuyển lời chào?'
+            en: 'Could you tell Mr. Tanaka the meeting starts at three?',
+            vi: 'Anh nhắn giúp anh Tanaka là cuộc họp bắt đầu từ 3 giờ được không?'
           },
-          jp: '田中さんに あいさつを すると 伝えていただけませんか。',
+          jp: '田中さんに、会議は 3時からだと 伝えていただけませんか。',
           ruby: [
             { base: '田', reading: 'た' },
             { base: '中', reading: 'なか' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '時', reading: 'じ' },
             { base: '伝', reading: 'つた' }
           ]
         },
         {
           prompt: {
-            en: 'Could you tell them the other person feels sad?',
-            vi: 'Nhờ nói đối phương cảm thấy buồn?'
+            en: 'Could you tell the manager I will be a little late today?',
+            vi: 'Anh nhắn giúp trưởng phòng là hôm nay tôi đến muộn một chút được không?'
           },
-          jp: '相手は 悲しい 気持ちだと 伝えていただけませんか。',
+          jp: '部長に、今日は 少し 遅れると 伝えていただけませんか。',
           ruby: [
-            { base: '相', reading: 'あい' },
-            { base: '手', reading: 'て' },
-            { base: '悲', reading: 'かな' },
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' },
+            { base: '部', reading: 'ぶ' },
+            { base: '長', reading: 'ちょう' },
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '少', reading: 'すこ' },
+            { base: '遅', reading: 'おく' },
             { base: '伝', reading: 'つた' }
           ]
         },
         {
           prompt: {
-            en: 'Could you tell them it was originally free?',
-            vi: 'Nhờ nói vốn dĩ là miễn phí?'
+            en: 'Could you tell the customers that parking is free?',
+            vi: 'Anh báo giúp khách là bãi đỗ xe miễn phí được không?'
           },
-          jp: 'もともと 無料だと 伝えていただけませんか。伝えます。',
+          jp: 'お客様に、駐車場は 無料だと 伝えていただけませんか。',
           ruby: [
+            { base: '客', reading: 'きゃく' },
+            { base: '様', reading: 'さま' },
+            { base: '駐', reading: 'ちゅう' },
+            { base: '車', reading: 'しゃ' },
+            { base: '場', reading: 'じょう' },
             { base: '無', reading: 'む' },
             { base: '料', reading: 'りょう' },
-            { base: '伝', reading: 'つた' },
             { base: '伝', reading: 'つた' }
           ]
         },
         {
           prompt: {
-            en: 'Could you tell them a phone call came?',
-            vi: 'Nhờ nói là có điện thoại?'
+            en: 'Could you ask Mr. Yamada to call me back later?',
+            vi: 'Anh nhắn giúp anh Yamada lát nữa gọi lại cho tôi được không?'
           },
-          jp: '電話が あると 伝えていただけませんか。電話が あります。',
+          jp: '山田さんに、後で 電話を くださいと 伝えていただけませんか。',
           ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '田', reading: 'だ' },
+            { base: '後', reading: 'あと' },
             { base: '電', reading: 'でん' },
             { base: '話', reading: 'わ' },
-            { base: '伝', reading: 'つた' },
-            { base: '電', reading: 'でん' },
-            { base: '話', reading: 'わ' }
+            { base: '伝', reading: 'つた' }
           ]
         },
         {
           prompt: {
-            en: 'Could you tell them it is not allowed?',
-            vi: 'Nhờ nói là không được?'
+            en: 'Could you tell the children they must not swim in the river?',
+            vi: 'Anh dặn giúp bọn trẻ là không được bơi ở sông nhé.'
           },
-          jp: 'だめだと 伝えていただけませんか。',
-          ruby: [{ base: '伝', reading: 'つた' }]
+          jp: '子どもたちに、川で 泳いでは いけないと 伝えていただけませんか。',
+          ruby: [
+            { base: '子', reading: 'こ' },
+            { base: '川', reading: 'かわ' },
+            { base: '泳', reading: 'およ' },
+            { base: '伝', reading: 'つた' }
+          ]
         }
       ]
     }

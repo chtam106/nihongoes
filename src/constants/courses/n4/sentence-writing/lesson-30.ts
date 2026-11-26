@@ -7,37 +7,40 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'A poster has been pasted on the wall.',
-            vi: 'Poster đã được dán trên tường.'
+            en: 'A big poster is put up on the classroom wall.',
+            vi: 'Trên tường lớp học có dán một tấm áp phích lớn.'
           },
-          jp: '壁に ポスターが はって あります。ポスターを はります。',
-          ruby: [{ base: '壁', reading: 'かべ' }]
+          jp: '教室の 壁に 大きな ポスターが はって あります。',
+          ruby: [
+            { base: '教', reading: 'きょう' },
+            { base: '室', reading: 'しつ' },
+            { base: '壁', reading: 'かべ' },
+            { base: '大', reading: 'おお' }
+          ]
         },
         {
           prompt: {
-            en: 'A calendar has been hung in the hallway.',
-            vi: 'Lịch đã được treo ở hành lang.'
+            en: "This month's calendar is hung in the hallway.",
+            vi: 'Ở hành lang có treo tờ lịch tháng này.'
           },
-          jp: '廊下に カレンダーが 掛けて あります。カレンダーを 掛けます。',
+          jp: '廊下に 今月の カレンダーが 掛けて あります。',
           ruby: [
             { base: '廊', reading: 'ろう' },
             { base: '下', reading: 'か' },
-            { base: '掛', reading: 'か' },
+            { base: '今', reading: 'こん' },
+            { base: '月', reading: 'げつ' },
             { base: '掛', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'A doll has been set as decoration at the entrance.',
-            vi: 'Búp bê đã được trang trí ở lối vào.'
+            en: 'A pretty doll is displayed at the entrance.',
+            vi: 'Ở lối vào có trưng một con búp bê đẹp.'
           },
-          jp: '玄関に 人形が 飾って あります。人形を 飾ります。',
+          jp: '玄関に きれいな 人形が 飾って あります。',
           ruby: [
             { base: '玄', reading: 'げん' },
             { base: '関', reading: 'かん' },
-            { base: '人', reading: 'にん' },
-            { base: '形', reading: 'ぎょう' },
-            { base: '飾', reading: 'かざ' },
             { base: '人', reading: 'にん' },
             { base: '形', reading: 'ぎょう' },
             { base: '飾', reading: 'かざ' }
@@ -45,49 +48,44 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'A vase has been arranged in the center.',
-            vi: 'Bình hoa đã được xếp ở chính giữa.'
+            en: 'A vase has been placed in the middle of the table.',
+            vi: 'Giữa bàn có đặt một bình hoa.'
           },
-          jp: '真ん中に 花瓶が 並べて あります。花瓶を 並べます。',
+          jp: 'テーブルの 真ん中に 花瓶が 置いて あります。',
           ruby: [
             { base: '真', reading: 'ま' },
             { base: '中', reading: 'なか' },
             { base: '花', reading: 'か' },
             { base: '瓶', reading: 'びん' },
-            { base: '並', reading: 'なら' },
-            { base: '花', reading: 'か' },
-            { base: '瓶', reading: 'びん' },
-            { base: '並', reading: 'なら' }
+            { base: '置', reading: 'お' }
           ]
         },
         {
           prompt: {
-            en: 'Trees have been planted around the pond.',
-            vi: 'Cây đã được trồng quanh ao.'
+            en: 'Cherry trees have been planted around the pond.',
+            vi: 'Xung quanh hồ có trồng cây anh đào.'
           },
-          jp: '池の 周りに 木が 植えて あります。木を 植えます。',
+          jp: '池の 周りに 桜の 木が 植えて あります。',
           ruby: [
             { base: '池', reading: 'いけ' },
             { base: '周', reading: 'まわ' },
-            { base: '木', reading: 'き' },
-            { base: '植', reading: 'う' },
+            { base: '桜', reading: 'さくら' },
             { base: '木', reading: 'き' },
             { base: '植', reading: 'う' }
           ]
         },
         {
           prompt: {
-            en: 'A notice has been put in the corner. A mirror is in the drawer.',
-            vi: 'Thông báo đặt ở góc. Gương ở ngăn kéo.'
+            en: 'The notices have been left in the corner of the reception desk.',
+            vi: 'Tờ thông báo được để ở góc quầy lễ tân.'
           },
-          jp: '隅に お知らせが 置いて あります。引き出しに 鏡が あります。',
+          jp: 'お知らせは 受付の 隅に 置いて あります。',
           ruby: [
-            { base: '隅', reading: 'すみ' },
             { base: '知', reading: 'し' },
-            { base: '置', reading: 'お' },
-            { base: '引', reading: 'ひ' },
-            { base: '出', reading: 'だ' },
-            { base: '鏡', reading: 'かがみ' }
+            { base: '受', reading: 'うけ' },
+            { base: '付', reading: 'つけ' },
+            { base: '隅', reading: 'すみ' },
+            { base: '置', reading: 'お' }
           ]
         }
       ]
@@ -97,91 +95,83 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I will put the backpack back in its original place in advance.',
-            vi: 'Tôi sẽ để ba lô lại chỗ cũ trước.'
+            en: 'Please put things back where they were after using them.',
+            vi: 'Dùng xong đồ thì hãy để lại chỗ cũ.'
           },
-          jp: 'リュックを 元の 所に 戻して おきます。リュックを 戻します。',
+          jp: '使った 物は 元の 所に 戻して おいて ください。',
           ruby: [
+            { base: '使', reading: 'つか' },
+            { base: '物', reading: 'もの' },
             { base: '元', reading: 'もと' },
             { base: '所', reading: 'ところ' },
-            { base: '戻', reading: 'もど' },
             { base: '戻', reading: 'もど' }
           ]
         },
         {
           prompt: {
-            en: 'I will pack the emergency kit bag in advance.',
-            vi: 'Tôi sẽ gom túi khẩn cấp trước.'
+            en: 'I will put water and a flashlight in the emergency kit ahead of time.',
+            vi: 'Tôi sẽ cho sẵn nước và đèn pin vào túi khẩn cấp.'
           },
-          jp: '非常袋を まとめて おきます。非常袋を まとめます。',
+          jp: '非常袋に 水と 懐中電灯を 入れて おきます。',
           ruby: [
             { base: '非', reading: 'ひ' },
             { base: '常', reading: 'じょう' },
             { base: '袋', reading: 'ぶくろ' },
-            { base: '非', reading: 'ひ' },
-            { base: '常', reading: 'じょう' },
-            { base: '袋', reading: 'ぶくろ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I will put the flashlight away ahead of time.',
-            vi: 'Tôi sẽ cất đèn pin trước.'
-          },
-          jp: '懐中電灯を しまって おきます。懐中電灯を しまいます。',
-          ruby: [
+            { base: '水', reading: 'みず' },
             { base: '懐', reading: 'かい' },
             { base: '中', reading: 'ちゅう' },
             { base: '電', reading: 'でん' },
             { base: '灯', reading: 'とう' },
-            { base: '懐', reading: 'かい' },
-            { base: '中', reading: 'ちゅう' },
-            { base: '電', reading: 'でん' },
-            { base: '灯', reading: 'とう' }
+            { base: '入', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'I will decide the class schedule in advance.',
-            vi: 'Tôi sẽ quyết định lịch giờ học trước.'
+            en: 'I have already put the winter clothes away.',
+            vi: 'Quần áo mùa đông tôi đã cất đi rồi.'
           },
-          jp: '授業の 予定を 決めて おきます。予定を 決めます。',
+          jp: '冬の 服は もう しまって おきました。',
           ruby: [
-            { base: '授', reading: 'じゅ' },
-            { base: '業', reading: 'ぎょう' },
-            { base: '予', reading: 'よ' },
-            { base: '定', reading: 'てい' },
-            { base: '決', reading: 'き' },
-            { base: '予', reading: 'よ' },
-            { base: '定', reading: 'てい' },
+            { base: '冬', reading: 'ふゆ' },
+            { base: '服', reading: 'ふく' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I will decide on a hotel before the trip.',
+            vi: 'Trước chuyến đi tôi sẽ chọn sẵn khách sạn.'
+          },
+          jp: '旅行の 前に、ホテルを 決めて おきます。',
+          ruby: [
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '前', reading: 'まえ' },
             { base: '決', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'I will preview and review the lecture in advance.',
-            vi: 'Tôi sẽ chuẩn bị bài và ôn tập bài giảng trước.'
+            en: "I will prepare for tomorrow's class in advance.",
+            vi: 'Tôi sẽ chuẩn bị bài trước cho giờ học ngày mai.'
           },
-          jp: '講義を 予習して おきます。講義を 復習します。予習します。',
+          jp: 'あしたの 授業の 予習を して おきます。',
           ruby: [
-            { base: '講', reading: 'こう' },
-            { base: '義', reading: 'ぎ' },
-            { base: '予', reading: 'よ' },
-            { base: '習', reading: 'しゅう' },
-            { base: '講', reading: 'こう' },
-            { base: '義', reading: 'ぎ' },
-            { base: '復', reading: 'ふく' },
-            { base: '習', reading: 'しゅう' },
+            { base: '授', reading: 'じゅ' },
+            { base: '業', reading: 'ぎょう' },
             { base: '予', reading: 'よ' },
             { base: '習', reading: 'しゅう' }
           ]
         },
         {
           prompt: {
-            en: 'Please leave the chairs as they are.',
-            vi: 'Hãy để ghế nguyên như thế.'
+            en: 'I will put the chairs away later, so please leave them as they are.',
+            vi: 'Ghế để lát nữa tôi dọn, cứ để nguyên đó nhé.'
           },
-          jp: 'いすは そのままに して おいて ください。そのままに します。'
+          jp: 'いすは 後で 片づけますから、そのままに して おいて ください。',
+          ruby: [
+            { base: '後', reading: 'あと' },
+            { base: '片', reading: 'かた' }
+          ]
         }
       ]
     },
@@ -219,27 +209,22 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I still live even in an emergency.',
-            vi: 'Lúc khẩn cấp tôi vẫn sống.'
+            en: 'It is already eleven, but the kids are still up.',
+            vi: 'Đã 11 giờ rồi mà bọn trẻ vẫn còn thức.'
           },
-          jp: '非常時も まだ 生活します。',
+          jp: 'もう 11時ですが、子どもは まだ 起きています。',
           ruby: [
-            { base: '非', reading: 'ひ' },
-            { base: '常', reading: 'じょう' },
             { base: '時', reading: 'じ' },
-            { base: '生', reading: 'せい' },
-            { base: '活', reading: 'かつ' }
+            { base: '子', reading: 'こ' },
+            { base: '起', reading: 'お' }
           ]
         },
         {
-          prompt: {
-            en: 'I am still happy. Then I wake up.',
-            vi: 'Tôi vẫn còn vui. Rồi tôi thức giấc.'
-          },
-          jp: 'まだ うれしいです。すると 目が 覚めます。',
+          prompt: { en: 'It is still raining.', vi: 'Trời vẫn còn mưa.' },
+          jp: '雨は まだ 降っています。',
           ruby: [
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'さ' }
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' }
           ]
         }
       ]
@@ -249,65 +234,70 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I put in a flashlight and a guidebook, and so on.',
-            vi: 'Tôi để đèn pin, sách hướng dẫn, v.v.'
+            en: 'I keep things like a flashlight and water in the emergency kit.',
+            vi: 'Trong túi khẩn cấp tôi để sẵn những thứ như đèn pin, nước.'
           },
-          jp: '懐中電灯～とか ガイドブック～とかを 入れます。',
+          jp: '非常袋には 懐中電灯とか 水とかを 入れて おきます。',
           ruby: [
+            { base: '非', reading: 'ひ' },
+            { base: '常', reading: 'じょう' },
+            { base: '袋', reading: 'ぶくろ' },
             { base: '懐', reading: 'かい' },
             { base: '中', reading: 'ちゅう' },
             { base: '電', reading: 'でん' },
             { base: '灯', reading: 'とう' },
+            { base: '水', reading: 'みず' },
             { base: '入', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'I decorate with dolls and vases, and so on.',
-            vi: 'Tôi trang trí bằng búp bê, bình hoa, v.v.'
+            en: 'I decorated the room with things like dolls and flowers.',
+            vi: 'Tôi trang trí phòng bằng những thứ như búp bê, hoa.'
           },
-          jp: '人形とか 花瓶とかを 飾ります。',
+          jp: '部屋に 人形とか 花とかを 飾りました。',
           ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
             { base: '人', reading: 'にん' },
             { base: '形', reading: 'ぎょう' },
-            { base: '花', reading: 'か' },
-            { base: '瓶', reading: 'びん' },
+            { base: '花', reading: 'はな' },
             { base: '飾', reading: 'かざ' }
           ]
         },
         {
           prompt: {
-            en: 'I use the trash can and the drawer, and so on.',
-            vi: 'Tôi dùng thùng rác, ngăn kéo, v.v.'
+            en: 'On my days off I do things like cleaning and laundry.',
+            vi: 'Ngày nghỉ tôi làm những việc như dọn dẹp, giặt giũ.'
           },
-          jp: 'ごみ箱とか 引き出しとかを 使います。',
+          jp: '休みの 日は 掃除とか 洗濯とかを します。',
           ruby: [
-            { base: '箱', reading: 'ばこ' },
-            { base: '引', reading: 'ひ' },
-            { base: '出', reading: 'だ' },
-            { base: '使', reading: 'つか' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'One day I dreamed of a round ball.',
-            vi: 'Một ngày nào đó tôi mơ thấy quả bóng tròn.'
-          },
-          jp: 'ある～日、丸い ボールの ような 夢を 見ます。',
-          ruby: [
+            { base: '休', reading: 'やす' },
             { base: '日', reading: 'ひ' },
-            { base: '丸', reading: 'まる' },
-            { base: '夢', reading: 'ゆめ' },
-            { base: '見', reading: 'み' }
+            { base: '掃', reading: 'そう' },
+            { base: '除', reading: 'じ' },
+            { base: '洗', reading: 'せん' },
+            { base: '濯', reading: 'たく' }
           ]
         },
         {
           prompt: {
-            en: 'I dislike meetings and lectures, and so on.',
-            vi: 'Tôi ghét họp và bài giảng, v.v.'
+            en: 'As for sports, I like things like soccer and tennis.',
+            vi: 'Về thể thao thì tôi thích mấy môn như bóng đá, quần vợt.'
           },
-          jp: 'ミーティングとか 講義とかは 嫌です。',
+          jp: 'スポーツは サッカーとか テニスとかが 好きです。',
+          ruby: [{ base: '好', reading: 'す' }]
+        },
+        {
+          prompt: {
+            en: 'I dislike things like long meetings and lectures.',
+            vi: 'Tôi ghét mấy thứ như họp hành, giờ giảng kéo dài.'
+          },
+          jp: '長い 会議とか 講義とかは 嫌です。',
           ruby: [
+            { base: '長', reading: 'なが' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
             { base: '講', reading: 'こう' },
             { base: '義', reading: 'ぎ' },
             { base: '嫌', reading: 'いや' }
@@ -356,27 +346,28 @@ export const n4Lesson30SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I do not go to the hallway either.',
-            vi: 'Tôi cũng không ra hành lang.'
+            en: 'I also tried going to the station, but my wallet was not there.',
+            vi: 'Tôi cũng đã thử ra ga, nhưng không thấy ví.'
           },
-          jp: '廊下へも 行きません。',
+          jp: '駅へも 行って みましたが、財布は ありませんでした。',
           ruby: [
-            { base: '廊', reading: 'ろう' },
-            { base: '下', reading: 'か' },
-            { base: '行', reading: 'い' }
+            { base: '駅', reading: 'えき' },
+            { base: '行', reading: 'い' },
+            { base: '財', reading: 'さい' },
+            { base: '布', reading: 'ふ' }
           ]
         },
         {
           prompt: {
-            en: 'In an emergency I use a backpack too.',
-            vi: 'Lúc khẩn cấp tôi cũng dùng ba lô.'
+            en: 'I run on this road even on rainy days.',
+            vi: 'Ngay cả ngày mưa tôi cũng chạy trên con đường này.'
           },
-          jp: '非常時にも リュックを 使います。',
+          jp: '雨の 日にも この 道を 走ります。',
           ruby: [
-            { base: '非', reading: 'ひ' },
-            { base: '常', reading: 'じょう' },
-            { base: '時', reading: 'じ' },
-            { base: '使', reading: 'つか' }
+            { base: '雨', reading: 'あめ' },
+            { base: '日', reading: 'ひ' },
+            { base: '道', reading: 'みち' },
+            { base: '走', reading: 'はし' }
           ]
         }
       ]

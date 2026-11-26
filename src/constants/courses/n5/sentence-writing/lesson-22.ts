@@ -30,40 +30,52 @@ export const n5Lesson22SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'This is a bright dining kitchen.',
-            vi: 'Đây là bếp kết hợp phòng ăn sáng sủa.'
+            en: 'This is the kitchen where I cook every day.',
+            vi: 'Đây là căn bếp nơi tôi nấu ăn mỗi ngày.'
           },
-          jp: 'これは 明るい ダイニングキッチンです。',
-          ruby: [{ base: '明', reading: 'あか' }]
+          jp: 'ここは 私が 毎日 料理を 作る 台所です。',
+          ruby: [
+            { base: '私', reading: 'わたし' },
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '料', reading: 'りょう' },
+            { base: '理', reading: 'り' },
+            { base: '作', reading: 'つく' },
+            { base: '台', reading: 'だい' },
+            { base: '所', reading: 'どころ' }
+          ]
+        },
+        {
+          prompt: { en: 'This is a cake my mother made.', vi: 'Đây là cái bánh mẹ tôi làm.' },
+          jp: 'これは 母が 作った ケーキです。',
+          ruby: [
+            { base: '母', reading: 'はは' },
+            { base: '作', reading: 'つく' }
+          ]
         },
         {
           prompt: {
-            en: 'This is a spacious Japanese-style room.',
-            vi: 'Đây là phòng kiểu Nhật rộng.'
+            en: 'I am looking for an apartment near the station.',
+            vi: 'Tôi đang tìm căn hộ gần ga.'
           },
-          jp: 'これは 広い 和室です。',
+          jp: '駅に 近い アパートを 探しています。',
           ruby: [
-            { base: '広', reading: 'ひろ' },
-            { base: '和', reading: 'わ' },
-            { base: '室', reading: 'しつ' }
+            { base: '駅', reading: 'えき' },
+            { base: '近', reading: 'ちか' },
+            { base: '探', reading: 'さが' }
           ]
         },
         {
-          prompt: { en: 'This is a large closet.', vi: 'Đây là tủ đựng đồ lớn.' },
-          jp: 'これは 大きい 押入れです。',
+          prompt: {
+            en: 'The futon I bought yesterday is very light.',
+            vi: 'Bộ chăn nệm tôi mua hôm qua rất nhẹ.'
+          },
+          jp: 'きのう 買った 布団は とても 軽いです。',
           ruby: [
-            { base: '大', reading: 'おお' },
-            { base: '押', reading: 'おし' },
-            { base: '入', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'This is a new futon.', vi: 'Đây là futon mới.' },
-          jp: 'これは 新しい 布団です。',
-          ruby: [
-            { base: '新', reading: 'あたら' },
+            { base: '買', reading: 'か' },
             { base: '布', reading: 'ふ' },
-            { base: '団', reading: 'とん' }
+            { base: '団', reading: 'とん' },
+            { base: '軽', reading: 'かる' }
           ]
         }
       ]
@@ -126,19 +138,6 @@ export const n5Lesson22SentenceWriting: LessonSentenceWriting = {
           },
           jp: 'これは 「おめでとうございます」と 書いた カードです。',
           ruby: [{ base: '書', reading: 'か' }]
-        },
-        {
-          prompt: {
-            en: 'The person who said "hmm" is Tanaka.',
-            vi: 'Người nói "ừm" là Tanaka.'
-          },
-          jp: '「うーん」と 言った 人は 田中さんです。',
-          ruby: [
-            { base: '言', reading: 'い' },
-            { base: '人', reading: 'ひと' },
-            { base: '田', reading: 'た' },
-            { base: '中', reading: 'なか' }
-          ]
         }
       ]
     },
@@ -169,52 +168,63 @@ export const n5Lesson22SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I made a promise to buy a sweater with a friend.',
-            vi: 'Tôi hẹn với bạn đi mua áo len.'
+            en: 'I made plans to have dinner with Yuki tonight.',
+            vi: 'Tôi đã hẹn ăn tối với Yuki tối nay.'
           },
-          jp: '友達と セーターを 買う 約束を しました。',
+          jp: '今晩 ゆきさんと 食事する 約束を しました。',
           ruby: [
-            { base: '友', reading: 'とも' },
-            { base: '達', reading: 'だち' },
-            { base: '買', reading: 'か' },
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' },
+            { base: '食', reading: 'しょく' },
+            { base: '事', reading: 'じ' },
             { base: '約', reading: 'やく' },
             { base: '束', reading: 'そく' }
           ]
         },
         {
           prompt: {
-            en: 'I have an errand to look at an apartment next week.',
-            vi: 'Tuần sau tôi có việc đi xem căn hộ.'
+            en: 'I have to go to the bank this afternoon.',
+            vi: 'Chiều nay tôi có việc phải đi đến ngân hàng.'
           },
-          jp: '来週 アパートを 見る 用事が あります。',
+          jp: '午後は 銀行へ 行く 用事が あります。',
           ruby: [
-            { base: '来', reading: 'らい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '見', reading: 'み' },
+            { base: '午', reading: 'ご' },
+            { base: '後', reading: 'ご' },
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' },
+            { base: '行', reading: 'い' },
             { base: '用', reading: 'よう' },
             { base: '事', reading: 'じ' }
           ]
         },
         {
           prompt: {
-            en: 'I have time to put on a coat this morning.',
-            vi: 'Sáng nay tôi có thời gian mặc áo khoác.'
+            en: 'This morning I had no time to eat breakfast.',
+            vi: 'Sáng nay tôi không có thời gian ăn sáng.'
           },
-          jp: 'けさ コートを 着る 時間が あります。',
+          jp: 'けさは 朝ごはんを 食べる 時間が ありませんでした。',
           ruby: [
-            { base: '着', reading: 'き' },
+            { base: '朝', reading: 'あさ' },
+            { base: '食', reading: 'た' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' }
           ]
         },
         {
           prompt: {
-            en: 'I made a promise to meet in Paris.',
-            vi: 'Tôi hẹn gặp ở Paris.'
+            en: 'On Saturday I have plans to see a movie with a friend.',
+            vi: 'Thứ Bảy tôi có hẹn đi xem phim với bạn.'
           },
-          jp: 'パリで 会う 約束を しました。',
+          jp: '土曜日は 友達と 映画を 見る 約束が あります。',
           ruby: [
-            { base: '会', reading: 'あ' },
+            { base: '土', reading: 'ど' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '見', reading: 'み' },
             { base: '約', reading: 'やく' },
             { base: '束', reading: 'そく' }
           ]
@@ -234,9 +244,16 @@ export const n5Lesson22SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '着', reading: 'き' }]
         },
         {
-          prompt: { en: 'I wear shoes too.', vi: 'Tôi cũng đi giày.' },
-          jp: '靴も はきます。',
-          ruby: [{ base: '靴', reading: 'くつ' }]
+          prompt: {
+            en: 'I put on my new shoes and went out.',
+            vi: 'Tôi đi đôi giày mới rồi ra ngoài.'
+          },
+          jp: '新しい 靴を はいて 出かけました。',
+          ruby: [
+            { base: '新', reading: 'あたら' },
+            { base: '靴', reading: 'くつ' },
+            { base: '出', reading: 'で' }
+          ]
         },
         {
           prompt: { en: 'On Sunday I wear a hat.', vi: 'Chủ nhật tôi đội mũ.' },

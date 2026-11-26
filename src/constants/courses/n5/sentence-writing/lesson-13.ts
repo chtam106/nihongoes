@@ -58,132 +58,65 @@ export const n5Lesson13SentenceWriting: LessonSentenceWriting = {
       pattern: 'V-stem + たい',
       items: [
         {
-          prompt: { en: 'I want to play.', vi: 'Tôi muốn chơi.' },
-          jp: '遊びたいです。',
-          ruby: [{ base: '遊', reading: 'あそ' }]
-        },
-        {
-          prompt: { en: 'I want to swim.', vi: 'Tôi muốn bơi.' },
-          jp: '泳ぎたいです。',
-          ruby: [{ base: '泳', reading: 'およ' }]
-        },
-        {
-          prompt: { en: 'I want to pick up a friend.', vi: 'Tôi muốn đón bạn.' },
-          jp: '友達を 迎えたいです。',
+          prompt: {
+            en: 'I want to hang out with friends this weekend.',
+            vi: 'Cuối tuần tôi muốn đi chơi với bạn.'
+          },
+          jp: '週末は 友達と 遊びたいです。',
           ruby: [
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
             { base: '友', reading: 'とも' },
             { base: '達', reading: 'だち' },
-            { base: '迎', reading: 'むか' }
-          ]
-        },
-        {
-          prompt: { en: 'I want to get married.', vi: 'Tôi muốn kết hôn.' },
-          jp: '結婚したいです。',
-          ruby: [
-            { base: '結', reading: 'けっ' },
-            { base: '婚', reading: 'こん' }
-          ]
-        },
-        {
-          prompt: { en: 'I want to shop.', vi: 'Tôi muốn mua sắm.' },
-          jp: '買い物したいです。',
-          ruby: [
-            { base: '買', reading: 'か' },
-            { base: '物', reading: 'もの' }
-          ]
-        },
-        {
-          prompt: { en: 'I want to have a meal.', vi: 'Tôi muốn dùng bữa.' },
-          jp: '食事したいです。',
-          ruby: [
-            { base: '食', reading: 'しょく' },
-            { base: '事', reading: 'じ' }
-          ]
-        },
-        {
-          prompt: { en: 'I want to take a walk.', vi: 'Tôi muốn đi dạo.' },
-          jp: '散歩したいです。',
-          ruby: [
-            { base: '散', reading: 'さん' },
-            { base: '歩', reading: 'ぽ' }
-          ]
-        },
-        {
-          prompt: { en: 'Work is tough, so I am tired.', vi: 'Việc vất vả nên tôi mệt.' },
-          jp: '仕事は 大変ですから、疲れました。',
-          ruby: [
-            { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' },
-            { base: '大', reading: 'たい' },
-            { base: '変', reading: 'へん' },
-            { base: '疲', reading: 'つか' }
-          ]
-        },
-        {
-          prompt: { en: 'I play in the park.', vi: 'Tôi chơi ở công viên.' },
-          jp: '公園で 遊びます。',
-          ruby: [
-            { base: '公', reading: 'こう' },
-            { base: '園', reading: 'えん' },
             { base: '遊', reading: 'あそ' }
           ]
         },
         {
-          prompt: { en: 'I swim in the pool.', vi: 'Tôi bơi ở bể bơi.' },
-          jp: 'プールで 泳ぎます。',
-          ruby: [{ base: '泳', reading: 'およ' }]
-        },
-        {
-          prompt: { en: 'I pick up a friend at the station.', vi: 'Tôi đón bạn ở ga.' },
-          jp: '駅で 友達を 迎えます。',
+          prompt: {
+            en: 'It is hot. I want to swim in the sea.',
+            vi: 'Nóng quá nhỉ. Tôi muốn bơi ở biển.'
+          },
+          jp: '暑いですね。海で 泳ぎたいです。',
           ruby: [
-            { base: '駅', reading: 'えき' },
-            { base: '友', reading: 'とも' },
-            { base: '達', reading: 'だち' },
-            { base: '迎', reading: 'むか' }
+            { base: '暑', reading: 'あつ' },
+            { base: '海', reading: 'うみ' },
+            { base: '泳', reading: 'およ' }
           ]
         },
         {
-          prompt: { en: 'I get tired.', vi: 'Tôi mệt.' },
-          jp: '疲れます。',
-          ruby: [{ base: '疲', reading: 'つか' }]
+          prompt: {
+            en: 'I want to go to the airport tomorrow to meet a friend.',
+            vi: 'Ngày mai tôi muốn ra sân bay đón bạn.'
+          },
+          jp: 'あした 空港へ 友達を 迎えに 行きたいです。',
+          ruby: [
+            { base: '空', reading: 'くう' },
+            { base: '港', reading: 'こう' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '迎', reading: 'むか' },
+            { base: '行', reading: 'い' }
+          ]
         },
         {
-          prompt: { en: 'I will get married in June.', vi: 'Tôi sẽ cưới vào tháng 6.' },
-          jp: '6月に 結婚します。',
+          prompt: { en: 'When do you want to get married?', vi: 'Anh muốn kết hôn khi nào?' },
+          jp: 'いつ 結婚したいですか。',
           ruby: [
-            { base: '月', reading: 'がつ' },
             { base: '結', reading: 'けっ' },
             { base: '婚', reading: 'こん' }
           ]
         },
         {
-          prompt: { en: 'I shop on Sunday.', vi: 'Chủ nhật tôi mua sắm.' },
-          jp: '日曜日に 買い物します。',
+          prompt: {
+            en: 'I want to go shopping in Shinjuku.',
+            vi: 'Tôi muốn đi mua sắm ở Shinjuku.'
+          },
+          jp: '新宿で 買い物したいです。',
           ruby: [
-            { base: '日', reading: 'にち' },
-            { base: '曜', reading: 'よう' },
-            { base: '日', reading: 'び' },
+            { base: '新', reading: 'しん' },
+            { base: '宿', reading: 'じゅく' },
             { base: '買', reading: 'か' },
             { base: '物', reading: 'もの' }
-          ]
-        },
-        {
-          prompt: { en: 'I have a meal at a restaurant.', vi: 'Tôi dùng bữa ở nhà hàng.' },
-          jp: 'レストランで 食事します。',
-          ruby: [
-            { base: '食', reading: 'しょく' },
-            { base: '事', reading: 'じ' }
-          ]
-        },
-        {
-          prompt: { en: 'I take a walk in the park.', vi: 'Tôi đi dạo ở công viên.' },
-          jp: '公園を 散歩します。',
-          ruby: [
-            { base: '公', reading: 'こう' },
-            { base: '園', reading: 'えん' },
-            { base: '散', reading: 'さん' },
-            { base: '歩', reading: 'ぽ' }
           ]
         }
       ]
@@ -328,9 +261,12 @@ export const n5Lesson13SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Please have a meal (polite).', vi: 'Mời dùng cơm ạ.' },
-          jp: 'ご飯を どうぞ。',
-          ruby: [{ base: '飯', reading: 'はん' }]
+          prompt: { en: 'Where are you from?', vi: 'Anh quê ở đâu ạ?' },
+          jp: 'ご出身は どちらですか。',
+          ruby: [
+            { base: '出', reading: 'しゅっ' },
+            { base: '身', reading: 'しん' }
+          ]
         },
         {
           prompt: {

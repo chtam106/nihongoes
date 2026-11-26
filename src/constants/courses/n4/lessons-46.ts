@@ -325,13 +325,13 @@ export const n4Lesson46: Lesson = {
       lines: [
         {
           speakerId: 'staff',
-          jp: 'ガスサービスセンター です。',
+          jp: 'ガスサービスセンターです。',
           romaji: 'Gasu sābisu sentā desu.',
           meaning: { en: 'Gas service center.', vi: 'Trung tâm dịch vụ ga nghe đây ạ.' }
         },
         {
           speakerId: 'thawaphon',
-          jp: 'すみません。うちの ガスレンジの 具合が 悪い んですが...',
+          jp: 'すみません。うちの ガスレンジの 具合が 悪いんですが……',
           romaji: 'Sumimasen. Uchi no gasu renji no guai ga warui n desu ga...',
           meaning: {
             en: 'Excuse me. Our gas stove is not working properly...',
@@ -345,7 +345,7 @@ export const n4Lesson46: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: 'どんな 具合 ですか。',
+          jp: 'どんな 具合ですか。',
           romaji: 'Donna guai desu ka.',
           meaning: { en: 'What seems to be wrong?', vi: 'Cụ thể như thế nào ạ?' },
           ruby: [
@@ -392,7 +392,7 @@ export const n4Lesson46: Lesson = {
         },
         {
           speakerId: 'thawaphon',
-          jp: 'もしもし。5時に 来る はず だった んですが、まだ 来ません。',
+          jp: 'もしもし。5時に 来る はず だったんですが、まだ 来ません。',
           romaji: 'Moshimoshi. Go-ji ni kuru hazu datta n desu ga, mada kimasen.',
           meaning: {
             en: 'Hello. They were supposed to come at five, but they still have not arrived.',
@@ -422,13 +422,13 @@ export const n4Lesson46: Lesson = {
         },
         {
           speakerId: 'thawaphon',
-          jp: 'タワポン です。',
+          jp: 'タワポンです。',
           romaji: 'Tawapon desu.',
           meaning: { en: 'This is Thawaphon.', vi: 'Tôi là Thawaphon.' }
         },
         {
           speakerId: 'staff',
-          jp: 'お待たせしました。今 向かっている ところ です。あと 10分 お待ち ください。',
+          jp: 'お待たせしました。今 向かっている ところです。あと 10分 お待ち ください。',
           romaji: 'Omatase shimashita. Ima mukatte iru tokoro desu. Ato juppun omachi kudasai.',
           meaning: {
             en: 'Sorry for the wait. We are on our way now. Please wait another ten minutes.',
@@ -460,7 +460,7 @@ export const n4Lesson46: Lesson = {
       explanationRuby: [],
       examples: [
         {
-          jp: '会議は これから 始める ところ です。',
+          jp: '会議は これから 始める ところです。',
           romaji: 'Kaigi wa korekara hajimeru tokoro desu.',
           meaning: {
             en: 'The meeting is about to start now.',
@@ -473,7 +473,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: '今 電車に 乗っている ところ です。',
+          jp: '今 電車に 乗っている ところです。',
           romaji: 'Ima densha ni notte iru tokoro desu.',
           meaning: {
             en: 'I am getting on the train right now.',
@@ -487,7 +487,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: '原因を 調べている ところ です。',
+          jp: '原因を 調べている ところです。',
           romaji: "Gen'in o shirabete iru tokoro desu.",
           meaning: { en: 'I am checking the cause now.', vi: 'Bây giờ tôi đang xem nguyên nhân.' },
           ruby: [
@@ -497,7 +497,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: 'たった今 帰った ところ です。',
+          jp: 'たった今 帰った ところです。',
           romaji: 'Tattaima kaetta tokoro desu.',
           meaning: { en: 'I just got back.', vi: 'Tôi vừa mới về xong.' },
           ruby: [
@@ -531,7 +531,7 @@ export const n4Lesson46: Lesson = {
       ],
       examples: [
         {
-          jp: '3月に 大学を 卒業した ばかり です。',
+          jp: '3月に 大学を 卒業した ばかりです。',
           romaji: 'Sangatsu ni daigaku o sotsugyō shita bakari desu.',
           meaning: {
             en: 'I just graduated from university in March.',
@@ -599,7 +599,7 @@ export const n4Lesson46: Lesson = {
       ],
       examples: [
         {
-          jp: 'ミラーさんは 会議室に いる はず です。',
+          jp: 'ミラーさんは 会議室に いる はずです。',
           romaji: 'Mirā-san wa kaigishitsu ni iru hazu desu.',
           meaning: {
             en: 'Mr. Miller should be in the meeting room.',
@@ -612,7 +612,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: 'さっき 駅から 電話が あった から、もうすぐ 着く はず です。',
+          jp: 'さっき 駅から 電話が あった から、もうすぐ 着く はずです。',
           romaji: 'Sakki eki kara denwa ga atta kara, mōsugu tsuku hazu desu.',
           meaning: {
             en: 'He called from the station earlier, so he should arrive soon.',
@@ -631,148 +631,171 @@ export const n4Lesson46: Lesson = {
   reading: [
     {
       id: 'reading-lesson46-bell',
-      title: { en: 'When the doorbell rang', vi: 'Khi chuông cửa reng' },
+      title: { en: 'When the doorbell rang', vi: 'Khi chuông cửa reo' },
       titleJp: 'ベルが 鳴った とき',
       titleRuby: [{ base: '鳴', reading: 'な' }],
       lines: [
         {
-          jp: '留守の とき、宅配便が 届く 出来事が よく あります。',
-          romaji: 'Rusu no toki, takhaibin ga todoku dekigoto ga yoku arimasu.',
+          jp: 'きのうの 夕方、宅配便が 届く はずでした。',
+          romaji: 'Kinō no yūgata, takuhaibin ga todoku hazu deshita.',
           meaning: {
-            en: 'When you are out, deliveries often become a problem.',
-            vi: 'Khi vắng nhà, việc hàng giao đến là chuyện thường.'
+            en: 'A parcel was supposed to arrive yesterday evening.',
+            vi: 'Chiều tối hôm qua đáng lẽ hàng chuyển phát sẽ đến.'
           },
           ruby: [
-            { base: '留', reading: 'る' },
-            { base: '守', reading: 'す' },
+            { base: '夕', reading: 'ゆう' },
+            { base: '方', reading: 'がた' },
             { base: '宅', reading: 'たく' },
             { base: '配', reading: 'はい' },
             { base: '便', reading: 'びん' },
-            { base: '届', reading: 'とど' },
-            { base: '出', reading: 'で' },
-            { base: '来', reading: 'き' },
-            { base: '事', reading: 'こと' }
+            { base: '届', reading: 'とど' }
           ]
         },
         {
-          jp: 'ある 日、ベルが 鳴りました。床が つるつる ついている ので、慌てて 走ると 転びました。',
-          romaji:
-            'Aru hi, beru ga narimashita. Yuka ga tsurutsuru tsuite iru node, awatete hashiru to korobimashita.',
+          jp: 'でも、6時に なっても 来ませんでした。',
+          romaji: 'Demo, roku-ji ni natte mo kimasen deshita.',
           meaning: {
-            en: 'One day the doorbell rang. The floor was slippery, so when I ran in a panic I fell.',
-            vi: 'Một ngày nọ chuông reng. Sàn trơn nên chạy vội thì ngã.'
+            en: 'But even at six it had not come.',
+            vi: 'Nhưng đến 6 giờ vẫn chưa thấy đến.'
           },
           ruby: [
-            { base: '日', reading: 'ひ' },
-            { base: '鳴', reading: 'な' },
-            { base: '床', reading: 'ゆか' },
+            { base: '時', reading: 'じ' },
+            { base: '来', reading: 'き' }
+          ]
+        },
+        {
+          jp: 'シャワーを 浴びて いる ところに、玄関の ベルが 鳴りました。',
+          romaji: 'Shawā o abite iru tokoro ni, genkan no beru ga narimashita.',
+          meaning: {
+            en: 'Just as I was taking a shower, the doorbell rang.',
+            vi: 'Đúng lúc tôi đang tắm thì chuông cửa reo.'
+          },
+          ruby: [
+            { base: '浴', reading: 'あ' },
+            { base: '玄', reading: 'げん' },
+            { base: '関', reading: 'かん' },
+            { base: '鳴', reading: 'な' }
+          ]
+        },
+        {
+          jp: '慌てて 出ましたが、宅配便の 人は 帰った ばかりでした。',
+          romaji: 'Awatete demashita ga, takuhaibin no hito wa kaetta bakari deshita.',
+          meaning: {
+            en: 'I rushed out, but the delivery person had just left.',
+            vi: 'Tôi vội chạy ra, nhưng người giao hàng vừa mới đi.'
+          },
+          ruby: [
             { base: '慌', reading: 'あわ' },
-            { base: '走', reading: 'はし' },
-            { base: '転', reading: 'ころ' }
+            { base: '出', reading: 'で' },
+            { base: '宅', reading: 'たく' },
+            { base: '配', reading: 'はい' },
+            { base: '便', reading: 'びん' },
+            { base: '人', reading: 'ひと' },
+            { base: '帰', reading: 'かえ' }
           ]
         },
         {
-          jp: '順番に やる ことが 大切 だと 思いました。',
-          romaji: 'Junban ni yaru koto ga taisetsu da to omoimashita.',
+          jp: 'ドアに「不在票」が はって ありました。',
+          romaji: 'Doa ni "fuzaihyō" ga hatte arimashita.',
           meaning: {
-            en: 'I realized it is important to do things in order.',
-            vi: 'Tôi nghĩ làm việc theo thứ tự mới quan trọng.'
+            en: 'A "missed delivery" notice was stuck on the door.',
+            vi: 'Trên cửa có dán tờ "phiếu báo vắng nhà".'
           },
           ruby: [
-            { base: '順', reading: 'じゅん' },
-            { base: '番', reading: 'ばん' },
-            { base: '大', reading: 'たい' },
-            { base: '切', reading: 'せつ' },
-            { base: '思', reading: 'おも' }
+            { base: '不', reading: 'ふ' },
+            { base: '在', reading: 'ざい' },
+            { base: '票', reading: 'ひょう' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'Why did the speaker fall?', vi: 'Tại sao người nói bị ngã?' },
-          jp: 'どうして 転びましたか。',
-          ruby: [{ base: '転', reading: 'ころ' }],
+          question: {
+            en: 'What was the writer doing when the bell rang?',
+            vi: 'Khi chuông reo, người viết đang làm gì?'
+          },
+          jp: 'ベルが 鳴った とき、何を していましたか。',
+          ruby: [
+            { base: '鳴', reading: 'な' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'The floor was slippery', vi: 'Sàn trơn' },
-              jp: '床が つるつる していたから',
-              ruby: [{ base: '床', reading: 'ゆか' }]
+              label: { en: 'Taking a shower', vi: 'Đang tắm' },
+              jp: 'シャワーを 浴びて いた',
+              ruby: [{ base: '浴', reading: 'あ' }]
             },
             {
               id: 'b',
-              label: { en: 'The bus left early', vi: 'Xe buýt rời sớm' },
-              jp: 'バスが 早く 出たから',
+              label: { en: 'Cooking', vi: 'Đang nấu ăn' },
+              jp: '料理を 作って いた',
               ruby: [
-                { base: '早', reading: 'はや' },
-                { base: '出', reading: 'で' }
+                { base: '料', reading: 'りょう' },
+                { base: '理', reading: 'り' },
+                { base: '作', reading: 'つく' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'The bread burned', vi: 'Bánh mì cháy' },
-              jp: 'パンが 焦げたから',
-              ruby: [{ base: '焦', reading: 'こ' }]
+              label: { en: 'Sleeping', vi: 'Đang ngủ' },
+              jp: '寝て いた',
+              ruby: [{ base: '寝', reading: 'ね' }]
             },
             {
               id: 'd',
-              label: { en: 'The gas stove broke', vi: 'Bếp ga hỏng' },
-              jp: 'ガスコンロが 壊れたから',
-              ruby: [{ base: '壊', reading: 'こわ' }]
+              label: { en: 'On the phone', vi: 'Đang gọi điện' },
+              jp: '電話を して いた',
+              ruby: [
+                { base: '電', reading: 'でん' },
+                { base: '話', reading: 'わ' }
+              ]
             }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
-          question: {
-            en: 'What lesson did the speaker learn?',
-            vi: 'Người nói rút ra bài học gì?'
-          },
-          jp: 'どんな ことが 大切だと 思いましたか。',
-          ruby: [
-            { base: '大', reading: 'たい' },
-            { base: '切', reading: 'せつ' },
-            { base: '思', reading: 'おも' }
-          ],
+          question: { en: 'What was stuck on the door?', vi: 'Trên cửa có dán cái gì?' },
+          jp: 'ドアに 何が はって ありましたか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
             {
               id: 'a',
-              label: { en: 'Do things in order', vi: 'Làm việc theo thứ tự' },
-              jp: '順番に やること',
+              label: { en: 'A missed-delivery notice', vi: 'Phiếu báo vắng nhà' },
+              jp: '不在票',
               ruby: [
-                { base: '順', reading: 'じゅん' },
-                { base: '番', reading: 'ばん' }
+                { base: '不', reading: 'ふ' },
+                { base: '在', reading: 'ざい' },
+                { base: '票', reading: 'ひょう' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Never use delivery', vi: 'Không bao giờ giao hàng' },
-              jp: '宅配便を 使わない こと',
+              label: { en: 'A map', vi: 'Bản đồ' },
+              jp: '地図',
               ruby: [
-                { base: '宅', reading: 'たく' },
-                { base: '配', reading: 'はい' },
-                { base: '便', reading: 'びん' },
-                { base: '使', reading: 'つか' }
+                { base: '地', reading: 'ち' },
+                { base: '図', reading: 'ず' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Always run faster', vi: 'Luôn chạy nhanh hơn' },
-              jp: 'もっと 速く 走ること',
+              label: { en: 'A letter', vi: 'Lá thư' },
+              jp: '手紙',
               ruby: [
-                { base: '速', reading: 'はや' },
-                { base: '走', reading: 'はし' }
+                { base: '手', reading: 'て' },
+                { base: '紙', reading: 'がみ' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'Ignore the doorbell', vi: 'Bỏ qua chuông cửa' },
-              jp: 'ベルを 無視する こと',
+              label: { en: 'A photo', vi: 'Tấm ảnh' },
+              jp: '写真',
               ruby: [
-                { base: '無', reading: 'む' },
-                { base: '視', reading: 'し' }
+                { base: '写', reading: 'しゃ' },
+                { base: '真', reading: 'しん' }
               ]
             }
           ],

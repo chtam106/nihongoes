@@ -566,7 +566,7 @@ export const n4Lesson34: Lesson = {
         },
         {
           speakerId: 'klara',
-          jp: 'そう ですか。',
+          jp: 'そうですか。',
           romaji: 'Sō desu ka.',
           meaning: { en: 'I see.', vi: 'Thế ạ?' }
         },
@@ -620,13 +620,13 @@ export const n4Lesson34: Lesson = {
         },
         {
           speakerId: 'teacher',
-          jp: 'はい。いかが ですか。',
+          jp: 'はい。いかがですか。',
           romaji: 'Hai. Ikaga desu ka.',
           meaning: { en: 'Yes. How does it taste?', vi: 'Vâng. Chị thấy thế nào?' }
         },
         {
           speakerId: 'klara',
-          jp: '少し 苦い ですが、おいしい です。',
+          jp: '少し 苦いですが、おいしいです。',
           romaji: 'Sukoshi nigai desu ga, oishii desu.',
           meaning: {
             en: 'It is a bit bitter, but delicious.',
@@ -891,7 +891,7 @@ export const n4Lesson34: Lesson = {
       ],
       lines: [
         {
-          jp: '今日は 親子どんぶりを 作ります。材料は 鶏肉 200グラム、玉ねぎ 1個、卵 3個 です。',
+          jp: '今日は 親子どんぶりを 作ります。材料は 鶏肉 200グラム、玉ねぎ 1個、卵 3個です。',
           romaji:
             'Kyō wa oyako donburi o tsukurimasu. Zairyō wa toriniku ni-hyaku guramu, tamanegi ikko, tamago san-ko desu.',
           meaning: {

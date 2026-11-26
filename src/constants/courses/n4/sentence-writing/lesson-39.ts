@@ -7,89 +7,110 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I cannot answer, so I am surprised.',
-            vi: 'Tôi không trả lời được nên giật mình.'
+            en: 'I could not answer the test questions, so I was disappointed.',
+            vi: 'Không trả lời được câu hỏi trong bài kiểm tra nên tôi thất vọng.'
           },
-          jp: '答えられない から、びっくりします。',
-          ruby: [{ base: '答', reading: 'こた' }]
-        },
-        {
-          prompt: {
-            en: 'The building fell, so I was disappointed.',
-            vi: 'Tòa nhà đổ nên tôi thất vọng.'
-          },
-          jp: 'ビルが 倒れます から、がっかりします。',
-          ruby: [{ base: '倒', reading: 'たお' }]
-        },
-        {
-          prompt: {
-            en: 'The road is clear, so cars pass through.',
-            vi: 'Đường thông nên xe đi qua.'
-          },
-          jp: '道が 空いて いる から、車が 通ります。',
+          jp: 'テストの 問題に 答えられなかったから、がっかりしました。',
           ruby: [
-            { base: '道', reading: 'みち' },
-            { base: '空', reading: 'す' },
-            { base: '車', reading: 'くるま' },
-            { base: '通', reading: 'とお' }
+            { base: '問', reading: 'もん' },
+            { base: '題', reading: 'だい' },
+            { base: '答', reading: 'こた' }
           ]
         },
         {
           prompt: {
-            en: 'There was an earthquake, so I feel relieved now.',
-            vi: 'Có động đất, giờ tôi mới yên tâm.'
+            en: 'There was an earthquake, so the trains have stopped.',
+            vi: 'Vì có động đất nên tàu điện đang ngừng chạy.'
           },
-          jp: '地震が あった から、今は 安心します。',
+          jp: '地震が あったから、電車が 止まっています。',
           ruby: [
             { base: '地', reading: 'じ' },
             { base: '震', reading: 'しん' },
-            { base: '今', reading: 'いま' },
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '止', reading: 'と' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'The roads were empty, so I arrived early.',
+            vi: 'Đường vắng nên tôi đến sớm.'
+          },
+          jp: '道が すいていたから、早く 着きました。',
+          ruby: [
+            { base: '道', reading: 'みち' },
+            { base: '早', reading: 'はや' },
+            { base: '着', reading: 'つ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'My whole family was safe, so I was relieved.',
+            vi: 'Cả nhà đều bình an nên tôi yên tâm.'
+          },
+          jp: '家族が みんな 無事だったから、安心しました。',
+          ruby: [
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' },
+            { base: '無', reading: 'ぶ' },
+            { base: '事', reading: 'じ' },
             { base: '安', reading: 'あん' },
             { base: '心', reading: 'しん' }
           ]
         },
         {
           prompt: {
-            en: 'They quarrel, so they will divorce.',
-            vi: 'Họ cãi nhau nên sẽ ly hôn.'
+            en: 'They fought every day, so the two of them divorced.',
+            vi: 'Ngày nào cũng cãi nhau nên hai người đã ly hôn.'
           },
-          jp: 'けんかします から、離婚します。',
+          jp: '毎日 けんかを していたから、二人は 離婚しました。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '二', reading: 'ふた' },
+            { base: '人', reading: 'り' },
             { base: '離', reading: 'り' },
             { base: '婚', reading: 'こん' }
           ]
         },
         {
           prompt: {
-            en: 'I eat a lot, so I gain weight.',
-            vi: 'Tôi ăn nhiều nên béo ra.'
+            en: 'I ate late every night, so I put on weight.',
+            vi: 'Tối nào cũng ăn muộn nên tôi đã lên cân.'
           },
-          jp: 'たくさん 食べる から、太ります。',
+          jp: '毎晩 遅く 食べたから、太って しまいました。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '晩', reading: 'ばん' },
+            { base: '遅', reading: 'おそ' },
             { base: '食', reading: 'た' },
             { base: '太', reading: 'ふと' }
           ]
         },
         {
           prompt: {
-            en: 'I walk every day, so I lose weight.',
-            vi: 'Tôi đi bộ mỗi ngày nên gầy đi.'
+            en: 'I walked an hour every day, so I lost a little weight.',
+            vi: 'Ngày nào cũng đi bộ một tiếng nên tôi đã gầy đi một chút.'
           },
-          jp: '毎日 歩く から、やせます。',
+          jp: '毎日 1時間 歩いたから、少し やせました。',
           ruby: [
             { base: '毎', reading: 'まい' },
             { base: '日', reading: 'にち' },
-            { base: '歩', reading: 'ある' }
+            { base: '時', reading: 'じ' },
+            { base: '間', reading: 'かん' },
+            { base: '歩', reading: 'ある' },
+            { base: '少', reading: 'すこ' }
           ]
         },
         {
           prompt: {
-            en: 'Someone died, so I am sad.',
-            vi: 'Ai đó mất nên tôi buồn.'
+            en: 'The dog I had died, so I am very sad.',
+            vi: 'Con chó tôi nuôi đã chết nên tôi rất buồn.'
           },
-          jp: '人が 死にます から、悲しい です。',
+          jp: '飼っていた 犬が 死んだから、とても 悲しいです。',
           ruby: [
-            { base: '人', reading: 'ひと' },
+            { base: '飼', reading: 'か' },
+            { base: '犬', reading: 'いぬ' },
             { base: '死', reading: 'し' },
             { base: '悲', reading: 'かな' }
           ]
@@ -101,30 +122,34 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The operation is complicated, so I will visit you.',
-            vi: 'Thao tác phức tạp nên tôi sẽ đến.'
+            en: 'The controls are complicated, so could you show me how to use it?',
+            vi: 'Thao tác phức tạp quá, anh chỉ tôi cách dùng được không?'
           },
-          jp: '操作が 複雑な ので、伺います。',
+          jp: '操作が 複雑なので、使い方を 教えて いただけませんか。',
           ruby: [
             { base: '操', reading: 'そう' },
             { base: '作', reading: 'さ' },
             { base: '複', reading: 'ふく' },
             { base: '雑', reading: 'ざつ' },
-            { base: '伺', reading: 'うかが' }
+            { base: '使', reading: 'つか' },
+            { base: '方', reading: 'かた' },
+            { base: '教', reading: 'おし' }
           ]
         },
         {
           prompt: {
-            en: 'There was a tsunami, so the venue is closed.',
-            vi: 'Có sóng thần nên hội trường đóng.'
+            en: 'There is a tsunami risk, so please stay away from the coast.',
+            vi: 'Có nguy cơ sóng thần nên đừng đến gần bờ biển.'
           },
-          jp: '津波が あった ので、会場は 休み です。',
+          jp: '津波の 危険が あるので、海岸に 近づかないで ください。',
           ruby: [
             { base: '津', reading: 'つ' },
             { base: '波', reading: 'なみ' },
-            { base: '会', reading: 'かい' },
-            { base: '場', reading: 'じょう' },
-            { base: '休', reading: 'やす' }
+            { base: '危', reading: 'き' },
+            { base: '険', reading: 'けん' },
+            { base: '海', reading: 'かい' },
+            { base: '岸', reading: 'がん' },
+            { base: '近', reading: 'ちか' }
           ]
         },
         {
@@ -132,7 +157,7 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
             en: 'A typhoon is coming, so hiking is cancelled.',
             vi: 'Bão đến nên chuyến dã ngoại bị hủy.'
           },
-          jp: '台風が 来る ので、ハイキングは 中止 です。',
+          jp: '台風が 来る ので、ハイキングは 中止です。',
           ruby: [
             { base: '台', reading: 'たい' },
             { base: '風', reading: 'ふう' },
@@ -143,37 +168,41 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'There is thunder, so please wait at the front desk.',
-            vi: 'Có sấm nên hãy đợi ở lễ tân.'
+            en: 'It is thundering, so please do not go outside.',
+            vi: 'Đang có sấm sét nên đừng ra ngoài.'
           },
-          jp: '雷が ある ので、フロントで 待って ください。',
+          jp: '雷が 鳴っているので、外に 出ないで ください。',
           ruby: [
             { base: '雷', reading: 'かみなり' },
-            { base: '待', reading: 'ま' }
+            { base: '鳴', reading: 'な' },
+            { base: '外', reading: 'そと' },
+            { base: '出', reading: 'で' }
           ]
         },
         {
           prompt: {
-            en: 'There was a fire, so the taxi fare is high.',
-            vi: 'Có hỏa hoạn nên tiền taxi cao.'
+            en: 'The roads were crowded, so the taxi fare went up.',
+            vi: 'Đường đông nên tiền taxi bị đắt lên.'
           },
-          jp: '火事が あった ので、タクシー～だいが 高い です。',
+          jp: '道が 込んでいたので、タクシー代が 高く なりました。',
           ruby: [
-            { base: '火', reading: 'か' },
-            { base: '事', reading: 'じ' },
+            { base: '道', reading: 'みち' },
+            { base: '込', reading: 'こ' },
+            { base: '代', reading: 'だい' },
             { base: '高', reading: 'たか' }
           ]
         },
         {
           prompt: {
-            en: 'There was an accident, so I go to the bread shop.',
-            vi: 'Có tai nạn nên tôi đến tiệm bánh.'
+            en: 'I have a headache. May I go home early?',
+            vi: 'Tôi bị đau đầu, tôi về sớm có được không?'
           },
-          jp: '事故が あった ので、パン～やへ 行きます。',
+          jp: '頭が 痛いので、早く 帰っても いいですか。',
           ruby: [
-            { base: '事', reading: 'じ' },
-            { base: '故', reading: 'こ' },
-            { base: '行', reading: 'い' }
+            { base: '頭', reading: 'あたま' },
+            { base: '痛', reading: 'いた' },
+            { base: '早', reading: 'はや' },
+            { base: '帰', reading: 'かえ' }
           ]
         }
       ]
@@ -183,34 +212,34 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I am happy and embarrassed.',
-            vi: 'Tôi vui và ngượng.'
+            en: 'I was praised in front of everyone and felt embarrassed.',
+            vi: 'Được khen trước mặt mọi người nên tôi thấy ngượng.'
           },
-          jp: 'うれしくて 恥ずかしい です。',
-          ruby: [{ base: '恥', reading: 'は' }]
+          jp: 'みんなの 前で 褒められて、恥ずかしかったです。',
+          ruby: [
+            { base: '前', reading: 'まえ' },
+            { base: '褒', reading: 'ほ' },
+            { base: '恥', reading: 'は' }
+          ]
         },
         {
           prompt: {
-            en: 'The bread is hard and dirty.',
-            vi: 'Bánh mì cứng và bẩn.'
+            en: 'This bread is so hard I cannot eat it.',
+            vi: 'Bánh mì này cứng quá, không ăn được.'
           },
-          jp: 'パンが 硬くて 汚い です。パンは 硬い です。',
+          jp: 'この パンは 硬くて 食べられません。',
           ruby: [
             { base: '硬', reading: 'かた' },
-            { base: '汚', reading: 'きたな' },
-            { base: '硬', reading: 'かた' }
+            { base: '食', reading: 'た' }
           ]
         },
         {
           prompt: {
-            en: 'This cake is soft and I am glad.',
-            vi: 'Bánh này mềm nên tôi vui.'
+            en: 'I was surprised to hear that news.',
+            vi: 'Nghe tin đó tôi đã rất ngạc nhiên.'
           },
-          jp: 'この ケーキは 軟らかくて うれしい です。ケーキは 軟らかい です。',
-          ruby: [
-            { base: '軟', reading: 'やわ' },
-            { base: '軟', reading: 'やわ' }
-          ]
+          jp: 'その ニュースを 聞いて、びっくりしました。',
+          ruby: [{ base: '聞', reading: 'き' }]
         },
         {
           prompt: {
@@ -227,37 +256,40 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The map is complicated and I am lost.',
-            vi: 'Bản đồ phức tạp nên tôi lạc.'
+            en: 'The inside of the station is complicated, and I got lost.',
+            vi: 'Bên trong nhà ga phức tạp quá nên tôi bị lạc.'
           },
-          jp: '地図が 複雑で 迷います。',
+          jp: '駅の 中が 複雑で、道に 迷いました。',
           ruby: [
-            { base: '地', reading: 'ち' },
-            { base: '図', reading: 'ず' },
+            { base: '駅', reading: 'えき' },
+            { base: '中', reading: 'なか' },
             { base: '複', reading: 'ふく' },
             { base: '雑', reading: 'ざつ' },
+            { base: '道', reading: 'みち' },
             { base: '迷', reading: 'まよ' }
           ]
         },
         {
-          prompt: {
-            en: 'Thank you for your hard work, everyone.',
-            vi: 'Mọi người đã vất vả quá.'
-          },
-          jp: 'お疲れさまでした。',
-          ruby: [{ base: '疲', reading: 'つか' }]
+          prompt: { en: 'I passed the exam, and I am happy.', vi: 'Thi đỗ rồi, tôi vui lắm.' },
+          jp: '試験に 合格して、うれしいです。',
+          ruby: [
+            { base: '試', reading: 'し' },
+            { base: '験', reading: 'けん' },
+            { base: '合', reading: 'ごう' },
+            { base: '格', reading: 'かく' }
+          ]
         },
         {
           prompt: {
-            en: 'The prime minister was busy and could not come.',
-            vi: 'Thủ tướng bận nên không đến được.'
+            en: 'I was busy with work and could not go to the party.',
+            vi: 'Công việc bận quá nên tôi không đi dự tiệc được.'
           },
-          jp: '首相が 忙しくて 来られません。',
+          jp: '仕事が 忙しくて、パーティーに 行けませんでした。',
           ruby: [
-            { base: '首', reading: 'しゅ' },
-            { base: '相', reading: 'しょう' },
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
             { base: '忙', reading: 'いそが' },
-            { base: '来', reading: 'こ' }
+            { base: '行', reading: 'い' }
           ]
         }
       ]
@@ -271,11 +303,13 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'On the way I crashed into a bicycle.',
-            vi: 'Trên đường tôi va vào xe đạp.'
+            en: 'On my way to the office, I ran into a bicycle.',
+            vi: 'Trên đường đến công ty tôi đã va phải một chiếc xe đạp.'
           },
-          jp: '来る 途中で 自転車に ぶつかります。',
+          jp: '会社へ 来る 途中で、自転車に ぶつかりました。',
           ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
             { base: '来', reading: 'く' },
             { base: '途', reading: 'と' },
             { base: '中', reading: 'ちゅう' },
@@ -286,13 +320,13 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'On the way to the marriage meeting it rained.',
-            vi: 'Trên đường đi xem mặt thì mưa.'
+            en: 'It started raining in the middle of my walk.',
+            vi: 'Đang đi dạo thì trời đổ mưa.'
           },
-          jp: 'お見合いの 途中で 雨が 降りました。',
+          jp: '散歩の 途中で、雨が 降って きました。',
           ruby: [
-            { base: '見', reading: 'み' },
-            { base: '合', reading: 'あ' },
+            { base: '散', reading: 'さん' },
+            { base: '歩', reading: 'ぽ' },
             { base: '途', reading: 'と' },
             { base: '中', reading: 'ちゅう' },
             { base: '雨', reading: 'あめ' },
@@ -314,31 +348,32 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'On the way there was an accident.',
-            vi: 'Trên đường có tai nạn.'
+            en: 'I saw an accident on my way to school.',
+            vi: 'Trên đường đến trường tôi đã thấy một vụ tai nạn.'
           },
-          jp: '行く 途中で 事故が ありました。',
+          jp: '学校へ 行く 途中で、事故を 見ました。',
           ruby: [
+            { base: '学', reading: 'がっ' },
+            { base: '校', reading: 'こう' },
             { base: '行', reading: 'い' },
             { base: '途', reading: 'と' },
             { base: '中', reading: 'ちゅう' },
             { base: '事', reading: 'じ' },
-            { base: '故', reading: 'こ' }
+            { base: '故', reading: 'こ' },
+            { base: '見', reading: 'み' }
           ]
         },
         {
           prompt: {
-            en: 'On the way I answer a call.',
-            vi: 'Trên đường tôi trả lời điện thoại.'
+            en: 'I stopped by the supermarket on my way home.',
+            vi: 'Trên đường về tôi ghé siêu thị.'
           },
-          jp: '歩く 途中で 電話に 答えます。',
+          jp: '帰る 途中で、スーパーに 寄りました。',
           ruby: [
-            { base: '歩', reading: 'ある' },
+            { base: '帰', reading: 'かえ' },
             { base: '途', reading: 'と' },
             { base: '中', reading: 'ちゅう' },
-            { base: '電', reading: 'でん' },
-            { base: '話', reading: 'わ' },
-            { base: '答', reading: 'こた' }
+            { base: '寄', reading: 'よ' }
           ]
         }
       ]
@@ -350,7 +385,7 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
         en: 'Sorry I am late.',
         vi: 'Xin lỗi tôi đến muộn.'
       },
-      jp: '遅刻 して すみません。',
+      jp: '遅刻して すみません。',
       ruby: [
         { base: '遅', reading: 'ち' },
         { base: '刻', reading: 'こく' }

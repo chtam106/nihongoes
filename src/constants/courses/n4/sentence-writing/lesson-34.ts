@@ -48,11 +48,14 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Brush your teeth the way the sports club taught.',
-            vi: 'Đánh răng như câu lạc bộ thể thao đã dạy.'
+            en: 'I brush my teeth the way the dentist taught me.',
+            vi: 'Tôi đánh răng đúng như nha sĩ đã chỉ.'
           },
-          jp: 'スポーツクラブで 習った とおりに、歯を 磨きます。',
+          jp: '歯医者さんに 習った とおりに、歯を 磨いています。',
           ruby: [
+            { base: '歯', reading: 'は' },
+            { base: '医', reading: 'い' },
+            { base: '者', reading: 'しゃ' },
             { base: '習', reading: 'なら' },
             { base: '歯', reading: 'は' },
             { base: '磨', reading: 'みが' }
@@ -60,14 +63,11 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Raise the umbrella as I did.',
-            vi: 'Che ô như tôi đã làm.'
+            en: 'Please try doing it exactly the way I did.',
+            vi: 'Anh thử làm đúng như tôi vừa làm xem.'
           },
-          jp: '私が した とおりに、かさを 差します。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '差', reading: 'さ' }
-          ]
+          jp: '私が やった とおりに、やって みて ください。',
+          ruby: [{ base: '私', reading: 'わたし' }]
         }
       ]
     },
@@ -76,63 +76,67 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'After the tea ceremony, I make tea.',
-            vi: 'Sau trà đạo tôi đánh trà.'
+            en: 'Would you like to go for a drink after work?',
+            vi: 'Sau giờ làm đi uống cùng nhau không?'
           },
-          jp: '茶道の あとで、お茶をたてます。',
+          jp: '仕事の あとで、いっしょに 飲みに 行きませんか。',
           ruby: [
-            { base: '茶', reading: 'さ' },
-            { base: '道', reading: 'どう' },
-            { base: '茶', reading: 'ちゃ' }
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
+            { base: '飲', reading: 'の' },
+            { base: '行', reading: 'い' }
+          ]
+        },
+        {
+          prompt: { en: 'I take a walk after dinner.', vi: 'Ăn tối xong tôi đi dạo.' },
+          jp: '晩ご飯を 食べた あとで、散歩します。',
+          ruby: [
+            { base: '晩', reading: 'ばん' },
+            { base: '飯', reading: 'はん' },
+            { base: '食', reading: 'た' },
+            { base: '散', reading: 'さん' },
+            { base: '歩', reading: 'ぽ' }
           ]
         },
         {
           prompt: {
-            en: 'After last night, the key was found.',
-            vi: 'Sau tối qua thì tìm thấy chìa khóa.'
+            en: 'After the movie, we ate at a restaurant.',
+            vi: 'Xem phim xong chúng tôi ăn ở nhà hàng.'
           },
-          jp: 'ゆうべの あとで、キーが 見つかります。',
-          ruby: [{ base: '見', reading: 'み' }]
-        },
-        {
-          prompt: {
-            en: 'After a short while, I noticed the castle.',
-            vi: 'Lúc nãy xong tôi để ý thấy thành.'
-          },
-          jp: 'さっき 歩いた あとで、お城に 気がつきます。',
+          jp: '映画を 見た あとで、レストランで 食事しました。',
           ruby: [
-            { base: '歩', reading: 'ある' },
-            { base: '城', reading: 'しろ' },
-            { base: '気', reading: 'き' }
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '見', reading: 'み' },
+            { base: '食', reading: 'しょく' },
+            { base: '事', reading: 'じ' }
           ]
         },
         {
           prompt: {
-            en: 'After putting it on the stove, I simmer it.',
-            vi: 'Sau khi bắc bếp tôi om.'
+            en: 'After cutting the vegetables, put them in the pot.',
+            vi: 'Cắt rau xong thì cho vào nồi.'
           },
-          jp: '火にかけた あとで、煮ます。まだ 煮えます。',
+          jp: '野菜を 切った あとで、なべに 入れます。',
           ruby: [
-            { base: '火', reading: 'ひ' },
-            { base: '煮', reading: 'に' },
-            { base: '煮', reading: 'に' }
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' },
+            { base: '切', reading: 'き' },
+            { base: '入', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'After time passes, I ask a question.',
-            vi: 'Sau khi thời gian trôi tôi đặt câu hỏi.'
+            en: 'Please ask questions after you hear the explanation.',
+            vi: 'Nghe giải thích xong rồi hãy đặt câu hỏi.'
           },
-          jp: '時間が 経った あとで、質問します。時間が 経ちます。',
+          jp: '説明を 聞いた あとで、質問して ください。',
           ruby: [
-            { base: '時', reading: 'じ' },
-            { base: '間', reading: 'かん' },
-            { base: '経', reading: 'た' },
+            { base: '説', reading: 'せつ' },
+            { base: '明', reading: 'めい' },
+            { base: '聞', reading: 'き' },
             { base: '質', reading: 'しつ' },
-            { base: '問', reading: 'もん' },
-            { base: '時', reading: 'じ' },
-            { base: '間', reading: 'かん' },
-            { base: '経', reading: 'た' }
+            { base: '問', reading: 'もん' }
           ]
         }
       ]
@@ -142,10 +146,10 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I eat it with soy sauce or sauce.',
-            vi: 'Tôi chấm xì dầu hoặc sốt rồi ăn.'
+            en: 'Please eat it dipped in soy sauce or sauce.',
+            vi: 'Hãy chấm xì dầu hoặc nước sốt rồi ăn.'
           },
-          jp: 'しょうゆ～か ～ソースを つけます。つけて 食べます。',
+          jp: 'しょうゆか ソースを つけて 食べて ください。',
           ruby: [{ base: '食', reading: 'た' }]
         },
         {
@@ -161,14 +165,14 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I put the chicken and egg bowl in a large bowl and eat.',
-            vi: 'Tôi cho cơm gà trứng vào tô rồi ăn.'
+            en: 'I put an egg on top of the rice and eat it.',
+            vi: 'Tôi đặt trứng lên trên cơm rồi ăn.'
           },
-          jp: '親子どんぶりを どんぶりに 載せます。載せて 食べます。',
+          jp: 'ご飯の 上に 卵を 載せて 食べます。',
           ruby: [
-            { base: '親', reading: 'おや' },
-            { base: '子', reading: 'こ' },
-            { base: '載', reading: 'の' },
+            { base: '飯', reading: 'はん' },
+            { base: '上', reading: 'うえ' },
+            { base: '卵', reading: 'たまご' },
             { base: '載', reading: 'の' },
             { base: '食', reading: 'た' }
           ]
@@ -190,14 +194,14 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I put a quarter of an onion in the pot and cook.',
-            vi: 'Tôi cho một phần tư hành tây vào nồi rồi nấu.'
+            en: 'Cut the onion and put it in the pot.',
+            vi: 'Cắt hành tây rồi cho vào nồi.'
           },
-          jp: '玉ねぎ よんぶんのいちを なべに 入れて 火にかけます。',
+          jp: '玉ねぎを 切って、なべに 入れます。',
           ruby: [
             { base: '玉', reading: 'たま' },
-            { base: '入', reading: 'い' },
-            { base: '火', reading: 'ひ' }
+            { base: '切', reading: 'き' },
+            { base: '入', reading: 'い' }
           ]
         }
       ]
@@ -207,79 +211,62 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I eat it without adding soy sauce.',
-            vi: 'Tôi ăn mà không chấm xì dầu.'
+            en: 'Please eat this sushi without soy sauce.',
+            vi: 'Món sushi này hãy ăn mà không chấm xì dầu.'
           },
-          jp: 'しょうゆを つけないで 食べます。苦いです。',
+          jp: 'この すしは しょうゆを つけないで 食べて ください。',
+          ruby: [{ base: '食', reading: 'た' }]
+        },
+        {
+          prompt: { en: 'I went out without an umbrella.', vi: 'Tôi lỡ ra ngoài mà không mang ô.' },
+          jp: '傘を 持たないで 出かけて しまいました。',
           ruby: [
-            { base: '食', reading: 'た' },
-            { base: '苦', reading: 'にが' }
+            { base: '傘', reading: 'かさ' },
+            { base: '持', reading: 'も' },
+            { base: '出', reading: 'で' }
           ]
         },
         {
           prompt: {
-            en: 'The guest waits without folding the paper.',
-            vi: 'Khách đợi mà không gập giấy.'
+            en: 'Try reading this sentence without a dictionary.',
+            vi: 'Thử đọc câu này mà không dùng từ điển xem.'
           },
-          jp: 'お客は 紙を 折らないで 待ちます。',
+          jp: '辞書を 使わないで、この 文を 読んで みて ください。',
           ruby: [
-            { base: '客', reading: 'きゃく' },
-            { base: '紙', reading: 'かみ' },
-            { base: '折', reading: 'お' },
-            { base: '待', reading: 'ま' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Choose a thick line, not a thin one.',
-            vi: 'Chọn đường kẻ to, không chọn mảnh.'
-          },
-          jp: '細い 線を 使わないで、太い 線を 使います。黒と 白と 赤と 青と 紺と 黄色と 茶色が あります。',
-          ruby: [
-            { base: '細', reading: 'ほそ' },
-            { base: '線', reading: 'せん' },
+            { base: '辞', reading: 'じ' },
+            { base: '書', reading: 'しょ' },
             { base: '使', reading: 'つか' },
-            { base: '太', reading: 'ふと' },
-            { base: '線', reading: 'せん' },
-            { base: '使', reading: 'つか' },
-            { base: '黒', reading: 'くろ' },
-            { base: '白', reading: 'しろ' },
-            { base: '赤', reading: 'あか' },
-            { base: '青', reading: 'あお' },
-            { base: '紺', reading: 'こん' },
-            { base: '黄', reading: 'き' },
-            { base: '色', reading: 'いろ' },
-            { base: '茶', reading: 'ちゃ' },
-            { base: '色', reading: 'いろ' }
+            { base: '文', reading: 'ぶん' },
+            { base: '読', reading: 'よ' }
           ]
         },
         {
           prompt: {
-            en: 'Use a suitable amount of ingredients, two pieces, 50 grams.',
-            vi: 'Dùng lượng nguyên liệu vừa phải, hai cái, 50 gam.'
+            en: 'Do not throw away the vegetable peels; use them for soup.',
+            vi: 'Vỏ rau đừng vứt đi, dùng để nấu canh.'
           },
-          jp: '材料は 適当な 2～個と 50～グラムで、捨てないで 使います。3人～分です。',
+          jp: '野菜の 皮は 捨てないで、スープに 使います。',
           ruby: [
-            { base: '材', reading: 'ざい' },
-            { base: '料', reading: 'りょう' },
-            { base: '適', reading: 'てき' },
-            { base: '当', reading: 'とう' },
-            { base: '個', reading: 'こ' },
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' },
+            { base: '皮', reading: 'かわ' },
             { base: '捨', reading: 'す' },
-            { base: '使', reading: 'つか' },
-            { base: '人', reading: 'にん' },
-            { base: '分', reading: 'ぶん' }
+            { base: '使', reading: 'つか' }
           ]
         },
         {
           prompt: {
-            en: 'I sit without noticing the key.',
-            vi: 'Tôi ngồi mà không để ý chìa khóa.'
+            en: 'I went to work without eating breakfast.',
+            vi: 'Tôi đi làm mà không ăn sáng.'
           },
-          jp: 'キーに 気がつかないで 座ります。',
+          jp: '朝ご飯を 食べないで 会社へ 行きました。',
           ruby: [
-            { base: '気', reading: 'き' },
-            { base: '座', reading: 'すわ' }
+            { base: '朝', reading: 'あさ' },
+            { base: '飯', reading: 'はん' },
+            { base: '食', reading: 'た' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
           ]
         }
       ]
@@ -292,7 +279,7 @@ export const n4Lesson34SentenceWriting: LessonSentenceWriting = {
     },
     {
       prompt: { en: 'How is it? (polite)', vi: 'Như thế nào ạ?' },
-      jp: 'いかが ですか。'
+      jp: 'いかがですか。'
     }
   ]
 };

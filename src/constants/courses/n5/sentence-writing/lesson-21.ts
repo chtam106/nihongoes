@@ -17,14 +17,6 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I think we will lose.', vi: 'Tôi nghĩ chúng ta sẽ thua.' },
-          jp: '負けると 思います。',
-          ruby: [
-            { base: '負', reading: 'ま' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
           prompt: { en: 'I think this manga is useful.', vi: 'Tôi nghĩ truyện tranh này hữu ích.' },
           jp: 'この マンガは 役に 立つと 思います。',
           ruby: [
@@ -49,37 +41,17 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I think I will quit the company.',
-            vi: 'Tôi nghĩ tôi sẽ thôi việc công ty.'
+            en: 'I think Mr. Tanaka will study abroad next year.',
+            vi: 'Tôi nghĩ anh Tanaka sẽ đi du học vào năm sau.'
           },
-          jp: '会社を 辞めると 思います。',
+          jp: '田中さんは 来年 留学すると 思います。',
           ruby: [
-            { base: '会', reading: 'かい' },
-            { base: '社', reading: 'しゃ' },
-            { base: '辞', reading: 'や' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I think I will study abroad next year.',
-            vi: 'Tôi nghĩ năm sau tôi sẽ du học.'
-          },
-          jp: '来年 留学すると 思います。',
-          ruby: [
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
             { base: '来', reading: 'らい' },
             { base: '年', reading: 'ねん' },
             { base: '留', reading: 'りゅう' },
             { base: '学', reading: 'がく' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
-          prompt: { en: 'I think it is wasteful.', vi: 'Tôi nghĩ thế là lãng phí.' },
-          jp: '無駄だと 思います。',
-          ruby: [
-            { base: '無', reading: 'む' },
-            { base: '駄', reading: 'だ' },
             { base: '思', reading: 'おも' }
           ]
         },
@@ -91,19 +63,6 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
             { base: '通', reading: 'つう' },
             { base: '不', reading: 'ふ' },
             { base: '便', reading: 'べん' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I think our opinions are the same.',
-            vi: 'Tôi nghĩ ý kiến của chúng ta giống nhau.'
-          },
-          jp: '意見が 同じだと 思います。',
-          ruby: [
-            { base: '意', reading: 'い' },
-            { base: '見', reading: 'けん' },
-            { base: '同', reading: 'おな' },
             { base: '思', reading: 'おも' }
           ]
         },
@@ -124,14 +83,6 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
           ruby: [
             { base: '本', reading: 'ほん' },
             { base: '当', reading: 'とう' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
-          prompt: { en: 'I think that is a lie.', vi: 'Tôi nghĩ đó là giả dối.' },
-          jp: 'それは 嘘だと 思います。',
-          ruby: [
-            { base: '嘘', reading: 'うそ' },
             { base: '思', reading: 'おも' }
           ]
         },
@@ -158,27 +109,15 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I think the earth is large.', vi: 'Tôi nghĩ trái đất lớn.' },
-          jp: '地球は 大きいと 思います。',
+          prompt: {
+            en: 'It is a bit far from the station, but I do not think it is that inconvenient.',
+            vi: 'Hơi xa ga một chút nhưng tôi nghĩ không bất tiện lắm.'
+          },
+          jp: '駅から 少し 遠いですが、そんなに 不便じゃ ないと 思います。',
           ruby: [
-            { base: '地', reading: 'ち' },
-            { base: '球', reading: 'きゅう' },
-            { base: '大', reading: 'おお' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
-          prompt: { en: 'I think the moon is beautiful.', vi: 'Tôi nghĩ mặt trăng đẹp.' },
-          jp: '月は きれいだと 思います。',
-          ruby: [
-            { base: '月', reading: 'つき' },
-            { base: '思', reading: 'おも' }
-          ]
-        },
-        {
-          prompt: { en: 'I think it is not so inconvenient.', vi: 'Tôi nghĩ không bất tiện lắm.' },
-          jp: 'そんなに 不便じゃ ないと 思います。',
-          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '少', reading: 'すこ' },
+            { base: '遠', reading: 'とお' },
             { base: '不', reading: 'ふ' },
             { base: '便', reading: 'べん' },
             { base: '思', reading: 'おも' }
@@ -192,42 +131,30 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The prime minister said he will appear on the news next week.',
-            vi: 'Thủ tướng nói tuần sau sẽ lên tin tức.'
+            en: 'The prime minister said he will go to America next week.',
+            vi: 'Thủ tướng nói tuần sau sẽ đi Mỹ.'
           },
-          jp: '首相は 来週 ニュースに 出ると 言いました。',
+          jp: '首相は 来週 アメリカへ 行くと 言いました。',
           ruby: [
             { base: '首', reading: 'しゅ' },
             { base: '相', reading: 'しょう' },
             { base: '来', reading: 'らい' },
             { base: '週', reading: 'しゅう' },
-            { base: '出', reading: 'で' },
+            { base: '行', reading: 'い' },
             { base: '言', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'The president said he will make a speech.',
-            vi: 'Tổng thống nói sẽ phát biểu.'
+            en: 'Mr. Tanaka said he would be a little late.',
+            vi: 'Anh Tanaka nói sẽ đến muộn một chút.'
           },
-          jp: '大統領は スピーチを すると 言いました。',
+          jp: '田中さんは 少し 遅れると 言いました。',
           ruby: [
-            { base: '大', reading: 'だい' },
-            { base: '統', reading: 'とう' },
-            { base: '領', reading: 'りょう' },
-            { base: '言', reading: 'い' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Yuki said she will talk about politics.',
-            vi: 'Yuki nói sẽ nói về chính trị.'
-          },
-          jp: 'ゆきさんは 政治について 話すと 言いました。',
-          ruby: [
-            { base: '政', reading: 'せい' },
-            { base: '治', reading: 'じ' },
-            { base: '話', reading: 'はな' },
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '少', reading: 'すこ' },
+            { base: '遅', reading: 'おく' },
             { base: '言', reading: 'い' }
           ]
         },
@@ -244,25 +171,11 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The teacher said this anime is a dream.',
-            vi: 'Thầy nói phim hoạt hình này là một giấc mơ.'
+            en: 'Everyone says that child is a genius.',
+            vi: 'Mọi người đều nói đứa trẻ đó là thiên tài.'
           },
-          jp: '先生は この アニメは 夢だと 言いました。',
+          jp: 'みんな あの 子は 天才だと 言っています。',
           ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
-            { base: '夢', reading: 'ゆめ' },
-            { base: '言', reading: 'い' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Everyone said that child is a genius.',
-            vi: 'Mọi người nói đứa trẻ đó là thiên tài.'
-          },
-          jp: '皆は あの 子は 天才だと 言いました。',
-          ruby: [
-            { base: '皆', reading: 'みな' },
             { base: '子', reading: 'こ' },
             { base: '天', reading: 'てん' },
             { base: '才', reading: 'さい' },
@@ -276,17 +189,6 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
           },
           jp: 'マリアさんは アルバイトを すると 言いました。',
           ruby: [{ base: '言', reading: 'い' }]
-        },
-        {
-          prompt: {
-            en: 'Sato said that story has humor.',
-            vi: 'Sato nói câu chuyện đó có hài hước.'
-          },
-          jp: 'さとうさんは その 話は ユーモアが あると 言いました。',
-          ruby: [
-            { base: '話', reading: 'はなし' },
-            { base: '言', reading: 'い' }
-          ]
         }
       ]
     },
@@ -306,19 +208,6 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
             { base: '試', reading: 'し' },
             { base: '合', reading: 'あい' },
             { base: '見', reading: 'み' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'There is a news broadcast tonight, right?',
-            vi: 'Tối nay có bản tin phải không?'
-          },
-          jp: '今夜 ニュースの 放送が あるでしょう。',
-          ruby: [
-            { base: '今', reading: 'こん' },
-            { base: '夜', reading: 'や' },
-            { base: '放', reading: 'ほう' },
-            { base: '送', reading: 'そう' }
           ]
         },
         {
@@ -361,14 +250,11 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '来', reading: 'く' }]
         },
         {
-          prompt: {
-            en: 'It is really amazing, right?',
-            vi: 'Thật sự tuyệt phải không?'
-          },
-          jp: '本当に すごいでしょう。',
+          prompt: { en: 'This dish is good, is it not?', vi: 'Món này ngon đúng không?' },
+          jp: 'この 料理、おいしいでしょう？',
           ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '当', reading: 'とう' }
+            { base: '料', reading: 'りょう' },
+            { base: '理', reading: 'り' }
           ]
         }
       ]
@@ -378,11 +264,14 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'There is a festival at the park.',
-            vi: 'Ở công viên có lễ hội.'
+            en: 'There is a festival in the park on Sunday.',
+            vi: 'Chủ nhật có lễ hội ở công viên.'
           },
-          jp: '公園で お祭りが あります。',
+          jp: '日曜日に 公園で お祭りが あります。',
           ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
             { base: '公', reading: 'こう' },
             { base: '園', reading: 'えん' },
             { base: '祭', reading: 'まつ' }
@@ -401,25 +290,32 @@ export const n5Lesson21SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'There is a speech at the school.',
-            vi: 'Ở trường có bài phát biểu.'
+            en: 'There is a speech contest at school tomorrow.',
+            vi: 'Ngày mai ở trường có cuộc thi hùng biện.'
           },
-          jp: '学校で スピーチが あります。',
+          jp: 'あした 学校で スピーチ大会が あります。',
           ruby: [
             { base: '学', reading: 'がっ' },
-            { base: '校', reading: 'こう' }
+            { base: '校', reading: 'こう' },
+            { base: '大', reading: 'たい' },
+            { base: '会', reading: 'かい' }
           ]
         },
         {
           prompt: {
-            en: 'There is a broadcast at the station.',
-            vi: 'Ở nhà ga có phát thanh.'
+            en: 'There is a graduation ceremony in the gym next week.',
+            vi: 'Tuần sau có lễ tốt nghiệp ở nhà thi đấu.'
           },
-          jp: '駅で 放送が あります。',
+          jp: '来週 体育館で 卒業式が あります。',
           ruby: [
-            { base: '駅', reading: 'えき' },
-            { base: '放', reading: 'ほう' },
-            { base: '送', reading: 'そう' }
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '体', reading: 'たい' },
+            { base: '育', reading: 'いく' },
+            { base: '館', reading: 'かん' },
+            { base: '卒', reading: 'そつ' },
+            { base: '業', reading: 'ぎょう' },
+            { base: '式', reading: 'しき' }
           ]
         },
         {

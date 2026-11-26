@@ -398,18 +398,17 @@ export const n5Lesson24: Lesson = {
           ]
         },
         {
-          jp: '母の 弁当を 自分で 作って あげましょう。',
-          romaji: 'Haha no bentō o jibun de tsukutte agemashō.',
+          jp: '母の 誕生日に ケーキを 作って あげました。',
+          romaji: 'Haha no tanjōbi ni kēki o tsukutte agemashita.',
           meaning: {
-            en: 'Let us make a boxed lunch for Mother by ourselves.',
-            vi: 'Chúng ta tự làm cơm hộp cho mẹ nhé.'
+            en: 'I made a cake for my mother on her birthday.',
+            vi: 'Tôi làm bánh tặng mẹ vào ngày sinh nhật.'
           },
           ruby: [
             { base: '母', reading: 'はは' },
-            { base: '弁', reading: 'べん' },
-            { base: '当', reading: 'とう' },
-            { base: '自', reading: 'じ' },
-            { base: '分', reading: 'ぶん' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
             { base: '作', reading: 'つく' }
           ]
         }
@@ -595,11 +594,12 @@ export const n5Lesson24: Lesson = {
           ]
         },
         {
-          jp: '私は 全部 食べられませんでしたが、みんな 手伝って くれました。',
-          romaji: 'Watashi wa zenbu taberaremasen deshita ga, minna tetsudatte kuremashita.',
+          jp: '私は 全部 食べる ことが できませんでしたが、みんなが 手伝って くれました。',
+          romaji:
+            'Watashi wa zenbu taberu koto ga dekimasen deshita ga, minna ga tetsudatte kuremashita.',
           meaning: {
-            en: 'I could not eat everything, but everyone helped me.',
-            vi: 'Tôi không ăn hết, nhưng mọi người giúp tôi.'
+            en: 'I could not eat it all, but everyone helped me.',
+            vi: 'Tôi không ăn hết được, nhưng mọi người đã ăn giúp.'
           },
           ruby: [
             { base: '私', reading: 'わたし' },

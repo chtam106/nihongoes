@@ -61,18 +61,14 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I have a ticket.', vi: 'Tôi có vé.' },
-          jp: '私は チケットが あります。',
-          ruby: [{ base: '私', reading: 'わたし' }]
-        },
-        {
-          prompt: { en: 'I like drinks.', vi: 'Tôi thích đồ uống.' },
-          jp: '私は 飲み物が 好きです。',
+          prompt: {
+            en: "I have tickets for tonight's concert.",
+            vi: 'Tôi có vé buổi hòa nhạc tối nay.'
+          },
+          jp: '今晩の コンサートの チケットが あります。',
           ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '飲', reading: 'の' },
-            { base: '物', reading: 'もの' },
-            { base: '好', reading: 'す' }
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' }
           ]
         },
         {
@@ -100,41 +96,6 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I like Japanese songs.', vi: 'Tôi thích bài hát Nhật Bản.' },
-          jp: '私は 日本の 歌が 好きです。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '歌', reading: 'うた' },
-            { base: '好', reading: 'す' }
-          ]
-        },
-        {
-          prompt: { en: 'I like classical music.', vi: 'Tôi thích nhạc cổ điển.' },
-          jp: '私は クラシックが 好きです。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '好', reading: 'す' }
-          ]
-        },
-        {
-          prompt: { en: 'I like concerts.', vi: 'Tôi thích buổi hòa nhạc.' },
-          jp: '私は コンサートが 好きです。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '好', reading: 'す' }
-          ]
-        },
-        {
-          prompt: { en: 'I like karaoke.', vi: 'Tôi thích karaoke.' },
-          jp: '私は カラオケが 好きです。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '好', reading: 'す' }
-          ]
-        },
-        {
           prompt: { en: 'I like kabuki.', vi: 'Tôi thích kabuki.' },
           jp: '私は 歌舞伎が 好きです。',
           ruby: [
@@ -146,10 +107,10 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I am good at painting.', vi: 'Tôi giỏi vẽ.' },
-          jp: '私は 絵が 上手です。',
+          prompt: { en: 'My younger sister is good at drawing.', vi: 'Em gái tôi vẽ giỏi.' },
+          jp: '妹は 絵が 上手です。',
           ruby: [
-            { base: '私', reading: 'わたし' },
+            { base: '妹', reading: 'いもうと' },
             { base: '絵', reading: 'え' },
             { base: '上', reading: 'じょう' },
             { base: '手', reading: 'ず' }
@@ -176,53 +137,29 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I understand hiragana.', vi: 'Tôi hiểu hiragana.' },
-          jp: 'ひらがなが わかります。'
+          prompt: { en: 'I can read hiragana and katakana.', vi: 'Tôi biết hiragana và katakana.' },
+          jp: 'ひらがなと カタカナが わかります。'
         },
         {
-          prompt: { en: 'I understand katakana.', vi: 'Tôi hiểu katakana.' },
-          jp: 'カタカナが わかります。'
-        },
-        {
-          prompt: { en: 'I understand romaji.', vi: 'Tôi hiểu chữ La Mã.' },
-          jp: 'ローマ字が わかります。',
-          ruby: [{ base: '字', reading: 'じ' }]
-        },
-        {
-          prompt: { en: 'I have small change.', vi: 'Tôi có tiền lẻ.' },
-          jp: '細かい お金が あります。',
+          prompt: {
+            en: 'Excuse me, do you have any small change?',
+            vi: 'Xin lỗi, anh có tiền lẻ không?'
+          },
+          jp: 'すみません、細かい お金が ありますか。',
           ruby: [
             { base: '細', reading: 'こま' },
             { base: '金', reading: 'かね' }
           ]
         },
         {
-          prompt: { en: 'I have time.', vi: 'Tôi có thời gian.' },
-          jp: '時間が あります。',
+          prompt: { en: 'Do you have time this evening?', vi: 'Tối nay anh có thời gian không?' },
+          jp: '今晩 時間が ありますか。',
           ruby: [
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' }
           ]
-        },
-        {
-          prompt: { en: 'I have an errand.', vi: 'Tôi có việc bận.' },
-          jp: '用事が あります。',
-          ruby: [
-            { base: '用', reading: 'よう' },
-            { base: '事', reading: 'じ' }
-          ]
-        },
-        {
-          prompt: { en: 'I have an appointment.', vi: 'Tôi có cuộc hẹn.' },
-          jp: '約束が あります。',
-          ruby: [
-            { base: '約', reading: 'やく' },
-            { base: '束', reading: 'そく' }
-          ]
-        },
-        {
-          prompt: { en: 'I have a part-time job.', vi: 'Tôi có việc làm thêm.' },
-          jp: 'アルバイトが あります。'
         },
         {
           prompt: {
@@ -233,14 +170,6 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ruby: [
             { base: '主', reading: 'しゅ' },
             { base: '人', reading: 'じん' },
-            { base: '好', reading: 'す' }
-          ]
-        },
-        {
-          prompt: { en: 'My husband likes soccer.', vi: 'Chồng tôi thích bóng đá.' },
-          jp: '夫は サッカーが 好きです。',
-          ruby: [
-            { base: '夫', reading: 'おっと' },
             { base: '好', reading: 'す' }
           ]
         },
@@ -256,28 +185,6 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
             { base: '理', reading: 'り' },
             { base: '上', reading: 'じょう' },
             { base: '手', reading: 'ず' }
-          ]
-        },
-        {
-          prompt: { en: 'My wife likes music.', vi: 'Vợ tôi thích âm nhạc.' },
-          jp: '妻は 音楽が 好きです。',
-          ruby: [
-            { base: '妻', reading: 'つま' },
-            { base: '音', reading: 'おん' },
-            { base: '楽', reading: 'がく' },
-            { base: '好', reading: 'す' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The child likes Vietnamese songs.',
-            vi: 'Đứa trẻ thích bài hát Việt Nam.'
-          },
-          jp: '子どもは ベトナムの 歌が 好きです。',
-          ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '歌', reading: 'うた' },
-            { base: '好', reading: 'す' }
           ]
         }
       ]
@@ -318,9 +225,17 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I like jazz.', vi: 'Tôi thích nhạc jazz.' },
-          jp: 'ジャズが 好きです。',
-          ruby: [{ base: '好', reading: 'す' }]
+          prompt: {
+            en: 'What kind of music do you often listen to? ...I often listen to jazz.',
+            vi: 'Anh hay nghe loại nhạc nào? ...Tôi hay nghe nhạc jazz.'
+          },
+          jp: 'どんな 音楽を よく 聞きますか。……ジャズを よく 聞きます。',
+          ruby: [
+            { base: '音', reading: 'おん' },
+            { base: '楽', reading: 'がく' },
+            { base: '聞', reading: 'き' },
+            { base: '聞', reading: 'き' }
+          ]
         }
       ]
     },
@@ -388,14 +303,6 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
             { base: '全', reading: 'ぜん' },
             { base: '然', reading: 'ぜん' }
           ]
-        },
-        {
-          prompt: { en: 'Please come early.', vi: 'Hãy đến sớm.' },
-          jp: '早く 来て ください。',
-          ruby: [
-            { base: '早', reading: 'はや' },
-            { base: '来', reading: 'き' }
-          ]
         }
       ]
     },
@@ -441,13 +348,14 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I have an errand, so I will not drink.',
-            vi: 'Tôi có việc bận nên không uống.'
+            en: 'I came by car, so I will not drink alcohol.',
+            vi: 'Tôi đi ô tô đến nên không uống rượu.'
           },
-          jp: '用事が ありますから、飲みません。',
+          jp: '車で 来ましたから、お酒は 飲みません。',
           ruby: [
-            { base: '用', reading: 'よう' },
-            { base: '事', reading: 'じ' },
+            { base: '車', reading: 'くるま' },
+            { base: '来', reading: 'き' },
+            { base: '酒', reading: 'さけ' },
             { base: '飲', reading: 'の' }
           ]
         },
@@ -465,41 +373,75 @@ export const n5Lesson9SentenceWriting: LessonSentenceWriting = {
       pattern: 'どうして',
       items: [
         {
-          prompt: { en: 'Why do you like Japan?', vi: 'Tại sao bạn thích Nhật Bản?' },
-          jp: 'どうして 日本が 好きですか。',
+          prompt: {
+            en: 'Why do you study Japanese? ...Because I like Japanese songs.',
+            vi: 'Sao anh học tiếng Nhật? ...Vì tôi thích bài hát Nhật.'
+          },
+          jp: 'どうして 日本語を 勉強しますか。……日本の 歌が 好きですから。',
           ruby: [
             { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '歌', reading: 'うた' },
             { base: '好', reading: 'す' }
           ]
         },
         {
-          prompt: { en: 'Why will you not go?', vi: 'Tại sao bạn không đi?' },
-          jp: 'どうして 行きませんか。',
-          ruby: [{ base: '行', reading: 'い' }]
+          prompt: {
+            en: 'Are you going to the party? ...No, I am not. ...Why not?',
+            vi: 'Anh có đi dự tiệc không? ...Không, tôi không đi. ...Sao vậy?'
+          },
+          jp: 'パーティーに 行きますか。……いいえ、行きません。……どうしてですか。',
+          ruby: [
+            { base: '行', reading: 'い' },
+            { base: '行', reading: 'い' }
+          ]
         },
         {
           prompt: {
-            en: 'Because I have an appointment.',
-            vi: 'Vì tôi có cuộc hẹn.'
+            en: 'Why are you going home early? ...Because I have plans with a friend.',
+            vi: 'Sao anh về sớm vậy? ...Vì tôi có hẹn với bạn.'
           },
-          jp: '約束が ありますから。',
+          jp: 'どうして 早く 帰りますか。……友達と 約束が ありますから。',
           ruby: [
+            { base: '早', reading: 'はや' },
+            { base: '帰', reading: 'かえ' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
             { base: '約', reading: 'やく' },
             { base: '束', reading: 'そく' }
           ]
         },
         {
-          prompt: { en: 'Why are you busy?', vi: 'Tại sao bạn bận?' },
-          jp: 'どうして 忙しいですか。',
-          ruby: [{ base: '忙', reading: 'いそが' }]
+          prompt: {
+            en: 'Why were you absent from school yesterday? ...Because I had something to take care of.',
+            vi: 'Sao hôm qua anh nghỉ học? ...Vì tôi có việc bận.'
+          },
+          jp: 'どうして きのう 学校を 休みましたか。……用事が ありましたから。',
+          ruby: [
+            { base: '学', reading: 'がっ' },
+            { base: '校', reading: 'こう' },
+            { base: '休', reading: 'やす' },
+            { base: '用', reading: 'よう' },
+            { base: '事', reading: 'じ' }
+          ]
         },
         {
           prompt: {
-            en: 'Because I have a part-time job.',
-            vi: 'Vì tôi có việc làm thêm.'
+            en: 'Why are you busy every day? ...Because I have a part-time job at night.',
+            vi: 'Sao ngày nào anh cũng bận? ...Vì buổi tối tôi đi làm thêm.'
           },
-          jp: 'アルバイトが ありますから。'
+          jp: 'どうして 毎日 忙しいですか。……夜 アルバイトが ありますから。',
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '忙', reading: 'いそが' },
+            { base: '夜', reading: 'よる' }
+          ]
         }
       ]
     }

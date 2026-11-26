@@ -7,16 +7,14 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Exports look about to increase.',
-            vi: 'Xuất khẩu có vẻ sắp tăng.'
+            en: 'Car exports look set to increase next year.',
+            vi: 'Năm sau xuất khẩu ô tô có vẻ sẽ tăng.'
           },
-          jp: '輸出が 増えそうです。来年 輸出が 増えます。',
+          jp: '来年は 車の 輸出が 増えそうです。',
           ruby: [
-            { base: '輸', reading: 'ゆ' },
-            { base: '出', reading: 'しゅつ' },
-            { base: '増', reading: 'ふ' },
             { base: '来', reading: 'らい' },
             { base: '年', reading: 'ねん' },
+            { base: '車', reading: 'くるま' },
             { base: '輸', reading: 'ゆ' },
             { base: '出', reading: 'しゅつ' },
             { base: '増', reading: 'ふ' }
@@ -24,31 +22,29 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The number of customers looks about to decrease.',
-            vi: 'Số khách có vẻ sắp giảm.'
+            en: 'If we raise prices, it looks like customers will drop off.',
+            vi: 'Nếu tăng giá thì có vẻ khách sẽ giảm.'
           },
-          jp: '客が 減りそうです。来月 客が 減ります。',
+          jp: '値段を 上げると、客が 減りそうです。',
           ruby: [
-            { base: '客', reading: 'きゃく' },
-            { base: '減', reading: 'へ' },
-            { base: '来', reading: 'らい' },
-            { base: '月', reading: 'げつ' },
+            { base: '値', reading: 'ね' },
+            { base: '段', reading: 'だん' },
+            { base: '上', reading: 'あ' },
             { base: '客', reading: 'きゃく' },
             { base: '減', reading: 'へ' }
           ]
         },
         {
           prompt: {
-            en: 'Prices look about to rise.',
-            vi: 'Giá có vẻ sắp tăng.'
+            en: 'Vegetable prices look set to rise from next month.',
+            vi: 'Từ tháng sau giá rau có vẻ sẽ tăng.'
           },
-          jp: '値段が 上がりそうです。来週 値段が 上がります。',
+          jp: '来月から 野菜の 値段が 上がりそうです。',
           ruby: [
-            { base: '値', reading: 'ね' },
-            { base: '段', reading: 'だん' },
-            { base: '上', reading: 'あ' },
             { base: '来', reading: 'らい' },
-            { base: '週', reading: 'しゅう' },
+            { base: '月', reading: 'げつ' },
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' },
             { base: '値', reading: 'ね' },
             { base: '段', reading: 'だん' },
             { base: '上', reading: 'あ' }
@@ -56,78 +52,54 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Prices look about to fall.',
-            vi: 'Giá có vẻ sắp giảm.'
+            en: 'This string looks like it could snap any moment.',
+            vi: 'Sợi dây này có vẻ sắp đứt đến nơi.'
           },
-          jp: '値段が 下がりそうです。来週 値段が 下がります。',
+          jp: 'この ひもは 今にも 切れそうです。',
           ruby: [
-            { base: '値', reading: 'ね' },
-            { base: '段', reading: 'だん' },
-            { base: '下', reading: 'さ' },
-            { base: '来', reading: 'らい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '値', reading: 'ね' },
-            { base: '段', reading: 'だん' },
-            { base: '下', reading: 'さ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The string looks about to snap.',
-            vi: 'Sợi dây có vẻ sắp đứt.'
-          },
-          jp: 'ひもが 切れそうです。よく 切れます。',
-          ruby: [
-            { base: '切', reading: 'き' },
+            { base: '今', reading: 'いま' },
             { base: '切', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'The button looks about to come off.',
-            vi: 'Nút áo có vẻ sắp tuột.'
+            en: 'The button on your shirt looks like it is about to come off.',
+            vi: 'Cúc áo sơ mi của anh có vẻ sắp bung ra đấy.'
           },
-          jp: 'ボタンが とれそうです。よく とれます。'
+          jp: 'シャツの ボタンが 取れそうですよ。',
+          ruby: [{ base: '取', reading: 'と' }]
         },
         {
           prompt: {
-            en: 'The bag looks about to fall.',
-            vi: 'Túi có vẻ sắp rơi.'
+            en: 'The luggage on the shelf looks like it is about to fall.',
+            vi: 'Hành lý trên giá có vẻ sắp rơi xuống.'
           },
-          jp: '荷物が 落ちそうです。よく 落ちます。',
+          jp: '棚の 上の 荷物が 落ちそうです。',
           ruby: [
+            { base: '棚', reading: 'たな' },
+            { base: '上', reading: 'うえ' },
             { base: '荷', reading: 'に' },
             { base: '物', reading: 'もつ' },
-            { base: '落', reading: 'お' },
             { base: '落', reading: 'お' }
           ]
         },
         {
           prompt: {
-            en: 'The gasoline looks about to run out.',
-            vi: 'Xăng có vẻ sắp hết.'
+            en: 'We are about to run out of gas, so let us stop at a gas station.',
+            vi: 'Xăng sắp hết rồi, ghé cây xăng đi.'
           },
-          jp: 'ガソリンが なくなりそうです。すぐ なくなります。'
+          jp: 'ガソリンが なくなりそうですから、スタンドに 寄りましょう。',
+          ruby: [{ base: '寄', reading: 'よ' }]
         },
         {
           prompt: {
-            en: 'That person looks strange.',
-            vi: 'Người kia có vẻ lạ.'
+            en: 'The two of them both look very happy.',
+            vi: 'Hai người trông thật hạnh phúc nhỉ.'
           },
-          jp: 'あの 人は 変そうです。',
+          jp: '二人とも とても 幸せそうですね。',
           ruby: [
-            { base: '人', reading: 'ひと' },
-            { base: '変', reading: 'へん' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'They look happy.',
-            vi: 'Họ có vẻ hạnh phúc.'
-          },
-          jp: 'あの 人は 幸せそうです。',
-          ruby: [
-            { base: '人', reading: 'ひと' },
+            { base: '二', reading: 'ふた' },
+            { base: '人', reading: 'り' },
             { base: '幸', reading: 'しあわ' }
           ]
         },
@@ -144,54 +116,33 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'This dish looks delicious.',
-            vi: 'Món này có vẻ ngon.'
-          },
-          jp: 'この 料理は うまそうです。本当に うまいです。',
-          ruby: [
-            { base: '料', reading: 'りょう' },
-            { base: '理', reading: 'り' },
-            { base: '本', reading: 'ほん' },
-            { base: '当', reading: 'とう' }
-          ]
+          prompt: { en: 'Wow, this cake looks delicious.', vi: 'Ồ, cái bánh này trông ngon quá.' },
+          jp: 'わあ、この ケーキ、おいしそうですね。'
         },
         {
           prompt: {
-            en: 'This soup looks bad-tasting.',
-            vi: 'Món súp này có vẻ dở.'
+            en: 'This movie looks boring. Shall we watch something else?',
+            vi: 'Phim này trông chán nhỉ. Xem phim khác không?'
           },
-          jp: 'この スープは まずそうです。本当に まずいです。',
-          ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '当', reading: 'とう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'This movie looks boring.',
-            vi: 'Phim này có vẻ chán.'
-          },
-          jp: 'この 映画は つまらなそうです。本当に つまらないです。',
+          jp: 'この 映画は つまらなそうですね。ほかのを 見ませんか。',
           ruby: [
             { base: '映', reading: 'えい' },
             { base: '画', reading: 'が' },
-            { base: '本', reading: 'ほん' },
-            { base: '当', reading: 'とう' }
+            { base: '見', reading: 'み' }
           ]
         },
         {
           prompt: {
-            en: 'That person looks kind.',
-            vi: 'Người kia có vẻ hiền lành.'
+            en: 'The new teacher looks like a kind person.',
+            vi: 'Thầy giáo mới trông có vẻ hiền.'
           },
-          jp: 'あの 人は 優しそうです。本当に 優しいです。',
+          jp: '新しい 先生は 優しそうな 人です。',
           ruby: [
-            { base: '人', reading: 'ひと' },
+            { base: '新', reading: 'あたら' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
             { base: '優', reading: 'やさ' },
-            { base: '本', reading: 'ほん' },
-            { base: '当', reading: 'とう' },
-            { base: '優', reading: 'やさ' }
+            { base: '人', reading: 'ひと' }
           ]
         },
         {
@@ -222,30 +173,37 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I will go buy a rose and come back.',
-            vi: 'Tôi đi mua hoa hồng rồi về.'
+            en: 'I will go buy some roses at the florist and come back.',
+            vi: 'Tôi ra tiệm hoa mua hoa hồng rồi về ngay.'
           },
-          jp: 'ばらを 買って 来ます。',
+          jp: '花屋で ばらを 買って 来ます。',
           ruby: [
+            { base: '花', reading: 'はな' },
+            { base: '屋', reading: 'や' },
             { base: '買', reading: 'か' },
             { base: '来', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'I will go for a drive and come back.',
-            vi: 'Tôi đi lái xe dạo rồi về.'
+            en: 'I am going for a quick drive to the sea and back.',
+            vi: 'Tôi lái xe ra biển một chút rồi về.'
           },
-          jp: 'ドライブして 来ます。',
-          ruby: [{ base: '来', reading: 'き' }]
+          jp: 'ちょっと 海まで ドライブして 来ます。',
+          ruby: [
+            { base: '海', reading: 'うみ' },
+            { base: '来', reading: 'き' }
+          ]
         },
         {
           prompt: {
-            en: 'Wow, I will go see it and come back.',
-            vi: 'Ôi, tôi đi xem một chút rồi về.'
+            en: 'What was that noise? I will go take a look.',
+            vi: 'Tiếng gì vậy nhỉ? Để tôi đi xem một chút.'
           },
-          jp: 'わあ、ちょっと 見て 来ます。',
+          jp: '何の 音でしょう。ちょっと 見て 来ます。',
           ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '音', reading: 'おと' },
             { base: '見', reading: 'み' },
             { base: '来', reading: 'き' }
           ]
@@ -268,29 +226,24 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Could you apologize for me?',
-            vi: 'Anh xin lỗi giúp được không?'
+            en: 'Would you apologize together with me?',
+            vi: 'Anh xin lỗi cùng tôi được không?'
           },
-          jp: '私が 謝ります。あなたも 謝って くれませんか。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '謝', reading: 'あやま' },
-            { base: '謝', reading: 'あやま' }
-          ]
+          jp: 'いっしょに 謝って くれませんか。',
+          ruby: [{ base: '謝', reading: 'あやま' }]
         },
         {
           prompt: {
-            en: 'Could you introduce me so I can get acquainted?',
-            vi: 'Anh giới thiệu để tôi làm quen được không?'
+            en: 'Could you introduce me to a Japanese teacher?',
+            vi: 'Anh giới thiệu cho tôi một giáo viên tiếng Nhật được không?'
           },
-          jp: 'パーティーで 新しい 人と 知り合います。知り合いを 紹介して くれませんか。',
+          jp: '日本語の 先生を 紹介して くれませんか。',
           ruby: [
-            { base: '新', reading: 'あたら' },
-            { base: '人', reading: 'ひと' },
-            { base: '知', reading: 'し' },
-            { base: '合', reading: 'あ' },
-            { base: '知', reading: 'し' },
-            { base: '合', reading: 'あ' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
             { base: '紹', reading: 'しょう' },
             { base: '介', reading: 'かい' }
           ]
@@ -320,11 +273,17 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Could you buy roses for me?',
-            vi: 'Anh mua hoa hồng giúp được không?'
+            en: 'Could you buy some milk on your way home?',
+            vi: 'Trên đường về mua giúp tôi hộp sữa được không?'
           },
-          jp: 'ばらを 買って くれませんか。',
-          ruby: [{ base: '買', reading: 'か' }]
+          jp: '帰りに 牛乳を 買って 来て くれませんか。',
+          ruby: [
+            { base: '帰', reading: 'かえ' },
+            { base: '牛', reading: 'ぎゅう' },
+            { base: '乳', reading: 'にゅう' },
+            { base: '買', reading: 'か' },
+            { base: '来', reading: 'き' }
+          ]
         }
       ]
     }

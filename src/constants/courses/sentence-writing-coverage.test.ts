@@ -4,7 +4,7 @@ import { auditSentenceWriting } from '@/constants/courses/sentence-writing-cover
 import { getSentenceWriting } from '@/constants/courses/sentence-writing.ts';
 
 describe('N5 lesson 1 sentence writing', () => {
-  it('covers every grammar point, vocab word, and useful phrase', () => {
+  it('covers every grammar point and useful phrase', () => {
     const lesson = getCourse('n5').lessons[0];
     const writing = getSentenceWriting('n5', lesson.id);
 
@@ -16,7 +16,7 @@ describe('N4 sentence writing', () => {
   const lessons = getCourse('n4').lessons;
 
   it.each(lessons.map((lesson) => [lesson.id, lesson] as const))(
-    '%s covers every grammar point, vocab word, and useful phrase',
+    '%s covers every grammar point and useful phrase',
     (_id, lesson) => {
       const writing = getSentenceWriting('n4', lesson.id);
 

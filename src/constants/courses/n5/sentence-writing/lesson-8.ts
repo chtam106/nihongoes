@@ -44,15 +44,6 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '暇', reading: 'ひま' }]
         },
         {
-          prompt: { en: 'This place is convenient.', vi: 'Chỗ này tiện lợi.' },
-          jp: 'この 所は 便利です。',
-          ruby: [
-            { base: '所', reading: 'ところ' },
-            { base: '便', reading: 'べん' },
-            { base: '利', reading: 'り' }
-          ]
-        },
-        {
           prompt: { en: 'This water is cold (to the touch).', vi: 'Nước này lạnh.' },
           jp: 'この 水は 冷たいです。',
           ruby: [
@@ -73,25 +64,6 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           prompt: { en: 'That bag is cheap.', vi: 'Cái túi kia rẻ.' },
           jp: 'あの かばんは 安いです。',
           ruby: [{ base: '安', reading: 'やす' }]
-        },
-        {
-          prompt: { en: 'This chair is low.', vi: 'Cái ghế này thấp.' },
-          jp: 'この いすは 低いです。',
-          ruby: [{ base: '低', reading: 'ひく' }]
-        },
-        {
-          prompt: { en: 'This book is good.', vi: 'Quyển sách này tốt.' },
-          jp: 'この 本は いいです。',
-          ruby: [{ base: '本', reading: 'ほん' }]
-        },
-        {
-          prompt: { en: 'That movie is bad.', vi: 'Bộ phim kia dở.' },
-          jp: 'あの 映画は 悪いです。',
-          ruby: [
-            { base: '映', reading: 'えい' },
-            { base: '画', reading: 'が' },
-            { base: '悪', reading: 'わる' }
-          ]
         },
         {
           prompt: { en: 'This restaurant is famous.', vi: 'Nhà hàng này nổi tiếng.' },
@@ -119,9 +91,13 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
       pattern: 'い-adj N / な-adj[な] N',
       items: [
         {
-          prompt: { en: 'Kyoto is a beautiful town.', vi: 'Kyoto là thành phố đẹp.' },
-          jp: 'きょうとは きれいな 町です。',
-          ruby: [{ base: '町', reading: 'まち' }]
+          prompt: { en: 'Kyoto is a beautiful town.', vi: 'Kyoto là một thành phố đẹp.' },
+          jp: '京都は きれいな 町です。',
+          ruby: [
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
+            { base: '町', reading: 'まち' }
+          ]
         },
         {
           prompt: { en: 'That is a lovely bag.', vi: 'Đó là cái túi đẹp.' },
@@ -144,14 +120,6 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Those are white cherry blossoms.', vi: 'Đó là hoa anh đào trắng.' },
-          jp: 'あれは 白い 桜です。',
-          ruby: [
-            { base: '白', reading: 'しろ' },
-            { base: '桜', reading: 'さくら' }
-          ]
-        },
-        {
           prompt: { en: 'That is a black bag.', vi: 'Đó là cái túi đen.' },
           jp: 'それは 黒い かばんです。',
           ruby: [{ base: '黒', reading: 'くろ' }]
@@ -162,14 +130,6 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           ruby: [
             { base: '赤', reading: 'あか' },
             { base: '花', reading: 'はな' }
-          ]
-        },
-        {
-          prompt: { en: 'That is a blue sky.', vi: 'Đó là bầu trời xanh.' },
-          jp: 'あれは 青い 空です。',
-          ruby: [
-            { base: '青', reading: 'あお' },
-            { base: '空', reading: 'そら' }
           ]
         }
       ]
@@ -248,9 +208,15 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '暑', reading: 'あつ' }]
         },
         {
-          prompt: { en: 'Hokkaido is very cold.', vi: 'Hokkaido rất lạnh.' },
-          jp: 'ほっかいどうは とても 寒いです。',
-          ruby: [{ base: '寒', reading: 'さむ' }]
+          prompt: { en: 'Winters in Hokkaido are very cold.', vi: 'Mùa đông ở Hokkaido rất lạnh.' },
+          jp: '北海道の 冬は とても 寒いです。',
+          ruby: [
+            { base: '北', reading: 'ほっ' },
+            { base: '海', reading: 'かい' },
+            { base: '道', reading: 'どう' },
+            { base: '冬', reading: 'ふゆ' },
+            { base: '寒', reading: 'さむ' }
+          ]
         },
         {
           prompt: { en: 'This film is very famous.', vi: 'Bộ phim này rất nổi tiếng.' },
@@ -291,11 +257,16 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'How is work?', vi: 'Công việc thế nào?' },
-          jp: 'お仕事は どうですか。',
+          prompt: {
+            en: 'How do you find Japanese food? ...It is very good.',
+            vi: 'Đồ ăn Nhật thấy thế nào? ...Rất ngon.'
+          },
+          jp: '日本の 食べ物は どうですか。……とても おいしいです。',
           ruby: [
-            { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' }
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '食', reading: 'た' },
+            { base: '物', reading: 'もの' }
           ]
         },
         {
@@ -303,9 +274,14 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
           jp: 'レストランは どうですか。'
         },
         {
-          prompt: { en: 'It is busy, but fun.', vi: 'Bận nhưng vui.' },
-          jp: '忙しいですが、楽しいです。',
+          prompt: {
+            en: 'How is work? ...Busy, but fun.',
+            vi: 'Công việc thế nào? ...Bận nhưng vui.'
+          },
+          jp: 'お仕事は どうですか。……忙しいですが、楽しいです。',
           ruby: [
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
             { base: '忙', reading: 'いそが' },
             { base: '楽', reading: 'たの' }
           ]
@@ -321,9 +297,18 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
       pattern: 'N1 は どんな N2 ですか',
       items: [
         {
-          prompt: { en: 'What kind of town is Nara?', vi: 'Nara là thành phố như thế nào?' },
-          jp: 'ならは どんな 町ですか。',
-          ruby: [{ base: '町', reading: 'まち' }]
+          prompt: {
+            en: 'What kind of town is Nara? ...It is an old town.',
+            vi: 'Nara là thành phố như thế nào? ...Là một thành phố cổ.'
+          },
+          jp: '奈良は どんな 町ですか。……古い 町です。',
+          ruby: [
+            { base: '奈', reading: 'な' },
+            { base: '良', reading: 'ら' },
+            { base: '町', reading: 'まち' },
+            { base: '古', reading: 'ふる' },
+            { base: '町', reading: 'まち' }
+          ]
         },
         {
           prompt: { en: 'What kind of mountain is that?', vi: 'Ngọn núi kia như thế nào?' },
@@ -348,11 +333,18 @@ export const n5Lesson8SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'What kind of cherry blossoms are they?',
-            vi: 'Hoa anh đào kia như thế nào?'
+            en: 'What kind of mountain is Mt. Fuji? ...It is a very tall mountain.',
+            vi: 'Núi Phú Sĩ là ngọn núi như thế nào? ...Là ngọn núi rất cao.'
           },
-          jp: 'それは どんな 桜ですか。',
-          ruby: [{ base: '桜', reading: 'さくら' }]
+          jp: '富士山は どんな 山ですか。……とても 高い 山です。',
+          ruby: [
+            { base: '富', reading: 'ふ' },
+            { base: '士', reading: 'じ' },
+            { base: '山', reading: 'さん' },
+            { base: '山', reading: 'やま' },
+            { base: '高', reading: 'たか' },
+            { base: '山', reading: 'やま' }
+          ]
         }
       ]
     }

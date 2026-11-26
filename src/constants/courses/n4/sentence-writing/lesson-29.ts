@@ -7,107 +7,89 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The door is open. The door opens.',
-            vi: 'Cửa đang mở. Cửa mở.'
+            en: 'The door is open. Shall I close it?',
+            vi: 'Cửa đang mở đấy. Tôi đóng lại nhé?'
           },
-          jp: 'ドアが 開いています。ドアが 開きます。',
+          jp: 'ドアが 開いていますよ。閉めましょうか。',
           ruby: [
             { base: '開', reading: 'あ' },
-            { base: '開', reading: 'あ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The window is closed. The window closes.',
-            vi: 'Cửa sổ đang đóng. Cửa sổ đóng.'
-          },
-          jp: '窓が 閉まっています。窓が 閉まります。',
-          ruby: [
-            { base: '窓', reading: 'まど' },
-            { base: '閉', reading: 'し' },
-            { base: '窓', reading: 'まど' },
             { base: '閉', reading: 'し' }
           ]
         },
         {
           prompt: {
-            en: 'The light is on. The light turns on.',
-            vi: 'Đèn đang sáng. Đèn sáng.'
+            en: 'The bank in front of the station was already closed.',
+            vi: 'Ngân hàng trước ga đã đóng cửa rồi.'
           },
-          jp: '電気が ついています。電気が つきます。',
+          jp: '駅前の 銀行は もう 閉まっていました。',
           ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '気', reading: 'き' },
+            { base: '駅', reading: 'えき' },
+            { base: '前', reading: 'まえ' },
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' },
+            { base: '閉', reading: 'し' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'The light in the meeting room is on. Is someone still there?',
+            vi: 'Đèn phòng họp vẫn sáng nhỉ. Chắc vẫn còn ai đó ở trong?'
+          },
+          jp: '会議室の 電気が ついていますね。まだ だれか いるんでしょうか。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '室', reading: 'しつ' },
             { base: '電', reading: 'でん' },
             { base: '気', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'The light is off. The light goes out.',
-            vi: 'Đèn đang tắt. Đèn tắt.'
+            en: 'The light in the next room is off. They must have gone to bed.',
+            vi: 'Phòng bên cạnh đã tắt đèn. Chắc đã ngủ rồi.'
           },
-          jp: '電気が 消えています。電気が 消えます。',
+          jp: '隣の 部屋は 電気が 消えています。もう 寝たんでしょう。',
           ruby: [
+            { base: '隣', reading: 'となり' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
             { base: '電', reading: 'でん' },
             { base: '気', reading: 'き' },
             { base: '消', reading: 'き' },
-            { base: '電', reading: 'でん' },
-            { base: '気', reading: 'き' },
-            { base: '消', reading: 'き' }
+            { base: '寝', reading: 'ね' }
           ]
         },
         {
           prompt: {
-            en: 'The chair is broken. A pocket is attached to the bag.',
-            vi: 'Ghế bị hỏng. Túi xách có ngăn.'
+            en: 'This chair is broken, so please do not sit on it.',
+            vi: 'Cái ghế này bị hỏng rồi, đừng ngồi nhé.'
           },
-          jp: 'いすが 壊れています。いすが 壊れます。かばんに ポケットが 付きます。',
+          jp: 'この いすは 壊れていますから、座らないで ください。',
           ruby: [
             { base: '壊', reading: 'こわ' },
-            { base: '壊', reading: 'こわ' },
-            { base: '付', reading: 'つ' }
+            { base: '座', reading: 'すわ' }
           ]
         },
         {
           prompt: {
-            en: 'The glass is cracked. The branch is snapped. The bag is torn. The plate is dirty.',
-            vi: 'Cốc bị vỡ. Cành gãy. Túi rách. Đĩa bẩn.'
+            en: 'This bag is torn, so please give me a new one.',
+            vi: 'Cái túi này bị rách rồi, cho tôi cái mới nhé.'
           },
-          jp: 'コップが 割れています。コップが 割れます。枝が 折れています。枝が 折れます。袋が 破れています。袋が 破れます。お皿が 汚れています。お皿が 汚れます。',
+          jp: 'この 袋は 破れていますから、新しいのを ください。',
           ruby: [
-            { base: '割', reading: 'わ' },
-            { base: '割', reading: 'わ' },
-            { base: '枝', reading: 'えだ' },
-            { base: '折', reading: 'お' },
-            { base: '枝', reading: 'えだ' },
-            { base: '折', reading: 'お' },
             { base: '袋', reading: 'ふくろ' },
             { base: '破', reading: 'やぶ' },
-            { base: '袋', reading: 'ふくろ' },
-            { base: '破', reading: 'やぶ' },
-            { base: '皿', reading: 'さら' },
-            { base: '汚', reading: 'よご' },
-            { base: '皿', reading: 'さら' },
-            { base: '汚', reading: 'よご' }
+            { base: '新', reading: 'あたら' }
           ]
         },
         {
           prompt: {
-            en: 'The button has come off. The car has stopped. The lock is locked.',
-            vi: 'Nút bị bung. Xe đã dừng. Khóa đang khóa.'
+            en: 'A button on your shirt has come off.',
+            vi: 'Áo sơ mi của anh bị bung cúc kìa.'
           },
-          jp: 'ボタンが 外れています。ボタンが 外れます。車が 止まっています。車が 止まります。かぎが 掛かっています。かぎが 掛かります。',
-          ruby: [
-            { base: '外', reading: 'はず' },
-            { base: '外', reading: 'はず' },
-            { base: '車', reading: 'くるま' },
-            { base: '止', reading: 'と' },
-            { base: '車', reading: 'くるま' },
-            { base: '止', reading: 'と' },
-            { base: '掛', reading: 'か' },
-            { base: '掛', reading: 'か' }
-          ]
+          jp: 'シャツの ボタンが 外れていますよ。',
+          ruby: [{ base: '外', reading: 'はず' }]
         }
       ]
     },
@@ -116,59 +98,63 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I dropped the rice bowl, unfortunately.',
-            vi: 'Tôi làm rơi bát cơm mất rồi.'
+            en: 'I dropped the rice bowl and broke it.',
+            vi: 'Tôi làm rơi bát cơm, vỡ mất rồi.'
           },
-          jp: 'お茶碗を 落として しまいました。お茶碗を 落とします。',
+          jp: 'お茶碗を 落として、割って しまいました。',
           ruby: [
             { base: '茶', reading: 'ちゃ' },
             { base: '碗', reading: 'わん' },
             { base: '落', reading: 'お' },
-            { base: '茶', reading: 'ちゃ' },
-            { base: '碗', reading: 'わん' },
-            { base: '落', reading: 'お' }
+            { base: '割', reading: 'わ' }
           ]
         },
         {
           prompt: {
-            en: 'I made a mistake in the speech, unfortunately.',
-            vi: 'Tôi nói nhầm trong bài diễn văn mất rồi.'
+            en: "I got the company president's name wrong in my speech.",
+            vi: 'Trong bài phát biểu tôi lỡ nói nhầm tên giám đốc.'
           },
-          jp: 'スピーチを まちがえて しまいました。よく まちがえます。'
+          jp: 'スピーチで 社長の 名前を まちがえて しまいました。',
+          ruby: [
+            { base: '社', reading: 'しゃ' },
+            { base: '長', reading: 'ちょう' },
+            { base: '名', reading: 'な' },
+            { base: '前', reading: 'まえ' }
+          ]
         },
         {
           prompt: {
-            en: 'The documents got dirty, unfortunately. I will replace them.',
-            vi: 'Giấy tờ bị bẩn mất rồi. Tôi sẽ thay.'
+            en: 'The documents got stained with coffee. Could you replace them with new ones?',
+            vi: 'Giấy tờ bị dính cà phê bẩn mất rồi. Anh đổi cho tôi bản mới được không?'
           },
-          jp: '書類が 汚れて しまいました。書類を 取り替えます。',
+          jp: 'コーヒーで 書類が 汚れて しまいました。新しいのと 取り替えて いただけませんか。',
           ruby: [
             { base: '書', reading: 'しょ' },
             { base: '類', reading: 'るい' },
             { base: '汚', reading: 'よご' },
-            { base: '書', reading: 'しょ' },
-            { base: '類', reading: 'るい' },
+            { base: '新', reading: 'あたら' },
             { base: '取', reading: 'と' },
             { base: '替', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'I finished wiping the glass.',
-            vi: 'Tôi lau thủy tinh xong rồi.'
+            en: 'I have already finished wiping the window glass.',
+            vi: 'Kính cửa sổ thì tôi đã lau xong rồi.'
           },
-          jp: 'ガラスを ふいて しまいました。ガラスを ふきます。'
+          jp: '窓の ガラスは もう ふいて しまいました。',
+          ruby: [{ base: '窓', reading: 'まど' }]
         },
         {
           prompt: {
-            en: 'I already tidied the room.',
-            vi: 'Tôi đã dọn phòng xong.'
+            en: 'I will finish tidying the room before the guests arrive.',
+            vi: 'Tôi sẽ dọn xong phòng trước khi khách đến.'
           },
-          jp: '部屋を 片づけて しまいました。部屋を 片づけます。',
+          jp: 'お客さんが 来る 前に、部屋を 片づけて しまいます。',
           ruby: [
-            { base: '部', reading: 'へ' },
-            { base: '屋', reading: 'や' },
-            { base: '片', reading: 'かた' },
+            { base: '客', reading: 'きゃく' },
+            { base: '来', reading: 'く' },
+            { base: '前', reading: 'まえ' },
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
             { base: '片', reading: 'かた' }
@@ -176,28 +162,28 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The wall collapsed in the earthquake, unfortunately.',
-            vi: 'Tường đổ trong động đất mất rồi.'
+            en: "The bookshelf fell over in last night's earthquake.",
+            vi: 'Trận động đất tối qua làm đổ cả giá sách.'
           },
-          jp: '地震で 壁が 倒れて しまいました。壁が 倒れます。',
+          jp: 'ゆうべの 地震で 本棚が 倒れて しまいました。',
           ruby: [
             { base: '地', reading: 'じ' },
             { base: '震', reading: 'しん' },
-            { base: '壁', reading: 'かべ' },
-            { base: '倒', reading: 'たお' },
-            { base: '壁', reading: 'かべ' },
+            { base: '本', reading: 'ほん' },
+            { base: '棚', reading: 'だな' },
             { base: '倒', reading: 'たお' }
           ]
         },
         {
           prompt: {
-            en: 'The house has burned down, unfortunately. It burns.',
-            vi: 'Nhà cháy mất rồi. Nó cháy.'
+            en: 'The house next door burned down in a fire.',
+            vi: 'Ngôi nhà bên cạnh bị cháy rụi trong vụ hỏa hoạn.'
           },
-          jp: '家が 燃えて しまいました。家が 燃えます。',
+          jp: '火事で 隣の 家が 燃えて しまいました。',
           ruby: [
-            { base: '家', reading: 'いえ' },
-            { base: '燃', reading: 'も' },
+            { base: '火', reading: 'か' },
+            { base: '事', reading: 'じ' },
+            { base: '隣', reading: 'となり' },
             { base: '家', reading: 'いえ' },
             { base: '燃', reading: 'も' }
           ]
@@ -214,11 +200,13 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I will go to the police box.',
-            vi: 'Tôi sẽ đi đồn cảnh sát.'
+            en: 'If you lose your wallet, go to the police box right away.',
+            vi: 'Nếu mất ví thì hãy đến đồn cảnh sát ngay.'
           },
-          jp: '交番に 行きます。',
+          jp: '財布を なくしたら、すぐ 交番に 行って ください。',
           ruby: [
+            { base: '財', reading: 'さい' },
+            { base: '布', reading: 'ふ' },
             { base: '交', reading: 'こう' },
             { base: '番', reading: 'ばん' },
             { base: '行', reading: 'い' }
@@ -226,10 +214,10 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The station staff came to the platform.',
-            vi: 'Nhân viên nhà ga đã đến sân ga.'
+            en: 'A station attendant came to the platform right away for me.',
+            vi: 'Nhân viên nhà ga đã đến sân ga ngay giúp tôi.'
           },
-          jp: '駅員が ホームに 来ました。',
+          jp: '駅員が すぐ ホームに 来て くれました。',
           ruby: [
             { base: '駅', reading: 'えき' },
             { base: '員', reading: 'いん' },
@@ -238,23 +226,28 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I will go back in front of the station.',
-            vi: 'Tôi sẽ về khu trước nhà ga.'
+            en: 'I will go back to the office as soon as the meeting ends.',
+            vi: 'Họp xong là tôi về công ty ngay.'
           },
-          jp: '駅前に 帰ります。',
+          jp: '会議が 終わったら、すぐ 会社に 帰ります。',
           ruby: [
-            { base: '駅', reading: 'えき' },
-            { base: '前', reading: 'まえ' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '終', reading: 'お' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
             { base: '帰', reading: 'かえ' }
           ]
         },
         {
           prompt: {
-            en: 'The reporter will go to the west side.',
-            vi: 'Phóng viên sẽ đi phía tây.'
+            en: 'The reporter went west, toward where the fire was.',
+            vi: 'Phóng viên đã đi về phía tây, nơi xảy ra hỏa hoạn.'
           },
-          jp: 'レポーターは 西～の方に 行きます。',
+          jp: 'レポーターは 火事の あった 西の 方に 行きました。',
           ruby: [
+            { base: '火', reading: 'か' },
+            { base: '事', reading: 'じ' },
             { base: '西', reading: 'にし' },
             { base: '方', reading: 'ほう' },
             { base: '行', reading: 'い' }
@@ -262,14 +255,16 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Please go ahead. I will go to that area.',
-            vi: 'Mời anh/chị đi trước. Tôi sẽ đi đến khu đó.'
+            en: 'When you get near the station, please give me a call.',
+            vi: 'Khi nào đến gần ga thì gọi điện cho tôi nhé.'
           },
-          jp: 'お先に どうぞ。あの～辺に 行きます。',
+          jp: '駅の 近くに 来たら、電話して ください。',
           ruby: [
-            { base: '先', reading: 'さき' },
-            { base: '辺', reading: 'へん' },
-            { base: '行', reading: 'い' }
+            { base: '駅', reading: 'えき' },
+            { base: '近', reading: 'ちか' },
+            { base: '来', reading: 'き' },
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' }
           ]
         }
       ]
@@ -279,11 +274,13 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I left something behind. That is terrible.',
-            vi: 'Tôi để quên đồ. Thế thì gay nhỉ.'
+            en: 'I left something on the train. ...Oh no, that is terrible.',
+            vi: 'Tôi để quên đồ trên tàu mất rồi. ...Thế thì gay quá nhỉ.'
           },
-          jp: '忘れ物を しました。それは 大変ですね。',
+          jp: '電車に 忘れ物を して しまいました。……それは 大変ですね。',
           ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
             { base: '忘', reading: 'わす' },
             { base: '物', reading: 'もの' },
             { base: '大', reading: 'たい' },
@@ -292,15 +289,15 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'About that train that just left - I do not remember.',
-            vi: 'Chuyến tàu vừa chạy đó - tôi không nhớ.'
+            en: 'I left my bag on the train that just left. ...What kind of bag is it?',
+            vi: 'Tôi để quên cặp trên chuyến tàu vừa rồi. ...Cái cặp đó trông như thế nào?'
           },
-          jp: 'その 今の 電車は 覚えていません。',
+          jp: '今の 電車に かばんを 忘れました。……その かばんは どんな かばんですか。',
           ruby: [
             { base: '今', reading: 'いま' },
             { base: '電', reading: 'でん' },
             { base: '車', reading: 'しゃ' },
-            { base: '覚', reading: 'おぼ' }
+            { base: '忘', reading: 'わす' }
           ]
         },
         {
@@ -316,23 +313,23 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The clock hand points to 3. I will do that too.',
-            vi: 'Kim đồng hồ chỉ số 3. Tôi cũng làm vậy.'
+            en: 'Please try looking carefully once more. ...Yes, I will do that.',
+            vi: 'Anh thử tìm kỹ lại một lần nữa xem. ...Vâng, tôi sẽ làm vậy.'
           },
-          jp: '時計の 針が 3を 指します。そう します。',
+          jp: 'もう 一度 よく 探して みて ください。……はい、そう します。',
           ruby: [
-            { base: '時', reading: 'と' },
-            { base: '計', reading: 'けい' },
-            { base: '針', reading: 'はり' },
-            { base: '指', reading: 'さ' }
+            { base: '一', reading: 'いち' },
+            { base: '度', reading: 'ど' },
+            { base: '探', reading: 'さが' }
           ]
         },
         {
           prompt: {
-            en: 'If I remember correctly, that bag is about this size.',
-            vi: 'Nếu không nhầm, túi đó cỡ tầm này.'
+            en: 'What kind of bag is it? ...If I remember right, a black one about this big.',
+            vi: 'Cặp như thế nào? ...Hình như là cái cặp đen cỡ chừng này.'
           },
-          jp: 'たしか その かばんは このくらいです。'
+          jp: 'どんな かばんですか。……たしか このくらいの 黒い かばんです。',
+          ruby: [{ base: '黒', reading: 'くろ' }]
         }
       ]
     },
@@ -361,35 +358,42 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Thank goodness - it was on the right side.',
-            vi: 'May quá - nó ở bên phải.'
+            en: 'Thank goodness. It was on the right side of the luggage rack.',
+            vi: 'May quá. Nó ở phía bên phải giá để hành lý.'
           },
-          jp: 'よかった。右～側に ありました。',
+          jp: 'よかった。網棚の 右側に ありました。',
           ruby: [
+            { base: '網', reading: 'あみ' },
+            { base: '棚', reading: 'だな' },
             { base: '右', reading: 'みぎ' },
             { base: '側', reading: 'がわ' }
           ]
         },
         {
           prompt: {
-            en: 'The reporter found the documents.',
-            vi: 'Phóng viên tìm thấy giấy tờ.'
+            en: 'I found the documents I lost. They were in my desk drawer.',
+            vi: 'Giấy tờ bị mất tìm thấy rồi, nằm trong ngăn kéo bàn.'
           },
-          jp: 'レポーターが 書類を 見つけました。書類が ありました。',
+          jp: 'なくした 書類、机の 引き出しに ありました。',
           ruby: [
             { base: '書', reading: 'しょ' },
             { base: '類', reading: 'るい' },
-            { base: '見', reading: 'み' },
-            { base: '書', reading: 'しょ' },
-            { base: '類', reading: 'るい' }
+            { base: '机', reading: 'つくえ' },
+            { base: '引', reading: 'ひ' },
+            { base: '出', reading: 'だ' }
           ]
         },
         {
           prompt: {
-            en: 'There was a glass cup.',
-            vi: 'Có cái cốc thủy tinh.'
+            en: 'Did you find the glasses? ...Yes, they were on the kitchen shelf.',
+            vi: 'Tìm thấy cốc chưa? ...Rồi, nó ở trên kệ bếp.'
           },
-          jp: 'ガラスの コップが ありました。'
+          jp: 'コップ、ありましたか。……ええ、台所の 棚に ありました。',
+          ruby: [
+            { base: '台', reading: 'だい' },
+            { base: '所', reading: 'どころ' },
+            { base: '棚', reading: 'たな' }
+          ]
         }
       ]
     },
@@ -429,18 +433,22 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I heard a speech somewhere.',
-            vi: 'Tôi nghe bài diễn văn ở đâu đó.'
+            en: 'I have heard this song somewhere before.',
+            vi: 'Bài hát này tôi đã nghe ở đâu đó rồi.'
           },
-          jp: 'どこかで スピーチを 聞きました。',
-          ruby: [{ base: '聞', reading: 'き' }]
+          jp: 'この 歌は どこかで 聞いた ことが あります。',
+          ruby: [
+            { base: '歌', reading: 'うた' },
+            { base: '聞', reading: 'き' }
+          ]
         },
         {
-          prompt: {
-            en: 'Please wipe it somewhere.',
-            vi: 'Hãy lau ở đâu đó.'
-          },
-          jp: 'どこかで ふいて ください。'
+          prompt: { en: 'Is there somewhere to sit?', vi: 'Có chỗ nào ngồi được không?' },
+          jp: 'どこかに 座る 所は ありませんか。',
+          ruby: [
+            { base: '座', reading: 'すわ' },
+            { base: '所', reading: 'ところ' }
+          ]
         }
       ]
     }

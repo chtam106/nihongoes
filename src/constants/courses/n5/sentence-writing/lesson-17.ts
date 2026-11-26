@@ -6,43 +6,45 @@ export const n5Lesson17SentenceWriting: LessonSentenceWriting = {
       pattern: 'V-ない',
       items: [
         {
-          prompt: { en: 'I do not remember the answer.', vi: 'Tôi không nhớ câu trả lời.' },
-          jp: '答えを 覚えません。',
+          prompt: {
+            en: 'I am not going to the office today. (casual)',
+            vi: 'Hôm nay tôi không đi làm. (thân mật)'
+          },
+          jp: '今日は 会社へ 行かない。',
           ruby: [
-            { base: '答', reading: 'こた' },
-            { base: '覚', reading: 'おぼ' }
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
+          ]
+        },
+        {
+          prompt: { en: 'I do not eat breakfast. (casual)', vi: 'Tôi không ăn sáng. (thân mật)' },
+          jp: '朝ごはんは 食べない。',
+          ruby: [
+            { base: '朝', reading: 'あさ' },
+            { base: '食', reading: 'た' }
           ]
         },
         {
           prompt: {
-            en: 'I will not forget my health insurance card.',
-            vi: 'Tôi sẽ không quên thẻ bảo hiểm y tế.'
+            en: 'I am not going anywhere tonight. (casual)',
+            vi: 'Tối nay tôi không đi đâu cả. (thân mật)'
           },
-          jp: '健康保険証を 忘れません。',
+          jp: '今晩は どこも 出かけない。',
           ruby: [
-            { base: '健', reading: 'けん' },
-            { base: '康', reading: 'こう' },
-            { base: '保', reading: 'ほ' },
-            { base: '険', reading: 'けん' },
-            { base: '証', reading: 'しょう' },
-            { base: '忘', reading: 'わす' }
-          ]
-        },
-        {
-          prompt: { en: 'I will not go out today.', vi: 'Hôm nay tôi không ra ngoài.' },
-          jp: '今日は 出かけません。',
-          ruby: [
-            { base: '今', reading: 'きょ' },
-            { base: '日', reading: 'う' },
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' },
             { base: '出', reading: 'で' }
           ]
         },
         {
           prompt: {
-            en: 'I will not work overtime this week.',
-            vi: 'Tuần này tôi không làm thêm giờ.'
+            en: 'I am not working overtime this week. (casual)',
+            vi: 'Tuần này tôi không làm thêm giờ. (thân mật)'
           },
-          jp: '今週は 残業しません。',
+          jp: '今週は 残業しない。',
           ruby: [
             { base: '今', reading: 'こん' },
             { base: '週', reading: 'しゅう' },
@@ -51,13 +53,15 @@ export const n5Lesson17SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I do not take a bath at night.', vi: 'Tối tôi không tắm bồn.' },
-          jp: '夜は お風呂に 入りません。',
+          prompt: {
+            en: 'Mr. Tanaka is not coming to the party. (casual)',
+            vi: 'Anh Tanaka không đến bữa tiệc. (thân mật)'
+          },
+          jp: '田中さんは パーティーに 来ない。',
           ruby: [
-            { base: '夜', reading: 'よる' },
-            { base: '風', reading: 'ふ' },
-            { base: '呂', reading: 'ろ' },
-            { base: '入', reading: 'はい' }
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '来', reading: 'こ' }
           ]
         }
       ]
@@ -244,32 +248,33 @@ export const n5Lesson17SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I will not submit this problem.', vi: 'Câu hỏi này thì tôi không nộp.' },
-          jp: 'この 問題は 出しません。',
+          prompt: { en: 'I already handed in the homework.', vi: 'Bài tập thì tôi nộp rồi.' },
+          jp: '宿題は もう 出しました。',
           ruby: [
-            { base: '問', reading: 'もん' },
+            { base: '宿', reading: 'しゅく' },
             { base: '題', reading: 'だい' },
             { base: '出', reading: 'だ' }
           ]
         },
         {
-          prompt: { en: 'I will not take off the jacket.', vi: 'Áo khoác thì tôi không cởi.' },
-          jp: '上着は 脱ぎません。',
+          prompt: { en: 'Please leave your luggage here.', vi: 'Hành lý thì hãy để ở đây.' },
+          jp: '荷物は ここに 置いて ください。',
           ruby: [
-            { base: '上', reading: 'うわ' },
-            { base: '着', reading: 'ぎ' },
-            { base: '脱', reading: 'ぬ' }
+            { base: '荷', reading: 'に' },
+            { base: '物', reading: 'もつ' },
+            { base: '置', reading: 'お' }
           ]
         },
         {
           prompt: {
-            en: 'I will not forget that answer.',
-            vi: 'Câu trả lời đó thì tôi không quên.'
+            en: 'I do not drink, but I do smoke.',
+            vi: 'Rượu thì tôi không uống, nhưng thuốc lá thì có hút.'
           },
-          jp: 'その 答えは 忘れません。',
+          jp: 'お酒は 飲みませんが、たばこは 吸います。',
           ruby: [
-            { base: '答', reading: 'こた' },
-            { base: '忘', reading: 'わす' }
+            { base: '酒', reading: 'さけ' },
+            { base: '飲', reading: 'の' },
+            { base: '吸', reading: 'す' }
           ]
         }
       ]
@@ -302,72 +307,38 @@ export const n5Lesson17SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'Please come to the hospital by two or three days from now.',
-            vi: 'Hãy đến bệnh viện trước hai, ba ngày nữa.'
-          },
-          jp: '2、3日までに 病院へ 来て ください。',
-          ruby: [
-            { base: '日', reading: 'にち' },
-            { base: '病', reading: 'びょう' },
-            { base: '院', reading: 'いん' },
-            { base: '来', reading: 'き' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I caught a cold, so I must take medicine by tonight.',
-            vi: 'Tôi bị cảm, vì vậy tối nay phải uống thuốc.'
-          },
-          jp: '風邪を ひきました。ですから、今夜までに 薬を 飲まなければ なりません。',
-          ruby: [
-            { base: '風', reading: 'か' },
-            { base: '邪', reading: 'ぜ' },
-            { base: '今', reading: 'こん' },
-            { base: '夜', reading: 'や' },
-            { base: '薬', reading: 'くすり' },
-            { base: '飲', reading: 'の' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I have a fever. I must go to the doctor by tomorrow.',
-            vi: 'Tôi bị sốt. Phải đến bác sĩ trước ngày mai.'
-          },
-          jp: '熱が あります。明日までに 先生の ところへ 行かなければ なりません。',
-          ruby: [
-            { base: '熱', reading: 'ねつ' },
-            { base: '明', reading: 'あ' },
-            { base: '日', reading: 'した' },
-            { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'This illness is dangerous, so please rest for two or three days.',
-            vi: 'Bệnh này nguy hiểm, vì vậy hãy nghỉ hai, ba ngày.'
-          },
-          jp: 'この 病気は 危ないです。ですから、2、3日 休んで ください。',
-          ruby: [
-            { base: '病', reading: 'びょう' },
-            { base: '気', reading: 'き' },
-            { base: '危', reading: 'あぶ' },
-            { base: '日', reading: 'にち' },
-            { base: '休', reading: 'やす' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Please rest for two or three hours.',
-            vi: 'Hãy nghỉ hai, ba tiếng.'
-          },
-          jp: '2、3時間 休んで ください。',
+          prompt: { en: 'I have to be back by three.', vi: 'Tôi phải về trước 3 giờ.' },
+          jp: '3時までに 帰らなければ なりません。',
           ruby: [
             { base: '時', reading: 'じ' },
-            { base: '間', reading: 'かん' },
-            { base: '休', reading: 'やす' }
+            { base: '帰', reading: 'かえ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I have to read this book by Saturday.',
+            vi: 'Tôi phải đọc xong cuốn sách này trước thứ Bảy.'
+          },
+          jp: '土曜日までに この 本を 読まなければ なりません。',
+          ruby: [
+            { base: '土', reading: 'ど' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '本', reading: 'ほん' },
+            { base: '読', reading: 'よ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Tomorrow I have to be at the office by nine.',
+            vi: 'Ngày mai tôi phải đến công ty trước 9 giờ.'
+          },
+          jp: 'あしたは 9時までに 会社へ 行かなければ なりません。',
+          ruby: [
+            { base: '時', reading: 'じ' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
           ]
         }
       ]
@@ -383,8 +354,8 @@ export const n5Lesson17SentenceWriting: LessonSentenceWriting = {
       jp: 'のど'
     },
     {
-      prompt: { en: '~ hurts.', vi: 'Đau ~.' },
-      jp: '～が 痛いです。',
+      prompt: { en: 'My throat hurts.', vi: 'Tôi bị đau họng.' },
+      jp: 'のどが 痛いです。',
       ruby: [{ base: '痛', reading: 'いた' }]
     },
     {

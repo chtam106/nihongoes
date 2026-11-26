@@ -311,7 +311,7 @@ export const n4Lesson50: Lesson = {
       lines: [
         {
           speakerId: 'host',
-          jp: '優勝 おめでとう ございます。スピーチ、とても よかった です。',
+          jp: '優勝 おめでとう ございます。スピーチ、とても よかったです。',
           romaji: 'Yūshō omedetō gozaimasu. Supīchi, totemo yokatta desu.',
           meaning: {
             en: 'Congratulations on winning. Your speech was excellent.',
@@ -330,7 +330,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'host',
-          jp: 'その とき、緊張 しましたか。',
+          jp: 'その とき、緊張しましたか。',
           romaji: 'Sono toki, kinchō shimashita ka.',
           meaning: { en: 'Were you nervous then?', vi: 'Lúc đó anh có hồi hộp lắm không?' },
           ruby: [
@@ -340,7 +340,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい、とても 緊張 しました。',
+          jp: 'はい、とても 緊張しました。',
           romaji: 'Hai, totemo kinchō shimashita.',
           meaning: { en: 'Yes, I was very nervous.', vi: 'Có, tôi đã rất hồi hộp.' },
           ruby: [
@@ -393,7 +393,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'ええと.... 動物が 好きで、小さい ころから アフリカへ 行きたいと 思っていました。',
+          jp: 'ええと…… 動物が 好きで、小さい ころから アフリカへ 行きたいと 思っていました。',
           romaji:
             'Eeto.... Dōbutsu ga suki de, chiisai koro kara Afurika e ikitai to omotte imashita.',
           meaning: {
@@ -411,14 +411,14 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'host',
-          jp: 'アフリカへ 行かれる んですね。',
+          jp: 'アフリカへ 行かれるんですね。',
           romaji: 'Afurika e ikareru n desu ne.',
           meaning: { en: 'So you will go to Africa.', vi: 'Thế là anh sẽ đi châu Phi à?' },
           ruby: [{ base: '行', reading: 'い' }]
         },
         {
           speakerId: 'miller',
-          jp: 'はい。自然の 中で きりんや ゾウを 見たい です。',
+          jp: 'はい。自然の 中で きりんや ゾウを 見たいです。',
           romaji: 'Hai. Shizen no naka de kirin ya zō o mitai desu.',
           meaning: {
             en: 'Yes. I want to see giraffes and elephants in nature.',
@@ -447,7 +447,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい。とても うれしい です。心から 応援 して くださった 皆さんに 感謝 いたします。ありがとう ございました。',
+          jp: 'はい。とても うれしいです。心から 応援して くださった 皆さんに 感謝 いたします。ありがとう ございました。',
           romaji:
             'Hai. Totemo ureshii desu. Kokoro kara ōen shite kudasatta minasan ni kansha itashimasu. Arigatō gozaimashita.',
           meaning: {
@@ -486,7 +486,7 @@ export const n4Lesson50: Lesson = {
       ],
       examples: [
         {
-          jp: '重そう ですね。お持ち しましょうか。',
+          jp: '重そうですね。お持ち しましょうか。',
           romaji: 'Omōsō desu ne. O-mochi shimashō ka.',
           meaning: {
             en: 'That looks heavy. Shall I carry it for you?',
@@ -498,7 +498,7 @@ export const n4Lesson50: Lesson = {
           ]
         },
         {
-          jp: '江戸東京 博物館へ ご案内 します。',
+          jp: '江戸東京 博物館へ ご案内します。',
           romaji: 'Edo-Tōkyō Hakubutsukan e go-annai shimasu.',
           meaning: {
             en: 'We will guide you to the Edo-Tokyo Museum.',
@@ -517,7 +517,7 @@ export const n4Lesson50: Lesson = {
           ]
         },
         {
-          jp: '初めに、きょうの スケジュールを ご説明 します。',
+          jp: '初めに、きょうの スケジュールを ご説明します。',
           romaji: 'Hajime ni, kyō no sukejūru o go-setsumei shimasu.',
           meaning: {
             en: 'First, I will explain the schedule for today.',
@@ -626,7 +626,7 @@ export const n4Lesson50: Lesson = {
   reading: [
     {
       id: 'reading-lesson50-thanks',
-      title: { en: 'A letter of thanks', vi: 'Thư cám ơn' },
+      title: { en: 'A thank-you letter', vi: 'Thư cảm ơn' },
       titleJp: 'お礼の 手紙',
       titleRuby: [
         { base: '礼', reading: 'れい' },
@@ -635,76 +635,88 @@ export const n4Lesson50: Lesson = {
       ],
       lines: [
         {
-          jp: 'さ来週、わたくしは ミュンヘンへ 出張に 参ります。',
-          romaji: 'Saraishū, watakushi wa Myunhen e shutchō ni mairimasu.',
+          jp: '皆様、お元気で いらっしゃいますか。',
+          romaji: 'Minasama, o-genki de irasshaimasu ka.',
           meaning: {
-            en: 'The week after next I will go on a business trip to Munich.',
-            vi: 'Tuần sau nữa tôi sẽ đi công tác München.'
+            en: 'Dear all, I hope you are well.',
+            vi: 'Kính gửi mọi người, mọi người vẫn khỏe chứ ạ?'
           },
           ruby: [
-            { base: '来', reading: 'らい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '出', reading: 'しゅっ' },
-            { base: '張', reading: 'ちょう' },
-            { base: '参', reading: 'まい' }
-          ]
-        },
-        {
-          jp: '初めに、メールアドレスを お送り します。スケジュールを 拝見 しました。',
-          romaji: 'Hajime ni, mēru adoresu o o-okuri shimasu. Sukejūru o haiken shimashita.',
-          meaning: {
-            en: 'First, I am sending my email address. I have looked at the schedule.',
-            vi: 'Trước hết, tôi gửi địa chỉ email. Tôi đã xem lịch làm việc.'
-          },
-          ruby: [
-            { base: '初', reading: 'はじ' },
-            { base: '送', reading: 'おく' },
-            { base: '拝', reading: 'はい' },
-            { base: '見', reading: 'けん' }
-          ]
-        },
-        {
-          jp: 'お元気で いらっしゃいますか。前回は 大変 お世話に なりました。',
-          romaji: 'O-genki de irasshaimasu ka. Zenkai wa taihen o-sewa ni narimashita.',
-          meaning: {
-            en: 'How are you? Thank you very much for your help last time.',
-            vi: 'Anh/Chị có khỏe không ạ. Lần trước đã nhận được sự giúp đỡ rất nhiều.'
-          },
-          ruby: [
+            { base: '皆', reading: 'みな' },
+            { base: '様', reading: 'さま' },
             { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' },
-            { base: '前', reading: 'ぜん' },
-            { base: '回', reading: 'かい' },
-            { base: '大', reading: 'おお' },
+            { base: '気', reading: 'き' }
+          ]
+        },
+        {
+          jp: '先月 日本で 研修を した とき、大変 お世話に なりました。',
+          romaji: 'Sengetsu Nihon de kenshū o shita toki, taihen o-sewa ni narimashita.',
+          meaning: {
+            en: 'Thank you so much for looking after me during my training in Japan last month.',
+            vi: 'Tháng trước khi thực tập ở Nhật, tôi đã được mọi người giúp đỡ rất nhiều.'
+          },
+          ruby: [
+            { base: '先', reading: 'せん' },
+            { base: '月', reading: 'げつ' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '研', reading: 'けん' },
+            { base: '修', reading: 'しゅう' },
+            { base: '大', reading: 'たい' },
             { base: '変', reading: 'へん' },
             { base: '世', reading: 'せ' },
             { base: '話', reading: 'わ' }
           ]
         },
         {
-          jp: '迷惑を かけない ように 努力 します。経験を 生かして 仕事を いたします。',
-          romaji:
-            'Meiwaku o kakenai yō ni doryoku shimasu. Keiken o ikashite shigoto o itashimasu.',
+          jp: '工場を ご案内 いただいて、たくさんの ことを 学びました。',
+          romaji: 'Kōjō o go-annai itadaite, takusan no koto o manabimashita.',
           meaning: {
-            en: 'I will try not to cause trouble. I will do my work making good use of my experience.',
-            vi: 'Tôi sẽ cố gắng không làm phiền. Tôi sẽ phát huy kinh nghiệm để làm việc.'
+            en: 'You kindly showed me around the factory, and I learned a great deal.',
+            vi: 'Được mọi người dẫn đi tham quan nhà máy, tôi đã học được rất nhiều điều.'
           },
           ruby: [
-            { base: '迷', reading: 'めい' },
-            { base: '惑', reading: 'わく' },
-            { base: '努', reading: 'ど' },
-            { base: '力', reading: 'りょく' },
-            { base: '経', reading: 'けい' },
-            { base: '験', reading: 'けん' },
-            { base: '生', reading: 'い' },
-            { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' }
+            { base: '工', reading: 'こう' },
+            { base: '場', reading: 'じょう' },
+            { base: '案', reading: 'あん' },
+            { base: '内', reading: 'ない' },
+            { base: '学', reading: 'まな' }
           ]
         },
         {
-          jp: '心から お礼 申し上げます。',
-          romaji: 'Kokoro kara o-rei mōshiagemasu.',
-          meaning: { en: 'I express my sincere thanks.', vi: 'Tôi xin cám ơn từ đáy lòng.' },
+          jp: 'さ来週、出張で また 東京へ 参ります。',
+          romaji: 'Saraishū, shutchō de mata Tōkyō e mairimasu.',
+          meaning: {
+            en: 'The week after next I will come to Tokyo again on business.',
+            vi: 'Tuần sau nữa tôi sẽ lại đến Tokyo công tác.'
+          },
+          ruby: [
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '出', reading: 'しゅっ' },
+            { base: '張', reading: 'ちょう' },
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
+            { base: '参', reading: 'まい' }
+          ]
+        },
+        {
+          jp: 'その 時、ぜひ ごあいさつに 伺いたいと 思っております。',
+          romaji: 'Sono toki, zehi go-aisatsu ni ukagaitai to omotte orimasu.',
+          meaning: {
+            en: 'I would very much like to visit you then to say hello.',
+            vi: 'Khi đó tôi rất mong được đến chào hỏi mọi người.'
+          },
+          ruby: [
+            { base: '時', reading: 'とき' },
+            { base: '伺', reading: 'うかが' },
+            { base: '思', reading: 'おも' }
+          ]
+        },
+        {
+          jp: '心から お礼を 申し上げます。',
+          romaji: 'Kokoro kara o-rei o mōshiagemasu.',
+          meaning: { en: 'Thank you from the bottom of my heart.', vi: 'Xin chân thành cảm ơn.' },
           ruby: [
             { base: '心', reading: 'こころ' },
             { base: '礼', reading: 'れい' },
@@ -717,43 +729,54 @@ export const n4Lesson50: Lesson = {
         {
           id: 'q1',
           question: {
-            en: 'When will the writer go to Munich?',
-            vi: 'Người viết sẽ đi đến München khi nào?'
+            en: 'What did the writer do in Japan last month?',
+            vi: 'Tháng trước người viết đã làm gì ở Nhật?'
           },
-          jp: 'いつ ミュンヘンへ 行きますか。',
-          ruby: [{ base: '行', reading: 'い' }],
+          jp: 'この 人は 先月 日本で 何を しましたか。',
+          ruby: [
+            { base: '人', reading: 'ひと' },
+            { base: '先', reading: 'せん' },
+            { base: '月', reading: 'げつ' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '何', reading: 'なに' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'The week after next', vi: 'Tuần sau nữa' },
-              jp: 'さ来週',
+              label: { en: 'Training', vi: 'Thực tập' },
+              jp: '研修',
               ruby: [
-                { base: '来', reading: 'らい' },
-                { base: '週', reading: 'しゅう' }
+                { base: '研', reading: 'けん' },
+                { base: '修', reading: 'しゅう' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Next month', vi: 'Tháng sau' },
-              jp: '来月',
+              label: { en: 'Sightseeing', vi: 'Du lịch' },
+              jp: '旅行',
               ruby: [
-                { base: '来', reading: 'らい' },
-                { base: '月', reading: 'げつ' }
+                { base: '旅', reading: 'りょ' },
+                { base: '行', reading: 'こう' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Tomorrow', vi: 'Ngày mai' },
-              jp: '明日',
-              ruby: [{ base: '明日', reading: 'あした' }]
+              label: { en: 'A wedding', vi: 'Đám cưới' },
+              jp: '結婚式',
+              ruby: [
+                { base: '結', reading: 'けっ' },
+                { base: '婚', reading: 'こん' },
+                { base: '式', reading: 'しき' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'The year after next', vi: 'Năm sau nữa' },
-              jp: 'さ来年',
+              label: { en: 'Moving house', vi: 'Chuyển nhà' },
+              jp: '引っ越し',
               ruby: [
-                { base: '来', reading: 'らい' },
-                { base: '年', reading: 'ねん' }
+                { base: '引', reading: 'ひ' },
+                { base: '越', reading: 'こ' }
               ]
             }
           ],
@@ -762,38 +785,57 @@ export const n4Lesson50: Lesson = {
         {
           id: 'q2',
           question: {
-            en: 'What does the writer promise to avoid?',
-            vi: 'Người viết hứa tránh điều gì?'
+            en: 'What will the writer do the week after next?',
+            vi: 'Tuần sau nữa người viết sẽ làm gì?'
           },
-          jp: '何を しない ように しますか。',
-          ruby: [{ base: '何', reading: 'なに' }],
+          jp: 'さ来週 何を する 予定ですか。',
+          ruby: [
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '何', reading: 'なに' },
+            { base: '予', reading: 'よ' },
+            { base: '定', reading: 'てい' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Causing trouble', vi: 'Làm phiền' },
-              jp: '迷惑を かけない こと',
+              label: { en: 'Come to Tokyo on business', vi: 'Đến Tokyo công tác' },
+              jp: '出張で 東京へ 行く',
               ruby: [
-                { base: '迷', reading: 'めい' },
-                { base: '惑', reading: 'わく' }
+                { base: '出', reading: 'しゅっ' },
+                { base: '張', reading: 'ちょう' },
+                { base: '東', reading: 'とう' },
+                { base: '京', reading: 'きょう' },
+                { base: '行', reading: 'い' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Drinking coffee', vi: 'Uống cà phê' },
-              jp: 'コーヒーを 飲む こと',
-              ruby: [{ base: '飲', reading: 'の' }]
+              label: { en: 'Go back to their country', vi: 'Về nước' },
+              jp: '国へ 帰る',
+              ruby: [
+                { base: '国', reading: 'くに' },
+                { base: '帰', reading: 'かえ' }
+              ]
             },
             {
               id: 'c',
-              label: { en: 'Winning prizes', vi: 'Nhận giải thưởng' },
-              jp: '賞を もらう こと',
-              ruby: [{ base: '賞', reading: 'しょう' }]
+              label: { en: 'Build a factory', vi: 'Xây nhà máy' },
+              jp: '工場を 作る',
+              ruby: [
+                { base: '工', reading: 'こう' },
+                { base: '場', reading: 'じょう' },
+                { base: '作', reading: 'つく' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'Meeting giraffes', vi: 'Gặp hươu cao cổ' },
-              jp: 'キリンに 会う こと',
-              ruby: [{ base: '会', reading: 'あ' }]
+              label: { en: 'Get married', vi: 'Kết hôn' },
+              jp: '結婚する',
+              ruby: [
+                { base: '結', reading: 'けっ' },
+                { base: '婚', reading: 'こん' }
+              ]
             }
           ],
           correctId: 'a'

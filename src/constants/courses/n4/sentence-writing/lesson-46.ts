@@ -7,106 +7,75 @@ export const n4Lesson46SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The parcel is about to arrive. Is now a good time?',
-            vi: 'Hàng sắp được giao đến. Bây giờ nói chuyện được không?'
+            en: 'Hello, is now a good time? ...Sorry, I am just about to go out.',
+            vi: 'A lô, giờ nói chuyện được không? ...Xin lỗi, tôi đang chuẩn bị ra ngoài.'
           },
-          jp: '宅配便が 届きます。今 届く ところです。今 いいですか。',
+          jp: 'もしもし、今 いいですか。……すみません、今から 出かける ところです。',
           ruby: [
-            { base: '宅', reading: 'たく' },
-            { base: '配', reading: 'はい' },
-            { base: '便', reading: 'びん' },
-            { base: '届', reading: 'とど' },
             { base: '今', reading: 'いま' },
-            { base: '届', reading: 'とど' },
-            { base: '今', reading: 'いま' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I will hand over the key here. I am about to hand it over.',
-            vi: 'Tôi sẽ trao chìa khóa ở đây. Tôi sắp trao.'
-          },
-          jp: 'こちらで かぎを 渡します。今 渡す ところです。',
-          ruby: [
-            { base: '渡', reading: 'わた' },
-            { base: '今', reading: 'いま' },
-            { base: '渡', reading: 'わた' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The bus leaves from near the station. It is about to leave.',
-            vi: 'Xe buýt xuất bến gần ga. Xe sắp chạy.'
-          },
-          jp: 'バスは 駅～の 所から 出ます。今 出る ところです。',
-          ruby: [
-            { base: '駅', reading: 'えき' },
-            { base: '所', reading: 'ところ' },
-            { base: '出', reading: 'で' },
             { base: '今', reading: 'いま' },
             { base: '出', reading: 'で' }
           ]
         },
         {
-          prompt: {
-            en: 'I grill bread now. I am in the middle of grilling it.',
-            vi: 'Tôi nướng bánh mì. Tôi đang nướng.'
-          },
-          jp: '今 パンを 焼きます。焼いている ところです。',
+          prompt: { en: 'The meeting is just about to start.', vi: 'Cuộc họp sắp bắt đầu.' },
+          jp: '今 会議が 始まる ところです。',
           ruby: [
             { base: '今', reading: 'いま' },
-            { base: '焼', reading: 'や' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '始', reading: 'はじ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'The bus is just about to leave. Hurry!',
+            vi: 'Xe buýt sắp chạy rồi. Nhanh lên!'
+          },
+          jp: 'バスは 今 出る ところですよ。急いで ください。',
+          ruby: [
+            { base: '今', reading: 'いま' },
+            { base: '出', reading: 'で' },
+            { base: '急', reading: 'いそ' }
+          ]
+        },
+        {
+          prompt: { en: 'I am baking bread right now.', vi: 'Bây giờ tôi đang nướng bánh mì.' },
+          jp: '今 パンを 焼いている ところです。',
+          ruby: [
+            { base: '今', reading: 'いま' },
             { base: '焼', reading: 'や' }
           ]
         },
         {
           prompt: {
-            en: 'We head to the gas service center. We are heading there now.',
-            vi: 'Chúng tôi đi đến trung tâm dịch vụ ga. Bây giờ đang trên đường.'
+            en: 'I am on my way to you right now.',
+            vi: 'Tôi đang trên đường tới chỗ anh.'
           },
-          jp: 'ガスサービスセンターへ 向かいます。今 向かっている ところです。',
+          jp: '今 そちらへ 向かっている ところです。',
           ruby: [
-            { base: '向', reading: 'む' },
             { base: '今', reading: 'いま' },
             { base: '向', reading: 'む' }
           ]
         },
         {
-          prompt: {
-            en: 'My older brother comes back. He just came back.',
-            vi: 'Anh trai tôi trở về. Anh ấy vừa về.'
-          },
-          jp: '兄は 帰って 来ます。たった今 帰って 来た ところです。',
+          prompt: { en: 'My older brother has just come home.', vi: 'Anh trai tôi vừa mới về.' },
+          jp: '兄は たった今 帰って 来た ところです。',
           ruby: [
             { base: '兄', reading: 'あに' },
-            { base: '帰', reading: 'かえ' },
-            { base: '来', reading: 'き' },
             { base: '今', reading: 'いま' },
             { base: '帰', reading: 'かえ' },
             { base: '来', reading: 'き' }
           ]
         },
         {
-          prompt: {
-            en: 'I am wiping the floor in a panic.',
-            vi: 'Tôi đang lau sàn một cách hoảng hốt.'
-          },
-          jp: '慌てて 床を ふいている ところです。',
+          prompt: { en: 'I am in the middle of making dinner.', vi: 'Tôi đang nấu bữa tối.' },
+          jp: '今 晩ご飯を 作っている ところです。',
           ruby: [
-            { base: '慌', reading: 'あわ' },
-            { base: '床', reading: 'ゆか' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The doorbell rings. It is about to ring.',
-            vi: 'Chuông cửa reng. Nó sắp reng.'
-          },
-          jp: 'ベルが 鳴ります。今 鳴る ところです。',
-          ruby: [
-            { base: '鳴', reading: 'な' },
             { base: '今', reading: 'いま' },
-            { base: '鳴', reading: 'な' }
+            { base: '晩', reading: 'ばん' },
+            { base: '飯', reading: 'はん' },
+            { base: '作', reading: 'つく' }
           ]
         }
       ]
@@ -116,10 +85,10 @@ export const n4Lesson46SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I enter university. I just entered half a year ago.',
-            vi: 'Tôi nhập học đại học. Tôi vừa nhập học cách đây nửa năm.'
+            en: 'I just started university half a year ago.',
+            vi: 'Tôi mới vào đại học được nửa năm.'
           },
-          jp: '半年前に 大学に 入学します。入学した ばかりです。',
+          jp: '半年前に 大学に 入学した ばかりです。',
           ruby: [
             { base: '半', reading: 'はん' },
             { base: '年', reading: 'とし' },
@@ -127,69 +96,60 @@ export const n4Lesson46SentenceWriting: LessonSentenceWriting = {
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
             { base: '入', reading: 'にゅう' },
-            { base: '学', reading: 'がく' },
-            { base: '入', reading: 'にゅう' },
             { base: '学', reading: 'がく' }
           ]
         },
         {
           prompt: {
-            en: 'She graduates from university. She just graduated.',
-            vi: 'Cô ấy tốt nghiệp đại học. Cô ấy vừa tốt nghiệp.'
+            en: 'She has just graduated from university.',
+            vi: 'Cô ấy vừa tốt nghiệp đại học.'
           },
-          jp: '彼女は 大学を 卒業します。卒業した ばかりです。',
+          jp: '彼女は 大学を 卒業した ばかりです。',
           ruby: [
             { base: '彼', reading: 'かの' },
             { base: '女', reading: 'じょ' },
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
             { base: '卒', reading: 'そつ' },
-            { base: '業', reading: 'ぎょう' },
-            { base: '卒', reading: 'そつ' },
             { base: '業', reading: 'ぎょう' }
           ]
         },
         {
           prompt: {
-            en: 'The bread finishes baking. It just finished baking.',
-            vi: 'Bánh mì nướng chín. Nó vừa nướng xong.'
+            en: 'This bread is fresh out of the oven and still warm.',
+            vi: 'Bánh mì này vừa nướng xong, vẫn còn ấm.'
           },
-          jp: 'パンが 焼けます。焼けた ばかりです。',
+          jp: 'この パンは 焼けた ばかりで、まだ 温かいです。',
           ruby: [
             { base: '焼', reading: 'や' },
-            { base: '焼', reading: 'や' }
+            { base: '温', reading: 'あたた' }
           ]
         },
         {
           prompt: {
-            en: 'I fall on the floor. I just fell.',
-            vi: 'Tôi ngã trên sàn. Tôi vừa ngã.'
+            en: 'I have only just come to Japan, so I do not know anything yet.',
+            vi: 'Tôi mới sang Nhật nên chưa biết gì cả.'
           },
-          jp: '床で 転びます。転んだ ばかりです。',
+          jp: '日本に 来た ばかりなので、まだ 何も わかりません。',
           ruby: [
-            { base: '床', reading: 'ゆか' },
-            { base: '転', reading: 'ころ' },
-            { base: '転', reading: 'ころ' }
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '来', reading: 'き' },
+            { base: '何', reading: 'なに' }
           ]
         },
         {
           prompt: {
-            en: 'The gas stove is in bad condition. We just repaired it.',
-            vi: 'Bếp ga tình trạng tệ. Chúng tôi vừa sửa.'
+            en: 'I just bought this computer last week, yet it is already broken.',
+            vi: 'Cái máy tính này mới mua tuần trước vậy mà đã hỏng.'
           },
-          jp: 'ガスレンジの 具合が 悪いので なおします。なおした ばかりです。',
+          jp: 'この パソコンは 先週 買った ばかりなのに、もう 壊れました。',
           ruby: [
-            { base: '具', reading: 'ぐ' },
-            { base: '合', reading: 'あい' },
-            { base: '悪', reading: 'わる' }
+            { base: '先', reading: 'せん' },
+            { base: '週', reading: 'しゅう' },
+            { base: '買', reading: 'か' },
+            { base: '壊', reading: 'こわ' }
           ]
-        },
-        {
-          prompt: {
-            en: 'The burner is on. I just turned it on.',
-            vi: 'Bếp đang bật. Tôi vừa bật.'
-          },
-          jp: 'ガスレンジが ついて います。つけた ばかりです。'
         }
       ]
     },
@@ -203,48 +163,49 @@ export const n4Lesson46SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Everyone should be out, so nobody is at home.',
-            vi: 'Mọi người chắc đang vắng nhà.'
+            en: 'Today is Sunday, so the office should be closed.',
+            vi: 'Hôm nay là Chủ nhật nên chắc chắn công ty nghỉ.'
           },
-          jp: 'みんな 留守の はずです。',
+          jp: '今日は 日曜日だから、会社は 休みの はずです。',
           ruby: [
-            { base: '留', reading: 'る' },
-            { base: '守', reading: 'す' }
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '休', reading: 'やす' }
           ]
         },
         {
           prompt: {
-            en: 'The cause of this incident should be that stove.',
-            vi: 'Nguyên nhân sự việc này chắc là cái bếp đó.'
+            en: 'Mr. Tanaka is supposed to come today.',
+            vi: 'Anh Tanaka chắc chắn hôm nay sẽ đến.'
           },
-          jp: 'この 出来事の 原因は ガスレンジの はずです。',
+          jp: '田中さんは 今日 来る はずです。',
           ruby: [
-            { base: '出', reading: 'で' },
-            { base: '来', reading: 'き' },
-            { base: '事', reading: 'ごと' },
-            { base: '原', reading: 'げん' },
-            { base: '因', reading: 'いん' }
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '来', reading: 'く' }
           ]
         },
         {
-          prompt: {
-            en: 'We do it in order. It should be your turn now.',
-            vi: 'Chúng ta làm theo thứ tự. Bây giờ chắc đến lượt bạn.'
-          },
-          jp: '順番に やります。今は あなたの 番の はずです。',
+          prompt: { en: 'It should be your turn next.', vi: 'Lượt tiếp theo chắc là của anh đấy.' },
+          jp: '次は あなたの 番の はずですよ。',
           ruby: [
-            { base: '順', reading: 'じゅん' },
-            { base: '番', reading: 'ばん' },
-            { base: '今', reading: 'いま' },
+            { base: '次', reading: 'つぎ' },
             { base: '番', reading: 'ばん' }
           ]
         },
         {
           prompt: {
-            en: 'It is exactly 5:00, so the staff should come soon.',
-            vi: 'Đúng 5 giờ, nên nhân viên chắc sắp đến.'
+            en: 'It is already five, so the person in charge should be here soon.',
+            vi: 'Đã 5 giờ rồi nên chắc người phụ trách sắp đến.'
           },
-          jp: 'ちょうど 5時 ですから、係の 人が 来る はずです。',
+          jp: 'もう 5時ですから、係の 人が 来る はずです。',
           ruby: [
             { base: '時', reading: 'じ' },
             { base: '係', reading: 'かかり' },
@@ -254,12 +215,11 @@ export const n4Lesson46SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I just called, so they should be heading this way.',
-            vi: 'Tôi vừa gọi, nên họ chắc đang đến phía này.'
+            en: 'I called them a moment ago, so they should be on their way here.',
+            vi: 'Tôi vừa gọi điện rồi nên chắc họ đang trên đường tới đây.'
           },
-          jp: 'たった今 電話した から、こちらへ 向かう はずです。',
+          jp: 'さっき 電話しましたから、こちらへ 向かっている はずです。',
           ruby: [
-            { base: '今', reading: 'いま' },
             { base: '電', reading: 'でん' },
             { base: '話', reading: 'わ' },
             { base: '向', reading: 'む' }

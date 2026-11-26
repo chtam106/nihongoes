@@ -310,17 +310,13 @@ export const n5Lesson22: Lesson = {
         },
         {
           speakerId: 'sato',
-          jp: 'パリで 生まれた 人は よく セーターを 着ますね。',
-          romaji: 'Pari de umareta hito wa yoku sētā o kimasu ne.',
+          jp: 'そうですか。パリは きれいな 町ですね。',
+          romaji: 'Sō desu ka. Pari wa kirei na machi desu ne.',
           meaning: {
-            en: 'People born in Paris often wear sweaters, do they not?',
-            vi: 'Người sinh ở Paris hay mặc áo len nhỉ.'
+            en: 'Is that so? Paris is a beautiful city.',
+            vi: 'Thế à. Paris là một thành phố đẹp nhỉ.'
           },
-          ruby: [
-            { base: '生', reading: 'う' },
-            { base: '人', reading: 'ひと' },
-            { base: '着', reading: 'き' }
-          ]
+          ruby: [{ base: '町', reading: 'まち' }]
         }
       ]
     }
@@ -419,18 +415,15 @@ export const n5Lesson22: Lesson = {
           ]
         },
         {
-          jp: '和室に 布団を 敷いた 部屋を 見せて ください。',
-          romaji: 'Washitsu ni futon o shita heya o misete kudasai.',
+          jp: '和室の ある 部屋を 見せて ください。',
+          romaji: 'Washitsu no aru heya o misete kudasai.',
           meaning: {
-            en: 'Please show me the room where futon was laid out in the Japanese room.',
-            vi: 'Xin cho xem phòng đã trải futon trong phòng kiểu Nhật.'
+            en: 'Please show me a place that has a Japanese-style room.',
+            vi: 'Cho tôi xem căn có phòng kiểu Nhật.'
           },
           ruby: [
             { base: '和', reading: 'わ' },
             { base: '室', reading: 'しつ' },
-            { base: '布', reading: 'ふ' },
-            { base: '団', reading: 'とん' },
-            { base: '敷', reading: 'し' },
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
             { base: '見', reading: 'み' }
@@ -748,13 +741,14 @@ export const n5Lesson22: Lesson = {
           ]
         },
         {
-          jp: 'ダイニングキッチンは 狭くても かまいません。',
-          romaji: 'Dainingu kitchin wa semakute mo kamaimasen.',
-          meaning: {
-            en: 'The dining kitchen can be small; I do not mind.',
-            vi: 'Bếp kết hợp phòng ăn hẹp cũng được.'
-          },
-          ruby: [{ base: '狭', reading: 'せま' }]
+          jp: '明るい 部屋が いいです。',
+          romaji: 'Akarui heya ga ii desu.',
+          meaning: { en: 'A bright room would be good.', vi: 'Phòng sáng sủa thì tốt.' },
+          ruby: [
+            { base: '明', reading: 'あか' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' }
+          ]
         }
       ],
       questions: [

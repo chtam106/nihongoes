@@ -417,7 +417,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'watanabe',
-          jp: 'すみません。急いで いる んです。',
+          jp: 'すみません。急いで いるんです。',
           romaji: 'Sumimasen. Isoide iru n desu.',
           meaning: { en: 'Sorry. I am in a hurry.', vi: 'Xin lỗi, tôi rất vội.' },
           ruby: [{ base: '急', reading: 'いそ' }]
@@ -443,7 +443,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'えっ、知らない んですか。最近 婚約した そう ですよ。',
+          jp: 'えっ、知らないんですか。最近 婚約した そうですよ。',
           romaji: "E, shiranai n desu ka. Saikin kon'yaku shita sō desu yo.",
           meaning: {
             en: 'What, you did not know? I hear she got engaged recently.',
@@ -459,7 +459,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'takahashi',
-          jp: '本当 ですか。相手は だれ ですか。',
+          jp: '本当ですか。相手は だれですか。',
           romaji: 'Hontō desu ka. Aite wa dare desu ka.',
           meaning: { en: 'Really? Who is her partner?', vi: 'Thế à? Ai là đối phương?' },
           ruby: [
@@ -471,7 +471,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'IMCの 鈴木さん です。ワットさんの 結婚式で 知り合った そう です。',
+          jp: 'IMCの 鈴木さんです。ワットさんの 結婚式で 知り合った そうです。',
           romaji: 'IMC no Suzuki-san desu. Watto-san no kekkonshiki de shiriatta sō desu.',
           meaning: {
             en: "Mr. Suzuki from IMC. I hear they met at Mr. Watt's wedding.",
@@ -489,13 +489,13 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'takahashi',
-          jp: 'そう ですか。',
+          jp: 'そうですか。',
           romaji: 'Sō desu ka.',
           meaning: { en: 'I see.', vi: 'Thế à.' }
         },
         {
           speakerId: 'hayashi',
-          jp: '高橋さん、あなたは どう ですか。',
+          jp: '高橋さん、あなたは どうですか。',
           romaji: 'Takahashi-san, anata wa dō desu ka.',
           meaning: {
             en: 'Mr. Takahashi, what about you?',
@@ -508,7 +508,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'takahashi',
-          jp: '私 ですか。私に とって 仕事が 恋人 です。',
+          jp: '私ですか。私に とって 仕事が 恋人です。',
           romaji: 'Watashi desu ka. Watashi ni totte shigoto ga koibito desu.',
           meaning: {
             en: 'Me? For me, work is my lover.',
@@ -546,7 +546,7 @@ export const n4Lesson47: Lesson = {
       ],
       examples: [
         {
-          jp: '天気予報によると、あした 寒くなる そう です。',
+          jp: '天気予報によると、あした 寒くなる そうです。',
           romaji: 'Tenki yohō ni yoru to, ashita samuku naru sō desu.',
           meaning: {
             en: 'According to the weather forecast, it will get cold tomorrow.',
@@ -561,7 +561,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '新聞で 読みましたが、1月に スピーチ大会が ある そう です。',
+          jp: '新聞で 読みましたが、1月に スピーチ大会が ある そうです。',
           romaji: 'Shinbun de yomimashita ga, ichigatsu ni supīchi taikai ga aru sō desu.',
           meaning: {
             en: 'I read in the newspaper that there will be a speech contest in January.',
@@ -577,7 +577,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '渡辺さんは 最近 婚約した そう です。',
+          jp: '渡辺さんは 最近 婚約した そうです。',
           romaji: "Watanabe-san wa saikin kon'yaku shita sō desu.",
           meaning: {
             en: 'I hear Ms. Watanabe got engaged recently.',
@@ -619,7 +619,7 @@ export const n4Lesson47: Lesson = {
       ],
       examples: [
         {
-          jp: '隣の 部屋に 人が いる よう です。',
+          jp: '隣の 部屋に 人が いる ようです。',
           romaji: 'Tonari no heya ni hito ga iru yō desu.',
           meaning: {
             en: 'It seems there is someone in the next room.',
@@ -633,7 +633,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: 'どうも 恋人が できた よう です。',
+          jp: 'どうも 恋人が できた ようです。',
           romaji: 'Dōmo koibito ga dekita yō desu.',
           meaning: {
             en: 'It seems she has gotten a boyfriend.',
@@ -645,7 +645,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '人が たくさん 集まっている から、事故が あった よう です。',
+          jp: '人が たくさん 集まっている から、事故が あった ようです。',
           romaji: 'Hito ga takusan atsumatte iru kara, jiko ga atta yō desu.',
           meaning: {
             en: 'Many people are gathered, so it seems there was an accident.',
@@ -676,12 +676,17 @@ export const n4Lesson47: Lesson = {
       ],
       examples: [
         {
-          jp: '楽しい 音が しますね。',
-          romaji: 'Tanoshii oto ga shimasu ne.',
-          meaning: { en: 'I hear a fun sound.', vi: 'Tiếng người nghe vui nhộn nhỉ.' },
+          jp: '隣の 部屋から ピアノの 音が しますね。',
+          romaji: 'Tonari no heya kara piano no oto ga shimasu ne.',
+          meaning: {
+            en: 'I can hear a piano from the next room.',
+            vi: 'Có tiếng đàn piano từ phòng bên cạnh nhỉ.'
+          },
           ruby: [
-            { base: '楽', reading: 'たの' },
-            { base: '音', reading: 'おん' }
+            { base: '隣', reading: 'となり' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '音', reading: 'おと' }
           ]
         },
         {
@@ -706,90 +711,100 @@ export const n4Lesson47: Lesson = {
   reading: [
     {
       id: 'reading-lesson47-longlife',
-      title: { en: 'Why women live longer', vi: 'Vì sao phụ nữ sống thọ hơn' },
-      titleJp: '女性が 長生きする 理由',
+      title: { en: 'Living a long life', vi: 'Sống lâu' },
+      titleJp: '長生き',
       titleRuby: [
-        { base: '女', reading: 'じょ' },
-        { base: '性', reading: 'せい' },
         { base: '長', reading: 'なが' },
-        { base: '生', reading: 'い' },
-        { base: '理', reading: 'り' },
-        { base: '由', reading: 'ゆう' }
+        { base: '生', reading: 'い' }
       ],
       lines: [
         {
-          jp: 'データによると、女性の 方が 男性より 長生き する そう です。',
-          romaji: 'Dēta ni yoru to, josei no hō ga dansei yori nagaiki suru sō desu.',
+          jp: 'ニュースに よると、日本は 世界で いちばん 長生きの 国の 一つだ そうです。',
+          romaji:
+            'Nyūsu ni yoru to, Nihon wa sekai de ichiban nagaiki no kuni no hitotsu da sō desu.',
           meaning: {
-            en: 'According to the data, I hear women live longer than men.',
-            vi: 'Theo dữ liệu thì nghe nói phụ nữ sống thọ hơn nam giới.'
+            en: 'According to the news, Japan is one of the countries where people live longest.',
+            vi: 'Theo tin tức, Nhật Bản là một trong những nước có tuổi thọ cao nhất thế giới.'
           },
           ruby: [
-            { base: '女', reading: 'じょ' },
-            { base: '性', reading: 'せい' },
-            { base: '方', reading: 'ほう' },
-            { base: '男', reading: 'だん' },
-            { base: '性', reading: 'せい' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '世', reading: 'せ' },
+            { base: '界', reading: 'かい' },
             { base: '長', reading: 'なが' },
-            { base: '生', reading: 'せい' }
+            { base: '生', reading: 'い' },
+            { base: '国', reading: 'くに' },
+            { base: '一', reading: 'ひと' }
           ]
         },
         {
-          jp: '理由の 一つは 化粧や 世話を する 習慣 だ そう です。',
-          romaji: 'Riyū no hitotsu wa keshō ya sewa o suru shūkan da sō desu.',
+          jp: '特に 女性は 男性より 長く 生きる そうです。',
+          romaji: 'Toku ni josei wa dansei yori nagaku ikiru sō desu.',
           meaning: {
-            en: 'One reason, I hear, is the habit of makeup and caring for others.',
-            vi: 'Một lý do được nói là thói quen trang điểm và chăm sóc người khác.'
+            en: 'Women in particular are said to live longer than men.',
+            vi: 'Nghe nói đặc biệt phụ nữ sống lâu hơn nam giới.'
+          },
+          ruby: [
+            { base: '特', reading: 'とく' },
+            { base: '女', reading: 'じょ' },
+            { base: '性', reading: 'せい' },
+            { base: '男', reading: 'だん' },
+            { base: '性', reading: 'せい' },
+            { base: '長', reading: 'なが' },
+            { base: '生', reading: 'い' }
+          ]
+        },
+        {
+          jp: '理由は 食事や 生活の 習慣に ある ようです。',
+          romaji: 'Riyū wa shokuji ya seikatsu no shūkan ni aru yō desu.',
+          meaning: {
+            en: 'The reasons seem to lie in diet and daily habits.',
+            vi: 'Lý do có vẻ nằm ở thói quen ăn uống và sinh hoạt.'
           },
           ruby: [
             { base: '理', reading: 'り' },
             { base: '由', reading: 'ゆう' },
-            { base: '一', reading: 'いち' },
-            { base: '化', reading: 'け' },
-            { base: '粧', reading: 'しょう' },
-            { base: '世', reading: 'せ' },
-            { base: '話', reading: 'わ' },
+            { base: '食', reading: 'しょく' },
+            { base: '事', reading: 'じ' },
+            { base: '生', reading: 'せい' },
+            { base: '活', reading: 'かつ' },
             { base: '習', reading: 'しゅう' },
             { base: '慣', reading: 'かん' }
           ]
         },
         {
-          jp: '科学や 医学の 研究でも、生活と 健康の 関係が 大切 だ そう です。',
-          romaji:
-            'Kagaku ya igaku no kenkyū demo, seikatsu to kenkō no kankei ga taisetsu da sō desu.',
+          jp: '例えば、魚や 野菜を よく 食べる ことが 体に いい そうです。',
+          romaji: 'Tatoeba, sakana ya yasai o yoku taberu koto ga karada ni ii sō desu.',
           meaning: {
-            en: 'Research in science and medicine also says the link between lifestyle and health matters.',
-            vi: 'Nghiên cứu khoa học và y học cũng nói quan hệ giữa đời sống và sức khỏe rất quan trọng.'
+            en: 'For example, eating plenty of fish and vegetables is said to be good for you.',
+            vi: 'Ví dụ, nghe nói ăn nhiều cá và rau rất tốt cho sức khỏe.'
           },
           ruby: [
-            { base: '科', reading: 'か' },
-            { base: '学', reading: 'がく' },
-            { base: '医', reading: 'い' },
-            { base: '学', reading: 'がく' },
-            { base: '研', reading: 'けん' },
-            { base: '究', reading: 'きゅう' },
-            { base: '生', reading: 'せい' },
-            { base: '活', reading: 'かつ' },
-            { base: '健', reading: 'けん' },
-            { base: '康', reading: 'こう' },
-            { base: '関', reading: 'かん' },
-            { base: '係', reading: 'けい' },
-            { base: '大', reading: 'たい' },
-            { base: '切', reading: 'せつ' }
+            { base: '例', reading: 'たと' },
+            { base: '魚', reading: 'さかな' },
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' },
+            { base: '食', reading: 'た' },
+            { base: '体', reading: 'からだ' }
           ]
         },
         {
-          jp: 'でも これは 一例 です。人それぞれ 違います。',
-          romaji: 'Demo kore wa ichirei desu. Hito sorezore chigaimasu.',
+          jp: '隣の おばあさんは 90歳ですが、毎朝 散歩していて、とても 元気そうです。',
+          romaji:
+            'Tonari no obāsan wa kyūjussai desu ga, maiasa sanpo shite ite, totemo genki sō desu.',
           meaning: {
-            en: 'But this is just one example. Everyone is different.',
-            vi: 'Nhưng đây chỉ là một ví dụ. Mỗi người một khác.'
+            en: 'The old woman next door is 90, but she takes a walk every morning and looks very healthy.',
+            vi: 'Bà cụ hàng xóm đã 90 tuổi nhưng sáng nào cũng đi dạo, trông rất khỏe.'
           },
           ruby: [
-            { base: '一', reading: 'いち' },
-            { base: '例', reading: 'れい' },
-            { base: '人', reading: 'ひと' },
-            { base: '違', reading: 'ちが' }
+            { base: '隣', reading: 'となり' },
+            { base: '歳', reading: 'さい' },
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '散', reading: 'さん' },
+            { base: '歩', reading: 'ぽ' },
+            { base: '元', reading: 'げん' },
+            { base: '気', reading: 'き' }
           ]
         }
       ],
@@ -797,55 +812,47 @@ export const n4Lesson47: Lesson = {
         {
           id: 'q1',
           question: {
-            en: 'What does the data say about lifespan?',
-            vi: 'Dữ liệu nói gì về tuổi thọ?'
+            en: 'Who is said to live longer, women or men?',
+            vi: 'Nghe nói phụ nữ hay nam giới sống lâu hơn?'
           },
-          jp: 'データは 寿命について 何と 言っていますか。',
+          jp: '女性と 男性と どちらが 長く 生きる そうですか。',
           ruby: [
-            { base: '寿', reading: 'じゅ' },
-            { base: '命', reading: 'みょう' },
-            { base: '何', reading: 'なん' },
-            { base: '言', reading: 'い' }
+            { base: '女', reading: 'じょ' },
+            { base: '性', reading: 'せい' },
+            { base: '男', reading: 'だん' },
+            { base: '性', reading: 'せい' },
+            { base: '長', reading: 'なが' },
+            { base: '生', reading: 'い' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Women live longer than men', vi: 'Phụ nữ sống thọ hơn nam giới' },
-              jp: '女性の 方が 男性より 長生きします',
+              label: { en: 'Women', vi: 'Phụ nữ' },
+              jp: '女性',
               ruby: [
                 { base: '女', reading: 'じょ' },
-                { base: '性', reading: 'せい' },
-                { base: '方', reading: 'ほう' },
-                { base: '男', reading: 'だん' },
-                { base: '性', reading: 'せい' },
-                { base: '長', reading: 'なが' },
-                { base: '生', reading: 'い' }
+                { base: '性', reading: 'せい' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Men live longer than women', vi: 'Nam giới sống thọ hơn phụ nữ' },
-              jp: '男性の 方が 女性より 長生きします',
+              label: { en: 'Men', vi: 'Nam giới' },
+              jp: '男性',
               ruby: [
                 { base: '男', reading: 'だん' },
-                { base: '性', reading: 'せい' },
-                { base: '方', reading: 'ほう' },
-                { base: '女', reading: 'じょ' },
-                { base: '性', reading: 'せい' },
-                { base: '長', reading: 'なが' },
-                { base: '生', reading: 'い' }
+                { base: '性', reading: 'せい' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Everyone lives the same', vi: 'Mọi người sống như nhau' },
-              jp: 'みんな 同じです',
+              label: { en: 'The same', vi: 'Như nhau' },
+              jp: '同じ',
               ruby: [{ base: '同', reading: 'おな' }]
             },
             {
               id: 'd',
-              label: { en: 'Data is unavailable', vi: 'Không có dữ liệu' },
-              jp: 'データが ありません'
+              label: { en: 'Unknown', vi: 'Không biết' },
+              jp: 'わからない'
             }
           ],
           correctId: 'a'
@@ -853,62 +860,51 @@ export const n4Lesson47: Lesson = {
         {
           id: 'q2',
           question: {
-            en: 'What habit is mentioned as a possible reason?',
-            vi: 'Thói quen nào được nêu là một lý do?'
+            en: 'What is said to be good for your health?',
+            vi: 'Nghe nói điều gì tốt cho sức khỏe?'
           },
-          jp: '理由として どんな 習慣が 出ていますか。',
+          jp: '体に いい ことは 何だ そうですか。',
           ruby: [
-            { base: '理', reading: 'り' },
-            { base: '由', reading: 'ゆう' },
-            { base: '習', reading: 'しゅう' },
-            { base: '慣', reading: 'かん' },
-            { base: '出', reading: 'で' }
+            { base: '体', reading: 'からだ' },
+            { base: '何', reading: 'なん' }
           ],
           choices: [
             {
               id: 'a',
-              label: {
-                en: 'Makeup and caring for others',
-                vi: 'Trang điểm và chăm sóc người khác'
-              },
-              jp: '化粧や 世話',
+              label: { en: 'Eating plenty of fish and vegetables', vi: 'Ăn nhiều cá và rau' },
+              jp: '魚や 野菜を よく 食べる こと',
               ruby: [
-                { base: '化', reading: 'け' },
-                { base: '粧', reading: 'しょう' },
-                { base: '世', reading: 'せ' },
-                { base: '話', reading: 'わ' }
+                { base: '魚', reading: 'さかな' },
+                { base: '野', reading: 'や' },
+                { base: '菜', reading: 'さい' },
+                { base: '食', reading: 'た' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Driving patrol cars', vi: 'Lái xe tuần tra' },
-              jp: 'パトカーを 運転すること',
+              label: { en: 'Going to bed late every night', vi: 'Tối nào cũng ngủ muộn' },
+              jp: '毎晩 遅く 寝る こと',
               ruby: [
-                { base: '運', reading: 'うん' },
-                { base: '転', reading: 'てん' }
+                { base: '毎', reading: 'まい' },
+                { base: '晩', reading: 'ばん' },
+                { base: '遅', reading: 'おそ' },
+                { base: '寝', reading: 'ね' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Writing literature only', vi: 'Chỉ viết văn học' },
-              jp: '文学だけ 書くこと',
+              label: { en: 'Eating only meat', vi: 'Chỉ ăn thịt' },
+              jp: '肉だけ 食べる こと',
               ruby: [
-                { base: '文', reading: 'ぶん' },
-                { base: '学', reading: 'がく' },
-                { base: '書', reading: 'か' }
+                { base: '肉', reading: 'にく' },
+                { base: '食', reading: 'た' }
               ]
             },
             {
               id: 'd',
-              label: { en: 'Opposing the president', vi: 'Phản đối tổng thống' },
-              jp: '大統領に 反対すること',
-              ruby: [
-                { base: '大', reading: 'だい' },
-                { base: '統', reading: 'とう' },
-                { base: '領', reading: 'りょう' },
-                { base: '反', reading: 'はん' },
-                { base: '対', reading: 'たい' }
-              ]
+              label: { en: 'Not walking much', vi: 'Ít đi bộ' },
+              jp: 'あまり 歩かない こと',
+              ruby: [{ base: '歩', reading: 'ある' }]
             }
           ],
           correctId: 'a'

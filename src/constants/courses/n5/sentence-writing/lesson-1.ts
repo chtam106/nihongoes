@@ -29,12 +29,11 @@ export const n5Lesson1SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '私', reading: 'わたし' }]
         },
         {
-          prompt: { en: 'Everyone is a student.', vi: 'Mọi người đều là học sinh.' },
-          jp: '皆さんは 学生です。',
+          prompt: { en: 'Mr. Wang is a doctor.', vi: 'Anh Wang là bác sĩ.' },
+          jp: 'ワンさんは 医者です。',
           ruby: [
-            { base: '皆', reading: 'みな' },
-            { base: '学', reading: 'がく' },
-            { base: '生', reading: 'せい' }
+            { base: '医', reading: 'い' },
+            { base: '者', reading: 'しゃ' }
           ]
         },
         {
@@ -117,19 +116,32 @@ export const n5Lesson1SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Yes, I am a student.', vi: 'Vâng, tôi là học sinh.' },
-          jp: 'はい、学生です。',
+          prompt: {
+            en: 'Is Mr. Wang a doctor? ...Yes, he is.',
+            vi: 'Anh Wang là bác sĩ à? ...Vâng, anh ấy là bác sĩ.'
+          },
+          jp: 'ワンさんは 医者ですか。……はい、医者です。',
           ruby: [
-            { base: '学', reading: 'がく' },
-            { base: '生', reading: 'せい' }
+            { base: '医', reading: 'い' },
+            { base: '者', reading: 'しゃ' },
+            { base: '医', reading: 'い' },
+            { base: '者', reading: 'しゃ' }
           ]
         },
         {
-          prompt: { en: 'No, I am not a student.', vi: 'Không, tôi không phải học sinh.' },
-          jp: 'いいえ、学生じゃありません。',
+          prompt: {
+            en: 'Is Maria a teacher? ...No, she is not. She is a researcher.',
+            vi: 'Chị Maria là giáo viên à? ...Không, không phải giáo viên. Chị ấy là nhà nghiên cứu.'
+          },
+          jp: 'マリアさんは 先生ですか。……いいえ、先生じゃありません。研究者です。',
           ruby: [
-            { base: '学', reading: 'がく' },
-            { base: '生', reading: 'せい' }
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '研', reading: 'けん' },
+            { base: '究', reading: 'きゅう' },
+            { base: '者', reading: 'しゃ' }
           ]
         },
         {
@@ -294,9 +306,12 @@ export const n5Lesson1SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Who is everyone?', vi: 'Mọi người là ai?' },
-          jp: '皆さんは だれですか。',
-          ruby: [{ base: '皆', reading: 'みな' }]
+          prompt: {
+            en: 'Who is that person? ...That is Maria.',
+            vi: 'Người kia là ai vậy? ...Là chị Maria.'
+          },
+          jp: 'あの 人は だれですか。……マリアさんです。',
+          ruby: [{ base: '人', reading: 'ひと' }]
         }
       ]
     },
@@ -320,13 +335,24 @@ export const n5Lesson1SentenceWriting: LessonSentenceWriting = {
           jp: 'おいくつですか。'
         },
         {
-          prompt: { en: 'She is nine years old.', vi: 'Bé 9 tuổi.' },
-          jp: '9歳です。',
-          ruby: [{ base: '歳', reading: 'さい' }]
+          prompt: {
+            en: 'How old is Teresa? ...She is nine.',
+            vi: 'Bé Teresa mấy tuổi? ...9 tuổi.'
+          },
+          jp: 'テレサちゃんは 何歳ですか。……9歳です。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '歳', reading: 'さい' },
+            { base: '歳', reading: 'さい' }
+          ]
         },
         {
-          prompt: { en: "I'm 20 years old.", vi: 'Tôi 20 tuổi.' },
-          jp: 'はたちです。'
+          prompt: {
+            en: 'How old is Mr. Miller? ...He is 28.',
+            vi: 'Anh Miller bao nhiêu tuổi? ...28 tuổi.'
+          },
+          jp: 'ミラーさんは おいくつですか。……28歳です。',
+          ruby: [{ base: '歳', reading: 'さい' }]
         },
         {
           prompt: {

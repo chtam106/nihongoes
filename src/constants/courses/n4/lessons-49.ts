@@ -331,7 +331,7 @@ export const n4Lesson49: Lesson = {
       lines: [
         {
           speakerId: 'teacher',
-          jp: 'はい、ひまわり 小学校 です。',
+          jp: 'はい、ひまわり 小学校です。',
           romaji: 'Hai, Himawari shōgakkō desu.',
           meaning: {
             en: 'Hello, Himawari Elementary School.',
@@ -364,7 +364,7 @@ export const n4Lesson49: Lesson = {
         },
         {
           speakerId: 'teacher',
-          jp: 'まだ 来て いらっしゃいません....',
+          jp: 'まだ 来て いらっしゃいません……',
           romaji: 'Mada kite irasshaimasen....',
           meaning: { en: 'She has not arrived yet...', vi: 'Cô ấy chưa đến ạ...' },
           ruby: [{ base: '来', reading: 'き' }]
@@ -407,7 +407,7 @@ export const n4Lesson49: Lesson = {
         },
         {
           speakerId: 'teacher',
-          jp: 'それは 大変 ですね。',
+          jp: 'それは 大変ですね。',
           romaji: 'Sore wa taihen desu ne.',
           meaning: { en: 'That is tough.', vi: 'Thế thì gay nhỉ.' },
           ruby: [
@@ -602,10 +602,14 @@ export const n4Lesson49: Lesson = {
       explanationRuby: [],
       examples: [
         {
-          jp: 'どうぞ お入り ください。',
-          romaji: 'Dōzo o-hairi kudasai.',
-          meaning: { en: 'Please come in.', vi: 'Xin mời vào.' },
-          ruby: [{ base: '入', reading: 'はい' }]
+          jp: 'こちらで 少々 お待ち ください。',
+          romaji: 'Kochira de shōshō o-machi kudasai.',
+          meaning: { en: 'Please wait here a moment.', vi: 'Xin vui lòng đợi ở đây một chút.' },
+          ruby: [
+            { base: '少', reading: 'しょう' },
+            { base: '々', reading: 'しょう' },
+            { base: '待', reading: 'ま' }
+          ]
         },
         {
           jp: '忘れ物に ご注意 ください。',
@@ -656,21 +660,29 @@ export const n4Lesson49: Lesson = {
       ],
       examples: [
         {
-          jp: 'お元気 ですか。',
-          romaji: 'O-genki desu ka.',
-          meaning: { en: 'How are you?', vi: 'Anh/Chị có khỏe không ạ?' },
+          jp: 'ご両親は お元気ですか。',
+          romaji: 'Go-ryōshin wa o-genki desu ka.',
+          meaning: { en: 'Are your parents well?', vi: 'Bố mẹ anh có khỏe không ạ?' },
           ruby: [
+            { base: '両', reading: 'りょう' },
+            { base: '親', reading: 'しん' },
             { base: '元', reading: 'げん' },
             { base: '気', reading: 'き' }
           ]
         },
         {
-          jp: 'ご家族は どちら ですか。',
-          romaji: 'Go-kazoku wa dochira desu ka.',
-          meaning: { en: 'Where is your family?', vi: 'Gia đình anh/chị ở đâu ạ?' },
+          jp: 'お名前と ご住所を 書いて ください。',
+          romaji: 'O-namae to go-jūsho o kaite kudasai.',
+          meaning: {
+            en: 'Please write your name and address.',
+            vi: 'Xin vui lòng ghi họ tên và địa chỉ.'
+          },
           ruby: [
-            { base: '家', reading: 'か' },
-            { base: '族', reading: 'ぞく' }
+            { base: '名', reading: 'な' },
+            { base: '前', reading: 'まえ' },
+            { base: '住', reading: 'じゅう' },
+            { base: '所', reading: 'しょ' },
+            { base: '書', reading: 'か' }
           ]
         }
       ]
@@ -679,55 +691,88 @@ export const n4Lesson49: Lesson = {
   reading: [
     {
       id: 'reading-lesson49-yamanaka',
-      title: { en: 'A Nobel laureate', vi: 'Giải Nobel y học' },
-      titleJp: 'ノーベル賞を 受けた 人',
+      title: { en: 'Professor Shinya Yamanaka', vi: 'Giáo sư Yamanaka Shinya' },
+      titleJp: '山中伸弥先生',
       titleRuby: [
-        { base: '賞', reading: 'しょう' },
-        { base: '受', reading: 'う' },
-        { base: '人', reading: 'ひと' }
+        { base: '山', reading: 'やま' },
+        { base: '中', reading: 'なか' },
+        { base: '伸', reading: 'しん' },
+        { base: '弥', reading: 'や' },
+        { base: '先', reading: 'せん' },
+        { base: '生', reading: 'せい' }
       ],
       lines: [
         {
-          jp: '山中 伸弥 さんは 医学部を 目指して 進み、iPS 細胞の 研究で 有名に なりました。',
+          jp: '山中伸弥先生は 1962年に 大阪で お生まれに なりました。',
           romaji:
-            'Yamanaka Shinya-san wa igakubu o mezashite susumi, iPS saibō no kenkyū de yūmei ni narimashita.',
+            "Yamanaka Shin'ya sensei wa sen kyūhyaku rokujūni-nen ni Ōsaka de o-umare ni narimashita.",
           meaning: {
-            en: 'Shinya Yamanaka aimed for medical school, advanced in his studies, and became famous for iPS cell research.',
-            vi: 'Yamanaka Shinya hướng đến khoa y, học lên, và nổi tiếng nhờ nghiên cứu tế bào iPS.'
+            en: 'Professor Shinya Yamanaka was born in Osaka in 1962.',
+            vi: 'Giáo sư Yamanaka Shinya sinh năm 1962 tại Osaka.'
           },
           ruby: [
             { base: '山', reading: 'やま' },
             { base: '中', reading: 'なか' },
             { base: '伸', reading: 'しん' },
             { base: '弥', reading: 'や' },
-            { base: '医', reading: 'い' },
-            { base: '学', reading: 'がく' },
-            { base: '部', reading: 'ぶ' },
-            { base: '目', reading: 'め' },
-            { base: '指', reading: 'め' },
-            { base: '進', reading: 'すす' },
-            { base: '細', reading: 'さい' },
-            { base: '胞', reading: 'ぼう' },
-            { base: '研', reading: 'けん' },
-            { base: '究', reading: 'きゅう' },
-            { base: '有', reading: 'ゆう' },
-            { base: '名', reading: 'めい' }
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '年', reading: 'ねん' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '生', reading: 'う' }
           ]
         },
         {
-          jp: '彼は マウスから ヒトの 細胞を 開発し、2012年に ノーベル賞を 受賞しました。',
+          jp: '神戸大学の 医学部を 卒業されて、最初は 病院で 働かれました。',
           romaji:
-            'Kare wa mausu kara hito no saibō o kaihatsu shi, ni-sen jūni-nen ni Nōberu-shō o jushō shimashita.',
+            'Kōbe daigaku no igakubu o sotsugyō sarete, saisho wa byōin de hatarakaremashita.',
           meaning: {
-            en: 'He developed human cells from mouse cells and received the Nobel Prize in 2012.',
-            vi: 'Ông phát triển tế bào người từ tế bào chuột và nhận giải Nobel năm 2012.'
+            en: 'He graduated from the Kobe University School of Medicine and first worked at a hospital.',
+            vi: 'Ông tốt nghiệp khoa Y Đại học Kobe và lúc đầu làm việc ở bệnh viện.'
           },
           ruby: [
-            { base: '彼', reading: 'かれ' },
+            { base: '神', reading: 'こう' },
+            { base: '戸', reading: 'べ' },
+            { base: '大', reading: 'だい' },
+            { base: '学', reading: 'がく' },
+            { base: '医', reading: 'い' },
+            { base: '学', reading: 'がく' },
+            { base: '部', reading: 'ぶ' },
+            { base: '卒', reading: 'そつ' },
+            { base: '業', reading: 'ぎょう' },
+            { base: '最', reading: 'さい' },
+            { base: '初', reading: 'しょ' },
+            { base: '病', reading: 'びょう' },
+            { base: '院', reading: 'いん' },
+            { base: '働', reading: 'はたら' }
+          ]
+        },
+        {
+          jp: 'その 後、研究者に なられて、iPS細胞を 作られました。',
+          romaji: 'Sono ato, kenkyūsha ni nararete, aipīesu saibō o tsukuraremashita.',
+          meaning: {
+            en: 'Later he became a researcher and created iPS cells.',
+            vi: 'Sau đó ông trở thành nhà nghiên cứu và đã tạo ra tế bào iPS.'
+          },
+          ruby: [
+            { base: '後', reading: 'あと' },
+            { base: '研', reading: 'けん' },
+            { base: '究', reading: 'きゅう' },
+            { base: '者', reading: 'しゃ' },
             { base: '細', reading: 'さい' },
             { base: '胞', reading: 'ぼう' },
-            { base: '開', reading: 'かい' },
-            { base: '発', reading: 'はつ' },
+            { base: '作', reading: 'つく' }
+          ]
+        },
+        {
+          jp: '2012年に ノーベル賞を 受賞されました。',
+          romaji: 'Ni-sen jūni-nen ni Nōberu-shō o jushō saremashita.',
+          meaning: {
+            en: 'In 2012 he received the Nobel Prize.',
+            vi: 'Năm 2012 ông được trao giải Nobel.'
+          },
+          ruby: [
             { base: '年', reading: 'ねん' },
             { base: '賞', reading: 'しょう' },
             { base: '受', reading: 'じゅ' },
@@ -735,103 +780,70 @@ export const n4Lesson49: Lesson = {
           ]
         },
         {
-          jp: '経歴を 読むと、たまに 講演会で 話す 機会も あります。',
-          romaji: 'Keireki o yomu to, tamani kōenkai de hanasu kikai mo arimasu.',
+          jp: '先生は マラソンも なさって、研究の ための お金を 集めて いらっしゃいます。',
+          romaji: 'Sensei wa marason mo nasatte, kenkyū no tame no okane o atsumete irasshaimasu.',
           meaning: {
-            en: 'Reading his background, you see he sometimes speaks at public lectures.',
-            vi: 'Đọc lí lịch thì thấy thi thoảng ông cũng nói chuyện ở các buổi diễn thuyết.'
+            en: 'He also runs marathons to raise money for research.',
+            vi: 'Ông còn chạy marathon để quyên góp tiền cho nghiên cứu.'
           },
           ruby: [
-            { base: '経', reading: 'けい' },
-            { base: '歴', reading: 'れき' },
-            { base: '読', reading: 'よ' },
-            { base: '講', reading: 'こう' },
-            { base: '演', reading: 'えん' },
-            { base: '会', reading: 'かい' },
-            { base: '話', reading: 'はな' },
-            { base: '機', reading: 'き' },
-            { base: '会', reading: 'かい' }
-          ]
-        },
-        {
-          jp: 'どなたでも 利用できる 資料も 用意されています。',
-          romaji: 'Donata demo riyō dekiru shiryō mo yōi sarete imasu.',
-          meaning: {
-            en: 'Materials anyone can use are also prepared.',
-            vi: 'Tài liệu mà vị nào cũng có thể sử dụng cũng được chuẩn bị sẵn.'
-          },
-          ruby: [
-            { base: '利', reading: 'り' },
-            { base: '用', reading: 'よう' },
-            { base: '資', reading: 'し' },
-            { base: '料', reading: 'りょう' },
-            { base: '用', reading: 'よう' },
-            { base: '意', reading: 'い' }
-          ]
-        },
-        {
-          jp: '「科学は ヒトの ために ある」といいます。',
-          romaji: '「Kagaku wa hito no tame ni aru」 to iimasu.',
-          meaning: {
-            en: 'He says that science exists for people.',
-            vi: 'Ông nói rằng khoa học là vì con người.'
-          },
-          ruby: [
-            { base: '科', reading: 'か' },
-            { base: '学', reading: 'がく' }
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '研', reading: 'けん' },
+            { base: '究', reading: 'きゅう' },
+            { base: '金', reading: 'かね' },
+            { base: '集', reading: 'あつ' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'What is Yamanaka famous for?', vi: 'Yamanaka nổi tiếng vì gì?' },
-          jp: '山中さんは 何で 有名ですか。',
+          question: {
+            en: 'What did Professor Yamanaka create?',
+            vi: 'Giáo sư Yamanaka đã tạo ra gì?'
+          },
+          jp: '山中先生は 何を 作られましたか。',
           ruby: [
             { base: '山', reading: 'やま' },
             { base: '中', reading: 'なか' },
-            { base: '何', reading: 'なん' },
-            { base: '有', reading: 'ゆう' },
-            { base: '名', reading: 'めい' }
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '何', reading: 'なに' },
+            { base: '作', reading: 'つく' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'iPS cell research', vi: 'Nghiên cứu tế bào iPS' },
-              jp: 'iPS細胞の 研究',
+              label: { en: 'iPS cells', vi: 'Tế bào iPS' },
+              jp: 'iPS細胞',
               ruby: [
                 { base: '細', reading: 'さい' },
-                { base: '胞', reading: 'ぼう' },
-                { base: '研', reading: 'けん' },
-                { base: '究', reading: 'きゅう' }
+                { base: '胞', reading: 'ぼう' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Running a ryokan', vi: 'Điều hành ryokan' },
-              jp: '旅館の 経営',
+              label: { en: 'A new medicine', vi: 'Một loại thuốc mới' },
+              jp: '新しい 薬',
               ruby: [
-                { base: '旅', reading: 'りょ' },
-                { base: '館', reading: 'かん' },
-                { base: '経', reading: 'けい' },
-                { base: '営', reading: 'えい' }
+                { base: '新', reading: 'あたら' },
+                { base: '薬', reading: 'くすり' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Teaching calligraphy', vi: 'Dạy viết chữ' },
-              jp: '習字を 教えること',
-              ruby: [
-                { base: '習', reading: 'しゅう' },
-                { base: '字', reading: 'じ' },
-                { base: '教', reading: 'おし' }
-              ]
+              label: { en: 'A robot', vi: 'Một con robot' },
+              jp: 'ロボット'
             },
             {
               id: 'd',
-              label: { en: 'Bus stop design', vi: 'Thiết kế bến xe buýt' },
-              jp: 'バス停の デザイン',
-              ruby: [{ base: '停', reading: 'てい' }]
+              label: { en: 'A university', vi: 'Một trường đại học' },
+              jp: '大学',
+              ruby: [
+                { base: '大', reading: 'だい' },
+                { base: '学', reading: 'がく' }
+              ]
             }
           ],
           correctId: 'a'
@@ -840,33 +852,41 @@ export const n4Lesson49: Lesson = {
           id: 'q2',
           question: {
             en: 'When did he receive the Nobel Prize?',
-            vi: 'Ông nhận giải Nobel năm nào?'
+            vi: 'Ông nhận giải Nobel khi nào?'
           },
-          jp: 'いつ ノーベル賞を もらいましたか。',
-          ruby: [{ base: '賞', reading: 'しょう' }],
+          jp: '山中先生は いつ ノーベル賞を 受賞されましたか。',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '中', reading: 'なか' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '賞', reading: 'しょう' },
+            { base: '受', reading: 'じゅ' },
+            { base: '賞', reading: 'しょう' }
+          ],
           choices: [
             {
               id: 'a',
-              label: { en: '2012', vi: '2012' },
+              label: { en: 'In 2012', vi: 'Năm 2012' },
               jp: '2012年',
               ruby: [{ base: '年', reading: 'ねん' }]
             },
             {
               id: 'b',
-              label: { en: '2002', vi: '2002' },
-              jp: '2002年',
+              label: { en: 'In 1962', vi: 'Năm 1962' },
+              jp: '1962年',
               ruby: [{ base: '年', reading: 'ねん' }]
             },
             {
               id: 'c',
-              label: { en: '1992', vi: '1992' },
-              jp: '1992年',
+              label: { en: 'In 1987', vi: 'Năm 1987' },
+              jp: '1987年',
               ruby: [{ base: '年', reading: 'ねん' }]
             },
             {
               id: 'd',
-              label: { en: '2022', vi: '2022' },
-              jp: '2022年',
+              label: { en: 'In 2020', vi: 'Năm 2020' },
+              jp: '2020年',
               ruby: [{ base: '年', reading: 'ねん' }]
             }
           ],

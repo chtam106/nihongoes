@@ -62,17 +62,19 @@ export const n5Lesson18SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The section chief drives to the office. (plain)',
-            vi: 'Tổ trưởng lái xe đến công ty. (thân mật)'
+            en: 'The section chief drives to work every day. (plain)',
+            vi: 'Trưởng ban ngày nào cũng đi làm bằng ô tô. (thể thường)'
           },
-          jp: '課長は 会社まで 運転する。',
+          jp: '課長は 毎日 車で 会社へ 行く。',
           ruby: [
             { base: '課', reading: 'か' },
             { base: '長', reading: 'ちょう' },
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '車', reading: 'くるま' },
             { base: '会', reading: 'かい' },
             { base: '社', reading: 'しゃ' },
-            { base: '運', reading: 'うん' },
-            { base: '転', reading: 'てん' }
+            { base: '行', reading: 'い' }
           ]
         }
       ]
@@ -86,9 +88,15 @@ export const n5Lesson18SentenceWriting: LessonSentenceWriting = {
           jp: 'ピアノが できますか。'
         },
         {
-          prompt: { en: 'Yes, I can play the piano.', vi: 'Có, tôi chơi piano được.' },
-          jp: 'はい、ピアノを 弾く ことが できます。',
-          ruby: [{ base: '弾', reading: 'ひ' }]
+          prompt: {
+            en: 'Can you play the piano? ...Yes, a little.',
+            vi: 'Anh chơi được piano không? ...Được, một chút.'
+          },
+          jp: 'ピアノを 弾く ことが できますか。……はい、少し できます。',
+          ruby: [
+            { base: '弾', reading: 'ひ' },
+            { base: '少', reading: 'すこ' }
+          ]
         },
         {
           prompt: { en: 'Can you drive?', vi: 'Anh/chị lái xe được không?' },
@@ -183,33 +191,25 @@ export const n5Lesson18SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: "The company president's hobby is horses.",
-            vi: 'Sở thích của giám đốc là ngựa.'
-          },
-          jp: '社長の 趣味は 馬です。',
+          prompt: { en: "My father's hobby is fishing.", vi: 'Sở thích của bố tôi là câu cá.' },
+          jp: '父の 趣味は 釣りです。',
           ruby: [
-            { base: '社', reading: 'しゃ' },
-            { base: '長', reading: 'ちょう' },
+            { base: '父', reading: 'ちち' },
             { base: '趣', reading: 'しゅ' },
             { base: '味', reading: 'み' },
-            { base: '馬', reading: 'うま' }
+            { base: '釣', reading: 'つ' }
           ]
         },
         {
-          prompt: {
-            en: "The manager's hobby is looking at animals.",
-            vi: 'Sở thích của trưởng phòng là xem động vật.'
-          },
-          jp: '部長の 趣味は 動物を 見る ことです。',
+          prompt: { en: "My mother's hobby is cooking.", vi: 'Sở thích của mẹ tôi là nấu ăn.' },
+          jp: '母の 趣味は 料理を 作る ことです。',
           ruby: [
-            { base: '部', reading: 'ぶ' },
-            { base: '長', reading: 'ちょう' },
+            { base: '母', reading: 'はは' },
             { base: '趣', reading: 'しゅ' },
             { base: '味', reading: 'み' },
-            { base: '動', reading: 'どう' },
-            { base: '物', reading: 'ぶつ' },
-            { base: '見', reading: 'み' }
+            { base: '料', reading: 'りょう' },
+            { base: '理', reading: 'り' },
+            { base: '作', reading: 'つく' }
           ]
         }
       ]
@@ -230,27 +230,30 @@ export const n5Lesson18SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Before I throw away the trash, I look at it.',
-            vi: 'Trước khi vứt rác, tôi xem lại.'
+            en: 'I brush my teeth before going to bed.',
+            vi: 'Trước khi ngủ tôi đánh răng.'
           },
-          jp: 'ごみを 捨てる 前に、見ます。',
+          jp: '寝る 前に、歯を 磨きます。',
           ruby: [
-            { base: '捨', reading: 'す' },
+            { base: '寝', reading: 'ね' },
             { base: '前', reading: 'まえ' },
-            { base: '見', reading: 'み' }
+            { base: '歯', reading: 'は' },
+            { base: '磨', reading: 'みが' }
           ]
         },
         {
           prompt: {
-            en: 'Before I reserve a hotel, I use the Internet.',
-            vi: 'Trước khi đặt khách sạn, tôi dùng Internet.'
+            en: 'I book a hotel before going on a trip.',
+            vi: 'Trước khi đi du lịch tôi đặt khách sạn.'
           },
-          jp: 'ホテルを 予約する 前に、インターネットを 使います。',
+          jp: '旅行に 行く 前に、ホテルを 予約します。',
           ruby: [
-            { base: '予', reading: 'よ' },
-            { base: '約', reading: 'やく' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '行', reading: 'い' },
             { base: '前', reading: 'まえ' },
-            { base: '使', reading: 'つか' }
+            { base: '予', reading: 'よ' },
+            { base: '約', reading: 'やく' }
           ]
         },
         {
@@ -376,15 +379,16 @@ export const n5Lesson18SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I definitely want to hear the president sing.',
-            vi: 'Tôi rất muốn nghe giám đốc hát.'
+            en: 'I would really like to go to Kyoto at least once.',
+            vi: 'Nhất định tôi muốn đi đến Kyoto một lần.'
           },
-          jp: 'ぜひ 社長の 歌を 聞きたいです。',
+          jp: 'ぜひ 一度 京都へ 行きたいです。',
           ruby: [
-            { base: '社', reading: 'しゃ' },
-            { base: '長', reading: 'ちょう' },
-            { base: '歌', reading: 'うた' },
-            { base: '聞', reading: 'き' }
+            { base: '一', reading: 'いち' },
+            { base: '度', reading: 'ど' },
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
+            { base: '行', reading: 'い' }
           ]
         },
         {
@@ -397,15 +401,15 @@ export const n5Lesson18SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I definitely want to collect old maps.',
-            vi: 'Tôi rất muốn sưu tầm bản đồ cũ.'
+            en: 'I would really like to climb Mt. Fuji.',
+            vi: 'Nhất định tôi muốn leo núi Phú Sĩ.'
           },
-          jp: 'ぜひ 古い 地図を 集めたいです。',
+          jp: 'ぜひ 富士山に 登りたいです。',
           ruby: [
-            { base: '古', reading: 'ふる' },
-            { base: '地', reading: 'ち' },
-            { base: '図', reading: 'ず' },
-            { base: '集', reading: 'あつ' }
+            { base: '富', reading: 'ふ' },
+            { base: '士', reading: 'じ' },
+            { base: '山', reading: 'さん' },
+            { base: '登', reading: 'のぼ' }
           ]
         }
       ]

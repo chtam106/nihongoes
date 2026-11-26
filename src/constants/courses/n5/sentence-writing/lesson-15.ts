@@ -37,9 +37,16 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Yes, you may look at it.', vi: 'Vâng, xem cũng được.' },
-          jp: 'はい、見ても いいですよ。',
-          ruby: [{ base: '見', reading: 'み' }]
+          prompt: {
+            en: 'May I take photos here? ...Yes, go ahead.',
+            vi: 'Tôi chụp ảnh ở đây được không? ...Được chứ.'
+          },
+          jp: 'ここで 写真を 撮っても いいですか。……はい、いいですよ。',
+          ruby: [
+            { base: '写', reading: 'しゃ' },
+            { base: '真', reading: 'しん' },
+            { base: '撮', reading: 'と' }
+          ]
         },
         {
           prompt: {
@@ -81,15 +88,9 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
           jp: 'この ソフトを コピーしては いけません。'
         },
         {
-          prompt: {
-            en: 'You must not sell these clothes here.',
-            vi: 'Ở đây không được bán quần áo này.'
-          },
-          jp: 'ここで この 服を 売っては いけません。',
-          ruby: [
-            { base: '服', reading: 'ふく' },
-            { base: '売', reading: 'う' }
-          ]
+          prompt: { en: 'You must not smoke here.', vi: 'Không được hút thuốc ở đây.' },
+          jp: 'ここで たばこを 吸っては いけません。',
+          ruby: [{ base: '吸', reading: 'す' }]
         },
         {
           prompt: {
@@ -104,16 +105,18 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'You must not enter the city hall now.',
-            vi: 'Bây giờ không được vào tòa thị chính.'
+            en: 'You must not take photos inside the art museum.',
+            vi: 'Không được chụp ảnh trong bảo tàng mỹ thuật.'
           },
-          jp: '今 市役所に 入っては いけません。',
+          jp: '美術館の 中で 写真を 撮っては いけません。',
           ruby: [
-            { base: '今', reading: 'いま' },
-            { base: '市', reading: 'し' },
-            { base: '役', reading: 'やく' },
-            { base: '所', reading: 'しょ' },
-            { base: '入', reading: 'はい' }
+            { base: '美', reading: 'び' },
+            { base: '術', reading: 'じゅつ' },
+            { base: '館', reading: 'かん' },
+            { base: '中', reading: 'なか' },
+            { base: '写', reading: 'しゃ' },
+            { base: '真', reading: 'しん' },
+            { base: '撮', reading: 'と' }
           ]
         }
       ]
@@ -131,9 +134,21 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Sorry, I do not know.', vi: 'Xin lỗi, tôi không biết.' },
-          jp: 'すみません、知りません。',
-          ruby: [{ base: '知', reading: 'し' }]
+          prompt: {
+            en: "Do you know Ms. Yamada's phone number? ...No, I do not.",
+            vi: 'Anh có biết số điện thoại của chị Yamada không? ...Không, tôi không biết.'
+          },
+          jp: '山田さんの 電話番号を 知っていますか。……いいえ、知りません。',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '田', reading: 'だ' },
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' },
+            { base: '番', reading: 'ばん' },
+            { base: '号', reading: 'ごう' },
+            { base: '知', reading: 'し' },
+            { base: '知', reading: 'し' }
+          ]
         },
         {
           prompt: { en: 'I live in Osaka now.', vi: 'Bây giờ tôi sống ở Osaka.' },
@@ -147,29 +162,29 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I cannot recall the name.',
-            vi: 'Tôi không nhớ ra tên.'
+            en: 'Is Mr. Miller married? ...Yes, he is.',
+            vi: 'Anh Miller đã kết hôn chưa? ...Rồi, anh ấy đã kết hôn.'
           },
-          jp: '名前を 思い出していません。',
+          jp: 'ミラーさんは 結婚していますか。……はい、結婚しています。',
           ruby: [
-            { base: '名', reading: 'な' },
-            { base: '前', reading: 'まえ' },
-            { base: '思', reading: 'おも' },
-            { base: '出', reading: 'だ' }
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' },
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' }
           ]
         },
         {
           prompt: {
-            en: 'Ms. Yamada is at city hall (honorific).',
-            vi: 'Cô Yamada đang ở tòa thị chính (kính ngữ).'
+            en: 'Where do you live now? ...I live in Yokohama.',
+            vi: 'Bây giờ anh sống ở đâu? ...Tôi sống ở Yokohama.'
           },
-          jp: '山田さんは 市役所に いらっしゃいます。',
+          jp: '今 どこに 住んでいますか。……横浜に 住んでいます。',
           ruby: [
-            { base: '山', reading: 'やま' },
-            { base: '田', reading: 'だ' },
-            { base: '市', reading: 'し' },
-            { base: '役', reading: 'やく' },
-            { base: '所', reading: 'しょ' }
+            { base: '今', reading: 'いま' },
+            { base: '住', reading: 'す' },
+            { base: '横', reading: 'よこ' },
+            { base: '浜', reading: 'はま' },
+            { base: '住', reading: 'す' }
           ]
         },
         {
@@ -273,19 +288,28 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
       pattern: 'N に V',
       items: [
         {
-          prompt: { en: 'I will enter the city hall.', vi: 'Tôi sẽ vào tòa thị chính.' },
-          jp: '市役所に 入ります。',
+          prompt: {
+            en: 'It is cold, so let us go into this cafe.',
+            vi: 'Lạnh quá, mình vào quán cà phê này đi.'
+          },
+          jp: '寒いですから、この 喫茶店に 入りましょう。',
           ruby: [
-            { base: '市', reading: 'し' },
-            { base: '役', reading: 'やく' },
-            { base: '所', reading: 'しょ' },
+            { base: '寒', reading: 'さむ' },
+            { base: '喫', reading: 'きっ' },
+            { base: '茶', reading: 'さ' },
+            { base: '店', reading: 'てん' },
             { base: '入', reading: 'はい' }
           ]
         },
         {
-          prompt: { en: 'I will go to the dentist.', vi: 'Tôi sẽ đến nha sĩ.' },
-          jp: '歯医者に 行きます。',
+          prompt: {
+            en: 'I am going to the dentist this afternoon.',
+            vi: 'Chiều nay tôi đi nha sĩ.'
+          },
+          jp: '午後 歯医者に 行きます。',
           ruby: [
+            { base: '午', reading: 'ご' },
+            { base: '後', reading: 'ご' },
             { base: '歯', reading: 'は' },
             { base: '医', reading: 'い' },
             { base: '者', reading: 'しゃ' },
@@ -293,18 +317,35 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I will enter the barber shop.', vi: 'Tôi sẽ vào tiệm cắt tóc nam.' },
-          jp: '床屋に 入ります。',
+          prompt: {
+            en: "I take the seven o'clock train every morning.",
+            vi: 'Sáng nào tôi cũng lên chuyến tàu 7 giờ.'
+          },
+          jp: '毎朝 7時の 電車に 乗ります。',
           ruby: [
-            { base: '床', reading: 'とこ' },
-            { base: '屋', reading: 'や' },
-            { base: '入', reading: 'はい' }
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '時', reading: 'じ' },
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '乗', reading: 'の' }
           ]
         },
         {
-          prompt: { en: 'I will go to the ticket agency.', vi: 'Tôi sẽ đến đại lý bán vé.' },
-          jp: 'プレイガイドに 行きます。',
-          ruby: [{ base: '行', reading: 'い' }]
+          prompt: {
+            en: 'I want to enter a Japanese university next year.',
+            vi: 'Năm sau tôi muốn vào một trường đại học ở Nhật.'
+          },
+          jp: '来年 日本の 大学に 入りたいです。',
+          ruby: [
+            { base: '来', reading: 'らい' },
+            { base: '年', reading: 'ねん' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '大', reading: 'だい' },
+            { base: '学', reading: 'がく' },
+            { base: '入', reading: 'はい' }
+          ]
         },
         {
           prompt: {
@@ -336,16 +377,16 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I put the electronic dictionary in my bag.',
-            vi: 'Tôi để kim từ điển vào túi.'
+            en: 'I put my electronic dictionary in my bag.',
+            vi: 'Tôi bỏ từ điển điện tử vào cặp.'
           },
-          jp: 'かばんに 電子辞書を 置きます。',
+          jp: 'かばんに 電子辞書を 入れます。',
           ruby: [
             { base: '電', reading: 'でん' },
             { base: '子', reading: 'し' },
             { base: '辞', reading: 'じ' },
             { base: '書', reading: 'しょ' },
-            { base: '置', reading: 'お' }
+            { base: '入', reading: 'い' }
           ]
         },
         {
@@ -354,12 +395,13 @@ export const n5Lesson15SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '置', reading: 'お' }]
         },
         {
-          prompt: { en: 'I put the clothes in the box.', vi: 'Tôi để quần áo vào hộp.' },
-          jp: '箱に 服を 置きます。',
+          prompt: { en: 'I put my old clothes in a box.', vi: 'Tôi cho quần áo cũ vào thùng.' },
+          jp: '古い 服を 箱に 入れました。',
           ruby: [
-            { base: '箱', reading: 'はこ' },
+            { base: '古', reading: 'ふる' },
             { base: '服', reading: 'ふく' },
-            { base: '置', reading: 'お' }
+            { base: '箱', reading: 'はこ' },
+            { base: '入', reading: 'い' }
           ]
         },
         {

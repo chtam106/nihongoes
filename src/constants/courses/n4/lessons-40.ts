@@ -443,7 +443,7 @@ export const n4Lesson40: Lesson = {
       lines: [
         {
           speakerId: 'klara',
-          jp: '先生、ハンスは 学校で どう ですか。友だちが できるか 心配 なんです。',
+          jp: '先生、ハンスは 学校で どうですか。友だちが できるか 心配 なんです。',
           romaji: 'Sensei, Hansu wa gakkō de dō desu ka. Tomodachi ga dekiru ka shinpai nan desu.',
           meaning: {
             en: 'Teacher, how is Hans at school? I worry whether he can make friends.',
@@ -461,7 +461,7 @@ export const n4Lesson40: Lesson = {
         },
         {
           speakerId: 'ito',
-          jp: '心配 しないで ください。クラスで とても 人気 ですよ。',
+          jp: '心配しないで ください。クラスで とても 人気ですよ。',
           romaji: 'Shinpai shinaide kudasai. Kurasu de totemo ninki desu yo.',
           meaning: {
             en: 'Please do not worry. He is very popular in class.',
@@ -476,7 +476,7 @@ export const n4Lesson40: Lesson = {
         },
         {
           speakerId: 'klara',
-          jp: 'それなら 安心 です。勉強は どう ですか。',
+          jp: 'それなら 安心です。勉強は どうですか。',
           romaji: 'Sorenara anshin desu. Benkyō wa dō desu ka.',
           meaning: {
             en: 'That is a relief. How about his studies?',
@@ -491,7 +491,7 @@ export const n4Lesson40: Lesson = {
         },
         {
           speakerId: 'ito',
-          jp: '毎日 テストが あって、成績も いい です。算数が 特に 上手 ですね。',
+          jp: '毎日 テストが あって、成績も いいです。算数が 特に 上手ですね。',
           romaji: 'Mainichi tesuto ga atte, seiseki mo ii desu. Sansū ga tokuni jōzu desu ne.',
           meaning: {
             en: 'There are tests every day, and his grades are good. He is especially good at math.',
@@ -527,7 +527,7 @@ export const n4Lesson40: Lesson = {
         },
         {
           speakerId: 'ito',
-          jp: 'もちろん です。ぜひ 来て ハンスの 様子を 見て ください。',
+          jp: 'もちろんです。ぜひ 来て ハンスの 様子を 見て ください。',
           romaji: 'Mochiron desu. Zehi kite Hansu no yōsu o mite kudasai.',
           meaning: {
             en: 'Of course. Please do come and see how Hans is doing.',
@@ -643,7 +643,7 @@ export const n4Lesson40: Lesson = {
           ]
         },
         {
-          jp: '長崎へ 行った ことが ありませんが、一度 行って みたい です。',
+          jp: '長崎へ 行った ことが ありませんが、一度 行って みたいです。',
           romaji: 'Nagasaki e itta koto ga arimasen ga, ichido itte mitai desu.',
           meaning: {
             en: 'I have never been to Nagasaki, but I want to try going once.',
@@ -702,7 +702,7 @@ export const n4Lesson40: Lesson = {
           ]
         },
         {
-          jp: '新しい 橋の 長さは 3,911メートル です。',
+          jp: '新しい 橋の 長さは 3,911メートルです。',
           romaji: 'Atarashii hashi no nagasa wa san-sen-kyū-hyaku jū-ichi mētoru desu.',
           meaning: {
             en: 'The new bridge is 3,911 meters long.',
@@ -793,7 +793,7 @@ export const n4Lesson40: Lesson = {
           ]
         },
         {
-          jp: 'みんな 答えを 確かめて から、発表 しました。',
+          jp: 'みんな 答えを 確かめて から、発表しました。',
           romaji: 'Minna kotae o tashikamete kara, happyō shimashita.',
           meaning: {
             en: 'Everyone confirmed their answers before presenting.',

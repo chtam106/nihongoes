@@ -6,9 +6,16 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
       pattern: 'Plain forms (V / Adj / N だ)',
       items: [
         {
-          prompt: { en: 'I need a visa.', vi: 'Tôi cần visa.' },
-          jp: 'ビザが 要る。',
-          ruby: [{ base: '要', reading: 'い' }]
+          prompt: {
+            en: 'You are going to America? Do you need a visa? ...Yeah, I do.',
+            vi: 'Đi Mỹ à? Có cần visa không? ...Ừ, cần.'
+          },
+          jp: 'アメリカへ 行くの？ビザが 要る？……うん、要る。',
+          ruby: [
+            { base: '行', reading: 'い' },
+            { base: '要', reading: 'い' },
+            { base: '要', reading: 'い' }
+          ]
         },
         {
           prompt: {
@@ -23,21 +30,30 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I am free. (male, casual)',
-            vi: 'Tôi rảnh. (nam, thân mật)'
+            en: 'I am free today, so I am going to see a movie. (casual)',
+            vi: 'Hôm nay rảnh nên tôi đi xem phim. (thân mật)'
           },
-          jp: '僕は 暇だ。',
+          jp: '今日は 暇だから、映画を 見に 行く。',
           ruby: [
-            { base: '僕', reading: 'ぼく' },
-            { base: '暇', reading: 'ひま' }
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '暇', reading: 'ひま' },
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '見', reading: 'み' },
+            { base: '行', reading: 'い' }
           ]
         },
         {
-          prompt: { en: 'You are busy. (casual)', vi: 'Cậu bận đó. (thân mật)' },
-          jp: '君は 忙しい。',
+          prompt: {
+            en: 'I am really busy this week. (casual)',
+            vi: 'Tuần này bận kinh khủng. (thân mật)'
+          },
+          jp: '今週は すごく 忙しい。',
           ruby: [
-            { base: '君', reading: 'きみ' },
-            { base: '忙', reading: 'いそ' }
+            { base: '今', reading: 'こん' },
+            { base: '週', reading: 'しゅう' },
+            { base: '忙', reading: 'いそが' }
           ]
         },
         {
@@ -50,25 +66,45 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Prices are high.', vi: 'Giá cả thì cao.' },
-          jp: '物価は 高い。',
+          prompt: {
+            en: 'Prices are high in Tokyo. (casual)',
+            vi: 'Tokyo vật giá đắt đỏ. (thân mật)'
+          },
+          jp: '東京は 物価が 高い。',
           ruby: [
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
             { base: '物', reading: 'ぶっ' },
             { base: '価', reading: 'か' },
             { base: '高', reading: 'たか' }
           ]
         },
         {
-          prompt: { en: 'Yeah, I will look it up.', vi: 'Ừ, tôi sẽ kiểm tra.' },
-          jp: 'うん、調べる。',
-          ruby: [{ base: '調', reading: 'しら' }]
+          prompt: {
+            en: 'Will you look up this word? ...Yeah, I will.',
+            vi: 'Từ này, tra không? ...Ừ, tra.'
+          },
+          jp: 'この 言葉、調べる？……うん、調べる。',
+          ruby: [
+            { base: '言', reading: 'こと' },
+            { base: '葉', reading: 'ば' },
+            { base: '調', reading: 'しら' },
+            { base: '調', reading: 'しら' }
+          ]
         },
         {
-          prompt: { en: 'No, I will not repair it.', vi: 'Không, tôi sẽ không sửa.' },
-          jp: 'ううん、修理しない。',
+          prompt: {
+            en: 'Will you get this watch repaired? ...No. I will buy a new one.',
+            vi: 'Cái đồng hồ này, sửa không? ...Không. Mua cái mới.'
+          },
+          jp: 'この 時計、修理する？……ううん、しない。新しいのを 買う。',
           ruby: [
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' },
             { base: '修', reading: 'しゅう' },
-            { base: '理', reading: 'り' }
+            { base: '理', reading: 'り' },
+            { base: '新', reading: 'あたら' },
+            { base: '買', reading: 'か' }
           ]
         },
         {
@@ -77,26 +113,6 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
           ruby: [
             { base: '着', reading: 'き' },
             { base: '物', reading: 'もの' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The beginning of the movie is interesting.',
-            vi: 'Phần đầu của phim hay.'
-          },
-          jp: '映画の 初めは おもしろい。',
-          ruby: [
-            { base: '映', reading: 'えい' },
-            { base: '画', reading: 'が' },
-            { base: '初', reading: 'はじ' }
-          ]
-        },
-        {
-          prompt: { en: 'The end is short.', vi: 'Phần cuối thì ngắn.' },
-          jp: '終わりは 短い。',
-          ruby: [
-            { base: '終', reading: 'お' },
-            { base: '短', reading: 'みじか' }
           ]
         }
       ]
@@ -109,7 +125,7 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
             en: 'Tanaka, will you call? (casual, particles dropped)',
             vi: 'Tanaka, cậu gọi điện chứ? (thân mật, bỏ trợ từ)'
           },
-          jp: '田中くん、電話 する？',
+          jp: '田中くん、電話する？',
           ruby: [
             { base: '田', reading: 'た' },
             { base: '中', reading: 'なか' },
@@ -131,29 +147,31 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '来', reading: 'く' }]
         },
         {
-          prompt: {
-            en: 'Will you look over there? (casual, near the listener)',
-            vi: 'Cậu nhìn phía đó chứ? (thân mật)'
-          },
-          jp: 'そっち 見る？',
-          ruby: [{ base: '見', reading: 'み' }]
+          prompt: { en: 'Want some coffee? (casual)', vi: 'Uống cà phê không? (thân mật)' },
+          jp: 'コーヒー 飲む？',
+          ruby: [{ base: '飲', reading: 'の' }]
         },
         {
           prompt: {
-            en: 'Will you fix that over there? (casual)',
-            vi: 'Cậu sửa cái đằng kia chứ? (thân mật)'
+            en: 'What time are you coming tomorrow? (casual)',
+            vi: 'Mai mấy giờ đến? (thân mật)'
           },
-          jp: 'あっち 直す？',
-          ruby: [{ base: '直', reading: 'なお' }]
+          jp: 'あした 何時に 来る？',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '来', reading: 'く' }
+          ]
         },
         {
           prompt: {
-            en: 'Did you all eat together the other day? (casual)',
-            vi: 'Hôm nọ các cậu ăn cùng nhau chưa? (thân mật)'
+            en: 'What did you all eat together the other day? (casual)',
+            vi: 'Hôm trước mọi người ăn gì vậy? (thân mật)'
           },
-          jp: 'あの間 みんなで 食べた？',
+          jp: 'この 間 みんなで 何 食べた？',
           ruby: [
             { base: '間', reading: 'あいだ' },
+            { base: '何', reading: 'なに' },
             { base: '食', reading: 'た' }
           ]
         }
@@ -163,21 +181,25 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
       pattern: 'Plain form ＋ けど',
       items: [
         {
-          prompt: { en: 'I need it, but it is expensive.', vi: 'Tôi cần, nhưng nó đắt.' },
-          jp: '要るけど、高い。',
+          prompt: {
+            en: 'I want this book, but it is expensive. (casual)',
+            vi: 'Muốn cuốn sách này nhưng đắt quá. (thân mật)'
+          },
+          jp: 'この 本、ほしいけど、高い。',
           ruby: [
-            { base: '要', reading: 'い' },
+            { base: '本', reading: 'ほん' },
             { base: '高', reading: 'たか' }
           ]
         },
         {
           prompt: {
-            en: 'I will fix it, but I have no time.',
-            vi: 'Tôi sẽ sửa, nhưng không có thời gian.'
+            en: 'I want to get it repaired, but I have no time. (casual)',
+            vi: 'Muốn sửa nhưng không có thời gian. (thân mật)'
           },
-          jp: '直すけど、時間がない。',
+          jp: '修理したいけど、時間が ない。',
           ruby: [
-            { base: '直', reading: 'なお' },
+            { base: '修', reading: 'しゅう' },
+            { base: '理', reading: 'り' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' }
           ]
@@ -245,7 +267,7 @@ export const n5Lesson20SentenceWriting: LessonSentenceWriting = {
     },
     {
       prompt: { en: 'I am full.', vi: 'No bụng rồi.' },
-      jp: 'お腹が いっぱい です。',
+      jp: 'お腹が いっぱいです。',
       ruby: [{ base: '腹', reading: 'なか' }]
     }
   ]

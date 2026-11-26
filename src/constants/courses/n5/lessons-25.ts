@@ -244,11 +244,11 @@ export const n5Lesson25: Lesson = {
         },
         {
           speakerId: 'yamada',
-          jp: 'そうですか。もし 時間が あれば、送別会を しましょう。',
-          romaji: 'Sō desu ka. Moshi jikan ga areba, sōbetsukai o shimashō.',
+          jp: 'そうですか。もし 時間が あったら、送別会を しましょう。',
+          romaji: 'Sō desu ka. Moshi jikan ga attara, sōbetsukai o shimashō.',
           meaning: {
-            en: 'I see. If there is time, let us have a farewell party.',
-            vi: 'Vậy à. Nếu có thời gian, tổ chức tiệc chia tay nhé.'
+            en: 'I see. If you have time, let us have a farewell party.',
+            vi: 'Thế à. Nếu có thời gian thì mình tổ chức tiệc chia tay nhé.'
           },
           ruby: [
             { base: '時', reading: 'じ' },
@@ -299,20 +299,20 @@ export const n5Lesson25: Lesson = {
         },
         {
           speakerId: 'kim',
-          jp: 'こちらこそ。日本へ 帰っても 日本語を 忘れないで ください。',
-          romaji: 'Kochira koso. Nihon e kaette mo Nihongo o wasurenaide kudasai.',
+          jp: 'こちらこそ。大阪へ 行っても、時々 連絡して ください。',
+          romaji: 'Kochira koso. Ōsaka e itte mo, tokidoki renraku shite kudasai.',
           meaning: {
-            en: 'Likewise. Even after returning to your country, please do not forget Japanese.',
-            vi: 'Tôi cũng vậy. Dù về nước cũng đừng quên tiếng Nhật nhé.'
+            en: 'Same here. Even after you go to Osaka, please keep in touch now and then.',
+            vi: 'Tôi cũng vậy. Dù chuyển đến Osaka thì thỉnh thoảng cũng liên lạc nhé.'
           },
           ruby: [
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '帰', reading: 'かえ' },
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '語', reading: 'ご' },
-            { base: '忘', reading: 'わす' }
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '行', reading: 'い' },
+            { base: '時', reading: 'とき' },
+            { base: '々', reading: 'どき' },
+            { base: '連', reading: 'れん' },
+            { base: '絡', reading: 'らく' }
           ]
         },
         {
@@ -346,7 +346,7 @@ export const n5Lesson25: Lesson = {
       ],
       examples: [
         {
-          jp: 'もし チャンスが あったら、留学したい です。',
+          jp: 'もし チャンスが あったら、留学したいです。',
           romaji: 'Moshi chansu ga attara, ryūgaku shitai desu.',
           meaning: {
             en: 'If I get a chance, I want to study abroad.',
@@ -372,11 +372,11 @@ export const n5Lesson25: Lesson = {
           ]
         },
         {
-          jp: '考えたら、答えが わかります。',
-          romaji: 'Kangaetara, kotae ga wakarimasu.',
+          jp: 'よく 考えたら、答えが わかりました。',
+          romaji: 'Yoku kangaetara, kotae ga wakarimashita.',
           meaning: {
-            en: 'If you think about it, you will understand the answer.',
-            vi: 'Nếu suy nghĩ thì sẽ hiểu câu trả lời.'
+            en: 'When I thought it over carefully, I understood the answer.',
+            vi: 'Suy nghĩ kỹ thì tôi đã hiểu ra câu trả lời.'
           },
           ruby: [
             { base: '考', reading: 'かんが' },
@@ -443,17 +443,17 @@ export const n5Lesson25: Lesson = {
       ],
       examples: [
         {
-          jp: 'もし 大使館で 働いたら、いい こと ですね。',
-          romaji: 'Moshi taishikan de hataraitara, ii koto desu ne.',
+          jp: 'もし 時間が あったら、旅行したいです。',
+          romaji: 'Moshi jikan ga attara, ryokō shitai desu.',
           meaning: {
-            en: 'If you worked at the embassy, that would be nice.',
-            vi: 'Nếu làm ở đại sứ quán thì hay nhỉ.'
+            en: 'If I had time, I would like to travel.',
+            vi: 'Nếu có thời gian tôi muốn đi du lịch.'
           },
           ruby: [
-            { base: '大', reading: 'たい' },
-            { base: '使', reading: 'し' },
-            { base: '館', reading: 'かん' },
-            { base: '働', reading: 'はたら' }
+            { base: '時', reading: 'じ' },
+            { base: '間', reading: 'かん' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' }
           ]
         }
       ]
@@ -472,7 +472,7 @@ export const n5Lesson25: Lesson = {
       ],
       examples: [
         {
-          jp: 'いくら 年を 取っても、元気で いたい です。',
+          jp: 'いくら 年を 取っても、元気で いたいです。',
           romaji: 'Ikura toshi o totte mo, genki de itai desu.',
           meaning: {
             en: 'No matter how old I get, I want to stay healthy.',
@@ -540,7 +540,7 @@ export const n5Lesson25: Lesson = {
       ],
       examples: [
         {
-          jp: 'グループで 働く ことは 大変ですが、チャンスも 多い です。',
+          jp: 'グループで 働く ことは 大変ですが、チャンスも 多いです。',
           romaji: 'Gurūpu de hataraku koto wa taihen desu ga, chansu mo ōi desu.',
           meaning: {
             en: 'Working in a group is hard, but there are many chances too.',
@@ -581,7 +581,7 @@ export const n5Lesson25: Lesson = {
           ]
         },
         {
-          jp: 'もし 1億円 あったら、田舎に 大きな 家を 建てたい です。',
+          jp: 'もし 1億円 あったら、田舎に 大きな 家を 建てたいです。',
           romaji: 'Moshi ichi-oku-en attara, inaka ni ōkina ie o tatetai desu.',
           meaning: {
             en: 'If I had 100 million yen, I would like to build a big house in the countryside.',

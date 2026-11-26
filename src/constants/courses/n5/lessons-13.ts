@@ -399,7 +399,7 @@ export const n5Lesson13: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '天ぷら定食と 牛どん ですね。少々 お待ちください。',
+          jp: '天ぷら定食と 牛どんですね。少々 お待ちください。',
           romaji: 'Tenpura teishoku to gyūdon desu ne. Shōshō omachi kudasai.',
           meaning: {
             en: 'One tempura set and one beef bowl. Please wait a moment.',
@@ -417,7 +417,7 @@ export const n5Lesson13: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '1,680円 です。',
+          jp: '1,680円です。',
           romaji: 'Sen roppyaku hachi-jū en desu.',
           meaning: { en: 'That is 1,680 yen.', vi: 'Hết 1.680 yen ạ.' },
           ruby: [{ base: '円', reading: 'えん' }]
@@ -438,7 +438,7 @@ export const n5Lesson13: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: 'はい。天ぷら定食は 980円、牛どんは 700円 です。',
+          jp: 'はい。天ぷら定食は 980円、牛どんは 700円です。',
           romaji: 'Hai. Tenpura teishoku wa kyū-hyaku hachi-jū en, gyūdon wa nana-hyaku en desu.',
           meaning: {
             en: 'Certainly. The tempura set is 980 yen; the beef bowl is 700 yen.',
@@ -1280,12 +1280,9 @@ export const n5Lesson13: Lesson = {
           ]
         },
         {
-          jp: '子どもは プールの 近くで 遊びたがりました。',
-          romaji: 'Kodomo wa pūru no chikaku de asobitagarimashita.',
-          meaning: {
-            en: 'The children wanted to play near the pool.',
-            vi: 'Các con muốn chơi gần bể bơi.'
-          },
+          jp: '子どもは プールの 近くで 遊びました。',
+          romaji: 'Kodomo wa pūru no chikaku de asobimashita.',
+          meaning: { en: 'The children played near the pool.', vi: 'Bọn trẻ chơi gần hồ bơi.' },
           ruby: [
             { base: '子', reading: 'こ' },
             { base: '近', reading: 'ちか' },
@@ -1384,8 +1381,8 @@ export const n5Lesson13: Lesson = {
         },
         {
           id: 'q3',
-          question: { en: 'What did the children want to do?', vi: 'Các con muốn làm gì?' },
-          jp: '子どもは 何を したがりましたか。',
+          question: { en: 'What did the children do?', vi: 'Bọn trẻ đã làm gì?' },
+          jp: '子どもは 何を しましたか。',
           ruby: [
             { base: '子', reading: 'こ' },
             { base: '何', reading: 'なに' }

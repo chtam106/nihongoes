@@ -12,53 +12,57 @@ export const n4Lesson47SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'According to the news, the president will come next week.',
-            vi: 'Theo tin tức, tổng thống sẽ đến tuần sau.'
+            en: 'According to the news, the president is coming to Japan next week.',
+            vi: 'Theo tin tức, tuần sau tổng thống sẽ đến Nhật.'
           },
-          jp: 'ニュース～に よると、大統領が 来週 来る そうです。',
+          jp: 'ニュースに よると、大統領が 来週 日本に 来る そうです。',
           ruby: [
             { base: '大', reading: 'だい' },
             { base: '統', reading: 'とう' },
             { base: '領', reading: 'りょう' },
             { base: '来', reading: 'らい' },
             { base: '週', reading: 'しゅう' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
             { base: '来', reading: 'く' }
           ]
         },
         {
           prompt: {
             en: 'I hear she got engaged recently.',
-            vi: 'Nghe nói cô ấy vừa đính hôn.'
+            vi: 'Nghe nói gần đây cô ấy đã đính hôn.'
           },
-          jp: '彼女は 最近 婚約します。婚約した そうです。',
+          jp: '彼女は 最近 婚約した そうです。',
           ruby: [
             { base: '彼', reading: 'かの' },
             { base: '女', reading: 'じょ' },
             { base: '最', reading: 'さい' },
             { base: '近', reading: 'きん' },
             { base: '婚', reading: 'こん' },
-            { base: '約', reading: 'やく' },
-            { base: '婚', reading: 'こん' },
             { base: '約', reading: 'やく' }
           ]
         },
         {
           prompt: {
-            en: 'I hear the experiment data is terrible.',
-            vi: 'Nghe nói dữ liệu thí nghiệm rất tệ.'
+            en: 'According to the weather forecast, it will rain tomorrow.',
+            vi: 'Theo dự báo thời tiết, ngày mai trời sẽ mưa.'
           },
-          jp: '実験の データは ひどい そうです。',
+          jp: '天気予報に よると、あしたは 雨が 降る そうです。',
           ruby: [
-            { base: '実', reading: 'じっ' },
-            { base: '験', reading: 'けん' }
+            { base: '天', reading: 'てん' },
+            { base: '気', reading: 'き' },
+            { base: '予', reading: 'よ' },
+            { base: '報', reading: 'ほう' },
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' }
           ]
         },
         {
           prompt: {
-            en: 'I hear the science teacher is strict.',
-            vi: 'Nghe nói giáo viên khoa học rất nghiêm khắc.'
+            en: 'I hear that science teacher is very strict.',
+            vi: 'Nghe nói thầy dạy khoa học đó rất nghiêm.'
           },
-          jp: '科学の 先生は 厳しい そうです。',
+          jp: 'あの 科学の 先生は とても 厳しい そうです。',
           ruby: [
             { base: '科', reading: 'か' },
             { base: '学', reading: 'がく' },
@@ -69,44 +73,45 @@ export const n4Lesson47SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I hear many people gather at the station.',
-            vi: 'Nghe nói nhiều người tập trung ở ga.'
+            en: 'I hear the ramen shop in front of the station is really good.',
+            vi: 'Nghe nói quán ramen trước ga rất ngon.'
           },
-          jp: '駅に 人が 集まります。たくさん 集まる そうです。',
+          jp: '駅前の ラーメン屋は とても おいしい そうです。',
           ruby: [
             { base: '駅', reading: 'えき' },
-            { base: '人', reading: 'ひと' },
-            { base: '集', reading: 'あつ' },
-            { base: '集', reading: 'あつ' }
+            { base: '前', reading: 'まえ' },
+            { base: '屋', reading: 'や' }
           ]
         },
         {
           prompt: {
-            en: 'I hear they met at a wedding.',
-            vi: 'Nghe nói họ quen nhau ở đám cưới.'
+            en: "I hear the two of them met at a friend's wedding.",
+            vi: 'Nghe nói hai người quen nhau ở đám cưới của bạn.'
           },
-          jp: '二人は 結婚式で 知り合います。知り合った そうです。',
+          jp: '二人は 友達の 結婚式で 知り合った そうです。',
           ruby: [
             { base: '二', reading: 'ふた' },
             { base: '人', reading: 'り' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
             { base: '結', reading: 'けっ' },
             { base: '婚', reading: 'こん' },
             { base: '式', reading: 'しき' },
-            { base: '知', reading: 'し' },
-            { base: '合', reading: 'あ' },
             { base: '知', reading: 'し' },
             { base: '合', reading: 'あ' }
           ]
         },
         {
           prompt: {
-            en: 'I hear the population will go down.',
-            vi: 'Nghe nói dân số sẽ giảm.'
+            en: "I hear this town's population is going to shrink.",
+            vi: 'Nghe nói dân số thị trấn này từ nay sẽ giảm.'
           },
-          jp: '人口が へる そうです。',
+          jp: 'この 町の 人口は これから 減る そうです。',
           ruby: [
+            { base: '町', reading: 'まち' },
             { base: '人', reading: 'じん' },
-            { base: '口', reading: 'こう' }
+            { base: '口', reading: 'こう' },
+            { base: '減', reading: 'へ' }
           ]
         }
       ]
@@ -147,79 +152,49 @@ export const n4Lesson47SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'It seems they will part next month.',
-            vi: 'Hình như tháng sau họ sẽ chia tay.'
+            en: 'It seems nobody is in the next room.',
+            vi: 'Phòng bên cạnh có vẻ không có ai.'
           },
-          jp: '二人は 来月 別れます。来月 別れる ようです。',
+          jp: '隣の 部屋は だれも いない ようです。',
           ruby: [
-            { base: '二', reading: 'ふた' },
-            { base: '人', reading: 'り' },
-            { base: '来', reading: 'らい' },
-            { base: '月', reading: 'げつ' },
-            { base: '別', reading: 'わか' },
-            { base: '来', reading: 'らい' },
-            { base: '月', reading: 'げつ' },
-            { base: '別', reading: 'わか' }
+            { base: '隣', reading: 'となり' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' }
+          ]
+        },
+        {
+          prompt: { en: 'It seems to be raining outside.', vi: 'Bên ngoài có vẻ đang mưa.' },
+          jp: '外は 雨が 降っている ようです。',
+          ruby: [
+            { base: '外', reading: 'そと' },
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' }
           ]
         },
         {
           prompt: {
-            en: 'It seems that woman is putting on makeup.',
-            vi: 'Hình như người phụ nữ kia đang trang điểm.'
+            en: 'It seems Mr. Tanaka has caught a cold.',
+            vi: 'Anh Tanaka có vẻ bị cảm rồi.'
           },
-          jp: 'あの 女性は 化粧を している ようです。',
+          jp: '田中さんは 風邪を ひいた ようです。',
           ruby: [
-            { base: '女', reading: 'じょ' },
-            { base: '性', reading: 'せい' },
-            { base: '化', reading: 'け' },
-            { base: '粧', reading: 'しょう' }
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '風', reading: 'か' },
+            { base: '邪', reading: 'ぜ' }
           ]
         },
         {
           prompt: {
-            en: 'It seems he takes care of his parents. That is why he lives long.',
-            vi: 'Hình như anh ấy chăm sóc bố mẹ. Đó là lý do sống thọ.'
+            en: 'The road is crowded. It seems there was an accident.',
+            vi: 'Đường đông quá nhỉ. Hình như có tai nạn.'
           },
-          jp: '親の 世話を します。長く 生きる 関係が ある ようです。長生きの 理由の ようです。',
+          jp: '道が 込んでいますね。事故が あった ようです。',
           ruby: [
-            { base: '親', reading: 'おや' },
-            { base: '世', reading: 'せ' },
-            { base: '話', reading: 'わ' },
-            { base: '長', reading: 'なが' },
-            { base: '生', reading: 'い' },
-            { base: '関', reading: 'かん' },
-            { base: '係', reading: 'けい' },
-            { base: '長', reading: 'なが' },
-            { base: '生', reading: 'い' },
-            { base: '理', reading: 'り' },
-            { base: '由', reading: 'ゆう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'It seems he passed away last night.',
-            vi: 'Hình như ông ấy qua đời tối qua.'
-          },
-          jp: 'あの 人は 昨夜 亡くなります。亡くなった ようです。',
-          ruby: [
-            { base: '人', reading: 'ひと' },
-            { base: '昨', reading: 'さく' },
-            { base: '夜', reading: 'や' },
-            { base: '亡', reading: 'な' },
-            { base: '亡', reading: 'な' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'It seems literature is scary for him.',
-            vi: 'Hình như văn học khiến anh ấy sợ.'
-          },
-          jp: '彼に とって 文学は 怖い ようです。',
-          ruby: [
-            { base: '彼', reading: 'かれ' },
-            { base: '文', reading: 'ぶん' },
-            { base: '学', reading: 'がく' },
-            { base: '怖', reading: 'こわ' }
+            { base: '道', reading: 'みち' },
+            { base: '込', reading: 'こ' },
+            { base: '事', reading: 'じ' },
+            { base: '故', reading: 'こ' }
           ]
         }
       ]
@@ -228,25 +203,18 @@ export const n4Lesson47SentenceWriting: LessonSentenceWriting = {
       pattern: 'N が します',
       items: [
         {
-          prompt: {
-            en: 'I smell something burning.',
-            vi: 'Tôi ngửi thấy mùi cháy.'
-          },
-          jp: 'ごみが 燃えます。燃える においが します。',
+          prompt: { en: 'I smell something burning.', vi: 'Có mùi gì đó đang cháy.' },
+          jp: '何か 燃える においが します。',
           ruby: [
-            { base: '燃', reading: 'も' },
+            { base: '何', reading: 'なに' },
             { base: '燃', reading: 'も' }
           ]
         },
         {
-          prompt: {
-            en: 'The wind blows. I hear a strong wind.',
-            vi: 'Gió thổi. Tôi nghe thấy gió mạnh.'
-          },
-          jp: '風が 吹きます。強い 風の 音が します。',
+          prompt: { en: 'I can hear a strong wind outside.', vi: 'Bên ngoài có tiếng gió mạnh.' },
+          jp: '外で 強い 風の 音が します。',
           ruby: [
-            { base: '風', reading: 'かぜ' },
-            { base: '吹', reading: 'ふ' },
+            { base: '外', reading: 'そと' },
             { base: '強', reading: 'つよ' },
             { base: '風', reading: 'かぜ' },
             { base: '音', reading: 'おと' }
@@ -266,33 +234,16 @@ export const n4Lesson47SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'This medicine has a strong smell. I study medical science.',
-            vi: 'Thuốc này mùi nồng. Tôi học y học.'
-          },
-          jp: 'この 薬は においが します。私は 医学を べんきょうします。',
-          ruby: [
-            { base: '薬', reading: 'くすり' },
-            { base: '私', reading: 'わたし' },
-            { base: '医', reading: 'い' },
-            { base: '学', reading: 'がく' }
-          ]
+          prompt: { en: 'This flower smells nice.', vi: 'Bông hoa này có mùi thơm.' },
+          jp: 'この 花は いい においが します。',
+          ruby: [{ base: '花', reading: 'はな' }]
         },
         {
-          prompt: {
-            en: 'I feel agreement, but I also feel opposition.',
-            vi: 'Tôi cảm thấy sự tán thành, nhưng cũng cảm thấy sự phản đối.'
-          },
-          jp: '賛成の 気持ちが しますが、反対の 気持ちも します。',
+          prompt: { en: 'This soup tastes strange.', vi: 'Món canh này có vị lạ.' },
+          jp: 'この スープは 変な 味が します。',
           ruby: [
-            { base: '賛', reading: 'さん' },
-            { base: '成', reading: 'せい' },
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' },
-            { base: '反', reading: 'はん' },
-            { base: '対', reading: 'たい' },
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' }
+            { base: '変', reading: 'へん' },
+            { base: '味', reading: 'あじ' }
           ]
         }
       ]
@@ -300,11 +251,16 @@ export const n4Lesson47SentenceWriting: LessonSentenceWriting = {
   ],
   phrases: [
     {
-      prompt: { en: 'According to the newspaper', vi: 'Theo báo' },
-      jp: '新聞～によると',
+      prompt: {
+        en: 'According to the newspaper, it will rain tomorrow.',
+        vi: 'Theo báo thì ngày mai trời mưa.'
+      },
+      jp: '新聞に よると、あしたは 雨が 降る そうです。',
       ruby: [
         { base: '新', reading: 'しん' },
-        { base: '聞', reading: 'ぶん' }
+        { base: '聞', reading: 'ぶん' },
+        { base: '雨', reading: 'あめ' },
+        { base: '降', reading: 'ふ' }
       ]
     },
     {

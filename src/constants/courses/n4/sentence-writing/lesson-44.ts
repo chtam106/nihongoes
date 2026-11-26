@@ -7,107 +7,85 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The child cries too much. The child cries.',
-            vi: 'Đứa trẻ khóc quá nhiều. Đứa trẻ khóc.'
+            en: 'I drank too much last night, and my head hurts.',
+            vi: 'Tối qua uống quá chén nên giờ đau đầu.'
           },
-          jp: '子どもは 泣きすぎます。よく 泣きます。',
+          jp: 'ゆうべ 飲みすぎて、頭が 痛いです。',
           ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '泣', reading: 'な' },
-            { base: '泣', reading: 'な' }
+            { base: '飲', reading: 'の' },
+            { base: '頭', reading: 'あたま' },
+            { base: '痛', reading: 'いた' }
           ]
         },
         {
           prompt: {
-            en: 'He laughs too much. He laughs.',
-            vi: 'Anh ấy cười quá nhiều. Anh ấy cười.'
+            en: 'I laughed so much that my stomach hurt.',
+            vi: 'Cười nhiều quá đến đau cả bụng.'
           },
-          jp: '彼は 笑いすぎます。よく 笑います。',
+          jp: '笑いすぎて、おなかが 痛く なりました。',
           ruby: [
-            { base: '彼', reading: 'かれ' },
             { base: '笑', reading: 'わら' },
-            { base: '笑', reading: 'わら' }
+            { base: '痛', reading: 'いた' }
           ]
         },
         {
           prompt: {
-            en: 'I sleep too much. I sleep early.',
-            vi: 'Tôi ngủ quá nhiều. Tôi ngủ sớm.'
+            en: 'I slept too much on the weekend and actually felt more tired.',
+            vi: 'Cuối tuần ngủ nhiều quá nên lại thấy mệt hơn.'
           },
-          jp: '私は 眠りすぎます。早く 眠ります。',
+          jp: '週末に 寝すぎて、かえって 疲れました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '眠', reading: 'ねむ' },
-            { base: '早', reading: 'はや' },
-            { base: '眠', reading: 'ねむ' }
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '寝', reading: 'ね' },
+            { base: '疲', reading: 'つか' }
           ]
         },
         {
           prompt: {
-            en: 'This coffee is too strong.',
-            vi: 'Cà phê này đặc quá.'
+            en: 'This coffee is too strong to drink.',
+            vi: 'Cà phê này đặc quá, không uống được.'
           },
-          jp: 'この コーヒーは 濃いです。濃すぎます。',
+          jp: 'この コーヒーは 濃すぎて 飲めません。',
           ruby: [
             { base: '濃', reading: 'こ' },
-            { base: '濃', reading: 'こ' }
+            { base: '飲', reading: 'の' }
           ]
         },
         {
           prompt: {
-            en: 'This soup is too thin.',
-            vi: 'Súp này loãng quá.'
+            en: 'This soup is a bit too bland, is it not?',
+            vi: 'Món canh này hơi nhạt quá nhỉ.'
           },
-          jp: 'この スープは 薄いです。薄すぎます。',
+          jp: 'この スープは 少し 薄すぎますね。',
           ruby: [
-            { base: '薄', reading: 'うす' },
+            { base: '少', reading: 'すこ' },
             { base: '薄', reading: 'うす' }
           ]
         },
         {
           prompt: {
-            en: 'This book is too thick.',
-            vi: 'Sách này dày quá.'
+            en: 'This book is too thick to fit in my bag.',
+            vi: 'Quyển sách này dày quá, không vừa cặp.'
           },
-          jp: 'この 本は 厚いです。厚すぎます。',
+          jp: 'この 本は 厚すぎて、かばんに 入りません。',
           ruby: [
             { base: '本', reading: 'ほん' },
             { base: '厚', reading: 'あつ' },
-            { base: '厚', reading: 'あつ' }
+            { base: '入', reading: 'はい' }
           ]
         },
         {
           prompt: {
-            en: 'This line is too thick.',
-            vi: 'Nét này to quá.'
+            en: 'This room is too small to fit a bed.',
+            vi: 'Phòng này chật quá, không kê được giường.'
           },
-          jp: 'この 線は 太いです。太すぎます。',
+          jp: 'この 部屋は 狭すぎて、ベッドが 置けません。',
           ruby: [
-            { base: '線', reading: 'せん' },
-            { base: '太', reading: 'ふと' },
-            { base: '太', reading: 'ふと' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'This string is too thin.',
-            vi: 'Sợi dây này mảnh quá.'
-          },
-          jp: 'この ひもは 細いです。細すぎます。',
-          ruby: [
-            { base: '細', reading: 'ほそ' },
-            { base: '細', reading: 'ほそ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'There are too many tears.',
-            vi: 'Nước mắt nhiều quá.'
-          },
-          jp: '涙が 多すぎます。',
-          ruby: [
-            { base: '涙', reading: 'なみだ' },
-            { base: '多', reading: 'おお' }
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '狭', reading: 'せま' },
+            { base: '置', reading: 'お' }
           ]
         }
       ]
@@ -117,40 +95,39 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Laundry dries easily. The shirt dries.',
-            vi: 'Đồ giặt dễ khô. Áo sơ mi khô.'
+            en: 'This shirt is thin and dries quickly.',
+            vi: 'Áo sơ mi này mỏng nên mau khô.'
           },
-          jp: '洗濯物は 乾きやすいです。シャツが 乾きます。',
+          jp: 'この シャツは 薄くて 乾きやすいです。',
           ruby: [
-            { base: '洗', reading: 'せん' },
-            { base: '濯', reading: 'たく' },
-            { base: '物', reading: 'もの' },
-            { base: '乾', reading: 'かわ' },
+            { base: '薄', reading: 'うす' },
             { base: '乾', reading: 'かわ' }
           ]
         },
         {
           prompt: {
-            en: 'This floor is easy to slip on. I slip.',
-            vi: 'Sàn này dễ trượt. Tôi trượt.'
+            en: 'The floor gets slippery on rainy days, so please be careful.',
+            vi: 'Ngày mưa sàn dễ trơn, hãy cẩn thận.'
           },
-          jp: 'この 床は 滑りやすいです。よく 滑ります。',
+          jp: '雨の 日は 床が 滑りやすいですから、気を つけて ください。',
           ruby: [
+            { base: '雨', reading: 'あめ' },
+            { base: '日', reading: 'ひ' },
             { base: '床', reading: 'ゆか' },
             { base: '滑', reading: 'すべ' },
-            { base: '滑', reading: 'すべ' }
+            { base: '気', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'Accidents happen easily here. An accident happens.',
-            vi: 'Ở đây dễ xảy ra tai nạn. Tai nạn xảy ra.'
+            en: 'Accidents happen easily at this intersection.',
+            vi: 'Ngã tư này dễ xảy ra tai nạn.'
           },
-          jp: 'ここで 事故が 起きやすいです。事故が 起きます。',
+          jp: 'この 交差点は 事故が 起きやすいです。',
           ruby: [
-            { base: '事', reading: 'じ' },
-            { base: '故', reading: 'こ' },
-            { base: '起', reading: 'お' },
+            { base: '交', reading: 'こう' },
+            { base: '差', reading: 'さ' },
+            { base: '点', reading: 'てん' },
             { base: '事', reading: 'じ' },
             { base: '故', reading: 'こ' },
             { base: '起', reading: 'お' }
@@ -158,26 +135,27 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Japanese food is easy to eat.',
-            vi: 'Món Nhật dễ ăn.'
+            en: 'This pen is light and easy to write with.',
+            vi: 'Cây bút này nhẹ nên dễ viết.'
           },
-          jp: '和食は 食べやすいです。',
+          jp: 'この ペンは 軽くて 書きやすいです。',
           ruby: [
-            { base: '和', reading: 'わ' },
-            { base: '食', reading: 'しょく' },
-            { base: '食', reading: 'た' }
+            { base: '軽', reading: 'かる' },
+            { base: '書', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'Western food is also easy to eat.',
-            vi: 'Món Tây cũng dễ ăn.'
+            en: 'This map has large print and is easy to read.',
+            vi: 'Tấm bản đồ này chữ to nên dễ xem.'
           },
-          jp: '洋食も 食べやすいです。',
+          jp: 'この 地図は 字が 大きくて 見やすいです。',
           ruby: [
-            { base: '洋', reading: 'よう' },
-            { base: '食', reading: 'しょく' },
-            { base: '食', reading: 'た' }
+            { base: '地', reading: 'ち' },
+            { base: '図', reading: 'ず' },
+            { base: '字', reading: 'じ' },
+            { base: '大', reading: 'おお' },
+            { base: '見', reading: 'み' }
           ]
         }
       ]
@@ -187,34 +165,26 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'This shirt does not get wet easily. The shirt gets wet.',
-            vi: 'Áo này khó ướt. Áo bị ướt.'
+            en: 'This coat does not get wet easily in the rain.',
+            vi: 'Chiếc áo khoác này khó bị ướt khi mưa.'
           },
-          jp: 'この シャツは ぬれにくいです。雨で ぬれます。',
+          jp: 'この コートは 雨に ぬれにくいです。',
           ruby: [{ base: '雨', reading: 'あめ' }]
         },
         {
-          prompt: {
-            en: 'This expression is hard to use. For example, these words.',
-            vi: 'Cách nói này khó dùng. Ví dụ, những từ này.'
-          },
-          jp: 'この 表現は 使いにくいです。例えば、これらです。',
-          ruby: [
-            { base: '表', reading: 'ひょう' },
-            { base: '現', reading: 'げん' },
-            { base: '使', reading: 'つか' },
-            { base: '例', reading: 'たと' }
-          ]
+          prompt: { en: 'These scissors are hard to use.', vi: 'Cái kéo này khó dùng.' },
+          jp: 'この はさみは 使いにくいです。',
+          ruby: [{ base: '使', reading: 'つか' }]
         },
         {
-          prompt: {
-            en: 'The sequence is hard to remember.',
-            vi: 'Trình tự khó nhớ.'
-          },
-          jp: '順序は 覚えにくいです。',
+          prompt: { en: 'Japanese names are hard to remember.', vi: 'Tên người Nhật khó nhớ.' },
+          jp: '日本人の 名前は 覚えにくいです。',
           ruby: [
-            { base: '順', reading: 'じゅん' },
-            { base: '序', reading: 'じょ' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '人', reading: 'じん' },
+            { base: '名', reading: 'な' },
+            { base: '前', reading: 'まえ' },
             { base: '覚', reading: 'おぼ' }
           ]
         },
@@ -250,15 +220,11 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I adjust the air and make the room comfortable.',
-            vi: 'Tôi điều chỉnh không khí cho phòng thoải mái.'
+            en: 'I made the room comfortable with the air conditioner.',
+            vi: 'Tôi bật điều hòa cho phòng dễ chịu.'
           },
-          jp: '空気を 調節します。部屋を 快適に します。',
+          jp: 'エアコンで 部屋を 快適に しました。',
           ruby: [
-            { base: '空', reading: 'くう' },
-            { base: '気', reading: 'き' },
-            { base: '調', reading: 'ちょう' },
-            { base: '節', reading: 'せつ' },
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
             { base: '快', reading: 'かい' },
@@ -267,10 +233,10 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I make the amount of the side dish twice as much.',
-            vi: 'Tôi làm lượng món ăn kèm gấp đôi.'
+            en: 'I will double the amount of side dishes.',
+            vi: 'Tôi sẽ tăng lượng thức ăn lên gấp đôi.'
           },
-          jp: 'おかずの 量を 2～倍に します。',
+          jp: 'おかずの 量を 2倍に します。',
           ruby: [
             { base: '量', reading: 'りょう' },
             { base: '倍', reading: 'ばい' }
@@ -278,30 +244,32 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I make the coffee weaker.',
-            vi: 'Tôi pha cà phê nhạt hơn.'
+            en: 'Please make the coffee a little weaker.',
+            vi: 'Pha cà phê loãng hơn một chút giúp tôi.'
           },
-          jp: 'コーヒーを 薄く します。',
-          ruby: [{ base: '薄', reading: 'うす' }]
+          jp: 'コーヒーを もう 少し 薄く して ください。',
+          ruby: [
+            { base: '少', reading: 'すこ' },
+            { base: '薄', reading: 'うす' }
+          ]
         },
         {
-          prompt: {
-            en: 'I make the line thinner.',
-            vi: 'Tôi vẽ nét mảnh hơn.'
-          },
-          jp: '線を 細く します。',
+          prompt: { en: 'Please turn the TV down.', vi: 'Hãy vặn nhỏ tiếng ti vi.' },
+          jp: 'テレビの 音を 小さく して ください。',
           ruby: [
-            { base: '線', reading: 'せん' },
-            { base: '細', reading: 'ほそ' }
+            { base: '音', reading: 'おと' },
+            { base: '小', reading: 'ちい' }
           ]
         },
         {
           prompt: {
-            en: 'I make the room safe.',
-            vi: 'Tôi làm cho phòng an toàn.'
+            en: 'Our baby is coming, so we made the room safe.',
+            vi: 'Sắp có em bé nên chúng tôi đã làm cho căn phòng an toàn.'
           },
-          jp: '部屋を 安全に します。',
+          jp: '子どもが 生まれるので、部屋を 安全に しました。',
           ruby: [
+            { base: '子', reading: 'こ' },
+            { base: '生', reading: 'う' },
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
             { base: '安', reading: 'あん' },
@@ -336,42 +304,40 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'I will watch a DVD.',
-            vi: 'Tôi chọn xem DVD.'
-          },
-          jp: '今夜は ＤＶＤに します。',
+          prompt: { en: 'I will have coffee to drink.', vi: 'Đồ uống thì tôi chọn cà phê.' },
+          jp: '飲み物は コーヒーに します。',
           ruby: [
-            { base: '今', reading: 'こん' },
-            { base: '夜', reading: 'や' }
+            { base: '飲', reading: 'の' },
+            { base: '物', reading: 'もの' }
           ]
         },
         {
           prompt: {
-            en: 'Children show dislike, so I will not choose that. Also, parting is a bad omen.',
-            vi: 'Trẻ em tỏ ra không thích nên tôi không chọn. Hơn nữa, chia tay là xui.'
+            en: 'We will hold the wedding on a lucky day.',
+            vi: 'Đám cưới sẽ tổ chức vào ngày tốt.'
           },
-          jp: '子どもは 嫌がります。また、別れます。それは 縁起が 悪い ので、別の 日に します。',
+          jp: '結婚式は 縁起の いい 日に します。',
           ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '嫌', reading: 'いや' },
-            { base: '別', reading: 'わか' },
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' },
+            { base: '式', reading: 'しき' },
             { base: '縁', reading: 'えん' },
             { base: '起', reading: 'ぎ' },
-            { base: '悪', reading: 'わる' },
-            { base: '別', reading: 'べつ' },
             { base: '日', reading: 'ひ' }
           ]
         },
         {
           prompt: {
-            en: 'I will do it well and feel at ease.',
-            vi: 'Tôi sẽ làm tốt và yên tâm.'
+            en: 'Then let us make the meeting Friday.',
+            vi: 'Vậy thì họp vào thứ Sáu nhé.'
           },
-          jp: 'うまく やって、安心に します。',
+          jp: 'じゃ、会議は 金曜日に しましょう。',
           ruby: [
-            { base: '安', reading: 'あん' },
-            { base: '心', reading: 'しん' }
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '金', reading: 'きん' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
           ]
         }
       ]
@@ -383,7 +349,7 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         en: 'What would you like to have done?',
         vi: 'Chị muốn làm gì?'
       },
-      jp: 'どう なさいます か。'
+      jp: 'どう なさいますか。'
     },
     {
       prompt: {
@@ -406,7 +372,7 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         en: 'How would you like it done?',
         vi: 'Chị muốn cắt như thế nào?'
       },
-      jp: 'どういう ふうに なさいます か。'
+      jp: 'どういう ふうに なさいますか。'
     },
     {
       prompt: {
@@ -420,7 +386,7 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         en: 'Please make it like this photo.',
         vi: 'Xin cắt như tấm ảnh này.'
       },
-      jp: 'この 写真～みたいに して ください。',
+      jp: 'この 写真みたいに して ください。',
       ruby: [
         { base: '写', reading: 'しゃ' },
         { base: '真', reading: 'しん' }
@@ -431,7 +397,7 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
         en: 'Is this alright?',
         vi: 'Như thế này được chưa ạ?'
       },
-      jp: 'これ で よろしい でしょう か。'
+      jp: 'これで よろしいでしょうか。'
     },
     {
       prompt: {
