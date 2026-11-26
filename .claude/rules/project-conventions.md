@@ -1,11 +1,11 @@
 ---
 description: Core dev workflow, i18n, audio and lint conventions for Nihongoes
-alwaysApply: true
 ---
 
 # Nihongoes conventions
 
 ## Courses (N5–N1 + Frontend)
+
 - Author lesson content (vocab, phrases, grammar, reading, reference) by hand in each `<course>/index.ts` (or its `lessons-*.ts` part files) following the shape of the existing lessons. Do NOT use a code generator for lesson data. When listing a lesson's vocabulary, cross-check against the Minna no Nihongo word list so nothing is missed (see the "never list less than the textbook" rule) - use the textbook/an authoritative list as a reference while you write, but keep our own EN/VI meanings.
 - **Vietnamese course copy** (`meaning.vi`, `prompt.vi`, dialogue `translation.vi`, reading questions, etc.) must read as natural Vietnamese, not word-for-word from Japanese or English. When a sentence is obscure, rewrite it once so it names the referent and still matches the vocab meaning, then re-read the edited line before replying. Do not hand back the rejected sentence. Do NOT change the word's meaning to make the line feel complete (歌 stays **bài hát**; do not rewrite it as **hát** / 歌う). Pluralizing a bare noun does not name it: **bài hát** and **những bài hát** stay obscure. Say which one (**bài hát Nhật Bản**). Use **thì** only to turn a bare noun + adjective fragment into a sentence (**Ga gần** → **Nhà ga thì gần**, **Trà ấm** → **Trà thì ấm**). Do not add **thì** when the line is already clear (**Váy này ngắn và rẻ**, comparatives with **hơn**, clauses with **nhưng** / **và** / **này**). Do not add a word the Japanese does not have. Change a prompt only when the Vietnamese says something the Japanese does not. For 行きます + destination use **đi đến** + place (siêu thị, Kyoto, công viên, ...); for school use **đi học**; for the office use **đi làm** (not `đi trường` / `đi công ty`). Keep idioms: **đi bộ**, **đi bằng**, **đi với**, **đi mua … rồi về**, **Chuyến đi …**, **đi châu Phi**, **đi chợ**. Run `node scripts/audit-vi.mjs` (also in `vi-audit.test.ts`) after bulk VI edits; extend that script when a new bad pattern shows up.
 - **Reading count is flexible** per lesson: add as many `ReadingPassage` entries as needed (each with its own `lines` + `questions`) so reading practice covers most of the lesson's vocab, grammar, and conversation themes. See the `n5-course` rule for authoring details.
@@ -16,6 +16,7 @@ alwaysApply: true
 - Store split lesson part files inside each corresponding course folder (e.g. `src/constants/courses/n2/lessons-*.ts`, `src/constants/courses/frontend/lessons-*.ts`) instead of at the `courses/` root.
 
 ## Kanji track (IMPORTANT)
+
 - The standalone Kanji feature is a hub -> track -> lesson tree, separate from the JLPT courses: `/kanji` (hub, lists kanji collections/tracks), `/kanji/:track` (track overview, lists lessons), `/kanji/:track/:lessonId` (detail), plus `/quiz` and `/writing` under the lesson. Data is in `src/constants/kanji/` (`types.ts`, `lessons.ts`, `index.ts`); pages under `src/features/kanji/` (`index.tsx` hub, `track/`, `lesson/`, `quiz/`, `writing/`).
 - Kanji tracks are organized BY SCHOOL GRADE (Jōyō grade), one track per grade: `grade-1` ("Grade 1 kanji" / "Kanji lớp 1", 80 chars = 8 lessons), `grade-2` ("Grade 2 kanji" / "Kanji lớp 2", 160 chars = 16 lessons), etc. Do NOT lump every grade into one giant "Jōyō" track. In `lessons.ts` keep one exported array per grade (`grade1Lessons`, `grade2Lessons`, ...), each independently wrapped in `withSequentialNumbers(...)` so every grade's lessons number from 1; `index.ts` builds one `KanjiTrack` per grade array. Add the next grade by appending a `gradeNLessons` array + a `gradeNTrack`.
 - Radicals: the 214 Kangxi radicals (部首) live in `src/constants/kanji/radicals.ts` (`Radical { number, char, variants?, strokes, name (romaji), kana, hanViet, meaning, componentMeaning? }`). `Radical.number` stays the Kangxi index for data identity / usage counts; the card tag, `#radical-N` anchors (scroll + highlight), and quiz From/To use the 1-based stroke-order index from `getRadicalStrokeIndex` / `radicalsInStrokeOrder` (default list order). The quiz result "Review radicals" link goes to `/kanji/radicals#radical-{to}`. The quiz pool expands each radical into prompts for `char` plus every `variants` glyph (e.g. 人 and 亻 are separate questions, same meaning). Do NOT show the Japanese name (`kana` or romaji `name`) on the radical card or legend; keep both fields in the data. Shown at `/kanji/radicals` (`src/app/[locale]/kanji/radicals`). A sort select offers the default order (grouped by stroke count) or by how often the radical heads kanji (all radicals, most used first, with the usage count on the card). A multiple-choice quiz (character to meaning) is at `/kanji/radicals/quiz`. On `/kanji/radicals` it is its own tonal practice card below the how-to-read card (title, one-line outcome, the whole card is the link, with one arrow icon pinned to the right while the title and body shrink), not a text link on the sort row. The quiz page puts a back link on its own row above the title, to the same `/kanji/radicals#radical-{to}` target as Review radicals. Quiz From/To steps by 10 (from 1, 11, 21, ...; to 10, 20, ..., plus the last radical), default 1 to the end, persisted in localStorage. From can be chosen past the current to; that moves to to the end of the new block of 10 (11 → 20, 211 → 214). Linked from the hub page and a "Radicals"/"Bộ thủ" nav child. The static route folder `app/[locale]/kanji/radicals` takes priority over the dynamic `app/[locale]/kanji/[track]` (Next ranks static segments above dynamic ones).
@@ -40,12 +41,15 @@ alwaysApply: true
 - Each kanji lesson has 2 practice exercises: a meaning quiz (`/kanji/:track/:id/quiz`) and writing (`/kanji/:track/:id/writing`). The quiz (`src/features/kanji/quiz/index.tsx`) combines BOTH directions - "kanji -> meaning" and "meaning -> kanji" - in ONE page with a `ToggleButtonGroup` (switching remounts the inner quiz via `key`); it reuses the course `ChoiceButton` + the standard retry-until-correct + `QUIZ_ADVANCE_DELAY_MS` auto-advance + result-screen pattern (reuse `course.*` result/progress i18n). Writing reuses the shared `<TracingCanvas>` (`src/components/tracing-canvas/index.tsx`, extracted from the course writing page so both tracks share it). Link both from a `KanjiPracticePanel` (flex-wrap buttons) on the lesson detail page.
 
 ## Git (IMPORTANT)
-- NEVER commit or push on your own. Only run `git commit` / `git push` when the user explicitly asks. Make and validate changes in the working tree and wait for the user's go-ahead before committing.
-- NEVER merge a PR (`gh pr merge`) on your own. Merging is destructive/hard-to-undo — always ask for an explicit, per-PR confirmation right before merging, even if an earlier instruction seemed to allow it. Preparing a PR (rebase, resolve conflicts, push, make it green) is fine; clicking merge is not, without confirmation.
+
+- NEVER commit or push on your own. Only run `git commit` / `git push` when the user explicitly asks ("deploy" counts as asking). Make and validate changes in the working tree and wait for the user's go-ahead before committing.
+- Do not merge a PR (`gh pr merge`) unless the user asked to merge or deploy. Preparing a PR (rebase, resolve conflicts, push, make it green) is always fine.
+- "deploy" means ship to production yourself, end to end: commit, push, open the PR into `master` and the PR from the same branch into `release-production`, wait for the required GitHub CI check (`Tests pass`), then merge both with `gh pr merge --merge`. Do not stop and leave the merge to the user. Say up front that you will merge once CI is green.
 - After a merge the user confirmed, delete that PR's head branch on origin (`git push origin --delete <branch>`) and locally (`git switch` to another branch, then `git branch -d <branch>`). Do NOT delete protected branches: `master` and `release-*` (GitHub ruleset "Protect branch"). Do not force-delete (`-D`) a branch that is not fully merged.
-- Do not wait for Vercel. When the user asks to merge or deploy, open the PR and merge it without polling the Vercel check. If a branch ruleset blocks the merge, wait only for the required GitHub CI checks.
+- Do not wait for Vercel before merging. When the user asks to merge or deploy, merge without polling the Vercel check; if a branch ruleset blocks the merge, wait only for the required GitHub CI checks.
 
 ## Dev tooling (IMPORTANT)
+
 - The repo requires Node 24 (`.nvmrc`). The default shell may resolve `node` to v12, which breaks `pnpm`. Always prefix commands:
   `export NVM_DIR="$HOME/.nvm" && source "$NVM_DIR/nvm.sh" && nvm use 24 >/dev/null && pnpm ...`
 - Validate changes with `pnpm run check` (typecheck + lint + lint:style + format:check) before pushing - running only `typecheck`/`lint`/`format` misses `lint:style`, which CI runs as its own Stylelint job. Stylelint wants lowercase keywords (`size: a4`) and rejects deprecated `page-break-*` (use `break-inside`/`break-after`).
@@ -55,23 +59,28 @@ alwaysApply: true
 - `pnpm start`/`pnpm dev` spawn a CHILD `next-server`; killing the pnpm PID does NOT free the port (next-server keeps listening -> `EADDRINUSE` / you silently keep hitting the OLD server). Always free a port with `lsof -ti tcp:<port> | xargs kill -9`.
 
 ## Imports (IMPORTANT)
+
 - NO parent-relative imports (`../...`). Use the `@/` alias for anything outside the current folder; only same-folder `./...` relative imports are allowed (e.g. a page importing its colocated `./course-quiz.ts`). This is enforced by ESLint `no-restricted-imports` (patterns `../*`, `../**`) in `eslint.config.js`.
 - Components/pages are folder-based (`<name>/index.tsx`), so import them extensionless via the alias: `@/components/speak-button`, `@/features/course/shared`.
 
 ## Lint rules to respect
+
 - Prettier runs INSIDE ESLint via `eslint-plugin-prettier` (the `prettier/prettier` rule, wired through `eslint-plugin-prettier/recommended` in `eslint.config.js`). This means formatting problems show up as red ESLint errors in the editor and fail `pnpm run lint` (not just `format:check`). Run `pnpm run lint:fix` (or `prettier --write`) to fix. Note: `@stylistic` alone canNOT replicate Prettier (no print-width line wrapping) — `prettier/prettier` is what enforces full formatting parity.
 - `react-hooks/set-state-in-effect`: do NOT call `setState` inside `useEffect`. To reset component state when a prop/route/locale changes, remount via `key` (e.g. `<Quiz key={`${id}:${locale}`} />`) and reset on user actions in event handlers instead.
 - `useEffect` is fine for syncing with external systems (e.g. calling `speakJapanese`), just not for setting React state.
 - Enforce semicolons for code style: keep Prettier `semi: true` and ESLint `semi: ['error', 'always']` (for `ts`/`tsx` and `scripts/**/*.mjs`). The core `semi` rule does NOT cover TS type/interface member delimiters — those are enforced separately by `@stylistic/member-delimiter-style` (from `@stylistic/eslint-plugin`), configured to `semi` (multiline `requireLast: true`, singleline) to match Prettier.
-- For conditional JSX *content* rendering, always use `&&`, never the `? :` ternary — including when there is an else branch. Split a two-branch render into two guards: `{cond && (<A />)}{!cond && (<B />)}`. This applies to `: null` cases too. Exception: keep `? :` for non-JSX *value* selection (prop values like `color={x ? 'a' : 'b'}`, `state={a ? 'x' : 'y'}`, string pickers like `{cond ? t('a') : t('b')}`) since `&&` cannot express those.
+- For conditional JSX _content_ rendering, always use `&&`, never the `? :` ternary — including when there is an else branch. Split a two-branch render into two guards: `{cond && (<A />)}{!cond && (<B />)}`. This applies to `: null` cases too. Exception: keep `? :` for non-JSX _value_ selection (prop values like `color={x ? 'a' : 'b'}`, `state={a ? 'x' : 'y'}`, string pickers like `{cond ? t('a') : t('b')}`) since `&&` cannot express those.
 
 ## Kana terminology (display text)
+
 - In ALL user-facing display text (UI labels, chart headings/descriptions, exercise hints, meta descriptions) use the colloquial mark names: call dakuten "Tenten" and handakuten "Maru". Do NOT use the formal words "dakuten"/"handakuten" in any displayed copy (EN or VI). Internal code identifiers (variable/type/scope keys like `dakuten`, `handakuten`, `scopeDakuten`) stay as-is.
 
 ## Vocab word display (IMPORTANT)
+
 - When a word HAS a kanji form, render its headword with authored furigana via the shared `<VocabHeadword>` (`src/components/vocab-headword/index.tsx`) and `renderJapaneseText(jp, ruby)` - store `ruby?: RubySegment[]` on each `VocabItem` (one segment per kanji in surface order). A kana-only word (no kanji, or kanji === kana) renders plainly. If kanji is present but `ruby` is missing, fall back to `漢字（かな）` until data is authored. Do NOT revert to the old two-line (kanji on top, grey kana below) layout.
 
 ## Ruby / furigana (IMPORTANT)
+
 - Store ruby in CONTENT DATA, not via dictionary lookup. Type: `RubySegment { base, reading }` in `@/types/course.ts`. Optional `ruby?: RubySegment[]` on `GrammarExample`, `ReadingLine`, `ConversationLine`, and `VocabItem` (lesson cards + data authoring). Vocab exercises (match + MCQ) and grammar cloze sentences render that ruby via `<FuriganaText>` when the user furigana preference is on.
 - Author **one segment per kanji** in surface order (e.g. 山田 -> `[{ base:'山', reading:'やま' }, { base:'田', reading:'だ' }]`). Plain kana/particles in `jp` stay unrubied; do NOT include okurigana or suffixes like `さん` in ruby segments. Iteration mark `々` also needs its own segment (別々 -> `別/べつ` + `々/べつ`; 時々 -> `時/とき` + `々/どき`).
 - Render with `renderJapaneseText(jp, ruby?)` (`src/utils/japanese-text.tsx`). No `ruby` -> plain text. Do NOT import course data into the renderer and do NOT infer readings at runtime.
@@ -82,33 +91,39 @@ alwaysApply: true
 - A ruby `reading` must carry the kanji's FULL reading, with only trailing okurigana kana left in the surface text: 間 is `あいだ` (not `あい`), 薬 is `くすり` (not `くす`), 暗い is 暗=`くら` + い. The audit enforces this by spelling the word out from its ruby and comparing against `kana`, so a truncated reading now fails. A vocab `kana` field must be pure kana (no kanji) for the same reason.
 
 ## Text & typography (IMPORTANT)
+
 - Keep UI copy (titles, intros, card descriptions) SHORT and declarative. Do NOT tack on a trailing comma-separated feature/enumeration clause just to sound fuller - e.g. avoid `... - interactive charts, audio, quizzes, and writing practice` or `... kèm âm đọc, bộ phận cấu tạo và từ ví dụ`. State the one main thing and stop. Only enumerate when the list itself is the point (e.g. a real feature grid), not as decorative padding on a description.
 - A lead/intro sentence must add USEFUL context the UI does not already show: define a jargon term where it first appears (e.g. what "Jōyō" means next to "Jōyō kanji by grade"), explain the WHY, or give a genuinely helpful fact. State the outcome the user gets (e.g. "Dùng tài khoản Google để đồng bộ flashcards trên mọi thiết bị."). NEVER narrate the process ("bấm A, rồi bấm B để chọn...") and NEVER describe controls already on screen ("pick a grade below and work through it" when grade cards are right there). If an existing lead is that kind of filler, REPLACE it with the outcome - do not merely delete it and leave the user staring at undefined jargon. Omit a lead only when there is truly nothing useful to add.
-- Use ONLY US-keyboard ASCII punctuation in non-Japanese text (UI strings, EN/VI content, code, comments, docs). NEVER use em dash (`—`) or en dash (`–`); use a hyphen `-` (as a separator write ` - `, for ranges write `N5-N1` not `N5–N1`). Avoid other "smart"/typographic unicode (curly quotes `“”‘’`, ellipsis `…`) too: use `"`, `'`, `...`.
+- Use ONLY US-keyboard ASCII punctuation in non-Japanese text (UI strings, EN/VI content, code, comments, docs). NEVER use em dash (`—`) or en dash (`–`); use a hyphen `-` (as a separator write `-`, for ranges write `N5-N1` not `N5–N1`). Avoid other "smart"/typographic unicode (curly quotes `“”‘’`, ellipsis `…`) too: use `"`, `'`, `...`.
 - Japanese CONTENT may use Japanese punctuation (`、。「」〜・` etc.); the rule only applies to the non-Japanese parts of a string.
 - Minimum text size is `body1` (16px / 1rem) on BOTH mobile and desktop - no readable text may render smaller. Enforced centrally in `src/theme/app-theme.ts` by flooring the small MUI variants (`body2`, `subtitle2`, `caption`, `overline`, `button`) to `1rem`, plus `MuiChip` (`root` + `sizeSmall`, whose own font is 13px/12px). Do NOT introduce `fontSize` values below `1rem` for text; keep the theme as the single source of truth (only tiny non-text decorations like a numbered badge glyph may stay smaller, plus the Google account email line inside the Sync button and tooltip text, both 14px).
 
 ## Alphabet romaji matching
+
 - Each kana accepts EXACTLY ONE romaji - the spelling shown in the chart (`AlphabetCell.romaji`). The romaji quiz's `correctAnswers` is just `[correctItem.romaji]`; typed input is only normalized with `normalizeRomajiInput` (trim + lowercase) before an exact match. Do NOT add alternate-spelling aliasing (no Kunrei si/shi, tya/cha, no homophone fuzziness) in the alphabet quiz.
 - Use Hepburn for the homophone kana: ぢ/ヂ = `ji`, づ/ヅ = `zu` (same as じ/ず). This means `ji`/`zu` are duplicated in the chart; `buildRomajiToCharMap` (in `src/constants/alphabet-charts.ts`) is first-occurrence-wins so じ/ず keep those keys and yoon base lookups (じゃ etc.) stay correct.
 - The sentence exercise keeps its OWN separate canonicalizer in `sentence/transliterate.ts` - independent of the alphabet quiz.
 - Script pairing in the quiz works on bilingual `KanaEntry { romaji, hiragana, katakana }` units (built in `exercise-quiz.ts` by zipping the two same-ordered per-script item arrays). The hiragana<->katakana counterpart is the matching field on the entry - do NOT re-pair by romaji (homophones じ/ぢ, ず/づ share a romaji) or by Unicode code-point math.
 
 ## i18n
+
 - UI chrome text is split ONE FILE PER NAMESPACE (page/feature) under `src/i18n/messages/en/<namespace>.ts` and `src/i18n/messages/vi/<namespace>.ts` (e.g. `home.ts`, `kanji.ts`, `course.ts`, `nav.ts`, `seo.ts`); `messages/<locale>/index.ts` composes them into the full tree (`enMessages`/`viMessages`, consumed by `src/i18n/request.ts`). Both `en` and `vi` MUST be kept in sync (same namespaces + keys). Read via `const { t, locale } = useTranslation()`; add a new namespace by creating the file in BOTH locales and importing it in both `index.ts`.
 - Bilingual CONTENT data (Japanese + meanings) is stored in data files as `Record<Locale, string>` (type `Bilingual`) and rendered with `value[locale]`, not as translation keys.
 - The header should not show brand logo or slogan; keep only the text brand link in the app bar. The site footer text stays in ENGLISH regardless of locale.
 - On desktop (`md` and up), align the text brand (`Nihongoes`) with the main content text column (same left gutter alignment), not visual center of the viewport.
 
 ## localStorage
-- Keys are UPPER_SNAKE_CASE via `storageKey` in `src/constants/site.ts` (`NIHONGOES_` + the name, e.g. `storageKey('VOCAB_INDEX')`). Do not use kebab-case (`nihongoes-vocab-index`). The locale cookie stays `nihongoes-locale`.
+
+- Keys are UPPER*SNAKE_CASE via `storageKey` in `src/constants/site.ts` (`NIHONGOES*`+ the name, e.g.`storageKey('VOCAB_INDEX')`). Do not use kebab-case (`nihongoes-vocab-index`). The locale cookie stays `nihongoes-locale`.
 
 ## Documentation
+
 - Every time you make a PERFORMANCE optimization, append an entry to `docs/OPTIMIZATION.md` (bilingual EN/VI, newest section at the TOP). Each entry MUST cover: Cause / Nguyên nhân, Fix / Cách sửa, Why it works / Vì sao hiệu quả, and before/after Metrics + the PR link when available. Follow the template already in that file.
 - When the user asks for bilingual docs, write the whole document in parallel EN/VI sections (not only one quick-start block), and keep command examples identical across both languages.
 - In user-facing docs, prefer concise commands (`pnpm ...`) and list `nvm use 24` once as a prerequisite instead of prefixing every command with shell setup.
 
 ## Audio / pronunciation
+
 - Japanese is spoken via the Web Speech API: `speakJapanese(text)` in `src/utils/speech.ts` (lang `ja-JP`). Voice + speed are user-configurable (persisted in localStorage) via `<AudioSettings />` in the header; voices load async (use `subscribeVoices`).
 - Anywhere Japanese text is shown, add `<SpeakButton text={...} />` (`src/components/speak-button/index.tsx`). Pass kana for single words, full sentence for examples. Do NOT add it to quiz answer options (would leak the answer), grammar patterns containing `N` placeholders, or sentence-writing revealed answers.
 - Do not make audio interaction icon-only. Wherever practical, make the related Japanese text/surface itself clickable (and keyboard-accessible with Enter/Space) so users do not need to tap precisely on the speaker icon.
@@ -116,6 +131,7 @@ alwaysApply: true
 - When a kana's spoken reading differs from its glyph (particles は=wa, へ=e, を=o), set `speech` on the `VocabItem` (e.g. `speech: 'わ'`) so TTS says the particle reading, not the literal kana. The lesson page speaks `item.speech ?? item.kana`. Full sentences need no override (TTS reads particles correctly in context).
 
 ## Site palette & page background
+
 - The site ALWAYS uses the Sakura palette (`palette` in `src/theme/app-theme.ts`: primary `#D63A6F`, `primary.light` `#F08BAE`, secondary `#3B9A57`) on MUI's default white background: do NOT set a custom `background.default` color and NO background image/pattern on `body` (no ruled lines, grid, or motifs). Header and drawer keep their default white. There is NO alternate/classic theme and no appearance setting - do not add one.
 - Changing colors must NOT change `shape.borderRadius` or other shape/spacing tokens.
 - The header wordmark (`Nihongoes`, `src/components/brand/index.tsx`) is a pink text gradient: `linear-gradient(90deg, primary.main, #F08BAE)` with `backgroundClip: 'text'` + transparent color. Keep it the only gradient in the chrome.
@@ -123,6 +139,7 @@ alwaysApply: true
 - Checkboxes show primary at rest, not MUI's default grey (`MuiCheckbox` in `app-theme.ts`). Set it in the theme, not per component. Checkbox has no circular hover fill (transparent `&:hover`, including `@media (hover: none)`). Select and text fields keep the default grey outline at rest. Checkbox box and check (`checkbox-icons.tsx`) are 1px stroke, empty fill, full sakura (`primary.main`) - not MUI's 2px filled icons and not the light-sakura focus ring. Every focus outline (outlined inputs including Select, `Mui-focusVisible` on `ButtonBase`, and custom `:focus-visible` rings) is 1px light sakura (`alpha(primary.main, 0.4)` via `focusVisibleSx` / `FOCUS_OUTLINE_*` in `src/theme/focus.ts`) - never MUI's 2px solid primary.
 
 ## Surfaces & cards (Material style) — ALWAYS follow
+
 - Prefer elevation/tonal surfaces over borders. Do NOT use `variant="outlined"` for content cards/papers.
 - Do NOT use heavy MUI default elevations (`elevation={2}` etc.) — their default shadow has a sharp bottom edge that looks like a thick bottom border. Always use `elevation={0}` + a helper.
 - Helpers in `src/theme/surfaces.ts`, applied as `elevation={0}` with `sx={[helper, { ...overrides }]}`:
@@ -134,6 +151,7 @@ alwaysApply: true
 - While a MUI modal is open, hide the Google Translate selection bubble (`#gtx-host`, `#gtx-trans`, `#goog-gt-tt`, `.goog-te-balloon-frame`) in `src/index.css`. That bubble uses the maximum z-index and is inserted after dialogs, so it paints over them. The save-to-collection dialog also sets `zIndex: 2147483647`.
 
 ## Quiz feedback styling
+
 - Quiz answer text must be selectable. Do not render an answer as a native `<button>` (a selection cannot start inside one). Multiple-choice answers go through `<ChoiceButton>` (`component="div"`, `userSelect: 'text'`); alphabet options and vocab match chips follow the same rule. A drag that highlights text must not also submit the answer (`hasTextSelection`). Locked answers stay selectable: do not use `pointer-events: none` on them.
 - Answer choices do NOT follow the theme primary: unanswered choice buttons are neutral black `QUIZ_CHOICE_COLOR` (`rgba(0, 0, 0, 0.87)` text, 0.23 border, `src/constants/quiz.ts`) via `quizChoiceSx` (`src/theme/quiz-choice.ts`), applied in `ChoiceButton` and the alphabet quiz options. Pink primary would read as a wrong answer.
 - Answer choices use a soft fill, not the solid progress-bar colors: correct is a light green tint of `QUIZ_CORRECT_COLOR`, wrong is a light pink (`pink[400]`). The progress bar stays a solid `QUIZ_CORRECT_COLOR` / `QUIZ_INCORRECT_COLOR` fill.
@@ -144,12 +162,15 @@ alwaysApply: true
 - Multiple-choice result screens list every question missed on the first try via `<QuizMissList>` (`src/components/quiz-miss-list`): the prompt and the correct answer only, labelled `Correct answer` / `Đáp án đúng`. Do not record the choice that was picked. No speak button on that list. A perfect score shows no list. Separate those questions with a divider border on the row that includes the item number, and leave the last one without a border. The list has no bottom margin, and the last item has no bottom padding, so only the card padding separates it from the card edge. Retry and review sit above that list, under the score message. Cover vocab MCQ, grammar, reading, kanji, radicals, and alphabet choice modes. Typed romaji and vocab matching stay score-only. A miss that maps to a flashcard (`QuizMiss.card`: vocab, phrase, kana, kanji, radical) shows one bookmark icon immediately before that kanji, radical, kana, or vocabulary word (the Japanese prompt, or the Japanese answer when the prompt is a meaning). The icon opens the existing save-to-collection dialog. When more than one question was missed and any can be saved, the heading row is `Missed questions | Add all to flashcards` (`Câu chọn sai | Thêm tất cả vào Flashcards`); that button opens the dialog for every savable miss. Below `md`, hide the pipe and put the button on its own line. Grammar and reading misses have no card, so those lists stay plain.
 
 ## Show/hide translation links
+
 - The "Show translation"/"Hiện bản dịch" text links (`TranslationLine`, `SectionHeaderWithTranslationToggle`) are matcha green (`secondary.main`) with NO underline at rest, underlined on hover only (`@media (hover: hover)`). Share the style via `translationToggleSx` (`src/theme/translation-toggle.ts`) - do NOT tint them primary.
 
 ## Hints / annotations
+
 - Render annotation/hint text (replay hints, etc.) via the shared `<HintText>` component (`src/components/hint-text/index.tsx`): it prefixes the text with `* ` (the asterisk is nudged down to center on the first line), uses `color="text.secondary"` (grey) and medium weight. Pass spacing via `sx`. Do NOT hand-roll hint `Typography`. Do NOT add tap-to-hear pronunciation hints (`audioHint` / `tapHint` / `detailHint`); Japanese text is already clickable. Do NOT add a print-instruction or tap-to-flip HintText on the vocab index. Flashcard how-to on the vocab index is a first-visit `Dialog` only (`guideSeen` in localStorage `NIHONGOES_VOCAB_FLASHCARD_GUIDE_SEEN`). The `/flashcards` list shows two HintText notes: tap to flip, and right-click or long-press to save from a card, a lesson word or phrase, or a vocab, kanji, or radical quiz prompt.
 
 ## Kanji cards - components & examples (IMPORTANT)
+
 - Each `KanjiEntry` declares REQUIRED `parts: KanjiComponent[]` (`{ char, role }`, role = `radical` | `semantic` | `phonetic` | `other`) - the FULL component breakdown. `KanjiCard` renders these as color-coded chips: bộ thủ chính = blue (`radical`), gợi nghĩa = green (`semantic`), gợi âm = orange (`phonetic`), khác = grey (`other`). Colors live in `src/theme/kanji-component-colors.ts`; the legend is `<KanjiComponentLegend>` on the lesson page. Component chips are NOT links to `/kanji/radicals` - show meaning only when the char matches a known radical.
 - ALWAYS show the main radical (bộ thủ chính) on every card. `parts` is REQUIRED on every `KanjiEntry` and is the single source of truth (`ComponentsRow` in `kanji-card` just sorts `entry.parts` by role and renders them - there is no legacy fallback). Include EXACTLY ONE `radical` role per entry. For a self-radical / atomic kanji (木/山/見/石/舌...), author a single part equal to the character itself: `parts: [{ char: '木', role: 'radical' }]` (do NOT list its sub-strokes). Verify the `radical` char against KANJIDIC2 (add a missing variant to `radicals.ts` rather than mislabeling).
 - Chips always display in role order radical -> semantic -> phonetic -> other (sorted in `ComponentsRow`), regardless of authored order.
@@ -158,6 +179,7 @@ alwaysApply: true
 - Example words must NOT be a single kanji equal to the headword that just repeats its meaning (e.g. 冬 -> ふゆ "winter"). Replace such standalone examples with a real compound word that keeps the SAME reading morpheme (e.g. 冬休み ふゆやすみ; 森 もり -> 青森 あおもり; 車 くるま -> 車いす くるまいす). Rendaku variants (はやし -> 松林 まつばやし) are acceptable when no non-rendaku compound exists.
 
 ## Grammar highlighting (IMPORTANT)
+
 - Each `GrammarPoint` declares an EXPLICIT `highlights: HighlightTerm[]` (the grammar morphemes to color, in palette order) - NEVER rely on auto/regex derivation from the pattern. `HighlightTerm` = a `string`, or a `string[]` of alternatives that SHARE one color. Use a shared-color group ONLY for a closed interchangeable set like `['これ','それ','あれ']`; list distinct variants (e.g. `だれ`/`どなた`, `なんさい`/`おいくつ`) as SEPARATE terms so each gets its own color.
 - Highlight ONLY grammar components: particles (`は`/`が`/`の`/`も`/`に`...), copula/endings (`です`/`じゃありません`/`ですか`), question words (`なん`/`だれ`/`どこ`/`なんさい`...). Do NOT highlight plain vocabulary or special readings (e.g. `はたち` is a word, not grammar).
 - Split a trailing `ですか` into TWO separate color terms `です` and `か` (the copula and the question particle each get their own color) - never group them as one `ですか` term, and never leave them attached to a question word. E.g. `highlights: ['は','なん','です','か']`, not `['は','なん','ですか']` and not `['は','なんですか']`. The pattern string may keep a space (`N は なん ですか`); it still displays attached (`formatGrammarPatternDisplay`).
@@ -167,10 +189,12 @@ alwaysApply: true
 - **Grammar card layout** (`GrammarPointCard`): numbered badge + pattern chip, then explanation, then example cards directly - no "Examples"/"Ví dụ" overline. Hide the `title` h3 when it repeats the pattern chip (`isGrammarTitleRedundant(pattern, title[locale])` in `grammar-highlight.ts`); keep titles that add context (e.g. `Xuất xứ (どこの)`, `も (cũng)`). Keep the separate "Answers"/"Cách trả lời" heading when `answers` is present.
 
 ## Scrollbars
+
 - Use one unified thin scrollbar style across the app. Global/page scrollbars and Select dropdown papers (`.MuiMenu-paper`) share the appearance in `src/index.css`. The drawer nav list (`.hide-scrollbar`) hides its scrollbar while remaining scrollable.
 - Do NOT use smooth scrolling anywhere: keep `html { scroll-behavior: auto; }` in `src/index.css` and never pass `behavior: 'smooth'` to `scrollTo` / `scrollIntoView`.
 
 ## Page layout
+
 - Wrap every page's content in the shared `<PageContainer>` (`src/components/page-container/index.tsx`) — do NOT use `<Container>` directly in pages. Content width/padding live in `PageContainer` + the `MuiContainer` theme overrides in `src/theme/app-theme.ts`, with a global max width of `1200px`.
 - On desktop, keep app bar inner content constrained to the same `1200px` max width and gutter alignment as page content.
 - Page headers: put the back button on its own row (wrapped in a `Box`), then the lesson/section chip, then the title — never let the back button and chip share a line.
@@ -182,6 +206,7 @@ alwaysApply: true
 - The scroll button (`src/components/scroll-button`) stays on screen while the page can scroll, including during an active scroll. It stays hidden until the first scroll movement. The arrow follows the last direction: scrolling down points down and jumps to the bottom; scrolling up points up and jumps back to the top. At the top or bottom, where that direction cannot continue, the arrow flips.
 
 ## Responsive rendering - no flicker (IMPORTANT)
+
 - NEVER use `useMediaQuery` (or any post-hydration JS check) to decide WHAT to render for responsive layout. It returns the SSR default (usually `false`) on the server + first client render, so the correct layout "pops in" after hydration = a visible flicker (e.g. the desktop drawer flashing on mobile, or the header/nav shifting). This has bitten us repeatedly (mobile layout flash fix; alphabet chart `useMediaQuery` removal).
 - Instead render BOTH variants and toggle with CSS `display` breakpoints (`sx={{ display: { xs, md } }}`) so the server markup is already correct at first paint. See `AppLayout` + `Menu` (both drawers rendered, CSS-toggled) and the alphabet chart.
 - TRADE-OFF (accept it): CSS toggling means the hidden variant still mounts + hydrates (e.g. the desktop drawer's nav content hydrates on mobile). You canNOT skip hydrating it without reintroducing the flicker - a client component under SSG cannot know the viewport at SSR. Zero flicker wins over saving that hydration.
@@ -189,32 +214,39 @@ alwaysApply: true
 - Do not `setState` in an effect to detect viewport (also violates `react-hooks/set-state-in-effect`); rely on CSS.
 
 ## Component reuse (IMPORTANT)
+
 - ALWAYS reuse shared components instead of duplicating or re-rendering the same UI inline. Before writing a piece of UI, check whether a component already exists (e.g. `KanjiCard`, `TracingCanvas`, `SpeakableSurface`, `SpeakButton`, `Heading`, `HintText`, `PageContainer`, `ChoiceButton`, `KanjiReadingsNote`) and use it.
 - When the same UI/logic is (or will be) used in 2+ places, extract it into a folder-based shared component under `src/components/<name>/index.tsx` (or a shared page-segment folder for page-only reuse) and import it via the `@/` alias - do NOT copy-paste. Keep a single source of truth.
-- React list keys on lesson vocab/phrases/reference must be unique even when suffix counters share kana+romaji (e.g. two `〜かい` entries). Include the array index: `key={\`vocab-${index}-${item.kana}\`}` - do NOT key lists on `${kana}-${romaji}` alone.
+- React list keys on lesson vocab/phrases/reference must be unique even when suffix counters share kana+romaji (e.g. two `〜かい` entries). Include the array index: `key={\`vocab-${index}-${item.kana}\`}`- do NOT key lists on`${kana}-${romaji}` alone.
 
 ## Type declarations
+
 - Shared/domain TYPES live in `src/types/`: `course.ts` (course/lesson data types + `Bilingual`, `CourseLevel`), `kanji.ts` (kanji data types), `i18n.ts` (`Locale`, `TranslationTree`, `TranslationParams`). Declare new domain/shared types here.
 - The old locations re-export from `@/types/` for backward compatibility and keep their RUNTIME code: `constants/courses/types.ts` (re-export + `withSequentialNumbers`), `constants/kanji/types.ts` (re-export + `withSequentialNumbers`), `i18n/translations.ts` (type re-export + `getChartSectionLabels`). Importing via either `@/types/*` or the old `@/constants/...`/`@/i18n/translations` paths works.
 - Component PROP types stay COLOCATED (see next), NOT in `src/types/`.
 
 ## Component props typing
+
 - ALWAYS declare props as a named `type <ComponentName>Props = { ... }` above the component (above its doc comment, if any) and annotate the param with it (e.g. `function Foo({ a, b }: FooProps)`). NEVER inline an object type in the parameter list - not even a single-prop one-liner like `({ level }: { level: CourseLevel })`. For generics use `type FooProps<T> = { ... }` + `function Foo<T>({ ... }: FooProps<T>)`.
 
 ## Buttons / icon hit areas
+
 - No Material ripple anywhere: it is disabled globally via `MuiButtonBase.defaultProps.disableRipple` in `src/theme/app-theme.ts` (the dark ripple sweeping across buttons/toggles/cards/nav on click looks out of place). Do NOT re-enable it per component; rely on hover/selected states for click feedback. Restore `IconButton` hover in `MuiIconButton` theme overrides (`alpha(primary.main, 0.08)` via `hoverFillSx` in `src/theme/hover.ts`) because MUI gates the default fill on ripple and uses 0.04 opacity. `hoverFillSx` also overrides MUI's `@media (hover: none)` transparent hover for fine pointers so IconButton and MenuItem stay visible - some desktop Chromium embeds report `hover: none`. On a coarse pointer (touch), hover and `:active` must not stick a darker fill: `coarsePressResetSx` restores `--button-rest-bg` (transparent unless the control sets a filled rest color). Contained primary/secondary buttons keep their resting color and shadow on touch. Unselected toggle buttons stay transparent. Checkbox hover fill is off. Select fields use MUI's default grey outline at rest; hover uses `text.primary` on the notched outline. Focused outlines stay 1px light sakura. The currently selected option in an open Select menu uses `primary.main` text (`MuiMenuItem` `Mui-selected`).
 - NEVER stretch an `IconButton` (or any round button) with `top: 0; bottom: 0` / `height: 100%` or otherwise give it an unequal width vs height - its hover/ripple background turns into an oval. Keep a square footprint and center it instead, e.g. absolutely positioned use `top: '50%'` + `transform: 'translateY(-50%)'` (not `top:0; bottom:0; my:'auto'`).
 - COMMON GOTCHA: when an `IconButton`/`SpeakButton` sits as a child of a `display: flex` row (e.g. a `SpeakableSurface` card with icon + text block), the default `align-items: stretch` stretches the button to the row's full height -> oval hover. ALWAYS set `alignItems: 'flex-start'` (or `'center'`) on that flex container, or `alignSelf` on the button. Mirror the lesson vocab card: `sx={{ p: 1.5, display: 'flex', gap: 0.5, alignItems: 'flex-start' }}`.
 
 ## MUI icons
+
 - Import by exact file name (often the `Outlined` suffix, e.g. `CheckCircleOutlined` not `CheckCircleOutline`). If unsure, check `node_modules/@mui/icons-material/`.
 
 ## Storybook
+
 - Colocate the story next to its component as `<name>/index.stories.tsx` (folder-based, mirroring `<name>/index.tsx`) — do NOT repeat the component name in the filename (no `footer.stories.tsx`).
 - Title stories generically by folder: `Components/<ComponentName>` for everything under `src/components/`. Don't hand-pick ad-hoc categories (no `Layout/...`).
 - Global providers (MUI theme + `CssBaseline`, `NextIntlClientProvider`) live in `.storybook/preview.tsx` decorators; the MUI theme is shared via `src/theme/app-theme.ts`. Storybook has no Next runtime, so `next/navigation` and `next/link` are aliased to mocks (`.storybook/next-navigation-mock.ts`, `.storybook/next-link-mock.tsx`) in `.storybook/main.ts`; the decorator sets the mock pathname from the `locale` toolbar global and passes `locale` + messages to `NextIntlClientProvider` (remount via `key`).
 
 ## Routing & sitemap (Next.js App Router, file-based, server on Vercel)
+
 - The app is a Next.js App Router site deployed on a server (Vercel) - NOT static export. The App Router lives in `src/app/`. Routing is file-based under `src/app/[locale]/**/page.tsx`. View code is COLOCATED in the route folder: Server Component views are inlined in `page.tsx`; client views live in a colocated `_components/` folder (see the `page-structure` rule). Interactive views (quiz/exercise/writing) are wrapped in `<ClientOnly>`. Shared internal clusters stay in `src/features/<feature>/`.
 - i18n is next-intl (standard App Router setup): `src/i18n/routing.ts` (`defineRouting`, en at root / vi under `/vi`, `localePrefix: 'as-needed'`) is the single source of truth, consumed by `src/proxy.ts` (`createMiddleware`; the file convention formerly called `middleware.ts`, renamed in Next 16), `src/i18n/navigation.tsx` (`createNavigation` -> `Link`/`usePathname`/`useRouter`/`getPathname`; `LocaleLink` wraps `Link`), and `src/i18n/request.ts` (`getRequestConfig`). The locale comes from the `[locale]` segment server-side: `app/[locale]/layout.tsx` calls `setRequestLocale`, renders `<html lang>` and `NextIntlClientProvider` (messages via `getMessages`); the root `app/layout.tsx` is a passthrough. Client code uses `useTranslation()` (wraps next-intl `useTranslations`/`useLocale`; `setLocale` uses the locale-aware router). Server Components/metadata use `getTranslations`. `useParams` for route params comes from `next/navigation` (client only). There is NO custom middleware/`LanguageProvider`/`locale-routing.ts` anymore.
 - To add a route: create `src/app/[locale]/**/page.tsx` (`generateStaticParams` from `@/i18n/route-helpers` + `generateMetadata` + `dynamicParams = false`) with the view inlined (server) or in `./_components/` (client), and add its logical path to `routes.ts` (or a `*_SITEMAP_PATHS` array).
@@ -222,11 +254,13 @@ alwaysApply: true
 - Every route is still statically pre-rendered (SSG) via `generateStaticParams` (params incl. `lang`) in `@/i18n/route-helpers`. `app/sitemap.ts` enumerates the union of `SITEMAP_PATHS` + `COURSE_SITEMAP_PATHS` + `KANJI_SITEMAP_PATHS`, once per locale. `robots.txt` is a static file in `public/`.
 
 ## Navigation labels
+
 - Course extra nav items after the lesson list: N5 intro at the top; then Reference (N5). All vocabulary and phrases (`/vocabulary`), Flashcards (`/flashcards`), and Sync (`/sync`, Vietnamese label Đồng bộ) are shared across JLPT levels: top-level drawer groups next to the course groups (not nested under N5/N4). Do NOT add a Level select on those pages - pool every course's lessons in one list (Minna numbers stay unique: N5 1-25, N4 26-50). Persist vocab From/To in `NIHONGOES_VOCAB_INDEX`. Sentence writing is a practice button on each lesson (`/:level/:lessonId/sentences`). `showInput` stays in `NIHONGOES_SENTENCE_WRITING`. The sentence-writing page has no previous-lesson or next-lesson link. `/sentences` (optional `?lesson=` Minna number) and `/:level/sentences` redirect to a lesson sentence-writing page. Redirect `/:level/vocabulary` to `/vocabulary`.
 - In drawer sub-items for course lessons, keep the lesson number inline with the title as `N. …` (number only - no `Lesson` / `Bài` prefix) to save horizontal space; do not render the number as a separate left icon/symbol.
 - Keep English lesson chips and other non-drawer labels as `Lesson` (e.g. `Lesson {{number}}` in `course.lessonLabel`), matching the lesson id (`lesson-N`) and the Vietnamese `Bài`. Do NOT use `Unit`.
 
 ## Drawer menu layout
+
 - The drawer is full viewport height and paints above the header. Leave the app bar at MUI's default z-index (below the drawer). Do not offset drawer content with a `Toolbar` spacer.
 - Keep drawer menu visuals minimal: use subtle divider lines between sibling items/sub-items, plus a matching line under the last top-level group (`:last-child`). Top-level group dividers are inset to the main-row content gutter (`spacing(2)` left and right via `::before`/`::after`) so they do not run edge-to-edge. Do NOT add a bottom line on the last nested sub-item. Avoid card-like shadows/background blocks for separation.
 - Drawer rows have no hover fill. Hover turns the label and icon `primary.main` (same as the selected route). Main rows and nested sub-items are full-bleed: no List gutter (`disablePadding`, no `px`), no `borderRadius`, no extra `mt`/`pt` around the row. Row vertical padding is `py: 1.5` (`NAV_ROW_PY`). Group rows use a wrapper `Box` (`pr: 2` insets the chevron); inner `ListItemButton`/`IconButton` stay transparent (with a hover-none override so theme `hoverFillSx` does not fill the chevron). Inactive nav icons (item icons, kana symbols, expand chevrons) keep MUI's default grey (`action.active`); hover and the selected route use `primary.main` for both icon and label.

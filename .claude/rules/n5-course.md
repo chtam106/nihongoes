@@ -1,7 +1,8 @@
 ---
 description: Structure of the shared course engine (N5–N1 JLPT + Frontend tracks; lessons, exercise, reading)
-globs: src/features/course/**,src/constants/courses/**
-alwaysApply: false
+paths:
+  - 'src/features/course/**'
+  - 'src/constants/courses/**'
 ---
 
 # Courses (N5–N1 + Frontend)
@@ -9,14 +10,17 @@ alwaysApply: false
 All course levels share ONE engine. Adding/extending a level = editing data files; the pages are generic and take a `level: CourseLevel` prop. Levels live in `COURSE_LEVELS = ['n5','n4','n3','n2','n1','frontend']`.
 
 ## Lesson count is FLEXIBLE (IMPORTANT)
+
 - Do NOT cap the number of lessons per level. Author as many lessons as needed to cover the FULL standard JLPT grammar syllabus for that level (N5–N1). The `frontend` track covers practical frontend/BRSE Japanese.
 - Lesson order may be (re)arranged freely. Compose part files and wrap with `withSequentialNumbers(...)` (in `types.ts`) so `id` becomes `lesson-<n>` and `number` becomes `1..N` automatically — no manual renumbering.
 - Everything is data-driven: the `lessons` array length drives routes, nav, sitemap, and the quiz/reading builders — so the count can grow freely with no code changes.
 
 ## Lesson `title` (EN + VI)
+
 - Short theme label for nav/chips - NOT a grammar dump. Use `[chủ đề 1] và [chủ đề 2]` when the lesson has two main points; each side must be a complete noun phrase (no dangling fragments like `Vừa làm vừa và …` or `Quá mức`). Prefer plain meaning over pattern names or jargon (`Dùng の làm danh từ`, not `Danh từ hóa với の`). Save pattern labels for grammar-point `title` fields. Keep EN/VI parallel.
 
 ## Content completeness (IMPORTANT)
+
 - NEVER include fewer items than the source syllabus/textbook. For each lesson, the `vocab` list, the `phrases` (会話 set expressions), AND the `grammar` points must ALL cover the FULL set from the corresponding textbook lesson (N5 follows Minna no Nihongo Shokyu I). Do not trim, sample, or make a "short version".
   - Vocab: include every 単語 word (core words, suffixes like `〜さん/〜じん/〜さい`, plain + polite variants such as `なんさい`/`おいくつ`).
   - Phrases: include every 会話 set expression (e.g. `はじめまして`, `どうぞよろしくおねがいします`, `しつれいですが`, `こちらは〜さんです`).
@@ -35,6 +39,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - Reference list rows with a Japanese `number` date (e.g. 5月3日, 7月第3月曜日) need matching `numberRuby` for every kanji in that string, same as `ruby` on `jp`. A list `introTerm` (e.g. 祝祭日) needs `introTerm.ruby` too.
 
 ## Reference section (IMPORTANT)
+
 - `reference?: ReferenceBlock[]` is NOT limited to vocabulary. Each block has a `kind`:
   - `vocab` - titled word grid (included in vocabulary quiz + kanji writing pools via `referenceVocabItems()` when `includeInQuiz` is not false; quiz uses core vocab plus phrases by default, with an optional toggle for reference vocab).
   - `steps` - numbered how-to with optional `notes` footnotes (e.g. public phone use).
@@ -44,6 +49,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - Author as many blocks as the textbook reference section needs; render via `<ReferenceBlockView>` on the lesson page.
 
 ## Reading passages (IMPORTANT)
+
 - Each lesson may have **zero or more** `reading: ReadingPassage[]` entries - no fixed count per lesson or per passage.
 - Author as many passages (and as many comprehension questions per passage) as needed so reading practice covers **most of the lesson's vocab themes, grammar patterns, and conversation topics**. Split by theme when one passage would cram too much (e.g. shop hours vs daily schedule vs telling the time).
 - Passage text must be **original** (not copied from the textbook) and use only vocabulary/grammar from that lesson (or earlier levels when natural). Optional `ruby` on `ReadingLine` where kanji appear.
@@ -51,6 +57,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - `reading-page.tsx` renders **every** passage on the page and quizzes through **all** questions across all passages in one session.
 
 ## Data (`src/constants/courses/`)
+
 - One FOLDER per level/track: `n5/`, `n4/`, `n3/`, `n2/`, `n1/`, `frontend/`. Each folder has an `index.ts` that exports its `Course` (`n5Course`, `n4Course`, …, `frontendCourse`) and keeps long content split into `lessons-*.ts` part files inside the same folder (e.g. `n2/lessons-1.ts`, `frontend/lessons-a.ts`). The `courses/` root holds registry/types/levels only — no per-level content.
 - Sentence writing lives OUTSIDE `Lesson` so the lesson page does not load it: `src/constants/courses/<level>/sentence-writing/lesson-N.ts`, keyed by `lesson.id` in that folder's `index.ts`, read via `getSentenceWriting(level, lessonId)` from `src/constants/courses/sentence-writing.ts`. The practice button on each lesson opens `/:level/:lessonId/sentences`. The server page loads that lesson's writing and passes it in; do not import `sentence-writing.ts` from the client lesson page. Write EN/VI prompts into Japanese, show-answer per item. `LessonSentenceWriting` has `grammar` groups (pattern must match the lesson; at least 5 items each, no max; vocab coverage is NOT required - use lesson words where they fit, conjugated as the grammar needs. Every item must be a natural, meaningful sentence someone would actually say: no bare stubs like 机が あります。, no tacked-on "～ます。" sentences, no "～" inside compounds) plus `phrases` (every useful phrase as its own prompt). Do NOT show grammar pattern headings or a Useful phrases heading on the page; render grammar items then phrases as one numbered list. Sentence-writing answers have no SpeakButton. A page-level checkbox (default off, persisted) shows an optional Japanese textarea. Original sentences only - do not copy the textbook.
 - Course domain TYPES (`Bilingual`, `VocabItem`, `GrammarExample`, `GrammarPoint`, `ReadingLine`, `ReadingChoice`, `ReadingQuestion`, `ReadingPassage`, `Lesson`, `Course`, `CourseLevel`, `LessonSentenceWriting`, ...) are declared in `@/types/course.ts`. `constants/courses/types.ts` re-exports them (`export * from '@/types/course.ts'`) and keeps the RUNTIME `withSequentialNumbers(lessons)` helper. Content is bilingual (`{ en, vi }`), NOT translation keys.
@@ -58,12 +65,14 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - `index.ts` – registry + helpers: `courses`, `courseList`, `getCourse`, `getLesson`, `lessonHasReading`, `COURSE_SITEMAP_PATHS` (appended to `SITEMAP_PATHS` in `routes.ts`); re-exports `types.ts`, `levels.ts`, `summaries.ts`, `seo.ts`. Each `Course` has `level`, `code`, `name`/`subtitle`/`intro`/`seoTitle`/`seoDescription` (all `Bilingual`) and a `lessons` array. Each lesson has `vocab`, `grammar`, and optional `reading` (`ReadingPassage[]` with `lines` + multiple-choice `questions`).
 
 ## Quizzes: NO romaji (IMPORTANT)
+
 - Do NOT show romaji/phonetic transcription in the quiz surfaces (vocabulary / grammar / reading). Quiz prompts and reading passages display Japanese (and meanings) only — no romaji helper line. Romaji stays on the lesson detail page only.
 - For every course and level, including future N3, N2, and N1 courses, multiple-choice distractors must match the word class of the displayed answer. Prefer the current lesson, then nearby lessons in course order when needed, rather than mixing word classes.
 - Every `VocabItem`, including phrases and reference vocabulary in all current and future courses, must declare its Japanese `partOfSpeech`. When an EN or VI gloss has a different class, record that locale in `meaningPartOfSpeech`.
 - Show Japanese word-class labels in English only on vocabulary, phrase, and reference vocabulary cards, regardless of the interface language.
 
 ## Pages (`src/features/course/`) — generic, take a `level: CourseLevel` prop
+
 - `course-page.tsx` – course overview (lesson list, from course data).
 - `lesson-page.tsx` – lesson detail (vocab + grammar with `SpeakButton`s) and CTAs to practice: vocabulary, grammar, sentence writing, reading (only if `lessonHasReading`), and kanji writing.
 - `exercise-page.tsx` + `course-quiz.ts` – mixed quiz (`ChoiceQuestion` + particle-cloze `InputQuestion`); the builder takes the whole `Course` for distractor pools.
@@ -72,6 +81,7 @@ All course levels share ONE engine. Adding/extending a level = editing data file
 - Quiz state resets by remounting via `key` (e.g. `key={`${level}:${lesson.id}:${locale}`}`), NOT via `setState` in an effect.
 
 ## Wiring
+
 - Routes are file-based under `app/[locale]/[jlptLevel]/**/page.tsx`: `/:level`, `/:level/:lessonId`, `.../grammar`, `.../reading`, `.../writing`, `.../sentences` (no `/lesson/` segment). Shared vocabulary lives at `app/[locale]/vocabulary`. `app/[locale]/sentences` only redirects to a lesson sentence-writing page. Each course route file awaits `[jlptLevel]` and passes it as a prop; the view reads `lessonId` via `useParams`. `generateStaticParams` comes from `@/i18n/route-helpers` (`courseLevelParams`, `courseLessonParams`, and grammar/reading/writing-filtered variants). `routes.ts` declares per-level index entries plus `/vocabulary` for SEO keys. Lesson sentence pages are covered by `COURSE_SITEMAP_PATHS`.
 - `getSeoRouteKey` maps any `/n5`…`/n1` (and `/frontend`) path to that level key. Course index/intro/reference use the light `getCourseSeo` copy of `seoTitle`/`seoDescription`. Lesson routes (`/:level/lesson-N` and vocab/grammar/reading/writing/sentences) keep the `JLPT N5`/`JLPT N4` prefix, then that lesson's title (`Lesson N: {title}` / `Bài N: {title}`), and use `focus` as the meta description. Intro and reference use the same prefix plus their page title (`Mở đầu` / `Thông tin tham khảo`) and page intro, via `src/i18n/seo-meta.ts`.
 - Each course is a nav group generated from the registry in `src/constants/nav-items.ts`; `app-drawer-content.tsx` renders course-group labels via `group.label[locale]`, while the Home/Alphabet groups use `labelKey` + `t()`.
