@@ -84,6 +84,8 @@ export type GrammarPoint = {
   explanation: Bilingual;
   /** Ruby for kanji cited in `explanation` (same segment order in en + vi when both quote the same Japanese). */
   explanationRuby?: RubySegment[];
+  /** Optional in-app link under the explanation (e.g. a conjugation guide). */
+  link?: { href: string; label: Bilingual };
   examples: GrammarExample[];
   /**
    * Terms to color in the pattern, explanation, and examples, in palette order.
