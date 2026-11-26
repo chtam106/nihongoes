@@ -81,6 +81,10 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'N が 見えます / 聞こえます',
+      patternRuby: [
+        { base: '見', reading: 'み' },
+        { base: '聞', reading: 'き' }
+      ],
       items: [
         {
           prompt: {

@@ -210,6 +210,7 @@ export const n4Lesson43SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'V-te 来ます',
+      patternRuby: [{ base: '来', reading: 'き' }],
       items: [
         {
           prompt: {

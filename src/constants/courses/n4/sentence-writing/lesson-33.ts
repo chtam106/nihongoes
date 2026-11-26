@@ -109,6 +109,10 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'X は Y と 書いて あります / Y と 読みます',
+      patternRuby: [
+        { base: '書', reading: 'か' },
+        { base: '読', reading: 'よ' }
+      ],
       items: [
         {
           prompt: {
@@ -184,6 +188,10 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'X は Y という 意味です',
+      patternRuby: [
+        { base: '意', reading: 'い' },
+        { base: '味', reading: 'み' }
+      ],
       items: [
         {
           prompt: {
@@ -267,6 +275,7 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'Plain form + と 言っていました',
+      patternRuby: [{ base: '言', reading: 'い' }],
       items: [
         {
           prompt: {
@@ -344,6 +353,7 @@ export const n4Lesson33SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'Plain form + と 伝えていただけませんか',
+      patternRuby: [{ base: '伝', reading: 'つた' }],
       items: [
         {
           prompt: {

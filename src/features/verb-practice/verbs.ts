@@ -22,7 +22,7 @@ export type PracticeVerb = {
 
 const kanjiStem: Record<string, [string, string]> = {
   あう: ['会', 'あ'],
-  あらう: ['洗', 'あら'],
+  まつ: ['待', 'ま'],
   いう: ['言', 'い'],
   おわる: ['終', 'お'],
   あそぶ: ['遊', 'あそ'],
@@ -101,11 +101,11 @@ const verbsByGroup: Record<VerbSubgroupId, PracticeVerb[]> = {
       meaning: { en: 'meet', vi: 'gặp' }
     },
     {
-      dictionary: 'あらう',
-      masu: 'あらいます',
-      te: 'あらって',
-      nai: 'あらわない',
-      meaning: { en: 'wash', vi: 'rửa' }
+      dictionary: 'まつ',
+      masu: 'まちます',
+      te: 'まって',
+      nai: 'またない',
+      meaning: { en: 'wait', vi: 'đợi, chờ' }
     },
     {
       dictionary: 'いう',

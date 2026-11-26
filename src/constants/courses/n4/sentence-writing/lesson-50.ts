@@ -148,6 +148,10 @@ export const n4Lesson50SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'Kenjougo II (参る, 申す, いたす, おります)',
+      patternRuby: [
+        { base: '参', reading: 'まい' },
+        { base: '申', reading: 'もう' }
+      ],
       items: [
         {
           prompt: {

@@ -259,6 +259,7 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'N から / N で 作ります',
+      patternRuby: [{ base: '作', reading: 'つく' }],
       items: [
         {
           prompt: {
@@ -332,6 +333,16 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'N の 中 / 外 / 上 / 下 / 前 / 後 / 右 / 左',
+      patternRuby: [
+        { base: '中', reading: 'なか' },
+        { base: '外', reading: 'そと' },
+        { base: '上', reading: 'うえ' },
+        { base: '下', reading: 'した' },
+        { base: '前', reading: 'まえ' },
+        { base: '後', reading: 'うし' },
+        { base: '右', reading: 'みぎ' },
+        { base: '左', reading: 'ひだ' }
+      ],
       items: [
         {
           prompt: {

@@ -649,14 +649,19 @@ export const n4Lesson33: Lesson = {
       highlights: ['ろ', 'な'],
       title: { en: 'Imperative and prohibitive forms', vi: 'Thể mệnh lệnh và cấm chỉ' },
       explanation: {
-        en: 'Group I imperative: change the vowel before ます to /e/ + ろ (書く→書け). Group II: add ろ (食べろ). Group III: しろ, 来い. Prohibitive: dictionary form + な (走るな). Used in emergencies, sports cheering, and signs.',
-        vi: 'Nhóm I mệnh lệnh: đổi nguyên âm trước ます thành /e/ + ろ (書く→書け). Nhóm II: thêm ろ (食べろ). Nhóm III: しろ, 来い. Cấm chỉ: nguyên dạng + な (走るな). Dùng trong khẩn cấp, cổ vũ, biển báo.'
+        en: 'Imperative (a blunt command). Group I: change the sound before ます from the い row to the え row: 書きます→書け, 行きます→行け. Group II: drop ます and add ろ: 食べます→食べろ. Group III: します→しろ, 来ます→来い (read こい). Prohibitive (do not): dictionary form + な: 走る→走るな. Used in emergencies, sports cheering, and signs.',
+        vi: 'Thể mệnh lệnh (ra lệnh trống không). Nhóm I: đổi âm trước ます từ hàng い sang hàng え: 書きます→書け, 行きます→行け. Nhóm II: bỏ ます, thêm ろ: 食べます→食べろ. Nhóm III: します→しろ, 来ます→来い (đọc là こい). Thể cấm chỉ (cấm làm): thể từ điển + な: 走る→走るな. Dùng trong tình huống khẩn cấp, cổ vũ thể thao, biển báo.'
       },
       explanationRuby: [
         { base: '書', reading: 'か' },
         { base: '書', reading: 'か' },
+        { base: '行', reading: 'い' },
+        { base: '行', reading: 'い' },
+        { base: '食', reading: 'た' },
         { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
+        { base: '来', reading: 'こ' },
+        { base: '走', reading: 'はし' },
         { base: '走', reading: 'はし' }
       ],
       examples: [

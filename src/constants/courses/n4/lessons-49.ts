@@ -469,7 +469,7 @@ export const n4Lesson49: Lesson = {
         { base: '中', reading: 'なか' },
         { base: '村', reading: 'むら' },
         { base: '時', reading: 'じ' },
-        { base: '来', reading: 'き' },
+        { base: '来', reading: 'こ' },
         { base: '酒', reading: 'さけ' },
         { base: '尊', reading: 'そん' },
         { base: '敬', reading: 'けい' },
@@ -487,7 +487,7 @@ export const n4Lesson49: Lesson = {
             { base: '中', reading: 'なか' },
             { base: '村', reading: 'むら' },
             { base: '時', reading: 'じ' },
-            { base: '来', reading: 'き' }
+            { base: '来', reading: 'こ' }
           ]
         },
         {
