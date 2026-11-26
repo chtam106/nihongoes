@@ -13,8 +13,20 @@ export const PARTICLES = [
   'や',
   'か',
   'から',
-  'まで'
+  'まで',
+  'までに',
+  'より',
+  'しか',
+  'ので',
+  'のに'
 ] as const;
+
+export const PARTICLE_LEVELS = ['n5', 'n4'] as const;
+
+export type ParticleLevel = (typeof PARTICLE_LEVELS)[number];
+
+/** Which questions a round draws from. */
+export type ParticleLevelFilter = ParticleLevel | 'all';
 
 export type Particle = (typeof PARTICLES)[number];
 
@@ -50,7 +62,20 @@ export type ParticleUse =
   | 'madeUntil'
   | 'kaQuestion'
   | 'gaBut'
-  | 'karaBecause';
+  | 'karaBecause'
+  | 'yoriThan'
+  | 'niBecome'
+  | 'toQuote'
+  | 'gaIntransitive'
+  | 'niPassive'
+  | 'niCausative'
+  | 'deCause'
+  | 'madeniDeadline'
+  | 'nodeBecause'
+  | 'noniDespite'
+  | 'kaEmbedded'
+  | 'niPer'
+  | 'shikaOnly';
 
 export type ParticleQuestion = {
   id: string;
@@ -63,6 +88,8 @@ export type ParticleQuestion = {
   distractors: [Particle, Particle, Particle];
   use: ParticleUse;
   meaning: Bilingual;
+  /** JLPT level of this use. */
+  level: ParticleLevel;
 };
 
 /** Short rule shown after each answer, and in the guide. */
@@ -262,6 +289,97 @@ export const PARTICLE_USES: Record<ParticleUse, { particle: Particle; rule: Bili
       vi: 'から sau vế đầu: vì… nên…',
       en: 'から after the first clause: because…, so…'
     }
+  },
+  yoriThan: {
+    particle: 'より',
+    rule: {
+      vi: 'A は B より …: A hơn B.',
+      en: 'A は B より …: A is more … than B.'
+    }
+  },
+  niBecome: {
+    particle: 'に',
+    rule: {
+      vi: 'Danh từ + に + なる: trở thành, đến lúc (医者に なる, 春に なる).',
+      en: 'A noun + に + なる: become, or turn into (医者に なる, 春に なる).'
+    }
+  },
+  toQuote: {
+    particle: 'と',
+    rule: {
+      vi: 'と + 思う / 言う: dẫn lại điều mình nghĩ hoặc người khác nói.',
+      en: 'と + 思う / 言う: quotes what you think or what someone said.'
+    }
+  },
+  gaIntransitive: {
+    particle: 'が',
+    rule: {
+      vi: 'Tự động từ (開く, 閉まる, つく…): vật tự thay đổi đi với が. Tha động từ (開ける…) mới đi với を.',
+      en: 'Intransitive verbs (開く, 閉まる, つく…): the thing that changes takes が. Transitive ones (開ける…) take を.'
+    }
+  },
+  niPassive: {
+    particle: 'に',
+    rule: {
+      vi: 'Câu bị động: người gây ra hành động đi với に.',
+      en: 'In a passive sentence, whoever does the action takes に.'
+    }
+  },
+  niCausative: {
+    particle: 'に',
+    rule: {
+      vi: 'Câu sai khiến 〜させる (có tân ngữ を): người bị bắt hoặc được cho làm đi với に.',
+      en: 'In a causative 〜させる sentence with an object (を), the person made or let to act takes に.'
+    }
+  },
+  deCause: {
+    particle: 'で',
+    rule: {
+      vi: 'で chỉ nguyên nhân: vì ốm, vì gió, vì tai nạn…',
+      en: 'で marks a cause: because of a cold, the wind, an accident…'
+    }
+  },
+  madeniDeadline: {
+    particle: 'までに',
+    rule: {
+      vi: 'までに: hạn chót, xong trước lúc đó. まで thì là làm liên tục cho đến lúc đó.',
+      en: 'までに: a deadline, done by then. まで means doing it all the way until then.'
+    }
+  },
+  nodeBecause: {
+    particle: 'ので',
+    rule: {
+      vi: 'ので: vì… nên…, nghe nhẹ nhàng, lịch sự hơn から.',
+      en: 'ので: because…, so…, softer and more polite than から.'
+    }
+  },
+  noniDespite: {
+    particle: 'のに',
+    rule: {
+      vi: 'のに: vậy mà, kết quả trái với điều mong đợi.',
+      en: 'のに: even though; the result is not what you expected.'
+    }
+  },
+  kaEmbedded: {
+    particle: 'か',
+    rule: {
+      vi: '〜か どうか: có… hay không, câu hỏi lồng trong câu.',
+      en: '〜か どうか: whether or not, a question inside a sentence.'
+    }
+  },
+  niPer: {
+    particle: 'に',
+    rule: {
+      vi: 'に chỉ tần suất: bao nhiêu lần trong một khoảng thời gian.',
+      en: 'に gives a rate: how many times within a period.'
+    }
+  },
+  shikaOnly: {
+    particle: 'しか',
+    rule: {
+      vi: 'しか + thể phủ định: chỉ (ít hơn mong đợi).',
+      en: 'しか + a negative verb: only (less than you would like).'
+    }
   }
 };
 
@@ -291,7 +409,8 @@ function q(
   distractors: [Particle, Particle, Particle],
   use: ParticleUse,
   vi: string,
-  en: string
+  en: string,
+  level: ParticleLevel = 'n5'
 ): ParticleQuestion {
   return {
     id,
@@ -300,11 +419,12 @@ function q(
     after: rubyText(after),
     distractors,
     use,
-    meaning: { vi, en }
+    meaning: { vi, en },
+    level
   };
 }
 
-/** N5 sentences, one blank each. Distractors leave out any particle that would also be right. */
+/** One blank per sentence. Distractors leave out any particle that would also be right. */
 export const PARTICLE_QUESTIONS: ParticleQuestion[] = [
   q(
     'wa-student',
@@ -745,11 +865,212 @@ export const PARTICLE_QUESTIONS: ParticleQuestion[] = [
     'karaBecause',
     'Vì không có thời gian nên tôi đi taxi.',
     "I don't have time, so I'll take a taxi."
+  ),
+  q(
+    'yori-osaka',
+    '東[とう]京[きょう]は 大[おお]阪[さか]',
+    'より',
+    ' 大[おお]きいです。',
+    ['から', 'まで', 'で'],
+    'yoriThan',
+    'Tokyo lớn hơn Osaka.',
+    'Tokyo is bigger than Osaka.'
+  ),
+  q(
+    'ni-doctor',
+    '将[しょう]来[らい] 医[い]者[しゃ]',
+    'に',
+    ' なりたいです。',
+    ['を', 'が', 'で'],
+    'niBecome',
+    'Sau này tôi muốn trở thành bác sĩ.',
+    'I want to become a doctor one day.',
+    'n4'
+  ),
+  q(
+    'ni-spring',
+    'もう すぐ 春[はる]',
+    'に',
+    ' なります。',
+    ['を', 'で', 'へ'],
+    'niBecome',
+    'Sắp sang xuân rồi.',
+    'It will soon be spring.',
+    'n4'
+  ),
+  q(
+    'to-rain',
+    'あしたは 雨[あめ]が 降[ふ]る',
+    'と',
+    ' 思[おも]います。',
+    ['を', 'に', 'が'],
+    'toQuote',
+    'Tôi nghĩ ngày mai trời sẽ mưa.',
+    'I think it will rain tomorrow.',
+    'n4'
+  ),
+  q(
+    'to-said',
+    '田[た]中[なか]さんは すぐ 来[く]る',
+    'と',
+    ' 言[い]いました。',
+    ['を', 'に', 'で'],
+    'toQuote',
+    'Anh Tanaka nói là sẽ đến ngay.',
+    'Mr Tanaka said he would come right away.',
+    'n4'
+  ),
+  q(
+    'ga-door',
+    '風[かぜ]で ドア',
+    'が',
+    ' 開[あ]きました。',
+    ['を', 'に', 'で'],
+    'gaIntransitive',
+    'Cửa mở ra vì gió.',
+    'The door blew open in the wind.',
+    'n4'
+  ),
+  q(
+    'wo-window',
+    '暑[あつ]いですから、窓[まど]',
+    'を',
+    ' 開[あ]けて ください。',
+    ['が', 'に', 'で'],
+    'woObject',
+    'Nóng quá, hãy mở cửa sổ ra.',
+    "It's hot, so please open the window.",
+    'n4'
+  ),
+  q(
+    'ni-praised',
+    '先[せん]生[せい]',
+    'に',
+    ' 褒[ほ]められました。',
+    ['が', 'を', 'で'],
+    'niPassive',
+    'Tôi được thầy giáo khen.',
+    'I was praised by my teacher.',
+    'n4'
+  ),
+  q(
+    'ni-stepped',
+    'となりの 人[ひと]',
+    'に',
+    ' 足[あし]を 踏[ふ]まれました。',
+    ['が', 'を', 'で'],
+    'niPassive',
+    'Tôi bị người bên cạnh giẫm vào chân.',
+    'The person next to me stepped on my foot.',
+    'n4'
+  ),
+  q(
+    'ni-vegetables',
+    '母[はは]は 子[こ]ども',
+    'に',
+    ' 野[や]菜[さい]を 食[た]べさせます。',
+    ['が', 'を', 'で'],
+    'niCausative',
+    'Mẹ bắt con ăn rau.',
+    'The mother makes her child eat vegetables.',
+    'n4'
+  ),
+  q(
+    'de-cold',
+    '{風邪}[かぜ]',
+    'で',
+    ' 学[がっ]校[こう]を 休[やす]みました。',
+    ['に', 'を', 'が'],
+    'deCause',
+    'Tôi nghỉ học vì bị cảm.',
+    'I stayed home from school with a cold.',
+    'n4'
+  ),
+  q(
+    'madeni-report',
+    '金[きん]曜[よう]日[び]',
+    'までに',
+    ' レポートを 出[だ]して ください。',
+    ['まで', 'から', 'で'],
+    'madeniDeadline',
+    'Hãy nộp báo cáo trước thứ Sáu.',
+    'Please hand in the report by Friday.',
+    'n4'
+  ),
+  q(
+    'made-work',
+    '5時[じ]',
+    'まで',
+    ' 会[かい]社[しゃ]で 働[はたら]きます。',
+    ['までに', 'を', 'が'],
+    'madeUntil',
+    'Tôi làm việc ở công ty đến 5 giờ.',
+    'I work at the office until 5.',
+    'n4'
+  ),
+  q(
+    'node-rain',
+    '雨[あめ]が 降[ふ]って いる',
+    'ので',
+    '、出[で]かけません。',
+    ['のに', 'を', 'で'],
+    'nodeBecause',
+    'Vì trời đang mưa nên tôi không ra ngoài.',
+    "It's raining, so I won't go out.",
+    'n4'
+  ),
+  q(
+    'noni-fever',
+    '薬[くすり]を 飲[の]んだ',
+    'のに',
+    '、まだ 熱[ねつ]が あります。',
+    ['ので', 'を', 'で'],
+    'noniDespite',
+    'Đã uống thuốc rồi mà vẫn còn sốt.',
+    'I took medicine, but I still have a fever.',
+    'n4'
+  ),
+  q(
+    'ka-party',
+    'パーティーに 行[い]く',
+    'か',
+    ' どうか まだ わかりません。',
+    ['を', 'に', 'が'],
+    'kaEmbedded',
+    'Tôi vẫn chưa biết có đi dự tiệc hay không.',
+    "I don't know yet whether I'll go to the party.",
+    'n4'
+  ),
+  q(
+    'ni-twice',
+    '1週[しゅう]間[かん]',
+    'に',
+    ' 2回[かい] プールへ 行[い]きます。',
+    ['で', 'を', 'が'],
+    'niPer',
+    'Một tuần tôi đi bơi 2 lần.',
+    'I go to the pool twice a week.',
+    'n4'
+  ),
+  q(
+    'shika-wallet',
+    '財[さい]布[ふ]に 100円[えん]',
+    'しか',
+    ' ありません。',
+    ['を', 'で', 'に'],
+    'shikaOnly',
+    'Trong ví chỉ có 100 yên.',
+    'I only have 100 yen in my wallet.',
+    'n4'
   )
 ];
 
-/** A round goes through every question once. */
-export const PARTICLE_ROUND_SIZE = PARTICLE_QUESTIONS.length;
+/** Questions a level filter draws from. */
+export function particleQuestionsFor(filter: ParticleLevelFilter): ParticleQuestion[] {
+  return filter === 'all'
+    ? PARTICLE_QUESTIONS
+    : PARTICLE_QUESTIONS.filter((question) => question.level === filter);
+}
 
 export type ParticleRoundQuestion = ParticleQuestion & { options: Particle[] };
 
@@ -764,12 +1085,13 @@ function shuffle<T>(items: readonly T[]): T[] {
   return copy;
 }
 
-/** A round in random order, with the four choices of each question shuffled. */
-export function createParticleRound(size = PARTICLE_ROUND_SIZE): ParticleRoundQuestion[] {
-  return shuffle(PARTICLE_QUESTIONS)
-    .slice(0, size)
-    .map((question) => ({
-      ...question,
-      options: shuffle([question.answer, ...question.distractors])
-    }));
+/**
+ * A round goes through every question of the level once, in random order, with
+ * the four choices of each question shuffled.
+ */
+export function createParticleRound(filter: ParticleLevelFilter = 'all'): ParticleRoundQuestion[] {
+  return shuffle(particleQuestionsFor(filter)).map((question) => ({
+    ...question,
+    options: shuffle([question.answer, ...question.distractors])
+  }));
 }

@@ -2,8 +2,8 @@ import { describe, expect, it } from 'vitest';
 import {
   createParticleRound,
   PARTICLE_QUESTIONS,
-  PARTICLE_ROUND_SIZE,
   PARTICLE_USES,
+  particleQuestionsFor,
   rubyText,
   type RubyText
 } from './particle-questions.ts';
@@ -64,15 +64,27 @@ describe('PARTICLE_QUESTIONS', () => {
 });
 
 describe('createParticleRound', () => {
-  it('draws a round of distinct questions, each with its answer among four choices', () => {
-    const round = createParticleRound();
+  it.each(['all', 'n5', 'n4'] as const)(
+    '%s: every question of the level once, each with its answer among four choices',
+    (filter) => {
+      const round = createParticleRound(filter);
+      const expected = particleQuestionsFor(filter);
 
-    expect(round).toHaveLength(PARTICLE_ROUND_SIZE);
-    expect(new Set(round.map((question) => question.id)).size).toBe(PARTICLE_ROUND_SIZE);
+      expect(round).toHaveLength(expected.length);
+      expect(new Set(round.map((question) => question.id))).toEqual(
+        new Set(expected.map((question) => question.id))
+      );
 
-    for (const question of round) {
-      expect(question.options).toHaveLength(4);
-      expect(question.options).toContain(question.answer);
+      for (const question of round) {
+        expect(question.options).toHaveLength(4);
+        expect(question.options).toContain(question.answer);
+        expect(filter === 'all' || question.level === filter).toBe(true);
+      }
     }
+  );
+
+  it('has questions at both levels', () => {
+    expect(particleQuestionsFor('n5').length).toBeGreaterThan(0);
+    expect(particleQuestionsFor('n4').length).toBeGreaterThan(0);
   });
 });

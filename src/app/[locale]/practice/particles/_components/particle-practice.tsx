@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from 'react';
 import ExpandMoreOutlinedIcon from '@mui/icons-material/ExpandMoreOutlined';
-import { Box, Collapse, Paper, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Collapse,
+  Paper,
+  Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography
+} from '@mui/material';
 import { FuriganaText } from '@/components/furigana-text';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
@@ -18,6 +26,7 @@ import {
   PARTICLE_USES,
   PARTICLES,
   type Particle,
+  type ParticleLevelFilter,
   type ParticleRoundQuestion
 } from './particle-questions.ts';
 
@@ -98,6 +107,7 @@ function ParticleGuide() {
 
 export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
   const { locale, t } = useTranslation();
+  const [level, setLevel] = useState<ParticleLevelFilter>('all');
   const [round, setRound] = useState(initialRound);
   const [current, setCurrent] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
@@ -130,8 +140,8 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
     });
   };
 
-  const retry = () => {
-    setRound(createParticleRound());
+  const restart = (filter: ParticleLevelFilter) => {
+    setRound(createParticleRound(filter));
     setCurrent(0);
     setResults([]);
     setWrong([]);
@@ -158,6 +168,17 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
 
     return () => window.clearTimeout(timer);
   }, [answered, isLast]);
+
+  const retry = () => restart(level);
+
+  const changeLevel = (_event: unknown, value: ParticleLevelFilter | null) => {
+    if (!value || value === level) {
+      return;
+    }
+
+    setLevel(value);
+    restart(value);
+  };
 
   const score = results.filter((result) => result === 'correct').length;
   // A missed question lists its translation and the rule for its particle.
@@ -188,6 +209,21 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
           {t('particlePractice.intro')}
         </Typography>
         <ParticleGuide />
+
+        <ToggleButtonGroup
+          exclusive
+          color="primary"
+          size="small"
+          value={level}
+          onChange={changeLevel}
+          aria-label={t('particlePractice.levelLabel')}
+          // Equal-width buttons, whatever the label.
+          sx={{ alignSelf: 'center', '& .MuiToggleButton-root': { width: 88 } }}
+        >
+          <ToggleButton value="all">{t('particlePractice.levelAll')}</ToggleButton>
+          <ToggleButton value="n5">N5</ToggleButton>
+          <ToggleButton value="n4">N4</ToggleButton>
+        </ToggleButtonGroup>
 
         {!finished && (
           <>
