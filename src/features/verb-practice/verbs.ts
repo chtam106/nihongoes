@@ -367,66 +367,16 @@ export function createVerbPracticeGroups(): VerbPracticeGroup[] {
 export function displayVerbForm(verb: PracticeVerb, form: string) {
   if (!verb.kanji || !verb.kanjiReading) return { text: form, ruby: undefined };
   if (verb.dictionary === 'くる') {
-    const readings: Record<string, string> = { きます: 'き', きて: 'き', こない: 'こ' };
-    return {
-      text: form.replace(/^[きこ]/, '来'),
-      ruby: [{ base: '来', reading: readings[form] ?? 'く' }]
-    };
+    // 来 changes its reading by form: きます／きて, こない, くる.
+    if (!/^[きこく]/.test(form)) return { text: form, ruby: undefined };
+    return { text: `来${form.slice(1)}`, ruby: [{ base: '来', reading: form[0] }] };
   }
-  const root = verb.dictionary.endsWith('する')
-    ? verb.dictionary.slice(0, -2)
-    : verb.dictionary.slice(0, -1);
-  if (!form.startsWith(root)) return { text: form, ruby: undefined };
+  // The kanji replaces only its own reading, so okurigana stays: たべて → 食べて, おわって → 終わって.
+  if (!form.startsWith(verb.kanjiReading)) return { text: form, ruby: undefined };
   return {
-    text: `${verb.kanji}${form.slice(root.length)}`,
+    text: `${verb.kanji}${form.slice(verb.kanjiReading.length)}`,
     ruby: [{ base: verb.kanji, reading: verb.kanjiReading }]
   };
-}
-
-const TE_PATTERNS: VerbSubgroupId[] = [
-  'godanUtsuru',
-  'godanMbn',
-  'godanKu',
-  'godanGu',
-  'godanSu',
-  'ichidan',
-  'irregular'
-];
-const NAI_ENDINGS: Record<VerbSubgroupId, string> = {
-  godanUtsuru: 'らない',
-  godanMbn: 'まない',
-  godanKu: 'かない',
-  godanGu: 'がない',
-  godanSu: 'さない',
-  ichidan: 'ない',
-  irregular: 'しない'
-};
-
-function teVariant(dictionary: string, subgroup: VerbSubgroupId) {
-  if (subgroup === 'irregular') {
-    if (dictionary === 'くる' || dictionary.endsWith('てくる'))
-      return `${dictionary.slice(0, -2)}きて`;
-    return `${dictionary.slice(0, -2)}して`;
-  }
-  const stem = dictionary.slice(0, -1);
-  const endings: Record<Exclude<VerbSubgroupId, 'irregular'>, string> = {
-    godanUtsuru: 'って',
-    godanMbn: 'んで',
-    godanKu: 'いて',
-    godanGu: 'いで',
-    godanSu: 'して',
-    ichidan: 'て'
-  };
-  return `${stem}${endings[subgroup]}`;
-}
-
-function naiVariant(dictionary: string, subgroup: VerbSubgroupId) {
-  if (subgroup === 'irregular') {
-    if (dictionary === 'くる' || dictionary.endsWith('てくる'))
-      return `${dictionary.slice(0, -2)}こない`;
-    return `${dictionary.slice(0, -2)}しない`;
-  }
-  return `${dictionary.slice(0, -1)}${NAI_ENDINGS[subgroup]}`;
 }
 
 function shuffle<T>(items: T[]): T[] {
@@ -438,21 +388,79 @@ function shuffle<T>(items: T[]): T[] {
   return result;
 }
 
+/** Te endings of the five Group 1 patterns, used to build wrong answers. */
+const GODAN_TE_ENDINGS = ['って', 'んで', 'いて', 'いで', 'して'];
+/** Dictionary ending → あ-row sound used before ない in Group 1. */
+const A_ROW: Record<string, string> = {
+  う: 'わ',
+  く: 'か',
+  ぐ: 'が',
+  す: 'さ',
+  つ: 'た',
+  ぬ: 'な',
+  ぶ: 'ば',
+  む: 'ま',
+  る: 'ら'
+};
+
+/**
+ * Wrong answers a learner plausibly picks. `traps` are the classic mistakes
+ * (wrong group, forgetting the exception); `others` apply other Group 1 patterns.
+ */
+function wrongAnswers(verb: PracticeVerb, mode: VerbMode, subgroup: VerbSubgroupId) {
+  const masuStem = verb.masu.slice(0, -2);
+  const traps: string[] = [];
+  const others: string[] = [];
+
+  if (subgroup === 'irregular') {
+    const prefix = verb.dictionary.slice(0, -2);
+    const isKuru = verb.dictionary === 'くる';
+    if (mode === 'te') {
+      traps.push(...(isKuru ? ['くって', 'こて'] : [`${prefix}すって`, `${prefix}しって`]));
+      others.push(...(isKuru ? ['くて', 'きって'] : [`${prefix}すて`, `${prefix}さって`]));
+    } else {
+      traps.push(...(isKuru ? ['きない', 'くない'] : [`${prefix}すない`, `${prefix}さない`]));
+      others.push(
+        ...(isKuru ? ['くらない', 'きらない'] : [`${prefix}すらない`, `${prefix}しらない`])
+      );
+    }
+    return { traps, others };
+  }
+
+  const stem = verb.dictionary.slice(0, -1);
+  if (mode === 'te') {
+    // Treating a Group 1 verb as Group 2 (かきて), or the reverse (たべって).
+    traps.push(subgroup === 'ichidan' ? `${stem}って` : `${masuStem}て`);
+    // Applying the regular rule to an exception: 行きます → 行いて.
+    if (verb.specialTe) traps.push(`${stem}いて`);
+    others.push(...GODAN_TE_ENDINGS.map((ending) => `${stem}${ending}`));
+    if (subgroup !== 'ichidan') others.push(`${stem}て`);
+  } else {
+    traps.push(subgroup === 'ichidan' ? `${stem}らない` : `${masuStem}ない`);
+    const last = verb.dictionary.slice(-1);
+    // う verbs: い → あ instead of わ (あいます → ああない).
+    if (last === 'う') traps.push(`${stem}あない`);
+    // Applying the regular rule to an exception: あります → あらない.
+    if (verb.specialNai) traps.push(`${stem}${A_ROW[last]}ない`);
+    others.push(...['か', 'が', 'さ', 'ま', 'ら', 'わ'].map((sound) => `${stem}${sound}ない`));
+    others.push(`${verb.dictionary}ない`);
+  }
+  return { traps, others };
+}
+
 export function createVerbQuestion(
   verb: PracticeVerb,
   mode: VerbMode,
   subgroup: VerbSubgroupId
 ): VerbQuestion {
   const correct = verb[mode];
-  const patterns = mode === 'te' ? TE_PATTERNS : groups.map((group) => group.id);
-  const distractors = shuffle(
-    patterns
-      .filter((pattern) => pattern !== subgroup)
-      .map((pattern) =>
-        mode === 'te' ? teVariant(verb.dictionary, pattern) : naiVariant(verb.dictionary, pattern)
-      )
-      .filter((choice, index, choices) => choice !== correct && choices.indexOf(choice) === index)
-  ).slice(0, 3);
+  const { traps, others } = wrongAnswers(verb, mode, subgroup);
+  const unique = (items: string[]) =>
+    items.filter((item, index) => item !== correct && items.indexOf(item) === index);
+  // Up to two classic mistakes, then fill with other patterns.
+  const picked = shuffle(unique(traps)).slice(0, 2);
+  const rest = shuffle(unique(others).filter((item) => !picked.includes(item)));
+  const distractors = [...picked, ...rest].slice(0, 3);
   const options = shuffle([correct, ...distractors]).map((label, index) => ({
     id: `choice-${index}`,
     label
