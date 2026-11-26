@@ -29,6 +29,7 @@ import type { Locale } from '@/i18n/translations.ts';
 import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
 import { ChoiceButton } from '@/features/course/choice-button';
 import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
+import { useReviewMissedCards } from '@/features/flashcards/use-review-missed-cards.ts';
 
 type KanjiQuizDirection = 'meaning' | 'character';
 
@@ -129,6 +130,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
+  useReviewMissedCards(misses);
   const [finished, setFinished] = useState(false);
 
   const total = questions.length;

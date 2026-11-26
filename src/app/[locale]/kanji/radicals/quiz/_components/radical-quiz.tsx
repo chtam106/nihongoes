@@ -40,6 +40,7 @@ import {
   type RadicalQuizRange
 } from './radical-quiz-pool.ts';
 import { useRadicalQuizRange } from './use-radical-quiz-pool.ts';
+import { useReviewMissedCards } from '@/features/flashcards/use-review-missed-cards.ts';
 
 function shuffle<T>(items: T[]): T[] {
   const copy = [...items];
@@ -114,6 +115,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
+  useReviewMissedCards(misses);
   const [finished, setFinished] = useState(false);
 
   const total = questions.length;

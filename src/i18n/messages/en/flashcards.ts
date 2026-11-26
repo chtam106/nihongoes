@@ -52,7 +52,8 @@ export const flashcards = {
   reviewIntro:
     'Each card comes back just before you would forget it: cards you remember come back later and later, cards you do not come back soon.',
   reviewHowTo:
-    'Look at the front and recall the answer. Tap the card to check it. If you got it, choose Got it: the card comes back after 3, 8, 20, 50... days. If not, choose Not yet: the card comes back tomorrow. For a card you do not need, choose No need to review. Keys 1, 2, 3 pick a button.',
+    'Look at the front and recall the answer. Tap the card to check it. If you got it, choose Got it: the card comes back after 3, 8, 20, 50... days. If not, choose Not yet: the card comes back tomorrow. For a card you know well, choose Know it well: it comes back after 6 months. Keys 1, 2, 3 pick a button.',
+  missesQueued: 'Cards you got wrong come back tomorrow in',
   reviewDueToday:
     '{count, plural, =0 {No cards due today.} one {# card due today.} other {# cards due today.}}',
   reviewStart: 'Review now',
@@ -60,7 +61,7 @@ export const flashcards = {
   reviewGradeLabel: 'Did you remember the answer?',
   reviewAgain: 'Not yet',
   reviewGood: 'Got it',
-  reviewSkip: 'No need to review',
+  reviewKnown: 'Know it well',
   reviewIntervalTomorrow: 'again tomorrow',
   reviewIntervalDays: '{count, plural, one {again in # day} other {again in # days}}',
   reviewIntervalMonths: '{count, plural, one {again in # month} other {again in # months}}',

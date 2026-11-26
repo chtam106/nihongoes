@@ -12,6 +12,7 @@ import {
   type QuizSession,
   type ScriptPairDirection
 } from '@/features/alphabet/exercise/exercise-quiz.ts';
+import { useReviewMissedCards } from '@/features/flashcards/use-review-missed-cards.ts';
 
 function kanaCard(char: string): QuizMiss['card'] {
   const code = char.codePointAt(0) ?? 0;
@@ -90,6 +91,7 @@ export function useExerciseQuiz({
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
+  useReviewMissedCards(misses);
   const [finished, setFinished] = useState(false);
 
   const isLast = total > 0 && questionNumber >= total - 1;

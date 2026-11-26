@@ -12,18 +12,20 @@ import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab
 
 const GRADE_LABEL_KEYS: Record<ReviewGrade, string> = {
   again: 'flashcards.reviewAgain',
-  good: 'flashcards.reviewGood'
+  good: 'flashcards.reviewGood',
+  known: 'flashcards.reviewKnown'
 };
 
-const GRADE_COLORS: Record<ReviewGrade, 'error' | 'success'> = {
+const GRADE_COLORS: Record<ReviewGrade, 'error' | 'success' | 'primary'> = {
   again: 'error',
-  good: 'success'
+  good: 'success',
+  known: 'primary'
 };
 
 type ReviewSessionProps = {
   /** Cards in review order (due first, then new). Read once when the session starts. */
   cards: VocabFlashcard[];
-  /** More new cards, in order. A skipped card frees its new-card slot for the next one. */
+  /** More new cards, in order. A new card graded "known" frees its slot for the next one. */
   spareCards?: VocabFlashcard[];
   locale: Locale;
   front: FlashcardFront;
@@ -48,9 +50,6 @@ function isTyping(target: EventTarget | null) {
 
 const NO_SPARE: VocabFlashcard[] = [];
 
-/** Key for "stop reviewing", after the grade keys. */
-const SKIP_KEY = String(REVIEW_GRADES.length + 1);
-
 export function ReviewSession({
   cards,
   spareCards = NO_SPARE,
@@ -59,7 +58,7 @@ export function ReviewSession({
   doneActions
 }: ReviewSessionProps) {
   const { t } = useTranslation();
-  const { store, grade, skip } = useFlashcardReviews();
+  const { store, grade } = useFlashcardReviews();
   const [session, setSession] = useState<SessionState>(() => ({
     queue: cards,
     index: 0,
@@ -90,28 +89,17 @@ export function ReviewSession({
       return;
     }
 
+    // A new card already known does not use a new-card slot: bring in the next one.
+    const freesSlot = value === 'known' && store.cards[card.id] === undefined;
     grade(card.id, value);
-    setSession((previous) => ({
-      ...previous,
-      index: previous.index + 1,
-      reviewed: previous.reviewed + 1
-    }));
-  };
-
-  const handleSkip = () => {
-    if (!card) {
-      return;
-    }
-
-    const wasNew = store.cards[card.id] === undefined;
-    skip(card.id);
     setSession((previous) => {
-      const refill = wasNew ? spareCards[previous.spareUsed] : undefined;
+      const refill = freesSlot ? spareCards[previous.spareUsed] : undefined;
 
       return {
         ...previous,
         queue: refill ? [...previous.queue, refill] : previous.queue,
         index: previous.index + 1,
+        reviewed: previous.reviewed + 1,
         spareUsed: previous.spareUsed + (refill ? 1 : 0)
       };
     });
@@ -136,9 +124,6 @@ export function ReviewSession({
       if (position >= 0) {
         event.preventDefault();
         handleGrade(REVIEW_GRADES[position]);
-      } else if (event.key === SKIP_KEY) {
-        event.preventDefault();
-        handleSkip();
       }
     };
 
@@ -221,21 +206,6 @@ export function ReviewSession({
             </Box>
           </Button>
         ))}
-        <Button
-          variant="outlined"
-          color="inherit"
-          onClick={handleSkip}
-          aria-keyshortcuts={SKIP_KEY}
-          sx={{
-            minHeight: 56,
-            color: 'text.secondary',
-            borderColor: 'divider',
-            textTransform: 'none',
-            fontWeight: 600
-          }}
-        >
-          {t('flashcards.reviewSkip')}
-        </Button>
       </Box>
     </Stack>
   );
