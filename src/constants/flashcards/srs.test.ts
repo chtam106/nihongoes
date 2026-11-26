@@ -7,7 +7,8 @@ import {
   EMPTY_REVIEW_STORE,
   gradeCard,
   mergeReviewStores,
-  suspendCard,
+  recordMiss,
+  KNOWN_INTERVAL,
   newCardsLeft,
   nextInterval,
   sanitizeReviewStore,
@@ -182,34 +183,56 @@ describe('mergeReviewStores', () => {
   });
 });
 
-describe('suspendCard', () => {
-  it('never brings a stopped card back, and keeps today’s new cards free', () => {
-    const store: ReviewStore = {
-      cards: { due: card({ due: TODAY - 1 }) },
-      newDay: TODAY,
-      newCount: 2
-    };
-    const stopped = suspendCard(suspendCard(store, 'due', TODAY), 'new', TODAY);
+describe('known', () => {
+  it('waits 6 months for a new card, then grows like Got it', () => {
+    const known = gradeCard(undefined, 'known', TODAY);
 
-    expect(stopped).toMatchObject({ newDay: TODAY, newCount: 2 });
-    expect(dueCardIds(stopped, TODAY + 1000)).toEqual([]);
-    expect(buildReviewQueue(['due', 'new', 'other'], stopped, TODAY + 1000)).toEqual({
-      due: [],
-      fresh: ['other'],
-      spare: []
-    });
+    expect(known).toMatchObject({ due: TODAY + KNOWN_INTERVAL, interval: KNOWN_INTERVAL, reps: 1 });
+    expect(nextInterval(known, 'good')).toBe(450);
+    expect(nextInterval(known, 'known')).toBe(450);
   });
 
-  it('survives storage and keeps the most recent choice when merging', () => {
-    const stopped = suspendCard(EMPTY_REVIEW_STORE, 'a', TODAY);
-    const reviewedLater: ReviewStore = {
-      cards: { a: card({ last: TODAY + 1 }) },
-      newDay: 0,
-      newCount: 0
-    };
+  it('never shortens a gap that is already longer', () => {
+    expect(nextInterval(card({ interval: 300 }), 'known')).toBe(750);
+  });
 
-    expect(sanitizeReviewStore(JSON.parse(JSON.stringify(stopped)))).toEqual(stopped);
-    expect(mergeReviewStores(stopped, reviewedLater).cards.a.suspended).toBeUndefined();
-    expect(mergeReviewStores(stopped, EMPTY_REVIEW_STORE).cards.a.suspended).toBe(true);
+  it('does not use up a new-card slot', () => {
+    const store: ReviewStore = { cards: {}, newDay: TODAY, newCount: 4 };
+
+    expect(applyGrade(store, 'a', 'known', TODAY)).toMatchObject({ newDay: TODAY, newCount: 4 });
+  });
+
+  it('reads cards an older build marked "no need to review" as known', () => {
+    const stored = { cards: { a: { ...card({ interval: 0, due: TODAY }), suspended: true } } };
+
+    expect(sanitizeReviewStore(stored).cards.a).toEqual(
+      card({ interval: KNOWN_INTERVAL, due: TODAY - 10 + KNOWN_INTERVAL })
+    );
+  });
+});
+
+describe('recordMiss', () => {
+  it('brings a missed card back tomorrow without using a new-card slot', () => {
+    const store: ReviewStore = { cards: {}, newDay: TODAY, newCount: 3 };
+    const next = recordMiss(store, 'a', TODAY);
+
+    expect(next.cards.a).toMatchObject({ due: TODAY + 1, interval: 0 });
+    expect(next).toMatchObject({ newDay: TODAY, newCount: 3 });
+  });
+
+  it('resets a learned card and counts the lapse', () => {
+    const next = recordMiss(
+      { cards: { a: card({ due: TODAY + 30 }) }, newDay: 0, newCount: 0 },
+      'a',
+      TODAY
+    );
+
+    expect(next.cards.a).toMatchObject({ due: TODAY + 1, interval: 0, lapses: 1 });
+  });
+
+  it('changes nothing for a card already coming back tomorrow', () => {
+    const missed = recordMiss(EMPTY_REVIEW_STORE, 'a', TODAY);
+
+    expect(recordMiss(missed, 'a', TODAY)).toBe(missed);
   });
 });

@@ -2,8 +2,10 @@
 
 import { useState } from 'react';
 import BookmarkAddOutlined from '@mui/icons-material/BookmarkAddOutlined';
-import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Button, IconButton, Link, Stack, Typography } from '@mui/material';
 import { FuriganaText } from '@/components/furigana-text';
+import { LocaleLink } from '@/components/locale-link';
+import { routes } from '@/constants/routes.ts';
 import type { FlashcardCard } from '@/constants/flashcards/collections.ts';
 import { SaveToCollectionDialog } from '@/features/flashcards/save-to-collection-dialog.tsx';
 import { useSaveCardReady } from '@/features/flashcards/save-card-gesture.tsx';
@@ -199,6 +201,15 @@ function MissListBody({ misses, onSave, onSaveAll }: MissListBodyProps) {
           </Button>
         )}
       </Box>
+      {misses.some((miss) => miss.card) && (
+        <Typography variant="body1" color="text.secondary" sx={{ mb: 1.5 }}>
+          {t('flashcards.missesQueued')}{' '}
+          <Link component={LocaleLink} to={routes.flashcardReview} sx={{ fontWeight: 600 }}>
+            {t('flashcards.reviewTitle')}
+          </Link>
+          .
+        </Typography>
+      )}
       <Stack component="ol" spacing={0} sx={{ m: 0, p: 0, listStyle: 'none' }}>
         {misses.map((miss, missIndex) => {
           const glyph = promptIsGlyph(miss.prompt);

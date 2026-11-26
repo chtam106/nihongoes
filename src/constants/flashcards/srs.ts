@@ -1,9 +1,10 @@
 import { storageKey } from '@/constants/site.ts';
 
 /**
- * Spaced repetition (SRS) for flashcards: a small SM-2 variant with two
+ * Spaced repetition (SRS) for flashcards: a small SM-2 variant with three
  * grades. "again" (not remembered) brings the card back tomorrow; "good"
- * (remembered) multiplies the gap by the card's ease: 3, 8, 20, 50... days.
+ * (remembered) multiplies the gap by the card's ease: 3, 8, 20, 50... days;
+ * "known" (remembered well) waits at least 6 months, then grows the same way.
  *
  * Dates are whole local days (`dayNumber`), not timestamps, so a card due
  * "tomorrow" turns due at local midnight whatever time it was reviewed.
@@ -14,7 +15,7 @@ export const FLASHCARD_REVIEWS_KEY = storageKey('FLASHCARD_REVIEWS');
 /** New cards a learner may start per day, across every collection. */
 export const NEW_CARDS_PER_DAY = 10;
 
-export const REVIEW_GRADES = ['again', 'good'] as const;
+export const REVIEW_GRADES = ['again', 'good', 'known'] as const;
 
 export type ReviewGrade = (typeof REVIEW_GRADES)[number];
 
@@ -31,8 +32,6 @@ export type ReviewCard = {
   lapses: number;
   /** Day of the last review. Merging keeps the copy reviewed most recently. */
   last: number;
-  /** The learner chose to stop reviewing this card. It is never due again. */
-  suspended?: true;
 };
 
 export type ReviewStore = {
@@ -50,6 +49,8 @@ const START_EASE = 2.5;
 const FIRST_INTERVAL = 3;
 /** Days before a card not remembered comes back. */
 const AGAIN_INTERVAL = 1;
+/** Shortest gap after "known": about 6 months. */
+export const KNOWN_INTERVAL = 180;
 const MIN_EASE = 1.3;
 const MAX_EASE = 3.5;
 const MAX_INTERVAL = 3650;
@@ -74,11 +75,12 @@ export function nextInterval(card: ReviewCard | undefined, grade: ReviewGrade): 
     return AGAIN_INTERVAL;
   }
 
-  if (!card || card.interval === 0) {
-    return FIRST_INTERVAL;
-  }
+  const good =
+    !card || card.interval === 0
+      ? FIRST_INTERVAL
+      : clampInterval(Math.max(card.interval + 1, card.interval * card.ease));
 
-  return clampInterval(Math.max(card.interval + 1, card.interval * card.ease));
+  return grade === 'known' ? Math.max(KNOWN_INTERVAL, good) : good;
 }
 
 export function gradeCard(
@@ -120,7 +122,10 @@ export function newCardsLeft(store: ReviewStore, today: number, limit = NEW_CARD
   return Math.max(0, limit - used);
 }
 
-/** Save a grade. A card graded for the first time counts toward today's new cards. */
+/**
+ * Save a grade. A card graded for the first time counts toward today's new
+ * cards, unless it was already known: that frees the slot for another card.
+ */
 export function applyGrade(
   store: ReviewStore,
   cardId: string,
@@ -128,7 +133,7 @@ export function applyGrade(
   today: number
 ): ReviewStore {
   const previous = store.cards[cardId];
-  const isNew = previous === undefined;
+  const isNew = previous === undefined && grade !== 'known';
   const newCount = isNew ? (store.newDay === today ? store.newCount : 0) + 1 : store.newCount;
 
   return {
@@ -138,32 +143,23 @@ export function applyGrade(
   };
 }
 
-export function isDue(card: ReviewCard | undefined, today: number) {
-  return card !== undefined && !card.suspended && card.due <= today;
-}
-
 /**
- * Stop reviewing a card for good. It does not use up one of today's new cards,
- * and merging keeps it stopped unless the other device reviewed it later.
+ * A quiz answer was wrong: treat it like "again", so the card comes back
+ * tomorrow. Unlike a review grade it does not use up one of today's new cards.
  */
-export function suspendCard(store: ReviewStore, cardId: string, today: number): ReviewStore {
+export function recordMiss(store: ReviewStore, cardId: string, today: number): ReviewStore {
   const previous = store.cards[cardId];
 
-  return {
-    ...store,
-    cards: {
-      ...store.cards,
-      [cardId]: {
-        due: previous?.due ?? today,
-        interval: previous?.interval ?? 0,
-        ease: previous?.ease ?? START_EASE,
-        reps: previous?.reps ?? 0,
-        lapses: previous?.lapses ?? 0,
-        last: today,
-        suspended: true
-      }
-    }
-  };
+  // Already waiting to come back by tomorrow after a miss: nothing to change.
+  if (previous && previous.interval === 0 && previous.due <= today + 1) {
+    return store;
+  }
+
+  return { ...store, cards: { ...store.cards, [cardId]: gradeCard(previous, 'again', today) } };
+}
+
+export function isDue(card: ReviewCard | undefined, today: number) {
+  return card !== undefined && card.due <= today;
 }
 
 export type ReviewQueue = {
@@ -171,7 +167,7 @@ export type ReviewQueue = {
   due: string[];
   /** Cards never reviewed, in the given order, capped by today's new-card limit. */
   fresh: string[];
-  /** The other never-reviewed cards, in order. They refill `fresh` when a card is skipped. */
+  /** The other never-reviewed cards, in order. They refill `fresh` when a new card is known. */
   spare: string[];
 };
 
@@ -244,14 +240,21 @@ function sanitizeReviewCard(value: unknown): ReviewCard | null {
     return null;
   }
 
+  // A short-lived build marked cards "no need to review" (`suspended`): they
+  // read as known, back in at least `KNOWN_INTERVAL` days.
+  const known = card.suspended === true;
+  const interval = Math.min(
+    known ? Math.max(card.interval, KNOWN_INTERVAL) : card.interval,
+    MAX_INTERVAL
+  );
+
   return {
-    due: card.due,
-    interval: Math.min(card.interval, MAX_INTERVAL),
+    due: known ? Math.max(card.due, card.last + KNOWN_INTERVAL) : card.due,
+    interval,
     ease: clampEase(card.ease),
     reps: card.reps,
     lapses: card.lapses,
-    last: card.last,
-    ...(card.suspended === true ? { suspended: true as const } : {})
+    last: card.last
   };
 }
 
