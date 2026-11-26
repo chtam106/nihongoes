@@ -33,17 +33,15 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I try to practice judo every year too.',
-            vi: 'Hàng năm tôi cũng cố gắng tập judo.'
+            en: 'I make a point of walking for 30 minutes every morning.',
+            vi: 'Tôi cố gắng đi bộ 30 phút mỗi sáng.'
           },
-          jp: '毎年 柔道も 練習する ように しています。',
+          jp: '毎朝 30分 歩く ように しています。',
           ruby: [
             { base: '毎', reading: 'まい' },
-            { base: '年', reading: 'とし' },
-            { base: '柔', reading: 'じゅう' },
-            { base: '道', reading: 'どう' },
-            { base: '練', reading: 'れん' },
-            { base: '習', reading: 'しゅう' }
+            { base: '朝', reading: 'あさ' },
+            { base: '分', reading: 'ぷん' },
+            { base: '歩', reading: 'ある' }
           ]
         },
         {
@@ -103,17 +101,15 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I try to use vehicles freely.',
-            vi: 'Tôi cố gắng dùng phương tiện một cách tự do.'
+            en: 'I try to take the stairs instead of the elevator.',
+            vi: 'Tôi cố gắng đi cầu thang thay vì dùng thang máy.'
           },
-          jp: '乗り物を 自由に 利用する ように しています。',
+          jp: 'エレベーターを 使わないで、階段を 使う ように しています。',
           ruby: [
-            { base: '乗', reading: 'の' },
-            { base: '物', reading: 'もの' },
-            { base: '自', reading: 'じ' },
-            { base: '由', reading: 'ゆう' },
-            { base: '利', reading: 'り' },
-            { base: '用', reading: 'よう' }
+            { base: '使', reading: 'つか' },
+            { base: '階', reading: 'かい' },
+            { base: '段', reading: 'だん' },
+            { base: '使', reading: 'つか' }
           ]
         }
       ]
@@ -159,48 +155,56 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I have started to challenge myself more.',
-            vi: 'Tôi đã bắt đầu thử sức nhiều hơn.'
+            en: 'I have started taking on new challenges more than before.',
+            vi: 'Tôi đã bắt đầu thử sức với những điều mới nhiều hơn trước.'
           },
-          jp: 'もっと チャレンジする ようになりました。'
+          jp: '前より 新しい ことに チャレンジする ようになりました。',
+          ruby: [
+            { base: '前', reading: 'まえ' },
+            { base: '新', reading: 'あたら' }
+          ]
         },
         {
           prompt: {
-            en: 'Most people have come to use steam trains.',
-            vi: 'Hầu hết mọi người đã dùng tàu lửa hơi nước.'
+            en: 'These days many people have started reading books on their phones.',
+            vi: 'Gần đây nhiều người đã chuyển sang đọc sách trên điện thoại.'
           },
-          jp: 'ほとんど 人が 汽車を 利用する ようになりました。',
+          jp: '最近は 多くの 人が スマホで 本を 読む ようになりました。',
           ruby: [
+            { base: '最', reading: 'さい' },
+            { base: '近', reading: 'きん' },
+            { base: '多', reading: 'おお' },
             { base: '人', reading: 'ひと' },
-            { base: '汽', reading: 'き' },
-            { base: '車', reading: 'しゃ' },
-            { base: '利', reading: 'り' },
-            { base: '用', reading: 'よう' }
+            { base: '本', reading: 'ほん' },
+            { base: '読', reading: 'よ' }
           ]
         },
         {
           prompt: {
-            en: 'I have become able to carry luggage far away.',
-            vi: 'Tôi đã vận chuyển được hành lý đến nơi xa.'
+            en: 'I can finally read Japanese newspapers.',
+            vi: 'Cuối cùng tôi cũng đọc được báo tiếng Nhật.'
           },
-          jp: '荷物を 遠くへ 運べる ようになりました。',
+          jp: 'やっと 日本語の 新聞が 読める ようになりました。',
           ruby: [
-            { base: '荷', reading: 'に' },
-            { base: '物', reading: 'もつ' },
-            { base: '遠', reading: 'とお' },
-            { base: '運', reading: 'はこ' }
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '新', reading: 'しん' },
+            { base: '聞', reading: 'ぶん' },
+            { base: '読', reading: 'よ' }
           ]
         },
         {
           prompt: {
-            en: 'My opinion has come to differ from theirs.',
-            vi: 'Ý kiến của tôi đã khác với họ.'
+            en: 'My child has started eating vegetables.',
+            vi: 'Con tôi đã chịu ăn rau rồi.'
           },
-          jp: '意見が 違う ようになりました。',
+          jp: '子どもが 野菜を 食べる ようになりました。',
           ruby: [
-            { base: '意', reading: 'い' },
-            { base: '見', reading: 'けん' },
-            { base: '違', reading: 'ちが' }
+            { base: '子', reading: 'こ' },
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' },
+            { base: '食', reading: 'た' }
           ]
         }
       ]
@@ -210,238 +214,171 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Please try not to be in an accident.',
-            vi: 'Xin đừng để gặp tai nạn.'
+            en: 'Please be careful so you do not get into an accident.',
+            vi: 'Hãy cẩn thận để không gặp tai nạn.'
           },
-          jp: '事故に あわない ように してください。',
+          jp: '事故に あわない ように、気を つけて ください。',
           ruby: [
             { base: '事', reading: 'じ' },
-            { base: '故', reading: 'こ' }
+            { base: '故', reading: 'こ' },
+            { base: '気', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: "Please try not to go past 7 o'clock.",
-            vi: 'Xin đừng trễ quá 7 giờ.'
+            en: 'Please make sure you are not late for the meeting.',
+            vi: 'Hãy cố gắng đừng đến họp muộn.'
           },
-          jp: '7時を 過ぎない ように してください。',
+          jp: '会議には 遅れない ように して ください。',
+          ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '遅', reading: 'おく' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Please be sure to come by eight tomorrow.',
+            vi: 'Ngày mai hãy đến trước 8 giờ nhé.'
+          },
+          jp: 'あしたは 8時までに 来る ように して ください。',
           ruby: [
             { base: '時', reading: 'じ' },
-            { base: '過', reading: 'す' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Please be sure to come every week.',
-            vi: 'Nhất định hãy đến hàng tuần.'
-          },
-          jp: '毎週 必ず 来る ように してください。',
-          ruby: [
-            { base: '毎', reading: 'まい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '必', reading: 'かなら' },
             { base: '来', reading: 'く' }
           ]
         },
         {
           prompt: {
-            en: 'Please never forget the guests.',
-            vi: 'Tuyệt đối đừng quên quý khách.'
+            en: 'Please make sure not to forget the important documents.',
+            vi: 'Hãy nhớ đừng quên giấy tờ quan trọng.'
           },
-          jp: 'お客様を 絶対に 忘れない ように してください。',
+          jp: '大切な 書類を 忘れない ように して ください。',
           ruby: [
-            { base: '客', reading: 'きゃく' },
-            { base: '様', reading: 'さま' },
-            { base: '絶', reading: 'ぜっ' },
-            { base: '対', reading: 'たい' },
+            { base: '大', reading: 'たい' },
+            { base: '切', reading: 'せつ' },
+            { base: '書', reading: 'しょ' },
+            { base: '類', reading: 'るい' },
             { base: '忘', reading: 'わす' }
           ]
         },
         {
           prompt: {
-            en: 'Please try to take care of your feelings.',
-            vi: 'Hãy cố gắng giữ tâm thế tốt.'
+            en: 'Please make sure to take your medicine before bed.',
+            vi: 'Hãy nhớ uống thuốc trước khi ngủ.'
           },
-          jp: '気持ちを 大切に する ように してください。',
+          jp: '寝る 前に 薬を 飲む ように して ください。',
           ruby: [
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' },
-            { base: '大', reading: 'たい' },
-            { base: '切', reading: 'せつ' }
+            { base: '寝', reading: 'ね' },
+            { base: '前', reading: 'まえ' },
+            { base: '薬', reading: 'くすり' },
+            { base: '飲', reading: 'の' }
           ]
         }
       ]
     },
     {
-      pattern: 'na-adj から',
+      pattern: 'na-adj / N + だから',
       items: [
         {
           prompt: {
-            en: 'Because today is special, many guests come.',
-            vi: 'Vì hôm nay đặc biệt nên nhiều khách đến.'
+            en: 'I am free today, so let us go see a movie or something.',
+            vi: 'Hôm nay rảnh nên đi xem phim đi.'
           },
-          jp: '今日は 特別な から、大勢の お客様が 来ます。',
+          jp: '今日は 暇だから、映画でも 見に 行こう。',
           ruby: [
             { base: '今', reading: 'きょ' },
             { base: '日', reading: 'う' },
-            { base: '特', reading: 'とく' },
-            { base: '別', reading: 'べつ' },
-            { base: '大', reading: 'おお' },
-            { base: '勢', reading: 'ぜい' },
-            { base: '客', reading: 'きゃく' },
-            { base: '様', reading: 'さま' },
-            { base: '来', reading: 'き' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because the town is quiet, I take a steamship.',
-            vi: 'Vì phố yên tĩnh nên tôi đi tàu thủy hơi nước.'
-          },
-          jp: '町が 静かな から、汽船で 行きます。',
-          ruby: [
-            { base: '町', reading: 'まち' },
-            { base: '静', reading: 'しず' },
-            { base: '汽', reading: 'き' },
-            { base: '船', reading: 'せん' },
+            { base: '暇', reading: 'ひま' },
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '見', reading: 'み' },
             { base: '行', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'Because it is convenient, I use a rare vehicle.',
-            vi: 'Vì tiện nên tôi dùng một phương tiện hiếm.'
+            en: 'It is quiet here, so let us study here.',
+            vi: 'Chỗ này yên tĩnh nên mình học ở đây nhé.'
           },
-          jp: '便利な から、珍しい 乗り物を 利用します。',
+          jp: 'ここは 静かだから、ここで 勉強しましょう。',
           ruby: [
+            { base: '静', reading: 'しず' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Trains are convenient, so I use them every day.',
+            vi: 'Tàu điện tiện nên ngày nào tôi cũng đi.'
+          },
+          jp: '電車は 便利だから、毎日 使っています。',
+          ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
             { base: '便', reading: 'べん' },
             { base: '利', reading: 'り' },
-            { base: '珍', reading: 'めずら' },
-            { base: '乗', reading: 'の' },
-            { base: '物', reading: 'もの' },
-            { base: '利', reading: 'り' },
-            { base: '用', reading: 'よう' }
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '使', reading: 'つか' }
           ]
         },
         {
           prompt: {
-            en: 'Because I am free, I carry boxes far away.',
-            vi: 'Vì rảnh nên tôi vận chuyển thùng đến nơi xa.'
+            en: 'This river is dangerous, so please do not swim in it.',
+            vi: 'Con sông này nguy hiểm, xin đừng bơi.'
           },
-          jp: '暇な から、箱を 遠くへ 運びます。',
+          jp: 'この 川は 危険ですから、泳がないで ください。',
           ruby: [
-            { base: '暇', reading: 'ひま' },
-            { base: '箱', reading: 'はこ' },
-            { base: '遠', reading: 'とお' },
-            { base: '運', reading: 'はこ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because I am healthy, I go swimming.',
-            vi: 'Vì khỏe nên tôi đi bơi.'
-          },
-          jp: '元気な から、水泳に 行きます。',
-          ruby: [
-            { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' },
-            { base: '水', reading: 'すい' },
-            { base: '泳', reading: 'えい' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because it is dangerous, people meet with accidents.',
-            vi: 'Vì nguy hiểm nên người ta gặp tai nạn.'
-          },
-          jp: '危険な から、事故に あいます。',
-          ruby: [
+            { base: '川', reading: 'かわ' },
             { base: '危', reading: 'き' },
             { base: '険', reading: 'けん' },
-            { base: '事', reading: 'じ' },
-            { base: '故', reading: 'こ' }
+            { base: '泳', reading: 'およ' }
           ]
         },
         {
           prompt: {
-            en: 'Because I am free, I save money every month.',
-            vi: 'Vì rảnh nên tôi tiết kiệm tiền hàng tháng.'
+            en: 'My grandmother is in good health, so she goes swimming every morning.',
+            vi: 'Bà tôi khỏe nên sáng nào cũng đi bơi.'
           },
-          jp: '暇な から、毎月 貯金します。',
+          jp: '祖母は 元気だから、毎朝 プールへ 泳ぎに 行きます。',
           ruby: [
-            { base: '暇', reading: 'ひま' },
-            { base: '毎', reading: 'まい' },
-            { base: '月', reading: 'つき' },
-            { base: '貯', reading: 'ちょ' },
-            { base: '金', reading: 'きん' }
-          ]
-        },
-        {
-          prompt: {
-            en: "Because I am busy, I go past 7 o'clock.",
-            vi: 'Vì bận nên tôi trễ quá 7 giờ.'
-          },
-          jp: '大変な から、7時を 過ぎます。',
-          ruby: [
-            { base: '大', reading: 'たい' },
-            { base: '変', reading: 'へん' },
-            { base: '時', reading: 'じ' },
-            { base: '過', reading: 'す' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because work is convenient, I get used to it.',
-            vi: 'Vì công việc tiện nên tôi quen.'
-          },
-          jp: '便利な から、仕事に 慣れます。',
-          ruby: [
-            { base: '便', reading: 'べん' },
-            { base: '利', reading: 'り' },
-            { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' },
-            { base: '慣', reading: 'な' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because it is inconvenient, the food goes bad.',
-            vi: 'Vì bất tiện nên thức ăn bị thiu.'
-          },
-          jp: '不便な から、食べ物が 腐ります。',
-          ruby: [
-            { base: '不', reading: 'ふ' },
-            { base: '便', reading: 'べん' },
-            { base: '食', reading: 'た' },
-            { base: '物', reading: 'もの' },
-            { base: '腐', reading: 'くさ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because it is special, my opinion differs.',
-            vi: 'Vì đặc biệt nên ý kiến tôi khác.'
-          },
-          jp: '特別な から、意見が 違います。',
-          ruby: [
-            { base: '特', reading: 'とく' },
-            { base: '別', reading: 'べつ' },
-            { base: '意', reading: 'い' },
-            { base: '見', reading: 'けん' },
-            { base: '違', reading: 'ちが' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Because I am healthy, I challenge myself.',
-            vi: 'Vì khỏe nên tôi thử sức.'
-          },
-          jp: '元気な から、新しい ことに チャレンジします。',
-          ruby: [
+            { base: '祖', reading: 'そ' },
+            { base: '母', reading: 'ぼ' },
             { base: '元', reading: 'げん' },
             { base: '気', reading: 'き' },
-            { base: '新', reading: 'あたら' }
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '泳', reading: 'およ' },
+            { base: '行', reading: 'い' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'It is far from the station and inconvenient, so I want to move.',
+            vi: 'Xa ga, bất tiện nên tôi muốn chuyển nhà.'
+          },
+          jp: '駅から 遠くて 不便だから、引っ越したいです。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '遠', reading: 'とお' },
+            { base: '不', reading: 'ふ' },
+            { base: '便', reading: 'べん' },
+            { base: '引', reading: 'ひ' },
+            { base: '越', reading: 'こ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'It is going to rain tomorrow, so take an umbrella.',
+            vi: 'Mai trời mưa nên nhớ mang ô.'
+          },
+          jp: 'あしたは 雨だから、傘を 持って 行って ください。',
+          ruby: [
+            { base: '雨', reading: 'あめ' },
+            { base: '傘', reading: 'かさ' },
+            { base: '持', reading: 'も' },
+            { base: '行', reading: 'い' }
           ]
         }
       ]
@@ -468,7 +405,7 @@ export const n4Lesson36SentenceWriting: LessonSentenceWriting = {
         en: 'I make an effort to exercise every day.',
         vi: 'Tôi cố gắng vận động mỗi ngày.'
       },
-      jp: '毎日 運動 する ように しています。',
+      jp: '毎日 運動する ように しています。',
       ruby: [
         { base: '毎', reading: 'まい' },
         { base: '日', reading: 'にち' },

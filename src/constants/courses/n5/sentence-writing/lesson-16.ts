@@ -86,33 +86,35 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I put in the card, take out money, and start shopping.',
-            vi: 'Tôi cho thẻ vào, lấy tiền ra, rồi bắt đầu mua sắm.'
+            en: 'Insert the card, enter your PIN, and withdraw the money.',
+            vi: 'Cho thẻ vào, bấm mã số rồi rút tiền.'
           },
-          jp: 'カードを 入れて、お金を 出して、買い物を 始めます。',
+          jp: 'カードを 入れて、番号を 押して、お金を 下ろします。',
           ruby: [
             { base: '入', reading: 'い' },
+            { base: '番', reading: 'ばん' },
+            { base: '号', reading: 'ごう' },
+            { base: '押', reading: 'お' },
             { base: '金', reading: 'かね' },
-            { base: '出', reading: 'だ' },
-            { base: '買', reading: 'か' },
-            { base: '物', reading: 'もの' },
-            { base: '始', reading: 'はじ' }
+            { base: '下', reading: 'お' }
           ]
         },
         {
           prompt: {
-            en: 'I get off the train, press the button, and enter the university.',
-            vi: 'Tôi xuống tàu, bấm nút, rồi vào đại học.'
+            en: 'I arrive at the university, go into the classroom, and attend class.',
+            vi: 'Tôi đến trường, vào lớp rồi học.'
           },
-          jp: '電車を 降りて、ボタンを 押して、大学に 入ります。',
+          jp: '大学に 着いて、教室に 入って、授業を 受けます。',
           ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '車', reading: 'しゃ' },
-            { base: '降', reading: 'お' },
-            { base: '押', reading: 'お' },
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
-            { base: '入', reading: 'はい' }
+            { base: '着', reading: 'つ' },
+            { base: '教', reading: 'きょう' },
+            { base: '室', reading: 'しつ' },
+            { base: '入', reading: 'はい' },
+            { base: '授', reading: 'じゅ' },
+            { base: '業', reading: 'ぎょう' },
+            { base: '受', reading: 'う' }
           ]
         }
       ]
@@ -339,15 +341,6 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'This child has big ears.', vi: 'Đứa trẻ này tai to.' },
-          jp: 'この 子は 耳が 大きいです。',
-          ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '耳', reading: 'みみ' },
-            { base: '大', reading: 'おお' }
-          ]
-        },
-        {
           prompt: { en: 'Tanaka has long legs.', vi: 'Anh Tanaka chân dài.' },
           jp: '田中さんは 足が 長いです。',
           ruby: [
@@ -358,49 +351,11 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I have white teeth.', vi: 'Tôi răng trắng.' },
-          jp: '私は 歯が 白いです。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '歯', reading: 'は' },
-            { base: '白', reading: 'しろ' }
-          ]
-        },
-        {
           prompt: { en: 'Maria has a round face.', vi: 'Maria mặt tròn.' },
           jp: 'マリアさんは 顔が 丸いです。',
           ruby: [
             { base: '顔', reading: 'かお' },
             { base: '丸', reading: 'まる' }
-          ]
-        },
-        {
-          prompt: { en: 'Alex has a big mouth.', vi: 'Alex miệng to.' },
-          jp: 'アレックスさんは 口が 大きいです。',
-          ruby: [
-            { base: '口', reading: 'くち' },
-            { base: '大', reading: 'おお' }
-          ]
-        },
-        {
-          prompt: { en: 'I have a good head (I am smart).', vi: 'Tôi đầu óc tốt (thông minh).' },
-          jp: '私は 頭が いいです。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '頭', reading: 'あたま' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'My body is fine, but my stomach is big.',
-            vi: 'Cơ thể tôi ổn, nhưng bụng to.'
-          },
-          jp: '体は 元気ですが、おなかが 大きいです。',
-          ruby: [
-            { base: '体', reading: 'からだ' },
-            { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' },
-            { base: '大', reading: 'おお' }
           ]
         }
       ]
@@ -446,12 +401,16 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'How do you get on this train?', vi: 'Lên tàu này bằng cách nào?' },
-          jp: 'この 電車に どうやって 乗りますか。',
+          prompt: {
+            en: 'How do you get to the university? ...By bus.',
+            vi: 'Anh đến trường bằng cách nào? ...Bằng xe buýt.'
+          },
+          jp: '大学まで どうやって 来ますか。……バスで 来ます。',
           ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '車', reading: 'しゃ' },
-            { base: '乗', reading: 'の' }
+            { base: '大', reading: 'だい' },
+            { base: '学', reading: 'がく' },
+            { base: '来', reading: 'き' },
+            { base: '来', reading: 'き' }
           ]
         }
       ]
@@ -478,11 +437,10 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Which train do you get off?', vi: 'Anh/chị xuống tàu nào?' },
-          jp: 'どの 電車を 降りますか。',
+          prompt: { en: 'Which station do you get off at?', vi: 'Anh xuống ở ga nào?' },
+          jp: 'どの 駅で 降りますか。',
           ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '車', reading: 'しゃ' },
+            { base: '駅', reading: 'えき' },
             { base: '降', reading: 'お' }
           ]
         },
@@ -496,18 +454,18 @@ export const n5Lesson16SentenceWriting: LessonSentenceWriting = {
   phrases: [
     {
       prompt: { en: 'That is amazing!', vi: 'Tuyệt quá!' },
-      jp: 'すごい ですね。'
+      jp: 'すごいですね。'
     },
     {
       prompt: {
         en: 'No, I still have a long way to go. (humble reply to praise)',
         vi: 'Không, còn kém lắm. (khiêm tốn khi được khen)'
       },
-      jp: 'いいえ、まだまだ です。'
+      jp: 'いいえ、まだまだです。'
     },
     {
       prompt: { en: 'Are you withdrawing money?', vi: 'Anh/Chị rút tiền phải không?' },
-      jp: 'お引き出し ですか。',
+      jp: 'お引き出しですか。',
       ruby: [
         { base: '引', reading: 'ひ' },
         { base: '出', reading: 'だ' }

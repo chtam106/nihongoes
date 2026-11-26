@@ -532,7 +532,7 @@ export const n5Lesson4: Lesson = {
         },
         {
           speakerId: 'yamada',
-          jp: '「あすか」ですか。5275 の 2725 です。',
+          jp: '「あすか」ですか。5275 の 2725です。',
           romaji: '"Asuka" desu ka. Gofutahyaku nijūnana no nihyakunijūgo desu.',
           meaning: {
             en: '"Asuka"? It is 5275-2725.',
@@ -950,7 +950,7 @@ export const n5Lesson4: Lesson = {
           ]
         },
         {
-          jp: '山田さんの 電話番号は 871 の 6813 です。',
+          jp: '山田さんの 電話番号は 871 の 6813です。',
           romaji: 'Yamada-san no denwa bangō wa hachihyaku nanajū no roppesen jūsan desu.',
           meaning: {
             en: "Mr. Yamada's phone number is 871-6813.",
@@ -967,7 +967,7 @@ export const n5Lesson4: Lesson = {
           ]
         },
         {
-          jp: '871 の 6813 ですね。',
+          jp: '871 の 6813ですね。',
           romaji: 'Hachihyaku nanajū no roppesen jūsan desu ne.',
           meaning: { en: '871-6813, right?', vi: '871-6813, đúng không ạ.' },
           dialogueGroup: 'confirm'
@@ -1024,7 +1024,7 @@ export const n5Lesson4: Lesson = {
           ]
         },
         {
-          jp: '電話番号は 5275 の 2725 です。',
+          jp: '電話番号は 5275 の 2725です。',
           romaji: 'Denwa bangō wa go sen nihyaku nanajū go no nihyaku nijūgo desu.',
           meaning: {
             en: 'The phone number is 5275-2725.',

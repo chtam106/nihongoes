@@ -1203,24 +1203,19 @@ export const n5Lesson15: Lesson = {
           ]
         },
         {
-          jp: 'カタログは ここに 置いて あります。',
-          romaji: 'Katarogu wa koko ni oite arimasu.',
-          meaning: {
-            en: 'The catalogs are placed here.',
-            vi: 'Ca-ta-lô đặt ở đây.'
-          },
-          ruby: [{ base: '置', reading: 'お' }]
+          jp: 'カタログは ここに あります。',
+          romaji: 'Katarogu wa koko ni arimasu.',
+          meaning: { en: 'The catalogs are here.', vi: 'Catalogue ở đây.' }
         },
         {
-          jp: '見ても いいですが、売る 部屋に 入っては いけません。',
-          romaji: 'Mite mo ii desu ga, uru heya ni haitte wa ikemasen.',
+          jp: '見ても いいですが、あちらの 部屋に 入っては いけません。',
+          romaji: 'Mite mo ii desu ga, achira no heya ni haitte wa ikemasen.',
           meaning: {
-            en: 'You may look, but you must not enter the sales room.',
-            vi: 'Xem thì được, nhưng không được vào phòng bán hàng.'
+            en: 'You may look at them, but you must not go into that room over there.',
+            vi: 'Xem thì được, nhưng không được vào căn phòng đằng kia.'
           },
           ruby: [
             { base: '見', reading: 'み' },
-            { base: '売', reading: 'う' },
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
             { base: '入', reading: 'はい' }
@@ -1276,12 +1271,12 @@ export const n5Lesson15: Lesson = {
             { id: 'a', label: { en: 'Here (where indicated)', vi: 'Ở đây' }, jp: 'ここです' },
             {
               id: 'b',
-              label: { en: 'In the sales room', vi: 'Trong phòng bán' },
-              jp: '売る 部屋',
+              label: { en: 'In the meeting room', vi: 'Trong phòng họp' },
+              jp: '会議室',
               ruby: [
-                { base: '売', reading: 'う' },
-                { base: '部', reading: 'へ' },
-                { base: '屋', reading: 'や' }
+                { base: '会', reading: 'かい' },
+                { base: '議', reading: 'ぎ' },
+                { base: '室', reading: 'しつ' }
               ]
             },
             {
@@ -1319,10 +1314,9 @@ export const n5Lesson15: Lesson = {
           choices: [
             {
               id: 'a',
-              label: { en: 'Enter the sales room', vi: 'Vào phòng bán hàng' },
-              jp: '売る 部屋に 入る',
+              label: { en: 'Enter the room over there', vi: 'Vào căn phòng đằng kia' },
+              jp: 'あちらの 部屋に 入る',
               ruby: [
-                { base: '売', reading: 'う' },
                 { base: '部', reading: 'へ' },
                 { base: '屋', reading: 'や' },
                 { base: '入', reading: 'はい' }

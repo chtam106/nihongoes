@@ -376,7 +376,7 @@ export const n4Lesson39: Lesson = {
       lines: [
         {
           speakerId: 'miller',
-          jp: '部長、遅刻 して すみません。',
+          jp: '部長、遅刻して すみません。',
           romaji: 'Buchō, chikoku shite sumimasen.',
           meaning: {
             en: 'Department head, I am sorry I am late.',
@@ -397,7 +397,7 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: '途中で 事故が あって、バスが 遅れた んです。',
+          jp: '途中で 事故が あって、バスが 遅れたんです。',
           romaji: 'Tochū de jiko ga atte, basu ga okureta n desu.',
           meaning: {
             en: 'There was an accident on the way, so the bus was delayed.',
@@ -413,7 +413,7 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: 'バスの 事故 ですか。',
+          jp: 'バスの 事故ですか。',
           romaji: 'Basu no jiko desu ka.',
           meaning: { en: 'A bus accident?', vi: 'Tai nạn xe buýt à?' },
           ruby: [
@@ -423,7 +423,7 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'いいえ。トラックと 車が ぶつかって、道が 通れなく なった んです。',
+          jp: 'いいえ。トラックと 車が ぶつかって、道が 通れなく なったんです。',
           romaji: 'Iie. Torakku to kuruma ga butsukatte, michi ga tōrenaku natta n desu.',
           meaning: {
             en: 'No. A truck and a car collided, and the road became blocked.',
@@ -437,7 +437,7 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: 'それは 大変 でしたね。連絡が 取れなく て、心配 しましたよ。',
+          jp: 'それは 大変 でしたね。連絡が 取れなく て、心配しましたよ。',
           romaji: 'Sore wa taihen deshita ne. Renraku ga torenakute, shinpai shimashita yo.',
           meaning: {
             en: 'That must have been tough. We could not reach you and were worried.',
@@ -455,15 +455,17 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'すみません。電話が 家に 忘れて しまって……。',
-          romaji: 'Sumimasen. Denwa ga ie ni wasurete shimatte…….',
+          jp: 'すみません。携帯電話を 家に 忘れて しまって……。',
+          romaji: 'Sumimasen. Keitai denwa o ie ni wasurete shimatte…….',
           meaning: {
-            en: 'I am sorry. I left my phone at home...',
+            en: 'Sorry. I left my phone at home...',
             vi: 'Xin lỗi. Tôi để quên điện thoại ở nhà...'
           },
           ruby: [
+            { base: '携', reading: 'けい' },
+            { base: '帯', reading: 'たい' },
             { base: '電', reading: 'でん' },
-            { base: '話', reading: 'はな' },
+            { base: '話', reading: 'わ' },
             { base: '家', reading: 'いえ' },
             { base: '忘', reading: 'わす' }
           ]
@@ -578,7 +580,7 @@ export const n4Lesson39: Lesson = {
           ]
         },
         {
-          jp: '用事が ある ので、先に 失礼 します。',
+          jp: '用事が ある ので、先に 失礼します。',
           romaji: 'Yōji ga aru no de, saki ni shitsurei shimasu.',
           meaning: {
             en: 'I have something to do, so excuse me for leaving first.',
@@ -684,61 +686,94 @@ export const n4Lesson39: Lesson = {
   reading: [
     {
       id: 'reading-lesson39-feelings',
-      title: { en: 'News that moves you', vi: 'Tin tức làm bạn bất ngờ' },
-      titleJp: '心が 動く ニュース',
+      title: { en: 'The day of the typhoon', vi: 'Ngày có bão' },
+      titleJp: '台風の 日',
       titleRuby: [
-        { base: '心', reading: 'こころ' },
-        { base: '動', reading: 'うご' }
+        { base: '台', reading: 'たい' },
+        { base: '風', reading: 'ふう' },
+        { base: '日', reading: 'ひ' }
       ],
       lines: [
         {
-          jp: '首相の 演説を 聞いて、安心 しました。',
-          romaji: 'Shushō no enzetsu o kiite, anshin shimashita.',
+          jp: 'きのうは 台風が 来たので、学校が 休みに なりました。',
+          romaji: 'Kinō wa taifū ga kita node, gakkō ga yasumi ni narimashita.',
           meaning: {
-            en: "I felt relieved after hearing the prime minister's speech.",
-            vi: 'Nghe bài phát biểu của thủ tướng, tôi yên tâm.'
-          },
-          ruby: [
-            { base: '首', reading: 'しゅ' },
-            { base: '相', reading: 'しょう' },
-            { base: '演', reading: 'えん' },
-            { base: '説', reading: 'ぜつ' },
-            { base: '聞', reading: 'き' },
-            { base: '安', reading: 'あん' },
-            { base: '心', reading: 'しん' }
-          ]
-        },
-        {
-          jp: 'でも 内容が 複雑で、よく 理解 できませんでした。',
-          romaji: 'Demo naiyō ga fukuzatsude, yoku rikai dekimasen deshita.',
-          meaning: {
-            en: 'But the content was complicated and I could not understand it well.',
-            vi: 'Nhưng nội dung phức tạp nên tôi không hiểu lắm.'
-          },
-          ruby: [
-            { base: '内', reading: 'ない' },
-            { base: '容', reading: 'よう' },
-            { base: '複', reading: 'ふく' },
-            { base: '雑', reading: 'ざつ' },
-            { base: '理', reading: 'り' },
-            { base: '解', reading: 'かい' }
-          ]
-        },
-        {
-          jp: '台風の ニュースでは、海岸の 町が 心配 です。',
-          romaji: 'Taifū no nyūsu de wa, kaigan no machi ga shinpai desu.',
-          meaning: {
-            en: 'In typhoon news, I worry about towns on the coast.',
-            vi: 'Trong tin bão, tôi lo cho các thị trấn ven biển.'
+            en: 'Yesterday a typhoon came, so school was closed.',
+            vi: 'Hôm qua có bão nên trường được nghỉ.'
           },
           ruby: [
             { base: '台', reading: 'たい' },
             { base: '風', reading: 'ふう' },
+            { base: '来', reading: 'き' },
+            { base: '学', reading: 'がっ' },
+            { base: '校', reading: 'こう' },
+            { base: '休', reading: 'やす' }
+          ]
+        },
+        {
+          jp: '父は 会社へ 行く 途中で、強い 雨に 降られました。',
+          romaji: 'Chichi wa kaisha e iku tochū de, tsuyoi ame ni furaremashita.',
+          meaning: {
+            en: 'My father got caught in heavy rain on his way to work.',
+            vi: 'Bố tôi bị mắc mưa to trên đường đi làm.'
+          },
+          ruby: [
+            { base: '父', reading: 'ちち' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' },
+            { base: '途', reading: 'と' },
+            { base: '中', reading: 'ちゅう' },
+            { base: '強', reading: 'つよ' },
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' }
+          ]
+        },
+        {
+          jp: '電車が 止まって、会社に 行けませんでした。',
+          romaji: 'Densha ga tomatte, kaisha ni ikemasen deshita.',
+          meaning: {
+            en: 'The trains stopped, and he could not get to work.',
+            vi: 'Tàu điện ngừng chạy nên bố không đến công ty được.'
+          },
+          ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '止', reading: 'と' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
+          ]
+        },
+        {
+          jp: 'ニュースを 見て、海岸の 町が 心配に なりました。',
+          romaji: 'Nyūsu o mite, kaigan no machi ga shinpai ni narimashita.',
+          meaning: {
+            en: 'Watching the news, I got worried about the towns on the coast.',
+            vi: 'Xem tin tức, tôi lo cho các thị trấn ven biển.'
+          },
+          ruby: [
+            { base: '見', reading: 'み' },
             { base: '海', reading: 'かい' },
             { base: '岸', reading: 'がん' },
             { base: '町', reading: 'まち' },
             { base: '心', reading: 'しん' },
             { base: '配', reading: 'ぱい' }
+          ]
+        },
+        {
+          jp: 'でも、大きな 被害は なかったので、安心しました。',
+          romaji: 'Demo, ōkina higai wa nakatta node, anshin shimashita.',
+          meaning: {
+            en: 'But there was no major damage, so I was relieved.',
+            vi: 'Nhưng không có thiệt hại lớn nên tôi yên tâm.'
+          },
+          ruby: [
+            { base: '大', reading: 'おお' },
+            { base: '被', reading: 'ひ' },
+            { base: '害', reading: 'がい' },
+            { base: '安', reading: 'あん' },
+            { base: '心', reading: 'しん' }
           ]
         }
       ],
@@ -746,50 +781,49 @@ export const n4Lesson39: Lesson = {
         {
           id: 'q1',
           question: {
-            en: 'How did the speaker feel about the speech at first?',
-            vi: 'Người nói ban đầu cảm thấy thế nào về bài phát biểu?'
+            en: 'Why could the father not get to work?',
+            vi: 'Tại sao bố không đến công ty được?'
           },
-          jp: '演説を 聞いて、初めに どう 感じましたか。',
+          jp: 'どうして 父は 会社に 行けませんでしたか。',
           ruby: [
-            { base: '演', reading: 'えん' },
-            { base: '説', reading: 'ぜつ' },
-            { base: '聞', reading: 'き' },
-            { base: '初', reading: 'はじ' },
-            { base: '感', reading: 'かん' }
+            { base: '父', reading: 'ちち' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '行', reading: 'い' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Relieved', vi: 'Yên tâm' },
-              jp: '安心しました',
+              label: { en: 'Because the trains stopped', vi: 'Vì tàu điện ngừng chạy' },
+              jp: '電車が 止まったから',
               ruby: [
-                { base: '安', reading: 'あん' },
-                { base: '心', reading: 'しん' }
+                { base: '電', reading: 'でん' },
+                { base: '車', reading: 'しゃ' },
+                { base: '止', reading: 'と' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'Disappointed', vi: 'Thất vọng' },
-              jp: '失望しました',
-              ruby: [
-                { base: '失', reading: 'しつ' },
-                { base: '望', reading: 'ぼう' }
-              ]
+              label: { en: 'Because he had a fever', vi: 'Vì bị sốt' },
+              jp: '熱が あったから',
+              ruby: [{ base: '熱', reading: 'ねつ' }]
             },
             {
               id: 'c',
-              label: { en: 'Angry', vi: 'Tức giận' },
-              jp: '怒りました',
-              ruby: [{ base: '怒', reading: 'おこ' }]
+              label: { en: 'Because he overslept', vi: 'Vì ngủ quên' },
+              jp: '寝坊したから',
+              ruby: [
+                { base: '寝', reading: 'ね' },
+                { base: '坊', reading: 'ぼう' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'Embarrassed', vi: 'Xấu hổ' },
-              jp: '恥ずかしい 気持ちに なりました',
+              label: { en: 'Because he got lost', vi: 'Vì bị lạc đường' },
+              jp: '道に 迷ったから',
               ruby: [
-                { base: '恥', reading: 'は' },
-                { base: '気', reading: 'き' },
-                { base: '持', reading: 'も' }
+                { base: '道', reading: 'みち' },
+                { base: '迷', reading: 'まよ' }
               ]
             }
           ],
@@ -798,46 +832,42 @@ export const n4Lesson39: Lesson = {
         {
           id: 'q2',
           question: {
-            en: 'Why could the speaker not understand well?',
-            vi: 'Vì sao người nói không hiểu rõ?'
+            en: 'How did the writer feel in the end?',
+            vi: 'Cuối cùng người viết cảm thấy thế nào?'
           },
-          jp: 'どうして よく 理解できませんでしたか。',
+          jp: '最後に どんな 気持ちに なりましたか。',
           ruby: [
-            { base: '理', reading: 'り' },
-            { base: '解', reading: 'かい' }
+            { base: '最', reading: 'さい' },
+            { base: '後', reading: 'ご' },
+            { base: '気', reading: 'き' },
+            { base: '持', reading: 'も' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'The content was complicated', vi: 'Nội dung phức tạp' },
-              jp: '内容が 複雑でした',
+              label: { en: 'Relieved', vi: 'Yên tâm' },
+              jp: '安心した',
               ruby: [
-                { base: '内', reading: 'ない' },
-                { base: '容', reading: 'よう' },
-                { base: '複', reading: 'ふく' },
-                { base: '雑', reading: 'ざつ' }
+                { base: '安', reading: 'あん' },
+                { base: '心', reading: 'しん' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'There was no news', vi: 'Không có tin tức' },
-              jp: 'ニュースが ありませんでした'
+              label: { en: 'Sad', vi: 'Buồn' },
+              jp: '悲しく なった',
+              ruby: [{ base: '悲', reading: 'かな' }]
             },
             {
               id: 'c',
-              label: { en: 'The coast was closed', vi: 'Bờ biển đóng cửa' },
-              jp: '海岸が 閉まって いました',
-              ruby: [
-                { base: '海', reading: 'かい' },
-                { base: '岸', reading: 'がん' },
-                { base: '閉', reading: 'し' }
-              ]
+              label: { en: 'Angry', vi: 'Tức giận' },
+              jp: '怒った',
+              ruby: [{ base: '怒', reading: 'おこ' }]
             },
             {
               id: 'd',
-              label: { en: 'They went hiking', vi: 'Họ đi dã ngoại' },
-              jp: 'ハイキングに 行きました',
-              ruby: [{ base: '行', reading: 'い' }]
+              label: { en: 'Disappointed', vi: 'Thất vọng' },
+              jp: 'がっかりした'
             }
           ],
           correctId: 'a'

@@ -6,125 +6,59 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
       pattern: 'N を V',
       items: [
         {
-          prompt: { en: 'I eat a meal.', vi: 'Tôi ăn cơm.' },
-          jp: 'ごはんを 食べます。',
-          ruby: [{ base: '食', reading: 'た' }]
+          prompt: { en: 'I eat bread every morning.', vi: 'Sáng nào tôi cũng ăn bánh mì.' },
+          jp: '毎朝 パンを 食べます。',
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '食', reading: 'た' }
+          ]
         },
         {
-          prompt: { en: 'I drink water.', vi: 'Tôi uống nước.' },
-          jp: '水を 飲みます。',
+          prompt: { en: 'I drink coffee every morning.', vi: 'Sáng nào tôi cũng uống cà phê.' },
+          jp: '毎朝 コーヒーを 飲みます。',
           ruby: [
-            { base: '水', reading: 'みず' },
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
             { base: '飲', reading: 'の' }
           ]
         },
         {
-          prompt: { en: 'I read a book.', vi: 'Tôi đọc sách.' },
-          jp: '本を 読みます。',
+          prompt: { en: 'Yesterday I took photos in Kyoto.', vi: 'Hôm qua tôi chụp ảnh ở Kyoto.' },
+          jp: 'きのう 京都で 写真を 撮りました。',
           ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '読', reading: 'よ' }
-          ]
-        },
-        {
-          prompt: { en: 'I write a letter.', vi: 'Tôi viết thư.' },
-          jp: '手紙を 書きます。',
-          ruby: [
-            { base: '手', reading: 'て' },
-            { base: '紙', reading: 'がみ' },
-            { base: '書', reading: 'か' }
-          ]
-        },
-        {
-          prompt: { en: 'I take a photo.', vi: 'Tôi chụp ảnh.' },
-          jp: '写真を 撮ります。',
-          ruby: [
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
             { base: '写', reading: 'しゃ' },
             { base: '真', reading: 'しん' },
             { base: '撮', reading: 'と' }
           ]
         },
         {
-          prompt: { en: 'I smoke a cigarette.', vi: 'Tôi hút thuốc lá.' },
-          jp: 'たばこを 吸います。',
-          ruby: [{ base: '吸', reading: 'す' }]
-        },
-        {
-          prompt: { en: 'I eat an egg.', vi: 'Tôi ăn trứng.' },
-          jp: '卵を 食べます。',
+          prompt: { en: 'My father does not smoke.', vi: 'Bố tôi không hút thuốc.' },
+          jp: '父は たばこを 吸いません。',
           ruby: [
-            { base: '卵', reading: 'たまご' },
-            { base: '食', reading: 'た' }
+            { base: '父', reading: 'ちち' },
+            { base: '吸', reading: 'す' }
           ]
         },
         {
-          prompt: { en: 'I eat meat.', vi: 'Tôi ăn thịt.' },
-          jp: '肉を 食べます。',
-          ruby: [
-            { base: '肉', reading: 'にく' },
-            { base: '食', reading: 'た' }
-          ]
-        },
-        {
-          prompt: { en: 'I eat fish.', vi: 'Tôi ăn cá.' },
-          jp: '魚を 食べます。',
-          ruby: [
-            { base: '魚', reading: 'さかな' },
-            { base: '食', reading: 'た' }
-          ]
-        },
-        {
-          prompt: { en: 'I eat vegetables.', vi: 'Tôi ăn rau.' },
-          jp: '野菜を 食べます。',
-          ruby: [
-            { base: '野', reading: 'や' },
-            { base: '菜', reading: 'さい' },
-            { base: '食', reading: 'た' }
-          ]
-        },
-        {
-          prompt: { en: 'I eat fruit.', vi: 'Tôi ăn hoa quả.' },
-          jp: '果物を 食べます。',
-          ruby: [
-            { base: '果', reading: 'くだ' },
-            { base: '物', reading: 'もの' },
-            { base: '食', reading: 'た' }
-          ]
-        },
-        {
-          prompt: { en: 'I drink tea.', vi: 'Tôi uống trà.' },
-          jp: 'お茶を 飲みます。',
-          ruby: [
-            { base: '茶', reading: 'ちゃ' },
-            { base: '飲', reading: 'の' }
-          ]
-        },
-        {
-          prompt: { en: 'I drink milk.', vi: 'Tôi uống sữa.' },
-          jp: 'ミルクを 飲みます。',
-          ruby: [{ base: '飲', reading: 'の' }]
-        },
-        {
-          prompt: {
-            en: 'I drink juice, then I drink alcohol.',
-            vi: 'Tôi uống nước hoa quả, rồi uống rượu.'
-          },
-          jp: 'ジュースを 飲みます。それから お酒を 飲みます。',
+          prompt: { en: 'I drink beer, and then I eat.', vi: 'Tôi uống bia, rồi sau đó ăn cơm.' },
+          jp: 'ビールを 飲みます。それから ごはんを 食べます。',
           ruby: [
             { base: '飲', reading: 'の' },
-            { base: '酒', reading: 'さけ' },
-            { base: '飲', reading: 'の' }
+            { base: '食', reading: 'た' }
           ]
         },
         {
-          prompt: { en: 'I watch a video.', vi: 'Tôi xem video.' },
-          jp: 'ビデオを 見ます。',
-          ruby: [{ base: '見', reading: 'み' }]
-        },
-        {
-          prompt: { en: 'I listen to the radio.', vi: 'Tôi nghe radio.' },
-          jp: 'ラジオを 聞きます。',
-          ruby: [{ base: '聞', reading: 'き' }]
+          prompt: { en: 'I watch videos at home on Sundays.', vi: 'Chủ nhật tôi xem video ở nhà.' },
+          jp: '日曜日 うちで ビデオを 見ます。',
+          ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '見', reading: 'み' }
+          ]
         },
         {
           prompt: { en: 'I meet a friend at 10.', vi: 'Tôi gặp bạn lúc 10 giờ.' },
@@ -142,17 +76,34 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
       pattern: 'N を します',
       items: [
         {
-          prompt: { en: 'I play soccer.', vi: 'Tôi chơi bóng đá.' },
-          jp: 'サッカーを します。'
-        },
-        {
-          prompt: { en: 'I play tennis.', vi: 'Tôi chơi quần vợt.' },
-          jp: 'テニスを します。'
-        },
-        {
-          prompt: { en: 'I do my homework.', vi: 'Tôi làm bài tập về nhà.' },
-          jp: '宿題を します。',
+          prompt: { en: 'I play soccer every Saturday.', vi: 'Thứ Bảy hằng tuần tôi đá bóng.' },
+          jp: '毎週 土曜日に サッカーを します。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '土', reading: 'ど' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I play tennis in the park in the morning.',
+            vi: 'Buổi sáng tôi chơi quần vợt ở công viên.'
+          },
+          jp: '朝 公園で テニスを します。',
+          ruby: [
+            { base: '朝', reading: 'あさ' },
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' }
+          ]
+        },
+        {
+          prompt: { en: 'I will do my homework this evening.', vi: 'Tối nay tôi làm bài tập.' },
+          jp: '今晩 宿題を します。',
+          ruby: [
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' },
             { base: '宿', reading: 'しゅく' },
             { base: '題', reading: 'だい' }
           ]
@@ -166,8 +117,20 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I do a report.', vi: 'Tôi làm báo cáo.' },
-          jp: 'レポートを します。'
+          prompt: {
+            en: 'I went cherry-blossom viewing with friends on Sunday.',
+            vi: 'Chủ nhật tôi đi ngắm hoa anh đào với bạn.'
+          },
+          jp: '日曜日に 友達と お花見を しました。',
+          ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '花', reading: 'はな' },
+            { base: '見', reading: 'み' }
+          ]
         }
       ]
     },
@@ -191,13 +154,26 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '何', reading: 'なに' }]
         },
         {
-          prompt: { en: 'I played soccer.', vi: 'Tôi đã chơi bóng đá.' },
-          jp: 'サッカーを しました。'
+          prompt: {
+            en: 'What did you do yesterday? ...I played tennis.',
+            vi: 'Hôm qua anh làm gì? ...Tôi chơi quần vợt.'
+          },
+          jp: 'きのう 何を しましたか。……テニスを しました。',
+          ruby: [{ base: '何', reading: 'なに' }]
         },
         {
-          prompt: { en: 'I do not do anything.', vi: 'Tôi không làm gì cả.' },
-          jp: '何も しません。',
-          ruby: [{ base: '何', reading: 'なに' }]
+          prompt: {
+            en: 'What are you doing on Sunday? ...Nothing.',
+            vi: 'Chủ nhật anh làm gì? ...Không làm gì cả.'
+          },
+          jp: '日曜日 何を しますか。……何も しません。',
+          ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '何', reading: 'なに' },
+            { base: '何', reading: 'なに' }
+          ]
         },
         {
           prompt: { en: 'What will you do tomorrow?', vi: 'Ngày mai bạn làm gì?' },
@@ -346,8 +322,18 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
           jp: 'いっしょに テニスを しませんか。'
         },
         {
-          prompt: { en: 'Sorry, I am afraid I cannot.', vi: 'Xin lỗi, tôi hơi...' },
-          jp: 'すみません、ちょっと...'
+          prompt: {
+            en: 'Would you like to go for a drink tonight? ...Sorry, tonight is a bit...',
+            vi: 'Tối nay đi uống với tôi không? ...Xin lỗi, tối nay thì hơi...'
+          },
+          jp: '今晩 いっしょに 飲みませんか。……すみません、今晩は ちょっと……',
+          ruby: [
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' },
+            { base: '飲', reading: 'の' },
+            { base: '今', reading: 'こん' },
+            { base: '晩', reading: 'ばん' }
+          ]
         }
       ]
     },
@@ -374,13 +360,19 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Yes, let us do that.', vi: 'Vâng, làm vậy nhé.' },
-          jp: 'ええ、しましょう。'
+          prompt: {
+            en: 'Shall we play tennis together? ...Yes, let us.',
+            vi: 'Cùng chơi quần vợt không? ...Ừ, chơi đi.'
+          },
+          jp: 'いっしょに テニスを しませんか。……ええ、しましょう。'
         },
         {
-          prompt: { en: 'Let us listen to the radio together.', vi: 'Cùng nghe radio nhé.' },
-          jp: 'いっしょに ラジオを 聞きましょう。',
-          ruby: [{ base: '聞', reading: 'き' }]
+          prompt: {
+            en: 'Well then, let us meet again tomorrow.',
+            vi: 'Vậy hẹn gặp lại ngày mai nhé.'
+          },
+          jp: 'じゃ、また あした 会いましょう。',
+          ruby: [{ base: '会', reading: 'あ' }]
         }
       ]
     },
@@ -388,47 +380,78 @@ export const n5Lesson6SentenceWriting: LessonSentenceWriting = {
       pattern: 'N ですか',
       items: [
         {
-          prompt: { en: 'You went to Kyoto on Sunday? (echo)', vi: 'Chủ nhật bạn đi đến Kyoto à?' },
-          jp: '日曜日 京都へ 行きましたか。',
+          prompt: {
+            en: 'I went to Kyoto on Sunday. ...Kyoto? How nice.',
+            vi: 'Chủ nhật tôi đã đi đến Kyoto. ...Kyoto à? Thích nhỉ.'
+          },
+          jp: '日曜日 京都へ 行きました。……京都ですか。いいですね。',
           ruby: [
             { base: '日', reading: 'にち' },
             { base: '曜', reading: 'よう' },
             { base: '日', reading: 'び' },
             { base: '京', reading: 'きょう' },
             { base: '都', reading: 'と' },
-            { base: '行', reading: 'い' }
+            { base: '行', reading: 'い' },
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' }
           ]
         },
         {
-          prompt: { en: 'You eat bread? (echo)', vi: 'Bạn ăn bánh mì à?' },
-          jp: 'パンを 食べますか。',
-          ruby: [{ base: '食', reading: 'た' }]
+          prompt: {
+            en: 'We are going cherry-blossom viewing tomorrow. ...Cherry-blossom viewing? How nice.',
+            vi: 'Mai chúng tôi đi ngắm hoa. ...Ngắm hoa à? Thích nhỉ.'
+          },
+          jp: 'あした お花見を します。……お花見ですか。いいですね。',
+          ruby: [
+            { base: '花', reading: 'はな' },
+            { base: '見', reading: 'み' },
+            { base: '花', reading: 'はな' },
+            { base: '見', reading: 'み' }
+          ]
         },
         {
-          prompt: { en: 'You drink black tea? (echo)', vi: 'Bạn uống trà đen à?' },
-          jp: '紅茶を 飲みますか。',
+          prompt: {
+            en: 'I am meeting a friend in Osaka this weekend. ...In Osaka?',
+            vi: 'Cuối tuần tôi gặp bạn ở Osaka. ...Ở Osaka à?'
+          },
+          jp: '週末 大阪で 友達に 会います。……大阪ですか。',
           ruby: [
-            { base: '紅', reading: 'こう' },
-            { base: '茶', reading: 'ちゃ' },
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '会', reading: 'あ' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I drink beer every night. ...Beer?',
+            vi: 'Tối nào tôi cũng uống bia. ...Bia à?'
+          },
+          jp: '毎晩 ビールを 飲みます。……ビールですか。',
+          ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '晩', reading: 'ばん' },
             { base: '飲', reading: 'の' }
           ]
         },
         {
-          prompt: { en: 'You always drink milk? (echo)', vi: 'Bạn lúc nào cũng uống sữa à?' },
-          jp: 'いつも 牛乳を 飲みますか。',
+          prompt: {
+            en: 'I am going to the department store on Sunday. ...The department store? What will you buy?',
+            vi: 'Chủ nhật tôi đi trung tâm thương mại. ...Trung tâm thương mại à? Anh mua gì?'
+          },
+          jp: '日曜日 デパートへ 行きます。……デパートですか。何を 買いますか。',
           ruby: [
-            { base: '牛', reading: 'ぎゅう' },
-            { base: '乳', reading: 'にゅう' },
-            { base: '飲', reading: 'の' }
-          ]
-        },
-        {
-          prompt: { en: 'You sometimes drink beer? (echo)', vi: 'Thỉnh thoảng bạn uống bia à?' },
-          jp: '時々 ビールを 飲みますか。',
-          ruby: [
-            { base: '時', reading: 'とき' },
-            { base: '々', reading: 'どき' },
-            { base: '飲', reading: 'の' }
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '行', reading: 'い' },
+            { base: '何', reading: 'なに' },
+            { base: '買', reading: 'か' }
           ]
         }
       ]

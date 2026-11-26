@@ -32,14 +32,15 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'If you think about it, you will understand the meaning.',
-            vi: 'Nếu suy nghĩ thì sẽ hiểu nghĩa.'
+            en: 'Please call me when you get to the station.',
+            vi: 'Đến ga thì gọi điện cho tôi nhé.'
           },
-          jp: '考えたら、意味が わかります。',
+          jp: '駅に 着いたら、電話して ください。',
           ruby: [
-            { base: '考', reading: 'かんが' },
-            { base: '意', reading: 'い' },
-            { base: '味', reading: 'み' }
+            { base: '駅', reading: 'えき' },
+            { base: '着', reading: 'つ' },
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' }
           ]
         },
         {
@@ -58,13 +59,12 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'If money is enough, I will study abroad.',
-            vi: 'Nếu tiền đủ, tôi sẽ du học.'
+            en: 'If I had the money, I would like to study abroad.',
+            vi: 'Nếu có tiền tôi muốn đi du học.'
           },
-          jp: 'お金が 足りたら、留学します。',
+          jp: 'お金が あったら、留学したいです。',
           ruby: [
             { base: '金', reading: 'かね' },
-            { base: '足', reading: 'た' },
             { base: '留', reading: 'りゅう' },
             { base: '学', reading: 'がく' }
           ]
@@ -92,7 +92,7 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
             en: 'Even if I grow older, I want to stay healthy.',
             vi: 'Dù già đi, tôi vẫn muốn khỏe mạnh.'
           },
-          jp: '年を 取っても、元気で いたい です。',
+          jp: '年を 取っても、元気で いたいです。',
           ruby: [
             { base: '年', reading: 'とし' },
             { base: '取', reading: 'と' },
@@ -110,28 +110,23 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Even if I go to the embassy, I cannot enter.',
-            vi: 'Dù đến đại sứ quán, tôi cũng không vào được.'
+            en: 'Even though I took medicine, my fever will not go down.',
+            vi: 'Uống thuốc rồi mà vẫn không hạ sốt.'
           },
-          jp: '大使館へ 行っても、入れません。',
+          jp: '薬を 飲んでも、熱が 下がりません。',
           ruby: [
-            { base: '大', reading: 'たい' },
-            { base: '使', reading: 'し' },
-            { base: '館', reading: 'かん' },
-            { base: '行', reading: 'い' },
-            { base: '入', reading: 'はい' }
+            { base: '薬', reading: 'くすり' },
+            { base: '飲', reading: 'の' },
+            { base: '熱', reading: 'ねつ' },
+            { base: '下', reading: 'さ' }
           ]
         },
         {
-          prompt: {
-            en: 'Even if I work in a group, I am nervous.',
-            vi: 'Dù làm việc theo nhóm, tôi vẫn lo.'
-          },
-          jp: 'グループで 働いても、心配です。',
+          prompt: { en: 'Even if it is cheap, I do not need it.', vi: 'Dù rẻ tôi cũng không cần.' },
+          jp: '安くても、要りません。',
           ruby: [
-            { base: '働', reading: 'はたら' },
-            { base: '心', reading: 'しん' },
-            { base: '配', reading: 'ぱい' }
+            { base: '安', reading: 'やす' },
+            { base: '要', reading: 'い' }
           ]
         }
       ]
@@ -144,7 +139,7 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
             en: 'If I get a chance, I want to work at the embassy.',
             vi: 'Nếu có cơ hội, tôi muốn làm ở đại sứ quán.'
           },
-          jp: 'もし チャンスが あったら、大使館で 働きたい です。',
+          jp: 'もし チャンスが あったら、大使館で 働きたいです。',
           ruby: [
             { base: '大', reading: 'たい' },
             { base: '使', reading: 'し' },
@@ -154,15 +149,17 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'If I go to the embassy, I will get a visa.',
-            vi: 'Nếu đến đại sứ quán, tôi sẽ lấy visa.'
+            en: 'If it rains, the game will be canceled.',
+            vi: 'Nếu trời mưa thì trận đấu sẽ bị hủy.'
           },
-          jp: 'もし 大使館へ 行ったら、ビザを もらいます。',
+          jp: 'もし 雨が 降ったら、試合は 中止です。',
           ruby: [
-            { base: '大', reading: 'たい' },
-            { base: '使', reading: 'し' },
-            { base: '館', reading: 'かん' },
-            { base: '行', reading: 'い' }
+            { base: '雨', reading: 'あめ' },
+            { base: '降', reading: 'ふ' },
+            { base: '試', reading: 'し' },
+            { base: '合', reading: 'あい' },
+            { base: '中', reading: 'ちゅう' },
+            { base: '止', reading: 'し' }
           ]
         },
         {
@@ -244,14 +241,11 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'No matter how much it costs, I will take the chance.',
-            vi: 'Dù tốn bao nhiêu, tôi cũng nắm cơ hội.'
+            en: 'No matter how expensive it is, I want this camera.',
+            vi: 'Dù đắt đến đâu tôi cũng muốn cái máy ảnh này.'
           },
-          jp: 'いくら 高くても、チャンスを 取ります。',
-          ruby: [
-            { base: '高', reading: 'たか' },
-            { base: '取', reading: 'と' }
-          ]
+          jp: 'いくら 高くても、この カメラが ほしいです。',
+          ruby: [{ base: '高', reading: 'たか' }]
         },
         {
           prompt: {
@@ -273,17 +267,14 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I am thinking about a job transfer, but I like the countryside.',
-            vi: 'Tôi đang nghĩ đến việc chuyển công tác, nhưng tôi thích vùng quê.'
+            en: 'This town is small, but very quiet.',
+            vi: 'Thị trấn này nhỏ nhưng rất yên tĩnh.'
           },
-          jp: '転勤する ことを 考えていますが、田舎が 好きです。',
+          jp: 'この 町は 小さいですが、とても 静かです。',
           ruby: [
-            { base: '転', reading: 'てん' },
-            { base: '勤', reading: 'きん' },
-            { base: '考', reading: 'かんが' },
-            { base: '田', reading: 'いな' },
-            { base: '舎', reading: 'か' },
-            { base: '好', reading: 'す' }
+            { base: '町', reading: 'まち' },
+            { base: '小', reading: 'ちい' },
+            { base: '静', reading: 'しず' }
           ]
         },
         {
@@ -301,11 +292,17 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I want to work in a group, but I am shy.',
-            vi: 'Tôi muốn làm theo nhóm, nhưng tôi nhút nhát.'
+            en: 'I called many times, but nobody answered.',
+            vi: 'Tôi đã gọi điện mấy lần nhưng không ai nghe máy.'
           },
-          jp: 'グループで 働きたい ですが、はずかしいです。',
-          ruby: [{ base: '働', reading: 'はたら' }]
+          jp: '何度も 電話しましたが、だれも 出ませんでした。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '度', reading: 'ど' },
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' },
+            { base: '出', reading: 'で' }
+          ]
         },
         {
           prompt: {
@@ -363,28 +360,32 @@ export const n5Lesson25SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Being transferred is a difficult matter.',
-            vi: 'Chuyển công tác là việc khó.'
+            en: 'Writing a diary in Japanese every day is hard.',
+            vi: 'Viết nhật ký bằng tiếng Nhật mỗi ngày thật vất vả.'
           },
-          jp: '転勤する 事は 難しいです。',
+          jp: '毎日 日本語で 日記を 書く ことは 大変です。',
           ruby: [
-            { base: '転', reading: 'てん' },
-            { base: '勤', reading: 'きん' },
-            { base: '事', reading: 'こと' },
-            { base: '難', reading: 'むずか' }
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '日', reading: 'にっ' },
+            { base: '記', reading: 'き' },
+            { base: '書', reading: 'か' },
+            { base: '大', reading: 'たい' },
+            { base: '変', reading: 'へん' }
           ]
         },
         {
-          prompt: {
-            en: 'Growing older is natural.',
-            vi: 'Có thêm tuổi là chuyện tự nhiên.'
-          },
-          jp: '年を 取る ことは 自然です。',
+          prompt: { en: 'Making new friends is fun.', vi: 'Kết bạn mới thật vui.' },
+          jp: '新しい 友達を 作る ことは 楽しいです。',
           ruby: [
-            { base: '年', reading: 'とし' },
-            { base: '取', reading: 'と' },
-            { base: '自', reading: 'し' },
-            { base: '然', reading: 'ぜん' }
+            { base: '新', reading: 'あたら' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '作', reading: 'つく' },
+            { base: '楽', reading: 'たの' }
           ]
         },
         {

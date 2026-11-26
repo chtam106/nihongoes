@@ -483,7 +483,7 @@ export const n5Lesson14: Lesson = {
         },
         {
           speakerId: 'driver',
-          jp: 'はい。1,800円 です。',
+          jp: 'はい。1,800円です。',
           romaji: 'Hai. Sen hachi-hyaku en desu.',
           meaning: { en: 'Certainly. That is 1,800 yen.', vi: 'Vâng. Hết 1.800 yen.' },
           ruby: [{ base: '円', reading: 'えん' }]
@@ -497,7 +497,7 @@ export const n5Lesson14: Lesson = {
         },
         {
           speakerId: 'driver',
-          jp: 'お釣りは 3,200円 です。ありがとう ございました。',
+          jp: 'お釣りは 3,200円です。ありがとう ございました。',
           romaji: 'Otsuri wa san-zen nihyaku en desu. Arigatō gozaimashita.',
           meaning: {
             en: 'Your change is 3,200 yen. Thank you very much.',

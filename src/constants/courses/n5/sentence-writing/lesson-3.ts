@@ -106,15 +106,6 @@ export const n5Lesson3SentenceWriting: LessonSentenceWriting = {
             { base: '場', reading: 'ば' },
             { base: '階', reading: 'かい' }
           ]
-        },
-        {
-          prompt: { en: 'The room is on the second floor.', vi: 'Phòng ở tầng hai.' },
-          jp: '部屋は 2階です。',
-          ruby: [
-            { base: '部', reading: 'へ' },
-            { base: '屋', reading: 'や' },
-            { base: '階', reading: 'かい' }
-          ]
         }
       ]
     },
@@ -162,11 +153,14 @@ export const n5Lesson3SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'What floor is it?', vi: 'Tầng mấy?' },
-          jp: '何階ですか。',
+          prompt: { en: 'What floor is the meeting room on?', vi: 'Phòng họp ở tầng mấy?' },
+          jp: '会議室は 何階ですか。',
           ruby: [
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '室', reading: 'しつ' },
             { base: '何', reading: 'なん' },
-            { base: '階', reading: 'かい' }
+            { base: '階', reading: 'がい' }
           ]
         }
       ]
@@ -180,12 +174,18 @@ export const n5Lesson3SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '靴', reading: 'くつ' }]
         },
         {
-          prompt: { en: 'They are Japanese shoes.', vi: 'Là giày của Nhật.' },
-          jp: '日本の 靴です。',
+          prompt: {
+            en: 'Where is that watch from? ...It is a Swiss watch.',
+            vi: 'Đồng hồ đó của nước nào? ...Đồng hồ Thụy Sĩ.'
+          },
+          jp: 'その 時計は どこの 時計ですか。……スイスの 時計です。',
           ruby: [
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '靴', reading: 'くつ' }
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' },
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' },
+            { base: '時', reading: 'と' },
+            { base: '計', reading: 'けい' }
           ]
         },
         {
@@ -193,20 +193,26 @@ export const n5Lesson3SentenceWriting: LessonSentenceWriting = {
           jp: 'これは どこの ネクタイですか。'
         },
         {
-          prompt: { en: 'It is a Japanese necktie.', vi: 'Là cà vạt của Nhật.' },
-          jp: '日本の ネクタイです。',
+          prompt: {
+            en: 'Where is this wine from? ...It is French wine.',
+            vi: 'Rượu vang này của nước nào? ...Rượu vang Pháp.'
+          },
+          jp: 'これは どこの ワインですか。……フランスの ワインです。'
+        },
+        {
+          prompt: {
+            en: 'Where is this camera from? ...It is from Japan.',
+            vi: 'Cái máy ảnh này của nước nào? ...Của Nhật.'
+          },
+          jp: 'この カメラは どこのですか。……日本のです。',
           ruby: [
             { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' }
           ]
         },
         {
-          prompt: { en: 'How much is this wine?', vi: 'Rượu vang này bao nhiêu tiền?' },
-          jp: 'この ワインは いくらですか。'
-        },
-        {
           prompt: { en: 'Where is this wine from?', vi: 'Rượu vang này của nước nào?' },
-          jp: 'この ワインは どこの ですか。'
+          jp: 'この ワインは どこのですか。'
         }
       ]
     },
@@ -219,8 +225,16 @@ export const n5Lesson3SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '国', reading: 'くに' }]
         },
         {
-          prompt: { en: 'I am from Vietnam.', vi: 'Tôi là người Việt Nam.' },
-          jp: 'ベトナムです。'
+          prompt: {
+            en: 'What is your job? ...I am an engineer.',
+            vi: 'Anh làm nghề gì? ...Tôi là kỹ sư.'
+          },
+          jp: 'お仕事は 何ですか。……エンジニアです。',
+          ruby: [
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
+            { base: '何', reading: 'なん' }
+          ]
         },
         {
           prompt: { en: 'Where is the restroom? (polite)', vi: 'Nhà vệ sinh ở đâu ạ?' },

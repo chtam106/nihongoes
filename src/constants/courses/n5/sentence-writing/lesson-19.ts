@@ -6,21 +6,38 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
       pattern: 'V-た',
       items: [
         {
-          prompt: { en: 'I climbed a mountain. (plain)', vi: 'Tôi đã leo núi. (thân mật)' },
-          jp: '山に 登った。',
+          prompt: {
+            en: 'I climbed Mt. Fuji last year. (plain)',
+            vi: 'Năm ngoái tôi đã leo núi Phú Sĩ. (thể thường)'
+          },
+          jp: '去年 富士山に 登った。',
           ruby: [
-            { base: '山', reading: 'やま' },
+            { base: '去', reading: 'きょ' },
+            { base: '年', reading: 'ねん' },
+            { base: '富', reading: 'ふ' },
+            { base: '士', reading: 'じ' },
+            { base: '山', reading: 'さん' },
             { base: '登', reading: 'のぼ' }
           ]
         },
         {
-          prompt: { en: 'I stayed at a hotel. (plain)', vi: 'Tôi đã ở khách sạn. (thân mật)' },
-          jp: 'ホテルに 泊まった。',
-          ruby: [{ base: '泊', reading: 'と' }]
+          prompt: {
+            en: 'Last night I stayed at a hotel in front of the station. (plain)',
+            vi: 'Tối qua tôi ở khách sạn trước ga. (thể thường)'
+          },
+          jp: 'ゆうべは 駅前の ホテルに 泊まった。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '前', reading: 'まえ' },
+            { base: '泊', reading: 'と' }
+          ]
         },
         {
-          prompt: { en: 'I cleaned the room. (plain)', vi: 'Tôi đã dọn phòng. (thân mật)' },
-          jp: '部屋を 掃除した。',
+          prompt: {
+            en: 'I cleaned my room yesterday. (plain)',
+            vi: 'Hôm qua tôi đã dọn phòng. (thể thường)'
+          },
+          jp: 'きのう 部屋を 掃除した。',
           ruby: [
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
@@ -29,9 +46,14 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I did the laundry. (plain)', vi: 'Tôi đã giặt quần áo. (thân mật)' },
-          jp: '洗濯した。',
+          prompt: {
+            en: 'I did the laundry this morning. (plain)',
+            vi: 'Sáng nay tôi đã giặt đồ. (thể thường)'
+          },
+          jp: '今朝 洗濯した。',
           ruby: [
+            { base: '今', reading: 'け' },
+            { base: '朝', reading: 'さ' },
             { base: '洗', reading: 'せん' },
             { base: '濯', reading: 'たく' }
           ]
@@ -63,12 +85,14 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Yes, I have climbed it once.', vi: 'Rồi, tôi đã leo một lần.' },
-          jp: 'はい、一度 登った ことが あります。',
+          prompt: {
+            en: 'Have you ever been skiing? ...Yes, once.',
+            vi: 'Anh đã từng trượt tuyết chưa? ...Rồi, một lần.'
+          },
+          jp: 'スキーを した ことが ありますか。……はい、一度 あります。',
           ruby: [
             { base: '一', reading: 'いち' },
-            { base: '度', reading: 'ど' },
-            { base: '登', reading: 'のぼ' }
+            { base: '度', reading: 'ど' }
           ]
         },
         {
@@ -101,9 +125,14 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '茶', reading: 'ちゃ' }]
         },
         {
-          prompt: { en: 'No, I have never played golf.', vi: 'Chưa, tôi chưa chơi gôn lần nào.' },
-          jp: 'いいえ、一度も ゴルフをした ことが ありません。',
+          prompt: {
+            en: 'Have you ever ridden a horse? ...No, never.',
+            vi: 'Anh đã từng cưỡi ngựa chưa? ...Chưa, chưa lần nào.'
+          },
+          jp: '馬に 乗った ことが ありますか。……いいえ、一度も ありません。',
           ruby: [
+            { base: '馬', reading: 'うま' },
+            { base: '乗', reading: 'の' },
             { base: '一', reading: 'いち' },
             { base: '度', reading: 'ど' }
           ]
@@ -142,15 +171,17 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'In winter I do things like climb mountains and stay at hotels.',
-            vi: 'Mùa đông tôi leo núi, ở khách sạn, v.v.'
+            en: 'During summer vacation I did things like swim in the sea and climb mountains.',
+            vi: 'Kỳ nghỉ hè tôi đã đi bơi ở biển, leo núi...'
           },
-          jp: '冬は 山に 登ったり、ホテルに 泊まったり します。',
+          jp: '夏休みは 海で 泳いだり、山に 登ったり しました。',
           ruby: [
-            { base: '冬', reading: 'ふゆ' },
+            { base: '夏', reading: 'なつ' },
+            { base: '休', reading: 'やす' },
+            { base: '海', reading: 'うみ' },
+            { base: '泳', reading: 'およ' },
             { base: '山', reading: 'やま' },
-            { base: '登', reading: 'のぼ' },
-            { base: '泊', reading: 'と' }
+            { base: '登', reading: 'のぼ' }
           ]
         },
         {
@@ -172,16 +203,19 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Thanks to you, on my day off I did things like clean and rest.',
-            vi: 'Nhờ anh/chị, ngày nghỉ tôi dọn nhà, nghỉ ngơi, v.v.'
+            en: 'On Sundays I do things like read books and listen to music.',
+            vi: 'Chủ nhật tôi đọc sách, nghe nhạc...'
           },
-          jp: 'おかげさまで、休みの 日は 掃除を したり、休んだり しました。',
+          jp: '日曜日は 本を 読んだり、音楽を 聞いたり します。',
           ruby: [
-            { base: '休', reading: 'やす' },
-            { base: '日', reading: 'ひ' },
-            { base: '掃', reading: 'そう' },
-            { base: '除', reading: 'じ' },
-            { base: '休', reading: 'やす' }
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '本', reading: 'ほん' },
+            { base: '読', reading: 'よ' },
+            { base: '音', reading: 'おん' },
+            { base: '楽', reading: 'がく' },
+            { base: '聞', reading: 'き' }
           ]
         }
       ]
@@ -190,31 +224,36 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
       pattern: 'Adj / N に なります',
       items: [
         {
-          prompt: { en: 'I become sleepy at night.', vi: 'Tối tôi trở nên buồn ngủ.' },
-          jp: '夜は 眠く なります。',
+          prompt: { en: 'I ate lunch and got sleepy.', vi: 'Ăn trưa xong tôi buồn ngủ.' },
+          jp: '昼ごはんを 食べて、眠く なりました。',
           ruby: [
-            { base: '夜', reading: 'よる' },
+            { base: '昼', reading: 'ひる' },
+            { base: '食', reading: 'た' },
             { base: '眠', reading: 'ねむ' }
           ]
         },
         {
           prompt: {
-            en: 'If I practice, I will become strong.',
-            vi: 'Nếu luyện tập, tôi sẽ mạnh lên.'
+            en: 'I practiced every day and got stronger.',
+            vi: 'Ngày nào cũng luyện tập nên tôi đã mạnh lên.'
           },
-          jp: '練習を すると、強く なります。',
+          jp: '毎日 練習して、強く なりました。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
             { base: '練', reading: 'れん' },
             { base: '習', reading: 'しゅう' },
             { base: '強', reading: 'つよ' }
           ]
         },
         {
-          prompt: { en: 'My body is becoming weak.', vi: 'Cơ thể tôi đang yếu đi.' },
-          jp: '体が 弱く なります。',
+          prompt: { en: 'My eyesight has gotten worse lately.', vi: 'Dạo này mắt tôi kém đi.' },
+          jp: '最近 目が 悪く なりました。',
           ruby: [
-            { base: '体', reading: 'からだ' },
-            { base: '弱', reading: 'よわ' }
+            { base: '最', reading: 'さい' },
+            { base: '近', reading: 'きん' },
+            { base: '目', reading: 'め' },
+            { base: '悪', reading: 'わる' }
           ]
         },
         {
@@ -235,14 +274,15 @@ export const n5Lesson19SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Thanks to you I became well. But I am still sleepy.',
-            vi: 'Nhờ anh/chị tôi đã khỏe. Nhưng tôi vẫn buồn ngủ.'
+            en: 'I took the medicine and got better.',
+            vi: 'Uống thuốc xong tôi đã khỏe lại.'
           },
-          jp: 'おかげさまで 元気に なりました。でも、まだ 眠いです。',
+          jp: '薬を 飲んで、元気に なりました。',
           ruby: [
+            { base: '薬', reading: 'くすり' },
+            { base: '飲', reading: 'の' },
             { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' },
-            { base: '眠', reading: 'ねむ' }
+            { base: '気', reading: 'き' }
           ]
         }
       ]

@@ -26,20 +26,18 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'My son attends university while working.',
-            vi: 'Con trai tôi vừa đi học đại học vừa đi làm.'
+            en: 'Your son goes to university while working? That is admirable.',
+            vi: 'Con trai anh vừa đi làm vừa học đại học à? Giỏi thật.'
           },
-          jp: '息子は 大学に 通いながら 働きます。大学に 通います。',
+          jp: '息子さんは 働きながら 大学に 通っているんですか。偉いですね。',
           ruby: [
             { base: '息', reading: 'むす' },
             { base: '子', reading: 'こ' },
-            { base: '大', reading: 'だい' },
-            { base: '学', reading: 'がく' },
-            { base: '通', reading: 'かよ' },
             { base: '働', reading: 'はたら' },
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
-            { base: '通', reading: 'かよ' }
+            { base: '通', reading: 'かよ' },
+            { base: '偉', reading: 'えら' }
           ]
         },
         {
@@ -55,14 +53,16 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I choose goods while looking at the price.',
-            vi: 'Tôi vừa xem giá vừa chọn hàng.'
+            en: 'I choose the goods myself while checking the prices.',
+            vi: 'Tôi tự chọn hàng trong lúc xem giá.'
           },
-          jp: '値段を 見ながら 品物を 選びます。',
+          jp: '値段を 見ながら 自分で 品物を 選びます。',
           ruby: [
             { base: '値', reading: 'ね' },
             { base: '段', reading: 'だん' },
             { base: '見', reading: 'み' },
+            { base: '自', reading: 'じ' },
+            { base: '分', reading: 'ぶん' },
             { base: '品', reading: 'しな' },
             { base: '物', reading: 'もの' },
             { base: '選', reading: 'えら' }
@@ -101,20 +101,18 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'In the future I want to become a novelist. I can also become a photographer. I am writing a novel now.',
-            vi: 'Sau này tôi muốn làm nhà văn. Tôi cũng có thể làm nhiếp ảnh. Bây giờ tôi đang viết tiểu thuyết.'
+            en: 'I want to become a novelist in the future, so I write fiction every day.',
+            vi: 'Tương lai tôi muốn thành tiểu thuyết gia nên ngày nào cũng viết tiểu thuyết.'
           },
-          jp: '将来 小説家に なりたいです。写真～家にも なれます。今 小説を 書いています。',
+          jp: '将来 小説家に なりたいので、毎日 小説を 書いています。',
           ruby: [
             { base: '将', reading: 'しょう' },
             { base: '来', reading: 'らい' },
             { base: '小', reading: 'しょう' },
             { base: '説', reading: 'せつ' },
             { base: '家', reading: 'か' },
-            { base: '写', reading: 'しゃ' },
-            { base: '真', reading: 'しん' },
-            { base: '家', reading: 'か' },
-            { base: '今', reading: 'いま' },
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
             { base: '小', reading: 'しょう' },
             { base: '説', reading: 'せつ' },
             { base: '書', reading: 'か' }
@@ -137,15 +135,14 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I take part in events every month.',
-            vi: 'Mỗi tháng tôi tham gia sự kiện.'
+            en: 'I take part in a town event every month.',
+            vi: 'Tháng nào tôi cũng tham gia sự kiện của khu phố.'
           },
-          jp: '毎月 イベントに 参加しています。イベントに 参加します。',
+          jp: '毎月 町の イベントに 参加しています。',
           ruby: [
             { base: '毎', reading: 'まい' },
-            { base: '月', reading: 'げつ' },
-            { base: '参', reading: 'さん' },
-            { base: '加', reading: 'か' },
+            { base: '月', reading: 'つき' },
+            { base: '町', reading: 'まち' },
             { base: '参', reading: 'さん' },
             { base: '加', reading: 'か' }
           ]
@@ -171,23 +168,27 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The scenery is pretty and the color is just right.',
-            vi: 'Phong cảnh đẹp, màu sắc lại vừa vặn.'
+            en: 'This room has a nice view and is just the right size, so I will take it.',
+            vi: 'Phòng này vừa có cảnh đẹp vừa rộng vừa phải, tôi chọn phòng này.'
           },
-          jp: '景色も きれいだし、色も ちょうどいいし。',
+          jp: 'この 部屋は 景色も きれいだし、広さも ちょうどいいし、ここに 決めます。',
           ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
             { base: '景', reading: 'け' },
             { base: '色', reading: 'しき' },
-            { base: '色', reading: 'いろ' }
+            { base: '広', reading: 'ひろ' },
+            { base: '決', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'The taste is good and the price is cheap, so bread sells well.',
-            vi: 'Vị ngon, giá rẻ, nên bánh mì bán chạy.'
+            en: "This shop's bread tastes good and is cheap, so it sells well.",
+            vi: 'Bánh mì tiệm này vừa ngon vừa rẻ nên bán chạy.'
           },
-          jp: '味も いいし、値段も 安いし、パンが 売れます。',
+          jp: 'この 店の パンは 味も いいし、値段も 安いし、よく 売れます。',
           ruby: [
+            { base: '店', reading: 'みせ' },
             { base: '味', reading: 'あじ' },
             { base: '値', reading: 'ね' },
             { base: '段', reading: 'だん' },
@@ -197,36 +198,43 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The singer is popular and admirable.',
-            vi: 'Ca sĩ được yêu thích và đáng khâm phục.'
+            en: 'That singer sings well and is earnest, so she is popular with students.',
+            vi: 'Ca sĩ đó vừa hát hay vừa nghiêm túc nên được sinh viên yêu thích.'
           },
-          jp: 'あの 歌手は 人気も あるし、偉いし。',
+          jp: 'あの 歌手は 歌も 上手だし、まじめだし、学生に 人気が あります。',
           ruby: [
             { base: '歌', reading: 'か' },
             { base: '手', reading: 'しゅ' },
+            { base: '歌', reading: 'うた' },
+            { base: '上', reading: 'じょう' },
+            { base: '手', reading: 'ず' },
+            { base: '学', reading: 'がく' },
+            { base: '生', reading: 'せい' },
             { base: '人', reading: 'にん' },
-            { base: '気', reading: 'き' },
-            { base: '偉', reading: 'えら' }
+            { base: '気', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'The salary is high and there is a bonus too.',
-            vi: 'Lương cao, lại có thưởng nữa.'
+            en: 'The salary is high and there is a bonus too, so I want to join this company.',
+            vi: 'Lương cao, lại có thưởng nên tôi muốn vào công ty này.'
           },
-          jp: '給料も 高いし、ボーナスも あるし。',
+          jp: '給料も 高いし、ボーナスも あるし、この 会社に 入りたいです。',
           ruby: [
             { base: '給', reading: 'きゅう' },
             { base: '料', reading: 'りょう' },
-            { base: '高', reading: 'たか' }
+            { base: '高', reading: 'たか' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
+            { base: '入', reading: 'はい' }
           ]
         },
         {
           prompt: {
-            en: 'The gym is free and the date is Saturday.',
-            vi: 'Nhà thi đấu miễn phí, ngày là thứ bảy.'
+            en: 'The gym is free and it is on a Saturday, so why not go together?',
+            vi: 'Nhà thi đấu miễn phí, ngày lại là thứ Bảy, mình cùng đi nhé?'
           },
-          jp: '体育館は 無料だし、日にちは 土だし。',
+          jp: '体育館は 無料だし、日にちも 土曜日だし、いっしょに 行きませんか。',
           ruby: [
             { base: '体', reading: 'たい' },
             { base: '育', reading: 'いく' },
@@ -234,7 +242,10 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
             { base: '無', reading: 'む' },
             { base: '料', reading: 'りょう' },
             { base: '日', reading: 'ひ' },
-            { base: '土', reading: 'ど' }
+            { base: '土', reading: 'ど' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '行', reading: 'い' }
           ]
         }
       ]
@@ -257,10 +268,10 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I saw the notice. So I will invite my own daughter.',
-            vi: 'Tôi xem thông báo. Vì thế tôi sẽ rủ con gái mình.'
+            en: 'I saw the event notice. So I invited my daughter.',
+            vi: 'Tôi thấy thông báo sự kiện. Vì thế tôi đã rủ con gái đi.'
           },
-          jp: 'お知らせを 見ました。それで 娘を 誘います。',
+          jp: 'イベントの お知らせを 見ました。それで、娘を 誘いました。',
           ruby: [
             { base: '知', reading: 'し' },
             { base: '見', reading: 'み' },
@@ -283,27 +294,31 @@ export const n4Lesson28SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I want strength. So I do it myself.',
-            vi: 'Tôi muốn sức mạnh. Vì thế tôi tự làm.'
+            en: 'I exercise every day. That is why I have become stronger.',
+            vi: 'Ngày nào tôi cũng tập thể dục. Vì thế tôi khỏe hơn rồi.'
           },
-          jp: '力が ほしいです。それで 自分で やります。',
+          jp: '毎日 運動しています。それで、力が 強く なりました。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '運', reading: 'うん' },
+            { base: '動', reading: 'どう' },
             { base: '力', reading: 'ちから' },
-            { base: '自', reading: 'じ' },
-            { base: '分', reading: 'ぶん' }
+            { base: '強', reading: 'つよ' }
           ]
         },
         {
           prompt: {
-            en: 'The shape is just right. So I will buy this washing machine.',
-            vi: 'Hình dạng vừa vặn. Vì thế tôi mua máy giặt này.'
+            en: 'This washing machine has a nice shape and color. So I bought it.',
+            vi: 'Cái máy giặt này kiểu dáng lẫn màu sắc đều đẹp. Vì thế tôi đã mua nó.'
           },
-          jp: '形が ちょうどいいです。それで この 洗濯～機を 買います。',
+          jp: 'この 洗濯機は 形も 色も きれいです。それで、これを 買いました。',
           ruby: [
-            { base: '形', reading: 'かたち' },
             { base: '洗', reading: 'せん' },
             { base: '濯', reading: 'たく' },
             { base: '機', reading: 'き' },
+            { base: '形', reading: 'かたち' },
+            { base: '色', reading: 'いろ' },
             { base: '買', reading: 'か' }
           ]
         }

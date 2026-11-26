@@ -6,9 +6,17 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
       pattern: 'N で V',
       items: [
         {
-          prompt: { en: 'I eat with chopsticks.', vi: 'Tôi ăn bằng đũa.' },
-          jp: 'はしで 食べます。',
-          ruby: [{ base: '食', reading: 'た' }]
+          prompt: {
+            en: 'Japanese people eat rice with chopsticks.',
+            vi: 'Người Nhật ăn cơm bằng đũa.'
+          },
+          jp: '日本人は はしで ごはんを 食べます。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '人', reading: 'じん' },
+            { base: '食', reading: 'た' }
+          ]
         },
         {
           prompt: { en: 'I write emails in Japanese.', vi: 'Tôi viết email bằng tiếng Nhật.' },
@@ -38,11 +46,6 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I eat with a spoon.', vi: 'Tôi ăn bằng thìa.' },
-          jp: 'スプーンで 食べます。',
-          ruby: [{ base: '食', reading: 'た' }]
-        },
-        {
           prompt: { en: 'I cut meat with a knife.', vi: 'Tôi cắt thịt bằng dao.' },
           jp: 'ナイフで 肉を 切ります。',
           ruby: [
@@ -51,30 +54,9 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I eat with a fork.', vi: 'Tôi ăn bằng nĩa.' },
-          jp: 'フォークで 食べます。',
-          ruby: [{ base: '食', reading: 'た' }]
-        },
-        {
           prompt: { en: 'I write email on a computer.', vi: 'Tôi viết email bằng máy tính.' },
           jp: 'パソコンで メールを 書きます。',
           ruby: [{ base: '書', reading: 'か' }]
-        },
-        {
-          prompt: { en: 'I make a hole with a hole punch.', vi: 'Tôi đục lỗ bằng cái đục lỗ.' },
-          jp: 'パンチで 紙を 切ります。',
-          ruby: [
-            { base: '紙', reading: 'かみ' },
-            { base: '切', reading: 'き' }
-          ]
-        },
-        {
-          prompt: { en: 'I eat with my hands.', vi: 'Tôi ăn bằng tay.' },
-          jp: '手で 食べます。',
-          ruby: [
-            { base: '手', reading: 'て' },
-            { base: '食', reading: 'た' }
-          ]
         }
       ]
     },
@@ -98,15 +80,23 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'It is "thank you".', vi: 'Là "thank you".' },
-          jp: '「Thank you」です。'
+          prompt: {
+            en: 'How do you say "sayōnara" in English? ..."Goodbye".',
+            vi: '"Sayōnara" tiếng Anh nói thế nào? ..."Goodbye".'
+          },
+          jp: '「さようなら」は 英語で 何ですか。……「Goodbye」です。',
+          ruby: [
+            { base: '英', reading: 'えい' },
+            { base: '語', reading: 'ご' },
+            { base: '何', reading: 'なん' }
+          ]
         },
         {
           prompt: {
-            en: 'How do you say "thank you" in Japanese?',
-            vi: '"Thank you" tiếng Nhật nói thế nào?'
+            en: 'What is this called in Japanese? ..."Hasami" (scissors).',
+            vi: 'Cái này tiếng Nhật gọi là gì? ..."Hasami" (cái kéo).'
           },
-          jp: '「Thank you」は 日本語で 何ですか。',
+          jp: 'これは 日本語で 何ですか。……「はさみ」です。',
           ruby: [
             { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' },
@@ -115,8 +105,17 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'It is "arigatou".', vi: 'Là "arigatou".' },
-          jp: '「ありがとう」です。'
+          prompt: {
+            en: 'How do you say "thank you" in Japanese? ..."Arigatō".',
+            vi: '"Thank you" tiếng Nhật nói thế nào? ..."Arigatō".'
+          },
+          jp: '「Thank you」は 日本語で 何ですか。……「ありがとう」です。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '何', reading: 'なん' }
+          ]
         },
         {
           prompt: {
@@ -166,31 +165,22 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I give flowers to Yamada-san.', vi: 'Tôi tặng hoa cho anh/chị Yamada.' },
-          jp: '山田さんに 花を あげます。',
-          ruby: [
-            { base: '山', reading: 'やま' },
-            { base: '田', reading: 'だ' },
-            { base: '花', reading: 'はな' }
-          ]
-        },
-        {
-          prompt: { en: 'I lend Lin a book.', vi: 'Tôi cho Lin mượn sách.' },
-          jp: 'リンさんに 本を 貸します。',
-          ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '貸', reading: 'か' }
-          ]
-        },
-        {
           prompt: { en: 'I gave my mother a shirt.', vi: 'Tôi đã tặng mẹ một áo sơ mi.' },
           jp: '母に シャツを あげました。',
           ruby: [{ base: '母', reading: 'はは' }]
         },
         {
-          prompt: { en: 'I gave my father a present.', vi: 'Tôi đã tặng bố một món quà.' },
-          jp: '父に プレゼントを あげました。',
-          ruby: [{ base: '父', reading: 'ちち' }]
+          prompt: {
+            en: 'I gave my father a necktie for his birthday.',
+            vi: 'Tôi tặng bố cà vạt nhân dịp sinh nhật.'
+          },
+          jp: '誕生日に 父に ネクタイを あげました。',
+          ruby: [
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
+            { base: '父', reading: 'ちち' }
+          ]
         }
       ]
     },
@@ -227,26 +217,6 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
             { base: '本', reading: 'ほん' },
             { base: '語', reading: 'ご' },
             { base: '習', reading: 'なら' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I receive flowers from Yamada-san.',
-            vi: 'Tôi nhận hoa từ anh/chị Yamada.'
-          },
-          jp: '山田さんに 花を もらいます。',
-          ruby: [
-            { base: '山', reading: 'やま' },
-            { base: '田', reading: 'だ' },
-            { base: '花', reading: 'はな' }
-          ]
-        },
-        {
-          prompt: { en: 'I borrow a book from Lin.', vi: 'Tôi mượn sách của Lin.' },
-          jp: 'リンさんに 本を 借ります。',
-          ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '借', reading: 'か' }
           ]
         },
         {
@@ -295,30 +265,44 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Yes, I already bought it.', vi: 'Rồi, tôi đã mua rồi.' },
-          jp: 'はい、もう 買いました。',
-          ruby: [{ base: '買', reading: 'か' }]
+          prompt: {
+            en: 'Have you eaten dinner yet? ...Yes, I already ate.',
+            vi: 'Anh ăn tối chưa? ...Rồi, tôi ăn rồi.'
+          },
+          jp: 'もう 晩ごはんを 食べましたか。……はい、もう 食べました。',
+          ruby: [
+            { base: '晩', reading: 'ばん' },
+            { base: '食', reading: 'た' },
+            { base: '食', reading: 'た' }
+          ]
         },
         {
-          prompt: { en: 'No, not yet.', vi: 'Chưa, tôi chưa mua.' },
-          jp: 'いいえ、まだです。'
+          prompt: {
+            en: 'Have you done your homework yet? ...No, not yet.',
+            vi: 'Làm bài tập chưa? ...Chưa.'
+          },
+          jp: 'もう 宿題を しましたか。……いいえ、まだです。',
+          ruby: [
+            { base: '宿', reading: 'しゅく' },
+            { base: '題', reading: 'だい' }
+          ]
         },
         {
-          prompt: { en: 'I will send it from now on.', vi: 'Tôi sẽ gửi từ bây giờ.' },
-          jp: 'これから 送ります。',
-          ruby: [{ base: '送', reading: 'おく' }]
+          prompt: {
+            en: 'Have you sent the package yet? ...No, I am about to send it.',
+            vi: 'Anh gửi hàng chưa? ...Chưa, giờ tôi mới gửi.'
+          },
+          jp: 'もう 荷物を 送りましたか。……いいえ、これから 送ります。',
+          ruby: [
+            { base: '荷', reading: 'に' },
+            { base: '物', reading: 'もつ' },
+            { base: '送', reading: 'おく' },
+            { base: '送', reading: 'おく' }
+          ]
         },
         {
           prompt: { en: 'I have already made a phone call.', vi: 'Tôi đã gọi điện rồi.' },
           jp: 'もう 電話を かけました。',
-          ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '話', reading: 'わ' }
-          ]
-        },
-        {
-          prompt: { en: 'I make a phone call.', vi: 'Tôi gọi điện.' },
-          jp: '電話を かけます。',
           ruby: [
             { base: '電', reading: 'でん' },
             { base: '話', reading: 'わ' }
@@ -348,10 +332,6 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           jp: 'この セロテープ、いいですね。'
         },
         {
-          prompt: { en: 'This stapler is handy.', vi: 'Cái dập ghim này tiện nhỉ.' },
-          jp: 'この ホッチキス、いいですね。'
-        },
-        {
           prompt: {
             en: 'How about this Christmas present?',
             vi: 'Món quà Giáng sinh này thì sao?'
@@ -359,14 +339,9 @@ export const n5Lesson7SentenceWriting: LessonSentenceWriting = {
           jp: 'この クリスマスの プレゼント、いかがですか。'
         },
         {
-          prompt: { en: 'Where is your father?', vi: 'Bố anh/chị ở đâu?' },
-          jp: 'お父さん、どこですか。',
-          ruby: [{ base: '父', reading: 'とう' }]
-        },
-        {
-          prompt: { en: 'Where is your mother?', vi: 'Mẹ anh/chị ở đâu?' },
-          jp: 'お母さん、どこですか。',
-          ruby: [{ base: '母', reading: 'かあ' }]
+          prompt: { en: 'Would you like some coffee?', vi: 'Uống cà phê không?' },
+          jp: 'コーヒー、飲みますか。',
+          ruby: [{ base: '飲', reading: 'の' }]
         }
       ]
     }

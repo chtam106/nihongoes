@@ -245,7 +245,7 @@ export const n4Lesson43: Lesson = {
       lines: [
         {
           speakerId: 'hayashi',
-          jp: 'この 写真は だれ ですか。',
+          jp: 'この 写真は だれですか。',
           romaji: 'Kono shashin wa dare desu ka.',
           meaning: { en: 'Who is in this photo?', vi: 'Đây là ảnh của ai thế?' },
           ruby: [
@@ -255,7 +255,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'schmidt',
-          jp: 'ハンスです。うちの 子どもです。この 写真は 体育の 大会の とき です。',
+          jp: 'ハンスです。うちの 子どもです。この 写真は 体育の 大会の ときです。',
           romaji: 'Hansu desu. Uchi no kodomo desu. Kono shashin wa taiiku no taikai no toki desu.',
           meaning: {
             en: 'That is Hans, my child. This photo was taken at a sports meet.',
@@ -273,7 +273,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: '元気そう ですね。',
+          jp: '元気そうですね。',
           romaji: 'Genki sō desu ne.',
           meaning: { en: "He looks healthy, doesn't he?", vi: 'Trông cậu bé khỏe mạnh nhỉ.' },
           ruby: [
@@ -283,7 +283,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'schmidt',
-          jp: 'ええ。ハンスは 速く 走ります。日本の 小学校にも 慣れて、友達も できて、毎日 楽しそう です。',
+          jp: 'ええ。ハンスは 速く 走ります。日本の 小学校にも 慣れて、友達も できて、毎日 楽しそうです。',
           romaji:
             'Ee. Hansu wa hayaku hashirimasu. Nihon no shōgakkō ni mo narete, tomodachi mo dekite, mainichi tanoshisō desu.',
           meaning: {
@@ -308,7 +308,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'よかった ですね。そして、こちらは 奥さん ですね。きれい ですね。',
+          jp: 'よかったですね。そして、こちらは 奥さんですね。きれいですね。',
           romaji: 'Yokatta desu ne. Soshite, kochira wa okusan desu ne. Kirei desu ne.',
           meaning: {
             en: 'That is good. And this is your wife, is she not? She is beautiful.',
@@ -318,7 +318,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'schmidt',
-          jp: 'ありがとう ございます。妻は いろいろな ことに 興味が あって、一緒に いると 楽しい です。',
+          jp: 'ありがとう ございます。妻は いろいろな ことに 興味が あって、一緒に いると 楽しいです。',
           romaji:
             'Arigatō gozaimasu. Tsuma wa iroirona koto ni kyōmi ga atte, issho ni iru to tanoshii desu.',
           meaning: {
@@ -336,13 +336,13 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'そう ですか。',
+          jp: 'そうですか。',
           romaji: 'Sō desu ka.',
           meaning: { en: 'I see.', vi: 'Thế à.' }
         },
         {
           speakerId: 'schmidt',
-          jp: '特に 歴史が 好きで、時間があると 古い 町を 散歩 します。',
+          jp: '特に 歴史が 好きで、時間があると 古い 町を 散歩します。',
           romaji: 'Toku ni rekishi ga suki de, jikan ga aru to furui machi o sanpo shimasu.',
           meaning: {
             en: 'She especially likes history, so when she has time she walks around old towns.',
@@ -517,16 +517,32 @@ export const n4Lesson43: Lesson = {
   reading: [
     {
       id: 'reading-lesson43-rose',
-      title: { en: 'A rose by the road', vi: 'Hoa hồng ven đường' },
+      title: { en: 'The roses by the road', vi: 'Những bông hồng bên đường' },
       titleJp: '道の わきの ばら',
       titleRuby: [{ base: '道', reading: 'みち' }],
       lines: [
         {
-          jp: 'ドライブの 途中で、道の わきに 赤い ばらが 咲いていました。',
-          romaji: 'Doraibu no tochū de, michi no waki ni akai bara ga saite imashita.',
+          jp: '日曜日、友達と ドライブに 行きました。',
+          romaji: 'Nichiyōbi, tomodachi to doraibu ni ikimashita.',
           meaning: {
-            en: 'During a drive, a red rose was blooming by the road.',
-            vi: 'Trên đường đi dạo, bên vệ đường có một bông hồng đỏ đang nở.'
+            en: 'On Sunday I went for a drive with a friend.',
+            vi: 'Chủ nhật tôi đi lái xe dạo chơi với bạn.'
+          },
+          ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '行', reading: 'い' }
+          ]
+        },
+        {
+          jp: '途中で、道の わきに 赤い ばらが たくさん 咲いていました。',
+          romaji: 'Tochū de, michi no waki ni akai bara ga takusan saite imashita.',
+          meaning: {
+            en: 'On the way, lots of red roses were blooming by the side of the road.',
+            vi: 'Trên đường đi, có rất nhiều hoa hồng đỏ nở bên vệ đường.'
           },
           ruby: [
             { base: '途', reading: 'と' },
@@ -537,143 +553,139 @@ export const n4Lesson43: Lesson = {
           ]
         },
         {
-          jp: '花が きれそうだったので、車を 止めて 写真を 撮りました。',
-          romaji: 'Hana ga kiresō datta node, kuruma o tomete shashin o torimashita.',
+          jp: '写真を 撮って いると、家から 優しそうな おばあさんが 出て 来ました。',
+          romaji: 'Shashin o totte iru to, ie kara yasashisō na obāsan ga dete kimashita.',
           meaning: {
-            en: 'The flower looked so pretty that I stopped the car and took a photo.',
-            vi: 'Hoa trông đẹp quá nên tôi dừng xe chụp ảnh.'
+            en: 'While we were taking photos, a kind-looking old woman came out of a house.',
+            vi: 'Đang chụp ảnh thì một bà cụ trông hiền hậu từ trong nhà đi ra.'
           },
           ruby: [
-            { base: '花', reading: 'はな' },
-            { base: '車', reading: 'くるま' },
-            { base: '止', reading: 'と' },
             { base: '写', reading: 'しゃ' },
             { base: '真', reading: 'しん' },
-            { base: '撮', reading: 'と' }
+            { base: '撮', reading: 'と' },
+            { base: '家', reading: 'いえ' },
+            { base: '優', reading: 'やさ' },
+            { base: '出', reading: 'で' },
+            { base: '来', reading: 'き' }
           ]
         },
         {
-          jp: 'その とき、知らない 人が 近づいて きました。',
-          romaji: 'Sono toki, shiranai hito ga chikazuite kimashita.',
+          jp: '「ちょっと 待って いて ください」と 言って、ばらを 何本か 切って 来て くれました。',
+          romaji: '"Chotto matte ite kudasai" to itte, bara o nanbon ka kitte kite kuremashita.',
           meaning: {
-            en: 'Then a stranger came up to me.',
-            vi: 'Lúc đó có người lạ đi lại gần.'
+            en: 'She said "Wait a moment," then went and cut some roses for us.',
+            vi: 'Bà nói "Đợi một chút nhé" rồi đi cắt mấy bông hồng mang ra cho chúng tôi.'
           },
           ruby: [
-            { base: '知', reading: 'し' },
-            { base: '人', reading: 'ひと' },
-            { base: '近', reading: 'ちか' }
+            { base: '待', reading: 'ま' },
+            { base: '言', reading: 'い' },
+            { base: '何', reading: 'なん' },
+            { base: '本', reading: 'ぼん' },
+            { base: '切', reading: 'き' },
+            { base: '来', reading: 'き' }
           ]
         },
         {
-          jp: '「すみません。ここは 私の 庭です」と 言われて、あやまりました。',
-          romaji: '「Sumimasen. Koko wa watashi no niwa desu」 to iwarete, ayamarimashita.',
+          jp: '帰りの 車の 中は、ばらの いい においで いっぱいでした。',
+          romaji: 'Kaeri no kuruma no naka wa, bara no ii nioi de ippai deshita.',
           meaning: {
-            en: 'I was told "Excuse me, this is my garden" and apologized.',
-            vi: 'Tôi được nói "Xin lỗi, đây là vườn nhà tôi" nên đã xin lỗi.'
+            en: 'On the drive home, the car was full of the lovely smell of roses.',
+            vi: 'Trên đường về, trong xe ngập mùi hoa hồng thơm.'
           },
           ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '庭', reading: 'にわ' },
-            { base: '言', reading: 'い' }
-          ]
-        },
-        {
-          jp: 'その 人と しりあって、ばらの 理由を 教えて もらいました。',
-          romaji: 'Sono hito to shiriatte, bara no riyū o oshiete moraimashita.',
-          meaning: {
-            en: 'I got acquainted and was told why the rose was there.',
-            vi: 'Tôi quen người đó và được kể lý do trồng hoa hồng.'
-          },
-          ruby: [
-            { base: '人', reading: 'ひと' },
-            { base: '理', reading: 'り' },
-            { base: '由', reading: 'ゆう' },
-            { base: '教', reading: 'おし' }
+            { base: '帰', reading: 'かえ' },
+            { base: '車', reading: 'くるま' },
+            { base: '中', reading: 'なか' }
           ]
         }
       ],
       questions: [
         {
           id: 'q1',
-          question: { en: 'Why did the speaker stop the car?', vi: 'Tại sao người nói dừng xe?' },
-          jp: 'どうして 車を 止めましたか。',
+          question: { en: 'Who came out of the house?', vi: 'Ai từ trong nhà đi ra?' },
+          jp: '家から だれが 出て 来ましたか。',
           ruby: [
-            { base: '車', reading: 'くるま' },
-            { base: '止', reading: 'と' }
+            { base: '家', reading: 'いえ' },
+            { base: '出', reading: 'で' },
+            { base: '来', reading: 'き' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'To photograph a rose', vi: 'Để chụp hoa hồng' },
-              jp: 'ばらの 写真を 撮るため',
-              ruby: [
-                { base: '写', reading: 'しゃ' },
-                { base: '真', reading: 'しん' },
-                { base: '撮', reading: 'と' }
-              ]
+              label: { en: 'A kind-looking old woman', vi: 'Một bà cụ trông hiền hậu' },
+              jp: '優しそうな おばあさん',
+              ruby: [{ base: '優', reading: 'やさ' }]
             },
             {
               id: 'b',
-              label: { en: 'To buy gas', vi: 'Để mua xăng' },
-              jp: 'ガソリンを 買うため',
-              ruby: [{ base: '買', reading: 'か' }]
+              label: { en: 'A young man', vi: 'Một người đàn ông trẻ' },
+              jp: '若い 男の 人',
+              ruby: [
+                { base: '若', reading: 'わか' },
+                { base: '男', reading: 'おとこ' },
+                { base: '人', reading: 'ひと' }
+              ]
             },
             {
               id: 'c',
-              label: { en: 'To meet Schmidt', vi: 'Để gặp Schmidt' },
-              jp: 'シュミットさんに 会うため',
-              ruby: [{ base: '会', reading: 'あ' }]
+              label: { en: 'A police officer', vi: 'Một cảnh sát' },
+              jp: '警官',
+              ruby: [
+                { base: '警', reading: 'けい' },
+                { base: '官', reading: 'かん' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'To pick a pamphlet', vi: 'Để lấy tờ rơi' },
-              jp: 'パンフレットを 取るため',
-              ruby: [{ base: '取', reading: 'と' }]
+              label: { en: 'Some children', vi: 'Mấy đứa trẻ' },
+              jp: '子どもたち',
+              ruby: [{ base: '子', reading: 'こ' }]
             }
           ],
           correctId: 'a'
         },
         {
           id: 'q2',
-          question: { en: 'What did the stranger say?', vi: 'Người lạ nói gì?' },
-          jp: '知らない 人は 何と 言いましたか。',
-          ruby: [
-            { base: '知', reading: 'し' },
-            { base: '人', reading: 'ひと' },
-            { base: '何', reading: 'なん' },
-            { base: '言', reading: 'い' }
-          ],
+          question: { en: 'What did the old woman do for them?', vi: 'Bà cụ đã làm gì cho họ?' },
+          jp: 'おばあさんは 何を して くれましたか。',
+          ruby: [{ base: '何', reading: 'なに' }],
           choices: [
             {
               id: 'a',
-              label: { en: 'This is my garden', vi: 'Đây là vườn nhà tôi' },
-              jp: 'ここは 私の 庭です',
+              label: { en: 'Cut some roses for them', vi: 'Cắt hoa hồng mang ra cho họ' },
+              jp: 'ばらを 切って 来て くれた',
               ruby: [
-                { base: '私', reading: 'わたし' },
-                { base: '庭', reading: 'にわ' }
+                { base: '切', reading: 'き' },
+                { base: '来', reading: 'き' }
               ]
             },
             {
               id: 'b',
-              label: { en: 'The price will fall', vi: 'Giá sẽ giảm' },
-              jp: '値段が 下がります',
+              label: { en: 'Showed them the way', vi: 'Chỉ đường cho họ' },
+              jp: '道を 教えて くれた',
               ruby: [
-                { base: '値', reading: 'ね' },
-                { base: '段', reading: 'だん' },
-                { base: '下', reading: 'さ' }
+                { base: '道', reading: 'みち' },
+                { base: '教', reading: 'おし' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Gas ran out', vi: 'Hết xăng' },
-              jp: 'ガソリンが なくなりました'
+              label: { en: 'Made them tea', vi: 'Pha trà cho họ' },
+              jp: 'お茶を 入れて くれた',
+              ruby: [
+                { base: '茶', reading: 'ちゃ' },
+                { base: '入', reading: 'い' }
+              ]
             },
             {
               id: 'd',
-              label: { en: 'The button came off', vi: 'Cúc áo tuột' },
-              jp: 'ボタンが 取れました',
-              ruby: [{ base: '取', reading: 'と' }]
+              label: { en: 'Took their photo', vi: 'Chụp ảnh cho họ' },
+              jp: '写真を 撮って くれた',
+              ruby: [
+                { base: '写', reading: 'しゃ' },
+                { base: '真', reading: 'しん' },
+                { base: '撮', reading: 'と' }
+              ]
             }
           ],
           correctId: 'a'

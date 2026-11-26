@@ -20,14 +20,26 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I go to the supermarket.', vi: 'Tôi đi đến siêu thị.' },
-          jp: 'スーパーへ 行きます。',
-          ruby: [{ base: '行', reading: 'い' }]
+          prompt: {
+            en: 'I am going to the supermarket this afternoon.',
+            vi: 'Chiều nay tôi đi đến siêu thị.'
+          },
+          jp: '午後 スーパーへ 行きます。',
+          ruby: [
+            { base: '午', reading: 'ご' },
+            { base: '後', reading: 'ご' },
+            { base: '行', reading: 'い' }
+          ]
         },
         {
-          prompt: { en: 'I go to the station.', vi: 'Tôi đi đến nhà ga.' },
-          jp: '駅へ 行きます。',
+          prompt: {
+            en: 'What time are you going to the station tomorrow?',
+            vi: 'Ngày mai mấy giờ anh ra ga?'
+          },
+          jp: 'あした 何時に 駅へ 行きますか。',
           ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
             { base: '駅', reading: 'えき' },
             { base: '行', reading: 'い' }
           ]
@@ -53,9 +65,17 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
       patternRuby: [{ base: '行', reading: 'い' }],
       items: [
         {
-          prompt: { en: 'I am not going anywhere.', vi: 'Tôi không đi đâu cả.' },
-          jp: 'どこも 行きません。',
-          ruby: [{ base: '行', reading: 'い' }]
+          prompt: {
+            en: 'I am not going anywhere today. I will rest at home.',
+            vi: 'Hôm nay tôi không đi đâu cả. Ở nhà nghỉ ngơi.'
+          },
+          jp: '今日は どこも 行きません。うちで 休みます。',
+          ruby: [
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '行', reading: 'い' },
+            { base: '休', reading: 'やす' }
+          ]
         },
         {
           prompt: { en: 'I did not go anywhere on Sunday.', vi: 'Chủ nhật tôi không đi đâu cả.' },
@@ -68,11 +88,14 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I am not going anywhere alone.', vi: 'Tôi không đi đâu một mình.' },
-          jp: '一人で どこも 行きません。',
+          prompt: {
+            en: 'I did not go anywhere during the winter break.',
+            vi: 'Kỳ nghỉ đông tôi không đi đâu cả.'
+          },
+          jp: '冬休みは どこへも 行きませんでした。',
           ruby: [
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' },
+            { base: '冬', reading: 'ふゆ' },
+            { base: '休', reading: 'やす' },
             { base: '行', reading: 'い' }
           ]
         },
@@ -82,9 +105,18 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '来', reading: 'き' }]
         },
         {
-          prompt: { en: 'I am not going home anywhere else.', vi: 'Tôi không về đâu cả.' },
-          jp: 'どこへも 帰りません。',
-          ruby: [{ base: '帰', reading: 'かえ' }]
+          prompt: {
+            en: 'Did you go anywhere on Sunday? ...No, I did not go anywhere.',
+            vi: 'Chủ nhật anh có đi đâu không? ...Không, tôi không đi đâu cả.'
+          },
+          jp: '日曜日 どこか 行きましたか。……いいえ、どこも 行きませんでした。',
+          ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '行', reading: 'い' },
+            { base: '行', reading: 'い' }
+          ]
         }
       ]
     },
@@ -97,78 +129,65 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
       ],
       items: [
         {
-          prompt: { en: 'I go by train.', vi: 'Tôi đi bằng tàu điện.' },
-          jp: '電車で 行きます。',
+          prompt: {
+            en: 'I go to the office by train every day.',
+            vi: 'Ngày nào tôi cũng đi tàu điện đến công ty.'
+          },
+          jp: '毎日 電車で 会社へ 行きます。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
             { base: '電', reading: 'でん' },
             { base: '車', reading: 'しゃ' },
+            { base: '会', reading: 'かい' },
+            { base: '社', reading: 'しゃ' },
             { base: '行', reading: 'い' }
           ]
         },
         {
-          prompt: { en: 'I go by subway.', vi: 'Tôi đi bằng tàu điện ngầm.' },
-          jp: '地下鉄で 行きます。',
+          prompt: {
+            en: 'I am going to Osaka by shinkansen next week.',
+            vi: 'Tuần sau tôi đi đến Osaka bằng tàu Shinkansen.'
+          },
+          jp: '来週 新幹線で 大阪へ 行きます。',
           ruby: [
-            { base: '地', reading: 'ち' },
-            { base: '下', reading: 'か' },
-            { base: '鉄', reading: 'てつ' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go by Shinkansen.', vi: 'Tôi đi bằng tàu Shinkansen.' },
-          jp: '新幹線で 行きます。',
-          ruby: [
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
             { base: '新', reading: 'しん' },
             { base: '幹', reading: 'かん' },
             { base: '線', reading: 'せん' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
             { base: '行', reading: 'い' }
           ]
         },
         {
-          prompt: { en: 'I come by bus.', vi: 'Tôi đến bằng xe buýt.' },
-          jp: 'バスで 来ます。',
-          ruby: [{ base: '来', reading: 'き' }]
-        },
-        {
-          prompt: { en: 'I go home by taxi.', vi: 'Tôi về nhà bằng tắc-xi.' },
-          jp: 'タクシーで 帰ります。',
-          ruby: [{ base: '帰', reading: 'かえ' }]
-        },
-        {
-          prompt: { en: 'I go by bicycle.', vi: 'Tôi đi bằng xe đạp.' },
-          jp: '自転車で 行きます。',
+          prompt: {
+            en: 'Yesterday I came to school by bus.',
+            vi: 'Hôm qua tôi đến trường bằng xe buýt.'
+          },
+          jp: 'きのう バスで 学校へ 来ました。',
           ruby: [
-            { base: '自', reading: 'じ' },
-            { base: '転', reading: 'てん' },
-            { base: '車', reading: 'しゃ' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go by airplane.', vi: 'Tôi đi bằng máy bay.' },
-          jp: '飛行機で 行きます。',
-          ruby: [
-            { base: '飛', reading: 'ひ' },
-            { base: '行', reading: 'こう' },
-            { base: '機', reading: 'き' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I come by ship.', vi: 'Tôi đến bằng tàu thủy.' },
-          jp: '船で 来ます。',
-          ruby: [
-            { base: '船', reading: 'ふね' },
+            { base: '学', reading: 'がっ' },
+            { base: '校', reading: 'こう' },
             { base: '来', reading: 'き' }
           ]
         },
         {
-          prompt: { en: 'I go on foot.', vi: 'Tôi đi bộ.' },
-          jp: '歩いて 行きます。',
+          prompt: { en: 'I went home by taxi at night.', vi: 'Buổi tối tôi về nhà bằng taxi.' },
+          jp: '夜 タクシーで うちへ 帰りました。',
           ruby: [
+            { base: '夜', reading: 'よる' },
+            { base: '帰', reading: 'かえ' }
+          ]
+        },
+        {
+          prompt: { en: 'I walked home from the station.', vi: 'Tôi đi bộ từ ga về nhà.' },
+          jp: '駅から 歩いて 帰りました。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
             { base: '歩', reading: 'ある' },
-            { base: '行', reading: 'い' }
+            { base: '帰', reading: 'かえ' }
           ]
         }
       ]
@@ -177,45 +196,76 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
       pattern: 'N と V',
       items: [
         {
-          prompt: { en: 'I go with a friend.', vi: 'Tôi đi với bạn.' },
-          jp: '友達と 行きます。',
+          prompt: {
+            en: 'Tomorrow I am going to the art museum with a friend.',
+            vi: 'Ngày mai tôi đi bảo tàng mỹ thuật với bạn.'
+          },
+          jp: 'あした 友達と 美術館へ 行きます。',
           ruby: [
             { base: '友', reading: 'とも' },
             { base: '達', reading: 'だち' },
+            { base: '美', reading: 'び' },
+            { base: '術', reading: 'じゅつ' },
+            { base: '館', reading: 'かん' },
             { base: '行', reading: 'い' }
           ]
         },
         {
-          prompt: { en: 'I go with him.', vi: 'Tôi đi với anh ấy.' },
-          jp: '彼と 行きます。',
+          prompt: {
+            en: 'I went to Kyoto with my boyfriend on Sunday.',
+            vi: 'Chủ nhật tôi đi đến Kyoto với bạn trai.'
+          },
+          jp: '日曜日 彼と 京都へ 行きました。',
           ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
             { base: '彼', reading: 'かれ' },
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
             { base: '行', reading: 'い' }
           ]
         },
         {
-          prompt: { en: 'I come with her.', vi: 'Tôi đến với chị ấy.' },
-          jp: '彼女と 来ます。',
+          prompt: {
+            en: 'Did you come alone? ...No, I came with my family.',
+            vi: 'Anh đến một mình à? ...Không, tôi đến cùng gia đình.'
+          },
+          jp: '一人で 来ましたか。……いいえ、家族と 来ました。',
           ruby: [
-            { base: '彼', reading: 'かの' },
-            { base: '女', reading: 'じょ' },
+            { base: '一', reading: 'ひと' },
+            { base: '人', reading: 'り' },
+            { base: '来', reading: 'き' },
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' },
             { base: '来', reading: 'き' }
           ]
         },
         {
-          prompt: { en: 'I go home with my family.', vi: 'Tôi về nhà với gia đình.' },
-          jp: '家族と 帰ります。',
+          prompt: {
+            en: 'I am going back to my home country with my family for the summer holidays.',
+            vi: 'Kỳ nghỉ hè tôi về nước cùng gia đình.'
+          },
+          jp: '夏休みに 家族と 国へ 帰ります。',
           ruby: [
+            { base: '夏', reading: 'なつ' },
+            { base: '休', reading: 'やす' },
             { base: '家', reading: 'か' },
             { base: '族', reading: 'ぞく' },
+            { base: '国', reading: 'くに' },
             { base: '帰', reading: 'かえ' }
           ]
         },
         {
-          prompt: { en: 'I go with that person.', vi: 'Tôi đi với người kia.' },
-          jp: 'あの 人と 行きます。',
+          prompt: {
+            en: 'Who are you going with? ...I am going alone.',
+            vi: 'Anh đi với ai? ...Tôi đi một mình.'
+          },
+          jp: 'だれと 行きますか。……一人で 行きます。',
           ruby: [
-            { base: '人', reading: 'ひと' },
+            { base: '行', reading: 'い' },
+            { base: '一', reading: 'ひと' },
+            { base: '人', reading: 'り' },
             { base: '行', reading: 'い' }
           ]
         }
@@ -225,289 +275,76 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
       pattern: 'いつ',
       items: [
         {
-          prompt: { en: 'When is your birthday?', vi: 'Sinh nhật bạn khi nào?' },
-          jp: '誕生日は いつですか。',
+          prompt: {
+            en: 'When is your birthday? ...March 3rd.',
+            vi: 'Sinh nhật anh là khi nào? ...Ngày 3 tháng 3.'
+          },
+          jp: '誕生日は いつですか。……3月3日です。',
           ruby: [
             { base: '誕', reading: 'たん' },
             { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
+            { base: '月', reading: 'がつ' },
+            { base: '日', reading: 'みっか' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'When did you come to Japan? ...I came last April.',
+            vi: 'Anh sang Nhật khi nào? ...Tháng 4 năm ngoái.'
+          },
+          jp: 'いつ 日本へ 来ましたか。……去年の 4月に 来ました。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '来', reading: 'き' },
+            { base: '去', reading: 'きょ' },
+            { base: '年', reading: 'ねん' },
+            { base: '月', reading: 'がつ' },
+            { base: '来', reading: 'き' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'When are you going back to your country? ...On the 15th of next month.',
+            vi: 'Khi nào anh về nước? ...Ngày 15 tháng sau.'
+          },
+          jp: 'いつ 国へ 帰りますか。……来月の 15日に 帰ります。',
+          ruby: [
+            { base: '国', reading: 'くに' },
+            { base: '帰', reading: 'かえ' },
+            { base: '来', reading: 'らい' },
+            { base: '月', reading: 'げつ' },
+            { base: '日', reading: 'にち' },
+            { base: '帰', reading: 'かえ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'When is the test? ...Next Friday.',
+            vi: 'Bài kiểm tra là khi nào? ...Thứ Sáu tuần sau.'
+          },
+          jp: 'テストは いつですか。……来週の 金曜日です。',
+          ruby: [
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '金', reading: 'きん' },
+            { base: '曜', reading: 'よう' },
             { base: '日', reading: 'び' }
           ]
         },
         {
           prompt: {
-            en: 'My birthday is January 1st.',
-            vi: 'Sinh nhật tôi là ngày mồng 1 tháng 1.'
+            en: 'When did you go to Kyoto? ...Last month.',
+            vi: 'Anh đi đến Kyoto khi nào? ...Tháng trước.'
           },
-          jp: '誕生日は 1月一日です。',
+          jp: 'いつ 京都へ 行きましたか。……先月 行きました。',
           ruby: [
-            { base: '誕', reading: 'たん' },
-            { base: '生', reading: 'じょう' },
-            { base: '日', reading: 'び' },
-            { base: '月', reading: 'がつ' },
-            { base: '一', reading: 'つい' },
-            { base: '日', reading: 'たち' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Her birthday is February 2nd.',
-            vi: 'Sinh nhật chị ấy là ngày mồng 2 tháng 2.'
-          },
-          jp: '彼女の 誕生日は 2月二日です。',
-          ruby: [
-            { base: '彼', reading: 'かの' },
-            { base: '女', reading: 'じょ' },
-            { base: '誕', reading: 'たん' },
-            { base: '生', reading: 'じょう' },
-            { base: '日', reading: 'び' },
-            { base: '月', reading: 'がつ' },
-            { base: '二', reading: 'ふつ' },
-            { base: '日', reading: 'か' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'His birthday is March 3rd.',
-            vi: 'Sinh nhật anh ấy là ngày mồng 3 tháng 3.'
-          },
-          jp: '彼の 誕生日は 3月三日です。',
-          ruby: [
-            { base: '彼', reading: 'かれ' },
-            { base: '誕', reading: 'たん' },
-            { base: '生', reading: 'じょう' },
-            { base: '日', reading: 'び' },
-            { base: '月', reading: 'がつ' },
-            { base: '三', reading: 'みっ' },
-            { base: '日', reading: 'か' }
-          ]
-        },
-        {
-          prompt: { en: 'My birthday is April 4th.', vi: 'Sinh nhật tôi là ngày mồng 4 tháng 4.' },
-          jp: '誕生日は 4月四日です。',
-          ruby: [
-            { base: '誕', reading: 'たん' },
-            { base: '生', reading: 'じょう' },
-            { base: '日', reading: 'び' },
-            { base: '月', reading: 'がつ' },
-            { base: '四', reading: 'よっ' },
-            { base: '日', reading: 'か' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on May 5th.', vi: 'Tôi đi ngày mồng 5 tháng 5.' },
-          jp: '5月五日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '五', reading: 'いつ' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on June 6th.', vi: 'Tôi đi ngày mồng 6 tháng 6.' },
-          jp: '6月六日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '六', reading: 'むい' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on July 7th.', vi: 'Tôi đi ngày mồng 7 tháng 7.' },
-          jp: '7月七日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '七', reading: 'なの' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on August 8th.', vi: 'Tôi đi ngày mồng 8 tháng 8.' },
-          jp: '8月八日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '八', reading: 'よう' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on September 9th.', vi: 'Tôi đi ngày mồng 9 tháng 9.' },
-          jp: '9月九日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '九', reading: 'ここの' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on October 10th.', vi: 'Tôi đi ngày mồng 10 tháng 10.' },
-          jp: '10月十日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '十', reading: 'とお' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on April 14th.', vi: 'Tôi đi ngày 14 tháng 4.' },
-          jp: '4月十四日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '十', reading: 'じゅう' },
-            { base: '四', reading: 'よっ' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on December 20th.', vi: 'Tôi đi ngày 20 tháng 12.' },
-          jp: '12月二十日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '二', reading: 'は' },
-            { base: '十', reading: 'つ' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on March 24th.', vi: 'Tôi đi ngày 24 tháng 3.' },
-          jp: '3月二十四日に 行きます。',
-          ruby: [
-            { base: '月', reading: 'がつ' },
-            { base: '二', reading: 'に' },
-            { base: '十', reading: 'じゅう' },
-            { base: '四', reading: 'よっ' },
-            { base: '日', reading: 'か' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go on the 15th.', vi: 'Tôi đi ngày 15.' },
-          jp: '15日に 行きます。',
-          ruby: [
-            { base: '日', reading: 'にち' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'What day of the month do you go?', vi: 'Bạn đi ngày mấy?' },
-          jp: '何日に 行きますか。',
-          ruby: [
-            { base: '何', reading: 'なん' },
-            { base: '日', reading: 'にち' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'What month do you go?', vi: 'Bạn đi tháng mấy?' },
-          jp: '何月に 行きますか。',
-          ruby: [
-            { base: '何', reading: 'なん' },
-            { base: '月', reading: 'がつ' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'What year did you come?', vi: 'Bạn đến năm nào?' },
-          jp: '何年に 来ましたか。',
-          ruby: [
-            { base: '何', reading: 'なん' },
-            { base: '年', reading: 'ねん' },
-            { base: '来', reading: 'き' }
-          ]
-        },
-        {
-          prompt: { en: 'I came in 2020.', vi: 'Tôi đã đến năm 2020.' },
-          jp: '2020年に 来ました。',
-          ruby: [
-            { base: '年', reading: 'ねん' },
-            { base: '来', reading: 'き' }
-          ]
-        },
-        {
-          prompt: { en: 'I went last week.', vi: 'Tuần trước tôi đã đi.' },
-          jp: '先週 行きました。',
-          ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '週', reading: 'しゅう' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go this week.', vi: 'Tuần này tôi đi.' },
-          jp: '今週 行きます。',
-          ruby: [
-            { base: '今', reading: 'こん' },
-            { base: '週', reading: 'しゅう' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go next week.', vi: 'Tuần sau tôi đi.' },
-          jp: '来週 行きます。',
-          ruby: [
-            { base: '来', reading: 'らい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I went last month.', vi: 'Tháng trước tôi đã đi.' },
-          jp: '先月 行きました。',
-          ruby: [
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
+            { base: '行', reading: 'い' },
             { base: '先', reading: 'せん' },
             { base: '月', reading: 'げつ' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go this month.', vi: 'Tháng này tôi đi.' },
-          jp: '今月 行きます。',
-          ruby: [
-            { base: '今', reading: 'こん' },
-            { base: '月', reading: 'げつ' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go next month.', vi: 'Tháng sau tôi đi.' },
-          jp: '来月 行きます。',
-          ruby: [
-            { base: '来', reading: 'らい' },
-            { base: '月', reading: 'げつ' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I came last year.', vi: 'Năm ngoái tôi đã đến.' },
-          jp: '去年 来ました。',
-          ruby: [
-            { base: '去', reading: 'きょ' },
-            { base: '年', reading: 'ねん' },
-            { base: '来', reading: 'き' }
-          ]
-        },
-        {
-          prompt: { en: 'I go this year.', vi: 'Năm nay tôi đi.' },
-          jp: '今年 行きます。',
-          ruby: [
-            { base: '今', reading: 'こ' },
-            { base: '年', reading: 'とし' },
-            { base: '行', reading: 'い' }
-          ]
-        },
-        {
-          prompt: { en: 'I go next year.', vi: 'Sang năm tôi đi.' },
-          jp: '来年 行きます。',
-          ruby: [
-            { base: '来', reading: 'らい' },
-            { base: '年', reading: 'ねん' },
             { base: '行', reading: 'い' }
           ]
         }
@@ -562,40 +399,64 @@ export const n5Lesson5SentenceWriting: LessonSentenceWriting = {
       pattern: 'そうですね',
       items: [
         {
-          prompt: { en: "That's right.", vi: 'Ừ, nhỉ.' },
-          jp: 'そうですね。'
+          prompt: {
+            en: 'Tomorrow is a holiday, is it not? ...Yes, that is right.',
+            vi: 'Mai được nghỉ nhỉ. ...Ừ nhỉ.'
+          },
+          jp: 'あしたは 休みですね。……そうですね。',
+          ruby: [{ base: '休', reading: 'やす' }]
         },
         {
-          prompt: { en: "That's right. I will go by train.", vi: 'Ừ nhỉ. Tôi sẽ đi tàu điện.' },
-          jp: 'そうですね。電車で 行きます。',
+          prompt: {
+            en: 'It is already five, is it not? ...Yes, it is. Well then, I will go home.',
+            vi: '5 giờ rồi nhỉ. ...Ừ nhỉ. Vậy tôi về đây.'
+          },
+          jp: 'もう 5時ですね。……そうですね。じゃ、帰ります。',
+          ruby: [
+            { base: '時', reading: 'じ' },
+            { base: '帰', reading: 'かえ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'This train goes to Kyoto, does it not? ...Yes, it does.',
+            vi: 'Tàu này đi đến Kyoto nhỉ. ...Đúng rồi.'
+          },
+          jp: 'この 電車は 京都へ 行きますね。……そうですね。',
           ruby: [
             { base: '電', reading: 'でん' },
             { base: '車', reading: 'しゃ' },
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
             { base: '行', reading: 'い' }
           ]
         },
         {
-          prompt: { en: "That's right. I will go next week.", vi: 'Ừ nhỉ. Tuần sau tôi đi.' },
-          jp: 'そうですね。来週 行きます。',
+          prompt: {
+            en: 'Banks are closed on Sundays, are they not? ...Yes, they are.',
+            vi: 'Chủ nhật ngân hàng nghỉ nhỉ. ...Đúng vậy.'
+          },
+          jp: '日曜日は 銀行が 休みですね。……そうですね。',
           ruby: [
-            { base: '来', reading: 'らい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '行', reading: 'い' }
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' },
+            { base: '休', reading: 'やす' }
           ]
         },
         {
-          prompt: { en: "That's right. I will go with a friend.", vi: 'Ừ nhỉ. Tôi đi với bạn.' },
-          jp: 'そうですね。友達と 行きます。',
+          prompt: {
+            en: 'That is Mr. Tanaka, is it not? ...Yes, it is.',
+            vi: 'Người kia là anh Tanaka nhỉ. ...Đúng rồi.'
+          },
+          jp: 'あの 人は 田中さんですね。……そうですね。',
           ruby: [
-            { base: '友', reading: 'とも' },
-            { base: '達', reading: 'だち' },
-            { base: '行', reading: 'い' }
+            { base: '人', reading: 'ひと' },
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' }
           ]
-        },
-        {
-          prompt: { en: "That's right. I will go home.", vi: 'Ừ nhỉ. Tôi về nhà.' },
-          jp: 'そうですね。うちへ 帰ります。',
-          ruby: [{ base: '帰', reading: 'かえ' }]
         }
       ]
     }

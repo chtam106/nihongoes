@@ -38,37 +38,42 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Everyone was formally invited by the company.',
-            vi: 'Quý vị được công ty mời trang trọng.'
+            en: "I was invited to a friend's wedding.",
+            vi: 'Tôi được mời dự đám cưới của bạn.'
           },
-          jp: '皆様は 会社に 招待されました。',
+          jp: '友だちの 結婚式に 招待されました。',
           ruby: [
-            { base: '皆', reading: 'みな' },
-            { base: '様', reading: 'さま' },
-            { base: '会', reading: 'かい' },
-            { base: '社', reading: 'しゃ' },
+            { base: '友', reading: 'とも' },
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' },
+            { base: '式', reading: 'しき' },
             { base: '招', reading: 'しょう' },
             { base: '待', reading: 'たい' }
           ]
         },
         {
-          prompt: {
-            en: 'I was asked a favor by my mother.',
-            vi: 'Tôi được mẹ nhờ một việc.'
-          },
-          jp: '母に 頼まれました。',
+          prompt: { en: 'My mother asked me to do the shopping.', vi: 'Tôi bị mẹ nhờ đi mua đồ.' },
+          jp: '母に 買い物を 頼まれました。',
           ruby: [
             { base: '母', reading: 'はは' },
+            { base: '買', reading: 'か' },
+            { base: '物', reading: 'もの' },
             { base: '頼', reading: 'たの' }
           ]
         },
         {
           prompt: {
-            en: 'I was warned by a police officer.',
-            vi: 'Tôi bị cảnh sát nhắc nhở.'
+            en: 'I rode my bike on the sidewalk and got warned by a police officer.',
+            vi: 'Tôi đạp xe trên vỉa hè và bị cảnh sát nhắc nhở.'
           },
-          jp: '警官に 注意されました。',
+          jp: '自転車で 歩道を 走って、警官に 注意されました。',
           ruby: [
+            { base: '自', reading: 'じ' },
+            { base: '転', reading: 'てん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '歩', reading: 'ほ' },
+            { base: '道', reading: 'どう' },
+            { base: '走', reading: 'はし' },
             { base: '警', reading: 'けい' },
             { base: '官', reading: 'かん' },
             { base: '注', reading: 'ちゅう' },
@@ -145,16 +150,17 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'A meeting will be held all over the world.',
-            vi: 'Một cuộc họp sẽ được tổ chức trên toàn thế giới.'
+            en: 'An international conference will be held in Tokyo next year.',
+            vi: 'Năm sau một hội nghị quốc tế sẽ được tổ chức ở Tokyo.'
           },
-          jp: '世界中と 世界～じゅうで 会議が 行われます。',
+          jp: '来年 東京で 国際会議が 行われます。',
           ruby: [
-            { base: '世', reading: 'せ' },
-            { base: '界', reading: 'かい' },
-            { base: '中', reading: 'じゅう' },
-            { base: '世', reading: 'せ' },
-            { base: '界', reading: 'かい' },
+            { base: '来', reading: 'らい' },
+            { base: '年', reading: 'ねん' },
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
+            { base: '国', reading: 'こく' },
+            { base: '際', reading: 'さい' },
             { base: '会', reading: 'かい' },
             { base: '議', reading: 'ぎ' },
             { base: '行', reading: 'おこな' }
@@ -207,52 +213,55 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
             en: 'Instant noodles were invented in the 20th century.',
             vi: 'Mì ăn liền được phát minh vào thế kỷ 20.'
           },
-          jp: 'インスタントラーメンは 20～せいきに 発明されました。',
+          jp: 'インスタントラーメンは 20世紀に 発明されました。',
           ruby: [
+            { base: '世', reading: 'せい' },
+            { base: '紀', reading: 'き' },
             { base: '発', reading: 'はつ' },
             { base: '明', reading: 'めい' }
           ]
         },
         {
           prompt: {
-            en: 'A new World Heritage site was discovered.',
-            vi: 'Một di sản thế giới mới được phát hiện.'
+            en: 'A new star has been discovered.',
+            vi: 'Một ngôi sao mới đã được phát hiện.'
           },
-          jp: '新しい 世界遺産が 発見されました。',
+          jp: '新しい 星が 発見されました。',
           ruby: [
             { base: '新', reading: 'あたら' },
-            { base: '世', reading: 'せ' },
-            { base: '界', reading: 'かい' },
-            { base: '遺', reading: 'い' },
-            { base: '産', reading: 'さん' },
+            { base: '星', reading: 'ほし' },
             { base: '発', reading: 'はっ' },
             { base: '見', reading: 'けん' }
           ]
         },
         {
           prompt: {
-            en: 'The house was burned after that.',
-            vi: 'Ngôi nhà đã cháy sau đó.'
+            en: 'Horyuji was built in the 7th century.',
+            vi: 'Chùa Horyuji được xây vào thế kỷ 7.'
           },
-          jp: 'その後 家が 焼けました。',
+          jp: '法隆寺は 7世紀に 建てられました。',
           ruby: [
-            { base: '後', reading: 'ご' },
-            { base: '家', reading: 'いえ' },
-            { base: '焼', reading: 'や' }
+            { base: '法', reading: 'ほう' },
+            { base: '隆', reading: 'りゅう' },
+            { base: '寺', reading: 'じ' },
+            { base: '世', reading: 'せい' },
+            { base: '紀', reading: 'き' },
+            { base: '建', reading: 'た' }
           ]
         },
         {
           prompt: {
-            en: 'That was great, was it not? A golden sculpture was shown.',
-            vi: 'Hay quá nhỉ. Một tác phẩm điêu khắc màu vàng được trưng bày.'
+            en: 'A summer festival is held at this temple every year.',
+            vi: 'Ở ngôi chùa này năm nào cũng tổ chức lễ hội mùa hè.'
           },
-          jp: 'よかったですね。金色の 彫刻が 見られました。',
+          jp: 'この お寺では 毎年 夏祭りが 開かれます。',
           ruby: [
-            { base: '金', reading: 'きん' },
-            { base: '色', reading: 'いろ' },
-            { base: '彫', reading: 'ちょう' },
-            { base: '刻', reading: 'こく' },
-            { base: '見', reading: 'み' }
+            { base: '寺', reading: 'てら' },
+            { base: '毎', reading: 'まい' },
+            { base: '年', reading: 'とし' },
+            { base: '夏', reading: 'なつ' },
+            { base: '祭', reading: 'まつ' },
+            { base: '開', reading: 'ひら' }
           ]
         }
       ]
@@ -286,16 +295,11 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'Plastic is made from oil as a raw material.',
-            vi: 'Nhựa được làm từ dầu mỏ làm nguyên liệu.'
-          },
-          jp: 'プラスチックは 石油の 原料から 作ります。',
+          prompt: { en: 'Plastic is made from oil.', vi: 'Nhựa được làm từ dầu mỏ.' },
+          jp: 'プラスチックは 石油から 作ります。',
           ruby: [
             { base: '石', reading: 'せき' },
             { base: '油', reading: 'ゆ' },
-            { base: '原', reading: 'げん' },
-            { base: '料', reading: 'りょう' },
             { base: '作', reading: 'つく' }
           ]
         },
@@ -316,16 +320,17 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The luxurious hall was made of gold.',
-            vi: 'Hội trường hoành tráng được làm bằng vàng.'
+            en: 'Japanese houses long ago were made of wood and paper.',
+            vi: 'Nhà Nhật ngày xưa được làm bằng gỗ và giấy.'
           },
-          jp: '豪華な 建物は 金で 作りました。',
+          jp: '昔の 日本の 家は 木と 紙で 作りました。',
           ruby: [
-            { base: '豪', reading: 'ごう' },
-            { base: '華', reading: 'か' },
-            { base: '建', reading: 'たて' },
-            { base: '物', reading: 'もの' },
-            { base: '金', reading: 'きん' },
+            { base: '昔', reading: 'むかし' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '家', reading: 'いえ' },
+            { base: '木', reading: 'き' },
+            { base: '紙', reading: 'かみ' },
             { base: '作', reading: 'つく' }
           ]
         }
@@ -359,15 +364,16 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'A legend is written on the left of the gate.',
-            vi: 'Truyền thuyết được viết bên trái cổng.'
+            en: 'An explanation of the temple is written on the left of the gate.',
+            vi: 'Bên trái cổng có ghi lời giới thiệu về ngôi chùa.'
           },
-          jp: '門の 左に 言い伝えが 書いて あります。',
+          jp: '門の 左に お寺の 説明が 書いて あります。',
           ruby: [
             { base: '門', reading: 'もん' },
             { base: '左', reading: 'ひだり' },
-            { base: '言', reading: 'い' },
-            { base: '伝', reading: 'つた' },
+            { base: '寺', reading: 'てら' },
+            { base: '説', reading: 'せつ' },
+            { base: '明', reading: 'めい' },
             { base: '書', reading: 'か' }
           ]
         },
@@ -385,157 +391,24 @@ export const n4Lesson37SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'The sculpture is on the right of the box.',
-            vi: 'Tác phẩm điêu khắc ở bên phải hộp.'
-          },
-          jp: '箱の 右に 彫刻が あります。',
+          prompt: { en: 'The key is on the desk.', vi: 'Chìa khóa ở trên bàn đấy.' },
+          jp: '鍵は 机の 上に ありますよ。',
           ruby: [
-            { base: '箱', reading: 'はこ' },
-            { base: '右', reading: 'みぎ' },
-            { base: '彫', reading: 'ちょう' },
-            { base: '刻', reading: 'こく' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'There is a mouse under the desk.',
-            vi: 'Có một con chuột dưới bàn.'
-          },
-          jp: '机の 下に 鼠が います。',
-          ruby: [
+            { base: '鍵', reading: 'かぎ' },
             { base: '机', reading: 'つくえ' },
+            { base: '上', reading: 'うえ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'The cat is hiding under the bed.',
+            vi: 'Con mèo đang trốn dưới gầm giường.'
+          },
+          jp: 'ベッドの 下に 猫が 隠れています。',
+          ruby: [
             { base: '下', reading: 'した' },
-            { base: '鼠', reading: 'ねずみ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The teacher praises students. Father scolds them.',
-            vi: 'Giáo viên khen học sinh. Bố mắng họ.'
-          },
-          jp: '先生は 学生を 褒めます。父は しかります。',
-          ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
-            { base: '学', reading: 'がく' },
-            { base: '生', reading: 'せい' },
-            { base: '褒', reading: 'ほ' },
-            { base: '父', reading: 'ちち' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'A friend invites me. The company formally invites everyone.',
-            vi: 'Bạn rủ tôi. Công ty mời mọi người một cách trang trọng.'
-          },
-          jp: '友だちは 誘います。会社は 皆様を 招待します。',
-          ruby: [
-            { base: '友', reading: 'とも' },
-            { base: '誘', reading: 'さそ' },
-            { base: '会', reading: 'かい' },
-            { base: '社', reading: 'しゃ' },
-            { base: '皆', reading: 'みな' },
-            { base: '様', reading: 'さま' },
-            { base: '招', reading: 'しょう' },
-            { base: '待', reading: 'たい' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Mother asks a favor. The officer warns me.',
-            vi: 'Mẹ nhờ tôi. Cảnh sát nhắc nhở.'
-          },
-          jp: '母は 頼みます。警官は 注意します。',
-          ruby: [
-            { base: '母', reading: 'はは' },
-            { base: '頼', reading: 'たの' },
-            { base: '警', reading: 'けい' },
-            { base: '官', reading: 'かん' },
-            { base: '注', reading: 'ちゅう' },
-            { base: '意', reading: 'い' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'A thief steals bags. A dog steps on feet.',
-            vi: 'Kẻ trộm lấy cắp túi. Chó dẫm chân.'
-          },
-          jp: '泥棒は かばんを とります。犬は 足を 踏みます。',
-          ruby: [
-            { base: '泥', reading: 'どろ' },
-            { base: '棒', reading: 'ぼう' },
-            { base: '犬', reading: 'いぬ' },
-            { base: '足', reading: 'あし' },
-            { base: '踏', reading: 'ふ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Children break toys and make shirts dirty.',
-            vi: 'Trẻ con làm hỏng đồ chơi và làm bẩn áo.'
-          },
-          jp: '子どもは おもちゃを 壊します。シャツを 汚します。',
-          ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '壊', reading: 'こわ' },
-            { base: '汚', reading: 'よご' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The city holds a meeting. The firm exports rice and imports oil.',
-            vi: 'Thành phố tổ chức họp. Công ty xuất gạo và nhập dầu.'
-          },
-          jp: '市は 会議を 行います。会社は 米を 輸出します。石油を 輸入します。',
-          ruby: [
-            { base: '市', reading: 'し' },
-            { base: '会', reading: 'かい' },
-            { base: '議', reading: 'ぎ' },
-            { base: '行', reading: 'おこな' },
-            { base: '会', reading: 'かい' },
-            { base: '社', reading: 'しゃ' },
-            { base: '米', reading: 'こめ' },
-            { base: '輸', reading: 'ゆ' },
-            { base: '出', reading: 'しゅつ' },
-            { base: '石', reading: 'せき' },
-            { base: '油', reading: 'ゆ' },
-            { base: '輸', reading: 'ゆ' },
-            { base: '入', reading: 'にゅう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'She translates books. He invents tools and discovers stars.',
-            vi: 'Cô ấy dịch sách. Anh ấy phát minh dụng cụ và phát hiện sao.'
-          },
-          jp: '彼女は 本を 翻訳します。彼は 道具を 発明します。星を 発見します。',
-          ruby: [
-            { base: '彼', reading: 'かの' },
-            { base: '女', reading: 'じょ' },
-            { base: '本', reading: 'ほん' },
-            { base: '翻', reading: 'ほん' },
-            { base: '訳', reading: 'やく' },
-            { base: '彼', reading: 'かれ' },
-            { base: '道', reading: 'どう' },
-            { base: '具', reading: 'ぐ' },
-            { base: '発', reading: 'はつ' },
-            { base: '明', reading: 'めい' },
-            { base: '星', reading: 'ほし' },
-            { base: '発', reading: 'はっ' },
-            { base: '見', reading: 'けん' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Old houses burn easily.',
-            vi: 'Nhà cũ dễ cháy.'
-          },
-          jp: '古い 家は すぐ 焼けます。',
-          ruby: [
-            { base: '古', reading: 'ふる' },
-            { base: '家', reading: 'いえ' },
-            { base: '焼', reading: 'や' }
+            { base: '猫', reading: 'ねこ' },
+            { base: '隠', reading: 'かく' }
           ]
         }
       ]

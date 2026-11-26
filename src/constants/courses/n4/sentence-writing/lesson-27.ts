@@ -7,63 +7,60 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I can keep a pet bird.',
-            vi: 'Tôi có thể nuôi chim làm thú cưng.'
+            en: 'This road has a lot of cars, so you cannot run on it.',
+            vi: 'Con đường này nhiều xe nên không chạy bộ được.'
           },
-          jp: 'ペットの 鳥が 飼えます。うちでは 鳥を 飼います。',
-          ruby: [
-            { base: '鳥', reading: 'とり' },
-            { base: '飼', reading: 'か' },
-            { base: '鳥', reading: 'とり' },
-            { base: '飼', reading: 'か' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Can you run on this road?',
-            vi: 'Bạn chạy trên con đường này được không?'
-          },
-          jp: 'この 道を 走れますか。毎朝 走ります。',
+          jp: 'この 道は 車が 多くて、走れません。',
           ruby: [
             { base: '道', reading: 'みち' },
-            { base: '走', reading: 'はし' },
-            { base: '毎', reading: 'まい' },
-            { base: '朝', reading: 'あさ' },
+            { base: '車', reading: 'くるま' },
+            { base: '多', reading: 'おお' },
             { base: '走', reading: 'はし' }
           ]
         },
         {
           prompt: {
-            en: 'You can fly freely in the sky. Birds fly too.',
-            vi: 'Bay tự do trên trời được. Chim cũng bay.'
+            en: 'Can you make furniture yourself?',
+            vi: 'Anh có tự làm được đồ nội thất không?'
           },
-          jp: '空を 自由に 飛べます。鳥も 飛びます。',
+          jp: '自分で 家具が 作れますか。',
+          ruby: [
+            { base: '自', reading: 'じ' },
+            { base: '分', reading: 'ぶん' },
+            { base: '家', reading: 'か' },
+            { base: '具', reading: 'ぐ' },
+            { base: '作', reading: 'つく' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Someday I want to fly freely in the sky. But people cannot fly.',
+            vi: 'Một ngày nào đó tôi muốn bay tự do trên bầu trời. Nhưng con người không bay được.'
+          },
+          jp: 'いつか 空を 自由に 飛びたいです。でも、人は 飛べません。',
           ruby: [
             { base: '空', reading: 'そら' },
             { base: '自', reading: 'じ' },
             { base: '由', reading: 'ゆう' },
             { base: '飛', reading: 'と' },
-            { base: '鳥', reading: 'とり' },
+            { base: '人', reading: 'ひと' },
             { base: '飛', reading: 'と' }
           ]
         },
         {
           prompt: {
-            en: 'I can attach a pocket to this bag.',
-            vi: 'Tôi gắn được một ngăn vào túi xách này.'
+            en: 'You can attach a pocket to this bag.',
+            vi: 'Có thể gắn thêm túi vào cái cặp này.'
           },
-          jp: 'この かばんに ポケットが 付けられます。ポケットを 付けます。',
-          ruby: [
-            { base: '付', reading: 'つ' },
-            { base: '付', reading: 'つ' }
-          ]
+          jp: 'この かばんには ポケットが 付けられます。',
+          ruby: [{ base: '付', reading: 'つ' }]
         },
         {
           prompt: {
             en: 'You can hold a cooking class in this room.',
-            vi: 'Ở phòng này tổ chức lớp nấu ăn được.'
+            vi: 'Có thể mở lớp dạy nấu ăn trong phòng này.'
           },
-          jp: 'この 部屋で 料理～教室が 開けます。来月 開きます。',
+          jp: 'この 部屋で 料理教室が 開けます。',
           ruby: [
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
@@ -71,9 +68,6 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
             { base: '理', reading: 'り' },
             { base: '教', reading: 'きょう' },
             { base: '室', reading: 'しつ' },
-            { base: '開', reading: 'ひら' },
-            { base: '来', reading: 'らい' },
-            { base: '月', reading: 'げつ' },
             { base: '開', reading: 'ひら' }
           ]
         }
@@ -163,55 +157,59 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'A large kitchen will be completed next month.',
-            vi: 'Tháng sau bếp lớn sẽ xong.'
+            en: 'A new kitchen will be finished in our home next month.',
+            vi: 'Tháng sau nhà tôi sẽ làm xong bếp mới.'
           },
-          jp: '来月 大きい キッチンが できます。',
+          jp: '来月 うちに 新しい キッチンが できます。',
           ruby: [
             { base: '来', reading: 'らい' },
             { base: '月', reading: 'げつ' },
-            { base: '大', reading: 'おお' }
+            { base: '新', reading: 'あたら' }
           ]
         },
         {
           prompt: {
-            en: 'New furniture was made for the room.',
-            vi: 'Đồ nội thất mới được làm cho phòng.'
+            en: 'The furniture I ordered will be ready in a week.',
+            vi: 'Đồ nội thất tôi đặt sẽ xong sau một tuần.'
           },
-          jp: '部屋に 新しい 家具が できました。',
+          jp: '注文した 家具は 1週間後に できます。',
           ruby: [
-            { base: '部', reading: 'へ' },
-            { base: '屋', reading: 'や' },
-            { base: '新', reading: 'あたら' },
+            { base: '注', reading: 'ちゅう' },
+            { base: '文', reading: 'もん' },
             { base: '家', reading: 'か' },
-            { base: '具', reading: 'ぐ' }
+            { base: '具', reading: 'ぐ' },
+            { base: '週', reading: 'しゅう' },
+            { base: '間', reading: 'かん' },
+            { base: '後', reading: 'ご' }
           ]
         },
         {
           prompt: {
-            en: 'A bookshelf was built by the wall.',
-            vi: 'Giá sách được làm ở bên tường.'
+            en: 'The bookshelf my father made is finally finished.',
+            vi: 'Cái giá sách bố tôi làm cuối cùng cũng xong.'
           },
-          jp: '壁の そばに 本棚が できました。',
+          jp: '父が 作った 本棚が やっと できました。',
           ruby: [
-            { base: '壁', reading: 'かべ' },
+            { base: '父', reading: 'ちち' },
+            { base: '作', reading: 'つく' },
             { base: '本', reading: 'ほん' },
             { base: '棚', reading: 'だな' }
           ]
         },
         {
           prompt: {
-            en: 'They build a new house. It will be completed in two hours.',
-            vi: 'Họ xây nhà mới. Hai giờ sau sẽ xong.'
+            en: 'We are building a new house now. It will be finished next spring.',
+            vi: 'Bây giờ chúng tôi đang xây nhà mới. Mùa xuân năm sau sẽ xong.'
           },
-          jp: '新しい 家を 建てます。2時間～後に できます。',
+          jp: '今 新しい 家を 建てています。来年の 春に できます。',
           ruby: [
+            { base: '今', reading: 'いま' },
             { base: '新', reading: 'あたら' },
             { base: '家', reading: 'いえ' },
             { base: '建', reading: 'た' },
-            { base: '時', reading: 'じ' },
-            { base: '間', reading: 'かん' },
-            { base: '後', reading: 'ご' }
+            { base: '来', reading: 'らい' },
+            { base: '年', reading: 'ねん' },
+            { base: '春', reading: 'はる' }
           ]
         }
       ]
@@ -221,61 +219,65 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I can only keep a small pet.',
-            vi: 'Tôi chỉ nuôi được thú cưng nhỏ.'
+            en: 'I want to keep a pet, but in this apartment you can only keep birds.',
+            vi: 'Tôi muốn nuôi thú cưng, nhưng chung cư này chỉ được nuôi chim.'
           },
-          jp: '小さな ペット～しか 飼えません。',
+          jp: 'ペットを 飼いたいんですが、この マンションでは 鳥しか 飼えません。',
           ruby: [
-            { base: '小', reading: 'ちい' },
+            { base: '飼', reading: 'か' },
+            { base: '鳥', reading: 'とり' },
             { base: '飼', reading: 'か' }
           ]
         },
         {
-          prompt: {
-            en: 'There is only a dry cleaner in this town.',
-            vi: 'Ở thị trấn này chỉ có tiệm giặt là.'
-          },
-          jp: 'この 町には クリーニングしか ありません。',
-          ruby: [{ base: '町', reading: 'まち' }]
-        },
-        {
-          prompt: {
-            en: 'I have only these tools.',
-            vi: 'Tôi chỉ có mấy dụng cụ này.'
-          },
-          jp: 'この 道具しか ありません。',
+          prompt: { en: 'There is only a dry cleaner nearby.', vi: 'Gần đây chỉ có tiệm giặt là.' },
+          jp: '近くには クリーニングの 店しか ありません。',
           ruby: [
-            { base: '道', reading: 'どう' },
-            { base: '具', reading: 'ぐ' }
+            { base: '近', reading: 'ちか' },
+            { base: '店', reading: 'みせ' }
           ]
         },
         {
           prompt: {
-            en: 'Only that person (honorific) can open the room.',
-            vi: 'Chỉ vị kia mới mở phòng được.'
+            en: 'I only have this tool right now. Is that all right?',
+            vi: 'Bây giờ tôi chỉ có dụng cụ này thôi, có được không?'
           },
-          jp: 'あの 方しか 部屋を 開けません。',
+          jp: '今 この 道具しか ありませんが、大丈夫ですか。',
           ruby: [
-            { base: '方', reading: 'かた' },
+            { base: '今', reading: 'いま' },
+            { base: '道', reading: 'どう' },
+            { base: '具', reading: 'ぐ' },
+            { base: '大', reading: 'だい' },
+            { base: '丈', reading: 'じょう' },
+            { base: '夫', reading: 'ぶ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Only that person has the key to this room.',
+            vi: 'Chỉ có vị kia giữ chìa khóa phòng này.'
+          },
+          jp: 'この 部屋の 鍵は あの 方しか 持っていません。',
+          ruby: [
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
-            { base: '開', reading: 'あ' }
+            { base: '鍵', reading: 'かぎ' },
+            { base: '方', reading: 'かた' },
+            { base: '持', reading: 'も' }
           ]
         },
         {
           prompt: {
-            en: 'I really like the main character. I do not like the other people.',
-            vi: 'Tôi rất thích nhân vật chính. Người khác thì tôi không thích.'
+            en: 'I only watched the end of this movie.',
+            vi: 'Bộ phim này tôi chỉ xem đoạn cuối.'
           },
-          jp: '主人公が 大好きです。ほかの 人は 好きじゃ ありません。',
+          jp: 'この 映画は 最後しか 見ませんでした。',
           ruby: [
-            { base: '主', reading: 'しゅ' },
-            { base: '人', reading: 'じん' },
-            { base: '公', reading: 'こう' },
-            { base: '大', reading: 'だい' },
-            { base: '好', reading: 'す' },
-            { base: '人', reading: 'ひと' },
-            { base: '好', reading: 'す' }
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '最', reading: 'さい' },
+            { base: '後', reading: 'ご' },
+            { base: '見', reading: 'み' }
           ]
         }
       ]
@@ -285,11 +287,12 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I am worried about the future, but I am not worried about now.',
-            vi: 'Tương lai thì lo, còn bây giờ thì không lo.'
+            en: 'I used to worry about the future, but now I do not.',
+            vi: 'Trước đây tôi lo về tương lai, nhưng bây giờ thì không.'
           },
-          jp: '将来は 心配ですが、今は 心配じゃ ありません。',
+          jp: '昔は 将来が 心配でしたが、今は 心配じゃ ありません。',
           ruby: [
+            { base: '昔', reading: 'むかし' },
             { base: '将', reading: 'しょう' },
             { base: '来', reading: 'らい' },
             { base: '心', reading: 'しん' },
@@ -314,37 +317,48 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Long ago it was wonderful, but now it is not.',
-            vi: 'Ngày xưa thì tuyệt vời, còn bây giờ thì không.'
+            en: 'The scenery is wonderful, but getting there is inconvenient.',
+            vi: 'Phong cảnh thì tuyệt đẹp, nhưng giao thông thì bất tiện.'
           },
-          jp: '昔は すばらしいでしたが、今は そうじゃ ありません。',
+          jp: '景色は すばらしいですが、交通は 不便です。',
           ruby: [
-            { base: '昔', reading: 'むかし' },
-            { base: '今', reading: 'いま' }
+            { base: '景', reading: 'け' },
+            { base: '色', reading: 'しき' },
+            { base: '交', reading: 'こう' },
+            { base: '通', reading: 'つう' },
+            { base: '不', reading: 'ふ' },
+            { base: '便', reading: 'べん' }
           ]
         },
         {
           prompt: {
-            en: 'I can do it myself, but other people cannot.',
-            vi: 'Bản thân thì làm được, người khác thì không.'
+            en: 'I love the main character, but I do not really like the other characters.',
+            vi: 'Nhân vật chính thì tôi rất thích, nhưng các nhân vật khác thì không thích lắm.'
           },
-          jp: '自分は できますが、ほかの 人は できません。',
+          jp: '主人公は 大好きですが、ほかの 人物は あまり 好きじゃ ありません。',
           ruby: [
-            { base: '自', reading: 'じ' },
-            { base: '分', reading: 'ぶん' },
-            { base: '人', reading: 'ひと' }
+            { base: '主', reading: 'しゅ' },
+            { base: '人', reading: 'じん' },
+            { base: '公', reading: 'こう' },
+            { base: '大', reading: 'だい' },
+            { base: '好', reading: 'す' },
+            { base: '人', reading: 'じん' },
+            { base: '物', reading: 'ぶつ' },
+            { base: '好', reading: 'す' }
           ]
         },
         {
           prompt: {
-            en: 'For example, this is cheap, but that is expensive.',
-            vi: 'Ví dụ, cái này rẻ, cái kia đắt.'
+            en: 'For example, you can keep dogs, but you cannot keep cats.',
+            vi: 'Ví dụ, chó thì được nuôi, còn mèo thì không.'
           },
-          jp: '例えば これは 安いですが、それは 高いです。',
+          jp: '例えば、犬は 飼えますが、猫は 飼えません。',
           ruby: [
             { base: '例', reading: 'たと' },
-            { base: '安', reading: 'やす' },
-            { base: '高', reading: 'たか' }
+            { base: '犬', reading: 'いぬ' },
+            { base: '飼', reading: 'か' },
+            { base: '猫', reading: 'ねこ' },
+            { base: '飼', reading: 'か' }
           ]
         }
       ]
@@ -379,39 +393,40 @@ export const n4Lesson27SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'At this dry cleaner, clothes come back in two days.',
-            vi: 'Ở tiệm giặt là này, hai ngày sau đồ về.'
+            en: 'At this dry cleaner, your clothes are ready two days later.',
+            vi: 'Ở tiệm giặt là này, quần áo xong sau hai ngày.'
           },
-          jp: 'この クリーニングでは 2日～後に 服が できます。',
+          jp: 'この クリーニング屋では 2日後に 服が できます。',
           ruby: [
-            { base: '日', reading: 'にち' },
+            { base: '屋', reading: 'や' },
+            { base: '日', reading: 'ふつか' },
             { base: '後', reading: 'ご' },
             { base: '服', reading: 'ふく' }
           ]
         },
         {
           prompt: {
-            en: 'Someday I want to live in that house.',
-            vi: 'Một ngày nào đó tôi muốn sống ở nhà đó.'
+            en: 'For children, fireworks are the most fun.',
+            vi: 'Với bọn trẻ thì pháo hoa là vui nhất.'
           },
-          jp: 'いつか あの 家に 住みたいです。',
+          jp: '子どもたちには 花火が いちばん 楽しいです。',
           ruby: [
-            { base: '家', reading: 'いえ' },
-            { base: '住', reading: 'す' }
+            { base: '子', reading: 'こ' },
+            { base: '花', reading: 'はな' },
+            { base: '火', reading: 'び' },
+            { base: '楽', reading: 'たの' }
           ]
         },
         {
           prompt: {
-            en: 'As for myself, I do not use that classroom.',
-            vi: 'Còn bản thân tôi thì không dùng lớp học đó.'
+            en: 'Here you can clearly hear the sound of the waves.',
+            vi: 'Ở đây nghe rõ tiếng sóng.'
           },
-          jp: '自分では あの 教室を 使いません。',
+          jp: 'ここでは 波の 音が はっきり 聞こえます。',
           ruby: [
-            { base: '自', reading: 'じ' },
-            { base: '分', reading: 'ぶん' },
-            { base: '教', reading: 'きょう' },
-            { base: '室', reading: 'しつ' },
-            { base: '使', reading: 'つか' }
+            { base: '波', reading: 'なみ' },
+            { base: '音', reading: 'おと' },
+            { base: '聞', reading: 'き' }
           ]
         }
       ]

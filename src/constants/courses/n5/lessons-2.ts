@@ -781,7 +781,7 @@ export const n5Lesson2: Lesson = {
       },
       examples: [
         {
-          jp: 'この 傘は あなたの ですか。',
+          jp: 'この 傘は あなたのですか。',
           romaji: 'Kono kasa wa anata no desu ka.',
           meaning: { en: 'Is this umbrella yours?', vi: 'Cái ô này là của bạn phải không?' },
           ruby: [{ base: '傘', reading: 'かさ' }]
@@ -1014,7 +1014,7 @@ export const n5Lesson2: Lesson = {
       titleJp: 'はい、そうです',
       lines: [
         {
-          jp: 'その 時計は 日本の ですか。',
+          jp: 'その 時計は 日本のですか。',
           romaji: 'Sono tokei wa nihon no desu ka.',
           meaning: {
             en: 'Is that watch Japanese?',

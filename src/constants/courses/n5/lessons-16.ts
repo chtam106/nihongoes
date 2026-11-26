@@ -478,7 +478,7 @@ export const n5Lesson16: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: 'お引き出し ですか。',
+          jp: 'お引き出しですか。',
           romaji: 'O-hikidashi desu ka.',
           meaning: { en: 'Are you withdrawing money?', vi: 'Anh rút tiền phải không?' },
           ruby: [
@@ -488,7 +488,7 @@ export const n5Lesson16: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい、10,000円 下ろしたい です。',
+          jp: 'はい、10,000円 下ろしたいです。',
           romaji: 'Hai, ichiman en oroshitai desu.',
           meaning: {
             en: 'Yes, I want to withdraw 10,000 yen.',
@@ -662,7 +662,7 @@ export const n5Lesson16: Lesson = {
       lines: [
         {
           speakerId: 'tom',
-          jp: '雪祭り、すごい ですね。日本語も 上手 ですね。',
+          jp: '雪祭り、すごいですね。日本語も 上手ですね。',
           romaji: 'Yuki Matsuri, sugoi desu ne. Nihongo mo jōzu desu ne.',
           meaning: {
             en: 'The Snow Festival is amazing. Your Japanese is great too.',
@@ -680,7 +680,7 @@ export const n5Lesson16: Lesson = {
         },
         {
           speakerId: 'yuki',
-          jp: 'いいえ、まだまだ です。',
+          jp: 'いいえ、まだまだです。',
           romaji: 'Iie, mada mada desu.',
           meaning: {
             en: 'No, I still have a long way to go.',
@@ -689,7 +689,7 @@ export const n5Lesson16: Lesson = {
         },
         {
           speakerId: 'tom',
-          jp: 'ユキさんは 髪が 長くて、目が 明るい ですね。',
+          jp: 'ユキさんは 髪が 長くて、目が 明るいですね。',
           romaji: 'Yuki-san wa kami ga nagakute, me ga akarui desu ne.',
           meaning: {
             en: 'Yuki, your hair is long and your eyes are bright.',
@@ -796,7 +796,7 @@ export const n5Lesson16: Lesson = {
       },
       examples: [
         {
-          jp: 'この 部屋は 明るくて、広い です。',
+          jp: 'この 部屋は 明るくて、広いです。',
           romaji: 'Kono heya wa akarukute, hiroi desu.',
           meaning: {
             en: 'This room is bright and spacious.',
@@ -810,7 +810,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: '髪が 長くて、目が 大きい です。',
+          jp: '髪が 長くて、目が 大きいです。',
           romaji: 'Kami ga nagakute, me ga ōkii desu.',
           meaning: {
             en: 'Her hair is long and her eyes are big.',
@@ -824,7 +824,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: '道が 暗くて、少し こわい です。',
+          jp: '道が 暗くて、少し こわいです。',
           romaji: 'Michi ga kurakute, sukoshi kowai desu.',
           meaning: {
             en: 'The road is dark and a little scary.',
@@ -851,7 +851,7 @@ export const n5Lesson16: Lesson = {
       },
       examples: [
         {
-          jp: 'ミラーさんは 会社員で、28歳 です。',
+          jp: 'ミラーさんは 会社員で、28歳です。',
           romaji: 'Mirā-san wa kaishain de, nijū-hassai desu.',
           meaning: {
             en: 'Mr. Miller is a company employee and 28 years old.',
@@ -865,7 +865,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: 'この 町は 静かで、きれい です。',
+          jp: 'この 町は 静かで、きれいです。',
           romaji: 'Kono machi wa shizuka de, kirei desu.',
           meaning: {
             en: 'This town is quiet and beautiful.',
@@ -877,7 +877,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: '私の 友達は 学生で、若い です。',
+          jp: '私の 友達は 学生で、若いです。',
           romaji: 'Watashi no tomodachi wa gakusei de, wakai desu.',
           meaning: {
             en: 'My friend is a student and young.',
@@ -962,7 +962,7 @@ export const n5Lesson16: Lesson = {
       ],
       examples: [
         {
-          jp: '田中さんは 髪が 長い です。',
+          jp: '田中さんは 髪が 長いです。',
           romaji: 'Tanaka-san wa kami ga nagai desu.',
           meaning: {
             en: 'Ms. Tanaka has long hair.',
@@ -976,7 +976,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: '私は 背が 高くない です。',
+          jp: '私は 背が 高くないです。',
           romaji: 'Watashi wa se ga takakunai desu.',
           meaning: { en: 'I am not tall.', vi: 'Tôi không cao.' },
           ruby: [
@@ -986,7 +986,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: 'この 子は 目が 大きくて、口が 小さい です。',
+          jp: 'この 子は 目が 大きくて、口が 小さいです。',
           romaji: 'Kono ko wa me ga ōkikute, kuchi ga chiisai desu.',
           meaning: {
             en: 'This child has big eyes and a small mouth.',
@@ -1092,7 +1092,7 @@ export const n5Lesson16: Lesson = {
           ]
         },
         {
-          jp: 'どれが あなたの カバン ですか。',
+          jp: 'どれが あなたの カバンですか。',
           romaji: 'Dore ga anata no kaban desu ka.',
           meaning: { en: 'Which one is your bag?', vi: 'Cái nào là túi của anh/chị?' },
           dialogueGroup: 'bag'
@@ -1289,7 +1289,7 @@ export const n5Lesson16: Lesson = {
       ],
       lines: [
         {
-          jp: 'リンさんは 大学前へ 行きたい です。',
+          jp: 'リンさんは 大学前へ 行きたいです。',
           romaji: 'Rin-san wa Daigakumae e ikitai desu.',
           meaning: {
             en: 'Lin wants to go to Daigakumae.',
@@ -1456,7 +1456,7 @@ export const n5Lesson16: Lesson = {
       titleJp: 'ジョギングの あと',
       lines: [
         {
-          jp: 'ケンさんは 体が 丈夫 ですが、今日は 足が 痛い です。',
+          jp: 'ケンさんは 体が 丈夫ですが、今日は 足が 痛いです。',
           romaji: 'Ken-san wa karada ga jōbu desu ga, kyō wa ashi ga itai desu.',
           meaning: {
             en: 'Ken is generally fit, but today his legs hurt.',

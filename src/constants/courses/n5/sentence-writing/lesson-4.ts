@@ -45,27 +45,31 @@ export const n5Lesson4SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'How many minutes is it now?', vi: 'Bây giờ mấy phút?' },
-          jp: '今 何分ですか。',
+          prompt: { en: 'What time is it in Tokyo now?', vi: 'Bây giờ ở Tokyo là mấy giờ?' },
+          jp: '東京は 今 何時ですか。',
           ruby: [
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
             { base: '今', reading: 'いま' },
             { base: '何', reading: 'なん' },
-            { base: '分', reading: 'ぷん' }
+            { base: '時', reading: 'じ' }
           ]
         },
         {
-          prompt: { en: 'It is 8 a.m.', vi: 'Là 8 giờ sáng.' },
-          jp: '午前 8時です。',
+          prompt: { en: 'It is 8 a.m. in London now.', vi: 'Bây giờ ở London là 8 giờ sáng.' },
+          jp: 'ロンドンは 今 午前 8時です。',
           ruby: [
+            { base: '今', reading: 'いま' },
             { base: '午', reading: 'ご' },
             { base: '前', reading: 'ぜん' },
             { base: '時', reading: 'じ' }
           ]
         },
         {
-          prompt: { en: 'It is 3 p.m.', vi: 'Là 3 giờ chiều.' },
-          jp: '午後 3時です。',
+          prompt: { en: 'It is 3 p.m. in Beijing now.', vi: 'Bây giờ ở Bắc Kinh là 3 giờ chiều.' },
+          jp: 'ペキンは 今 午後 3時です。',
           ruby: [
+            { base: '今', reading: 'いま' },
             { base: '午', reading: 'ご' },
             { base: '後', reading: 'ご' },
             { base: '時', reading: 'じ' }
@@ -133,9 +137,15 @@ export const n5Lesson4SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Yes, I studied.', vi: 'Vâng, tôi đã học.' },
-          jp: 'はい、勉強しました。',
+          prompt: {
+            en: 'Did you study last night? ...Yes, I did.',
+            vi: 'Tối qua anh có học bài không? ...Có, tôi đã học.'
+          },
+          jp: 'きのうの 晩 勉強しましたか。……はい、勉強しました。',
           ruby: [
+            { base: '晩', reading: 'ばん' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' },
             { base: '勉', reading: 'べん' },
             { base: '強', reading: 'きょう' }
           ]
@@ -146,9 +156,18 @@ export const n5Lesson4SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '働', reading: 'はたら' }]
         },
         {
-          prompt: { en: 'No, I will rest.', vi: 'Không, tôi sẽ nghỉ.' },
-          jp: 'いいえ、休みます。',
-          ruby: [{ base: '休', reading: 'やす' }]
+          prompt: {
+            en: 'Do you work on Saturdays too? ...No, I take the day off.',
+            vi: 'Thứ Bảy anh cũng làm việc à? ...Không, tôi nghỉ.'
+          },
+          jp: '土曜日も 働きますか。……いいえ、休みます。',
+          ruby: [
+            { base: '土', reading: 'ど' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
+            { base: '働', reading: 'はたら' },
+            { base: '休', reading: 'やす' }
+          ]
         },
         {
           prompt: {
@@ -416,27 +435,33 @@ export const n5Lesson4SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'What day is it today?', vi: 'Hôm nay là thứ mấy?' },
-          jp: '今日は 何曜日ですか。',
+          prompt: {
+            en: 'You work until ten every day? That is tough.',
+            vi: 'Ngày nào anh cũng làm đến 10 giờ à? Vất vả nhỉ.'
+          },
+          jp: '毎日 10時まで 働きますか。大変ですね。',
           ruby: [
-            { base: '今', reading: 'きょ' },
-            { base: '日', reading: 'う' },
-            { base: '何', reading: 'なん' },
-            { base: '曜', reading: 'よう' },
-            { base: '日', reading: 'び' }
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '時', reading: 'じ' },
+            { base: '働', reading: 'はたら' },
+            { base: '大', reading: 'たい' },
+            { base: '変', reading: 'へん' }
           ]
         },
         {
           prompt: {
-            en: "The art museum is closed in the evening, isn't it?",
-            vi: 'Bảo tàng mỹ thuật nghỉ buổi tối nhỉ?'
+            en: 'The art museum is closed on Mondays, is it not?',
+            vi: 'Bảo tàng mỹ thuật nghỉ vào thứ Hai nhỉ.'
           },
-          jp: '美術館は 晩 休みですね。',
+          jp: '美術館は 月曜日 休みですね。',
           ruby: [
             { base: '美', reading: 'び' },
             { base: '術', reading: 'じゅつ' },
             { base: '館', reading: 'かん' },
-            { base: '晩', reading: 'ばん' },
+            { base: '月', reading: 'げつ' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
             { base: '休', reading: 'やす' }
           ]
         }

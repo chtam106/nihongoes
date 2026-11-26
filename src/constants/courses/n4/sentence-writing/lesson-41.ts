@@ -7,25 +7,27 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The section chief gives me a handkerchief.',
-            vi: 'Tổ trưởng tặng tôi khăn tay.'
+            en: 'The section chief gave me a handkerchief for my birthday.',
+            vi: 'Trưởng ban đã tặng tôi chiếc khăn tay nhân dịp sinh nhật.'
           },
-          jp: '課長が 私に ハンカチを くださいます。',
+          jp: '課長が 誕生日に ハンカチを くださいました。',
           ruby: [
             { base: '課', reading: 'か' },
             { base: '長', reading: 'ちょう' },
-            { base: '私', reading: 'わたし' }
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' }
           ]
         },
         {
           prompt: {
-            en: 'I give a toy to the child.',
-            vi: 'Tôi cho trẻ đồ chơi.'
+            en: 'I gave my old toys to my younger brother.',
+            vi: 'Tôi cho em trai mấy món đồ chơi cũ.'
           },
-          jp: '私は 子どもに おもちゃを やります。',
+          jp: '弟に 古い おもちゃを やりました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '子', reading: 'こ' }
+            { base: '弟', reading: 'おとうと' },
+            { base: '古', reading: 'ふる' }
           ]
         },
         {
@@ -38,37 +40,40 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'A friend gives me a picture postcard.',
-            vi: 'Bạn tặng tôi bưu thiếp tranh.'
+            en: 'A friend sent me a picture postcard from their trip.',
+            vi: 'Bạn tôi gửi cho tôi tấm bưu thiếp từ nơi du lịch.'
           },
-          jp: '友達が 私に 絵はがきを くれます。',
+          jp: '友達が 旅行先から 絵はがきを くれました。',
           ruby: [
             { base: '友', reading: 'とも' },
             { base: '達', reading: 'だち' },
-            { base: '私', reading: 'わたし' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '先', reading: 'さき' },
             { base: '絵', reading: 'え' }
           ]
         },
         {
           prompt: {
-            en: 'I give Tanaka a screwdriver.',
-            vi: 'Tôi cho anh Tanaka tuốc-nơ-vít.'
+            en: 'I gave Mr. Tanaka a screwdriver I do not use.',
+            vi: 'Tôi cho anh Tanaka cái tua vít mà tôi không dùng.'
           },
-          jp: '私は 田中さんに ドライバーを あげます。',
+          jp: '田中さんに 使わない ドライバーを あげました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
             { base: '田', reading: 'た' },
-            { base: '中', reading: 'なか' }
+            { base: '中', reading: 'なか' },
+            { base: '使', reading: 'つか' }
           ]
         },
         {
           prompt: {
-            en: 'I receive New Year gift money from my grandmother.',
-            vi: 'Tôi nhận tiền mừng tuổi từ bà.'
+            en: 'At New Year I received gift money from my grandmother.',
+            vi: 'Dịp Tết tôi được bà cho tiền mừng tuổi.'
           },
-          jp: '私は 祖母から お年玉を いただきます。',
+          jp: 'お正月に 祖母から お年玉を いただきました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
+            { base: '正', reading: 'しょう' },
+            { base: '月', reading: 'がつ' },
             { base: '祖', reading: 'そ' },
             { base: '母', reading: 'ぼ' },
             { base: '年', reading: 'とし' },
@@ -77,56 +82,29 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'In winter I raise the heating temperature.',
-            vi: 'Mùa đông tôi tăng nhiệt độ máy sưởi.'
+            en: 'My mother gave me some socks she made herself.',
+            vi: 'Mẹ tặng tôi đôi tất tự tay đan.'
           },
-          jp: '冬は 暖房の 温度を 上げます。',
-          ruby: [
-            { base: '冬', reading: 'ふゆ' },
-            { base: '暖', reading: 'だん' },
-            { base: '房', reading: 'ぼう' },
-            { base: '温', reading: 'おん' },
-            { base: '度', reading: 'ど' },
-            { base: '上', reading: 'あ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'At night I lower the heating temperature.',
-            vi: 'Ban đêm tôi giảm nhiệt độ máy sưởi.'
-          },
-          jp: '夜は 暖房の 温度を 下げます。',
-          ruby: [
-            { base: '夜', reading: 'よる' },
-            { base: '暖', reading: 'だん' },
-            { base: '房', reading: 'ぼう' },
-            { base: '温', reading: 'おん' },
-            { base: '度', reading: 'ど' },
-            { base: '下', reading: 'さ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Mother gives me socks.',
-            vi: 'Mẹ tặng tôi tất.'
-          },
-          jp: '母が 私に 靴下を くれます。',
+          jp: '母が 手作りの 靴下を くれました。',
           ruby: [
             { base: '母', reading: 'はは' },
-            { base: '私', reading: 'わたし' },
+            { base: '手', reading: 'て' },
+            { base: '作', reading: 'づく' },
             { base: '靴', reading: 'くつ' },
             { base: '下', reading: 'した' }
           ]
         },
         {
           prompt: {
-            en: 'I give my younger sister gloves.',
-            vi: 'Tôi cho em gái găng tay.'
+            en: 'I gave my younger sister gloves for her birthday.',
+            vi: 'Tôi tặng em gái đôi găng tay vào ngày sinh nhật.'
           },
-          jp: '私は 妹に 手袋を あげます。',
+          jp: '妹の 誕生日に 手袋を あげました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
             { base: '妹', reading: 'いもうと' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
             { base: '手', reading: 'て' },
             { base: '袋', reading: 'ぶくろ' }
           ]
@@ -180,88 +158,46 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I have a senior colleague teach me the information.',
-            vi: 'Tôi nhờ đàn anh chỉ thông tin.'
+            en: 'A senior colleague showed me how to do the job.',
+            vi: 'Tôi được đàn anh chỉ cách làm việc.'
           },
-          jp: '私は 先輩から 情報を 教えて もらいます。',
+          jp: '先輩に 仕事の やり方を 教えて もらいました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
             { base: '先', reading: 'せん' },
             { base: '輩', reading: 'ぱい' },
-            { base: '情', reading: 'じょう' },
-            { base: '報', reading: 'ほう' },
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
+            { base: '方', reading: 'かた' },
             { base: '教', reading: 'おし' }
           ]
         },
         {
           prompt: {
-            en: 'The teacher is kind to the kindergarten children.',
-            vi: 'Giáo viên thân thiện với trẻ mầm non.'
+            en: 'I showed a lost person the way to the station.',
+            vi: 'Tôi đã dẫn người bị lạc đường ra tận ga.'
           },
-          jp: '先生は 幼稚園の 子どもに 親切にします。',
+          jp: '道に 迷った 人を 駅まで 案内して あげました。',
           ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
-            { base: '幼', reading: 'よう' },
-            { base: '稚', reading: 'ち' },
-            { base: '園', reading: 'えん' },
-            { base: '子', reading: 'こ' },
-            { base: '親', reading: 'しん' },
-            { base: '切', reading: 'せつ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I help a person in trouble.',
-            vi: 'Tôi giúp người đang khó khăn.'
-          },
-          jp: '私は 困っている 人を 助けます。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
-            { base: '困', reading: 'こま' },
+            { base: '道', reading: 'みち' },
+            { base: '迷', reading: 'まよ' },
             { base: '人', reading: 'ひと' },
-            { base: '助', reading: 'たす' }
+            { base: '駅', reading: 'えき' },
+            { base: '案', reading: 'あん' },
+            { base: '内', reading: 'ない' }
           ]
         },
         {
           prompt: {
-            en: 'A bad child bullies the turtle.',
-            vi: 'Đứa trẻ xấu bắt nạt con rùa.'
+            en: 'When I was a child, my grandmother often told me old folk tales.',
+            vi: 'Hồi nhỏ tôi hay được bà kể chuyện cổ tích.'
           },
-          jp: '悪い 子が 亀を いじめます。',
+          jp: '子どもの とき、よく 祖母に 昔話を して もらいました。',
           ruby: [
-            { base: '悪', reading: 'わる' },
             { base: '子', reading: 'こ' },
-            { base: '亀', reading: 'かめ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The kindergarten children are cute.',
-            vi: 'Trẻ mầm non dễ thương.'
-          },
-          jp: '幼稚園の 子どもは かわいいです。',
-          ruby: [
-            { base: '幼', reading: 'よう' },
-            { base: '稚', reading: 'ち' },
-            { base: '園', reading: 'えん' },
-            { base: '子', reading: 'こ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I have Grandma tell me a rare folk tale.',
-            vi: 'Tôi nhờ bà kể chuyện cổ tích hiếm.'
-          },
-          jp: '私は 祖母から 珍しい 昔話を 教えて もらいます。',
-          ruby: [
-            { base: '私', reading: 'わたし' },
             { base: '祖', reading: 'そ' },
             { base: '母', reading: 'ぼ' },
-            { base: '珍', reading: 'めずら' },
             { base: '昔', reading: 'むかし' },
-            { base: '話', reading: 'ばなし' },
-            { base: '教', reading: 'おし' }
+            { base: '話', reading: 'ばなし' }
           ]
         }
       ]
@@ -294,47 +230,48 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Please lend me a book you are interested in.',
-            vi: 'Xin cho mượn quyển sách mà bạn quan tâm.'
+            en: 'If you have an interesting book, please lend it to me.',
+            vi: 'Nếu có quyển sách nào hay thì cho tôi mượn nhé.'
           },
-          jp: '興味が ある 本を 貸して ください。',
+          jp: 'おもしろい 本が あったら、貸して ください。',
           ruby: [
-            { base: '興', reading: 'きょう' },
-            { base: '味', reading: 'み' },
             { base: '本', reading: 'ほん' },
             { base: '貸', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'Could you come to my home?',
-            vi: 'Anh/chị đến nhà tôi được không?'
+            en: "Could you please come to tomorrow's meeting?",
+            vi: 'Anh có thể đến dự cuộc họp ngày mai được không?'
           },
-          jp: 'お宅へ 来て いただけませんか。',
+          jp: 'あしたの 会議に 来て いただけませんか。',
           ruby: [
-            { base: '宅', reading: 'たく' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
             { base: '来', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'Please look at the contents.',
-            vi: 'Xin hãy xem nội dung bên trong.'
+            en: 'Please check what is inside the box.',
+            vi: 'Hãy kiểm tra đồ bên trong hộp.'
           },
-          jp: '中身を 見て ください。',
+          jp: '箱の 中身を 確かめて ください。',
           ruby: [
+            { base: '箱', reading: 'はこ' },
             { base: '中', reading: 'なか' },
             { base: '身', reading: 'み' },
-            { base: '見', reading: 'み' }
+            { base: '確', reading: 'たし' }
           ]
         },
         {
-          prompt: {
-            en: 'Please take two at a time.',
-            vi: 'Xin hãy lấy từng hai cái.'
-          },
-          jp: '二つ～ずつ 取って ください。',
+          prompt: { en: 'Please take two sweets each.', vi: 'Mỗi người lấy hai cái bánh nhé.' },
+          jp: 'お菓子は 一人 二つずつ 取って ください。',
           ruby: [
+            { base: '菓', reading: 'か' },
+            { base: '子', reading: 'し' },
+            { base: '一', reading: 'ひと' },
+            { base: '人', reading: 'り' },
             { base: '二', reading: 'ふた' },
             { base: '取', reading: 'と' }
           ]
@@ -388,40 +325,45 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I give a treasure to the princess.',
-            vi: 'Tôi tặng báu vật cho công chúa.'
+            en: "I gave my father a necktie as a Father's Day present.",
+            vi: 'Tôi tặng bố cà vạt làm quà Ngày của Cha.'
           },
-          jp: 'お姫様に 宝物を あげます。',
+          jp: '父の 日の プレゼントに ネクタイを あげました。',
           ruby: [
-            { base: '姫', reading: 'ひめ' },
-            { base: '様', reading: 'さま' },
-            { base: '宝', reading: 'たから' },
-            { base: '物', reading: 'もの' }
+            { base: '父', reading: 'ちち' },
+            { base: '日', reading: 'ひ' }
           ]
         },
         {
           prompt: {
-            en: 'The couple lives on land.',
-            vi: 'Cặp đôi sống trên đất liền.'
+            en: 'We all took a photo together to remember our graduation.',
+            vi: 'Cả lớp chụp ảnh chung làm kỷ niệm tốt nghiệp.'
           },
-          jp: '二人は 陸で 暮らします。',
+          jp: '卒業の 記念に みんなで 写真を 撮りました。',
           ruby: [
-            { base: '二', reading: 'ふた' },
-            { base: '人', reading: 'り' },
-            { base: '陸', reading: 'りく' },
-            { base: '暮', reading: 'く' }
+            { base: '卒', reading: 'そつ' },
+            { base: '業', reading: 'ぎょう' },
+            { base: '記', reading: 'き' },
+            { base: '念', reading: 'ねん' },
+            { base: '写', reading: 'しゃ' },
+            { base: '真', reading: 'しん' },
+            { base: '撮', reading: 'と' }
           ]
         },
         {
           prompt: {
-            en: 'The smoke is pure white.',
-            vi: 'Khói thì trắng toát.'
+            en: "I sent flowers to celebrate my mother's birthday.",
+            vi: 'Tôi gửi hoa để mừng sinh nhật mẹ.'
           },
-          jp: '煙は 真っ白です。',
+          jp: '母の 誕生日の お祝いに 花を 贈りました。',
           ruby: [
-            { base: '煙', reading: 'けむり' },
-            { base: '真', reading: 'ま' },
-            { base: '白', reading: 'しろ' }
+            { base: '母', reading: 'はは' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
+            { base: '祝', reading: 'いわ' },
+            { base: '花', reading: 'はな' },
+            { base: '贈', reading: 'おく' }
           ]
         }
       ]

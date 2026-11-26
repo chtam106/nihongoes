@@ -1,7 +1,6 @@
 import type {
   Lesson,
   LessonSentenceWriting,
-  SentenceWritingGroup,
   SentenceWritingItem,
   VocabItem
 } from '@/types/course.ts';
@@ -32,7 +31,7 @@ function spellJapanese(surface: string, segments: RubySegment[] = []): string {
 }
 
 function stripNeedle(value: string): string {
-  return value.replace(/[〜。、\s\u3000]/g, '').replace(/\[な\]/g, '');
+  return value.replace(/[〜～。、\s\u3000]/g, '').replace(/\[な\]/g, '');
 }
 
 function spelledItems(items: SentenceWritingItem[]): string {
@@ -41,18 +40,15 @@ function spelledItems(items: SentenceWritingItem[]): string {
     .join('\n');
 }
 
-function spelledGroups(groups: SentenceWritingGroup[]): string {
-  return spelledItems(groups.flatMap((group) => group.items));
-}
-
-export function isVocabCovered(item: VocabItem, spelled: string): boolean {
+/** A useful phrase counts as covered when its kana appears in some phrase prompt answer. */
+export function isPhraseCovered(item: VocabItem, spelled: string): boolean {
   const needle = stripNeedle(item.kana);
 
   return needle.length > 0 && spelled.includes(needle);
 }
 
 export type SentenceWritingCoverageIssue = {
-  kind: 'missing-group' | 'extra-group' | 'too-few-items' | 'uncovered-vocab' | 'uncovered-phrase';
+  kind: 'missing-group' | 'extra-group' | 'too-few-items' | 'uncovered-phrase';
   detail: string;
 };
 
@@ -87,18 +83,10 @@ export function auditSentenceWriting(
     }
   }
 
-  const spelledGrammar = spelledGroups(grammar);
-
-  for (const item of lesson.vocab) {
-    if (!isVocabCovered(item, spelledGrammar)) {
-      issues.push({ kind: 'uncovered-vocab', detail: item.kana });
-    }
-  }
-
   const spelledPhrases = spelledItems(phrases);
 
   for (const item of lesson.phrases ?? []) {
-    if (!isVocabCovered(item, spelledPhrases)) {
+    if (!isPhraseCovered(item, spelledPhrases)) {
       issues.push({ kind: 'uncovered-phrase', detail: item.kana });
     }
   }

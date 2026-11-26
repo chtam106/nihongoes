@@ -240,7 +240,7 @@ export const n4Lesson48: Lesson = {
       lines: [
         {
           speakerId: 'miller',
-          jp: '部長、今 お忙しい ですか。',
+          jp: '部長、今 お忙しいですか。',
           romaji: 'Buchō, ima o-isogashii desu ka.',
           meaning: {
             en: 'Manager, are you busy now?',
@@ -261,7 +261,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: '実は お願いが あって...',
+          jp: '実は お願いが あって……',
           romaji: 'Jitsu wa onegai ga atte...',
           meaning: {
             en: 'Actually, I have a favor to ask...',
@@ -274,7 +274,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: '何 ですか。',
+          jp: '何ですか。',
           romaji: 'Nan desu ka.',
           meaning: { en: 'What is it?', vi: 'Chuyện gì thế?' },
           ruby: [{ base: '何', reading: 'なに' }]
@@ -298,7 +298,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: '10日間 ですか。',
+          jp: '10日間ですか。',
           romaji: 'Tōkakan desu ka.',
           meaning: { en: 'Ten days?', vi: '10 ngày cơ à.' },
           ruby: [
@@ -324,7 +324,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: 'そう ですか。来月 20日に 営業の 会議が あります。それまでに 帰って 来られますか。',
+          jp: 'そうですか。来月 20日に 営業の 会議が あります。それまでに 帰って 来られますか。',
           romaji:
             'Sō desu ka. Raigetsu hatsuka ni eigyō no kaigi ga arimasu. Sore made ni kaette koraremasu ka.',
           meaning: {
@@ -345,7 +345,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい、大丈夫 です。',
+          jp: 'はい、大丈夫です。',
           romaji: 'Hai, daijōbu desu.',
           meaning: { en: 'Yes, that will be fine.', vi: 'Vâng ạ.' },
           ruby: [
@@ -549,7 +549,7 @@ export const n4Lesson48: Lesson = {
   reading: [
     {
       id: 'reading-lesson48-parents',
-      title: { en: 'What parents let children do', vi: 'Cha mẹ cho con làm gì' },
+      title: { en: 'What parents have children do', vi: 'Cha mẹ cho con làm gì' },
       titleJp: '親が 子どもに させる こと',
       titleRuby: [
         { base: '親', reading: 'おや' },
@@ -557,89 +557,88 @@ export const n4Lesson48: Lesson = {
       ],
       lines: [
         {
-          jp: 'ある 調査では、親は 小学生に 何を させるか 答えました。',
-          romaji: 'Aru chōsa de wa, oya wa shōgakusei ni nani o saseru ka kotaemashita.',
+          jp: 'ある 調査で、小学生の 親に「子どもに 何を 習わせていますか」と 聞きました。',
+          romaji:
+            'Aru chōsa de, shōgakusei no oya ni "kodomo ni nani o narawasete imasu ka" to kikimashita.',
           meaning: {
-            en: 'In one survey, parents answered what they let elementary school children do.',
-            vi: 'Trong một khảo sát, phụ huynh trả lời họ cho học sinh tiểu học làm những gì.'
+            en: 'In one survey, parents of elementary school children were asked, "What lessons do you have your child take?"',
+            vi: 'Trong một cuộc khảo sát, người ta hỏi phụ huynh học sinh tiểu học: "Anh chị cho con đi học gì?"'
           },
           ruby: [
             { base: '調', reading: 'ちょう' },
             { base: '査', reading: 'さ' },
-            { base: '親', reading: 'おや' },
             { base: '小', reading: 'しょう' },
             { base: '学', reading: 'がく' },
             { base: '生', reading: 'せい' },
+            { base: '親', reading: 'おや' },
+            { base: '子', reading: 'こ' },
             { base: '何', reading: 'なに' },
-            { base: '答', reading: 'こた' }
-          ]
-        },
-        {
-          jp: '40パーセントの 家庭は 週末 習字を させています。',
-          romaji: 'Yonjū pāsento no katei wa shūmatsu shūji o sasete imasu.',
-          meaning: {
-            en: 'Forty percent of families have their children practice calligraphy on weekends.',
-            vi: '40 phần trăm gia đình cho con luyện viết chữ vào cuối tuần.'
-          },
-          ruby: [
-            { base: '家', reading: 'か' },
-            { base: '庭', reading: 'てい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '末', reading: 'まつ' },
             { base: '習', reading: 'なら' },
-            { base: '字', reading: 'じ' }
+            { base: '聞', reading: 'き' }
           ]
         },
         {
-          jp: 'その次に 多いのは 塾です。普通の 学校の あと、ファイルを 持って 通わせる 親も います。',
-          romaji:
-            'Sono tsugi ni ōi no wa juku desu. Futsū no gakkō no ato, fairu o motte kayowaseru oya mo imasu.',
+          jp: 'いちばん 多かったのは 水泳で、次は 英語でした。',
+          romaji: 'Ichiban ōkatta no wa suiei de, tsugi wa eigo deshita.',
           meaning: {
-            en: 'Next most common is cram school. Some parents have children go after regular school with folders in hand.',
-            vi: 'Tiếp theo là học thêm. Có phụ huynh cho con đi lò luyện thi sau giờ học thông thường, mang theo kẹp tài liệu.'
+            en: 'The most common answer was swimming, followed by English.',
+            vi: 'Nhiều nhất là bơi lội, tiếp theo là tiếng Anh.'
           },
           ruby: [
-            { base: '次', reading: 'つぎ' },
             { base: '多', reading: 'おお' },
-            { base: '塾', reading: 'じゅく' },
-            { base: '普', reading: 'ふ' },
-            { base: '通', reading: 'かよ' },
-            { base: '学', reading: 'がく' },
-            { base: '校', reading: 'こう' },
-            { base: '持', reading: 'も' },
-            { base: '通', reading: 'かよ' },
-            { base: '親', reading: 'おや' }
+            { base: '水', reading: 'すい' },
+            { base: '泳', reading: 'えい' },
+            { base: '次', reading: 'つぎ' },
+            { base: '英', reading: 'えい' },
+            { base: '語', reading: 'ご' }
           ]
         },
         {
-          jp: '反対に、自由に 遊ばせる 家庭も 30パーセント ありました。',
-          romaji: 'Hantai ni, jiyū ni asobaseru katei mo sanjū pāsento arimashita.',
+          jp: '習字や ピアノを 習わせている 家庭も ありました。',
+          romaji: 'Shūji ya piano o narawasete iru katei mo arimashita.',
           meaning: {
-            en: 'On the other hand, thirty percent let children play freely.',
-            vi: 'Ngược lại, 30 phần trăm để con chơi tự do.'
+            en: 'Some families also had their children learn calligraphy or piano.',
+            vi: 'Cũng có gia đình cho con học thư pháp hay piano.'
           },
           ruby: [
-            { base: '反', reading: 'はん' },
-            { base: '対', reading: 'たい' },
-            { base: '自', reading: 'じ' },
-            { base: '由', reading: 'ゆう' },
-            { base: '遊', reading: 'あそ' },
+            { base: '習', reading: 'しゅう' },
+            { base: '字', reading: 'じ' },
+            { base: '習', reading: 'なら' },
             { base: '家', reading: 'か' },
             { base: '庭', reading: 'てい' }
           ]
         },
         {
-          jp: '「子どもが 嫌がる ことは させない」という 答えも 多かったです。',
-          romaji: '「Kodomo ga iya ga ru koto wa sasenai」 to iu kotae mo ōkatta desu.',
+          jp: '一方、「子どもは 自由に 遊ばせたい」と 答えた 親も 多かったです。',
+          romaji: 'Ippō, "kodomo wa jiyū ni asobasetai" to kotaeta oya mo ōkatta desu.',
           meaning: {
-            en: 'Many also answered that they do not make children do things they dislike.',
-            vi: 'Nhiều người cũng trả lời rằng không bắt con làm việc con không thích.'
+            en: 'On the other hand, many parents answered, "I want to let my child play freely."',
+            vi: 'Mặt khác, cũng có nhiều phụ huynh trả lời: "Tôi muốn để con tự do vui chơi."'
+          },
+          ruby: [
+            { base: '一', reading: 'いっ' },
+            { base: '方', reading: 'ぽう' },
+            { base: '子', reading: 'こ' },
+            { base: '自', reading: 'じ' },
+            { base: '由', reading: 'ゆう' },
+            { base: '遊', reading: 'あそ' },
+            { base: '答', reading: 'こた' },
+            { base: '親', reading: 'おや' },
+            { base: '多', reading: 'おお' }
+          ]
+        },
+        {
+          jp: '「子どもが 嫌がる ことは させない」という 意見も ありました。',
+          romaji: '"Kodomo ga iyagaru koto wa sasenai" to iu iken mo arimashita.',
+          meaning: {
+            en: 'There was also the opinion, "I do not make my child do things they dislike."',
+            vi: 'Cũng có ý kiến: "Không bắt con làm những việc con không thích."'
           },
           ruby: [
             { base: '子', reading: 'こ' },
             { base: '嫌', reading: 'いや' },
-            { base: '答', reading: 'こた' },
-            { base: '多', reading: 'おお' }
+            { base: '意', reading: 'い' },
+            { base: '見', reading: 'けん' }
           ]
         }
       ],
@@ -647,21 +646,36 @@ export const n4Lesson48: Lesson = {
         {
           id: 'q1',
           question: {
-            en: 'What do 40 percent of families have children do on weekends?',
-            vi: '40 phần trăm gia đình cho con làm gì vào cuối tuần?'
+            en: 'What was the most common lesson?',
+            vi: 'Môn học được chọn nhiều nhất là gì?'
           },
-          jp: '40パーセントの 家庭は 週末、何を させますか。',
+          jp: 'いちばん 多かったのは 何ですか。',
           ruby: [
-            { base: '家', reading: 'か' },
-            { base: '庭', reading: 'てい' },
-            { base: '週', reading: 'しゅう' },
-            { base: '末', reading: 'まつ' },
-            { base: '何', reading: 'なに' }
+            { base: '多', reading: 'おお' },
+            { base: '何', reading: 'なん' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Calligraphy practice', vi: 'Luyện viết chữ' },
+              label: { en: 'Swimming', vi: 'Bơi lội' },
+              jp: '水泳',
+              ruby: [
+                { base: '水', reading: 'すい' },
+                { base: '泳', reading: 'えい' }
+              ]
+            },
+            {
+              id: 'b',
+              label: { en: 'English', vi: 'Tiếng Anh' },
+              jp: '英語',
+              ruby: [
+                { base: '英', reading: 'えい' },
+                { base: '語', reading: 'ご' }
+              ]
+            },
+            {
+              id: 'c',
+              label: { en: 'Calligraphy', vi: 'Thư pháp' },
               jp: '習字',
               ruby: [
                 { base: '習', reading: 'しゅう' },
@@ -669,30 +683,9 @@ export const n4Lesson48: Lesson = {
               ]
             },
             {
-              id: 'b',
-              label: { en: 'Recording audio', vi: 'Ghi âm' },
-              jp: '録音',
-              ruby: [
-                { base: '録', reading: 'ろく' },
-                { base: '音', reading: 'おん' }
-              ]
-            },
-            {
-              id: 'c',
-              label: { en: 'Sales meetings', vi: 'Họp kinh doanh' },
-              jp: '営業の 会議',
-              ruby: [
-                { base: '営', reading: 'えい' },
-                { base: '業', reading: 'ぎょう' },
-                { base: '会', reading: 'かい' },
-                { base: '議', reading: 'ぎ' }
-              ]
-            },
-            {
               id: 'd',
-              label: { en: 'Delivering files', vi: 'Chuyển tài liệu' },
-              jp: 'ファイルを 届けること',
-              ruby: [{ base: '届', reading: 'とど' }]
+              label: { en: 'Piano', vi: 'Piano' },
+              jp: 'ピアノ'
             }
           ],
           correctId: 'a'
@@ -700,52 +693,43 @@ export const n4Lesson48: Lesson = {
         {
           id: 'q2',
           question: {
-            en: 'What comes next most often after calligraphy?',
-            vi: 'Sau luyện viết chữ, việc phổ biến tiếp theo là gì?'
+            en: 'How many parents wanted to let their children play freely?',
+            vi: 'Số phụ huynh muốn cho con tự do vui chơi thế nào?'
           },
-          jp: '習字の 次に 多いのは 何ですか。',
+          jp: '「自由に 遊ばせたい」と 答えた 親は どうでしたか。',
           ruby: [
-            { base: '習', reading: 'しゅう' },
-            { base: '字', reading: 'じ' },
-            { base: '次', reading: 'つぎ' },
-            { base: '多', reading: 'おお' },
-            { base: '何', reading: 'なん' }
+            { base: '自', reading: 'じ' },
+            { base: '由', reading: 'ゆう' },
+            { base: '遊', reading: 'あそ' },
+            { base: '答', reading: 'こた' },
+            { base: '親', reading: 'おや' }
           ],
           choices: [
             {
               id: 'a',
-              label: { en: 'Cram school', vi: 'Học thêm' },
-              jp: '塾',
-              ruby: [{ base: '塾', reading: 'じゅく' }]
+              label: { en: 'There were many', vi: 'Nhiều' },
+              jp: '多かった',
+              ruby: [{ base: '多', reading: 'おお' }]
             },
             {
               id: 'b',
-              label: { en: 'Free play only', vi: 'Chỉ chơi tự do' },
-              jp: '自由に 遊ぶことだけ',
+              label: { en: 'There were none', vi: 'Không có ai' },
+              jp: '一人も いなかった',
               ruby: [
-                { base: '自', reading: 'じ' },
-                { base: '由', reading: 'ゆう' },
-                { base: '遊', reading: 'あそ' }
+                { base: '一', reading: 'ひと' },
+                { base: '人', reading: 'り' }
               ]
             },
             {
               id: 'c',
-              label: { en: 'Business trips', vi: 'Công tác' },
-              jp: '出張',
-              ruby: [
-                { base: '出', reading: 'しゅっ' },
-                { base: '張', reading: 'ちょう' }
-              ]
+              label: { en: 'There were very few', vi: 'Rất ít' },
+              jp: 'とても 少なかった',
+              ruby: [{ base: '少', reading: 'すく' }]
             },
             {
               id: 'd',
-              label: { en: 'Taking care of parents', vi: 'Chăm sóc bố mẹ' },
-              jp: '親の 世話',
-              ruby: [
-                { base: '親', reading: 'おや' },
-                { base: '世', reading: 'せ' },
-                { base: '話', reading: 'わ' }
-              ]
+              label: { en: 'Unknown', vi: 'Không rõ' },
+              jp: 'わからない'
             }
           ],
           correctId: 'a'

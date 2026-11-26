@@ -910,21 +910,18 @@ export const n5Lesson17: Lesson = {
           ]
         },
         {
-          jp: '薬は 食事の 前に 飲んで ください。3日までに 飲み切って ください。',
-          romaji: 'Kusuri wa shokuji no mae ni nonde kudasai. Mikka made ni nomikitte kudasai.',
+          jp: '薬は 食事の 前に 飲んで ください。',
+          romaji: 'Kusuri wa shokuji no mae ni nonde kudasai.',
           meaning: {
-            en: 'Take the medicine before meals. Please finish it within three days.',
-            vi: 'Uống thuốc trước bữa ăn. Uống hết trong ba ngày nhé.'
+            en: 'Please take the medicine before meals.',
+            vi: 'Hãy uống thuốc trước bữa ăn.'
           },
           ruby: [
-            { base: '薬', reading: 'くす' },
+            { base: '薬', reading: 'くすり' },
             { base: '食', reading: 'しょく' },
             { base: '事', reading: 'じ' },
             { base: '前', reading: 'まえ' },
-            { base: '飲', reading: 'の' },
-            { base: '日', reading: 'か' },
-            { base: '飲', reading: 'の' },
-            { base: '切', reading: 'き' }
+            { base: '飲', reading: 'の' }
           ]
         },
         {
@@ -1181,7 +1178,7 @@ export const n5Lesson17: Lesson = {
           ]
         },
         {
-          jp: '代金は 3,200円 です。今日中に 払わなければ なりません。',
+          jp: '代金は 3,200円です。今日中に 払わなければ なりません。',
           romaji: 'Daikin wa san-zen nihyaku en desu. Kyō-jū ni harawanakereba narimasen.',
           meaning: {
             en: 'The bill is 3,200 yen. It must be paid by the end of today.',

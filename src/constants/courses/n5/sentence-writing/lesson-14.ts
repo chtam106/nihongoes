@@ -6,31 +6,29 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
       pattern: 'V-て ください',
       items: [
         {
-          prompt: { en: 'Please turn on the light.', vi: 'Hãy bật đèn.' },
-          jp: '電気を 付けて ください。',
+          prompt: {
+            en: 'It is dark. Please turn on the light.',
+            vi: 'Tối quá nhỉ. Hãy bật đèn lên.'
+          },
+          jp: '暗いですね。電気を 付けて ください。',
           ruby: [
+            { base: '暗', reading: 'くら' },
             { base: '電', reading: 'でん' },
             { base: '気', reading: 'き' },
             { base: '付', reading: 'つ' }
           ]
         },
         {
-          prompt: { en: 'Please turn off the air conditioner.', vi: 'Hãy tắt máy điều hòa.' },
-          jp: 'エアコンを 消して ください。',
-          ruby: [{ base: '消', reading: 'け' }]
-        },
-        {
-          prompt: { en: 'Please open the window.', vi: 'Hãy mở cửa sổ.' },
-          jp: '窓を 開けて ください。',
+          prompt: {
+            en: 'It is hot, so please open the window.',
+            vi: 'Nóng quá, hãy mở cửa sổ ra.'
+          },
+          jp: '暑いですから、窓を 開けて ください。',
           ruby: [
+            { base: '暑', reading: 'あつ' },
             { base: '窓', reading: 'まど' },
             { base: '開', reading: 'あ' }
           ]
-        },
-        {
-          prompt: { en: 'Please close the door.', vi: 'Hãy đóng cửa.' },
-          jp: 'ドアを 閉めて ください。',
-          ruby: [{ base: '閉', reading: 'し' }]
         },
         {
           prompt: { en: 'Please hurry a little.', vi: 'Hãy vội một chút.' },
@@ -48,15 +46,6 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '持', reading: 'も' }]
         },
         {
-          prompt: { en: 'Please pass the sugar.', vi: 'Hãy chuyển đường giúp tôi.' },
-          jp: '砂糖を 取って ください。',
-          ruby: [
-            { base: '砂', reading: 'さ' },
-            { base: '糖', reading: 'とう' },
-            { base: '取', reading: 'と' }
-          ]
-        },
-        {
           prompt: { en: 'Please help me.', vi: 'Hãy giúp tôi.' },
           jp: '手伝って ください。',
           ruby: [
@@ -65,23 +54,9 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Please call Tanaka.', vi: 'Hãy gọi anh Tanaka.' },
-          jp: '田中さんを 呼んで ください。',
-          ruby: [
-            { base: '田', reading: 'た' },
-            { base: '中', reading: 'なか' },
-            { base: '呼', reading: 'よ' }
-          ]
-        },
-        {
           prompt: { en: 'Please speak slowly.', vi: 'Hãy nói chậm.' },
           jp: 'ゆっくり 話して ください。',
           ruby: [{ base: '話', reading: 'はな' }]
-        },
-        {
-          prompt: { en: 'Please use this computer.', vi: 'Hãy dùng máy tính này.' },
-          jp: 'この パソコンを 使って ください。',
-          ruby: [{ base: '使', reading: 'つか' }]
         },
         {
           prompt: { en: 'Please park the car here.', vi: 'Hãy đỗ xe ở đây.' },
@@ -97,77 +72,12 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '見', reading: 'み' }]
         },
         {
-          prompt: { en: 'Please tell me your address.', vi: 'Hãy cho tôi biết địa chỉ.' },
-          jp: '住所を 教えて ください。',
-          ruby: [
-            { base: '住', reading: 'じゅう' },
-            { base: '所', reading: 'しょ' },
-            { base: '教', reading: 'おし' }
-          ]
-        },
-        {
-          prompt: { en: 'Please sit down.', vi: 'Hãy ngồi xuống.' },
-          jp: '座って ください。',
-          ruby: [{ base: '座', reading: 'すわ' }]
-        },
-        {
-          prompt: { en: 'Please stand up.', vi: 'Hãy đứng dậy.' },
-          jp: '立って ください。',
-          ruby: [{ base: '立', reading: 'た' }]
-        },
-        {
-          prompt: { en: 'Please enter the cafe.', vi: 'Hãy vào quán giải khát.' },
-          jp: '喫茶店に 入って ください。',
-          ruby: [
-            { base: '喫', reading: 'きっ' },
-            { base: '茶', reading: 'さ' },
-            { base: '店', reading: 'てん' },
-            { base: '入', reading: 'はい' }
-          ]
-        },
-        {
-          prompt: { en: 'Please leave this shop.', vi: 'Hãy ra khỏi cửa hàng này.' },
-          jp: 'この 店を 出て ください。',
-          ruby: [
-            { base: '店', reading: 'みせ' },
-            { base: '出', reading: 'で' }
-          ]
-        },
-        {
-          prompt: { en: 'Please photocopy this paper.', vi: 'Hãy phô-tô tờ giấy này.' },
-          jp: 'この 紙を コピーして ください。',
-          ruby: [{ base: '紙', reading: 'かみ' }]
-        },
-        {
           prompt: { en: 'Please write your name.', vi: 'Hãy viết tên.' },
           jp: '名前を 書いて ください。',
           ruby: [
             { base: '名', reading: 'な' },
             { base: '前', reading: 'まえ' },
             { base: '書', reading: 'か' }
-          ]
-        },
-        {
-          prompt: { en: 'Please show me the map.', vi: 'Hãy cho tôi xem bản đồ.' },
-          jp: '地図を 見せて ください。',
-          ruby: [
-            { base: '地', reading: 'ち' },
-            { base: '図', reading: 'ず' },
-            { base: '見', reading: 'み' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Please teach me how to read this kanji.',
-            vi: 'Hãy chỉ tôi cách đọc chữ Hán này.'
-          },
-          jp: 'この 漢字の 読み方を 教えて ください。',
-          ruby: [
-            { base: '漢', reading: 'かん' },
-            { base: '字', reading: 'じ' },
-            { base: '読', reading: 'よ' },
-            { base: '方', reading: 'かた' },
-            { base: '教', reading: 'おし' }
           ]
         },
         {
@@ -180,40 +90,6 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
             { base: '使', reading: 'つか' },
             { base: '方', reading: 'かた' },
             { base: '教', reading: 'おし' }
-          ]
-        },
-        {
-          prompt: { en: 'Please go straight.', vi: 'Hãy đi thẳng.' },
-          jp: 'まっすぐ 行って ください。',
-          ruby: [{ base: '行', reading: 'い' }]
-        },
-        {
-          prompt: { en: 'Please come immediately.', vi: 'Hãy đến ngay.' },
-          jp: 'すぐ 来て ください。',
-          ruby: [{ base: '来', reading: 'き' }]
-        },
-        {
-          prompt: { en: 'Please come again.', vi: 'Hãy đến lại.' },
-          jp: 'また 来て ください。',
-          ruby: [{ base: '来', reading: 'き' }]
-        },
-        {
-          prompt: { en: 'Please wait a little more.', vi: 'Hãy đợi thêm một chút nữa.' },
-          jp: 'もう 少し 待って ください。',
-          ruby: [
-            { base: '少', reading: 'すこ' },
-            { base: '待', reading: 'ま' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Please give me another cup of coffee.',
-            vi: 'Hãy cho thêm một tách cà phê.'
-          },
-          jp: 'コーヒーを もう 一杯 ください。',
-          ruby: [
-            { base: '一', reading: 'いっ' },
-            { base: '杯', reading: 'ぱい' }
           ]
         }
       ]
@@ -330,32 +206,33 @@ export const n5Lesson14SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'There is a problem.', vi: 'Có một vấn đề.' },
-          jp: '問題が あります。',
+          prompt: { en: 'Excuse me, there is a bit of a problem.', vi: 'Xin lỗi, có chút vấn đề.' },
+          jp: 'すみません、ちょっと 問題が あります。',
           ruby: [
             { base: '問', reading: 'もん' },
             { base: '題', reading: 'だい' }
           ]
         },
         {
-          prompt: { en: 'Yuki is not here.', vi: 'Yuki không có ở đây.' },
-          jp: 'ゆきさんが いません。'
+          prompt: { en: 'Huh? Yuki is not here.', vi: 'Ơ? Không thấy Yuki đâu nhỉ.' },
+          jp: 'あれ？ゆきさんが いませんね。'
         },
         {
-          prompt: { en: 'There is no electricity.', vi: 'Không có điện.' },
-          jp: '電気が ありません。',
+          prompt: { en: 'Huh? My wallet is gone.', vi: 'Ơ? Không thấy cái ví đâu.' },
+          jp: 'あれ？財布が ありません。',
           ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '気', reading: 'き' }
+            { base: '財', reading: 'さい' },
+            { base: '布', reading: 'ふ' }
           ]
         },
         {
-          prompt: { en: 'The train comes.', vi: 'Tàu đến.' },
-          jp: '電車が 来ます。',
+          prompt: { en: 'The train is here. Hurry!', vi: 'Tàu đến rồi kìa. Nhanh lên!' },
+          jp: '電車が 来ましたよ。急いで ください。',
           ruby: [
             { base: '電', reading: 'でん' },
             { base: '車', reading: 'しゃ' },
-            { base: '来', reading: 'き' }
+            { base: '来', reading: 'き' },
+            { base: '急', reading: 'いそ' }
           ]
         }
       ]
