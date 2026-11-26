@@ -1,7 +1,7 @@
 ---
 description: Page folder structure - colocate views in the route folder; each page uses page.tsx
-globs: src/app/**/*
-alwaysApply: false
+paths:
+  - 'src/app/**/*'
 ---
 
 # Page folder structure
@@ -15,8 +15,9 @@ SEO via `@/i18n/seo-meta`), and `export const dynamicParams = false`. i18n is
 next-intl driven from `src/i18n/routing.ts`: `src/proxy.ts`
 (`createMiddleware`) keeps English at the root (no prefix) and Vietnamese under
 `/vi` (`localePrefix: 'as-needed'`); `app/[locale]/layout.tsx` renders `<html lang>`
-+ `NextIntlClientProvider` from the `[locale]` segment (root `app/layout.tsx` is a
-passthrough).
+
+- `NextIntlClientProvider` from the `[locale]` segment (root `app/layout.tsx` is a
+  passthrough).
 
 ## Where view code lives (colocation - IMPORTANT)
 
@@ -85,24 +86,24 @@ screen"; a future improvement is to make the boundary rely on
 
 ## Mapping (view code lives in the route folder)
 
-| Route | View |
-|-------|------|
-| `/`, `/alphabet`, `/alphabet/exercise`, `/kanji` | inlined in that route's `page.tsx` (Server Component) |
-| `/alphabet/hiragana` | `src/app/[locale]/alphabet/hiragana/_components/hiragana-chart.tsx` |
-| `/alphabet/katakana` | `.../alphabet/katakana/_components/katakana-chart.tsx` |
-| `/alphabet/combined` | `.../alphabet/combined/_components/combined-chart.tsx` |
-| `/alphabet/exercise/<kind>` | `.../alphabet/exercise/<kind>/_components/<kind>-exercise.tsx` |
-| `/:level` | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx` |
-| `/:level/intro` | `.../[jlptLevel]/intro/page.tsx` |
-| `/vocabulary` | `src/app/[locale]/vocabulary/_components/vocab-index-page.tsx` |
-| `/:level/reference` | `.../[jlptLevel]/reference/page.tsx` |
-| `/:level/:lessonId` | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx` |
-| `/:level/:lessonId/vocabulary` | `.../[lessonId]/vocabulary/_components/exercise-page.tsx` |
-| `/:level/:lessonId/{grammar,reading,writing}` | `.../[lessonId]/<kind>/_components/<kind>-page.tsx` |
-| `/:level/:lessonId/sentences` | `.../[lessonId]/sentences/_components/sentence-writing-page.tsx` |
-| `/kanji/:track` | `src/app/[locale]/kanji/[track]/_components/kanji-track.tsx` |
-| `/kanji/:track/:lessonId(/quiz/writing)` | `.../[lessonId](/quiz/writing)/_components/kanji-*.tsx` |
-| `/kanji/radicals` | `.../kanji/radicals/_components/kanji-radicals.tsx` |
+| Route                                            | View                                                                |
+| ------------------------------------------------ | ------------------------------------------------------------------- |
+| `/`, `/alphabet`, `/alphabet/exercise`, `/kanji` | inlined in that route's `page.tsx` (Server Component)               |
+| `/alphabet/hiragana`                             | `src/app/[locale]/alphabet/hiragana/_components/hiragana-chart.tsx` |
+| `/alphabet/katakana`                             | `.../alphabet/katakana/_components/katakana-chart.tsx`              |
+| `/alphabet/combined`                             | `.../alphabet/combined/_components/combined-chart.tsx`              |
+| `/alphabet/exercise/<kind>`                      | `.../alphabet/exercise/<kind>/_components/<kind>-exercise.tsx`      |
+| `/:level`                                        | `src/app/[locale]/[jlptLevel]/_components/course-page.tsx`          |
+| `/:level/intro`                                  | `.../[jlptLevel]/intro/page.tsx`                                    |
+| `/vocabulary`                                    | `src/app/[locale]/vocabulary/_components/vocab-index-page.tsx`      |
+| `/:level/reference`                              | `.../[jlptLevel]/reference/page.tsx`                                |
+| `/:level/:lessonId`                              | `.../[jlptLevel]/[lessonId]/_components/lesson-page.tsx`            |
+| `/:level/:lessonId/vocabulary`                   | `.../[lessonId]/vocabulary/_components/exercise-page.tsx`           |
+| `/:level/:lessonId/{grammar,reading,writing}`    | `.../[lessonId]/<kind>/_components/<kind>-page.tsx`                 |
+| `/:level/:lessonId/sentences`                    | `.../[lessonId]/sentences/_components/sentence-writing-page.tsx`    |
+| `/kanji/:track`                                  | `src/app/[locale]/kanji/[track]/_components/kanji-track.tsx`        |
+| `/kanji/:track/:lessonId(/quiz/writing)`         | `.../[lessonId](/quiz/writing)/_components/kanji-*.tsx`             |
+| `/kanji/radicals`                                | `.../kanji/radicals/_components/kanji-radicals.tsx`                 |
 
 Page-specific quiz logic is colocated in the same `_components/` folder (e.g.
 `vocabulary/_components/vocab-quiz.ts`, `grammar/_components/grammar-quiz.ts`), imported via `./`. Course views

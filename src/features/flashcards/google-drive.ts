@@ -1,4 +1,15 @@
 import { sanitizeFlashcardStore, type FlashcardStore } from '@/constants/flashcards/collections.ts';
+import { sanitizeReviewStore, type ReviewStore } from '@/constants/flashcards/srs.ts';
+
+/** What the Drive file holds: the collections, plus review progress under `reviews`. */
+export type FlashcardDriveData = {
+  store: FlashcardStore;
+  reviews: ReviewStore;
+};
+
+function driveFileBody({ store, reviews }: FlashcardDriveData) {
+  return JSON.stringify({ ...store, reviews });
+}
 
 export const FLASHCARD_DRIVE_FILE = 'nihongoes-flashcards.json';
 
@@ -54,7 +65,10 @@ export async function findFlashcardFile(token: string): Promise<string | null> {
   return id || null;
 }
 
-export async function readFlashcardFile(token: string, fileId: string): Promise<FlashcardStore> {
+export async function readFlashcardFile(
+  token: string,
+  fileId: string
+): Promise<FlashcardDriveData> {
   const response = await fetch(`${DRIVE_FILES}/${encodeURIComponent(fileId)}?alt=media`, {
     headers: { Authorization: `Bearer ${token}` }
   });
@@ -63,10 +77,20 @@ export async function readFlashcardFile(token: string, fileId: string): Promise<
     throw new DriveApiError(response.status);
   }
 
-  return sanitizeFlashcardStore(await response.json());
+  const body: unknown = await response.json();
+  // Files written before review sync have no `reviews`: they read as empty.
+  const reviews =
+    body && typeof body === 'object' && !Array.isArray(body)
+      ? (body as { reviews?: unknown }).reviews
+      : undefined;
+
+  return { store: sanitizeFlashcardStore(body), reviews: sanitizeReviewStore(reviews) };
 }
 
-export async function createFlashcardFile(token: string, store: FlashcardStore): Promise<string> {
+export async function createFlashcardFile(
+  token: string,
+  data: FlashcardDriveData
+): Promise<string> {
   const boundary = `nihongoes-${crypto.randomUUID()}`;
   const metadata = {
     name: FLASHCARD_DRIVE_FILE,
@@ -81,7 +105,7 @@ export async function createFlashcardFile(token: string, store: FlashcardStore):
     `--${boundary}`,
     'Content-Type: application/json',
     '',
-    JSON.stringify(store),
+    driveFileBody(data),
     `--${boundary}--`,
     ''
   ].join('\r\n');
@@ -105,7 +129,7 @@ export async function createFlashcardFile(token: string, store: FlashcardStore):
 export async function updateFlashcardFile(
   token: string,
   fileId: string,
-  store: FlashcardStore
+  data: FlashcardDriveData
 ): Promise<void> {
   const response = await fetch(`${DRIVE_UPLOAD}/${encodeURIComponent(fileId)}?uploadType=media`, {
     method: 'PATCH',
@@ -113,7 +137,7 @@ export async function updateFlashcardFile(
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(store)
+    body: driveFileBody(data)
   });
 
   if (!response.ok) {

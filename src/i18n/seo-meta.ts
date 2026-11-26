@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { isCourseLevel } from '@/constants/courses/levels.ts';
+import { FLASHCARD_REVIEW_PATH, isCourseLevel } from '@/constants/courses/levels.ts';
 import { getCourseSeo } from '@/constants/courses/seo.ts';
 import { KANJI_TRACK_META } from '@/constants/kanji/track-meta.ts';
 import { getSeoRouteKey, type SeoRouteKey } from '@/constants/routes.ts';
@@ -244,7 +244,8 @@ async function getFlashcardCollectionSeo(
 ): Promise<SeoText | undefined> {
   const match = FLASHCARD_COLLECTION_PATH.exec(logicalPath);
 
-  if (!match) {
+  // `/flashcards/review` is its own page, not a collection.
+  if (!match || logicalPath === FLASHCARD_REVIEW_PATH) {
     return undefined;
   }
 

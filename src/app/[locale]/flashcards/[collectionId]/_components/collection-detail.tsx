@@ -1,6 +1,6 @@
 'use client';
 
-import { useSyncExternalStore, type MouseEvent } from 'react';
+import { useMemo, useSyncExternalStore, type MouseEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowBackOutlined from '@mui/icons-material/ArrowBackOutlined';
@@ -9,7 +9,6 @@ import { Box, Button, Stack, ToggleButton, ToggleButtonGroup, Typography } from 
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
-import { VocabFlashcards } from '@/components/vocab-flashcards';
 import {
   flashcardCollectionHref,
   flashcardsListPath,
@@ -27,7 +26,10 @@ import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
+import { buildReviewQueue, dayNumber } from '@/constants/flashcards/srs.ts';
+import { ReviewSession } from '@/features/flashcards/review-session.tsx';
 import { SaveCardProvider } from '@/features/flashcards/save-card-gesture.tsx';
+import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
@@ -78,8 +80,20 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
     'ja',
     sanitizeCollectionFront
   );
+  const { store: reviews } = useFlashcardReviews();
   const collection = collections.find((item) => item.id === collectionId) ?? null;
-  const cards = collection ? studyFlashcards(collection.cards, resolveCards) : [];
+  const cards = useMemo(
+    () => (collection ? studyFlashcards(collection.cards, resolveCards) : []),
+    [collection, resolveCards]
+  );
+  const queue = buildReviewQueue(
+    cards.map((card) => card.id),
+    reviews,
+    dayNumber()
+  );
+  const byId = new Map(cards.map((card) => [card.id, card]));
+  const reviewCards = [...queue.due, ...queue.fresh].flatMap((id) => byId.get(id) ?? []);
+  const spareCards = queue.spare.flatMap((id) => byId.get(id) ?? []);
   const { previous, next } = adjacentDefaultCollections(collections, collectionId, locale);
 
   const handleFrontChange = (_event: MouseEvent<HTMLElement>, value: FlashcardFront | null) => {
@@ -125,8 +139,16 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
             {t('flashcards.studyEmpty')}
           </Typography>
         )}
-        {collection && cards.length > 0 && (
-          <VocabFlashcards key={collection.id} cards={cards} locale={locale} front={front} />
+        {collection && cards.length > 0 && ready && (
+          <Stack spacing={2} sx={{ alignItems: 'center' }}>
+            <ReviewSession
+              key={collection.id}
+              cards={reviewCards}
+              spareCards={spareCards}
+              locale={locale}
+              front={front}
+            />
+          </Stack>
         )}
         {!collection && ready && (
           <Typography variant="body1" color="text.secondary">
