@@ -23,62 +23,60 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The manager works at that company.',
-            vi: 'Trưởng phòng làm việc ở công ty đó.'
+            en: 'How many years has the manager worked at this company?',
+            vi: 'Trưởng phòng làm ở công ty này bao nhiêu năm rồi ạ?'
           },
-          jp: '部長は その 会社に 勤めます。勤められます。',
+          jp: '部長は 何年 この 会社に 勤められていますか。',
           ruby: [
             { base: '部', reading: 'ぶ' },
             { base: '長', reading: 'ちょう' },
+            { base: '何', reading: 'なん' },
+            { base: '年', reading: 'ねん' },
             { base: '会', reading: 'かい' },
             { base: '社', reading: 'しゃ' },
-            { base: '勤', reading: 'つと' },
             { base: '勤', reading: 'つと' }
           ]
         },
         {
           prompt: {
-            en: 'The doctor uses this hospital.',
-            vi: 'Bác sĩ sử dụng bệnh viện này.'
+            en: 'The president reads the newspaper every morning.',
+            vi: 'Giám đốc đọc báo mỗi sáng.'
           },
-          jp: '先生は この 病院を 利用します。利用されます。',
+          jp: '社長は 毎朝 新聞を 読まれます。',
+          ruby: [
+            { base: '社', reading: 'しゃ' },
+            { base: '長', reading: 'ちょう' },
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '新', reading: 'しん' },
+            { base: '聞', reading: 'ぶん' },
+            { base: '読', reading: 'よ' }
+          ]
+        },
+        {
+          prompt: { en: 'The professor has already gone home.', vi: 'Thầy đã về rồi ạ.' },
+          jp: '先生は もう 帰られました。',
           ruby: [
             { base: '先', reading: 'せん' },
             { base: '生', reading: 'せい' },
-            { base: '病', reading: 'びょう' },
-            { base: '院', reading: 'いん' },
-            { base: '利', reading: 'り' },
-            { base: '用', reading: 'よう' },
-            { base: '利', reading: 'り' },
-            { base: '用', reading: 'よう' }
+            { base: '帰', reading: 'かえ' }
           ]
         },
         {
           prompt: {
-            en: 'The guest sits on the chair.',
-            vi: 'Khách ngồi ghế.'
+            en: 'The professor spent the summer holidays at an inn in Kyoto.',
+            vi: 'Thầy đã nghỉ hè ở một lữ quán tại Kyoto.'
           },
-          jp: 'お客様は いすに 掛けます。掛けられます。',
-          ruby: [
-            { base: '客', reading: 'きゃく' },
-            { base: '様', reading: 'さま' },
-            { base: '掛', reading: 'か' },
-            { base: '掛', reading: 'か' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The teacher spends the summer at a Japanese inn.',
-            vi: 'Thầy giáo nghỉ hè ở nhà khách kiểu Nhật.'
-          },
-          jp: '先生は 夏を 旅館で 過ごします。過ごされます。',
+          jp: '先生は 夏休みを 京都の 旅館で 過ごされました。',
           ruby: [
             { base: '先', reading: 'せん' },
             { base: '生', reading: 'せい' },
             { base: '夏', reading: 'なつ' },
+            { base: '休', reading: 'やす' },
+            { base: '京', reading: 'きょう' },
+            { base: '都', reading: 'と' },
             { base: '旅', reading: 'りょ' },
             { base: '館', reading: 'かん' },
-            { base: '過', reading: 'す' },
             { base: '過', reading: 'す' }
           ]
         }
@@ -127,24 +125,26 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'Anyone may enter this room.',
-            vi: 'Vị nào cũng có thể vào phòng này.'
-          },
-          jp: 'どなたでも この へやへ お入りに なれます。',
-          ruby: [{ base: '入', reading: 'はい' }]
+          prompt: { en: 'Anyone may enter this room.', vi: 'Ai cũng có thể vào phòng này.' },
+          jp: 'どなたでも この 部屋に お入りに なれます。',
+          ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '入', reading: 'はい' }
+          ]
         },
         {
           prompt: {
-            en: 'The guest will sit down now.',
-            vi: 'Khách sẽ ngồi xuống bây giờ.'
+            en: 'Around what time will the manager be back?',
+            vi: 'Trưởng phòng khoảng mấy giờ thì về ạ?'
           },
-          jp: 'お客様は 今 お掛けに なります。',
+          jp: '部長は 何時ごろ お戻りに なりますか。',
           ruby: [
-            { base: '客', reading: 'きゃく' },
-            { base: '様', reading: 'さま' },
-            { base: '今', reading: 'いま' },
-            { base: '掛', reading: 'か' }
+            { base: '部', reading: 'ぶ' },
+            { base: '長', reading: 'ちょう' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' },
+            { base: '戻', reading: 'もど' }
           ]
         }
       ]
@@ -166,55 +166,50 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'Please help yourself to this cake.',
-            vi: 'Xin mời dùng bánh này.'
-          },
-          jp: 'この ケーキを 召し上がりますか。どうぞ 召し上がって ください。',
+          prompt: { en: 'What would you like to eat, Professor?', vi: 'Thầy dùng món gì ạ?' },
+          jp: '先生は 何を 召し上がりますか。',
           ruby: [
-            { base: '召', reading: 'め' },
-            { base: '上', reading: 'あ' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '何', reading: 'なに' },
             { base: '召', reading: 'め' },
             { base: '上', reading: 'あ' }
           ]
         },
         {
           prompt: {
-            en: 'What is your name? I am called Yamanaka.',
-            vi: 'Tên ngài là gì ạ? Tôi tên là Yamanaka.'
+            en: 'May I have your name? ...My name is Yamanaka.',
+            vi: 'Xin hỏi quý danh là gì ạ? ...Tôi tên là Yamanaka.'
           },
-          jp: 'お名前は 何と おっしゃいますか。山中と いいます。',
+          jp: 'お名前は 何と おっしゃいますか。……山中と 申します。',
           ruby: [
             { base: '名', reading: 'な' },
             { base: '前', reading: 'まえ' },
             { base: '何', reading: 'なん' },
             { base: '山', reading: 'やま' },
-            { base: '中', reading: 'なか' }
+            { base: '中', reading: 'なか' },
+            { base: '申', reading: 'もう' }
           ]
         },
         {
           prompt: {
-            en: 'What will the director do next?',
-            vi: 'Giám đốc sẽ làm gì tiếp theo?'
+            en: 'What will you be doing this weekend?',
+            vi: 'Cuối tuần ngài định làm gì ạ?'
           },
-          jp: '所長は つぎに 何を なさいますか。',
+          jp: '週末は 何を なさいますか。',
           ruby: [
-            { base: '所', reading: 'しょ' },
-            { base: '長', reading: 'ちょう' },
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
             { base: '何', reading: 'なに' }
           ]
         },
         {
-          prompt: {
-            en: 'Please look at this. Do you know iPS cells?',
-            vi: 'Xin mời xem cái này. Ngài có biết tế bào iPS không?'
-          },
-          jp: 'これを ご覧になりますか。iPS 細胞を ご存じです か。',
+          prompt: { en: 'Professor, have you seen this news?', vi: 'Thầy đã xem tin này chưa ạ?' },
+          jp: '先生は この ニュースを ご覧に なりましたか。',
           ruby: [
-            { base: '覧', reading: 'らん' },
-            { base: '細', reading: 'さい' },
-            { base: '胞', reading: 'ぼう' },
-            { base: '存', reading: 'ぞん' }
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '覧', reading: 'らん' }
           ]
         }
       ]
@@ -242,14 +237,11 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'Please look at this career history.',
-            vi: 'Xin xem lý lịch này.'
-          },
-          jp: 'この 経歴を ご覧 ください。',
+          prompt: { en: 'Please take a look at these materials.', vi: 'Xin mời xem tài liệu này.' },
+          jp: 'こちらの 資料を ご覧 ください。',
           ruby: [
-            { base: '経', reading: 'けい' },
-            { base: '歴', reading: 'れき' },
+            { base: '資', reading: 'し' },
+            { base: '料', reading: 'りょう' },
             { base: '覧', reading: 'らん' }
           ]
         },
@@ -290,65 +282,44 @@ export const n4Lesson49SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'He aims for medical school and then advances.',
-            vi: 'Anh ấy hướng đến khoa y rồi học lên.'
-          },
-          jp: '彼は 医学部を 目指します。そのあと 進みます。',
+          prompt: { en: 'Is your family well, Professor?', vi: 'Gia đình thầy có khỏe không ạ?' },
+          jp: '先生の ご家族は お元気ですか。',
           ruby: [
-            { base: '彼', reading: 'かれ' },
-            { base: '医', reading: 'い' },
-            { base: '学', reading: 'がく' },
-            { base: '部', reading: 'ぶ' },
-            { base: '目', reading: 'め' },
-            { base: '指', reading: 'ざ' },
-            { base: '進', reading: 'すす' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'He develops iPS cells in mice and in humans.',
-            vi: 'Ông ấy phát triển tế bào iPS ở chuột và ở người.'
-          },
-          jp: 'マウスと ヒトで iPS 細胞を 開発します。',
-          ruby: [
-            { base: '細', reading: 'さい' },
-            { base: '胞', reading: 'ぼう' },
-            { base: '開', reading: 'かい' },
-            { base: '発', reading: 'はつ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'He received a prize at the talk.',
-            vi: 'Ông ấy nhận giải ở buổi nói chuyện.'
-          },
-          jp: '講演会で 賞を 受賞します。受賞されました。',
-          ruby: [
-            { base: '講', reading: 'こう' },
-            { base: '演', reading: 'えん' },
-            { base: '会', reading: 'かい' },
-            { base: '賞', reading: 'しょう' },
-            { base: '受', reading: 'じゅ' },
-            { base: '賞', reading: 'しょう' },
-            { base: '受', reading: 'じゅ' },
-            { base: '賞', reading: 'しょう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'How is your wife? Please take care.',
-            vi: 'Phu nhân có khỏe không? Xin bảo trọng.'
-          },
-          jp: '奥様は お元気 ですか。お体を ご自愛 ください。',
-          ruby: [
-            { base: '奥', reading: 'おく' },
-            { base: '様', reading: 'さま' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' },
             { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' },
+            { base: '気', reading: 'き' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Thank you for taking the time when you are so busy.',
+            vi: 'Cảm ơn anh đã dành thời gian dù đang bận.'
+          },
+          jp: 'お忙しい ところ、ありがとう ございます。',
+          ruby: [{ base: '忙', reading: 'いそが' }]
+        },
+        {
+          prompt: { en: 'Congratulations on your wedding.', vi: 'Chúc mừng đám cưới của anh chị.' },
+          jp: 'ご結婚 おめでとう ございます。',
+          ruby: [
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'It has gotten cold, so please take good care of yourself.',
+            vi: 'Trời đã lạnh rồi, xin hãy giữ gìn sức khỏe.'
+          },
+          jp: '寒く なりましたから、どうぞ お体を 大切に して ください。',
+          ruby: [
+            { base: '寒', reading: 'さむ' },
             { base: '体', reading: 'からだ' },
-            { base: '自', reading: 'じ' },
-            { base: '愛', reading: 'あい' }
+            { base: '大', reading: 'たい' },
+            { base: '切', reading: 'せつ' }
           ]
         }
       ]

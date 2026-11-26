@@ -6,66 +6,57 @@ export const n5Lesson10SentenceWriting: LessonSentenceWriting = {
       pattern: 'N が あります / います',
       items: [
         {
-          prompt: { en: 'There is a convenience store.', vi: 'Có cửa hàng tiện lợi.' },
-          jp: 'コンビニが あります。'
+          prompt: {
+            en: 'Excuse me, is there a convenience store near here?',
+            vi: 'Xin lỗi, gần đây có cửa hàng tiện lợi không?'
+          },
+          jp: 'すみません、この 近くに コンビニが ありますか。',
+          ruby: [{ base: '近', reading: 'ちか' }]
         },
         {
-          prompt: { en: 'There is a park.', vi: 'Có công viên.' },
-          jp: '公園が あります。',
+          prompt: { en: 'I have a meeting this afternoon.', vi: 'Chiều nay tôi có cuộc họp.' },
+          jp: '今日は 午後 会議が あります。',
           ruby: [
-            { base: '公', reading: 'こう' },
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '午', reading: 'ご' },
+            { base: '後', reading: 'ご' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Oh, there is a cat. It is cute, is it not?',
+            vi: 'Ồ, có con mèo kìa. Dễ thương nhỉ.'
+          },
+          jp: 'あ、猫が いますよ。かわいいですね。',
+          ruby: [{ base: '猫', reading: 'ねこ' }]
+        },
+        {
+          prompt: { en: 'There are pandas at Ueno Zoo.', vi: 'Ở sở thú Ueno có gấu trúc.' },
+          jp: '上野動物園には パンダが います。',
+          ruby: [
+            { base: '上', reading: 'うえ' },
+            { base: '野', reading: 'の' },
+            { base: '動', reading: 'どう' },
+            { base: '物', reading: 'ぶつ' },
             { base: '園', reading: 'えん' }
           ]
         },
         {
-          prompt: { en: 'There is a dog.', vi: 'Có con chó.' },
-          jp: '犬が います。',
-          ruby: [{ base: '犬', reading: 'いぬ' }]
-        },
-        {
-          prompt: { en: 'There is a cat.', vi: 'Có con mèo.' },
-          jp: '猫が います。',
-          ruby: [{ base: '猫', reading: 'ねこ' }]
-        },
-        {
-          prompt: { en: 'There is a panda.', vi: 'Có gấu trúc.' },
-          jp: 'パンダが います。'
-        },
-        {
-          prompt: { en: 'There is an elephant.', vi: 'Có con voi.' },
-          jp: '象が います。',
-          ruby: [{ base: '象', reading: 'ぞう' }]
-        },
-        {
-          prompt: { en: 'There is a man.', vi: 'Có một người đàn ông.' },
-          jp: '男の 人が います。',
+          prompt: {
+            en: 'There is a man and a woman at the reception desk.',
+            vi: 'Ở quầy lễ tân có một người đàn ông và một người phụ nữ.'
+          },
+          jp: '受付に 男の 人と 女の 人が います。',
           ruby: [
+            { base: '受', reading: 'うけ' },
+            { base: '付', reading: 'つけ' },
             { base: '男', reading: 'おとこ' },
-            { base: '人', reading: 'ひと' }
-          ]
-        },
-        {
-          prompt: { en: 'There is a woman.', vi: 'Có một người đàn bà.' },
-          jp: '女の 人が います。',
-          ruby: [
+            { base: '人', reading: 'ひと' },
             { base: '女', reading: 'おんな' },
             { base: '人', reading: 'ひと' }
-          ]
-        },
-        {
-          prompt: { en: 'There is a boy.', vi: 'Có một cậu bé.' },
-          jp: '男の 子が います。',
-          ruby: [
-            { base: '男', reading: 'おとこ' },
-            { base: '子', reading: 'こ' }
-          ]
-        },
-        {
-          prompt: { en: 'There is a girl.', vi: 'Có một cô bé.' },
-          jp: '女の 子が います。',
-          ruby: [
-            { base: '女', reading: 'おんな' },
-            { base: '子', reading: 'こ' }
           ]
         }
       ]
@@ -224,14 +215,6 @@ export const n5Lesson10SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The window is on the right.', vi: 'Cửa sổ ở bên phải.' },
-          jp: '窓は 右に あります。',
-          ruby: [
-            { base: '窓', reading: 'まど' },
-            { base: '右', reading: 'みぎ' }
-          ]
-        },
-        {
           prompt: { en: 'The post office is on the left.', vi: 'Bưu điện ở bên trái.' },
           jp: '郵便局は 左に あります。',
           ruby: [
@@ -248,14 +231,6 @@ export const n5Lesson10SentenceWriting: LessonSentenceWriting = {
           },
           jp: 'スーパーは ビルの 中に あります。',
           ruby: [{ base: '中', reading: 'なか' }]
-        },
-        {
-          prompt: { en: 'The dog is outside.', vi: 'Con chó ở ngoài.' },
-          jp: '犬は 外に います。',
-          ruby: [
-            { base: '犬', reading: 'いぬ' },
-            { base: '外', reading: 'そと' }
-          ]
         },
         {
           prompt: { en: 'The cafe is next to the park.', vi: 'Quán cà phê ở cạnh công viên.' },
@@ -335,23 +310,25 @@ export const n5Lesson10SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Fish sauce is in the Thai section.',
-            vi: 'Nước mắm ở khu Thái.'
+            en: 'Fish sauce, coconut milk and such are in that section over there.',
+            vi: 'Nước mắm, nước cốt dừa... ở khu bên kia.'
           },
-          jp: 'ナンプラーは タイの コーナーに あります。'
+          jp: 'ナンプラーや ココナッツミルクは あちらの コーナーに あります。'
         },
         {
           prompt: {
-            en: 'Nagano Prefecture is in Japan.',
-            vi: 'Tỉnh Nagano ở Nhật.'
+            en: 'There is a bank, a post office and such near the station.',
+            vi: 'Gần ga có ngân hàng, bưu điện...'
           },
-          jp: '長野県は 日本に あります。',
+          jp: '駅の 近くに 銀行や 郵便局が あります。',
           ruby: [
-            { base: '長', reading: 'なが' },
-            { base: '野', reading: 'の' },
-            { base: '県', reading: 'けん' },
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' }
+            { base: '駅', reading: 'えき' },
+            { base: '近', reading: 'ちか' },
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' },
+            { base: '郵', reading: 'ゆう' },
+            { base: '便', reading: 'びん' },
+            { base: '局', reading: 'きょく' }
           ]
         }
       ]
@@ -360,35 +337,58 @@ export const n5Lesson10SentenceWriting: LessonSentenceWriting = {
       pattern: 'N ですか (confirmation)',
       items: [
         {
-          prompt: { en: 'Asia Store?', vi: 'Siêu thị Asia ấy à?' },
-          jp: 'アジアストアですか。'
-        },
-        {
-          prompt: { en: 'Is this a battery?', vi: 'Đây là pin phải không?' },
-          jp: 'これは 電池ですか。',
-          ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '池', reading: 'ち' }
-          ]
-        },
-        {
-          prompt: { en: 'Is that a mailbox?', vi: 'Kia là hòm thư phải không?' },
-          jp: 'それは ポストですか。'
+          prompt: {
+            en: 'Where is Asia Store? ...Asia Store? It is in that building.',
+            vi: 'Cửa hàng Asia Store ở đâu ạ? ...Asia Store à? Nó ở trong tòa nhà kia.'
+          },
+          jp: 'アジアストアは どこですか。……アジアストアですか。あの ビルの 中に あります。',
+          ruby: [{ base: '中', reading: 'なか' }]
         },
         {
           prompt: {
-            en: 'Is this a convenience store?',
-            vi: 'Đây là cửa hàng tiện lợi phải không?'
+            en: 'Where are the batteries? ...Batteries? They are next to the register.',
+            vi: 'Pin ở đâu ạ? ...Pin à? Ở cạnh quầy thu ngân.'
           },
-          jp: 'ここは コンビニですか。'
+          jp: '電池は どこですか。……電池ですか。レジの 隣に あります。',
+          ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '池', reading: 'ち' },
+            { base: '電', reading: 'でん' },
+            { base: '池', reading: 'ち' },
+            { base: '隣', reading: 'となり' }
+          ]
         },
         {
-          prompt: { en: 'Is that a park?', vi: 'Kia là công viên phải không?' },
-          jp: 'あそこは 公園ですか。',
+          prompt: {
+            en: 'Is Mr. Tanaka here? ...Mr. Tanaka? He is in the meeting room now.',
+            vi: 'Có anh Tanaka ở đây không? ...Anh Tanaka à? Giờ anh ấy đang ở phòng họp.'
+          },
+          jp: '田中さんは いますか。……田中さんですか。今 会議室に います。',
           ruby: [
-            { base: '公', reading: 'こう' },
-            { base: '園', reading: 'えん' }
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '今', reading: 'いま' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '室', reading: 'しつ' }
           ]
+        },
+        {
+          prompt: {
+            en: 'Where is the restroom? ...The restroom? It is on the second floor.',
+            vi: 'Nhà vệ sinh ở đâu ạ? ...Nhà vệ sinh à? Ở tầng 2.'
+          },
+          jp: 'トイレは どこですか。……トイレですか。2階に あります。',
+          ruby: [{ base: '階', reading: 'かい' }]
+        },
+        {
+          prompt: {
+            en: 'Do you have fish sauce? ...Fish sauce? It is over there.',
+            vi: 'Có nước mắm không ạ? ...Nước mắm à? Ở đằng kia.'
+          },
+          jp: 'ナンプラー、ありますか。……ナンプラーですか。あちらに あります。'
         }
       ]
     }

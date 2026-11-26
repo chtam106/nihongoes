@@ -418,11 +418,16 @@ export const n5Lesson20: Lesson = {
           ruby: [{ base: '行', reading: 'い' }]
         },
         {
-          jp: 'あの間 電話 した？',
-          romaji: 'Ano aida denwa shita?',
-          meaning: { en: 'Did you call the other day?', vi: 'Hôm nọ gọi điện chưa?' },
+          jp: 'この 間、田中さんに 電話した？',
+          romaji: 'Kono aida, Tanaka-san ni denwa shita?',
+          meaning: {
+            en: 'Did you call Mr. Tanaka the other day? (casual)',
+            vi: 'Hôm trước cậu gọi cho anh Tanaka chưa? (thân mật)'
+          },
           ruby: [
             { base: '間', reading: 'あいだ' },
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
             { base: '電', reading: 'でん' },
             { base: '話', reading: 'わ' }
           ]

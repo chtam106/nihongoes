@@ -329,7 +329,7 @@ export const n4Lesson44: Lesson = {
   ],
   phrases: [
     {
-      kana: 'どう なさいます か。',
+      kana: 'どう なさいますか。',
       partOfSpeech: 'expression',
       romaji: 'Dō nasaimasu ka.',
       meaning: { en: 'What would you like to have done?', vi: 'Chị muốn làm gì?' }
@@ -348,7 +348,7 @@ export const n4Lesson44: Lesson = {
       meaning: { en: 'shampoo (～を します: to wash hair)', vi: 'dầu gội (～を します: gội đầu)' }
     },
     {
-      kana: 'どういう ふう に なさいます か。',
+      kana: 'どういう ふうに なさいますか。',
       partOfSpeech: 'expression',
       romaji: 'Dō iu fū ni nasaimasu ka.',
       meaning: { en: 'How would you like it done?', vi: 'Chị muốn cắt như thế nào?' }
@@ -367,7 +367,7 @@ export const n4Lesson44: Lesson = {
       meaning: { en: 'Please make it like ~.', vi: 'Anh hãy cắt như ~.' }
     },
     {
-      kana: 'これ で よろしい でしょう か。',
+      kana: 'これで よろしいでしょうか。',
       partOfSpeech: 'expression',
       romaji: 'Kore de yoroshii deshō ka.',
       meaning: { en: 'Is this alright?', vi: 'Như thế này được chưa ạ?' }
@@ -395,7 +395,7 @@ export const n4Lesson44: Lesson = {
       lines: [
         {
           speakerId: 'stylist',
-          jp: 'いらっしゃいませ。今日は どう なさいます か。',
+          jp: 'いらっしゃいませ。今日は どう なさいますか。',
           romaji: 'Irasshaimase. Kyō wa dō nasaimasu ka.',
           meaning: {
             en: 'Welcome. What would you like today?',
@@ -415,7 +415,7 @@ export const n4Lesson44: Lesson = {
         },
         {
           speakerId: 'stylist',
-          jp: 'かしこまりました。まず シャンプー から どうぞ。',
+          jp: 'かしこまりました。まず シャンプーから どうぞ。',
           romaji: 'Kashikomarimashita. Mazu shanpū kara dōzo.',
           meaning: {
             en: 'Certainly. Please start with a shampoo.',
@@ -424,13 +424,13 @@ export const n4Lesson44: Lesson = {
         },
         {
           speakerId: 'stylist',
-          jp: 'どういう ふう に なさいます か。',
+          jp: 'どういう ふうに なさいますか。',
           romaji: 'Dō iu fū ni nasaimasu ka.',
           meaning: { en: 'How would you like it cut?', vi: 'Chị muốn cắt như thế nào ạ?' }
         },
         {
           speakerId: 'lee',
-          jp: 'ショートが 好き です。この 写真 みたい に して ください。',
+          jp: 'ショートが 好きです。この 写真みたいに して ください。',
           romaji: 'Shōto ga suki desu. Kono shashin mitai ni shite kudasai.',
           meaning: {
             en: 'I like it short. Please make it like in this photo.',
@@ -444,13 +444,13 @@ export const n4Lesson44: Lesson = {
         },
         {
           speakerId: 'stylist',
-          jp: 'いい スタイル ですね。',
+          jp: 'いい スタイルですね。',
           romaji: 'Ii sutairu desu ne.',
           meaning: { en: 'That is a nice style.', vi: 'Kiểu tóc đẹp đấy.' }
         },
         {
           speakerId: 'stylist',
-          jp: '前の 長さは これ で よろしい でしょう か。',
+          jp: '前の 長さは これで よろしいでしょうか。',
           romaji: 'Mae no nagasa wa kore de yoroshii deshō ka.',
           meaning: {
             en: 'Is this length for the front alright?',
@@ -714,23 +714,21 @@ export const n4Lesson44: Lesson = {
       ],
       lines: [
         {
-          jp: '日本では 結婚式で 使う 言葉に 順序が あります。',
-          romaji: 'Nihon de wa kekkonshiki de tsukau kotoba ni junjo ga arimasu.',
+          jp: '日本では 結婚式で 使わない ほうが いい 言葉が あります。',
+          romaji: 'Nihon de wa kekkonshiki de tsukawanai hō ga ii kotoba ga arimasu.',
           meaning: {
-            en: 'In Japan there is an order to the words used at weddings.',
-            vi: 'Ở Nhật có trình tự cho các từ dùng trong lễ cưới.'
+            en: 'In Japan there are words you had better not use at weddings.',
+            vi: 'Ở Nhật có những từ không nên dùng trong lễ cưới.'
           },
           ruby: [
-            { base: '日', reading: 'にち' },
+            { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' },
             { base: '結', reading: 'けっ' },
             { base: '婚', reading: 'こん' },
             { base: '式', reading: 'しき' },
             { base: '使', reading: 'つか' },
             { base: '言', reading: 'こと' },
-            { base: '葉', reading: 'ば' },
-            { base: '順', reading: 'じゅん' },
-            { base: '序', reading: 'じょ' }
+            { base: '葉', reading: 'ば' }
           ]
         },
         {

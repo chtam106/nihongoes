@@ -526,7 +526,7 @@ export const n4Lesson38: Lesson = {
       lines: [
         {
           speakerId: 'staff',
-          jp: 'ワット先生、こちら 回覧 です。',
+          jp: 'ワット先生、こちら 回覧です。',
           romaji: 'Watto-sensei, kochira kairan desu.',
           meaning: {
             en: 'Professor Watt, here is the office circular.',
@@ -557,7 +557,7 @@ export const n4Lesson38: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '研究室は いつも きれい ですね。整理 する のが お上手 ですね。',
+          jp: '研究室は いつも きれいですね。整理 する のが お上手ですね。',
           romaji: 'Kenkyūshitsu wa itsumo kirei desu ne. Seiri suru no ga o-jōzu desu ne.',
           meaning: {
             en: 'Your office is always neat. You are good at organizing.',
@@ -591,7 +591,7 @@ export const n4Lesson38: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '「上手な 整理の 方法」という 本を 書いた そう ですね。',
+          jp: '「上手な 整理の 方法」という 本を 書いた そうですね。',
           romaji: '「Jōzu na seiri no hōhō」 to iu hon o kaita sō desu ne.',
           meaning: {
             en: 'I heard you wrote a book called "Skillful Organizing Methods."',
@@ -649,7 +649,7 @@ export const n4Lesson38: Lesson = {
       ],
       examples: [
         {
-          jp: '星を 見る のが 好き です。',
+          jp: '星を 見る のが 好きです。',
           romaji: 'Hoshi o miru no ga suki desu.',
           meaning: { en: 'I like looking at stars.', vi: 'Tôi thích ngắm sao.' },
           ruby: [
@@ -708,7 +708,7 @@ export const n4Lesson38: Lesson = {
       ],
       examples: [
         {
-          jp: '東京の 人は 歩く のが 速い です。',
+          jp: '東京の 人は 歩く のが 速いです。',
           romaji: 'Tōkyō no hito wa aruku no ga hayai desu.',
           meaning: { en: 'People in Tokyo walk fast.', vi: 'Người Tokyo đi bộ nhanh.' },
           ruby: [
@@ -720,7 +720,7 @@ export const n4Lesson38: Lesson = {
           ]
         },
         {
-          jp: '私たちは 花を 育てる のが 得意 です。',
+          jp: '私たちは 花を 育てる のが 得意です。',
           romaji: 'Watashitachi wa hana o sodateru no ga tokui desu.',
           meaning: { en: 'We are good at growing flowers.', vi: 'Chúng tôi rất giỏi trồng hoa.' },
           ruby: [
@@ -813,7 +813,7 @@ export const n4Lesson38: Lesson = {
           ]
         },
         {
-          jp: '……いいえ、知りません。いつ ですか。',
+          jp: '……いいえ、知りません。いつですか。',
           romaji: '……Iie, shirimasen. Itsu desu ka.',
           meaning: {
             en: '...No, I did not know. When was it?',
@@ -856,25 +856,19 @@ export const n4Lesson38: Lesson = {
       ],
       examples: [
         {
-          jp: '初めて 恋人に 会った 時は 小学校の 音楽の 時間 です。',
-          romaji: 'Hajimete koibito ni atta toki wa shōgakkō no ongaku no jikan desu.',
+          jp: '初めて 日本に 来た 時は、何も わかりませんでした。',
+          romaji: 'Hajimete Nihon ni kita toki wa, nani mo wakarimasen deshita.',
           meaning: {
-            en: 'The first time I met the person I loved was during music class in elementary school.',
-            vi: 'Lần đầu gặp người mình yêu là ở giờ âm nhạc tiểu học.'
+            en: 'When I first came to Japan, I did not understand anything.',
+            vi: 'Lần đầu sang Nhật tôi chẳng hiểu gì cả.'
           },
           ruby: [
             { base: '初', reading: 'はじ' },
-            { base: '恋', reading: 'こ' },
-            { base: '人', reading: 'い' },
-            { base: '会', reading: 'あ' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '来', reading: 'き' },
             { base: '時', reading: 'とき' },
-            { base: '小', reading: 'しょう' },
-            { base: '学', reading: 'がっ' },
-            { base: '校', reading: 'こう' },
-            { base: '音', reading: 'おん' },
-            { base: '楽', reading: 'がく' },
-            { base: '時', reading: 'じ' },
-            { base: '間', reading: 'かん' }
+            { base: '何', reading: 'なに' }
           ]
         }
       ]
@@ -946,7 +940,7 @@ export const n4Lesson38: Lesson = {
           ]
         },
         {
-          jp: '姉は おとなしくて 優しい 人 です。妹は 気が 強くて、よく けんか します。',
+          jp: '姉は おとなしくて 優しい 人です。妹は 気が 強くて、よく けんか します。',
           romaji:
             'Ane wa otonashikute yasashii hito desu. Imōto wa ki ga tsuyokute, yoku kenka shimasu.',
           meaning: {

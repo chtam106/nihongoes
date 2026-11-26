@@ -18,11 +18,12 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Please look up what time the flight departs.',
-            vi: 'Hãy xem chuyến bay xuất phát lúc mấy giờ.'
+            en: 'Please check what time flight JL107 departs.',
+            vi: 'Hãy tra xem chuyến bay JL107 khởi hành lúc mấy giờ.'
           },
-          jp: 'JL107～びんが 何時に 出発するか、調べて ください。',
+          jp: 'JL107便が 何時に 出発するか、調べて ください。',
           ruby: [
+            { base: '便', reading: 'びん' },
             { base: '何', reading: 'なん' },
             { base: '時', reading: 'じ' },
             { base: '出', reading: 'しゅっ' },
@@ -32,16 +33,16 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I do not know whether the plane will arrive.',
-            vi: 'Tôi không biết máy bay có đến hay không.'
+            en: 'We do not know yet whether the plane will fly because of the snow.',
+            vi: 'Vì tuyết nên vẫn chưa biết máy bay có cất cánh được không.'
           },
-          jp: '飛行機が 到着するかどうか、わかりません。',
+          jp: '雪で 飛行機が 飛ぶかどうか、まだ わかりません。',
           ruby: [
+            { base: '雪', reading: 'ゆき' },
             { base: '飛', reading: 'ひ' },
             { base: '行', reading: 'こう' },
             { base: '機', reading: 'き' },
-            { base: '到', reading: 'とう' },
-            { base: '着', reading: 'ちゃく' }
+            { base: '飛', reading: 'と' }
           ]
         },
         {
@@ -60,75 +61,29 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I asked whether a math problem will appear on the test.',
-            vi: 'Tôi hỏi xem bài kiểm tra có câu toán không.'
+            en: 'I asked the teacher whether this question will be on the test.',
+            vi: 'Tôi đã hỏi thầy xem câu này có ra trong bài kiểm tra không.'
           },
-          jp: 'テストに 問題が 出るかどうか、聞きました。',
+          jp: 'この 問題が テストに 出るかどうか、先生に 聞きました。',
           ruby: [
             { base: '問', reading: 'もん' },
             { base: '題', reading: 'だい' },
             { base: '出', reading: 'で' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
             { base: '聞', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'Please count how many pieces there are.',
-            vi: 'Hãy đếm xem có bao nhiêu cái.'
+            en: 'Please count how many apples there are.',
+            vi: 'Hãy đếm xem có bao nhiêu quả táo.'
           },
-          jp: '何～こ あるか、数えて ください。',
+          jp: 'りんごが 何個 あるか、数えて ください。',
           ruby: [
             { base: '何', reading: 'なん' },
+            { base: '個', reading: 'こ' },
             { base: '数', reading: 'かぞ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The plane departs at 9. It arrives at 11.',
-            vi: 'Máy bay xuất phát lúc 9. Đến lúc 11.'
-          },
-          jp: '飛行機は 9時に 出発します。11時に 到着します。',
-          ruby: [
-            { base: '飛', reading: 'ひ' },
-            { base: '行', reading: 'こう' },
-            { base: '機', reading: 'き' },
-            { base: '時', reading: 'じ' },
-            { base: '出', reading: 'しゅっ' },
-            { base: '発', reading: 'ぱつ' },
-            { base: '時', reading: 'じ' },
-            { base: '到', reading: 'とう' },
-            { base: '着', reading: 'ちゃく' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'The size fits. I confirm it.',
-            vi: 'Cỡ vừa. Tôi xác nhận.'
-          },
-          jp: 'サイズが 合います。確かめます。',
-          ruby: [
-            { base: '合', reading: 'あ' },
-            { base: '確', reading: 'たし' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I count the cups.',
-            vi: 'Tôi đếm số ly.'
-          },
-          jp: 'カップを 数えます。',
-          ruby: [{ base: '数', reading: 'かぞ' }]
-        },
-        {
-          prompt: {
-            en: 'A problem appears on the test.',
-            vi: 'Bài kiểm tra có câu hỏi.'
-          },
-          jp: 'テストに 問題が 出ます。',
-          ruby: [
-            { base: '問', reading: 'もん' },
-            { base: '題', reading: 'だい' },
-            { base: '出', reading: 'で' }
           ]
         }
       ]
@@ -186,31 +141,6 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
           },
           jp: 'マラソンを 走って みます。',
           ruby: [{ base: '走', reading: 'はし' }]
-        },
-        {
-          prompt: {
-            en: 'I measure the height in centimeters.',
-            vi: 'Tôi đo chiều cao bằng xăng-ti-mét.'
-          },
-          jp: '高さを センチで 測ります。',
-          ruby: [
-            { base: '高', reading: 'たか' },
-            { base: '測', reading: 'はか' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I consult a friend about grades.',
-            vi: 'Tôi bàn với bạn về thành tích.'
-          },
-          jp: '成績を 友だちと 相談します。',
-          ruby: [
-            { base: '成', reading: 'せい' },
-            { base: '績', reading: 'せき' },
-            { base: '友', reading: 'とも' },
-            { base: '相', reading: 'そう' },
-            { base: '談', reading: 'だん' }
-          ]
         }
       ]
     },
@@ -222,7 +152,7 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
             en: 'What is the length of this stick?',
             vi: 'Chiều dài cây gậy này là bao nhiêu?'
           },
-          jp: 'この 棒の 長さは 何～センチ ですか。',
+          jp: 'この 棒の 長さは 何センチですか。',
           ruby: [
             { base: '棒', reading: 'ぼう' },
             { base: '長', reading: 'なが' },
@@ -230,50 +160,63 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'The weight is 200 grams.',
-            vi: 'Trọng lượng là 200 gam.'
-          },
-          jp: '重さは 200～グラム です。',
-          ruby: [{ base: '重', reading: 'おも' }]
-        },
-        {
-          prompt: {
-            en: 'The height is 50 millimeters.',
-            vi: 'Chiều cao là 50 mi-li-mét.'
-          },
-          jp: '高さは 50～ミリ です。',
-          ruby: [{ base: '高', reading: 'たか' }]
-        },
-        {
-          prompt: {
-            en: 'The size is the same as this box. There are two bottles.',
-            vi: 'Kích thước bằng cái hộp này. Có hai chai.'
-          },
-          jp: '大きさは この 箱と 同じ です。2～ほん あります。',
+          prompt: { en: 'This package weighs 200 grams.', vi: 'Gói hàng này nặng 200 gam.' },
+          jp: 'この 荷物の 重さは 200グラムです。',
           ruby: [
-            { base: '大', reading: 'おお' },
+            { base: '荷', reading: 'に' },
+            { base: '物', reading: 'もつ' },
+            { base: '重', reading: 'おも' }
+          ]
+        },
+        {
+          prompt: { en: 'Mount Fuji is 3,776 meters high.', vi: 'Núi Phú Sĩ cao 3776 mét.' },
+          jp: '富士山の 高さは 3776メートルです。',
+          ruby: [
+            { base: '富', reading: 'ふ' },
+            { base: '士', reading: 'じ' },
+            { base: '山', reading: 'さん' },
+            { base: '高', reading: 'たか' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Please measure the size of this box.',
+            vi: 'Hãy đo kích thước cái hộp này.'
+          },
+          jp: 'この 箱の 大きさを 測って ください。',
+          ruby: [
             { base: '箱', reading: 'はこ' },
-            { base: '同', reading: 'おな' }
+            { base: '大', reading: 'おお' },
+            { base: '測', reading: 'はか' }
           ]
         },
         {
           prompt: {
-            en: 'Two cupfuls are more than enough.',
-            vi: 'Hai ly là hơn đủ.'
+            en: 'I am still not used to the heat of Japanese summers.',
+            vi: 'Tôi vẫn chưa quen với cái nóng mùa hè Nhật Bản.'
           },
-          jp: '2～はい は 必要～いじょう です。',
+          jp: '日本の 夏の 暑さには まだ 慣れません。',
           ruby: [
-            { base: '必', reading: 'ひつ' },
-            { base: '要', reading: 'よう' }
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '夏', reading: 'なつ' },
+            { base: '暑', reading: 'あつ' },
+            { base: '慣', reading: 'な' }
           ]
         },
         {
           prompt: {
-            en: 'This is below 10 grams.',
-            vi: 'Cái này dưới 10 gam.'
+            en: 'I chose this apartment for the convenience of being near the station.',
+            vi: 'Tôi chọn căn hộ này vì sự tiện lợi gần ga.'
           },
-          jp: 'これは 10グラム～いか です。'
+          jp: '駅に 近い 便利さで、この アパートを 選びました。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '近', reading: 'ちか' },
+            { base: '便', reading: 'べん' },
+            { base: '利', reading: 'り' },
+            { base: '選', reading: 'えら' }
+          ]
         }
       ]
     },
@@ -306,10 +249,10 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I wonder how the recital will be.',
-            vi: 'Không biết buổi phát biểu sẽ thế nào.'
+            en: 'I wonder if I can do well at the recital.',
+            vi: 'Không biết buổi biểu diễn mình có làm tốt không nhỉ.'
           },
-          jp: '発表会は どうでしょうか。',
+          jp: '発表会、うまく できるかな。',
           ruby: [
             { base: '発', reading: 'はっ' },
             { base: '表', reading: 'ぴょう' },
@@ -318,83 +261,22 @@ export const n4Lesson40SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I wonder if I will get drunk at the tournament.',
-            vi: 'Không biết ở hội thi tôi có say không.'
+            en: 'I wonder if it will be sunny tomorrow.',
+            vi: 'Không biết mai trời có nắng không nhỉ.'
           },
-          jp: '大会で 酔うかな。',
-          ruby: [
-            { base: '大', reading: 'たい' },
-            { base: '会', reading: 'かい' },
-            { base: '酔', reading: 'よ' }
-          ]
+          jp: 'あしたは 晴れるかな。',
+          ruby: [{ base: '晴', reading: 'は' }]
         },
         {
           prompt: {
-            en: 'By the way, I wonder about the weather forecast.',
-            vi: 'Nhân tiện, không biết dự báo thời tiết thế nào.'
+            en: 'I wonder if Mr. Tanaka has arrived yet.',
+            vi: 'Không biết anh Tanaka đã đến chưa nhỉ.'
           },
-          jp: 'ところで、天気予報は どうかな。',
+          jp: '田中さん、もう 着いたかな。',
           ruby: [
-            { base: '天', reading: 'てん' },
-            { base: '気', reading: 'き' },
-            { base: '予', reading: 'よ' },
-            { base: '報', reading: 'ほう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I wonder if elderly people will enter the contest.',
-            vi: 'Không biết người cao tuổi có dự thi không.'
-          },
-          jp: 'お年寄りは コンテストに 出るかな。',
-          ruby: [
-            { base: '年', reading: 'とし' },
-            { base: '寄', reading: 'よ' },
-            { base: '出', reading: 'で' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I wonder if there is a scratch on the back.',
-            vi: 'Không biết mặt sau có vết xước không.'
-          },
-          jp: '裏に 傷が あるかな。',
-          ruby: [
-            { base: '裏', reading: 'うら' },
-            { base: '傷', reading: 'きず' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I wonder if the front has a mistake.',
-            vi: 'Không biết mặt trước có sai sót không.'
-          },
-          jp: '表に まちがいが あるかな。',
-          ruby: [{ base: '表', reading: 'おもて' }]
-        },
-        {
-          prompt: {
-            en: 'I wonder about his appearance. It is necessary.',
-            vi: 'Không biết bộ dạng anh ấy. Điều đó cần thiết.'
-          },
-          jp: '様子は どうかな。必要 です。',
-          ruby: [
-            { base: '様', reading: 'よう' },
-            { base: '子', reading: 'す' },
-            { base: '必', reading: 'ひつ' },
-            { base: '要', reading: 'よう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I get drunk easily. Things go well today.',
-            vi: 'Tôi dễ say. Hôm nay mọi thứ suôn sẻ.'
-          },
-          jp: 'すぐ 酔います。今日は うまくいきます。',
-          ruby: [
-            { base: '酔', reading: 'よ' },
-            { base: '今', reading: 'きょ' },
-            { base: '日', reading: 'う' }
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '着', reading: 'つ' }
           ]
         }
       ]

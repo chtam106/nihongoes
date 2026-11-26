@@ -15,36 +15,32 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           jp: 'パーティーは にぎやかでした。'
         },
         {
-          prompt: { en: 'The hotel was simple.', vi: 'Khách sạn thì đơn giản.' },
-          jp: 'ホテルは 簡単でした。',
+          prompt: { en: "Yesterday's exam was easy.", vi: 'Bài thi hôm qua dễ.' },
+          jp: 'きのうの 試験は 簡単でした。',
           ruby: [
+            { base: '試', reading: 'し' },
+            { base: '験', reading: 'けん' },
             { base: '簡', reading: 'かん' },
             { base: '単', reading: 'たん' }
           ]
         },
         {
-          prompt: { en: 'It was not a festival.', vi: 'Không phải lễ hội.' },
-          jp: 'お祭りじゃ ありませんでした。',
-          ruby: [{ base: '祭', reading: 'まつ' }]
+          prompt: { en: 'The hotel was not very quiet.', vi: 'Khách sạn không yên tĩnh lắm.' },
+          jp: 'ホテルは あまり 静かじゃ ありませんでした。',
+          ruby: [{ base: '静', reading: 'しず' }]
         },
         {
-          prompt: { en: 'The weather was rain.', vi: 'Thời tiết là mưa.' },
-          jp: '天気は 雨でした。',
+          prompt: {
+            en: 'It rained the whole time on the day of the trip.',
+            vi: 'Hôm đi du lịch trời mưa suốt.'
+          },
+          jp: '旅行の 日は ずっと 雨でした。',
           ruby: [
-            { base: '天', reading: 'てん' },
-            { base: '気', reading: 'き' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '日', reading: 'ひ' },
             { base: '雨', reading: 'あめ' }
           ]
-        },
-        {
-          prompt: { en: 'It was cloudy.', vi: 'Trời thì u ám.' },
-          jp: '曇りでした。',
-          ruby: [{ base: '曇', reading: 'くも' }]
-        },
-        {
-          prompt: { en: 'It was snow.', vi: 'Trời có tuyết.' },
-          jp: '雪でした。',
-          ruby: [{ base: '雪', reading: 'ゆき' }]
         }
       ]
     },
@@ -52,139 +48,70 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
       pattern: 'i-adj かったです / くなかったです',
       items: [
         {
-          prompt: { en: 'The station was near.', vi: 'Nhà ga thì gần.' },
-          jp: '駅は 近かったです。',
+          prompt: {
+            en: 'It was close from the hotel to the station.',
+            vi: 'Từ khách sạn ra ga gần.'
+          },
+          jp: 'ホテルから 駅まで 近かったです。',
           ruby: [
             { base: '駅', reading: 'えき' },
             { base: '近', reading: 'ちか' }
           ]
         },
         {
-          prompt: { en: 'The airport was far.', vi: 'Sân bay thì xa.' },
-          jp: '空港は 遠かったです。',
+          prompt: { en: 'The shinkansen was very fast.', vi: 'Tàu Shinkansen rất nhanh.' },
+          jp: '新幹線は とても 速かったです。',
           ruby: [
-            { base: '空', reading: 'くう' },
-            { base: '港', reading: 'こう' },
-            { base: '遠', reading: 'とお' }
-          ]
-        },
-        {
-          prompt: { en: 'The train was fast.', vi: 'Tàu thì nhanh.' },
-          jp: '電車は 速かったです。',
-          ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '車', reading: 'しゃ' },
+            { base: '新', reading: 'しん' },
+            { base: '幹', reading: 'かん' },
+            { base: '線', reading: 'せん' },
             { base: '速', reading: 'はや' }
           ]
         },
         {
-          prompt: { en: 'The bus was slow.', vi: 'Xe buýt thì chậm.' },
-          jp: 'バスは 遅かったです。',
-          ruby: [{ base: '遅', reading: 'おそ' }]
-        },
-        {
-          prompt: { en: 'Spring was warm.', vi: 'Mùa xuân thì ấm.' },
-          jp: '春は 暖かかったです。',
+          prompt: { en: 'This spring was warm.', vi: 'Mùa xuân năm nay ấm áp.' },
+          jp: '今年の 春は 暖かかったです。',
           ruby: [
+            { base: '今', reading: 'こ' },
+            { base: '年', reading: 'とし' },
             { base: '春', reading: 'はる' },
             { base: '暖', reading: 'あたた' }
           ]
         },
         {
-          prompt: { en: 'Autumn was cool.', vi: 'Mùa thu thì mát.' },
-          jp: '秋は 涼しかったです。',
-          ruby: [
-            { base: '秋', reading: 'あき' },
-            { base: '涼', reading: 'すず' }
-          ]
-        },
-        {
-          prompt: { en: 'The tea was warm.', vi: 'Trà thì ấm.' },
-          jp: 'お茶は 温かかったです。',
-          ruby: [
-            { base: '茶', reading: 'ちゃ' },
-            { base: '温', reading: 'あたた' }
-          ]
-        },
-        {
-          prompt: { en: 'Sukiyaki was sweet.', vi: 'Sukiyaki thì ngọt.' },
-          jp: 'すき焼きは 甘かったです。',
+          prompt: { en: 'The sukiyaki was a little sweet.', vi: 'Món sukiyaki hơi ngọt.' },
+          jp: 'すき焼きは ちょっと 甘かったです。',
           ruby: [
             { base: '焼', reading: 'や' },
             { base: '甘', reading: 'あま' }
           ]
         },
         {
-          prompt: { en: 'The ramen was spicy.', vi: 'Ramen thì cay.' },
-          jp: 'ラーメンは 辛かったです。',
-          ruby: [{ base: '辛', reading: 'から' }]
-        },
-        {
-          prompt: { en: 'The bag was heavy.', vi: 'Cái túi thì nặng.' },
-          jp: 'かばんは 重かったです。',
-          ruby: [{ base: '重', reading: 'おも' }]
-        },
-        {
-          prompt: { en: 'The bag was light.', vi: 'Cái túi thì nhẹ.' },
-          jp: 'かばんは 軽かったです。',
-          ruby: [{ base: '軽', reading: 'かる' }]
-        },
-        {
-          prompt: { en: 'I got up early.', vi: 'Tôi dậy sớm.' },
-          jp: '早く 起きました。',
+          prompt: {
+            en: 'Was the trip fun? ...Yes, it was a lot of fun.',
+            vi: 'Chuyến du lịch có vui không? ...Có, rất vui.'
+          },
+          jp: '旅行は 楽しかったですか。……はい、とても 楽しかったです。',
           ruby: [
-            { base: '早', reading: 'はや' },
-            { base: '起', reading: 'お' }
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '楽', reading: 'たの' },
+            { base: '楽', reading: 'たの' }
           ]
         },
         {
-          prompt: { en: 'The station is near.', vi: 'Nhà ga thì gần.' },
-          jp: '駅は 近いです。',
+          prompt: { en: 'My travel bag was heavy.', vi: 'Cái túi du lịch nặng.' },
+          jp: '旅行の かばんは 重かったです。',
           ruby: [
-            { base: '駅', reading: 'えき' },
-            { base: '近', reading: 'ちか' }
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '重', reading: 'おも' }
           ]
         },
         {
-          prompt: { en: 'The airport is far.', vi: 'Sân bay thì xa.' },
-          jp: '空港は 遠いです。',
-          ruby: [
-            { base: '空', reading: 'くう' },
-            { base: '港', reading: 'こう' },
-            { base: '遠', reading: 'とお' }
-          ]
-        },
-        {
-          prompt: { en: 'This train is fast.', vi: 'Tàu này nhanh.' },
-          jp: 'この 電車は 速いです。',
-          ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '車', reading: 'しゃ' },
-            { base: '速', reading: 'はや' }
-          ]
-        },
-        {
-          prompt: { en: 'This bus is slow.', vi: 'Xe buýt này chậm.' },
-          jp: 'この バスは 遅いです。',
-          ruby: [{ base: '遅', reading: 'おそ' }]
-        },
-        {
-          prompt: { en: 'Today is warm.', vi: 'Hôm nay thì ấm.' },
-          jp: 'きょうは 暖かいです。',
-          ruby: [{ base: '暖', reading: 'あたた' }]
-        },
-        {
-          prompt: { en: 'The wind is cool.', vi: 'Gió thì mát.' },
-          jp: '風は 涼しいです。',
-          ruby: [
-            { base: '風', reading: 'かぜ' },
-            { base: '涼', reading: 'すず' }
-          ]
-        },
-        {
-          prompt: { en: 'This bag is heavy.', vi: 'Cái túi này nặng.' },
-          jp: 'この かばんは 重いです。',
-          ruby: [{ base: '重', reading: 'おも' }]
+          prompt: { en: 'The test was not very difficult.', vi: 'Bài kiểm tra không khó lắm.' },
+          jp: 'テストは あまり 難しくなかったです。',
+          ruby: [{ base: '難', reading: 'むずか' }]
         }
       ]
     },
@@ -221,22 +148,30 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Chicken is lighter than beef.', vi: 'Thịt gà nhẹ hơn thịt bò.' },
-          jp: 'とり肉は 牛肉より 軽いです。',
+          prompt: { en: 'Tokyo has more people than Osaka.', vi: 'Tokyo đông người hơn Osaka.' },
+          jp: '東京は 大阪より 人が 多いです。',
           ruby: [
-            { base: '肉', reading: 'にく' },
-            { base: '牛', reading: 'ぎゅう' },
-            { base: '肉', reading: 'にく' },
-            { base: '軽', reading: 'かる' }
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '人', reading: 'ひと' },
+            { base: '多', reading: 'おお' }
           ]
         },
         {
           prompt: {
-            en: 'The sea is far more beautiful than the hotel.',
-            vi: 'Biển đẹp hơn hẳn khách sạn.'
+            en: 'This room is much bigger than that one.',
+            vi: 'Phòng này rộng hơn phòng kia nhiều.'
           },
-          jp: '海は ホテルより ずっと きれいです。',
-          ruby: [{ base: '海', reading: 'うみ' }]
+          jp: 'この 部屋は あの 部屋より ずっと 広いです。',
+          ruby: [
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '広', reading: 'ひろ' }
+          ]
         }
       ]
     },
@@ -245,16 +180,29 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Which is sweeter, sushi or tempura?',
-            vi: 'Sushi và tempura, cái nào ngọt hơn?'
+            en: 'Which is faster, the train or the bus? ...The train is faster.',
+            vi: 'Tàu điện và xe buýt cái nào nhanh hơn? ...Tàu điện nhanh hơn.'
           },
-          jp: 'おすしと てんぷらと どちらが 甘いですか。',
-          ruby: [{ base: '甘', reading: 'あま' }]
+          jp: '電車と バスと どちらが 速いですか。……電車の ほうが 速いです。',
+          ruby: [
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '速', reading: 'はや' },
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '速', reading: 'はや' }
+          ]
         },
         {
-          prompt: { en: 'Sushi is sweeter.', vi: 'Sushi ngọt hơn.' },
-          jp: 'おすしの ほうが 甘いです。',
-          ruby: [{ base: '甘', reading: 'あま' }]
+          prompt: {
+            en: 'Which do you like better, sushi or tempura? ...I like sushi better.',
+            vi: 'Sushi và tempura anh thích món nào hơn? ...Tôi thích sushi hơn.'
+          },
+          jp: 'おすしと てんぷらと どちらが 好きですか。……おすしの ほうが 好きです。',
+          ruby: [
+            { base: '好', reading: 'す' },
+            { base: '好', reading: 'す' }
+          ]
         },
         {
           prompt: {
@@ -265,12 +213,28 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '茶', reading: 'ちゃ' }]
         },
         {
-          prompt: { en: 'Coffee is better.', vi: 'Cà phê thì hơn.' },
-          jp: 'コーヒーの ほうが いいです。'
+          prompt: {
+            en: 'Which is bigger, Tokyo or Osaka? ...Tokyo is bigger.',
+            vi: 'Tokyo và Osaka nơi nào lớn hơn? ...Tokyo lớn hơn.'
+          },
+          jp: '東京と 大阪と どちらが 大きいですか。……東京の ほうが 大きいです。',
+          ruby: [
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '大', reading: 'おお' },
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
+            { base: '大', reading: 'おお' }
+          ]
         },
         {
-          prompt: { en: 'Both are delicious.', vi: 'Cả hai đều ngon.' },
-          jp: 'どちらも おいしいです。'
+          prompt: {
+            en: 'Which would you like, beer or wine? ...Either is fine.',
+            vi: 'Bia hay rượu vang, anh thích cái nào? ...Cái nào cũng được.'
+          },
+          jp: 'ビールと ワインと どちらが いいですか。……どちらも いいです。'
         }
       ]
     },
@@ -299,11 +263,19 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I like spring the best.', vi: 'Tôi thích mùa xuân nhất.' },
-          jp: '春が いちばん 好きです。',
+          prompt: {
+            en: 'Who is the tallest in your family? ...My father is the tallest.',
+            vi: 'Trong gia đình ai cao nhất? ...Bố tôi cao nhất.'
+          },
+          jp: '家族の 中で だれが いちばん 背が 高いですか。……父が いちばん 高いです。',
           ruby: [
-            { base: '春', reading: 'はる' },
-            { base: '好', reading: 'す' }
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' },
+            { base: '中', reading: 'なか' },
+            { base: '背', reading: 'せ' },
+            { base: '高', reading: 'たか' },
+            { base: '父', reading: 'ちち' },
+            { base: '高', reading: 'たか' }
           ]
         },
         {
@@ -322,48 +294,34 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The maple leaves are the most beautiful in autumn.',
-            vi: 'Lá phong đẹp nhất vào mùa thu.'
+            en: 'Of all Japanese dishes, which do you like best? ...I like tempura best.',
+            vi: 'Trong các món Nhật anh thích món nào nhất? ...Tôi thích tempura nhất.'
           },
-          jp: '秋の 中で 紅葉が いちばん きれいです。',
+          jp: '日本料理の 中で 何が いちばん 好きですか。……てんぷらが いちばん 好きです。',
           ruby: [
-            { base: '秋', reading: 'あき' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '料', reading: 'りょう' },
+            { base: '理', reading: 'り' },
             { base: '中', reading: 'なか' },
-            { base: '紅', reading: 'もみ' },
-            { base: '葉', reading: 'じ' }
+            { base: '何', reading: 'なに' },
+            { base: '好', reading: 'す' },
+            { base: '好', reading: 'す' }
           ]
         },
         {
-          prompt: { en: 'There are few people at the airport.', vi: 'Ở sân bay ít người.' },
-          jp: '空港は 人が 少ないです。',
+          prompt: {
+            en: 'When is the hottest time of year? ...August is the hottest.',
+            vi: 'Trong năm lúc nào nóng nhất? ...Tháng 8 nóng nhất.'
+          },
+          jp: '一年で いつが いちばん 暑いですか。……8月が いちばん 暑いです。',
           ruby: [
-            { base: '空', reading: 'くう' },
-            { base: '港', reading: 'こう' },
-            { base: '人', reading: 'ひと' },
-            { base: '少', reading: 'すく' }
+            { base: '一', reading: 'いち' },
+            { base: '年', reading: 'ねん' },
+            { base: '暑', reading: 'あつ' },
+            { base: '月', reading: 'がつ' },
+            { base: '暑', reading: 'あつ' }
           ]
-        },
-        {
-          prompt: { en: 'I did ikebana for the first time.', vi: 'Tôi cắm hoa lần đầu.' },
-          jp: '初めて 生け花を しました。',
-          ruby: [
-            { base: '初', reading: 'はじ' },
-            { base: '生', reading: 'い' },
-            { base: '花', reading: 'ばな' }
-          ]
-        },
-        {
-          prompt: { en: 'Sashimi is the most delicious.', vi: 'Sashimi ngon nhất.' },
-          jp: '刺身が いちばん おいしいです。',
-          ruby: [
-            { base: '刺', reading: 'さし' },
-            { base: '身', reading: 'み' }
-          ]
-        },
-        {
-          prompt: { en: 'Lemon is sour, but I like it.', vi: 'Chanh chua nhưng tôi thích.' },
-          jp: 'レモンは すっぱいですが、好きです。',
-          ruby: [{ base: '好', reading: 'す' }]
         }
       ]
     },
@@ -375,8 +333,8 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           jp: 'どの かばんが あなたのですか。'
         },
         {
-          prompt: { en: 'The big one.', vi: 'Cái lớn.' },
-          jp: '大きいのです。',
+          prompt: { en: 'Which bag? ...That big one.', vi: 'Cái cặp nào? ...Cái to kia.' },
+          jp: 'どの かばんですか。……あの 大きいのです。',
           ruby: [{ base: '大', reading: 'おお' }]
         },
         {
@@ -385,14 +343,14 @@ export const n5Lesson12SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '軽', reading: 'かる' }]
         },
         {
-          prompt: { en: 'The sweet one is delicious.', vi: 'Cái ngọt ngon.' },
-          jp: '甘いのは おいしいです。',
-          ruby: [{ base: '甘', reading: 'あま' }]
+          prompt: { en: 'How much is this red one?', vi: 'Cái màu đỏ này bao nhiêu tiền?' },
+          jp: 'この 赤いのは いくらですか。',
+          ruby: [{ base: '赤', reading: 'あか' }]
         },
         {
-          prompt: { en: 'The spicy one is this.', vi: 'Cái cay là cái này.' },
-          jp: '辛いのは これです。',
-          ruby: [{ base: '辛', reading: 'から' }]
+          prompt: { en: 'Do you have a cheaper one?', vi: 'Có cái nào rẻ hơn không?' },
+          jp: 'もっと 安いのは ありますか。',
+          ruby: [{ base: '安', reading: 'やす' }]
         }
       ]
     }

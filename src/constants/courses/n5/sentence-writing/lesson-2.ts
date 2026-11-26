@@ -145,11 +145,12 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '何', reading: 'なん' }]
         },
         {
-          prompt: { en: 'What is that key?', vi: 'Chìa khóa đó là gì?' },
-          jp: 'その 鍵は 何ですか。',
+          prompt: { en: 'What is that key for?', vi: 'Chìa khóa đó là chìa khóa gì?' },
+          jp: 'その 鍵は 何の 鍵ですか。',
           ruby: [
             { base: '鍵', reading: 'かぎ' },
-            { base: '何', reading: 'なん' }
+            { base: '何', reading: 'なん' },
+            { base: '鍵', reading: 'かぎ' }
           ]
         },
         {
@@ -163,8 +164,18 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
           ruby: [{ base: '何', reading: 'なん' }]
         },
         {
-          prompt: { en: 'This is a telephone card.', vi: 'Đây là thẻ điện thoại.' },
-          jp: 'これは テレホンカードです。'
+          prompt: {
+            en: 'What is that? ...It is a Japanese sweet.',
+            vi: 'Đó là cái gì vậy? ...Là bánh kẹo Nhật.'
+          },
+          jp: 'それは 何ですか。……日本の お菓子です。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '菓', reading: 'か' },
+            { base: '子', reading: 'し' }
+          ]
         }
       ]
     },
@@ -177,24 +188,35 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
           jp: 'それは カメラですか。'
         },
         {
-          prompt: { en: 'Yes, it is.', vi: 'Vâng, đúng rồi.' },
-          jp: 'はい、そうです。'
+          prompt: {
+            en: 'Is this your umbrella? ...Yes, it is.',
+            vi: 'Đây là ô của anh à? ...Vâng, đúng vậy.'
+          },
+          jp: 'これは あなたの 傘ですか。……はい、そうです。',
+          ruby: [{ base: '傘', reading: 'かさ' }]
         },
         {
           prompt: { en: 'Is this a radio?', vi: 'Đây là radio phải không?' },
           jp: 'これは ラジオですか。'
         },
         {
-          prompt: { en: 'No, it is not.', vi: 'Không, không phải.' },
-          jp: 'いいえ、違います。',
-          ruby: [{ base: '違', reading: 'ちが' }]
+          prompt: {
+            en: "Is that Mr. Tanaka's bag? ...No, it is not.",
+            vi: 'Đó là cặp của anh Tanaka à? ...Không, không phải.'
+          },
+          jp: 'それは 田中さんの かばんですか。……いいえ、違います。',
+          ruby: [
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '違', reading: 'ちが' }
+          ]
         },
         {
           prompt: {
-            en: 'Is that a CD? No, it is a tape.',
-            vi: 'Đó là đĩa CD phải không? Không, là băng.'
+            en: 'Is that a CD? ...No, it is a tape.',
+            vi: 'Đó là đĩa CD à? ...Không phải, là băng cát-xét.'
           },
-          jp: 'それは CDですか。いいえ、違います。テープです。',
+          jp: 'それは CDですか。……いいえ、違います。テープです。',
           ruby: [{ base: '違', reading: 'ちが' }]
         }
       ]
@@ -210,8 +232,23 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
           jp: 'これは ボールペンですか、シャープペンシルですか。'
         },
         {
-          prompt: { en: 'It is a ballpoint pen.', vi: 'Là bút bi.' },
-          jp: 'ボールペンです。'
+          prompt: {
+            en: 'Is that a Japanese book or an English book? ...It is an English book.',
+            vi: 'Đó là sách tiếng Nhật hay sách tiếng Anh? ...Sách tiếng Anh.'
+          },
+          jp: 'それは 日本語の 本ですか、英語の 本ですか。……英語の 本です。',
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '本', reading: 'ほん' },
+            { base: '英', reading: 'えい' },
+            { base: '語', reading: 'ご' },
+            { base: '本', reading: 'ほん' },
+            { base: '英', reading: 'えい' },
+            { base: '語', reading: 'ご' },
+            { base: '本', reading: 'ほん' }
+          ]
         },
         {
           prompt: { en: 'Is that a chair or a desk?', vi: 'Đó là ghế hay bàn?' },
@@ -223,9 +260,11 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'It is a desk.', vi: 'Là bàn.' },
-          jp: '机です。',
-          ruby: [{ base: '机', reading: 'つくえ' }]
+          prompt: {
+            en: 'Is this "a" or "o"? ...It is "o".',
+            vi: 'Đây là chữ "a" hay chữ "o"? ...Chữ "o".'
+          },
+          jp: 'これは「あ」ですか、「お」ですか。……「お」です。'
         },
         {
           prompt: {
@@ -256,21 +295,27 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'That coffee is a souvenir.', vi: 'Cà phê đó là quà.' },
-          jp: 'その コーヒーは お土産です。',
-          ruby: [
-            { base: '土', reading: 'み' },
-            { base: '産', reading: 'やげ' }
-          ]
-        },
-        {
-          prompt: { en: 'This is a souvenir from Japan.', vi: 'Đây là quà từ Nhật.' },
-          jp: 'これは 日本の お土産です。',
+          prompt: {
+            en: 'This is Japanese tea. Please have some.',
+            vi: 'Đây là trà Nhật. Mời anh.'
+          },
+          jp: 'これは 日本の お茶です。どうぞ。',
           ruby: [
             { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' },
-            { base: '土', reading: 'み' },
-            { base: '産', reading: 'やげ' }
+            { base: '茶', reading: 'ちゃ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'These are sweets. Please share them, everyone.',
+            vi: 'Đây là bánh kẹo. Mời mọi người cùng ăn.'
+          },
+          jp: 'これは お菓子です。皆さんで どうぞ。',
+          ruby: [
+            { base: '菓', reading: 'か' },
+            { base: '子', reading: 'し' },
+            { base: '皆', reading: 'みな' }
           ]
         },
         {
@@ -287,38 +332,62 @@ export const n5Lesson2SentenceWriting: LessonSentenceWriting = {
       pattern: 'そうですか',
       items: [
         {
-          prompt: { en: 'I see.', vi: 'Vậy à.' },
-          jp: 'そうですか。'
+          prompt: {
+            en: 'That person is the new teacher. ...Oh, I see.',
+            vi: 'Người kia là thầy giáo mới. ...Thế à.'
+          },
+          jp: 'あの 人は 新しい 先生です。……そうですか。',
+          ruby: [
+            { base: '人', reading: 'ひと' },
+            { base: '新', reading: 'あたら' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' }
+          ]
         },
         {
-          prompt: { en: 'This is my bag. I see.', vi: 'Cái cặp này là của tôi. Vậy à.' },
-          jp: 'この かばんは 私のです。そうですか。',
+          prompt: {
+            en: 'This bag is mine. ...Oh, I see.',
+            vi: 'Cái cặp này là của tôi. ...Thế à.'
+          },
+          jp: 'この かばんは 私のです。……そうですか。',
           ruby: [{ base: '私', reading: 'わたし' }]
         },
         {
           prompt: {
-            en: 'That is a Japanese dictionary. I see.',
-            vi: 'Đó là từ điển tiếng Nhật. Vậy à.'
+            en: 'This is a Japanese dictionary. ...I see. That is handy.',
+            vi: 'Đây là từ điển tiếng Nhật. ...Thế à. Tiện nhỉ.'
           },
-          jp: 'それは 日本語の 辞書です。そうですか。',
+          jp: 'これは 日本語の 辞書です。……そうですか。便利ですね。',
           ruby: [
             { base: '日', reading: 'に' },
             { base: '本', reading: 'ほん' },
             { base: '語', reading: 'ご' },
             { base: '辞', reading: 'じ' },
-            { base: '書', reading: 'しょ' }
+            { base: '書', reading: 'しょ' },
+            { base: '便', reading: 'べん' },
+            { base: '利', reading: 'り' }
           ]
         },
         {
           prompt: {
-            en: 'That over there is a computer. I see.',
-            vi: 'Cái kia là máy tính. Vậy à.'
+            en: 'Mr. Yamada is a bank employee. ...Oh, I see.',
+            vi: 'Anh Yamada là nhân viên ngân hàng. ...Thế à.'
           },
-          jp: 'あれは コンピューターです。そうですか。'
+          jp: '山田さんは 銀行員です。……そうですか。',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '田', reading: 'だ' },
+            { base: '銀', reading: 'ぎん' },
+            { base: '行', reading: 'こう' },
+            { base: '員', reading: 'いん' }
+          ]
         },
         {
-          prompt: { en: "This is Alex's key. I see.", vi: 'Đây là chìa khóa của anh Alex. Vậy à.' },
-          jp: 'これは アレックスさんの 鍵です。そうですか。',
+          prompt: {
+            en: "This is Alex's key. ...I see. Thank you.",
+            vi: 'Đây là chìa khóa của Alex. ...Thế à. Cảm ơn anh.'
+          },
+          jp: 'これは アレックスさんの 鍵です。……そうですか。ありがとう ございます。',
           ruby: [{ base: '鍵', reading: 'かぎ' }]
         }
       ]

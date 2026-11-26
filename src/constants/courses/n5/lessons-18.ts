@@ -349,7 +349,7 @@ export const n5Lesson18: Lesson = {
         },
         {
           speakerId: 'santos',
-          jp: 'いいえ、まだ です。日本では なかなか 馬を 見る ことが できません。',
+          jp: 'いいえ、まだです。日本では なかなか 馬を 見る ことが できません。',
           romaji: 'Iie, mada desu. Nihon de wa naka naka uma o miru koto ga dekimasen.',
           meaning: {
             en: 'No, not yet. In Japan it is hard to find chances to see horses.',

@@ -376,7 +376,7 @@ export const n4Lesson39: Lesson = {
       lines: [
         {
           speakerId: 'miller',
-          jp: '部長、遅刻 して すみません。',
+          jp: '部長、遅刻して すみません。',
           romaji: 'Buchō, chikoku shite sumimasen.',
           meaning: {
             en: 'Department head, I am sorry I am late.',
@@ -413,7 +413,7 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: 'バスの 事故 ですか。',
+          jp: 'バスの 事故ですか。',
           romaji: 'Basu no jiko desu ka.',
           meaning: { en: 'A bus accident?', vi: 'Tai nạn xe buýt à?' },
           ruby: [
@@ -437,7 +437,7 @@ export const n4Lesson39: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: 'それは 大変 でしたね。連絡が 取れなく て、心配 しましたよ。',
+          jp: 'それは 大変 でしたね。連絡が 取れなく て、心配しましたよ。',
           romaji: 'Sore wa taihen deshita ne. Renraku ga torenakute, shinpai shimashita yo.',
           meaning: {
             en: 'That must have been tough. We could not reach you and were worried.',
@@ -578,7 +578,7 @@ export const n4Lesson39: Lesson = {
           ]
         },
         {
-          jp: '用事が ある ので、先に 失礼 します。',
+          jp: '用事が ある ので、先に 失礼します。',
           romaji: 'Yōji ga aru no de, saki ni shitsurei shimasu.',
           meaning: {
             en: 'I have something to do, so excuse me for leaving first.',
@@ -692,7 +692,7 @@ export const n4Lesson39: Lesson = {
       ],
       lines: [
         {
-          jp: '首相の 演説を 聞いて、安心 しました。',
+          jp: '首相の 演説を 聞いて、安心しました。',
           romaji: 'Shushō no enzetsu o kiite, anshin shimashita.',
           meaning: {
             en: "I felt relieved after hearing the prime minister's speech.",
@@ -725,7 +725,7 @@ export const n4Lesson39: Lesson = {
           ]
         },
         {
-          jp: '台風の ニュースでは、海岸の 町が 心配 です。',
+          jp: '台風の ニュースでは、海岸の 町が 心配です。',
           romaji: 'Taifū no nyūsu de wa, kaigan no machi ga shinpai desu.',
           meaning: {
             en: 'In typhoon news, I worry about towns on the coast.',

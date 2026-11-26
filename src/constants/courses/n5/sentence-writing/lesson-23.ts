@@ -41,42 +41,40 @@ export const n5Lesson23SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'During New Year I go to an electronics store.',
-            vi: 'Dịp Tết tôi đi cửa hàng điện máy.'
+            en: 'When I go back to my country, I buy souvenirs.',
+            vi: 'Khi về nước tôi mua quà.'
           },
-          jp: '正月の とき 電気屋へ 行きます。',
+          jp: '国へ 帰る とき、お土産を 買います。',
           ruby: [
-            { base: '正', reading: 'しょう' },
-            { base: '月', reading: 'がつ' },
-            { base: '電', reading: 'でん' },
-            { base: '気', reading: 'き' },
-            { base: '屋', reading: 'や' },
-            { base: '行', reading: 'い' }
+            { base: '国', reading: 'くに' },
+            { base: '帰', reading: 'かえ' },
+            { base: '土産', reading: 'みやげ' },
+            { base: '買', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'When I ask the teacher I write a note.',
-            vi: 'Khi hỏi thầy cô tôi viết ghi chú.'
+            en: 'When I do not know the way, I ask at a police box.',
+            vi: 'Khi không biết đường, tôi hỏi ở đồn cảnh sát.'
           },
-          jp: '先生に 聞く とき メモを 書きます。',
+          jp: '道が わからない とき、交番で 聞きます。',
           ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
-            { base: '聞', reading: 'き' },
-            { base: '書', reading: 'か' }
+            { base: '道', reading: 'みち' },
+            { base: '交', reading: 'こう' },
+            { base: '番', reading: 'ばん' },
+            { base: '聞', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'When I change the size I look at the label carefully.',
-            vi: 'Khi đổi cỡ tôi nhìn nhãn cho cẩn thận.'
+            en: 'When I was a child, I often played by the river.',
+            vi: 'Hồi nhỏ tôi hay chơi ở bờ sông.'
           },
-          jp: 'サイズを 変える とき 気を つけて ラベルを 見ます。',
+          jp: '子どもの とき、よく 川で 遊びました。',
           ruby: [
-            { base: '変', reading: 'か' },
-            { base: '気', reading: 'き' },
-            { base: '見', reading: 'み' }
+            { base: '子', reading: 'こ' },
+            { base: '川', reading: 'かわ' },
+            { base: '遊', reading: 'あそ' }
           ]
         }
       ]
@@ -99,26 +97,26 @@ export const n5Lesson23SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'When you pull the door, a sound comes out.',
-            vi: 'Kéo cửa thì có tiếng.'
+            en: 'If you press this button, your change comes out.',
+            vi: 'Bấm nút này thì tiền thừa sẽ ra.'
           },
-          jp: 'ドアを 引く と 音が 出ます。',
+          jp: 'この ボタンを 押すと、お釣りが 出ます。',
           ruby: [
-            { base: '引', reading: 'ひ' },
-            { base: '音', reading: 'おと' },
+            { base: '押', reading: 'お' },
+            { base: '釣', reading: 'つ' },
             { base: '出', reading: 'で' }
           ]
         },
         {
           prompt: {
-            en: 'When you press this, it breaks down.',
-            vi: 'Bấm cái này thì bị hỏng.'
+            en: 'When spring comes, the cherry blossoms bloom.',
+            vi: 'Mùa xuân đến thì hoa anh đào nở.'
           },
-          jp: 'これを 押す と 故障します。',
+          jp: '春に なると、桜が 咲きます。',
           ruby: [
-            { base: '押', reading: 'お' },
-            { base: '故', reading: 'こ' },
-            { base: '障', reading: 'しょう' }
+            { base: '春', reading: 'はる' },
+            { base: '桜', reading: 'さくら' },
+            { base: '咲', reading: 'さ' }
           ]
         },
         {
@@ -173,14 +171,16 @@ export const n5Lesson23SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'This building is new.',
-            vi: 'Tòa nhà này mới.'
+            en: 'When you open the window, the breeze feels nice.',
+            vi: 'Mở cửa sổ ra thì gió mát dễ chịu.'
           },
-          jp: 'この 建物が 新しいです。',
+          jp: '窓を 開けると、風が 気持ちいいです。',
           ruby: [
-            { base: '建', reading: 'たて' },
-            { base: '物', reading: 'もの' },
-            { base: '新', reading: 'あたら' }
+            { base: '窓', reading: 'まど' },
+            { base: '開', reading: 'あ' },
+            { base: '風', reading: 'かぜ' },
+            { base: '気', reading: 'き' },
+            { base: '持', reading: 'も' }
           ]
         },
         {
@@ -193,31 +193,30 @@ export const n5Lesson23SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'The machine has a malfunction.', vi: 'Máy bị sự cố.' },
-          jp: '機械が 故障です。',
+          prompt: {
+            en: 'Something is wrong with this machine.',
+            vi: 'Cái máy này có vẻ trục trặc.'
+          },
+          jp: 'この 機械は 調子が おかしいです。',
           ruby: [
             { base: '機', reading: 'き' },
             { base: '械', reading: 'かい' },
-            { base: '故', reading: 'こ' },
-            { base: '障', reading: 'しょう' }
+            { base: '調', reading: 'ちょう' },
+            { base: '子', reading: 'し' }
           ]
         },
         {
-          prompt: { en: 'The sound is loud.', vi: 'Âm thanh lớn.' },
-          jp: '音が 大きいです。',
+          prompt: { en: 'The TV sound is low, is it not?', vi: 'Tiếng ti vi nhỏ nhỉ.' },
+          jp: 'テレビの 音が 小さいですね。',
           ruby: [
             { base: '音', reading: 'おと' },
-            { base: '大', reading: 'おお' }
+            { base: '小', reading: 'ちい' }
           ]
         },
         {
-          prompt: { en: 'This bookstore is quiet.', vi: 'Hiệu sách này yên tĩnh.' },
-          jp: 'この 本屋は 静かです。',
-          ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '屋', reading: 'や' },
-            { base: '静', reading: 'しず' }
-          ]
+          prompt: { en: "This shop's cakes are delicious.", vi: 'Tiệm này bánh ngọt ngon.' },
+          jp: 'この 店は ケーキが おいしいです。',
+          ruby: [{ base: '店', reading: 'みせ' }]
         }
       ]
     },
@@ -280,16 +279,17 @@ export const n5Lesson23SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Walk past the electronics store.',
-            vi: 'Đi bộ qua cửa hàng điện máy.'
+            en: 'I take a walk in the park every morning.',
+            vi: 'Sáng nào tôi cũng đi dạo trong công viên.'
           },
-          jp: '電気屋の 前を 歩きます。',
+          jp: '毎朝 公園を 散歩します。',
           ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '気', reading: 'き' },
-            { base: '屋', reading: 'や' },
-            { base: '前', reading: 'まえ' },
-            { base: '歩', reading: 'ある' }
+            { base: '毎', reading: 'まい' },
+            { base: '朝', reading: 'あさ' },
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' },
+            { base: '散', reading: 'さん' },
+            { base: '歩', reading: 'ぽ' }
           ]
         }
       ]

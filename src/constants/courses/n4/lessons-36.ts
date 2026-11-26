@@ -402,7 +402,7 @@ export const n4Lesson36: Lesson = {
       lines: [
         {
           speakerId: 'host',
-          jp: '今日の お客様は 小川米 さん、80歳 です。',
+          jp: '今日の お客様は 小川米 さん、80歳です。',
           romaji: 'Kyō no o-kyaku-sama wa Ogawa Yone-san, hachijū-sai desu.',
           meaning: {
             en: "Today's guest is Ms. Ogawa Yone, 80 years old.",
@@ -443,7 +443,7 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'yone',
-          jp: '毎日 運動 する ように しています。水泳や 剣道など です。',
+          jp: '毎日 運動 する ように しています。水泳や 剣道などです。',
           romaji: 'Mainichi undō suru yō ni shite imasu. Suiei ya kendō nado desu.',
           meaning: {
             en: 'I make an effort to exercise every day - swimming, kendo, and so on.',
@@ -492,7 +492,7 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'host',
-          jp: '本当に すごい ですね。来年 フランスへ 行く んですか。',
+          jp: '本当に すごいですね。来年 フランスへ 行く んですか。',
           romaji: 'Hontō ni sugoi desu ne. Rainen Furansu e iku n desu ka.',
           meaning: {
             en: 'That is truly amazing. Are you going to France next year?',
@@ -508,7 +508,7 @@ export const n4Lesson36: Lesson = {
         },
         {
           speakerId: 'yone',
-          jp: 'はい。フランス語が 話せる ように 勉強 しています。「チャレンジ する 気持ち」が 大切 です。',
+          jp: 'はい。フランス語が 話せる ように 勉強しています。「チャレンジ する 気持ち」が 大切です。',
           romaji:
             'Hai. Furansugo ga hanaseru yō ni benkyō shite imasu. 「Charenji suru kimochi」 ga taisetsu desu.',
           meaning: {
@@ -570,7 +570,7 @@ export const n4Lesson36: Lesson = {
           ]
         },
         {
-          jp: '忘れない ように メモ します。',
+          jp: '忘れない ように メモします。',
           romaji: 'Wasurenai yō ni memo shimasu.',
           meaning: { en: 'I take notes so I will not forget.', vi: 'Tôi ghi chú để không quên.' },
           ruby: [{ base: '忘', reading: 'わす' }]
@@ -654,7 +654,7 @@ export const n4Lesson36: Lesson = {
       ],
       examples: [
         {
-          jp: '遅刻 しない ように してください。',
+          jp: '遅刻しない ように してください。',
           romaji: 'Chikoku shinai yō ni shite kudasai.',
           meaning: { en: 'Please try not to be late.', vi: 'Xin đừng đến muộn.' },
           ruby: [
@@ -678,52 +678,51 @@ export const n4Lesson36: Lesson = {
       ]
     },
     {
-      pattern: 'na-adj から',
-      highlights: ['から'],
-      title: { en: 'Reason with na-adj から', vi: 'Lý do với tính từ な から' },
+      pattern: 'na-adj / N + だから',
+      highlights: ['だから', 'ですから'],
+      title: {
+        en: 'Reason with na-adjectives and nouns (だから)',
+        vi: 'Nêu lý do với tính từ な và danh từ (だから)'
+      },
       explanation: {
-        en: 'For na-adjectives, な comes before から when giving a reason: 体に いい から、毎日 運動 しています. Compare i-adj から (drop い): おいしい から.',
-        vi: 'Với tính từ な, thêm な trước から khi nêu lý do: 体に いい から、毎日 運動 しています. Tính từ い bỏ い: おいしい から.'
+        en: 'A na-adjective or noun takes だ before から in plain speech and です in polite speech: 静かだから / 静かですから, 雨だから / 雨ですから. Do not say 静かなから. An い-adjective goes straight before から: 高いから.',
+        vi: 'Tính từ な và danh từ thêm だ trước から khi nói thân mật, thêm です khi nói lịch sự: 静かだから / 静かですから, 雨だから / 雨ですから. Không nói 静かなから. Tính từ い thì đặt thẳng trước から: 高いから.'
       },
       explanationRuby: [
-        { base: '体', reading: 'から' },
-        { base: '毎', reading: 'まい' },
-        { base: '日', reading: 'にち' },
-        { base: '運', reading: 'うん' },
-        { base: '動', reading: 'どう' },
-        { base: '体', reading: 'から' },
-        { base: '毎', reading: 'まい' },
-        { base: '日', reading: 'にち' },
-        { base: '運', reading: 'うん' },
-        { base: '動', reading: 'どう' }
+        { base: '静', reading: 'しず' },
+        { base: '静', reading: 'しず' },
+        { base: '雨', reading: 'あめ' },
+        { base: '雨', reading: 'あめ' },
+        { base: '静', reading: 'しず' },
+        { base: '高', reading: 'たか' }
       ],
       examples: [
         {
-          jp: '体に よくない から、甘い ものを 食べない ように しています。',
-          romaji: 'Karada ni yokunai kara, amai mono o tabenai yō ni shite imasu.',
+          jp: 'この 図書館は 静かだから、よく ここで 勉強します。',
+          romaji: 'Kono toshokan wa shizuka da kara, yoku koko de benkyō shimasu.',
           meaning: {
-            en: 'Because it is bad for my health, I try not to eat sweet things.',
-            vi: 'Vì có hại cho sức khỏe nên tôi cố không ăn đồ ngọt.'
+            en: 'This library is quiet, so I often study here.',
+            vi: 'Thư viện này yên tĩnh nên tôi hay học ở đây.'
           },
           ruby: [
-            { base: '体', reading: 'から' },
-            { base: '甘', reading: 'あま' },
-            { base: '食', reading: 'しょく' }
+            { base: '図', reading: 'と' },
+            { base: '書', reading: 'しょ' },
+            { base: '館', reading: 'かん' },
+            { base: '静', reading: 'しず' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' }
           ]
         },
         {
-          jp: '早く お茶が 点てられる ように 練習 したい です。',
-          romaji: 'Hayaku o-cha ga taterareru yō ni renshū shitai desu.',
+          jp: 'あしたは 休みですから、ゆっくり 寝ます。',
+          romaji: 'Ashita wa yasumi desu kara, yukkuri nemasu.',
           meaning: {
-            en: 'I want to practice so I can make tea quickly.',
-            vi: 'Tôi muốn mình sớm rót trà giỏi hơn.'
+            en: 'Tomorrow is a day off, so I will sleep in.',
+            vi: 'Ngày mai được nghỉ nên tôi sẽ ngủ thoải mái.'
           },
           ruby: [
-            { base: '早', reading: 'はや' },
-            { base: '茶', reading: 'ちゃ' },
-            { base: '点', reading: 'た' },
-            { base: '練', reading: 'れん' },
-            { base: '習', reading: 'しゅう' }
+            { base: '休', reading: 'やす' },
+            { base: '寝', reading: 'ね' }
           ]
         }
       ]

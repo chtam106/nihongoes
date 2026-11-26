@@ -245,7 +245,7 @@ export const n4Lesson43: Lesson = {
       lines: [
         {
           speakerId: 'hayashi',
-          jp: 'この 写真は だれ ですか。',
+          jp: 'この 写真は だれですか。',
           romaji: 'Kono shashin wa dare desu ka.',
           meaning: { en: 'Who is in this photo?', vi: 'Đây là ảnh của ai thế?' },
           ruby: [
@@ -255,7 +255,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'schmidt',
-          jp: 'ハンスです。うちの 子どもです。この 写真は 体育の 大会の とき です。',
+          jp: 'ハンスです。うちの 子どもです。この 写真は 体育の 大会の ときです。',
           romaji: 'Hansu desu. Uchi no kodomo desu. Kono shashin wa taiiku no taikai no toki desu.',
           meaning: {
             en: 'That is Hans, my child. This photo was taken at a sports meet.',
@@ -273,7 +273,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: '元気そう ですね。',
+          jp: '元気そうですね。',
           romaji: 'Genki sō desu ne.',
           meaning: { en: "He looks healthy, doesn't he?", vi: 'Trông cậu bé khỏe mạnh nhỉ.' },
           ruby: [
@@ -283,7 +283,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'schmidt',
-          jp: 'ええ。ハンスは 速く 走ります。日本の 小学校にも 慣れて、友達も できて、毎日 楽しそう です。',
+          jp: 'ええ。ハンスは 速く 走ります。日本の 小学校にも 慣れて、友達も できて、毎日 楽しそうです。',
           romaji:
             'Ee. Hansu wa hayaku hashirimasu. Nihon no shōgakkō ni mo narete, tomodachi mo dekite, mainichi tanoshisō desu.',
           meaning: {
@@ -308,7 +308,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'よかった ですね。そして、こちらは 奥さん ですね。きれい ですね。',
+          jp: 'よかったですね。そして、こちらは 奥さんですね。きれいですね。',
           romaji: 'Yokatta desu ne. Soshite, kochira wa okusan desu ne. Kirei desu ne.',
           meaning: {
             en: 'That is good. And this is your wife, is she not? She is beautiful.',
@@ -318,7 +318,7 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'schmidt',
-          jp: 'ありがとう ございます。妻は いろいろな ことに 興味が あって、一緒に いると 楽しい です。',
+          jp: 'ありがとう ございます。妻は いろいろな ことに 興味が あって、一緒に いると 楽しいです。',
           romaji:
             'Arigatō gozaimasu. Tsuma wa iroirona koto ni kyōmi ga atte, issho ni iru to tanoshii desu.',
           meaning: {
@@ -336,13 +336,13 @@ export const n4Lesson43: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'そう ですか。',
+          jp: 'そうですか。',
           romaji: 'Sō desu ka.',
           meaning: { en: 'I see.', vi: 'Thế à.' }
         },
         {
           speakerId: 'schmidt',
-          jp: '特に 歴史が 好きで、時間があると 古い 町を 散歩 します。',
+          jp: '特に 歴史が 好きで、時間があると 古い 町を 散歩します。',
           romaji: 'Toku ni rekishi ga suki de, jikan ga aru to furui machi o sanpo shimasu.',
           meaning: {
             en: 'She especially likes history, so when she has time she walks around old towns.',

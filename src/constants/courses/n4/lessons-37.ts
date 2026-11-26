@@ -438,7 +438,7 @@ export const n4Lesson37: Lesson = {
       lines: [
         {
           speakerId: 'guide',
-          jp: '皆様、あちらが 有名な 金閣寺 です。',
+          jp: '皆様、あちらが 有名な 金閣寺です。',
           romaji: 'Minasama, achira ga yūmei na Kinkaku-ji desu.',
           meaning: {
             en: 'Everyone, that famous temple over there is Kinkakuji.',
@@ -485,7 +485,7 @@ export const n4Lesson37: Lesson = {
         },
         {
           speakerId: 'karina',
-          jp: 'きれいですね。あの 金色は 本物の 金 ですか。',
+          jp: 'きれいですね。あの 金色は 本物の 金ですか。',
           romaji: 'Kirei desu ne. Ano kin iro wa honmono no kin desu ka.',
           meaning: {
             en: 'It is beautiful. Is that gold color real gold?',
@@ -724,16 +724,13 @@ export const n4Lesson37: Lesson = {
           ]
         },
         {
-          jp: 'これは 麦の 原料 です。',
-          romaji: 'Kore wa mugi no genryō desu.',
-          meaning: {
-            en: 'This is barley as the raw material.',
-            vi: 'Đây là lúa mạch nguyên liệu.'
-          },
+          jp: 'この お酒は 米から 作ります。',
+          romaji: 'Kono o-sake wa kome kara tsukurimasu.',
+          meaning: { en: 'This sake is made from rice.', vi: 'Loại rượu này được làm từ gạo.' },
           ruby: [
-            { base: '麦', reading: 'むぎ' },
-            { base: '原', reading: 'げん' },
-            { base: '料', reading: 'りょう' }
+            { base: '酒', reading: 'さけ' },
+            { base: '米', reading: 'こめ' },
+            { base: '作', reading: 'つく' }
           ]
         }
       ]
@@ -776,22 +773,25 @@ export const n4Lesson37: Lesson = {
       ],
       examples: [
         {
-          jp: '中に 入れますか。',
-          romaji: 'Naka ni hairemasu ka.',
-          meaning: { en: 'Can we go inside?', vi: 'Có vào được bên trong không?' },
+          jp: '箱の 中に 何が 入っていますか。',
+          romaji: 'Hako no naka ni nani ga haitte imasu ka.',
+          meaning: { en: 'What is inside the box?', vi: 'Trong hộp có gì vậy?' },
           ruby: [
-            { base: '中', reading: 'じゅう' },
+            { base: '箱', reading: 'はこ' },
+            { base: '中', reading: 'なか' },
+            { base: '何', reading: 'なに' },
             { base: '入', reading: 'はい' }
           ]
         },
         {
-          jp: '机の 上に 本が あります。',
-          romaji: 'Tsukue no ue ni hon ga arimasu.',
-          meaning: { en: 'There is a book on the desk.', vi: 'Trên bàn có sách.' },
+          jp: '眼鏡は 机の 上に ありますよ。',
+          romaji: 'Megane wa tsukue no ue ni arimasu yo.',
+          meaning: { en: 'Your glasses are on the desk.', vi: 'Kính ở trên bàn đấy.' },
           ruby: [
+            { base: '眼', reading: 'め' },
+            { base: '鏡', reading: 'がね' },
             { base: '机', reading: 'つくえ' },
-            { base: '上', reading: 'うえ' },
-            { base: '本', reading: 'ほん' }
+            { base: '上', reading: 'うえ' }
           ]
         }
       ]

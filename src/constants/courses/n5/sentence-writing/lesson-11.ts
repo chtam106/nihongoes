@@ -39,58 +39,6 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Please give me five apples.', vi: 'Cho tôi năm quả táo.' },
-          jp: 'りんごを 五つ ください。',
-          ruby: [{ base: '五', reading: 'いつ' }]
-        },
-        {
-          prompt: { en: 'I bought six mandarin oranges.', vi: 'Tôi đã mua sáu quả quýt.' },
-          jp: 'みかんを 六つ 買いました。',
-          ruby: [
-            { base: '六', reading: 'むっ' },
-            { base: '買', reading: 'か' }
-          ]
-        },
-        {
-          prompt: { en: 'There are seven sandwiches.', vi: 'Có bảy cái bánh sandwich.' },
-          jp: 'サンドイッチが 七つ あります。',
-          ruby: [{ base: '七', reading: 'なな' }]
-        },
-        {
-          prompt: { en: 'Please give me eight ice creams.', vi: 'Cho tôi tám cây kem.' },
-          jp: 'アイスクリームを 八つ ください。',
-          ruby: [{ base: '八', reading: 'やっ' }]
-        },
-        {
-          prompt: { en: 'Please give me nine apples.', vi: 'Cho tôi chín quả táo.' },
-          jp: 'りんごを 九つ ください。',
-          ruby: [{ base: '九', reading: 'ここの' }]
-        },
-        {
-          prompt: { en: 'I bought ten mandarin oranges.', vi: 'Tôi đã mua mười quả quýt.' },
-          jp: 'みかんを 十 買いました。',
-          ruby: [
-            { base: '十', reading: 'とお' },
-            { base: '買', reading: 'か' }
-          ]
-        },
-        {
-          prompt: { en: 'There is one person.', vi: 'Có một người.' },
-          jp: '一人 います。',
-          ruby: [
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
-          prompt: { en: 'There are two people.', vi: 'Có hai người.' },
-          jp: '二人 います。',
-          ruby: [
-            { base: '二', reading: 'ふた' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
           prompt: { en: 'There are three people in the class.', vi: 'Trong lớp có ba người.' },
           jp: 'クラスに 3人 います。',
           ruby: [{ base: '人', reading: 'にん' }]
@@ -139,31 +87,46 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'How many stamps?', vi: 'Bao nhiêu tem?' },
-          jp: '切手は 何枚ですか。',
+          prompt: {
+            en: 'How many 80-yen stamps are you buying?',
+            vi: 'Anh mua mấy con tem 80 yên?'
+          },
+          jp: '80円の 切手を 何枚 買いますか。',
           ruby: [
+            { base: '円', reading: 'えん' },
             { base: '切', reading: 'きっ' },
             { base: '手', reading: 'て' },
             { base: '何', reading: 'なん' },
-            { base: '枚', reading: 'まい' }
+            { base: '枚', reading: 'まい' },
+            { base: '買', reading: 'か' }
           ]
         },
         {
-          prompt: { en: 'How many postcards?', vi: 'Bao nhiêu bưu thiếp?' },
-          jp: 'はがきは 何枚ですか。',
+          prompt: {
+            en: 'How many people are in your family? ...Four.',
+            vi: 'Gia đình anh có mấy người? ...4 người.'
+          },
+          jp: 'ご家族は 何人ですか。……4人です。',
           ruby: [
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' },
             { base: '何', reading: 'なん' },
-            { base: '枚', reading: 'まい' }
+            { base: '人', reading: 'にん' },
+            { base: '人', reading: 'にん' }
           ]
         },
         {
-          prompt: { en: 'How many envelopes?', vi: 'Bao nhiêu phong bì?' },
-          jp: '封筒は 何枚ですか。',
+          prompt: {
+            en: 'How many computers are there in the office?',
+            vi: 'Văn phòng có mấy cái máy tính?'
+          },
+          jp: '事務所に パソコンは 何台 ありますか。',
           ruby: [
-            { base: '封', reading: 'ふう' },
-            { base: '筒', reading: 'とう' },
+            { base: '事', reading: 'じ' },
+            { base: '務', reading: 'む' },
+            { base: '所', reading: 'しょ' },
             { base: '何', reading: 'なん' },
-            { base: '枚', reading: 'まい' }
+            { base: '台', reading: 'だい' }
           ]
         }
       ]
@@ -172,34 +135,34 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
       pattern: 'どのくらい / 〜ぐらい / かかります',
       items: [
         {
-          prompt: { en: 'How long does it take?', vi: 'Mất bao lâu?' },
-          jp: 'どのくらい かかりますか。'
+          prompt: {
+            en: 'How long does it take to the station? ...About ten minutes on foot.',
+            vi: 'Đến ga mất bao lâu? ...Đi bộ khoảng 10 phút.'
+          },
+          jp: '駅まで どのくらい かかりますか。……歩いて 10分ぐらいです。',
+          ruby: [
+            { base: '駅', reading: 'えき' },
+            { base: '歩', reading: 'ある' },
+            { base: '分', reading: 'ぷん' }
+          ]
         },
         {
-          prompt: { en: 'It takes about two hours.', vi: 'Mất khoảng hai tiếng.' },
-          jp: '2時間ぐらい かかります。',
+          prompt: {
+            en: 'It takes about three hours from Tokyo to Osaka by shinkansen.',
+            vi: 'Từ Tokyo đến Osaka đi Shinkansen mất khoảng 3 tiếng.'
+          },
+          jp: '東京から 大阪まで 新幹線で 3時間ぐらい かかります。',
           ruby: [
+            { base: '東', reading: 'とう' },
+            { base: '京', reading: 'きょう' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '新', reading: 'しん' },
+            { base: '幹', reading: 'かん' },
+            { base: '線', reading: 'せん' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' }
           ]
-        },
-        {
-          prompt: { en: 'It takes about three weeks.', vi: 'Mất khoảng ba tuần.' },
-          jp: '3週間ぐらい かかります。',
-          ruby: [
-            { base: '週', reading: 'しゅう' },
-            { base: '間', reading: 'かん' }
-          ]
-        },
-        {
-          prompt: { en: 'It takes about two months.', vi: 'Mất khoảng hai tháng.' },
-          jp: '2か月ぐらい かかります。',
-          ruby: [{ base: '月', reading: 'げつ' }]
-        },
-        {
-          prompt: { en: 'It takes about one year.', vi: 'Mất khoảng một năm.' },
-          jp: '1年ぐらい かかります。',
-          ruby: [{ base: '年', reading: 'ねん' }]
         },
         {
           prompt: {
@@ -270,19 +233,15 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'The international students meet twice a month.',
-            vi: 'Du học sinh gặp hai lần một tháng.'
-          },
-          jp: '留学生は 一か月に 2回 会います。',
+          prompt: { en: 'I watch a movie twice a month.', vi: 'Một tháng tôi xem phim hai lần.' },
+          jp: '一か月に 2回 映画を 見ます。',
           ruby: [
-            { base: '留', reading: 'りゅう' },
-            { base: '学', reading: 'がく' },
-            { base: '生', reading: 'せい' },
             { base: '一', reading: 'いっ' },
             { base: '月', reading: 'げつ' },
             { base: '回', reading: 'かい' },
-            { base: '会', reading: 'あ' }
+            { base: '映', reading: 'えい' },
+            { base: '画', reading: 'が' },
+            { base: '見', reading: 'み' }
           ]
         },
         {
@@ -314,47 +273,26 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'I have only one younger sister.', vi: 'Tôi chỉ có một em gái.' },
-          jp: '妹が 一人 だけ います。',
+          prompt: {
+            en: 'I am the only foreigner in this class.',
+            vi: 'Trong lớp này người nước ngoài chỉ có mình tôi.'
+          },
+          jp: 'この クラスで 外国人は 私だけです。',
           ruby: [
-            { base: '妹', reading: 'いもうと' },
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
+            { base: '外', reading: 'がい' },
+            { base: '国', reading: 'こく' },
+            { base: '人', reading: 'じん' },
+            { base: '私', reading: 'わたし' }
           ]
         },
         {
-          prompt: { en: 'I have only one older brother.', vi: 'Tôi chỉ có một anh trai.' },
-          jp: '兄が 一人 だけ います。',
+          prompt: { en: 'My only day off is Sunday.', vi: 'Tôi chỉ được nghỉ mỗi Chủ nhật.' },
+          jp: '休みは 日曜日だけです。',
           ruby: [
-            { base: '兄', reading: 'あに' },
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
-          prompt: { en: 'I have only one older sister.', vi: 'Tôi chỉ có một chị gái.' },
-          jp: '姉が 一人 だけ います。',
-          ruby: [
-            { base: '姉', reading: 'あね' },
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
-          prompt: { en: 'Everyone is in Japan.', vi: 'Mọi người đều ở Nhật.' },
-          jp: 'みんな 日本に います。',
-          ruby: [
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' }
-          ]
-        },
-        {
-          prompt: { en: 'It is 800 yen in total.', vi: 'Tổng cộng 800 yên.' },
-          jp: '全部で 800円です。',
-          ruby: [
-            { base: '全', reading: 'ぜん' },
-            { base: '部', reading: 'ぶ' },
-            { base: '円', reading: 'えん' }
+            { base: '休', reading: 'やす' },
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' }
           ]
         },
         {
@@ -371,47 +309,15 @@ export const n5Lesson11SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Maria has only one older sister.',
-            vi: 'Maria chỉ có một người chị.'
+            en: 'I understand just a little Japanese.',
+            vi: 'Tiếng Nhật thì tôi chỉ hiểu một chút.'
           },
-          jp: 'マリアさんは お姉さんが 一人 だけ います。',
+          jp: '日本語は 少しだけ わかります。',
           ruby: [
-            { base: '姉', reading: 'ねえ' },
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Yuki has only one younger brother.',
-            vi: 'Bé Yuki chỉ có một em trai.'
-          },
-          jp: 'ゆきちゃんは 弟さんが 一人 だけ います。',
-          ruby: [
-            { base: '弟', reading: 'おとうと' },
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Yamada has only one younger sister.',
-            vi: 'Anh Yamada chỉ có một em gái.'
-          },
-          jp: 'やまださんは 妹さんが 一人 だけ います。',
-          ruby: [
-            { base: '妹', reading: 'いもうと' },
-            { base: '一', reading: 'ひと' },
-            { base: '人', reading: 'り' }
-          ]
-        },
-        {
-          prompt: { en: 'I have three siblings.', vi: 'Tôi có ba anh chị em.' },
-          jp: '兄弟が 3人 います。',
-          ruby: [
-            { base: '兄', reading: 'きょう' },
-            { base: '弟', reading: 'だい' },
-            { base: '人', reading: 'にん' }
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '少', reading: 'すこ' }
           ]
         }
       ]

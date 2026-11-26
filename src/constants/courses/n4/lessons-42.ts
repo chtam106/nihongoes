@@ -589,7 +589,7 @@ export const n4Lesson42: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'はい。いつか イギリスに 留学する ために です。',
+          jp: 'はい。いつか イギリスに 留学する ためにです。',
           romaji: 'Hai. Itsuka Igirisu ni ryūgaku suru tame ni desu.',
           meaning: {
             en: 'Yes. Because I plan to study abroad in England someday.',
@@ -656,7 +656,7 @@ export const n4Lesson42: Lesson = {
       explanationRuby: [],
       examples: [
         {
-          jp: '私は 自分の 店を 持つ ために、貯金 しています。',
+          jp: '私は 自分の 店を 持つ ために、貯金しています。',
           romaji: 'Watashi wa jibun no mise o motsu tame ni, chokin shite imasu.',
           meaning: {
             en: 'I am saving money in order to open my own shop.',
@@ -709,7 +709,7 @@ export const n4Lesson42: Lesson = {
           ]
         },
         {
-          jp: '弁護士に なる ために、法律を 勉強 しています。',
+          jp: '弁護士に なる ために、法律を 勉強しています。',
           romaji: 'Bengoshi ni naru tame ni, hōritsu o benkyō shite imasu.',
           meaning: {
             en: 'I am studying law to become a lawyer.',
@@ -848,18 +848,18 @@ export const n4Lesson42: Lesson = {
       ],
       examples: [
         {
-          jp: '私は [ボーナスの] 半分は 貯金する つもりです。',
-          romaji: 'Watashi wa [bōnasu no] hanbun wa chokin suru tsumori desu.',
+          jp: '私は ボーナスの 半分は 貯金する つもりです。',
+          romaji: 'Watashi wa bōnasu no hanbun wa chokin suru tsumori desu.',
           meaning: {
             en: 'I plan to save at least half of my bonus.',
-            vi: 'Tôi định để tiết kiệm ít nhất một nửa số tiền thưởng.'
+            vi: 'Tôi định tiết kiệm ít nhất một nửa tiền thưởng.'
           },
           ruby: [
             { base: '私', reading: 'わたし' },
             { base: '半', reading: 'はん' },
             { base: '分', reading: 'ぶん' },
             { base: '貯', reading: 'ちょ' },
-            { base: '金', reading: 'かな' }
+            { base: '金', reading: 'きん' }
           ]
         },
         {

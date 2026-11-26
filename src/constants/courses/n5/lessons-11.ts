@@ -954,7 +954,7 @@ export const n5Lesson11: Lesson = {
           ]
         },
         {
-          jp: '休みは 日曜日だけ です。',
+          jp: '休みは 日曜日だけです。',
           romaji: 'Yasumi wa nichiyōbi dake desu.',
           meaning: { en: 'My day off is only Sunday.', vi: 'Ngày nghỉ của tôi chỉ có chủ nhật.' },
           ruby: [

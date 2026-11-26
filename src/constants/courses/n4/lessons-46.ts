@@ -325,7 +325,7 @@ export const n4Lesson46: Lesson = {
       lines: [
         {
           speakerId: 'staff',
-          jp: 'ガスサービスセンター です。',
+          jp: 'ガスサービスセンターです。',
           romaji: 'Gasu sābisu sentā desu.',
           meaning: { en: 'Gas service center.', vi: 'Trung tâm dịch vụ ga nghe đây ạ.' }
         },
@@ -345,7 +345,7 @@ export const n4Lesson46: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: 'どんな 具合 ですか。',
+          jp: 'どんな 具合ですか。',
           romaji: 'Donna guai desu ka.',
           meaning: { en: 'What seems to be wrong?', vi: 'Cụ thể như thế nào ạ?' },
           ruby: [
@@ -422,13 +422,13 @@ export const n4Lesson46: Lesson = {
         },
         {
           speakerId: 'thawaphon',
-          jp: 'タワポン です。',
+          jp: 'タワポンです。',
           romaji: 'Tawapon desu.',
           meaning: { en: 'This is Thawaphon.', vi: 'Tôi là Thawaphon.' }
         },
         {
           speakerId: 'staff',
-          jp: 'お待たせしました。今 向かっている ところ です。あと 10分 お待ち ください。',
+          jp: 'お待たせしました。今 向かっている ところです。あと 10分 お待ち ください。',
           romaji: 'Omatase shimashita. Ima mukatte iru tokoro desu. Ato juppun omachi kudasai.',
           meaning: {
             en: 'Sorry for the wait. We are on our way now. Please wait another ten minutes.',
@@ -460,7 +460,7 @@ export const n4Lesson46: Lesson = {
       explanationRuby: [],
       examples: [
         {
-          jp: '会議は これから 始める ところ です。',
+          jp: '会議は これから 始める ところです。',
           romaji: 'Kaigi wa korekara hajimeru tokoro desu.',
           meaning: {
             en: 'The meeting is about to start now.',
@@ -473,7 +473,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: '今 電車に 乗っている ところ です。',
+          jp: '今 電車に 乗っている ところです。',
           romaji: 'Ima densha ni notte iru tokoro desu.',
           meaning: {
             en: 'I am getting on the train right now.',
@@ -487,7 +487,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: '原因を 調べている ところ です。',
+          jp: '原因を 調べている ところです。',
           romaji: "Gen'in o shirabete iru tokoro desu.",
           meaning: { en: 'I am checking the cause now.', vi: 'Bây giờ tôi đang xem nguyên nhân.' },
           ruby: [
@@ -497,7 +497,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: 'たった今 帰った ところ です。',
+          jp: 'たった今 帰った ところです。',
           romaji: 'Tattaima kaetta tokoro desu.',
           meaning: { en: 'I just got back.', vi: 'Tôi vừa mới về xong.' },
           ruby: [
@@ -531,7 +531,7 @@ export const n4Lesson46: Lesson = {
       ],
       examples: [
         {
-          jp: '3月に 大学を 卒業した ばかり です。',
+          jp: '3月に 大学を 卒業した ばかりです。',
           romaji: 'Sangatsu ni daigaku o sotsugyō shita bakari desu.',
           meaning: {
             en: 'I just graduated from university in March.',
@@ -599,7 +599,7 @@ export const n4Lesson46: Lesson = {
       ],
       examples: [
         {
-          jp: 'ミラーさんは 会議室に いる はず です。',
+          jp: 'ミラーさんは 会議室に いる はずです。',
           romaji: 'Mirā-san wa kaigishitsu ni iru hazu desu.',
           meaning: {
             en: 'Mr. Miller should be in the meeting room.',
@@ -612,7 +612,7 @@ export const n4Lesson46: Lesson = {
           ]
         },
         {
-          jp: 'さっき 駅から 電話が あった から、もうすぐ 着く はず です。',
+          jp: 'さっき 駅から 電話が あった から、もうすぐ 着く はずです。',
           romaji: 'Sakki eki kara denwa ga atta kara, mōsugu tsuku hazu desu.',
           meaning: {
             en: 'He called from the station earlier, so he should arrive soon.',

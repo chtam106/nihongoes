@@ -507,7 +507,7 @@ export const n4Lesson41: Lesson = {
         },
         {
           speakerId: 'watt',
-          jp: '先生は 整理の 本も くださいました。研究室は いつも きれい ですから、きっと お宅も 素敵 だと 思います。',
+          jp: '先生は 整理の 本も くださいました。研究室は いつも きれいですから、きっと お宅も 素敵 だと 思います。',
           romaji:
             'Sensei wa seiri no hon mo kudasaimashita. Kenkyūshitsu wa itsumo kirei desu kara, kitto o-taku mo suteki da to omoimasu.',
           meaning: {
@@ -576,16 +576,16 @@ export const n4Lesson41: Lesson = {
           ]
         },
         {
-          jp: '母、サルに お菓子を あげて も いいですか。',
-          romaji: 'Haha, saru ni o-kashi o agete mo ii desu ka.',
+          jp: 'お母さん、サルに お菓子を あげても いい？',
+          romaji: 'Okāsan, saru ni o-kashi o agete mo ii?',
           meaning: {
-            en: 'Mom, may I give candy to the monkey?',
-            vi: 'Mẹ ơi, con cho con khỉ kẹo được không?'
+            en: 'Mom, can I give the monkey some candy?',
+            vi: 'Mẹ ơi, con cho khỉ ăn kẹo được không?'
           },
           ruby: [
-            { base: '母', reading: 'はは' },
+            { base: '母', reading: 'かあ' },
             { base: '菓', reading: 'か' },
-            { base: '子', reading: 'こ' }
+            { base: '子', reading: 'し' }
           ]
         }
       ],
@@ -596,15 +596,16 @@ export const n4Lesson41: Lesson = {
         },
         examples: [
           {
-            jp: '……だめよ。あれは 「サルに 食べ物を やっては いけません」 よ。',
-            romaji: '……Dame yo. Are wa 「Saru ni tabemono o yatte wa ikemasen」 yo.',
+            jp: '……だめよ。「サルに 食べ物を やらないで ください」と 書いて あるでしょう。',
+            romaji: '……Dame yo. "Saru ni tabemono o yaranaide kudasai" to kaite aru deshō.',
             meaning: {
-              en: '...No. That sign says "Do not feed the monkeys."',
-              vi: '...Không được. Kia có ghi "Không được cho (khi) ăn" đấy.'
+              en: '...No. It says "Please do not feed the monkeys," see?',
+              vi: '...Không được. Có ghi "Xin đừng cho khỉ ăn" kia kìa.'
             },
             ruby: [
               { base: '食', reading: 'た' },
-              { base: '物', reading: 'もの' }
+              { base: '物', reading: 'もの' },
+              { base: '書', reading: 'か' }
             ]
           }
         ]

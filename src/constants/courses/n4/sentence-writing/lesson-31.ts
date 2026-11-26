@@ -7,23 +7,26 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Let us take a break, then continue.',
-            vi: 'Nghỉ giải lao rồi tiếp tục thôi.'
+            en: 'I am a bit tired. Let us take a break.',
+            vi: 'Hơi mệt rồi nhỉ. Nghỉ giải lao thôi.'
           },
-          jp: '休憩しよう。それから 続けます。',
+          jp: 'ちょっと 疲れたね。休憩しよう。',
           ruby: [
+            { base: '疲', reading: 'つか' },
             { base: '休', reading: 'きゅう' },
-            { base: '憩', reading: 'けい' },
-            { base: '続', reading: 'つづ' }
+            { base: '憩', reading: 'けい' }
           ]
         },
         {
           prompt: {
-            en: 'Let us go to the exhibition.',
-            vi: 'Đi triển lãm thôi.'
+            en: 'Let us go to the exhibition together on Sunday.',
+            vi: 'Chủ nhật mình cùng đi triển lãm nhé.'
           },
-          jp: '展覧会へ 行こう。',
+          jp: '日曜日、いっしょに 展覧会へ 行こうよ。',
           ruby: [
+            { base: '日', reading: 'にち' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
             { base: '展', reading: 'てん' },
             { base: '覧', reading: 'らん' },
             { base: '会', reading: 'かい' },
@@ -32,39 +35,34 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Let us close our eyes for a moment.',
-            vi: 'Nhắm mắt một chút thôi.'
+            en: 'It is late already, so let us head home soon.',
+            vi: 'Muộn rồi, mình về thôi.'
           },
-          jp: 'ちょっと 目を 閉じよう。目を 閉じます。',
+          jp: 'もう 遅いから、そろそろ 帰ろう。',
           ruby: [
-            { base: '目', reading: 'め' },
-            { base: '閉', reading: 'と' },
-            { base: '目', reading: 'め' },
-            { base: '閉', reading: 'と' }
+            { base: '遅', reading: 'おそ' },
+            { base: '帰', reading: 'かえ' }
+          ]
+        },
+        {
+          prompt: { en: 'I am hungry. Let us eat something.', vi: 'Đói bụng rồi nhỉ. Ăn gì đi.' },
+          jp: 'おなかが すいたね。何か 食べよう。',
+          ruby: [
+            { base: '何', reading: 'なに' },
+            { base: '食', reading: 'た' }
           ]
         },
         {
           prompt: {
-            en: 'Let us have the ceremony at the church.',
-            vi: 'Tổ chức lễ ở nhà thờ thôi.'
+            en: 'The weather is nice, so let us walk to the park.',
+            vi: 'Trời đẹp nên mình đi bộ ra công viên nhé.'
           },
-          jp: '教会で 式を しよう。',
+          jp: '天気が いいから、公園まで 歩こう。',
           ruby: [
-            { base: '教', reading: 'きょう' },
-            { base: '会', reading: 'かい' },
-            { base: '式', reading: 'しき' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Let us walk freely in the village.',
-            vi: 'Đi thoải mái trong làng thôi.'
-          },
-          jp: '村で 自由に 歩こう。',
-          ruby: [
-            { base: '村', reading: 'むら' },
-            { base: '自', reading: 'じ' },
-            { base: '由', reading: 'ゆう' },
+            { base: '天', reading: 'てん' },
+            { base: '気', reading: 'き' },
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' },
             { base: '歩', reading: 'ある' }
           ]
         }
@@ -77,9 +75,9 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         {
           prompt: {
             en: 'I am planning to take the graduate-school entrance exam.',
-            vi: 'Tôi định dự kỳ thi đầu vào cao học.'
+            vi: 'Tôi định thi vào cao học.'
           },
-          jp: '大学院の 入学試験を 受けようと 思っています。来月 受けます。',
+          jp: '大学院の 入学試験を 受けようと 思っています。',
           ruby: [
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
@@ -89,10 +87,7 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
             { base: '試', reading: 'し' },
             { base: '験', reading: 'けん' },
             { base: '受', reading: 'う' },
-            { base: '思', reading: 'おも' },
-            { base: '来', reading: 'らい' },
-            { base: '月', reading: 'げつ' },
-            { base: '受', reading: 'う' }
+            { base: '思', reading: 'おも' }
           ]
         },
         {
@@ -113,30 +108,35 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I am planning to stay at the branch office.',
-            vi: 'Tôi định ở lại chi nhánh.'
+            en: 'There is talk of a transfer, but I am planning to stay at my current branch.',
+            vi: 'Có chuyện chuyển công tác, nhưng tôi định ở lại chi nhánh hiện tại.'
           },
-          jp: '支店に 残ろうと 思っています。家族は 残ります。',
+          jp: '転勤の 話が ありますが、今の 支店に 残ろうと 思っています。',
           ruby: [
+            { base: '転', reading: 'てん' },
+            { base: '勤', reading: 'きん' },
+            { base: '話', reading: 'はなし' },
+            { base: '今', reading: 'いま' },
             { base: '支', reading: 'し' },
             { base: '店', reading: 'てん' },
             { base: '残', reading: 'のこ' },
-            { base: '思', reading: 'おも' },
-            { base: '家', reading: 'か' },
-            { base: '族', reading: 'ぞく' },
-            { base: '残', reading: 'のこ' }
+            { base: '思', reading: 'おも' }
           ]
         },
         {
           prompt: {
-            en: 'I am planning to present at the movie theater.',
-            vi: 'Tôi định trình bày ở rạp chiếu phim.'
+            en: "I am planning to present a new plan at next month's meeting.",
+            vi: 'Tôi định trình bày kế hoạch mới trong cuộc họp tháng sau.'
           },
-          jp: '映画館で 発表を しようと 思っています。',
+          jp: '来月の 会議で 新しい 計画を 発表しようと 思っています。',
           ruby: [
-            { base: '映', reading: 'えい' },
-            { base: '画', reading: 'が' },
-            { base: '館', reading: 'かん' },
+            { base: '来', reading: 'らい' },
+            { base: '月', reading: 'げつ' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '新', reading: 'あたら' },
+            { base: '計', reading: 'けい' },
+            { base: '画', reading: 'かく' },
             { base: '発', reading: 'はっ' },
             { base: '表', reading: 'ぴょう' },
             { base: '思', reading: 'おも' }
@@ -144,13 +144,14 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I am planning to go to the zoo in the city.',
-            vi: 'Tôi định đi sở thú ở thành phố.'
+            en: 'I am planning to go to the zoo with my kids this weekend.',
+            vi: 'Cuối tuần tôi định đưa con đi sở thú.'
           },
-          jp: '都会の 動物園へ 行こうと 思っています。',
+          jp: '週末は 子どもと 動物園へ 行こうと 思っています。',
           ruby: [
-            { base: '都', reading: 'と' },
-            { base: '会', reading: 'かい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '子', reading: 'こ' },
             { base: '動', reading: 'どう' },
             { base: '物', reading: 'ぶつ' },
             { base: '園', reading: 'えん' },
@@ -165,51 +166,49 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I intend to take time off and continue the essay.',
-            vi: 'Tôi định xin nghỉ và tiếp tục bài văn.'
+            en: 'I intend to go back to my home country for the summer holidays.',
+            vi: 'Kỳ nghỉ hè tôi định về nước.'
           },
-          jp: '休みを 取ります。作文を 続ける つもりです。',
+          jp: '夏休みは 国へ 帰る つもりです。',
           ruby: [
+            { base: '夏', reading: 'なつ' },
             { base: '休', reading: 'やす' },
-            { base: '取', reading: 'と' },
-            { base: '作', reading: 'さく' },
-            { base: '文', reading: 'ぶん' },
-            { base: '続', reading: 'つづ' }
+            { base: '国', reading: 'くに' },
+            { base: '帰', reading: 'かえ' }
           ]
         },
         {
           prompt: {
-            en: 'I intend to apply at the head office.',
-            vi: 'Tôi định đăng ký tại trụ sở chính.'
+            en: 'Thinking of my family, I intend not to take a transfer.',
+            vi: 'Nghĩ cho gia đình, tôi định không chuyển công tác.'
           },
-          jp: '本社で 申し込みます。転勤しない つもりです。',
+          jp: '家族の ことを 考えて、転勤しない つもりです。',
           ruby: [
-            { base: '本', reading: 'ほん' },
-            { base: '社', reading: 'しゃ' },
-            { base: '申', reading: 'もう' },
-            { base: '込', reading: 'こ' },
+            { base: '家', reading: 'か' },
+            { base: '族', reading: 'ぞく' },
+            { base: '考', reading: 'かんが' },
             { base: '転', reading: 'てん' },
             { base: '勤', reading: 'きん' }
           ]
         },
         {
           prompt: {
-            en: 'I intend not to go to the funeral.',
-            vi: 'Tôi định không đi đám tang.'
+            en: 'I intend to stop smoking starting this year.',
+            vi: 'Từ năm nay tôi định không hút thuốc nữa.'
           },
-          jp: 'お葬式へ 行かない つもりです。',
+          jp: '今年から たばこを 吸わない つもりです。',
           ruby: [
-            { base: '葬', reading: 'そう' },
-            { base: '式', reading: 'しき' },
-            { base: '行', reading: 'い' }
+            { base: '今', reading: 'こ' },
+            { base: '年', reading: 'とし' },
+            { base: '吸', reading: 'す' }
           ]
         },
         {
           prompt: {
-            en: 'I intend to graduate and find a job in the village.',
-            vi: 'Tôi định tốt nghiệp rồi tìm việc ở làng.'
+            en: 'After finishing graduate school, I intend to find a job in my home village.',
+            vi: 'Học xong cao học, tôi định tìm việc ở làng quê mình.'
           },
-          jp: '大学院を 卒業します。村で 仕事を 見つける つもりです。',
+          jp: '大学院を 卒業したら、ふるさとの 村で 仕事を 見つける つもりです。',
           ruby: [
             { base: '大', reading: 'だい' },
             { base: '学', reading: 'がく' },
@@ -224,11 +223,14 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I intend to keep studying the whole time.',
-            vi: 'Tôi định học suốt.'
+            en: 'I intend to keep studying Japanese from now on.',
+            vi: 'Tiếng Nhật thì từ giờ tôi định sẽ học mãi.'
           },
-          jp: 'ずっと 勉強する つもりです。',
+          jp: '日本語は これからも ずっと 勉強する つもりです。',
           ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
             { base: '勉', reading: 'べん' },
             { base: '強', reading: 'きょう' }
           ]
@@ -243,82 +245,79 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
       ],
       items: [
         {
-          prompt: {
-            en: 'The wedding is scheduled at the church.',
-            vi: 'Lễ cưới dự kiến ở nhà thờ.'
-          },
-          jp: '結婚式は 教会の 予定です。',
+          prompt: { en: 'The wedding is planned for June.', vi: 'Đám cưới dự định vào tháng 6.' },
+          jp: '結婚式は 6月の 予定です。',
           ruby: [
             { base: '結', reading: 'けっ' },
             { base: '婚', reading: 'こん' },
             { base: '式', reading: 'しき' },
-            { base: '教', reading: 'きょう' },
-            { base: '会', reading: 'かい' },
+            { base: '月', reading: 'がつ' },
             { base: '予', reading: 'よ' },
             { base: '定', reading: 'てい' }
           ]
         },
         {
           prompt: {
-            en: 'The presentation is scheduled at the movie theater.',
-            vi: 'Buổi trình bày dự kiến ở rạp chiếu phim.'
+            en: 'The presentation is scheduled for next Friday.',
+            vi: 'Buổi thuyết trình dự kiến vào thứ Sáu tuần sau.'
           },
-          jp: '発表は 映画館の 予定です。',
+          jp: '発表は 来週の 金曜日の 予定です。',
           ruby: [
             { base: '発', reading: 'はっ' },
             { base: '表', reading: 'ぴょう' },
-            { base: '映', reading: 'えい' },
-            { base: '画', reading: 'が' },
-            { base: '館', reading: 'かん' },
+            { base: '来', reading: 'らい' },
+            { base: '週', reading: 'しゅう' },
+            { base: '金', reading: 'きん' },
+            { base: '曜', reading: 'よう' },
+            { base: '日', reading: 'び' },
             { base: '予', reading: 'よ' },
             { base: '定', reading: 'てい' }
           ]
         },
         {
           prompt: {
-            en: 'I am scheduled to go to the exhibition once a month.',
-            vi: 'Tôi dự kiến mỗi tháng đi triển lãm một lần.'
+            en: 'I am scheduled to go on a business trip to the Osaka branch next month.',
+            vi: 'Tháng sau tôi dự định đi công tác ở chi nhánh Osaka.'
           },
-          jp: '月に 一度 展覧会へ 行く 予定です。',
+          jp: '来月 大阪の 支店へ 出張する 予定です。',
           ruby: [
-            { base: '月', reading: 'つき' },
-            { base: '一', reading: 'いち' },
-            { base: '度', reading: 'ど' },
-            { base: '展', reading: 'てん' },
-            { base: '覧', reading: 'らん' },
-            { base: '会', reading: 'かい' },
-            { base: '行', reading: 'い' },
+            { base: '来', reading: 'らい' },
+            { base: '月', reading: 'げつ' },
+            { base: '大', reading: 'おお' },
+            { base: '阪', reading: 'さか' },
+            { base: '支', reading: 'し' },
+            { base: '店', reading: 'てん' },
+            { base: '出', reading: 'しゅっ' },
+            { base: '張', reading: 'ちょう' },
             { base: '予', reading: 'よ' },
             { base: '定', reading: 'てい' }
           ]
         },
         {
           prompt: {
-            en: 'The return trip is scheduled on the Nozomi 12 service.',
-            vi: 'Chiều về dự kiến tàu Nozomi số 12.'
+            en: 'On the way back I am scheduled to take the Nozomi 12.',
+            vi: 'Chiều về tôi dự định đi chuyến Nozomi số 12.'
           },
-          jp: '帰りは のぞみ12～号の 予定です。新神戸～の 方です。',
+          jp: '帰りは のぞみ12号に 乗る 予定です。',
           ruby: [
             { base: '帰', reading: 'かえ' },
             { base: '号', reading: 'ごう' },
+            { base: '乗', reading: 'の' },
             { base: '予', reading: 'よ' },
-            { base: '定', reading: 'てい' },
-            { base: '新', reading: 'しん' },
-            { base: '神', reading: 'こう' },
-            { base: '戸', reading: 'べ' },
-            { base: '方', reading: 'ほう' }
+            { base: '定', reading: 'てい' }
           ]
         },
         {
           prompt: {
-            en: 'The funeral is scheduled in the village.',
-            vi: 'Đám tang dự kiến ở làng.'
+            en: 'The meeting is scheduled to end at three.',
+            vi: 'Cuộc họp dự kiến kết thúc lúc 3 giờ.'
           },
-          jp: 'お葬式は 村の 予定です。',
+          jp: '会議は 3時に 終わる 予定です。',
           ruby: [
-            { base: '葬', reading: 'そう' },
-            { base: '式', reading: 'しき' },
-            { base: '村', reading: 'むら' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '時', reading: 'じ' },
+            { base: '終', reading: 'お' },
             { base: '予', reading: 'よ' },
             { base: '定', reading: 'てい' }
           ]
@@ -342,14 +341,12 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I have not found a job yet.',
-            vi: 'Tôi chưa tìm được việc.'
+            en: 'I have not found a new apartment yet.',
+            vi: 'Tôi vẫn chưa tìm được căn hộ mới.'
           },
-          jp: '仕事は まだ 見つけて いません。あした 見つけます。',
+          jp: '新しい アパートは まだ 見つけて いません。',
           ruby: [
-            { base: '仕', reading: 'し' },
-            { base: '事', reading: 'ごと' },
-            { base: '見', reading: 'み' },
+            { base: '新', reading: 'あたら' },
             { base: '見', reading: 'み' }
           ]
         },
@@ -376,17 +373,12 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'The children have not gone to the zoo yet.',
-            vi: 'Các con chưa đi sở thú.'
-          },
-          jp: 'お子さんは まだ 動物園へ 行って いません。',
+          prompt: { en: 'I have not had lunch yet.', vi: 'Tôi vẫn chưa ăn trưa.' },
+          jp: '昼ご飯は まだ 食べて いません。',
           ruby: [
-            { base: '子', reading: 'こ' },
-            { base: '動', reading: 'どう' },
-            { base: '物', reading: 'ぶつ' },
-            { base: '園', reading: 'えん' },
-            { base: '行', reading: 'い' }
+            { base: '昼', reading: 'ひる' },
+            { base: '飯', reading: 'はん' },
+            { base: '食', reading: 'た' }
           ]
         }
       ]
@@ -396,24 +388,21 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I take a break on the return train.',
-            vi: 'Tôi nghỉ giải lao trên tàu chiều về.'
+            en: 'I slept a little on the train home.',
+            vi: 'Tôi ngủ một chút trên chuyến tàu về.'
           },
-          jp: '帰りの 電車で 休憩します。',
+          jp: '帰りの 電車で 少し 寝ました。',
           ruby: [
             { base: '帰', reading: 'かえ' },
             { base: '電', reading: 'でん' },
             { base: '車', reading: 'しゃ' },
-            { base: '休', reading: 'きゅう' },
-            { base: '憩', reading: 'けい' }
+            { base: '少', reading: 'すこ' },
+            { base: '寝', reading: 'ね' }
           ]
         },
         {
-          prompt: {
-            en: 'Where is the application?',
-            vi: 'Đơn đăng ký ở đâu?'
-          },
-          jp: '申し込みは どこですか。',
+          prompt: { en: 'Where do I sign up for the seminar?', vi: 'Đăng ký hội thảo ở đâu ạ?' },
+          jp: 'セミナーの 申し込みは どこで しますか。',
           ruby: [
             { base: '申', reading: 'もう' },
             { base: '込', reading: 'こ' }
@@ -421,37 +410,42 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'The return trip is toward Shin-Kobe.',
-            vi: 'Chiều về về phía Shin-Kobe.'
+            en: 'We go there by bus and come back by train.',
+            vi: 'Lượt đi bằng xe buýt, lượt về bằng tàu điện.'
           },
-          jp: '帰りは しんこうべ～の 方です。',
+          jp: '行きは バスで、帰りは 電車です。',
           ruby: [
+            { base: '行', reading: 'い' },
             { base: '帰', reading: 'かえ' },
-            { base: '方', reading: 'ほう' }
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' }
           ]
         },
         {
           prompt: {
-            en: 'I enjoy the rest on consecutive holidays.',
-            vi: 'Tôi tận hưởng kỳ nghỉ trong ngày nghỉ liền.'
+            en: 'What do you usually do on your days off?',
+            vi: 'Ngày nghỉ anh thường làm gì?'
           },
-          jp: '連休の 休みは 楽しいです。',
+          jp: '休みの 日は いつも 何を して いますか。',
           ruby: [
-            { base: '連', reading: 'れん' },
-            { base: '休', reading: 'きゅう' },
             { base: '休', reading: 'やす' },
-            { base: '楽', reading: 'たの' }
+            { base: '日', reading: 'ひ' },
+            { base: '何', reading: 'なに' }
           ]
         },
         {
           prompt: {
-            en: 'The return Nozomi is number 3.',
-            vi: 'Tàu Nozomi chiều về là số 3.'
+            en: 'What time is the shinkansen on the way back?',
+            vi: 'Chuyến Shinkansen chiều về lúc mấy giờ?'
           },
-          jp: '帰りの のぞみは 3～号です。',
+          jp: '帰りの 新幹線は 何時ですか。',
           ruby: [
             { base: '帰', reading: 'かえ' },
-            { base: '号', reading: 'ごう' }
+            { base: '新', reading: 'しん' },
+            { base: '幹', reading: 'かん' },
+            { base: '線', reading: 'せん' },
+            { base: '何', reading: 'なん' },
+            { base: '時', reading: 'じ' }
           ]
         }
       ]

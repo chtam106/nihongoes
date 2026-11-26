@@ -22,63 +22,65 @@ export const n4Lesson48SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I let the children enjoy the trip freely.',
-            vi: 'Tôi để trẻ con tự do tận hưởng chuyến đi.'
+            en: 'I let the children play freely in the park.',
+            vi: 'Tôi cho bọn trẻ tự do chơi trong công viên.'
           },
-          jp: '子どもは 旅行を 楽しみます。子どもを 自由に 楽しませます。',
+          jp: '子どもたちを 公園で 自由に 遊ばせます。',
           ruby: [
             { base: '子', reading: 'こ' },
-            { base: '旅', reading: 'りょ' },
-            { base: '行', reading: 'こう' },
-            { base: '楽', reading: 'たの' },
-            { base: '子', reading: 'こ' },
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' },
             { base: '自', reading: 'じ' },
             { base: '由', reading: 'ゆう' },
-            { base: '楽', reading: 'たの' }
+            { base: '遊', reading: 'あそ' }
           ]
         },
         {
           prompt: {
             en: 'The teacher makes the pupils practice calligraphy.',
-            vi: 'Giáo viên bắt học sinh luyện chữ bút lông.'
+            vi: 'Thầy giáo bắt học sinh luyện viết thư pháp.'
           },
-          jp: '先生は 生徒に 習字を れんしゅうさせます。',
+          jp: '先生は 生徒に 習字を 練習させます。',
           ruby: [
             { base: '先', reading: 'せん' },
             { base: '生', reading: 'せい' },
             { base: '生', reading: 'せい' },
             { base: '徒', reading: 'と' },
             { base: '習', reading: 'しゅう' },
-            { base: '字', reading: 'じ' }
+            { base: '字', reading: 'じ' },
+            { base: '練', reading: 'れん' },
+            { base: '習', reading: 'しゅう' }
           ]
         },
         {
           prompt: {
-            en: 'I record the class. I make the students record it too.',
-            vi: 'Tôi ghi âm lớp. Tôi cũng bắt học sinh ghi âm.'
+            en: 'My mother makes the children eat vegetables every day.',
+            vi: 'Mẹ bắt bọn trẻ ăn rau mỗi ngày.'
           },
-          jp: '授業を 録音します。生徒にも 録音させます。',
+          jp: '母は 子どもに 毎日 野菜を 食べさせます。',
           ruby: [
-            { base: '授', reading: 'じゅ' },
-            { base: '業', reading: 'ぎょう' },
-            { base: '録', reading: 'ろく' },
-            { base: '音', reading: 'おん' },
-            { base: '生', reading: 'せい' },
-            { base: '徒', reading: 'と' },
-            { base: '録', reading: 'ろく' },
-            { base: '音', reading: 'おん' }
+            { base: '母', reading: 'はは' },
+            { base: '子', reading: 'こ' },
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
+            { base: '野', reading: 'や' },
+            { base: '菜', reading: 'さい' },
+            { base: '食', reading: 'た' }
           ]
         },
         {
           prompt: {
-            en: 'I unload the boxes. I make my son unload them.',
-            vi: 'Tôi dỡ thùng. Tôi bắt con trai dỡ thùng.'
+            en: 'I had my son carry the heavy luggage.',
+            vi: 'Tôi bảo con trai khiêng đồ nặng.'
           },
-          jp: '箱を 降ろします。むすこにも 降ろさせます。',
+          jp: '息子に 重い 荷物を 運ばせました。',
           ruby: [
-            { base: '箱', reading: 'はこ' },
-            { base: '降', reading: 'お' },
-            { base: '降', reading: 'お' }
+            { base: '息', reading: 'むす' },
+            { base: '子', reading: 'こ' },
+            { base: '重', reading: 'おも' },
+            { base: '荷', reading: 'に' },
+            { base: '物', reading: 'もつ' },
+            { base: '運', reading: 'はこ' }
           ]
         }
       ]
@@ -88,89 +90,92 @@ export const n4Lesson48SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The teacher has the pupil deliver the file.',
-            vi: 'Giáo viên sai học sinh mang file đến.'
+            en: 'The teacher had a pupil take the file to the staff room.',
+            vi: 'Thầy giáo bảo học sinh mang tập tài liệu lên phòng giáo viên.'
           },
-          jp: '生徒は ファイルを 届けます。先生は 生徒に ファイルを 届けさせます。',
+          jp: '先生は 生徒に ファイルを 職員室へ 届けさせました。',
           ruby: [
-            { base: '生', reading: 'せい' },
-            { base: '徒', reading: 'と' },
-            { base: '届', reading: 'とど' },
             { base: '先', reading: 'せん' },
             { base: '生', reading: 'せい' },
             { base: '生', reading: 'せい' },
             { base: '徒', reading: 'と' },
+            { base: '職', reading: 'しょく' },
+            { base: '員', reading: 'いん' },
+            { base: '室', reading: 'しつ' },
             { base: '届', reading: 'とど' }
           ]
         },
         {
           prompt: {
-            en: 'Parents make children do unpleasant homework.',
-            vi: 'Bố mẹ bắt con làm bài tập mà chúng không thích.'
+            en: 'The parents make their child do homework before dinner.',
+            vi: 'Bố mẹ bắt con làm bài tập trước bữa tối.'
           },
-          jp: '親は 子どもに 嫌な しゅくだいを させます。',
+          jp: '親は 子どもに 夕食の 前に 宿題を させます。',
           ruby: [
             { base: '親', reading: 'おや' },
             { base: '子', reading: 'こ' },
-            { base: '嫌', reading: 'いや' }
+            { base: '夕', reading: 'ゆう' },
+            { base: '食', reading: 'しょく' },
+            { base: '前', reading: 'まえ' },
+            { base: '宿', reading: 'しゅく' },
+            { base: '題', reading: 'だい' }
           ]
         },
         {
           prompt: {
-            en: 'Mother has her daughter take care of her little brother.',
-            vi: 'Mẹ sai con gái chăm sóc em trai.'
+            en: 'My mother has my sister look after our little brother.',
+            vi: 'Mẹ bảo chị gái trông em trai.'
           },
-          jp: '母は 娘に 弟の 世話を します。世話を させます。',
+          jp: '母は 娘に 弟の 世話を させます。',
           ruby: [
             { base: '母', reading: 'はは' },
             { base: '娘', reading: 'むすめ' },
             { base: '弟', reading: 'おとうと' },
-            { base: '世', reading: 'せ' },
-            { base: '話', reading: 'わ' },
             { base: '世', reading: 'せ' },
             { base: '話', reading: 'わ' }
           ]
         },
         {
           prompt: {
-            en: 'The sales manager makes staff work for ten days.',
-            vi: 'Trưởng phòng kinh doanh bắt nhân viên làm trong 10 ngày.'
+            en: 'The manager makes the staff work late every night.',
+            vi: 'Trưởng phòng bắt nhân viên làm việc đến khuya mỗi tối.'
           },
-          jp: '営業の 部長は 社員を 10日間 はたらかせます。',
+          jp: '部長は 社員を 毎晩 遅くまで 働かせます。',
           ruby: [
-            { base: '営', reading: 'えい' },
-            { base: '業', reading: 'ぎょう' },
             { base: '部', reading: 'ぶ' },
             { base: '長', reading: 'ちょう' },
             { base: '社', reading: 'しゃ' },
             { base: '員', reading: 'いん' },
-            { base: '日', reading: 'にち' },
-            { base: '間', reading: 'かん' }
+            { base: '毎', reading: 'まい' },
+            { base: '晩', reading: 'ばん' },
+            { base: '遅', reading: 'おそ' },
+            { base: '働', reading: 'はたら' }
           ]
         },
         {
           prompt: {
-            en: 'After that, I let them write ordinary letters.',
-            vi: 'Tiếp theo đó, tôi cho các em viết chữ thông thường.'
+            en: 'The teacher had the pupils write an essay.',
+            vi: 'Thầy giáo cho học sinh viết bài văn.'
           },
-          jp: 'その次は 生徒に 普通の 字を かかせます。',
+          jp: '先生は 生徒に 作文を 書かせました。',
           ruby: [
-            { base: '次', reading: 'つぎ' },
+            { base: '先', reading: 'せん' },
+            { base: '生', reading: 'せい' },
             { base: '生', reading: 'せい' },
             { base: '徒', reading: 'と' },
-            { base: '普', reading: 'ふ' },
-            { base: '通', reading: 'つう' },
-            { base: '字', reading: 'じ' }
+            { base: '作', reading: 'さく' },
+            { base: '文', reading: 'ぶん' },
+            { base: '書', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'About 80 percent of parents make children go to cram school.',
-            vi: 'Khoảng 80 phần trăm bố mẹ cho con đi học thêm.'
+            en: 'Many parents send their children to cram school.',
+            vi: 'Nhiều bố mẹ cho con đi học thêm.'
           },
-          jp: '約80パーセントの 親が 子どもを 塾へ 通わせます。',
+          jp: '多くの 親が 子どもを 塾へ 通わせています。',
           ruby: [
-            { base: '約', reading: 'やく' },
+            { base: '多', reading: 'おお' },
             { base: '親', reading: 'おや' },
             { base: '子', reading: 'こ' },
             { base: '塾', reading: 'じゅく' },
@@ -184,15 +189,17 @@ export const n4Lesson48SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'May I take ten days off? I will be back by then.',
-            vi: 'Cho tôi xin nghỉ 10 ngày được không? Tôi sẽ về trước lúc đó.'
+            en: 'My mother is in the hospital. Could you let me take three days off?',
+            vi: 'Mẹ tôi nằm viện, cho phép tôi nghỉ ba ngày được không ạ?'
           },
-          jp: '10日間 休ませて いただけませんか。それまでに 帰ります。',
+          jp: '母が 入院したので、3日間 休ませて いただけませんか。',
           ruby: [
-            { base: '日', reading: 'にち' },
+            { base: '母', reading: 'はは' },
+            { base: '入', reading: 'にゅう' },
+            { base: '院', reading: 'いん' },
+            { base: '日', reading: 'みっか' },
             { base: '間', reading: 'かん' },
-            { base: '休', reading: 'やす' },
-            { base: '帰', reading: 'かえ' }
+            { base: '休', reading: 'やす' }
           ]
         },
         {
@@ -209,38 +216,32 @@ export const n4Lesson48SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'May I deliver this file to the sales desk?',
-            vi: 'Cho tôi mang file này đến ban kinh doanh được không?'
-          },
-          jp: 'この ファイルを 営業に 届けさせて いただけませんか。',
+          prompt: { en: 'Could you let me do that job?', vi: 'Việc đó để tôi làm được không ạ?' },
+          jp: 'その 仕事、私に やらせて いただけませんか。',
           ruby: [
-            { base: '営', reading: 'えい' },
-            { base: '業', reading: 'ぎょう' },
-            { base: '届', reading: 'とど' }
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
+            { base: '私', reading: 'わたし' }
           ]
         },
         {
           prompt: {
-            en: 'May I enjoy a short break?',
-            vi: 'Cho tôi tận hưởng một lúc nghỉ ngắn được không?'
+            en: 'Excuse me, may I use your phone?',
+            vi: 'Xin lỗi, cho tôi dùng nhờ điện thoại được không ạ?'
           },
-          jp: '少し 休みを 楽しませて いただけませんか。',
+          jp: 'すみませんが、電話を 使わせて いただけませんか。',
           ruby: [
-            { base: '少', reading: 'すこ' },
-            { base: '休', reading: 'やす' },
-            { base: '楽', reading: 'たの' }
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' },
+            { base: '使', reading: 'つか' }
           ]
         },
         {
-          prompt: {
-            en: 'May I unload the boxes here?',
-            vi: 'Cho tôi dỡ thùng ở đây được không?'
-          },
-          jp: 'ここに 箱を 降ろさせて いただけませんか。',
+          prompt: { en: 'May I park my car here?', vi: 'Cho tôi đỗ xe ở đây được không ạ?' },
+          jp: 'ここに 車を 止めさせて いただけませんか。',
           ruby: [
-            { base: '箱', reading: 'はこ' },
-            { base: '降', reading: 'お' }
+            { base: '車', reading: 'くるま' },
+            { base: '止', reading: 'と' }
           ]
         }
       ]
@@ -252,7 +253,7 @@ export const n4Lesson48SentenceWriting: LessonSentenceWriting = {
         en: 'Are you busy? (polite, to a superior)',
         vi: 'Anh chị có bận không ạ?'
       },
-      jp: 'お忙しい ですか。',
+      jp: 'お忙しいですか。',
       ruby: [{ base: '忙', reading: 'いそが' }]
     },
     {

@@ -399,7 +399,7 @@ export const n5Lesson13: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '天ぷら定食と 牛どん ですね。少々 お待ちください。',
+          jp: '天ぷら定食と 牛どんですね。少々 お待ちください。',
           romaji: 'Tenpura teishoku to gyūdon desu ne. Shōshō omachi kudasai.',
           meaning: {
             en: 'One tempura set and one beef bowl. Please wait a moment.',
@@ -417,7 +417,7 @@ export const n5Lesson13: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: '1,680円 です。',
+          jp: '1,680円です。',
           romaji: 'Sen roppyaku hachi-jū en desu.',
           meaning: { en: 'That is 1,680 yen.', vi: 'Hết 1.680 yen ạ.' },
           ruby: [{ base: '円', reading: 'えん' }]
@@ -438,7 +438,7 @@ export const n5Lesson13: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: 'はい。天ぷら定食は 980円、牛どんは 700円 です。',
+          jp: 'はい。天ぷら定食は 980円、牛どんは 700円です。',
           romaji: 'Hai. Tenpura teishoku wa kyū-hyaku hachi-jū en, gyūdon wa nana-hyaku en desu.',
           meaning: {
             en: 'Certainly. The tempura set is 980 yen; the beef bowl is 700 yen.',

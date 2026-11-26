@@ -7,66 +7,65 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'You should exercise every day.',
-            vi: 'Nên vận động mỗi ngày.'
+            en: 'You should get a little exercise every day.',
+            vi: 'Mỗi ngày nên vận động một chút.'
           },
-          jp: '毎日 運動した ほうが いいです。運動します。',
+          jp: '毎日 少し 運動した ほうが いいですよ。',
           ruby: [
             { base: '毎', reading: 'まい' },
             { base: '日', reading: 'にち' },
-            { base: '運', reading: 'うん' },
-            { base: '動', reading: 'どう' },
+            { base: '少', reading: 'すこ' },
             { base: '運', reading: 'うん' },
             { base: '動', reading: 'どう' }
           ]
         },
         {
           prompt: {
-            en: 'You should not overdo it.',
-            vi: 'Không nên gắng sức quá.'
+            en: 'You have a fever, so you had better not push yourself today.',
+            vi: 'Anh đang sốt, hôm nay đừng cố quá thì hơn.'
           },
-          jp: '無理を しない ほうが いいです。無理をします。',
+          jp: '熱が ありますから、今日は 無理を しない ほうが いいですよ。',
           ruby: [
-            { base: '無', reading: 'む' },
-            { base: '理', reading: 'り' },
+            { base: '熱', reading: 'ねつ' },
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
             { base: '無', reading: 'む' },
             { base: '理', reading: 'り' }
           ]
         },
         {
           prompt: {
-            en: 'You should cool your stomach.',
-            vi: 'Nên làm mát dạ dày.'
+            en: 'When you have a fever, you should cool your head.',
+            vi: 'Khi bị sốt thì nên chườm lạnh đầu.'
           },
-          jp: '胃を 冷やした ほうが いいです。冷やします。',
+          jp: '熱が ある ときは、頭を 冷やした ほうが いいです。',
           ruby: [
-            { base: '胃', reading: 'い' },
-            { base: '冷', reading: 'ひ' },
+            { base: '熱', reading: 'ねつ' },
+            { base: '頭', reading: 'あたま' },
             { base: '冷', reading: 'ひ' }
           ]
         },
         {
           prompt: {
-            en: 'You should not catch a cold.',
-            vi: 'Không nên để bị cảm.'
+            en: 'It is cold outside, so you should wear a coat.',
+            vi: 'Bên ngoài lạnh, nên mặc áo khoác vào.'
           },
-          jp: '風邪を ひかない ほうが いいです。風邪を ひきます。',
+          jp: '外は 寒いですから、コートを 着た ほうが いいですよ。',
           ruby: [
-            { base: '風', reading: 'か' },
-            { base: '邪', reading: 'ぜ' },
-            { base: '風', reading: 'か' },
-            { base: '邪', reading: 'ぜ' }
+            { base: '外', reading: 'そと' },
+            { base: '寒', reading: 'さむ' },
+            { base: '着', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'You should see a doctor if you have a cough.',
-            vi: 'Nếu ho thì nên gặp bác sĩ.'
+            en: 'Your cough is bad, so you should go to the hospital.',
+            vi: 'Ho nặng thế thì nên đi đến bệnh viện.'
           },
-          jp: 'せきが あるから、先生に 行った ほうが いいです。',
+          jp: 'せきが ひどいですから、病院へ 行った ほうが いいですよ。',
           ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '生', reading: 'せい' },
+            { base: '病', reading: 'びょう' },
+            { base: '院', reading: 'いん' },
             { base: '行', reading: 'い' }
           ]
         }
@@ -77,88 +76,78 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'It will probably clear up tonight.',
-            vi: 'Tối nay chắc trời nắng.'
+            en: 'The rain will stop tonight, and it will probably be sunny tomorrow.',
+            vi: 'Tối nay tạnh mưa, ngày mai có lẽ trời nắng.'
           },
-          jp: '今夜は 晴れるでしょう。空に 太陽が 出ます。あしたは 晴れます。',
+          jp: '今夜 雨が やんで、あしたは 晴れるでしょう。',
           ruby: [
             { base: '今', reading: 'こん' },
             { base: '夜', reading: 'や' },
-            { base: '晴', reading: 'は' },
-            { base: '空', reading: 'そら' },
-            { base: '太', reading: 'たい' },
-            { base: '陽', reading: 'よう' },
-            { base: '出', reading: 'で' },
+            { base: '雨', reading: 'あめ' },
             { base: '晴', reading: 'は' }
           ]
         },
         {
           prompt: {
-            en: 'It will probably become cloudy, then the rain will stop.',
-            vi: 'Chắc trời nhiều mây, rồi mưa sẽ tạnh.'
+            en: 'It will probably turn cloudy in the afternoon.',
+            vi: 'Từ chiều trời có lẽ sẽ nhiều mây.'
           },
-          jp: '曇るでしょう。空が 曇ります。それから 雨が やみます。',
+          jp: '午後から 曇るでしょう。',
           ruby: [
-            { base: '曇', reading: 'くも' },
-            { base: '空', reading: 'そら' },
-            { base: '曇', reading: 'くも' },
-            { base: '雨', reading: 'あめ' }
+            { base: '午', reading: 'ご' },
+            { base: '後', reading: 'ご' },
+            { base: '曇', reading: 'くも' }
           ]
         },
         {
           prompt: {
-            en: 'The team will probably succeed.',
-            vi: 'Đội chắc sẽ thành công.'
+            en: 'That team is strong, so it will surely win.',
+            vi: 'Đội đó mạnh nên chắc chắn sẽ thắng.'
           },
-          jp: 'チームは 成功するでしょう。成功します。',
+          jp: 'あの チームは 強いですから、きっと 勝つでしょう。',
           ruby: [
-            { base: '成', reading: 'せい' },
-            { base: '功', reading: 'こう' },
-            { base: '成', reading: 'せい' },
-            { base: '功', reading: 'こう' }
+            { base: '強', reading: 'つよ' },
+            { base: '勝', reading: 'か' }
           ]
         },
         {
           prompt: {
-            en: 'He will probably fail the exam.',
-            vi: 'Anh ấy chắc sẽ trượt kỳ thi.'
+            en: 'The roads are this crowded, so we will probably be late for the meeting.',
+            vi: 'Đường đông thế này chắc sẽ trễ họp mất.'
           },
-          jp: '試験に 失敗するでしょう。失敗します。',
+          jp: '道が こんなに 込んでいますから、会議に 遅れるでしょう。',
           ruby: [
-            { base: '試', reading: 'し' },
-            { base: '験', reading: 'けん' },
-            { base: '失', reading: 'しっ' },
-            { base: '敗', reading: 'ぱい' },
-            { base: '失', reading: 'しっ' },
-            { base: '敗', reading: 'ぱい' }
+            { base: '道', reading: 'みち' },
+            { base: '込', reading: 'こ' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '遅', reading: 'おく' }
           ]
         },
         {
           prompt: {
-            en: 'She will probably pass.',
-            vi: 'Cô ấy chắc sẽ đỗ.'
+            en: 'You studied hard, so you will surely pass.',
+            vi: 'Anh đã học chăm như vậy thì chắc chắn sẽ đỗ.'
           },
-          jp: '合格するでしょう。合格します。',
+          jp: 'よく 勉強しましたから、きっと 合格するでしょう。',
           ruby: [
-            { base: '合', reading: 'ごう' },
-            { base: '格', reading: 'かく' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' },
             { base: '合', reading: 'ごう' },
             { base: '格', reading: 'かく' }
           ]
         },
         {
           prompt: {
-            en: 'The fever will probably continue until evening.',
-            vi: 'Sốt chắc còn đến chiều tối.'
+            en: 'You took the medicine, so your fever will probably go down by tomorrow.',
+            vi: 'Đã uống thuốc rồi nên đến mai chắc sẽ hạ sốt.'
           },
-          jp: '熱は 夕方まで 続くでしょう。熱が 続きます。',
+          jp: '薬を 飲みましたから、熱は あしたには 下がるでしょう。',
           ruby: [
+            { base: '薬', reading: 'くすり' },
+            { base: '飲', reading: 'の' },
             { base: '熱', reading: 'ねつ' },
-            { base: '夕', reading: 'ゆう' },
-            { base: '方', reading: 'がた' },
-            { base: '続', reading: 'つづ' },
-            { base: '熱', reading: 'ねつ' },
-            { base: '続', reading: 'つづ' }
+            { base: '下', reading: 'さ' }
           ]
         }
       ]
@@ -168,78 +157,79 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'The road might be crowded.',
-            vi: 'Đường có thể đông.'
+            en: 'It is a long weekend, so the roads might be crowded.',
+            vi: 'Đang kỳ nghỉ dài nên đường có thể đông.'
           },
-          jp: '道が 込むかも しれません。道が 込みます。',
+          jp: '連休ですから、道が 込むかもしれません。',
           ruby: [
-            { base: '道', reading: 'みち' },
-            { base: '込', reading: 'こ' },
+            { base: '連', reading: 'れん' },
+            { base: '休', reading: 'きゅう' },
             { base: '道', reading: 'みち' },
             { base: '込', reading: 'こ' }
           ]
         },
         {
-          prompt: {
-            en: 'The road might be empty later.',
-            vi: 'Lát nữa đường có thể vắng.'
-          },
-          jp: '道が すくかも しれません。夜は すきます。',
+          prompt: { en: 'The roads might be empty at night.', vi: 'Buổi tối đường có lẽ vắng.' },
+          jp: '夜は 道が すいているかもしれません。',
           ruby: [
-            { base: '道', reading: 'みち' },
-            { base: '夜', reading: 'よる' }
+            { base: '夜', reading: 'よる' },
+            { base: '道', reading: 'みち' }
           ]
         },
         {
           prompt: {
-            en: 'The engine sound might be strange.',
-            vi: 'Tiếng động cơ có thể lạ.'
+            en: 'The engine sounds strange. It might be broken.',
+            vi: 'Tiếng động cơ lạ quá. Có thể bị hỏng rồi.'
           },
-          jp: 'エンジンの 音が おかしいかも しれません。',
-          ruby: [{ base: '音', reading: 'おと' }]
-        },
-        {
-          prompt: {
-            en: 'You might get a burn or an injury.',
-            vi: 'Có thể bị bỏng hoặc thương.'
-          },
-          jp: 'やけどや けがを するかも しれません。'
-        },
-        {
-          prompt: {
-            en: 'You might catch the flu because of the west wind.',
-            vi: 'Gió tây có thể làm tôi bị cúm.'
-          },
-          jp: '西の 風で インフルエンザに なるかも しれません。',
+          jp: 'エンジンの 音が 変です。故障かもしれません。',
           ruby: [
-            { base: '西', reading: 'にし' },
-            { base: '風', reading: 'かぜ' }
+            { base: '音', reading: 'おと' },
+            { base: '変', reading: 'へん' },
+            { base: '故', reading: 'こ' },
+            { base: '障', reading: 'しょう' }
           ]
         },
         {
           prompt: {
-            en: 'The lottery might win.',
-            vi: 'Vé số có thể trúng.'
+            en: 'You might burn yourself, so please be careful.',
+            vi: 'Có thể bị bỏng đấy, cẩn thận nhé.'
           },
-          jp: '宝くじが 当たるかも しれません。宝くじが 当たります。',
+          jp: 'やけどを するかもしれませんから、気を つけて ください。',
+          ruby: [{ base: '気', reading: 'き' }]
+        },
+        {
+          prompt: {
+            en: 'Your fever is high. It might be the flu.',
+            vi: 'Sốt cao quá nhỉ. Có thể là cúm.'
+          },
+          jp: '熱が 高いですね。インフルエンザかもしれません。',
+          ruby: [
+            { base: '熱', reading: 'ねつ' },
+            { base: '高', reading: 'たか' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I bought a lottery ticket. I might win.',
+            vi: 'Tôi đã mua vé số. Biết đâu lại trúng.'
+          },
+          jp: '宝くじを 買いました。当たるかもしれません。',
           ruby: [
             { base: '宝', reading: 'たから' },
-            { base: '当', reading: 'あ' },
-            { base: '宝', reading: 'たから' },
+            { base: '買', reading: 'か' },
             { base: '当', reading: 'あ' }
           ]
         },
         {
           prompt: {
-            en: 'Stress might trouble your health.',
-            vi: 'Căng thẳng có thể làm sức khỏe khó khăn.'
+            en: 'If you are under a lot of stress, you might get sick.',
+            vi: 'Nếu căng thẳng nhiều thì có thể sinh bệnh.'
           },
-          jp: 'ストレスで 健康が 困るかも しれません。困ります。',
+          jp: 'ストレスが 多いと、病気に なるかもしれません。',
           ruby: [
-            { base: '健', reading: 'けん' },
-            { base: '康', reading: 'こう' },
-            { base: '困', reading: 'こま' },
-            { base: '困', reading: 'こま' }
+            { base: '多', reading: 'おお' },
+            { base: '病', reading: 'びょう' },
+            { base: '気', reading: 'き' }
           ]
         }
       ]
@@ -249,66 +239,66 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Let us attend the international match.',
-            vi: 'Hãy tham gia trận quốc tế.'
+            en: 'Let us all enter the international match.',
+            vi: 'Cả đội cùng tham gia trận đấu quốc tế nhé.'
           },
-          jp: '国際～試合に 出ましょう。チームに 出ます。',
+          jp: 'みんなで 国際試合に 出ましょう。',
           ruby: [
             { base: '国', reading: 'こく' },
             { base: '際', reading: 'さい' },
             { base: '試', reading: 'し' },
             { base: '合', reading: 'あい' },
-            { base: '出', reading: 'で' },
             { base: '出', reading: 'で' }
           ]
         },
         {
           prompt: {
-            en: 'Let us drink enough tap water.',
-            vi: 'Hãy uống đủ nước máy.'
+            en: 'On hot days, let us drink plenty of water.',
+            vi: 'Ngày nóng hãy uống đủ nước nhé.'
           },
-          jp: '十分に 水道を 飲みましょう。',
+          jp: '暑い 日は 水を 十分に 飲みましょう。',
           ruby: [
+            { base: '暑', reading: 'あつ' },
+            { base: '日', reading: 'ひ' },
+            { base: '水', reading: 'みず' },
             { base: '十', reading: 'じゅう' },
             { base: '分', reading: 'ぶん' },
-            { base: '水', reading: 'すい' },
-            { base: '道', reading: 'どう' },
             { base: '飲', reading: 'の' }
           ]
         },
         {
           prompt: {
-            en: 'Let us look at the stars in the north.',
-            vi: 'Hãy nhìn sao ở phía bắc.'
+            en: 'The stars are beautiful tonight. Let us look at them outside.',
+            vi: 'Tối nay sao đẹp quá. Mình ra ngoài ngắm nhé.'
           },
-          jp: '北の 星を 見ましょう。',
+          jp: '今夜は 星が きれいですね。外で 見ましょう。',
           ruby: [
-            { base: '北', reading: 'きた' },
+            { base: '今', reading: 'こん' },
+            { base: '夜', reading: 'や' },
             { base: '星', reading: 'ほし' },
+            { base: '外', reading: 'そと' },
             { base: '見', reading: 'み' }
           ]
         },
         {
-          prompt: {
-            en: 'Let us rest before it gets late.',
-            vi: 'Hãy nghỉ trước khi muộn.'
-          },
-          jp: '遅く ならない まえに 休みましょう。',
+          prompt: { en: 'Let us go home before it gets late.', vi: 'Về trước khi trời muộn nhé.' },
+          jp: '遅く なる 前に 帰りましょう。',
           ruby: [
             { base: '遅', reading: 'おそ' },
-            { base: '休', reading: 'やす' }
+            { base: '前', reading: 'まえ' },
+            { base: '帰', reading: 'かえ' }
           ]
         },
         {
           prompt: {
-            en: 'Let us stay well and avoid overworking.',
-            vi: 'Hãy giữ khỏe, đừng làm việc quá sức.'
+            en: 'Let us not overdo it and rest well.',
+            vi: 'Đừng cố quá, hãy nghỉ ngơi thong thả.'
           },
-          jp: '元気で いましょう。働きすぎは だめです。',
+          jp: '無理を しないで、ゆっくり 休みましょう。',
           ruby: [
-            { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' },
-            { base: '働', reading: 'はたら' }
+            { base: '無', reading: 'む' },
+            { base: '理', reading: 'り' },
+            { base: '休', reading: 'やす' }
           ]
         }
       ]
@@ -318,35 +308,39 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Can we get to the east in 20 minutes?',
-            vi: '20 phút có tới phía đông không?'
+            en: 'Can I get to the station in 20 minutes?',
+            vi: 'Đi đến ga trong 20 phút có kịp không?'
           },
-          jp: '東まで 20分で 行けますか。',
+          jp: '駅まで 20分で 行けますか。',
           ruby: [
-            { base: '東', reading: 'ひがし' },
+            { base: '駅', reading: 'えき' },
             { base: '分', reading: 'ぷん' },
             { base: '行', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'Can I buy a lucky charm with 500 yen?',
-            vi: '500 yên có mua được vật may mắn không?'
+            en: 'At this shop you can have lunch for 500 yen.',
+            vi: 'Ở quán này có thể ăn trưa với 500 yên.'
           },
-          jp: '500円で ラッキーアイテムを 買えますか。',
+          jp: 'この 店では 500円で 昼ご飯が 食べられます。',
           ruby: [
+            { base: '店', reading: 'みせ' },
             { base: '円', reading: 'えん' },
-            { base: '買', reading: 'か' }
+            { base: '昼', reading: 'ひる' },
+            { base: '飯', reading: 'はん' },
+            { base: '食', reading: 'た' }
           ]
         },
         {
           prompt: {
-            en: 'Can you get to the south in one hour?',
-            vi: 'Một giờ có tới phía nam không?'
+            en: 'Can we reach the airport in an hour?',
+            vi: 'Đến sân bay trong một tiếng có kịp không?'
           },
-          jp: '南まで 1時間で 着きますか。',
+          jp: '空港まで 1時間で 着きますか。',
           ruby: [
-            { base: '南', reading: 'みなみ' },
+            { base: '空', reading: 'くう' },
+            { base: '港', reading: 'こう' },
             { base: '時', reading: 'じ' },
             { base: '間', reading: 'かん' },
             { base: '着', reading: 'つ' }
@@ -354,29 +348,27 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I recovered with a stone as a lucky item.',
-            vi: 'Tôi khỏe lại nhờ viên đá làm vật may.'
+            en: 'This job will be finished in three days.',
+            vi: 'Công việc này ba ngày là xong.'
           },
-          jp: '石の ラッキーアイテムで 元気に なりました。',
+          jp: 'この 仕事は 3日で 終わります。',
           ruby: [
-            { base: '石', reading: 'いし' },
-            { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' }
+            { base: '仕', reading: 'し' },
+            { base: '事', reading: 'ごと' },
+            { base: '日', reading: 'みっか' },
+            { base: '終', reading: 'お' }
           ]
         },
         {
           prompt: {
-            en: 'The horoscope for Taurus finishes in five minutes.',
-            vi: 'Bói sao Kim Ngưu xong trong năm phút.'
+            en: 'The meeting was over in 30 minutes.',
+            vi: 'Cuộc họp kết thúc trong 30 phút.'
           },
-          jp: '牡牛座の 星占いは 5分で 終わります。',
+          jp: '会議は 30分で 終わりました。',
           ruby: [
-            { base: '牡', reading: 'おう' },
-            { base: '牛', reading: 'し' },
-            { base: '座', reading: 'ざ' },
-            { base: '星', reading: 'ほし' },
-            { base: '占', reading: 'うらな' },
-            { base: '分', reading: 'ふん' },
+            { base: '会', reading: 'かい' },
+            { base: '議', reading: 'ぎ' },
+            { base: '分', reading: 'ぷん' },
             { base: '終', reading: 'お' }
           ]
         }
@@ -387,62 +379,66 @@ export const n4Lesson32SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Is there something noisy bothering you?',
-            vi: 'Có chuyện gì ồn ào làm phiền không?'
+            en: 'Has anything interesting happened lately?',
+            vi: 'Gần đây có chuyện gì thú vị không?'
           },
-          jp: '何か うるさい ことが ありますか。',
-          ruby: [{ base: '何', reading: 'なに' }]
-        },
-        {
-          prompt: {
-            en: 'Is there something strange about romance?',
-            vi: 'Tình yêu có gì kỳ lạ không?'
-          },
-          jp: '恋愛に 何か おかしい ことが ありますか。',
+          jp: '最近、何か おもしろい ことが ありましたか。',
           ruby: [
-            { base: '恋', reading: 'れん' },
-            { base: '愛', reading: 'あい' },
+            { base: '最', reading: 'さい' },
+            { base: '近', reading: 'きん' },
             { base: '何', reading: 'なに' }
           ]
         },
         {
           prompt: {
-            en: 'Is there something worrying about your boyfriend or girlfriend?',
-            vi: 'Người yêu có gì lo không?'
+            en: 'If anything worries you, please tell me.',
+            vi: 'Nếu có điều gì lo lắng thì cứ nói nhé.'
           },
-          jp: '恋人に 何か 心配な ことが ありますか。',
+          jp: '何か 心配な ことが あったら、言って ください。',
           ruby: [
-            { base: '恋', reading: 'こい' },
-            { base: '人', reading: 'びと' },
             { base: '何', reading: 'なに' },
             { base: '心', reading: 'しん' },
-            { base: '配', reading: 'ぱい' }
+            { base: '配', reading: 'ぱい' },
+            { base: '言', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'Do not work this hard. It is too much.',
-            vi: 'Đừng làm nhiều thế này. Nhiều quá.'
+            en: 'I want to do something fun this weekend.',
+            vi: 'Cuối tuần tôi muốn làm điều gì đó vui vui.'
           },
-          jp: 'こんなに 働かないで ください。そんなに 必要じゃ ありません。あんなに 無理をします。',
+          jp: '週末は 何か 楽しい ことを したいです。',
           ruby: [
-            { base: '働', reading: 'はたら' },
-            { base: '必', reading: 'ひつ' },
-            { base: '要', reading: 'よう' },
-            { base: '無', reading: 'む' },
-            { base: '理', reading: 'り' }
+            { base: '週', reading: 'しゅう' },
+            { base: '末', reading: 'まつ' },
+            { base: '何', reading: 'なに' },
+            { base: '楽', reading: 'たの' }
           ]
         },
         {
           prompt: {
-            en: 'Is there something healthy you can do?',
-            vi: 'Có việc gì tốt cho sức khỏe không?'
+            en: 'It is cold. I want something warm to drink.',
+            vi: 'Lạnh quá. Tôi muốn uống gì đó nóng.'
           },
-          jp: '何か 元気な ことが できますか。',
+          jp: '寒いですね。何か 温かい ものが 飲みたいです。',
+          ruby: [
+            { base: '寒', reading: 'さむ' },
+            { base: '何', reading: 'なに' },
+            { base: '温', reading: 'あたた' },
+            { base: '飲', reading: 'の' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Let us start with something easy first.',
+            vi: 'Trước tiên hãy bắt đầu từ việc gì đó đơn giản.'
+          },
+          jp: 'まず 何か 簡単な ことから 始めましょう。',
           ruby: [
             { base: '何', reading: 'なに' },
-            { base: '元', reading: 'げん' },
-            { base: '気', reading: 'き' }
+            { base: '簡', reading: 'かん' },
+            { base: '単', reading: 'たん' },
+            { base: '始', reading: 'はじ' }
           ]
         }
       ]

@@ -240,7 +240,7 @@ export const n4Lesson48: Lesson = {
       lines: [
         {
           speakerId: 'miller',
-          jp: '部長、今 お忙しい ですか。',
+          jp: '部長、今 お忙しいですか。',
           romaji: 'Buchō, ima o-isogashii desu ka.',
           meaning: {
             en: 'Manager, are you busy now?',
@@ -274,7 +274,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: '何 ですか。',
+          jp: '何ですか。',
           romaji: 'Nan desu ka.',
           meaning: { en: 'What is it?', vi: 'Chuyện gì thế?' },
           ruby: [{ base: '何', reading: 'なに' }]
@@ -298,7 +298,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: '10日間 ですか。',
+          jp: '10日間ですか。',
           romaji: 'Tōkakan desu ka.',
           meaning: { en: 'Ten days?', vi: '10 ngày cơ à.' },
           ruby: [
@@ -324,7 +324,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'nakamura',
-          jp: 'そう ですか。来月 20日に 営業の 会議が あります。それまでに 帰って 来られますか。',
+          jp: 'そうですか。来月 20日に 営業の 会議が あります。それまでに 帰って 来られますか。',
           romaji:
             'Sō desu ka. Raigetsu hatsuka ni eigyō no kaigi ga arimasu. Sore made ni kaette koraremasu ka.',
           meaning: {
@@ -345,7 +345,7 @@ export const n4Lesson48: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい、大丈夫 です。',
+          jp: 'はい、大丈夫です。',
           romaji: 'Hai, daijōbu desu.',
           meaning: { en: 'Yes, that will be fine.', vi: 'Vâng ạ.' },
           ruby: [

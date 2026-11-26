@@ -7,25 +7,25 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Participating in trips is fun.',
-            vi: 'Tham gia chuyến đi là vui.'
+            en: 'Traveling together with everyone is fun.',
+            vi: 'Đi du lịch cùng mọi người thật vui.'
           },
-          jp: '旅行に 参加する のは 楽しい です。',
+          jp: 'みんなで 旅行する のは 楽しいです。',
           ruby: [
             { base: '旅', reading: 'りょ' },
             { base: '行', reading: 'こう' },
-            { base: '参', reading: 'さん' },
-            { base: '加', reading: 'か' },
             { base: '楽', reading: 'たの' }
           ]
         },
         {
           prompt: {
-            en: 'Being in hospital is hard.',
-            vi: 'Nằm viện thật vất vả.'
+            en: 'Being in the hospital alone is hard.',
+            vi: 'Nằm viện một mình thật vất vả.'
           },
-          jp: '入院する のは 大変 です。',
+          jp: '一人で 入院する のは 大変です。',
           ruby: [
+            { base: '一', reading: 'ひと' },
+            { base: '人', reading: 'り' },
             { base: '入', reading: 'にゅう' },
             { base: '院', reading: 'いん' },
             { base: '大', reading: 'たい' },
@@ -34,119 +34,37 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Leaving hospital is a relief.',
-            vi: 'Ra viện thật nhẹ nhõm.'
+            en: 'Going to bed early is good for your health.',
+            vi: 'Đi ngủ sớm tốt cho sức khỏe.'
           },
-          jp: '退院する のが 安心 です。',
+          jp: '早く 寝る のは 体に いいです。',
           ruby: [
-            { base: '退', reading: 'たい' },
-            { base: '院', reading: 'いん' },
-            { base: '安', reading: 'あん' },
-            { base: '心', reading: 'しん' }
+            { base: '早', reading: 'はや' },
+            { base: '寝', reading: 'ね' },
+            { base: '体', reading: 'からだ' }
           ]
         },
         {
-          prompt: {
-            en: 'Carrying boxes is tiring.',
-            vi: 'Vận chuyển thùng thật mệt.'
-          },
-          jp: '箱を 運ぶ のは 疲れます。',
+          prompt: { en: 'Carrying heavy boxes is tiring.', vi: 'Khiêng thùng nặng thật mệt.' },
+          jp: '重い 箱を 運ぶ のは 疲れます。',
           ruby: [
+            { base: '重', reading: 'おも' },
             { base: '箱', reading: 'はこ' },
             { base: '運', reading: 'はこ' },
             { base: '疲', reading: 'つか' }
           ]
         },
         {
-          prompt: {
-            en: 'Turning on the power is easy.',
-            vi: 'Bật điện nguồn thì dễ.'
-          },
-          jp: '電源を 入れる のは 簡単 です。',
+          prompt: { en: 'Turning on this machine is easy.', vi: 'Bật nguồn cái máy này rất dễ.' },
+          jp: 'この 機械の 電源を 入れる のは 簡単です。',
           ruby: [
+            { base: '機', reading: 'き' },
+            { base: '械', reading: 'かい' },
             { base: '電', reading: 'でん' },
             { base: '源', reading: 'げん' },
             { base: '入', reading: 'い' },
             { base: '簡', reading: 'かん' },
             { base: '単', reading: 'たん' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I participate in the trip every year.',
-            vi: 'Hàng năm tôi tham gia chuyến đi.'
-          },
-          jp: '毎年 旅行に 参加します。',
-          ruby: [
-            { base: '毎', reading: 'まい' },
-            { base: '年', reading: 'ねん' },
-            { base: '旅', reading: 'りょ' },
-            { base: '行', reading: 'こう' },
-            { base: '参', reading: 'さん' },
-            { base: '加', reading: 'か' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Last week I was hospitalized, and today I leave the hospital.',
-            vi: 'Tuần trước tôi nhập viện, hôm nay tôi ra viện.'
-          },
-          jp: '先週 入院します。今日 退院します。',
-          ruby: [
-            { base: '先', reading: 'せん' },
-            { base: '週', reading: 'しゅう' },
-            { base: '入', reading: 'にゅう' },
-            { base: '院', reading: 'いん' },
-            { base: '今', reading: 'きょ' },
-            { base: '日', reading: 'う' },
-            { base: '退', reading: 'たい' },
-            { base: '院', reading: 'いん' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I turn off the power and lock the door.',
-            vi: 'Tôi tắt điện nguồn và khóa cửa.'
-          },
-          jp: '電源を 切ります。かぎを 掛けます。',
-          ruby: [
-            { base: '電', reading: 'でん' },
-            { base: '源', reading: 'げん' },
-            { base: '切', reading: 'き' },
-            { base: '掛', reading: 'か' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Someone tells a lie. That is not good.',
-            vi: 'Nói dối. Việc đó không tốt.'
-          },
-          jp: 'うそを つきます。それは よく ない です。'
-        },
-        {
-          prompt: {
-            en: 'I turn on the power now.',
-            vi: 'Bây giờ tôi bật điện nguồn.'
-          },
-          jp: '今 電源を 入れます。',
-          ruby: [
-            { base: '今', reading: 'いま' },
-            { base: '電', reading: 'でん' },
-            { base: '源', reading: 'げん' },
-            { base: '入', reading: 'い' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'I carry the boxes to the factory.',
-            vi: 'Tôi vận chuyển thùng đến nhà máy.'
-          },
-          jp: '箱を 工場へ 運びます。',
-          ruby: [
-            { base: '箱', reading: 'はこ' },
-            { base: '工', reading: 'こう' },
-            { base: '場', reading: 'じょう' },
-            { base: '運', reading: 'はこ' }
           ]
         }
       ]
@@ -162,25 +80,25 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
       ],
       items: [
         {
-          prompt: {
-            en: 'Raising a baby is something I am good at.',
-            vi: 'Tôi giỏi chăm em bé.'
-          },
-          jp: '赤ちゃんを 育てる のが 上手 です。',
+          prompt: { en: 'My older sister is good at cooking.', vi: 'Chị tôi nấu ăn giỏi.' },
+          jp: '姉は 料理を 作る のが 上手です。',
           ruby: [
-            { base: '赤', reading: 'あか' },
-            { base: '育', reading: 'そだ' },
+            { base: '姉', reading: 'あね' },
+            { base: '料', reading: 'りょう' },
+            { base: '理', reading: 'り' },
+            { base: '作', reading: 'つく' },
             { base: '上', reading: 'じょう' },
             { base: '手', reading: 'ず' }
           ]
         },
         {
           prompt: {
-            en: 'I like walking on the coast.',
-            vi: 'Tôi thích đi bộ ở bờ biển.'
+            en: 'I like walking along the coast in the morning.',
+            vi: 'Tôi thích đi dạo dọc bờ biển vào buổi sáng.'
           },
-          jp: '海岸を 歩く のが 好き です。',
+          jp: '朝 海岸を 歩く のが 好きです。',
           ruby: [
+            { base: '朝', reading: 'あさ' },
             { base: '海', reading: 'かい' },
             { base: '岸', reading: 'がん' },
             { base: '歩', reading: 'ある' },
@@ -188,53 +106,47 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'Tidying up is what I like.',
-            vi: 'Tôi thích sắp xếp.'
-          },
-          jp: '整理する のが 好き です。',
+          prompt: { en: 'I am bad at keeping my room tidy.', vi: 'Tôi dọn dẹp phòng rất kém.' },
+          jp: '私は 部屋を 片づける のが 下手です。',
           ruby: [
-            { base: '整', reading: 'せい' },
-            { base: '理', reading: 'り' },
-            { base: '好', reading: 'す' }
+            { base: '私', reading: 'わたし' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '片', reading: 'かた' },
+            { base: '下', reading: 'へ' },
+            { base: '手', reading: 'た' }
           ]
         },
         {
-          prompt: {
-            en: 'I am poor at writing kana.',
-            vi: 'Tôi viết kana kém.'
-          },
-          jp: 'かなを 書く のが 下手 です。',
+          prompt: { en: 'I am still bad at writing kanji.', vi: 'Tôi viết chữ Hán vẫn còn kém.' },
+          jp: '漢字を 書く のが まだ 下手です。',
           ruby: [
+            { base: '漢', reading: 'かん' },
+            { base: '字', reading: 'じ' },
             { base: '書', reading: 'か' },
             { base: '下', reading: 'へ' },
             { base: '手', reading: 'た' }
           ]
         },
         {
-          prompt: {
-            en: 'I raise flowers in the village.',
-            vi: 'Tôi trồng hoa ở làng.'
-          },
-          jp: '村で 花を 育てます。',
+          prompt: { en: 'My mother likes growing flowers.', vi: 'Mẹ tôi thích trồng hoa.' },
+          jp: '母は 花を 育てる のが 好きです。',
           ruby: [
-            { base: '村', reading: 'むら' },
+            { base: '母', reading: 'はは' },
             { base: '花', reading: 'はな' },
-            { base: '育', reading: 'そだ' }
+            { base: '育', reading: 'そだ' },
+            { base: '好', reading: 'す' }
           ]
         },
         {
-          prompt: {
-            en: 'I tidy the research office neatly.',
-            vi: 'Tôi sắp xếp phòng nghiên cứu ngay ngắn.'
-          },
-          jp: '研究室を きちんと 整理します。',
+          prompt: { en: 'My father is good at singing.', vi: 'Bố tôi hát hay.' },
+          jp: '父は 歌を 歌う のが 上手です。',
           ruby: [
-            { base: '研', reading: 'けん' },
-            { base: '究', reading: 'きゅう' },
-            { base: '室', reading: 'しつ' },
-            { base: '整', reading: 'せい' },
-            { base: '理', reading: 'り' }
+            { base: '父', reading: 'ちち' },
+            { base: '歌', reading: 'うた' },
+            { base: '歌', reading: 'うた' },
+            { base: '上', reading: 'じょう' },
+            { base: '手', reading: 'ず' }
           ]
         }
       ]
@@ -245,18 +157,20 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I got used to locking the door.',
-            vi: 'Tôi đã quen khóa cửa.'
+            en: 'I have already gotten used to getting up early.',
+            vi: 'Tôi đã quen với việc dậy sớm rồi.'
           },
-          jp: 'かぎを 掛ける のに なれます。',
-          ruby: [{ base: '掛', reading: 'か' }]
+          jp: '朝 早く 起きる のに もう 慣れました。',
+          ruby: [
+            { base: '朝', reading: 'あさ' },
+            { base: '早', reading: 'はや' },
+            { base: '起', reading: 'お' },
+            { base: '慣', reading: 'な' }
+          ]
         },
         {
-          prompt: {
-            en: 'I forgot to turn off the power.',
-            vi: 'Tôi quên tắt điện nguồn.'
-          },
-          jp: '電源を 切る のを 忘れます。',
+          prompt: { en: 'I forgot to turn off the air conditioner.', vi: 'Tôi quên tắt điều hòa.' },
+          jp: 'エアコンの 電源を 切る のを 忘れました。',
           ruby: [
             { base: '電', reading: 'でん' },
             { base: '源', reading: 'げん' },
@@ -266,39 +180,44 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I got used to stamping the seal.',
-            vi: 'Tôi đã quen đóng con dấu.'
+            en: 'Please do not forget to stamp your seal on the documents.',
+            vi: 'Đừng quên đóng dấu vào giấy tờ nhé.'
           },
-          jp: '判子を 押す のに なれます。',
+          jp: '書類に 判子を 押す のを 忘れないで ください。',
           ruby: [
+            { base: '書', reading: 'しょ' },
+            { base: '類', reading: 'るい' },
             { base: '判', reading: 'はん' },
             { base: '子', reading: 'こ' },
-            { base: '押', reading: 'お' }
+            { base: '押', reading: 'お' },
+            { base: '忘', reading: 'わす' }
           ]
         },
         {
           prompt: {
-            en: 'I stamp the circular with a seal.',
-            vi: 'Tôi đóng dấu vào tài liệu thông báo.'
+            en: 'I just cannot get used to riding packed trains.',
+            vi: 'Tôi mãi không quen được với việc đi tàu chật kín người.'
           },
-          jp: '回覧に 判子を 押します。',
+          jp: '満員電車に 乗る のに なかなか 慣れません。',
           ruby: [
-            { base: '回', reading: 'かい' },
-            { base: '覧', reading: 'らん' },
-            { base: '判', reading: 'はん' },
-            { base: '子', reading: 'こ' },
-            { base: '押', reading: 'お' }
+            { base: '満', reading: 'まん' },
+            { base: '員', reading: 'いん' },
+            { base: '電', reading: 'でん' },
+            { base: '車', reading: 'しゃ' },
+            { base: '乗', reading: 'の' },
+            { base: '慣', reading: 'な' }
           ]
         },
         {
           prompt: {
-            en: 'I forgot the method called that.',
-            vi: 'Tôi quên phương pháp có tên gọi là thế.'
+            en: 'I completely forgot to hand in my homework.',
+            vi: 'Tôi quên béng việc nộp bài tập.'
           },
-          jp: 'さくら～という 方法を 忘れます。',
+          jp: '宿題を 出す のを すっかり 忘れて いました。',
           ruby: [
-            { base: '方', reading: 'ほう' },
-            { base: '法', reading: 'ほう' },
+            { base: '宿', reading: 'しゅく' },
+            { base: '題', reading: 'だい' },
+            { base: '出', reading: 'だ' },
             { base: '忘', reading: 'わす' }
           ]
         }
@@ -310,84 +229,88 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'Do you know the custom in front of the station?',
-            vi: 'Anh/chị có biết tập quán trước ga không?'
+            en: 'Do you know that Mr. Tanaka is getting married next month?',
+            vi: 'Anh có biết anh Tanaka tháng sau cưới không?'
           },
-          jp: '駅前の 習慣を 知っていますか。',
+          jp: '田中さんが 来月 結婚する のを 知っていますか。',
+          ruby: [
+            { base: '田', reading: 'た' },
+            { base: '中', reading: 'なか' },
+            { base: '来', reading: 'らい' },
+            { base: '月', reading: 'げつ' },
+            { base: '結', reading: 'けっ' },
+            { base: '婚', reading: 'こん' },
+            { base: '知', reading: 'し' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Do you know that a new shop opened in front of the station?',
+            vi: 'Anh có biết trước ga mới mở một cửa hàng không?'
+          },
+          jp: '駅前に 新しい 店が できた のを 知っていますか。',
           ruby: [
             { base: '駅', reading: 'えき' },
             { base: '前', reading: 'まえ' },
-            { base: '習', reading: 'しゅう' },
-            { base: '慣', reading: 'かん' },
+            { base: '新', reading: 'あたら' },
+            { base: '店', reading: 'みせ' },
             { base: '知', reading: 'し' }
           ]
         },
         {
           prompt: {
-            en: 'Do you know this Japanese-made ring?',
-            vi: 'Anh/chị có biết chiếc nhẫn hàng Nhật này không?'
+            en: "Do you know that tomorrow's class is canceled?",
+            vi: 'Anh có biết giờ học ngày mai được nghỉ không?'
           },
-          jp: 'この 日本～せいの 指輪を 知っていますか。',
+          jp: 'あしたの 授業が 休みな のを 知っていますか。',
           ruby: [
-            { base: '日', reading: 'に' },
-            { base: '本', reading: 'ほん' },
-            { base: '指', reading: 'ゆび' },
-            { base: '輪', reading: 'わ' },
+            { base: '授', reading: 'じゅ' },
+            { base: '業', reading: 'ぎょう' },
+            { base: '休', reading: 'やす' },
             { base: '知', reading: 'し' }
           ]
         },
         {
           prompt: {
-            en: 'Do you know a big elementary school in the village?',
-            vi: 'Anh/chị có biết trường tiểu học lớn ở làng không?'
+            en: 'Do you know that Ms. Yamada is in the hospital?',
+            vi: 'Anh có biết chị Yamada đang nằm viện không?'
           },
-          jp: '村の 大きな 小学校を 知っていますか。',
+          jp: '山田さんが 入院している のを 知っていますか。',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '田', reading: 'だ' },
+            { base: '入', reading: 'にゅう' },
+            { base: '院', reading: 'いん' },
+            { base: '知', reading: 'し' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Do you know that this village has only one elementary school?',
+            vi: 'Anh có biết làng này chỉ có một trường tiểu học không?'
+          },
+          jp: 'この 村に 小学校が 一つしか ない のを 知っていますか。',
           ruby: [
             { base: '村', reading: 'むら' },
-            { base: '大', reading: 'おお' },
             { base: '小', reading: 'しょう' },
             { base: '学', reading: 'がっ' },
             { base: '校', reading: 'こう' },
+            { base: '一', reading: 'ひと' },
             { base: '知', reading: 'し' }
           ]
         },
         {
           prompt: {
-            en: 'Do you know the small junior high school?',
-            vi: 'Anh/chị có biết trường THCS nhỏ không?'
+            en: 'Do you know the manager is being transferred? ...No, I had no idea.',
+            vi: 'Anh có biết trưởng phòng sắp chuyển công tác không? ...Không, tôi không biết.'
           },
-          jp: '小さな 中学校を 知っていますか。',
+          jp: '部長が 転勤する のを 知っていますか。……いいえ、知りませんでした。',
           ruby: [
-            { base: '小', reading: 'ちい' },
-            { base: '中', reading: 'ちゅう' },
-            { base: '学', reading: 'がっ' },
-            { base: '校', reading: 'こう' },
-            { base: '知', reading: 'し' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Do you know a way that is good for health?',
-            vi: 'Anh/chị có biết cách tốt cho sức khỏe không?'
-          },
-          jp: '健康に いい 仕方を 知っていますか。',
-          ruby: [
-            { base: '健', reading: 'けん' },
-            { base: '康', reading: 'こう' },
-            { base: '仕', reading: 'し' },
-            { base: '方', reading: 'かた' },
-            { base: '知', reading: 'し' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Oh no. I do not know that method.',
-            vi: 'Không được rồi. Tôi không biết phương pháp đó.'
-          },
-          jp: 'いけない。その 方法を 知りません。',
-          ruby: [
-            { base: '方', reading: 'ほう' },
-            { base: '法', reading: 'ほう' },
+            { base: '部', reading: 'ぶ' },
+            { base: '長', reading: 'ちょう' },
+            { base: '転', reading: 'てん' },
+            { base: '勤', reading: 'きん' },
+            { base: '知', reading: 'し' },
             { base: '知', reading: 'し' }
           ]
         }
@@ -399,60 +322,62 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'When I was in elementary school, I felt good.',
-            vi: 'Lúc học tiểu học tôi thấy sướng.'
+            en: 'When I was in elementary school, I often swam in the river.',
+            vi: 'Hồi tiểu học tôi hay bơi ở sông.'
           },
-          jp: '小学校の 時、気持ちがいい でした。',
+          jp: '小学校の 時、よく 川で 泳ぎました。',
           ruby: [
             { base: '小', reading: 'しょう' },
             { base: '学', reading: 'がっ' },
             { base: '校', reading: 'こう' },
             { base: '時', reading: 'とき' },
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' }
+            { base: '川', reading: 'かわ' },
+            { base: '泳', reading: 'およ' }
           ]
         },
         {
           prompt: {
-            en: 'When I was in junior high, I felt bad.',
-            vi: 'Lúc học THCS tôi thấy khó chịu.'
+            en: 'In junior high, I was in the tennis club.',
+            vi: 'Hồi cấp hai tôi ở câu lạc bộ quần vợt.'
           },
-          jp: '中学校の 時、気持ちが悪い でした。',
+          jp: '中学校の 時、テニス部に 入って いました。',
           ruby: [
             { base: '中', reading: 'ちゅう' },
             { base: '学', reading: 'がっ' },
             { base: '校', reading: 'こう' },
             { base: '時', reading: 'とき' },
-            { base: '気', reading: 'き' },
-            { base: '持', reading: 'も' },
-            { base: '悪', reading: 'わる' }
+            { base: '部', reading: 'ぶ' },
+            { base: '入', reading: 'はい' }
           ]
         },
         {
           prompt: {
-            en: 'When I leave first, I say excuse me.',
-            vi: 'Khi về trước tôi nói xin phép.'
+            en: 'When you leave before others, you say "Osaki ni shitsurei shimasu".',
+            vi: 'Khi về trước người khác thì nói "Osaki ni shitsurei shimasu".'
           },
-          jp: 'お先に 帰る 時、失礼 します。',
+          jp: '先に 帰る 時は、「お先に 失礼します」と 言います。',
           ruby: [
             { base: '先', reading: 'さき' },
             { base: '帰', reading: 'かえ' },
             { base: '時', reading: 'とき' },
+            { base: '先', reading: 'さき' },
             { base: '失', reading: 'しつ' },
-            { base: '礼', reading: 'れい' }
+            { base: '礼', reading: 'れい' },
+            { base: '言', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'The year before last, when time passed, I was still a child.',
-            vi: 'Năm kia, khi thời gian trôi, tôi vẫn còn là trẻ.'
+            en: 'When I was a child, I often played in this park.',
+            vi: 'Hồi nhỏ tôi hay chơi ở công viên này.'
           },
-          jp: 'おととし、時間がたちます。子どもの 時 です。',
+          jp: '子どもの 時、この 公園で よく 遊びました。',
           ruby: [
-            { base: '時', reading: 'じ' },
-            { base: '間', reading: 'かん' },
             { base: '子', reading: 'こ' },
-            { base: '時', reading: 'とき' }
+            { base: '時', reading: 'とき' },
+            { base: '公', reading: 'こう' },
+            { base: '園', reading: 'えん' },
+            { base: '遊', reading: 'あそ' }
           ]
         },
         {
@@ -492,47 +417,56 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'She is quiet, but she is strong-willed.',
-            vi: 'Cô ấy ngoan nhưng tính cách mạnh.'
+            en: 'She looks quiet, but she is actually strong-willed.',
+            vi: 'Trông thì hiền lành vậy mà thật ra rất cứng cỏi.'
           },
-          jp: 'おとなしい のに、気が強い です。',
+          jp: '見た 目は おとなしい のに、実は 気が 強いです。',
           ruby: [
+            { base: '見', reading: 'み' },
+            { base: '目', reading: 'め' },
+            { base: '実', reading: 'じつ' },
             { base: '気', reading: 'き' },
             { base: '強', reading: 'つよ' }
           ]
         },
         {
           prompt: {
-            en: 'He is kind, but they quarrel.',
-            vi: 'Anh ấy hiền nhưng họ cãi nhau.'
+            en: 'He promised, but he did not come.',
+            vi: 'Đã hứa rồi vậy mà anh ấy không đến.'
           },
-          jp: '優しい のに、けんかします。',
-          ruby: [{ base: '優', reading: 'やさ' }]
-        },
-        {
-          prompt: {
-            en: 'The age is the same, but it is mysterious.',
-            vi: 'Tuổi tác giống nhau nhưng thật kỳ lạ.'
-          },
-          jp: '年齢が 同じ なのに、不思議 です。',
+          jp: '約束した のに、彼は 来ませんでした。',
           ruby: [
-            { base: '年', reading: 'ねん' },
-            { base: '齢', reading: 'れい' },
-            { base: '同', reading: 'おな' },
-            { base: '不', reading: 'ふ' },
-            { base: '思', reading: 'し' },
-            { base: '議', reading: 'ぎ' }
+            { base: '約', reading: 'やく' },
+            { base: '束', reading: 'そく' },
+            { base: '彼', reading: 'かれ' },
+            { base: '来', reading: 'き' }
           ]
         },
         {
           prompt: {
-            en: 'I said excuse me first, but nobody heard.',
-            vi: 'Tôi đã xin về trước nhưng không ai nghe.'
+            en: 'They are twins, yet their personalities are completely different.',
+            vi: 'Là sinh đôi vậy mà tính cách khác hẳn nhau.'
           },
-          jp: 'お先に 言った のに、だれも 聞きません。',
+          jp: '双子なのに、性格が ぜんぜん 違います。',
           ruby: [
-            { base: '先', reading: 'さき' },
-            { base: '言', reading: 'い' },
+            { base: '双', reading: 'ふた' },
+            { base: '子', reading: 'ご' },
+            { base: '性', reading: 'せい' },
+            { base: '格', reading: 'かく' },
+            { base: '違', reading: 'ちが' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I explained it many times, but nobody is listening.',
+            vi: 'Tôi đã giải thích bao nhiêu lần vậy mà chẳng ai nghe.'
+          },
+          jp: '何度も 説明した のに、だれも 聞いて いません。',
+          ruby: [
+            { base: '何', reading: 'なん' },
+            { base: '度', reading: 'ど' },
+            { base: '説', reading: 'せつ' },
+            { base: '明', reading: 'めい' },
             { base: '聞', reading: 'き' }
           ]
         }

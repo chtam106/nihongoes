@@ -763,15 +763,26 @@ export const n4Lesson30: Lesson = {
       explanationRuby: [{ base: '行', reading: 'い' }],
       examples: [
         {
-          jp: 'ほかにも いろいろ あります。',
-          romaji: 'Hoka ni mo iroiro arimasu.',
-          meaning: { en: 'There are various other things too.', vi: 'Ngoài ra còn nhiều thứ khác.' }
+          jp: 'ほかにも 質問が ありますか。',
+          romaji: 'Hoka ni mo shitsumon ga arimasu ka.',
+          meaning: { en: 'Are there any other questions?', vi: 'Còn câu hỏi nào khác nữa không?' },
+          ruby: [
+            { base: '質', reading: 'しつ' },
+            { base: '問', reading: 'もん' }
+          ]
         },
         {
-          jp: 'どこ [へ] も 行きません。',
-          romaji: 'Doko [e] mo ikimasen.',
-          meaning: { en: 'I am not going anywhere.', vi: 'Tôi chẳng đi đâu cả.' },
-          ruby: [{ base: '行', reading: 'い' }]
+          jp: '連休は どこへも 行きません。',
+          romaji: 'Renkyū wa doko e mo ikimasen.',
+          meaning: {
+            en: 'I am not going anywhere over the long weekend.',
+            vi: 'Kỳ nghỉ dài tôi không đi đâu cả.'
+          },
+          ruby: [
+            { base: '連', reading: 'れん' },
+            { base: '休', reading: 'きゅう' },
+            { base: '行', reading: 'い' }
+          ]
         }
       ]
     }

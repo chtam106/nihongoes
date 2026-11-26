@@ -443,7 +443,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'えっ、知らない んですか。最近 婚約した そう ですよ。',
+          jp: 'えっ、知らない んですか。最近 婚約した そうですよ。',
           romaji: "E, shiranai n desu ka. Saikin kon'yaku shita sō desu yo.",
           meaning: {
             en: 'What, you did not know? I hear she got engaged recently.',
@@ -459,7 +459,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'takahashi',
-          jp: '本当 ですか。相手は だれ ですか。',
+          jp: '本当ですか。相手は だれですか。',
           romaji: 'Hontō desu ka. Aite wa dare desu ka.',
           meaning: { en: 'Really? Who is her partner?', vi: 'Thế à? Ai là đối phương?' },
           ruby: [
@@ -471,7 +471,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'hayashi',
-          jp: 'IMCの 鈴木さん です。ワットさんの 結婚式で 知り合った そう です。',
+          jp: 'IMCの 鈴木さんです。ワットさんの 結婚式で 知り合った そうです。',
           romaji: 'IMC no Suzuki-san desu. Watto-san no kekkonshiki de shiriatta sō desu.',
           meaning: {
             en: "Mr. Suzuki from IMC. I hear they met at Mr. Watt's wedding.",
@@ -489,13 +489,13 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'takahashi',
-          jp: 'そう ですか。',
+          jp: 'そうですか。',
           romaji: 'Sō desu ka.',
           meaning: { en: 'I see.', vi: 'Thế à.' }
         },
         {
           speakerId: 'hayashi',
-          jp: '高橋さん、あなたは どう ですか。',
+          jp: '高橋さん、あなたは どうですか。',
           romaji: 'Takahashi-san, anata wa dō desu ka.',
           meaning: {
             en: 'Mr. Takahashi, what about you?',
@@ -508,7 +508,7 @@ export const n4Lesson47: Lesson = {
         },
         {
           speakerId: 'takahashi',
-          jp: '私 ですか。私に とって 仕事が 恋人 です。',
+          jp: '私ですか。私に とって 仕事が 恋人です。',
           romaji: 'Watashi desu ka. Watashi ni totte shigoto ga koibito desu.',
           meaning: {
             en: 'Me? For me, work is my lover.',
@@ -546,7 +546,7 @@ export const n4Lesson47: Lesson = {
       ],
       examples: [
         {
-          jp: '天気予報によると、あした 寒くなる そう です。',
+          jp: '天気予報によると、あした 寒くなる そうです。',
           romaji: 'Tenki yohō ni yoru to, ashita samuku naru sō desu.',
           meaning: {
             en: 'According to the weather forecast, it will get cold tomorrow.',
@@ -561,7 +561,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '新聞で 読みましたが、1月に スピーチ大会が ある そう です。',
+          jp: '新聞で 読みましたが、1月に スピーチ大会が ある そうです。',
           romaji: 'Shinbun de yomimashita ga, ichigatsu ni supīchi taikai ga aru sō desu.',
           meaning: {
             en: 'I read in the newspaper that there will be a speech contest in January.',
@@ -577,7 +577,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '渡辺さんは 最近 婚約した そう です。',
+          jp: '渡辺さんは 最近 婚約した そうです。',
           romaji: "Watanabe-san wa saikin kon'yaku shita sō desu.",
           meaning: {
             en: 'I hear Ms. Watanabe got engaged recently.',
@@ -619,7 +619,7 @@ export const n4Lesson47: Lesson = {
       ],
       examples: [
         {
-          jp: '隣の 部屋に 人が いる よう です。',
+          jp: '隣の 部屋に 人が いる ようです。',
           romaji: 'Tonari no heya ni hito ga iru yō desu.',
           meaning: {
             en: 'It seems there is someone in the next room.',
@@ -633,7 +633,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: 'どうも 恋人が できた よう です。',
+          jp: 'どうも 恋人が できた ようです。',
           romaji: 'Dōmo koibito ga dekita yō desu.',
           meaning: {
             en: 'It seems she has gotten a boyfriend.',
@@ -645,7 +645,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '人が たくさん 集まっている から、事故が あった よう です。',
+          jp: '人が たくさん 集まっている から、事故が あった ようです。',
           romaji: 'Hito ga takusan atsumatte iru kara, jiko ga atta yō desu.',
           meaning: {
             en: 'Many people are gathered, so it seems there was an accident.',
@@ -676,12 +676,17 @@ export const n4Lesson47: Lesson = {
       ],
       examples: [
         {
-          jp: '楽しい 音が しますね。',
-          romaji: 'Tanoshii oto ga shimasu ne.',
-          meaning: { en: 'I hear a fun sound.', vi: 'Tiếng người nghe vui nhộn nhỉ.' },
+          jp: '隣の 部屋から ピアノの 音が しますね。',
+          romaji: 'Tonari no heya kara piano no oto ga shimasu ne.',
+          meaning: {
+            en: 'I can hear a piano from the next room.',
+            vi: 'Có tiếng đàn piano từ phòng bên cạnh nhỉ.'
+          },
           ruby: [
-            { base: '楽', reading: 'たの' },
-            { base: '音', reading: 'おん' }
+            { base: '隣', reading: 'となり' },
+            { base: '部', reading: 'へ' },
+            { base: '屋', reading: 'や' },
+            { base: '音', reading: 'おと' }
           ]
         },
         {
@@ -718,7 +723,7 @@ export const n4Lesson47: Lesson = {
       ],
       lines: [
         {
-          jp: 'データによると、女性の 方が 男性より 長生き する そう です。',
+          jp: 'データによると、女性の 方が 男性より 長生き する そうです。',
           romaji: 'Dēta ni yoru to, josei no hō ga dansei yori nagaiki suru sō desu.',
           meaning: {
             en: 'According to the data, I hear women live longer than men.',
@@ -735,7 +740,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '理由の 一つは 化粧や 世話を する 習慣 だ そう です。',
+          jp: '理由の 一つは 化粧や 世話を する 習慣 だ そうです。',
           romaji: 'Riyū no hitotsu wa keshō ya sewa o suru shūkan da sō desu.',
           meaning: {
             en: 'One reason, I hear, is the habit of makeup and caring for others.',
@@ -754,7 +759,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: '科学や 医学の 研究でも、生活と 健康の 関係が 大切 だ そう です。',
+          jp: '科学や 医学の 研究でも、生活と 健康の 関係が 大切 だ そうです。',
           romaji:
             'Kagaku ya igaku no kenkyū demo, seikatsu to kenkō no kankei ga taisetsu da sō desu.',
           meaning: {
@@ -779,7 +784,7 @@ export const n4Lesson47: Lesson = {
           ]
         },
         {
-          jp: 'でも これは 一例 です。人それぞれ 違います。',
+          jp: 'でも これは 一例です。人それぞれ 違います。',
           romaji: 'Demo kore wa ichirei desu. Hito sorezore chigaimasu.',
           meaning: {
             en: 'But this is just one example. Everyone is different.',

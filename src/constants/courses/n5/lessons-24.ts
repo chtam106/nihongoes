@@ -398,18 +398,17 @@ export const n5Lesson24: Lesson = {
           ]
         },
         {
-          jp: '母の 弁当を 自分で 作って あげましょう。',
-          romaji: 'Haha no bentō o jibun de tsukutte agemashō.',
+          jp: '母の 誕生日に ケーキを 作って あげました。',
+          romaji: 'Haha no tanjōbi ni kēki o tsukutte agemashita.',
           meaning: {
-            en: 'Let us make a boxed lunch for Mother by ourselves.',
-            vi: 'Chúng ta tự làm cơm hộp cho mẹ nhé.'
+            en: 'I made a cake for my mother on her birthday.',
+            vi: 'Tôi làm bánh tặng mẹ vào ngày sinh nhật.'
           },
           ruby: [
             { base: '母', reading: 'はは' },
-            { base: '弁', reading: 'べん' },
-            { base: '当', reading: 'とう' },
-            { base: '自', reading: 'じ' },
-            { base: '分', reading: 'ぶん' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
             { base: '作', reading: 'つく' }
           ]
         }

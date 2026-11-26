@@ -419,18 +419,15 @@ export const n5Lesson22: Lesson = {
           ]
         },
         {
-          jp: '和室に 布団を 敷いた 部屋を 見せて ください。',
-          romaji: 'Washitsu ni futon o shita heya o misete kudasai.',
+          jp: '和室の ある 部屋を 見せて ください。',
+          romaji: 'Washitsu no aru heya o misete kudasai.',
           meaning: {
-            en: 'Please show me the room where futon was laid out in the Japanese room.',
-            vi: 'Xin cho xem phòng đã trải futon trong phòng kiểu Nhật.'
+            en: 'Please show me a place that has a Japanese-style room.',
+            vi: 'Cho tôi xem căn có phòng kiểu Nhật.'
           },
           ruby: [
             { base: '和', reading: 'わ' },
             { base: '室', reading: 'しつ' },
-            { base: '布', reading: 'ふ' },
-            { base: '団', reading: 'とん' },
-            { base: '敷', reading: 'し' },
             { base: '部', reading: 'へ' },
             { base: '屋', reading: 'や' },
             { base: '見', reading: 'み' }

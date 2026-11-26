@@ -388,7 +388,7 @@ export const n4Lesson45: Lesson = {
         },
         {
           speakerId: 'staff',
-          jp: 'その 場合は 近くの 係員に 名前を 言って 帰って ください。それでは スタート です。',
+          jp: 'その 場合は 近くの 係員に 名前を 言って 帰って ください。それでは スタートです。',
           romaji:
             'Sono baai wa chikaku no kakariin ni namae o itte kaette kudasai. Soredewa sutāto desu.',
           meaning: {
@@ -425,7 +425,7 @@ export const n4Lesson45: Lesson = {
         },
         {
           speakerId: 'suzuki',
-          jp: '2位 ですか。すごい ですね。',
+          jp: '2位ですか。すごいですね。',
           romaji: 'Ni-i desu ka. Sugoi desu ne.',
           meaning: { en: 'Second place? That is amazing.', vi: 'Thứ 2 ấy à? Anh giỏi quá nhỉ.' },
           ruby: [{ base: '位', reading: 'い' }]
@@ -599,11 +599,11 @@ export const n4Lesson45: Lesson = {
           ]
         },
         {
-          jp: '冬な のに、桜が 咲いています。あれは 桜じゃ なくて、梅 ですよ。',
-          romaji: 'Fuyu na noni, sakura ga saite imasu. Are wa sakura ja nakute, ume desu yo.',
+          jp: '冬なのに、桜が 咲いていますね。……あれは 桜じゃ なくて、梅ですよ。',
+          romaji: 'Fuyu na noni, sakura ga saite imasu ne. ……Are wa sakura ja nakute, ume desu yo.',
           meaning: {
-            en: 'Even though it is winter, cherry blossoms are blooming. Those are not cherry blossoms - they are plum blossoms.',
-            vi: 'Mùa đông mà hoa anh đào vẫn nở nhỉ. Đấy không phải anh đào mà là hoa mơ đấy.'
+            en: 'It is winter, yet the cherry trees are blooming. ...Those are not cherry blossoms, they are plum blossoms.',
+            vi: 'Mùa đông vậy mà hoa anh đào nở nhỉ. ...Đó không phải hoa anh đào đâu, là hoa mơ đấy.'
           },
           ruby: [
             { base: '冬', reading: 'ふゆ' },

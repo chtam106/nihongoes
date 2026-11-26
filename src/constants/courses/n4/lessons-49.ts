@@ -331,7 +331,7 @@ export const n4Lesson49: Lesson = {
       lines: [
         {
           speakerId: 'teacher',
-          jp: 'はい、ひまわり 小学校 です。',
+          jp: 'はい、ひまわり 小学校です。',
           romaji: 'Hai, Himawari shōgakkō desu.',
           meaning: {
             en: 'Hello, Himawari Elementary School.',
@@ -407,7 +407,7 @@ export const n4Lesson49: Lesson = {
         },
         {
           speakerId: 'teacher',
-          jp: 'それは 大変 ですね。',
+          jp: 'それは 大変ですね。',
           romaji: 'Sore wa taihen desu ne.',
           meaning: { en: 'That is tough.', vi: 'Thế thì gay nhỉ.' },
           ruby: [
@@ -602,10 +602,14 @@ export const n4Lesson49: Lesson = {
       explanationRuby: [],
       examples: [
         {
-          jp: 'どうぞ お入り ください。',
-          romaji: 'Dōzo o-hairi kudasai.',
-          meaning: { en: 'Please come in.', vi: 'Xin mời vào.' },
-          ruby: [{ base: '入', reading: 'はい' }]
+          jp: 'こちらで 少々 お待ち ください。',
+          romaji: 'Kochira de shōshō o-machi kudasai.',
+          meaning: { en: 'Please wait here a moment.', vi: 'Xin vui lòng đợi ở đây một chút.' },
+          ruby: [
+            { base: '少', reading: 'しょう' },
+            { base: '々', reading: 'しょう' },
+            { base: '待', reading: 'ま' }
+          ]
         },
         {
           jp: '忘れ物に ご注意 ください。',
@@ -656,21 +660,29 @@ export const n4Lesson49: Lesson = {
       ],
       examples: [
         {
-          jp: 'お元気 ですか。',
-          romaji: 'O-genki desu ka.',
-          meaning: { en: 'How are you?', vi: 'Anh/Chị có khỏe không ạ?' },
+          jp: 'ご両親は お元気ですか。',
+          romaji: 'Go-ryōshin wa o-genki desu ka.',
+          meaning: { en: 'Are your parents well?', vi: 'Bố mẹ anh có khỏe không ạ?' },
           ruby: [
+            { base: '両', reading: 'りょう' },
+            { base: '親', reading: 'しん' },
             { base: '元', reading: 'げん' },
             { base: '気', reading: 'き' }
           ]
         },
         {
-          jp: 'ご家族は どちら ですか。',
-          romaji: 'Go-kazoku wa dochira desu ka.',
-          meaning: { en: 'Where is your family?', vi: 'Gia đình anh/chị ở đâu ạ?' },
+          jp: 'お名前と ご住所を 書いて ください。',
+          romaji: 'O-namae to go-jūsho o kaite kudasai.',
+          meaning: {
+            en: 'Please write your name and address.',
+            vi: 'Xin vui lòng ghi họ tên và địa chỉ.'
+          },
           ruby: [
-            { base: '家', reading: 'か' },
-            { base: '族', reading: 'ぞく' }
+            { base: '名', reading: 'な' },
+            { base: '前', reading: 'まえ' },
+            { base: '住', reading: 'じゅう' },
+            { base: '所', reading: 'しょ' },
+            { base: '書', reading: 'か' }
           ]
         }
       ]

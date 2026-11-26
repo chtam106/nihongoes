@@ -452,7 +452,7 @@ export const n4Lesson35: Lesson = {
         },
         {
           speakerId: 'thawaphon',
-          jp: '3日くらい です。',
+          jp: '3日くらいです。',
           romaji: 'Mikka kurai desu.',
           meaning: { en: 'About three days.', vi: 'Khoảng 3 ngày.' },
           ruby: [{ base: '日', reading: 'にっ' }]

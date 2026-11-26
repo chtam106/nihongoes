@@ -381,7 +381,7 @@ export const n4Lesson31: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'どうして ですか。',
+          jp: 'どうしてですか。',
           romaji: 'Dōshite desu ka.',
           meaning: { en: 'Why is that?', vi: 'Sao?' }
         },
@@ -420,7 +420,7 @@ export const n4Lesson31: Lesson = {
         },
         {
           speakerId: 'ogawa',
-          jp: '妻と 子どもは 東京に 残るから です。',
+          jp: '妻と 子どもは 東京に 残るからです。',
           romaji: 'Tsuma to kodomo wa Tōkyō ni nokoru kara desu.',
           meaning: {
             en: 'Because my wife and children will stay in Tokyo.',
@@ -483,7 +483,7 @@ export const n4Lesson31: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: '家族が 離れ離れ ですね。',
+          jp: '家族が 離れ離れですね。',
           romaji: 'Kazoku ga hanarebanare desu ne.',
           meaning: { en: 'Your family will live apart.', vi: 'Gia đình anh sống xa nhau nhỉ.' },
           ruby: [

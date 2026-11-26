@@ -340,7 +340,7 @@ export const n5Lesson23: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'あ、動きました。サイズを 変えたい です。',
+          jp: 'あ、動きました。サイズを 変えたいです。',
           romaji: 'A, ugokimashita. Saizu o kaetai desu.',
           meaning: {
             en: 'Oh, it works. I want to change the size.',
@@ -465,19 +465,16 @@ export const n5Lesson23: Lesson = {
           ]
         },
         {
-          jp: '正月の とき 家族と 一緒に いました。',
-          romaji: 'Shōgatsu no toki kazoku to issho ni imashita.',
+          jp: '子どもの とき、よく 川で 遊びました。',
+          romaji: 'Kodomo no toki, yoku kawa de asobimashita.',
           meaning: {
-            en: 'During New Year I was with my family.',
-            vi: 'Dịp Tết tôi ở cùng gia đình.'
+            en: 'When I was a child, I often played by the river.',
+            vi: 'Hồi nhỏ tôi hay chơi ở bờ sông.'
           },
           ruby: [
-            { base: '正', reading: 'しょう' },
-            { base: '月', reading: 'がつ' },
-            { base: '家', reading: 'か' },
-            { base: '族', reading: 'ぞく' },
-            { base: '一', reading: 'いっ' },
-            { base: '緒', reading: 'しょ' }
+            { base: '子', reading: 'こ' },
+            { base: '川', reading: 'かわ' },
+            { base: '遊', reading: 'あそ' }
           ]
         }
       ]

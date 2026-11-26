@@ -311,7 +311,7 @@ export const n4Lesson50: Lesson = {
       lines: [
         {
           speakerId: 'host',
-          jp: '優勝 おめでとう ございます。スピーチ、とても よかった です。',
+          jp: '優勝 おめでとう ございます。スピーチ、とても よかったです。',
           romaji: 'Yūshō omedetō gozaimasu. Supīchi, totemo yokatta desu.',
           meaning: {
             en: 'Congratulations on winning. Your speech was excellent.',
@@ -330,7 +330,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'host',
-          jp: 'その とき、緊張 しましたか。',
+          jp: 'その とき、緊張しましたか。',
           romaji: 'Sono toki, kinchō shimashita ka.',
           meaning: { en: 'Were you nervous then?', vi: 'Lúc đó anh có hồi hộp lắm không?' },
           ruby: [
@@ -340,7 +340,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい、とても 緊張 しました。',
+          jp: 'はい、とても 緊張しました。',
           romaji: 'Hai, totemo kinchō shimashita.',
           meaning: { en: 'Yes, I was very nervous.', vi: 'Có, tôi đã rất hồi hộp.' },
           ruby: [
@@ -418,7 +418,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい。自然の 中で きりんや ゾウを 見たい です。',
+          jp: 'はい。自然の 中で きりんや ゾウを 見たいです。',
           romaji: 'Hai. Shizen no naka de kirin ya zō o mitai desu.',
           meaning: {
             en: 'Yes. I want to see giraffes and elephants in nature.',
@@ -447,7 +447,7 @@ export const n4Lesson50: Lesson = {
         },
         {
           speakerId: 'miller',
-          jp: 'はい。とても うれしい です。心から 応援 して くださった 皆さんに 感謝 いたします。ありがとう ございました。',
+          jp: 'はい。とても うれしいです。心から 応援して くださった 皆さんに 感謝 いたします。ありがとう ございました。',
           romaji:
             'Hai. Totemo ureshii desu. Kokoro kara ōen shite kudasatta minasan ni kansha itashimasu. Arigatō gozaimashita.',
           meaning: {
@@ -486,7 +486,7 @@ export const n4Lesson50: Lesson = {
       ],
       examples: [
         {
-          jp: '重そう ですね。お持ち しましょうか。',
+          jp: '重そうですね。お持ち しましょうか。',
           romaji: 'Omōsō desu ne. O-mochi shimashō ka.',
           meaning: {
             en: 'That looks heavy. Shall I carry it for you?',
@@ -498,7 +498,7 @@ export const n4Lesson50: Lesson = {
           ]
         },
         {
-          jp: '江戸東京 博物館へ ご案内 します。',
+          jp: '江戸東京 博物館へ ご案内します。',
           romaji: 'Edo-Tōkyō Hakubutsukan e go-annai shimasu.',
           meaning: {
             en: 'We will guide you to the Edo-Tokyo Museum.',
@@ -517,7 +517,7 @@ export const n4Lesson50: Lesson = {
           ]
         },
         {
-          jp: '初めに、きょうの スケジュールを ご説明 します。',
+          jp: '初めに、きょうの スケジュールを ご説明します。',
           romaji: 'Hajime ni, kyō no sukejūru o go-setsumei shimasu.',
           meaning: {
             en: 'First, I will explain the schedule for today.',
@@ -650,7 +650,7 @@ export const n4Lesson50: Lesson = {
           ]
         },
         {
-          jp: '初めに、メールアドレスを お送り します。スケジュールを 拝見 しました。',
+          jp: '初めに、メールアドレスを お送り します。スケジュールを 拝見しました。',
           romaji: 'Hajime ni, mēru adoresu o o-okuri shimasu. Sukejūru o haiken shimashita.',
           meaning: {
             en: 'First, I am sending my email address. I have looked at the schedule.',
@@ -682,7 +682,7 @@ export const n4Lesson50: Lesson = {
           ]
         },
         {
-          jp: '迷惑を かけない ように 努力 します。経験を 生かして 仕事を いたします。',
+          jp: '迷惑を かけない ように 努力します。経験を 生かして 仕事を いたします。',
           romaji:
             'Meiwaku o kakenai yō ni doryoku shimasu. Keiken o ikashite shigoto o itashimasu.',
           meaning: {

@@ -784,14 +784,7 @@ export const n4Lesson32: Lesson = {
         vi: 'V-ます + ましょう nói người nói sẽ làm (quyết đoán hơn 〜ましょうか): ちょっと 調べましょう.'
       },
       explanationRuby: [{ base: '調', reading: 'しら' }],
-      examples: [
-        {
-          jp: 'ちょっと 調べましょう。',
-          romaji: 'Chotto shirabemashō.',
-          meaning: { en: 'Let me check a moment.', vi: 'Để tôi kiểm tra một chút.' },
-          ruby: [{ base: '調', reading: 'しら' }]
-        }
-      ]
+      examples: []
     },
     {
       pattern: 'Quantifier + で',

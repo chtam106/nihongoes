@@ -963,7 +963,7 @@ export const n5Lesson12: Lesson = {
           }
         },
         {
-          jp: 'あの 赤くて、大きいの です。',
+          jp: 'あの 赤くて、大きいのです。',
           romaji: 'Ano akakute, ōkii no desu.',
           meaning: { en: 'That big red one.', vi: 'Là cái lớn màu đỏ kia.' },
           ruby: [

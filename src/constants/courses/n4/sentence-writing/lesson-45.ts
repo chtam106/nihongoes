@@ -14,10 +14,10 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'If the computer breaks, show the warranty card.',
-            vi: 'Trường hợp máy hỏng thì đưa phiếu bảo hành.'
+            en: 'If the computer breaks down, please show this warranty card.',
+            vi: 'Trường hợp máy tính bị hỏng, hãy xuất trình giấy bảo hành này.'
           },
-          jp: 'パソコンが 故障した 場合は、保証書を 見せます。',
+          jp: 'パソコンが 故障した 場合は、この 保証書を 見せて ください。',
           ruby: [
             { base: '故', reading: 'こ' },
             { base: '障', reading: 'しょう' },
@@ -31,10 +31,10 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'If you need a receipt, please tell the staff.',
-            vi: 'Trường hợp cần hóa đơn thì nói với nhân viên.'
+            en: 'If you need a receipt, please tell a staff member.',
+            vi: 'Trường hợp cần hóa đơn, hãy nói với nhân viên.'
           },
-          jp: '領収書が 必要な 場合は、係員に 知らせます。',
+          jp: '領収書が 必要な 場合は、係員に 言って ください。',
           ruby: [
             { base: '領', reading: 'りょう' },
             { base: '収', reading: 'しゅう' },
@@ -45,15 +45,15 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
             { base: '合', reading: 'あい' },
             { base: '係', reading: 'かかり' },
             { base: '員', reading: 'いん' },
-            { base: '知', reading: 'し' }
+            { base: '言', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'If it rains, we cancel the camp. The event is cancelled.',
-            vi: 'Trường hợp mưa thì hủy trại. Sự kiện bị hủy.'
+            en: 'In case of rain, the camp is canceled.',
+            vi: 'Trường hợp trời mưa thì hủy cắm trại.'
           },
-          jp: '雨の 場合は キャンプを キャンセルします。イベントは 中止です。',
+          jp: '雨の 場合は、キャンプは 中止です。',
           ruby: [
             { base: '雨', reading: 'あめ' },
             { base: '場', reading: 'ば' },
@@ -63,32 +63,24 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'In case of a crime, call 110. In case of fire, call 119.',
-            vi: 'Trường hợp tội phạm gọi 110. Trường hợp cháy gọi 119.'
-          },
-          jp: '事件の 場合は 110番に 電話します。火事の 場合は 119番です。',
+          prompt: { en: 'In case of fire, call 119.', vi: 'Trường hợp hỏa hoạn, hãy gọi số 119.' },
+          jp: '火事の 場合は、119番に 電話して ください。',
           ruby: [
-            { base: '事', reading: 'じ' },
-            { base: '件', reading: 'けん' },
-            { base: '場', reading: 'ば' },
-            { base: '合', reading: 'あい' },
-            { base: '番', reading: 'ばん' },
-            { base: '電', reading: 'でん' },
-            { base: '話', reading: 'わ' },
             { base: '火', reading: 'か' },
             { base: '事', reading: 'じ' },
             { base: '場', reading: 'ば' },
             { base: '合', reading: 'あい' },
-            { base: '番', reading: 'ばん' }
+            { base: '番', reading: 'ばん' },
+            { base: '電', reading: 'でん' },
+            { base: '話', reading: 'わ' }
           ]
         },
         {
           prompt: {
-            en: 'If you suddenly feel sick, do not force yourself.',
-            vi: 'Trường hợp đột nhiên khó chịu thì đừng cố.'
+            en: 'If you suddenly feel sick, rest right away.',
+            vi: 'Trường hợp đột nhiên thấy khó chịu, hãy nghỉ ngay.'
           },
-          jp: '急に 気分が 悪い 場合は、無理に 歩きません。',
+          jp: '急に 気分が 悪く なった 場合は、すぐ 休んで ください。',
           ruby: [
             { base: '急', reading: 'きゅう' },
             { base: '気', reading: 'き' },
@@ -96,68 +88,21 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
             { base: '悪', reading: 'わる' },
             { base: '場', reading: 'ば' },
             { base: '合', reading: 'あい' },
-            { base: '無', reading: 'む' },
-            { base: '理', reading: 'り' },
-            { base: '歩', reading: 'ある' }
+            { base: '休', reading: 'やす' }
           ]
         },
         {
           prompt: {
-            en: 'If the alarm clock does not ring, set it again.',
-            vi: 'Trường hợp đồng hồ không kêu thì đặt lại.'
+            en: 'If the alarm does not go off, set it again.',
+            vi: 'Trường hợp chuông báo không kêu, hãy cài lại lần nữa.'
           },
-          jp: '目覚まし[時計]が 鳴ります。鳴らない 場合は、もう 一度 セットします。',
+          jp: 'アラームが 鳴らない 場合は、もう 一度 セットして ください。',
           ruby: [
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'ざ' },
-            { base: '時', reading: 'ど' },
-            { base: '計', reading: 'けい' },
-            { base: '鳴', reading: 'な' },
             { base: '鳴', reading: 'な' },
             { base: '場', reading: 'ば' },
             { base: '合', reading: 'あい' },
             { base: '一', reading: 'いち' },
             { base: '度', reading: 'ど' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'If you cannot wake up, I will notify you. That is all.',
-            vi: 'Trường hợp không thức được thì tôi báo. Xin hết.'
-          },
-          jp: '朝 目が 覚めます。目が 覚めない 場合は 知らせます。以上です。',
-          ruby: [
-            { base: '朝', reading: 'あさ' },
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'さ' },
-            { base: '目', reading: 'め' },
-            { base: '覚', reading: 'さ' },
-            { base: '場', reading: 'ば' },
-            { base: '合', reading: 'あい' },
-            { base: '知', reading: 'し' },
-            { base: '以', reading: 'い' },
-            { base: '上', reading: 'じょう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'If you cannot believe the score, check the answer.',
-            vi: 'Trường hợp không tin điểm thì kiểm câu trả lời.'
-          },
-          jp: '点を 信じます。信じない 場合は、回答を 見ます。大学生も 同じです。',
-          ruby: [
-            { base: '点', reading: 'てん' },
-            { base: '信', reading: 'しん' },
-            { base: '信', reading: 'しん' },
-            { base: '場', reading: 'ば' },
-            { base: '合', reading: 'あい' },
-            { base: '回', reading: 'かい' },
-            { base: '答', reading: 'とう' },
-            { base: '見', reading: 'み' },
-            { base: '大', reading: 'だい' },
-            { base: '学', reading: 'がく' },
-            { base: '生', reading: 'せい' },
-            { base: '同', reading: 'おな' }
           ]
         }
       ]
@@ -172,61 +117,61 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
       items: [
         {
           prompt: {
-            en: 'I practiced a lot, yet I did not win.',
-            vi: 'Tôi luyện nhiều thế mà không vô địch.'
+            en: 'I practiced every day, yet I lost the match.',
+            vi: 'Ngày nào cũng luyện tập vậy mà vẫn thua trận.'
           },
-          jp: '練習した のに、優勝しません。来年は 優勝します。',
+          jp: '毎日 練習した のに、試合に 負けて しまいました。',
           ruby: [
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
             { base: '練', reading: 'れん' },
             { base: '習', reading: 'しゅう' },
-            { base: '優', reading: 'ゆう' },
-            { base: '勝', reading: 'しょう' },
-            { base: '来', reading: 'らい' },
-            { base: '年', reading: 'ねん' },
-            { base: '優', reading: 'ゆう' },
-            { base: '勝', reading: 'しょう' }
+            { base: '試', reading: 'し' },
+            { base: '合', reading: 'あい' },
+            { base: '負', reading: 'ま' }
           ]
         },
         {
           prompt: {
-            en: 'I started on the course, yet I did not take first place.',
-            vi: 'Tôi xuất phát trên đường chạy thế mà không nhất.'
+            en: 'I had a good start, yet I could not take first place.',
+            vi: 'Xuất phát tốt vậy mà không giành được hạng nhất.'
           },
-          jp: 'コースを スタートした のに、一位に なりません。',
-          ruby: [
-            { base: '一', reading: 'いち' },
-            { base: '位', reading: 'い' }
-          ]
+          jp: 'スタートは よかった のに、1位に なれませんでした。',
+          ruby: [{ base: '位', reading: 'い' }]
         },
         {
           prompt: {
-            en: 'I am looking forward to it, yet I have a worry.',
-            vi: 'Tôi mong chờ thế mà vẫn lo.'
+            en: 'I was looking forward to it, but the trip got canceled.',
+            vi: 'Đã mong chờ vậy mà chuyến du lịch bị hủy.'
           },
-          jp: '楽しみに しています。それでも 悩みが あります。',
+          jp: '楽しみに していた のに、旅行が 中止に なりました。',
           ruby: [
             { base: '楽', reading: 'たの' },
-            { base: '悩', reading: 'なや' }
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '中', reading: 'ちゅう' },
+            { base: '止', reading: 'し' }
           ]
         },
         {
           prompt: {
-            en: 'It is winter, yet plum blossoms are blooming.',
-            vi: 'Mùa đông thế mà hoa mơ vẫn nở.'
+            en: 'It is winter, yet today is warm.',
+            vi: 'Đang mùa đông vậy mà hôm nay ấm.'
           },
-          jp: '冬な のに、梅が 咲きます。',
+          jp: '冬なのに、今日は 暖かいです。',
           ruby: [
             { base: '冬', reading: 'ふゆ' },
-            { base: '梅', reading: 'うめ' },
-            { base: '咲', reading: 'さ' }
+            { base: '今', reading: 'きょ' },
+            { base: '日', reading: 'う' },
+            { base: '暖', reading: 'あたた' }
           ]
         },
         {
           prompt: {
-            en: 'I set the alarm, yet it does not ring.',
-            vi: 'Tôi đặt báo thức thế mà nó không kêu.'
+            en: 'I set it properly, yet the alarm clock did not go off.',
+            vi: 'Đã cài cẩn thận vậy mà đồng hồ báo thức không kêu.'
           },
-          jp: 'セットした のに、目覚まし[時計]が 鳴りません。',
+          jp: 'ちゃんと セットした のに、目覚まし時計が 鳴りませんでした。',
           ruby: [
             { base: '目', reading: 'め' },
             { base: '覚', reading: 'ざ' },

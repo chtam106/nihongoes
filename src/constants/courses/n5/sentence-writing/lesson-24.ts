@@ -42,14 +42,18 @@ export const n5Lesson24SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: { en: 'Tanaka gave me everything.', vi: 'Tanaka cho tôi tất cả.' },
-          jp: '田中さんが 私に 全部 くれました。',
+          prompt: {
+            en: 'A friend gave me flowers for my birthday.',
+            vi: 'Bạn tôi tặng hoa nhân dịp sinh nhật.'
+          },
+          jp: '友達が 誕生日に 花を くれました。',
           ruby: [
-            { base: '田', reading: 'た' },
-            { base: '中', reading: 'なか' },
-            { base: '私', reading: 'わたし' },
-            { base: '全', reading: 'ぜん' },
-            { base: '部', reading: 'ぶ' }
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '誕', reading: 'たん' },
+            { base: '生', reading: 'じょう' },
+            { base: '日', reading: 'び' },
+            { base: '花', reading: 'はな' }
           ]
         }
       ]
@@ -108,17 +112,16 @@ export const n5Lesson24SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I will take the children along for Mother.',
-            vi: 'Tôi sẽ dẫn bọn trẻ đi giúp mẹ.'
+            en: 'I helped my younger brother with his homework.',
+            vi: 'Tôi đã giảng bài tập cho em trai.'
           },
-          jp: '私は 母に 子供を 連れて 行って あげます。',
+          jp: '私は 弟に 宿題を 教えて あげました。',
           ruby: [
             { base: '私', reading: 'わたし' },
-            { base: '母', reading: 'はは' },
-            { base: '子', reading: 'こ' },
-            { base: '供', reading: 'ども' },
-            { base: '連', reading: 'つ' },
-            { base: '行', reading: 'い' }
+            { base: '弟', reading: 'おとうと' },
+            { base: '宿', reading: 'しゅく' },
+            { base: '題', reading: 'だい' },
+            { base: '教', reading: 'おし' }
           ]
         }
       ]
@@ -157,19 +160,15 @@ export const n5Lesson24SentenceWriting: LessonSentenceWriting = {
           ]
         },
         {
-          prompt: {
-            en: 'I had someone prepare everything for me.',
-            vi: 'Tôi nhờ người chuẩn bị tất cả.'
-          },
-          jp: '私は 友達に 全部 準備して もらいました。',
+          prompt: { en: 'My friends helped me move.', vi: 'Tôi được bạn bè giúp chuyển nhà.' },
+          jp: '友達に 引っ越しを 手伝って もらいました。',
           ruby: [
-            { base: '私', reading: 'わたし' },
             { base: '友', reading: 'とも' },
             { base: '達', reading: 'だち' },
-            { base: '全', reading: 'ぜん' },
-            { base: '部', reading: 'ぶ' },
-            { base: '準', reading: 'じゅん' },
-            { base: '備', reading: 'び' }
+            { base: '引', reading: 'ひ' },
+            { base: '越', reading: 'こ' },
+            { base: '手', reading: 'て' },
+            { base: '伝', reading: 'つだ' }
           ]
         },
         {
@@ -250,15 +249,16 @@ export const n5Lesson24SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'Besides that, Sato will explain it for me.',
-            vi: 'Ngoài ra, Sato sẽ giải thích giúp tôi.'
+            en: 'Ms. Sato drove me to the station.',
+            vi: 'Chị Sato đã chở tôi ra ga bằng ô tô.'
           },
-          jp: 'ほかに 佐藤さんが 説明して くれます。',
+          jp: '佐藤さんが 駅まで 車で 送って くれました。',
           ruby: [
             { base: '佐', reading: 'さ' },
             { base: '藤', reading: 'とう' },
-            { base: '説', reading: 'せつ' },
-            { base: '明', reading: 'めい' }
+            { base: '駅', reading: 'えき' },
+            { base: '車', reading: 'くるま' },
+            { base: '送', reading: 'おく' }
           ]
         }
       ]
@@ -328,10 +328,10 @@ export const n5Lesson24SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'I cannot drive, but Father will take the station wagon.',
-            vi: 'Tôi không lái được, còn bố sẽ đưa xe wagon.'
+            en: 'I do not drive, but my father will drive the station wagon.',
+            vi: 'Tôi không lái xe, nhưng bố tôi sẽ lái chiếc xe wagon.'
           },
-          jp: '私は 運転できませんが、父が ワゴン車を 運転します。',
+          jp: '私は 運転しませんが、父が ワゴン車を 運転します。',
           ruby: [
             { base: '私', reading: 'わたし' },
             { base: '運', reading: 'うん' },
