@@ -745,7 +745,7 @@ export const n5Lesson17: Lesson = {
             { base: '険', reading: 'けん' },
             { base: '証', reading: 'しょう' },
             { base: '持', reading: 'も' },
-            { base: '来', reading: 'き' }
+            { base: '来', reading: 'こ' }
           ]
         },
         {

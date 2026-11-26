@@ -206,6 +206,11 @@ export const n4Lesson29SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'N (place) に 行きます / 来ます / 帰ります',
+      patternRuby: [
+        { base: '行', reading: 'い' },
+        { base: '来', reading: 'き' },
+        { base: '帰', reading: 'かえ' }
+      ],
       items: [
         {
           prompt: {

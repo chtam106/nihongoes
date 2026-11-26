@@ -33,11 +33,6 @@ export const verbPractice = {
   chooseTe: 'Thể て của động từ này là gì?',
   chooseNai: 'Thể ない của động từ này là gì?',
   correct: 'Chính xác!',
-  nextQuestion: 'Câu tiếp theo',
-  showSummary: 'Xem tổng kết',
-  summaryTitle: 'Tổng kết lượt luyện',
-  summaryWord: 'Động từ',
-  summaryResult: 'Kết quả',
   review: 'Xem lại',
   retry: 'Luyện lại nhóm này'
 };

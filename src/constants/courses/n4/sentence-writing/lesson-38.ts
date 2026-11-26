@@ -153,6 +153,13 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'V-plain の が 好き / 上手 / 下手',
+      patternRuby: [
+        { base: '好', reading: 'す' },
+        { base: '上', reading: 'うえ' },
+        { base: '手', reading: 'て' },
+        { base: '下', reading: 'へ' },
+        { base: '手', reading: 'て' }
+      ],
       items: [
         {
           prompt: {
@@ -234,6 +241,7 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'V-plain の に なれます / 忘れます',
+      patternRuby: [{ base: '忘', reading: 'わす' }],
       items: [
         {
           prompt: {
@@ -298,6 +306,7 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: '～知っていますか',
+      patternRuby: [{ base: '知', reading: 'し' }],
       items: [
         {
           prompt: {
@@ -386,6 +395,7 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'N / V-plain 時',
+      patternRuby: [{ base: '時', reading: 'じ' }],
       items: [
         {
           prompt: {
@@ -447,15 +457,17 @@ export const n4Lesson38SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'When I see twins, they look alike.',
-            vi: 'Khi thấy sinh đôi, họ giống nhau.'
+            en: 'The twins look alike. When I first met them, I could not tell who was who.',
+            vi: 'Cặp song sinh trông rất giống nhau. Lần đầu gặp, tôi không phân biệt được ai là ai.'
           },
-          jp: '双子を 見る 時、似ています。',
+          jp: '双子は よく 似ています。初めて 会った 時、どちらが どちらか わかりませんでした。',
           ruby: [
             { base: '双', reading: 'ふた' },
             { base: '子', reading: 'ご' },
-            { base: '見', reading: 'み' },
-            { base: '似', reading: 'に' }
+            { base: '似', reading: 'に' },
+            { base: '初', reading: 'はじ' },
+            { base: '会', reading: 'あ' },
+            { base: '時', reading: 'とき' }
           ]
         }
       ]

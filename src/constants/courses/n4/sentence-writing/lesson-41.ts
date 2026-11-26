@@ -277,7 +277,8 @@ export const n4Lesson41SentenceWriting: LessonSentenceWriting = {
           jp: '一言 言って ください。',
           ruby: [
             { base: '一', reading: 'ひと' },
-            { base: '言', reading: 'こと' }
+            { base: '言', reading: 'こと' },
+            { base: '言', reading: 'い' }
           ]
         },
         {

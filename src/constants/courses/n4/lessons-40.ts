@@ -522,7 +522,7 @@ export const n4Lesson40: Lesson = {
             { base: '動', reading: 'どう' },
             { base: '会', reading: 'かい' },
             { base: '父', reading: 'ちち' },
-            { base: '来', reading: 'く' }
+            { base: '来', reading: 'こ' }
           ]
         },
         {
@@ -534,9 +534,9 @@ export const n4Lesson40: Lesson = {
             vi: 'Tất nhiên. Xin mời đến xem em Hans thế nào nhé.'
           },
           ruby: [
-            { base: '来', reading: 'く' },
+            { base: '来', reading: 'き' },
             { base: '様', reading: 'よう' },
-            { base: '子', reading: 'こ' },
+            { base: '子', reading: 'す' },
             { base: '見', reading: 'み' }
           ]
         }

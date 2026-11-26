@@ -552,14 +552,18 @@ export const n4Lesson27: Lesson = {
       highlights: ['られる'],
       title: { en: 'Potential verbs', vi: 'Động từ thể khả năng' },
       explanation: {
-        en: 'Potential form means "can do": Group I かきます→かけます, Group II たべます→たべられます, 来ます→こられます, します→できます. They conjugate like Group II verbs. わかります already implies ability, so わかれます is not used.',
-        vi: 'Thể khả năng nghĩa "có thể làm": nhóm I かきます→かけます, nhóm II たべます→たべられます, 来ます→こられます, します→できます. Chia như động từ nhóm II. わかります đã mang nghĩa khả năng, không dùng わかれます.'
+        en: 'The potential form means "can do". Group I: change the sound before ます from the い row to the え row: 書きます→書けます, 話します→話せます. Group II: drop ます and add られます: 食べます→食べられます. Group III: 来ます→来られます (read こられます), します→できます. Potential verbs conjugate like Group II. わかります already implies ability, so わかれます is not used.',
+        vi: 'Thể khả năng nghĩa "có thể làm". Nhóm I: đổi âm trước ます từ hàng い sang hàng え: 書きます→書けます, 話します→話せます. Nhóm II: bỏ ます, thêm られます: 食べます→食べられます. Nhóm III: 来ます→来られます (đọc là こられます), します→できます. Động từ thể khả năng chia tiếp như nhóm II. わかります đã mang nghĩa khả năng, không dùng わかれます.'
       },
       explanationRuby: [
+        { base: '書', reading: 'か' },
+        { base: '書', reading: 'か' },
+        { base: '話', reading: 'はな' },
+        { base: '話', reading: 'はな' },
+        { base: '食', reading: 'た' },
+        { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
-        { base: '来', reading: 'こ' },
-        { base: '分', reading: 'わ' },
-        { base: '分', reading: 'わ' }
+        { base: '来', reading: 'こ' }
       ],
       examples: [
         {

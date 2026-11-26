@@ -195,6 +195,11 @@ export const n4Lesson46SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'N / Adj / V 普通形 はずです',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
+      ],
       items: [
         {
           prompt: {

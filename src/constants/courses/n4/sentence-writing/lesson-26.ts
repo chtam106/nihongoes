@@ -246,6 +246,7 @@ export const n4Lesson26SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: '疑問詞 ＋ V-たら いいですか',
+      patternRuby: [{ base: '疑', reading: 'ぎ' }],
       items: [
         {
           prompt: {

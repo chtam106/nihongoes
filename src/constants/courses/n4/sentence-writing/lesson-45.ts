@@ -4,6 +4,13 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
   grammar: [
     {
       pattern: 'N / V-た / Adj 普通形 場合は',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' },
+        { base: '場', reading: 'ば' },
+        { base: '合', reading: 'あい' }
+      ],
       items: [
         {
           prompt: {
@@ -157,6 +164,11 @@ export const n4Lesson45SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'V-た / Adj 普通形 のに',
+      patternRuby: [
+        { base: '普', reading: 'ふ' },
+        { base: '通', reading: 'つう' },
+        { base: '形', reading: 'けい' }
+      ],
       items: [
         {
           prompt: {

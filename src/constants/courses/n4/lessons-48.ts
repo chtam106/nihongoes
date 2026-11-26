@@ -383,11 +383,11 @@ export const n4Lesson48: Lesson = {
       highlights: ['させ'],
       title: { en: 'Causative form (V-させる)', vi: 'Thể sai khiến (V-させる)' },
       explanation: {
-        en: 'The causative means make or let someone do something. Group I: かきます→かかせます; Group II: たべます→たべさせます; 来ます→こさせます; します→させます. Causative verbs conjugate like Group II. A person of lower status does not use the causative toward a superior - use 〜て いただきます or 〜て もらいます instead.',
-        vi: 'Thể sai khiến: bắt hoặc cho ai làm gì. Nhóm I: かきます→かかせます; nhóm II: たべます→たべさせます; 来ます→こさせます; します→させます. Chia như động từ nhóm II. Người cấp dưới không dùng sai khiến với cấp trên - dùng 〜て いただきます hoặc 〜て もらいます.'
+        en: 'The causative means make or let someone do something. Group I: かきます→かかせます; Group II: たべます→たべさせます; 来ます→来させます (read こさせます); します→させます. Causative verbs conjugate like Group II. A person of lower status does not use the causative toward a superior - use 〜て いただきます or 〜て もらいます instead.',
+        vi: 'Thể sai khiến: bắt hoặc cho ai làm gì. Nhóm I: かきます→かかせます; nhóm II: たべます→たべさせます; 来ます→来させます (đọc là こさせます); します→させます. Chia như động từ nhóm II. Người cấp dưới không dùng sai khiến với cấp trên - dùng 〜て いただきます hoặc 〜て もらいます.'
       },
       explanationRuby: [
-        { base: '来', reading: 'こ' },
+        { base: '来', reading: 'き' },
         { base: '来', reading: 'こ' }
       ],
       examples: [
