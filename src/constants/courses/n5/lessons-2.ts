@@ -1071,7 +1071,12 @@ export const n5Lesson2: Lesson = {
               jp: 'いいえ、違います',
               ruby: [{ base: '違', reading: 'ちが' }]
             },
-            { id: 'c', label: { en: 'Not mentioned', vi: 'Không nói' }, jp: '書いて ありません' },
+            {
+              id: 'c',
+              label: { en: 'Not mentioned', vi: 'Không nói' },
+              jp: '書いて ありません',
+              ruby: [{ base: '書', reading: 'か' }]
+            },
             { id: 'd', label: { en: 'It is broken', vi: 'Bị hỏng' }, jp: 'こわれています' }
           ],
           correctId: 'a'

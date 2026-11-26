@@ -549,8 +549,8 @@ export const n4Lesson37: Lesson = {
       highlights: ['に', 'が'],
       title: { en: 'Passive with a person agent (に)', vi: 'Bị động với tác nhân người (に)' },
       explanation: {
-        en: 'When someone does something to you, the doer takes に and you are the subject: 先生に 褒められました. Conjugate passive like Group II: 書きます→書かれます.',
-        vi: 'Khi ai làm gì với bạn, tác nhân dùng に, bạn là chủ ngữ: 先生に 褒められました. Chia bị động như nhóm II: 書きます→書かれます.'
+        en: 'When someone does something to you, the doer takes に and you are the subject: 先生に 褒められました. Making the passive: Group I: change the sound before ます to the あ row and add れます (い becomes わ): 書きます→書かれます, 言います→言われます. Group II: drop ます and add られます: 褒めます→褒められます. Group III: します→されます, 来ます→来られます (read こられます). The passive verb then conjugates like Group II.',
+        vi: 'Khi ai làm gì với bạn, người làm đi với に, còn bạn là chủ ngữ: 先生に 褒められました. Cách chia thể bị động: Nhóm I: đổi âm trước ます sang hàng あ rồi thêm れます (い đổi thành わ): 書きます→書かれます, 言います→言われます. Nhóm II: bỏ ます, thêm られます: 褒めます→褒められます. Nhóm III: します→されます, 来ます→来られます (đọc là こられます). Sau đó động từ bị động chia tiếp như nhóm II.'
       },
       explanationRuby: [
         { base: '先', reading: 'せん' },
@@ -558,11 +558,12 @@ export const n4Lesson37: Lesson = {
         { base: '褒', reading: 'ほ' },
         { base: '書', reading: 'か' },
         { base: '書', reading: 'か' },
-        { base: '先', reading: 'せん' },
-        { base: '生', reading: 'せい' },
+        { base: '言', reading: 'い' },
+        { base: '言', reading: 'い' },
         { base: '褒', reading: 'ほ' },
-        { base: '書', reading: 'か' },
-        { base: '書', reading: 'か' }
+        { base: '褒', reading: 'ほ' },
+        { base: '来', reading: 'き' },
+        { base: '来', reading: 'こ' }
       ],
       examples: [
         {

@@ -1,3 +1,4 @@
+import { routes } from '@/constants/routes.ts';
 import type { Lesson } from '@/constants/courses/types.ts';
 
 /** Minna no Nihongo Shokyu I - Lesson 14 (て形, 〜てください, 〜ています, 〜ましょうか). */
@@ -618,20 +619,26 @@ export const n5Lesson14: Lesson = {
       highlights: ['て', 'ください'],
       title: { en: 'Please do (〜てください)', vi: 'Hãy ~ (〜てください)' },
       explanation: {
-        en: 'Drop ます and add て, then ください to make a polite request or instruction. Form the て-form by verb group: Group I (書き→書いて, 読み→読んで, 待ち→待って); Group II (食べ→食べて); Group III (き→きて, する→して).',
-        vi: 'Bỏ ます, thêm て rồi ください để yêu cầu hoặc chỉ thị lịch sự. Chia thể て theo nhóm: nhóm I (書き→書いて, 読み→読んで, 待ち→待って); nhóm II (食べ→食べて); nhóm III (き→きて, する→して).'
+        en: 'Put the verb in the て form, then add ください to make a polite request or instruction: 書きます→書いて ください, 読みます→読んで ください, 食べます→食べて ください, 来ます→来て ください. How the て form is made depends on the verb group.',
+        vi: 'Chia động từ sang thể て rồi thêm ください để yêu cầu hoặc chỉ thị lịch sự: 書きます→書いて ください, 読みます→読んで ください, 食べます→食べて ください, 来ます→来て ください. Cách đổi sang thể て tùy theo nhóm động từ.'
       },
       explanationRuby: [
         { base: '書', reading: 'か' },
         { base: '書', reading: 'か' },
         { base: '読', reading: 'よ' },
         { base: '読', reading: 'よ' },
-        { base: '待', reading: 'ま' },
-        { base: '待', reading: 'ま' },
         { base: '食', reading: 'た' },
         { base: '食', reading: 'た' },
+        { base: '来', reading: 'き' },
         { base: '来', reading: 'き' }
       ],
+      link: {
+        href: `${routes.practice.verbs.te}#guide`,
+        label: {
+          en: 'How to change the ます form to the て form',
+          vi: 'Xem cách đổi từ thể ます sang thể て'
+        }
+      },
       examples: [
         {
           jp: 'ちょっと 待って ください。',
@@ -666,27 +673,6 @@ export const n5Lesson14: Lesson = {
             { base: '方', reading: 'かた' },
             { base: '教', reading: 'おし' }
           ]
-        },
-        {
-          jp: '暑いですね。窓を 開けましょうか。',
-          romaji: 'Atsui desu ne. Mado o akemashō ka.',
-          meaning: {
-            en: 'It is hot, is it not? Shall I open the window?',
-            vi: 'Nóng nhỉ. Tôi mở cửa sổ nhé?'
-          },
-          dialogueGroup: 'window',
-          ruby: [
-            { base: '暑', reading: 'あつ' },
-            { base: '窓', reading: 'まど' },
-            { base: '開', reading: 'あ' }
-          ]
-        },
-        {
-          jp: 'ええ、お願いします。',
-          romaji: 'Ee, onegaishimasu.',
-          meaning: { en: 'Yes, please.', vi: 'Vâng, nhờ anh/chị.' },
-          dialogueGroup: 'window',
-          ruby: [{ base: '願', reading: 'ねが' }]
         }
       ]
     },

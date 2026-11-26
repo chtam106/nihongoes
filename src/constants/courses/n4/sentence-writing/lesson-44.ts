@@ -190,7 +190,8 @@ export const n4Lesson44SentenceWriting: LessonSentenceWriting = {
             en: 'This shirt does not get wet easily. The shirt gets wet.',
             vi: 'Áo này khó ướt. Áo bị ướt.'
           },
-          jp: 'この シャツは ぬれにくいです。雨で ぬれます。'
+          jp: 'この シャツは ぬれにくいです。雨で ぬれます。',
+          ruby: [{ base: '雨', reading: 'あめ' }]
         },
         {
           prompt: {

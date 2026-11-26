@@ -555,7 +555,7 @@ export const n5Lesson18: Lesson = {
         { base: '食', reading: 'た' },
         { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
-        { base: '来', reading: 'き' }
+        { base: '来', reading: 'く' }
       ],
       examples: [
         {

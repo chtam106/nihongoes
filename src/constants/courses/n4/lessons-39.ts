@@ -648,7 +648,7 @@ export const n4Lesson39: Lesson = {
       explanationRuby: [
         { base: '途', reading: 'と' },
         { base: '中', reading: 'ちゅう' },
-        { base: '来', reading: 'き' },
+        { base: '来', reading: 'く' },
         { base: '途', reading: 'と' },
         { base: '中', reading: 'ちゅう' },
         { base: '事', reading: 'じ' },
@@ -656,7 +656,7 @@ export const n4Lesson39: Lesson = {
         { base: '道', reading: 'みち' },
         { base: '途', reading: 'と' },
         { base: '中', reading: 'ちゅう' },
-        { base: '来', reading: 'き' },
+        { base: '来', reading: 'く' },
         { base: '途', reading: 'と' },
         { base: '中', reading: 'ちゅう' },
         { base: '事', reading: 'じ' },

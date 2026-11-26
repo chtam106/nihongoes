@@ -3,19 +3,28 @@ import type { LessonSentenceWriting } from '@/types/course.ts';
 export const n4Lesson35SentenceWriting: LessonSentenceWriting = {
   grammar: [
     {
-      pattern: 'V-たら',
+      pattern: 'V-ば',
       items: [
         {
           prompt: {
-            en: 'When spring comes, the flowers bloom and the leaves change.',
-            vi: 'Khi xuân đến, hoa nở và lá đổi màu.'
+            en: 'When spring comes, the flowers bloom.',
+            vi: 'Khi mùa xuân đến thì hoa nở.'
           },
-          jp: '春が 来たら、花が 咲きます。葉の 色が 変わります。',
+          jp: '春に なれば、花が 咲きます。',
           ruby: [
             { base: '春', reading: 'はる' },
-            { base: '来', reading: 'き' },
             { base: '花', reading: 'はな' },
-            { base: '咲', reading: 'さ' },
+            { base: '咲', reading: 'さ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'When autumn comes, the color of the leaves changes.',
+            vi: 'Khi mùa thu đến thì lá đổi màu.'
+          },
+          jp: '秋に なれば、葉の 色が 変わります。',
+          ruby: [
+            { base: '秋', reading: 'あき' },
             { base: '葉', reading: 'は' },
             { base: '色', reading: 'いろ' },
             { base: '変', reading: 'か' }
@@ -23,286 +32,340 @@ export const n4Lesson35SentenceWriting: LessonSentenceWriting = {
         },
         {
           prompt: {
-            en: 'If you click, you can enter furigana.',
-            vi: 'Nếu click thì nhập được furigana.'
+            en: 'If the weather is good, you can see an island over there.',
+            vi: 'Nếu trời đẹp thì có thể thấy hòn đảo ở phía bên kia.'
           },
-          jp: 'クリックしたら、ふりがなを 入力します。',
+          jp: '天気が よければ、向こうに 島が 見えます。',
           ruby: [
-            { base: '入', reading: 'にゅう' },
-            { base: '力', reading: 'りょく' }
+            { base: '天', reading: 'てん' },
+            { base: '気', reading: 'き' },
+            { base: '向', reading: 'む' },
+            { base: '島', reading: 'しま' },
+            { base: '見', reading: 'み' }
           ]
         },
         {
           prompt: {
-            en: 'If it is fixed, pull the lever.',
-            vi: 'Nếu sửa xong thì kéo cần.'
+            en: 'If you pull this lever, the machine stops.',
+            vi: 'Nếu kéo cần gạt này thì máy sẽ dừng.'
           },
-          jp: '故障が 直ったら、レバーを 引きます。機械が 治ります。',
+          jp: 'この レバーを 引けば、機械が 止まります。',
           ruby: [
-            { base: '故', reading: 'こ' },
-            { base: '障', reading: 'しょう' },
-            { base: '直', reading: 'なお' },
             { base: '引', reading: 'ひ' },
             { base: '機', reading: 'き' },
             { base: '械', reading: 'かい' },
-            { base: '治', reading: 'なお' }
+            { base: '止', reading: 'と' }
           ]
         },
         {
           prompt: {
-            en: 'If you go overseas, you will have a chance to climb mountains.',
-            vi: 'Nếu ra nước ngoài sẽ có cơ hội leo núi.'
+            en: 'Without permission, you cannot go up to the rooftop.',
+            vi: 'Nếu không có sự cho phép thì không thể lên tầng thượng.'
           },
-          jp: '海外へ 行ったら、山登りの 機会が あります。',
-          ruby: [
-            { base: '海', reading: 'かい' },
-            { base: '外', reading: 'がい' },
-            { base: '行', reading: 'い' },
-            { base: '山', reading: 'やま' },
-            { base: '登', reading: 'のぼ' },
-            { base: '機', reading: 'き' },
-            { base: '会', reading: 'かい' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'If you mix with people, you get along.',
-            vi: 'Nếu chơi với người thì sẽ hòa thuận.'
-          },
-          jp: '人と 交わったら、仲よくします。よく 交わります。',
-          ruby: [
-            { base: '人', reading: 'ひと' },
-            { base: '交', reading: 'まじ' },
-            { base: '仲', reading: 'なか' },
-            { base: '交', reading: 'まじ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'If you lack permission, you will be troubled.',
-            vi: 'Nếu không có phép thì sẽ lúng túng.'
-          },
-          jp: '許可が なかったら、困ります。',
+          jp: '許可が なければ、屋上へ 行く ことは できません。',
           ruby: [
             { base: '許', reading: 'きょ' },
             { base: '可', reading: 'か' },
-            { base: '困', reading: 'こま' }
-          ]
-        }
-      ]
-    },
-    {
-      pattern: '疑問詞 + V-たら いいですか',
-      items: [
-        {
-          prompt: {
-            en: 'Which key should I press to mark a circle?',
-            vi: 'Phải bấm phím nào để đánh dấu tròn?'
-          },
-          jp: '丸を 付けるには、どの キーを 押したら いいですか。正しい キーを 付けます。',
-          ruby: [
-            { base: '丸', reading: 'まる' },
-            { base: '付', reading: 'つ' },
-            { base: '押', reading: 'お' },
-            { base: '正', reading: 'ただ' },
-            { base: '付', reading: 'つ' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Where should I go to see the harbor?',
-            vi: 'Muốn xem cảng thì nên đi đâu?'
-          },
-          jp: '港を 見たいんですが、どこへ 行ったら いいですか。向こうの 島です。',
-          ruby: [
-            { base: '港', reading: 'みなと' },
-            { base: '見', reading: 'み' },
-            { base: '行', reading: 'い' },
-            { base: '向', reading: 'む' },
-            { base: '島', reading: 'しま' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'How should I open the curtain cord?',
-            vi: 'Dây rèm phải kéo thế nào?'
-          },
-          jp: 'カーテンの ひもは どうしたら いいですか。'
-        },
-        {
-          prompt: {
-            en: 'When should I use the rice cooker?',
-            vi: 'Nồi cơm điện nên dùng khi nào?'
-          },
-          jp: '炊飯器は いつ 使ったら いいですか。設備が 必要です。',
-          ruby: [
-            { base: '炊', reading: 'すい' },
-            { base: '飯', reading: 'はん' },
-            { base: '器', reading: 'き' },
-            { base: '使', reading: 'つか' },
-            { base: '設', reading: 'せつ' },
-            { base: '備', reading: 'び' },
-            { base: '必', reading: 'ひつ' },
-            { base: '要', reading: 'よう' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'Who should I ask at the travel agency?',
-            vi: 'Ở công ty du lịch nên hỏi ai?'
-          },
-          jp: '旅行社で だれに 聞いたら いいですか。詳しい 人です。',
-          ruby: [
-            { base: '旅', reading: 'りょ' },
-            { base: '行', reading: 'こう' },
-            { base: '社', reading: 'しゃ' },
-            { base: '聞', reading: 'き' },
-            { base: '詳', reading: 'くわ' },
-            { base: '人', reading: 'ひと' }
-          ]
-        }
-      ]
-    },
-    {
-      pattern: 'N1 は N2 です',
-      items: [
-        {
-          prompt: {
-            en: 'As for history, the old days of this neighborhood are long.',
-            vi: 'Về lịch sử thì ngày xưa khu phố này dài.'
-          },
-          jp: '歴史は 近所の 昔が 長いです。',
-          ruby: [
-            { base: '歴', reading: 'れき' },
-            { base: '史', reading: 'し' },
-            { base: '近', reading: 'きん' },
-            { base: '所', reading: 'じょ' },
-            { base: '昔', reading: 'むかし' },
-            { base: '長', reading: 'なが' }
-          ]
-        },
-        {
-          prompt: {
-            en: 'As for the rooftop, the view of the island is good.',
-            vi: 'Về tầng thượng thì view đảo đẹp.'
-          },
-          jp: '屋上は 島の 景色が いいです。',
-          ruby: [
             { base: '屋', reading: 'おく' },
             { base: '上', reading: 'じょう' },
-            { base: '島', reading: 'しま' },
-            { base: '景', reading: 'け' },
-            { base: '色', reading: 'しき' }
+            { base: '行', reading: 'い' }
           ]
         },
         {
           prompt: {
-            en: 'As for ski resorts, the overnight bus is convenient.',
-            vi: 'Về khu trượt tuyết thì xe đêm tiện.'
+            en: 'If you take this medicine, you will get better soon.',
+            vi: 'Nếu uống thuốc này thì sẽ khỏi ngay.'
           },
-          jp: 'スキー場は 夜行バスが 便利です。',
+          jp: 'この 薬を 飲めば、すぐ 治ります。',
           ruby: [
-            { base: '場', reading: 'じょう' },
+            { base: '薬', reading: 'くすり' },
+            { base: '飲', reading: 'の' },
+            { base: '治', reading: 'なお' }
+          ]
+        }
+      ]
+    },
+    {
+      pattern: 'N なら',
+      items: [
+        {
+          prompt: {
+            en: 'For mountain climbing, going by night bus is convenient.',
+            vi: 'Nếu là leo núi thì đi bằng xe buýt đêm rất tiện.'
+          },
+          jp: '山登りなら、夜行バスで 行くのが 便利ですよ。',
+          ruby: [
+            { base: '山', reading: 'やま' },
+            { base: '登', reading: 'のぼ' },
             { base: '夜', reading: 'や' },
             { base: '行', reading: 'こう' },
+            { base: '行', reading: 'い' },
             { base: '便', reading: 'べん' },
             { base: '利', reading: 'り' }
           ]
         },
         {
           prompt: {
-            en: 'As for proverbs, relationships are important.',
-            vi: 'Về tục ngữ thì quan hệ là quan trọng.'
+            en: 'For ski resorts, Hokkaido is good.',
+            vi: 'Nếu là khu trượt tuyết thì Hokkaido là hay nhất.'
           },
-          jp: '諺は 人と人の 関係を 教えます。',
+          jp: 'スキー場なら、北海道が いいですよ。',
           ruby: [
-            { base: '諺', reading: 'ことわざ' },
-            { base: '人', reading: 'ひと' },
-            { base: '人', reading: 'ひと' },
-            { base: '関', reading: 'かん' },
-            { base: '係', reading: 'けい' },
-            { base: '教', reading: 'おし' }
+            { base: '場', reading: 'じょう' },
+            { base: '北', reading: 'ほっ' },
+            { base: '海', reading: 'かい' },
+            { base: '道', reading: 'どう' }
           ]
         },
         {
           prompt: {
-            en: 'Well, as for more details, I am not sure.',
-            vi: 'Ờ, còn chi tiết hơn thì tôi không rõ.'
+            en: 'For travel, it is best to ask at a travel agency.',
+            vi: 'Nếu là du lịch thì tốt nhất nên hỏi ở công ty du lịch.'
           },
-          jp: 'さあ、もっと 詳しい ことは わかりません。それなら 旅行社へ 行きます。',
+          jp: '旅行なら、旅行社で 聞くのが いちばんです。',
           ruby: [
-            { base: '詳', reading: 'くわ' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
             { base: '旅', reading: 'りょ' },
             { base: '行', reading: 'こう' },
             { base: '社', reading: 'しゃ' },
-            { base: '行', reading: 'い' }
+            { base: '聞', reading: 'き' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'For history, you can learn about the old days at the temple in my neighborhood.',
+            vi: 'Nếu là lịch sử thì ở ngôi chùa trong khu phố có thể biết chuyện ngày xưa.'
+          },
+          jp: '歴史なら、近所の お寺で 昔の ことが わかります。',
+          ruby: [
+            { base: '歴', reading: 'れき' },
+            { base: '史', reading: 'し' },
+            { base: '近', reading: 'きん' },
+            { base: '所', reading: 'じょ' },
+            { base: '寺', reading: 'てら' },
+            { base: '昔', reading: 'むかし' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'For an overseas trip, a hotel near the harbor is convenient.',
+            vi: 'Nếu là du lịch nước ngoài thì khách sạn gần cảng rất tiện.'
+          },
+          jp: '海外旅行なら、港の 近くの ホテルが 便利です。',
+          ruby: [
+            { base: '海', reading: 'かい' },
+            { base: '外', reading: 'がい' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '港', reading: 'みなと' },
+            { base: '近', reading: 'ちか' },
+            { base: '便', reading: 'べん' },
+            { base: '利', reading: 'り' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Hmm, I do not know. In that case, please ask someone who knows more.',
+            vi: 'Ờ, tôi không biết. Nếu vậy thì hãy hỏi người biết rõ hơn.'
+          },
+          jp: 'さあ、わかりません。それなら、もっと 詳しい 人に 聞いて ください。',
+          ruby: [
+            { base: '詳', reading: 'くわ' },
+            { base: '人', reading: 'ひと' },
+            { base: '聞', reading: 'き' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'If it is necessary, please use this equipment.',
+            vi: 'Nếu cần thì hãy dùng thiết bị này.'
+          },
+          jp: '必要なら、この 設備を 使って ください。',
+          ruby: [
+            { base: '必', reading: 'ひつ' },
+            { base: '要', reading: 'よう' },
+            { base: '設', reading: 'せつ' },
+            { base: '備', reading: 'び' },
+            { base: '使', reading: 'つか' }
           ]
         }
       ]
     },
     {
-      pattern: '～ないか',
+      pattern: '疑問詞 + V-ば いいですか',
+      patternRuby: [
+        { base: '疑', reading: 'ぎ' },
+        { base: '問', reading: 'もん' },
+        { base: '詞', reading: 'し' }
+      ],
       items: [
         {
           prompt: {
-            en: 'Is there no other permission needed?',
-            vi: 'Không cần phép nào khác sao?'
+            en: 'I want to mark it with a circle. Which key should I press?',
+            vi: 'Tôi muốn đánh dấu tròn. Nên bấm phím nào?'
           },
-          jp: 'ほかに 許可は ないか。',
+          jp: '丸を 付けたいんですが、どの キーを 押せば いいですか。',
           ruby: [
-            { base: '許', reading: 'きょ' },
-            { base: '可', reading: 'か' }
+            { base: '丸', reading: 'まる' },
+            { base: '付', reading: 'つ' },
+            { base: '押', reading: 'お' }
           ]
         },
         {
           prompt: {
-            en: 'Do you not know a proverb?',
-            vi: 'Không biết tục ngữ nào sao?'
+            en: 'Where should I enter the furigana? You enter it above your name.',
+            vi: 'Nên nhập furigana ở đâu? Nhập phía trên tên.'
           },
-          jp: '諺を 知らないか。',
+          jp: 'ふりがなは どこに 入力すれば いいですか。……名前の 上に 入力します。',
+          ruby: [
+            { base: '入', reading: 'にゅう' },
+            { base: '力', reading: 'りょく' },
+            { base: '名', reading: 'な' },
+            { base: '前', reading: 'まえ' },
+            { base: '上', reading: 'うえ' },
+            { base: '入', reading: 'にゅう' },
+            { base: '力', reading: 'りょく' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'The curtain cord broke. What should I do?',
+            vi: 'Dây rèm cửa bị đứt rồi. Nên làm thế nào?'
+          },
+          jp: 'カーテンの ひもが 切れました。どうすれば いいですか。',
+          ruby: [{ base: '切', reading: 'き' }]
+        },
+        {
+          prompt: {
+            en: 'The rice cooker broke. Who should I ask?',
+            vi: 'Nồi cơm điện bị hỏng. Nên hỏi ai?'
+          },
+          jp: '炊飯器が 壊れたんですが、だれに 聞けば いいですか。',
+          ruby: [
+            { base: '炊', reading: 'すい' },
+            { base: '飯', reading: 'はん' },
+            { base: '器', reading: 'き' },
+            { base: '壊', reading: 'こわ' },
+            { base: '聞', reading: 'き' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I want to know the correct way to use it. What should I read?',
+            vi: 'Tôi muốn biết cách dùng đúng. Nên đọc gì?'
+          },
+          jp: '正しい 使い方を 知りたいんですが、何を 読めば いいですか。',
+          ruby: [
+            { base: '正', reading: 'ただ' },
+            { base: '使', reading: 'つか' },
+            { base: '方', reading: 'かた' },
+            { base: '知', reading: 'し' },
+            { base: '何', reading: 'なに' },
+            { base: '読', reading: 'よ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'Which button should I click? Click this round button.',
+            vi: 'Nên click nút nào? Click vào nút tròn này.'
+          },
+          jp: 'どの ボタンを クリックすれば いいですか。……この 丸い ボタンを クリックします。',
+          ruby: [{ base: '丸', reading: 'まる' }]
+        }
+      ]
+    },
+    {
+      pattern: '～ば ～ほど',
+      items: [
+        {
+          prompt: {
+            en: 'The more you know about proverbs, the more interesting they are.',
+            vi: 'Tục ngữ càng biết nhiều càng thấy thú vị.'
+          },
+          jp: '諺は 知れば 知るほど おもしろいです。',
           ruby: [
             { base: '諺', reading: 'ことわざ' },
+            { base: '知', reading: 'し' },
             { base: '知', reading: 'し' }
           ]
         },
         {
           prompt: {
-            en: 'Is the rice cooker not necessary?',
-            vi: 'Không cần nồi cơm điện sao?'
+            en: 'I mix with many kinds of people. The more I do, the deeper the relationships become.',
+            vi: 'Tôi giao lưu với nhiều người. Càng giao lưu thì quan hệ càng sâu sắc.'
           },
-          jp: '炊飯器は 必要じゃ ないか。',
+          jp: 'いろいろな 人と 交わります。交われば 交わるほど、関係が 深く なります。',
           ruby: [
-            { base: '炊', reading: 'すい' },
-            { base: '飯', reading: 'はん' },
-            { base: '器', reading: 'き' },
-            { base: '必', reading: 'ひつ' },
-            { base: '要', reading: 'よう' }
+            { base: '人', reading: 'ひと' },
+            { base: '交', reading: 'まじ' },
+            { base: '交', reading: 'まじ' },
+            { base: '交', reading: 'まじ' },
+            { base: '関', reading: 'かん' },
+            { base: '係', reading: 'けい' },
+            { base: '深', reading: 'ふか' }
           ]
         },
         {
           prompt: {
-            en: 'Will the machine not be fixed?',
-            vi: 'Máy không sửa được sao?'
+            en: 'I get along with my classmates. The more we talk, the more fun it is.',
+            vi: 'Tôi chơi thân với bạn cùng lớp. Càng nói chuyện càng vui.'
           },
-          jp: '機械は 直らないか。クリックします。',
+          jp: 'クラスの 友達と 仲よくします。話せば 話すほど、楽しく なります。',
           ruby: [
-            { base: '機', reading: 'き' },
-            { base: '械', reading: 'かい' },
-            { base: '直', reading: 'なお' }
+            { base: '友', reading: 'とも' },
+            { base: '達', reading: 'だち' },
+            { base: '仲', reading: 'なか' },
+            { base: '話', reading: 'はな' },
+            { base: '話', reading: 'はな' },
+            { base: '楽', reading: 'たの' }
           ]
         },
         {
           prompt: {
-            en: 'Is there no chance to go abroad?',
-            vi: 'Không có cơ hội ra nước ngoài sao?'
+            en: 'The more chances you have, the better your Japanese gets.',
+            vi: 'Càng có nhiều cơ hội thì tiếng Nhật càng giỏi.'
           },
-          jp: '海外へ 行く 機会は ないか。',
+          jp: '機会が あれば あるほど、日本語が 上手に なります。',
           ruby: [
-            { base: '海', reading: 'かい' },
-            { base: '外', reading: 'がい' },
-            { base: '行', reading: 'い' },
             { base: '機', reading: 'き' },
-            { base: '会', reading: 'かい' }
+            { base: '会', reading: 'かい' },
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '上', reading: 'じょう' },
+            { base: '手', reading: 'ず' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'I put circles on the correct answers. The more I study, the more circles there are.',
+            vi: 'Tôi đánh dấu tròn vào câu trả lời đúng. Càng học thì dấu tròn càng nhiều.'
+          },
+          jp: '正しい 答えに 丸を 付けます。勉強すれば するほど、丸が 増えます。',
+          ruby: [
+            { base: '正', reading: 'ただ' },
+            { base: '答', reading: 'こた' },
+            { base: '丸', reading: 'まる' },
+            { base: '付', reading: 'つ' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' },
+            { base: '丸', reading: 'まる' },
+            { base: '増', reading: 'ふ' }
+          ]
+        },
+        {
+          prompt: {
+            en: 'The more money you spend, the less you have, and you get into trouble.',
+            vi: 'Tiền càng tiêu càng ít đi, rồi sẽ khó khăn.'
+          },
+          jp: 'お金は 使えば 使うほど 少なく なって、困ります。',
+          ruby: [
+            { base: '金', reading: 'かね' },
+            { base: '使', reading: 'つか' },
+            { base: '使', reading: 'つか' },
+            { base: '少', reading: 'すく' },
+            { base: '困', reading: 'こま' }
           ]
         }
       ]

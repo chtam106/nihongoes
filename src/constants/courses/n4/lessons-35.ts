@@ -1,6 +1,6 @@
 import type { Lesson } from '@/constants/courses/types.ts';
 
-/** Minna no Nihongo Shokyu II - Lesson 35 (V-たら, たらいいですか, N は N, ～ないか). */
+/** Minna no Nihongo Shokyu II - Lesson 35 (条件形 ば, N なら, 疑問詞 + ばいいですか, ～ば～ほど). */
 export const n4Lesson35: Lesson = {
   id: 'lesson-35',
   number: 35,
@@ -9,8 +9,8 @@ export const n4Lesson35: Lesson = {
     vi: 'Khi và nếu'
   },
   focus: {
-    en: 'Express conditions with V-たら, ask how to do something with question word + V-たら, give topical information with N は N, and ask politely with ～ないか.',
-    vi: 'Diễn tả điều kiện với V-たら, hỏi cách làm với từ nghi vấn + V-たら, cung cấp thông tin chủ đề với N は N, và hỏi lịch sự với ～ないか.'
+    en: 'Make conditions with the ば form, pick up a topic with N なら, ask what to do with question word + V-ば いいですか, and say "the more..., the more..." with ～ば ～ほど.',
+    vi: 'Diễn tả điều kiện với thể ば, tiếp lời về một chủ đề với N なら, hỏi nên làm gì với từ nghi vấn + V-ば いいですか, và nói "càng... càng..." với ～ば ～ほど.'
   },
   vocab: [
     {
@@ -535,178 +535,80 @@ export const n4Lesson35: Lesson = {
   ],
   grammar: [
     {
-      pattern: 'V-たら',
-      highlights: ['たら'],
-      title: { en: 'Conditional たら', vi: 'Thể điều kiện たら' },
+      pattern: 'V-ば',
+      highlights: ['ば'],
+      title: { en: 'Conditional form (V-ば)', vi: 'Thể điều kiện (V-ば)' },
       explanation: {
-        en: "V-たら marks a condition for what follows: 春が 来たら 桜が 咲きます. It can also express the speaker's judgment in a situation: 財布が ないなら、カードで 払って ください.",
-        vi: 'V-たら đánh dấu điều kiện cho mệnh đề sau: 春が 来たら 桜が 咲きます. Cũng diễn tả phán đoán của người nói: 財布が ないなら、カードで 払って ください.'
+        en: 'The ば form states a condition for what follows: 天気が よければ、島が 見えます. From the ます form: Group I: change the sound before ます from the い row to the え row and add ば: 行きます→行けば, 押します→押せば. Group II: drop ます and add れば: 食べます→食べれば. Group III: します→すれば, 来ます→来れば (read くれば). Negative: ない→なければ. い-adjectives: い→ければ (いい→よければ); な-adjectives and nouns use なら.',
+        vi: 'Thể ば (thể điều kiện) nêu điều kiện để vế sau xảy ra: 天気が よければ、島が 見えます. Cách đổi từ thể ます: Nhóm I: đổi âm trước ます từ hàng い sang hàng え rồi thêm ば: 行きます→行けば, 押します→押せば. Nhóm II: bỏ ます, thêm れば: 食べます→食べれば. Nhóm III: します→すれば, 来ます→来れば (đọc là くれば). Phủ định: ない→なければ. Tính từ い: い→ければ (いい→よければ); tính từ な và danh từ dùng なら.'
       },
       explanationRuby: [
-        { base: '春', reading: 'はる' },
+        { base: '天', reading: 'てん' },
+        { base: '気', reading: 'き' },
+        { base: '島', reading: 'しま' },
+        { base: '見', reading: 'み' },
+        { base: '行', reading: 'い' },
+        { base: '行', reading: 'い' },
+        { base: '押', reading: 'お' },
+        { base: '押', reading: 'お' },
+        { base: '食', reading: 'た' },
+        { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
-        { base: '桜', reading: 'さく' },
-        { base: '咲', reading: 'さ' },
-        { base: '財', reading: 'さい' },
-        { base: '布', reading: 'ふ' },
-        { base: '払', reading: 'はら' }
+        { base: '来', reading: 'く' }
       ],
       examples: [
         {
-          jp: '天気が いい 日に 行ったら、向こうに 島が 見えます。',
-          romaji: 'Tenki ga ii hi ni ittara, mukō ni shima ga miemasu.',
+          jp: '天気が よければ、向こうに 島が 見えます。',
+          romaji: 'Tenki ga yokereba, mukō ni shima ga miemasu.',
           meaning: {
-            en: 'If you go on a clear day, you can see islands over there.',
-            vi: 'Nếu đi ngày đẹp trời thì nhìn thấy đảo ở phía kia.'
+            en: 'If the weather is good, you can see an island over there.',
+            vi: 'Nếu trời đẹp thì có thể thấy hòn đảo ở phía bên kia.'
           },
           ruby: [
             { base: '天', reading: 'てん' },
             { base: '気', reading: 'き' },
-            { base: '日', reading: 'ひ' },
-            { base: '行', reading: 'い' },
             { base: '向', reading: 'む' },
             { base: '島', reading: 'しま' },
             { base: '見', reading: 'み' }
           ]
         },
         {
-          jp: 'ボタンを クリックしたら、ドアが 開きます。',
-          romaji: 'Botan o kurikku shitara, doa ga akimasu.',
+          jp: 'ボタンを 押せば、窓が 開きます。',
+          romaji: 'Botan o oseba, mado ga akimasu.',
           meaning: {
-            en: 'If you click the button, the door opens.',
-            vi: 'Nếu bấm nút thì cửa sẽ mở.'
-          },
-          ruby: [{ base: '開', reading: 'あ' }]
-        },
-        {
-          jp: '北海道へ 行くなら、6月が いいですよ。',
-          romaji: 'Hokkaidō e iku nara, roku-gatsu ga ii desu yo.',
-          meaning: {
-            en: 'If you go to Hokkaido, June is good.',
-            vi: 'Nếu đi du lịch Hokkaido thì tháng 6 hay.'
+            en: 'If you press the button, the window opens.',
+            vi: 'Nếu bấm nút thì cửa sổ sẽ mở.'
           },
           ruby: [
-            { base: '北', reading: 'ほっ' },
-            { base: '海', reading: 'かい' },
-            { base: '道', reading: 'どう' },
-            { base: '行', reading: 'い' },
-            { base: '月', reading: 'がつ' }
-          ]
-        }
-      ],
-      answers: {
-        explanation: {
-          en: 'When the condition clause and main clause have different subjects, expressions of will or command are allowed: 田中さんが 来たら、会いに 行きます.',
-          vi: 'Khi chủ ngữ hai mệnh đề khác nhau, có thể dùng ý chí hoặc mệnh lệnh: 田中さんが 来たら、会いに 行きます.'
-        },
-        explanationRuby: [
-          { base: '田', reading: 'た' },
-          { base: '中', reading: 'なか' },
-          { base: '来', reading: 'らい' },
-          { base: '会', reading: 'あ' },
-          { base: '行', reading: 'い' },
-          { base: '田', reading: 'た' },
-          { base: '中', reading: 'なか' },
-          { base: '来', reading: 'らい' },
-          { base: '会', reading: 'あ' },
-          { base: '行', reading: 'い' }
-        ],
-        examples: [
-          {
-            jp: 'レポートは 明日までに 出さなければ なりませんか。',
-            romaji: 'Repōto wa ashita made ni dasanakereba narimasen ka.',
-            meaning: {
-              en: 'Do I have to submit the report by tomorrow?',
-              vi: 'Tôi phải nộp bài báo cáo trước ngày mai à?'
-            },
-            ruby: [
-              { base: '明', reading: 'あ' },
-              { base: '日', reading: 'にっ' },
-              { base: '出', reading: 'だ' }
-            ]
-          },
-          {
-            jp: '……無理なら、来週の 金曜日までに 出してください。',
-            romaji: '……Muri nara, raishū no kinyōbi made ni dashite kudasai.',
-            meaning: {
-              en: '...If you cannot, please submit it by next Friday.',
-              vi: '...Nếu không thể thì anh/chị nộp trước thứ Sáu tuần sau.'
-            },
-            ruby: [
-              { base: '無', reading: 'む' },
-              { base: '理', reading: 'り' },
-              { base: '来', reading: 'らい' },
-              { base: '週', reading: 'しゅう' },
-              { base: '金', reading: 'きん' },
-              { base: '曜', reading: 'よう' },
-              { base: '日', reading: 'にっ' },
-              { base: '出', reading: 'だ' }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      pattern: '疑問詞 + V-たら いいですか',
-      patternRuby: [{ base: '疑', reading: 'ぎ' }],
-      highlights: ['たら', 'いい', 'です', 'か'],
-      title: {
-        en: 'How should I...? (question word + たら)',
-        vi: 'Phải làm thế nào? (từ nghi vấn + たら)'
-      },
-      explanation: {
-        en: 'Ask how to do something: 本を 借りたいんですが、どうすれば いいですか. Same pattern as ～たら いいですか from Lesson 26, but with a question word.',
-        vi: 'Hỏi cách làm việc gì: 本を 借りたいんですが、どうすれば いいですか. Cùng mẫu với ～たら いいですか bài 26, nhưng có từ nghi vấn.'
-      },
-      explanationRuby: [
-        { base: '本', reading: 'ほん' },
-        { base: '借', reading: 'か' },
-        { base: '本', reading: 'ほん' },
-        { base: '借', reading: 'か' }
-      ],
-      examples: [
-        {
-          jp: '温泉に 行きたいんですが、どこへ 行ったら いいですか。',
-          romaji: 'Onsen ni ikitai n desu ga, doko e ittara ii desu ka.',
-          meaning: {
-            en: 'I want to go to a hot spring. Where should I go?',
-            vi: 'Tôi muốn đi tắm suối nước nóng. Nên đi đâu?'
-          },
-          ruby: [
-            { base: '温', reading: 'おん' },
-            { base: '泉', reading: 'せん' },
-            { base: '行', reading: 'い' },
-            { base: '行', reading: 'い' }
+            { base: '押', reading: 'お' },
+            { base: '窓', reading: 'まど' },
+            { base: '開', reading: 'あ' }
           ]
         },
         {
-          jp: '……温泉なら、白馬が いいですよ。',
-          romaji: '……Onsen nara, Hakuba ga ii desu yo.',
+          jp: '急がなければ、間に 合いませんよ。',
+          romaji: 'Isoganakereba, ma ni aimasen yo.',
           meaning: {
-            en: '...For hot springs, Hakuba is good.',
-            vi: '...Nếu là suối nước nóng thì Hakuba được đấy.'
+            en: 'If you do not hurry, you will not make it.',
+            vi: 'Nếu không nhanh lên thì sẽ không kịp đâu.'
           },
           ruby: [
-            { base: '温', reading: 'おん' },
-            { base: '泉', reading: 'せん' },
-            { base: '白', reading: 'はく' },
-            { base: '馬', reading: 'ば' }
+            { base: '急', reading: 'いそ' },
+            { base: '間', reading: 'ま' },
+            { base: '合', reading: 'あ' }
           ]
         }
       ]
     },
     {
-      pattern: 'N1 は N2 です',
-      highlights: ['は'],
-      title: { en: 'Topic with は (N は N)', vi: 'Chủ đề với は (N は N)' },
+      pattern: 'N なら',
+      highlights: ['なら'],
+      title: { en: 'If it is N (N なら)', vi: 'Nếu là N thì (N なら)' },
       explanation: {
-        en: 'N1 は N2 gives information about a topic already raised: ビールは ドイツの 歴史が 長いです. Compare 温泉は 白馬が いいですよ (about hot springs, Hakuba is good).',
-        vi: 'N1 は N2 cung cấp thông tin về chủ đề đã được nêu: ビールは ドイツの 歴史が 長いです. So sánh 温泉は 白馬が いいですよ (về suối nước nóng thì Hakuba hay).'
+        en: 'Use N なら to pick up a topic the other person just raised and give advice or information about it: 温泉なら、白馬が いいですよ.',
+        vi: 'N なら dùng khi tiếp lời về điều đối phương vừa nhắc đến, rồi đưa ra lời khuyên hay thông tin về điều đó: 温泉なら、白馬が いいですよ.'
       },
       explanationRuby: [
-        { base: '歴', reading: 'れき' },
-        { base: '史', reading: 'し' },
-        { base: '長', reading: 'なが' },
         { base: '温', reading: 'おん' },
         { base: '泉', reading: 'せん' },
         { base: '白', reading: 'はく' },
@@ -714,81 +616,146 @@ export const n4Lesson35: Lesson = {
       ],
       examples: [
         {
-          jp: '2、3日 旅行に 行きたいんですが、いい 所、知っていませんか。',
-          romaji: 'Ni, san-nichi ryokō ni ikitai n desu ga, ii tokoro, shitte imasen ka.',
+          jp: '温泉に 行きたいんですが、いい 所、知りませんか。',
+          romaji: 'Onsen ni ikitai n desu ga, ii tokoro, shirimasen ka.',
           meaning: {
-            en: 'I want to travel for two or three days. Do you know a good place?',
-            vi: 'Tôi muốn đi du lịch hai, ba ngày. Anh/chị biết chỗ nào hay không?'
+            en: 'I want to go to a hot spring. Do you know a good place?',
+            vi: 'Tôi muốn đi suối nước nóng. Anh/chị có biết chỗ nào hay không?'
           },
+          dialogueGroup: 'onsen',
           ruby: [
-            { base: '日', reading: 'にっ' },
-            { base: '旅', reading: 'りょ' },
+            { base: '温', reading: 'おん' },
+            { base: '泉', reading: 'せん' },
             { base: '行', reading: 'い' },
-            { base: '行', reading: 'い' },
-            { base: '所', reading: 'じょ' },
-            { base: '知', reading: 'ち' }
+            { base: '所', reading: 'ところ' },
+            { base: '知', reading: 'し' }
           ]
         },
         {
-          jp: '……2、3日なら、箱根か 日光が いいと 思います。',
-          romaji: '……Ni, san-nichi nara, Hakone ka Nikkō ga ii to omoimasu.',
+          jp: '……温泉なら、白馬が いいですよ。',
+          romaji: '……Onsen nara, Hakuba ga ii desu yo.',
           meaning: {
-            en: '...For two or three days, I think Hakone or Nikko would be good.',
-            vi: '...Nếu hai, ba ngày thì tôi nghĩ Hakone hoặc Nikko hay.'
+            en: '...For hot springs, Hakuba is good.',
+            vi: '...Suối nước nóng thì Hakuba được đấy.'
+          },
+          dialogueGroup: 'onsen',
+          ruby: [
+            { base: '温', reading: 'おん' },
+            { base: '泉', reading: 'せん' },
+            { base: '白', reading: 'はく' },
+            { base: '馬', reading: 'ば' }
+          ]
+        },
+        {
+          jp: '北海道旅行なら、6月が いいですよ。',
+          romaji: 'Hokkaidō ryokō nara, roku-gatsu ga ii desu yo.',
+          meaning: {
+            en: 'For a trip to Hokkaido, June is a good time.',
+            vi: 'Nếu đi du lịch Hokkaido thì nên đi vào tháng 6.'
           },
           ruby: [
-            { base: '日', reading: 'にっ' },
-            { base: '箱', reading: 'はこ' },
-            { base: '根', reading: 'ね' },
-            { base: '日', reading: 'にっ' },
-            { base: '光', reading: 'こう' },
-            { base: '思', reading: 'おも' }
+            { base: '北', reading: 'ほっ' },
+            { base: '海', reading: 'かい' },
+            { base: '道', reading: 'どう' },
+            { base: '旅', reading: 'りょ' },
+            { base: '行', reading: 'こう' },
+            { base: '月', reading: 'がつ' }
           ]
         }
       ]
     },
     {
-      pattern: '～ないか',
-      highlights: ['ない', 'か'],
-      title: { en: 'Negative question (～ないか)', vi: 'Câu hỏi phủ định (～ないか)' },
+      pattern: '疑問詞 + V-ば いいですか',
+      patternRuby: [
+        { base: '疑', reading: 'ぎ' },
+        { base: '問', reading: 'もん' },
+        { base: '詞', reading: 'し' }
+      ],
+      highlights: ['ば', 'いい', 'です', 'か'],
+      title: {
+        en: 'What should I do? (question word + V-ば いいですか)',
+        vi: 'Nên làm thế nào? (từ nghi vấn + V-ば いいですか)'
+      },
       explanation: {
-        en: 'A negative question invites agreement or lets the listener say no easily: ほかに 意見が ないか. More polite than a plain yes/no question when asking for opinions.',
-        vi: 'Câu hỏi phủ định mời ý kiến hoặc để đối phương từ chối dễ hơn: ほかに 意見が ないか. Lịch sự hơn câu hỏi khẳng định khi hỏi ý kiến.'
+        en: 'Ask what you should do with question word + ば form + いいですか: 本を 借りたいんですが、どうすれば いいですか. It means the same as ～たら いいですか from Lesson 26.',
+        vi: 'Hỏi nên làm thế nào bằng từ nghi vấn + thể ば + いいですか: 本を 借りたいんですが、どうすれば いいですか. Nghĩa giống ～たら いいですか ở bài 26.'
       },
       explanationRuby: [
-        { base: '意', reading: 'い' },
-        { base: '見', reading: 'けん' },
-        { base: '意', reading: 'い' },
-        { base: '見', reading: 'けん' }
+        { base: '本', reading: 'ほん' },
+        { base: '借', reading: 'か' }
       ],
       examples: [
         {
-          jp: 'ほかに 意見が ないか。',
-          romaji: 'Hoka ni iken ga nai ka.',
-          meaning: { en: 'Does anyone else have an opinion?', vi: 'Còn ai có thêm ý kiến không?' },
+          jp: 'パソコンが 動かないんですが、どうすれば いいですか。',
+          romaji: 'Pasokon ga ugokanai n desu ga, dō sureba ii desu ka.',
+          meaning: {
+            en: 'My computer will not work. What should I do?',
+            vi: 'Máy tính không chạy, tôi nên làm thế nào?'
+          },
+          ruby: [{ base: '動', reading: 'うご' }]
+        },
+        {
+          jp: 'この 書類は だれに 出せば いいですか。',
+          romaji: 'Kono shorui wa dare ni daseba ii desu ka.',
+          meaning: {
+            en: 'Who should I submit this document to?',
+            vi: 'Giấy tờ này tôi nên nộp cho ai?'
+          },
           ruby: [
-            { base: '意', reading: 'い' },
-            { base: '見', reading: 'けん' }
+            { base: '書', reading: 'しょ' },
+            { base: '類', reading: 'るい' },
+            { base: '出', reading: 'だ' }
+          ]
+        }
+      ]
+    },
+    {
+      pattern: '～ば ～ほど',
+      highlights: ['ば', 'ほど'],
+      title: { en: 'The more..., the more... (～ば ～ほど)', vi: 'Càng... càng... (～ば ～ほど)' },
+      explanation: {
+        en: 'Repeat the same word, first in the ば form, then in the dictionary form + ほど, to say "the more..., the more...": 練習すれば するほど 上手に なります. With い-adjectives: 安ければ 安いほど いいです.',
+        vi: 'Lặp lại cùng một từ, lần đầu ở thể ば, lần sau ở thể từ điển + ほど, để nói "càng... càng...": 練習すれば するほど 上手に なります. Với tính từ い: 安ければ 安いほど いいです.'
+      },
+      explanationRuby: [
+        { base: '練', reading: 'れん' },
+        { base: '習', reading: 'しゅう' },
+        { base: '上', reading: 'じょう' },
+        { base: '手', reading: 'ず' },
+        { base: '安', reading: 'やす' },
+        { base: '安', reading: 'やす' }
+      ],
+      examples: [
+        {
+          jp: '日本語は 勉強すれば するほど おもしろく なります。',
+          romaji: 'Nihongo wa benkyō sureba suru hodo omoshiroku narimasu.',
+          meaning: {
+            en: 'The more you study Japanese, the more interesting it gets.',
+            vi: 'Tiếng Nhật càng học càng thấy thú vị.'
+          },
+          ruby: [
+            { base: '日', reading: 'に' },
+            { base: '本', reading: 'ほん' },
+            { base: '語', reading: 'ご' },
+            { base: '勉', reading: 'べん' },
+            { base: '強', reading: 'きょう' }
           ]
         },
         {
-          jp: '……ないなら、ここで やめましょう。',
-          romaji: '……Nai nara, koko de yamemashō.',
+          jp: 'パソコンは 軽ければ 軽いほど 便利です。',
+          romaji: 'Pasokon wa karukereba karui hodo benri desu.',
           meaning: {
-            en: '...If not, let us stop here.',
-            vi: '...Nếu không có thì chúng ta dừng ở đây.'
-          }
+            en: 'The lighter a computer is, the more convenient it is.',
+            vi: 'Máy tính càng nhẹ càng tiện.'
+          },
+          ruby: [
+            { base: '軽', reading: 'かる' },
+            { base: '軽', reading: 'かる' },
+            { base: '便', reading: 'べん' },
+            { base: '利', reading: 'り' }
+          ]
         }
-      ],
-      answers: {
-        examples: [
-          {
-            jp: '……ありません。',
-            romaji: '……Arimasen.',
-            meaning: { en: '...No, there is not.', vi: '...Không. Không có gì thêm nữa.' }
-          }
-        ]
-      }
+      ]
     }
   ],
   reading: [

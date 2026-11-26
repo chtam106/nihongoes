@@ -342,3 +342,10 @@ const all = [
 ];
 console.log(JSON.stringify(all, null, 2));
 console.error('count', all.length);
+
+// `kana-jp` is advisory (some words are normally written in kana); every other kind fails.
+const blocking = all.filter((issue) => issue.kind !== 'kana-jp');
+if (blocking.length > 0) {
+  console.error('blocking', blocking.length);
+  process.exitCode = 1;
+}

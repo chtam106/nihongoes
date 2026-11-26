@@ -32,11 +32,6 @@ export const verbPractice = {
   chooseTe: 'What is the て form of this verb?',
   chooseNai: 'What is the ない form of this verb?',
   correct: 'Correct!',
-  nextQuestion: 'Next question',
-  showSummary: 'View summary',
-  summaryTitle: 'Practice summary',
-  summaryWord: 'Verb',
-  summaryResult: 'Result',
   review: 'Review',
   retry: 'Retry this subgroup'
 };

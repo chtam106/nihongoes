@@ -264,6 +264,10 @@ export const n4Lesson39SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: '途中で',
+      patternRuby: [
+        { base: '途', reading: 'と' },
+        { base: '中', reading: 'ちゅう' }
+      ],
       items: [
         {
           prompt: {

@@ -429,12 +429,13 @@ export const n5Lesson19: Lesson = {
       highlights: ['た'],
       title: { en: 'Past plain form (V-た形)', vi: 'Thể た (quá khứ thân mật)' },
       explanation: {
-        en: 'The た-form is the plain past tense. Form it like the て-form but replace て/で with た/だ: 書いて→書いた, のんで→飲んだ, 食べて→食べた, 来て→来た, して→した.',
-        vi: 'Thể た là quá khứ thân mật. Làm giống thể て nhưng thay て/で bằng た/だ: 書いて→書いた, のんで→飲んだ, 食べて→食べた, 来て→来た, して→した.'
+        en: 'The た-form is the plain past tense. Form it like the て-form but replace て/で with た/だ: 書いて→書いた, 飲んで→飲んだ, 食べて→食べた, 来て→来た, して→した.',
+        vi: 'Thể た là quá khứ thân mật. Làm giống thể て nhưng thay て/で bằng た/だ: 書いて→書いた, 飲んで→飲んだ, 食べて→食べた, 来て→来た, して→した.'
       },
       explanationRuby: [
         { base: '書', reading: 'か' },
         { base: '書', reading: 'か' },
+        { base: '飲', reading: 'の' },
         { base: '飲', reading: 'の' },
         { base: '食', reading: 'た' },
         { base: '食', reading: 'た' },

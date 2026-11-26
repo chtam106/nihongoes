@@ -142,6 +142,8 @@ export const n4Lesson42SentenceWriting: LessonSentenceWriting = {
             { base: '物', reading: 'もの' },
             { base: '包', reading: 'つつ' },
             { base: '使', reading: 'つか' },
+            { base: '毎', reading: 'まい' },
+            { base: '日', reading: 'にち' },
             { base: '包', reading: 'つつ' }
           ]
         },

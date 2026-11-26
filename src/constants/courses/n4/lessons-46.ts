@@ -396,11 +396,11 @@ export const n4Lesson46: Lesson = {
           romaji: 'Moshimoshi. Go-ji ni kuru hazu datta n desu ga, mada kimasen.',
           meaning: {
             en: 'Hello. They were supposed to come at five, but they still have not arrived.',
-            vi: 'A-lô, theo hẹn thì khoảng 5 giờ chắc chắn sẽ đến, thế mà vẫn chưa đến ạ?'
+            vi: 'A-lô, đáng lẽ 5 giờ người ta đến, thế mà vẫn chưa thấy đến.'
           },
           ruby: [
             { base: '時', reading: 'じ' },
-            { base: '来', reading: 'き' },
+            { base: '来', reading: 'く' },
             { base: '来', reading: 'き' }
           ]
         },

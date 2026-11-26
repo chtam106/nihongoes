@@ -72,6 +72,7 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'V-volitional と 思っています',
+      patternRuby: [{ base: '思', reading: 'おも' }],
       items: [
         {
           prompt: {
@@ -236,6 +237,10 @@ export const n4Lesson31SentenceWriting: LessonSentenceWriting = {
     },
     {
       pattern: 'V-dictionary / N の + 予定です',
+      patternRuby: [
+        { base: '予', reading: 'よ' },
+        { base: '定', reading: 'てい' }
+      ],
       items: [
         {
           prompt: {
