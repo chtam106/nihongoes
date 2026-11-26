@@ -188,3 +188,4 @@ Required token permissions: **Project - Admin**, **Release - Admin**,
 - Performance auditing: `docs/LIGHTHOUSE.md`
 - Optimization log: `docs/OPTIMIZATION.md`
 - Testing guide: `docs/TESTING.md`
+- Project conventions (read by Claude Code): `CLAUDE.md` and `.claude/rules/`
