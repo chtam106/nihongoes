@@ -535,16 +535,16 @@ export const n5Lesson23: Lesson = {
       highlights: ['が'],
       title: { en: 'Subject with が (N が 〜)', vi: 'Chủ ngữ với が (N が 〜)' },
       explanation: {
-        en: 'が marks the subject when describing a state or action: 機械が 故障します, 音が 大きいです.',
-        vi: 'が đánh dấu chủ ngữ khi miêu tả trạng thái hoặc hành động: 機械が 故障します, 音が 大きいです.'
+        en: 'が marks the subject when describing a state or event, especially in the result clause after と: つまみを 回すと、音が 大きく なります, ボタンを 押すと、電気が つきます.',
+        vi: 'が đánh dấu chủ ngữ khi miêu tả trạng thái hay sự việc, nhất là ở vế kết quả sau と: つまみを 回すと、音が 大きく なります, ボタンを 押すと、電気が つきます.'
       },
       explanationRuby: [
-        { base: '機', reading: 'き' },
-        { base: '械', reading: 'かい' },
-        { base: '故', reading: 'こ' },
-        { base: '障', reading: 'しょう' },
+        { base: '回', reading: 'まわ' },
         { base: '音', reading: 'おと' },
-        { base: '大', reading: 'おお' }
+        { base: '大', reading: 'おお' },
+        { base: '押', reading: 'お' },
+        { base: '電', reading: 'でん' },
+        { base: '気', reading: 'き' }
       ],
       examples: [
         {

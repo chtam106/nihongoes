@@ -142,17 +142,6 @@ export const n4Lesson45: Lesson = {
       ruby: [{ base: '楽', reading: 'たの' }]
     },
     {
-      kana: 'いじょうです。',
-      partOfSpeech: 'expression',
-      kanji: '以上です。',
-      romaji: 'ijō desu.',
-      meaning: { en: 'That is all.', vi: 'Xin hết.' },
-      ruby: [
-        { base: '以', reading: 'い' },
-        { base: '上', reading: 'じょう' }
-      ]
-    },
-    {
       kana: 'かかりいん',
       partOfSpeech: 'noun',
       kanji: '係員',

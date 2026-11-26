@@ -821,11 +821,11 @@ export const n4Lesson33: Lesson = {
       highlights: ['と', '言'],
       title: {
         en: 'Reported speech (〜と言っていました)',
-        vi: 'Truyền l lời (〜と言っていました)'
+        vi: 'Truyền lời (〜と言っていました)'
       },
       explanation: {
         en: 'Plain form + と言っていました relays a third person message: 田中さんは あした 休むと 言っていました.',
-        vi: 'Thể thông thường + と言っていました chuyển l lời người thứ ba: 田中さんは あした 休むと 言っていました.'
+        vi: 'Thể thông thường + と言っていました chuyển lời người thứ ba: 田中さんは あした 休むと 言っていました.'
       },
       explanationRuby: [
         { base: '言', reading: 'い' },
@@ -859,11 +859,11 @@ export const n4Lesson33: Lesson = {
       highlights: ['と', '伝'],
       title: {
         en: 'Could you pass on a message? (〜と伝えていただけませんか)',
-        vi: 'Nhờ chuyển l lời (〜と伝えていただけませんか)'
+        vi: 'Nhờ chuyển lời (〜と伝えていただけませんか)'
       },
       explanation: {
         en: 'Polite request to relay a message: 渡辺さんに あしたの パーティーは 6時からだと 伝えていただけませんか.',
-        vi: 'Nhờ chuyển l lời lịch sự: 渡辺さんに あしたの パーティーは 6時からだと 伝えていただけませんか.'
+        vi: 'Nhờ chuyển lời lịch sự: 渡辺さんに あしたの パーティーは 6時からだと 伝えていただけませんか.'
       },
       explanationRuby: [
         { base: '渡', reading: 'わた' },

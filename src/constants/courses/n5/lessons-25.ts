@@ -492,17 +492,16 @@ export const n5Lesson25: Lesson = {
       highlights: ['が'],
       title: { en: 'が in subordinate clauses', vi: 'が trong mệnh đề phụ' },
       explanation: {
-        en: 'In subordinate clauses, が can mark the subject when it differs from the main clause topic: 転勤する ことが 決まりましたが、家族が 心配しています.',
-        vi: 'Trong mệnh đề phụ, が đánh dấu chủ ngữ khác với chủ đề câu chính: 転勤する ことが 決まりましたが、家族が 心配しています.'
+        en: 'Inside a subordinate clause (～たら, ～ても, ～とき, or a clause modifying a noun), the subject of that clause takes が, not は: 友達が 来たら、いっしょに 出かけます, 私が 作った ケーキ.',
+        vi: 'Trong mệnh đề phụ (～たら, ～ても, ～とき, hoặc mệnh đề bổ nghĩa cho danh từ), chủ ngữ của mệnh đề đó dùng が chứ không dùng は: 友達が 来たら、いっしょに 出かけます, 私が 作った ケーキ.'
       },
       explanationRuby: [
-        { base: '転', reading: 'てん' },
-        { base: '勤', reading: 'きん' },
-        { base: '決', reading: 'き' },
-        { base: '家', reading: 'か' },
-        { base: '族', reading: 'ぞく' },
-        { base: '心', reading: 'しん' },
-        { base: '配', reading: 'ぱい' }
+        { base: '友', reading: 'とも' },
+        { base: '達', reading: 'だち' },
+        { base: '来', reading: 'き' },
+        { base: '出', reading: 'で' },
+        { base: '私', reading: 'わたし' },
+        { base: '作', reading: 'つく' }
       ],
       examples: [
         {

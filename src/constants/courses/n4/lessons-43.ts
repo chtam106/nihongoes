@@ -370,10 +370,17 @@ export const n4Lesson43: Lesson = {
       highlights: ['そう'],
       title: { en: 'Looks like (そうです)', vi: 'Có vẻ (~そうです)' },
       explanation: {
-        en: 'Verb masu-stem + そうです shows a sign something is about to happen (often with いまにも, もうすぐ). i-adj drops い; na-adj drops な (いい→よさ). It can also describe how someone appears to feel.',
-        vi: 'Động từ thể ます + そうです cho thấy sắp xảy ra (thường với いまにも, もうすぐ). Tính từ い bỏ い; な bỏ な (いい→よさ). Cũng mô tả cảm xúc bên ngoài của người khác.'
+        en: 'ます-stem + そうです says something looks about to happen (often with 今にも or もうすぐ): 今にも 雨が 降りそうです. For い-adjectives drop い (おいしそう; いい becomes よさそう); for な-adjectives add そう to the stem (元気そう). It also describes how someone else seems to feel.',
+        vi: 'Gốc ます + そうです cho thấy việc gì đó sắp xảy ra (thường kèm 今にも, もうすぐ): 今にも 雨が 降りそうです. Tính từ い bỏ い (おいしそう; riêng いい thành よさそう); tính từ な thêm そう vào thân (元気そう). Cũng dùng để tả cảm xúc trông thấy ở người khác.'
       },
-      explanationRuby: [],
+      explanationRuby: [
+        { base: '今', reading: 'いま' },
+        { base: '今', reading: 'いま' },
+        { base: '雨', reading: 'あめ' },
+        { base: '降', reading: 'ふ' },
+        { base: '元', reading: 'げん' },
+        { base: '気', reading: 'き' }
+      ],
       examples: [
         {
           jp: '今にも 雨が 降りそうです。',
