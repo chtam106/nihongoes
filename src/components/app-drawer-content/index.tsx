@@ -16,6 +16,7 @@ import {
 import { alpha, type Theme } from '@mui/material/styles';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { routes } from '@/constants/routes.ts';
+import { useDueReviewCount } from '@/features/flashcards/use-due-review-count.ts';
 import type { CourseLevel } from '@/constants/courses/types.ts';
 import {
   isNavGroupActive,
@@ -25,6 +26,41 @@ import {
 } from '@/constants/nav-items.ts';
 
 const NAV_ROW_PY = 1.5;
+
+/** Flashcards due today, as a small pill after the menu label. Hidden at 0. */
+function DueReviewBadge() {
+  const { t } = useTranslation();
+  const due = useDueReviewCount();
+
+  if (due === 0) {
+    return null;
+  }
+
+  return (
+    <Box
+      component="span"
+      aria-label={t('flashcards.reviewDueBadge', { count: due })}
+      sx={{
+        ml: 1,
+        px: 1,
+        minWidth: 24,
+        height: 24,
+        borderRadius: 12,
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0,
+        bgcolor: 'primary.main',
+        color: 'primary.contrastText',
+        fontSize: '0.875rem',
+        fontWeight: 600,
+        lineHeight: 1
+      }}
+    >
+      {due > 99 ? '99+' : due}
+    </Box>
+  );
+}
 
 function navDividerBorder(theme: Theme) {
   return `1px solid ${alpha(
@@ -269,6 +305,7 @@ export function AppDrawerContent({ onNavigate }: AppDrawerContentProps) {
                     {GroupIcon && <GroupIcon fontSize="small" />}
                   </ListItemIcon>
                   <ListItemText primary={groupLabel} />
+                  {group.path === routes.flashcards && <DueReviewBadge />}
                 </ListItemButton>
               )}
 

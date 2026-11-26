@@ -12,6 +12,9 @@ import { storageKey } from '@/constants/site.ts';
 
 export const FLASHCARD_REVIEWS_KEY = storageKey('FLASHCARD_REVIEWS');
 
+/** Day the "cards due today" prompt was last dismissed. */
+export const REVIEW_PROMPT_DAY_KEY = storageKey('REVIEW_PROMPT_DAY');
+
 /** New cards a learner may start per day, across every collection. */
 export const NEW_CARDS_PER_DAY = 10;
 

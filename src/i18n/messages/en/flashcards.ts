@@ -54,6 +54,10 @@ export const flashcards = {
   reviewHowTo:
     'Look at the front and recall the answer. Tap the card to check it. If you got it, choose Got it: the card comes back after 3, 8, 20, 50... days. If not, choose Not yet: the card comes back tomorrow. For a card you know well, choose Know it well: it comes back after 6 months. Keys 1, 2, 3 pick a button.',
   missesQueued: 'Cards you got wrong come back tomorrow in',
+  reviewLater: 'Later',
+  reviewDueBadge: '{count, plural, one {# card due today} other {# cards due today}}',
+  reviewPromptBody:
+    '{count, plural, one {# card is due today. A quick review keeps it fresh!} other {# cards are due today. A quick review keeps them fresh!}}',
   reviewDueToday:
     '{count, plural, =0 {No cards due today.} one {# card due today.} other {# cards due today.}}',
   reviewStart: 'Review now',

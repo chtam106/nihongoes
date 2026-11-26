@@ -54,6 +54,9 @@ export const flashcards = {
   reviewHowTo:
     'Nhìn mặt trước và tự nhớ đáp án. Bấm vào card để lật xem đáp án. Nếu nghĩ ra đúng thì chọn Đã nhớ, card sẽ quay lại sau 3, 8, 20, 50... ngày. Nếu không thì chọn Chưa nhớ, card sẽ quay lại vào ngày mai. Card đã thuộc lòng thì chọn Đã nhớ kĩ, card sẽ quay lại sau 6 tháng. Phím 1, 2, 3 để chọn nhanh.',
   missesQueued: 'Các card trả lời sai sẽ được ôn lại vào ngày mai trong',
+  reviewLater: 'Để sau',
+  reviewDueBadge: '{count} card cần ôn hôm nay',
+  reviewPromptBody: 'Hôm nay có {count} card cần ôn. Ôn một chút để không quên nhé!',
   reviewDueToday:
     '{count, plural, =0 {Hôm nay không có card nào cần ôn.} other {Hôm nay có # card cần ôn.}}',
   reviewStart: 'Ôn ngay',
