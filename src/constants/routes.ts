@@ -17,7 +17,8 @@ export const routes = {
     verbs: {
       te: '/practice/verbs/te',
       nai: '/practice/verbs/nai'
-    }
+    },
+    particles: '/practice/particles'
   },
   flashcardDrive: '/sync',
   n5: {

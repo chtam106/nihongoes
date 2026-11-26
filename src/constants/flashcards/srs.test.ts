@@ -184,16 +184,33 @@ describe('mergeReviewStores', () => {
 });
 
 describe('known', () => {
-  it('waits 6 months for a new card, then grows like Got it', () => {
+  it('waits 6 months for a new card, then grows faster than Got it', () => {
     const known = gradeCard(undefined, 'known', TODAY);
 
-    expect(known).toMatchObject({ due: TODAY + KNOWN_INTERVAL, interval: KNOWN_INTERVAL, reps: 1 });
-    expect(nextInterval(known, 'good')).toBe(450);
-    expect(nextInterval(known, 'known')).toBe(450);
+    expect(known).toMatchObject({
+      due: TODAY + KNOWN_INTERVAL,
+      interval: KNOWN_INTERVAL,
+      ease: 2.65,
+      reps: 1
+    });
+    expect(nextInterval(known, 'good')).toBe(477);
+    expect(nextInterval(known, 'known')).toBe(620);
+  });
+
+  it('keeps stretching with each Know it well: 6 months, then about 1.7 and 6 years', () => {
+    const intervals: number[] = [];
+    let current: ReviewCard | undefined;
+
+    for (let index = 0; index < 3; index += 1) {
+      current = gradeCard(current, 'known', TODAY);
+      intervals.push(current.interval);
+    }
+
+    expect(intervals).toEqual([180, 620, 2257]);
   });
 
   it('never shortens a gap that is already longer', () => {
-    expect(nextInterval(card({ interval: 300 }), 'known')).toBe(750);
+    expect(nextInterval(card({ interval: 300 }), 'known')).toBe(975);
   });
 
   it('does not use up a new-card slot', () => {

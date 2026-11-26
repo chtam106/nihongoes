@@ -45,6 +45,11 @@ export const seo = {
         title: 'Bài tập chia thể ない',
         description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể ない.'
       }
+    },
+    particles: {
+      title: 'Bài tập trợ từ tiếng Nhật',
+      description:
+        'Điền は, が, を, に, で, へ và các trợ từ N5 khác, có giải thích ngắn cho từng câu.'
     }
   },
   n5: {
