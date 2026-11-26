@@ -115,7 +115,7 @@ type FlipCardProps = {
   type: FlashcardCardType;
 };
 
-function FlipCard({ item, locale, front, type }: FlipCardProps) {
+export function FlipCard({ item, locale, front, type }: FlipCardProps) {
   const { t } = useTranslation();
   const [flipped, setFlipped] = useState(false);
   const back: FlashcardFront = front === 'ja' ? 'meaning' : 'ja';

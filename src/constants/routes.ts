@@ -2,7 +2,8 @@ import {
   COURSE_LEVELS,
   coursePath,
   VOCABULARY_PATH,
-  FLASHCARDS_PATH
+  FLASHCARDS_PATH,
+  FLASHCARD_REVIEW_PATH
 } from '@/constants/courses/levels.ts';
 type RouteNode = string | { readonly [key: string]: RouteNode };
 
@@ -11,6 +12,7 @@ export const routes = {
   privacy: '/privacy',
   vocabulary: VOCABULARY_PATH,
   flashcards: FLASHCARDS_PATH,
+  flashcardReview: FLASHCARD_REVIEW_PATH,
   practice: {
     verbs: {
       te: '/practice/verbs/te',
@@ -95,6 +97,10 @@ export function getSeoRouteKey(pathname: string): SeoRouteKey {
 
   if (pathname === routes.flashcardDrive) {
     return 'flashcardDrive' as SeoRouteKey;
+  }
+
+  if (pathname === routes.flashcardReview) {
+    return 'flashcardReview' as SeoRouteKey;
   }
 
   if (pathname === routes.flashcards || pathname.startsWith(`${routes.flashcards}/`)) {

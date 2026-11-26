@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
 import SyncOutlined from '@mui/icons-material/SyncOutlined';
+import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
@@ -12,6 +13,8 @@ import {
   Box,
   Button,
   ButtonBase,
+  Card,
+  CardActionArea,
   Collapse,
   Dialog,
   DialogActions,
@@ -43,6 +46,8 @@ import {
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
+import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
+import { dayNumber, dueCardIds } from '@/constants/flashcards/srs.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
@@ -54,7 +59,7 @@ import {
 } from './flashcards-list-tab.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { coarsePressResetSx } from '@/theme/hover.ts';
-import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx, interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 type CollectionsGridProps = {
   collections: FlashcardCollection[];
@@ -328,6 +333,8 @@ function FlashcardsView() {
           </Stack>
         </Box>
 
+        <DailyReviewPanel />
+
         <Box>
           <Box
             sx={{
@@ -551,3 +558,60 @@ function FlashcardsView() {
 }
 
 export default FlashcardsPage;
+
+function DailyReviewPanel() {
+  const { t } = useTranslation();
+  const { store } = useFlashcardReviews();
+  const started = Object.keys(store.cards).length > 0;
+  const due = dueCardIds(store, dayNumber()).length;
+  const content = (
+    <Box
+      sx={{
+        p: 2.5,
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
+        alignItems: { xs: 'flex-start', sm: 'center' },
+        gap: 2
+      }}
+    >
+      <EventRepeatOutlined color="primary" sx={{ display: { xs: 'none', sm: 'block' } }} />
+      <Box sx={{ flex: 1, minWidth: 0 }}>
+        <Heading component="h2" scale="subsection">
+          {t('flashcards.reviewTitle')}
+        </Heading>
+        <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>
+          {started
+            ? t('flashcards.reviewDueToday', { count: due })
+            : t('flashcards.reviewGetStarted')}
+        </Typography>
+      </Box>
+      {started && (
+        // A label, not a second link: the whole card is the link.
+        <Button
+          component="span"
+          tabIndex={-1}
+          variant={due > 0 ? 'contained' : 'outlined'}
+          sx={{ flexShrink: 0, px: 2.5, fontWeight: 600, pointerEvents: 'none' }}
+        >
+          {t('flashcards.reviewStart')}
+        </Button>
+      )}
+    </Box>
+  );
+
+  if (!started) {
+    return (
+      <Box component="section" aria-label={t('flashcards.reviewTitle')} sx={elevatedSurfaceSx}>
+        {content}
+      </Box>
+    );
+  }
+
+  return (
+    <Card component="section" elevation={0} sx={interactiveSurfaceSx}>
+      <CardActionArea component={RouterLink} to={routes.flashcardReview}>
+        {content}
+      </CardActionArea>
+    </Card>
+  );
+}

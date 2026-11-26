@@ -14,6 +14,8 @@ export const VOCABULARY_PATH = '/vocabulary';
 export const SENTENCES_PATH = '/sentences';
 export const FLASHCARDS_PATH = '/flashcards';
 
+export const FLASHCARD_REVIEW_PATH = `${FLASHCARDS_PATH}/review`;
+
 export function flashcardCollectionPath(id: string) {
   return `${FLASHCARDS_PATH}/${encodeURIComponent(id)}`;
 }

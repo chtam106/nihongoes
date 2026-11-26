@@ -29,6 +29,7 @@ Bilingual content (English and Vietnamese), interactive exercises, recorded kana
 - Grammar points with highlighted patterns and speakable examples
 - Per lesson: vocabulary quiz (match and multiple choice), grammar quiz, reading, and kanji writing
 - A vocabulary index per level, with printable duplex flashcards
+- Flashcard collections with a Review mode (spaced repetition: Not yet / Got it) and a daily review page at `/flashcards/review`
 - N5 getting-started and reference pages (verb tables and appendix)
 - Show/hide translation and phonetics on example sentences
 - Alphabet audio is recorded; other Japanese text uses the Web Speech API (voice and speed are configurable)
