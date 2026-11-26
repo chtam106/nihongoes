@@ -35,15 +35,37 @@ export const flashcards = {
   driveSignOut: 'Sign out',
   driveSync: 'Sync with Google Drive',
   driveSyncFromDrive: 'Use the Google Drive copy',
-  driveSyncFromDriveBody: 'Replace the collections in this browser with the copy in Google Drive.',
+  driveSyncFromDriveBody:
+    'Replace the collections and review progress in this browser with the copy in Google Drive.',
   driveSyncFromBrowser: 'Use this browser',
-  driveSyncFromBrowserBody: 'Replace the Google Drive copy with the collections in this browser.',
+  driveSyncFromBrowserBody:
+    'Replace the Google Drive copy with the collections and review progress in this browser.',
   driveSyncMerge: 'Merge both copies',
   driveSyncMergeBody:
-    'Keep collections from both sides. Cards in the same collection are combined.',
+    'Keep collections from both sides. Cards in the same collection are combined, and each card keeps its most recent review.',
   driveSyncing: 'Syncing...',
   driveSyncDone: 'Sync succeeded.',
   driveLoading: 'Connecting...',
   driveError: 'Could not reach Google Drive.',
-  driveUnconfigured: 'Google Drive is not configured.'
+  driveUnconfigured: 'Google Drive is not configured.',
+  reviewTitle: 'Daily review',
+  reviewIntro:
+    'Each card comes back just before you would forget it: cards you remember come back later and later, cards you do not come back soon.',
+  reviewHowTo:
+    'Look at the front and recall the answer. Tap the card to check it. If you got it, choose Got it: the card comes back after 3, 8, 20, 50... days. If not, choose Not yet: the card comes back tomorrow. For a card you do not need, choose No need to review. Keys 1, 2, 3 pick a button.',
+  reviewDueToday:
+    '{count, plural, =0 {No cards due today.} one {# card due today.} other {# cards due today.}}',
+  reviewStart: 'Review now',
+  reviewGetStarted: 'Open a collection to start reviewing its cards.',
+  reviewGradeLabel: 'Did you remember the answer?',
+  reviewAgain: 'Not yet',
+  reviewGood: 'Got it',
+  reviewSkip: 'No need to review',
+  reviewIntervalTomorrow: 'again tomorrow',
+  reviewIntervalDays: '{count, plural, one {again in # day} other {again in # days}}',
+  reviewIntervalMonths: '{count, plural, one {again in # month} other {again in # months}}',
+  reviewIntervalYears: '{count, plural, one {again in # year} other {again in # years}}',
+  reviewDone: '{count, plural, one {Done: # card reviewed.} other {Done: # cards reviewed.}}',
+  reviewNothing: 'Nothing to review right now. Come back tomorrow.',
+  reviewBackToFlashcards: 'Back to flashcards'
 };

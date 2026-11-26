@@ -9,11 +9,11 @@ export const privacy = {
   },
   file: {
     title: 'What is stored',
-    body: 'The site keeps your flashcard collections in one file named nihongoes-flashcards.json. The file holds the collections you create and any edits you make to the built-in collections. It does not hold your Google password.'
+    body: 'The site keeps your flashcard collections in one file named nihongoes-flashcards.json. The file holds the collections you create, any edits you make to the built-in collections, and your review progress (when each card is next due). It does not hold your Google password.'
   },
   use: {
     title: 'How we use it',
-    body: 'The file is used only to show, create, rename, and delete your flashcard collections inside Nihongoes. We do not use it for advertising. We do not sell it or share it with anyone else.'
+    body: 'The file is used only to show, create, rename, and delete your flashcard collections, and to schedule your flashcard reviews, inside Nihongoes. We do not use it for advertising. We do not sell it or share it with anyone else.'
   },
   storage: {
     title: 'Where it lives',

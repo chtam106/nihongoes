@@ -31,6 +31,12 @@ import {
   sanitizeFlashcardStore
 } from '@/constants/flashcards/collections.ts';
 import {
+  EMPTY_REVIEW_STORE,
+  FLASHCARD_REVIEWS_KEY,
+  mergeReviewStores,
+  sanitizeReviewStore
+} from '@/constants/flashcards/srs.ts';
+import {
   createFlashcardFile,
   DRIVE_APPDATA_SCOPE,
   DriveApiError,
@@ -257,8 +263,16 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
             EMPTY_FLASHCARD_STORE,
             sanitizeFlashcardStore
           );
+          const localReviews = readPersistedValue(
+            FLASHCARD_REVIEWS_KEY,
+            EMPTY_REVIEW_STORE,
+            sanitizeReviewStore
+          );
           const fileId = fileIdRef.current ?? (await findFlashcardFile(token));
-          const remote = fileId ? await readFlashcardFile(token, fileId) : EMPTY_FLASHCARD_STORE;
+          const remoteData = fileId
+            ? await readFlashcardFile(token, fileId)
+            : { store: EMPTY_FLASHCARD_STORE, reviews: EMPTY_REVIEW_STORE };
+          const remote = remoteData.store;
 
           if (readDriveSession()?.token !== token) {
             return 'aborted';
@@ -270,9 +284,17 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
               : mode === 'local'
                 ? local
                 : mergeFlashcardStores(local, remote);
+          const nextReviews =
+            mode === 'drive'
+              ? remoteData.reviews
+              : mode === 'local'
+                ? localReviews
+                : mergeReviewStores(localReviews, remoteData.reviews);
+          const nextData = { store: next, reviews: nextReviews };
 
           if (mode !== 'local') {
             writeStorageItem(FLASHCARD_COLLECTIONS_KEY, JSON.stringify(next));
+            writeStorageItem(FLASHCARD_REVIEWS_KEY, JSON.stringify(nextReviews));
           }
 
           if (readDriveSession()?.token !== token) {
@@ -280,10 +302,10 @@ export function FlashcardDriveProvider({ children }: FlashcardDriveProviderProps
           }
 
           if (mode !== 'drive') {
-            const nextFileId = fileId ?? (await createFlashcardFile(token, next));
+            const nextFileId = fileId ?? (await createFlashcardFile(token, nextData));
 
             if (fileId) {
-              await updateFlashcardFile(token, fileId, next);
+              await updateFlashcardFile(token, fileId, nextData);
             }
 
             const session = readDriveSession();

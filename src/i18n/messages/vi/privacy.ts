@@ -9,11 +9,11 @@ export const privacy = {
   },
   file: {
     title: 'File được lưu',
-    body: 'Collection flashcard nằm trong một file tên nihongoes-flashcards.json. File gồm những collection bạn tạo và các sửa đổi trên collection có sẵn. File không chứa mật khẩu Google.'
+    body: 'Collection flashcard nằm trong một file tên nihongoes-flashcards.json. File gồm những collection bạn tạo, các sửa đổi trên collection có sẵn, và tiến độ ôn tập (ngày đến hạn của từng card). File không chứa mật khẩu Google.'
   },
   use: {
     title: 'Cách dùng',
-    body: 'File chỉ dùng để hiện, tạo, đổi tên và xóa collection flashcard trong Nihongoes. Chúng tôi không dùng file để quảng cáo, không bán, và không chia sẻ cho bên khác.'
+    body: 'File chỉ dùng để hiện, tạo, đổi tên và xóa collection flashcard, và để lên lịch ôn tập flashcard, trong Nihongoes. Chúng tôi không dùng file để quảng cáo, không bán, và không chia sẻ cho bên khác.'
   },
   storage: {
     title: 'File nằm ở đâu',

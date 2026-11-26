@@ -35,14 +35,37 @@ export const flashcards = {
   driveSignOut: 'Sign out',
   driveSync: 'Sync with Google Drive',
   driveSyncFromDrive: 'Dùng bản trên Google Drive',
-  driveSyncFromDriveBody: 'Thay collection trên trình duyệt bằng bản trên Google Drive.',
+  driveSyncFromDriveBody:
+    'Thay collection và tiến độ ôn tập trên trình duyệt bằng bản trên Google Drive.',
   driveSyncFromBrowser: 'Dùng bản trên trình duyệt',
-  driveSyncFromBrowserBody: 'Thay bản trên Google Drive bằng collection trên trình duyệt.',
+  driveSyncFromBrowserBody:
+    'Thay bản trên Google Drive bằng collection và tiến độ ôn tập trên trình duyệt.',
   driveSyncMerge: 'Gộp cả hai bản',
-  driveSyncMergeBody: 'Giữ collection của cả hai bên. Card trong cùng một collection được gộp lại.',
+  driveSyncMergeBody:
+    'Giữ collection của cả hai bên. Card trong cùng một collection được gộp lại, và mỗi card giữ lần ôn gần nhất.',
   driveSyncing: 'Đang đồng bộ...',
   driveSyncDone: 'Đồng bộ thành công.',
   driveLoading: 'Đang kết nối...',
   driveError: 'Không kết nối được Google Drive.',
-  driveUnconfigured: 'Chưa cấu hình Google Drive.'
+  driveUnconfigured: 'Chưa cấu hình Google Drive.',
+  reviewTitle: 'Ôn tập hằng ngày',
+  reviewIntro:
+    'Mỗi card được đưa ra đúng lúc bạn sắp quên: card đã nhớ sẽ quay lại muộn dần, card chưa nhớ sẽ quay lại sớm.',
+  reviewHowTo:
+    'Nhìn mặt trước và tự nhớ đáp án. Bấm vào card để lật xem đáp án. Nếu nghĩ ra đúng thì chọn Đã nhớ, card sẽ quay lại sau 3, 8, 20, 50... ngày. Nếu không thì chọn Chưa nhớ, card sẽ quay lại vào ngày mai. Card không cần học nữa thì bấm Không cần ôn lại. Phím 1, 2, 3 để chọn nhanh.',
+  reviewDueToday:
+    '{count, plural, =0 {Hôm nay không có card nào cần ôn.} other {Hôm nay có # card cần ôn.}}',
+  reviewStart: 'Ôn ngay',
+  reviewGetStarted: 'Mở một collection để bắt đầu ôn các card trong đó.',
+  reviewGradeLabel: 'Bạn có nhớ ra đáp án không?',
+  reviewAgain: 'Chưa nhớ',
+  reviewGood: 'Đã nhớ',
+  reviewSkip: 'Không cần ôn lại',
+  reviewIntervalTomorrow: 'ôn lại ngày mai',
+  reviewIntervalDays: 'ôn lại sau {count} ngày',
+  reviewIntervalMonths: 'ôn lại sau {count} tháng',
+  reviewIntervalYears: 'ôn lại sau {count} năm',
+  reviewDone: 'Xong: đã ôn {count} card.',
+  reviewNothing: 'Hiện chưa có gì cần ôn. Mai quay lại nhé.',
+  reviewBackToFlashcards: 'Về Flashcards'
 };
