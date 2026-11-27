@@ -3,7 +3,6 @@
 import { useMemo, useState, useSyncExternalStore, type MouseEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowBackOutlined from '@mui/icons-material/ArrowBackOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckOutlined from '@mui/icons-material/CheckOutlined';
 import PlaylistAddOutlined from '@mui/icons-material/PlaylistAddOutlined';
@@ -21,7 +20,7 @@ import {
   Typography
 } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { PageContainer } from '@/components/page-container';
 import {
   flashcardCollectionHref,
@@ -133,17 +132,10 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
   return (
     <PageContainer bottomGutter>
       <Stack spacing={2}>
-        <Box>
-          <Button
-            component={RouterLink}
-            to={flashcardsListPath(listTab)}
-            startIcon={<ArrowBackOutlined />}
-            sx={{ textTransform: 'none' }}
-          >
-            {t('common.back')}
-          </Button>
-        </Box>
-        {collection && <Heading component="h1">{collection.name}</Heading>}
+        <PageBreadcrumb
+          title={collection?.name ?? ''}
+          items={[{ label: t('flashcards.title'), to: flashcardsListPath(listTab) }]}
+        />
         {collection && (
           <ToggleButtonGroup
             exclusive

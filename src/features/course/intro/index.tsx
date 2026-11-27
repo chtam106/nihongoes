@@ -1,12 +1,11 @@
 'use client';
 
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { n5Intro } from '@/constants/courses/n5/intro.ts';
 import { coursePath, lessonPath } from '@/constants/courses/levels.ts';
-import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { PageContainer } from '@/components/page-container';
 import { ReferenceArticleView } from '@/features/course/reference/reference-article';
 import { useTranslation } from '@/i18n/use-translation.ts';
@@ -19,19 +18,10 @@ export function N5IntroPage() {
     <PageContainer bottomGutter>
       <Stack spacing={4}>
         <Box>
-          <Box sx={{ mb: 1.5 }}>
-            <Button
-              component={RouterLink}
-              to={coursePath('n5')}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {t('course.referenceBackToCourse')}
-            </Button>
-          </Box>
-
-          <Heading component="h1">{content.title[locale]}</Heading>
+          <PageBreadcrumb
+            title={content.title[locale]}
+            items={[{ label: 'JLPT N5', to: coursePath('n5') }]}
+          />
           <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
             {content.intro[locale]}
           </Typography>

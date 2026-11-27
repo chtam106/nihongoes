@@ -10,6 +10,7 @@ import { routes } from '@/constants/routes.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { localeParams, type PageProps } from '@/i18n/route-helpers.ts';
+import { DailyReviewPanel } from '@/features/flashcards/daily-review-panel.tsx';
 
 export const dynamicParams = false;
 
@@ -70,6 +71,27 @@ export default async function Page({ params }: PageProps) {
     }
   ];
 
+  const practiceCards: NavCardItem[] = [
+    {
+      to: routes.practice.verbs.te,
+      title: t('verbPractice.teTitle'),
+      symbol: 'て',
+      description: t('home.verbTeDescription')
+    },
+    {
+      to: routes.practice.verbs.nai,
+      title: t('verbPractice.naiTitle'),
+      symbol: 'な',
+      description: t('home.verbNaiDescription')
+    },
+    {
+      to: routes.practice.particles,
+      title: t('particlePractice.title'),
+      symbol: 'は',
+      description: t('home.particlesDescription')
+    }
+  ];
+
   const courseCards: NavCardItem[] = [
     ...COURSE_SUMMARIES.map(
       (course): NavCardItem => ({
@@ -105,6 +127,8 @@ export default async function Page({ params }: PageProps) {
           </Typography>
         </Box>
 
+        <DailyReviewPanel hideUntilStarted />
+
         <Stack spacing={1.5}>
           <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
             {t('home.alphabetSection')}
@@ -124,6 +148,13 @@ export default async function Page({ params }: PageProps) {
             {t('home.coursesSection')}
           </Typography>
           <NavCardGrid items={courseCards} titleComponent="h3" />
+        </Stack>
+
+        <Stack spacing={1.5}>
+          <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>
+            {t('home.practiceSection')}
+          </Typography>
+          <NavCardGrid items={practiceCards} titleComponent="h3" />
         </Stack>
       </Stack>
     </PageContainer>

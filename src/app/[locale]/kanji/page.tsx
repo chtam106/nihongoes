@@ -29,10 +29,14 @@ export default async function Page({ params }: PageProps) {
   const locale = await primePageLocale(params);
   const t = await getTranslations();
 
-  const totalKanji = kanjiTracks.reduce(
-    (sum, track) => sum + track.lessons.reduce((n, lesson) => n + lesson.kanji.length, 0),
-    0
-  );
+  const countKanji = (tracks: KanjiTrack[]) =>
+    tracks.reduce(
+      (sum, track) => sum + track.lessons.reduce((n, lesson) => n + lesson.kanji.length, 0),
+      0
+    );
+  // School grades and Kanken levels are different series: list them apart.
+  const gradeTracks = kanjiTracks.filter((track) => track.slug.startsWith('grade-'));
+  const kankenTracks = kanjiTracks.filter((track) => track.slug.startsWith('kanken-'));
 
   const renderTrackCard = (track: KanjiTrack) => {
     const kanjiTotal = track.lessons.reduce((sum, lesson) => sum + lesson.kanji.length, 0);
@@ -137,13 +141,31 @@ export default async function Page({ params }: PageProps) {
               color="text.secondary"
               sx={{ fontWeight: 400 }}
             >
-              ({t('kanji.kanjiCount', { count: totalKanji })})
+              ({t('kanji.kanjiCount', { count: countKanji(gradeTracks) })})
             </Typography>
           </Heading>
           <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
             {t('kanji.collectionsSubtitle')}
           </Typography>
-          <Stack spacing={1.5}>{kanjiTracks.map(renderTrackCard)}</Stack>
+          <Stack spacing={1.5}>{gradeTracks.map(renderTrackCard)}</Stack>
+        </Box>
+
+        <Box>
+          <Heading scale="subsection" component="h2" sx={{ mb: 0.5 }}>
+            {t('kanji.kankenHeading')}{' '}
+            <Typography
+              component="span"
+              variant="body2"
+              color="text.secondary"
+              sx={{ fontWeight: 400 }}
+            >
+              ({t('kanji.kanjiCount', { count: countKanji(kankenTracks) })})
+            </Typography>
+          </Heading>
+          <Typography variant="body2" color="text.secondary" sx={{ mb: 1.5 }}>
+            {t('kanji.kankenSubtitle')}
+          </Typography>
+          <Stack spacing={1.5}>{kankenTracks.map(renderTrackCard)}</Stack>
         </Box>
       </Stack>
 

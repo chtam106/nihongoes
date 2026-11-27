@@ -1,13 +1,12 @@
 'use client';
 
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
-import { Box, Button, Stack, Typography } from '@mui/material';
-import { LocaleLink as RouterLink } from '@/components/locale-link';
+import { Box, Stack, Typography } from '@mui/material';
 import { n5Reference } from '@/constants/courses/n5/reference/index.ts';
 import { coursePath } from '@/constants/courses/levels.ts';
 import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { PageContainer } from '@/components/page-container';
 import { ReferenceArticleView } from '@/features/course/reference/reference-article';
 import { ReferenceTableSectionView } from '@/features/course/reference/reference-table';
@@ -22,19 +21,10 @@ export function N5ReferencePage() {
     <PageContainer bottomGutter>
       <Stack spacing={4}>
         <Box>
-          <Box sx={{ mb: 1.5 }}>
-            <Button
-              component={RouterLink}
-              to={coursePath('n5')}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {t('course.referenceBackToCourse')}
-            </Button>
-          </Box>
-
-          <Heading component="h1">{content.title[locale]}</Heading>
+          <PageBreadcrumb
+            title={content.title[locale]}
+            items={[{ label: 'JLPT N5', to: coursePath('n5') }]}
+          />
           <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
             {content.intro[locale]}
           </Typography>

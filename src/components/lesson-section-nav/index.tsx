@@ -251,11 +251,14 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
       />
 
       <Box
+        // Mid-right on desktop. On a phone that spot covers the cards, so the
+        // rail drops to the bottom-right corner with only the contents button.
         sx={{
           position: 'fixed',
           right: 0,
-          top: '50%',
-          transform: 'translateY(-50%)',
+          top: { xs: 'auto', md: '50%' },
+          bottom: { xs: 'calc(16px + env(safe-area-inset-bottom))', md: 'auto' },
+          transform: { xs: 'none', md: 'translateY(-50%)' },
           zIndex: (theme) => theme.zIndex.fab
         }}
       >
@@ -306,6 +309,7 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
               sx={[
                 TAB_RAIL_BUTTON_SX,
                 {
+                  display: { xs: 'none', md: 'flex' },
                   minHeight: TAB_TOUCH_MIN_HEIGHT,
                   borderBottom: (theme) =>
                     `1px solid ${alpha(
@@ -335,7 +339,9 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
                       theme.palette.text.primary,
                       theme.palette.mode === 'light' ? 0.08 : 0.16
                     )}`
-                }
+                },
+                // Alone on a phone: no divider under it.
+                (theme) => ({ [theme.breakpoints.down('md')]: { borderBottom: 'none' } })
               ]}
             >
               <FormatListBulletedOutlinedIcon sx={{ fontSize: TAB_ICON_SIZE }} />
@@ -347,7 +353,10 @@ export function LessonSectionNav({ lesson }: LessonSectionNavProps) {
               aria-label={t('course.sectionNavNext')}
               disabled={!canGoNext}
               onClick={() => scrollToAdjacentSection('next')}
-              sx={[TAB_RAIL_BUTTON_SX, { minHeight: TAB_TOUCH_MIN_HEIGHT }]}
+              sx={[
+                TAB_RAIL_BUTTON_SX,
+                { display: { xs: 'none', md: 'flex' }, minHeight: TAB_TOUCH_MIN_HEIGHT }
+              ]}
             >
               <KeyboardArrowDownIcon sx={{ fontSize: TAB_ARROW_ICON_SIZE }} />
             </Box>

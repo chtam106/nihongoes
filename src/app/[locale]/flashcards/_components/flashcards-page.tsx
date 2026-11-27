@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
 import SyncOutlined from '@mui/icons-material/SyncOutlined';
-import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
 import MoreHorizOutlined from '@mui/icons-material/MoreHorizOutlined';
@@ -14,15 +13,13 @@ import {
   Box,
   Button,
   ButtonBase,
-  Card,
-  CardActionArea,
   Collapse,
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
   IconButton,
-  Link,
+  LinearProgress,
   ListItemIcon,
   Menu,
   MenuItem,
@@ -31,6 +28,7 @@ import {
   Tab,
   Tabs,
   TextField,
+  Tooltip,
   Typography
 } from '@mui/material';
 import { Heading } from '@/components/heading';
@@ -49,9 +47,9 @@ import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
+import { DailyReviewPanel } from '@/features/flashcards/daily-review-panel.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
-import { dayNumber, dueCardIds } from '@/constants/flashcards/srs.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
@@ -63,7 +61,7 @@ import {
 } from './flashcards-list-tab.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { coarsePressResetSx } from '@/theme/hover.ts';
-import { elevatedSurfaceSx, interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 type CollectionsGridProps = {
   collections: FlashcardCollection[];
@@ -202,10 +200,17 @@ function CollectionsGrid({
                 {collection.name}
               </Typography>
               <Typography component="span" color="text.secondary">
-                {inReview > 0
-                  ? t('flashcards.reviewOnListCount', { count: inReview, total: count })
-                  : t('flashcards.count', { count })}
+                {t('flashcards.count', { count })}
+                {inReview > 0 && ` · ${t('flashcards.inReviewCount', { count: inReview })}`}
               </Typography>
+              {inReview > 0 && (
+                <LinearProgress
+                  variant="determinate"
+                  value={(inReview / count) * 100}
+                  aria-label={t('flashcards.inReviewCount', { count: inReview })}
+                  sx={{ alignSelf: 'stretch', mt: 1, height: 4, borderRadius: 2 }}
+                />
+              )}
             </Box>
             {(allowRename || allowDelete) && (
               <CollectionMenu
@@ -367,92 +372,61 @@ function FlashcardsView() {
   return (
     <PageContainer bottomGutter>
       <Stack spacing={3}>
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 1.5
+          }}
+        >
           <Heading component="h1">{t('flashcards.title')}</Heading>
-          <Stack spacing={0.5} sx={{ mt: 1.5 }}>
-            <HintText>{t('flashcards.flipHint')}</HintText>
-            <HintText>{t('flashcards.saveHint')}</HintText>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', ml: 'auto' }}>
+            <Tooltip title={t('flashcards.driveSync')}>
+              <IconButton
+                component={RouterLink}
+                to={routes.flashcardDrive}
+                color="primary"
+                aria-label={t('flashcards.driveSync')}
+              >
+                <SyncOutlined />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title={t('flashcards.newCollection')}>
+              <IconButton
+                color="primary"
+                aria-label={t('flashcards.newCollection')}
+                onClick={() => setCreateOpen(true)}
+              >
+                <AddOutlined />
+              </IconButton>
+            </Tooltip>
           </Stack>
         </Box>
 
         <DailyReviewPanel />
 
         <Box>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              gap: 1,
-              mb: 2
-            }}
-          >
-            <Link
-              component={RouterLink}
-              to={routes.flashcardDrive}
-              underline="none"
-              color="primary"
-              sx={(theme) => ({
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 0.5,
-                flexShrink: 0,
-                fontWeight: 600,
-                textDecoration: 'none',
-                textUnderlineOffset: '3px',
-                '&:focus-visible': focusVisibleSx(theme),
-                '@media (hover: hover)': {
-                  '&:hover': { textDecoration: 'underline' }
-                }
-              })}
-            >
-              <SyncOutlined fontSize="small" />
-              {t('flashcards.driveSync')}
-            </Link>
-            <Button
-              variant="text"
-              color="primary"
-              startIcon={<AddOutlined />}
-              onClick={() => setCreateOpen(true)}
-              sx={(theme) => ({
-                minWidth: 0,
-                px: 0,
-                py: 0.5,
-                border: 0,
-                boxShadow: 'none',
-                textTransform: 'none',
-                fontSize: '1rem',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&.Mui-focusVisible': focusVisibleSx(theme),
-                '@media (hover: hover)': {
-                  '&:hover': {
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '3px',
-                    bgcolor: 'transparent'
-                  }
-                }
-              })}
-            >
-              {t('flashcards.newCollection')}
-            </Button>
-          </Box>
-
           <Tabs
             value={listTab}
             onChange={handleListTabChange}
-            variant="fullWidth"
+            variant="scrollable"
+            scrollButtons={false}
             sx={{
               mb: 2,
+              borderBottom: 1,
+              borderColor: 'divider',
               '& .MuiTab-root': { textTransform: 'none', fontSize: '1rem', fontWeight: 600 }
             }}
           >
-            <Tab value="mine" label={t('flashcards.myCollections')} />
+            <Tab value="mine" label={`${t('flashcards.myCollections')} (${mine.length})`} />
             <Tab value="default" label={t('flashcards.defaultCollections')} />
           </Tabs>
 
           {listTab === 'mine' && (
             <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
+              <HintText>{t('flashcards.saveHint')}</HintText>
               <CollectionsGrid
                 collections={mine}
                 listTab="mine"
@@ -600,60 +574,3 @@ function FlashcardsView() {
 }
 
 export default FlashcardsPage;
-
-function DailyReviewPanel() {
-  const { t } = useTranslation();
-  const { store } = useFlashcardReviews();
-  const started = Object.keys(store.cards).length > 0;
-  const due = dueCardIds(store, dayNumber()).length;
-  const content = (
-    <Box
-      sx={{
-        p: 2.5,
-        display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
-        alignItems: { xs: 'flex-start', sm: 'center' },
-        gap: 2
-      }}
-    >
-      <EventRepeatOutlined color="primary" sx={{ display: { xs: 'none', sm: 'block' } }} />
-      <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Heading component="h2" scale="subsection">
-          {t('flashcards.reviewTitle')}
-        </Heading>
-        <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>
-          {started
-            ? t('flashcards.reviewDueToday', { count: due })
-            : t('flashcards.reviewGetStarted')}
-        </Typography>
-      </Box>
-      {started && (
-        // A label, not a second link: the whole card is the link.
-        <Button
-          component="span"
-          tabIndex={-1}
-          variant={due > 0 ? 'contained' : 'outlined'}
-          sx={{ flexShrink: 0, px: 2.5, fontWeight: 600, pointerEvents: 'none' }}
-        >
-          {t('flashcards.reviewStart')}
-        </Button>
-      )}
-    </Box>
-  );
-
-  if (!started) {
-    return (
-      <Box component="section" aria-label={t('flashcards.reviewTitle')} sx={elevatedSurfaceSx}>
-        {content}
-      </Box>
-    );
-  }
-
-  return (
-    <Card component="section" elevation={0} sx={interactiveSurfaceSx}>
-      <CardActionArea component={RouterLink} to={routes.flashcardReview}>
-        {content}
-      </CardActionArea>
-    </Card>
-  );
-}

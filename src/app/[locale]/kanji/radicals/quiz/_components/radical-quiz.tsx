@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
@@ -17,6 +16,7 @@ import {
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
@@ -26,6 +26,7 @@ import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
   formatRadicalMeaning,
+  KANJI_BASE_PATH,
   KANJI_RADICALS_PATH,
   type Radical
 } from '@/constants/kanji/index.ts';
@@ -309,18 +310,13 @@ function RadicalQuizPage() {
     <PageContainer>
       <Stack spacing={3}>
         <Box>
-          <Box sx={{ mb: 1 }}>
-            <Button
-              component={RouterLink}
-              to={`${KANJI_RADICALS_PATH}#radical-${range.to}`}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {t('kanji.radicalsBack')}
-            </Button>
-          </Box>
-          <Heading component="h1">{t('kanji.radicalsQuizTitle')}</Heading>
+          <PageBreadcrumb
+            title={t('kanji.radicalsQuizTitle')}
+            items={[
+              { label: t('kanji.overviewTitle'), to: KANJI_BASE_PATH },
+              { label: t('kanji.radicals'), to: `${KANJI_RADICALS_PATH}#radical-${range.to}` }
+            ]}
+          />
           <Stack direction="row" spacing={1.5} sx={{ mt: 2 }}>
             <FormControl size="small" sx={{ minWidth: 120 }}>
               <InputLabel id="radical-quiz-from-label">{t('kanji.radicalsQuizFrom')}</InputLabel>
