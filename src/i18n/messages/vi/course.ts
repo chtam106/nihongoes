@@ -47,7 +47,7 @@ export const course = {
   vocabIndexFlashcardsProgress: '{current} / {total}',
   vocabIndexFlashcardsDone: 'Đã hết {count} từ.',
   vocabIndexFlashcardsHint: 'Bấm vào card để lật mặt.',
-  vocabIndexFlashcardsNext: 'Next card',
+  vocabIndexFlashcardsNext: 'Card tiếp theo',
   vocabIndexFlashcardsGuideTitle: 'Flashcards',
   vocabIndexFlashcardsGuideBody: 'Bấm vào card để lật giữa từ và nghĩa.',
   vocabIndexFlashcardsGuideGotIt: 'Đã hiểu',

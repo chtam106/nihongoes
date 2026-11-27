@@ -37,6 +37,8 @@ export default defineConfig({
     command: SERVER_COMMAND,
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
+    // `pnpm dev` opens a browser tab by default; tests drive their own browser.
+    env: { NO_OPEN: '1' },
     // A production build can take a couple of minutes; give it room in CI.
     timeout: USE_PROD_SERVER ? 300_000 : 120_000
   }

@@ -1,16 +1,19 @@
 import { describe, expect, it } from 'vitest';
 import {
+  addAllToReview,
+  addToReview,
   applyGrade,
-  buildReviewQueue,
   dayNumber,
   dueCardIds,
   EMPTY_REVIEW_STORE,
   gradeCard,
   mergeReviewStores,
   recordMiss,
-  KNOWN_INTERVAL,
-  newCardsLeft,
+  removeAllFromReview,
+  removeCard,
   nextInterval,
+  nextReview,
+  restoreCard,
   sanitizeReviewStore,
   type ReviewCard,
   type ReviewStore
@@ -98,8 +101,6 @@ describe('applyGrade', () => {
     store = applyGrade(store, 'b', 'good', TODAY);
 
     expect(store.newCount).toBe(2);
-    expect(newCardsLeft(store, TODAY, 10)).toBe(8);
-    expect(newCardsLeft(store, TODAY + 1, 10)).toBe(10);
   });
 
   it('restarts the new-card count on a new day', () => {
@@ -109,29 +110,42 @@ describe('applyGrade', () => {
   });
 });
 
-describe('buildReviewQueue', () => {
-  const store: ReviewStore = {
-    cards: {
-      later: card({ due: TODAY + 3 }),
-      due: card({ due: TODAY }),
-      overdue: card({ due: TODAY - 5 })
-    },
-    newDay: TODAY,
-    newCount: 8
-  };
+describe('dueCardIds', () => {
+  it('lists every due card, most overdue first', () => {
+    const store: ReviewStore = {
+      cards: {
+        later: card({ due: TODAY + 3 }),
+        due: card({ due: TODAY }),
+        overdue: card({ due: TODAY - 5 })
+      },
+      newDay: 0,
+      newCount: 0
+    };
 
-  it('returns due cards most overdue first, and caps new cards', () => {
-    expect(
-      buildReviewQueue(['n1', 'later', 'due', 'n2', 'n3', 'overdue', 'n1'], store, TODAY, 10)
-    ).toEqual({
-      due: ['overdue', 'due'],
-      fresh: ['n1', 'n2'],
-      spare: ['n3']
+    expect(dueCardIds(store, TODAY)).toEqual(['overdue', 'due']);
+  });
+});
+
+describe('addToReview', () => {
+  it('puts a card on the review list, due today', () => {
+    const next = addToReview(EMPTY_REVIEW_STORE, 'a', TODAY);
+
+    expect(next.cards.a).toEqual({
+      due: TODAY,
+      interval: 0,
+      ease: 2.5,
+      reps: 0,
+      lapses: 0,
+      last: TODAY
     });
+    expect(dueCardIds(next, TODAY)).toEqual(['a']);
+    expect(nextInterval(next.cards.a, 'good')).toBe(3);
   });
 
-  it('lists every due card across collections', () => {
-    expect(dueCardIds(store, TODAY)).toEqual(['overdue', 'due']);
+  it('keeps the schedule of a card already on the list', () => {
+    const store: ReviewStore = { cards: { a: card({ due: TODAY + 8 }) }, newDay: 0, newCount: 0 };
+
+    expect(addToReview(store, 'a', TODAY)).toBe(store);
   });
 });
 
@@ -183,48 +197,25 @@ describe('mergeReviewStores', () => {
   });
 });
 
-describe('known', () => {
-  it('waits 6 months for a new card, then grows faster than Got it', () => {
-    const known = gradeCard(undefined, 'known', TODAY);
+describe('removeCard', () => {
+  it('takes a card out of the schedule and leaves the rest', () => {
+    const store: ReviewStore = {
+      cards: { a: card({ due: TODAY - 1 }), b: card({ due: TODAY }) },
+      newDay: TODAY,
+      newCount: 2
+    };
+    const next = removeCard(store, 'a');
 
-    expect(known).toMatchObject({
-      due: TODAY + KNOWN_INTERVAL,
-      interval: KNOWN_INTERVAL,
-      ease: 2.65,
-      reps: 1
-    });
-    expect(nextInterval(known, 'good')).toBe(477);
-    expect(nextInterval(known, 'known')).toBe(620);
+    expect(next.cards).toEqual({ b: card({ due: TODAY }) });
+    expect(dueCardIds(next, TODAY)).toEqual(['b']);
+    expect(next).toMatchObject({ newDay: TODAY, newCount: 2 });
+    expect(removeCard(next, 'missing')).toBe(next);
   });
 
-  it('keeps stretching with each Know it well: 6 months, then about 1.7 and 6 years', () => {
-    const intervals: number[] = [];
-    let current: ReviewCard | undefined;
+  it('drops cards an older build marked "no need to review"', () => {
+    const stored = { cards: { a: { ...card(), suspended: true }, b: card() } };
 
-    for (let index = 0; index < 3; index += 1) {
-      current = gradeCard(current, 'known', TODAY);
-      intervals.push(current.interval);
-    }
-
-    expect(intervals).toEqual([180, 620, 2257]);
-  });
-
-  it('never shortens a gap that is already longer', () => {
-    expect(nextInterval(card({ interval: 300 }), 'known')).toBe(975);
-  });
-
-  it('does not use up a new-card slot', () => {
-    const store: ReviewStore = { cards: {}, newDay: TODAY, newCount: 4 };
-
-    expect(applyGrade(store, 'a', 'known', TODAY)).toMatchObject({ newDay: TODAY, newCount: 4 });
-  });
-
-  it('reads cards an older build marked "no need to review" as known', () => {
-    const stored = { cards: { a: { ...card({ interval: 0, due: TODAY }), suspended: true } } };
-
-    expect(sanitizeReviewStore(stored).cards.a).toEqual(
-      card({ interval: KNOWN_INTERVAL, due: TODAY - 10 + KNOWN_INTERVAL })
-    );
+    expect(sanitizeReviewStore(stored).cards).toEqual({ b: card() });
   });
 });
 
@@ -251,5 +242,56 @@ describe('recordMiss', () => {
     const missed = recordMiss(EMPTY_REVIEW_STORE, 'a', TODAY);
 
     expect(recordMiss(missed, 'a', TODAY)).toBe(missed);
+  });
+});
+
+describe('addAllToReview', () => {
+  it('adds every card and keeps the ones already scheduled', () => {
+    const store: ReviewStore = { cards: { b: card({ due: TODAY + 8 }) }, newDay: 0, newCount: 0 };
+    const next = addAllToReview(store, ['a', 'b', 'c'], TODAY);
+
+    expect(Object.keys(next.cards).sort()).toEqual(['a', 'b', 'c']);
+    expect(next.cards.b).toEqual(card({ due: TODAY + 8 }));
+    expect(dueCardIds(next, TODAY).sort()).toEqual(['a', 'c']);
+  });
+});
+
+describe('restoreCard', () => {
+  it('undoes a grade, or takes a card back off the list', () => {
+    const before = card({ due: TODAY });
+    const graded = applyGrade({ cards: { a: before }, newDay: 0, newCount: 0 }, 'a', 'good', TODAY);
+
+    expect(restoreCard(graded, 'a', before).cards.a).toEqual(before);
+    expect(restoreCard(graded, 'a', undefined).cards).toEqual({});
+  });
+});
+
+describe('nextReview', () => {
+  it('finds the next day with cards due and counts them', () => {
+    const store: ReviewStore = {
+      cards: {
+        today: card({ due: TODAY }),
+        soon1: card({ due: TODAY + 2 }),
+        soon2: card({ due: TODAY + 2 }),
+        later: card({ due: TODAY + 9 })
+      },
+      newDay: 0,
+      newCount: 0
+    };
+
+    expect(nextReview(store, TODAY)).toEqual({ day: TODAY + 2, count: 2 });
+    expect(nextReview({ cards: {}, newDay: 0, newCount: 0 }, TODAY)).toBeNull();
+  });
+});
+
+describe('removeAllFromReview', () => {
+  it('takes every listed card off and leaves the others', () => {
+    const store: ReviewStore = {
+      cards: { a: card(), b: card(), c: card() },
+      newDay: 0,
+      newCount: 0
+    };
+
+    expect(Object.keys(removeAllFromReview(store, ['a', 'c', 'missing']).cards)).toEqual(['b']);
   });
 });

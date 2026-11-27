@@ -16,6 +16,8 @@ export type StudyMenuRequest = {
   y: number;
   askText: string;
   card?: StudyMenuCard;
+  /** Custom collection the card is being studied in, so the menu can remove it. */
+  collectionId?: string;
 };
 
 export function openStudyMenu(request: StudyMenuRequest) {
@@ -27,6 +29,7 @@ const CARD_TYPES = new Set<FlashcardCardType>(['vocab', 'phrase', 'kana', 'radic
 export function readSaveCard(element: Element | null): {
   element: HTMLElement;
   card: StudyMenuCard;
+  collectionId?: string;
 } | null {
   const host = element?.closest<HTMLElement>('[data-save-card-id]');
 
@@ -41,7 +44,11 @@ export function readSaveCard(element: Element | null): {
     return null;
   }
 
-  return { element: host, card: { id, type: type as FlashcardCardType } };
+  return {
+    element: host,
+    card: { id, type: type as FlashcardCardType },
+    collectionId: host.dataset.saveCollectionId || undefined
+  };
 }
 
 /** Japanese surface for ChatGPT. Prefer an authored string, then the first Japanese node. */
