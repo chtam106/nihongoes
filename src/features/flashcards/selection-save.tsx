@@ -25,6 +25,7 @@ import {
   STUDY_MENU_EVENT,
   type StudyMenuRequest
 } from '@/features/flashcards/study-menu.ts';
+import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
 
@@ -85,6 +86,7 @@ function withClipMeaning(collections: FlashcardCollection[], card: FlashcardCard
 
 export function SelectionSave() {
   const { locale, t } = useTranslation();
+  const { store: reviews, add: addToReview } = useFlashcardReviews();
   const [store, setStore] = usePersistentState(
     FLASHCARD_COLLECTIONS_KEY,
     EMPTY_FLASHCARD_STORE,
@@ -203,7 +205,8 @@ export function SelectionSave() {
               x: event.clientX,
               y: event.clientY,
               askText: host ? cardAskText(host.element) : '',
-              card: host?.card
+              card: host?.card,
+              collectionId: host?.collectionId
             }
       );
     };
@@ -264,6 +267,38 @@ export function SelectionSave() {
     }
   };
 
+  const addToReviewFromMenu = () => {
+    const card = menu?.card;
+
+    setMenu(null);
+
+    if (card) {
+      addToReview(card.id);
+    }
+  };
+
+  const removeFromCollection = () => {
+    const request = menu;
+
+    setMenu(null);
+
+    if (!request?.card || !request.collectionId) {
+      return;
+    }
+
+    const { collectionId } = request;
+    const cardId = request.card.id;
+
+    // Use the stored card: a phrase saved from selected text needs its text to match.
+    apply((current) => {
+      const stored = current
+        .find((collection) => collection.id === collectionId)
+        ?.cards.find((card) => card.id === cardId);
+
+      return stored ? setCardsInCollection(current, collectionId, [stored], false) : current;
+    });
+  };
+
   const askChatGpt = () => {
     const text = menu?.askText;
 
@@ -277,6 +312,10 @@ export function SelectionSave() {
   };
 
   const activeCard = savedCard ?? clip;
+  // Only a real card can join the review list; selected text is not a card yet.
+  const menuCard =
+    menu?.card && flashcardCard(menu.card.id, menu.card.type) ? menu.card : undefined;
+  const menuCardOnList = Boolean(menuCard && menuCard.id in reviews.cards);
 
   return (
     <>
@@ -289,6 +328,16 @@ export function SelectionSave() {
           sx={{ zIndex: STUDY_LAYER_Z_INDEX }}
         >
           <MenuItem onClick={saveFromMenu}>{t('flashcards.contextSave')}</MenuItem>
+          {menu.card && menu.collectionId && (
+            <MenuItem onClick={removeFromCollection}>
+              {t('flashcards.contextRemoveFromCollection')}
+            </MenuItem>
+          )}
+          {menuCard && (
+            <MenuItem disabled={menuCardOnList} onClick={addToReviewFromMenu}>
+              {menuCardOnList ? t('flashcards.reviewOnList') : t('flashcards.reviewAdd')}
+            </MenuItem>
+          )}
           <MenuItem disabled={!menu.askText} onClick={askChatGpt}>
             {t('flashcards.contextChatGpt')}
           </MenuItem>

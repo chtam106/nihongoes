@@ -1,11 +1,10 @@
 import { storageKey } from '@/constants/site.ts';
 
 /**
- * Spaced repetition (SRS) for flashcards: a small SM-2 variant with three
+ * Spaced repetition (SRS) for flashcards: a small SM-2 variant with two
  * grades. "again" (not remembered) brings the card back tomorrow; "good"
- * (remembered) multiplies the gap by the card's ease: 3, 8, 20, 50... days;
- * "known" (remembered well) waits at least 6 months and grows faster than
- * "good": 1.3 times the gap, and the card's ease goes up.
+ * (remembered) multiplies the gap by the card's ease: 3, 8, 20, 50... days.
+ * A card can also be taken out of the schedule (`removeCard`).
  *
  * Dates are whole local days (`dayNumber`), not timestamps, so a card due
  * "tomorrow" turns due at local midnight whatever time it was reviewed.
@@ -16,10 +15,7 @@ export const FLASHCARD_REVIEWS_KEY = storageKey('FLASHCARD_REVIEWS');
 /** Day the "cards due today" prompt was last dismissed. */
 export const REVIEW_PROMPT_DAY_KEY = storageKey('REVIEW_PROMPT_DAY');
 
-/** New cards a learner may start per day, across every collection. */
-export const NEW_CARDS_PER_DAY = 10;
-
-export const REVIEW_GRADES = ['again', 'good', 'known'] as const;
+export const REVIEW_GRADES = ['again', 'good'] as const;
 
 export type ReviewGrade = (typeof REVIEW_GRADES)[number];
 
@@ -53,12 +49,6 @@ const START_EASE = 2.5;
 const FIRST_INTERVAL = 3;
 /** Days before a card not remembered comes back. */
 const AGAIN_INTERVAL = 1;
-/** Shortest gap after "known": about 6 months. */
-export const KNOWN_INTERVAL = 180;
-/** "known" stretches the "good" gap by this much. */
-const KNOWN_BONUS = 1.3;
-/** "known" also makes later gaps grow faster. */
-const KNOWN_EASE_STEP = 0.15;
 const MIN_EASE = 1.3;
 const MAX_EASE = 3.5;
 const MAX_INTERVAL = 3650;
@@ -83,12 +73,11 @@ export function nextInterval(card: ReviewCard | undefined, grade: ReviewGrade): 
     return AGAIN_INTERVAL;
   }
 
-  const good =
-    !card || card.interval === 0
-      ? FIRST_INTERVAL
-      : clampInterval(Math.max(card.interval + 1, card.interval * card.ease));
+  if (!card || card.interval === 0) {
+    return FIRST_INTERVAL;
+  }
 
-  return grade === 'known' ? Math.max(KNOWN_INTERVAL, clampInterval(good * KNOWN_BONUS)) : good;
+  return clampInterval(Math.max(card.interval + 1, card.interval * card.ease));
 }
 
 export function gradeCard(
@@ -116,24 +105,14 @@ export function gradeCard(
   return {
     due: today + interval,
     interval,
-    ease: grade === 'known' ? clampEase(ease + KNOWN_EASE_STEP) : ease,
+    ease,
     reps: (card?.reps ?? 0) + 1,
     lapses: card?.lapses ?? 0,
     last: today
   };
 }
 
-/** New cards still allowed today. */
-export function newCardsLeft(store: ReviewStore, today: number, limit = NEW_CARDS_PER_DAY) {
-  const used = store.newDay === today ? store.newCount : 0;
-
-  return Math.max(0, limit - used);
-}
-
-/**
- * Save a grade. A card graded for the first time counts toward today's new
- * cards, unless it was already known: that frees the slot for another card.
- */
+/** Save a grade. A card graded for the first time counts toward today's new cards. */
 export function applyGrade(
   store: ReviewStore,
   cardId: string,
@@ -141,7 +120,7 @@ export function applyGrade(
   today: number
 ): ReviewStore {
   const previous = store.cards[cardId];
-  const isNew = previous === undefined && grade !== 'known';
+  const isNew = previous === undefined;
   const newCount = isNew ? (store.newDay === today ? store.newCount : 0) + 1 : store.newCount;
 
   return {
@@ -166,53 +145,92 @@ export function recordMiss(store: ReviewStore, cardId: string, today: number): R
   return { ...store, cards: { ...store.cards, [cardId]: gradeCard(previous, 'again', today) } };
 }
 
-export function isDue(card: ReviewCard | undefined, today: number) {
-  return card !== undefined && card.due <= today;
+/**
+ * Take a card out of the review schedule ("no need to review"): it is no longer
+ * due, and it counts as never reviewed again. Its collection keeps it.
+ */
+export function removeCard(store: ReviewStore, cardId: string): ReviewStore {
+  if (!(cardId in store.cards)) {
+    return store;
+  }
+
+  const cards = { ...store.cards };
+  delete cards[cardId];
+
+  return { ...store, cards };
 }
 
-export type ReviewQueue = {
-  /** Cards already learned and due today, most overdue first. */
-  due: string[];
-  /** Cards never reviewed, in the given order, capped by today's new-card limit. */
-  fresh: string[];
-  /** The other never-reviewed cards, in order. They refill `fresh` when a new card is known. */
-  spare: string[];
-};
+/**
+ * Put a card on the review list, due today. A card already on the list keeps
+ * its schedule.
+ */
+export function addToReview(store: ReviewStore, cardId: string, today: number): ReviewStore {
+  if (cardId in store.cards) {
+    return store;
+  }
 
-export function buildReviewQueue(
-  cardIds: readonly string[],
+  return {
+    ...store,
+    cards: {
+      ...store.cards,
+      [cardId]: { due: today, interval: 0, ease: START_EASE, reps: 0, lapses: 0, last: today }
+    }
+  };
+}
+
+/** Put every card of a list on the review list. Cards already there keep their schedule. */
+export function addAllToReview(
   store: ReviewStore,
-  today: number,
-  limit = NEW_CARDS_PER_DAY
-): ReviewQueue {
-  const seen = new Set<string>();
-  const due: string[] = [];
-  const fresh: string[] = [];
-  const spare: string[] = [];
-  const freshLimit = newCardsLeft(store, today, limit);
+  cardIds: readonly string[],
+  today: number
+): ReviewStore {
+  return cardIds.reduce((next, cardId) => addToReview(next, cardId, today), store);
+}
 
-  for (const id of cardIds) {
-    if (seen.has(id)) {
+/** Take every card of a list off the review list. */
+export function removeAllFromReview(store: ReviewStore, cardIds: readonly string[]): ReviewStore {
+  return cardIds.reduce((next, cardId) => removeCard(next, cardId), store);
+}
+
+/** Put a card back the way it was before a grade, to undo it. `undefined` takes it off the list. */
+export function restoreCard(
+  store: ReviewStore,
+  cardId: string,
+  card: ReviewCard | undefined
+): ReviewStore {
+  if (card === undefined) {
+    return removeCard(store, cardId);
+  }
+
+  return { ...store, cards: { ...store.cards, [cardId]: card } };
+}
+
+/** The next day after today with cards due, and how many fall due that day. */
+export function nextReview(
+  store: ReviewStore,
+  today: number
+): { day: number; count: number } | null {
+  let day = Infinity;
+  let count = 0;
+
+  for (const card of Object.values(store.cards)) {
+    if (card.due <= today || card.due > day) {
       continue;
     }
 
-    seen.add(id);
-    const card = store.cards[id];
-
-    if (card === undefined) {
-      if (fresh.length < freshLimit) {
-        fresh.push(id);
-      } else {
-        spare.push(id);
-      }
-    } else if (isDue(card, today)) {
-      due.push(id);
+    if (card.due < day) {
+      day = card.due;
+      count = 0;
     }
+
+    count += 1;
   }
 
-  due.sort((left, right) => store.cards[left].due - store.cards[right].due);
+  return count > 0 ? { day, count } : null;
+}
 
-  return { due, fresh, spare };
+export function isDue(card: ReviewCard | undefined, today: number) {
+  return card !== undefined && card.due <= today;
 }
 
 /** Ids of every reviewed card that is due today. */
@@ -248,17 +266,15 @@ function sanitizeReviewCard(value: unknown): ReviewCard | null {
     return null;
   }
 
-  // A short-lived build marked cards "no need to review" (`suspended`): they
-  // read as known, back in at least `KNOWN_INTERVAL` days.
-  const known = card.suspended === true;
-  const interval = Math.min(
-    known ? Math.max(card.interval, KNOWN_INTERVAL) : card.interval,
-    MAX_INTERVAL
-  );
+  // An early build marked "no need to review" cards as `suspended`: they are
+  // out of the schedule now, as removeCard would leave them.
+  if (card.suspended === true) {
+    return null;
+  }
 
   return {
-    due: known ? Math.max(card.due, card.last + KNOWN_INTERVAL) : card.due,
-    interval,
+    due: card.due,
+    interval: Math.min(card.interval, MAX_INTERVAL),
     ease: clampEase(card.ease),
     reps: card.reps,
     lapses: card.lapses,

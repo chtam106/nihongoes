@@ -1,10 +1,17 @@
 'use client';
 
 import { useEffect, useState, type ReactNode } from 'react';
+import UndoOutlined from '@mui/icons-material/UndoOutlined';
 import { Box, Button, Stack, Typography } from '@mui/material';
-import { FlipCard, type VocabFlashcard } from '@/components/vocab-flashcards';
-import { nextInterval, REVIEW_GRADES, type ReviewGrade } from '@/constants/flashcards/srs.ts';
-import { SaveableCard } from '@/features/flashcards/save-card-gesture.tsx';
+import { FlashcardStage, isOwnKeyTarget, type VocabFlashcard } from '@/components/vocab-flashcards';
+import {
+  dayNumber,
+  nextInterval,
+  nextReview,
+  REVIEW_GRADES,
+  type ReviewCard,
+  type ReviewGrade
+} from '@/constants/flashcards/srs.ts';
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/types/i18n.ts';
@@ -12,62 +19,52 @@ import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab
 
 const GRADE_LABEL_KEYS: Record<ReviewGrade, string> = {
   again: 'flashcards.reviewAgain',
-  good: 'flashcards.reviewGood',
-  known: 'flashcards.reviewKnown'
+  good: 'flashcards.reviewGood'
 };
 
-// Red, green, blue: three hues apart, so no grade looks like another (the
-// pink primary color sits too close to the red of "again").
-const GRADE_COLORS: Record<ReviewGrade, 'error' | 'success' | 'info'> = {
+const GRADE_COLORS: Record<ReviewGrade, 'error' | 'success'> = {
   again: 'error',
-  good: 'success',
-  known: 'info'
+  good: 'success'
 };
+
+/** Key for "no need to review", after the grade keys. */
+const SKIP_KEY = String(REVIEW_GRADES.length + 1);
+
+type ReviewAction = ReviewGrade | 'remove';
 
 type ReviewSessionProps = {
-  /** Cards in review order (due first, then new). Read once when the session starts. */
+  /** Due cards in review order. Read once when the session starts. */
   cards: VocabFlashcard[];
-  /** More new cards, in order. A new card graded "known" frees its slot for the next one. */
-  spareCards?: VocabFlashcard[];
   locale: Locale;
   front: FlashcardFront;
   /** Shown under the summary when a session with at least one card is over. */
   doneActions?: ReactNode;
 };
 
-type SessionState = {
-  queue: VocabFlashcard[];
-  index: number;
-  reviewed: number;
-  /** Spare cards already moved into the queue. */
-  spareUsed: number;
+/** One step of the session, kept so it can be undone. */
+type HistoryEntry = {
+  cardId: string;
+  /** The card's schedule before this step. */
+  before: ReviewCard | undefined;
+  action: ReviewAction;
 };
 
-function isTyping(target: EventTarget | null) {
-  return (
-    target instanceof HTMLElement &&
-    (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))
-  );
+type SessionState = {
+  index: number;
+  history: HistoryEntry[];
+  flipped: boolean;
+};
+
+function countOf(history: HistoryEntry[], action: ReviewAction) {
+  return history.filter((entry) => entry.action === action).length;
 }
 
-const NO_SPARE: VocabFlashcard[] = [];
-
-export function ReviewSession({
-  cards,
-  spareCards = NO_SPARE,
-  locale,
-  front,
-  doneActions
-}: ReviewSessionProps) {
+export function ReviewSession({ cards, locale, front, doneActions }: ReviewSessionProps) {
   const { t } = useTranslation();
-  const { store, grade } = useFlashcardReviews();
-  const [session, setSession] = useState<SessionState>(() => ({
-    queue: cards,
-    index: 0,
-    reviewed: 0,
-    spareUsed: 0
-  }));
-  const card = session.queue[session.index];
+  const { store, grade, remove, restore } = useFlashcardReviews();
+  const [queue] = useState(cards);
+  const [session, setSession] = useState<SessionState>({ index: 0, history: [], flipped: false });
+  const card = queue[session.index];
   const finished = !card;
 
   const formatInterval = (days: number) => {
@@ -86,46 +83,75 @@ export function ReviewSession({
     return t('flashcards.reviewIntervalYears', { count: Math.round(days / 36.5) / 10 });
   };
 
-  const handleGrade = (value: ReviewGrade) => {
+  const act = (action: ReviewAction) => {
     if (!card) {
       return;
     }
 
-    // A new card already known does not use a new-card slot: bring in the next one.
-    const freesSlot = value === 'known' && store.cards[card.id] === undefined;
-    grade(card.id, value);
-    setSession((previous) => {
-      const refill = freesSlot ? spareCards[previous.spareUsed] : undefined;
+    const before = store.cards[card.id];
 
-      return {
-        ...previous,
-        queue: refill ? [...previous.queue, refill] : previous.queue,
-        index: previous.index + 1,
-        reviewed: previous.reviewed + 1,
-        spareUsed: previous.spareUsed + (refill ? 1 : 0)
-      };
-    });
+    if (action === 'remove') {
+      remove(card.id);
+    } else {
+      grade(card.id, action);
+    }
+
+    setSession((previous) => ({
+      index: previous.index + 1,
+      history: [...previous.history, { cardId: card.id, before, action }],
+      flipped: false
+    }));
   };
 
-  useEffect(() => {
-    if (finished) {
+  const undo = () => {
+    const last = session.history.at(-1);
+
+    if (!last) {
       return;
     }
 
+    restore(last.cardId, last.before);
+    setSession((previous) => ({
+      index: previous.index - 1,
+      history: previous.history.slice(0, -1),
+      flipped: false
+    }));
+  };
+
+  // Space flips, 1-2 grade, 3 takes the card off the list, Z undoes.
+  useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.defaultPrevented || event.repeat || isTyping(event.target)) {
+      if (event.defaultPrevented || event.repeat || event.altKey) {
         return;
       }
 
-      if (event.ctrlKey || event.metaKey || event.altKey) {
+      if (isOwnKeyTarget(event.target, event.key)) {
         return;
       }
 
-      const position = REVIEW_GRADES.findIndex((_, index) => event.key === String(index + 1));
+      const key = event.key.toLowerCase();
+
+      if (key === 'z' && !event.shiftKey) {
+        event.preventDefault();
+        undo();
+        return;
+      }
+
+      if (finished || event.ctrlKey || event.metaKey) {
+        return;
+      }
+
+      const position = REVIEW_GRADES.findIndex((_, index) => key === String(index + 1));
 
       if (position >= 0) {
         event.preventDefault();
-        handleGrade(REVIEW_GRADES[position]);
+        act(REVIEW_GRADES[position]);
+      } else if (key === SKIP_KEY) {
+        event.preventDefault();
+        act('remove');
+      } else if (key === ' ') {
+        event.preventDefault();
+        setSession((previous) => ({ ...previous, flipped: !previous.flipped }));
       }
     };
 
@@ -134,44 +160,88 @@ export function ReviewSession({
     return () => window.removeEventListener('keydown', onKeyDown);
   });
 
+  const undoButton = session.history.length > 0 && (
+    <Button
+      onClick={undo}
+      startIcon={<UndoOutlined />}
+      aria-keyshortcuts="Z"
+      sx={{ alignSelf: 'center', textTransform: 'none', color: 'text.secondary' }}
+    >
+      {t('flashcards.reviewUndo')}
+    </Button>
+  );
+
   if (finished) {
+    const reviewed = session.history.length;
+    const today = dayNumber();
+    const upcoming = nextReview(store, today);
+    const removed = countOf(session.history, 'remove');
+    const summary = [
+      t('flashcards.reviewSummaryGood', { count: countOf(session.history, 'good') }),
+      t('flashcards.reviewSummaryAgain', { count: countOf(session.history, 'again') }),
+      ...(removed > 0 ? [t('flashcards.reviewSummaryRemoved', { count: removed })] : [])
+    ].join(' · ');
+
     return (
       <Stack spacing={2} sx={{ alignItems: 'center', textAlign: 'center' }}>
-        <Typography variant="body1" color="text.secondary">
-          {session.reviewed > 0
-            ? t('flashcards.reviewDone', { count: session.reviewed })
-            : t('flashcards.reviewNothing')}
-        </Typography>
-        {session.reviewed > 0 && doneActions}
+        {reviewed === 0 && (
+          <Typography variant="body1" color="text.secondary">
+            {t('flashcards.reviewNothing')}
+          </Typography>
+        )}
+        {reviewed > 0 && (
+          <Stack spacing={0.5} sx={{ alignItems: 'center' }}>
+            <Typography variant="h6" component="p" sx={{ fontWeight: 600 }}>
+              {t('flashcards.reviewDone', { count: reviewed })}
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              {summary}
+            </Typography>
+            {upcoming && (
+              <Typography variant="body1" color="text.secondary">
+                {upcoming.day === today + 1
+                  ? t('flashcards.reviewNextTomorrow', { count: upcoming.count })
+                  : t('flashcards.reviewNextIn', {
+                      days: upcoming.day - today,
+                      count: upcoming.count
+                    })}
+              </Typography>
+            )}
+          </Stack>
+        )}
+        {undoButton}
+        {reviewed > 0 && doneActions}
       </Stack>
     );
   }
+
+  const buttonSx = {
+    minHeight: 56,
+    flexDirection: 'column',
+    gap: 0.25,
+    textTransform: 'none',
+    lineHeight: 1.2
+  } as const;
 
   return (
     <Stack spacing={2} sx={{ width: '100%', alignItems: 'center' }}>
       <Typography variant="body1" color="text.secondary" sx={{ textAlign: 'center' }}>
         {t('course.vocabIndexFlashcardsProgress', {
           current: session.index + 1,
-          total: session.queue.length
+          total: queue.length
         })}
       </Typography>
 
-      <SaveableCard
-        cardId={card.id}
-        cardType={card.type}
-        askText={card.item.kanji ?? card.item.kana}
-        sx={{ position: 'relative', width: '100%', maxWidth: 420, mx: 'auto' }}
-      >
-        <Box sx={{ perspective: 1000 }}>
-          <FlipCard
-            key={`${session.index}:${front}`}
-            item={card.item}
-            locale={locale}
-            front={front}
-            type={card.type}
-          />
-        </Box>
-      </SaveableCard>
+      <FlashcardStage
+        card={card}
+        position={session.history.length}
+        locale={locale}
+        front={front}
+        flipped={session.flipped}
+        onFlip={(flipped) => setSession((previous) => ({ ...previous, flipped }))}
+        onSwipeLeft={() => act('again')}
+        onSwipeRight={() => act('good')}
+      />
 
       <Box
         role="group"
@@ -190,15 +260,9 @@ export function ReviewSession({
             key={value}
             variant="outlined"
             color={GRADE_COLORS[value]}
-            onClick={() => handleGrade(value)}
+            onClick={() => act(value)}
             aria-keyshortcuts={String(position + 1)}
-            sx={{
-              minHeight: 56,
-              flexDirection: 'column',
-              gap: 0.25,
-              textTransform: 'none',
-              lineHeight: 1.2
-            }}
+            sx={buttonSx}
           >
             <Box component="span" sx={{ fontWeight: 600 }}>
               {t(GRADE_LABEL_KEYS[value])}
@@ -208,7 +272,23 @@ export function ReviewSession({
             </Box>
           </Button>
         ))}
+        <Button
+          variant="outlined"
+          color="info"
+          onClick={() => act('remove')}
+          aria-keyshortcuts={SKIP_KEY}
+          sx={buttonSx}
+        >
+          <Box component="span" sx={{ fontWeight: 600 }}>
+            {t('flashcards.reviewSkip')}
+          </Box>
+          <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400 }}>
+            {t('flashcards.reviewSkipRemove')}
+          </Box>
+        </Button>
       </Box>
+
+      {undoButton}
     </Stack>
   );
 }

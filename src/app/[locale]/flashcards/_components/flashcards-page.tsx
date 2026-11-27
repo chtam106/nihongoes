@@ -3,10 +3,12 @@
 import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
+import ArrowForwardOutlined from '@mui/icons-material/ArrowForwardOutlined';
 import SyncOutlined from '@mui/icons-material/SyncOutlined';
 import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
+import MoreHorizOutlined from '@mui/icons-material/MoreHorizOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import {
@@ -21,12 +23,16 @@ import {
   DialogContent,
   DialogTitle,
   IconButton,
-  Link,
+  LinearProgress,
+  ListItemIcon,
+  Menu,
+  MenuItem,
   Paper,
   Stack,
   Tab,
   Tabs,
   TextField,
+  Tooltip,
   Typography
 } from '@mui/material';
 import { Heading } from '@/components/heading';
@@ -70,6 +76,61 @@ type CollectionsGridProps = {
   onDelete?: (collection: FlashcardCollection) => void;
 };
 
+type CollectionMenuProps = {
+  collection: FlashcardCollection;
+  onRename?: (collection: FlashcardCollection) => void;
+  onDelete?: (collection: FlashcardCollection) => void;
+};
+
+/** Rename and delete for a custom collection, behind one ⋯ button. */
+function CollectionMenu({ collection, onRename, onDelete }: CollectionMenuProps) {
+  const { t } = useTranslation();
+  const [anchor, setAnchor] = useState<HTMLElement | null>(null);
+
+  const choose = (action?: (collection: FlashcardCollection) => void) => {
+    setAnchor(null);
+    action?.(collection);
+  };
+
+  return (
+    <>
+      <IconButton
+        aria-label={t('flashcards.collectionMenu', { name: collection.name })}
+        aria-haspopup="menu"
+        aria-expanded={Boolean(anchor)}
+        onClick={(event) => setAnchor(event.currentTarget)}
+        sx={{ flexShrink: 0, mt: 1, mr: 1 }}
+      >
+        <MoreHorizOutlined />
+      </IconButton>
+      <Menu
+        anchorEl={anchor}
+        open={Boolean(anchor)}
+        onClose={() => setAnchor(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        {onRename && (
+          <MenuItem onClick={() => choose(onRename)}>
+            <ListItemIcon>
+              <EditOutlined fontSize="small" />
+            </ListItemIcon>
+            {t('flashcards.rename')}
+          </MenuItem>
+        )}
+        {onDelete && (
+          <MenuItem onClick={() => choose(onDelete)}>
+            <ListItemIcon>
+              <DeleteOutlined fontSize="small" />
+            </ListItemIcon>
+            {t('flashcards.delete')}
+          </MenuItem>
+        )}
+      </Menu>
+    </>
+  );
+}
+
 function CollectionsGrid({
   collections,
   listTab,
@@ -80,6 +141,7 @@ function CollectionsGrid({
 }: CollectionsGridProps) {
   const { t } = useTranslation();
   const { resolveCards } = useFlashcardDefaults();
+  const { store: reviews } = useFlashcardReviews();
 
   if (collections.length === 0) {
     return (
@@ -104,26 +166,27 @@ function CollectionsGrid({
       }}
     >
       {collections.map((collection) => {
-        const count = studyFlashcards(collection.cards, resolveCards).length;
+        const studyCards = studyFlashcards(collection.cards, resolveCards);
+        const count = studyCards.length;
+        const inReview = studyCards.filter((card) => card.id in reviews.cards).length;
 
         return (
           <Paper
             key={collection.id}
             elevation={0}
-            sx={[elevatedSurfaceSx, { display: 'flex', flexDirection: 'column', minWidth: 0 }]}
+            sx={[elevatedSurfaceSx, { display: 'flex', alignItems: 'flex-start', minWidth: 0 }]}
           >
             <Box
               component={RouterLink}
               to={flashcardCollectionHref(collection.id, listTab)}
               sx={(theme) => ({
-                width: '100%',
+                flex: 1,
                 minWidth: 0,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
                 gap: 0.25,
-                pt: 1.5,
-                pb: allowRename || allowDelete ? 0.5 : 1.5,
+                py: 1.5,
                 px: 2,
                 border: 0,
                 bgcolor: 'transparent',
@@ -142,35 +205,23 @@ function CollectionsGrid({
               </Typography>
               <Typography component="span" color="text.secondary">
                 {t('flashcards.count', { count })}
+                {inReview > 0 && ` · ${t('flashcards.inReviewCount', { count: inReview })}`}
               </Typography>
+              {inReview > 0 && (
+                <LinearProgress
+                  variant="determinate"
+                  value={(inReview / count) * 100}
+                  aria-label={t('flashcards.inReviewCount', { count: inReview })}
+                  sx={{ alignSelf: 'stretch', mt: 1, height: 4, borderRadius: 2 }}
+                />
+              )}
             </Box>
             {(allowRename || allowDelete) && (
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                  alignItems: 'center',
-                  px: 1,
-                  pb: 0.5
-                }}
-              >
-                {allowRename && onRename && (
-                  <IconButton
-                    aria-label={t('flashcards.renameName', { name: collection.name })}
-                    onClick={() => onRename(collection)}
-                  >
-                    <EditOutlined />
-                  </IconButton>
-                )}
-                {allowDelete && onDelete && (
-                  <IconButton
-                    aria-label={t('flashcards.deleteName', { name: collection.name })}
-                    onClick={() => onDelete(collection)}
-                  >
-                    <DeleteOutlined />
-                  </IconButton>
-                )}
-              </Box>
+              <CollectionMenu
+                collection={collection}
+                onRename={allowRename ? onRename : undefined}
+                onDelete={allowDelete ? onDelete : undefined}
+              />
             )}
           </Paper>
         );
@@ -325,92 +376,61 @@ function FlashcardsView() {
   return (
     <PageContainer bottomGutter>
       <Stack spacing={3}>
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 1.5
+          }}
+        >
           <Heading component="h1">{t('flashcards.title')}</Heading>
-          <Stack spacing={0.5} sx={{ mt: 1.5 }}>
-            <HintText>{t('flashcards.flipHint')}</HintText>
-            <HintText>{t('flashcards.saveHint')}</HintText>
+          <Stack direction="row" spacing={1} sx={{ alignItems: 'center', ml: 'auto' }}>
+            <Tooltip title={t('flashcards.driveSync')}>
+              <IconButton
+                component={RouterLink}
+                to={routes.flashcardDrive}
+                color="primary"
+                aria-label={t('flashcards.driveSync')}
+              >
+                <SyncOutlined />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title={t('flashcards.newCollection')}>
+              <IconButton
+                color="primary"
+                aria-label={t('flashcards.newCollection')}
+                onClick={() => setCreateOpen(true)}
+              >
+                <AddOutlined />
+              </IconButton>
+            </Tooltip>
           </Stack>
         </Box>
 
         <DailyReviewPanel />
 
         <Box>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-start',
-              gap: 1,
-              mb: 2
-            }}
-          >
-            <Link
-              component={RouterLink}
-              to={routes.flashcardDrive}
-              underline="none"
-              color="primary"
-              sx={(theme) => ({
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 0.5,
-                flexShrink: 0,
-                fontWeight: 600,
-                textDecoration: 'none',
-                textUnderlineOffset: '3px',
-                '&:focus-visible': focusVisibleSx(theme),
-                '@media (hover: hover)': {
-                  '&:hover': { textDecoration: 'underline' }
-                }
-              })}
-            >
-              <SyncOutlined fontSize="small" />
-              {t('flashcards.driveSync')}
-            </Link>
-            <Button
-              variant="text"
-              color="primary"
-              startIcon={<AddOutlined />}
-              onClick={() => setCreateOpen(true)}
-              sx={(theme) => ({
-                minWidth: 0,
-                px: 0,
-                py: 0.5,
-                border: 0,
-                boxShadow: 'none',
-                textTransform: 'none',
-                fontSize: '1rem',
-                fontWeight: 600,
-                textDecoration: 'none',
-                '&.Mui-focusVisible': focusVisibleSx(theme),
-                '@media (hover: hover)': {
-                  '&:hover': {
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '3px',
-                    bgcolor: 'transparent'
-                  }
-                }
-              })}
-            >
-              {t('flashcards.newCollection')}
-            </Button>
-          </Box>
-
           <Tabs
             value={listTab}
             onChange={handleListTabChange}
-            variant="fullWidth"
+            variant="scrollable"
+            scrollButtons={false}
             sx={{
               mb: 2,
+              borderBottom: 1,
+              borderColor: 'divider',
               '& .MuiTab-root': { textTransform: 'none', fontSize: '1rem', fontWeight: 600 }
             }}
           >
-            <Tab value="mine" label={t('flashcards.myCollections')} />
+            <Tab value="mine" label={`${t('flashcards.myCollections')} (${mine.length})`} />
             <Tab value="default" label={t('flashcards.defaultCollections')} />
           </Tabs>
 
           {listTab === 'mine' && (
             <Stack spacing={2} role="tabpanel" aria-label={t('flashcards.myCollections')}>
+              <HintText>{t('flashcards.saveHint')}</HintText>
               <CollectionsGrid
                 collections={mine}
                 listTab="mine"
@@ -567,35 +587,26 @@ function DailyReviewPanel() {
   const content = (
     <Box
       sx={{
-        p: 2.5,
+        px: 2,
+        py: 1.5,
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
-        alignItems: { xs: 'flex-start', sm: 'center' },
-        gap: 2
+        alignItems: 'center',
+        gap: 1.5
       }}
     >
-      <EventRepeatOutlined color="primary" sx={{ display: { xs: 'none', sm: 'block' } }} />
+      <EventRepeatOutlined color="primary" />
       <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Heading component="h2" scale="subsection">
+        <Typography component="h2" variant="body1" sx={{ fontWeight: 600 }}>
           {t('flashcards.reviewTitle')}
-        </Heading>
-        <Typography variant="body1" color="text.secondary" sx={{ mt: 0.5 }}>
+        </Typography>
+        <Typography variant="body1" color="text.secondary">
           {started
             ? t('flashcards.reviewDueToday', { count: due })
             : t('flashcards.reviewGetStarted')}
         </Typography>
       </Box>
-      {started && (
-        // A label, not a second link: the whole card is the link.
-        <Button
-          component="span"
-          tabIndex={-1}
-          variant={due > 0 ? 'contained' : 'outlined'}
-          sx={{ flexShrink: 0, px: 2.5, fontWeight: 600, pointerEvents: 'none' }}
-        >
-          {t('flashcards.reviewStart')}
-        </Button>
-      )}
+      {/* The whole card is the link; the arrow only shows where it goes. */}
+      {started && <ArrowForwardOutlined color="primary" aria-hidden sx={{ flexShrink: 0 }} />}
     </Box>
   );
 
