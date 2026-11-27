@@ -2,8 +2,8 @@
 
 import { useSyncExternalStore } from 'react';
 import ArrowBackOutlined from '@mui/icons-material/ArrowBackOutlined';
-import { Box, Button, Stack, Typography } from '@mui/material';
-import { Heading } from '@/components/heading';
+import { Button, Stack, Typography } from '@mui/material';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { HintText } from '@/components/hint-text';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageContainer } from '@/components/page-container';
@@ -112,8 +112,10 @@ function DailyReview() {
   return (
     <PageContainer bottomGutter>
       <Stack spacing={2}>
-        <Box>{backLink}</Box>
-        <Heading component="h1">{t('flashcards.reviewTitle')}</Heading>
+        <PageBreadcrumb
+          title={t('flashcards.reviewTitle')}
+          items={[{ label: t('flashcards.title'), to: FLASHCARDS_PATH }]}
+        />
         <Stack spacing={0.5}>
           <HintText>{t('flashcards.reviewIntro')}</HintText>
           <HintText>{t('flashcards.reviewHowTo')}</HintText>

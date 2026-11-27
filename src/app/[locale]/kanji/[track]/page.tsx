@@ -1,8 +1,8 @@
 import { getTranslations } from 'next-intl/server';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Box, Button, Card, CardActionArea, CardContent, Stack, Typography } from '@mui/material';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { PageContainer } from '@/components/page-container';
 import { ScrollButton } from '@/components/scroll-button';
 import {
@@ -78,21 +78,11 @@ export default async function Page({ params }: PageProps<{ track: string }>) {
     <PageContainer bottomGutter>
       <Stack spacing={4}>
         <Box>
-          <Box sx={{ mb: 1 }}>
-            <Button
-              component={RouterLink}
-              to={KANJI_BASE_PATH}
-              startIcon={<ArrowBackIcon />}
-              variant="text"
-              sx={{ px: 0 }}
-            >
-              {t('kanji.overviewTitle')}
-            </Button>
-          </Box>
-          <Heading component="h1" gutterBottom>
-            {track.name[locale]}
-          </Heading>
-          <Typography variant="body1" color="text.secondary">
+          <PageBreadcrumb
+            title={track.name[locale]}
+            items={[{ label: t('kanji.overviewTitle'), to: KANJI_BASE_PATH }]}
+          />
+          <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
             {track.intro[locale]}
           </Typography>
         </Box>

@@ -11,6 +11,10 @@ export const home = {
   radicalsDescription: '214 bộ thủ Kangxi - thành phần cấu tạo nên mọi chữ kanji.',
   alphabetSection: 'Bảng chữ cái & luyện tập',
   kanjiSection: 'Kanji & bộ thủ',
+  practiceSection: 'Luyện tập',
+  verbTeDescription: 'Đổi động từ từ thể ます sang thể て.',
+  verbNaiDescription: 'Đổi động từ từ thể ます sang thể ない.',
+  particlesDescription: 'Chọn trợ từ đúng cho câu, từ N5 đến N4.',
   coursesSection: 'Khóa học',
   vocabDescription: 'Toàn bộ từ vựng và mẫu câu của các khóa JLPT.',
   flashcardsDescription: 'Ôn từ vựng đã lưu trong collection.'

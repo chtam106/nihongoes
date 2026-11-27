@@ -5,8 +5,8 @@ export const n5Lesson18: Lesson = {
   id: 'lesson-18',
   number: 18,
   title: {
-    en: 'Hobbies and skills',
-    vi: 'Sở thích và kỹ năng'
+    en: 'What you can do',
+    vi: 'Có thể làm gì'
   },
   focus: {
     en: 'Use the dictionary form, express ability with 〜ことができます, talk about hobbies, and say "before" with 〜まえに.',

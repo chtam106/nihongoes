@@ -3,9 +3,7 @@
 import { useEffect, useMemo, useState, type SyntheticEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AddOutlined from '@mui/icons-material/AddOutlined';
-import ArrowForwardOutlined from '@mui/icons-material/ArrowForwardOutlined';
 import SyncOutlined from '@mui/icons-material/SyncOutlined';
-import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
 import MoreHorizOutlined from '@mui/icons-material/MoreHorizOutlined';
@@ -15,8 +13,6 @@ import {
   Box,
   Button,
   ButtonBase,
-  Card,
-  CardActionArea,
   Collapse,
   Dialog,
   DialogActions,
@@ -51,9 +47,9 @@ import {
   FlashcardDefaultsProvider,
   useFlashcardDefaults
 } from '@/features/flashcards/flashcard-defaults.tsx';
+import { DailyReviewPanel } from '@/features/flashcards/daily-review-panel.tsx';
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
-import { dayNumber, dueCardIds } from '@/constants/flashcards/srs.ts';
 import { useRouter } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import {
@@ -65,7 +61,7 @@ import {
 } from './flashcards-list-tab.ts';
 import { focusVisibleSx } from '@/theme/focus.ts';
 import { coarsePressResetSx } from '@/theme/hover.ts';
-import { elevatedSurfaceSx, interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 
 type CollectionsGridProps = {
   collections: FlashcardCollection[];
@@ -578,51 +574,3 @@ function FlashcardsView() {
 }
 
 export default FlashcardsPage;
-
-function DailyReviewPanel() {
-  const { t } = useTranslation();
-  const { store } = useFlashcardReviews();
-  const started = Object.keys(store.cards).length > 0;
-  const due = dueCardIds(store, dayNumber()).length;
-  const content = (
-    <Box
-      sx={{
-        px: 2,
-        py: 1.5,
-        display: 'flex',
-        alignItems: 'center',
-        gap: 1.5
-      }}
-    >
-      <EventRepeatOutlined color="primary" />
-      <Box sx={{ flex: 1, minWidth: 0 }}>
-        <Typography component="h2" variant="body1" sx={{ fontWeight: 600 }}>
-          {t('flashcards.reviewTitle')}
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          {started
-            ? t('flashcards.reviewDueToday', { count: due })
-            : t('flashcards.reviewGetStarted')}
-        </Typography>
-      </Box>
-      {/* The whole card is the link; the arrow only shows where it goes. */}
-      {started && <ArrowForwardOutlined color="primary" aria-hidden sx={{ flexShrink: 0 }} />}
-    </Box>
-  );
-
-  if (!started) {
-    return (
-      <Box component="section" aria-label={t('flashcards.reviewTitle')} sx={elevatedSurfaceSx}>
-        {content}
-      </Box>
-    );
-  }
-
-  return (
-    <Card component="section" elevation={0} sx={interactiveSurfaceSx}>
-      <CardActionArea component={RouterLink} to={routes.flashcardReview}>
-        {content}
-      </CardActionArea>
-    </Card>
-  );
-}
