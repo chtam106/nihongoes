@@ -3,6 +3,9 @@ export const kanji = {
   collectionsHeading: 'Jōyō kanji theo lớp',
   collectionsSubtitle:
     'Kanji Jōyō là khoảng 2.136 chữ được Nhật quy định dùng hằng ngày. Trường học Nhật dạy chúng theo từng lớp - một thứ tự tự nhiên để học.',
+  kankenHeading: 'Kanken (漢検)',
+  kankenSubtitle:
+    'Kanken là kỳ thi năng lực kanji của Nhật. Các cấp 4級 đến 2級 học tiếp sau kanji tiểu học, cho tới đủ toàn bộ chữ Jōyō.',
   aboutHeading: 'Kanji là gì?',
   aboutWhat:
     'Kanji (漢字) là chữ biểu nghĩa mượn từ tiếng Hán. Mỗi chữ mang một nghĩa và một hoặc nhiều cách đọc, được viết xen kẽ với hai bảng chữ hiragana và katakana.',
@@ -76,7 +79,6 @@ export const kanji = {
     'Dòng đếm dưới nghĩa - số kanji trong bài học lấy bộ này làm bộ thủ chính (hiện khi sắp xếp theo độ thông dụng).',
   radicalsQuizBody: 'Tự kiểm tra nghĩa bộ thủ.',
   radicalsQuizTitle: 'Trắc nghiệm bộ thủ',
-  radicalsBack: 'Bộ thủ',
   radicalsQuizPrompt: 'Bộ thủ này là gì?',
   radicalsQuizFrom: 'Từ',
   radicalsQuizTo: 'Đến',

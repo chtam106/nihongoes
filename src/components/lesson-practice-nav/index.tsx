@@ -139,8 +139,10 @@ export function LessonPracticeNav({ level, lesson, section }: LessonPracticeNavP
         sx={{
           position: 'fixed',
           right: 0,
-          top: '50%',
-          transform: 'translateY(-50%)',
+          // Same spot as the lesson section nav: bottom-right on a phone.
+          top: { xs: 'auto', md: '50%' },
+          bottom: { xs: 'calc(16px + env(safe-area-inset-bottom))', md: 'auto' },
+          transform: { xs: 'none', md: 'translateY(-50%)' },
           zIndex: (theme) => theme.zIndex.fab
         }}
       >

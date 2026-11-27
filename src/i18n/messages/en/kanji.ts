@@ -3,6 +3,9 @@ export const kanji = {
   collectionsHeading: 'Jōyō kanji by grade',
   collectionsSubtitle:
     'The Jōyō kanji are the ~2,136 characters approved for everyday use in Japan. Japanese schools teach them grade by grade - a natural order to learn them in.',
+  kankenHeading: 'Kanken (漢検)',
+  kankenSubtitle:
+    'Kanken is the Japanese kanji proficiency test. Levels 4 to 2 pick up after the school grades and go on to the full Jōyō set.',
   aboutHeading: 'What is kanji?',
   aboutWhat:
     'Kanji (漢字) are meaning-based characters adapted from Chinese. Each one carries a meaning and one or more readings, and they are written alongside the hiragana and katakana syllabaries.',
@@ -76,7 +79,6 @@ export const kanji = {
     'Count under the meaning - how many lesson kanji use this as their main radical (shown when sorting by frequency).',
   radicalsQuizBody: 'Test yourself on radical meanings.',
   radicalsQuizTitle: 'Radical quiz',
-  radicalsBack: 'Radicals',
   radicalsQuizPrompt: 'What is this radical?',
   radicalsQuizFrom: 'From',
   radicalsQuizTo: 'To',

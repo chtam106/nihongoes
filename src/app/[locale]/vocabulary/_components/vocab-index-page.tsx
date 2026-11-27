@@ -1,15 +1,18 @@
 'use client';
 
-import { type MouseEvent } from 'react';
+import { useState, type MouseEvent } from 'react';
+import SearchOutlined from '@mui/icons-material/SearchOutlined';
 import StyleOutlined from '@mui/icons-material/StyleOutlined';
 import ViewListOutlined from '@mui/icons-material/ViewListOutlined';
 import {
   Box,
   FormControl,
+  InputAdornment,
   InputLabel,
   MenuItem,
   Select,
   Stack,
+  TextField,
   ToggleButton,
   ToggleButtonGroup,
   Typography
@@ -35,6 +38,16 @@ type VocabIndexPageProps = {
   defaults: readonly DefaultCollection[];
 };
 
+/** Lowercase, without Vietnamese tone marks, so "truong" finds "trường". */
+function searchKey(text: string) {
+  return text
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/Đ/g, 'D')
+    .toLowerCase();
+}
+
 function lessonVocabItems(lesson: Lesson) {
   return [...lesson.vocab, ...(lesson.phrases ?? [])];
 }
@@ -47,8 +60,21 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
   const lessonNumbers = lessons.map((lesson) => lesson.number);
   const { prefs, setView, setFront, setRange, guideSeen, setGuideSeen } =
     useVocabIndexPreferences(lessonNumbers);
+  const [query, setQuery] = useState('');
+  const needle = searchKey(query.trim());
+  // Search kana, kanji, romaji and both meanings, inside the From/To range.
   const visibleCards = allFlashcards().filter(
-    (card) => card.lessonNumber >= prefs.from && card.lessonNumber <= prefs.to
+    (card) =>
+      card.lessonNumber >= prefs.from &&
+      card.lessonNumber <= prefs.to &&
+      (!needle ||
+        [
+          card.item.kana,
+          card.item.kanji ?? '',
+          card.item.romaji,
+          card.item.meaning.vi,
+          card.item.meaning.en
+        ].some((text) => searchKey(text).includes(needle)))
   );
   const visibleItems = visibleCards.map((card) => card.item);
   const visibleCount = visibleItems.length;
@@ -94,6 +120,25 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
               <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                 {t('course.vocabIndexCount', { count: visibleCount })}
               </Typography>
+              <TextField
+                size="small"
+                fullWidth
+                type="search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={t('course.vocabIndexSearch')}
+                aria-label={t('course.vocabIndexSearch')}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchOutlined />
+                      </InputAdornment>
+                    )
+                  }
+                }}
+                sx={{ mt: 2, maxWidth: 480 }}
+              />
               <Box
                 sx={{
                   mt: 2,
@@ -183,8 +228,13 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
               </Box>
             </Box>
 
+            {visibleCount === 0 && (
+              <Typography variant="body1" color="text.secondary">
+                {t('course.vocabIndexNoMatch')}
+              </Typography>
+            )}
             {prefs.view === 'list' && <VocabCardGrid cards={visibleCards} locale={locale} />}
-            {prefs.view === 'flashcards' && (
+            {prefs.view === 'flashcards' && visibleCount > 0 && (
               <VocabFlashcards
                 key={`${prefs.from}:${prefs.to}:${locale}:${visibleCount}`}
                 cards={visibleCards}

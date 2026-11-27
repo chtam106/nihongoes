@@ -1,13 +1,11 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
   Box,
-  Button,
   ButtonBase,
   Card,
   CardActionArea,
@@ -24,6 +22,7 @@ import {
 import type { SelectChangeEvent } from '@mui/material/Select';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
+import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { PageContainer } from '@/components/page-container';
 import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
 import { SaveableCard, SaveCardScope } from '@/features/flashcards/save-card-gesture.tsx';
@@ -377,21 +376,11 @@ function KanjiRadicalsPage({ usage, defaults }: KanjiRadicalsPageProps) {
       <PageContainer bottomGutter>
         <Stack spacing={4}>
           <Box>
-            <Box sx={{ mb: 1 }}>
-              <Button
-                component={RouterLink}
-                to={KANJI_BASE_PATH}
-                startIcon={<ArrowBackIcon />}
-                variant="text"
-                sx={{ px: 0 }}
-              >
-                {t('kanji.overviewTitle')}
-              </Button>
-            </Box>
-            <Heading component="h1" gutterBottom>
-              {t('kanji.radicalsTitle')}
-            </Heading>
-            <Typography variant="body1" color="text.secondary">
+            <PageBreadcrumb
+              title={t('kanji.radicalsTitle')}
+              items={[{ label: t('kanji.overviewTitle'), to: KANJI_BASE_PATH }]}
+            />
+            <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
               {t('kanji.radicalsIntro')}
             </Typography>
           </Box>

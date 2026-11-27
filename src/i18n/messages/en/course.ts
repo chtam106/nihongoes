@@ -6,7 +6,6 @@ export const course = {
   referencePageTitle: 'Reference information',
   referencePageIntro:
     'Back-matter charts and grammar notes from Minna no Nihongo Shokyu I - numbers, time, counters, and verb forms.',
-  referenceBackToCourse: 'Back to N5 course',
   introPageTitle: 'Getting started',
   introPageIntro:
     'Read before Lesson 1 - Japanese basics, classroom phrases, and everyday greetings.',
@@ -39,6 +38,8 @@ export const course = {
   vocabularyCount: 'Vocabulary ({count})',
   vocabIndexHeading: 'All vocabulary and phrases',
   vocabIndexIntro: 'Every vocabulary word and set phrase from the JLPT courses.',
+  vocabIndexSearch: 'Search: kana, kanji, romaji or meaning',
+  vocabIndexNoMatch: 'No words match.',
   vocabIndexFrom: 'From',
   vocabIndexTo: 'To',
   vocabIndexCount: '{count} words',
@@ -74,6 +75,7 @@ export const course = {
   notFoundTitle: 'Lesson not found',
   notFoundBody: 'This lesson does not exist. Go back to the course overview.',
   practiceHeading: 'Practice',
+  jumpToPractice: 'Go to practice',
   exerciseSubtitle: 'Check what you remember from this lesson.',
   startExercise: 'Vocabulary',
   startGrammar: 'Grammar',
