@@ -164,7 +164,8 @@ function useSaveCardGesture(cardId: string, cardType: FlashcardCardType, askText
         x,
         y,
         askText: askText?.trim() ? askText : cardAskText(host),
-        card: { id: cardId, type: cardType }
+        card: { id: cardId, type: cardType },
+        collectionId: host.dataset.saveCollectionId || undefined
       });
     },
     [askText, cardId, cardType, context, stopBlockingSelect, stopTransientDocListeners]
@@ -242,11 +243,20 @@ type SaveableCardProps = {
   cardType: FlashcardCardType;
   /** Japanese word or sentence sent to ChatGPT. */
   askText?: string;
+  /** Custom collection this card is studied in: its menu can remove the card. */
+  collectionId?: string;
   children: ReactNode;
   sx?: SxProps<Theme>;
 };
 
-export function SaveableCard({ cardId, cardType, askText, children, sx }: SaveableCardProps) {
+export function SaveableCard({
+  cardId,
+  cardType,
+  askText,
+  collectionId,
+  children,
+  sx
+}: SaveableCardProps) {
   const gesture = useSaveCardGesture(cardId, cardType, askText);
   const sxOverrides = sx == null ? [] : Array.isArray(sx) ? sx : [sx];
 
@@ -256,6 +266,7 @@ export function SaveableCard({ cardId, cardType, askText, children, sx }: Saveab
       data-save-card-id={cardId}
       data-save-card-type={cardType}
       data-ask-text={askText}
+      data-save-collection-id={collectionId}
       sx={[{ WebkitTouchCallout: 'none', touchAction: 'manipulation' }, ...sxOverrides]}
     >
       {children}

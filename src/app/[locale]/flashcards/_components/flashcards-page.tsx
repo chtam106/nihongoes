@@ -7,6 +7,7 @@ import SyncOutlined from '@mui/icons-material/SyncOutlined';
 import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
 import DeleteOutlined from '@mui/icons-material/DeleteOutlined';
 import EditOutlined from '@mui/icons-material/EditOutlined';
+import MoreHorizOutlined from '@mui/icons-material/MoreHorizOutlined';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import {
@@ -22,6 +23,9 @@ import {
   DialogTitle,
   IconButton,
   Link,
+  ListItemIcon,
+  Menu,
+  MenuItem,
   Paper,
   Stack,
   Tab,
@@ -70,6 +74,61 @@ type CollectionsGridProps = {
   onDelete?: (collection: FlashcardCollection) => void;
 };
 
+type CollectionMenuProps = {
+  collection: FlashcardCollection;
+  onRename?: (collection: FlashcardCollection) => void;
+  onDelete?: (collection: FlashcardCollection) => void;
+};
+
+/** Rename and delete for a custom collection, behind one ⋯ button. */
+function CollectionMenu({ collection, onRename, onDelete }: CollectionMenuProps) {
+  const { t } = useTranslation();
+  const [anchor, setAnchor] = useState<HTMLElement | null>(null);
+
+  const choose = (action?: (collection: FlashcardCollection) => void) => {
+    setAnchor(null);
+    action?.(collection);
+  };
+
+  return (
+    <>
+      <IconButton
+        aria-label={t('flashcards.collectionMenu', { name: collection.name })}
+        aria-haspopup="menu"
+        aria-expanded={Boolean(anchor)}
+        onClick={(event) => setAnchor(event.currentTarget)}
+        sx={{ flexShrink: 0, mt: 1, mr: 1 }}
+      >
+        <MoreHorizOutlined />
+      </IconButton>
+      <Menu
+        anchorEl={anchor}
+        open={Boolean(anchor)}
+        onClose={() => setAnchor(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      >
+        {onRename && (
+          <MenuItem onClick={() => choose(onRename)}>
+            <ListItemIcon>
+              <EditOutlined fontSize="small" />
+            </ListItemIcon>
+            {t('flashcards.rename')}
+          </MenuItem>
+        )}
+        {onDelete && (
+          <MenuItem onClick={() => choose(onDelete)}>
+            <ListItemIcon>
+              <DeleteOutlined fontSize="small" />
+            </ListItemIcon>
+            {t('flashcards.delete')}
+          </MenuItem>
+        )}
+      </Menu>
+    </>
+  );
+}
+
 function CollectionsGrid({
   collections,
   listTab,
@@ -80,6 +139,7 @@ function CollectionsGrid({
 }: CollectionsGridProps) {
   const { t } = useTranslation();
   const { resolveCards } = useFlashcardDefaults();
+  const { store: reviews } = useFlashcardReviews();
 
   if (collections.length === 0) {
     return (
@@ -104,26 +164,27 @@ function CollectionsGrid({
       }}
     >
       {collections.map((collection) => {
-        const count = studyFlashcards(collection.cards, resolveCards).length;
+        const studyCards = studyFlashcards(collection.cards, resolveCards);
+        const count = studyCards.length;
+        const inReview = studyCards.filter((card) => card.id in reviews.cards).length;
 
         return (
           <Paper
             key={collection.id}
             elevation={0}
-            sx={[elevatedSurfaceSx, { display: 'flex', flexDirection: 'column', minWidth: 0 }]}
+            sx={[elevatedSurfaceSx, { display: 'flex', alignItems: 'flex-start', minWidth: 0 }]}
           >
             <Box
               component={RouterLink}
               to={flashcardCollectionHref(collection.id, listTab)}
               sx={(theme) => ({
-                width: '100%',
+                flex: 1,
                 minWidth: 0,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
                 gap: 0.25,
-                pt: 1.5,
-                pb: allowRename || allowDelete ? 0.5 : 1.5,
+                py: 1.5,
                 px: 2,
                 border: 0,
                 bgcolor: 'transparent',
@@ -141,36 +202,17 @@ function CollectionsGrid({
                 {collection.name}
               </Typography>
               <Typography component="span" color="text.secondary">
-                {t('flashcards.count', { count })}
+                {inReview > 0
+                  ? t('flashcards.reviewOnListCount', { count: inReview, total: count })
+                  : t('flashcards.count', { count })}
               </Typography>
             </Box>
             {(allowRename || allowDelete) && (
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                  alignItems: 'center',
-                  px: 1,
-                  pb: 0.5
-                }}
-              >
-                {allowRename && onRename && (
-                  <IconButton
-                    aria-label={t('flashcards.renameName', { name: collection.name })}
-                    onClick={() => onRename(collection)}
-                  >
-                    <EditOutlined />
-                  </IconButton>
-                )}
-                {allowDelete && onDelete && (
-                  <IconButton
-                    aria-label={t('flashcards.deleteName', { name: collection.name })}
-                    onClick={() => onDelete(collection)}
-                  >
-                    <DeleteOutlined />
-                  </IconButton>
-                )}
-              </Box>
+              <CollectionMenu
+                collection={collection}
+                onRename={allowRename ? onRename : undefined}
+                onDelete={allowDelete ? onDelete : undefined}
+              />
             )}
           </Paper>
         );

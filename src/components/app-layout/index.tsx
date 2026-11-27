@@ -7,6 +7,7 @@ import { Header } from '@/components/header';
 import { Menu } from '@/components/menu';
 import { ScrollManager } from '@/components/scroll-manager';
 import { DailyReviewPrompt } from '@/features/flashcards/daily-review-prompt.tsx';
+import { ReviewToast } from '@/features/flashcards/review-toast.tsx';
 import { loadJapaneseUiFont } from '@/theme/fonts.ts';
 import { installRubyAwareCopyHandler } from '@/utils/ruby-selection.ts';
 
@@ -35,6 +36,7 @@ function AppLayout({ children }: AppLayoutProps) {
     <Box sx={{ display: 'flex', minHeight: '100svh', '@media print': { minHeight: 'auto' } }}>
       <ScrollManager />
       <DailyReviewPrompt />
+      <ReviewToast />
 
       <Header
         drawerWidth={drawerWidth}
