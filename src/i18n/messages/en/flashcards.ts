@@ -71,13 +71,16 @@ export const flashcards = {
   reviewAdded: 'Added to your review list',
   reviewAddedMany:
     '{count, plural, one {Added # card to your review list} other {Added # cards to your review list}}',
+  reviewRemoved: 'Removed from your review list',
+  reviewRemovedMany:
+    '{count, plural, one {Removed # card from your review list} other {Removed # cards from your review list}}',
   reviewRemoveAll: 'Remove all from review list',
   reviewRemoveAllTitle: 'Remove from review list',
   reviewRemoveAllBody:
     '{count, plural, one {Take # card of this collection off your review list? Its review schedule is deleted.} other {Take # cards of this collection off your review list? Their review schedules are deleted.}}',
   reviewRemoveAllConfirm: 'Remove from list',
   reviewRemoveAllKeep: 'Keep',
-  reviewOnList: 'On your review list',
+  reviewRemove: 'Remove from review list',
   reviewUndo: 'Undo',
   reviewSummaryGood: 'Got it: {count}',
   reviewSummaryAgain: 'Not yet: {count}',
