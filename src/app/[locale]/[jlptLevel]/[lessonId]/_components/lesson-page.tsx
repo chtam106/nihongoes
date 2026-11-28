@@ -44,6 +44,7 @@ import { LessonSectionNav } from '@/components/lesson-section-nav';
 import { PageContainer } from '@/components/page-container';
 import { SpeakableSurface } from '@/components/speakable-surface';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { TrackCurrentLesson } from '@/features/course/current-lesson';
 import { useUserPreferences } from '@/utils/user-preferences.ts';
 import { VocabCardGrid } from '@/components/vocab-card-grid';
 import { flashcardCardId, type DefaultCollection } from '@/constants/flashcards/collections.ts';
@@ -419,6 +420,14 @@ function LessonPage({ level, defaults }: LessonPageProps) {
 
   return (
     <SaveCardScope defaults={defaults}>
+      <TrackCurrentLesson
+        trackKey={level}
+        course={{ en: `JLPT ${course.code}`, vi: `JLPT ${course.code}` }}
+        lessonId={lesson.id}
+        number={lesson.number}
+        title={lesson.title}
+        path={lessonPath(level, lesson.id)}
+      />
       <PageContainer>
         <Stack spacing={4}>
           <Box>

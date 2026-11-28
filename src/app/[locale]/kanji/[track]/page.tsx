@@ -15,6 +15,7 @@ import { getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { kanjiTrackParams, type PageProps } from '@/i18n/route-helpers.ts';
+import { ContinueLessonPanel, CurrentLessonBadge } from '@/features/course/current-lesson';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
 
 export const dynamicParams = false;
@@ -56,9 +57,12 @@ export default async function Page({ params }: PageProps<{ track: string }>) {
       >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
-            <Heading component="h3">
-              {t('kanji.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
-            </Heading>
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+              <Heading component="h3" sx={{ flex: 1, minWidth: 0 }}>
+                {t('kanji.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+              </Heading>
+              <CurrentLessonBadge trackKey={`kanji:${track.slug}`} lessonId={lesson.id} />
+            </Box>
             <Typography
               lang="ja"
               sx={{ mt: 0.75, fontWeight: 600, letterSpacing: 2, color: 'text.primary' }}
@@ -86,6 +90,8 @@ export default async function Page({ params }: PageProps<{ track: string }>) {
             {track.intro[locale]}
           </Typography>
         </Box>
+
+        <ContinueLessonPanel trackKey={`kanji:${track.slug}`} />
 
         <Box>
           <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>

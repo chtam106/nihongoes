@@ -34,6 +34,8 @@ export const course = {
   sectionNavPrevious: 'Previous section',
   sectionNavNext: 'Next section',
   lessonLabel: 'Lesson {number}',
+  continueTitle: 'Continue {course}',
+  currentLessonBadge: 'Studying',
   vocabulary: 'Vocabulary',
   vocabularyCount: 'Vocabulary ({count})',
   vocabIndexHeading: 'All vocabulary and phrases',

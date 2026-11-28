@@ -17,6 +17,7 @@ import { getKanjiLesson, getKanjiTrack } from '@/constants/kanji/tracks.ts';
 import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { kanjiLessonParams, type PageProps } from '@/i18n/route-helpers.ts';
+import { TrackCurrentLesson } from '@/features/course/current-lesson';
 import { KanjiPracticePanel } from './_components/kanji-practice-panel.tsx';
 
 export const dynamicParams = false;
@@ -57,6 +58,14 @@ export default async function Page({ params }: PageProps<{ track: string; lesson
 
   return (
     <SaveCardScope defaults={getLightFlashcardDefaults().collections}>
+      <TrackCurrentLesson
+        trackKey={`kanji:${track.slug}`}
+        course={track.name}
+        lessonId={lesson.id}
+        number={lesson.number}
+        title={lesson.title}
+        path={kanjiLessonPath(track.slug, lesson.id)}
+      />
       <PageContainer bottomGutter>
         <Stack spacing={3}>
           <PageBreadcrumb

@@ -192,6 +192,23 @@ function subscribeKey(key: string, callback: () => void) {
 }
 
 /**
+ * Update a persisted value outside React (e.g. from an effect that syncs with
+ * the current route). Every `usePersistentState` hook on `key` re-renders.
+ */
+export function updatePersistedValue<T>(
+  key: string,
+  fallback: T,
+  sanitize: (value: unknown) => T,
+  next: T | ((previous: T) => T)
+) {
+  const previous = getClientSnapshot(key, fallback, sanitize);
+  const resolved = typeof next === 'function' ? (next as (previous: T) => T)(previous) : next;
+  writePersistedValue(key, resolved);
+  snapshots.set(key, { raw: JSON.stringify(resolved), value: resolved });
+  notify(key);
+}
+
+/**
  * Like `useState`, but the value is seeded from and mirrored to localStorage
  * under `key`. Every update writes the new value back so the selection survives
  * reloads. Pass a `sanitize` guard to validate previously stored data.
@@ -223,11 +240,7 @@ export function usePersistentState<T>(key: string, fallback: T, sanitize: (value
 
   const setPersistedValue = useCallback(
     (next: T | ((previous: T) => T)) => {
-      const previous = getClientSnapshot(key, fallback, sanitize);
-      const resolved = typeof next === 'function' ? (next as (previous: T) => T)(previous) : next;
-      writePersistedValue(key, resolved);
-      snapshots.set(key, { raw: JSON.stringify(resolved), value: resolved });
-      notify(key);
+      updatePersistedValue(key, fallback, sanitize, next);
     },
     [key, fallback, sanitize]
   );

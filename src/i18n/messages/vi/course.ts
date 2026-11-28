@@ -33,6 +33,8 @@ export const course = {
   sectionNavPrevious: 'Phần trước',
   sectionNavNext: 'Phần sau',
   lessonLabel: 'Bài {number}',
+  continueTitle: 'Học tiếp {course}',
+  currentLessonBadge: 'Đang học',
   vocabulary: 'Từ vựng',
   vocabularyCount: 'Từ vựng ({count})',
   vocabIndexHeading: 'Tổng hợp từ vựng và mẫu câu',
