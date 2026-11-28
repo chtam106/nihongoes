@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { AppBar, Badge, Box, IconButton, Stack, Toolbar } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Brand } from '@/components/brand';
-import { HistoryButton } from '@/components/history-button';
+import { LastPageSaver } from '@/components/history-button';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useDueReviewCount } from '@/features/flashcards/use-due-review-count.ts';
 
@@ -81,12 +81,10 @@ export function Header({ drawerWidth, mobileOpen, onToggleMobile }: HeaderProps)
           }}
         >
           <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', px: { md: 6 } }}>
+            <LastPageSaver />
             <Brand showTagline={false} showLogo={false} />
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-              <Suspense fallback={null}>
-                <HistoryButton />
-              </Suspense>
               <Suspense fallback={<Box sx={{ width: 80, height: 40 }} aria-hidden />}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
                   <AppSettings />

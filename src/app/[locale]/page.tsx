@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { getTranslations } from 'next-intl/server';
 import { Box, Stack, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
@@ -11,6 +12,8 @@ import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { localeParams, type PageProps } from '@/i18n/route-helpers.ts';
 import { DailyReviewPanel } from '@/features/flashcards/daily-review-panel.tsx';
+import { ContinueLessonPanel } from '@/features/course/current-lesson';
+import { RestoreSessionLink } from '@/components/history-button';
 
 export const dynamicParams = false;
 
@@ -127,7 +130,13 @@ export default async function Page({ params }: PageProps) {
           </Typography>
         </Box>
 
-        <DailyReviewPanel hideUntilStarted />
+        <Stack spacing={1} sx={{ '&:empty': { display: 'none' } }}>
+          <ContinueLessonPanel />
+          <DailyReviewPanel hideUntilStarted highlight />
+          <Suspense fallback={null}>
+            <RestoreSessionLink />
+          </Suspense>
+        </Stack>
 
         <Stack spacing={1.5}>
           <Typography variant="h6" component="h2" sx={{ fontWeight: 600 }}>

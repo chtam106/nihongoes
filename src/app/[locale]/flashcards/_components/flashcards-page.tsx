@@ -405,7 +405,7 @@ function FlashcardsView() {
           </Stack>
         </Box>
 
-        <DailyReviewPanel />
+        <DailyReviewPanel highlight />
 
         <Box>
           <Tabs
