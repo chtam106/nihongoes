@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, useSyncExternalStore, type MouseEvent } from 'react';
+import { useEffect, useMemo, useState, useSyncExternalStore, type MouseEvent } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -48,6 +48,11 @@ import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
 import type { FlashcardFront } from '@/types/course.ts';
 
+/** How long the add/remove button shows "done" before its next action. */
+const REVIEW_FLASH_MS = 900;
+
+type ReviewFlash = { cardId: string; change: 'added' | 'removed' };
+
 type CollectionDetailProps = {
   collectionId: string;
   defaults: readonly DefaultCollection[];
@@ -93,8 +98,21 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
     'ja',
     sanitizeCollectionFront
   );
-  const { store: reviews, add, addAll, removeAll } = useFlashcardReviews();
+  const { store: reviews, add, remove, addAll, removeAll } = useFlashcardReviews();
   const [confirmRemoveAll, setConfirmRemoveAll] = useState(false);
+  const [toggledCardId, setToggledCardId] = useState<string | null>(null);
+  // A short "done" step after a toggle, before the button shows its new action.
+  const [flash, setFlash] = useState<ReviewFlash | null>(null);
+
+  useEffect(() => {
+    if (!flash) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => setFlash(null), REVIEW_FLASH_MS);
+
+    return () => window.clearTimeout(timer);
+  }, [flash]);
   const collection = collections.find((item) => item.id === collectionId) ?? null;
   const cards = useMemo(
     () => (collection ? studyFlashcards(collection.cards, resolveCards) : []),
@@ -103,20 +121,71 @@ function CollectionStudy({ collectionId }: CollectionStudyProps) {
   const { previous, next } = adjacentDefaultCollections(collections, collectionId, locale);
   const onListCount = cards.filter((card) => card.id in reviews.cards).length;
 
-  // Collections are for browsing: a card joins the daily review only when asked.
+  // Collections are for browsing: a card joins the daily review only when asked,
+  // and the same button takes it off again.
   const addToReviewButton = (card: VocabFlashcard) => {
     const onList = card.id in reviews.cards;
+    // Only the card just toggled animates, not every card as it slides in.
+    const popped = toggledCardId === card.id;
+    const done = flash?.cardId === card.id ? flash.change : null;
+    const Icon = onList ? PlaylistRemoveOutlined : PlaylistAddOutlined;
+    const stateKey = done ? `done-${done}` : onList ? 'on' : 'off';
+    const label = done
+      ? t(done === 'added' ? 'flashcards.reviewAdded' : 'flashcards.reviewRemoved')
+      : t(onList ? 'flashcards.reviewRemove' : 'flashcards.reviewAdd');
+    const motion = (name: string, ms: number) =>
+      popped
+        ? {
+            animation: `${name} ${ms}ms ease-out`,
+            '@media (prefers-reduced-motion: reduce)': { animation: 'none' }
+          }
+        : undefined;
 
     return (
       <Button
         variant="outlined"
         fullWidth
-        disabled={onList}
-        startIcon={onList ? <CheckOutlined /> : undefined}
-        onClick={() => add(card.id)}
-        sx={{ minHeight: 48, fontWeight: 600, textTransform: 'none' }}
+        aria-pressed={onList}
+        // The done step is a bare check; the label stays available to screen readers.
+        aria-label={done ? label : undefined}
+        startIcon={done ? undefined : <Icon key={stateKey} sx={motion('reviewTogglePop', 260)} />}
+        onClick={() => {
+          // Ignore taps during the "done" step, so a double tap cannot undo the change.
+          if (done) {
+            return;
+          }
+
+          setToggledCardId(card.id);
+          setFlash({ cardId: card.id, change: onList ? 'removed' : 'added' });
+
+          if (onList) {
+            remove(card.id);
+            return;
+          }
+
+          add(card.id);
+        }}
+        sx={{
+          minHeight: 48,
+          fontWeight: 600,
+          textTransform: 'none',
+          '@keyframes reviewTogglePop': {
+            '0%': { transform: 'scale(0.6)' },
+            '60%': { transform: 'scale(1.2)' },
+            '100%': { transform: 'scale(1)' }
+          },
+          '@keyframes reviewToggleFade': {
+            from: { opacity: 0 },
+            to: { opacity: 1 }
+          }
+        }}
       >
-        {onList ? t('flashcards.reviewOnList') : t('flashcards.reviewAdd')}
+        {done && <CheckOutlined key={stateKey} aria-hidden sx={motion('reviewTogglePop', 260)} />}
+        {!done && (
+          <Box component="span" key={stateKey} sx={motion('reviewToggleFade', 200)}>
+            {label}
+          </Box>
+        )}
       </Button>
     );
   };

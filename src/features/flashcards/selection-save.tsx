@@ -27,6 +27,7 @@ import {
   STUDY_MENU_EVENT,
   type StudyMenuRequest
 } from '@/features/flashcards/study-menu.ts';
+import { notifyReviewRemoved } from '@/features/flashcards/review-toast.tsx';
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/types/i18n.ts';
@@ -110,7 +111,7 @@ const STUDY_MENU_ITEM_SX = {
 
 export function SelectionSave() {
   const { locale, t } = useTranslation();
-  const { store: reviews, add: addToReview } = useFlashcardReviews();
+  const { store: reviews, add: addToReview, remove: removeFromReview } = useFlashcardReviews();
   const [store, setStore] = usePersistentState(
     FLASHCARD_COLLECTIONS_KEY,
     EMPTY_FLASHCARD_STORE,
@@ -291,14 +292,23 @@ export function SelectionSave() {
     }
   };
 
-  const addToReviewFromMenu = () => {
+  /** Adds the card to the review list, or takes it off when it is already there. */
+  const toggleReviewFromMenu = () => {
     const card = menu?.card;
 
     setMenu(null);
 
-    if (card) {
-      addToReview(card.id);
+    if (!card) {
+      return;
     }
+
+    if (card.id in reviews.cards) {
+      removeFromReview(card.id);
+      notifyReviewRemoved(1);
+      return;
+    }
+
+    addToReview(card.id);
   };
 
   const removeFromCollection = () => {
@@ -399,12 +409,8 @@ export function SelectionSave() {
             </MenuItem>
           )}
           {menuCard && (
-            <MenuItem
-              disabled={menuCardOnList}
-              onClick={addToReviewFromMenu}
-              sx={STUDY_MENU_ITEM_SX}
-            >
-              {menuCardOnList ? t('flashcards.reviewOnList') : t('flashcards.reviewAdd')}
+            <MenuItem onClick={toggleReviewFromMenu} sx={STUDY_MENU_ITEM_SX}>
+              {menuCardOnList ? t('flashcards.reviewRemove') : t('flashcards.reviewAdd')}
             </MenuItem>
           )}
           <MenuItem
