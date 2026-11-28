@@ -241,6 +241,16 @@ export function dueCardIds(store: ReviewStore, today: number): string[] {
     .map(([id]) => id);
 }
 
+/**
+ * Due cards worth a daily reminder: due today or earlier and on the list since
+ * before today. A card the learner put on the list today needs no prompt, so
+ * adding one does not pop the reminder over the page they are on.
+ */
+export function promptDueCount(store: ReviewStore, today: number): number {
+  return Object.values(store.cards).filter((card) => isDue(card, today) && card.last < today)
+    .length;
+}
+
 const MAX_CARD_ID_LENGTH = 48;
 
 function isWholeNumber(value: unknown, min: number): value is number {

@@ -221,6 +221,9 @@ function RadicalCard({ radical, index, highlighted, usageCount }: RadicalCardPro
           elevatedSurfaceSx,
           {
             height: '100%',
+            // At least two lines of body text (2 x 24px) plus padding, so a
+            // one-line card is as tall as a card with a component meaning.
+            minHeight: 80,
             position: 'relative',
             p: 2,
             display: 'flex',

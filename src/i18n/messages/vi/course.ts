@@ -78,7 +78,6 @@ export const course = {
   sentenceWritingWrong: 'Chưa đúng. Đáp án:',
   sentenceWritingNext: 'Câu tiếp theo',
   readingBackToPassage: 'Xem lại đoạn văn',
-  jumpToPractice: 'Đến phần luyện tập',
   exerciseSubtitle: 'Kiểm tra phần đã học trong bài.',
   startExercise: 'Từ vựng',
   startGrammar: 'Ngữ pháp',

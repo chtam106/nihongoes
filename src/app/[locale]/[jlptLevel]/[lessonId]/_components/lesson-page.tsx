@@ -3,8 +3,6 @@
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { replaceSectionHash } from '@/utils/scroll-to-hash.ts';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -435,17 +433,6 @@ function LessonPage({ level, defaults }: LessonPageProps) {
             <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
               {lesson.focus[locale]}
             </Typography>
-
-            {/* The practice panel sits below a long lesson: a shortcut to it. */}
-            <Button
-              className="no-print"
-              variant="text"
-              endIcon={<ArrowDownwardIcon />}
-              onClick={() => replaceSectionHash('practice')}
-              sx={{ mt: 1, px: 0, textTransform: 'none' }}
-            >
-              {t('course.jumpToPractice')}
-            </Button>
           </Box>
 
           <VocabularySection lesson={lesson} />
