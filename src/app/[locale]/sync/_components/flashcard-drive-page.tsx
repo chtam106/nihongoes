@@ -16,20 +16,22 @@ export default function FlashcardDrivePage() {
   const { t } = useTranslation();
 
   return (
-    <PageContainer>
+    <PageContainer bottomGutter>
       <FlashcardDriveProvider>
-        <Stack spacing={2} sx={{ alignItems: 'flex-start', width: '100%' }}>
+        <Stack spacing={3}>
           <Heading component="h1">{t('flashcards.driveLink')}</Heading>
-          <FlashcardDriveConnect />
-          <Button
-            component={RouterLink}
-            to={routes.flashcards}
-            endIcon={<ArrowForwardIcon />}
-            variant="text"
-            sx={{ alignSelf: 'flex-end', mt: 2, px: 0, textTransform: 'none' }}
-          >
-            {t('flashcards.title')}
-          </Button>
+          <Stack spacing={3}>
+            <FlashcardDriveConnect />
+            <Button
+              component={RouterLink}
+              to={routes.flashcards}
+              endIcon={<ArrowForwardIcon />}
+              variant="text"
+              sx={{ alignSelf: 'center' }}
+            >
+              {t('flashcards.title')}
+            </Button>
+          </Stack>
         </Stack>
       </FlashcardDriveProvider>
     </PageContainer>

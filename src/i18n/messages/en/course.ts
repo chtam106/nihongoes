@@ -79,7 +79,6 @@ export const course = {
   sentenceWritingWrong: 'Not quite. The answer:',
   sentenceWritingNext: 'Next sentence',
   readingBackToPassage: 'Back to the passage',
-  jumpToPractice: 'Go to practice',
   exerciseSubtitle: 'Check what you remember from this lesson.',
   startExercise: 'Vocabulary',
   startGrammar: 'Grammar',
