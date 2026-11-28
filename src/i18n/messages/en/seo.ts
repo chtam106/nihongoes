@@ -44,6 +44,10 @@ export const seo = {
       nai: {
         title: 'ない Form Quiz',
         description: 'Multiple-choice practice for Japanese verb ない forms.'
+      },
+      dictionary: {
+        title: 'Dictionary Form Quiz',
+        description: 'Multiple-choice practice for Japanese verb dictionary forms.'
       }
     },
     particles: {

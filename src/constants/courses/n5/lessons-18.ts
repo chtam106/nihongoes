@@ -1,3 +1,4 @@
+import { routes } from '@/constants/routes.ts';
 import type { Lesson } from '@/constants/courses/types.ts';
 
 /** Minna no Nihongo Shokyu I - Lesson 18 (dictionary form, できる, hobbies, まえに). */
@@ -544,19 +545,26 @@ export const n5Lesson18: Lesson = {
       highlights: ['dictionary form'],
       title: { en: 'Dictionary form (plain form)', vi: 'Thể nguyên dạng' },
       explanation: {
-        en: 'The dictionary form is the plain non-past form of a verb. Group I: change the last い-row sound before ます to the う-row (書きます→書く, 読みます→読む). Group II: drop ます and add る (食べます→食べる). Group III: します→する, 来ます→来る.',
-        vi: 'Thể nguyên dạng là dạng thân mật không quá khứ của động từ. Nhóm I: đổi âm hàng い trước ます sang hàng う (書きます→書く, 読みます→読む). Nhóm II: bỏ ます, thêm る (食べます→食べる). Nhóm III: します→する, 来ます→来る.'
+        en: 'The dictionary form is the plain non-past form of a verb, the form you look up in a dictionary: 書きます→書く, 食べます→食べる, 来ます→来る. Friends and family use it in casual speech; this lesson builds ことが できます, 趣味は 〜ことです and まえに on it.',
+        vi: 'Thể nguyên dạng là dạng thân mật không quá khứ của động từ, cũng là dạng tra trong từ điển: 書きます→書く, 食べます→食べる, 来ます→来る. Bạn bè, người nhà dùng thể này khi nói chuyện thân mật; bài này ghép nó vào các mẫu ことが できます, 趣味は 〜ことです và まえに.'
       },
       explanationRuby: [
         { base: '書', reading: 'か' },
         { base: '書', reading: 'か' },
-        { base: '読', reading: 'よ' },
-        { base: '読', reading: 'よ' },
         { base: '食', reading: 'た' },
         { base: '食', reading: 'た' },
         { base: '来', reading: 'き' },
-        { base: '来', reading: 'く' }
+        { base: '来', reading: 'く' },
+        { base: '趣', reading: 'しゅ' },
+        { base: '味', reading: 'み' }
       ],
+      link: {
+        href: `${routes.practice.verbs.dictionary}#guide`,
+        label: {
+          en: 'How to change the ます form to the dictionary form',
+          vi: 'Xem cách đổi từ thể ます sang thể nguyên dạng'
+        }
+      },
       examples: [
         {
           jp: '私は 毎朝 新聞を 読みます。',
