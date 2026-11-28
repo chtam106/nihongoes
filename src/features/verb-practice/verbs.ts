@@ -1,4 +1,4 @@
-export type VerbMode = 'te' | 'nai';
+export type VerbMode = 'te' | 'nai' | 'dictionary';
 export type VerbSubgroupId =
   | 'godanUtsuru'
   | 'godanMbn'
@@ -403,11 +403,67 @@ const A_ROW: Record<string, string> = {
   る: 'ら'
 };
 
+/** Dictionary endings, used to build wrong Group 1 dictionary forms. */
+const U_ROW = ['う', 'く', 'ぐ', 'す', 'つ', 'む', 'ぶ', 'る'];
+/** い/え-row sound → う-row sound, for treating a Group 2 verb as Group 1 (みます → みむ). */
+const TO_U_ROW: Record<string, string> = {
+  い: 'う',
+  き: 'く',
+  ぎ: 'ぐ',
+  し: 'す',
+  ち: 'つ',
+  に: 'ぬ',
+  び: 'ぶ',
+  み: 'む',
+  り: 'る',
+  え: 'う',
+  け: 'く',
+  げ: 'ぐ',
+  せ: 'す',
+  て: 'つ',
+  ね: 'ぬ',
+  べ: 'ぶ',
+  め: 'む',
+  れ: 'る'
+};
+
+/** Wrong dictionary forms: wrong group, wrong う-row sound, or the wrong reading of 来. */
+function wrongDictionaryAnswers(verb: PracticeVerb, subgroup: VerbSubgroupId) {
+  const masuStem = verb.masu.slice(0, -2);
+  const traps: string[] = [];
+  const others: string[] = [];
+  if (subgroup === 'irregular') {
+    if (verb.dictionary === 'くる') {
+      traps.push('きる', 'こる');
+      others.push('くう', 'きく');
+    } else {
+      const prefix = verb.dictionary.slice(0, -2);
+      traps.push(`${prefix}しる`, `${prefix}す`);
+      others.push(`${prefix}さる`, `${prefix}せる`);
+    }
+    return { traps, others };
+  }
+  if (subgroup === 'ichidan') {
+    // Treating a Group 2 verb as Group 1: みます → みむ, たべます → たぶ.
+    const shifted = TO_U_ROW[masuStem.slice(-1)];
+    if (shifted) traps.push(`${masuStem.slice(0, -1)}${shifted}`);
+    traps.push(`${masuStem}う`);
+    others.push(...['く', 'す', 'む', 'ぶ'].map((ending) => `${masuStem}${ending}`));
+    return { traps, others };
+  }
+  // Treating a Group 1 verb as Group 2: かきます → かきる.
+  traps.push(`${masuStem}る`);
+  const stem = verb.dictionary.slice(0, -1);
+  others.push(...U_ROW.map((ending) => `${stem}${ending}`));
+  return { traps, others };
+}
+
 /**
  * Wrong answers a learner plausibly picks. `traps` are the classic mistakes
  * (wrong group, forgetting the exception); `others` apply other Group 1 patterns.
  */
 function wrongAnswers(verb: PracticeVerb, mode: VerbMode, subgroup: VerbSubgroupId) {
+  if (mode === 'dictionary') return wrongDictionaryAnswers(verb, subgroup);
   const masuStem = verb.masu.slice(0, -2);
   const traps: string[] = [];
   const others: string[] = [];

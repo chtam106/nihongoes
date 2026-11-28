@@ -88,6 +88,12 @@ export default async function Page({ params }: PageProps) {
       description: t('home.verbNaiDescription')
     },
     {
+      to: routes.practice.verbs.dictionary,
+      title: t('verbPractice.dictionaryTitle'),
+      symbol: 'る',
+      description: t('home.verbDictionaryDescription')
+    },
+    {
       to: routes.practice.particles,
       title: t('particlePractice.title'),
       symbol: 'は',
