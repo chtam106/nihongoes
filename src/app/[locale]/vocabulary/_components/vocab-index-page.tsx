@@ -1,9 +1,7 @@
 'use client';
 
-import { useState, type MouseEvent } from 'react';
+import { useState } from 'react';
 import SearchOutlined from '@mui/icons-material/SearchOutlined';
-import StyleOutlined from '@mui/icons-material/StyleOutlined';
-import ViewListOutlined from '@mui/icons-material/ViewListOutlined';
 import {
   Box,
   FormControl,
@@ -13,8 +11,6 @@ import {
   Select,
   Stack,
   TextField,
-  ToggleButton,
-  ToggleButtonGroup,
   Typography
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
@@ -22,7 +18,6 @@ import { Heading } from '@/components/heading';
 import { PageContainer } from '@/components/page-container';
 import { ScrollButton } from '@/components/scroll-button';
 import { VocabCardGrid } from '@/components/vocab-card-grid';
-import { VocabFlashcards } from '@/components/vocab-flashcards';
 import { allFlashcards } from '@/constants/flashcards/catalog.ts';
 import type { DefaultCollection } from '@/constants/flashcards/collections.ts';
 import { getAllCourseLessons, type Lesson } from '@/constants/courses/index.ts';
@@ -30,8 +25,6 @@ import { FlashcardDefaultsProvider } from '@/features/flashcards/flashcard-defau
 import { SaveCardProvider } from '@/features/flashcards/save-card-gesture.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { useVocabIndexPreferences } from './use-vocab-index-preferences.ts';
-import { VocabFlashcardGuideDialog } from './vocab-flashcard-guide-dialog.tsx';
-import type { FlashcardFront, VocabIndexView } from './vocab-index-preferences.ts';
 import { VocabPrintSheets } from './vocab-print-sheets.tsx';
 
 type VocabIndexPageProps = {
@@ -58,8 +51,7 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
     .map(({ lesson }) => lesson)
     .filter((lesson) => lessonVocabItems(lesson).length > 0);
   const lessonNumbers = lessons.map((lesson) => lesson.number);
-  const { prefs, setView, setFront, setRange, guideSeen, setGuideSeen } =
-    useVocabIndexPreferences(lessonNumbers);
+  const { prefs, setRange } = useVocabIndexPreferences(lessonNumbers);
   const [query, setQuery] = useState('');
   const needle = searchKey(query.trim());
   // Search kana, kanji, romaji and both meanings, inside the From/To range.
@@ -95,34 +87,22 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
     setRange({ from: prefs.from, to: Number(event.target.value) });
   };
 
-  const handleViewChange = (_event: MouseEvent<HTMLElement>, value: VocabIndexView | null) => {
-    if (value) {
-      setView(value);
-    }
-  };
-
-  const handleFrontChange = (_event: MouseEvent<HTMLElement>, value: FlashcardFront | null) => {
-    if (value) {
-      setFront(value);
-    }
-  };
-
   return (
     <FlashcardDefaultsProvider defaults={defaults}>
       <SaveCardProvider>
         <PageContainer bottomGutter>
-          <Stack className="no-print" spacing={prefs.view === 'flashcards' ? 2 : 4}>
+          <Stack className="no-print" spacing={2}>
             <Box>
               <Heading component="h1">{t('course.vocabIndexHeading')}</Heading>
               <Typography variant="body1" color="text.secondary" sx={{ mt: 1 }}>
                 {t('course.vocabIndexIntro')}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                {t('course.vocabIndexCount', { count: visibleCount })}
-              </Typography>
+            </Box>
+
+            {/* Search and lesson range on one row from md; stacked on a phone. */}
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 1.5 }}>
               <TextField
                 size="small"
-                fullWidth
                 type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
@@ -137,117 +117,83 @@ export function VocabIndexPage({ defaults }: VocabIndexPageProps) {
                     )
                   }
                 }}
-                sx={{ mt: 2, maxWidth: 480 }}
+                sx={{ flex: { xs: '1 1 100%', md: '1 1 240px' } }}
               />
-              <Box
-                sx={{
-                  mt: 2,
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'center',
-                  columnGap: 1.5,
-                  rowGap: 1.5
-                }}
+              <Stack
+                direction="row"
+                spacing={1.5}
+                sx={{ flex: { xs: '1 1 100%', md: '0 0 auto' } }}
               >
-                <Stack
-                  direction="row"
-                  spacing={1.5}
-                  sx={{ order: { xs: 3, md: 0 }, flexBasis: '100%' }}
-                >
-                  <FormControl size="small" sx={{ minWidth: 120 }}>
-                    <InputLabel id="vocab-index-from-label">
-                      {t('course.vocabIndexFrom')}
-                    </InputLabel>
-                    <Select<number>
-                      labelId="vocab-index-from-label"
-                      value={prefs.from}
-                      label={t('course.vocabIndexFrom')}
-                      onChange={handleFromChange}
-                      MenuProps={{ slotProps: { paper: { sx: { maxHeight: 320 } } } }}
-                    >
-                      {lessons.map((lesson) => (
-                        <MenuItem key={lesson.id} value={lesson.number}>
-                          {t('course.lessonLabel', { number: lesson.number })}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                  <FormControl size="small" sx={{ minWidth: 120 }}>
-                    <InputLabel id="vocab-index-to-label">{t('course.vocabIndexTo')}</InputLabel>
-                    <Select<number>
-                      labelId="vocab-index-to-label"
-                      value={prefs.to}
-                      label={t('course.vocabIndexTo')}
-                      onChange={handleToChange}
-                      MenuProps={{ slotProps: { paper: { sx: { maxHeight: 320 } } } }}
-                    >
-                      {toOptions.map((lesson) => (
-                        <MenuItem key={lesson.id} value={lesson.number}>
-                          {t('course.lessonLabel', { number: lesson.number })}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </Stack>
-                <ToggleButtonGroup
-                  exclusive
-                  color="primary"
-                  size="small"
-                  value={prefs.view}
-                  onChange={handleViewChange}
-                  aria-label={t('course.vocabIndexView')}
-                  sx={{ order: 1 }}
-                >
-                  <ToggleButton value="list">
-                    <ViewListOutlined sx={{ mr: 1 }} />
-                    {t('course.vocabIndexViewList')}
-                  </ToggleButton>
-                  <ToggleButton value="flashcards">
-                    <StyleOutlined sx={{ mr: 1 }} />
-                    {t('course.vocabIndexViewFlashcards')}
-                  </ToggleButton>
-                </ToggleButtonGroup>
-                {prefs.view === 'flashcards' && (
-                  <ToggleButtonGroup
-                    exclusive
-                    color="primary"
-                    size="small"
-                    value={prefs.front}
-                    onChange={handleFrontChange}
-                    aria-label={t('course.vocabIndexFlashcardsFront')}
-                    sx={{ order: 2, width: '100%', justifyContent: 'center' }}
+                <FormControl size="small" sx={{ flex: { xs: 1, md: 'none' }, minWidth: 110 }}>
+                  <InputLabel id="vocab-index-from-label">{t('course.vocabIndexFrom')}</InputLabel>
+                  <Select<number>
+                    labelId="vocab-index-from-label"
+                    value={prefs.from}
+                    label={t('course.vocabIndexFrom')}
+                    onChange={handleFromChange}
+                    MenuProps={{ slotProps: { paper: { sx: { maxHeight: 320 } } } }}
                   >
-                    <ToggleButton value="ja">
-                      {t('course.vocabIndexFlashcardsFrontWord')}
-                    </ToggleButton>
-                    <ToggleButton value="meaning">
-                      {t('course.vocabIndexFlashcardsFrontMeaning')}
-                    </ToggleButton>
-                  </ToggleButtonGroup>
-                )}
-              </Box>
+                    {lessons.map((lesson) => (
+                      <MenuItem key={lesson.id} value={lesson.number}>
+                        {t('course.lessonLabel', { number: lesson.number })}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                <FormControl size="small" sx={{ flex: { xs: 1, md: 'none' }, minWidth: 110 }}>
+                  <InputLabel id="vocab-index-to-label">{t('course.vocabIndexTo')}</InputLabel>
+                  <Select<number>
+                    labelId="vocab-index-to-label"
+                    value={prefs.to}
+                    label={t('course.vocabIndexTo')}
+                    onChange={handleToChange}
+                    MenuProps={{ slotProps: { paper: { sx: { maxHeight: 320 } } } }}
+                  >
+                    {toOptions.map((lesson) => (
+                      <MenuItem key={lesson.id} value={lesson.number}>
+                        {t('course.lessonLabel', { number: lesson.number })}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Stack>
             </Box>
 
+            {visibleCount > 0 && (
+              <Typography variant="body1" color="text.secondary">
+                {t('course.vocabIndexCount', { count: visibleCount })}
+              </Typography>
+            )}
             {visibleCount === 0 && (
               <Typography variant="body1" color="text.secondary">
                 {t('course.vocabIndexNoMatch')}
               </Typography>
             )}
-            {prefs.view === 'list' && <VocabCardGrid cards={visibleCards} locale={locale} />}
-            {prefs.view === 'flashcards' && visibleCount > 0 && (
-              <VocabFlashcards
-                key={`${prefs.from}:${prefs.to}:${locale}:${visibleCount}`}
-                cards={visibleCards}
-                locale={locale}
-                front={prefs.front}
-              />
-            )}
-          </Stack>
+            {/* One block per lesson, headed by its number and title. */}
+            {lessons.map((lesson) => {
+              const cards = visibleCards.filter((card) => card.lessonNumber === lesson.number);
 
-          <VocabFlashcardGuideDialog
-            open={prefs.view === 'flashcards' && !guideSeen}
-            onClose={() => setGuideSeen(true)}
-          />
+              if (cards.length === 0) {
+                return null;
+              }
+
+              return (
+                <Box component="section" key={lesson.id} sx={{ pt: 2 }}>
+                  <Typography
+                    variant="h6"
+                    component="h2"
+                    sx={{ fontWeight: 600, mb: 1.5, display: 'flex', gap: 1, flexWrap: 'wrap' }}
+                  >
+                    {t('course.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+                    <Box component="span" sx={{ color: 'text.secondary', fontWeight: 400 }}>
+                      ({cards.length})
+                    </Box>
+                  </Typography>
+                  <VocabCardGrid cards={cards} locale={locale} />
+                </Box>
+              );
+            })}
+          </Stack>
 
           <VocabPrintSheets items={visibleItems} locale={locale} />
 

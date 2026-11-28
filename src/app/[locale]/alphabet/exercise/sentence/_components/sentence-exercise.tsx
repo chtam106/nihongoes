@@ -16,10 +16,10 @@ import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { quizInputFeedbackSx } from '@/features/alphabet/exercise/exercise-ui.ts';
 import { HintText } from '@/components/hint-text';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
+import { ResultRetryButtons } from '@/features/course/result-actions';
 import { Heading } from '@/components/heading';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
-import ReplayIcon from '@mui/icons-material/Replay';
 import { ExercisePageLayout } from '@/features/alphabet/exercise/exercise-page-layout.tsx';
 import { useSentenceExercisePreferences } from '@/features/alphabet/exercise/use-exercise-preferences.ts';
 import { SENTENCES, type SentenceType } from '@/features/alphabet/exercise/sentence/sentences.ts';
@@ -60,6 +60,7 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
   const [correctCount, setCorrectCount] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [completed, setCompleted] = useState(false);
+  const [missed, setMissed] = useState<string[]>([]);
 
   const total = order.length;
   const current = order[index];
@@ -78,6 +79,8 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
 
       if (firstTry) {
         setCorrectCount((previous) => previous + 1);
+      } else {
+        setMissed((previous) => [...previous, current]);
       }
       setStatus('correct');
     } else {
@@ -110,8 +113,9 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
     return () => window.clearTimeout(timer);
   }, [status, index, total]);
 
-  const handleRestart = () => {
-    setOrder(shuffle(SENTENCES[type]));
+  const startRound = (next: string[]) => {
+    setOrder(next);
+    setMissed([]);
     setIndex(0);
     setValue('');
     setStatus('idle');
@@ -120,6 +124,8 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
     setResults([]);
     setCompleted(false);
   };
+  const handleRestart = () => startRound(shuffle(SENTENCES[type]));
+  const handleRetryMisses = () => startRound(missed);
 
   if (completed) {
     const ratio = total === 0 ? 0 : correctCount / total;
@@ -145,9 +151,11 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
           {resultMessage}
         </Typography>
-        <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRestart}>
-          {t('course.retry')}
-        </Button>
+        <ResultRetryButtons
+          onRetry={handleRestart}
+          onRetryMisses={handleRetryMisses}
+          hasMisses={missed.length > 0}
+        />
       </Paper>
     );
   }
@@ -160,9 +168,6 @@ function SentenceQuiz({ type }: SentenceQuizProps) {
   return (
     <Paper elevation={0} sx={[elevatedSurfaceSx, { p: 3 }]}>
       <Box sx={{ mb: 2 }}>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-          {progressLabel}
-        </Typography>
         <QuizProgressBar total={total} current={index} results={results} label={progressLabel} />
       </Box>
 

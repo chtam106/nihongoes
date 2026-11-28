@@ -1,20 +1,11 @@
 'use client';
 
 import { useEffect, useState, type MouseEvent } from 'react';
-import ReplayIcon from '@mui/icons-material/Replay';
-import {
-  Box,
-  Button,
-  Paper,
-  Stack,
-  ToggleButton,
-  ToggleButtonGroup,
-  Typography
-} from '@mui/material';
-import { LocaleLink as RouterLink } from '@/components/locale-link';
+import { Box, Paper, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import { KanjiPracticeHeader } from '@/app/[locale]/kanji/[track]/[lessonId]/_components/kanji-practice-header';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
+import { ResultNavLinks, ResultRetryButtons } from '@/features/course/result-actions';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
@@ -130,6 +121,7 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
+  const [missedQuestions, setMissedQuestions] = useState<typeof questions>([]);
   useReviewMissedCards(misses);
   const [finished, setFinished] = useState(false);
 
@@ -170,14 +162,16 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
         setScore((previous) => previous + 1);
       } else {
         setMisses((previous) => [...previous, kanjiMiss(question, index, trackSlug)]);
+        setMissedQuestions((previous) => [...previous, question]);
       }
     } else {
       setWrongIds((previous) => [...previous, choiceId]);
     }
   };
 
-  const handleRetry = () => {
-    setQuestions(buildQuestions(lesson, direction, locale));
+  const startRound = (next: typeof questions) => {
+    setQuestions(next);
+    setMissedQuestions([]);
     setIndex(0);
     setWrongIds([]);
     setCorrectPicked(false);
@@ -186,6 +180,8 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
     setMisses([]);
     setFinished(false);
   };
+  const handleRetry = () => startRound(buildQuestions(lesson, direction, locale));
+  const handleRetryMisses = () => startRound(missedQuestions);
 
   const ratio = total === 0 ? 0 : score / total;
   const resultMessage =
@@ -211,24 +207,16 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
           {resultMessage}
         </Typography>
-        <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          spacing={1.5}
-          sx={{ justifyContent: 'center', flexWrap: 'wrap', mb: misses.length > 0 ? 3 : 0 }}
-          useFlexGap
-        >
-          <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRetry}>
-            {t('course.retry')}
-          </Button>
-          <Button
-            variant="outlined"
-            component={RouterLink}
-            to={kanjiLessonPath(trackSlug, lesson.id)}
-          >
-            {t('kanji.reviewLesson')}
-          </Button>
-        </Stack>
+        <ResultRetryButtons
+          onRetry={handleRetry}
+          onRetryMisses={handleRetryMisses}
+          hasMisses={score < total}
+        />
+        {misses.length > 0 && <Box sx={{ mt: 3 }} />}
         <QuizMissList misses={misses} />
+        <ResultNavLinks
+          review={{ to: kanjiLessonPath(trackSlug, lesson.id), label: t('kanji.reviewLesson') }}
+        />
       </Paper>
     );
   }
@@ -240,9 +228,6 @@ function KanjiQuiz({ trackSlug, lesson, direction }: KanjiQuizProps) {
   return (
     <>
       <Box>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
-          {t('course.questionProgress', { current: index + 1, total })}
-        </Typography>
         <QuizProgressBar
           total={total}
           current={index}

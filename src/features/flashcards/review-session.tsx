@@ -15,7 +15,7 @@ import {
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import type { Locale } from '@/types/i18n.ts';
-import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab-index-preferences.ts';
+import type { FlashcardFront } from '@/types/course.ts';
 
 const GRADE_LABEL_KEYS: Record<ReviewGrade, string> = {
   again: 'flashcards.reviewAgain',

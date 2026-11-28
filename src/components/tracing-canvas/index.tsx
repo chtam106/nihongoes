@@ -176,8 +176,8 @@ export function TracingCanvas({
           alignItems: 'center',
           px: 1,
           py: 0.5,
-          bgcolor: (theme) =>
-            alpha(theme.palette.primary.main, theme.palette.mode === 'light' ? 0.08 : 0.2)
+          borderBottom: (theme) =>
+            `1px solid ${alpha(theme.palette.text.primary, theme.palette.mode === 'light' ? 0.08 : 0.16)}`
         }}
       >
         <IconButton

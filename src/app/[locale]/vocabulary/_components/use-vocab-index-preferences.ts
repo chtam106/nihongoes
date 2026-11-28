@@ -2,13 +2,9 @@ import { useCallback, useMemo } from 'react';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
 import {
   defaultVocabIndexPreferences,
-  FLASHCARD_GUIDE_SEEN_KEY,
-  sanitizeFlashcardGuideSeen,
   sanitizeVocabIndexPreferences,
   VOCAB_INDEX_STORAGE_KEY,
-  type FlashcardFront,
-  type VocabIndexPreferences,
-  type VocabIndexView
+  type VocabIndexPreferences
 } from './vocab-index-preferences.ts';
 
 export function useVocabIndexPreferences(lessonNumbers: number[]) {
@@ -29,27 +25,8 @@ export function useVocabIndexPreferences(lessonNumbers: number[]) {
     [firstNumber, numbersKey]
   );
   const [prefs, setPrefs] = usePersistentState(VOCAB_INDEX_STORAGE_KEY, fallback, sanitize);
-  const [guideSeen, setGuideSeen] = usePersistentState(
-    FLASHCARD_GUIDE_SEEN_KEY,
-    false,
-    sanitizeFlashcardGuideSeen
-  );
 
-  const setView = useCallback(
-    (view: VocabIndexView) => setPrefs((previous) => ({ ...previous, view })),
-    [setPrefs]
-  );
+  const setRange = useCallback((range: VocabIndexPreferences) => setPrefs(range), [setPrefs]);
 
-  const setFront = useCallback(
-    (front: FlashcardFront) => setPrefs((previous) => ({ ...previous, front })),
-    [setPrefs]
-  );
-
-  const setRange = useCallback(
-    (range: Pick<VocabIndexPreferences, 'from' | 'to'>) =>
-      setPrefs((previous) => ({ ...previous, ...range })),
-    [setPrefs]
-  );
-
-  return { prefs, setView, setFront, setRange, guideSeen, setGuideSeen };
+  return { prefs, setRange };
 }

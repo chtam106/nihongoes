@@ -65,7 +65,8 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
     wrongIds,
     answeredCorrectly,
     handleSelect,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   } = useVocabQuiz({
     lesson,
     level,
@@ -79,10 +80,9 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
       <ResultScreen
         score={score}
         total={total}
-        level={level}
-        lessonId={lesson.id}
         misses={misses}
         onRetry={handleRetry}
+        onRetryMisses={handleRetryMisses}
       />
     );
   }
@@ -98,9 +98,6 @@ function VocabMcqPanel({ lesson, level, locale, mode, includeReference }: VocabM
   return (
     <Stack spacing={3}>
       <Box>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-          {progressLabel}
-        </Typography>
         <QuizProgressBar
           total={total}
           current={questionNumber}

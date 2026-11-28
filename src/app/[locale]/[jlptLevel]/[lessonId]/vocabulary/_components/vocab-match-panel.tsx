@@ -191,7 +191,7 @@ const MatchMeaningCell = memo(function MatchMeaningCell({
   );
 });
 
-function VocabMatchPanel({ lesson, level, locale, includeReference }: VocabMatchPanelProps) {
+function VocabMatchPanel({ lesson, locale, includeReference }: VocabMatchPanelProps) {
   const { t } = useTranslation();
   const {
     activePairs,
@@ -208,7 +208,8 @@ function VocabMatchPanel({ lesson, level, locale, includeReference }: VocabMatch
     selectedMeaningId,
     selectWord,
     selectMeaning,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   } = useVocabMatch({ lesson, locale, includeReference });
 
   if (finished) {
@@ -216,9 +217,8 @@ function VocabMatchPanel({ lesson, level, locale, includeReference }: VocabMatch
       <ResultScreen
         score={score}
         total={totalPairs}
-        level={level}
-        lessonId={lesson.id}
         onRetry={handleRetry}
+        onRetryMisses={handleRetryMisses}
       />
     );
   }
@@ -250,15 +250,6 @@ function VocabMatchPanel({ lesson, level, locale, includeReference }: VocabMatch
   return (
     <Stack spacing={2.5}>
       <Box>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
-          {t('course.vocabMatchInstruction')}
-        </Typography>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-          {t('course.vocabMatchProgress', {
-            matched: totalMatched,
-            total: totalPairs
-          })}
-        </Typography>
         <QuizProgressBar
           total={totalPairs}
           current={totalMatched}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import ReplayIcon from '@mui/icons-material/Replay';
 import { Box, Button, Link, Paper, Stack, TextField, Typography } from '@mui/material';
 import {
   getOptionValue,
@@ -16,6 +15,7 @@ import { quizInputFeedbackSx, resultBorderSx } from '@/features/alphabet/exercis
 import { useExerciseQuiz } from '@/features/alphabet/exercise/use-exercise-quiz.ts';
 import { Heading } from '@/components/heading';
 import { QuizMissList } from '@/components/quiz-miss-list';
+import { ResultRetryButtons } from '@/features/course/result-actions';
 import { QuizProgressBar } from '@/components/quiz-progress-bar';
 import { quizChoiceSx } from '@/theme/quiz-choice.ts';
 import { KanaDisplay } from '@/components/kana-display';
@@ -356,14 +356,12 @@ export function ExerciseQuiz({
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
           {resultMessage}
         </Typography>
-        <Button
-          variant="contained"
-          startIcon={<ReplayIcon />}
-          onClick={quiz.handleRetry}
-          sx={{ mb: quiz.misses.length > 0 ? 3 : 0 }}
-        >
-          {t('course.retry')}
-        </Button>
+        <ResultRetryButtons
+          onRetry={quiz.handleRetry}
+          onRetryMisses={quiz.handleRetryMisses}
+          hasMisses={quiz.score < quiz.total}
+        />
+        {quiz.misses.length > 0 && <Box sx={{ mt: 3 }} />}
         <QuizMissList misses={quiz.misses} />
       </Paper>
     );
@@ -377,9 +375,6 @@ export function ExerciseQuiz({
   return (
     <Stack spacing={3}>
       <Box>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-          {progressLabel}
-        </Typography>
         <QuizProgressBar
           total={quiz.total}
           current={quiz.questionNumber}

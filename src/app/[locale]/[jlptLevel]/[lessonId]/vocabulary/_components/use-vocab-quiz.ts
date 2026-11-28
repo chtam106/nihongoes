@@ -13,6 +13,7 @@ import {
   shuffleMatchMeanings,
   VOCAB_MATCH_BATCH_FADE_MS,
   VOCAB_MATCH_BATCH_PAUSE_MS,
+  vocabMatchSessionFromPairs,
   type VocabMatchPair,
   type VocabMatchSession,
   type VocabMode,
@@ -48,6 +49,13 @@ function vocabMiss(question: VocabQuestion, questionNumber: number): QuizMiss {
   };
 }
 
+/** A session over a fixed list, for a round of only the missed questions. */
+function fixedSession(questions: VocabQuestion[]): VocabSession {
+  let at = 0;
+
+  return { total: questions.length, next: () => questions[Math.min(at++, questions.length - 1)] };
+}
+
 type UseVocabQuizOptions = {
   lesson: Lesson;
   level: CourseLevel;
@@ -72,7 +80,8 @@ export function useVocabQuiz({
     return { session, question: session.next() };
   });
   const sessionRef = useRef<VocabSession>(initial.session);
-  const [total] = useState(initial.session.total);
+  const [total, setTotal] = useState(initial.session.total);
+  const [missed, setMissed] = useState<VocabQuestion[]>([]);
   const [question, setQuestion] = useState<VocabQuestion>(initial.question);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
@@ -99,16 +108,18 @@ export function useVocabQuiz({
         setScore((previous) => previous + 1);
       } else {
         setMisses((previous) => [...previous, vocabMiss(question, questionNumber)]);
+        setMissed((previous) => [...previous, question]);
       }
     } else {
       setWrongIds((previous) => [...previous, optionId]);
     }
   };
 
-  const handleRetry = () => {
-    const session = createVocabSession(lesson, locale, mode, level, includeReference);
+  const startRound = (session: VocabSession) => {
     sessionRef.current = session;
+    setTotal(session.total);
     setQuestion(session.next());
+    setMissed([]);
     setQuestionNumber(0);
     setWrongIds([]);
     setAnsweredCorrectly(false);
@@ -117,6 +128,10 @@ export function useVocabQuiz({
     setMisses([]);
     setFinished(false);
   };
+
+  const handleRetry = () =>
+    startRound(createVocabSession(lesson, locale, mode, level, includeReference));
+  const handleRetryMisses = () => startRound(fixedSession(missed));
 
   useEffect(() => {
     if (!answeredCorrectly) {
@@ -151,7 +166,8 @@ export function useVocabQuiz({
     wrongIds,
     answeredCorrectly,
     handleSelect,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   };
 }
 
@@ -190,9 +206,10 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
   const activePairsRef = useRef(initial.activePairs);
   const matchedPairColorsRef = useRef<Map<string, number>>(new Map());
   const missedPairIdsRef = useRef<Set<string>>(new Set());
+  const missedPairsRef = useRef<VocabMatchPair[]>([]);
   const totalMatchedRef = useRef(0);
   const transitionTimersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
-  const [totalPairs] = useState(initial.session.totalPairs);
+  const [totalPairs, setTotalPairs] = useState(initial.session.totalPairs);
   const [activePairs, setActivePairs] = useState<VocabMatchPair[]>(initial.activePairs);
   const [meaningOrder, setMeaningOrder] = useState(initial.meaningOrder);
   const [batchKey, setBatchKey] = useState(0);
@@ -230,12 +247,13 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
     transitionTimersRef.current = [];
   };
 
-  const handleRetry = () => {
+  const startMatchRound = (session: VocabMatchSession) => {
     clearTransitionTimers();
-    const session = createVocabMatchSession(lesson, locale, includeReference);
     const nextPairs = session.fill(initialVocabMatchSlotCount(session.totalPairs));
     sessionRef.current = session;
     missedPairIdsRef.current = new Set();
+    missedPairsRef.current = [];
+    setTotalPairs(session.totalPairs);
     setActivePairs(nextPairs);
     setMeaningOrder(shuffleMatchMeanings(nextPairs));
     setMatchedPairColors(new Map());
@@ -248,6 +266,11 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
     setSelectedMeaningId(null);
     setBatchVisible(true);
   };
+
+  const handleRetry = () =>
+    startMatchRound(createVocabMatchSession(lesson, locale, includeReference));
+  const handleRetryMisses = () =>
+    startMatchRound(vocabMatchSessionFromPairs(missedPairsRef.current));
 
   const scheduleBatchAdvance = (nextTotal: number) => {
     clearTransitionTimers();
@@ -326,8 +349,12 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
     }
 
     if (!missedPairIdsRef.current.has(wordId)) {
-      const cardId = activePairsRef.current.find((pair) => pair.id === wordId)?.cardId;
-      recordMisses(cardId ? [cardId] : []);
+      const pair = activePairsRef.current.find((item) => item.id === wordId);
+      recordMisses(pair?.cardId ? [pair.cardId] : []);
+
+      if (pair) {
+        missedPairsRef.current = [...missedPairsRef.current, pair];
+      }
     }
 
     missedPairIdsRef.current.add(wordId);
@@ -376,6 +403,7 @@ export function useVocabMatch({ lesson, locale, includeReference }: UseVocabMatc
     selectedMeaningId,
     selectWord,
     selectMeaning,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   };
 }

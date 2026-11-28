@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
-import TranslateOutlinedIcon from '@mui/icons-material/TranslateOutlined';
-import { Box, Button, Collapse, Link, Paper, Stack, Typography } from '@mui/material';
+import { Box, Collapse, Link, Paper, Stack, Typography } from '@mui/material';
 import {
   getLesson,
   type CourseLevel,
@@ -118,15 +117,16 @@ function PassageCard({ passage, showTitleTranslation }: PassageCardProps) {
           )}
         </Box>
         {preferences.showTranslation && (
-          <Button
+          <Link
             className="no-print"
-            size="small"
-            startIcon={<TranslateOutlinedIcon />}
+            component="button"
+            type="button"
+            underline="none"
             onClick={() => setShowTranslation((previous) => !previous)}
-            sx={{ flexShrink: 0 }}
+            sx={[translationToggleSx, { flexShrink: 0, whiteSpace: 'nowrap' }]}
           >
             {showTranslation ? t('course.hideTranslation') : t('course.showTranslation')}
-          </Button>
+          </Link>
         )}
       </Stack>
 
@@ -164,6 +164,7 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
+  const [missedQuestions, setMissedQuestions] = useState<FlatQuestion[]>([]);
   const [finished, setFinished] = useState(false);
   const [preferences] = useUserPreferences();
   const [showQuestionTranslation, setShowQuestionTranslation] = useState(
@@ -226,14 +227,16 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
         setScore((previous) => previous + 1);
       } else {
         setMisses((previous) => [...previous, readingMiss(question, index, locale)]);
+        setMissedQuestions((previous) => [...previous, question]);
       }
     } else {
       setWrongIds((previous) => [...previous, choiceId]);
     }
   };
 
-  const handleRetry = () => {
-    setQuestions(shuffleQuestions(flattenQuestions(passages)));
+  const startRound = (next: FlatQuestion[]) => {
+    setQuestions(next);
+    setMissedQuestions([]);
     setIndex(0);
     setWrongIds([]);
     setCorrectPicked(false);
@@ -243,6 +246,8 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
     setFinished(false);
     previousPassageIdRef.current = undefined;
   };
+  const handleRetry = () => startRound(shuffleQuestions(flattenQuestions(passages)));
+  const handleRetryMisses = () => startRound(missedQuestions);
 
   return (
     <PageContainer>
@@ -263,27 +268,39 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
           <ResultScreen
             score={score}
             total={total}
-            level={level}
-            lessonId={lesson.id}
             misses={misses}
             onRetry={handleRetry}
+            onRetryMisses={handleRetryMisses}
           />
         )}
         {!finished && (
           <>
             <Box>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
-                {t('course.questionProgress', { current: index + 1, total })}
-              </Typography>
+              {/* The passage sits above; on a phone it scrolls out of view while answering. */}
               <QuizProgressBar
                 total={total}
                 current={index}
                 results={results}
                 label={t('course.questionProgress', { current: index + 1, total })}
+                action={
+                  <Link
+                    className="no-print"
+                    component="button"
+                    type="button"
+                    variant="body1"
+                    underline="hover"
+                    onClick={() => passageAnchorRef.current?.scrollIntoView({ block: 'start' })}
+                  >
+                    {t('course.readingBackToPassage')}
+                  </Link>
+                }
               />
             </Box>
 
-            <Paper elevation={0} sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 } }]}>
+            <Paper
+              elevation={0}
+              sx={[subtleSurfaceSx, { p: { xs: 2.5, md: 3 }, textAlign: 'center' }]}
+            >
               {question.jp && (
                 <Typography variant="h6" component="p" lang="ja" sx={{ fontWeight: 600 }}>
                   <FuriganaText text={question.jp} ruby={question.ruby} />
@@ -302,7 +319,10 @@ function ReadingQuiz({ level, lesson }: ReadingQuizProps) {
                   variant="body2"
                   underline="none"
                   onClick={() => setShowQuestionTranslation((previous) => !previous)}
-                  sx={[translationToggleSx, { display: 'block', mt: 1, textAlign: 'left' }]}
+                  sx={[
+                    translationToggleSx,
+                    { display: 'block', mt: 1, mx: 'auto', textAlign: 'center' }
+                  ]}
                 >
                   {showQuestionTranslation
                     ? t('course.hideTranslation')
