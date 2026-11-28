@@ -17,6 +17,7 @@ import { createMetadata } from '@/i18n/seo-meta.ts';
 import { primePageLocale } from '@/i18n/server.ts';
 import { courseLevelParams, type PageProps } from '@/i18n/route-helpers.ts';
 import { interactiveSurfaceSx } from '@/theme/surfaces.ts';
+import { ContinueLessonPanel, CurrentLessonBadge } from '@/features/course/current-lesson';
 
 export const dynamicParams = false;
 
@@ -42,9 +43,12 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
       >
         <CardContent>
           <Box sx={{ minWidth: 0 }}>
-            <Heading component="h3">
-              {t('course.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
-            </Heading>
+            <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 1 }}>
+              <Heading component="h3" sx={{ flex: 1, minWidth: 0 }}>
+                {t('course.lessonLabel', { number: lesson.number })}: {lesson.title[locale]}
+              </Heading>
+              <CurrentLessonBadge trackKey={level} lessonId={lesson.id} />
+            </Box>
             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
               {lesson.focus[locale]}
             </Typography>
@@ -71,6 +75,8 @@ export default async function Page({ params }: PageProps<{ jlptLevel: string }>)
             {course.intro[locale]}
           </Typography>
         </Box>
+
+        <ContinueLessonPanel trackKey={level} />
 
         <Box>
           <Heading scale="subsection" component="h2" sx={{ mb: 1.5 }}>

@@ -33,3 +33,26 @@ export const tonalSurfaceSx = (theme: Theme) => ({
   borderRadius: 2,
   backgroundColor: alpha(theme.palette.primary.main, theme.palette.mode === 'light' ? 0.06 : 0.16)
 });
+
+/**
+ * Stronger sakura tonal fill for a clickable row that must stand out on a page
+ * (home and flashcards daily review, home "Continue" lesson). No border.
+ */
+export const highlightSurfaceSx = (theme: Theme) => ({
+  borderRadius: 2,
+  backgroundColor: alpha(theme.palette.primary.main, 0.08),
+  transition: 'background-color 0.2s ease',
+  '&:hover': { backgroundColor: alpha(theme.palette.primary.main, 0.14) }
+});
+
+/** 40px light sakura circle holding the icon of a `highlightSurfaceSx` row. */
+export const highlightIconSx = (theme: Theme) => ({
+  width: 40,
+  height: 40,
+  flexShrink: 0,
+  borderRadius: '50%',
+  display: 'grid',
+  placeItems: 'center',
+  color: theme.palette.primary.main,
+  backgroundColor: alpha(theme.palette.primary.main, 0.12)
+});

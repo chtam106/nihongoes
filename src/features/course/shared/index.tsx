@@ -7,6 +7,7 @@ import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { LessonPracticeNav, type LessonPracticeSection } from '@/components/lesson-practice-nav';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
 import { ResultRetryButtons } from '@/features/course/result-actions';
+import { TrackCurrentLesson } from '@/features/course/current-lesson';
 import {
   coursePath,
   getCourse,
@@ -45,13 +46,22 @@ function practiceTitleKey(section: LessonPracticeSection): `course.${string}` {
  */
 export function LessonQuizHeader({ level, lesson, section }: LessonQuizHeaderProps) {
   const { t } = useTranslation();
+  const course = getCourse(level);
 
   return (
     <>
+      <TrackCurrentLesson
+        trackKey={level}
+        course={{ en: `JLPT ${course.code}`, vi: `JLPT ${course.code}` }}
+        lessonId={lesson.id}
+        number={lesson.number}
+        title={lesson.title}
+        path={lessonPath(level, lesson.id)}
+      />
       <PageBreadcrumb
         title={t(practiceTitleKey(section))}
         items={[
-          { label: `JLPT ${getCourse(level).code}`, to: coursePath(level) },
+          { label: `JLPT ${course.code}`, to: coursePath(level) },
           {
             label: t('course.lessonLabel', { number: lesson.number }),
             to: lessonPath(level, lesson.id)

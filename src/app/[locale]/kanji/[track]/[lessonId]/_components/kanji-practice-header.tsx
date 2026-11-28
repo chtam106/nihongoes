@@ -8,6 +8,7 @@ import {
   type KanjiLesson
 } from '@/constants/kanji/index.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { kanjiTrackKey, TrackCurrentLesson } from '@/features/course/current-lesson';
 
 type KanjiPracticeHeaderProps = {
   trackSlug: string;
@@ -29,15 +30,25 @@ export function KanjiPracticeHeader({
   const { locale, t } = useTranslation();
 
   return (
-    <PageBreadcrumb
-      title={practice}
-      items={[
-        { label: trackName[locale], to: kanjiTrackPath(trackSlug) },
-        {
-          label: t('kanji.lessonLabel', { number: lesson.number }),
-          to: kanjiLessonPath(trackSlug, lesson.id)
-        }
-      ]}
-    />
+    <>
+      <TrackCurrentLesson
+        trackKey={kanjiTrackKey(trackSlug)}
+        course={trackName}
+        lessonId={lesson.id}
+        number={lesson.number}
+        title={lesson.title}
+        path={kanjiLessonPath(trackSlug, lesson.id)}
+      />
+      <PageBreadcrumb
+        title={practice}
+        items={[
+          { label: trackName[locale], to: kanjiTrackPath(trackSlug) },
+          {
+            label: t('kanji.lessonLabel', { number: lesson.number }),
+            to: kanjiLessonPath(trackSlug, lesson.id)
+          }
+        ]}
+      />
+    </>
   );
 }
