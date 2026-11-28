@@ -420,6 +420,34 @@ export function createVocabMatchSession(
   };
 }
 
+/** A match session over given pairs only: a round of the pairs missed last time. */
+export function vocabMatchSessionFromPairs(pairs: VocabMatchPair[]): VocabMatchSession {
+  let pool = shuffle([...pairs]);
+
+  const drawNext = (): VocabMatchPair | null => pool.shift() ?? null;
+
+  return {
+    totalPairs: pairs.length,
+    fill: (count) => {
+      const drawn: VocabMatchPair[] = [];
+
+      for (let index = 0; index < count; index += 1) {
+        const pair = drawNext();
+        if (!pair) {
+          break;
+        }
+        drawn.push(pair);
+      }
+
+      return drawn;
+    },
+    drawNext,
+    reshufflePool: () => {
+      pool = shuffle([...pairs]);
+    }
+  };
+}
+
 /** Shuffled meaning column with no row showing its own word-meaning pair. */
 export function shuffleMatchMeanings(pairs: VocabMatchPair[]): VocabMatchPair[] {
   if (pairs.length <= 1) {

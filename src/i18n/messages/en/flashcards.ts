@@ -23,8 +23,10 @@ export const flashcards = {
   meaning: 'Meaning',
   contextRemoveFromCollection: 'Remove from collection',
   cardMenu: 'Card options',
+  contextCopy: 'Copy',
   contextSave: 'Save flashcard',
-  contextChatGpt: 'Meaning and usage in ChatGPT',
+  contextGoogleTranslate: 'Google Translate',
+  contextChatGpt: 'ChatGPT',
   saveHint:
     'Save cards to a collection: right-click a card in a lesson or use its three-dot button, or select text and press S.',
   previousCollection: 'Previous collection',

@@ -15,6 +15,8 @@ export type StudyMenuRequest = {
   x: number;
   y: number;
   askText: string;
+  /** The highlighted text, when the menu opened on a selection: offers Copy. */
+  copyText?: string;
   card?: StudyMenuCard;
   /** Custom collection the card is being studied in, so the menu can remove it. */
   collectionId?: string;
@@ -75,4 +77,23 @@ export function chatGptUrl(text: string, locale: Locale) {
       : `Explain the meaning and usage of this Japanese word or sentence: ${text}\nInclude the meaning, part of speech or structure, a few examples, and usage notes.`;
 
   return `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
+}
+
+/** Kana, kanji or the Japanese marks that come with them. */
+const JAPANESE_TEXT = /[\u3040-\u30ff\u3400-\u9fff\uff66-\uff9f]/;
+
+/**
+ * Google Translate for the text: Japanese goes into the page language;
+ * anything else (a meaning in Vietnamese or English) goes into Japanese.
+ */
+export function googleTranslateUrl(text: string, locale: Locale) {
+  const japanese = JAPANESE_TEXT.test(text);
+  const params = new URLSearchParams({
+    sl: japanese ? 'ja' : 'auto',
+    tl: japanese ? locale : 'ja',
+    text,
+    op: 'translate'
+  });
+
+  return `https://translate.google.com/?${params.toString()}`;
 }

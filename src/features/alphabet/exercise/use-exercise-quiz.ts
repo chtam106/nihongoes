@@ -69,6 +69,19 @@ type UseExerciseQuizOptions = {
   pairDirection?: ScriptPairDirection;
 };
 
+/** A session over a fixed list, for a round of only the missed questions. */
+function fixedSession(questions: QuizQuestion[]): QuizSession {
+  let at = 0;
+
+  return {
+    total: questions.length,
+    get remaining() {
+      return Math.max(0, questions.length - at);
+    },
+    next: () => questions[Math.min(at++, questions.length - 1)]
+  };
+}
+
 // When script/mode/scope/direction change, the consumer remounts via `key`.
 // Retry rebuilds the session in place after a finished run.
 export function useExerciseQuiz({
@@ -83,7 +96,8 @@ export function useExerciseQuiz({
     return { session, question: session.next() };
   });
   const sessionRef = useRef<QuizSession>(initialQuiz.session);
-  const [total] = useState(initialQuiz.session.total);
+  const [total, setTotal] = useState(initialQuiz.session.total);
+  const [missed, setMissed] = useState<QuizQuestion[]>([]);
   const [question, setQuestion] = useState<QuizQuestion>(initialQuiz.question);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState<string[]>([]);
@@ -109,6 +123,7 @@ export function useExerciseQuiz({
       if (firstTry) {
         setScore((previous) => previous + 1);
       } else {
+        setMissed((previous) => [...previous, question]);
         const miss = choiceMiss(question, questionNumber);
 
         if (miss) {
@@ -120,10 +135,11 @@ export function useExerciseQuiz({
     }
   };
 
-  const handleRetry = () => {
-    const session = createQuizSession(script, mode, scope, pairDirection);
+  const startRound = (session: QuizSession) => {
     sessionRef.current = session;
+    setTotal(session.total);
     setQuestion(session.next());
+    setMissed([]);
     setQuestionNumber(0);
     setWrongAnswers([]);
     setAnsweredCorrectly(false);
@@ -132,6 +148,9 @@ export function useExerciseQuiz({
     setMisses([]);
     setFinished(false);
   };
+
+  const handleRetry = () => startRound(createQuizSession(script, mode, scope, pairDirection));
+  const handleRetryMisses = () => startRound(fixedSession(missed));
 
   useEffect(() => {
     if (!answeredCorrectly) {
@@ -166,6 +185,7 @@ export function useExerciseQuiz({
     wrongAnswers,
     answeredCorrectly,
     handleAnswer,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   };
 }
