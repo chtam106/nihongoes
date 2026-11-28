@@ -10,7 +10,14 @@ import {
   useState,
   type ReactNode
 } from 'react';
+import CheckOutlined from '@mui/icons-material/CheckOutlined';
+import CloudSyncOutlined from '@mui/icons-material/CloudSyncOutlined';
+import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
+import GoogleIcon from '@mui/icons-material/Google';
+import LockOutlined from '@mui/icons-material/LockOutlined';
+import StyleOutlined from '@mui/icons-material/StyleOutlined';
 import {
+  Avatar,
   Box,
   Button,
   CircularProgress,
@@ -46,9 +53,17 @@ import {
   readGoogleEmail,
   updateFlashcardFile
 } from '@/features/flashcards/google-drive.ts';
+import { IconBadge } from '@/components/icon-badge';
+import { elevatedSurfaceSx, subtleSurfaceSx } from '@/theme/surfaces.ts';
+import { storageKey } from '@/constants/site.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import type { Locale } from '@/types/i18n.ts';
 import type { GoogleTokenClient } from '@/types/google-identity.ts';
-import { readPersistedValue, writeStorageItem } from '@/utils/use-persistent-state.ts';
+import {
+  readPersistedValue,
+  usePersistentState,
+  writeStorageItem
+} from '@/utils/use-persistent-state.ts';
 
 export type FlashcardDriveStatus =
   | 'unconfigured'
@@ -362,6 +377,38 @@ export function useFlashcardDrive() {
 
 type SyncDialogPhase = 'closed' | 'choose' | 'loading' | 'done';
 
+/** When this browser last synced with Drive (ms since epoch), 0 if never. */
+const LAST_SYNC_KEY = storageKey('FLASHCARD_LAST_SYNC');
+
+function sanitizeTimestamp(value: unknown): number {
+  return typeof value === 'number' && Number.isFinite(value) && value > 0 ? value : 0;
+}
+
+/** "5 phút trước" / "5 minutes ago", from seconds up to days. */
+function timeAgo(timestamp: number, locale: Locale, now = Date.now()) {
+  const seconds = Math.round((timestamp - now) / 1000);
+  const format = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
+  const units: [Intl.RelativeTimeFormatUnit, number][] = [
+    ['day', 86_400],
+    ['hour', 3_600],
+    ['minute', 60]
+  ];
+
+  for (const [unit, size] of units) {
+    if (Math.abs(seconds) >= size) {
+      return format.format(Math.round(seconds / size), unit);
+    }
+  }
+
+  return format.format(0, 'second');
+}
+
+const SYNCED_ITEMS = [
+  { icon: StyleOutlined, label: 'flashcards.driveWhatCollections' },
+  { icon: EventRepeatOutlined, label: 'flashcards.driveWhatReviews' },
+  { icon: LockOutlined, label: 'flashcards.driveWhatPrivate' }
+] as const;
+
 const SYNC_CHOICES: { mode: FlashcardSyncMode; title: string; body: string }[] = [
   {
     mode: 'drive',
@@ -380,8 +427,14 @@ const SYNC_CHOICES: { mode: FlashcardSyncMode; title: string; body: string }[] =
   }
 ];
 
+/**
+ * The Sync page body: one centered card. Signed out it explains what syncs and
+ * offers Google sign-in; connected it shows the account, when this browser last
+ * synced, Sync (opens the merge/replace choice) and Sign out.
+ */
 export function FlashcardDriveConnect() {
-  const { t } = useTranslation();
+  const { locale, t } = useTranslation();
+  const [lastSync, setLastSync] = usePersistentState(LAST_SYNC_KEY, 0, sanitizeTimestamp);
   const { status, email, signIn, signOut, sync } = useFlashcardDrive();
   const [phase, setPhase] = useState<SyncDialogPhase>('closed');
   const [syncMode, setSyncMode] = useState<FlashcardSyncMode>('merge');
@@ -400,75 +453,151 @@ export function FlashcardDriveConnect() {
   const chooseSync = (mode: FlashcardSyncMode) => {
     setPhase('loading');
     void sync(mode).then((result) => {
+      if (result === 'ok') {
+        setLastSync(Date.now());
+      }
+
       setPhase(result === 'ok' ? 'done' : 'closed');
     });
   };
 
   return (
-    <Stack spacing={1.5} sx={{ alignItems: 'flex-start', alignSelf: 'stretch', width: '100%' }}>
-      <Typography variant="body1" color="text.secondary">
-        {t('flashcards.drivePageBody')}
-      </Typography>
-      {status === 'signing-in' && (
-        <Typography variant="body1" color="text.secondary">
-          {t('flashcards.driveLoading')}
-        </Typography>
-      )}
-      {status === 'unconfigured' && (
-        <Typography variant="body1" color="text.secondary">
-          {t('flashcards.driveUnconfigured')}
-        </Typography>
-      )}
-      {status === 'error' && (
-        <Typography variant="body1" color="text.secondary">
-          {t('flashcards.driveError')}
-        </Typography>
-      )}
-      {(status === 'signed-out' || status === 'error') && (
-        <Button
-          variant="contained"
-          onClick={signIn}
-          sx={{ alignSelf: 'center', textTransform: 'none' }}
+    <Box
+      sx={[
+        elevatedSurfaceSx,
+        {
+          width: '100%',
+          p: { xs: 3, sm: 4 },
+          borderRadius: 4,
+          display: 'grid',
+          // Full width: what syncs on the left, the actions on the right; one column on a phone.
+          gridTemplateColumns: { xs: '1fr', md: 'minmax(0, 1fr) minmax(0, 1fr)' },
+          columnGap: 6,
+          rowGap: 3,
+          alignItems: 'center'
+        }
+      ]}
+    >
+      <Stack spacing={3} sx={{ alignItems: { xs: 'center', md: 'flex-start' } }}>
+        {/* Phone: the badge tops the card. From md it moves above the actions (right column). */}
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          <IconBadge>
+            <CloudSyncOutlined />
+          </IconBadge>
+        </Box>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ textAlign: { xs: 'center', md: 'left' } }}
         >
-          {t('flashcards.driveSignIn')}
-        </Button>
-      )}
-      {connected && (
-        <Box
-          sx={{
-            display: 'inline-grid',
-            gap: 1.5,
-            justifyItems: 'stretch',
-            alignSelf: 'center'
-          }}
-        >
+          {t('flashcards.drivePageBody')}
+        </Typography>
+
+        <Stack component="ul" spacing={1.5} sx={{ p: 0, m: 0, listStyle: 'none', width: '100%' }}>
+          {SYNCED_ITEMS.map(({ icon: Icon, label }) => (
+            <Box
+              component="li"
+              key={label}
+              sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, textAlign: 'left' }}
+            >
+              <Icon sx={{ color: 'primary.main', flexShrink: 0, mt: '2px' }} />
+              <Typography variant="body1">{t(label)}</Typography>
+            </Box>
+          ))}
+        </Stack>
+      </Stack>
+
+      {/* useFlexGap: the badge hidden on a phone must not leave a gap above the button. */}
+      <Stack
+        spacing={2}
+        useFlexGap
+        sx={{ alignItems: 'center', textAlign: 'center', width: '100%' }}
+      >
+        <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+          <IconBadge>
+            <CloudSyncOutlined />
+          </IconBadge>
+        </Box>
+        {status === 'signing-in' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('flashcards.driveLoading')}
+          </Typography>
+        )}
+        {status === 'unconfigured' && (
+          <Typography variant="body1" color="text.secondary">
+            {t('flashcards.driveUnconfigured')}
+          </Typography>
+        )}
+        {status === 'error' && (
+          <Typography variant="body1" color="error">
+            {t('flashcards.driveError')}
+          </Typography>
+        )}
+
+        {(status === 'signed-out' || status === 'error') && (
           <Button
             variant="contained"
-            onClick={() => {
-              setSyncMode('merge');
-              setPhase('choose');
-            }}
-            disabled={status === 'syncing'}
-            sx={{
-              textTransform: 'none',
-              ...(email && { flexDirection: 'column', whiteSpace: 'normal', lineHeight: 1.4 })
-            }}
+            size="large"
+            fullWidth
+            startIcon={<GoogleIcon />}
+            onClick={signIn}
+            sx={{ minHeight: 48 }}
           >
-            {t('flashcards.driveSync')}
-            {email && (
-              <Box
-                component="span"
-                sx={{ display: 'block', overflowWrap: 'anywhere', fontSize: '14px' }}
-              >
-                ({email})
+            {t('flashcards.driveSignIn')}
+          </Button>
+        )}
+
+        {connected && (
+          <Stack spacing={2} sx={{ width: '100%' }}>
+            <Box
+              sx={[
+                subtleSurfaceSx,
+                {
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 1.5,
+                  p: 1.5,
+                  borderRadius: 2,
+                  textAlign: 'left'
+                }
+              ]}
+            >
+              <Avatar sx={{ bgcolor: 'primary.main', width: 40, height: 40 }}>
+                {(email ?? 'G').charAt(0).toUpperCase()}
+              </Avatar>
+              <Box sx={{ minWidth: 0 }}>
+                {email && (
+                  <Typography variant="body1" sx={{ fontWeight: 600, overflowWrap: 'anywhere' }}>
+                    {email}
+                  </Typography>
+                )}
+                <Typography variant="body1" color="text.secondary">
+                  {lastSync > 0
+                    ? t('flashcards.driveLastSync', { time: timeAgo(lastSync, locale) })
+                    : t('flashcards.driveNeverSynced')}
+                </Typography>
               </Box>
-            )}
-          </Button>
-          <Button variant="outlined" onClick={signOut} sx={{ textTransform: 'none' }}>
-            {t('flashcards.driveSignOut')}
-          </Button>
-        </Box>
-      )}
+            </Box>
+            <Button
+              variant="contained"
+              size="large"
+              fullWidth
+              startIcon={<CloudSyncOutlined />}
+              onClick={() => {
+                setSyncMode('merge');
+                setPhase('choose');
+              }}
+              disabled={status === 'syncing'}
+              sx={{ minHeight: 48 }}
+            >
+              {t('flashcards.driveSync')}
+            </Button>
+            <Button onClick={signOut} sx={{ alignSelf: 'center', color: 'text.secondary' }}>
+              {t('flashcards.driveSignOut')}
+            </Button>
+          </Stack>
+        )}
+      </Stack>
       <Dialog
         open={phase !== 'closed'}
         onClose={() => {
@@ -541,12 +670,17 @@ export function FlashcardDriveConnect() {
         )}
         {phase === 'done' && (
           <DialogContent>
-            <Typography variant="body1" sx={{ py: 3, textAlign: 'center' }}>
-              {t('flashcards.driveSyncDone')}
-            </Typography>
+            <Stack spacing={2} sx={{ alignItems: 'center', py: 3, textAlign: 'center' }}>
+              <IconBadge>
+                <CheckOutlined />
+              </IconBadge>
+              <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                {t('flashcards.driveSyncDone')}
+              </Typography>
+            </Stack>
           </DialogContent>
         )}
       </Dialog>
-    </Stack>
+    </Box>
   );
 }

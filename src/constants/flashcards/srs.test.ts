@@ -13,6 +13,7 @@ import {
   removeCard,
   nextInterval,
   nextReview,
+  promptDueCount,
   restoreCard,
   sanitizeReviewStore,
   type ReviewCard,
@@ -123,6 +124,30 @@ describe('dueCardIds', () => {
     };
 
     expect(dueCardIds(store, TODAY)).toEqual(['overdue', 'due']);
+  });
+});
+
+describe('promptDueCount', () => {
+  it('counts due cards that were on the list before today', () => {
+    const store: ReviewStore = {
+      cards: {
+        overdue: card({ due: TODAY - 2, last: TODAY - 10 }),
+        missedYesterday: card({ due: TODAY, last: TODAY - 1 }),
+        addedToday: card({ due: TODAY, last: TODAY }),
+        later: card({ due: TODAY + 3, last: TODAY - 1 })
+      },
+      newDay: 0,
+      newCount: 0
+    };
+
+    expect(promptDueCount(store, TODAY)).toBe(2);
+  });
+
+  it('ignores a card just added to the list', () => {
+    const store = addToReview(EMPTY_REVIEW_STORE, '1:0', TODAY);
+
+    expect(dueCardIds(store, TODAY)).toEqual(['1:0']);
+    expect(promptDueCount(store, TODAY)).toBe(0);
   });
 });
 

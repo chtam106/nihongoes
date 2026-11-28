@@ -1,14 +1,15 @@
 'use client';
 
 import EventRepeatOutlined from '@mui/icons-material/EventRepeatOutlined';
-import { Box, Button, Dialog, Stack, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { Button, Dialog, Stack, Typography } from '@mui/material';
+import { IconBadge } from '@/components/icon-badge';
 import { LocaleLink } from '@/components/locale-link';
-import { dayNumber, REVIEW_PROMPT_DAY_KEY } from '@/constants/flashcards/srs.ts';
+import { dayNumber, promptDueCount, REVIEW_PROMPT_DAY_KEY } from '@/constants/flashcards/srs.ts';
 import { routes } from '@/constants/routes.ts';
-import { useDueReviewCount } from '@/features/flashcards/use-due-review-count.ts';
+import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { usePathname } from '@/i18n/navigation.tsx';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import { useIsClient } from '@/utils/use-is-client.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
 
 function sanitizeDay(value: unknown): number {
@@ -16,17 +17,40 @@ function sanitizeDay(value: unknown): number {
 }
 
 /**
+ * The due count read once, when the page first loads in the browser. Later
+ * changes in the same page load (adding a card, moving to another page) never
+ * reopen the prompt; the next full load reads it again.
+ */
+let dueAtPageOpen: number | null = null;
+
+function readDueAtPageOpen(read: () => number) {
+  if (dueAtPageOpen === null) {
+    dueAtPageOpen = read();
+  }
+
+  return dueAtPageOpen;
+}
+
+/**
  * Once a day, on the first page opened, say how many flashcards are due and
- * offer to review them. Shown only when something is due, and never on the
+ * offer to review them. Checked only once, when the page loads: shown only when
+ * cards from before today are due then, and never when the page opened on the
  * review page itself.
  */
 export function DailyReviewPrompt() {
   const { t } = useTranslation();
   const pathname = usePathname();
-  const due = useDueReviewCount();
+  const isClient = useIsClient();
+  const { store } = useFlashcardReviews();
   const today = dayNumber();
+  // Read the stored list only once it is the browser's, not the server's empty copy.
+  const due = isClient
+    ? readDueAtPageOpen(() =>
+        pathname === routes.flashcardReview ? 0 : promptDueCount(store, today)
+      )
+    : 0;
   const [promptDay, setPromptDay] = usePersistentState(REVIEW_PROMPT_DAY_KEY, 0, sanitizeDay);
-  const open = due > 0 && promptDay !== today && pathname !== routes.flashcardReview;
+  const open = due > 0 && promptDay !== today;
 
   const close = () => {
     setPromptDay(today);
@@ -43,20 +67,9 @@ export function DailyReviewPrompt() {
       slotProps={{ paper: { sx: { borderRadius: 4, m: 2 } } }}
     >
       <Stack spacing={3} sx={{ p: { xs: 3, sm: 4 }, alignItems: 'center', textAlign: 'center' }}>
-        <Box
-          aria-hidden
-          sx={(theme) => ({
-            width: 72,
-            height: 72,
-            borderRadius: '50%',
-            display: 'grid',
-            placeItems: 'center',
-            color: 'primary.main',
-            bgcolor: alpha(theme.palette.primary.main, 0.1)
-          })}
-        >
-          <EventRepeatOutlined sx={{ fontSize: 36 }} />
-        </Box>
+        <IconBadge>
+          <EventRepeatOutlined />
+        </IconBadge>
 
         <Stack spacing={1} sx={{ alignItems: 'center' }}>
           <Typography
