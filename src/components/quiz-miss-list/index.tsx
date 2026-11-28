@@ -42,6 +42,8 @@ export type QuizMiss = {
 
 type QuizMissListProps = {
   misses: QuizMiss[];
+  /** Heading over the list; defaults to the multiple-choice "Missed questions". */
+  title?: string;
 };
 
 type MissPartProps = {
@@ -54,6 +56,7 @@ type ChoiceRunProps = {
 
 type MissListBodyProps = {
   misses: QuizMiss[];
+  title?: string;
   onSave?: (card: FlashcardCard) => void;
   onSaveAll?: () => void;
 };
@@ -154,7 +157,7 @@ function savableCards(misses: QuizMiss[]): FlashcardCard[] {
   return cards;
 }
 
-function MissListBody({ misses, onSave, onSaveAll }: MissListBodyProps) {
+function MissListBody({ misses, title, onSave, onSaveAll }: MissListBodyProps) {
   const { t } = useTranslation();
 
   return (
@@ -169,7 +172,7 @@ function MissListBody({ misses, onSave, onSaveAll }: MissListBodyProps) {
         }}
       >
         <Typography component="h3" variant="body1" sx={{ fontWeight: 600, flexShrink: 0 }}>
-          {t('course.resultMisses')}
+          {title ?? t('course.resultMisses')}
         </Typography>
         {onSaveAll && (
           <Box
@@ -311,7 +314,7 @@ function SavableMissList({ misses }: SavableMissListProps) {
  * icon before that word. Add all to flashcards shows only when more than one
  * question was missed.
  */
-export function QuizMissList({ misses }: QuizMissListProps) {
+export function QuizMissList({ misses, title }: QuizMissListProps) {
   const canSave = useSaveCardReady() && misses.some((miss) => miss.card);
 
   if (misses.length === 0) {
@@ -322,5 +325,5 @@ export function QuizMissList({ misses }: QuizMissListProps) {
     return <SavableMissList misses={misses} />;
   }
 
-  return <MissListBody misses={misses} />;
+  return <MissListBody misses={misses} title={title} />;
 }

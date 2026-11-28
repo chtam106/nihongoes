@@ -1,12 +1,12 @@
 'use client';
 
-import ReplayIcon from '@mui/icons-material/Replay';
 import { LocaleLink as RouterLink } from '@/components/locale-link';
-import { Button, Paper, Stack, Typography } from '@mui/material';
+import { Box, Button, Paper, Typography } from '@mui/material';
 import { Heading } from '@/components/heading';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { LessonPracticeNav, type LessonPracticeSection } from '@/components/lesson-practice-nav';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
+import { ResultRetryButtons } from '@/features/course/result-actions';
 import {
   coursePath,
   getCourse,
@@ -88,19 +88,21 @@ export function LessonNotFound({ level }: LessonNotFoundProps) {
 type ResultScreenProps = {
   score: number;
   total: number;
-  level?: CourseLevel;
-  lessonId?: string;
   misses?: QuizMiss[];
+  /** Heading over the missed list, when "Missed questions" does not fit. */
+  missesTitle?: string;
   onRetry: () => void;
+  /** Starts a round with only the questions missed this time; shown when there are any. */
+  onRetryMisses?: () => void;
 };
 
 export function ResultScreen({
   score,
   total,
-  level,
-  lessonId,
   misses = [],
-  onRetry
+  missesTitle,
+  onRetry,
+  onRetryMisses
 }: ResultScreenProps) {
   const { t } = useTranslation();
   const ratio = total === 0 ? 0 : score / total;
@@ -122,22 +124,13 @@ export function ResultScreen({
       <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
         {message}
       </Typography>
-      <Stack
-        direction={{ xs: 'column', sm: 'row' }}
-        spacing={1.5}
-        sx={{ justifyContent: 'center', flexWrap: 'wrap', mb: misses.length > 0 ? 3 : 0 }}
-        useFlexGap
-      >
-        <Button variant="contained" startIcon={<ReplayIcon />} onClick={onRetry}>
-          {t('course.retry')}
-        </Button>
-        {level && lessonId && (
-          <Button variant="outlined" component={RouterLink} to={lessonPath(level, lessonId)}>
-            {t('course.reviewLesson')}
-          </Button>
-        )}
-      </Stack>
-      <QuizMissList misses={misses} />
+      <ResultRetryButtons
+        onRetry={onRetry}
+        onRetryMisses={onRetryMisses}
+        hasMisses={score < total}
+      />
+      {misses.length > 0 && <Box sx={{ mt: 3 }} />}
+      <QuizMissList misses={misses} title={missesTitle} />
     </Paper>
   );
 }

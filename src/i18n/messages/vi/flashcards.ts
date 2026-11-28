@@ -23,8 +23,10 @@ export const flashcards = {
   meaning: 'Nghĩa',
   contextRemoveFromCollection: 'Xóa khỏi collection',
   cardMenu: 'Tùy chọn cho card',
+  contextCopy: 'Sao chép',
   contextSave: 'Lưu flashcard',
-  contextChatGpt: 'Nghĩa và cách dùng trên ChatGPT',
+  contextGoogleTranslate: 'Google Translate',
+  contextChatGpt: 'ChatGPT',
   saveHint:
     'Lưu card vào collection: chuột phải hoặc bấm nút ba chấm trên card trong bài học, hoặc bôi đen chữ rồi bấm S.',
   previousCollection: 'Previous collection',

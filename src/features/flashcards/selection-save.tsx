@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import OpenInNewOutlined from '@mui/icons-material/OpenInNewOutlined';
 import { Menu, MenuItem } from '@mui/material';
 import {
   clipCard,
@@ -20,6 +21,7 @@ import { SaveToCollectionDialogView } from '@/features/flashcards/save-to-collec
 import {
   cardAskText,
   chatGptUrl,
+  googleTranslateUrl,
   readSaveCard,
   STUDY_LAYER_Z_INDEX,
   STUDY_MENU_EVENT,
@@ -27,6 +29,8 @@ import {
 } from '@/features/flashcards/study-menu.ts';
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
+import type { Locale } from '@/types/i18n.ts';
+import { isMobileOs } from '@/utils/mobile-os.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
 
 function hasOpenDialog() {
@@ -83,6 +87,26 @@ function withClipMeaning(collections: FlashcardCollection[], card: FlashcardCard
     collections
   );
 }
+
+/**
+ * Study menu rows: roomy, and hover or keyboard focus only turns the label and
+ * icon sakura (like the drawer rows), with no background fill. The doubled `&&`
+ * outranks the theme's MenuItem hover fill and MUI's focus fill.
+ */
+const STUDY_MENU_ITEM_SX = {
+  minHeight: 48,
+  px: 2.5,
+  py: 1.25,
+  transition: 'color 0.15s ease',
+  '&&:hover, &&.Mui-focusVisible, &&.Mui-selected': {
+    bgcolor: 'transparent',
+    color: 'primary.main',
+    '& .MuiSvgIcon-root': { color: 'primary.main' }
+  },
+  '@media (hover: none)': {
+    '&&:hover': { bgcolor: 'transparent' }
+  }
+} as const;
 
 export function SelectionSave() {
   const { locale, t } = useTranslation();
@@ -200,7 +224,7 @@ export function SelectionSave() {
       event.preventDefault();
       setMenu(
         selected
-          ? { x: event.clientX, y: event.clientY, askText: selected }
+          ? { x: event.clientX, y: event.clientY, askText: selected, copyText: selected }
           : {
               x: event.clientX,
               y: event.clientY,
@@ -299,7 +323,26 @@ export function SelectionSave() {
     });
   };
 
-  const askChatGpt = () => {
+  const copySelection = () => {
+    const text = menu?.copyText;
+
+    setMenu(null);
+
+    if (!text) {
+      return;
+    }
+
+    // The Clipboard API needs a secure context; the old command still works on the live selection.
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).catch(() => document.execCommand('copy'));
+      return;
+    }
+
+    document.execCommand('copy');
+  };
+
+  /** Opens an outside tool for the menu text: a new tab on desktop, this tab on a phone. */
+  const openOutside = (buildUrl: (text: string, locale: Locale) => string) => {
     const text = menu?.askText;
 
     setMenu(null);
@@ -308,7 +351,15 @@ export function SelectionSave() {
       return;
     }
 
-    window.open(chatGptUrl(text, locale), '_blank', 'noopener,noreferrer');
+    const url = buildUrl(text, locale);
+
+    // A phone handles a new tab badly (and may hand off to the app), so stay in this tab there.
+    if (isMobileOs()) {
+      window.location.assign(url);
+      return;
+    }
+
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const activeCard = savedCard ?? clip;
@@ -325,21 +376,52 @@ export function SelectionSave() {
           onClose={() => setMenu(null)}
           anchorReference="anchorPosition"
           anchorPosition={{ top: menu.y, left: menu.x }}
+          // Opened by a pointer: no row should look hovered until the pointer is on it.
+          disableAutoFocusItem
           sx={{ zIndex: STUDY_LAYER_Z_INDEX }}
+          // Roomier than MUI's dense default: it is a study tool, tapped as often as clicked.
+          slotProps={{
+            paper: { sx: { minWidth: 240 } },
+            list: { sx: { py: 1 } }
+          }}
         >
-          <MenuItem onClick={saveFromMenu}>{t('flashcards.contextSave')}</MenuItem>
+          {menu.copyText && (
+            <MenuItem onClick={copySelection} sx={STUDY_MENU_ITEM_SX}>
+              {t('flashcards.contextCopy')}
+            </MenuItem>
+          )}
+          <MenuItem onClick={saveFromMenu} sx={STUDY_MENU_ITEM_SX}>
+            {t('flashcards.contextSave')}
+          </MenuItem>
           {menu.card && menu.collectionId && (
-            <MenuItem onClick={removeFromCollection}>
+            <MenuItem onClick={removeFromCollection} sx={STUDY_MENU_ITEM_SX}>
               {t('flashcards.contextRemoveFromCollection')}
             </MenuItem>
           )}
           {menuCard && (
-            <MenuItem disabled={menuCardOnList} onClick={addToReviewFromMenu}>
+            <MenuItem
+              disabled={menuCardOnList}
+              onClick={addToReviewFromMenu}
+              sx={STUDY_MENU_ITEM_SX}
+            >
               {menuCardOnList ? t('flashcards.reviewOnList') : t('flashcards.reviewAdd')}
             </MenuItem>
           )}
-          <MenuItem disabled={!menu.askText} onClick={askChatGpt}>
+          <MenuItem
+            disabled={!menu.askText}
+            onClick={() => openOutside(chatGptUrl)}
+            sx={[STUDY_MENU_ITEM_SX, { display: 'flex', alignItems: 'center', gap: 1 }]}
+          >
             {t('flashcards.contextChatGpt')}
+            <OpenInNewOutlined aria-hidden sx={{ fontSize: '1.25rem', color: 'text.secondary' }} />
+          </MenuItem>
+          <MenuItem
+            disabled={!menu.askText}
+            onClick={() => openOutside(googleTranslateUrl)}
+            sx={[STUDY_MENU_ITEM_SX, { display: 'flex', alignItems: 'center', gap: 1 }]}
+          >
+            {t('flashcards.contextGoogleTranslate')}
+            <OpenInNewOutlined aria-hidden sx={{ fontSize: '1.25rem', color: 'text.secondary' }} />
           </MenuItem>
         </Menu>
       )}

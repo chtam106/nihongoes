@@ -46,7 +46,7 @@ import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews
 import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-collections.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
-import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab-index-preferences.ts';
+import type { FlashcardFront } from '@/types/course.ts';
 
 type CollectionDetailProps = {
   collectionId: string;

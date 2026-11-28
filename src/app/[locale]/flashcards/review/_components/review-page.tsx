@@ -27,7 +27,7 @@ import { useFlashcardCollections } from '@/features/flashcards/use-flashcard-col
 import { useFlashcardReviews } from '@/features/flashcards/use-flashcard-reviews.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
-import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab-index-preferences.ts';
+import type { FlashcardFront } from '@/types/course.ts';
 
 type ReviewPageProps = {
   defaults: readonly DefaultCollection[];

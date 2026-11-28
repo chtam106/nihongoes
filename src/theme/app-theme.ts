@@ -55,7 +55,9 @@ export const appTheme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        // Sentence case everywhere: MUI's all-caps labels shout and read badly in Vietnamese.
         root: ({ theme: muiTheme }) => ({
+          textTransform: 'none',
           '@media (pointer: coarse)': {
             '&&.MuiButton-containedPrimary:hover, &&.MuiButton-containedPrimary:active': {
               backgroundColor: muiTheme.palette.primary.main,

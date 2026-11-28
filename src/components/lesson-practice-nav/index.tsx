@@ -59,53 +59,71 @@ const TAB_RAIL_BUTTON_SX = {
   '&:active': { color: 'primary.main' }
 } as const;
 
+export type LessonPracticeStep = {
+  id: LessonPracticeSection;
+  labelKey: `course.${string}`;
+  to: string;
+};
+
+/** A lesson's practice pages in the order the lesson page lists them. */
+export function lessonPracticeSteps(level: CourseLevel, lesson: Lesson): LessonPracticeStep[] {
+  return [
+    {
+      id: 'vocabulary',
+      labelKey: 'course.vocabularyPractice',
+      to: lessonVocabularyPath(level, lesson.id)
+    },
+    ...(lesson.grammar.length > 0
+      ? [
+          {
+            id: 'grammar' as const,
+            labelKey: 'course.grammarPractice' as const,
+            to: lessonGrammarPath(level, lesson.id)
+          }
+        ]
+      : []),
+    {
+      id: 'sentences',
+      labelKey: 'course.sentenceWritingHeading',
+      to: lessonSentencesPath(level, lesson.id)
+    },
+    ...(lessonHasReading(lesson)
+      ? [
+          {
+            id: 'reading' as const,
+            labelKey: 'course.readingPractice' as const,
+            to: lessonReadingPath(level, lesson.id)
+          }
+        ]
+      : []),
+    ...(lessonHasKanji(lesson)
+      ? [
+          {
+            id: 'writing' as const,
+            labelKey: 'course.writingPractice' as const,
+            to: lessonWritingPath(level, lesson.id)
+          }
+        ]
+      : [])
+  ];
+}
+
 export function LessonPracticeNav({ level, lesson, section }: LessonPracticeNavProps) {
   const { t } = useTranslation();
   const isClient = useIsClient();
   const [preferences] = useUserPreferences();
   const [open, setOpen] = useState(false);
-  const items = useMemo((): LessonPracticeNavItem[] => {
-    return [
+  const items = useMemo(
+    (): LessonPracticeNavItem[] => [
       { id: 'lesson', label: t('course.reviewLesson'), to: lessonPath(level, lesson.id) },
-      {
-        id: 'vocabulary',
-        label: t('course.vocabularyPractice'),
-        to: lessonVocabularyPath(level, lesson.id)
-      },
-      ...(lesson.grammar.length > 0
-        ? [
-            {
-              id: 'grammar' as const,
-              label: t('course.grammarPractice'),
-              to: lessonGrammarPath(level, lesson.id)
-            }
-          ]
-        : []),
-      {
-        id: 'sentences',
-        label: t('course.sentenceWritingHeading'),
-        to: lessonSentencesPath(level, lesson.id)
-      },
-      ...(lessonHasReading(lesson)
-        ? [
-            {
-              id: 'reading' as const,
-              label: t('course.readingPractice'),
-              to: lessonReadingPath(level, lesson.id)
-            }
-          ]
-        : []),
-      ...(lessonHasKanji(lesson)
-        ? [
-            {
-              id: 'writing' as const,
-              label: t('course.writingPractice'),
-              to: lessonWritingPath(level, lesson.id)
-            }
-          ]
-        : [])
-    ];
-  }, [level, lesson, t]);
+      ...lessonPracticeSteps(level, lesson).map((step) => ({
+        id: step.id,
+        label: t(step.labelKey),
+        to: step.to
+      }))
+    ],
+    [level, lesson, t]
+  );
 
   useEffect(() => {
     if (!open) {

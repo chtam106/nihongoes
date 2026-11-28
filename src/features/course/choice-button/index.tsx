@@ -75,8 +75,11 @@ export function ChoiceButton({ children, state, dimmed, onClick, lang }: ChoiceB
         const feedbackText = state === 'correct' ? '#067a28' : pink[700];
 
         return {
-          justifyContent: 'space-between',
-          textAlign: 'left',
+          // Centered like the question above it; one min height so a choice with
+          // furigana is not taller than its plain neighbours.
+          justifyContent: 'center',
+          textAlign: 'center',
+          minHeight: 68,
           // MUI Button sets user-select: none, which blocks highlighting the answer.
           userSelect: 'text',
           // MUI Button defaults to overflow:hidden (ripple); that clips furigana.

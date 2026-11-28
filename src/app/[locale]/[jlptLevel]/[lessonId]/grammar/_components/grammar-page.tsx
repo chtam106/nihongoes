@@ -36,7 +36,8 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
     wrongIds,
     answeredCorrectly,
     handleSelect,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   } = useGrammarQuiz({
     lesson,
     level,
@@ -53,10 +54,9 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
       <ResultScreen
         score={score}
         total={total}
-        level={level}
-        lessonId={lesson.id}
         misses={misses}
         onRetry={handleRetry}
+        onRetryMisses={handleRetryMisses}
       />
     );
   }
@@ -69,9 +69,6 @@ function GrammarQuiz({ lesson, level, locale }: GrammarQuizProps) {
   return (
     <Stack spacing={3}>
       <Box>
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-          {progressLabel}
-        </Typography>
         <QuizProgressBar
           total={total}
           current={questionNumber}

@@ -140,14 +140,15 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
     });
   };
 
-  const restart = (filter: ParticleLevelFilter) => {
-    setRound(createParticleRound(filter));
+  const startRound = (next: typeof round) => {
+    setRound(next);
     setCurrent(0);
     setResults([]);
     setWrong([]);
     setAnswered(false);
     setFinished(false);
   };
+  const restart = (filter: ParticleLevelFilter) => startRound(createParticleRound(filter));
 
   // Same pace as the other quizzes: move on shortly after the right answer.
   useEffect(() => {
@@ -170,6 +171,8 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
   }, [answered, isLast]);
 
   const retry = () => restart(level);
+  const retryMisses = () =>
+    startRound(round.filter((_item, index) => results[index] === 'incorrect'));
 
   const changeLevel = (_event: unknown, value: ParticleLevelFilter | null) => {
     if (!value || value === level) {
@@ -228,9 +231,6 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
         {!finished && (
           <>
             <Box>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 0.5 }}>
-                {progressLabel}
-              </Typography>
               <QuizProgressBar
                 total={round.length}
                 current={current}
@@ -304,7 +304,13 @@ export function ParticlePractice({ initialRound }: ParticlePracticeProps) {
         )}
 
         {finished && (
-          <ResultScreen score={score} total={round.length} misses={misses} onRetry={retry} />
+          <ResultScreen
+            score={score}
+            total={round.length}
+            misses={misses}
+            onRetry={retry}
+            onRetryMisses={retryMisses}
+          />
         )}
       </Stack>
     </PageContainer>

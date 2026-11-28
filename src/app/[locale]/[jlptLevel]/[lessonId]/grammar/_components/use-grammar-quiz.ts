@@ -29,6 +29,13 @@ function grammarMiss(question: GrammarQuestion, questionNumber: number): QuizMis
   };
 }
 
+/** A session over a fixed list, for a round of only the missed questions. */
+function fixedSession(questions: GrammarQuestion[]): GrammarSession {
+  let at = 0;
+
+  return { total: questions.length, next: () => questions[Math.min(at++, questions.length - 1)] };
+}
+
 type UseGrammarQuizOptions = {
   lesson: Lesson;
   level: CourseLevel;
@@ -43,7 +50,8 @@ export function useGrammarQuiz({ lesson, level, locale }: UseGrammarQuizOptions)
     return { session, question: session.next() };
   });
   const sessionRef = useRef<GrammarSession>(initial.session);
-  const [total] = useState(initial.session.total);
+  const [total, setTotal] = useState(initial.session.total);
+  const [missed, setMissed] = useState<GrammarQuestion[]>([]);
   const [question, setQuestion] = useState<GrammarQuestion>(initial.question);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
@@ -69,16 +77,18 @@ export function useGrammarQuiz({ lesson, level, locale }: UseGrammarQuizOptions)
         setScore((previous) => previous + 1);
       } else {
         setMisses((previous) => [...previous, grammarMiss(question, questionNumber)]);
+        setMissed((previous) => [...previous, question]);
       }
     } else {
       setWrongIds((previous) => [...previous, optionId]);
     }
   };
 
-  const handleRetry = () => {
-    const session = createGrammarSession(lesson, locale, level);
+  const startRound = (session: GrammarSession) => {
     sessionRef.current = session;
+    setTotal(session.total);
     setQuestion(session.next());
+    setMissed([]);
     setQuestionNumber(0);
     setWrongIds([]);
     setAnsweredCorrectly(false);
@@ -87,6 +97,9 @@ export function useGrammarQuiz({ lesson, level, locale }: UseGrammarQuizOptions)
     setMisses([]);
     setFinished(false);
   };
+
+  const handleRetry = () => startRound(createGrammarSession(lesson, locale, level));
+  const handleRetryMisses = () => startRound(fixedSession(missed));
 
   useEffect(() => {
     if (!answeredCorrectly) {
@@ -121,6 +134,7 @@ export function useGrammarQuiz({ lesson, level, locale }: UseGrammarQuizOptions)
     wrongIds,
     answeredCorrectly,
     handleSelect,
-    handleRetry
+    handleRetry,
+    handleRetryMisses
   };
 }

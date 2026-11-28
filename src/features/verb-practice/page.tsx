@@ -37,13 +37,21 @@ export function VerbPracticePage({ mode, groups, initialDeck }: VerbPracticePage
   });
   const isLast = current === deck.length - 1;
 
-  function retry() {
-    setDeck(createVerbQuizDeck(groups, mode));
+  function startRound(next: typeof deck) {
+    setDeck(next);
     setCurrent(0);
     setResults([]);
     setWrongIds([]);
     setAnswered(false);
     setFinished(false);
+  }
+
+  function retry() {
+    startRound(createVerbQuizDeck(groups, mode));
+  }
+
+  function retryMisses() {
+    startRound(deck.filter((_item, index) => results[index] !== 'correct'));
   }
 
   function choose(optionId: string) {
@@ -98,9 +106,6 @@ export function VerbPracticePage({ mode, groups, initialDeck }: VerbPracticePage
         {!finished && (
           <>
             <Box>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 0.75 }}>
-                {progressLabel}
-              </Typography>
               <QuizProgressBar
                 total={deck.length}
                 current={current}
@@ -159,7 +164,13 @@ export function VerbPracticePage({ mode, groups, initialDeck }: VerbPracticePage
         )}
 
         {finished && (
-          <ResultScreen score={score} total={deck.length} misses={misses} onRetry={retry} />
+          <ResultScreen
+            score={score}
+            total={deck.length}
+            misses={misses}
+            onRetry={retry}
+            onRetryMisses={retryMisses}
+          />
         )}
       </Stack>
     </PageContainer>

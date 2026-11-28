@@ -1,3 +1,6 @@
+/** Which face of a flashcard shows first. */
+export type FlashcardFront = 'ja' | 'meaning';
+
 import type { HighlightTerm } from '@/utils/grammar-highlight.ts';
 import type { Locale } from '@/types/i18n.ts';
 

@@ -14,14 +14,18 @@ import { focusVisibleSx } from '@/theme/focus.ts';
 import { elevatedSurfaceSx } from '@/theme/surfaces.ts';
 import type { Locale } from '@/types/i18n.ts';
 import { useSwipe } from '@/utils/use-swipe.ts';
-import type { FlashcardFront } from '@/app/[locale]/vocabulary/_components/vocab-index-preferences.ts';
+import type { FlashcardFront } from '@/types/course.ts';
 
 const FLIP_MS = 480;
 
+// Both faces share one grid cell, so the card grows to fit the longer face
+// instead of letting a long phrase spill out. Vertical padding clears the
+// speaker and menu icons in the corner.
 const faceSx = {
-  position: 'absolute',
-  inset: 0,
-  p: 3,
+  gridArea: '1 / 1',
+  minWidth: 0,
+  px: 3,
+  py: 6,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -167,6 +171,8 @@ export function FlipCard({
       onKeyDown={handleCardKeyDown}
       sx={(theme) => ({
         position: 'relative',
+        display: 'grid',
+        gridTemplateColumns: 'minmax(0, 1fr)',
         minHeight: 220,
         transformStyle: 'preserve-3d',
         cursor: 'pointer',

@@ -1,20 +1,27 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { Checkbox, FormControlLabel, Stack } from '@mui/material';
-import { ScrollButton } from '@/components/scroll-button';
+import { Box, Stack, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { PageContainer } from '@/components/page-container';
+import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
+import type { QuizMiss } from '@/components/quiz-miss-list';
 import { getLesson } from '@/constants/courses/index.ts';
-import type { CourseLevel, Lesson, LessonSentenceWriting } from '@/types/course.ts';
+import type {
+  CourseLevel,
+  Lesson,
+  LessonSentenceWriting,
+  SentenceWritingItem
+} from '@/types/course.ts';
 import { useTranslation } from '@/i18n/use-translation.ts';
 import { usePersistentState } from '@/utils/use-persistent-state.ts';
-import { LessonNotFound, LessonQuizHeader } from '@/features/course/shared';
+import { LessonNotFound, LessonQuizHeader, ResultScreen } from '@/features/course/shared';
 import { SentenceWritingPrompt } from './sentence-writing-prompt.tsx';
 import {
   defaultSentenceWritingPreferences,
   sanitizeSentenceWritingPreferences,
-  SENTENCE_WRITING_STORAGE_KEY
+  SENTENCE_WRITING_STORAGE_KEY,
+  type SentenceAnswerMode
 } from './sentence-writing-preferences.ts';
 
 type SentenceWritingExerciseProps = {
@@ -38,40 +45,97 @@ function SentenceWritingExercise({ level, lesson, writing }: SentenceWritingExer
 
     return [...grammarItems, ...writing.phrases];
   }, [lesson, writing]);
+  // null = the whole lesson; a list = a retry round of the missed sentences.
+  const [round, setRound] = useState<SentenceWritingItem[] | null>(null);
+  const [missedItems, setMissedItems] = useState<SentenceWritingItem[]>([]);
+  const active = round ?? items;
+  const [index, setIndex] = useState(0);
+  const [results, setResults] = useState<QuizSegmentResult[]>([]);
+  const [misses, setMisses] = useState<QuizMiss[]>([]);
+  const total = active.length;
+  const finished = total > 0 && index >= total;
+  const item = active[index];
+  const score = results.filter((result) => result === 'correct').length;
+
+  const handleGrade = (correct: boolean) => {
+    setResults((previous) => [...previous, correct ? 'correct' : 'incorrect']);
+
+    if (!correct) {
+      setMissedItems((previous) => [...previous, item]);
+      setMisses((previous) => [
+        ...previous,
+        {
+          id: `sentence-${index}`,
+          prompt: [{ text: item.prompt[locale] }],
+          answer: { text: item.jp, ruby: item.ruby, japanese: true }
+        }
+      ]);
+    }
+    setIndex((previous) => previous + 1);
+  };
+
+  const startRound = (next: SentenceWritingItem[] | null) => {
+    setRound(next);
+    setMissedItems([]);
+    setIndex(0);
+    setResults([]);
+    setMisses([]);
+  };
+  const handleRetry = () => startRound(null);
+  const handleRetryMisses = () => startRound(missedItems);
 
   return (
-    <PageContainer bottomGutter>
+    <PageContainer>
       <Stack spacing={3}>
         <LessonQuizHeader level={level} lesson={lesson} section="sentences" />
-        <FormControlLabel
-          sx={{ mx: 0, alignSelf: 'flex-start' }}
-          control={
-            <Checkbox
-              size="small"
-              checked={prefs.showInput}
-              onChange={(_event, checked) =>
-                setPrefs((previousPrefs) => ({ ...previousPrefs, showInput: checked }))
+        {!finished && (
+          <ToggleButtonGroup
+            exclusive
+            size="small"
+            color="primary"
+            value={prefs.mode}
+            onChange={(_event, mode: SentenceAnswerMode | null) => {
+              if (mode) {
+                setPrefs({ mode });
               }
-              aria-label={t('course.sentenceWritingShowInput')}
-            />
-          }
-          label={t('course.sentenceWritingShowInput')}
-        />
-        {items.length > 0 && (
-          <Stack spacing={1.5}>
-            {items.map((item, itemIndex) => (
-              <SentenceWritingPrompt
-                key={`item-${itemIndex}`}
-                item={item}
-                index={itemIndex + 1}
-                prompt={item.prompt[locale]}
-                showInput={prefs.showInput}
+            }}
+            aria-label={t('course.sentenceWritingMode')}
+            sx={{ alignSelf: 'center', '& .MuiToggleButton-root': { minWidth: 140 } }}
+          >
+            <ToggleButton value="hand">{t('course.sentenceWritingModeHand')}</ToggleButton>
+            <ToggleButton value="type">{t('course.sentenceWritingModeType')}</ToggleButton>
+          </ToggleButtonGroup>
+        )}
+        {finished && (
+          <ResultScreen
+            score={score}
+            total={total}
+            misses={misses}
+            missesTitle={t('course.sentenceWritingMisses')}
+            onRetry={handleRetry}
+            onRetryMisses={handleRetryMisses}
+          />
+        )}
+        {!finished && item && (
+          <>
+            <Box>
+              <QuizProgressBar
+                total={total}
+                current={index}
+                results={results}
+                label={t('course.questionProgress', { current: index + 1, total })}
               />
-            ))}
-          </Stack>
+            </Box>
+            <SentenceWritingPrompt
+              key={`item-${index}`}
+              item={item}
+              prompt={item.prompt[locale]}
+              showInput={prefs.mode === 'type'}
+              onGrade={handleGrade}
+            />
+          </>
         )}
       </Stack>
-      <ScrollButton />
     </PageContainer>
   );
 }

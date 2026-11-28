@@ -1,10 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
-  Button,
   FormControl,
   InputLabel,
   MenuItem,
@@ -14,10 +12,10 @@ import {
   Typography
 } from '@mui/material';
 import type { SelectChangeEvent } from '@mui/material/Select';
-import { LocaleLink as RouterLink } from '@/components/locale-link';
 import { Heading } from '@/components/heading';
 import { PageBreadcrumb } from '@/components/page-breadcrumb';
 import { QuizMissList, type QuizMiss } from '@/components/quiz-miss-list';
+import { ResultNavLinks, ResultRetryButtons } from '@/features/course/result-actions';
 import { QuizProgressBar, type QuizSegmentResult } from '@/components/quiz-progress-bar';
 import { QUIZ_ADVANCE_DELAY_MS } from '@/constants/quiz.ts';
 import { PageContainer } from '@/components/page-container';
@@ -116,6 +114,7 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState<QuizSegmentResult[]>([]);
   const [misses, setMisses] = useState<QuizMiss[]>([]);
+  const [missedQuestions, setMissedQuestions] = useState<typeof questions>([]);
   useReviewMissedCards(misses);
   const [finished, setFinished] = useState(false);
 
@@ -156,14 +155,16 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
         setScore((previous) => previous + 1);
       } else {
         setMisses((previous) => [...previous, radicalMiss(question, index)]);
+        setMissedQuestions((previous) => [...previous, question]);
       }
     } else {
       setWrongIds((previous) => [...previous, choiceId]);
     }
   };
 
-  const handleRetry = () => {
-    setQuestions(buildQuestions(pool, locale));
+  const startRound = (next: typeof questions) => {
+    setQuestions(next);
+    setMissedQuestions([]);
     setIndex(0);
     setWrongIds([]);
     setCorrectPicked(false);
@@ -172,6 +173,8 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
     setMisses([]);
     setFinished(false);
   };
+  const handleRetry = () => startRound(buildQuestions(pool, locale));
+  const handleRetryMisses = () => startRound(missedQuestions);
 
   const ratio = total === 0 ? 0 : score / total;
   const resultMessage =
@@ -197,24 +200,19 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
           {resultMessage}
         </Typography>
-        <Stack
-          direction={{ xs: 'column', sm: 'row' }}
-          spacing={1.5}
-          sx={{ justifyContent: 'center', flexWrap: 'wrap', mb: misses.length > 0 ? 3 : 0 }}
-          useFlexGap
-        >
-          <Button variant="contained" startIcon={<ReplayIcon />} onClick={handleRetry}>
-            {t('course.retry')}
-          </Button>
-          <Button
-            variant="outlined"
-            component={RouterLink}
-            to={`${KANJI_RADICALS_PATH}#radical-${range.to}`}
-          >
-            {t('kanji.radicalsQuizReview')}
-          </Button>
-        </Stack>
+        <ResultRetryButtons
+          onRetry={handleRetry}
+          onRetryMisses={handleRetryMisses}
+          hasMisses={score < total}
+        />
+        {misses.length > 0 && <Box sx={{ mt: 3 }} />}
         <QuizMissList misses={misses} />
+        <ResultNavLinks
+          review={{
+            to: `${KANJI_RADICALS_PATH}#radical-${range.to}`,
+            label: t('kanji.radicalsQuizReview')
+          }}
+        />
       </Paper>
     );
   }
@@ -226,9 +224,6 @@ function RadicalQuiz({ range }: RadicalQuizProps) {
   return (
     <>
       <Box>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
-          {t('course.questionProgress', { current: index + 1, total })}
-        </Typography>
         <QuizProgressBar
           total={total}
           current={index}
