@@ -16,7 +16,8 @@ export const routes = {
   practice: {
     verbs: {
       te: '/practice/verbs/te',
-      nai: '/practice/verbs/nai'
+      nai: '/practice/verbs/nai',
+      dictionary: '/practice/verbs/dictionary'
     },
     particles: '/practice/particles'
   },

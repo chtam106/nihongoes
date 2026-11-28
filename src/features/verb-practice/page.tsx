@@ -16,6 +16,12 @@ import type { VerbMode, VerbPracticeGroup, VerbQuestion } from './verbs.ts';
 import { createVerbQuizDeck, displayVerbForm } from './verbs.ts';
 import { VerbGuide } from './verb-guide.tsx';
 
+const CHOOSE_KEY: Record<VerbMode, string> = {
+  te: 'verbPractice.chooseTe',
+  nai: 'verbPractice.chooseNai',
+  dictionary: 'verbPractice.chooseDictionary'
+};
+
 type VerbPracticePageProps = {
   mode: VerbMode;
   groups: VerbPracticeGroup[];
@@ -94,7 +100,7 @@ export function VerbPracticePage({ mode, groups, initialDeck }: VerbPracticePage
           }
         ]
   );
-  const pageTitle = mode === 'te' ? t('verbPractice.teTitle') : t('verbPractice.naiTitle');
+  const pageTitle = t(`verbPractice.${mode}Title`);
 
   return (
     <PageContainer bottomGutter>
@@ -119,7 +125,7 @@ export function VerbPracticePage({ mode, groups, initialDeck }: VerbPracticePage
                 color="text.secondary"
                 sx={{ display: 'block', textAlign: 'center', lineHeight: 1.5, mb: 1 }}
               >
-                {mode === 'te' ? t('verbPractice.chooseTe') : t('verbPractice.chooseNai')}
+                {t(CHOOSE_KEY[mode])}
               </Typography>
               <Paper
                 elevation={0}

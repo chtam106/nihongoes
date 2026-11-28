@@ -14,6 +14,7 @@ export const home = {
   practiceSection: 'Luyện tập',
   verbTeDescription: 'Đổi động từ từ thể ます sang thể て.',
   verbNaiDescription: 'Đổi động từ từ thể ます sang thể ない.',
+  verbDictionaryDescription: 'Đổi động từ từ thể ます sang thể nguyên dạng.',
   particlesDescription: 'Chọn trợ từ đúng cho câu, từ N5 đến N4.',
   coursesSection: 'Khóa học',
   vocabDescription: 'Toàn bộ từ vựng và mẫu câu của các khóa JLPT.',

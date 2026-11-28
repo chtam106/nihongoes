@@ -30,6 +30,45 @@ const GROUP1_NAI_SHIFTS: [string, string][] = [
   ['り', 'ら']
 ];
 
+/** Group 1 dictionary-form sound shift: い-row sound before ます → う-row sound. */
+const GROUP1_DICTIONARY_SHIFTS: [string, string][] = [
+  ['い', 'う'],
+  ['き', 'く'],
+  ['ぎ', 'ぐ'],
+  ['し', 'す'],
+  ['ち', 'つ'],
+  ['に', 'ぬ'],
+  ['び', 'ぶ'],
+  ['み', 'む'],
+  ['り', 'る']
+];
+
+type GuideMode = Exclude<VerbMode, 'te'>;
+
+const GROUP1_EXAMPLES: Record<GuideMode, string[]> = {
+  nai: [
+    'かきます → かか + ない → かかない',
+    'のみます → のま + ない → のまない',
+    'あいます → あわ + ない → あわない'
+  ],
+  dictionary: ['かきます → かく', 'のみます → のむ', 'あいます → あう', 'まちます → まつ']
+};
+
+const GROUP2_EXAMPLES: Record<VerbMode, string[]> = {
+  te: ['食べます → 食べて', '見ます → 見て'],
+  nai: ['食べます → 食べない', '見ます → 見ない'],
+  dictionary: ['食べます → 食べる', '見ます → 見る']
+};
+
+const GROUP3_EXAMPLES: Record<VerbMode, string[]> = {
+  te: ['します → して', '来ます（きます） → 来て（きて）', '勉強します → 勉強して'],
+  nai: ['します → しない', '来ます（きます） → 来ない（こない）', '勉強します → 勉強しない'],
+  dictionary: ['します → する', '来ます（きます） → 来る（くる）', '勉強します → 勉強する']
+};
+
+/** Capitalized mode used in i18n keys (guideGroup2TeRule, guideGroup2DictionaryRule, ...). */
+const KEY_SUFFIX: Record<VerbMode, string> = { te: 'Te', nai: 'Nai', dictionary: 'Dictionary' };
+
 const rowSx = { px: 1.25, py: 0.75, borderRadius: 1.5, bgcolor: 'action.hover' } as const;
 
 function JaLine({ children }: { children: ReactNode }) {
@@ -97,7 +136,7 @@ export function VerbGuide({ mode }: { mode: VerbMode }) {
     });
     return () => cancelAnimationFrame(frame);
   }, []);
-  const isTe = mode === 'te';
+  const suffix = KEY_SUFFIX[mode];
 
   return (
     <Paper
@@ -127,7 +166,7 @@ export function VerbGuide({ mode }: { mode: VerbMode }) {
         }}
       >
         <Heading scale="subsection" component="h2">
-          {isTe ? t('verbPractice.guideTeTitle') : t('verbPractice.guideNaiTitle')}
+          {t(`verbPractice.guide${suffix}Title`)}
         </Heading>
         <ExpandMoreOutlinedIcon
           sx={{
@@ -143,7 +182,7 @@ export function VerbGuide({ mode }: { mode: VerbMode }) {
             title={t('verbPractice.guideGroup1Title')}
             identify={t('verbPractice.guideGroup1Identify')}
           >
-            {isTe ? (
+            {mode === 'te' && (
               <Stack spacing={0.75}>
                 <Note>{t('verbPractice.guideGroup1TeRule')}</Note>
                 {GROUP1_TE_ROWS.map(([ending, result, example]) => (
@@ -177,28 +216,35 @@ export function VerbGuide({ mode }: { mode: VerbMode }) {
                 ))}
                 <Note>{t('verbPractice.guideGroup1TeException')}</Note>
               </Stack>
-            ) : (
+            )}
+            {mode !== 'te' && (
               <Stack spacing={0.75}>
-                <Note>{t('verbPractice.guideGroup1NaiRule')}</Note>
+                <Note>{t(`verbPractice.guideGroup1${suffix}Rule`)}</Note>
                 <Box
                   sx={{ ...rowSx, display: 'flex', flexWrap: 'wrap', columnGap: 2, rowGap: 0.5 }}
                 >
-                  {GROUP1_NAI_SHIFTS.map(([from, to]) => (
-                    <Typography key={from} lang="ja" variant="body2" sx={{ fontWeight: 600 }}>
-                      {from} →{' '}
-                      <Box component="span" sx={{ color: 'primary.main', fontWeight: 700 }}>
-                        {to}
-                      </Box>
-                    </Typography>
-                  ))}
+                  {(mode === 'nai' ? GROUP1_NAI_SHIFTS : GROUP1_DICTIONARY_SHIFTS).map(
+                    ([from, to]) => (
+                      <Typography key={from} lang="ja" variant="body2" sx={{ fontWeight: 600 }}>
+                        {from} →{' '}
+                        <Box component="span" sx={{ color: 'primary.main', fontWeight: 700 }}>
+                          {to}
+                        </Box>
+                      </Typography>
+                    )
+                  )}
                 </Box>
                 <Box sx={rowSx}>
-                  <JaLine>かきます → かか + ない → かかない</JaLine>
-                  <JaLine>のみます → のま + ない → のまない</JaLine>
-                  <JaLine>あいます → あわ + ない → あわない</JaLine>
+                  {GROUP1_EXAMPLES[mode].map((line) => (
+                    <JaLine key={line}>{line}</JaLine>
+                  ))}
                 </Box>
-                <Note>{t('verbPractice.guideGroup1NaiNote')}</Note>
-                <Note>{t('verbPractice.guideGroup1NaiException')}</Note>
+                {mode === 'nai' && (
+                  <>
+                    <Note>{t('verbPractice.guideGroup1NaiNote')}</Note>
+                    <Note>{t('verbPractice.guideGroup1NaiException')}</Note>
+                  </>
+                )}
               </Stack>
             )}
           </GroupSection>
@@ -207,21 +253,11 @@ export function VerbGuide({ mode }: { mode: VerbMode }) {
             title={t('verbPractice.guideGroup2Title')}
             identify={t('verbPractice.guideGroup2Identify')}
           >
-            <Note>
-              {isTe ? t('verbPractice.guideGroup2TeRule') : t('verbPractice.guideGroup2NaiRule')}
-            </Note>
+            <Note>{t(`verbPractice.guideGroup2${suffix}Rule`)}</Note>
             <Box sx={rowSx}>
-              {isTe ? (
-                <>
-                  <JaLine>食べます → 食べて</JaLine>
-                  <JaLine>見ます → 見て</JaLine>
-                </>
-              ) : (
-                <>
-                  <JaLine>食べます → 食べない</JaLine>
-                  <JaLine>見ます → 見ない</JaLine>
-                </>
-              )}
+              {GROUP2_EXAMPLES[mode].map((line) => (
+                <JaLine key={line}>{line}</JaLine>
+              ))}
             </Box>
           </GroupSection>
 
@@ -229,23 +265,11 @@ export function VerbGuide({ mode }: { mode: VerbMode }) {
             title={t('verbPractice.guideGroup3Title')}
             identify={t('verbPractice.guideGroup3Identify')}
           >
-            <Note>
-              {isTe ? t('verbPractice.guideGroup3TeRule') : t('verbPractice.guideGroup3NaiRule')}
-            </Note>
+            <Note>{t(`verbPractice.guideGroup3${suffix}Rule`)}</Note>
             <Box sx={rowSx}>
-              {isTe ? (
-                <>
-                  <JaLine>します → して</JaLine>
-                  <JaLine>来ます（きます） → 来て（きて）</JaLine>
-                  <JaLine>勉強します → 勉強して</JaLine>
-                </>
-              ) : (
-                <>
-                  <JaLine>します → しない</JaLine>
-                  <JaLine>来ます（きます） → 来ない（こない）</JaLine>
-                  <JaLine>勉強します → 勉強しない</JaLine>
-                </>
-              )}
+              {GROUP3_EXAMPLES[mode].map((line) => (
+                <JaLine key={line}>{line}</JaLine>
+              ))}
             </Box>
           </GroupSection>
         </Stack>

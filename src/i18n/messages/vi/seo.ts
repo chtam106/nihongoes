@@ -44,6 +44,10 @@ export const seo = {
       nai: {
         title: 'Bài tập chia thể ない',
         description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể ない.'
+      },
+      dictionary: {
+        title: 'Bài tập chia thể nguyên dạng',
+        description: 'Trắc nghiệm biến đổi động từ tiếng Nhật sang thể nguyên dạng.'
       }
     },
     particles: {

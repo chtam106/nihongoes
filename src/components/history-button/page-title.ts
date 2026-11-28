@@ -160,6 +160,10 @@ function practiceLabels(segments: string[], t: TranslateFn): string[] {
     return [t('verbPractice.naiTitle')];
   }
 
+  if (kind === 'verbs' && form === 'dictionary') {
+    return [t('verbPractice.dictionaryTitle')];
+  }
+
   return [t('nav.pages.practice')];
 }
 
